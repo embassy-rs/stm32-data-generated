@@ -989,7 +989,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Product ID field",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 32,
                     array: None,
                     enumm: None,
@@ -1009,7 +1013,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IN endpoint interrupt bits",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -1019,7 +1027,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "OUT endpoint interrupt bits",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -1039,7 +1051,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IN EP interrupt mask bits",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -1049,7 +1065,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "OUT EP interrupt mask bits",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -1069,7 +1089,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Device speed",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -1081,7 +1105,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-zero-length status OUT handshake",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1091,7 +1119,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Device address",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -1101,7 +1133,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Periodic frame interval",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -1113,7 +1149,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Transceiver delay",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1133,7 +1173,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Remote wakeup signaling",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1143,7 +1187,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Soft disconnect",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1153,7 +1201,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Global IN NAK status",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1163,7 +1215,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Global OUT NAK status",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1173,7 +1229,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Test control",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -1183,7 +1243,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Set global IN NAK",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1193,7 +1257,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clear global IN NAK",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1203,7 +1271,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Set global OUT NAK",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1213,7 +1285,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clear global OUT NAK",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1223,7 +1299,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Power-on programming done",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1243,7 +1323,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "MPSIZ",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 11,
                     array: None,
                     enumm: None,
@@ -1253,7 +1337,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USBAEP",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1263,7 +1351,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EONUM/DPID",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1273,7 +1365,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "NAKSTS",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1283,7 +1379,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EPTYP",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -1295,7 +1395,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SNPM",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1305,7 +1409,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "STALL",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1315,7 +1423,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TXFNUM",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -1325,7 +1437,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CNAK",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1335,7 +1451,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SNAK",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1345,7 +1465,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SD0PID/SEVNFRM",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1355,7 +1479,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SODDFRM/SD1PID",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1365,7 +1493,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EPDIS",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1375,7 +1507,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EPENA",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1395,7 +1531,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IN EP Tx FIFO empty interrupt mask bits",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -1415,7 +1555,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "XFRC",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1425,7 +1569,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EPDISD",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1435,7 +1583,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TOC",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1445,7 +1597,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ITTXFE",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1455,7 +1611,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "INEPNE",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1465,7 +1625,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TXFE",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1485,7 +1649,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Transfer completed interrupt mask",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1495,7 +1663,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Endpoint disabled interrupt mask",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1505,7 +1677,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Timeout condition mask (Non-isochronous endpoints)",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1515,7 +1691,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IN token received when TxFIFO empty mask",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1525,7 +1705,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IN token received with EP mismatch mask",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1535,7 +1719,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IN endpoint NAK effective mask",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1555,7 +1743,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Transfer size",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 19,
                     array: None,
                     enumm: None,
@@ -1565,7 +1757,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Packet count",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 10,
                     array: None,
                     enumm: None,
@@ -1575,7 +1771,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Multi count",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -1595,7 +1795,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "MPSIZ",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 11,
                     array: None,
                     enumm: None,
@@ -1605,7 +1809,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USBAEP",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1615,7 +1823,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EONUM/DPID",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1625,7 +1837,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "NAKSTS",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1635,7 +1851,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EPTYP",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -1647,7 +1867,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SNPM",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1657,7 +1881,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "STALL",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1667,7 +1895,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CNAK",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1677,7 +1909,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SNAK",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1687,7 +1923,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SD0PID/SEVNFRM",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1697,7 +1937,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SODDFRM",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1707,7 +1951,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EPDIS",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1717,7 +1965,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EPENA",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1737,7 +1989,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "XFRC",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1747,7 +2003,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EPDISD",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1757,7 +2017,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "STUP",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1767,7 +2031,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "OTEPDIS",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1777,7 +2045,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "B2BSTUP",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1797,7 +2069,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Transfer completed interrupt mask",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1807,7 +2083,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Endpoint disabled interrupt mask",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1817,7 +2097,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SETUP phase done mask",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1827,7 +2111,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "OUT token received when endpoint disabled mask",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1847,7 +2135,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Transfer size",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 19,
                     array: None,
                     enumm: None,
@@ -1857,7 +2149,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Packet count",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 10,
                     array: None,
                     enumm: None,
@@ -1867,7 +2163,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Received data PID/SETUP packet count",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -1887,7 +2187,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Suspend status",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1897,7 +2201,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Enumerated speed",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -1909,7 +2217,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Erratic error",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1919,7 +2231,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Frame number of the received SOF",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 14,
                     array: None,
                     enumm: None,
@@ -1939,7 +2255,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IN endpoint TxFIFO space available",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -1959,7 +2279,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Device VBUS discharge time",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -1979,7 +2303,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Device VBUS pulsing time",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 12,
                     array: None,
                     enumm: None,
@@ -1999,7 +2327,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Data",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 32,
                     array: None,
                     enumm: None,
@@ -2019,7 +2351,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "RAM start address",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -2029,7 +2365,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "FIFO depth",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -2049,7 +2389,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Global interrupt mask",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2059,7 +2403,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Burst length/type",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -2069,7 +2417,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DMA enable",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2079,7 +2431,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TxFIFO empty level",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2089,7 +2445,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Periodic TxFIFO empty level",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2109,7 +2469,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Power down",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2119,7 +2483,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Enable the VBUS \"A\" sensing device",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2129,7 +2497,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Enable the VBUS \"B\" sensing device",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2139,7 +2511,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SOF output enable",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2149,7 +2525,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "VBUS sensing disable",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2169,7 +2549,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Data contact detection (DCD) status",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2179,7 +2563,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Primary detection (PD) status",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2189,7 +2577,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secondary detection (SD) status",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2199,7 +2591,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DM pull-up detection status",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2209,7 +2605,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Power down",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2219,7 +2619,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Battery charging detector (BCD) enable",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2229,7 +2633,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Data contact detection (DCD) mode enable",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2239,7 +2647,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Primary detection (PD) mode enable",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2249,7 +2661,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secondary detection (SD) mode enable",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2259,7 +2675,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USB VBUS detection enable",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2269,7 +2689,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Internal high-speed PHY enable.",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2289,7 +2713,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C Read/Write Data",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -2299,7 +2727,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C Register Address",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -2309,7 +2741,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C Address",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -2319,7 +2755,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C Enable",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2329,7 +2769,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C ACK",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2339,7 +2783,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C Device Address",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -2349,7 +2797,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C DatSe0 USB mode",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2359,7 +2811,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Read/Write Indicator",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2369,7 +2825,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C Busy/Done",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2389,7 +2849,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Mode mismatch interrupt mask",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2399,7 +2863,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "OTG interrupt mask",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2409,7 +2877,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Start of frame mask",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2419,7 +2891,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Receive FIFO non-empty mask",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2429,7 +2905,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-periodic TxFIFO empty mask",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2439,7 +2919,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Global non-periodic IN NAK effective mask",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2449,7 +2933,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Global OUT NAK effective mask",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2459,7 +2947,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Early suspend mask",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2469,7 +2961,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USB suspend mask",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2479,7 +2975,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USB reset mask",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2489,7 +2989,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Enumeration done mask",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2499,7 +3003,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Isochronous OUT packet dropped interrupt mask",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2509,7 +3017,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "End of periodic frame interrupt mask",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2519,7 +3031,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Endpoint mismatch interrupt mask",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2529,7 +3045,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IN endpoints interrupt mask",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2539,7 +3059,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "OUT endpoints interrupt mask",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2549,7 +3073,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Incomplete isochronous IN transfer mask",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2559,7 +3087,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Incomplete periodic transfer mask (host mode) / Incomplete isochronous OUT transfer mask (device mode)",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2569,7 +3101,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Data fetch suspended mask",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2579,7 +3115,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Reset detected interrupt mask",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2589,7 +3129,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Host port interrupt mask",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2599,7 +3143,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Host channels interrupt mask",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2609,7 +3157,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Periodic TxFIFO empty mask",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2619,7 +3171,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LPM interrupt mask",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2629,7 +3185,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Connector ID status change mask",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2639,7 +3199,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Disconnect detected interrupt mask",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2649,7 +3213,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Session request/new session detected interrupt mask",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2659,7 +3227,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Resume/remote wakeup detected interrupt mask",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2679,7 +3251,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Current mode of operation",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2689,7 +3265,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Mode mismatch interrupt",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2699,7 +3279,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "OTG interrupt",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2709,7 +3293,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Start of frame",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2719,7 +3307,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "RxFIFO non-empty",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2729,7 +3321,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-periodic TxFIFO empty",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2739,7 +3335,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Global IN non-periodic NAK effective",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2749,7 +3349,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Global OUT NAK effective",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2759,7 +3363,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Early suspend",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2769,7 +3377,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USB suspend",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2779,7 +3391,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USB reset",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2789,7 +3405,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Enumeration done",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2799,7 +3419,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Isochronous OUT packet dropped interrupt",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2809,7 +3433,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "End of periodic frame interrupt",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2819,7 +3447,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IN endpoint interrupt",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2829,7 +3461,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "OUT endpoint interrupt",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2839,7 +3475,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Incomplete isochronous IN transfer",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2849,7 +3489,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Incomplete periodic transfer (host mode) / Incomplete isochronous OUT transfer (device mode)",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2859,7 +3503,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Data fetch suspended",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2869,7 +3517,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Host port interrupt",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2879,7 +3531,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Host channels interrupt",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2889,7 +3545,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Periodic TxFIFO empty",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2899,7 +3559,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Connector ID status change",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2909,7 +3573,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Disconnect detected interrupt",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2919,7 +3587,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Session request/new session detected interrupt",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2929,7 +3601,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Resume/remote wakeup detected interrupt",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2949,7 +3625,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LPM support enable",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2959,7 +3639,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LPM token acknowledge enable",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2969,7 +3653,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Best effort service latency",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -2979,7 +3667,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "bRemoteWake value",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2989,7 +3681,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "L1 Shallow Sleep enable",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2999,7 +3695,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "BESL threshold",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -3009,7 +3709,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "L1 deep sleep enable",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3019,7 +3723,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LPM response",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -3029,7 +3737,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port sleep status",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3039,7 +3751,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Sleep State Resume OK",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3049,7 +3765,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LPM Channel Index",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -3059,7 +3779,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LPM retry count",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -3069,7 +3793,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Send LPM transaction",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3079,7 +3807,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LPM retry count status",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -3089,7 +3821,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Enable best effort service latency",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3109,7 +3845,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Session request success",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3119,7 +3859,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Session request",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3129,7 +3873,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "VBUS valid override enable",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3139,7 +3887,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "VBUS valid override value",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3149,7 +3901,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "A-peripheral session valid override enable",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3159,7 +3915,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "A-peripheral session valid override value",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3169,7 +3929,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "B-peripheral session valid override enable",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3179,7 +3943,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "B-peripheral session valid override value",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3189,7 +3957,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Host negotiation success",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3199,7 +3971,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "HNP request",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3209,7 +3985,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Host set HNP enable",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3219,7 +3999,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Device HNP enabled",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3229,7 +4013,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Embedded host enable",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3239,7 +4027,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Connector ID status",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3249,7 +4041,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Long/short debounce time",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3259,7 +4055,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "A-session valid",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3269,7 +4069,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "B-session valid",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3289,7 +4093,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Session end detected",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3299,7 +4107,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Session request success status change",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3309,7 +4121,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Host negotiation success status change",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3319,7 +4135,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Host negotiation detected",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3329,7 +4149,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "A-device timeout change",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3339,7 +4163,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Debounce done",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3349,7 +4177,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ID input pin changed",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3369,7 +4201,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Core soft reset",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3379,7 +4215,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "HCLK soft reset",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3389,7 +4229,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Host frame counter reset",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3399,7 +4243,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "RxFIFO flush",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3409,7 +4257,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TxFIFO flush",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3419,7 +4271,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TxFIFO number",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -3429,7 +4285,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DMA request signal enabled for USB OTG HS",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3439,7 +4299,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "AHB master idle",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3459,7 +4323,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "RxFIFO depth",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -3479,7 +4347,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Endpoint number (device mode) / Channel number (host mode)",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -3489,7 +4361,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Byte count",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 11,
                     array: None,
                     enumm: None,
@@ -3499,7 +4375,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Data PID",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -3511,7 +4391,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Packet status (device mode)",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: Some(
@@ -3523,7 +4407,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Packet status (host mode)",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: Some(
@@ -3535,7 +4423,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Frame number (device mode)",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -3555,7 +4447,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "FS timeout calibration",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -3565,7 +4461,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Full-speed internal serial transceiver enable",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3575,7 +4475,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SRP-capable",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3585,7 +4489,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "HNP-capable",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3595,7 +4503,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USB turnaround time",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -3605,7 +4517,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PHY Low-power clock select",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3615,7 +4531,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ULPI FS/LS select",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3625,7 +4545,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ULPI Auto-resume",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3635,7 +4559,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ULPI Clock SuspendM",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3645,7 +4573,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ULPI External VBUS Drive",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3655,7 +4587,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ULPI external VBUS indicator",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3665,7 +4601,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TermSel DLine pulsing selection",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3675,7 +4615,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Indicator complement",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3685,7 +4629,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Indicator pass through",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3695,7 +4643,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ULPI interface protect disable",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3705,7 +4657,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Force host mode",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3715,7 +4671,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Force device mode",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3725,7 +4685,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Corrupt Tx packet",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3745,7 +4709,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Channel interrupts",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -3765,7 +4733,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Channel interrupt mask",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -3785,7 +4757,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Maximum packet size",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 11,
                     array: None,
                     enumm: None,
@@ -3795,7 +4771,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Endpoint number",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -3805,7 +4785,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Endpoint direction",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3815,7 +4799,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Low-speed device",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3825,7 +4813,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Endpoint type",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -3837,7 +4829,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Multicount",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -3847,7 +4843,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Device address",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -3857,7 +4857,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Odd frame",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3867,7 +4871,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Channel disable",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3877,7 +4885,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Channel enable",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3897,7 +4909,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "FS/LS PHY clock select",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -3907,7 +4923,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "FS- and LS-only support",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3927,7 +4947,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Transfer completed",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3937,7 +4961,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Channel halted",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3947,7 +4975,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "STALL response received interrupt",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3957,7 +4989,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "NAK response received interrupt",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3967,7 +5003,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ACK response received/transmitted interrupt",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3977,7 +5017,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Transaction error",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3987,7 +5031,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Babble error",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3997,7 +5045,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Frame overrun",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4007,7 +5059,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Data toggle error",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4027,7 +5083,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Transfer completed mask",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4037,7 +5097,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Channel halted mask",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4047,7 +5111,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "STALL response received interrupt mask",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4057,7 +5125,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "NAK response received interrupt mask",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4067,7 +5139,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ACK response received/transmitted interrupt mask",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4077,7 +5153,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Response received interrupt mask",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4087,7 +5167,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Transaction error mask",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4097,7 +5181,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Babble error mask",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4107,7 +5195,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Frame overrun mask",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4117,7 +5209,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Data toggle error mask",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4137,7 +5233,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Transfer size",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 19,
                     array: None,
                     enumm: None,
@@ -4147,7 +5247,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Packet count",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 10,
                     array: None,
                     enumm: None,
@@ -4157,7 +5261,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Data PID",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -4177,7 +5285,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Frame interval",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -4197,7 +5309,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Frame number",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -4207,7 +5323,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Frame time remaining",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -4227,7 +5347,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-periodic TxFIFO space available",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -4237,7 +5361,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-periodic transmit request queue space available",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -4247,7 +5375,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Top of the non-periodic transmit request queue",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -4267,7 +5399,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port connect status",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4277,7 +5413,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port connect detected",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4287,7 +5427,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port enable",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4297,7 +5441,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port enable/disable change",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4307,7 +5455,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port overcurrent active",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4317,7 +5469,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port overcurrent change",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4327,7 +5483,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port resume",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4337,7 +5497,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port suspend",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4347,7 +5511,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port reset",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4357,7 +5525,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port line status",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -4367,7 +5539,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port power",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4377,7 +5553,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port test control",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -4387,7 +5567,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port speed",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -4407,7 +5591,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Periodic transmit data FIFO space available",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -4417,7 +5605,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Periodic transmit request queue space available",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -4427,7 +5619,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Top of the periodic transmit request queue",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -4447,7 +5643,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Stop PHY clock",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4457,7 +5657,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Gate HCLK",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4467,7 +5671,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PHY Suspended",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,

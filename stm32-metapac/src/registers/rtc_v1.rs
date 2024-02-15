@@ -127,7 +127,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "alrh",
                 description: Some("Alarm register high"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: None,
                 enumm: None,
@@ -141,7 +141,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "alrl",
                 description: Some("Alarm register low"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: None,
                 enumm: None,
@@ -155,7 +155,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "cnth",
                 description: Some("Counter register high"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: None,
                 enumm: None,
@@ -169,7 +169,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "cntl",
                 description: Some("Counter register low"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: None,
                 enumm: None,
@@ -184,7 +184,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "secie",
                     description: Some("Second interrupt enable"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -192,7 +192,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "alrie",
                     description: Some("Alarm interrupt enable"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -200,7 +200,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "owie",
                     description: Some("Overflow interrupt enable"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -216,7 +216,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "secf",
                     description: Some("Second flag"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -224,7 +224,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "alrf",
                     description: Some("Alarm flag"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -232,7 +232,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "owf",
                     description: Some("Overflow flag"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -240,7 +240,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rsf",
                     description: Some("Registers synchronized flag"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -248,7 +248,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cnf",
                     description: Some("Enter configuration mode"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -256,7 +256,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rtoff",
                     description: Some("RTC operation OFF"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: Some("Rtoff"),
@@ -271,7 +271,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "divh",
                 description: Some("Prescaler divider register high"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 4,
                 array: None,
                 enumm: None,
@@ -285,7 +285,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "divl",
                 description: Some("Prescaler divider register low"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: None,
                 enumm: None,
@@ -299,7 +299,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "prlh",
                 description: Some("Prescaler load register high"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 4,
                 array: None,
                 enumm: None,
@@ -313,7 +313,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "prll",
                 description: Some("Prescaler divider register low"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: None,
                 enumm: None,

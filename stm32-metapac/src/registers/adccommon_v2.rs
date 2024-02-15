@@ -51,7 +51,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "multi",
                     description: Some("Multi ADC mode selection"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 5,
                     array: None,
                     enumm: Some("Multi"),
@@ -59,7 +59,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "delay",
                     description: Some("Delay between 2 sampling phases"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -67,7 +67,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dds",
                     description: Some("DMA disable selection for multi-ADC mode"),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
                     enumm: Some("Dds"),
@@ -75,7 +75,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dma",
                     description: Some("Direct memory access mode for multi ADC mode"),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 2,
                     array: None,
                     enumm: Some("Dma"),
@@ -83,7 +83,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "adcpre",
                     description: Some("ADC prescaler"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 2,
                     array: None,
                     enumm: Some("Adcpre"),
@@ -91,7 +91,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "vbate",
                     description: Some("VBAT enable"),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -99,7 +99,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tsvrefe",
                     description: Some("Temperature sensor and VREFINT enable"),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -114,7 +114,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "data",
                 description: Some("1st data item of a pair of regular conversions"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
                 enumm: None,
@@ -129,7 +129,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "awd",
                     description: Some("Analog watchdog event occurred"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
                     enumm: None,
@@ -137,7 +137,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eoc",
                     description: Some("End of conversion of ADC"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
                     enumm: None,
@@ -145,7 +145,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jeoc",
                     description: Some("Injected channel end of conversion of ADC"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
                     enumm: None,
@@ -153,7 +153,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jstrt",
                     description: Some("Injected channel conversion started"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
                     enumm: None,
@@ -161,7 +161,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "strt",
                     description: Some("regular channel conversion started"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
                     enumm: None,
@@ -169,7 +169,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ovr",
                     description: Some("Overrun occurred"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
                     enumm: None,

@@ -25,7 +25,7 @@ pub(crate) static REGISTERS: IR = IR {
         fields: &[Field {
             name: "value",
             description: Some("Calibration value"),
-            bit_offset: 0,
+            bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
             bit_size: 16,
             array: None,
             enumm: None,

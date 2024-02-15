@@ -227,7 +227,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Low-power mode selection",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -239,7 +243,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Disable backup domain write protection",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -249,7 +257,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Voltage scaling range selection",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -261,7 +273,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Low-power run",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -283,7 +299,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Power voltage detector enable",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -293,7 +313,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Power voltage detector level selection",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -305,7 +329,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Peripheral voltage monitoring 1 enable: VDDUSB vs. 1.2V",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -315,7 +343,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Peripheral voltage monitoring 2 enable: VDDIO2 vs. 0.9V",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -325,7 +357,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Peripheral voltage monitoring 3 enable: VDDA vs. 1.62V",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -335,7 +371,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Peripheral voltage monitoring 4 enable: VDDA vs. 2.2V",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -345,7 +385,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "VDDIO2 Independent I/Os supply valid",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -355,7 +399,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "VDDUSB USB supply valid",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -375,7 +423,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Enable Wakeup pin WKUP",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -392,7 +444,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SRAM2 retention in Standby mode",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -404,7 +460,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Apply pull-up and pull-down configuration",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -414,7 +474,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ULPMEN",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -424,7 +488,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "UCPD_STDBY",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -434,7 +502,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "UCPD_DBDIS",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -454,7 +526,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Wakeup pin WKUP1 polarity",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -464,7 +540,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Wakeup pin WKUP2 polarity",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -474,7 +554,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Wakeup pin WKUP3 polarity",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -484,7 +568,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Wakeup pin WKUP4 polarity",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -494,7 +582,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Wakeup pin WKUP5 polarity",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -504,7 +596,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "VBAT battery charging enable",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -514,7 +610,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "VBAT battery charging resistor selection",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -524,7 +624,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SMPSBYP",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -534,7 +638,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EXTSMPSEN",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -544,7 +652,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SMPSFSTEN",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -554,7 +666,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SMPSLPEN",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -574,7 +690,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port pull bit y (y=0..15)",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -601,7 +721,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PRIV",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -621,7 +745,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clear wakeup flag",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -638,7 +766,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clear standby flag",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -658,7 +790,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "WKUP1 pin security",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -668,7 +804,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "WKUP2 pin security",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -678,7 +818,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "WKUP3 pin security",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -688,7 +832,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "WKUP4 pin security",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -698,7 +846,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "WKUP5 pin security",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -708,7 +860,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LPMSEC",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -718,7 +874,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "VDMSEC",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -728,7 +888,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "VBSEC",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -738,7 +902,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "APCSEC",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -758,7 +926,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Wakeup flag 1",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -768,7 +940,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Wakeup flag 2",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -778,7 +954,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Wakeup flag 3",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -788,7 +968,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Wakeup flag 4",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -798,7 +982,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Wakeup flag 5",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -808,7 +996,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Standby flag",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -818,7 +1010,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Wakeup flag internal",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -838,7 +1034,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Low-power regulator started",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -848,7 +1048,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Low-power regulator flag",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -858,7 +1062,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Voltage scaling flag",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -868,7 +1076,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Power voltage detector output",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -878,7 +1090,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Peripheral voltage monitoring output: VDDUSB vs. 1.2 V",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -888,7 +1104,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Peripheral voltage monitoring output: VDDIO2 vs. 0.9 V",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -898,7 +1118,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Peripheral voltage monitoring output: VDDA vs. 1.62 V",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -908,7 +1132,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Peripheral voltage monitoring output: VDDA vs. 2.2 V",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,

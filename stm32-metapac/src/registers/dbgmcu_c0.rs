@@ -62,7 +62,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tim3",
                     description: Some("TIM3 counter stopped when core is halted"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -70,7 +70,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rtc",
                     description: Some("Debug RTC stopped when Core is halted"),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -78,7 +78,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wwdg",
                     description: Some("Debug Window Wachdog stopped when Core is halted"),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -86,7 +86,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "iwdg",
                     description: Some("Debug Independent Wachdog stopped when Core is halted"),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -94,7 +94,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c1",
                     description: Some("I2C1 SMBUS timeout mode stopped when core is halted"),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -110,7 +110,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tim1",
                     description: Some("TIM1"),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -118,7 +118,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tim14",
                     description: Some("TIM14"),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -126,7 +126,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tim16",
                     description: Some("TIM16"),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -134,7 +134,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tim17",
                     description: Some("TIM17"),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -150,7 +150,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dbg_stop",
                     description: Some("Debug Stop Mode"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -158,7 +158,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dbg_standby",
                     description: Some("Debug Standby Mode"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -174,7 +174,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dev_id",
                     description: Some("Device Identifier"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -182,7 +182,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rev_id",
                     description: Some("Revision Identifier"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 16,
                     array: None,
                     enumm: None,

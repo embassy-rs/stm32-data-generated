@@ -4313,24 +4313,30 @@ pub mod regs {
         #[doc = "Slave mode selection"]
         #[inline(always)]
         pub const fn sms(&self) -> super::vals::Sms {
-            let val = (self.0 >> 0usize) & 0x07;
+            let mut val = 0;
+            val += (((self.0 >> 0usize) & 0x07) << 0usize);
+            val += (((self.0 >> 16usize) & 0x01) << 3usize);
             super::vals::Sms::from_bits(val as u8)
         }
         #[doc = "Slave mode selection"]
         #[inline(always)]
         pub fn set_sms(&mut self, val: super::vals::Sms) {
-            self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32 >> 0usize) & 0x07) << 0usize);
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32 >> 3usize) & 0x01) << 16usize);
         }
         #[doc = "Trigger selection"]
         #[inline(always)]
         pub const fn ts(&self) -> super::vals::Ts {
-            let val = (self.0 >> 4usize) & 0x07;
+            let mut val = 0;
+            val += (((self.0 >> 4usize) & 0x07) << 0usize);
+            val += (((self.0 >> 20usize) & 0x03) << 3usize);
             super::vals::Ts::from_bits(val as u8)
         }
         #[doc = "Trigger selection"]
         #[inline(always)]
         pub fn set_ts(&mut self, val: super::vals::Ts) {
-            self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32 >> 0usize) & 0x07) << 4usize);
+            self.0 = (self.0 & !(0x03 << 20usize)) | (((val.to_bits() as u32 >> 3usize) & 0x03) << 20usize);
         }
         #[doc = "Master/Slave mode"]
         #[inline(always)]
@@ -4358,24 +4364,30 @@ pub mod regs {
         #[doc = "Slave mode selection"]
         #[inline(always)]
         pub const fn sms(&self) -> super::vals::Sms {
-            let val = (self.0 >> 0usize) & 0x07;
+            let mut val = 0;
+            val += (((self.0 >> 0usize) & 0x07) << 0usize);
+            val += (((self.0 >> 16usize) & 0x01) << 3usize);
             super::vals::Sms::from_bits(val as u8)
         }
         #[doc = "Slave mode selection"]
         #[inline(always)]
         pub fn set_sms(&mut self, val: super::vals::Sms) {
-            self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32 >> 0usize) & 0x07) << 0usize);
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32 >> 3usize) & 0x01) << 16usize);
         }
         #[doc = "Trigger selection"]
         #[inline(always)]
         pub const fn ts(&self) -> super::vals::Ts {
-            let val = (self.0 >> 4usize) & 0x07;
+            let mut val = 0;
+            val += (((self.0 >> 4usize) & 0x07) << 0usize);
+            val += (((self.0 >> 20usize) & 0x03) << 3usize);
             super::vals::Ts::from_bits(val as u8)
         }
         #[doc = "Trigger selection"]
         #[inline(always)]
         pub fn set_ts(&mut self, val: super::vals::Ts) {
-            self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32 >> 0usize) & 0x07) << 4usize);
+            self.0 = (self.0 & !(0x03 << 20usize)) | (((val.to_bits() as u32 >> 3usize) & 0x03) << 20usize);
         }
         #[doc = "Master/Slave mode"]
         #[inline(always)]
@@ -4447,24 +4459,30 @@ pub mod regs {
         #[doc = "Slave mode selection"]
         #[inline(always)]
         pub const fn sms(&self) -> super::vals::Sms {
-            let val = (self.0 >> 0usize) & 0x07;
+            let mut val = 0;
+            val += (((self.0 >> 0usize) & 0x07) << 0usize);
+            val += (((self.0 >> 16usize) & 0x01) << 3usize);
             super::vals::Sms::from_bits(val as u8)
         }
         #[doc = "Slave mode selection"]
         #[inline(always)]
         pub fn set_sms(&mut self, val: super::vals::Sms) {
-            self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32 >> 0usize) & 0x07) << 0usize);
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32 >> 3usize) & 0x01) << 16usize);
         }
         #[doc = "Trigger selection"]
         #[inline(always)]
         pub const fn ts(&self) -> super::vals::Ts {
-            let val = (self.0 >> 4usize) & 0x07;
+            let mut val = 0;
+            val += (((self.0 >> 4usize) & 0x07) << 0usize);
+            val += (((self.0 >> 20usize) & 0x03) << 3usize);
             super::vals::Ts::from_bits(val as u8)
         }
         #[doc = "Trigger selection"]
         #[inline(always)]
         pub fn set_ts(&mut self, val: super::vals::Ts) {
-            self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32 >> 0usize) & 0x07) << 4usize);
+            self.0 = (self.0 & !(0x03 << 20usize)) | (((val.to_bits() as u32 >> 3usize) & 0x03) << 20usize);
         }
         #[doc = "Master/Slave mode"]
         #[inline(always)]
@@ -5924,7 +5942,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Sms {
-        #[doc = "Slave mode disabled - if CEN = ‘1 then the prescaler is clocked directly by the internal clock."]
+        #[doc = "Slave mode disabled - if CEN = '1' then the prescaler is clocked directly by the internal clock."]
         DISABLED = 0,
         #[doc = "Encoder mode 1 - Counter counts up/down on TI2FP1 edge depending on TI1FP2 level."]
         ENCODER_MODE_1 = 0x01,
@@ -5940,11 +5958,20 @@ pub mod vals {
         TRIGGER_MODE = 0x06,
         #[doc = "External Clock Mode 1 - Rising edges of the selected trigger (TRGI) clock the counter."]
         EXT_CLOCK_MODE = 0x07,
+        #[doc = "Rising edge of the selected trigger input (tim_trgi) reinitializes the counter, generates an update of the registers and starts the counter."]
+        COMBINED_RESET_TRIGGER = 0x08,
+        _RESERVED_9 = 0x09,
+        _RESERVED_a = 0x0a,
+        _RESERVED_b = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
     }
     impl Sms {
         #[inline(always)]
         pub const fn from_bits(val: u8) -> Sms {
-            unsafe { core::mem::transmute(val & 0x07) }
+            unsafe { core::mem::transmute(val & 0x0f) }
         }
         #[inline(always)]
         pub const fn to_bits(self) -> u8 {
@@ -5996,27 +6023,51 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ts {
-        #[doc = "Internal Trigger 0 (ITR0)"]
+        #[doc = "Internal Trigger 0"]
         ITR0 = 0,
-        #[doc = "Internal Trigger 1 (ITR1)"]
+        #[doc = "Internal Trigger 1"]
         ITR1 = 0x01,
-        #[doc = "Internal Trigger 2 (ITR2)"]
+        #[doc = "Internal Trigger 2"]
         ITR2 = 0x02,
-        #[doc = "Internal Trigger 3 (ITR3)"]
+        #[doc = "Internal Trigger 3"]
         ITR3 = 0x03,
-        #[doc = "TI1 Edge Detector (TI1F_ED)"]
+        #[doc = "TI1 Edge Detector"]
         TI1F_ED = 0x04,
-        #[doc = "Filtered Timer Input 1 (TI1FP1)"]
+        #[doc = "Filtered Timer Input 1"]
         TI1FP1 = 0x05,
-        #[doc = "Filtered Timer Input 2 (TI2FP2)"]
+        #[doc = "Filtered Timer Input 2"]
         TI2FP2 = 0x06,
-        #[doc = "External Trigger input (ETRF)"]
+        #[doc = "External Trigger input"]
         ETRF = 0x07,
+        _RESERVED_8 = 0x08,
+        _RESERVED_9 = 0x09,
+        _RESERVED_a = 0x0a,
+        _RESERVED_b = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
+        _RESERVED_10 = 0x10,
+        _RESERVED_11 = 0x11,
+        _RESERVED_12 = 0x12,
+        _RESERVED_13 = 0x13,
+        _RESERVED_14 = 0x14,
+        _RESERVED_15 = 0x15,
+        _RESERVED_16 = 0x16,
+        _RESERVED_17 = 0x17,
+        _RESERVED_18 = 0x18,
+        _RESERVED_19 = 0x19,
+        _RESERVED_1a = 0x1a,
+        _RESERVED_1b = 0x1b,
+        _RESERVED_1c = 0x1c,
+        _RESERVED_1d = 0x1d,
+        _RESERVED_1e = 0x1e,
+        _RESERVED_1f = 0x1f,
     }
     impl Ts {
         #[inline(always)]
         pub const fn from_bits(val: u8) -> Ts {
-            unsafe { core::mem::transmute(val & 0x07) }
+            unsafe { core::mem::transmute(val & 0x1f) }
         }
         #[inline(always)]
         pub const fn to_bits(self) -> u8 {

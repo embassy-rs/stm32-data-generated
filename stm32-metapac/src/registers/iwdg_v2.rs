@@ -72,7 +72,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "key",
                 description: Some("Key value (write only, read 0000h)"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: None,
                 enumm: Some("Key"),
@@ -86,7 +86,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "pr",
                 description: Some("Prescaler divider"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 3,
                 array: None,
                 enumm: Some("Pr"),
@@ -100,7 +100,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "rl",
                 description: Some("Watchdog counter reload value"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 12,
                 array: None,
                 enumm: None,
@@ -115,7 +115,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pvu",
                     description: Some("Watchdog prescaler value update"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -123,7 +123,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rvu",
                     description: Some("Watchdog counter reload value update"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -131,7 +131,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wvu",
                     description: Some("Watchdog counter window value update"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -146,7 +146,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "win",
                 description: Some("Watchdog counter window value"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 12,
                 array: None,
                 enumm: None,

@@ -73,7 +73,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Function.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: Some(
@@ -85,7 +89,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Precision required (number of iterations/cycles), where PRECISION = (number of iterations/4).",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: Some(
@@ -97,7 +105,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Scaling factor (2^-n for arguments, 2^n for results).",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -107,7 +119,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Enable interrupt.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -117,7 +133,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Enable DMA wread channel.",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -127,7 +147,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Enable DMA write channel.",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -137,7 +161,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Number of results in the RDATA register.",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -149,7 +177,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Number of arguments expected by the WDATA register.",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -161,7 +193,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Width of output data.",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -173,7 +209,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Width of input data.",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -185,7 +225,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Result ready flag.",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,

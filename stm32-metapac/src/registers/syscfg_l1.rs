@@ -50,7 +50,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "exti",
                 description: Some("EXTI x configuration (x = 8 to 11)"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 4,
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
                 enumm: None,
@@ -65,7 +65,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "mem_mode",
                     description: Some("MEM_MODE"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -73,7 +73,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "boot_mode",
                     description: Some("BOOT_MODE"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -89,7 +89,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "usb_pu",
                     description: Some("USB pull-up"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -97,7 +97,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lcd_capa",
                     description: Some("USB pull-up enable on DP line"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 5,
                     array: None,
                     enumm: None,

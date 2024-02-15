@@ -689,7 +689,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "init",
                     description: Some("Initialization"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -697,7 +697,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cce",
                     description: Some("Configuration Change Enable"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -705,7 +705,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "asm",
                     description: Some("ASM Restricted Operation Mode"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -713,7 +713,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "csa",
                     description: Some("Clock Stop Acknowledge"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -721,7 +721,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "csr",
                     description: Some("Clock Stop Request"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -729,7 +729,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "mon",
                     description: Some("Bus Monitoring Mode"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -737,7 +737,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dar",
                     description: Some("Disable Automatic Retransmission"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -745,7 +745,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "test",
                     description: Some("Test Mode Enable"),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -753,7 +753,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fdoe",
                     description: Some("FD Operation Enable"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -761,7 +761,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "bse",
                     description: Some("FDCAN Bit Rate Switching"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -769,7 +769,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pxhd",
                     description: Some("Protocol Exception Handling Disable"),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -777,7 +777,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "efbi",
                     description: Some("Edge Filtering during Bus Integration"),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -785,7 +785,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "txp",
                     description: Some("TXP"),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -793,7 +793,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "niso",
                     description: Some("Non ISO Operation"),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -809,7 +809,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "day",
                     description: Some("Timestamp Day"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -817,7 +817,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "mon",
                     description: Some("Timestamp Month"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -825,7 +825,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "year",
                     description: Some("Timestamp Year"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -833,7 +833,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "substep",
                     description: Some("Sub-step of Core release"),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -841,7 +841,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "step",
                     description: Some("Step of Core release"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -849,7 +849,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rel",
                     description: Some("Core release"),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -865,7 +865,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dsjw",
                     description: Some("Synchronization Jump Width"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -873,7 +873,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dtseg2",
                     description: Some("Data time segment after sample point"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -881,7 +881,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dtseg1",
                     description: Some("Data time segment after sample point"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -889,7 +889,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dbrp",
                     description: Some("Data BIt Rate Prescaler"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -897,7 +897,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tdc",
                     description: Some("Transceiver Delay Compensation"),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -913,7 +913,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tec",
                     description: Some("Transmit Error Counter"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -921,7 +921,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rec",
                     description: Some("Receive Error Counter"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -929,7 +929,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rp",
                     description: Some("Receive Error Passive"),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -937,7 +937,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cel",
                     description: Some("AN Error Logging"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -952,7 +952,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "etv",
                 description: Some("Endiannes Test Value"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -967,7 +967,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rrfe",
                     description: Some("Reject Remote Frames Extended"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -975,7 +975,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rrfs",
                     description: Some("Reject Remote Frames Standard"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -983,7 +983,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "anfe",
                     description: Some("Accept Non-matching Frames Extended"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -991,7 +991,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "anfs",
                     description: Some("Accept Non-matching Frames Standard"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -1007,7 +1007,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "bidx",
                     description: Some("Buffer Index"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 6,
                     array: None,
                     enumm: None,
@@ -1015,7 +1015,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "msi",
                     description: Some("Message Storage Indicator"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -1023,7 +1023,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fidx",
                     description: Some("Filter Index"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -1031,7 +1031,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "flst",
                     description: Some("Filter List"),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1047,7 +1047,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rfne",
                     description: Some("Rx FIFO X New Message Enable"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 4] })),
                     enumm: None,
@@ -1055,7 +1055,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rfwe",
                     description: Some("Rx FIFO X Watermark Reached Enable"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 4] })),
                     enumm: None,
@@ -1063,7 +1063,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rffe",
                     description: Some("Rx FIFO X Full Enable"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 4] })),
                     enumm: None,
@@ -1071,7 +1071,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rfle",
                     description: Some("Rx FIFO X Message Lost Enable"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 4] })),
                     enumm: None,
@@ -1079,7 +1079,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hpme",
                     description: Some("High Priority Message Enable"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1087,7 +1087,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tce",
                     description: Some("Transmission Completed Enable"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1095,7 +1095,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tcfe",
                     description: Some("Transmission Cancellation Finished Enable"),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1103,7 +1103,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tefe",
                     description: Some("Tx FIFO Empty Enable"),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1111,7 +1111,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tefne",
                     description: Some("Tx Event FIFO New Entry Enable"),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1119,7 +1119,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tefwe",
                     description: Some("Tx Event FIFO Watermark Reached Enable"),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1127,7 +1127,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "teffe",
                     description: Some("Tx Event FIFO Full Enable"),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1135,7 +1135,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tefle",
                     description: Some("Tx Event FIFO Element Lost Enable"),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1143,7 +1143,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tswe",
                     description: Some("Timestamp Wraparound Enable"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1151,7 +1151,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "mrafe",
                     description: Some("Message RAM Access Failure Enable"),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1159,7 +1159,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tooe",
                     description: Some("Timeout Occurred Enable"),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1167,7 +1167,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "drxe",
                     description: Some("Message stored to Dedicated Rx Buffer Enable"),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1175,7 +1175,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "bece",
                     description: Some("Bit Error Corrected Interrupt Enable"),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1183,7 +1183,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "beue",
                     description: Some("Bit Error Uncorrected Interrupt Enable"),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1191,7 +1191,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eloe",
                     description: Some("Error Logging Overflow Enable"),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1199,7 +1199,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "epe",
                     description: Some("Error Passive Enable"),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1207,7 +1207,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ewe",
                     description: Some("Warning Status Enable"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1215,7 +1215,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "boe",
                     description: Some("Bus_Off Status Enable"),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1223,7 +1223,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wdie",
                     description: Some("Watchdog Interrupt Enable"),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1231,7 +1231,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "peae",
                     description: Some("Protocol Error in Arbitration Phase Enable"),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 27 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1239,7 +1239,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pede",
                     description: Some("Protocol Error in Data Phase Enable"),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1247,7 +1247,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "arae",
                     description: Some("Access to Reserved Address Enable"),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1263,7 +1263,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eint0",
                     description: Some("Enable Interrupt Line 0"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1271,7 +1271,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eint1",
                     description: Some("Enable Interrupt Line 1"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1287,7 +1287,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rfnl",
                     description: Some("Rx FIFO X New Message Interrupt Line"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 4] })),
                     enumm: None,
@@ -1295,7 +1295,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rfwl",
                     description: Some("Rx FIFO X Watermark Reached Interrupt Line"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 4] })),
                     enumm: None,
@@ -1303,7 +1303,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rffl",
                     description: Some("Rx FIFO X Full Interrupt Line"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 4] })),
                     enumm: None,
@@ -1311,7 +1311,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rfll",
                     description: Some("Rx FIFO X Message Lost Interrupt Line"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 4] })),
                     enumm: None,
@@ -1319,7 +1319,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hpml",
                     description: Some("High Priority Message Interrupt Line"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1327,7 +1327,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tcl",
                     description: Some("Transmission Completed Interrupt Line"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1335,7 +1335,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tcfl",
                     description: Some("Transmission Cancellation Finished Interrupt Line"),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1343,7 +1343,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tefl",
                     description: Some("Tx FIFO Empty Interrupt Line"),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1351,7 +1351,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tefnl",
                     description: Some("Tx Event FIFO New Entry Interrupt Line"),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1359,7 +1359,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tefwl",
                     description: Some("Tx Event FIFO Watermark Reached Interrupt Line"),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1367,7 +1367,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "teffl",
                     description: Some("Tx Event FIFO Full Interrupt Line"),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1375,7 +1375,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tefll",
                     description: Some("Tx Event FIFO Element Lost Interrupt Line"),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1383,7 +1383,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tswl",
                     description: Some("Timestamp Wraparound Interrupt Line"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1391,7 +1391,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "mrafl",
                     description: Some("Message RAM Access Failure Interrupt Line"),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1399,7 +1399,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tool",
                     description: Some("Timeout Occurred Interrupt Line"),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1407,7 +1407,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "drxl",
                     description: Some("Message stored to Dedicated Rx Buffer Interrupt Line"),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1415,7 +1415,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "becl",
                     description: Some("Bit Error Corrected Interrupt Line"),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1423,7 +1423,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "beul",
                     description: Some("Bit Error Uncorrected Interrupt Line"),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1431,7 +1431,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "elol",
                     description: Some("Error Logging Overflow Interrupt Line"),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1439,7 +1439,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "epl",
                     description: Some("Error Passive Interrupt Line"),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1447,7 +1447,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ewl",
                     description: Some("Warning Status Interrupt Line"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1455,7 +1455,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "bol",
                     description: Some("Bus_Off Status"),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1463,7 +1463,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wdil",
                     description: Some("Watchdog Interrupt Line"),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1471,7 +1471,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "peal",
                     description: Some("Protocol Error in Arbitration Phase Line"),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 27 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1479,7 +1479,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pedl",
                     description: Some("Protocol Error in Data Phase Line"),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1487,7 +1487,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "aral",
                     description: Some("Access to Reserved Address Line"),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1503,7 +1503,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rfn",
                     description: Some("Rx FIFO X New Message"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 4] })),
                     enumm: None,
@@ -1511,7 +1511,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rfw",
                     description: Some("Rx FIFO X Watermark Reached"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 4] })),
                     enumm: None,
@@ -1519,7 +1519,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rff",
                     description: Some("Rx FIFO X Full"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 4] })),
                     enumm: None,
@@ -1527,7 +1527,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rfl",
                     description: Some("Rx FIFO X Message Lost"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 4] })),
                     enumm: None,
@@ -1535,7 +1535,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hpm",
                     description: Some("High Priority Message"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1543,7 +1543,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tc",
                     description: Some("Transmission Completed"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1551,7 +1551,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tcf",
                     description: Some("Transmission Cancellation Finished"),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1559,7 +1559,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tef",
                     description: Some("Tx FIFO Empty"),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1567,7 +1567,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tefn",
                     description: Some("Tx Event FIFO New Entry"),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1575,7 +1575,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tefw",
                     description: Some("Tx Event FIFO Watermark Reached"),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1583,7 +1583,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "teff",
                     description: Some("Tx Event FIFO Full"),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1591,7 +1591,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tefl",
                     description: Some("Tx Event FIFO Element Lost"),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1599,7 +1599,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tsw",
                     description: Some("Timestamp Wraparound"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1607,7 +1607,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "mraf",
                     description: Some("Message RAM Access Failure"),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1615,7 +1615,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "too",
                     description: Some("Timeout Occurred"),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1623,7 +1623,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "drx",
                     description: Some("Message stored to Dedicated Rx Buffer"),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1631,7 +1631,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "elo",
                     description: Some("Error Logging Overflow"),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1639,7 +1639,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ep",
                     description: Some("Error Passive"),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1647,7 +1647,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ew",
                     description: Some("Warning Status"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1655,7 +1655,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "bo",
                     description: Some("Bus_Off Status"),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1663,7 +1663,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wdi",
                     description: Some("Watchdog Interrupt"),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1671,7 +1671,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pea",
                     description: Some("Protocol Error in Arbitration Phase (Nominal Bit Time is used)"),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 27 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1679,7 +1679,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ped",
                     description: Some("Protocol Error in Data Phase (Data Bit Time is used)"),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1687,7 +1687,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ara",
                     description: Some("Access to Reserved Address"),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1703,7 +1703,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ntseg2",
                     description: Some("Nominal Time segment after sample point"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -1711,7 +1711,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ntseg1",
                     description: Some("Nominal Time segment before sample point"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -1719,7 +1719,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "nbrp",
                     description: Some("Bit Rate Prescaler"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -1727,7 +1727,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "nsjw",
                     description: Some("NSJW: Nominal (Re)Synchronization Jump Width."),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -1742,7 +1742,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "nd",
                 description: Some("New data (buffers 0 - 31)"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -1756,7 +1756,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "nd",
                 description: Some("New data (buffers 32 - 63)"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -1771,7 +1771,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lec",
                     description: Some("Last Error Code"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -1779,7 +1779,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "act",
                     description: Some("Activity"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -1787,7 +1787,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ep",
                     description: Some("Error Passive"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1795,7 +1795,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ew",
                     description: Some("Warning Status"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1803,7 +1803,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "bo",
                     description: Some("Bus_Off Status"),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1811,7 +1811,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dlec",
                     description: Some("Data Last Error Code"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -1819,7 +1819,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "resi",
                     description: Some("ESI flag of last received FDCAN Message"),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1827,7 +1827,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rbrs",
                     description: Some("BRS flag of last received FDCAN Message"),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1835,7 +1835,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "redl",
                     description: Some("Received FDCAN Message"),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1843,7 +1843,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pxe",
                     description: Some("Protocol Exception Event"),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1851,7 +1851,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tdcv",
                     description: Some("Transmitter Delay Compensation Value"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -1867,7 +1867,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wdc",
                     description: Some("Watchdog configuration"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -1875,7 +1875,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wdv",
                     description: Some("Watchdog value"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -1890,7 +1890,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "rbsa",
                 description: Some("Rx Buffer Start Address"),
-                bit_offset: 2,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                 bit_size: 14,
                 array: None,
                 enumm: None,
@@ -1905,7 +1905,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fds",
                     description: Some("Rx FIFO X Data Field Size"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 3,
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 4] })),
                     enumm: None,
@@ -1913,7 +1913,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rbds",
                     description: Some("Rx Buffer Data Field Size"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -1928,7 +1928,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "fai",
                 description: Some("Rx FIFO X Acknowledge Index"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 6,
                 array: None,
                 enumm: None,
@@ -1943,7 +1943,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fsa",
                     description: Some("Rx FIFO X Start Address"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 14,
                     array: None,
                     enumm: None,
@@ -1951,7 +1951,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fs",
                     description: Some("Rx FIFO X Size"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -1959,7 +1959,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fwm",
                     description: Some("FIFO X Watermark"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -1967,7 +1967,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fom",
                     description: Some("FIFO X operation mode"),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1983,7 +1983,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ffl",
                     description: Some("Rx FIFO X Fill Level"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -1991,7 +1991,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fgi",
                     description: Some("Rx FIFO X Get Index"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 6,
                     array: None,
                     enumm: None,
@@ -1999,7 +1999,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fpi",
                     description: Some("Rx FIFO X Put Index"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 6,
                     array: None,
                     enumm: None,
@@ -2007,7 +2007,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ff",
                     description: Some("Rx FIFO X Full"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2015,7 +2015,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rfl",
                     description: Some("Rx FIFO X Message Lost"),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2031,7 +2031,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "flssa",
                     description: Some("Filter List Standard Start Address"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 14,
                     array: None,
                     enumm: None,
@@ -2039,7 +2039,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lss",
                     description: Some("List Size Standard"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -2055,7 +2055,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tdcf",
                     description: Some("Transmitter Delay Compensation Filter Window Length"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -2063,7 +2063,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tdco",
                     description: Some("Transmitter Delay Compensation Offset"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -2079,7 +2079,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lbck",
                     description: Some("Loop Back mode"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2087,7 +2087,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tx",
                     description: Some("Loop Back mode"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -2095,7 +2095,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rx",
                     description: Some("Control of Transmit Pin"),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2111,7 +2111,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "etoc",
                     description: Some("Enable Timeout Counter"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2119,7 +2119,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tos",
                     description: Some("Timeout Select"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -2127,7 +2127,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "top",
                     description: Some("Timeout Period"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -2142,7 +2142,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "toc",
                 description: Some("Timeout Counter"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: None,
                 enumm: None,
@@ -2157,7 +2157,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tss",
                     description: Some("Timestamp Select"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -2165,7 +2165,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tcp",
                     description: Some("Timestamp Counter Prescaler"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -2180,7 +2180,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "tsc",
                 description: Some("Timestamp Counter"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: None,
                 enumm: None,
@@ -2195,7 +2195,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ccv",
                     description: Some("Cycle Count Value"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 6,
                     array: None,
                     enumm: None,
@@ -2203,7 +2203,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "swv",
                     description: Some("Stop Watch Value"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -2218,7 +2218,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "csm",
                 description: Some("Cycle Sync Mark"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: None,
                 enumm: None,
@@ -2233,7 +2233,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ct",
                     description: Some("Cycle Time"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -2241,7 +2241,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cc",
                     description: Some("Cycle Count"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 6,
                     array: None,
                     enumm: None,
@@ -2257,7 +2257,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ncl",
                     description: Some("Time Preset"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -2265,7 +2265,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ctp",
                     description: Some("Cycle Time Target Phase"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -2281,7 +2281,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "sbce",
                     description: Some("Start of Basic Cycle Interrupt Enable"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2289,7 +2289,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "smce",
                     description: Some("Start of Matrix Cycle Interrupt Enable"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2297,7 +2297,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "csme",
                     description: Some("Change of Synchronization Mode Interrupt Enable"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2305,7 +2305,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "soge",
                     description: Some("Start of Gap Interrupt Enable"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2313,7 +2313,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rtmie",
                     description: Some("Register Time Mark Interrupt Enable"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2321,7 +2321,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ttmie",
                     description: Some("Trigger Time Mark Event Internal Interrupt Enable"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2329,7 +2329,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "swee",
                     description: Some("Stop Watch Event Interrupt Enable"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2337,7 +2337,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "gtwe",
                     description: Some("Global Time Wrap Interrupt Enable"),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2345,7 +2345,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "gtde",
                     description: Some("Global Time Discontinuity Interrupt Enable"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2353,7 +2353,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "gtee",
                     description: Some("Global Time Error Interrupt Enable"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2361,7 +2361,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "txue",
                     description: Some("Tx Count Underflow Interrupt Enable"),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2369,7 +2369,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "txoe",
                     description: Some("Tx Count Overflow Interrupt Enable"),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2377,7 +2377,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "se1e",
                     description: Some("Scheduling Error 1 Interrupt Enable"),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2385,7 +2385,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "se2e",
                     description: Some("Scheduling Error 2 Interrupt Enable"),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2393,7 +2393,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "elce",
                     description: Some("Change Error Level Interrupt Enable"),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2401,7 +2401,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "iwtge",
                     description: Some("Initialization Watch Trigger Interrupt Enable"),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2409,7 +2409,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wte",
                     description: Some("Watch Trigger Interrupt Enable"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2417,7 +2417,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "awe",
                     description: Some("Application Watchdog Interrupt Enable"),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2425,7 +2425,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cere",
                     description: Some("Configuration Error Interrupt Enable"),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2441,7 +2441,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "sbcl",
                     description: Some("Start of Basic Cycle Interrupt Line"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2449,7 +2449,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "smcl",
                     description: Some("Start of Matrix Cycle Interrupt Line"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2457,7 +2457,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "csml",
                     description: Some("Change of Synchronization Mode Interrupt Line"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2465,7 +2465,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "sogl",
                     description: Some("Start of Gap Interrupt Line"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2473,7 +2473,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rtmil",
                     description: Some("Register Time Mark Interrupt Line"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2481,7 +2481,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ttmil",
                     description: Some("Trigger Time Mark Event Internal Interrupt Line"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2489,7 +2489,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "swel",
                     description: Some("Stop Watch Event Interrupt Line"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2497,7 +2497,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "gtwl",
                     description: Some("Global Time Wrap Interrupt Line"),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2505,7 +2505,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "gtdl",
                     description: Some("Global Time Discontinuity Interrupt Line"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2513,7 +2513,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "gtel",
                     description: Some("Global Time Error Interrupt Line"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2521,7 +2521,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "txul",
                     description: Some("Tx Count Underflow Interrupt Line"),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2529,7 +2529,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "txol",
                     description: Some("Tx Count Overflow Interrupt Line"),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2537,7 +2537,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "se1l",
                     description: Some("Scheduling Error 1 Interrupt Line"),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2545,7 +2545,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "se2l",
                     description: Some("Scheduling Error 2 Interrupt Line"),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2553,7 +2553,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "elcl",
                     description: Some("Change Error Level Interrupt Line"),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2561,7 +2561,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "iwtgl",
                     description: Some("Initialization Watch Trigger Interrupt Line"),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2569,7 +2569,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wtl",
                     description: Some("Watch Trigger Interrupt Line"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2577,7 +2577,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "awl",
                     description: Some("Application Watchdog Interrupt Line"),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2585,7 +2585,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cerl",
                     description: Some("Configuration Error Interrupt Line"),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2601,7 +2601,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "sbc",
                     description: Some("Start of Basic Cycle"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2609,7 +2609,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "smc",
                     description: Some("Start of Matrix Cycle"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2617,7 +2617,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "csm",
                     description: Some("Change of Synchronization Mode"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2625,7 +2625,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "sog",
                     description: Some("Start of Gap"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2633,7 +2633,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rtmi",
                     description: Some("Register Time Mark Interrupt"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2641,7 +2641,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ttmi",
                     description: Some("Trigger Time Mark Event Internal"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2649,7 +2649,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "swe",
                     description: Some("Stop Watch Event"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2657,7 +2657,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "gtw",
                     description: Some("Global Time Wrap"),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2665,7 +2665,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "gtd",
                     description: Some("Global Time Discontinuity"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2673,7 +2673,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "gte",
                     description: Some("Global Time Error"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2681,7 +2681,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "txu",
                     description: Some("Tx Count Underflow"),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2689,7 +2689,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "txo",
                     description: Some("Tx Count Overflow"),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2697,7 +2697,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "se1",
                     description: Some("Scheduling Error 1"),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2705,7 +2705,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "se2",
                     description: Some("Scheduling Error 2"),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2713,7 +2713,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "elc",
                     description: Some("Error Level Changed"),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2721,7 +2721,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "iwtg",
                     description: Some("Initialization Watch Trigger"),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2729,7 +2729,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wt",
                     description: Some("Watch Trigger"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2737,7 +2737,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "aw",
                     description: Some("Application Watchdog"),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2745,7 +2745,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cer",
                     description: Some("Configuration Error"),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2761,7 +2761,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lt",
                     description: Some("Local Time"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -2769,7 +2769,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "gt",
                     description: Some("Global Time"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -2785,7 +2785,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ccm",
                     description: Some("Cycle Count Max"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 6,
                     array: None,
                     enumm: None,
@@ -2793,7 +2793,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "css",
                     description: Some("Cycle Start Synchronization"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -2801,7 +2801,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "txew",
                     description: Some("Tx Enable Window"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -2809,7 +2809,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "entt",
                     description: Some("Expected Number of Tx Triggers"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 12,
                     array: None,
                     enumm: None,
@@ -2825,7 +2825,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "om",
                     description: Some("Operation Mode"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -2833,7 +2833,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "gen",
                     description: Some("Gap Enable"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2841,7 +2841,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tm",
                     description: Some("Time Master"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2849,7 +2849,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ldsdl",
                     description: Some("LD of Synchronization Deviation Limit"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -2857,7 +2857,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "irto",
                     description: Some("Initial Reference Trigger Offset"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -2865,7 +2865,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eecs",
                     description: Some("Enable External Clock Synchronization"),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2873,7 +2873,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "awl",
                     description: Some("Application Watchdog Limit"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -2881,7 +2881,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "egtf",
                     description: Some("Enable Global Time Filtering"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2889,7 +2889,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ecc",
                     description: Some("Enable Clock Calibration"),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2897,7 +2897,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "evtp",
                     description: Some("Event Trigger Polarity"),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2913,7 +2913,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "sgt",
                     description: Some("Set Global time"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2921,7 +2921,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ecs",
                     description: Some("External Clock Synchronization"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2929,7 +2929,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "swp",
                     description: Some("Stop Watch Polarity"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2937,7 +2937,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "sws",
                     description: Some("Stop Watch Source"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -2945,7 +2945,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rtie",
                     description: Some("Register Time Mark Interrupt Pulse Enable"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2953,7 +2953,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tmc",
                     description: Some("Register Time Mark Compare"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -2961,7 +2961,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ttie",
                     description: Some("Trigger Time Mark Interrupt Pulse Enable"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2969,7 +2969,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "gcs",
                     description: Some("Gap Control Select"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2977,7 +2977,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fgp",
                     description: Some("Finish Gap"),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2985,7 +2985,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tmg",
                     description: Some("Time Mark Gap"),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2993,7 +2993,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "nig",
                     description: Some("Next is Gap"),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3001,7 +3001,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "escn",
                     description: Some("External Synchronization Control"),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3009,7 +3009,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lckc",
                     description: Some("TT Operation Control Register Locked"),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3025,7 +3025,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "el",
                     description: Some("Error Level"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -3033,7 +3033,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ms",
                     description: Some("Master State"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -3041,7 +3041,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "sys",
                     description: Some("Synchronization State"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -3049,7 +3049,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "qgtp",
                     description: Some("Quality of Global Time Phase"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3057,7 +3057,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "qcs",
                     description: Some("Quality of Clock Speed"),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3065,7 +3065,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rto",
                     description: Some("Reference Trigger Offset"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -3073,7 +3073,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wgtd",
                     description: Some("Wait for Global Time Discontinuity"),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3081,7 +3081,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "gfi",
                     description: Some("Gap Finished Indicator"),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3089,7 +3089,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tmp",
                     description: Some("Time Master Priority"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -3097,7 +3097,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "gsi",
                     description: Some("Gap Started Indicator"),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 27 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3105,7 +3105,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wfe",
                     description: Some("Wait for Event"),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3113,7 +3113,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "awe",
                     description: Some("Application Watchdog Event"),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3121,7 +3121,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wecs",
                     description: Some("Wait for External Clock Synchronization"),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3129,7 +3129,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "spl",
                     description: Some("Schedule Phase Lock"),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3145,7 +3145,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rid",
                     description: Some("Reference Identifier"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 29,
                     array: None,
                     enumm: None,
@@ -3153,7 +3153,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "xtd",
                     description: Some("Extended Identifier"),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3161,7 +3161,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rmps",
                     description: Some("Reference Message Payload Select"),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3177,7 +3177,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tmsa",
                     description: Some("Trigger Memory Start Address"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 14,
                     array: None,
                     enumm: None,
@@ -3185,7 +3185,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tme",
                     description: Some("Trigger Memory Elements"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -3201,7 +3201,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tm",
                     description: Some("Time Mark"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -3209,7 +3209,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ticc",
                     description: Some("Time Mark Cycle Code"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -3217,7 +3217,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lckm",
                     description: Some("TT Time Mark Register Locked"),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3233,7 +3233,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "swtdel",
                     description: Some("Stop watch trigger input selection"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -3241,7 +3241,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "evtsel",
                     description: Some("Event trigger input selection"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -3257,7 +3257,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ncl",
                     description: Some("Numerator Configuration Low"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -3265,7 +3265,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dc",
                     description: Some("Denominator Configuration"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 14,
                     array: None,
                     enumm: None,
@@ -3273,7 +3273,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "elt",
                     description: Some("Enable Local Time"),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3288,7 +3288,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "nav",
                 description: Some("Numerator Actual Value"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 18,
                 array: None,
                 enumm: None,
@@ -3302,7 +3302,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "ar",
                 description: Some("Add Request"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 32, stride: 1 })),
                 enumm: None,
@@ -3317,7 +3317,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tbsa",
                     description: Some("Tx Buffers Start Address"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 14,
                     array: None,
                     enumm: None,
@@ -3325,7 +3325,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ndtb",
                     description: Some("Number of Dedicated Transmit Buffers"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 6,
                     array: None,
                     enumm: None,
@@ -3333,7 +3333,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tfqs",
                     description: Some("Transmit FIFO/Queue Size"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 6,
                     array: None,
                     enumm: None,
@@ -3341,7 +3341,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tfqm",
                     description: Some("Tx FIFO/Queue Mode"),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3356,7 +3356,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "cf",
                 description: Some("Cancellation Finished"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 32, stride: 1 })),
                 enumm: None,
@@ -3370,7 +3370,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "cf",
                 description: Some("Cancellation Finished Interrupt Enable"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 32, stride: 1 })),
                 enumm: None,
@@ -3384,7 +3384,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "cr",
                 description: Some("Cancellation Request"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 32, stride: 1 })),
                 enumm: None,
@@ -3398,7 +3398,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "trp",
                 description: Some("Transmission Request Pending"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 32, stride: 1 })),
                 enumm: None,
@@ -3412,7 +3412,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "tie",
                 description: Some("Transmission Interrupt Enable"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 32, stride: 1 })),
                 enumm: None,
@@ -3426,7 +3426,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "to",
                 description: Some("Transmission Occurred"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 32, stride: 1 })),
                 enumm: None,
@@ -3440,7 +3440,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "efai",
                 description: Some("Event FIFO Acknowledge Index"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 5,
                 array: None,
                 enumm: None,
@@ -3455,7 +3455,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "efsa",
                     description: Some("Event FIFO Start Address"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 14,
                     array: None,
                     enumm: None,
@@ -3463,7 +3463,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "efs",
                     description: Some("Event FIFO Size"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 6,
                     array: None,
                     enumm: None,
@@ -3471,7 +3471,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "efwm",
                     description: Some("Event FIFO Watermark"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 6,
                     array: None,
                     enumm: None,
@@ -3487,7 +3487,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "effl",
                     description: Some("Event FIFO Fill Level"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 6,
                     array: None,
                     enumm: None,
@@ -3495,7 +3495,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "efgi",
                     description: Some("Event FIFO Get Index"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -3503,7 +3503,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "efpi",
                     description: Some("Event FIFO put index"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -3511,7 +3511,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eff",
                     description: Some("Event FIFO Full"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3519,7 +3519,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tefl",
                     description: Some("Tx Event FIFO Element Lost"),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3534,7 +3534,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "tbds",
                 description: Some("Tx Buffer Data Field Size"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 3,
                 array: None,
                 enumm: None,
@@ -3549,7 +3549,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tffl",
                     description: Some("Tx FIFO Free Level"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 6,
                     array: None,
                     enumm: None,
@@ -3557,7 +3557,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tfgi",
                     description: Some("TFGI"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -3565,7 +3565,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tfqpi",
                     description: Some("Tx FIFO/Queue Put Index"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -3573,7 +3573,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tfqf",
                     description: Some("Tx FIFO/Queue Full"),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3588,7 +3588,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "eidm",
                 description: Some("Extended ID Mask"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 29,
                 array: None,
                 enumm: None,
@@ -3603,7 +3603,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "flesa",
                     description: Some("Filter List Standard Start Address"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 14,
                     array: None,
                     enumm: None,
@@ -3611,7 +3611,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lse",
                     description: Some("List Size Extended"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,

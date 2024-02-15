@@ -304,7 +304,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "brp",
                     description: Some("BRP"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 10,
                     array: None,
                     enumm: None,
@@ -312,7 +312,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ts",
                     description: Some("TS1"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 4,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 4 })),
                     enumm: None,
@@ -320,7 +320,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "sjw",
                     description: Some("SJW"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -328,7 +328,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lbkm",
                     description: Some("Loop Back Mode enabled"),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -336,7 +336,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "silm",
                     description: Some("SILM"),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                     bit_size: 1,
                     array: None,
                     enumm: Some("Silm"),
@@ -352,7 +352,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ewgf",
                     description: Some("EWGF"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -360,7 +360,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "epvf",
                     description: Some("EPVF"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -368,7 +368,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "boff",
                     description: Some("BOFF"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -376,7 +376,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lec",
                     description: Some("LEC"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 3,
                     array: None,
                     enumm: Some("Lec"),
@@ -384,7 +384,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tec",
                     description: Some("TEC"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -392,7 +392,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rec",
                     description: Some("REC"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -407,7 +407,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "fact",
                 description: Some("Filter active"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 28, stride: 1 })),
                 enumm: None,
@@ -421,7 +421,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "ffa",
                 description: Some("Filter FIFO assignment for filter 0"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 28, stride: 1 })),
                 enumm: None,
@@ -435,7 +435,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "fbm",
                 description: Some("Filter mode"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 28, stride: 1 })),
                 enumm: None,
@@ -450,7 +450,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "finit",
                     description: Some("FINIT"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -458,7 +458,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "can2sb",
                     description: Some("CAN2SB"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 6,
                     array: None,
                     enumm: None,
@@ -473,7 +473,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "fb",
                 description: Some("Filter bits"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 32, stride: 1 })),
                 enumm: None,
@@ -487,7 +487,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "fb",
                 description: Some("Filter bits"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 32, stride: 1 })),
                 enumm: None,
@@ -501,7 +501,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "fsc",
                 description: Some("Filter scale configuration"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 28, stride: 1 })),
                 enumm: None,
@@ -516,7 +516,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tmeie",
                     description: Some("TMEIE"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -524,7 +524,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fmpie",
                     description: Some("FMPIE0"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 3 })),
                     enumm: None,
@@ -532,7 +532,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ffie",
                     description: Some("FFIE0"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 3 })),
                     enumm: None,
@@ -540,7 +540,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fovie",
                     description: Some("FOVIE0"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 3 })),
                     enumm: None,
@@ -548,7 +548,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ewgie",
                     description: Some("EWGIE"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -556,7 +556,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "epvie",
                     description: Some("EPVIE"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -564,7 +564,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "bofie",
                     description: Some("BOFIE"),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -572,7 +572,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lecie",
                     description: Some("LECIE"),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -580,7 +580,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "errie",
                     description: Some("ERRIE"),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -588,7 +588,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wkuie",
                     description: Some("WKUIE"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -596,7 +596,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "slkie",
                     description: Some("SLKIE"),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -612,7 +612,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "inrq",
                     description: Some("INRQ"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -620,7 +620,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "sleep",
                     description: Some("SLEEP"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -628,7 +628,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "txfp",
                     description: Some("TXFP"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -636,7 +636,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rflm",
                     description: Some("RFLM"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -644,7 +644,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "nart",
                     description: Some("NART"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -652,7 +652,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "awum",
                     description: Some("AWUM"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -660,7 +660,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "abom",
                     description: Some("ABOM"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -668,7 +668,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ttcm",
                     description: Some("TTCM"),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -676,7 +676,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "reset",
                     description: Some("RESET"),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -684,7 +684,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dbf",
                     description: Some("DBF"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -700,7 +700,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "inak",
                     description: Some("INAK"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -708,7 +708,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "slak",
                     description: Some("SLAK"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -716,7 +716,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "erri",
                     description: Some("ERRI"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -724,7 +724,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wkui",
                     description: Some("WKUI"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -732,7 +732,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "slaki",
                     description: Some("SLAKI"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -740,7 +740,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "txm",
                     description: Some("TXM"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -748,7 +748,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rxm",
                     description: Some("RXM"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -756,7 +756,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "samp",
                     description: Some("SAMP"),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -764,7 +764,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rx",
                     description: Some("RX"),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -779,7 +779,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "data",
                 description: Some("DATA4"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 8,
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 8 })),
                 enumm: None,
@@ -793,7 +793,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "data",
                 description: Some("DATA0"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 8,
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 8 })),
                 enumm: None,
@@ -808,7 +808,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dlc",
                     description: Some("DLC"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -816,7 +816,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fmi",
                     description: Some("FMI"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -824,7 +824,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "time",
                     description: Some("TIME"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -840,7 +840,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fmp",
                     description: Some("FMP0"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -848,7 +848,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "full",
                     description: Some("FULL0"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -856,7 +856,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fovr",
                     description: Some("FOVR0"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -864,7 +864,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rfom",
                     description: Some("RFOM0"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -880,7 +880,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rtr",
                     description: Some("RTR"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: Some("Rtr"),
@@ -888,7 +888,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ide",
                     description: Some("IDE"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: Some("Ide"),
@@ -896,7 +896,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "exid",
                     description: Some("EXID"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 18,
                     array: None,
                     enumm: None,
@@ -904,7 +904,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "stid",
                     description: Some("STID"),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 11,
                     array: None,
                     enumm: None,
@@ -919,7 +919,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "data",
                 description: Some("DATA4"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 8,
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 8 })),
                 enumm: None,
@@ -933,7 +933,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "data",
                 description: Some("DATA0"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 8,
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 8 })),
                 enumm: None,
@@ -948,7 +948,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dlc",
                     description: Some("DLC"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -956,7 +956,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tgt",
                     description: Some("TGT"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -964,7 +964,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "time",
                     description: Some("TIME"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -980,7 +980,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "txrq",
                     description: Some("TXRQ"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -988,7 +988,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rtr",
                     description: Some("RTR"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: Some("Rtr"),
@@ -996,7 +996,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ide",
                     description: Some("IDE"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: Some("Ide"),
@@ -1004,7 +1004,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "exid",
                     description: Some("EXID"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 18,
                     array: None,
                     enumm: None,
@@ -1012,7 +1012,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "stid",
                     description: Some("STID"),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 11,
                     array: None,
                     enumm: None,
@@ -1028,7 +1028,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rqcp",
                     description: Some("RQCP0"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
                     enumm: None,
@@ -1036,7 +1036,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "txok",
                     description: Some("TXOK0"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
                     enumm: None,
@@ -1044,7 +1044,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "alst",
                     description: Some("ALST0"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
                     enumm: None,
@@ -1052,7 +1052,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "terr",
                     description: Some("TERR0"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
                     enumm: None,
@@ -1060,7 +1060,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "abrq",
                     description: Some("ABRQ0"),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
                     enumm: None,
@@ -1068,7 +1068,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "code",
                     description: Some("CODE"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -1076,7 +1076,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tme",
                     description: Some("Lowest priority flag for mailbox 0"),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 1 })),
                     enumm: None,
@@ -1084,7 +1084,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "low",
                     description: Some("Lowest priority flag for mailbox 0"),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 1 })),
                     enumm: None,

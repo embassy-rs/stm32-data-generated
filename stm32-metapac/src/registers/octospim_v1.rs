@@ -51,7 +51,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "muxen",
                     description: Some("Multiplexed mode enable"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -59,7 +59,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "req2ack_time",
                     description: Some("REQ to ACK time"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -75,7 +75,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "clken",
                     description: Some("CLK/CLK Enable for Port"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -83,7 +83,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "clksrc",
                     description: Some("CLK/CLK Source for Port"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -91,7 +91,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dqsen",
                     description: Some("DQS Enable for Port"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -99,7 +99,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dqssrc",
                     description: Some("DQS Source for Port"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -107,7 +107,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ncsen",
                     description: Some("CS Enable for Port"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -115,7 +115,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ncssrc",
                     description: Some("CS Source for Port"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -123,7 +123,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "iolen",
                     description: Some("Enable for Port"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -131,7 +131,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "iolsrc",
                     description: Some("Source for Port"),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -139,7 +139,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "iohen",
                     description: Some("Enable for Port n"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -147,7 +147,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "iohsrc",
                     description: Some("Source for Port"),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -163,7 +163,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "clken",
                     description: Some("CLK/CLK Enable for Port"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -171,7 +171,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "clksrc",
                     description: Some("CLK/CLK Source for Port"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -179,7 +179,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dqsen",
                     description: Some("DQS Enable for Port"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -187,7 +187,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dqssrc",
                     description: Some("DQS Source for Port"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -195,7 +195,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ncsen",
                     description: Some("CS Enable for Port"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -203,7 +203,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ncssrc",
                     description: Some("CS Source for Port"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -211,7 +211,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "iolen",
                     description: Some("Enable for Port"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -219,7 +219,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "iolsrc",
                     description: Some("Source for Port"),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -227,7 +227,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "iohen",
                     description: Some("Enable for Port n"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -235,7 +235,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "iohsrc",
                     description: Some("Source for Port"),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,

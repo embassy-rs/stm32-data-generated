@@ -434,7 +434,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Memory mapping selection bits. This bitfield controlled by software selects the memory internally mapped at the address 0x0000_0000. Its reset value is determined by the boot mode configuration. Refer to Reference Manual section 2.5 for more details.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -446,7 +450,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PA11 pin remapping\r This bit is set and cleared by software. When set, it remaps the PA11 pin to operate as PA9 GPIO port, instead as PA11 GPIO port.",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -456,7 +464,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PA12 pin remapping\r This bit is set and cleared by software. When set, it remaps the PA12 pin to operate as PA10 GPIO port, instead as PA12 GPIO port.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -466,7 +478,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IR output polarity selection",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -476,7 +492,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IR Modulation Envelope signal selection\r This bitfield selects the signal for IR modulation envelope:",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -488,7 +508,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Fast Mode Plus (FM+) enable for PB6\r This bit is set and cleared by software. It enables I2C FM+ driving capability on PB6 I/O port.\r With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -498,7 +522,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Fast Mode Plus (FM+) enable for PB7\r This bit is set and cleared by software. It enables I2C FM+ driving capability on PB7 I/O port.\r With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored.",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -508,7 +536,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Fast Mode Plus (FM+) enable for PB8\r This bit is set and cleared by software. It enables I2C FM+ driving capability on PB8 I/O port.\r With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored.",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -518,7 +550,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Fast Mode Plus (FM+) enable for PB9\r This bit is set and cleared by software. It enables I2C FM+ driving capability on PB9 I/O port.\r With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored.",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -528,7 +564,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Fast Mode Plus (FM+) enable for I2C1\r This bit is set and cleared by software. It enables I2C FM+ driving capability on I/O ports configured as I2C1 through GPIOx_AFR registers.\r With this bit in disable state, the I2C FM+ driving capability on I/O ports configured as I2C1 can be enabled through their corresponding I2Cx_FMP bit. When I2C FM+ is enabled, the speed control is ignored.",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -538,7 +578,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Fast Mode Plus (FM+) enable for PA9\r This bit is set and cleared by software. It enables I2C FM+ driving capability on PA9 I/O port.\r With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored.",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -548,7 +592,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Fast Mode Plus (FM+) enable for PA10\r This bit is set and cleared by software. It enables I2C FM+ driving capability on PA10 I/O port.\r With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored.",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -558,7 +606,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Fast Mode Plus (FM+) enable for PC14\r This bit is set and cleared by software. It enables I2C FM+ driving capability on PC14 I/O port.\r With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored.",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -578,7 +630,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Cortex<Superscript>�<Default � Font>-M0+ LOCKUP enable\r This bit is set by software and cleared by system reset. When set, it enables the connection of Cortex<Superscript>�<Default � Font>-M0+ LOCKUP (HardFault) output to the TIM1/16/17 Break input.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -598,7 +654,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Pin GPIO multiplexer 0\r This bit is set by software and cleared by system reset. It assigns a GPIO to a pin.\r 1x: Reserved\r Pin F2 of WLCSP14 package GPIO assignment\r 1x: Reserved",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -610,7 +670,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Pin GPIO multiplexer 1\r This bit is set by software and cleared by system reset. It assigns a GPIO to a pin.\r 1x: Reserved",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -622,7 +686,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Pin GPIO multiplexer 2\r This bit is set by software and cleared by system reset. It assigns a GPIO to a pin.\r 1x: Reserved\r 1x: Reserved",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -634,7 +702,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Pin GPIO multiplexer 3\r This bit is set by software and cleared by system reset. It assigns a GPIO to a pin.\r 1x: Reserved",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -646,7 +718,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Pin GPIO multiplexer 4\r This bit is set by software and cleared by system reset. It assigns a GPIO to a pin.\r 1x: Reserved\r 1x: Reserved",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -658,7 +734,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Pin GPIO multiplexer 5\r This bit is set by software and cleared by system reset. It assigns a GPIO to a pin.\r 1x: Reserved",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -680,7 +760,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Window watchdog interrupt pending flag",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -700,7 +784,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DMA1 channel 2 interrupt request pending",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -710,7 +798,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DMA1 channel 3 interrupt request pending",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -730,7 +822,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DMAMUX interrupt request pending",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -750,7 +846,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ADC interrupt request pending",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -770,7 +870,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Timer 1 commutation interrupt request pending",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -780,7 +884,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Timer 1 trigger interrupt request pending",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -790,7 +898,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Timer 1 update interrupt request pending",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -800,7 +912,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Timer 1 break interrupt request pending",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -820,7 +936,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Timer 1 capture compare interrupt request pending",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -840,7 +960,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Timer 3 interrupt request pending",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -860,7 +984,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Timer 14 interrupt request pending",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -880,7 +1008,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "RTC interrupt request pending (EXTI line 19)",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -900,7 +1032,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Timer 16 interrupt request pending",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -920,7 +1056,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Timer 17 interrupt request pending",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -940,7 +1080,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C1 interrupt request pending, combined with EXTI line 23",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -960,7 +1104,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI1 interrupt request pending",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -980,7 +1128,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USART1 interrupt request pending, combined with EXTI line 25",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1000,7 +1152,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USART2 interrupt request pending (EXTI line 26)",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1020,7 +1176,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Flash interface interrupt request pending",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1040,7 +1200,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Reset and clock control interrupt request pending",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1060,7 +1224,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EXTI",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -1087,7 +1255,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EXTI",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -1114,7 +1286,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EXTI",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -1141,7 +1317,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DMA1 channel 1interrupt request pending",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,

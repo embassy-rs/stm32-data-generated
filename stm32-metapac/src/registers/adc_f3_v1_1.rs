@@ -304,7 +304,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "adcpre",
                     description: Some("ADC prescaler"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -312,7 +312,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tsvrefe",
                     description: Some("Temperature sensor and VREFINT enable"),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -328,7 +328,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "awdch",
                     description: Some("Analog watchdog channel select bits"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -336,7 +336,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eocie",
                     description: Some("Interrupt enable for EOC"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -344,7 +344,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "awdie",
                     description: Some("Analog watchdog interrupt enable"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -352,7 +352,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jeocie",
                     description: Some("Interrupt enable for injected channels"),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -360,7 +360,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "scan",
                     description: Some("Scan mode"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -368,7 +368,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "awdsgl",
                     description: Some("Enable the watchdog on a single channel in scan mode"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -376,7 +376,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jauto",
                     description: Some("Automatic injected group conversion"),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -384,7 +384,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "discen",
                     description: Some("Discontinuous mode on regular channels"),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -392,7 +392,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jdiscen",
                     description: Some("Discontinuous mode on injected channels"),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -400,7 +400,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "discnum",
                     description: Some("Discontinuous mode channel count"),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 3,
                     array: None,
                     enumm: Some("Discnum"),
@@ -408,7 +408,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pdd",
                     description: Some("Power down during the delay phase"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -416,7 +416,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pdi",
                     description: Some("Power down during the idle phase"),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -424,7 +424,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jawden",
                     description: Some("Analog watchdog enable on injected channels"),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -432,7 +432,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "awden",
                     description: Some("Analog watchdog enable on regular channels"),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -440,7 +440,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "res",
                     description: Some("Resolution"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 2,
                     array: None,
                     enumm: Some("Res"),
@@ -448,7 +448,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ovrie",
                     description: Some("Overrun interrupt enable"),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -464,7 +464,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "adon",
                     description: Some("A/D Converter ON / OFF"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -472,7 +472,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cont",
                     description: Some("Continuous conversion"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -480,7 +480,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "adc_cfg",
                     description: Some("ADC configuration"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: Some("AdcCfg"),
@@ -488,7 +488,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dels",
                     description: Some("Delay selection"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 3,
                     array: None,
                     enumm: Some("Dels"),
@@ -496,7 +496,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dma",
                     description: Some("Direct memory access mode"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -504,7 +504,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dds",
                     description: Some("DMA disable selection"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -512,7 +512,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eocs",
                     description: Some("End of conversion selection"),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -520,7 +520,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "align",
                     description: Some("Data alignment"),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -528,7 +528,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jextsel",
                     description: Some("External event select for injected group"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 4,
                     array: None,
                     enumm: Some("Jextsel"),
@@ -536,7 +536,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jexten",
                     description: Some("External trigger enable for injected channels"),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 2,
                     array: None,
                     enumm: Some("Exten"),
@@ -544,7 +544,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jswstart",
                     description: Some("Start conversion of injected channels"),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -552,7 +552,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "extsel",
                     description: Some("External event select for regular group"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 4,
                     array: None,
                     enumm: Some("Extsel"),
@@ -560,7 +560,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "exten",
                     description: Some("External trigger enable for regular channels"),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 2,
                     array: None,
                     enumm: Some("Exten"),
@@ -568,7 +568,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "swstart",
                     description: Some("Start conversion of regular channels"),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -584,7 +584,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "awd1",
                     description: Some("Analog watchdog flag of the ADC"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -592,7 +592,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eoc1",
                     description: Some("End of conversion of the ADC"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -600,7 +600,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jeoc1",
                     description: Some("Injected channel end of conversion of the ADC"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -608,7 +608,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jstrt1",
                     description: Some("Injected channel Start flag of the ADC"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -616,7 +616,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "strt1",
                     description: Some("Regular channel Start flag of the ADC"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -624,7 +624,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ovr1",
                     description: Some("Overrun flag of the ADC"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -632,7 +632,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "adons1",
                     description: Some("ADON Status of ADC1"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -647,7 +647,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "rdata",
                 description: Some("Regular data"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: None,
                 enumm: None,
@@ -661,7 +661,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "ht",
                 description: Some("Analog watchdog higher threshold"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 12,
                 array: None,
                 enumm: None,
@@ -675,7 +675,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "jdata",
                 description: Some("Injected data"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: None,
                 enumm: None,
@@ -689,7 +689,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "jdata",
                 description: Some("Injected data"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: None,
                 enumm: None,
@@ -703,7 +703,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "jdata",
                 description: Some("Injected data"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: None,
                 enumm: None,
@@ -717,7 +717,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "jdata",
                 description: Some("Injected data"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: None,
                 enumm: None,
@@ -731,7 +731,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "joffset1",
                 description: Some("Data offset for injected channel x"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 12,
                 array: None,
                 enumm: None,
@@ -745,7 +745,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "joffset2",
                 description: Some("Data offset for injected channel x"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 12,
                 array: None,
                 enumm: None,
@@ -759,7 +759,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "joffset3",
                 description: Some("Data offset for injected channel x"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 12,
                 array: None,
                 enumm: None,
@@ -773,7 +773,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "joffset4",
                 description: Some("Data offset for injected channel x"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 12,
                 array: None,
                 enumm: None,
@@ -788,7 +788,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jsq1",
                     description: Some("1st conversion in injected sequence"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -796,7 +796,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jsq2",
                     description: Some("2nd conversion in injected sequence"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -804,7 +804,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jsq3",
                     description: Some("3rd conversion in injected sequence"),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -812,7 +812,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jsq4",
                     description: Some("4th conversion in injected sequence"),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -820,7 +820,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jl",
                     description: Some("Injected sequence length"),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -835,7 +835,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "lt",
                 description: Some("Analog watchdog lower threshold"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 12,
                 array: None,
                 enumm: None,
@@ -849,7 +849,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "smp",
                 description: Some("channel 30-31 sampling time selection"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 3,
                 array: Some(Array::Regular(RegularArray { len: 2, stride: 3 })),
                 enumm: Some("SampleTime"),
@@ -863,7 +863,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "smp",
                 description: Some("channel 20-29 sampling time selection"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 3,
                 array: Some(Array::Regular(RegularArray { len: 10, stride: 3 })),
                 enumm: Some("SampleTime"),
@@ -877,7 +877,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "smp",
                 description: Some("channel 10-19 sampling time selection"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 3,
                 array: Some(Array::Regular(RegularArray { len: 10, stride: 3 })),
                 enumm: Some("SampleTime"),
@@ -891,7 +891,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "smp",
                 description: Some("channel 0-9 sampling time selection"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 3,
                 array: Some(Array::Regular(RegularArray { len: 10, stride: 3 })),
                 enumm: Some("SampleTime"),
@@ -906,7 +906,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "sq",
                     description: Some("25th-29th conversion in regular sequence"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 5,
                     array: Some(Array::Regular(RegularArray { len: 4, stride: 5 })),
                     enumm: None,
@@ -914,7 +914,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "l",
                     description: Some("Regular channel sequence length"),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -929,7 +929,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "sq",
                 description: Some("19th-24th conversion in regular sequence"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 5,
                 array: Some(Array::Regular(RegularArray { len: 6, stride: 5 })),
                 enumm: None,
@@ -943,7 +943,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "sq",
                 description: Some("13th-18th conversion in regular sequence"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 5,
                 array: Some(Array::Regular(RegularArray { len: 6, stride: 5 })),
                 enumm: None,
@@ -957,7 +957,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "sq",
                 description: Some("7th-12th conversion in regular sequence"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 5,
                 array: Some(Array::Regular(RegularArray { len: 6, stride: 5 })),
                 enumm: None,
@@ -971,7 +971,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "sq",
                 description: Some("1st-6th conversion in regular sequence"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 5,
                 array: Some(Array::Regular(RegularArray { len: 6, stride: 5 })),
                 enumm: None,
@@ -986,7 +986,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "awd",
                     description: Some("Analog watchdog flag"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -994,7 +994,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eoc",
                     description: Some("Regular channel end of conversion"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1002,7 +1002,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jeoc",
                     description: Some("Injected channel end of conversion"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1010,7 +1010,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jstrt",
                     description: Some("Injected channel start flag"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1018,7 +1018,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "strt",
                     description: Some("Regular channel start flag"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1026,7 +1026,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ovr",
                     description: Some("Overrun"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1034,7 +1034,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "adons",
                     description: Some("ADC ON status"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1042,7 +1042,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rcnr",
                     description: Some("Regular channel not ready"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1050,7 +1050,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jcnr",
                     description: Some("Injected channel not ready"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,

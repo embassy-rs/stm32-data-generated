@@ -281,7 +281,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bitstream selection.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 5,
                     array: None,
                     enumm: Some(
@@ -293,7 +297,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "BSMX active flag. This bit is set and cleared by hardware. It is used by the application to check if the BSMX is effectively enabled (active) or not. BSSEL[4:0] can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go to 0 if DFLT0 is enabled.",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -313,7 +321,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clock generator dividers enable.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -323,7 +335,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CCK0 clock enable. This bit is set and reset by software. It is used to control the generation of the bitstream clock on the CCK pin.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -335,7 +351,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CCK1 clock enable. This bit is set and reset by software. It is used to control the generation of the bitstream clock on the CCK pin.",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -347,7 +367,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clock generator mode. This bit is set and reset by software. It is used to define the way the clock generator is enabled. This bit must not be changed if the filter is enabled (DFTEN = 1).",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -359,7 +383,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CCK0 direction. This bit is set and reset by software. It is used to control the direction of the ADF_CCK0 pin.",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -371,7 +399,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CCK1 direction. This bit is set and reset by software. It is used to control the direction of the ADF_CCK1 pin.",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -383,7 +415,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CKGEN trigger sensitivity selection. This bit is set and cleared by software. It is used to select the trigger sensitivity of the trigger signals. This bit is not significant if the CKGMOD = 0.",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -395,7 +431,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Digital filter trigger signal selection. This bit is set and cleared by software. It is used to select the trigger signal for the digital filter. This bit is not significant if the CKGMOD = 0.",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: Some(
@@ -407,7 +447,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Divider to control the CCK clock.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: Some(
@@ -419,7 +463,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Divider to control the serial interface clock.",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -429,7 +477,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clock generator active flag.",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -449,7 +501,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Source data for the digital filter.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -461,7 +517,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Select the CIC order.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -473,7 +533,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CIC decimation ratio selection. This bitfield is set and cleared by software.It is used to select the CIC decimation ratio. A decimation ratio smaller than two is not allowed. The decimation ratio is given by (CICDEC+1).",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -483,7 +547,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Scaling factor selection. This bitfield is set and cleared by software. It is used to select the gain to be applied at CIC output. If the application attempts to write a new gain value while the previous one is not yet applied, this new gain value is ignored. Reading back this bitfield informs the application on the current gain value.",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 6,
                     array: None,
                     enumm: None,
@@ -503,7 +571,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DFLT enable. This bit is set and reset by software. It is used to enable the digital filter.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -513,7 +585,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DMA requests enable. This bit is set and reset by software. It is used to control the generation of DMA request to transfer the processed samples into the memory.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -523,7 +599,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "RXFIFO threshold selection.",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -535,7 +615,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DFLT trigger mode.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -547,7 +631,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DFLT trigger signal selection.",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -557,7 +645,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Number of samples to be discarded.",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -567,7 +659,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DFLT run status flag.",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -577,7 +673,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DFLT active flag.",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -597,7 +697,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DR. Data processed by DFT",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 24,
                     array: None,
                     enumm: None,
@@ -617,7 +721,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "RXFIFO threshold interrupt enable.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -627,7 +735,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Data overflow interrupt enable.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -637,7 +749,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Saturation detection interrupt enable.",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -647,7 +763,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clock absence detection interrupt enable.",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -657,7 +777,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Reshape filter overrun interrupt enable.",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -667,7 +791,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Sound activity detection interrupt enable.",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -677,7 +805,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SAD sound-level value ready enable.",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -697,7 +829,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "RXFIFO threshold flag.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -707,7 +843,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Data overflow flag.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -717,7 +857,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "RXFIFO not empty flag.",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -727,7 +871,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Saturation detection flag.",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -737,7 +885,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clock absence detection flag.",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -747,7 +899,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Reshape filter overrun detection flag.",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -757,7 +913,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Sound activity detection flag.",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -767,7 +927,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Sound level value ready flag.",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -787,7 +951,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Reshaper filter bypass.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -797,7 +965,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Reshaper filter decimation ratio.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -809,7 +981,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "High-pass filter bypass. This bit is set and cleared by software. It is used to bypass the high-pass filter.",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -819,7 +995,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "High-pass filter cut-off frequency. This bitfield is set and cleared by software. it is used to select the cut-off frequency of the high-pass filter. F PCM represents the sampling frequency at HPF input.",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -841,7 +1021,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Delay to apply to a bitstream. This bitfield is set and cleared by software. It defines the number of input samples that are skipped. Skipping is applied immediately after writing to this bitfield, if SKPBF = 0 and DFLTEN = 1. If SKPBF = 1, the value written into the register is ignored by the delay state machine.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -851,7 +1035,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Skip busy flag.",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -871,7 +1059,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Trigger output control Set by software and reset by.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -891,7 +1083,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ANLVL.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 15,
                     array: None,
                     enumm: None,
@@ -911,7 +1107,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SNTHR.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: Some(
@@ -923,7 +1123,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ANSLP.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -933,7 +1137,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LFRNB.",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -945,7 +1153,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Hangover time window.",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -957,7 +1169,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ANMIN.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 13,
                     array: None,
                     enumm: None,
@@ -977,7 +1193,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Sound activity detector enable.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -987,7 +1207,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Data capture mode.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -999,7 +1223,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Sound trigger event configuration.",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1011,7 +1239,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SAD state.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -1023,7 +1255,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Hysteresis enable.",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1033,7 +1269,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Frame size.",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -1045,7 +1285,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Sound activity detector working mode.",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -1057,7 +1301,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SAD Active flag.",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1077,7 +1325,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Short term sound level. This bitfield is set by hardware. It contains the latest sound level computed by the SAD. To refresh this value, SDLVLF must be cleared.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 15,
                     array: None,
                     enumm: None,
@@ -1095,7 +1347,11 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "sitfen",
                     description: None,
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1103,7 +1359,11 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "scksrc",
                     description: None,
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -1113,7 +1373,11 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "sitfmod",
                     description: None,
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -1125,7 +1389,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Manchester symbol threshold/SPI threshold. This bitfield is set and cleared by software. It is used for Manchester mode to define the expected symbol threshold levels (seer to Manchester mode for details on computation). In addition this bitfield is used to define the timeout value for the clock absence detection in Normal SPI mode. STH[4:0] values lower than four are invalid.",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -1135,7 +1403,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SITFACTIVE.",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,

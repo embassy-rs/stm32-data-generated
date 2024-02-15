@@ -174,7 +174,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EN.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -184,7 +188,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Set by software and cleared by hardware when the BUSYF flag is set (during cache maintenance operation). Writing 0 has no effect.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -196,7 +204,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "This bit allows user to choose ICACHE set-associativity. It can be written by software only when cache is disabled (EN = 0).",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -208,7 +220,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Hit monitor enable.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -218,7 +234,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Miss monitor enable.",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -228,7 +248,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Hit monitor reset.",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -240,7 +264,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Miss monitor reset.",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -262,7 +290,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "base address for region.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -272,7 +304,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "size for region.",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -284,7 +320,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "enable for region.",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -294,7 +334,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "remapped address for region.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 11,
                     array: None,
                     enumm: None,
@@ -304,7 +348,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "AHB cache master selection for region.",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -316,7 +364,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "output burst type for region.",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -338,7 +390,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clear busy end flag.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -348,7 +404,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clear ERRF flag in SR.",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -368,7 +428,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Hit monitor register.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 32,
                     array: None,
                     enumm: None,
@@ -388,7 +452,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Interrupt enable on busy end.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -398,7 +466,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Error interrupt on cache error.",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -418,7 +490,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Miss monitor register.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -438,7 +514,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "cache busy executing a full invalidate CACHEINV operation.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -448,7 +528,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "full invalidate CACHEINV operation finished.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -458,7 +542,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "an error occurred during the operation.",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,

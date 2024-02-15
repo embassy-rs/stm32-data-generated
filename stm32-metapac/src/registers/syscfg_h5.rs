@@ -332,7 +332,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "enable compensation cell for VDDIO power rail\r This bit enables the I/O compensation cell.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -349,7 +353,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "code selection for VDDIO power rail (reset value set to 1)\r This bit selects the code to be applied for the I/O compensation cell.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -368,7 +376,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "VDDIO compensation cell ready flag\r This bit provides the status of the compensation cell.",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -395,7 +407,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "NMOS compensation code for VDD power rails\r This bitfield is written by software to define an I/O compensation cell code for NMOS transistors of the VDD power rail. This code is applied to the I/O when CS1 is set in SBS_CCSR.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -405,7 +421,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PMOS compensation code for the VDD power rails\r This bitfield is written by software to define an I/O compensation cell code for PMOS transistors of the VDDIO power rail. This code is applied to the I/O when CS1 is set in SBS_CCSR.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -415,7 +435,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "NMOS compensation code for VDDIO power rails\r This bitfield is written by software to define an I/O compensation cell code for NMOS transistors of the VDD power rail. This code is applied to the I/O when CS2 is set in SBS_CCSR.",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -425,7 +449,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PMOS compensation code for the VDDIO power rails\r This bitfield is written by software to define an I/O compensation cell code for PMOS transistors of the VDDIO power rail. This code is applied to the I/O when CS2 is set in SBS_CCSR.",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -445,7 +473,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "compensation value for the NMOS transistor\r This value is provided by the cell and must be interpreted by the processor to compensate the slew rate in the functional range.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -455,7 +487,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "compensation value for the PMOS transistor\r This value is provided by the cell and must be interpreted by the processor to compensate the slew rate in the functional range.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -465,7 +501,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Compensation value for the NMOS transistor\r This value is provided by the cell and must be interpreted by the processor to compensate the slew rate in the functional range.",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -475,7 +515,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "compensation value for the PMOS transistor\r This value is provided by the cell and must be interpreted by the processor to compensate the slew rate in the functional range.",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -495,7 +539,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "core lockup lock\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the lockup (HardFault) output of Cortex-M33 with TIM1/8/15/16/17 break inputs.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -505,7 +553,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SRAM ECC error lock\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the SRAM double ECC error signal with break input of TIM1/8/15/16/17.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -515,7 +567,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PVD lock\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the PVD connection with TIM1/8/15/16/17 break inputs.",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -525,7 +581,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ECC lock\r This bit is set and cleared by software. It can be used to enable and lock the Flash memory double ECC error with break input of TIM1/8/15/6/17.",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -545,7 +605,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "VTOR_NS register lock\r This bit is set by software and cleared only by a system reset.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -555,7 +619,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "non-secure MPU register lock\r This bit is set by software and cleared only by a system reset. When set, this bit disables write access to non-secure MPU_CTRL_NS, MPU_RNR_NS and MPU_RBAR_NS registers.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -575,7 +643,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "VTOR_S and AIRCR register lock\r This bit is set by software and cleared only by a system reset. When set, this bit disables write access to VTOR_S register, PRIS and BFHFNMINS bits in the AIRCR register.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -585,7 +657,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "secure MPU registers lock\r This bit is set by software and cleared only by a system reset. When set, this bit disables write access to secure MPU_CTRL, MPU_RNR and MPU_RBAR registers.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -595,7 +671,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SAU registers lock\r This bit is set by software and cleared only by a system reset. When set, this bit disables write access to SAU_CTRL, SAU_RNR, SAU_RBAR and SAU_RLAR registers.",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -615,7 +695,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "access port unlock\r Write 0xB4 to this bitfield to open the device access port.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -625,7 +709,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "debug unlock when DBG_AUTH_HDPL is reached\r Write 0xB4 to this bitfield to open the debug when HDPL in SBS_HDPLSR equals to DBG_AUTH_HDPL in this register.",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -635,7 +723,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "authenticated debug temporal isolation level\r Writing to this bitfield defines at which HDPL the authenticated debug opens.\r Note: Writing any other values is ignored. Reading any other value means the debug never opens.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: Some(
@@ -647,7 +739,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "control debug opening secure/non-secure\r Write 0xB4 to this bitfield to open debug for secure and non-secure.\r Writing any other values only open non-secure.",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -667,7 +763,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "debug configuration lock\r Reading this bitfield returns 0x6A if the bitfield value is different from 0xB4.\r 0xC3 is the recommended value to lock the debug configuration using this bitfield.\r Other: Writes to SBS_DBGCR ignored",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: Some(
@@ -689,7 +789,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "NMI behavior setup when a double ECC error occurs on flitf data part",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -709,7 +813,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "select EPOCH value to be sent to the SAES\r 1x: EPOCH forced to zero (value used to retrieve PUF reference value at boot time)",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -731,7 +839,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "FPU interrupt enable\r Set and cleared by software to enable the Cortex-M33 FPU interrupts\r FPU_IE[5]: inexact interrupt enable (interrupt disabled at reset)\r FPU_IE[4]: input abnormal interrupt enable\r FPU_IE[3]: overflow interrupt enable\r FPU_IE[2]: underflow interrupt enable\r FPU_IE[1]: divide-by-zero interrupt enable\r FPU_IE[0]: invalid operation interrupt enable",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 6,
                     array: None,
                     enumm: None,
@@ -751,7 +863,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "increment HDPL value\r Other: all other values allow a HDPL level increment.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: Some(
@@ -773,7 +889,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "temporal isolation level\r This bitfield returns the current temporal isolation level.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: Some(
@@ -795,7 +915,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "erase after reset status\r This bit shows the status of the protection for SRAM2, BKPRAM, ICACHE, DCACHE, ICACHE and PKA. It is set by hardware and reset by software",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -805,7 +929,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "end-of-erase status for ICACHE and PKA RAM\r This bit shows the status of the protection for ICACHE and PKA. It is set by hardware and reset by software.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -825,7 +953,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "index to point to a higher HDPL than the current one\r Index to add to the current HDPL to point (through OBK-HDPL) to the next secure storage areas (OBK-HDPL = HDPL + NEXTHDPL). See for more details.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -845,7 +977,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "booster enable\r Set this bit to reduce the total harmonic distortion of the analog switch when the processor supply is below 2.7 V. The booster can be activated to guaranty AC performance on analog switch when the supply is below 2.7 V. When the booster is activated, the analog switch performances are the same as with the full voltage range.",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -855,7 +991,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "booster VDD selection\r Note: Booster must not be used when VDDA < 2.7 V, but VDD > 2.7 V (add current consumption).\r When both VDD < 2.7 V and VDDA < 2.7 V, booster is needed to get full AC performances from I/O analog switches.",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -865,7 +1005,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Fast-mode Plus command on PB(6)",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -875,7 +1019,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Fast-mode Plus command on PB(7)",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -885,7 +1033,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Fast-mode Plus command on PB(8)",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -895,7 +1047,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Fast-mode Plus command on PB(9)",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -905,7 +1061,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Ethernet PHY interface selection\r Other: reserved",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -927,7 +1087,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "RSS command\r The application can use this bitfield to pass on a command to the RSS, executed at the next reset.\r When RSSCMD ≠ 0 and PRODUCT_STATE is in Open, then the system always boots on RSS whatever is the boot pin value.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -947,7 +1111,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SBS clock control, memory-erase status register and compensation cell register security enable",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -959,7 +1127,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ClassB security enable",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -971,7 +1143,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "FPU security enable\r Note: This bit can only be written through privilege transaction.",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -983,7 +1159,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "control accessibility of SMPS_DIV_CLOCK _EN in SBS_PMCR",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,

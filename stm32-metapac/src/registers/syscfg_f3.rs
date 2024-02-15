@@ -135,7 +135,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Memory mapping selection bits",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -147,7 +151,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USB interrupt remap\n0: USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 19, 20 and 42 respectively\n1: USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 74, 75 and 76 respectively",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -157,7 +165,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Timer 1 ITR3 selection\n0: Not remapped\n1: TIM1_ITR3 = TIM17_OC",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -167,7 +179,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DAC trigger remap (when TSEL = 001)\n0: DAC trigger is TIM8_TRGO in STM32F303xB/C and STM32F358xC devices\n1: DAC trigger is TIM3_TRGO",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -177,7 +193,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DAC trigger remap (when TSEL = 001)\n0: Not remapped\n1: DAC trigger is TIM3_TRGO",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -187,7 +207,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ADC24 DMA remapping bit\n0: ADC24 DMA requests mapped on DMA2 channels 1 and 2\n1: ADC24 DMA requests mapped on DMA2 channels 3 and 4",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -197,7 +221,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM16 DMA request remapping bit\n0: TIM16_CH1 and TIM16_UP DMA requests mapped on DMA channel 3\n1: TIM16_CH1 and TIM16_UP DMA requests mapped on DMA channel 4",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -207,7 +235,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM17 DMA request remapping bit\n0: TIM17_CH1 and TIM17_UP DMA requests mapped on DMA channel 1\n1: TIM17_CH1 and TIM17_UP DMA requests mapped on DMA channel 2",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -217,7 +249,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM6 and DAC1 DMA request remapping bit\n0: TIM6_UP and DAC_CH1 DMA requests mapped on DMA2 channel 3\n1: TIM6_UP and DAC_CH1 DMA requests mapped on DMA1 channel 3",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -227,7 +263,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM6 and DAC1 DMA request remapping bit\n0: TIM6_UP and DAC_CH1 DMA requests mapped on DMA2 channel 3\n1: TIM6_UP and DAC_CH1 DMA requests mapped on DMA1 channel 3",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -237,7 +277,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM6 and DAC1 DMA request remapping bit\n0: TIM7 and DAC1_OUT1 DMA requests mapped on DMA2 channel 3\n1: TIM7 and DAC1_OUT1 DMA requests mapped on DMA1 channel 3",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -247,7 +291,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM7 and DAC2 DMA request remapping bit\n0: Not remapped\n1: TIM7_UP and DAC_CH2 DMA requests mapped on DMA1 channel 4",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -257,7 +305,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM7 and DAC2 DMA request remapping bit\n0: TIM7 and DAC1_OUT2 DMA requests mapped on DMA2 channel 4\n1: TIM7 and DAC1_OUT2 DMA requests mapped on DMA1 channel 4",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -267,7 +319,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DAC2 channel1 DMA remap\n0: Not remapped\n1: DAC2_CH1 DMA requests mapped on DMA1 channel 5",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -277,7 +333,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM18 and DAC2_OUT1 DMA request remapping bit\n0: TIM18 and DAC2_OUT1 DMA requests mapped on DMA2 channel 5\n1: TIM18 and DAC2_OUT1 DMA requests mapped on DMA1 channel 5",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -287,7 +347,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Fast Mode Plus (FM+) driving capability activation bits.\n0: PB6 pin operate in standard mode\n1: I2C FM+ mode enabled on PB6 and the Speed control is bypassed",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -299,7 +363,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Fast Mode Plus (FM+) driving capability activation bits.\n0: PB7 pin operate in standard mode\n1: I2C FM+ mode enabled on PB7 and the Speed control is bypassed",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -311,7 +379,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Fast Mode Plus (FM+) driving capability activation bits.\n0: PB8 pin operate in standard mode\n1: I2C FM+ mode enabled on PB8 and the Speed control is bypassed",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -323,7 +395,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Fast Mode Plus (FM+) driving capability activation bits.\n0: PB9 pin operate in standard mode\n1: I2C FM+ mode enabled on PB9 and the Speed control is bypassed",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -335,7 +411,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C1 Fast Mode Plus\n0: FM+ mode is controlled by I2C_Pxx_FMP bits only\n1: FM+ mode is enabled on all I2C1 pins selected through selection through IOPORT control registers AF selection bits",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -347,7 +427,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C2 Fast Mode Plus\n0: FM+ mode is controlled by I2C_Pxx_FMP bits only\n1: FM+ mode is enabled on all I2C2 pins selected through selection through IOPORT control registers AF selection bits",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -359,7 +443,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Encoder mode",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -371,7 +459,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C3 Fast Mode Plus\n0: FM+ mode is controlled by I2C_Pxx_FMP bits only\n1: FM+ mode is enabled on all I2C3 pins selected through selection trhough IOPORT control registers AF selection bits",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -383,7 +475,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Enable the power switch to deliver VBAT voltage on ADC channel 18 input",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -393,7 +489,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Idx 0: Invalid operation interrupt enable;\nIdx 1: Devide-by-zero interrupt enable;\nIdx 2: Underflow interrupt enable;\nIdx 3: Overflow interrupt enable;\nIdx 4: Input denormal interrupt enable;\nIdx 5: Inexact interrupt enable",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -420,7 +520,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Cortex-M0 LOCKUP bit enable bit",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -430,7 +534,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SRAM parity lock bit",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -440,7 +548,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PVD lock enable bit",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -450,7 +562,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bypass address bit 29 in parity calculation",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -460,7 +576,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SRAM parity flag",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -480,7 +600,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI1_RX DMA remapping bit",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -492,7 +616,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI1_TX DMA remapping bit",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -504,7 +632,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C1_RX DMA remapping bit",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -516,7 +648,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C1_TX DMA remapping bit",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -528,7 +664,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ADC2 DMA remapping bit",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -540,7 +680,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DAC1_CH1 / DAC1_CH2 Trigger remap",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -552,7 +696,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DAC1_CH1 / DAC1_CH2 Trigger remap\n0: Not remapped\n1: DAC trigger is HRTIM1_DAC1_TRIG2",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -572,7 +720,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Controls the Input trigger of ADC12 regular channel EXT2",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -584,7 +736,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Controls the Input trigger of ADC12 regular channel EXT3",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -596,7 +752,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Controls the Input trigger of ADC12 regular channel EXT5",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -608,7 +768,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Controls the Input trigger of ADC12 regular channel EXT13",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -620,7 +784,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Controls the Input trigger of ADC12 regular channel EXT15",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -632,7 +800,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Controls the Input trigger of ADC12 injected channel JEXT3",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -644,7 +816,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Controls the Input trigger of ADC12 injected channel JEXT6",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -656,7 +832,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Controls the Input trigger of ADC12 injected channel JEXT13",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -668,7 +848,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Controls the Input trigger of ADC34 regular channel EXT5",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -680,7 +864,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Controls the Input trigger of ADC34 regular channel EXT6",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -692,7 +880,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Controls the Input trigger of ADC34 regular channel EXT15",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -704,7 +896,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Controls the Input trigger of ADC34 injected channel JEXT5",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -716,7 +912,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Controls the Input trigger of ADC34 injected channel JEXT11",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -728,7 +928,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Controls the Input trigger of ADC34 injected channel JEXT14",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -750,7 +954,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EXTI x configuration",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 4,
                     array: Some(
                         Array::Regular(
@@ -777,7 +985,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CCM SRAM page x write protection enabled",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(

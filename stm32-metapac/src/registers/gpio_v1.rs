@@ -83,7 +83,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "br",
                 description: Some("Reset bit"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 16, stride: 1 })),
                 enumm: None,
@@ -98,7 +98,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "bs",
                     description: Some("Set bit"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 16, stride: 1 })),
                     enumm: None,
@@ -106,7 +106,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "br",
                     description: Some("Reset bit"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 16, stride: 1 })),
                     enumm: None,
@@ -122,7 +122,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "mode",
                     description: Some("Port n mode bits"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 2,
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
                     enumm: Some("Mode"),
@@ -130,7 +130,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cnf_in",
                     description: Some("Port n configuration bits, for input mode"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 2,
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
                     enumm: Some("CnfIn"),
@@ -138,7 +138,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cnf_out",
                     description: Some("Port n configuration bits, for output mode"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 2,
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
                     enumm: Some("CnfOut"),
@@ -153,7 +153,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "idr",
                 description: Some("Port input data"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 16, stride: 1 })),
                 enumm: Some("Idr"),
@@ -168,7 +168,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lck",
                     description: Some("Port configuration locked"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 16, stride: 1 })),
                     enumm: None,
@@ -176,7 +176,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lckk",
                     description: Some("Port configuration lock key active"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -191,7 +191,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "odr",
                 description: Some("Port output data"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 16, stride: 1 })),
                 enumm: Some("Odr"),

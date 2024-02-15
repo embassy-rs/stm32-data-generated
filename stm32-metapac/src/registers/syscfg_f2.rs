@@ -62,7 +62,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cmp_pd",
                     description: Some("Compensation cell power-down"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -70,7 +70,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ready",
                     description: Some("Compensation cell ready flag"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -85,7 +85,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "exti",
                 description: Some("EXTI x configuration (x = 0 to 3)"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 4,
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
                 enumm: None,
@@ -99,7 +99,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "mem_mode",
                 description: Some("Memory mapping selection"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 2,
                 array: None,
                 enumm: Some("MemMode"),
@@ -113,7 +113,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "mii_rmii_sel",
                 description: Some("Ethernet PHY interface selection"),
-                bit_offset: 23,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,

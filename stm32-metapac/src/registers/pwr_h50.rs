@@ -281,7 +281,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Backup RAM retention in Standby and V<sub>BAT</sub> modes\r When this bit set, the backup regulator (used to maintain the backup RAM content in Standby and V<sub>BAT</sub> modes) is enabled.\r If BREN is cleared, the backup regulator is switched off. The backup RAM can still be used in \tRun and Stop modes. However its content is lost in Standby and V<sub>BAT</sub> modes.\r If BREN is set, the application must wait till the backup regulator ready flag (BRRDY) is set to indicate that the data written into the SRAM is maintained in Standby and V<sub>BAT</sub> modes.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -291,7 +295,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Backup domain voltage and temperature monitoring enable",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -301,7 +309,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "V<sub>BAT</sub> charging enable\r Note: Reset only by POR,.",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -311,7 +323,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "V<sub>BAT</sub> charging resistor selection",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -333,7 +349,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "backup regulator ready\r This bit is set by hardware to indicate that the backup regulator is ready.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -343,7 +363,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "V<sub>BAT</sub> level monitoring versus low threshold",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -353,7 +377,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "V<sub>BAT</sub> level monitoring versus high threshold",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -363,7 +391,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "temperature level monitoring versus low threshold",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -373,7 +405,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "temperature level monitoring versus high threshold",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -393,7 +429,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Disable Backup domain write protection\r In reset state, all registers and SRAM in Backup domain are protected against parasitic write \taccess. This bit must be set to enable write access to these registers.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -413,7 +453,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO retention enable:\r When entering into standby mode, the output is sampled, and applied to the output IO during the standby power mode. \r Note: the IO state is not retained if the DBG_STANDBY bit is set in DBGMCU_CR register.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -423,7 +467,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO retention enable for JTAG IOs\r when entering into standby mode, the output is sampled, and applied to the output IO during the standby power mode",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -443,7 +491,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "low-power mode selection\r This bit defines the Deepsleep mode.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -453,7 +505,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "system Stop mode voltage scaling selection\r These bits control the V<sub>CORE</sub> voltage level in system Stop mode, to obtain the best trade-off between power consumption and performance.",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -465,7 +521,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "clear Standby and Stop flags (always read as 0)\r This bit is cleared to 0 by hardware.",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -475,7 +535,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Flash memory low-power mode in Stop mode\r This bit is used to obtain the best trade-off between low-power consumption and restart time when exiting from Stop mode.\r When it is set, the Flash memory enters low-power mode when the CPU domain is in Stop mode.\r Note: When system enters stop mode with SVOS5 enabled, Flash memory is automatically forced in low-power mode.",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -485,7 +549,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "analog switch V<sub>BOOST</sub> control\r This bit enables the booster to guarantee the analog switch AC performance when the V<sub>DD</sub> supply voltage is below 2.7 V (reduction of the total harmonic distortion to have the same switch performance over the full supply voltage range) The V<sub>DD</sub> supply voltage can be monitored through the PVD and the PLS bits.",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -495,7 +563,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "analog voltage ready\r This bit is only used when the analog switch boost needs to be enabled (see BOOSTE bit).\r It must be set by software when the expected V<sub>DDA</sub> analog supply level is available.\r The correct analog supply level is indicated by the AVDO bit (PWR_VMSR register) after setting the AVDEN bit (PWR_VMCR register) and selecting the supply level to be monitored \t(ALS bits).",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -505,7 +577,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "AHB SRAM2 shut-off in Stop mode.",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -515,7 +591,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "AHB SRAM1 shut-off in Stop mode",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -535,7 +615,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Stop flag\r This bit is set by hardware and cleared only by any reset or by setting the CSSF bit.",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -545,7 +629,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "System standby flag\r This bit is set by hardware and cleared only by a POR or by setting the CSSF bit.",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -565,7 +653,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PWR functions privilege configuration\r Set and reset by software. This bit can be written only by privileged access.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -587,7 +679,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "power management unit bypass",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -597,7 +693,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LDO enable \r The value is set by hardware when the package uses the LDO regulator.",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -617,7 +717,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PVD enable",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -627,7 +731,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "programmable voltage detector (PVD) level selection\r These bits select the voltage threshold detected by the PVD.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -639,7 +747,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "peripheral voltage monitor on V<sub>DDA</sub> enable",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -649,7 +761,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "analog voltage detector (AVD) level selection\r These bits select the voltage threshold detected by the AVD.",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -671,7 +787,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "analog voltage detector output on V<sub>DDA</sub>\r This bit is set and cleared by hardware. It is valid only if AVD on VDDA is enabled by the AVDEN bit.\r Note: Since the AVD is disabled in Standby mode, this bit is equal to 0 after standby or reset until the AVDEN bit is set.",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -683,7 +803,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "voltage detector output on V<sub>DDIO2</sub>\r This bit is set and cleared by hardware.",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -693,7 +817,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "programmable voltage detect output\r This bit is set and cleared by hardware. It is valid only if the PVD has been enabled by the PVDE bit.\r Note: Since the PVD is disabled in Standby mode, this bit is equal to 0 after Standby or reset until the PVDE bit is set.",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -715,7 +843,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "voltage scaling selection according to performance\r These bits control the V<sub>CORE</sub> voltage level and allow to obtain the best trade-off between power consumption and performance:\r - In bypass mode, these bits must also be set according to the external provided core voltage level and related performance.\r - When increasing the performance, the voltage scaling must be changed before increasing the system frequency.\r - When decreasing performance, the system frequency must first be decreased before changing the voltage scaling.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -737,7 +869,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Ready bit for V<sub>CORE</sub> voltage scaling output selection.",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -747,7 +883,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Voltage level ready for currently used VOS",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -757,7 +897,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "voltage output scaling currently applied to V<sub>CORE</sub>\r This field provides the last VOS value.",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -779,7 +923,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "enable wakeup pin WUPx\r These bits are set and cleared by software.\r Note: an additional wakeup event is detected if WUPx pin is enabled (by setting the WUPENx bit) when WUPx pin level is already high when WUPPx selects rising edge, or low when WUPPx selects falling edge.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -796,7 +944,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "wakeup pin polarity bit for WUPx\r These bits define the polarity used for event detection on WUPx external wakeup pin.",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -815,7 +967,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "wakeup pin pull configuration for WKUPx\r These bits define the I/O pad pull configuration used when WUPENx = 1. The associated GPIO port pull configuration must be set to the same value or to 00. The wakeup pin pull configuration is kept in Standby mode.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 2,
                     array: Some(
                         Array::Regular(
@@ -844,7 +1000,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "clear wakeup pin flag for WUFx\r These bits are always read as 0.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -871,7 +1031,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "wakeup pin WUFx flag\r This bit is set by hardware and cleared only by a RESET pin or by setting the CWUFx bit in PWR_WUSCR register.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(

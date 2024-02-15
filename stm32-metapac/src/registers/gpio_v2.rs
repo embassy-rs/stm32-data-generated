@@ -186,7 +186,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Alternate function selection for one of the pins controlled by this register (0-7).",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 4,
                     array: Some(
                         Array::Regular(
@@ -213,7 +217,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port x set bit y (y= 0..15)",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -230,7 +238,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port x set bit y (y= 0..15)",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -257,7 +269,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port input data (y = 0..15)",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -286,7 +302,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port configuration locked",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -303,7 +323,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port configuration lock key active",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -323,7 +347,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port x configuration bits (y = 0..15)",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 2,
                     array: Some(
                         Array::Regular(
@@ -352,7 +380,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port output data (y = 0..15)",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -381,7 +413,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port x configuration bits (y = 0..15)",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 2,
                     array: Some(
                         Array::Regular(
@@ -410,7 +446,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port x configuration bits (y = 0..15)",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -439,7 +479,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Port x configuration bits (y = 0..15)",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 2,
                     array: Some(
                         Array::Regular(

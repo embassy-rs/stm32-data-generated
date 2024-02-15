@@ -802,7 +802,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Latency\r These bits represent the ratio between the HCLK (AHB clock) period and the Flash memory access time.\r ...",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -812,7 +816,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Prefetch enable\r This bit enables the prefetch buffer in the embedded Flash memory.",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -822,7 +830,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Low-power read mode\r This bit puts the Flash memory in low-power read mode.",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -834,7 +846,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 power-down mode request\r This bit is write-protected with FLASH_PDKEY1R. This bit requests bank 1 to enter power-down mode. When bank 1 enters power-down mode, this bit is cleared by hardware and the PDKEY1R is locked.",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -846,7 +862,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 2 power-down mode request\r This bit is write-protected with FLASH_PDKEY2R. This bit requests bank 2 to enter power-down mode. When bank 2 enters power-down mode, this bit is cleared by hardware and the PDKEY2R is locked.",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -858,7 +878,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Flash memory power-down mode during Sleep mode\r This bit determines whether the Flash memory is in power-down mode or Idle mode when the device is in Sleep mode.\r The Flash must not be put in power-down while a program or an erase operation is on-going.",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -880,7 +904,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ECC fail address",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 20,
                     array: None,
                     enumm: None,
@@ -890,7 +918,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ECC fail bank",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -902,7 +934,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "System Flash memory ECC fail\r This bit indicates that the ECC error correction or double ECC error detection is located in the system Flash memory.",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -912,7 +948,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ECC correction interrupt enable\r This bit enables the interrupt generation when the ECCC bit in the FLASH_ECCR register is set.",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -924,7 +964,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ECC correction\r This bit is set by hardware when one ECC error has been detected and corrected (only if ECCC and ECCD were previously cleared). An interrupt is generated if ECCIE is set. This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -934,7 +978,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ECC detection\r This bit is set by hardware when two ECC errors have been detected (only if ECCC and ECCD were previously cleared). When this bit is set, a NMI is generated. This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -954,7 +1002,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure boot base address 0\r The non-secure boot memory address can be programmed to any address in the valid address range with a granularity of 128 bytes. These bits correspond to address [31:7]. The NSBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 state.\r Examples:\r NSBOOTADD0[24:0] = 0x0100000: Boot from non-secure Flash memory (0x0800 0000)\r NSBOOTADD0[24:0] = 0x017F200: Boot from system memory bootloader (0x0BF9 0000)\r NSBOOTADD0[24:0] = 0x0400000: Boot from non-secure SRAM1 on S-Bus (0x2000 0000)",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 25,
                     array: None,
                     enumm: None,
@@ -974,7 +1026,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure boot address 1\r The non-secure boot memory address can be programmed to any address in the valid address range with a granularity of 128 bytes. These bits correspond to address [31:7]. The NSBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 state.\r Examples:\r NSBOOTADD1[24:0] = 0x0100000: Boot from non-secure Flash memory (0x0800 0000)\r NSBOOTADD1[24:0] = 0x017F200: Boot from system memory bootloader (0x0BF9 0000)\r NSBOOTADD1[24:0] = 0x0400000: Boot from non-secure SRAM1 on S-Bus (0x2000 0000)",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 25,
                     array: None,
                     enumm: None,
@@ -994,7 +1050,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure programming",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1006,7 +1066,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure page erase",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1018,7 +1082,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure bank 1 mass erase\r This bit triggers the bank 1 non-secure mass erase (all bank 1 user pages) when set.",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1028,7 +1096,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure page number selection\r These bits select the page to erase.\r ...",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -1038,7 +1110,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure bank selection for page erase",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1050,7 +1126,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure burst write programming mode\r When set, this bit selects the burst write programming mode.",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1060,7 +1140,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure bank 2 mass erase\r This bit triggers the bank 2 non-secure mass erase (all bank 2 user pages) when set.",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1070,7 +1154,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure start\r This bit triggers a non-secure erase operation when set. If MER1, MER2 and PER bits are reset and the STRT bit is set, the PGSERR bit in FLASH_NSSR is set (this condition is forbidden).\r This bit is set only by software and is cleared when the BSY bit is cleared in FLASH_NSSR.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1080,7 +1168,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Options modification start\r This bit triggers an options operation when set. It can not be written if OPTLOCK bit is set. This bit is set only by software, and is cleared when the BSY bit is cleared in FLASH_NSSR.",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1090,7 +1182,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure end of operation interrupt enable\r This bit enables the interrupt generation when the EOP bit in the FLASH_NSSR is set to 1.",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1102,7 +1198,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure error interrupt enable\r This bit enables the interrupt generation when the OPERR bit in the FLASH_NSSR is set to 1.",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1114,7 +1214,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Force the option byte loading\r When set to 1, this bit forces the option byte reloading. This bit is cleared only when the option byte loading is complete. It cannot be written if OPTLOCK is set.",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1126,7 +1230,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Option lock\r This bit is set only. When set, all bits concerning user options in FLASH_NSCR register are locked. This bit is cleared by hardware after detecting the unlock sequence. The LOCK bit in the FLASH_NSCR must be cleared before doing the unlock sequence for OPTLOCK bit.\r In case of an unsuccessful unlock operation, this bit remains set until the next reset.",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1136,7 +1244,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure lock\r This bit is set only. When set, the FLASH_NSCR register is locked. It is cleared by hardware after detecting the unlock sequence in FLASH_NSKEYR register.\r In case of an unsuccessful unlock operation, this bit remains set until the next system reset.",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1156,7 +1268,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure end of operation",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1166,7 +1282,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure operation error",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1176,7 +1296,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure programming error\r This bit is set by hardware when a non-secure quad-word address to be programmed contains a value different from all 1 before programming, except if the data to write is all 0. This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1186,7 +1310,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure write protection error\r This bit is set by hardware when an non-secure address to be erased/programmed belongs to a write-protected part (by WRP, HDP or RDP level 1) of the Flash memory. This bit is cleared by writing 1.\r Refer to for full conditions of error flag setting.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1196,7 +1324,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure programming alignment error\r This bit is set by hardware when the first word to be programmed is not aligned with a quad-word address, or the second, third or forth word does not belong to the same quad-word address. This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1206,7 +1338,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure size error\r This bit is set by hardware when the size of the access is a byte or half-word during a non-secure program sequence. Only quad-word programming is allowed by means of successive word accesses. This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1216,7 +1352,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure programming sequence error\r This bit is set by hardware when programming sequence is not correct. It is cleared by writing 1.\r Refer to for full conditions of error flag setting.",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1226,7 +1366,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Option write error\r This bit is set by hardware when the options bytes are written with an invalid configuration. It is cleared by writing 1.\r Refer to for full conditions of error flag setting.",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1236,7 +1380,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure busy\r This indicates that a Flash memory secure or non-secure operation is in progress. This bit is set at the beginning of a Flash operation and reset when the operation finishes or when an error occurs.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1246,7 +1394,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure wait data to write\r This bit indicates that the Flash memory write buffer has been written by a secure or non-secure operation. It is set when the first data is stored in the buffer and cleared when the write is performed in the Flash memory.",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1256,7 +1408,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "OEM1 lock\r This bit indicates that the OEM1 RDP key read during the OBL is not virgin. When set, the OEM1 RDP lock mechanism is active.",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1266,7 +1422,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "OEM2 lock\r This bit indicates that the OEM2 RDP key read during the OBL is not virgin. When set, the OEM2 RDP lock mechanism is active.",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1276,7 +1436,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 in power-down mode\r This bit indicates that the Flash memory bank 1 is in power-down state. It is reset when bank\u{a0}1 is in normal mode or being awaken.",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1286,7 +1450,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 2 in power-down mode\r This bit indicates that the Flash memory bank 2 is in power-down state. It is reset when bank\u{a0}2 is in normal mode or being awaken.",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1306,7 +1474,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "OEM1 least significant bytes key",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 32,
                     array: None,
                     enumm: None,
@@ -1326,7 +1498,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "OEM1 most significant bytes key",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 32,
                     array: None,
                     enumm: None,
@@ -1346,7 +1522,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "OEM2 least significant bytes key",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 32,
                     array: None,
                     enumm: None,
@@ -1366,7 +1546,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "OEM2 most significant bytes key",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 32,
                     array: None,
                     enumm: None,
@@ -1386,7 +1570,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Interrupted operation address\r This field indicates which address in the Flash memory was accessed when reset occurred. The address is given by bank from address 0x0\u{a0}0000 to 0xF\u{a0}FFF0.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 20,
                     array: None,
                     enumm: None,
@@ -1396,7 +1584,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Interrupted operation bank\r This bit indicates which Flash memory bank was accessed when reset occurred",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1408,7 +1600,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Operation in system Flash memory interrupted\r This bit indicates that the reset occurred during an operation in the system Flash memory.",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1418,7 +1614,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Flash memory operation code\r This field indicates which Flash memory operation has been interrupted by a system reset:",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -1440,7 +1640,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Readout protection level\r Others: Level 1 (memories readout protection active)\r Note: Refer to for more details.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: Some(
@@ -1452,7 +1656,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "BOR reset level\r These bits contain the VDD supply level threshold that activates/releases the reset.",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -1464,7 +1672,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Reset generation in Stop mode",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1476,7 +1688,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Reset generation in Standby mode",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1488,7 +1704,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Reset generation in Shutdown mode",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1500,7 +1720,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SRAM1, SRAM3 and SRAM4 erase upon system reset",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1510,7 +1734,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Independent watchdog selection",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1522,7 +1750,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Independent watchdog counter freeze in Stop mode",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1534,7 +1766,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Independent watchdog counter freeze in Standby mode",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1546,7 +1782,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Window watchdog selection",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1558,7 +1798,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Swap banks",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1570,7 +1814,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Dual-bank on 1-Mbyte and 512-Kbyte Flash memory devices",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1582,7 +1830,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Backup RAM ECC detection and correction enable",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1594,7 +1846,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SRAM3 ECC detection and correction enable",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1606,7 +1862,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SRAM2 ECC detection and correction enable",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1618,7 +1878,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SRAM2 erase when system reset",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1628,7 +1892,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Software BOOT0",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1640,7 +1908,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "nBOOT0 option bit",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1652,7 +1924,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PA15 pull-up enable",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1662,7 +1938,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "High-speed IO at low VDD voltage configuration bit\r This bit can be set only with VDD below 2.5V",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1674,7 +1954,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "High-speed IO at low VDDIO2 voltage configuration bit\r This bit can be set only with VDDIO2 below 2.5\u{a0}V.",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -1686,7 +1970,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Global TrustZone security enable",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1706,7 +1994,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 power-down key",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 32,
                     array: None,
                     enumm: None,
@@ -1726,7 +2018,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 2 power-down key",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 32,
                     array: None,
                     enumm: None,
@@ -1746,7 +2042,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1756,7 +2056,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1766,7 +2070,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1776,7 +2084,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1786,7 +2098,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1796,7 +2112,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1806,7 +2126,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1816,7 +2140,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1826,7 +2154,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1836,7 +2168,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1846,7 +2182,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1856,7 +2196,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1866,7 +2210,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1876,7 +2224,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1886,7 +2238,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1896,7 +2252,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1906,7 +2266,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1916,7 +2280,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1926,7 +2294,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1936,7 +2308,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1946,7 +2322,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1956,7 +2336,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1966,7 +2350,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1976,7 +2364,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1986,7 +2378,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1996,7 +2392,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2006,7 +2406,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2016,7 +2420,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2026,7 +2434,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2036,7 +2448,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2046,7 +2462,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2056,7 +2476,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2076,7 +2500,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2086,7 +2514,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2096,7 +2528,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2106,7 +2542,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2116,7 +2556,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2126,7 +2570,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2136,7 +2584,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2146,7 +2598,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2156,7 +2612,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2166,7 +2626,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2176,7 +2640,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2186,7 +2654,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2196,7 +2668,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2206,7 +2682,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2216,7 +2696,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2226,7 +2710,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2236,7 +2724,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2246,7 +2738,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2256,7 +2752,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2266,7 +2766,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2276,7 +2780,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2286,7 +2794,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2296,7 +2808,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2306,7 +2822,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2316,7 +2836,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2326,7 +2850,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2336,7 +2864,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2346,7 +2878,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2356,7 +2892,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2366,7 +2906,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2376,7 +2920,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2386,7 +2934,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2406,7 +2958,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2416,7 +2972,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2426,7 +2986,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2436,7 +3000,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2446,7 +3014,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2456,7 +3028,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2466,7 +3042,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2476,7 +3056,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2486,7 +3070,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2496,7 +3084,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2506,7 +3098,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2516,7 +3112,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2526,7 +3126,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2536,7 +3140,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2546,7 +3154,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2556,7 +3168,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2566,7 +3182,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2576,7 +3196,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2586,7 +3210,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2596,7 +3224,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2606,7 +3238,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2616,7 +3252,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2626,7 +3266,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2636,7 +3280,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2646,7 +3294,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2656,7 +3308,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2666,7 +3322,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2676,7 +3336,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2686,7 +3350,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2696,7 +3364,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2706,7 +3378,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2716,7 +3392,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2736,7 +3416,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2746,7 +3430,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2756,7 +3444,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2766,7 +3458,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2776,7 +3472,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2786,7 +3486,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2796,7 +3500,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2806,7 +3514,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2816,7 +3528,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2826,7 +3542,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2836,7 +3556,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2846,7 +3570,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2856,7 +3584,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2866,7 +3598,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2876,7 +3612,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2886,7 +3626,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2896,7 +3640,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2906,7 +3654,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2916,7 +3668,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2926,7 +3682,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2936,7 +3696,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2946,7 +3710,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2956,7 +3724,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2966,7 +3738,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2976,7 +3752,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2986,7 +3766,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2996,7 +3780,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3006,7 +3794,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3016,7 +3808,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3026,7 +3822,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3036,7 +3836,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3046,7 +3850,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3066,7 +3874,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3076,7 +3888,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3086,7 +3902,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3096,7 +3916,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3106,7 +3930,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3116,7 +3944,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3126,7 +3958,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3136,7 +3972,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3146,7 +3986,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3156,7 +4000,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3166,7 +4014,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3176,7 +4028,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3186,7 +4042,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3196,7 +4056,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3206,7 +4070,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3216,7 +4084,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3226,7 +4098,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3236,7 +4112,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3246,7 +4126,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3256,7 +4140,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3266,7 +4154,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3276,7 +4168,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3286,7 +4182,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3296,7 +4196,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3306,7 +4210,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3316,7 +4224,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3326,7 +4238,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3336,7 +4252,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3346,7 +4266,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3356,7 +4280,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3366,7 +4294,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3376,7 +4308,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3396,7 +4332,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3406,7 +4346,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3416,7 +4360,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3426,7 +4374,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3436,7 +4388,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3446,7 +4402,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3456,7 +4416,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3466,7 +4430,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3476,7 +4444,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3486,7 +4458,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3496,7 +4472,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3506,7 +4486,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3516,7 +4500,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3526,7 +4514,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3536,7 +4528,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3546,7 +4542,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3556,7 +4556,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3566,7 +4570,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3576,7 +4584,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3586,7 +4598,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3596,7 +4612,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3606,7 +4626,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3616,7 +4640,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3626,7 +4654,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3636,7 +4668,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3646,7 +4682,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3656,7 +4696,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3666,7 +4710,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3676,7 +4724,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3686,7 +4738,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3696,7 +4752,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3706,7 +4766,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3726,7 +4790,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3736,7 +4804,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3746,7 +4818,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3756,7 +4832,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3766,7 +4846,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3776,7 +4860,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3786,7 +4874,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3796,7 +4888,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3806,7 +4902,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3816,7 +4916,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3826,7 +4930,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3836,7 +4944,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3846,7 +4958,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3856,7 +4972,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3866,7 +4986,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3876,7 +5000,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3886,7 +5014,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3896,7 +5028,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3906,7 +5042,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3916,7 +5056,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3926,7 +5070,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3936,7 +5084,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3946,7 +5098,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3956,7 +5112,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3966,7 +5126,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3976,7 +5140,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3986,7 +5154,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3996,7 +5168,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4006,7 +5182,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4016,7 +5196,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4026,7 +5210,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4036,7 +5224,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4056,7 +5248,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4066,7 +5262,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4076,7 +5276,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4086,7 +5290,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4096,7 +5304,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4106,7 +5318,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4116,7 +5332,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4126,7 +5346,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4136,7 +5360,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4146,7 +5374,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4156,7 +5388,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4166,7 +5402,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4176,7 +5416,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4186,7 +5430,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4196,7 +5444,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4206,7 +5458,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4216,7 +5472,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4226,7 +5486,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4236,7 +5500,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4246,7 +5514,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4256,7 +5528,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4266,7 +5542,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4276,7 +5556,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4286,7 +5570,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4296,7 +5584,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4306,7 +5598,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4316,7 +5612,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4326,7 +5626,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4336,7 +5640,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4346,7 +5654,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4356,7 +5668,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4366,7 +5682,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page privileged/unprivileged attribution",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4386,7 +5706,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Privileged protection for secure registers\r This bit can be accessed only when TrustZone is enabled (TZEN\u{a0}=\u{a0}1). This bit can be read by both privileged or unprivileged, secure and non-secure access.\r The SPRIV bit can be written only by a secure privileged access. A non-secure write access on SPRIV bit is ignored. A secure unprivileged write access on SPRIV bit is ignored.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -4398,7 +5722,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Privileged protection for non-secure registers\r This bit can be read by both privileged or unprivileged, secure and non-secure access.\r The NSPRIV bit can be written by a secure or non-secure privileged access. A secure or non-secure unprivileged write access on NSPRIV bit is ignored.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -4420,7 +5748,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4430,7 +5762,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4440,7 +5776,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4450,7 +5790,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4460,7 +5804,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4470,7 +5818,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4480,7 +5832,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4490,7 +5846,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4500,7 +5860,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4510,7 +5874,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4520,7 +5888,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4530,7 +5902,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4540,7 +5916,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4550,7 +5930,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4560,7 +5944,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4570,7 +5958,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4580,7 +5972,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4590,7 +5986,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4600,7 +6000,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4610,7 +6014,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4620,7 +6028,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4630,7 +6042,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4640,7 +6056,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4650,7 +6070,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4660,7 +6084,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4670,7 +6098,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4680,7 +6112,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4690,7 +6126,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4700,7 +6140,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4710,7 +6154,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4720,7 +6168,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4730,7 +6182,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4750,7 +6206,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4760,7 +6220,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4770,7 +6234,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4780,7 +6248,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4790,7 +6262,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4800,7 +6276,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4810,7 +6290,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4820,7 +6304,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4830,7 +6318,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4840,7 +6332,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4850,7 +6346,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4860,7 +6360,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4870,7 +6374,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4880,7 +6388,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4890,7 +6402,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4900,7 +6416,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4910,7 +6430,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4920,7 +6444,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4930,7 +6458,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4940,7 +6472,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4950,7 +6486,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4960,7 +6500,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4970,7 +6514,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4980,7 +6528,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4990,7 +6542,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5000,7 +6556,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5010,7 +6570,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5020,7 +6584,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5030,7 +6598,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5040,7 +6612,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5050,7 +6626,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5060,7 +6640,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5080,7 +6664,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5090,7 +6678,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5100,7 +6692,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5110,7 +6706,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5120,7 +6720,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5130,7 +6734,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5140,7 +6748,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5150,7 +6762,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5160,7 +6776,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5170,7 +6790,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5180,7 +6804,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5190,7 +6818,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5200,7 +6832,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5210,7 +6846,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5220,7 +6860,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5230,7 +6874,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5240,7 +6888,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5250,7 +6902,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5260,7 +6916,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5270,7 +6930,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5280,7 +6944,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5290,7 +6958,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5300,7 +6972,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5310,7 +6986,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5320,7 +7000,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5330,7 +7014,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5340,7 +7028,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5350,7 +7042,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5360,7 +7056,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5370,7 +7070,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5380,7 +7084,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5390,7 +7098,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5410,7 +7122,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5420,7 +7136,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5430,7 +7150,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5440,7 +7164,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5450,7 +7178,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5460,7 +7192,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5470,7 +7206,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5480,7 +7220,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5490,7 +7234,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5500,7 +7248,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5510,7 +7262,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5520,7 +7276,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5530,7 +7290,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5540,7 +7304,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5550,7 +7318,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5560,7 +7332,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5570,7 +7346,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5580,7 +7360,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5590,7 +7374,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5600,7 +7388,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5610,7 +7402,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5620,7 +7416,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5630,7 +7430,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5640,7 +7444,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5650,7 +7458,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5660,7 +7472,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5670,7 +7486,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5680,7 +7500,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5690,7 +7514,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5700,7 +7528,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5710,7 +7542,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5720,7 +7556,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5740,7 +7580,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5750,7 +7594,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5760,7 +7608,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5770,7 +7622,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5780,7 +7636,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5790,7 +7650,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5800,7 +7664,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5810,7 +7678,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5820,7 +7692,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5830,7 +7706,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5840,7 +7720,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5850,7 +7734,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5860,7 +7748,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5870,7 +7762,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5880,7 +7776,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5890,7 +7790,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5900,7 +7804,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5910,7 +7818,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5920,7 +7832,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5930,7 +7846,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5940,7 +7860,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5950,7 +7874,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5960,7 +7888,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5970,7 +7902,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5980,7 +7916,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5990,7 +7930,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6000,7 +7944,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6010,7 +7958,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6020,7 +7972,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6030,7 +7986,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6040,7 +8000,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6050,7 +8014,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6070,7 +8038,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6080,7 +8052,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6090,7 +8066,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6100,7 +8080,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6110,7 +8094,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6120,7 +8108,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6130,7 +8122,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6140,7 +8136,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6150,7 +8150,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6160,7 +8164,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6170,7 +8178,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6180,7 +8192,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6190,7 +8206,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6200,7 +8220,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6210,7 +8234,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6220,7 +8248,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6230,7 +8262,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6240,7 +8276,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6250,7 +8290,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6260,7 +8304,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6270,7 +8318,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6280,7 +8332,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6290,7 +8346,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6300,7 +8360,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6310,7 +8374,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6320,7 +8388,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6330,7 +8402,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6340,7 +8416,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6350,7 +8430,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6360,7 +8444,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6370,7 +8458,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6380,7 +8472,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6400,7 +8496,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6410,7 +8510,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6420,7 +8524,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6430,7 +8538,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6440,7 +8552,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6450,7 +8566,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6460,7 +8580,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6470,7 +8594,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6480,7 +8608,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6490,7 +8622,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6500,7 +8636,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6510,7 +8650,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6520,7 +8664,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6530,7 +8678,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6540,7 +8692,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6550,7 +8706,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6560,7 +8720,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6570,7 +8734,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6580,7 +8748,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6590,7 +8762,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6600,7 +8776,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6610,7 +8790,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6620,7 +8804,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6630,7 +8818,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6640,7 +8832,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6650,7 +8846,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6660,7 +8860,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6670,7 +8874,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6680,7 +8888,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6690,7 +8902,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6700,7 +8916,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6710,7 +8930,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6730,7 +8954,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6740,7 +8968,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6750,7 +8982,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6760,7 +8996,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6770,7 +9010,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6780,7 +9024,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6790,7 +9038,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6800,7 +9052,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6810,7 +9066,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6820,7 +9080,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6830,7 +9094,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6840,7 +9108,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6850,7 +9122,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6860,7 +9136,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6870,7 +9150,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6880,7 +9164,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6890,7 +9178,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6900,7 +9192,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6910,7 +9206,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6920,7 +9220,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6930,7 +9234,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6940,7 +9248,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6950,7 +9262,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6960,7 +9276,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6970,7 +9290,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6980,7 +9304,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6990,7 +9318,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7000,7 +9332,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7010,7 +9346,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7020,7 +9360,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7030,7 +9374,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7040,7 +9388,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "page secure/non-secure attribution",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7060,7 +9412,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Boot lock\r When set, the boot is always forced to base address value programmed in SECBOOTADD0[24:0] option bytes whatever the boot selection option. When set, this bit can only be cleared by an RDP at level 0.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7070,7 +9426,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure boot base address 0\r The secure boot memory address can be programmed to any address in the valid address range with a granularity of 128 bytes. This bits correspond to address [31:7] The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 state.\r Examples:\r SECBOOTADD0[24:0] = 0x018 0000: Boot from secure Flash memory (0x0C00 0000)\r SECBOOTADD0[24:0] = 0x01F F000: Boot from RSS (0x0FF8 0000)\r SECBOOTADD0[24:0] = 0x060 0000: Boot from secure SRAM1 on S-Bus (0x3000 0000)",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 25,
                     array: None,
                     enumm: None,
@@ -7090,7 +9450,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure programming",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -7102,7 +9466,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure page erase",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -7114,7 +9482,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure bank 1 mass erase\r This bit triggers the bank 1 secure mass erase (all bank 1 user pages) when set.",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7124,7 +9496,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure page number selection\r These bits select the page to erase:\r ...",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -7134,7 +9510,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure bank selection for page erase",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -7146,7 +9526,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure burst write programming mode\r When set, this bit selects the burst write programming mode.",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7156,7 +9540,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure bank 2 mass erase\r This bit triggers the bank 2 secure mass erase (all bank 2 user pages) when set.",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7166,7 +9554,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure start\r This bit triggers a secure erase operation when set. If MER1, MER2 and PER bits are reset and the STRT bit is set, the PGSERR in the FLASH_SECSR is set (this condition is forbidden).\r This bit is set only by software and is cleared when the BSY bit is cleared in FLASH_SECSR.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7176,7 +9568,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure End of operation interrupt enable\r This bit enables the interrupt generation when the EOP bit in the FLASH_SECSR is set to 1.",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -7188,7 +9584,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure error interrupt enable",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -7200,7 +9600,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure PCROP read error interrupt enable",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7210,7 +9614,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Flash memory security state invert\r This bit inverts the Flash memory security state.",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7220,7 +9628,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure lock\r This bit is set only. When set, the FLASH_SECCR register is locked. It is cleared by hardware after detecting the unlock sequence in FLASH_SECKEYR register.\r In case of an unsuccessful unlock operation, this bit remains set until the next system reset.",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7240,7 +9652,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "HDP1 area access disable\r When set, this bit is only cleared by a system reset.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -7252,7 +9668,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "HDP2 area access disable\r When set, this bit is only cleared by a system reset.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -7274,7 +9694,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure end of operation\r This bit is set by hardware when one or more Flash memory secure operation (program/erase) has been completed successfully. This bit is set only if the secure end of operation interrupts are enabled (EOPIE = 1 in FLASH_SECCR). This bit is cleared by writing\u{a0}1.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7284,7 +9708,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure operation error\r This bit is set by hardware when a Flash memory secure operation (program/erase) completes unsuccessfully. This bit is set only if secure error interrupts are enabled (SECERRIE = 1). This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7294,7 +9722,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure programming error\r This bit is set by hardware when a secure quad-word address to be programmed contains a value different from all 1 before programming, except if the data to write is all 0. This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7304,7 +9736,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure write protection error\r This bit is set by hardware when an secure address to be erased/programmed belongs to a write-protected part (by WRP, PCROP, HDP or RDP level 1) of the Flash memory.This bit is cleared by writing 1.\r Refer to for full conditions of error flag setting.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7314,7 +9750,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure programming alignment error\r This bit is set by hardware when the first word to be programmed is not aligned with a quad-word address, or the second, third or forth word does not belong to the same quad-word address.This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7324,7 +9764,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure size error\r This bit is set by hardware when the size of the access is a byte or half-word during a secure program sequence. Only quad-word programming is allowed by means of successive word accesses.This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7334,7 +9778,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure programming sequence error\r This bit is set by hardware when programming sequence is not correct. It is cleared by writing 1.\r Refer to for full conditions of error flag setting.",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7344,7 +9792,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure busy\r This bit indicates that a Flash memory secure or non-secure operation is in progress. This is set on the beginning of a Flash operation and reset when the operation finishes or when an error occurs.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7354,7 +9806,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure wait data to write\r This bit indicates that the Flash memory write buffer has been written by a secure or non-secure operation. It is set when the first data is stored in the buffer and cleared when the write is performed in the Flash memory.",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7374,7 +9830,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Start page of first secure area\r This field contains the first page of the secure area in bank 1.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -7384,7 +9844,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "End page of first secure area\r This field contains the last page of the secure area in bank 1.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -7404,7 +9868,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "End page of first hide protection area\r This field contains the last page of the HDP area in bank 1.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -7414,7 +9882,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Hide protection first area enable",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7434,7 +9906,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Start page of second secure area\r This field contains the first page of the secure area in bank 2.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -7444,7 +9920,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "End page of second secure area\r This field contains the last page of the secure area in bank 2.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -7464,7 +9944,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "End page of hide protection second area\r HDP2_PEND contains the last page of the HDP area in bank 2.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -7474,7 +9958,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Hide protection second area enable",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7494,7 +9982,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "bank 1 WPR first area A start page\r This field contains the first page of the first WPR area for bank 1.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -7504,7 +9996,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 WPR first area A end page\r This field contains the last page of the first WPR area in bank 1.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -7514,7 +10010,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 WPR first area A unlock",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -7536,7 +10036,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 WRP second area B start page\r This field contains the first page of the second WRP area for bank 1.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -7546,7 +10050,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 WRP second area B end page\r This field contains the last page of the second WRP area in bank 1.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -7556,7 +10064,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 WPR second area B unlock",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -7578,7 +10090,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 2 WPR first area A start page\r This field contains the first page of the first WRP area for bank 2.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -7588,7 +10104,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 2 WPR first area A end page\r This field contains the last page of the first WRP area in bank 2.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -7598,7 +10118,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 2 WPR first area A unlock",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -7620,7 +10144,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 2 WPR second area B start page\r This field contains the first page of the second WRP area for bank 2.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -7630,7 +10158,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 2 WPR second area B end page\r This field contains the last page of the second WRP area in bank 2.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -7640,7 +10172,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 2 WPR second area B unlock",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(

@@ -83,7 +83,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "reset",
                 description: Some("RESET bit"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,
@@ -91,7 +91,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "polysize",
                 description: Some("Polynomial size"),
-                bit_offset: 3,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                 bit_size: 2,
                 array: None,
                 enumm: Some("Polysize"),
@@ -99,7 +99,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "rev_in",
                 description: Some("Reverse input data"),
-                bit_offset: 5,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                 bit_size: 2,
                 array: None,
                 enumm: Some("RevIn"),
@@ -107,7 +107,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "rev_out",
                 description: Some("Reverse output data"),
-                bit_offset: 7,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                 bit_size: 1,
                 array: None,
                 enumm: Some("RevOut"),

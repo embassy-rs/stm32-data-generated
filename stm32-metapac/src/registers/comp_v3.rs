@@ -26,7 +26,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "en",
                 description: Some("Enable"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,
@@ -34,7 +34,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "pwrmode",
                 description: Some("Power Mode."),
-                bit_offset: 2,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                 bit_size: 2,
                 array: None,
                 enumm: Some("Pwrmode"),
@@ -42,7 +42,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "inmsel",
                 description: Some("Input minus selection bits."),
-                bit_offset: 4,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                 bit_size: 3,
                 array: None,
                 enumm: None,
@@ -50,7 +50,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "inpsel",
                 description: Some("Input plus selection bit."),
-                bit_offset: 7,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                 bit_size: 2,
                 array: None,
                 enumm: None,
@@ -58,7 +58,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "polarity",
                 description: Some("Polarity selection bit."),
-                bit_offset: 15,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                 bit_size: 1,
                 array: None,
                 enumm: Some("Polarity"),
@@ -66,7 +66,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "hyst",
                 description: Some("Hysteresis selection bits."),
-                bit_offset: 16,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                 bit_size: 2,
                 array: None,
                 enumm: Some("Hyst"),
@@ -74,7 +74,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "blanking",
                 description: Some("Blanking source selection bits."),
-                bit_offset: 18,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                 bit_size: 3,
                 array: None,
                 enumm: Some("Blanking"),
@@ -82,7 +82,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "brgen",
                 description: Some("Scaler bridge enable."),
-                bit_offset: 22,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,
@@ -90,7 +90,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "scalen",
                 description: Some("Voltage scaler enable bit."),
-                bit_offset: 23,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,
@@ -98,7 +98,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "inmesel",
                 description: Some("Input minus extended selection bits."),
-                bit_offset: 25,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
                 bit_size: 2,
                 array: None,
                 enumm: None,
@@ -106,7 +106,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "value",
                 description: Some("Output status bit."),
-                bit_offset: 30,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,
@@ -114,7 +114,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "lock",
                 description: Some("Register lock bit."),
-                bit_offset: 31,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,

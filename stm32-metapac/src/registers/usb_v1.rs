@@ -135,7 +135,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "BTABLE",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 13,
                     array: None,
                     enumm: None,
@@ -155,7 +159,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Force a reset of the USB peripheral, exactly like a RESET signaling on the USB",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -165,7 +173,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Enter power down mode",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -175,7 +187,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Enter low-power mode",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -185,7 +201,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Enter suspend mode. Clocks and static power dissipation in the analog transceiver are left unaffected",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -195,7 +215,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Resume request",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -205,7 +229,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ESOF Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -215,7 +243,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SOF Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -225,7 +257,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "RESET Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -235,7 +271,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SUSP Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -245,7 +285,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "WKUP Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -255,7 +299,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ERR Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -265,7 +313,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PMAOVR Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -275,7 +327,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CTR Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -295,7 +351,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "device address",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -305,7 +365,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USB device enabled",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -325,7 +389,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EA",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -335,7 +403,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "STAT_TX",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -347,7 +419,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DTOG_TX",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -357,7 +433,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CTR_TX",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -367,7 +447,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EP_KIND",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -377,7 +461,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EPTYPE",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -389,7 +477,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SETUP",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -399,7 +491,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "STAT_RX",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -411,7 +507,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DTOG_RX",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -421,7 +521,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CTR_RX",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -441,7 +545,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "FN",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 11,
                     array: None,
                     enumm: None,
@@ -451,7 +559,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LSOF",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -461,7 +573,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "the frame timer remains in this state until an USB reset or USB suspend event occurs",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -471,7 +587,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "received data minus upstream port data line",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -481,7 +601,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "received data plus upstream port data line",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -501,7 +625,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EP_ID",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -511,7 +639,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DIR",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -523,7 +655,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "an SOF packet is expected but not received",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -533,7 +669,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "beginning of a new USB frame and it is set when a SOF packet arrives through the USB bus",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -543,7 +683,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "peripheral detects an active USB RESET signal at its inputs",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -553,7 +697,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "no traffic has been received for 3 ms, indicating a suspend mode request from the USB bus",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -563,7 +711,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "activity is detected that wakes up the USB peripheral",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -573,7 +725,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "One of No ANSwer, Cyclic Redundancy Check, Bit Stuffing or Framing format Violation error occurred",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -583,7 +739,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "microcontroller has not been able to respond in time to an USB memory request",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -593,7 +753,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "endpoint has successfully completed a transaction",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,

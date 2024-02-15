@@ -51,7 +51,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rngen",
                     description: Some("Random number generator enable"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -59,7 +59,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ie",
                     description: Some("Interrupt enable"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -67,7 +67,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ced",
                     description: Some("Clock error detection"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -83,7 +83,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "drdy",
                     description: Some("Data ready"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -91,7 +91,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cecs",
                     description: Some("Clock error current status"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -99,7 +99,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "secs",
                     description: Some("Seed error current status"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -107,7 +107,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ceis",
                     description: Some("Clock error interrupt status"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -115,7 +115,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "seis",
                     description: Some("Seed error interrupt status"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,

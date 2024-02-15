@@ -51,7 +51,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "w",
                     description: Some("7-bit window value"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -59,7 +59,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ewi",
                     description: Some("Early wakeup interrupt"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -67,7 +67,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wdgtb",
                     description: Some("Timer base"),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 3,
                     array: None,
                     enumm: Some("Wdgtb"),
@@ -83,7 +83,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "t",
                     description: Some("7-bit counter (MSB to LSB)"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -91,7 +91,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wdga",
                     description: Some("Activation bit (true is enabled, false is disabled)"),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -106,7 +106,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "ewif",
                 description: Some("Early wakeup interrupt flag"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,

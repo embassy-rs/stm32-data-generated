@@ -142,7 +142,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Input DMA request line selected",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -152,7 +156,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Interrupt enable at synchronization event overrun",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -162,7 +170,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Event generation enable/disable",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -172,7 +184,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Synchronous operating mode enable/disable",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -182,7 +198,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Synchronization event type selector Defines the synchronization event on the selected synchronization input:",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -194,7 +214,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -204,7 +228,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Synchronization input selected",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -224,7 +252,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Synchronization overrun event flag",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -251,7 +283,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DMA request trigger input selected",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -261,7 +297,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Interrupt enable at trigger event overrun",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -271,7 +311,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DMA request generator channel enable/disable",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -281,7 +325,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -293,7 +341,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -313,7 +365,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Trigger event overrun flag The flag is set when a trigger event occurs on DMA request generator channel x, while the DMA request generator counter value is lower than GNBREQ. The flag is cleared by writing 1 to the corresponding COFx bit in DMAMUX_RGCFR register.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(

@@ -2105,15 +2105,33 @@
       {
         "name": "SMS",
         "description": "Slave mode selection",
-        "bit_offset": 0,
-        "bit_size": 3,
+        "bit_offset": [
+          {
+            "start": 0,
+            "end": 2
+          },
+          {
+            "start": 16,
+            "end": 16
+          }
+        ],
+        "bit_size": 4,
         "enum": "SMS"
       },
       {
         "name": "TS",
         "description": "Trigger selection",
-        "bit_offset": 4,
-        "bit_size": 3,
+        "bit_offset": [
+          {
+            "start": 4,
+            "end": 6
+          },
+          {
+            "start": 20,
+            "end": 21
+          }
+        ],
+        "bit_size": 5,
         "enum": "TS"
       },
       {
@@ -3062,11 +3080,11 @@
     ]
   },
   "enum/SMS": {
-    "bit_size": 3,
+    "bit_size": 4,
     "variants": [
       {
         "name": "Disabled",
-        "description": "Slave mode disabled - if CEN = ‘1 then the prescaler is clocked directly by the internal clock.",
+        "description": "Slave mode disabled - if CEN = '1' then the prescaler is clocked directly by the internal clock.",
         "value": 0
       },
       {
@@ -3103,6 +3121,11 @@
         "name": "Ext_Clock_Mode",
         "description": "External Clock Mode 1 - Rising edges of the selected trigger (TRGI) clock the counter.",
         "value": 7
+      },
+      {
+        "name": "Combined_Reset_Trigger",
+        "description": "Rising edge of the selected trigger input (tim_trgi) reinitializes the counter, generates an update of the registers and starts the counter.",
+        "value": 8
       }
     ]
   },
@@ -3122,46 +3145,46 @@
     ]
   },
   "enum/TS": {
-    "bit_size": 3,
+    "bit_size": 5,
     "variants": [
       {
         "name": "ITR0",
-        "description": "Internal Trigger 0 (ITR0)",
+        "description": "Internal Trigger 0",
         "value": 0
       },
       {
         "name": "ITR1",
-        "description": "Internal Trigger 1 (ITR1)",
+        "description": "Internal Trigger 1",
         "value": 1
       },
       {
         "name": "ITR2",
-        "description": "Internal Trigger 2 (ITR2)",
+        "description": "Internal Trigger 2",
         "value": 2
       },
       {
         "name": "ITR3",
-        "description": "Internal Trigger 3 (ITR3)",
+        "description": "Internal Trigger 3",
         "value": 3
       },
       {
         "name": "TI1F_ED",
-        "description": "TI1 Edge Detector (TI1F_ED)",
+        "description": "TI1 Edge Detector",
         "value": 4
       },
       {
         "name": "TI1FP1",
-        "description": "Filtered Timer Input 1 (TI1FP1)",
+        "description": "Filtered Timer Input 1",
         "value": 5
       },
       {
         "name": "TI2FP2",
-        "description": "Filtered Timer Input 2 (TI2FP2)",
+        "description": "Filtered Timer Input 2",
         "value": 6
       },
       {
         "name": "ETRF",
-        "description": "External Trigger input (ETRF)",
+        "description": "External Trigger input",
         "value": 7
       }
     ]

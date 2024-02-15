@@ -517,7 +517,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Latency\r These bits represent the ratio between the AHB hclk1 clock period and the memory access time.\r Access to the bit can be secured by RCC SYSCLKSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.\r ...\r Note: Before entering Stop 1 mode software must set wait state latency to at least 1.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -527,7 +531,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Prefetch enable\r This bit enables the prefetch buffer in the embedded memory.\r This bit can be protected against unprivileged access by NSPRIV.",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -537,7 +545,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Low-power read mode\r This bit puts the memory in low-power read mode.\r Access to the bit can be secured by PWR LPMSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.\r This bit can’t be written when a program or erase operation is busy (BSY = 1) or when the write buffer is not empty (WDW = 1). Changing this bit while a program or erase operation is busy (BSY = 1) is rejected.",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -547,7 +559,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "power-down mode request\r This bit requests to enter power-down mode. When enters power-down mode, this bit is cleared by hardware and the PDKEYR is locked.\r This bit is write-protected with PDKEYR. \r Access to the bit can be secured by PWR LPMSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -557,7 +573,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "memory power-down mode during Sleep mode\r This bit determines whether the memory is in power-down mode or Idle mode when the device is in Sleep mode.\r Access to the bit can be secured by PWR LPMSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.\r The must not be put in power-down while a program or an erase operation is ongoing.",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -575,7 +595,11 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "block",
                     description: None,
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -602,7 +626,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ECC fail address\r This field indicates which address is concerned by the ECC error correction or by the double ECC error detection. The address is given relative to base address, from offset 0x0�0000 to 0xF�FFF0.\r Note that bit 19 is reserved on STM32WBAxEx devices.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 20,
                     array: None,
                     enumm: None,
@@ -612,7 +640,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "System memory ECC fail\r This bit indicates that the ECC error correction or double ECC error detection is located in the system memory.",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -622,7 +654,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ECC correction interrupt enable\r This bit enables the interrupt generation when the ECCC bit in the ECCR register is set.",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -632,7 +668,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ECC correction\r This bit is set by hardware when one ECC error has been detected and corrected (only if ECCC and ECCD were previously cleared). An interrupt is generated if ECCIE is set. This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -642,7 +682,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ECC detection\r This bit is set by hardware when two ECC errors have been detected (only if ECCC and ECCD were previously cleared). When this bit is set, a NMI is generated. This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -662,7 +706,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure boot base address 0\r This address is only used when TZEN = 0.\r The non-secure boot memory address can be programmed to any address in the valid address range (see Table 28: Boot space versus RDP protection) with a granularity of 128 bytes. These bits correspond to address [31:7]. The NSBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 state.\r Examples:\r NSBOOTADD0[24:0] = 0x0100000: Boot from memory (0x0800 0000)\r NSBOOTADD0[24:0] = 0x017F100: Boot from system memory bootloader (0x0BF8 8000)\r NSBOOTADD0[24:0] = 0x0400200: Boot from SRAM2 on S-Bus (0x2001 0000)",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 25,
                     array: None,
                     enumm: None,
@@ -682,7 +730,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure boot address 1\r This address is only used when TZEN = 0.\r The non-secure boot memory address can be programmed to any address in the valid address range (see Table 28: Boot space versus RDP protection) with a granularity of 128 bytes. These bits correspond to address [31:7]. The NSBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 state. \r Examples:\r NSBOOTADD1[24:0] = 0x0100000: Boot from memory (0x0800 0000)\r NSBOOTADD1[24:0] = 0x017F100: Boot from system memory bootloader (0x0BF8 8000)\r NSBOOTADD1[24:0] = 0x0400200: Boot from SRAM2 (0x2001 0000)",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 25,
                     array: None,
                     enumm: None,
@@ -702,7 +754,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure programming",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -712,7 +768,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure page erase",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -722,7 +782,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure mass erase\r This bit triggers the non-secure mass erase (all user pages) when set.",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -732,7 +796,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure page number selection\r These bits select the page to erase.\r ...\r Note that bit 9 is reserved on STM32WBA5xEx devices.",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -742,7 +810,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure burst write programming mode\r When set, this bit selects the burst write programming mode.",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -752,7 +824,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure operation start \r This bit triggers a non-secure erase operation when set. If MER and PER bits are reset and the STRT bit is set, the PGSERR bit in NSSR is set (this condition is forbidden).\r This bit is set only by software and is cleared when the BSY bit is cleared in NSSR.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -762,7 +838,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Options modification start\r This bit triggers an option bytes erase and program operation when set. This bit is write-protected with OPTLOCK.. This bit is set only by software, and is cleared when the BSY bit is cleared in NSSR.",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -772,7 +852,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure end of operation interrupt enable\r This bit enables the interrupt generation when the EOP bit in the NSSR is set to 1.",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -782,7 +866,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure error interrupt enable\r This bit enables the interrupt generation when the OPERR bit in the NSSR is set to 1.",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -792,7 +880,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Force the option byte loading\r When set to 1, this bit forces the option byte reloading. This bit is cleared only when the option byte loading is complete. This bit is write-protected with OPTLOCK.\r Note: The LSE oscillator must be disabled, LSEON = 0 and LSERDY = 0, before starting OBL_LAUNCH.",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -802,7 +894,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Option lock\r This bit is set only. When set, the NSCR1.OPTSRT and OBL_LAUNCH bits concerning user options write access is locked. This bit is cleared by hardware after detecting the unlock sequence in OPTKEYR. The NSCR1.LOCK bit must be cleared before doing the OPTKEYR unlock sequence.\r In case of an unsuccessful unlock operation, this bit remains set until the next reset.",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -812,7 +908,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure lock\r This bit is set only.\r When set, the NSCR1 register write access is locked. This bit is cleared by hardware after detecting the unlock sequence in NSKEYR.\r In case of an unsuccessful unlock operation, this bit remains set until the next system reset.",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -832,7 +932,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Program suspend request",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -842,7 +946,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Erase suspend request",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -862,7 +970,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure end of operation\r This bit is set by hardware when one or more memory non-secure operation (program/erase) has been completed successfully. This bit is set only if the non-secure end of operation interrupts are enabled (EOPIE = 1 in NSCR1). This bit is cleared by writing�1.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -872,7 +984,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure operation error\r This bit is set by hardware when a memory non-secure operation (program/erase) completes unsuccessfully. This bit is set only if non-secure error interrupts are enabled (NSERRIE = 1). This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -882,7 +998,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure programming error\r This bit is set by hardware when a non-secure quad-word address to be programmed contains a value different from all 1 before programming, except if the data to write is all 0. This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -892,7 +1012,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure write protection error\r This bit is set by hardware when a non-secure address to be erased/programmed belongs to a write-protected part (by WRP or HDP) of the memory. This bit is cleared by writing 1.\r Refer to Section�7.3.10: memory errors flags for full conditions of error flag setting.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -902,7 +1026,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure programming alignment error\r This bit is set by hardware when the first word to be programmed is not aligned with a quad-word address, or the second, third or forth word does not belong to the same quad-word address. This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -912,7 +1040,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure size error\r This bit is set by hardware when the size of the access is a byte or half-word during a non-secure program sequence. Only quad-word programming is allowed by means of successive word accesses. This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -922,7 +1054,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure programming sequence error\r This bit is set by hardware when programming sequence is not correct. It is cleared by writing 1.\r Refer to Section�7.3.10: memory errors flags for full conditions of error flag setting.",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -932,7 +1068,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Option write error \r This bit is set by hardware when the options bytes are written with an invalid configuration or when modifying options in RDP level 2.. It is cleared by writing 1.\r Refer to Section�7.3.10: memory errors flags for full conditions of error flag setting.",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -942,7 +1082,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure busy\r This indicates that a memory secure or non-secure operation is in progress. This bit is set at the beginning of a operation and reset when the operation finishes or when an error occurs.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -952,7 +1096,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Non-secure wait data to write\r This bit indicates that the memory write buffer has been written by a secure or non-secure operation. It is set when the first data is stored in the buffer and cleared when the write is performed in the memory.",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -962,7 +1110,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "OEM1 key RDP lock\r This bit indicates that the OEM1 key read during the OBL is not virgin. When set, the OEM1 key RDP lock mechanism is active.",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -972,7 +1124,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "OEM2 key RDP lock\r This bit indicates that the OEM2 key read during the OBL is not virgin. When set, the OEM2 key RDP lock mechanism is active.",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -982,7 +1138,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "in power-down mode\r This bit indicates that the memory is in power-down state. It is reset when is in normal mode or being awaken.",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1002,7 +1162,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Interrupted operation address\r This field indicates which address in the memory was accessed when reset occurred. The address is given relative to the base address, from offset 0x0�0000 to 0xF�FFF0.\r Note that bit 19 is reserved on STM32WBAxEx devices.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 20,
                     array: None,
                     enumm: None,
@@ -1012,7 +1176,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Operation in system memory interrupted\r This bit indicates that the reset occurred during an operation in the system memory.",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1022,7 +1190,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "memory operation code\r This field indicates which memory operation has been interrupted by a system reset:",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -1044,7 +1216,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Readout protection level\r Others: Level 1 (memories readout protection active)\r Note: Refer to Section�7.6.2: Readout protection (RDP) for more details.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: Some(
@@ -1056,7 +1232,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "BOR reset level\r These bits contain the V<sub>DD</sub> supply level threshold that activates/releases the reset.",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -1068,7 +1248,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Reset generation in Stop mode",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1078,7 +1262,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Reset generation in Standby mode",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1088,7 +1276,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SRAM1 erase upon system reset",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1098,7 +1290,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Independent watchdog enable selection",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1108,7 +1304,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Independent watchdog counter freeze in Stop mode",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1118,7 +1318,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Independent watchdog counter freeze in Standby mode",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1128,7 +1332,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Window watchdog selection",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1138,7 +1346,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SRAM2 parity check enable",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1148,7 +1360,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SRAM2 erase when system reset",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1158,7 +1374,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Software BOOT0",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1168,7 +1388,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "NBOOT0 option bit",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1178,7 +1402,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Global TrustZone security enable",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1198,7 +1426,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Privileged protection for secure registers\r This bit is secure write protected. It can only be written by a secure privileged access when TrustZone is enabled (TZEN�=�1).",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1208,7 +1440,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Privileged protection for non-secure registers",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1228,7 +1464,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Boot lock\r This lock is only used when TZEN = 0.\r When set, the boot is always forced to base address value programmed in SECBOOTADD0[24:0] option bytes whatever the boot selection option. When set, this bit can only be cleared by an RDP regression level 1 to level 0.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1238,7 +1478,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure boot base address 0\r This address is only used when TZEN = 1.\r The secure boot memory address can be programmed to any address in the valid address range (see Table�28: Boot space versus RDP protection) with a granularity of 128 bytes. This bits correspond to address [31:7] The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 state. \r Examples:\r SECBOOTADD0[24:0] = 0x018 0000: Boot from secure user memory (0x0C00 0000)\r SECBOOTADD0[24:0] = 0x01F F000: Boot from RSS system memory (0x0FF8 0000)\r SECBOOTADD0[24:0] = 0x060 0000: Boot from secure SRAM1 on S-Bus (0x3000 0000)",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 25,
                     array: None,
                     enumm: None,
@@ -1258,7 +1502,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure programming",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1268,7 +1516,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure page erase",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1278,7 +1530,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure mass erase\r This bit triggers the secure mass erase (all user pages) when set.",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1288,7 +1544,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure page number selection\r These bits select the page to erase:\r ...\r Note that bit 9 is reserved on STM32WBA5xEx devices.",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -1298,7 +1558,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure burst write programming mode\r When set, this bit selects the burst write programming mode.",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1308,7 +1572,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure start \r This bit triggers a secure erase operation when set. If MER and PER bits are reset and the STRT bit is set, the PGSERR in the SECSR is set (this condition is forbidden).\r This bit is set only by software and is cleared when the BSY bit is cleared in SECSR.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1318,7 +1586,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure End of operation interrupt enable\r This bit enables the interrupt generation when the EOP bit in SECSR is set to 1.",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1328,7 +1600,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure error interrupt enable\r This bit enables the interrupt generation when the OPERR bit in SECSR is set to 1.",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1338,7 +1614,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "memory security state invert\r This bit inverts the memory security state.",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1348,7 +1628,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure lock\r This bit is set only. When set, the SECCR1 register is locked. It is cleared by hardware after detecting the unlock sequence in SECKEYR register.\r In case of an unsuccessful unlock operation, this bit remains set until the next system reset.",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1368,7 +1652,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Program suspend request",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1378,7 +1666,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Erase suspend request",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1398,7 +1690,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure HDP area access disable \r When set, this bit is only cleared by a system reset.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1418,7 +1714,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure end of operation\r This bit is set by hardware when one or more memory secure operation (program/erase) has been completed successfully. This bit is set only if the secure end of operation interrupts are enabled (EOPIE = 1 in SECCR1). This bit is cleared by writing�1.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1428,7 +1728,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure operation error\r This bit is set by hardware when a memory secure operation (program/erase) completes unsuccessfully. This bit is set only if secure error interrupts are enabled (SECERRIE = 1). This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1438,7 +1742,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure programming error\r This bit is set by hardware when a secure quad-word address to be programmed contains a value different from all 1 before programming, except if the data to write is all 0. This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1448,7 +1756,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure write protection error\r This bit is set by hardware when an secure address to be erased/programmed belongs to a write-protected part (by WRP or HDP) of the memory. This bit is cleared by writing 1.\r Refer to Section�7.3.10: memory errors flags for full conditions of error flag setting.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1458,7 +1770,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure programming alignment error\r This bit is set by hardware when the first word to be programmed is not aligned with a quad-word address, or the second, third or forth word does not belong to the same quad-word address.This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1468,7 +1784,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure size error\r This bit is set by hardware when the size of the access is a byte or half-word during a secure program sequence. Only quad-word programming is allowed by means of successive word accesses.This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1478,7 +1798,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure programming sequence error\r This bit is set by hardware when programming sequence is not correct. It is cleared by writing 1.\r Refer to Section�7.3.10: memory errors flags for full conditions of error flag setting.",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1488,7 +1812,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure busy\r This bit indicates that a memory secure or non-secure operation is in progress. This is set on the beginning of a operation and reset when the operation finishes or when an error occurs.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1498,7 +1826,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure wait data to write\r This bit indicates that the memory write buffer has been written by a secure or non-secure operation. It is set when the first data is stored in the buffer and cleared when the write is performed in the memory.",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1518,7 +1850,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Start page of secure area\r This field contains the first page of the secure area.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -1528,7 +1864,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "End page of secure area\r This field contains the last page of the secure area.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -1548,7 +1888,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "End page of secure hide protection area\r This field contains the last page of the secure HDP area.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -1558,7 +1902,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Secure Hide protection area enable",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1578,7 +1926,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "WPR area A start page\r This field contains the first page of the WPR area A.\r Note that bit 6 is reserved on STM32WBAxEx devices.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -1588,7 +1940,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "WPR area A end page\r This field contains the last page of the WPR area A.\r Note that bit 22 is reserved on STM32WBAxEx devices.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -1598,7 +1954,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "WPR area A unlock",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1618,7 +1978,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "WRP area B start page\r This field contains the first page of the WRP area B.\r Note that bit 6 is reserved on STM32WBAxEx devices.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -1628,7 +1992,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "WRP area B end page\r This field contains the last page of the WRP area B.\r Note that bit 22 is reserved on STM32WBAxEx devices.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -1638,7 +2006,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "WPR area B unlock",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,

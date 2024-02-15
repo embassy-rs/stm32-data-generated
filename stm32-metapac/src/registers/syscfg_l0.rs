@@ -62,7 +62,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "mem_mode",
                     description: Some("Memory mapping selection bits"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -70,7 +70,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ufb",
                     description: Some("User bank swapping"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -78,7 +78,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "boot_mode",
                     description: Some("Boot mode selected by the boot pins status bits"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -94,7 +94,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fwdis",
                     description: Some("Firewall disable bit"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -102,7 +102,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c_pb6_fmp",
                     description: Some("Fm+ drive capability on PB6 enable bit"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -110,7 +110,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c_pb7_fmp",
                     description: Some("Fm+ drive capability on PB7 enable bit"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -118,7 +118,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c_pb8_fmp",
                     description: Some("Fm+ drive capability on PB8 enable bit"),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -126,7 +126,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c_pb9_fmp",
                     description: Some("Fm+ drive capability on PB9 enable bit"),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -134,7 +134,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c1_fmp",
                     description: Some("I2C1 Fm+ drive capability enable bit"),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -142,7 +142,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c2_fmp",
                     description: Some("I2C2 Fm+ drive capability enable bit"),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -150,7 +150,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c3_fmp",
                     description: Some("I2C3 Fm+ drive capability enable bit"),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -166,7 +166,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "en_vrefint",
                     description: Some("VREFINT enable and scaler control for COMP2 enable bit"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -174,7 +174,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "sel_vref_out",
                     description: Some("VREFINT_ADC connection bit"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -182,7 +182,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "enbuf_vrefint_adc",
                     description: Some("VREFINT reference for ADC enable bit"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -190,7 +190,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "enbuf_sensor_adc",
                     description: Some("Temperature sensor reference for ADC enable bit"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -198,7 +198,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "enbuf_vrefint_comp2",
                     description: Some("VREFINT reference for COMP2 scaler enable bit"),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -206,7 +206,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "enref_hsi48",
                     description: Some("VREFINT reference for HSI48 oscillator enable bit"),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -214,7 +214,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "vrefint_rdyf",
                     description: Some("VREFINT ready flag"),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -222,7 +222,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ref_lock",
                     description: Some("SYSCFG_CFGR3 lock bit"),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -237,7 +237,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "exti",
                 description: Some("EXTI configuration bits"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 4,
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
                 enumm: None,

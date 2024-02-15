@@ -62,7 +62,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cmp_pd",
                     description: Some("Compensation cell power-down"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -70,7 +70,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ready",
                     description: Some("READY"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -85,7 +85,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "exti",
                 description: Some("EXTI x configuration"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 4,
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
                 enumm: None,
@@ -100,7 +100,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "mem_mode",
                     description: Some("Memory mapping selection"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -108,7 +108,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fb_mode",
                     description: Some("Flash bank mode selection"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -116,7 +116,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "swp_fmc",
                     description: Some("FMC memory mapping swap"),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -132,7 +132,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "adc1dc2",
                     description: Some("ADC1DC2"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -140,7 +140,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "adc2dc2",
                     description: Some("ADC2DC2"),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -148,7 +148,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "adc3dc2",
                     description: Some("ADC3DC2"),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -156,7 +156,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "mii_rmii_sel",
                     description: Some("Ethernet PHY interface selection"),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,

@@ -49,7 +49,7 @@ pub(crate) static REGISTERS: IR = IR {
         fields: &[Field {
             name: "reset",
             description: Some("RESET bit"),
-            bit_offset: 0,
+            bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
             bit_size: 1,
             array: None,
             enumm: None,

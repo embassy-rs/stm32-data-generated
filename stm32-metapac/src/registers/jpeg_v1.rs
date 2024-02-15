@@ -5561,7 +5561,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5575,7 +5575,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5589,7 +5589,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5603,7 +5603,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5617,7 +5617,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5631,7 +5631,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5645,7 +5645,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5659,7 +5659,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5673,7 +5673,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5687,7 +5687,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5701,7 +5701,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5715,7 +5715,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5729,7 +5729,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5743,7 +5743,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5757,7 +5757,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5771,7 +5771,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5785,7 +5785,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5799,7 +5799,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5813,7 +5813,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5827,7 +5827,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5841,7 +5841,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5855,7 +5855,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5869,7 +5869,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5883,7 +5883,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5897,7 +5897,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5911,7 +5911,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5925,7 +5925,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5939,7 +5939,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5953,7 +5953,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5967,7 +5967,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5981,7 +5981,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -5995,7 +5995,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6009,7 +6009,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6023,7 +6023,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6037,7 +6037,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6051,7 +6051,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6065,7 +6065,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6079,7 +6079,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6093,7 +6093,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6107,7 +6107,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6121,7 +6121,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6135,7 +6135,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6149,7 +6149,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6163,7 +6163,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6177,7 +6177,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6191,7 +6191,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6205,7 +6205,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6219,7 +6219,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6233,7 +6233,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6247,7 +6247,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6261,7 +6261,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6275,7 +6275,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6289,7 +6289,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6303,7 +6303,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6317,7 +6317,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6331,7 +6331,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6345,7 +6345,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6359,7 +6359,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6373,7 +6373,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6387,7 +6387,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6401,7 +6401,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6415,7 +6415,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6429,7 +6429,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6443,7 +6443,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6457,7 +6457,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6471,7 +6471,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6485,7 +6485,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6499,7 +6499,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6513,7 +6513,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6527,7 +6527,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6541,7 +6541,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6555,7 +6555,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6569,7 +6569,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6583,7 +6583,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6597,7 +6597,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6611,7 +6611,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6625,7 +6625,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6639,7 +6639,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6653,7 +6653,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6667,7 +6667,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6681,7 +6681,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6695,7 +6695,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6709,7 +6709,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6723,7 +6723,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6737,7 +6737,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6751,7 +6751,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6765,7 +6765,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6779,7 +6779,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6793,7 +6793,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6807,7 +6807,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6821,7 +6821,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6835,7 +6835,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6849,7 +6849,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6863,7 +6863,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6877,7 +6877,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6891,7 +6891,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6905,7 +6905,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6919,7 +6919,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6933,7 +6933,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6947,7 +6947,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6961,7 +6961,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6975,7 +6975,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -6989,7 +6989,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -7004,7 +7004,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7012,7 +7012,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7028,7 +7028,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7036,7 +7036,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7052,7 +7052,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7060,7 +7060,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7076,7 +7076,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7084,7 +7084,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7100,7 +7100,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7108,7 +7108,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7124,7 +7124,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7132,7 +7132,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7148,7 +7148,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7156,7 +7156,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7172,7 +7172,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7180,7 +7180,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7196,7 +7196,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7204,7 +7204,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7220,7 +7220,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7228,7 +7228,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7244,7 +7244,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7252,7 +7252,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7268,7 +7268,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7276,7 +7276,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7292,7 +7292,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7300,7 +7300,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7316,7 +7316,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7324,7 +7324,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7340,7 +7340,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7348,7 +7348,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7364,7 +7364,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7372,7 +7372,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7388,7 +7388,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7396,7 +7396,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7412,7 +7412,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7420,7 +7420,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7436,7 +7436,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7444,7 +7444,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7460,7 +7460,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7468,7 +7468,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7484,7 +7484,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7492,7 +7492,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7508,7 +7508,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7516,7 +7516,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7532,7 +7532,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7540,7 +7540,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7556,7 +7556,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7564,7 +7564,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7580,7 +7580,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7588,7 +7588,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7604,7 +7604,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7612,7 +7612,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7628,7 +7628,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7636,7 +7636,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7652,7 +7652,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7660,7 +7660,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7676,7 +7676,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7684,7 +7684,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7700,7 +7700,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7708,7 +7708,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7724,7 +7724,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7732,7 +7732,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7748,7 +7748,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_0",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7756,7 +7756,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "huff_base_ram_1",
                     description: Some("HuffBase RAM"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -7771,7 +7771,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -7785,7 +7785,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -7799,7 +7799,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -7813,7 +7813,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -7827,7 +7827,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -7841,7 +7841,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -7855,7 +7855,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -7869,7 +7869,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -7883,7 +7883,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -7897,7 +7897,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -7911,7 +7911,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -7925,7 +7925,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -7939,7 +7939,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -7953,7 +7953,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -7967,7 +7967,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -7981,7 +7981,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -7995,7 +7995,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8009,7 +8009,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8023,7 +8023,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8037,7 +8037,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8051,7 +8051,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8065,7 +8065,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8079,7 +8079,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8093,7 +8093,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8107,7 +8107,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8121,7 +8121,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8135,7 +8135,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8149,7 +8149,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8163,7 +8163,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8177,7 +8177,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8191,7 +8191,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8205,7 +8205,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8219,7 +8219,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8233,7 +8233,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8247,7 +8247,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8261,7 +8261,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8275,7 +8275,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8289,7 +8289,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8303,7 +8303,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8317,7 +8317,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8331,7 +8331,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8345,7 +8345,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8359,7 +8359,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8373,7 +8373,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8387,7 +8387,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8401,7 +8401,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8415,7 +8415,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8429,7 +8429,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8443,7 +8443,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8457,7 +8457,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8471,7 +8471,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8485,7 +8485,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8499,7 +8499,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8513,7 +8513,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8527,7 +8527,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8541,7 +8541,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8555,7 +8555,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8569,7 +8569,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8583,7 +8583,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8597,7 +8597,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8611,7 +8611,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8625,7 +8625,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8639,7 +8639,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8653,7 +8653,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8667,7 +8667,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8681,7 +8681,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8695,7 +8695,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8709,7 +8709,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8723,7 +8723,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8737,7 +8737,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8751,7 +8751,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8765,7 +8765,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8779,7 +8779,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8793,7 +8793,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8807,7 +8807,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8821,7 +8821,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8835,7 +8835,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8849,7 +8849,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8863,7 +8863,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8877,7 +8877,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8891,7 +8891,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8905,7 +8905,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8919,7 +8919,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8933,7 +8933,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8947,7 +8947,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8961,7 +8961,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8975,7 +8975,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -8989,7 +8989,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9003,7 +9003,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9017,7 +9017,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9031,7 +9031,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9045,7 +9045,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9059,7 +9059,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9073,7 +9073,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9087,7 +9087,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9101,7 +9101,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9115,7 +9115,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9129,7 +9129,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9143,7 +9143,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9157,7 +9157,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9171,7 +9171,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9185,7 +9185,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9199,7 +9199,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9213,7 +9213,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9227,7 +9227,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9241,7 +9241,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9255,7 +9255,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9269,7 +9269,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9283,7 +9283,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9297,7 +9297,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9311,7 +9311,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9325,7 +9325,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9339,7 +9339,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9353,7 +9353,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9367,7 +9367,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9381,7 +9381,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9395,7 +9395,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9409,7 +9409,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9423,7 +9423,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9437,7 +9437,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9451,7 +9451,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9465,7 +9465,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9479,7 +9479,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9493,7 +9493,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9507,7 +9507,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9521,7 +9521,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9535,7 +9535,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9549,7 +9549,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9563,7 +9563,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9577,7 +9577,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9591,7 +9591,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9605,7 +9605,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9619,7 +9619,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9633,7 +9633,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9647,7 +9647,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9661,7 +9661,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9675,7 +9675,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9689,7 +9689,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9703,7 +9703,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9717,7 +9717,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9731,7 +9731,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9745,7 +9745,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9759,7 +9759,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9773,7 +9773,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9787,7 +9787,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9801,7 +9801,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9815,7 +9815,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9829,7 +9829,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9843,7 +9843,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9857,7 +9857,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9871,7 +9871,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9885,7 +9885,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9899,7 +9899,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9913,7 +9913,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9927,7 +9927,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9941,7 +9941,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9955,7 +9955,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9969,7 +9969,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9983,7 +9983,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -9997,7 +9997,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10011,7 +10011,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10025,7 +10025,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10039,7 +10039,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10053,7 +10053,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10067,7 +10067,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10081,7 +10081,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10095,7 +10095,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10109,7 +10109,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10123,7 +10123,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10137,7 +10137,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10151,7 +10151,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10165,7 +10165,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10179,7 +10179,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10193,7 +10193,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10207,7 +10207,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10221,7 +10221,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10235,7 +10235,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10249,7 +10249,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10263,7 +10263,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10277,7 +10277,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10291,7 +10291,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10305,7 +10305,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10319,7 +10319,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10333,7 +10333,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10347,7 +10347,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10361,7 +10361,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10375,7 +10375,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10389,7 +10389,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10403,7 +10403,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10417,7 +10417,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10431,7 +10431,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10445,7 +10445,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhtmem_ram",
                 description: Some("DHTMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10459,7 +10459,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_min_ram",
                 description: Some("HuffMin RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10473,7 +10473,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_min_ram",
                 description: Some("HuffMin RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10487,7 +10487,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_min_ram",
                 description: Some("HuffMin RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10501,7 +10501,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_min_ram",
                 description: Some("HuffMin RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10515,7 +10515,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_min_ram",
                 description: Some("HuffMin RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10529,7 +10529,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_min_ram",
                 description: Some("HuffMin RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10543,7 +10543,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_min_ram",
                 description: Some("HuffMin RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10557,7 +10557,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_min_ram",
                 description: Some("HuffMin RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10571,7 +10571,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_min_ram",
                 description: Some("HuffMin RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10585,7 +10585,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_min_ram",
                 description: Some("HuffMin RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10599,7 +10599,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_min_ram",
                 description: Some("HuffMin RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10613,7 +10613,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_min_ram",
                 description: Some("HuffMin RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10627,7 +10627,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_min_ram",
                 description: Some("HuffMin RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10641,7 +10641,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_min_ram",
                 description: Some("HuffMin RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10655,7 +10655,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_min_ram",
                 description: Some("HuffMin RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10669,7 +10669,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_min_ram",
                 description: Some("HuffMin RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10683,7 +10683,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10697,7 +10697,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10711,7 +10711,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10725,7 +10725,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10739,7 +10739,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10753,7 +10753,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10767,7 +10767,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10781,7 +10781,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10795,7 +10795,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10809,7 +10809,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10823,7 +10823,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10837,7 +10837,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10851,7 +10851,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10865,7 +10865,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10879,7 +10879,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10893,7 +10893,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10907,7 +10907,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10921,7 +10921,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10935,7 +10935,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10949,7 +10949,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10963,7 +10963,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10977,7 +10977,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -10991,7 +10991,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11005,7 +11005,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11019,7 +11019,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11033,7 +11033,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11047,7 +11047,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11061,7 +11061,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11075,7 +11075,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11089,7 +11089,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11103,7 +11103,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11117,7 +11117,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11131,7 +11131,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11145,7 +11145,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11159,7 +11159,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11173,7 +11173,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11187,7 +11187,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11201,7 +11201,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11215,7 +11215,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11229,7 +11229,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11243,7 +11243,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11257,7 +11257,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11271,7 +11271,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11285,7 +11285,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11299,7 +11299,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11313,7 +11313,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11327,7 +11327,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11341,7 +11341,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11355,7 +11355,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11369,7 +11369,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11383,7 +11383,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11397,7 +11397,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11411,7 +11411,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11425,7 +11425,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11439,7 +11439,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11453,7 +11453,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11467,7 +11467,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11481,7 +11481,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11495,7 +11495,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11509,7 +11509,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11523,7 +11523,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11537,7 +11537,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11551,7 +11551,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11565,7 +11565,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11579,7 +11579,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11593,7 +11593,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11607,7 +11607,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11621,7 +11621,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11635,7 +11635,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11649,7 +11649,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11663,7 +11663,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11677,7 +11677,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11691,7 +11691,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11705,7 +11705,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11719,7 +11719,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11733,7 +11733,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11747,7 +11747,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11761,7 +11761,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11775,7 +11775,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11789,7 +11789,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11803,7 +11803,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11817,7 +11817,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11831,7 +11831,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11845,7 +11845,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "huff_symb_ram",
                 description: Some("DHTSymb RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -11860,7 +11860,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ceocf",
                     description: Some("Clear End of Conversion Flag"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -11868,7 +11868,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "chpdf",
                     description: Some("Clear Header Parsing Done Flag"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -11883,7 +11883,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "start",
                 description: Some("Start"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,
@@ -11898,7 +11898,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "nf",
                     description: Some("Number of color components"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -11906,7 +11906,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "de",
                     description: Some("Decoding Enable"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -11914,7 +11914,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "colorspace",
                     description: Some("Color Space"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -11922,7 +11922,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ns",
                     description: Some("Number of components for Scan"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -11930,7 +11930,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hdr",
                     description: Some("Header Processing"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -11938,7 +11938,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ysize",
                     description: Some("Y Size"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -11953,7 +11953,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "nmcu",
                 description: Some("Number of MCU"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 26,
                 array: None,
                 enumm: None,
@@ -11967,7 +11967,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "xsize",
                 description: Some("X size"),
-                bit_offset: 16,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                 bit_size: 16,
                 array: None,
                 enumm: None,
@@ -11982,7 +11982,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hd",
                     description: Some("Huffman DC"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -11990,7 +11990,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ha",
                     description: Some("Huffman AC"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -11998,7 +11998,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "qt",
                     description: Some("Quantization Table"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -12006,7 +12006,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "nb",
                     description: Some("Number of Block"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -12014,7 +12014,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "vsf",
                     description: Some("Vertical Sampling Factor"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -12022,7 +12022,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsf",
                     description: Some("Horizontal Sampling Factor"),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -12038,7 +12038,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hd",
                     description: Some("Huffman DC"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12046,7 +12046,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ha",
                     description: Some("Huffman AC"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12054,7 +12054,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "qt",
                     description: Some("Quantization Table"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -12062,7 +12062,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "nb",
                     description: Some("Number of Block"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -12070,7 +12070,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "vsf",
                     description: Some("Vertical Sampling Factor"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -12078,7 +12078,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsf",
                     description: Some("Horizontal Sampling Factor"),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -12094,7 +12094,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hd",
                     description: Some("Huffman DC"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12102,7 +12102,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ha",
                     description: Some("Huffman AC"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12110,7 +12110,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "qt",
                     description: Some("Quantization Table"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -12118,7 +12118,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "nb",
                     description: Some("Number of Block"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -12126,7 +12126,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "vsf",
                     description: Some("Vertical Sampling Factor"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -12134,7 +12134,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsf",
                     description: Some("Horizontal Sampling Factor"),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -12150,7 +12150,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hd",
                     description: Some("Huffman DC"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12158,7 +12158,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ha",
                     description: Some("Huffman AC"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12166,7 +12166,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "qt",
                     description: Some("Quantization Table"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -12174,7 +12174,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "nb",
                     description: Some("Number of Block"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -12182,7 +12182,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "vsf",
                     description: Some("Vertical Sampling Factor"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -12190,7 +12190,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsf",
                     description: Some("Horizontal Sampling Factor"),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -12206,7 +12206,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jcen",
                     description: Some("JPEG Core Enable"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12214,7 +12214,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "iftie",
                     description: Some("Input FIFO Threshold Interrupt Enable"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12222,7 +12222,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ifnfie",
                     description: Some("Input FIFO Not Full Interrupt Enable"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12230,7 +12230,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "oftie",
                     description: Some("Output FIFO Threshold Interrupt Enable"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12238,7 +12238,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ofneie",
                     description: Some("Output FIFO Not Empty Interrupt Enable"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12246,7 +12246,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eocie",
                     description: Some("End of Conversion Interrupt Enable"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12254,7 +12254,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hpdie",
                     description: Some("Header Parsing Done Interrupt Enable"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12262,7 +12262,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "idmaen",
                     description: Some("Input DMA Enable"),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12270,7 +12270,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "odmaen",
                     description: Some("Output DMA Enable"),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12278,7 +12278,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "iff",
                     description: Some("Input FIFO Flush"),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12286,7 +12286,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "off",
                     description: Some("Output FIFO Flush"),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12301,7 +12301,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "datain",
                 description: Some("Data Input FIFO"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12315,7 +12315,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dataout",
                 description: Some("Data Output FIFO"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12330,7 +12330,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "iftf",
                     description: Some("Input FIFO Threshold Flag"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12338,7 +12338,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ifnff",
                     description: Some("Input FIFO Not Full Flag"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12346,7 +12346,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "oftf",
                     description: Some("Output FIFO Threshold Flag"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12354,7 +12354,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ofnef",
                     description: Some("Output FIFO Not Empty Flag"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12362,7 +12362,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eocf",
                     description: Some("End of Conversion Flag"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12370,7 +12370,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hpdf",
                     description: Some("Header Parsing Done Flag"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12378,7 +12378,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cof",
                     description: Some("Codec Operation Flag"),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -12393,7 +12393,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12407,7 +12407,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12421,7 +12421,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12435,7 +12435,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12449,7 +12449,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12463,7 +12463,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12477,7 +12477,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12491,7 +12491,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12505,7 +12505,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12519,7 +12519,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12533,7 +12533,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12547,7 +12547,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12561,7 +12561,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12575,7 +12575,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12589,7 +12589,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12603,7 +12603,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12617,7 +12617,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12631,7 +12631,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12645,7 +12645,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12659,7 +12659,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12673,7 +12673,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12687,7 +12687,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12701,7 +12701,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12715,7 +12715,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12729,7 +12729,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12743,7 +12743,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12757,7 +12757,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12771,7 +12771,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12785,7 +12785,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12799,7 +12799,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12813,7 +12813,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12827,7 +12827,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12841,7 +12841,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12855,7 +12855,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12869,7 +12869,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12883,7 +12883,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12897,7 +12897,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12911,7 +12911,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12925,7 +12925,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12939,7 +12939,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12953,7 +12953,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12967,7 +12967,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12981,7 +12981,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -12995,7 +12995,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -13009,7 +13009,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -13023,7 +13023,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -13037,7 +13037,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -13051,7 +13051,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -13065,7 +13065,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -13079,7 +13079,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -13093,7 +13093,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -13107,7 +13107,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -13121,7 +13121,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -13135,7 +13135,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -13149,7 +13149,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -13163,7 +13163,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -13177,7 +13177,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -13191,7 +13191,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -13205,7 +13205,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -13219,7 +13219,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -13233,7 +13233,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -13247,7 +13247,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -13261,7 +13261,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -13275,7 +13275,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "qmem_ram",
                 description: Some("QMem RAM"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,

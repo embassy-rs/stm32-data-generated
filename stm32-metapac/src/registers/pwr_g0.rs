@@ -117,7 +117,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lpms",
                     description: Some("Low-power mode selection"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -125,7 +125,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fpd_stop",
                     description: Some("Flash memory powered down during Stop mode"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -133,7 +133,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fpd_lprun",
                     description: Some("Flash memory powered down during Low-power run mode"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -141,7 +141,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fpd_lpslp",
                     description: Some("Flash memory powered down during Low-power sleep mode"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -149,7 +149,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dbp",
                     description: Some("Disable backup domain write protection"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -157,7 +157,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "vos",
                     description: Some("Voltage scaling range selection"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 2,
                     array: None,
                     enumm: Some("Vos"),
@@ -165,7 +165,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lpr",
                     description: Some("Low-power run"),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -181,7 +181,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pvde",
                     description: Some("Power voltage detector enable"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -189,7 +189,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pvdft",
                     description: Some("Power voltage detector falling threshold selection"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -197,7 +197,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pvdrt",
                     description: Some("Power voltage detector rising threshold selection"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -213,7 +213,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ewup",
                     description: Some("Enable Wakeup pin"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
                     enumm: None,
@@ -221,7 +221,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rrs",
                     description: Some("SRAM retention in Standby mode"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -229,7 +229,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ulpen",
                     description: Some("Enable the periodical sampling mode for PDR detection"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -237,7 +237,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "apc",
                     description: Some("Apply pull-up and pull-down configuration"),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -245,7 +245,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eiwul",
                     description: Some("Enable internal wakeup line"),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -261,7 +261,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wp",
                     description: Some("Wakeup pin WKUP1 polarity"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
                     enumm: None,
@@ -269,7 +269,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "vbe",
                     description: Some("VBAT battery charging enable"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -277,7 +277,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "vbrs",
                     description: Some("VBAT battery charging resistor selection"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -292,7 +292,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "p",
                 description: Some("Port pull bit y (y=0..15)"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 16, stride: 1 })),
                 enumm: None,
@@ -307,7 +307,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cwuf",
                     description: Some("Clear Wakeup flag"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
                     enumm: None,
@@ -315,7 +315,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "csbf",
                     description: Some("Clear standby flag"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -331,7 +331,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wuf",
                     description: Some("Wakeup flag"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
                     enumm: None,
@@ -339,7 +339,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "sbf",
                     description: Some("Standby flag"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -347,7 +347,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wufi",
                     description: Some("Wakeup flag internal"),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -363,7 +363,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "flash_rdy",
                     description: Some("Flash ready flag"),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -371,7 +371,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "reglps",
                     description: Some("Low-power regulator started"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -379,7 +379,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "reglpf",
                     description: Some("Low-power regulator flag"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -387,7 +387,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "vosf",
                     description: Some("Voltage scaling flag"),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -395,7 +395,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pvdo",
                     description: Some("Power voltage detector output"),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,

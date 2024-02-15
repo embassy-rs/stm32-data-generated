@@ -166,7 +166,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Physical buffer offset. Offset of the physical buffer.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 19,
                     array: None,
                     enumm: None,
@@ -176,7 +180,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Physical buffer base address. Base address MSB of the physical buffer.",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 9,
                     array: None,
                     enumm: None,
@@ -196,7 +204,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Buffer overflow interrupt enable. This bit enables the buffer 0 overflow interrupt.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -213,7 +225,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "AHB master error interrupt enable. This bit enables the AHB master error interrupt.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -223,7 +239,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "192 Block mode. This bit defines the number of blocks per line.",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -252,7 +272,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Default value. This field indicates the default 32-bit value which is returned when a master accesses a virtual memory location not physically mapped.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 32,
                     array: None,
                     enumm: None,
@@ -272,7 +296,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clear buffer overflow flag. Writing 1 clears the buffer 0 overflow flag in the GFXMMU_SR register.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -289,7 +317,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clear AHB master error flag. Writing 1 clears the AHB master error flag in the GFXMMU_SR register.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -309,7 +341,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Line offset. Line offset of line number x (i.e. offset of block 0 of line x).",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 18,
                     array: None,
                     enumm: None,
@@ -329,7 +365,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Line enable.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -339,7 +379,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "First Valid Block. Number of the first valid block of line number x.",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -349,7 +393,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Last Valid Block. Number of the last valid block of line number X.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -369,7 +417,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Buffer overflow flag. This bit is set when an overflow occurs during the offset calculation of the buffer 0. It is cleared by writing 1 to CB0OF.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -386,7 +438,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "AHB master error flag. This bit is set when an AHB error happens during a transaction. It is cleared by writing 1 to CAMEF.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,

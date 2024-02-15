@@ -169,7 +169,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "BKP",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 32,
                     array: None,
                     enumm: None,
@@ -189,7 +193,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Tamper detection on IN X enable",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -206,7 +214,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Internal tamper X enable",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -233,7 +245,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Tamper X no erase",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -250,7 +266,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Tamper X mask.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -267,7 +287,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Active level for tamper X input.",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -294,7 +318,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Tamper sampling frequency. Determines the frequency at which each of the INx inputs are sampled.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -304,7 +332,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "INx filter count. These bits determines the number of consecutive samples at the specified level (TAMP*TRG) needed to activate a tamper event. TAMPFLT is valid for each of the INx inputs.",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -314,7 +346,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "INx precharge duration. These bit determines the duration of time during which the pull-up/is activated before each sample. TAMPPRCH is valid for each of the INx inputs.",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -324,7 +360,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "INx pull-up disable. This bit determines if each of the TAMPx pins are precharged before each sample.",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -344,7 +384,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Tamper X interrupt enable",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -361,7 +405,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Internal tamper X interrupt enable",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -388,7 +436,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Tamper X interrupt masked flag",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -405,7 +457,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Internal tamper X interrupt masked flag",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -432,7 +488,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clear tamper X detection flag",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -449,7 +509,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clear internal tamper X detection flag",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -476,7 +540,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Tamper X detection flag",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -493,7 +561,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Internal tamper X detection flag",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(

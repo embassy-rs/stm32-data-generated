@@ -26,7 +26,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "en",
                 description: Some("COMP enable bit."),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,
@@ -34,7 +34,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "inmsel",
                 description: Some("Comparator signal selector for inverting input INM. (RM0440 24.3.2 Table 197)"),
-                bit_offset: 4,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                 bit_size: 3,
                 array: None,
                 enumm: None,
@@ -42,7 +42,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "inpsel",
                 description: Some("Comparator signal selector for non-inverting input INP. (RM0440 24.3.2 Table 196)"),
-                bit_offset: 8,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,
@@ -50,7 +50,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "polarity",
                 description: Some("Comparator polarity selector."),
-                bit_offset: 15,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                 bit_size: 1,
                 array: None,
                 enumm: Some("Polarity"),
@@ -58,7 +58,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "hyst",
                 description: Some("Comparator hysteresis selector."),
-                bit_offset: 16,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                 bit_size: 3,
                 array: None,
                 enumm: Some("Hyst"),
@@ -66,7 +66,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "blanksel",
                 description: Some("Comparator blanking source selector. (RM0440 24.3.6 Table 198)"),
-                bit_offset: 19,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                 bit_size: 3,
                 array: None,
                 enumm: None,
@@ -74,7 +74,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "brgen",
                 description: Some("Vrefint resistor bridge enable. (RM0440 24.6)"),
-                bit_offset: 22,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,
@@ -82,7 +82,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "scalen",
                 description: Some("Vrefint scaled input enable. (RM0440 24.6)"),
-                bit_offset: 23,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,
@@ -90,7 +90,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "value_do_not_set",
                 description: Some("Comparator output status. (READ ONLY)"),
-                bit_offset: 30,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,
@@ -98,7 +98,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "lock",
                 description: Some("CSR register lock."),
-                bit_offset: 31,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,

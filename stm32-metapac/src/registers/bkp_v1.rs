@@ -67,7 +67,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tpe",
                     description: Some("Tamper pin enable"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -75,7 +75,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tpal",
                     description: Some("Tamper pin active level"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: Some("Tpal"),
@@ -91,7 +91,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cte",
                     description: Some("Clear Tamper event"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -99,7 +99,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cti",
                     description: Some("Clear Tamper Interrupt"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -107,7 +107,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tpie",
                     description: Some("Tamper Pin interrupt enable"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -115,7 +115,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tef",
                     description: Some("Tamper Event Flag"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -123,7 +123,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tif",
                     description: Some("Tamper Interrupt Flag"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -138,7 +138,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "d",
                 description: Some("Backup data"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: None,
                 enumm: None,
@@ -153,7 +153,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cal",
                     description: Some("Calibration value"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -161,7 +161,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cco",
                     description: Some("Calibration Clock Output"),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -169,7 +169,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "asoe",
                     description: Some("Alarm or second output enable"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -177,7 +177,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "asos",
                     description: Some("Alarm or second output selection"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: Some("Asos"),

@@ -117,7 +117,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cperf",
                     description: Some("Clear the preamble error flag"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -125,7 +125,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cserf",
                     description: Some("Clear the start error flag"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -133,7 +133,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cterf",
                     description: Some("Clear the turnaround error flag"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -149,7 +149,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "en",
                     description: Some("Peripheral enable"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -157,7 +157,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wrie",
                     description: Some("Register write interrupt enable"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -165,7 +165,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rdie",
                     description: Some("Register Read Interrupt Enable"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -173,7 +173,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eie",
                     description: Some("Error interrupt enable"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -181,7 +181,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dpc",
                     description: Some("Disable Preamble Check"),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -189,7 +189,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "port_address",
                     description: Some("Slaves's address"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -204,7 +204,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "crdf",
                 description: Some("Clear the read flag"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -218,7 +218,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "cwrf",
                 description: Some("Clear the write flag"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -232,7 +232,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "din",
                 description: Some("Input data received from MDIO Master during write frames"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: None,
                 enumm: None,
@@ -246,7 +246,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dout",
                 description: Some("Output data sent to MDIO Master during read frames"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: None,
                 enumm: None,
@@ -260,7 +260,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "rdf",
                 description: Some("Read flags for MDIO registers 0 to 31"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -275,7 +275,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "perf",
                     description: Some("Preamble error flag"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -283,7 +283,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "serf",
                     description: Some("Start error flag"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -291,7 +291,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "terf",
                     description: Some("Turnaround error flag"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -306,7 +306,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "wrf",
                 description: Some("Write flags for MDIO registers 0 to 31"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,

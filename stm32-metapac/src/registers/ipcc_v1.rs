@@ -76,7 +76,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rxoie",
                     description: Some("processor x Receive channel occupied interrupt enable"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -84,7 +84,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "txfie",
                     description: Some("processor x Transmit channel free interrupt enable"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -100,7 +100,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "chom",
                     description: Some("processor x Receive channel y occupied interrupt enable"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
                     enumm: None,
@@ -108,7 +108,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "chfm",
                     description: Some("processor x Transmit channel y free interrupt mask"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
                     enumm: None,
@@ -124,7 +124,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "chc",
                     description: Some("processor x Receive channel y status clear"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
                     enumm: None,
@@ -132,7 +132,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "chs",
                     description: Some("processor x Transmit channel y status set"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
                     enumm: None,
@@ -147,7 +147,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "chf",
                 description: Some("processor x transmit to process y Receive channel z status flag"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
                 enumm: None,

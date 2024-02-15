@@ -117,7 +117,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "en",
                     description: Some("channel enable"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
                     enumm: None,
@@ -125,7 +125,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "boff",
                     description: Some("channel output buffer disable"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
                     enumm: None,
@@ -133,7 +133,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ten",
                     description: Some("channel trigger enable"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
                     enumm: None,
@@ -141,7 +141,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tsel",
                     description: Some("channel trigger selection"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 3,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
                     enumm: None,
@@ -149,7 +149,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wave",
                     description: Some("channel noise/triangle wave generation enable"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 2,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
                     enumm: Some("Wave"),
@@ -157,7 +157,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "mamp",
                     description: Some("channel mask/amplitude selector"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 4,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
                     enumm: None,
@@ -165,7 +165,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dmaen",
                     description: Some("channel DMA enable"),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
                     enumm: None,
@@ -180,7 +180,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhr",
                 description: Some("channel 12-bit left-aligned data"),
-                bit_offset: 4,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                 bit_size: 12,
                 array: None,
                 enumm: None,
@@ -194,7 +194,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhr",
                 description: Some("channel 12-bit left-aligned data"),
-                bit_offset: 4,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                 bit_size: 12,
                 array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
                 enumm: None,
@@ -208,7 +208,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhr",
                 description: Some("channel 12-bit right-aligned data"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 12,
                 array: None,
                 enumm: None,
@@ -222,7 +222,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhr",
                 description: Some("channel 12-bit right-aligned data"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 12,
                 array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
                 enumm: None,
@@ -236,7 +236,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhr",
                 description: Some("channel 8-bit right-aligned data"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 8,
                 array: None,
                 enumm: None,
@@ -250,7 +250,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dhr",
                 description: Some("channel 8-bit right-aligned data"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 8,
                 array: Some(Array::Regular(RegularArray { len: 2, stride: 8 })),
                 enumm: None,
@@ -264,7 +264,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dor",
                 description: Some("channel data output"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 12,
                 array: None,
                 enumm: None,
@@ -278,7 +278,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "swtrig",
                 description: Some("channel software trigger"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
                 enumm: None,

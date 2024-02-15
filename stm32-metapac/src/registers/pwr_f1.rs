@@ -40,7 +40,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lpds",
                     description: Some("Low Power Deep Sleep"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -48,7 +48,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pdds",
                     description: Some("Power Down Deep Sleep"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: Some("Pdds"),
@@ -56,7 +56,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cwuf",
                     description: Some("Clear Wake-up Flag"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -64,7 +64,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "csbf",
                     description: Some("Clear STANDBY Flag"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -72,7 +72,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pvde",
                     description: Some("Power Voltage Detector Enable"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -80,7 +80,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pls",
                     description: Some("PVD Level Selection"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -88,7 +88,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dbp",
                     description: Some("Disable Backup Domain write protection"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -104,7 +104,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wuf",
                     description: Some("Wake-Up Flag"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -112,7 +112,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "sbf",
                     description: Some("STANDBY Flag"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -120,7 +120,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pvdo",
                     description: Some("PVD Output"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -128,7 +128,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ewup",
                     description: Some("Enable WKUP pin"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,

@@ -468,7 +468,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port A clock enable",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -478,7 +482,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port B clock enable",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -488,7 +496,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port C clock enable",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -498,7 +510,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port D clock enable",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -508,7 +524,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port E clock enable",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -518,7 +538,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port F clock enable",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -528,7 +552,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port G clock enable",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -538,7 +566,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port H clock enable",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -548,7 +580,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port I clock enable",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -558,7 +594,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port J clock enable",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -568,7 +608,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port K clock enable",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -578,7 +622,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CRC clock enable",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -588,7 +636,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Backup SRAM interface clock enable",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -598,7 +650,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CCM data RAM clock enable",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -608,7 +664,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DMA1 clock enable",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -618,7 +678,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DMA2 clock enable",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -628,7 +692,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DMA2D clock enable",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -638,7 +706,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Ethernet MAC clock enable",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -648,7 +720,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Ethernet Transmission clock enable",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -658,7 +734,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Ethernet Reception clock enable",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -668,7 +748,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Ethernet PTP clock enable",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -678,7 +762,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USB OTG HS clock enable",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -688,7 +776,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USB OTG HSULPI clock enable",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -708,7 +800,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port A clock enable during sleep mode",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -718,7 +814,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port B clock enable during Sleep mode",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -728,7 +828,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port C clock enable during Sleep mode",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -738,7 +842,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port D clock enable during Sleep mode",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -748,7 +856,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port E clock enable during Sleep mode",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -758,7 +870,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port F clock enable during Sleep mode",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -768,7 +884,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port G clock enable during Sleep mode",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -778,7 +898,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port H clock enable during Sleep mode",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -788,7 +912,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port I clock enable during Sleep mode",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -798,7 +926,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port J clock enable during Sleep mode",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -808,7 +940,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port K clock enable during Sleep mode",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -818,7 +954,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CRC clock enable during Sleep mode",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -828,7 +968,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "AXI to AHB bridge clock enable during Sleep mode",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -838,7 +982,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Flash interface clock enable during Sleep mode",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -848,7 +996,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SRAM 1interface clock enable during Sleep mode",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -858,7 +1010,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SRAM 2 interface clock enable during Sleep mode",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -868,7 +1024,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Backup SRAM interface clock enable during Sleep mode",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -878,7 +1038,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SRAM 3 interface clock enable during Sleep mode",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -888,7 +1052,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DTCM RAM interface clock enable during Sleep mode",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -898,7 +1066,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DMA1 clock enable during Sleep mode",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -908,7 +1080,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DMA2 clock enable during Sleep mode",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -918,7 +1094,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DMA2D clock enable during Sleep mode",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -928,7 +1108,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Ethernet MAC clock enable during Sleep mode",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -938,7 +1122,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Ethernet transmission clock enable during Sleep mode",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -948,7 +1136,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Ethernet reception clock enable during Sleep mode",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -958,7 +1150,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Ethernet PTP clock enable during Sleep mode",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -968,7 +1164,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USB OTG HS clock enable during Sleep mode",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -978,7 +1178,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USB OTG HS ULPI clock enable during Sleep mode",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -998,7 +1202,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port A reset",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1008,7 +1216,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port B reset",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1018,7 +1230,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port C reset",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1028,7 +1244,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port D reset",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1038,7 +1258,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port E reset",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1048,7 +1272,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port F reset",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1058,7 +1286,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port G reset",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1068,7 +1300,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port H reset",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1078,7 +1314,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port I reset",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1088,7 +1328,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port J reset",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1098,7 +1342,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IO port K reset",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1108,7 +1356,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CRC reset",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1118,7 +1370,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DMA2 reset",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1128,7 +1384,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DMA2 reset",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1138,7 +1398,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DMA2D reset",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1148,7 +1412,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Ethernet MAC reset",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1158,7 +1426,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USB OTG HS module reset",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1178,7 +1450,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Camera interface enable",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1188,7 +1464,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "JPEG enable",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1198,7 +1478,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "AES module clock enable",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1208,7 +1492,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Cryptographic modules clock enable",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1218,7 +1506,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Hash modules clock enable",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1228,7 +1520,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Random number generator clock enable",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1238,7 +1534,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USB OTG FS clock enable",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1258,7 +1558,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Camera interface enable during Sleep mode",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1268,7 +1572,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "JPEG module enabled during Sleep mode",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1278,7 +1586,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "AES module clock enable during Sleep mode",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1288,7 +1600,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Cryptography modules clock enable during Sleep mode",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1298,7 +1614,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Hash modules clock enable during Sleep mode",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1308,7 +1628,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Random number generator clock enable during Sleep mode",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1318,7 +1642,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USB OTG FS clock enable during Sleep mode",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1338,7 +1666,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Camera interface reset",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1348,7 +1680,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "AES module reset",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1358,7 +1694,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Cryptographic module reset",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1368,7 +1708,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Hash module reset",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1378,7 +1722,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Random number generator module reset",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1388,7 +1736,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USB OTG FS module reset",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1408,7 +1760,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Flexible memory controller module clock enable",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1418,7 +1774,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Quad SPI memory controller clock enable",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1438,7 +1798,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Flexible memory controller module clock enable during Sleep mode",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1448,7 +1812,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Quand SPI memory controller clock enable during Sleep mode",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1468,7 +1836,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Flexible memory controller module reset",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1478,7 +1850,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Quad SPI memory controller reset",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1498,7 +1874,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM2 clock enable",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1508,7 +1888,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM3 clock enable",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1518,7 +1902,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM4 clock enable",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1528,7 +1916,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM5 clock enable",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1538,7 +1930,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM6 clock enable",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1548,7 +1944,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM7 clock enable",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1558,7 +1958,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM12 clock enable",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1568,7 +1972,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM13 clock enable",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1578,7 +1986,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM14 clock enable",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1588,7 +2000,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Low power timer 1 clock enable",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1598,7 +2014,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "RTCAPB clock enable",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1608,7 +2028,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Window watchdog clock enable",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1618,7 +2042,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CAN 3 enable",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1628,7 +2056,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI2 clock enable",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1638,7 +2070,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI3 clock enable",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1648,7 +2084,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPDIF-RX clock enable",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1658,7 +2098,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USART 2 clock enable",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1668,7 +2112,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USART3 clock enable",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1678,7 +2126,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "UART4 clock enable",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1688,7 +2140,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "UART5 clock enable",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1698,7 +2154,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C1 clock enable",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1708,7 +2168,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C2 clock enable",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1718,7 +2182,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C3 clock enable",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1728,7 +2196,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C4 clock enable",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1738,7 +2210,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CAN 1 clock enable",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1748,7 +2224,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CAN 2 clock enable",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1758,7 +2238,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "HDMI-CEN clock enable",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1768,7 +2252,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Power interface clock enable",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1778,7 +2266,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DAC interface clock enable",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1788,7 +2280,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "UART7 clock enable",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1798,7 +2294,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "UART8 clock enable",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1818,7 +2318,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM2 clock enable during Sleep mode",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1828,7 +2332,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM3 clock enable during Sleep mode",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1838,7 +2346,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM4 clock enable during Sleep mode",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1848,7 +2360,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM5 clock enable during Sleep mode",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1858,7 +2374,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM6 clock enable during Sleep mode",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1868,7 +2388,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM7 clock enable during Sleep mode",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1878,7 +2402,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM12 clock enable during Sleep mode",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1888,7 +2416,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM13 clock enable during Sleep mode",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1898,7 +2430,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM14 clock enable during Sleep mode",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1908,7 +2444,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "low power timer 1 clock enable during Sleep mode",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1918,7 +2458,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "RTCAPB clock enable during Sleep mode",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1928,7 +2472,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Window watchdog clock enable during Sleep mode",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1938,7 +2486,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CAN 3 clock enable during Sleep mode",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1948,7 +2500,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI2 clock enable during Sleep mode",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1958,7 +2514,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI3 clock enable during Sleep mode",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1968,7 +2528,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPDIF-RX clock enable during sleep mode",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1978,7 +2542,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USART2 clock enable during Sleep mode",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1988,7 +2556,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USART3 clock enable during Sleep mode",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1998,7 +2570,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "UART4 clock enable during Sleep mode",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2008,7 +2584,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "UART5 clock enable during Sleep mode",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2018,7 +2598,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C1 clock enable during Sleep mode",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2028,7 +2612,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C2 clock enable during Sleep mode",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2038,7 +2626,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C3 clock enable during Sleep mode",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2048,7 +2640,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C4 clock enable during Sleep mode",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2058,7 +2654,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CAN 1 clock enable during Sleep mode",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2068,7 +2668,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CAN 2 clock enable during Sleep mode",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2078,7 +2682,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "HDMI-CEN clock enable during Sleep mode",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2088,7 +2696,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Power interface clock enable during Sleep mode",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2098,7 +2710,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DAC interface clock enable during Sleep mode",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2108,7 +2724,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "UART7 clock enable during Sleep mode",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2118,7 +2738,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "UART8 clock enable during Sleep mode",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2138,7 +2762,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM2 reset",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2148,7 +2776,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM3 reset",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2158,7 +2790,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM4 reset",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2168,7 +2804,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM5 reset",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2178,7 +2818,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM6 reset",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2188,7 +2832,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM7 reset",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2198,7 +2846,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM12 reset",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2208,7 +2860,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM13 reset",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2218,7 +2874,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM14 reset",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2228,7 +2888,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Low power timer 1 reset",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2238,7 +2902,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Window watchdog reset",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2248,7 +2916,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CAN 3 reset",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2258,7 +2930,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI 2 reset",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2268,7 +2944,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI 3 reset",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2278,7 +2958,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPDIF-RX reset",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2288,7 +2972,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USART 2 reset",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2298,7 +2986,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USART 3 reset",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2308,7 +3000,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USART 4 reset",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2318,7 +3014,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USART 5 reset",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2328,7 +3028,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C 1 reset",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2338,7 +3042,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C 2 reset",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2348,7 +3056,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C3 reset",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2358,7 +3070,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C 4 reset",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2368,7 +3084,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CAN1 reset",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2378,7 +3098,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CAN2 reset",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2388,7 +3112,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "HDMI-CEC reset",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2398,7 +3126,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Power interface reset",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2408,7 +3140,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DAC reset",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2418,7 +3154,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "UART7 reset",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2428,7 +3168,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "UART8 reset",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2448,7 +3192,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM1 clock enable",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2458,7 +3206,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM8 clock enable",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2468,7 +3220,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USART1 clock enable",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2478,7 +3234,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USART6 clock enable",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2488,7 +3248,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SDMMC2 clock enable",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2498,7 +3262,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ADC1 clock enable",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2508,7 +3276,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ADC2 clock enable",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2518,7 +3290,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ADC3 clock enable",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2528,7 +3304,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SDMMC1 clock enable",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2538,7 +3318,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI1 clock enable",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2548,7 +3332,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI4 clock enable",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2558,7 +3346,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "System configuration controller clock enable",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2568,7 +3360,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM9 clock enable",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2578,7 +3374,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM10 clock enable",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2588,7 +3388,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM11 clock enable",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2598,7 +3402,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI5 clock enable",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2608,7 +3416,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI6 clock enable",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2618,7 +3430,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SAI1 clock enable",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2628,7 +3444,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SAI2 clock enable",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2638,7 +3458,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LTDC clock enable",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2648,7 +3472,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DSI clock enable",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2658,7 +3486,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DFSDM1 clock enable",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2668,7 +3500,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "MDIO clock enable",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2678,7 +3514,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USB OTG HS PHY controller clock enable",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2698,7 +3538,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM1 clock enable during Sleep mode",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2708,7 +3552,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM8 clock enable during Sleep mode",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2718,7 +3566,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USART1 clock enable during Sleep mode",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2728,7 +3580,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USART6 clock enable during Sleep mode",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2738,7 +3594,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SDMMC2 clock enable during Sleep mode",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2748,7 +3608,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ADC1 clock enable during Sleep mode",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2758,7 +3622,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ADC2 clock enable during Sleep mode",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2768,7 +3636,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ADC 3 clock enable during Sleep mode",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2778,7 +3650,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SDMMC1 clock enable during Sleep mode",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2788,7 +3664,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI 1 clock enable during Sleep mode",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2798,7 +3678,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI 4 clock enable during Sleep mode",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2808,7 +3692,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "System configuration controller clock enable during Sleep mode",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2818,7 +3706,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM9 clock enable during sleep mode",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2828,7 +3720,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM10 clock enable during Sleep mode",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2838,7 +3734,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM11 clock enable during Sleep mode",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2848,7 +3748,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI 5 clock enable during Sleep mode",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2858,7 +3762,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI 6 clock enable during Sleep mode",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2868,7 +3776,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SAI1 clock enable during sleep mode",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2878,7 +3790,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SAI2 clock enable during sleep mode",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2888,7 +3804,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LTDC clock enable during sleep mode",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2898,7 +3818,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DSI clock enable during Sleep mode",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2908,7 +3832,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DFSDM1 clock enable during Sleep mode",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2918,7 +3846,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "MDIO clock enable during Sleep mode",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2938,7 +3870,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM1 reset",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2948,7 +3884,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM8 reset",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2958,7 +3898,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USART1 reset",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2968,7 +3912,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USART6 reset",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2978,7 +3926,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SDMMC2 reset",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2988,7 +3940,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ADC interface reset (common to all ADCs)",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2998,7 +3954,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SDMMC1 reset",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3008,7 +3968,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI 1 reset",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3018,7 +3982,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI4 reset",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3028,7 +3996,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "System configuration controller reset",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3038,7 +4010,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM9 reset",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3048,7 +4024,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM10 reset",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3058,7 +4038,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM11 reset",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3068,7 +4052,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI5 reset",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3078,7 +4066,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SPI6 reset",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3088,7 +4080,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SAI1 reset",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3098,7 +4094,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SAI2 reset",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3108,7 +4108,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LTDC reset",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3118,7 +4122,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DSI reset",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3128,7 +4136,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DFSDM 1 reset",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3138,7 +4150,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "MDIOS reset",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3148,7 +4164,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USB OTG HS PHY controller reset",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3168,7 +4188,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "External low-speed oscillator enable",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3178,7 +4202,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "External low-speed oscillator ready",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3188,7 +4216,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "External low-speed oscillator bypass",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3198,7 +4230,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LSE oscillator drive capability",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -3210,7 +4246,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "RTC clock source selection",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -3222,7 +4262,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "RTC clock enable",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3232,7 +4276,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Backup domain software reset",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3252,7 +4300,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "System clock switch",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -3264,7 +4316,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "System clock switch status",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -3276,7 +4332,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "AHB prescaler",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: Some(
@@ -3288,7 +4348,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "APB Low speed prescaler (APB1)",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -3300,7 +4364,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "APB high-speed prescaler (APB2)",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -3312,7 +4380,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "HSE division factor for RTC clock",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -3322,7 +4394,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Microcontroller clock output 1",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -3334,7 +4410,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2S clock selection",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -3346,7 +4426,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "MCO1 prescaler",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -3358,7 +4442,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "MCO2 prescaler",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -3370,7 +4458,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Microcontroller clock output 2",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -3392,7 +4484,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LSI ready interrupt flag",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3402,7 +4498,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LSE ready interrupt flag",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3412,7 +4512,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "HSI ready interrupt flag",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3422,7 +4526,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "HSE ready interrupt flag",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3432,7 +4540,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLL ready interrupt flag",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3442,7 +4554,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLLI2S ready interrupt flag",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3452,7 +4568,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLLSAI ready interrupt flag",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3462,7 +4582,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clock security system interrupt flag",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3472,7 +4596,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LSI ready interrupt enable",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3482,7 +4610,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LSE ready interrupt enable",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3492,7 +4624,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "HSI ready interrupt enable",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3502,7 +4638,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "HSE ready interrupt enable",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3512,7 +4652,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLL ready interrupt enable",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3522,7 +4666,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLLI2S ready interrupt enable",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3532,7 +4680,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLLSAI Ready Interrupt Enable",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3542,7 +4694,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LSI ready interrupt clear",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3552,7 +4708,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LSE ready interrupt clear",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3562,7 +4722,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "HSI ready interrupt clear",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3572,7 +4736,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "HSE ready interrupt clear",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3582,7 +4750,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Main PLL(PLL) ready interrupt clear",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3592,7 +4764,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLLI2S ready interrupt clear",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3602,7 +4778,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLLSAI Ready Interrupt Clear",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3612,7 +4792,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clock security system interrupt clear",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3632,7 +4816,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Internal high-speed clock enable",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3642,7 +4830,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Internal high-speed clock ready flag",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3652,7 +4844,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Internal high-speed clock trimming",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -3662,7 +4858,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Internal high-speed clock calibration",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -3672,7 +4872,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "HSE clock enable",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3682,7 +4886,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "HSE clock ready flag",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3692,7 +4900,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "HSE clock bypass",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3702,7 +4914,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clock security system enable",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3712,7 +4928,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLL enable",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3722,7 +4942,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLL clock ready flag",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3732,7 +4956,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLLI2S enable",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3742,7 +4970,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLLI2S clock ready flag",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3752,7 +4984,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLLSAI enable",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3762,7 +4998,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLLSAI clock ready flag",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3782,7 +5022,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Internal low-speed oscillator enable",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3792,7 +5036,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Internal low-speed oscillator ready",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3802,7 +5050,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Remove reset flag",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3812,7 +5064,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "BOR reset flag",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3822,7 +5078,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PIN reset flag",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3832,7 +5092,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "POR/PDR reset flag",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3842,7 +5106,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Software reset flag",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3852,7 +5120,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Independent watchdog reset flag",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3862,7 +5134,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Window watchdog reset flag",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3872,7 +5148,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Low-power reset flag",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3892,7 +5172,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLLI2S division factor for SAI1 clock",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 5,
                     array: None,
                     enumm: Some(
@@ -3904,7 +5188,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLLSAI division factor for SAI1 clock",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 5,
                     array: None,
                     enumm: Some(
@@ -3916,7 +5204,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "division factor for LCD_CLK",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -3928,7 +5220,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SAI1 clock source selection",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -3940,7 +5236,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SAI2 clock source selection",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -3952,7 +5252,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Timers clocks prescalers selection",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -3964,7 +5268,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DFSDM1 clock source selection",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -3976,7 +5284,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DFSDM1 AUDIO clock source selection",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -3998,7 +5310,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USART 1 clock source selection",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -4010,7 +5326,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USART 2 clock source selection",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -4022,7 +5342,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USART 3 clock source selection",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -4034,7 +5358,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "UART 4 clock source selection",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -4046,7 +5374,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "UART 5 clock source selection",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -4058,7 +5390,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "USART 6 clock source selection",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -4070,7 +5406,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "UART 7 clock source selection",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -4082,7 +5422,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "UART 8 clock source selection",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -4094,7 +5438,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C1 clock source selection",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -4106,7 +5454,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C2 clock source selection",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -4118,7 +5470,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C3 clock source selection",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -4130,7 +5486,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C4 clock source selection",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -4142,7 +5502,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Low power timer 1 clock source selection",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -4154,7 +5518,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "HDMI-CEC clock source selection",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -4166,7 +5534,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "48MHz clock source selection",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -4178,7 +5550,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SDMMC1 clock source selection",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -4190,7 +5566,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SDMMC2 clock source selection",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -4202,7 +5582,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DSI clock source selection",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -4224,7 +5608,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Division factor for the PLL and audio PLL (PLLI2S) input clock",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 6,
                     array: None,
                     enumm: Some(
@@ -4236,7 +5624,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLL multiplication factor for VCO",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 9,
                     array: None,
                     enumm: Some(
@@ -4248,7 +5640,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLL division factor for main system clock",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -4260,7 +5656,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLL and audio PLL (PLLI2S, PLLSAI) entry clock source",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -4272,7 +5672,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLL division factor for USB OTG FS, SDIO and random number generator clocks",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: Some(
@@ -4284,7 +5688,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLL division factor for DSI clock",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -4306,7 +5714,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLL multiplication factor for VCO",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 9,
                     array: None,
                     enumm: Some(
@@ -4318,7 +5730,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLL division factor for main system clock",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -4330,7 +5746,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLL division factor for USB OTG FS, SDIO and random number generator clocks",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: Some(
@@ -4342,7 +5762,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLL division factor for DSI clock",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -4364,7 +5788,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLL multiplication factor for VCO",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 9,
                     array: None,
                     enumm: Some(
@@ -4376,7 +5804,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLL division factor for main system clock",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: Some(
@@ -4388,7 +5820,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLL division factor for USB OTG FS, SDIO and random number generator clocks",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: Some(
@@ -4400,7 +5836,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLL division factor for DSI clock",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: Some(
@@ -4422,7 +5862,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Modulation period",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 13,
                     array: None,
                     enumm: None,
@@ -4432,7 +5876,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Incrementation step",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 15,
                     array: None,
                     enumm: None,
@@ -4442,7 +5890,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Spread Select",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
@@ -4454,7 +5906,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Spread spectrum modulation enable",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,

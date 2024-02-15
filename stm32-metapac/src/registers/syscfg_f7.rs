@@ -62,7 +62,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cmp_pd",
                     description: Some("Compensation cell power-down"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -70,7 +70,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ready",
                     description: Some("READY"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -85,7 +85,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "exti",
                 description: Some("EXTI x configuration (x = 0 to 3)"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 4,
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
                 enumm: None,
@@ -100,7 +100,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "mem_boot",
                     description: Some("Memory boot mapping"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -108,7 +108,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fb_mode",
                     description: Some("Flash bank mode selection"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -116,7 +116,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "swp_fmc",
                     description: Some("FMC memory mapping swap"),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -132,7 +132,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c1_fmp",
                     description: Some("I2C1_FMP I2C1 Fast Mode + Enable"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -140,7 +140,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c2_fmp",
                     description: Some("I2C2_FMP I2C2 Fast Mode + Enable"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -148,7 +148,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c3_fmp",
                     description: Some("I2C3_FMP I2C3 Fast Mode + Enable"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -156,7 +156,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c4_fmp",
                     description: Some("I2C4 Fast Mode + Enable"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -164,7 +164,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pb6_fmp",
                     description: Some("PB6_FMP Fast Mode"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -172,7 +172,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pb7_fmp",
                     description: Some("PB7_FMP Fast Mode + Enable"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -180,7 +180,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pb8_fmp",
                     description: Some("PB8_FMP Fast Mode + Enable"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -188,7 +188,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pb9_fmp",
                     description: Some("Fast Mode + Enable"),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -196,7 +196,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "adc1dc2",
                     description: Some("ADC3DC2"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -204,7 +204,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "adc2dc2",
                     description: Some("ADC2DC2"),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -212,7 +212,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "adc3dc2",
                     description: Some("ADC3DC2"),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -220,7 +220,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "mii_rmii_sel",
                     description: Some("Ethernet PHY interface selection"),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,

@@ -138,7 +138,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "exti",
                 description: Some("EXTI configuration bits"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 8,
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 8 })),
                 enumm: None,
@@ -152,7 +152,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "line",
                 description: Some("EXTI line"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 32, stride: 1 })),
                 enumm: None,
@@ -166,7 +166,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "lock",
                 description: Some("LOCK"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,
@@ -180,7 +180,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "priv_",
                 description: Some("Security enable on event input x"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 32, stride: 1 })),
                 enumm: None,
@@ -194,7 +194,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "sec",
                 description: Some("Security enable on event input x"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 32, stride: 1 })),
                 enumm: None,

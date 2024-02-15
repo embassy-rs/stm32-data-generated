@@ -442,7 +442,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Read latency",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -452,7 +456,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Flash signal delay",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -472,7 +480,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Boot address 0",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -482,7 +494,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Boot address 1",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -502,7 +518,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Boot address 0",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -512,7 +532,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Boot address 1",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -532,7 +556,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 EOP1 flag clear bit",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -542,7 +570,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 WRPERR1 flag clear bit",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -552,7 +584,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 PGSERR1 flag clear bi",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -562,7 +598,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 STRBERR1 flag clear bit",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -572,7 +612,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 INCERR1 flag clear bit",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -582,7 +626,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 OPERR1 flag clear bit",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -592,7 +640,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 RDPERR1 flag clear bit",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -602,7 +654,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 RDSERR1 flag clear bit",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -612,7 +668,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 SNECCERR1 flag clear bit",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -622,7 +682,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 DBECCERR1 flag clear bit",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -632,7 +696,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 CRCEND1 flag clear bit",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -642,7 +710,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 CRC read error clear bit",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -662,7 +734,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 configuration lock bit",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -672,7 +748,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 program enable bit",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -682,7 +762,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 sector erase request",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -692,7 +776,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 erase request",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -702,7 +790,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 program size",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -712,7 +804,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 write forcing control bit",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -722,7 +818,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 bank or sector erase start control bit",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -732,7 +832,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 sector erase selection number",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -742,7 +846,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 CRC control bit",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -752,7 +860,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 end-of-program interrupt control bit",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -762,7 +874,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 write protection error interrupt enable bit",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -772,7 +888,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 programming sequence error interrupt enable bit",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -782,7 +902,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 strobe error interrupt enable bit",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -792,7 +916,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 inconsistency error interrupt enable bit",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -802,7 +930,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 write/erase error interrupt enable bit",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -812,7 +944,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 read protection error interrupt enable bit",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -822,7 +958,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 secure error interrupt enable bit",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -832,7 +972,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 ECC single correction error interrupt enable bit",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -842,7 +986,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 ECC double detection error interrupt enable bit",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -852,7 +1000,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 end of CRC calculation interrupt enable bit",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -862,7 +1014,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 CRC read error interrupt enable bit",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -882,7 +1038,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 CRC sector number",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -892,7 +1052,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 CRC select bit",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -902,7 +1066,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 CRC sector mode select bit",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -912,7 +1080,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 CRC sector select bit",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -922,7 +1094,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 CRC sector list clear bit",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -932,7 +1108,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 CRC start bit",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -942,7 +1122,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 CRC clear bit",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -952,7 +1136,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 CRC burst size",
                     ),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -972,7 +1160,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CRC result",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 32,
                     array: None,
                     enumm: None,
@@ -992,7 +1184,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CRC end address on bank 1",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 32,
                     array: None,
                     enumm: None,
@@ -1012,7 +1208,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CRC start address on bank 1",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 32,
                     array: None,
                     enumm: None,
@@ -1032,7 +1232,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 ECC error address",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 15,
                     array: None,
                     enumm: None,
@@ -1052,7 +1256,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "OPTCHANGEERR reset bit",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1072,7 +1280,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "FLASH_OPTCR lock option configuration bit",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1082,7 +1294,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Option byte start change option configuration bit",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1092,7 +1308,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Flash mass erase enable bit",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1102,7 +1322,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Option byte change error interrupt enable bit",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1112,7 +1336,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank swapping configuration bit",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1132,7 +1360,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Option byte change ongoing flag",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1142,7 +1374,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Brownout level option status bit",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -1152,7 +1388,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IWDG1 control option status bit",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1162,7 +1402,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "D1 DStop entry reset option status bit",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1172,7 +1416,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "D1 DStandby entry reset option status bit",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1182,7 +1430,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Readout protection level option status byte",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -1192,7 +1444,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IWDG Stop mode freeze option status bit",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1202,7 +1458,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IWDG Standby mode freeze option status bit",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1212,7 +1472,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DTCM RAM size option status",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -1222,7 +1486,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Security enable option status bit",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1232,7 +1500,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "User option bit 1",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1242,7 +1514,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Device personalization status bit",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1252,7 +1528,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I/O high-speed at low-voltage status bit (PRODUCT_BELOW_25V)",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1262,7 +1542,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Option byte change error flag",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1272,7 +1556,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank swapping option status bit",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1292,7 +1580,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "BOR reset level option configuration bits",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -1302,7 +1594,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IWDG1 option configuration bit",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1312,7 +1608,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Option byte erase after D1 DStop option configuration bit",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1322,7 +1622,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Option byte erase after D1 DStandby option configuration bit",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1332,7 +1636,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Readout protection level option configuration byte",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -1342,7 +1650,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IWDG Stop mode freeze option configuration bit",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1352,7 +1664,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "IWDG Standby mode freeze option configuration bit",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1362,7 +1678,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DTCM size select option configuration bits",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -1372,7 +1692,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Security option configuration bit",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1382,7 +1706,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "User option configuration bit 1",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1392,7 +1720,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "User option configuration bit 2",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1402,7 +1734,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I/O high-speed at low-voltage (PRODUCT_BELOW_25V)",
                     ),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1412,7 +1748,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank swapping option configuration bit",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1432,7 +1772,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 lowest PCROP protected address",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 12,
                     array: None,
                     enumm: None,
@@ -1442,7 +1786,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 highest PCROP protected address",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 12,
                     array: None,
                     enumm: None,
@@ -1452,7 +1800,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 PCROP protected erase enable option status bit",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1472,7 +1824,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 lowest PCROP protected address configuration",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 12,
                     array: None,
                     enumm: None,
@@ -1482,7 +1838,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 highest PCROP protected address configuration",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 12,
                     array: None,
                     enumm: None,
@@ -1492,7 +1852,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 PCROP protected erase enable option configuration bit",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1512,7 +1876,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 lowest secure protected address",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 12,
                     array: None,
                     enumm: None,
@@ -1522,7 +1890,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 highest secure protected address",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 12,
                     array: None,
                     enumm: None,
@@ -1532,7 +1904,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 secure protected erase enable option status bit",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1552,7 +1928,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 lowest secure protected address configuration",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 12,
                     array: None,
                     enumm: None,
@@ -1562,7 +1942,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 highest secure protected address configuration",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 12,
                     array: None,
                     enumm: None,
@@ -1572,7 +1956,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 secure protected erase enable option configuration bit",
                     ),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1592,7 +1980,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 ongoing program flag",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1602,7 +1994,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 write buffer not empty flag",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1612,7 +2008,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 wait queue flag",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1622,7 +2022,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 CRC busy flag",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1632,7 +2036,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 end-of-program flag",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1642,7 +2050,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 write protection error flag",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1652,7 +2064,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 programming sequence error flag",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1662,7 +2078,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 strobe error flag",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1672,7 +2092,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 inconsistency error flag",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1682,7 +2106,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 write/erase error flag",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1692,7 +2120,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 read protection error flag",
                     ),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1702,7 +2134,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 secure error flag",
                     ),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1712,7 +2148,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 single correction error flag",
                     ),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1722,7 +2162,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 ECC double detection error flag",
                     ),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1732,7 +2176,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 CRC-complete flag",
                     ),
-                    bit_offset: 27,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1742,7 +2190,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 CRC read error flag",
                     ),
-                    bit_offset: 28,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1762,7 +2214,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 sector write protection option status byte",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -1782,7 +2238,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bank 1 sector write protection configuration byte",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,

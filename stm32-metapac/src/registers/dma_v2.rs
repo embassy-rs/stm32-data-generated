@@ -122,7 +122,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "en",
                     description: Some("Stream enable / flag stream ready when read low"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -130,7 +130,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dmeie",
                     description: Some("Direct mode error interrupt enable"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -138,7 +138,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "teie",
                     description: Some("Transfer error interrupt enable"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -146,7 +146,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "htie",
                     description: Some("Half transfer interrupt enable"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -154,7 +154,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tcie",
                     description: Some("Transfer complete interrupt enable"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -162,7 +162,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pfctrl",
                     description: Some("Peripheral flow controller"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: Some("Pfctrl"),
@@ -170,7 +170,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dir",
                     description: Some("Data transfer direction"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 2,
                     array: None,
                     enumm: Some("Dir"),
@@ -178,7 +178,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "circ",
                     description: Some("Circular mode enabled"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -186,7 +186,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pinc",
                     description: Some("Peripheral increment mode enabled"),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -194,7 +194,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "minc",
                     description: Some("Memory increment mode enabled"),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -202,7 +202,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "psize",
                     description: Some("Peripheral data size"),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 2,
                     array: None,
                     enumm: Some("Size"),
@@ -210,7 +210,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "msize",
                     description: Some("Memory data size"),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 2,
                     array: None,
                     enumm: Some("Size"),
@@ -218,7 +218,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pincos",
                     description: Some("Peripheral increment offset size"),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: Some("Pincos"),
@@ -226,7 +226,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pl",
                     description: Some("Priority level"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 2,
                     array: None,
                     enumm: Some("Pl"),
@@ -234,7 +234,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dbm",
                     description: Some("Double buffer mode enabled"),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -242,7 +242,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ct",
                     description: Some("Current target (only in double buffer mode)"),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
                     array: None,
                     enumm: Some("Ct"),
@@ -250,7 +250,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pburst",
                     description: Some("Peripheral burst transfer configuration"),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 2,
                     array: None,
                     enumm: Some("Burst"),
@@ -258,7 +258,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "mburst",
                     description: Some("Memory burst transfer configuration"),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 2,
                     array: None,
                     enumm: Some("Burst"),
@@ -266,7 +266,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "chsel",
                     description: Some("Channel selection"),
-                    bit_offset: 25,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -282,7 +282,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fth",
                     description: Some("FIFO threshold selection"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 2,
                     array: None,
                     enumm: Some("Fth"),
@@ -290,7 +290,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dmdis",
                     description: Some("Direct mode disable"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: Some("Dmdis"),
@@ -298,7 +298,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "fs",
                     description: Some("FIFO status"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 3,
                     array: None,
                     enumm: Some("Fs"),
@@ -306,7 +306,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "feie",
                     description: Some("FIFO error interrupt enable"),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -322,7 +322,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "feif",
                     description: Some("Stream x FIFO error interrupt flag (x=3..0)"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray {
                         offsets: &[0, 6, 16, 22],
@@ -332,7 +332,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dmeif",
                     description: Some("Stream x direct mode error interrupt flag (x=3..0)"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray {
                         offsets: &[0, 6, 16, 22],
@@ -342,7 +342,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "teif",
                     description: Some("Stream x transfer error interrupt flag (x=3..0)"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray {
                         offsets: &[0, 6, 16, 22],
@@ -352,7 +352,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "htif",
                     description: Some("Stream x half transfer interrupt flag (x=3..0)"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray {
                         offsets: &[0, 6, 16, 22],
@@ -362,7 +362,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tcif",
                     description: Some("Stream x transfer complete interrupt flag (x = 3..0)"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray {
                         offsets: &[0, 6, 16, 22],
@@ -379,7 +379,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "ndt",
                 description: Some("Number of data items to transfer"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: None,
                 enumm: None,

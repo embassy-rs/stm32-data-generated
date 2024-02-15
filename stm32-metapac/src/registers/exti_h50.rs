@@ -242,7 +242,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EXTI12 GPIO port selection\r These bits are written by software to select the source input for EXTI12 external interrupt.\r When EXTI_PRIVCFGR.PRIV12 is disabled, EXTI12 can be accessed with privileged and unprivileged access.\r When EXTI_PRIVCFGR.PRIV12 is enabled, EXTI12 can only be accessed with privileged access. Unprivileged write to this bit is discarded.\r Others: reserved",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 8,
                     array: Some(
                         Array::Regular(
@@ -269,7 +273,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "EXTI line",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -296,7 +304,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Security enable on event input x\r When EXTI_SECCFGR.SECx is disabled, PRIVx can be accessed with secure and non-secure access.\r When EXTI_SECCFGR.SECx is enabled, PRIVx can only be written with secure access. Non-secure write to this PRIVx is discarded.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: Some(
                         Array::Regular(

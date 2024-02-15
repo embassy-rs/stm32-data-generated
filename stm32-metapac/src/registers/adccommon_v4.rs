@@ -62,7 +62,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dual",
                     description: Some("Dual ADC mode selection"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 5,
                     array: None,
                     enumm: Some("Dual"),
@@ -70,7 +70,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "delay",
                     description: Some("Delay between 2 sampling phases"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -78,7 +78,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "damdf",
                     description: Some("Dual ADC Mode Data Format"),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 2,
                     array: None,
                     enumm: Some("Damdf"),
@@ -86,7 +86,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ckmode",
                     description: Some("ADC clock mode"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 2,
                     array: None,
                     enumm: Some("Ckmode"),
@@ -94,7 +94,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "presc",
                     description: Some("ADC prescaler"),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 4,
                     array: None,
                     enumm: Some("Presc"),
@@ -102,7 +102,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "vrefen",
                     description: Some("VREFINT enable"),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -110,7 +110,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "vsenseen",
                     description: Some("Temperature sensor enable"),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -118,7 +118,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "vbaten",
                     description: Some("VBAT enable"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -134,7 +134,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rdata_mst",
                     description: Some("Regular data of the master ADC"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -142,7 +142,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rdata_slv",
                     description: Some("Regular data of the slave ADC"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -157,7 +157,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "rdata_alt",
                 description: Some("Regular data of the master/slave alternated ADCs"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -172,7 +172,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "adrdy_mst",
                     description: Some("Master ADC ready"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -180,7 +180,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eosmp_mst",
                     description: Some("End of Sampling phase flag of the master ADC"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -188,7 +188,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eoc_mst",
                     description: Some("End of regular conversion of the master ADC"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -196,7 +196,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eos_mst",
                     description: Some("End of regular sequence flag of the master ADC"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -204,7 +204,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ovr_mst",
                     description: Some("Overrun flag of the master ADC"),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -212,7 +212,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jeoc_mst",
                     description: Some("End of injected conversion flag of the master ADC"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -220,7 +220,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jeos_mst",
                     description: Some("End of injected sequence flag of the master ADC"),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -228,7 +228,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "awd_mst",
                     description: Some("Analog watchdog flag of the master ADC"),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 1 })),
                     enumm: None,
@@ -236,7 +236,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jqovf_mst",
                     description: Some("Injected Context Queue Overflow flag of the master ADC"),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -244,7 +244,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "adrdy_slv",
                     description: Some("Slave ADC ready"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -252,7 +252,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eosmp_slv",
                     description: Some("End of Sampling phase flag of the slave ADC"),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -260,7 +260,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eoc_slv",
                     description: Some("End of regular conversion of the slave ADC"),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -268,7 +268,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eos_slv",
                     description: Some("End of regular sequence flag of the slave ADC"),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -276,7 +276,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ovr_slv",
                     description: Some("Overrun flag of the slave ADC"),
-                    bit_offset: 20,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -284,7 +284,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jeoc_slv",
                     description: Some("End of injected conversion flag of the slave ADC"),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -292,7 +292,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jeos_slv",
                     description: Some("End of injected sequence flag of the slave ADC"),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -300,7 +300,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "awd_slv",
                     description: Some("Analog watchdog flag of the slave ADC"),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 1 })),
                     enumm: None,
@@ -308,7 +308,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "jqovf_slv",
                     description: Some("Injected Context Queue Overflow flag of the slave ADC"),
-                    bit_offset: 26,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,

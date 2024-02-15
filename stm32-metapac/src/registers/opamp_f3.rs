@@ -26,7 +26,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "opampen",
                 description: Some("OPAMP enable"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,
@@ -36,7 +36,7 @@ pub(crate) static REGISTERS: IR = IR {
                 description: Some(
                     "Forces a calibration reference voltage on non-inverting input and disables external connections.",
                 ),
-                bit_offset: 1,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                 bit_size: 1,
                 array: None,
                 enumm: Some("ForceVp"),
@@ -44,7 +44,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "vp_sel",
                 description: Some("OPAMP Non inverting input selection"),
-                bit_offset: 2,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                 bit_size: 2,
                 array: None,
                 enumm: Some("VpSel"),
@@ -52,7 +52,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "vm_sel",
                 description: Some("OPAMP inverting input selection"),
-                bit_offset: 5,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                 bit_size: 2,
                 array: None,
                 enumm: Some("VmSel"),
@@ -60,7 +60,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "tcm_en",
                 description: Some("Timer controlled Mux mode enable"),
-                bit_offset: 7,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,
@@ -68,7 +68,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "vms_sel",
                 description: Some("OPAMP inverting input secondary selection"),
-                bit_offset: 8,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                 bit_size: 1,
                 array: None,
                 enumm: Some("VmsSel"),
@@ -76,7 +76,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "vps_sel",
                 description: Some("OPAMP Non inverting input secondary selection"),
-                bit_offset: 9,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                 bit_size: 2,
                 array: None,
                 enumm: Some("VpsSel"),
@@ -84,7 +84,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "calon",
                 description: Some("Calibration mode enable"),
-                bit_offset: 11,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,
@@ -92,7 +92,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "calsel",
                 description: Some("Calibration selection"),
-                bit_offset: 12,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                 bit_size: 2,
                 array: None,
                 enumm: Some("Calsel"),
@@ -100,7 +100,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "pga_gain",
                 description: Some("Gain in PGA mode"),
-                bit_offset: 14,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                 bit_size: 4,
                 array: None,
                 enumm: Some("PgaGain"),
@@ -108,7 +108,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "user_trim",
                 description: Some("User trimming enable"),
-                bit_offset: 18,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,
@@ -116,7 +116,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "trimoffsetp",
                 description: Some("Offset trimming value (PMOS)"),
-                bit_offset: 19,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                 bit_size: 5,
                 array: None,
                 enumm: None,
@@ -124,7 +124,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "trimoffsetn",
                 description: Some("Offset trimming value (NMOS)"),
-                bit_offset: 24,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                 bit_size: 5,
                 array: None,
                 enumm: None,
@@ -132,7 +132,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "tstref",
                 description: Some("Output the internal reference voltage"),
-                bit_offset: 29,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,
@@ -140,7 +140,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "outcal",
                 description: Some("OPAMP ouput status flag"),
-                bit_offset: 30,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                 bit_size: 1,
                 array: None,
                 enumm: Some("Outcal"),
@@ -148,7 +148,7 @@ pub(crate) static REGISTERS: IR = IR {
             Field {
                 name: "lock",
                 description: Some("OPAMP lock"),
-                bit_offset: 31,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,

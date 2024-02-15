@@ -366,7 +366,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "GPDMA channel 0 stop in debug",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -376,7 +380,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "GPDMA channel 1 stop in debug",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -386,7 +394,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "GPDMA channel 2 stop in debug",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -396,7 +408,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "GPDMA channel 3 stop in debug",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -406,7 +422,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "GPDMA channel 4 stop in debug",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -416,7 +436,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "GPDMA channel 5 stop in debug",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -426,7 +450,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "GPDMA channel 6 stop in debug",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -436,7 +464,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "GPDMA channel 7 stop in debug",
                     ),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -446,7 +478,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "GPDMA channel 8 stop in debug",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -456,7 +492,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "GPDMA channel 9 stop in debug",
                     ),
-                    bit_offset: 9,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -466,7 +506,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "GPDMA channel 10 stop in debug",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -476,7 +520,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "GPDMA channel 11 stop in debug",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -486,7 +534,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "GPDMA channel 12 stop in debug",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -496,7 +548,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "GPDMA channel 13 stop in debug",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -506,7 +562,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "GPDMA channel 14 stop in debug",
                     ),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -516,7 +576,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "GPDMA channel 15 stop in debug",
                     ),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -536,7 +600,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LPDMA channel 0 stop in debug",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -546,7 +614,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LPDMA channel 1 stop in debug",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -556,7 +628,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LPDMA channel 2 stop in debug",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -566,7 +642,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LPDMA channel 3 stop in debug",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -586,7 +666,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C4 stop in debug",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -596,7 +680,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LPTIM2 stop in debug",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -616,7 +704,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM2 stop in debug",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -626,7 +718,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM3 stop in debug",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -636,7 +732,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM4 stop in debug",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -646,7 +746,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM5 stop in debug",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -656,7 +760,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM6 stop in debug",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -666,7 +774,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM7 stop in debug",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -676,7 +788,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Window watchdog counter stop in debug",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -686,7 +802,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Independent watchdog counter stop in debug",
                     ),
-                    bit_offset: 12,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -696,7 +816,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C1 SMBUS timeout stop in debug",
                     ),
-                    bit_offset: 21,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -706,7 +830,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C2 SMBUS timeout stop in debug",
                     ),
-                    bit_offset: 22,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -726,7 +854,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM1 counter stopped when core is\r halted",
                     ),
-                    bit_offset: 11,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -736,7 +868,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM8 stop in debug",
                     ),
-                    bit_offset: 13,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -746,7 +882,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM15 counter stopped when core is\r halted",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -756,7 +896,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "TIM16 counter stopped when core is\r halted",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -766,7 +910,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DBG_TIM17_STOP",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -786,7 +934,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "I2C3 stop in debug",
                     ),
-                    bit_offset: 10,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -796,7 +948,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LPTIM1 stop in debug",
                     ),
-                    bit_offset: 17,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -806,7 +962,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LPTIM3 stop in debug",
                     ),
-                    bit_offset: 18,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -816,7 +976,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "LPTIM4 stop in debug",
                     ),
-                    bit_offset: 19,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -826,7 +990,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "RTC stop in debug",
                     ),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -846,7 +1014,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "component identification bits [7:0]",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -866,7 +1038,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "component identification bits [11:8]",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -876,7 +1052,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "component identification bits [15:12] - component class",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -896,7 +1076,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "component identification bits [23:16]",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -916,7 +1100,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "component identification bits [31:24]",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -936,7 +1124,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Debug Stop mode",
                     ),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -946,7 +1138,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Debug Standby mode",
                     ),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -956,7 +1152,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Trace pin assignment\r control",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -966,7 +1166,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "trace port and clock\r enable",
                     ),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -976,7 +1180,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Trace pin assignment\r control",
                     ),
-                    bit_offset: 6,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -996,7 +1204,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Device specific ID\r \tDevice specific ID used for RDP regression.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 32,
                     array: None,
                     enumm: None,
@@ -1016,7 +1228,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Device authentication key\r \tThe device specific 64-bit authentication key (OEM key) must be written to this register (in two successive 32-bit writes, least significant word first) to permit RDP regression. Writing a wrong key locks access to the device and prevent code execution from the Flash memory.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 32,
                     array: None,
                     enumm: None,
@@ -1036,7 +1252,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bit n identifies whether access port AP n is present in device\r \tBit n\u{a0}=\u{a0}0: APn absent\r \tBit n\u{a0}=\u{a0}1: APn present",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -1046,7 +1266,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DECLARATION TO BE CONFIRMED by PRODUCT OWNER! Bit n identifies whether access port AP n is open (can be accessed via the debug port) or locked (debug access to the AP is blocked)\r \tBit n\u{a0}=\u{a0}0: APn locked\r \tBit n\u{a0}=\u{a0}1: APn enabled",
                     ),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -1066,7 +1290,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Device dentification",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 12,
                     array: None,
                     enumm: None,
@@ -1076,7 +1304,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Revision",
                     ),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -1096,7 +1328,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "part number bits [7:0]",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -1116,7 +1352,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "part number bits [11:8]",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -1126,7 +1366,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "JEP106 identity code bits [3:0]",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -1146,7 +1390,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "JEP106 identity code bits [6:4]",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -1156,7 +1404,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "JEDEC assigned value",
                     ),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1166,7 +1418,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "component revision number",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -1186,7 +1442,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "customer modified",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -1196,7 +1456,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "metal fix version",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -1216,7 +1480,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "JEP106 continuation code",
                     ),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -1226,7 +1494,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "register file size",
                     ),
-                    bit_offset: 4,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
                     enumm: None,

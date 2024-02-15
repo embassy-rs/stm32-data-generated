@@ -216,7 +216,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tampam",
                     description: Some("TAMPAM"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 1 })),
                     enumm: None,
@@ -224,7 +224,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "atosel",
                     description: Some("ATOSEL"),
-                    bit_offset: 8,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 2,
                     array: Some(Array::Regular(RegularArray { len: 4, stride: 2 })),
                     enumm: None,
@@ -232,7 +232,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "atcksel",
                     description: Some("ATCKSEL"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -240,7 +240,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "atper",
                     description: Some("ATPER"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -248,7 +248,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "atoshare",
                     description: Some("ATOSHARE"),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -256,7 +256,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "flten",
                     description: Some("FLTEN"),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -271,7 +271,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "atosel",
                 description: Some("ATOSEL"),
-                bit_offset: 8,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                 bit_size: 3,
                 array: Some(Array::Regular(RegularArray { len: 8, stride: 3 })),
                 enumm: None,
@@ -286,7 +286,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "prng",
                     description: Some("Pseudo-random generator value"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -294,7 +294,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "seedf",
                     description: Some("Seed running flag"),
-                    bit_offset: 14,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -302,7 +302,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "inits",
                     description: Some("Active tamper initialization status"),
-                    bit_offset: 15,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -317,7 +317,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "seed",
                 description: Some("Pseudo-random generator seed value"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -331,7 +331,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "bkp",
                 description: Some("BKP"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -346,7 +346,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tmonen",
                     description: Some("TMONEN"),
-                    bit_offset: 1,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -354,7 +354,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "vmonen",
                     description: Some("VMONEN"),
-                    bit_offset: 2,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -362,7 +362,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wutmonen",
                     description: Some("WUTMONEN"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -377,7 +377,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "count",
                 description: Some("COUNT"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
                 enumm: None,
@@ -392,7 +392,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tampe",
                     description: Some("TAMPE"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 1 })),
                     enumm: None,
@@ -400,7 +400,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "itampe",
                     description: Some("ITAMPE"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 1 })),
                     enumm: None,
@@ -416,7 +416,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tampnoer",
                     description: Some("Tamper X no erase"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 1 })),
                     enumm: None,
@@ -424,7 +424,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tampmsk",
                     description: Some("Tamper X mask"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 1 })),
                     enumm: None,
@@ -432,7 +432,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "bkerase",
                     description: Some("BKERASE"),
-                    bit_offset: 23,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -440,7 +440,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tamptrg",
                     description: Some("Active level for tamper X input"),
-                    bit_offset: 24,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 1 })),
                     enumm: None,
@@ -455,7 +455,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "itampnoer",
                 description: Some("Internal Tamper X no erase"),
-                bit_offset: 0,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 8, stride: 1 })),
                 enumm: None,
@@ -470,7 +470,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tampfreq",
                     description: Some("TAMPFREQ"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 3,
                     array: None,
                     enumm: None,
@@ -478,7 +478,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tampflt",
                     description: Some("TAMPFLT"),
-                    bit_offset: 3,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -486,7 +486,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tampprch",
                     description: Some("TAMPPRCH"),
-                    bit_offset: 5,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -494,7 +494,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tamppudis",
                     description: Some("TAMPPUDIS"),
-                    bit_offset: 7,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -510,7 +510,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tampie",
                     description: Some("Tamper X interrupt enable"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 1 })),
                     enumm: None,
@@ -518,7 +518,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "itampie",
                     description: Some("Internal tamper X interrupt enable"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 1 })),
                     enumm: None,
@@ -534,7 +534,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tampmf",
                     description: Some("Tamper X interrupt masked flag"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 1 })),
                     enumm: None,
@@ -542,7 +542,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "itampmf",
                     description: Some("Internal tamper X interrupt masked flag"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 1 })),
                     enumm: None,
@@ -558,7 +558,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "bkprwpriv",
                     description: Some("Backup registers zone 1 privilege protection"),
-                    bit_offset: 29,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -566,7 +566,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "bkpwpriv",
                     description: Some("Backup registers zone 2 privilege protection"),
-                    bit_offset: 30,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -574,7 +574,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tamppriv",
                     description: Some("Tamper privilege protection"),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -590,7 +590,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ctampf",
                     description: Some("Clear tamper X detection flag"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 1 })),
                     enumm: None,
@@ -598,7 +598,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "citampf",
                     description: Some("Clear internal tamper X detection flag"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 1 })),
                     enumm: None,
@@ -614,7 +614,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "bkprwdprot",
                     description: Some("Backup registers read/write protection offset"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -622,7 +622,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "bkpwdprot",
                     description: Some("Backup registers write protection offset"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -630,7 +630,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tampdprot",
                     description: Some("Tamper protection"),
-                    bit_offset: 31,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -646,7 +646,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tampmf",
                     description: Some("Tamper X interrupt masked flag"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 1 })),
                     enumm: None,
@@ -654,7 +654,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "itampmf",
                     description: Some("Internal tamper X interrupt masked flag"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 1 })),
                     enumm: None,
@@ -670,7 +670,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tampf",
                     description: Some("Tamper X detection flag"),
-                    bit_offset: 0,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 1 })),
                     enumm: None,
@@ -678,7 +678,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "itampf",
                     description: Some("Internal tamper X detection flag"),
-                    bit_offset: 16,
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 1 })),
                     enumm: None,

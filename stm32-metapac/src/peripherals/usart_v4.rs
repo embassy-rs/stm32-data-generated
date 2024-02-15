@@ -1,3 +1,8 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
 #[doc = "Low-power Universal synchronous asynchronous receiver transmitter"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct Lpuart {

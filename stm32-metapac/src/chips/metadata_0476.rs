@@ -1,5 +1,5 @@
 
-pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
+pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "ADC",
         address: 1073816576,
@@ -1436,7 +1436,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         ],
     },
 ];
-pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
+pub(crate) static INTERRUPTS: &[Interrupt] = &[
     Interrupt {
         name: "WWDG",
         number: 0,
@@ -1504,7 +1504,7 @@ pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
         number: 29,
     },
 ];
-pub(crate) static DMA_CHANNELS: &'static [DmaChannel] = &[
+pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
     DmaChannel {
         name: "DMA1_CH1",
         dma: "DMA1",

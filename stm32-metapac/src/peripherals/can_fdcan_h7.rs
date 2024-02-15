@@ -1,3 +1,8 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
 #[doc = "Controller area network with flexible data rate (FD)"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct Fdcan {

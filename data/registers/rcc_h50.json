@@ -1209,7 +1209,7 @@
         "description": "USART1 kernel clock source selection\r Set and reset by software.\r others: reserved, the kernel clock is disabled",
         "bit_offset": 0,
         "bit_size": 3,
-        "enum": "USARTSEL"
+        "enum": "USART1SEL"
       },
       {
         "name": "USART2SEL",
@@ -1242,14 +1242,14 @@
         "description": "LPTIM1 kernel clock source selection\r others: reserved, the kernel clock is disabled",
         "bit_offset": 8,
         "bit_size": 3,
-        "enum": "LPTIMSEL"
+        "enum": "LPTIM1SEL"
       },
       {
         "name": "LPTIM2SEL",
         "description": "LPTIM2 kernel clock source selection\r others: reserved, the kernel clock is disabled",
         "bit_offset": 12,
         "bit_size": 3,
-        "enum": "LPTIMSEL"
+        "enum": "LPTIM2SEL"
       }
     ]
   },
@@ -1329,7 +1329,7 @@
         "description": "I3C2 kernel clock source selection",
         "bit_offset": 26,
         "bit_size": 2,
-        "enum": "I2CSEL"
+        "enum": "I3C2SEL"
       }
     ]
   },
@@ -2196,12 +2196,67 @@
       }
     ]
   },
-  "enum/LPTIMSEL": {
+  "enum/I3C2SEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "PCLK3",
+        "description": "rcc_pclk3 selected as peripheral clock",
+        "value": 0
+      },
+      {
+        "name": "PLL3_R",
+        "description": "pll3_r selected as peripheral clock",
+        "value": 1
+      },
+      {
+        "name": "HSI",
+        "description": "hsi_ker selected as peripheral clock",
+        "value": 2
+      },
+      {
+        "name": "CSI",
+        "description": "csi_ker selected as peripheral clock",
+        "value": 3
+      }
+    ]
+  },
+  "enum/LPTIM1SEL": {
     "bit_size": 3,
     "variants": [
       {
         "name": "PCLK3",
         "description": "rcc_pclk3 selected as peripheral clock",
+        "value": 0
+      },
+      {
+        "name": "PLL2_P",
+        "description": "pll2_p selected as peripheral clock",
+        "value": 1
+      },
+      {
+        "name": "LSE",
+        "description": "LSE selected as peripheral clock",
+        "value": 3
+      },
+      {
+        "name": "LSI",
+        "description": "LSI selected as peripheral clock",
+        "value": 4
+      },
+      {
+        "name": "PER",
+        "description": "PER selected as peripheral clock",
+        "value": 5
+      }
+    ]
+  },
+  "enum/LPTIM2SEL": {
+    "bit_size": 3,
+    "variants": [
+      {
+        "name": "PCLK1",
+        "description": "rcc_pclk1 selected as peripheral clock",
         "value": 0
       },
       {
@@ -5537,11 +5592,41 @@
       }
     ]
   },
-  "enum/USARTSEL": {
+  "enum/USART1SEL": {
     "bit_size": 3,
     "variants": [
       {
         "name": "PCLK2",
+        "description": "rcc_pclk2 selected as peripheral clock",
+        "value": 0
+      },
+      {
+        "name": "PLL2_Q",
+        "description": "pll2_q selected as peripheral clock",
+        "value": 1
+      },
+      {
+        "name": "HSI",
+        "description": "hsi_ker selected as peripheral clock",
+        "value": 3
+      },
+      {
+        "name": "CSI",
+        "description": "csi_ker selected as peripheral clock",
+        "value": 4
+      },
+      {
+        "name": "LSE",
+        "description": "LSE selected as peripheral clock",
+        "value": 5
+      }
+    ]
+  },
+  "enum/USARTSEL": {
+    "bit_size": 3,
+    "variants": [
+      {
+        "name": "PCLK1",
         "description": "rcc_pclk2 selected as peripheral clock",
         "value": 0
       },

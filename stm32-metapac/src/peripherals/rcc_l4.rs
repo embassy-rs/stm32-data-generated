@@ -1412,17 +1412,6 @@ pub mod regs {
         pub fn set_lptim2en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
-        #[doc = "DFSDMEN enable"]
-        #[inline(always)]
-        pub const fn dfsdmen(&self) -> bool {
-            let val = (self.0 >> 24usize) & 0x01;
-            val != 0
-        }
-        #[doc = "DFSDMEN enable"]
-        #[inline(always)]
-        pub fn set_dfsdmen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
-        }
     }
     impl Default for Apb1enr2 {
         #[inline(always)]
@@ -2264,15 +2253,15 @@ pub mod regs {
         pub fn set_sai2en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
-        #[doc = "DFSDM timer clock enable"]
+        #[doc = "DFSDMEN enable"]
         #[inline(always)]
-        pub const fn dfsdm_timen(&self) -> bool {
+        pub const fn dfsdmen(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
             val != 0
         }
-        #[doc = "DFSDM timer clock enable"]
+        #[doc = "DFSDMEN enable"]
         #[inline(always)]
-        pub fn set_dfsdm_timen(&mut self, val: bool) {
+        pub fn set_dfsdmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
     }
@@ -2721,46 +2710,46 @@ pub mod regs {
         }
         #[doc = "USART2 clock source selection"]
         #[inline(always)]
-        pub const fn usart2sel(&self) -> super::vals::Usart2sel {
+        pub const fn usart2sel(&self) -> super::vals::Usartsel {
             let val = (self.0 >> 2usize) & 0x03;
-            super::vals::Usart2sel::from_bits(val as u8)
+            super::vals::Usartsel::from_bits(val as u8)
         }
         #[doc = "USART2 clock source selection"]
         #[inline(always)]
-        pub fn set_usart2sel(&mut self, val: super::vals::Usart2sel) {
+        pub fn set_usart2sel(&mut self, val: super::vals::Usartsel) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
         }
         #[doc = "USART3 clock source selection"]
         #[inline(always)]
-        pub const fn usart3sel(&self) -> super::vals::Usart3sel {
+        pub const fn usart3sel(&self) -> super::vals::Usartsel {
             let val = (self.0 >> 4usize) & 0x03;
-            super::vals::Usart3sel::from_bits(val as u8)
+            super::vals::Usartsel::from_bits(val as u8)
         }
         #[doc = "USART3 clock source selection"]
         #[inline(always)]
-        pub fn set_usart3sel(&mut self, val: super::vals::Usart3sel) {
+        pub fn set_usart3sel(&mut self, val: super::vals::Usartsel) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
         #[doc = "UART4 clock source selection"]
         #[inline(always)]
-        pub const fn uart4sel(&self) -> super::vals::Uart4sel {
+        pub const fn uart4sel(&self) -> super::vals::Usartsel {
             let val = (self.0 >> 6usize) & 0x03;
-            super::vals::Uart4sel::from_bits(val as u8)
+            super::vals::Usartsel::from_bits(val as u8)
         }
         #[doc = "UART4 clock source selection"]
         #[inline(always)]
-        pub fn set_uart4sel(&mut self, val: super::vals::Uart4sel) {
+        pub fn set_uart4sel(&mut self, val: super::vals::Usartsel) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
         }
         #[doc = "UART5 clock source selection"]
         #[inline(always)]
-        pub const fn uart5sel(&self) -> super::vals::Uart5sel {
+        pub const fn uart5sel(&self) -> super::vals::Usartsel {
             let val = (self.0 >> 8usize) & 0x03;
-            super::vals::Uart5sel::from_bits(val as u8)
+            super::vals::Usartsel::from_bits(val as u8)
         }
         #[doc = "UART5 clock source selection"]
         #[inline(always)]
-        pub fn set_uart5sel(&mut self, val: super::vals::Uart5sel) {
+        pub fn set_uart5sel(&mut self, val: super::vals::Usartsel) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
         }
         #[doc = "LPUART1 clock source selection"]
@@ -5272,77 +5261,9 @@ in the RCC_CR register"]
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Uart4sel {
-        #[doc = "PCLK clock selected"]
-        PCLK1 = 0,
-        #[doc = "SYSCLK clock selected"]
-        SYS = 0x01,
-        #[doc = "HSI clock selected"]
-        HSI = 0x02,
-        #[doc = "LSE clock selected"]
-        LSE = 0x03,
-    }
-    impl Uart4sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Uart4sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Uart4sel {
-        #[inline(always)]
-        fn from(val: u8) -> Uart4sel {
-            Uart4sel::from_bits(val)
-        }
-    }
-    impl From<Uart4sel> for u8 {
-        #[inline(always)]
-        fn from(val: Uart4sel) -> u8 {
-            Uart4sel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Uart5sel {
-        #[doc = "PCLK clock selected"]
-        PCLK1 = 0,
-        #[doc = "SYSCLK clock selected"]
-        SYS = 0x01,
-        #[doc = "HSI clock selected"]
-        HSI = 0x02,
-        #[doc = "LSE clock selected"]
-        LSE = 0x03,
-    }
-    impl Uart5sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Uart5sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Uart5sel {
-        #[inline(always)]
-        fn from(val: u8) -> Uart5sel {
-            Uart5sel::from_bits(val)
-        }
-    }
-    impl From<Uart5sel> for u8 {
-        #[inline(always)]
-        fn from(val: Uart5sel) -> u8 {
-            Uart5sel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usart1sel {
         #[doc = "PCLK clock selected"]
-        PCLK1 = 0,
+        PCLK2 = 0,
         #[doc = "SYSCLK clock selected"]
         SYS = 0x01,
         #[doc = "HSI clock selected"]
@@ -5374,7 +5295,7 @@ in the RCC_CR register"]
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Usart2sel {
+    pub enum Usartsel {
         #[doc = "PCLK clock selected"]
         PCLK1 = 0,
         #[doc = "SYSCLK clock selected"]
@@ -5384,9 +5305,9 @@ in the RCC_CR register"]
         #[doc = "LSE clock selected"]
         LSE = 0x03,
     }
-    impl Usart2sel {
+    impl Usartsel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Usart2sel {
+        pub const fn from_bits(val: u8) -> Usartsel {
             unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
@@ -5394,50 +5315,16 @@ in the RCC_CR register"]
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Usart2sel {
+    impl From<u8> for Usartsel {
         #[inline(always)]
-        fn from(val: u8) -> Usart2sel {
-            Usart2sel::from_bits(val)
+        fn from(val: u8) -> Usartsel {
+            Usartsel::from_bits(val)
         }
     }
-    impl From<Usart2sel> for u8 {
+    impl From<Usartsel> for u8 {
         #[inline(always)]
-        fn from(val: Usart2sel) -> u8 {
-            Usart2sel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Usart3sel {
-        #[doc = "PCLK clock selected"]
-        PCLK1 = 0,
-        #[doc = "SYSCLK clock selected"]
-        SYS = 0x01,
-        #[doc = "HSI clock selected"]
-        HSI = 0x02,
-        #[doc = "LSE clock selected"]
-        LSE = 0x03,
-    }
-    impl Usart3sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Usart3sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Usart3sel {
-        #[inline(always)]
-        fn from(val: u8) -> Usart3sel {
-            Usart3sel::from_bits(val)
-        }
-    }
-    impl From<Usart3sel> for u8 {
-        #[inline(always)]
-        fn from(val: Usart3sel) -> u8 {
-            Usart3sel::to_bits(val)
+        fn from(val: Usartsel) -> u8 {
+            Usartsel::to_bits(val)
         }
     }
 }

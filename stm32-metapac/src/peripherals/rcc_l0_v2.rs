@@ -1286,13 +1286,13 @@ pub mod regs {
     impl Ccipr {
         #[doc = "USART1 clock source selection"]
         #[inline(always)]
-        pub const fn usart1sel(&self) -> super::vals::Uartsel {
+        pub const fn usart1sel(&self) -> super::vals::Usart1sel {
             let val = (self.0 >> 0usize) & 0x03;
-            super::vals::Uartsel::from_bits(val as u8)
+            super::vals::Usart1sel::from_bits(val as u8)
         }
         #[doc = "USART1 clock source selection"]
         #[inline(always)]
-        pub fn set_usart1sel(&mut self, val: super::vals::Uartsel) {
+        pub fn set_usart1sel(&mut self, val: super::vals::Usart1sel) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
         #[doc = "USART2 clock source selection"]
@@ -3221,6 +3221,40 @@ bits in the RCC clock control register (RCC_CR)) used as the RTC clock"]
         #[inline(always)]
         fn from(val: Uartsel) -> u8 {
             Uartsel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Usart1sel {
+        #[doc = "APB clock selected as peripheral clock"]
+        PCLK2 = 0,
+        #[doc = "System clock selected as peripheral clock"]
+        SYS = 0x01,
+        #[doc = "HSI clock selected as peripheral clock"]
+        HSI = 0x02,
+        #[doc = "LSE clock selected as peripheral clock"]
+        LSE = 0x03,
+    }
+    impl Usart1sel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Usart1sel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Usart1sel {
+        #[inline(always)]
+        fn from(val: u8) -> Usart1sel {
+            Usart1sel::from_bits(val)
+        }
+    }
+    impl From<Usart1sel> for u8 {
+        #[inline(always)]
+        fn from(val: Usart1sel) -> u8 {
+            Usart1sel::to_bits(val)
         }
     }
 }

@@ -5418,7 +5418,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usart1sel {
         #[doc = "PCLK clock selected"]
-        PCLK1 = 0,
+        PCLK2 = 0,
         #[doc = "SYSCLK clock selected"]
         SYS = 0x01,
         #[doc = "HSI clock selected"]

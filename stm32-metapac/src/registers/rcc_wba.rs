@@ -2797,7 +2797,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Usartsel",
+                        "Usart1sel",
                     ),
                 },
                 Field {
@@ -2829,7 +2829,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "I2csel",
+                        "I2c1sel",
                     ),
                 },
                 Field {
@@ -2845,7 +2845,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Lptimsel",
+                        "Lptim2sel",
                     ),
                 },
                 Field {
@@ -2861,7 +2861,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Spisel",
+                        "Spi1sel",
                     ),
                 },
                 Field {
@@ -2961,7 +2961,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Spisel",
+                        "Spi3sel",
                     ),
                 },
                 Field {
@@ -2977,7 +2977,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "I2csel",
+                        "I2c3sel",
                     ),
                 },
                 Field {
@@ -2993,7 +2993,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Lptimsel",
+                        "Lptim1sel",
                     ),
                 },
                 Field {
@@ -4272,9 +4272,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "HCLK1",
+                    name: "HCLK4",
                     description: Some(
-                        "hclk1 clock selected",
+                        "hclk4 clock selected",
                     ),
                     value: 0,
                 },
@@ -4435,7 +4435,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "I2csel",
+            name: "I2c1sel",
             description: None,
             bit_size: 2,
             variants: &[
@@ -4463,12 +4463,75 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Lptimsel",
+            name: "I2c3sel",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
                     name: "PCLK7",
+                    description: Some(
+                        "pclk7 selected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SYS",
+                    description: Some(
+                        "SYSCLK selected",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some(
+                        "HSI selected",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Lptim1sel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK7",
+                    description: Some(
+                        "pclk7 selected.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LSI",
+                    description: Some(
+                        "LSI selected",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some(
+                        "HSI selected",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some(
+                        "LSE selected",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Lptim2sel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK1",
                     description: Some(
                         "pclk7 selected.",
                     ),
@@ -4995,12 +5058,40 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Spisel",
+            name: "Spi1sel",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
                     name: "PCLK2",
+                    description: Some(
+                        "pclk2 selected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SYS",
+                    description: Some(
+                        "SYSCLK selected",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some(
+                        "HSI selected",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Spi3sel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK7",
                     description: Some(
                         "pclk2 selected",
                     ),
@@ -5096,6 +5187,41 @@ pub(crate) static REGISTERS: IR = IR {
                         "HSI/256 generated and can be selected by TIM16, TIM17 and LPTIM2 as internal input capture",
                     ),
                     value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Usart1sel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK2",
+                    description: Some(
+                        "pclk2 selected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SYS",
+                    description: Some(
+                        "SYSCLK selected",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some(
+                        "HSI selected",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some(
+                        "LSE selected",
+                    ),
+                    value: 3,
                 },
             ],
         },

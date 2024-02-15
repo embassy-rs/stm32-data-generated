@@ -2898,7 +2898,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Usartsel",
+                        "Usart1sel",
                     ),
                 },
                 Field {
@@ -2972,7 +2972,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Lptimsel",
+                        "Lptim1sel",
                     ),
                 },
                 Field {
@@ -2988,7 +2988,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Lptimsel",
+                        "Lptim2sel",
                     ),
                 },
             ],
@@ -3168,7 +3168,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "I2csel",
+                        "I3c2sel",
                     ),
                 },
             ],
@@ -4954,7 +4954,42 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Lptimsel",
+            name: "I3c2sel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK3",
+                    description: Some(
+                        "rcc_pclk3 selected as peripheral clock",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PLL3_R",
+                    description: Some(
+                        "pll3_r selected as peripheral clock",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some(
+                        "hsi_ker selected as peripheral clock",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "CSI",
+                    description: Some(
+                        "csi_ker selected as peripheral clock",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Lptim1sel",
             description: None,
             bit_size: 3,
             variants: &[
@@ -4962,6 +4997,48 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "PCLK3",
                     description: Some(
                         "rcc_pclk3 selected as peripheral clock",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PLL2_P",
+                    description: Some(
+                        "pll2_p selected as peripheral clock",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some(
+                        "LSE selected as peripheral clock",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "LSI",
+                    description: Some(
+                        "LSI selected as peripheral clock",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "PER",
+                    description: Some(
+                        "PER selected as peripheral clock",
+                    ),
+                    value: 5,
+                },
+            ],
+        },
+        Enum {
+            name: "Lptim2sel",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK1",
+                    description: Some(
+                        "rcc_pclk1 selected as peripheral clock",
                     ),
                     value: 0,
                 },
@@ -9212,12 +9289,54 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Usartsel",
+            name: "Usart1sel",
             description: None,
             bit_size: 3,
             variants: &[
                 EnumVariant {
                     name: "PCLK2",
+                    description: Some(
+                        "rcc_pclk2 selected as peripheral clock",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PLL2_Q",
+                    description: Some(
+                        "pll2_q selected as peripheral clock",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some(
+                        "hsi_ker selected as peripheral clock",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "CSI",
+                    description: Some(
+                        "csi_ker selected as peripheral clock",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some(
+                        "LSE selected as peripheral clock",
+                    ),
+                    value: 5,
+                },
+            ],
+        },
+        Enum {
+            name: "Usartsel",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK1",
                     description: Some(
                         "rcc_pclk2 selected as peripheral clock",
                     ),

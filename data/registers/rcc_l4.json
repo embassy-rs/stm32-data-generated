@@ -850,12 +850,6 @@
         "description": "LPTIM2EN",
         "bit_offset": 5,
         "bit_size": 1
-      },
-      {
-        "name": "DFSDMEN",
-        "description": "DFSDMEN enable",
-        "bit_offset": 24,
-        "bit_size": 1
       }
     ]
   },
@@ -1309,8 +1303,8 @@
         "bit_size": 1
       },
       {
-        "name": "DFSDM_TIMEN",
-        "description": "DFSDM timer clock enable",
+        "name": "DFSDMEN",
+        "description": "DFSDMEN enable",
         "bit_offset": 24,
         "bit_size": 1
       }
@@ -1559,28 +1553,28 @@
         "description": "USART2 clock source selection",
         "bit_offset": 2,
         "bit_size": 2,
-        "enum": "USART2SEL"
+        "enum": "USARTSEL"
       },
       {
         "name": "USART3SEL",
         "description": "USART3 clock source selection",
         "bit_offset": 4,
         "bit_size": 2,
-        "enum": "USART3SEL"
+        "enum": "USARTSEL"
       },
       {
         "name": "UART4SEL",
         "description": "UART4 clock source selection",
         "bit_offset": 6,
         "bit_size": 2,
-        "enum": "UART4SEL"
+        "enum": "USARTSEL"
       },
       {
         "name": "UART5SEL",
         "description": "UART5 clock source selection",
         "bit_offset": 8,
         "bit_size": 2,
-        "enum": "UART5SEL"
+        "enum": "USARTSEL"
       },
       {
         "name": "LPUART1SEL",
@@ -3646,61 +3640,11 @@
       }
     ]
   },
-  "enum/UART4SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PCLK1",
-        "description": "PCLK clock selected",
-        "value": 0
-      },
-      {
-        "name": "SYS",
-        "description": "SYSCLK clock selected",
-        "value": 1
-      },
-      {
-        "name": "HSI",
-        "description": "HSI clock selected",
-        "value": 2
-      },
-      {
-        "name": "LSE",
-        "description": "LSE clock selected",
-        "value": 3
-      }
-    ]
-  },
-  "enum/UART5SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PCLK1",
-        "description": "PCLK clock selected",
-        "value": 0
-      },
-      {
-        "name": "SYS",
-        "description": "SYSCLK clock selected",
-        "value": 1
-      },
-      {
-        "name": "HSI",
-        "description": "HSI clock selected",
-        "value": 2
-      },
-      {
-        "name": "LSE",
-        "description": "LSE clock selected",
-        "value": 3
-      }
-    ]
-  },
   "enum/USART1SEL": {
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK1",
+        "name": "PCLK2",
         "description": "PCLK clock selected",
         "value": 0
       },
@@ -3721,32 +3665,7 @@
       }
     ]
   },
-  "enum/USART2SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PCLK1",
-        "description": "PCLK clock selected",
-        "value": 0
-      },
-      {
-        "name": "SYS",
-        "description": "SYSCLK clock selected",
-        "value": 1
-      },
-      {
-        "name": "HSI",
-        "description": "HSI clock selected",
-        "value": 2
-      },
-      {
-        "name": "LSE",
-        "description": "LSE clock selected",
-        "value": 3
-      }
-    ]
-  },
-  "enum/USART3SEL": {
+  "enum/USARTSEL": {
     "bit_size": 2,
     "variants": [
       {

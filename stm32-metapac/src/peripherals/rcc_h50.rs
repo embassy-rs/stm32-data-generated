@@ -2028,13 +2028,13 @@ pub mod regs {
     impl Ccipr1 {
         #[doc = "USART1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled"]
         #[inline(always)]
-        pub const fn usart1sel(&self) -> super::vals::Usartsel {
+        pub const fn usart1sel(&self) -> super::vals::Usart1sel {
             let val = (self.0 >> 0usize) & 0x07;
-            super::vals::Usartsel::from_bits(val as u8)
+            super::vals::Usart1sel::from_bits(val as u8)
         }
         #[doc = "USART1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled"]
         #[inline(always)]
-        pub fn set_usart1sel(&mut self, val: super::vals::Usartsel) {
+        pub fn set_usart1sel(&mut self, val: super::vals::Usart1sel) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
         }
         #[doc = "USART2 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled"]
@@ -2084,24 +2084,24 @@ pub mod regs {
     impl Ccipr2 {
         #[doc = "LPTIM1 kernel clock source selection others: reserved, the kernel clock is disabled"]
         #[inline(always)]
-        pub const fn lptim1sel(&self) -> super::vals::Lptimsel {
+        pub const fn lptim1sel(&self) -> super::vals::Lptim1sel {
             let val = (self.0 >> 8usize) & 0x07;
-            super::vals::Lptimsel::from_bits(val as u8)
+            super::vals::Lptim1sel::from_bits(val as u8)
         }
         #[doc = "LPTIM1 kernel clock source selection others: reserved, the kernel clock is disabled"]
         #[inline(always)]
-        pub fn set_lptim1sel(&mut self, val: super::vals::Lptimsel) {
+        pub fn set_lptim1sel(&mut self, val: super::vals::Lptim1sel) {
             self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
         }
         #[doc = "LPTIM2 kernel clock source selection others: reserved, the kernel clock is disabled"]
         #[inline(always)]
-        pub const fn lptim2sel(&self) -> super::vals::Lptimsel {
+        pub const fn lptim2sel(&self) -> super::vals::Lptim2sel {
             let val = (self.0 >> 12usize) & 0x07;
-            super::vals::Lptimsel::from_bits(val as u8)
+            super::vals::Lptim2sel::from_bits(val as u8)
         }
         #[doc = "LPTIM2 kernel clock source selection others: reserved, the kernel clock is disabled"]
         #[inline(always)]
-        pub fn set_lptim2sel(&mut self, val: super::vals::Lptimsel) {
+        pub fn set_lptim2sel(&mut self, val: super::vals::Lptim2sel) {
             self.0 = (self.0 & !(0x07 << 12usize)) | (((val.to_bits() as u32) & 0x07) << 12usize);
         }
     }
@@ -2229,13 +2229,13 @@ pub mod regs {
         }
         #[doc = "I3C2 kernel clock source selection"]
         #[inline(always)]
-        pub const fn i3c2sel(&self) -> super::vals::I2csel {
+        pub const fn i3c2sel(&self) -> super::vals::I3c2sel {
             let val = (self.0 >> 26usize) & 0x03;
-            super::vals::I2csel::from_bits(val as u8)
+            super::vals::I3c2sel::from_bits(val as u8)
         }
         #[doc = "I3C2 kernel clock source selection"]
         #[inline(always)]
-        pub fn set_i3c2sel(&mut self, val: super::vals::I2csel) {
+        pub fn set_i3c2sel(&mut self, val: super::vals::I3c2sel) {
             self.0 = (self.0 & !(0x03 << 26usize)) | (((val.to_bits() as u32) & 0x03) << 26usize);
         }
     }
@@ -3712,7 +3712,41 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Lptimsel {
+    pub enum I3c2sel {
+        #[doc = "rcc_pclk3 selected as peripheral clock"]
+        PCLK3 = 0,
+        #[doc = "pll3_r selected as peripheral clock"]
+        PLL3_R = 0x01,
+        #[doc = "hsi_ker selected as peripheral clock"]
+        HSI = 0x02,
+        #[doc = "csi_ker selected as peripheral clock"]
+        CSI = 0x03,
+    }
+    impl I3c2sel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> I3c2sel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for I3c2sel {
+        #[inline(always)]
+        fn from(val: u8) -> I3c2sel {
+            I3c2sel::from_bits(val)
+        }
+    }
+    impl From<I3c2sel> for u8 {
+        #[inline(always)]
+        fn from(val: I3c2sel) -> u8 {
+            I3c2sel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Lptim1sel {
         #[doc = "rcc_pclk3 selected as peripheral clock"]
         PCLK3 = 0,
         #[doc = "pll2_p selected as peripheral clock"]
@@ -3727,9 +3761,9 @@ pub mod vals {
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
-    impl Lptimsel {
+    impl Lptim1sel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lptimsel {
+        pub const fn from_bits(val: u8) -> Lptim1sel {
             unsafe { core::mem::transmute(val & 0x07) }
         }
         #[inline(always)]
@@ -3737,16 +3771,55 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Lptimsel {
+    impl From<u8> for Lptim1sel {
         #[inline(always)]
-        fn from(val: u8) -> Lptimsel {
-            Lptimsel::from_bits(val)
+        fn from(val: u8) -> Lptim1sel {
+            Lptim1sel::from_bits(val)
         }
     }
-    impl From<Lptimsel> for u8 {
+    impl From<Lptim1sel> for u8 {
         #[inline(always)]
-        fn from(val: Lptimsel) -> u8 {
-            Lptimsel::to_bits(val)
+        fn from(val: Lptim1sel) -> u8 {
+            Lptim1sel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Lptim2sel {
+        #[doc = "rcc_pclk1 selected as peripheral clock"]
+        PCLK1 = 0,
+        #[doc = "pll2_p selected as peripheral clock"]
+        PLL2_P = 0x01,
+        _RESERVED_2 = 0x02,
+        #[doc = "LSE selected as peripheral clock"]
+        LSE = 0x03,
+        #[doc = "LSI selected as peripheral clock"]
+        LSI = 0x04,
+        #[doc = "PER selected as peripheral clock"]
+        PER = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+    }
+    impl Lptim2sel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Lptim2sel {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Lptim2sel {
+        #[inline(always)]
+        fn from(val: u8) -> Lptim2sel {
+            Lptim2sel::from_bits(val)
+        }
+    }
+    impl From<Lptim2sel> for u8 {
+        #[inline(always)]
+        fn from(val: Lptim2sel) -> u8 {
+            Lptim2sel::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -5233,9 +5306,48 @@ selected as clock source"]
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Usartsel {
+    pub enum Usart1sel {
         #[doc = "rcc_pclk2 selected as peripheral clock"]
         PCLK2 = 0,
+        #[doc = "pll2_q selected as peripheral clock"]
+        PLL2_Q = 0x01,
+        _RESERVED_2 = 0x02,
+        #[doc = "hsi_ker selected as peripheral clock"]
+        HSI = 0x03,
+        #[doc = "csi_ker selected as peripheral clock"]
+        CSI = 0x04,
+        #[doc = "LSE selected as peripheral clock"]
+        LSE = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+    }
+    impl Usart1sel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Usart1sel {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Usart1sel {
+        #[inline(always)]
+        fn from(val: u8) -> Usart1sel {
+            Usart1sel::from_bits(val)
+        }
+    }
+    impl From<Usart1sel> for u8 {
+        #[inline(always)]
+        fn from(val: Usart1sel) -> u8 {
+            Usart1sel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Usartsel {
+        #[doc = "rcc_pclk2 selected as peripheral clock"]
+        PCLK1 = 0,
         #[doc = "pll2_q selected as peripheral clock"]
         PLL2_Q = 0x01,
         _RESERVED_2 = 0x02,

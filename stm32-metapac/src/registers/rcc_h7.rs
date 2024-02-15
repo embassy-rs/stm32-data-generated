@@ -7556,8 +7556,8 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "PCLK3",
-                    description: Some("rcc_pclk_d3 selected as peripheral clock"),
+                    name: "PCLK4",
+                    description: Some("rcc_pclk_d4 selected as peripheral clock"),
                     value: 0,
                 },
                 EnumVariant {

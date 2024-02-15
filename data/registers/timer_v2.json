@@ -3526,12 +3526,12 @@
       },
       {
         "name": "Retrigerrable_OPM_Mode_1",
-        "description": "In up-counting mode, the channel is active until a trigger\nevent is detected (on tim_trgi signal). Then, a comparison is performed as in PWM\nmode 1 and the channels becomes active again at the next update. In down-counting\nmode, the channel is inactive until a trigger event is detected (on tim_trgi signal).\nThen, a comparison is performed as in PWM mode 1 and the channels becomes\ninactive again at the next update.\n",
+        "description": "In up-counting mode, the channel is active until a trigger\nevent is detected (on tim_trgi signal). Then, a comparison is performed as in PWM\nmode 1 and the channels becomes active again at the next update. In down-counting\nmode, the channel is inactive until a trigger event is detected (on tim_trgi signal).\nThen, a comparison is performed as in PWM mode 1 and the channels becomes\ninactive again at the next update.",
         "value": 8
       },
       {
         "name": "Retrigerrable_OPM_Mode_2",
-        "description": "In up-counting mode, the channel is inactive until a\ntrigger event is detected (on tim_trgi signal). Then, a comparison is performed as in\nPWM mode 2 and the channels becomes inactive again at the next update. In down-\ncounting mode, the channel is active until a trigger event is detected (on tim_trgi\nsignal). Then, a comparison is performed as in PWM mode 1 and the channels\nbecomes active again at the next update.\n",
+        "description": "In up-counting mode, the channel is inactive until a\ntrigger event is detected (on tim_trgi signal). Then, a comparison is performed as in\nPWM mode 2 and the channels becomes inactive again at the next update. In down-\ncounting mode, the channel is active until a trigger event is detected (on tim_trgi\nsignal). Then, a comparison is performed as in PWM mode 1 and the channels\nbecomes active again at the next update.",
         "value": 9
       },
       {
@@ -3546,22 +3546,22 @@
       },
       {
         "name": "Combined_PWM_Mode_1",
-        "description": "tim_oc1ref has the same behavior as in PWM mode 1.\ntim_oc1refc is the logical OR between tim_oc1ref and tim_oc2ref.\n",
+        "description": "tim_oc1ref has the same behavior as in PWM mode 1.\ntim_oc1refc is the logical OR between tim_oc1ref and tim_oc2ref.",
         "value": 12
       },
       {
         "name": "Combined_PWM_Mode_2",
-        "description": "tim_oc1ref has the same behavior as in PWM mode 2.\ntim_oc1refc is the logical AND between tim_oc1ref and tim_oc2ref.\n",
+        "description": "tim_oc1ref has the same behavior as in PWM mode 2.\ntim_oc1refc is the logical AND between tim_oc1ref and tim_oc2ref.",
         "value": 13
       },
       {
         "name": "Asymmetric_PWM_Mode_1",
-        "description": "tim_oc1ref has the same behavior as in PWM mode 1.\ntim_oc1refc outputs tim_oc1ref when the counter is counting up, tim_oc2ref when it is\ncounting down.\n",
+        "description": "tim_oc1ref has the same behavior as in PWM mode 1.\ntim_oc1refc outputs tim_oc1ref when the counter is counting up, tim_oc2ref when it is\ncounting down.",
         "value": 14
       },
       {
         "name": "Asymmetric_PWM_Mode_2",
-        "description": "tim_oc1ref has the same behavior as in PWM mode 2.\ntim_oc1refc outputs tim_oc1ref when the counter is counting up, tim_oc2ref when it is\ncounting down.\n",
+        "description": "tim_oc1ref has the same behavior as in PWM mode 2.\ntim_oc1refc outputs tim_oc1ref when the counter is counting up, tim_oc2ref when it is\ncounting down.",
         "value": 15
       }
     ]

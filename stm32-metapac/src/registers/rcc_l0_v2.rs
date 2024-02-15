@@ -1811,7 +1811,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Uartsel",
+                        "Usart1sel",
                     ),
                 },
                 Field {
@@ -4084,6 +4084,41 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PCLK1",
+                    description: Some(
+                        "APB clock selected as peripheral clock",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SYS",
+                    description: Some(
+                        "System clock selected as peripheral clock",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some(
+                        "HSI clock selected as peripheral clock",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some(
+                        "LSE clock selected as peripheral clock",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Usart1sel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK2",
                     description: Some(
                         "APB clock selected as peripheral clock",
                     ),

@@ -2303,7 +2303,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Timsw",
+                        "Tim2sw",
                     ),
                 },
                 Field {
@@ -3613,6 +3613,27 @@ pub(crate) static REGISTERS: IR = IR {
                         "PLL used as system clock",
                     ),
                     value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Tim2sw",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK1_TIM",
+                    description: Some(
+                        "PCLK2 clock (doubled frequency when prescaled)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PLL1_P",
+                    description: Some(
+                        "PLL vco output (running up to 144 MHz)",
+                    ),
+                    value: 1,
                 },
             ],
         },

@@ -1697,13 +1697,13 @@ pub mod regs {
         }
         #[doc = "Timer2 clock source selection"]
         #[inline(always)]
-        pub const fn tim2sw(&self) -> super::vals::Timsw {
+        pub const fn tim2sw(&self) -> super::vals::Tim2sw {
             let val = (self.0 >> 24usize) & 0x01;
-            super::vals::Timsw::from_bits(val as u8)
+            super::vals::Tim2sw::from_bits(val as u8)
         }
         #[doc = "Timer2 clock source selection"]
         #[inline(always)]
-        pub fn set_tim2sw(&mut self, val: super::vals::Timsw) {
+        pub fn set_tim2sw(&mut self, val: super::vals::Tim2sw) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
         }
         #[doc = "Timer34 clock source selection"]
@@ -2854,6 +2854,36 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Sw) -> u8 {
             Sw::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Tim2sw {
+        #[doc = "PCLK2 clock (doubled frequency when prescaled)"]
+        PCLK1_TIM = 0,
+        #[doc = "PLL vco output (running up to 144 MHz)"]
+        PLL1_P = 0x01,
+    }
+    impl Tim2sw {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Tim2sw {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Tim2sw {
+        #[inline(always)]
+        fn from(val: u8) -> Tim2sw {
+            Tim2sw::from_bits(val)
+        }
+    }
+    impl From<Tim2sw> for u8 {
+        #[inline(always)]
+        fn from(val: Tim2sw) -> u8 {
+            Tim2sw::to_bits(val)
         }
     }
     #[repr(u8)]

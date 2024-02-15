@@ -2298,7 +2298,7 @@
                         "block": "HRTIM"
                     },
                     "rcc": {
-                        "clock": "pclk2",
+                        "clock": "pclk2_tim",
                         "enable": {
                             "register": "apb2enr",
                             "field": "hrtim1en"

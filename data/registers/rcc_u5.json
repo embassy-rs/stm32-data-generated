@@ -2337,7 +2337,7 @@
         "description": "USART1 kernel clock source selection\r This bits are used to select the USART1 kernel clock source.\r Note: The USART1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE.",
         "bit_offset": 0,
         "bit_size": 2,
-        "enum": "USARTSEL"
+        "enum": "USART1SEL"
       },
       {
         "name": "USART2SEL",
@@ -2358,14 +2358,14 @@
         "description": "UART4 kernel clock source selection\r This bits are used to select the UART4 kernel clock source.\r Note: The UART4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE.",
         "bit_offset": 6,
         "bit_size": 2,
-        "enum": "UARTSEL"
+        "enum": "USARTSEL"
       },
       {
         "name": "UART5SEL",
         "description": "UART5 kernel clock source selection\r These bits are used to select the UART5 kernel clock source.\r Note: The UART5 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE.",
         "bit_offset": 8,
         "bit_size": 2,
-        "enum": "UARTSEL"
+        "enum": "USARTSEL"
       },
       {
         "name": "I2C1SEL",
@@ -2393,21 +2393,21 @@
         "description": "SPI2 kernel clock source selection\r These bits are used to select the SPI2 kernel clock source.\r Note: The SPI2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK.",
         "bit_offset": 16,
         "bit_size": 2,
-        "enum": "SPISEL"
+        "enum": "SPI2SEL"
       },
       {
         "name": "LPTIM2SEL",
         "description": "Low-power timer 2 kernel clock source selection\r These bits are used to select the LPTIM2 kernel clock source.\r Note: The LPTIM2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is LSI, LSE or HSI if HSIKERON = 1.",
         "bit_offset": 18,
         "bit_size": 2,
-        "enum": "LPTIMSEL"
+        "enum": "LPTIM2SEL"
       },
       {
         "name": "SPI1SEL",
         "description": "SPI1 kernel clock source selection\r These bits are used to select the SPI1 kernel clock source.\r Note: The SPI1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK.",
         "bit_offset": 20,
         "bit_size": 2,
-        "enum": "SPISEL"
+        "enum": "SPI1SEL"
       },
       {
         "name": "SYSTICKSEL",
@@ -2550,21 +2550,21 @@
         "description": "LPUART1 kernel clock source selection\r These bits are used to select the LPUART1 kernel clock source.\r others: reserved\r Note: The LPUART1 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI, LSE or MSIK.",
         "bit_offset": 0,
         "bit_size": 3,
-        "enum": "LPUARTSEL"
+        "enum": "LPUSARTSEL"
       },
       {
         "name": "SPI3SEL",
         "description": "SPI3 kernel clock source selection\r These bits are used to select the SPI3 kernel clock source.\r Note: The SPI3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI or MSIK.",
         "bit_offset": 3,
         "bit_size": 2,
-        "enum": "SPISEL"
+        "enum": "SPI3SEL"
       },
       {
         "name": "I2C3SEL",
         "description": "I2C3 kernel clock source selection\r These bits are used to select the I2C3 kernel clock source.\r Note: The I2C3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI or MSIK.",
         "bit_offset": 6,
         "bit_size": 2,
-        "enum": "I2CSEL"
+        "enum": "I2C3SEL"
       },
       {
         "name": "LPTIM34SEL",
@@ -3661,7 +3661,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "HCLK1",
+        "name": "HCLK3",
         "description": "HCLK selected",
         "value": 0
       },
@@ -3857,6 +3857,31 @@
       }
     ]
   },
+  "enum/I2C3SEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "PCLK3",
+        "description": "PCLK3 selected",
+        "value": 0
+      },
+      {
+        "name": "SYS",
+        "description": "SYSCLK selected",
+        "value": 1
+      },
+      {
+        "name": "HSI",
+        "description": "HSI selected",
+        "value": 2
+      },
+      {
+        "name": "MSIK",
+        "description": "MSIK selected",
+        "value": 3
+      }
+    ]
+  },
   "enum/I2CSEL": {
     "bit_size": 2,
     "variants": [
@@ -3907,7 +3932,7 @@
       }
     ]
   },
-  "enum/LPTIMSEL": {
+  "enum/LPTIM2SEL": {
     "bit_size": 2,
     "variants": [
       {
@@ -3932,7 +3957,32 @@
       }
     ]
   },
-  "enum/LPUARTSEL": {
+  "enum/LPTIMSEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "PCLK3",
+        "description": "PCLK3 selected",
+        "value": 0
+      },
+      {
+        "name": "LSI",
+        "description": "LSI selected",
+        "value": 1
+      },
+      {
+        "name": "HSI",
+        "description": "HSI selected",
+        "value": 2
+      },
+      {
+        "name": "LSE",
+        "description": "LSE selected",
+        "value": 3
+      }
+    ]
+  },
+  "enum/LPUSARTSEL": {
     "bit_size": 3,
     "variants": [
       {
@@ -7239,11 +7289,61 @@
       }
     ]
   },
-  "enum/SPISEL": {
+  "enum/SPI1SEL": {
     "bit_size": 2,
     "variants": [
       {
         "name": "PCLK2",
+        "description": "PCLK2 selected",
+        "value": 0
+      },
+      {
+        "name": "SYS",
+        "description": "SYSCLK selected",
+        "value": 1
+      },
+      {
+        "name": "HSI",
+        "description": "HSI selected",
+        "value": 2
+      },
+      {
+        "name": "MSIK",
+        "description": "MSIK selected",
+        "value": 3
+      }
+    ]
+  },
+  "enum/SPI2SEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "PCLK1",
+        "description": "PCLK2 selected",
+        "value": 0
+      },
+      {
+        "name": "SYS",
+        "description": "SYSCLK selected",
+        "value": 1
+      },
+      {
+        "name": "HSI",
+        "description": "HSI selected",
+        "value": 2
+      },
+      {
+        "name": "MSIK",
+        "description": "MSIK selected",
+        "value": 3
+      }
+    ]
+  },
+  "enum/SPI3SEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "PCLK3",
         "description": "PCLK2 selected",
         "value": 0
       },
@@ -7369,12 +7469,12 @@
       }
     ]
   },
-  "enum/UARTSEL": {
+  "enum/USART1SEL": {
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK1",
-        "description": "PCLK1 selected",
+        "name": "PCLK2",
+        "description": "PCLK2 selected",
         "value": 0
       },
       {
@@ -7398,8 +7498,8 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK2",
-        "description": "PCLK2 selected",
+        "name": "PCLK1",
+        "description": "PCLK1 selected",
         "value": 0
       },
       {

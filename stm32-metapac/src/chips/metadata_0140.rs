@@ -799,7 +799,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             ir: &hrtim::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "pclk2",
+            clock: "pclk2_tim",
             enable: Some(PeripheralRccRegister {
                 register: "apb2enr",
                 field: "hrtim1en",

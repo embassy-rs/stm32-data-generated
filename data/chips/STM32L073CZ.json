@@ -340,14 +340,15 @@
                         "block": "ADC"
                     },
                     "rcc": {
-                        "clock": "pclk2",
+                        "bus_clock": "PCLK2",
+                        "kernel_clock": "PCLK2",
                         "enable": {
-                            "register": "apb2enr",
-                            "field": "adcen"
+                            "register": "APB2ENR",
+                            "field": "ADCEN"
                         },
                         "reset": {
-                            "register": "apb2rstr",
-                            "field": "adcrst"
+                            "register": "APB2RSTR",
+                            "field": "ADCRST"
                         }
                     },
                     "pins": [
@@ -542,14 +543,15 @@
                         "block": "CRC"
                     },
                     "rcc": {
-                        "clock": "hclk1",
+                        "bus_clock": "HCLK1",
+                        "kernel_clock": "HCLK1",
                         "enable": {
-                            "register": "ahbenr",
-                            "field": "crcen"
+                            "register": "AHBENR",
+                            "field": "CRCEN"
                         },
                         "reset": {
-                            "register": "ahbrstr",
-                            "field": "crcrst"
+                            "register": "AHBRSTR",
+                            "field": "CRCRST"
                         }
                     }
                 },
@@ -562,14 +564,15 @@
                         "block": "CRS"
                     },
                     "rcc": {
-                        "clock": "pclk1",
+                        "bus_clock": "PCLK1",
+                        "kernel_clock": "PCLK1",
                         "enable": {
-                            "register": "apb1enr",
-                            "field": "crsen"
+                            "register": "APB1ENR",
+                            "field": "CRSEN"
                         },
                         "reset": {
-                            "register": "apb1rstr",
-                            "field": "crsrst"
+                            "register": "APB1RSTR",
+                            "field": "CRSRST"
                         }
                     },
                     "pins": [
@@ -594,14 +597,15 @@
                         "block": "DAC"
                     },
                     "rcc": {
-                        "clock": "pclk1",
+                        "bus_clock": "PCLK1",
+                        "kernel_clock": "PCLK1",
                         "enable": {
-                            "register": "apb1enr",
-                            "field": "dacen"
+                            "register": "APB1ENR",
+                            "field": "DACEN"
                         },
                         "reset": {
-                            "register": "apb1rstr",
-                            "field": "dacrst"
+                            "register": "APB1RSTR",
+                            "field": "DACRST"
                         }
                     },
                     "pins": [
@@ -651,14 +655,15 @@
                         "block": "DMA"
                     },
                     "rcc": {
-                        "clock": "hclk1",
+                        "bus_clock": "HCLK1",
+                        "kernel_clock": "HCLK1",
                         "enable": {
-                            "register": "ahbenr",
-                            "field": "dma1en"
+                            "register": "AHBENR",
+                            "field": "DMA1EN"
                         },
                         "reset": {
-                            "register": "ahbrstr",
-                            "field": "dma1rst"
+                            "register": "AHBRSTR",
+                            "field": "DMA1RST"
                         }
                     },
                     "interrupts": [
@@ -791,14 +796,15 @@
                         "block": "GPIO"
                     },
                     "rcc": {
-                        "clock": "gpio",
+                        "bus_clock": "GPIO",
+                        "kernel_clock": "GPIO",
                         "enable": {
-                            "register": "gpioenr",
-                            "field": "gpioaen"
+                            "register": "GPIOENR",
+                            "field": "GPIOAEN"
                         },
                         "reset": {
-                            "register": "gpiorstr",
-                            "field": "gpioarst"
+                            "register": "GPIORSTR",
+                            "field": "GPIOARST"
                         }
                     }
                 },
@@ -811,14 +817,15 @@
                         "block": "GPIO"
                     },
                     "rcc": {
-                        "clock": "gpio",
+                        "bus_clock": "GPIO",
+                        "kernel_clock": "GPIO",
                         "enable": {
-                            "register": "gpioenr",
-                            "field": "gpioben"
+                            "register": "GPIOENR",
+                            "field": "GPIOBEN"
                         },
                         "reset": {
-                            "register": "gpiorstr",
-                            "field": "gpiobrst"
+                            "register": "GPIORSTR",
+                            "field": "GPIOBRST"
                         }
                     }
                 },
@@ -831,14 +838,15 @@
                         "block": "GPIO"
                     },
                     "rcc": {
-                        "clock": "gpio",
+                        "bus_clock": "GPIO",
+                        "kernel_clock": "GPIO",
                         "enable": {
-                            "register": "gpioenr",
-                            "field": "gpiocen"
+                            "register": "GPIOENR",
+                            "field": "GPIOCEN"
                         },
                         "reset": {
-                            "register": "gpiorstr",
-                            "field": "gpiocrst"
+                            "register": "GPIORSTR",
+                            "field": "GPIOCRST"
                         }
                     }
                 },
@@ -851,14 +859,15 @@
                         "block": "GPIO"
                     },
                     "rcc": {
-                        "clock": "gpio",
+                        "bus_clock": "GPIO",
+                        "kernel_clock": "GPIO",
                         "enable": {
-                            "register": "gpioenr",
-                            "field": "gpioden"
+                            "register": "GPIOENR",
+                            "field": "GPIODEN"
                         },
                         "reset": {
-                            "register": "gpiorstr",
-                            "field": "gpiodrst"
+                            "register": "GPIORSTR",
+                            "field": "GPIODRST"
                         }
                     }
                 },
@@ -871,14 +880,15 @@
                         "block": "GPIO"
                     },
                     "rcc": {
-                        "clock": "gpio",
+                        "bus_clock": "GPIO",
+                        "kernel_clock": "GPIO",
                         "enable": {
-                            "register": "gpioenr",
-                            "field": "gpioeen"
+                            "register": "GPIOENR",
+                            "field": "GPIOEEN"
                         },
                         "reset": {
-                            "register": "gpiorstr",
-                            "field": "gpioerst"
+                            "register": "GPIORSTR",
+                            "field": "GPIOERST"
                         }
                     }
                 },
@@ -891,14 +901,15 @@
                         "block": "GPIO"
                     },
                     "rcc": {
-                        "clock": "gpio",
+                        "bus_clock": "GPIO",
+                        "kernel_clock": "GPIO",
                         "enable": {
-                            "register": "gpioenr",
-                            "field": "gpiohen"
+                            "register": "GPIOENR",
+                            "field": "GPIOHEN"
                         },
                         "reset": {
-                            "register": "gpiorstr",
-                            "field": "gpiohrst"
+                            "register": "GPIORSTR",
+                            "field": "GPIOHRST"
                         }
                     }
                 },
@@ -911,18 +922,18 @@
                         "block": "I2C"
                     },
                     "rcc": {
-                        "clock": "pclk1",
+                        "bus_clock": "PCLK1",
+                        "kernel_clock": {
+                            "register": "CCIPR",
+                            "field": "I2C1SEL"
+                        },
                         "enable": {
-                            "register": "apb1enr",
-                            "field": "i2c1en"
+                            "register": "APB1ENR",
+                            "field": "I2C1EN"
                         },
                         "reset": {
-                            "register": "apb1rstr",
-                            "field": "i2c1rst"
-                        },
-                        "mux": {
-                            "register": "ccipr",
-                            "field": "i2c1sel"
+                            "register": "APB1RSTR",
+                            "field": "I2C1RST"
                         }
                     },
                     "pins": [
@@ -1004,14 +1015,15 @@
                         "block": "I2C"
                     },
                     "rcc": {
-                        "clock": "pclk1",
+                        "bus_clock": "PCLK1",
+                        "kernel_clock": "PCLK1",
                         "enable": {
-                            "register": "apb1enr",
-                            "field": "i2c2en"
+                            "register": "APB1ENR",
+                            "field": "I2C2EN"
                         },
                         "reset": {
-                            "register": "apb1rstr",
-                            "field": "i2c2rst"
+                            "register": "APB1RSTR",
+                            "field": "I2C2RST"
                         }
                     },
                     "pins": [
@@ -1068,18 +1080,18 @@
                         "block": "I2C"
                     },
                     "rcc": {
-                        "clock": "pclk1",
+                        "bus_clock": "PCLK1",
+                        "kernel_clock": {
+                            "register": "CCIPR",
+                            "field": "I2C3SEL"
+                        },
                         "enable": {
-                            "register": "apb1enr",
-                            "field": "i2c3en"
+                            "register": "APB1ENR",
+                            "field": "I2C3EN"
                         },
                         "reset": {
-                            "register": "apb1rstr",
-                            "field": "i2c3rst"
-                        },
-                        "mux": {
-                            "register": "ccipr",
-                            "field": "i2c3sel"
+                            "register": "APB1RSTR",
+                            "field": "I2C3RST"
                         }
                     },
                     "pins": [
@@ -1319,18 +1331,18 @@
                         "block": "LPTIM"
                     },
                     "rcc": {
-                        "clock": "pclk1",
+                        "bus_clock": "PCLK1",
+                        "kernel_clock": {
+                            "register": "CCIPR",
+                            "field": "LPTIM1SEL"
+                        },
                         "enable": {
-                            "register": "apb1enr",
-                            "field": "lptim1en"
+                            "register": "APB1ENR",
+                            "field": "LPTIM1EN"
                         },
                         "reset": {
-                            "register": "apb1rstr",
-                            "field": "lptim1rst"
-                        },
-                        "mux": {
-                            "register": "ccipr",
-                            "field": "lptim1sel"
+                            "register": "APB1RSTR",
+                            "field": "LPTIM1RST"
                         },
                         "stop_mode": "Stop2"
                     },
@@ -1387,18 +1399,18 @@
                         "block": "LPUART"
                     },
                     "rcc": {
-                        "clock": "pclk1",
+                        "bus_clock": "PCLK1",
+                        "kernel_clock": {
+                            "register": "CCIPR",
+                            "field": "LPUART1SEL"
+                        },
                         "enable": {
-                            "register": "apb1enr",
-                            "field": "lpuart1en"
+                            "register": "APB1ENR",
+                            "field": "LPUART1EN"
                         },
                         "reset": {
-                            "register": "apb1rstr",
-                            "field": "lpuart1rst"
-                        },
-                        "mux": {
-                            "register": "ccipr",
-                            "field": "lpuart1sel"
+                            "register": "APB1RSTR",
+                            "field": "LPUART1RST"
                         },
                         "stop_mode": "Stop2"
                     },
@@ -1532,14 +1544,15 @@
                         "block": "PWR"
                     },
                     "rcc": {
-                        "clock": "pclk1",
+                        "bus_clock": "PCLK1",
+                        "kernel_clock": "PCLK1",
                         "enable": {
-                            "register": "apb1enr",
-                            "field": "pwren"
+                            "register": "APB1ENR",
+                            "field": "PWREN"
                         },
                         "reset": {
-                            "register": "apb1rstr",
-                            "field": "pwrrst"
+                            "register": "APB1RSTR",
+                            "field": "PWRRST"
                         }
                     }
                 },
@@ -1604,14 +1617,15 @@
                         "block": "RNG"
                     },
                     "rcc": {
-                        "clock": "hclk1",
+                        "bus_clock": "HCLK1",
+                        "kernel_clock": "HCLK1",
                         "enable": {
-                            "register": "ahbenr",
-                            "field": "rngen"
+                            "register": "AHBENR",
+                            "field": "RNGEN"
                         },
                         "reset": {
-                            "register": "ahbrstr",
-                            "field": "rngrst"
+                            "register": "AHBRSTR",
+                            "field": "RNGRST"
                         }
                     },
                     "interrupts": [
@@ -1698,14 +1712,15 @@
                         "block": "SPI"
                     },
                     "rcc": {
-                        "clock": "pclk2",
+                        "bus_clock": "PCLK2",
+                        "kernel_clock": "PCLK2",
                         "enable": {
-                            "register": "apb2enr",
-                            "field": "spi1en"
+                            "register": "APB2ENR",
+                            "field": "SPI1EN"
                         },
                         "reset": {
-                            "register": "apb2rstr",
-                            "field": "spi1rst"
+                            "register": "APB2RSTR",
+                            "field": "SPI1RST"
                         }
                     },
                     "pins": [
@@ -1788,14 +1803,15 @@
                         "block": "SPI"
                     },
                     "rcc": {
-                        "clock": "pclk1",
+                        "bus_clock": "PCLK1",
+                        "kernel_clock": "PCLK1",
                         "enable": {
-                            "register": "apb1enr",
-                            "field": "spi2en"
+                            "register": "APB1ENR",
+                            "field": "SPI2EN"
                         },
                         "reset": {
-                            "register": "apb1rstr",
-                            "field": "spi2rst"
+                            "register": "APB1RSTR",
+                            "field": "SPI2RST"
                         }
                     },
                     "pins": [
@@ -1903,14 +1919,15 @@
                         "block": "SYSCFG"
                     },
                     "rcc": {
-                        "clock": "pclk2",
+                        "bus_clock": "PCLK2",
+                        "kernel_clock": "PCLK2",
                         "enable": {
-                            "register": "apb2enr",
-                            "field": "syscfgen"
+                            "register": "APB2ENR",
+                            "field": "SYSCFGEN"
                         },
                         "reset": {
-                            "register": "apb2rstr",
-                            "field": "syscfgrst"
+                            "register": "APB2RSTR",
+                            "field": "SYSCFGRST"
                         }
                     }
                 },
@@ -1923,14 +1940,15 @@
                         "block": "TIM_GP16"
                     },
                     "rcc": {
-                        "clock": "pclk1_tim",
+                        "bus_clock": "PCLK1",
+                        "kernel_clock": "PCLK1_TIM",
                         "enable": {
-                            "register": "apb1enr",
-                            "field": "tim2en"
+                            "register": "APB1ENR",
+                            "field": "TIM2EN"
                         },
                         "reset": {
-                            "register": "apb1rstr",
-                            "field": "tim2rst"
+                            "register": "APB1RSTR",
+                            "field": "TIM2RST"
                         }
                     },
                     "pins": [
@@ -2064,14 +2082,15 @@
                         "block": "TIM_2CH"
                     },
                     "rcc": {
-                        "clock": "pclk2_tim",
+                        "bus_clock": "PCLK2",
+                        "kernel_clock": "PCLK2_TIM",
                         "enable": {
-                            "register": "apb2enr",
-                            "field": "tim21en"
+                            "register": "APB2ENR",
+                            "field": "TIM21EN"
                         },
                         "reset": {
-                            "register": "apb2rstr",
-                            "field": "tim21rst"
+                            "register": "APB2RSTR",
+                            "field": "TIM21RST"
                         }
                     },
                     "pins": [
@@ -2133,14 +2152,15 @@
                         "block": "TIM_2CH"
                     },
                     "rcc": {
-                        "clock": "pclk2_tim",
+                        "bus_clock": "PCLK2",
+                        "kernel_clock": "PCLK2_TIM",
                         "enable": {
-                            "register": "apb2enr",
-                            "field": "tim22en"
+                            "register": "APB2ENR",
+                            "field": "TIM22EN"
                         },
                         "reset": {
-                            "register": "apb2rstr",
-                            "field": "tim22rst"
+                            "register": "APB2RSTR",
+                            "field": "TIM22RST"
                         }
                     },
                     "pins": [
@@ -2202,14 +2222,15 @@
                         "block": "TIM_GP16"
                     },
                     "rcc": {
-                        "clock": "pclk1_tim",
+                        "bus_clock": "PCLK1",
+                        "kernel_clock": "PCLK1_TIM",
                         "enable": {
-                            "register": "apb1enr",
-                            "field": "tim3en"
+                            "register": "APB1ENR",
+                            "field": "TIM3EN"
                         },
                         "reset": {
-                            "register": "apb1rstr",
-                            "field": "tim3rst"
+                            "register": "APB1RSTR",
+                            "field": "TIM3RST"
                         }
                     },
                     "pins": [
@@ -2303,14 +2324,15 @@
                         "block": "TIM_BASIC"
                     },
                     "rcc": {
-                        "clock": "pclk1_tim",
+                        "bus_clock": "PCLK1",
+                        "kernel_clock": "PCLK1_TIM",
                         "enable": {
-                            "register": "apb1enr",
-                            "field": "tim6en"
+                            "register": "APB1ENR",
+                            "field": "TIM6EN"
                         },
                         "reset": {
-                            "register": "apb1rstr",
-                            "field": "tim6rst"
+                            "register": "APB1RSTR",
+                            "field": "TIM6RST"
                         }
                     },
                     "interrupts": [
@@ -2352,14 +2374,15 @@
                         "block": "TIM_BASIC"
                     },
                     "rcc": {
-                        "clock": "pclk1_tim",
+                        "bus_clock": "PCLK1",
+                        "kernel_clock": "PCLK1_TIM",
                         "enable": {
-                            "register": "apb1enr",
-                            "field": "tim7en"
+                            "register": "APB1ENR",
+                            "field": "TIM7EN"
                         },
                         "reset": {
-                            "register": "apb1rstr",
-                            "field": "tim7rst"
+                            "register": "APB1RSTR",
+                            "field": "TIM7RST"
                         }
                     },
                     "interrupts": [
@@ -2567,18 +2590,18 @@
                         "block": "USART"
                     },
                     "rcc": {
-                        "clock": "pclk2",
+                        "bus_clock": "PCLK2",
+                        "kernel_clock": {
+                            "register": "CCIPR",
+                            "field": "USART1SEL"
+                        },
                         "enable": {
-                            "register": "apb2enr",
-                            "field": "usart1en"
+                            "register": "APB2ENR",
+                            "field": "USART1EN"
                         },
                         "reset": {
-                            "register": "apb2rstr",
-                            "field": "usart1rst"
-                        },
-                        "mux": {
-                            "register": "ccipr",
-                            "field": "usart1sel"
+                            "register": "APB2RSTR",
+                            "field": "USART1RST"
                         }
                     },
                     "pins": [
@@ -2681,18 +2704,18 @@
                         "block": "USART"
                     },
                     "rcc": {
-                        "clock": "pclk1",
+                        "bus_clock": "PCLK1",
+                        "kernel_clock": {
+                            "register": "CCIPR",
+                            "field": "USART2SEL"
+                        },
                         "enable": {
-                            "register": "apb1enr",
-                            "field": "usart2en"
+                            "register": "APB1ENR",
+                            "field": "USART2EN"
                         },
                         "reset": {
-                            "register": "apb1rstr",
-                            "field": "usart2rst"
-                        },
-                        "mux": {
-                            "register": "ccipr",
-                            "field": "usart2sel"
+                            "register": "APB1RSTR",
+                            "field": "USART2RST"
                         }
                     },
                     "pins": [
@@ -2775,14 +2798,15 @@
                         "block": "USART"
                     },
                     "rcc": {
-                        "clock": "pclk1",
+                        "bus_clock": "PCLK1",
+                        "kernel_clock": "PCLK1",
                         "enable": {
-                            "register": "apb1enr",
-                            "field": "usart4en"
+                            "register": "APB1ENR",
+                            "field": "USART4EN"
                         },
                         "reset": {
-                            "register": "apb1rstr",
-                            "field": "usart4rst"
+                            "register": "APB1RSTR",
+                            "field": "USART4RST"
                         }
                     },
                     "pins": [
@@ -2850,14 +2874,15 @@
                         "block": "USART"
                     },
                     "rcc": {
-                        "clock": "pclk1",
+                        "bus_clock": "PCLK1",
+                        "kernel_clock": "PCLK1",
                         "enable": {
-                            "register": "apb1enr",
-                            "field": "usart5en"
+                            "register": "APB1ENR",
+                            "field": "USART5EN"
                         },
                         "reset": {
-                            "register": "apb1rstr",
-                            "field": "usart5rst"
+                            "register": "APB1RSTR",
+                            "field": "USART5RST"
                         }
                     },
                     "pins": [
@@ -2925,14 +2950,15 @@
                         "block": "USB"
                     },
                     "rcc": {
-                        "clock": "pclk1",
+                        "bus_clock": "PCLK1",
+                        "kernel_clock": "PCLK1",
                         "enable": {
-                            "register": "apb1enr",
-                            "field": "usben"
+                            "register": "APB1ENR",
+                            "field": "USBEN"
                         },
                         "reset": {
-                            "register": "apb1rstr",
-                            "field": "usbrst"
+                            "register": "APB1RSTR",
+                            "field": "USBRST"
                         }
                     },
                     "pins": [
@@ -2983,14 +3009,15 @@
                         "block": "WWDG"
                     },
                     "rcc": {
-                        "clock": "pclk1",
+                        "bus_clock": "PCLK1",
+                        "kernel_clock": "PCLK1",
                         "enable": {
-                            "register": "apb1enr",
-                            "field": "wwdgen"
+                            "register": "APB1ENR",
+                            "field": "WWDGEN"
                         },
                         "reset": {
-                            "register": "apb1rstr",
-                            "field": "wwdgrst"
+                            "register": "APB1RSTR",
+                            "field": "WWDGRST"
                         }
                     },
                     "interrupts": [

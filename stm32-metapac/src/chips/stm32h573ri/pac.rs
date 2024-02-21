@@ -629,7 +629,7 @@ pub const CORDIC: cordic::Cordic = unsafe { cordic::Cordic::from_ptr(0x4002_3800
 pub const FMAC: fmac::Fmac = unsafe { fmac::Fmac::from_ptr(0x4002_3c00usize as _) };
 pub const ETH: eth::Eth = unsafe { eth::Eth::from_ptr(0x4002_8000usize as _) };
 pub const ICACHE: *mut () = 0x4003_0400usize as _;
-pub const DCACHE1: *mut () = 0x4003_1400usize as _;
+pub const DCACHE1: dcache::Dcache = unsafe { dcache::Dcache::from_ptr(0x4003_1400usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0000usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0400usize as _) };
 pub const GPIOC: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0800usize as _) };
@@ -691,6 +691,8 @@ pub mod crs;
 pub mod dac;
 #[path = "../../peripherals/dbgmcu_h5.rs"]
 pub mod dbgmcu;
+#[path = "../../peripherals/dcache_v1.rs"]
+pub mod dcache;
 #[path = "../../peripherals/dcmi_v1.rs"]
 pub mod dcmi;
 #[path = "../../peripherals/eth_v2.rs"]

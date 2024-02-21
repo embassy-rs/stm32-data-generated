@@ -697,6 +697,11 @@
                 {
                     "name": "DCACHE1",
                     "address": 1073943552,
+                    "registers": {
+                        "kind": "dcache",
+                        "version": "v1",
+                        "block": "DCACHE"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK1",
                         "kernel_clock": "HCLK1",
@@ -715,6 +720,11 @@
                 {
                     "name": "DCACHE2",
                     "address": 1073944576,
+                    "registers": {
+                        "kind": "dcache",
+                        "version": "v1",
+                        "block": "DCACHE"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK1",
                         "kernel_clock": "HCLK1",

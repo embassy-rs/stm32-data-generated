@@ -602,7 +602,7 @@ pub const TSC: tsc::Tsc = unsafe { tsc::Tsc::from_ptr(0x4002_4000usize as _) };
 pub const MDF1: *mut () = 0x4002_5000usize as _;
 pub const DMA2D: dma2d::Dma2d = unsafe { dma2d::Dma2d::from_ptr(0x4002_b000usize as _) };
 pub const ICACHE: icache::Icache = unsafe { icache::Icache::from_ptr(0x4003_0400usize as _) };
-pub const DCACHE1: *mut () = 0x4003_1400usize as _;
+pub const DCACHE1: dcache::Dcache = unsafe { dcache::Dcache::from_ptr(0x4003_1400usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0000usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0400usize as _) };
 pub const GPIOC: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0800usize as _) };
@@ -673,6 +673,8 @@ pub mod crs;
 pub mod dac;
 #[path = "../../peripherals/dbgmcu_u5.rs"]
 pub mod dbgmcu;
+#[path = "../../peripherals/dcache_v1.rs"]
+pub mod dcache;
 #[path = "../../peripherals/dma2d_v1.rs"]
 pub mod dma2d;
 #[path = "../../peripherals/exti_u5.rs"]

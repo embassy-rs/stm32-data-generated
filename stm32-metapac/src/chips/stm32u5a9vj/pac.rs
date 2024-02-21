@@ -678,7 +678,7 @@ pub const ADC1: *mut () = 0x4202_8000usize as _;
 pub const ADC2: *mut () = 0x4202_8100usize as _;
 pub const ADC_COMMON: *mut () = 0x4202_8300usize as _;
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4202_c000usize as _) };
-pub const PSSI: *mut () = 0x4202_c400usize as _;
+pub const PSSI: pssi::Pssi = unsafe { pssi::Pssi::from_ptr(0x4202_c400usize as _) };
 pub const USB_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4204_0000usize as _) };
 pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x420c_0000usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400usize as _) };
@@ -777,6 +777,8 @@ pub mod octospi;
 pub mod octospim;
 #[path = "../../peripherals/otg_v1.rs"]
 pub mod otg;
+#[path = "../../peripherals/pssi_v1.rs"]
+pub mod pssi;
 #[path = "../../peripherals/pwr_u5.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_u5.rs"]

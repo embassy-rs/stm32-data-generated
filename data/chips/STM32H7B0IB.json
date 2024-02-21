@@ -4691,6 +4691,11 @@
                 {
                     "name": "PSSI",
                     "address": 1208091648,
+                    "registers": {
+                        "kind": "pssi",
+                        "version": "v1",
+                        "block": "PSSI"
+                    },
                     "pins": [
                         {
                             "pin": "PA10",

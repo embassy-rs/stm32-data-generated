@@ -632,7 +632,7 @@ pub const ADC2: *mut () = 0x4202_8100usize as _;
 pub const ADC_COMMON: *mut () = 0x4202_8300usize as _;
 pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4202_8400usize as _) };
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4202_c000usize as _) };
-pub const PSSI: *mut () = 0x4202_c400usize as _;
+pub const PSSI: pssi::Pssi = unsafe { pssi::Pssi::from_ptr(0x4202_c400usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4400_0400usize as _) };
@@ -703,6 +703,8 @@ pub mod icache;
 pub mod lptim;
 #[path = "../../peripherals/octospi_v2.rs"]
 pub mod octospi;
+#[path = "../../peripherals/pssi_v1.rs"]
+pub mod pssi;
 #[path = "../../peripherals/pwr_h5.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_h5.rs"]

@@ -577,7 +577,7 @@ pub const GPIOH: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1c00usize as 
 pub const ADC1: *mut () = 0x4202_8000usize as _;
 pub const ADC_COMMON: *mut () = 0x4202_8308usize as _;
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4202_c000usize as _) };
-pub const PSSI: *mut () = 0x4202_c400usize as _;
+pub const PSSI: pssi::Pssi = unsafe { pssi::Pssi::from_ptr(0x4202_c400usize as _) };
 pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x420c_0000usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
@@ -658,6 +658,8 @@ pub mod icache;
 pub mod lptim;
 #[path = "../../peripherals/octospi_v1.rs"]
 pub mod octospi;
+#[path = "../../peripherals/pssi_v1.rs"]
+pub mod pssi;
 #[path = "../../peripherals/pwr_u5.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_u5.rs"]

@@ -3751,6 +3751,11 @@
                 {
                     "name": "PSSI",
                     "address": 1107477504,
+                    "registers": {
+                        "kind": "pssi",
+                        "version": "v1",
+                        "block": "PSSI"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK2",
                         "kernel_clock": "HCLK2",

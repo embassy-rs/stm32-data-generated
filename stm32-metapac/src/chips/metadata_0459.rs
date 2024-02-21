@@ -3824,7 +3824,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "PSSI",
         address: 1208091648,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "pssi",
+            version: "v1",
+            block: "PSSI",
+            ir: &pssi::REGISTERS,
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -9091,6 +9096,8 @@ pub mod octospi;
 pub mod octospim;
 #[path = "../registers/otg_v1.rs"]
 pub mod otg;
+#[path = "../registers/pssi_v1.rs"]
+pub mod pssi;
 #[path = "../registers/pwr_h7rm0455.rs"]
 pub mod pwr;
 #[path = "../registers/rcc_h7ab.rs"]

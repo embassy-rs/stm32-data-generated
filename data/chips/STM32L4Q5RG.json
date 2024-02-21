@@ -2590,6 +2590,11 @@
                 {
                     "name": "PSSI",
                     "address": 1342505984,
+                    "registers": {
+                        "kind": "pssi",
+                        "version": "v1",
+                        "block": "PSSI"
+                    },
                     "pins": [
                         {
                             "pin": "PA10",

@@ -648,7 +648,7 @@ pub mod gpio;
 pub mod hash;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;
-#[path = "../../peripherals/icache_v1.rs"]
+#[path = "../../peripherals/icache_v1_3crr.rs"]
 pub mod icache;
 #[path = "../../peripherals/lptim_v1.rs"]
 pub mod lptim;

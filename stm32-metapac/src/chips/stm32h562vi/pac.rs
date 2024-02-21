@@ -603,7 +603,7 @@ pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000usize
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000usize as _) };
 pub const CORDIC: cordic::Cordic = unsafe { cordic::Cordic::from_ptr(0x4002_3800usize as _) };
 pub const FMAC: fmac::Fmac = unsafe { fmac::Fmac::from_ptr(0x4002_3c00usize as _) };
-pub const ICACHE: *mut () = 0x4003_0400usize as _;
+pub const ICACHE: icache::Icache = unsafe { icache::Icache::from_ptr(0x4003_0400usize as _) };
 pub const DCACHE1: dcache::Dcache = unsafe { dcache::Dcache::from_ptr(0x4003_1400usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0000usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0400usize as _) };
@@ -683,6 +683,8 @@ pub mod gpio;
 pub mod hash;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;
+#[path = "../../peripherals/icache_v1_4crr.rs"]
+pub mod icache;
 #[path = "../../peripherals/lptim_v1.rs"]
 pub mod lptim;
 #[path = "../../peripherals/octospi_v2.rs"]

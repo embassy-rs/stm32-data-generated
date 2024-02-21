@@ -2486,7 +2486,7 @@
                     "address": 1073939456,
                     "registers": {
                         "kind": "icache",
-                        "version": "v1",
+                        "version": "v1_3crr",
                         "block": "ICACHE"
                     },
                     "interrupts": [

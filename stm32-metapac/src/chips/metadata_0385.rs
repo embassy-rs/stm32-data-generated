@@ -3146,7 +3146,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "ICACHE",
         address: 1073939456,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "icache",
+            version: "v1_4crr",
+            block: "ICACHE",
+            ir: &icache::REGISTERS,
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -11141,6 +11146,8 @@ pub mod gpio;
 pub mod hash;
 #[path = "../registers/i2c_v2.rs"]
 pub mod i2c;
+#[path = "../registers/icache_v1_4crr.rs"]
+pub mod icache;
 #[path = "../registers/lptim_v1.rs"]
 pub mod lptim;
 #[path = "../registers/octospi_v2.rs"]

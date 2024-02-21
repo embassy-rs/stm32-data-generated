@@ -3,32 +3,6 @@ use crate::metadata::ir::*;
 pub(crate) static REGISTERS: IR = IR {
     blocks: &[
         Block {
-            name: "Crr",
-            extends: None,
-            description: Some(
-                "ICACHE region configuration register.",
-            ),
-            items: &[
-                BlockItem {
-                    name: "crrx",
-                    description: Some(
-                        "ICACHE control register.",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Crrx",
-                            ),
-                        },
-                    ),
-                },
-            ],
-        },
-        Block {
             name: "Icache",
             extends: None,
             description: Some(
@@ -114,9 +88,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::Read,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Hmonr",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -134,26 +106,6 @@ pub(crate) static REGISTERS: IR = IR {
                             fieldset: Some(
                                 "Mmonr",
                             ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "crr",
-                    description: Some(
-                        "Cluster CRR%s, container region configuration registers.",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 3,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    byte_offset: 32,
-                    inner: BlockItemInner::Block(
-                        BlockItemBlock {
-                            block: "Crr",
                         },
                     ),
                 },
@@ -195,9 +147,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Cacheinv",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "waysel",
@@ -255,9 +205,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Hitmrst",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "missmrst",
@@ -271,109 +219,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Missmrst",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Crrx",
-            extends: None,
-            description: Some(
-                "ICACHE region configuration register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "baseaddr",
-                    description: Some(
-                        "base address for region.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
                     enumm: None,
-                },
-                Field {
-                    name: "rsize",
-                    description: Some(
-                        "size for region.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 9,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Rsize",
-                    ),
-                },
-                Field {
-                    name: "ren",
-                    description: Some(
-                        "enable for region.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 15,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "remapaddr",
-                    description: Some(
-                        "remapped address for region.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 11,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mstsel",
-                    description: Some(
-                        "AHB cache master selection for region.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Mstsel",
-                    ),
-                },
-                Field {
-                    name: "hburst",
-                    description: Some(
-                        "output burst type for region.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 31,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Hburst",
-                    ),
                 },
             ],
         },
@@ -410,30 +256,6 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Hmonr",
-            extends: None,
-            description: Some(
-                "ICACHE hit monitor register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "hitmon",
-                    description: Some(
-                        "Hit monitor register.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -555,124 +377,6 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
-        Enum {
-            name: "Cacheinv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "INVALIDATE",
-                    description: Some(
-                        "Invalidate entire cache",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hburst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "WRAP",
-                    description: None,
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "INCREMENT",
-                    description: None,
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hitmrst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "RESET",
-                    description: Some(
-                        "Reset cache hit monitor",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Missmrst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "RESET",
-                    description: Some(
-                        "Reset cache miss monitor",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Mstsel",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "MASTER1SELECTED",
-                    description: None,
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MASTER2SELECTED",
-                    description: None,
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Rsize",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "TWOMEGABYTES",
-                    description: None,
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "FOURMEGABYTES",
-                    description: None,
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "EIGHTMEGABYTES",
-                    description: None,
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "SIXTEENMEGABYTES",
-                    description: None,
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "THIRTYTWOMEGABYTES",
-                    description: None,
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "SIXTYFOURMEGABYTES",
-                    description: None,
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "ONETWENTYEIGHTMEGABYTES",
-                    description: None,
-                    value: 7,
-                },
-            ],
-        },
         Enum {
             name: "Waysel",
             description: None,

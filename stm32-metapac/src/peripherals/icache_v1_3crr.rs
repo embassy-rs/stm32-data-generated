@@ -3,28 +3,6 @@
 #![allow(clippy::unnecessary_cast)]
 #![allow(clippy::erasing_op)]
 
-#[doc = "ICACHE region configuration register."]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Crr {
-    ptr: *mut u8,
-}
-unsafe impl Send for Crr {}
-unsafe impl Sync for Crr {}
-impl Crr {
-    #[inline(always)]
-    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
-        Self { ptr: ptr as _ }
-    }
-    #[inline(always)]
-    pub const fn as_ptr(&self) -> *mut () {
-        self.ptr as _
-    }
-    #[doc = "ICACHE control register."]
-    #[inline(always)]
-    pub const fn crrx(self) -> crate::common::Reg<regs::Crrx, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
-    }
-}
 #[doc = "Instruction Cache Control Registers."]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct Icache {
@@ -63,7 +41,7 @@ impl Icache {
     }
     #[doc = "ICACHE hit monitor register."]
     #[inline(always)]
-    pub const fn hmonr(self) -> crate::common::Reg<regs::Hmonr, crate::common::R> {
+    pub const fn hmonr(self) -> crate::common::Reg<u32, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
     }
     #[doc = "ICACHE miss monitor register."]
@@ -73,9 +51,9 @@ impl Icache {
     }
     #[doc = "Cluster CRR%s, container region configuration registers."]
     #[inline(always)]
-    pub const fn crr(self, n: usize) -> Crr {
+    pub const fn crr(self, n: usize) -> crate::common::Reg<regs::Crr, crate::common::RW> {
         assert!(n < 3usize);
-        unsafe { Crr::from_ptr(self.ptr.add(32usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize + n * 4usize) as _) }
     }
 }
 pub mod regs {
@@ -97,14 +75,14 @@ pub mod regs {
         }
         #[doc = "Set by software and cleared by hardware when the BUSYF flag is set (during cache maintenance operation). Writing 0 has no effect."]
         #[inline(always)]
-        pub const fn cacheinv(&self) -> super::vals::Cacheinv {
+        pub const fn cacheinv(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Cacheinv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Set by software and cleared by hardware when the BUSYF flag is set (during cache maintenance operation). Writing 0 has no effect."]
         #[inline(always)]
-        pub fn set_cacheinv(&mut self, val: super::vals::Cacheinv) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_cacheinv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "This bit allows user to choose ICACHE set-associativity. It can be written by software only when cache is disabled (EN = 0)."]
         #[inline(always)]
@@ -141,25 +119,25 @@ pub mod regs {
         }
         #[doc = "Hit monitor reset."]
         #[inline(always)]
-        pub const fn hitmrst(&self) -> super::vals::Hitmrst {
+        pub const fn hitmrst(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
-            super::vals::Hitmrst::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Hit monitor reset."]
         #[inline(always)]
-        pub fn set_hitmrst(&mut self, val: super::vals::Hitmrst) {
-            self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+        pub fn set_hitmrst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "Miss monitor reset."]
         #[inline(always)]
-        pub const fn missmrst(&self) -> super::vals::Missmrst {
+        pub const fn missmrst(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
-            super::vals::Missmrst::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Miss monitor reset."]
         #[inline(always)]
-        pub fn set_missmrst(&mut self, val: super::vals::Missmrst) {
-            self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+        pub fn set_missmrst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
     }
     impl Default for Cr {
@@ -171,8 +149,8 @@ pub mod regs {
     #[doc = "ICACHE region configuration register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Crrx(pub u32);
-    impl Crrx {
+    pub struct Crr(pub u32);
+    impl Crr {
         #[doc = "base address for region."]
         #[inline(always)]
         pub const fn baseaddr(&self) -> u8 {
@@ -240,10 +218,10 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
         }
     }
-    impl Default for Crrx {
+    impl Default for Crr {
         #[inline(always)]
-        fn default() -> Crrx {
-            Crrx(0)
+        fn default() -> Crr {
+            Crr(0)
         }
     }
     #[doc = "ICACHE flag clear register."]
@@ -278,29 +256,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Fcr {
             Fcr(0)
-        }
-    }
-    #[doc = "ICACHE hit monitor register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Hmonr(pub u32);
-    impl Hmonr {
-        #[doc = "Hit monitor register."]
-        #[inline(always)]
-        pub const fn hitmon(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Hit monitor register."]
-        #[inline(always)]
-        pub fn set_hitmon(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Hmonr {
-        #[inline(always)]
-        fn default() -> Hmonr {
-            Hmonr(0)
         }
     }
     #[doc = "ICACHE interrupt enable register."]
@@ -409,35 +364,6 @@ pub mod regs {
 pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Cacheinv {
-        _RESERVED_0 = 0,
-        #[doc = "Invalidate entire cache"]
-        INVALIDATE = 0x01,
-    }
-    impl Cacheinv {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Cacheinv {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Cacheinv {
-        #[inline(always)]
-        fn from(val: u8) -> Cacheinv {
-            Cacheinv::from_bits(val)
-        }
-    }
-    impl From<Cacheinv> for u8 {
-        #[inline(always)]
-        fn from(val: Cacheinv) -> u8 {
-            Cacheinv::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Hburst {
         WRAP = 0,
         INCREMENT = 0x01,
@@ -462,64 +388,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Hburst) -> u8 {
             Hburst::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Hitmrst {
-        _RESERVED_0 = 0,
-        #[doc = "Reset cache hit monitor"]
-        RESET = 0x01,
-    }
-    impl Hitmrst {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Hitmrst {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Hitmrst {
-        #[inline(always)]
-        fn from(val: u8) -> Hitmrst {
-            Hitmrst::from_bits(val)
-        }
-    }
-    impl From<Hitmrst> for u8 {
-        #[inline(always)]
-        fn from(val: Hitmrst) -> u8 {
-            Hitmrst::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Missmrst {
-        _RESERVED_0 = 0,
-        #[doc = "Reset cache miss monitor"]
-        RESET = 0x01,
-    }
-    impl Missmrst {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Missmrst {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Missmrst {
-        #[inline(always)]
-        fn from(val: u8) -> Missmrst {
-            Missmrst::from_bits(val)
-        }
-    }
-    impl From<Missmrst> for u8 {
-        #[inline(always)]
-        fn from(val: Missmrst) -> u8 {
-            Missmrst::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -554,13 +422,13 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rsize {
         _RESERVED_0 = 0,
-        TWOMEGABYTES = 0x01,
-        FOURMEGABYTES = 0x02,
-        EIGHTMEGABYTES = 0x03,
-        SIXTEENMEGABYTES = 0x04,
-        THIRTYTWOMEGABYTES = 0x05,
-        SIXTYFOURMEGABYTES = 0x06,
-        ONETWENTYEIGHTMEGABYTES = 0x07,
+        MEGABYTES2 = 0x01,
+        MEGABYTES4 = 0x02,
+        MEGABYTES8 = 0x03,
+        MEGABYTES16 = 0x04,
+        MEGABYTES32 = 0x05,
+        MEGABYTES64 = 0x06,
+        MEGABYTES128 = 0x07,
     }
     impl Rsize {
         #[inline(always)]

@@ -2612,6 +2612,11 @@
                 {
                     "name": "ICACHE",
                     "address": 1073939456,
+                    "registers": {
+                        "kind": "icache",
+                        "version": "v1_4crr",
+                        "block": "ICACHE"
+                    },
                     "interrupts": [
                         {
                             "signal": "GLOBAL",

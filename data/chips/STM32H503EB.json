@@ -274,7 +274,12 @@
                 },
                 {
                     "name": "DBGMCU",
-                    "address": 1140998144
+                    "address": 1140998144,
+                    "registers": {
+                        "kind": "dbgmcu",
+                        "version": "h5",
+                        "block": "DBGMCU"
+                    }
                 },
                 {
                     "name": "DTS",
@@ -2178,6 +2183,11 @@
                 {
                     "name": "TAMP",
                     "address": 1140882432,
+                    "registers": {
+                        "kind": "tamp",
+                        "version": "h5",
+                        "block": "TAMP"
+                    },
                     "pins": [
                         {
                             "pin": "PA0",

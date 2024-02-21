@@ -667,11 +667,11 @@ pub const LPTIM5: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4400_5000usiz
 pub const LPTIM6: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4400_5400usize as _) };
 pub const VREFBUF: *mut () = 0x4400_7400usize as _;
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4400_7800usize as _) };
-pub const TAMP: *mut () = 0x4400_7c00usize as _;
+pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4400_7c00usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4402_0800usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4402_0c00usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4402_2000usize as _) };
-pub const DBGMCU: *mut () = 0x4402_4000usize as _;
+pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0x4402_4000usize as _) };
 pub const OTFDEC1: *mut () = 0x4600_5000usize as _;
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4600_8000usize as _) };
 pub const SDMMC2: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4600_8c00usize as _) };
@@ -697,6 +697,8 @@ pub mod crc;
 pub mod crs;
 #[path = "../../peripherals/dac_v6.rs"]
 pub mod dac;
+#[path = "../../peripherals/dbgmcu_h5.rs"]
+pub mod dbgmcu;
 #[path = "../../peripherals/dcmi_v1.rs"]
 pub mod dcmi;
 #[path = "../../peripherals/eth_v2.rs"]
@@ -735,6 +737,8 @@ pub mod sdmmc;
 pub mod spi;
 #[path = "../../peripherals/syscfg_h5.rs"]
 pub mod syscfg;
+#[path = "../../peripherals/tamp_h5.rs"]
+pub mod tamp;
 #[path = "../../peripherals/timer_v2.rs"]
 pub mod timer;
 #[path = "../../peripherals/ucpd_v1.rs"]

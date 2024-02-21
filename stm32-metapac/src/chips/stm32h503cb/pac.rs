@@ -463,11 +463,11 @@ pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4400_2400u
 pub const I3C2: *mut () = 0x4400_3000usize as _;
 pub const LPTIM1: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4400_4400usize as _) };
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4400_7800usize as _) };
-pub const TAMP: *mut () = 0x4400_7c00usize as _;
+pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4400_7c00usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4402_0800usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4402_0c00usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4402_2000usize as _) };
-pub const DBGMCU: *mut () = 0x4402_4000usize as _;
+pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0x4402_4000usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 4;
@@ -486,6 +486,8 @@ pub mod crc;
 pub mod crs;
 #[path = "../../peripherals/dac_v6.rs"]
 pub mod dac;
+#[path = "../../peripherals/dbgmcu_h5.rs"]
+pub mod dbgmcu;
 #[path = "../../peripherals/exti_h50.rs"]
 pub mod exti;
 #[path = "../../peripherals/fdcanram_v1.rs"]
@@ -514,6 +516,8 @@ pub mod rtc;
 pub mod spi;
 #[path = "../../peripherals/syscfg_h50.rs"]
 pub mod syscfg;
+#[path = "../../peripherals/tamp_h5.rs"]
+pub mod tamp;
 #[path = "../../peripherals/timer_v2.rs"]
 pub mod timer;
 #[path = "../../peripherals/uid_v1.rs"]

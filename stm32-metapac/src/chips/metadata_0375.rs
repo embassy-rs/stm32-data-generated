@@ -569,7 +569,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "DBGMCU",
         address: 1140998144,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "dbgmcu",
+            version: "h5",
+            block: "DBGMCU",
+            ir: &dbgmcu::REGISTERS,
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -578,7 +583,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "DCACHE1",
         address: 1073943552,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "dcache",
+            version: "v1",
+            block: "DCACHE",
+            ir: &dcache::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK1",
             kernel_clock: Clock("HCLK1"),
@@ -5622,7 +5632,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "TAMP",
         address: 1140882432,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "tamp",
+            version: "h5",
+            block: "TAMP",
+            ir: &tamp::REGISTERS,
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -9790,6 +9805,10 @@ pub mod crc;
 pub mod crs;
 #[path = "../registers/dac_v6.rs"]
 pub mod dac;
+#[path = "../registers/dbgmcu_h5.rs"]
+pub mod dbgmcu;
+#[path = "../registers/dcache_v1.rs"]
+pub mod dcache;
 #[path = "../registers/dcmi_v1.rs"]
 pub mod dcmi;
 #[path = "../registers/exti_h5.rs"]
@@ -9826,6 +9845,8 @@ pub mod sdmmc;
 pub mod spi;
 #[path = "../registers/syscfg_h5.rs"]
 pub mod syscfg;
+#[path = "../registers/tamp_h5.rs"]
+pub mod tamp;
 #[path = "../registers/timer_v2.rs"]
 pub mod timer;
 #[path = "../registers/ucpd_v1.rs"]

@@ -501,11 +501,21 @@
                 },
                 {
                     "name": "DBGMCU",
-                    "address": 1140998144
+                    "address": 1140998144,
+                    "registers": {
+                        "kind": "dbgmcu",
+                        "version": "h5",
+                        "block": "DBGMCU"
+                    }
                 },
                 {
                     "name": "DCACHE1",
                     "address": 1073943552,
+                    "registers": {
+                        "kind": "dcache",
+                        "version": "v1",
+                        "block": "DCACHE"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK1",
                         "kernel_clock": "HCLK1",
@@ -3770,6 +3780,11 @@
                 {
                     "name": "TAMP",
                     "address": 1140882432,
+                    "registers": {
+                        "kind": "tamp",
+                        "version": "h5",
+                        "block": "TAMP"
+                    },
                     "pins": [
                         {
                             "pin": "PA0",

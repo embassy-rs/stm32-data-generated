@@ -617,7 +617,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "DCACHE1",
         address: 1073943552,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "dcache",
+            version: "v1",
+            block: "DCACHE",
+            ir: &dcache::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK1",
             kernel_clock: Clock("HCLK1"),
@@ -8825,6 +8830,8 @@ pub mod crs;
 pub mod dac;
 #[path = "../registers/dbgmcu_u5.rs"]
 pub mod dbgmcu;
+#[path = "../registers/dcache_v1.rs"]
+pub mod dcache;
 #[path = "../registers/dcmi_v1.rs"]
 pub mod dcmi;
 #[path = "../registers/dma2d_v1.rs"]

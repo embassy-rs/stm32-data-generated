@@ -604,7 +604,7 @@ pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000usize as _) };
 pub const CORDIC: cordic::Cordic = unsafe { cordic::Cordic::from_ptr(0x4002_3800usize as _) };
 pub const FMAC: fmac::Fmac = unsafe { fmac::Fmac::from_ptr(0x4002_3c00usize as _) };
 pub const ICACHE: *mut () = 0x4003_0400usize as _;
-pub const DCACHE1: *mut () = 0x4003_1400usize as _;
+pub const DCACHE1: dcache::Dcache = unsafe { dcache::Dcache::from_ptr(0x4003_1400usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0000usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0400usize as _) };
 pub const GPIOC: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0800usize as _) };
@@ -634,11 +634,11 @@ pub const LPTIM5: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4400_5000usiz
 pub const LPTIM6: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4400_5400usize as _) };
 pub const VREFBUF: *mut () = 0x4400_7400usize as _;
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4400_7800usize as _) };
-pub const TAMP: *mut () = 0x4400_7c00usize as _;
+pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4400_7c00usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4402_0800usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4402_0c00usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4402_2000usize as _) };
-pub const DBGMCU: *mut () = 0x4402_4000usize as _;
+pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0x4402_4000usize as _) };
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4600_8000usize as _) };
 pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x4700_1400usize as _) };
 pub const FMC: *mut () = 0x6000_0000usize as _;
@@ -662,6 +662,10 @@ pub mod crc;
 pub mod crs;
 #[path = "../../peripherals/dac_v6.rs"]
 pub mod dac;
+#[path = "../../peripherals/dbgmcu_h5.rs"]
+pub mod dbgmcu;
+#[path = "../../peripherals/dcache_v1.rs"]
+pub mod dcache;
 #[path = "../../peripherals/dcmi_v1.rs"]
 pub mod dcmi;
 #[path = "../../peripherals/exti_h5.rs"]
@@ -698,6 +702,8 @@ pub mod sdmmc;
 pub mod spi;
 #[path = "../../peripherals/syscfg_h5.rs"]
 pub mod syscfg;
+#[path = "../../peripherals/tamp_h5.rs"]
+pub mod tamp;
 #[path = "../../peripherals/timer_v2.rs"]
 pub mod timer;
 #[path = "../../peripherals/ucpd_v1.rs"]

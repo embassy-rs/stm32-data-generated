@@ -6278,7 +6278,12 @@
                 },
                 {
                     "name": "VREFBUF",
-                    "address": 1140880384
+                    "address": 1140880384,
+                    "registers": {
+                        "kind": "vrefbuf",
+                        "version": "v2a2",
+                        "block": "VREFBUF"
+                    }
                 },
                 {
                     "name": "WWDG",

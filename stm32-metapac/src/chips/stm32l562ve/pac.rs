@@ -518,7 +518,7 @@ pub const USB: usb::Usb = unsafe { usb::Usb::from_ptr(0x4000_d400usize as _) };
 pub const USBRAM: usbram::Usbram = unsafe { usbram::Usbram::from_ptr(0x4000_d800usize as _) };
 pub const UCPD1: ucpd::Ucpd = unsafe { ucpd::Ucpd::from_ptr(0x4000_dc00usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000usize as _) };
-pub const VREFBUF: *mut () = 0x4001_0100usize as _;
+pub const VREFBUF: vrefbuf::Vrefbuf = unsafe { vrefbuf::Vrefbuf::from_ptr(0x4001_0100usize as _) };
 pub const COMP1: *mut () = 0x4001_0200usize as _;
 pub const COMP2: *mut () = 0x4001_0204usize as _;
 pub const TIM1: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_2c00usize as _) };
@@ -639,6 +639,8 @@ pub mod usart;
 pub mod usb;
 #[path = "../../peripherals/usbram_16x2_1024.rs"]
 pub mod usbram;
+#[path = "../../peripherals/vrefbuf_v1.rs"]
+pub mod vrefbuf;
 #[path = "../../peripherals/wwdg_v2.rs"]
 pub mod wwdg;
 pub const CORE_INDEX: usize = 0;

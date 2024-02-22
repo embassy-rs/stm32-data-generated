@@ -7625,7 +7625,12 @@
                 },
                 {
                     "name": "VREFBUF",
-                    "address": 1174434816
+                    "address": 1174434816,
+                    "registers": {
+                        "kind": "vrefbuf",
+                        "version": "v2a1",
+                        "block": "VREFBUF"
+                    }
                 },
                 {
                     "name": "WWDG",

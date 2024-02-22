@@ -6040,7 +6040,12 @@
                 },
                 {
                     "name": "VREFBUF",
-                    "address": 1073807616
+                    "address": 1073807616,
+                    "registers": {
+                        "kind": "vrefbuf",
+                        "version": "v1",
+                        "block": "VREFBUF"
+                    }
                 },
                 {
                     "name": "WWDG",

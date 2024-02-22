@@ -9270,7 +9270,12 @@
                 },
                 {
                     "name": "VREFBUF",
-                    "address": 1476410368
+                    "address": 1476410368,
+                    "registers": {
+                        "kind": "vrefbuf",
+                        "version": "v2a1",
+                        "block": "VREFBUF"
+                    }
                 },
                 {
                     "name": "WWDG1",
@@ -18962,7 +18967,12 @@
                 },
                 {
                     "name": "VREFBUF",
-                    "address": 1476410368
+                    "address": 1476410368,
+                    "registers": {
+                        "kind": "vrefbuf",
+                        "version": "v2a1",
+                        "block": "VREFBUF"
+                    }
                 },
                 {
                     "name": "WWDG1",

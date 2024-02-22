@@ -4585,7 +4585,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "VREFBUF",
         address: 1174434816,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "vrefbuf",
+            version: "v2a1",
+            block: "VREFBUF",
+            ir: &vrefbuf::REGISTERS,
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -5240,5 +5245,7 @@ pub mod usart;
 pub mod usb;
 #[path = "../registers/usbram_32_2048.rs"]
 pub mod usbram;
+#[path = "../registers/vrefbuf_v2a1.rs"]
+pub mod vrefbuf;
 #[path = "../registers/wwdg_v2.rs"]
 pub mod wwdg;

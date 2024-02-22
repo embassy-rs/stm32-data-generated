@@ -661,7 +661,7 @@ pub const LPTIM3: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4400_4800usiz
 pub const LPTIM4: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4400_4c00usize as _) };
 pub const LPTIM5: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4400_5000usize as _) };
 pub const LPTIM6: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4400_5400usize as _) };
-pub const VREFBUF: *mut () = 0x4400_7400usize as _;
+pub const VREFBUF: vrefbuf::Vrefbuf = unsafe { vrefbuf::Vrefbuf::from_ptr(0x4400_7400usize as _) };
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4400_7800usize as _) };
 pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4400_7c00usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4402_0800usize as _) };
@@ -756,6 +756,8 @@ pub mod usart;
 pub mod usb;
 #[path = "../../peripherals/usbram_32_2048.rs"]
 pub mod usbram;
+#[path = "../../peripherals/vrefbuf_v2a2.rs"]
+pub mod vrefbuf;
 #[path = "../../peripherals/wwdg_v2.rs"]
 pub mod wwdg;
 pub const CORE_INDEX: usize = 0;

@@ -716,7 +716,7 @@ pub const LPTIM4: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x5800_2c00usiz
 pub const LPTIM5: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x5800_3000usize as _) };
 pub const COMP1: *mut () = 0x5800_380cusize as _;
 pub const COMP2: *mut () = 0x5800_3810usize as _;
-pub const VREFBUF: *mut () = 0x5800_3c00usize as _;
+pub const VREFBUF: vrefbuf::Vrefbuf = unsafe { vrefbuf::Vrefbuf::from_ptr(0x5800_3c00usize as _) };
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x5800_4000usize as _) };
 pub const IWDG1: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x5800_4800usize as _) };
 pub const IWDG2: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x5800_4c00usize as _) };
@@ -828,6 +828,8 @@ pub mod timer;
 pub mod uid;
 #[path = "../../peripherals/usart_v4.rs"]
 pub mod usart;
+#[path = "../../peripherals/vrefbuf_v2a1.rs"]
+pub mod vrefbuf;
 #[path = "../../peripherals/wwdg_v2.rs"]
 pub mod wwdg;
 pub const CORE_INDEX: usize = 1;

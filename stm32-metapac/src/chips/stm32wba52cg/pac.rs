@@ -318,7 +318,7 @@ pub const UID: uid::Uid = unsafe { uid::Uid::from_ptr(0x0bf9_0700usize as _) };
 pub const TIM2: timer::TimGp32 = unsafe { timer::TimGp32::from_ptr(0x4000_0000usize as _) };
 pub const TIM3: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4000_0400usize as _) };
 pub const WWDG: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x4000_2c00usize as _) };
-pub const IWDG: *mut () = 0x4000_3000usize as _;
+pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000usize as _) };
 pub const USART2: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4400usize as _) };
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400usize as _) };
 pub const LPTIM2: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_9400usize as _) };
@@ -382,6 +382,8 @@ pub mod hash;
 pub mod i2c;
 #[path = "../../peripherals/icache_v1_4crr.rs"]
 pub mod icache;
+#[path = "../../peripherals/iwdg_v3.rs"]
+pub mod iwdg;
 #[path = "../../peripherals/lptim_v1.rs"]
 pub mod lptim;
 #[path = "../../peripherals/pwr_wba.rs"]

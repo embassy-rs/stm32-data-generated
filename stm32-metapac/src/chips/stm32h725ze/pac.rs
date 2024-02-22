@@ -706,7 +706,7 @@ pub const VREFBUF: *mut () = 0x5800_3c00usize as _;
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x5800_4000usize as _) };
 pub const IWDG1: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x5800_4800usize as _) };
 pub const SAI4: sai::Sai = unsafe { sai::Sai::from_ptr(0x5800_5400usize as _) };
-pub const DTS: *mut () = 0x5800_6800usize as _;
+pub const DTS: dts::Dts = unsafe { dts::Dts::from_ptr(0x5800_6800usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x5802_0000usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x5802_0400usize as _) };
 pub const GPIOC: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x5802_0800usize as _) };
@@ -761,6 +761,8 @@ pub mod dma;
 pub mod dma2d;
 #[path = "../../peripherals/dmamux_v1.rs"]
 pub mod dmamux;
+#[path = "../../peripherals/dts_v1.rs"]
+pub mod dts;
 #[path = "../../peripherals/eth_v2.rs"]
 pub mod eth;
 #[path = "../../peripherals/exti_h7.rs"]

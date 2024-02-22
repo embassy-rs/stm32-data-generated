@@ -1564,6 +1564,11 @@
                 {
                     "name": "DTS",
                     "address": 1476421632,
+                    "registers": {
+                        "kind": "dts",
+                        "version": "v1",
+                        "block": "DTS"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK4",
                         "kernel_clock": "PCLK4",

@@ -849,7 +849,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "DTS",
         address: 1073777664,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "dts",
+            version: "v1",
+            block: "DTS",
+            ir: &dts::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Clock("PCLK1"),
@@ -2611,7 +2616,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "IWDG",
         address: 1073754112,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "iwdg",
+            version: "v3",
+            block: "IWDG",
+            ir: &iwdg::REGISTERS,
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -9821,6 +9831,8 @@ pub mod dbgmcu;
 pub mod dcache;
 #[path = "../registers/dcmi_v1.rs"]
 pub mod dcmi;
+#[path = "../registers/dts_v1.rs"]
+pub mod dts;
 #[path = "../registers/exti_h5.rs"]
 pub mod exti;
 #[path = "../registers/fdcanram_v1.rs"]
@@ -9839,6 +9851,8 @@ pub mod hash;
 pub mod i2c;
 #[path = "../registers/icache_v1_4crr.rs"]
 pub mod icache;
+#[path = "../registers/iwdg_v3.rs"]
+pub mod iwdg;
 #[path = "../registers/lptim_v1.rs"]
 pub mod lptim;
 #[path = "../registers/octospi_v2.rs"]

@@ -536,7 +536,7 @@ pub const TIM5: timer::TimGp32 = unsafe { timer::TimGp32::from_ptr(0x4000_0c00us
 pub const TIM6: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4000_1000usize as _) };
 pub const TIM7: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4000_1400usize as _) };
 pub const WWDG: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x4000_2c00usize as _) };
-pub const IWDG: *mut () = 0x4000_3000usize as _;
+pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000usize as _) };
 pub const SPI2: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3800usize as _) };
 pub const USART3: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4800usize as _) };
 pub const UART4: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4c00usize as _) };
@@ -650,6 +650,8 @@ pub mod hash;
 pub mod i2c;
 #[path = "../../peripherals/icache_v1_3crr.rs"]
 pub mod icache;
+#[path = "../../peripherals/iwdg_v3.rs"]
+pub mod iwdg;
 #[path = "../../peripherals/lptim_v1.rs"]
 pub mod lptim;
 #[path = "../../peripherals/octospi_v1.rs"]

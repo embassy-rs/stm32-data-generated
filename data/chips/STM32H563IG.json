@@ -889,6 +889,11 @@
                 {
                     "name": "DTS",
                     "address": 1073777664,
+                    "registers": {
+                        "kind": "dts",
+                        "version": "v1",
+                        "block": "DTS"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK1",
                         "kernel_clock": "PCLK1",
@@ -2905,6 +2910,11 @@
                 {
                     "name": "IWDG",
                     "address": 1073754112,
+                    "registers": {
+                        "kind": "iwdg",
+                        "version": "v3",
+                        "block": "IWDG"
+                    },
                     "interrupts": [
                         {
                             "signal": "GLOBAL",

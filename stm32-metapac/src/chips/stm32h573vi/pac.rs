@@ -587,7 +587,7 @@ pub const TIM12: timer::Tim2ch = unsafe { timer::Tim2ch::from_ptr(0x4000_1800usi
 pub const TIM13: timer::Tim1ch = unsafe { timer::Tim1ch::from_ptr(0x4000_1c00usize as _) };
 pub const TIM14: timer::Tim1ch = unsafe { timer::Tim1ch::from_ptr(0x4000_2000usize as _) };
 pub const WWDG: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x4000_2c00usize as _) };
-pub const IWDG: *mut () = 0x4000_3000usize as _;
+pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000usize as _) };
 pub const SPI2: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3800usize as _) };
 pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3c00usize as _) };
 pub const USART2: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4400usize as _) };
@@ -606,7 +606,7 @@ pub const UART7: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_7800usize
 pub const UART8: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_7c00usize as _) };
 pub const UART9: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_8000usize as _) };
 pub const UART12: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_8400usize as _) };
-pub const DTS: *mut () = 0x4000_8c00usize as _;
+pub const DTS: dts::Dts = unsafe { dts::Dts::from_ptr(0x4000_8c00usize as _) };
 pub const LPTIM2: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_9400usize as _) };
 pub const FDCAN1: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a400usize as _) };
 pub const FDCAN2: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a800usize as _) };
@@ -701,6 +701,8 @@ pub mod dbgmcu;
 pub mod dcache;
 #[path = "../../peripherals/dcmi_v1.rs"]
 pub mod dcmi;
+#[path = "../../peripherals/dts_v1.rs"]
+pub mod dts;
 #[path = "../../peripherals/eth_v2.rs"]
 pub mod eth;
 #[path = "../../peripherals/exti_h5.rs"]
@@ -721,6 +723,8 @@ pub mod hash;
 pub mod i2c;
 #[path = "../../peripherals/icache_v1_4crr.rs"]
 pub mod icache;
+#[path = "../../peripherals/iwdg_v3.rs"]
+pub mod iwdg;
 #[path = "../../peripherals/lptim_v1.rs"]
 pub mod lptim;
 #[path = "../../peripherals/octospi_v2.rs"]

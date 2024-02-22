@@ -1295,7 +1295,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "DTS",
         address: 1476421632,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "dts",
+            version: "v1",
+            block: "DTS",
+            ir: &dts::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK4",
             kernel_clock: Clock("PCLK4"),
@@ -7098,6 +7103,8 @@ pub mod dma;
 pub mod dma2d;
 #[path = "../registers/dmamux_v1.rs"]
 pub mod dmamux;
+#[path = "../registers/dts_v1.rs"]
+pub mod dts;
 #[path = "../registers/exti_h7.rs"]
 pub mod exti;
 #[path = "../registers/fdcanram_h7.rs"]

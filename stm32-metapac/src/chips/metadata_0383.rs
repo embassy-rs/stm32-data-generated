@@ -3,7 +3,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "ADC1",
         address: 1107460096,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "adc",
+            version: "h5",
+            block: "ADC",
+            ir: &adc::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
             kernel_clock: Clock("HCLK2"),
@@ -178,7 +183,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "ADC2",
         address: 1107460352,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "adc",
+            version: "h5",
+            block: "ADC",
+            ir: &adc::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
             kernel_clock: Clock("HCLK2"),
@@ -353,7 +363,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "ADC_COMMON",
         address: 1107460864,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "adccommon",
+            version: "h5",
+            block: "ADC_COMMON",
+            ir: &adccommon::REGISTERS,
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -362,7 +377,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "CEC",
         address: 1073770496,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "cec",
+            version: "v2",
+            block: "CEC",
+            ir: &cec::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -10237,8 +10257,14 @@ pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
         dmamux_channel: None,
     },
 ];
+#[path = "../registers/adc_h5.rs"]
+pub mod adc;
+#[path = "../registers/adccommon_h5.rs"]
+pub mod adccommon;
 #[path = "../registers/can_fdcan_v1.rs"]
 pub mod can;
+#[path = "../registers/cec_v2.rs"]
+pub mod cec;
 #[path = "../registers/cordic_v1.rs"]
 pub mod cordic;
 #[path = "../registers/crc_v3.rs"]

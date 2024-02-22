@@ -639,7 +639,7 @@ pub const UART5: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_5000usize
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400usize as _) };
 pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5800usize as _) };
 pub const I2C3: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5c00usize as _) };
-pub const CEC: *mut () = 0x4000_6c00usize as _;
+pub const CEC: cec::Cec = unsafe { cec::Cec::from_ptr(0x4000_6c00usize as _) };
 pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4000_7400usize as _) };
 pub const UART7: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_7800usize as _) };
 pub const UART8: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_7c00usize as _) };
@@ -741,6 +741,8 @@ pub mod adccommon;
 pub mod bdma;
 #[path = "../../peripherals/can_fdcan_h7.rs"]
 pub mod can;
+#[path = "../../peripherals/cec_v2.rs"]
+pub mod cec;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]

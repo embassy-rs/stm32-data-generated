@@ -170,7 +170,7 @@ pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5800usize as _) };
 pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_6c00usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4000_7000usize as _) };
 pub const DAC: dac::Dac = unsafe { dac::Dac::from_ptr(0x4000_7400usize as _) };
-pub const CEC: *mut () = 0x4000_7800usize as _;
+pub const CEC: cec::Cec = unsafe { cec::Cec::from_ptr(0x4000_7800usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000usize as _) };
 pub const COMP1: *mut () = 0x4001_001cusize as _;
 pub const COMP2: *mut () = 0x4001_001eusize as _;
@@ -209,6 +209,8 @@ pub fn GPIO(n: usize) -> gpio::Gpio {
 pub mod adc;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
+#[path = "../../peripherals/cec_v2.rs"]
+pub mod cec;
 #[path = "../../peripherals/crc_v2.rs"]
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]

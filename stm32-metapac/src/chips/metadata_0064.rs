@@ -180,7 +180,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "CEC",
         address: 1073772544,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "cec",
+            version: "v1",
+            block: "CEC",
+            ir: &cec::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Clock("PCLK1"),
@@ -2119,6 +2124,8 @@ pub mod afio;
 pub mod bdma;
 #[path = "../registers/bkp_v1.rs"]
 pub mod bkp;
+#[path = "../registers/cec_v1.rs"]
+pub mod cec;
 #[path = "../registers/crc_v1.rs"]
 pub mod crc;
 #[path = "../registers/dac_v2.rs"]

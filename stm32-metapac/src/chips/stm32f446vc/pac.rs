@@ -417,7 +417,7 @@ pub const I2C3: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5c00usize as _) };
 pub const FMPI2C1: *mut () = 0x4000_6000usize as _;
 pub const CAN1: can::Can = unsafe { can::Can::from_ptr(0x4000_6400usize as _) };
 pub const CAN2: can::Can = unsafe { can::Can::from_ptr(0x4000_6800usize as _) };
-pub const CEC: *mut () = 0x4000_6c00usize as _;
+pub const CEC: cec::Cec = unsafe { cec::Cec::from_ptr(0x4000_6c00usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4000_7000usize as _) };
 pub const DAC: dac::Dac = unsafe { dac::Dac::from_ptr(0x4000_7400usize as _) };
 pub const TIM1: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_0000usize as _) };
@@ -473,6 +473,8 @@ pub mod adc;
 pub mod adccommon;
 #[path = "../../peripherals/can_bxcan.rs"]
 pub mod can;
+#[path = "../../peripherals/cec_v2.rs"]
+pub mod cec;
 #[path = "../../peripherals/crc_v1.rs"]
 pub mod crc;
 #[path = "../../peripherals/dac_v2.rs"]

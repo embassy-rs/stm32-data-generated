@@ -456,7 +456,7 @@ pub const I2C3: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5c00usize as _) };
 pub const I2C4: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_6000usize as _) };
 pub const CAN1: can::Can = unsafe { can::Can::from_ptr(0x4000_6400usize as _) };
 pub const CAN2: can::Can = unsafe { can::Can::from_ptr(0x4000_6800usize as _) };
-pub const CEC: *mut () = 0x4000_6c00usize as _;
+pub const CEC: cec::Cec = unsafe { cec::Cec::from_ptr(0x4000_6c00usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4000_7000usize as _) };
 pub const DAC: dac::Dac = unsafe { dac::Dac::from_ptr(0x4000_7400usize as _) };
 pub const UART7: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_7800usize as _) };
@@ -525,6 +525,8 @@ pub mod adc;
 pub mod adccommon;
 #[path = "../../peripherals/can_bxcan.rs"]
 pub mod can;
+#[path = "../../peripherals/cec_v2.rs"]
+pub mod cec;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/cryp_v2.rs"]

@@ -792,6 +792,11 @@
                 {
                     "name": "CEC",
                     "address": 1073769472,
+                    "registers": {
+                        "kind": "cec",
+                        "version": "v2",
+                        "block": "CEC"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK1",
                         "kernel_clock": {
@@ -9206,6 +9211,11 @@
                 {
                     "name": "CEC",
                     "address": 1073769472,
+                    "registers": {
+                        "kind": "cec",
+                        "version": "v2",
+                        "block": "CEC"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK1",
                         "kernel_clock": {

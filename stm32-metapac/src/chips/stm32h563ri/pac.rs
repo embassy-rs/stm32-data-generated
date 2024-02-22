@@ -588,7 +588,7 @@ pub const I3C1: *mut () = 0x4000_5c00usize as _;
 pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_6000usize as _) };
 pub const USART6: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_6400usize as _) };
 pub const USART11: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_6c00usize as _) };
-pub const CEC: *mut () = 0x4000_7000usize as _;
+pub const CEC: cec::Cec = unsafe { cec::Cec::from_ptr(0x4000_7000usize as _) };
 pub const UART7: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_7800usize as _) };
 pub const DTS: dts::Dts = unsafe { dts::Dts::from_ptr(0x4000_8c00usize as _) };
 pub const LPTIM2: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_9400usize as _) };
@@ -627,9 +627,9 @@ pub const GPIOF: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1400usize as 
 pub const GPIOG: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1800usize as _) };
 pub const GPIOH: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1c00usize as _) };
 pub const GPIOI: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_2000usize as _) };
-pub const ADC1: *mut () = 0x4202_8000usize as _;
-pub const ADC2: *mut () = 0x4202_8100usize as _;
-pub const ADC_COMMON: *mut () = 0x4202_8300usize as _;
+pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_8000usize as _) };
+pub const ADC2: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_8100usize as _) };
+pub const ADC_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4202_8300usize as _) };
 pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4202_8400usize as _) };
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4202_c000usize as _) };
 pub const PSSI: pssi::Pssi = unsafe { pssi::Pssi::from_ptr(0x4202_c400usize as _) };
@@ -663,8 +663,14 @@ pub use Interrupt as interrupt;
 pub fn GPIO(n: usize) -> gpio::Gpio {
     unsafe { gpio::Gpio::from_ptr((1107427328 + 1024 * n) as _) }
 }
+#[path = "../../peripherals/adc_h5.rs"]
+pub mod adc;
+#[path = "../../peripherals/adccommon_h5.rs"]
+pub mod adccommon;
 #[path = "../../peripherals/can_fdcan_v1.rs"]
 pub mod can;
+#[path = "../../peripherals/cec_v2.rs"]
+pub mod cec;
 #[path = "../../peripherals/cordic_v1.rs"]
 pub mod cordic;
 #[path = "../../peripherals/crc_v3.rs"]

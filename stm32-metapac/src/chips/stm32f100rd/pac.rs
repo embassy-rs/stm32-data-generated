@@ -288,7 +288,7 @@ pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5800usize as _) };
 pub const BKP: bkp::Bkp = unsafe { bkp::Bkp::from_ptr(0x4000_6c00usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4000_7000usize as _) };
 pub const DAC: dac::Dac = unsafe { dac::Dac::from_ptr(0x4000_7400usize as _) };
-pub const CEC: *mut () = 0x4000_7800usize as _;
+pub const CEC: cec::Cec = unsafe { cec::Cec::from_ptr(0x4000_7800usize as _) };
 pub const AFIO: afio::Afio = unsafe { afio::Afio::from_ptr(0x4001_0000usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4001_0400usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4001_0800usize as _) };
@@ -330,6 +330,8 @@ pub mod afio;
 pub mod bdma;
 #[path = "../../peripherals/bkp_v1.rs"]
 pub mod bkp;
+#[path = "../../peripherals/cec_v1.rs"]
+pub mod cec;
 #[path = "../../peripherals/crc_v1.rs"]
 pub mod crc;
 #[path = "../../peripherals/dac_v2.rs"]

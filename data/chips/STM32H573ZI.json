@@ -69,6 +69,11 @@
                 {
                     "name": "ADC1",
                     "address": 1107460096,
+                    "registers": {
+                        "kind": "adc",
+                        "version": "h5",
+                        "block": "ADC"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK2",
                         "kernel_clock": "HCLK2",
@@ -213,6 +218,11 @@
                 {
                     "name": "ADC2",
                     "address": 1107460352,
+                    "registers": {
+                        "kind": "adc",
+                        "version": "h5",
+                        "block": "ADC"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK2",
                         "kernel_clock": "HCLK2",
@@ -356,7 +366,12 @@
                 },
                 {
                     "name": "ADC_COMMON",
-                    "address": 1107460864
+                    "address": 1107460864,
+                    "registers": {
+                        "kind": "adccommon",
+                        "version": "h5",
+                        "block": "ADC_COMMON"
+                    }
                 },
                 {
                     "name": "AES",
@@ -405,6 +420,11 @@
                 {
                     "name": "CEC",
                     "address": 1073770496,
+                    "registers": {
+                        "kind": "cec",
+                        "version": "v2",
+                        "block": "CEC"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK1",
                         "kernel_clock": {

@@ -749,15 +749,15 @@ pub mod regs {
         pub fn set_dcmien(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "CRYPT peripheral clock enable"]
+        #[doc = "CRYP peripheral clock enable"]
         #[inline(always)]
-        pub const fn crypten(&self) -> bool {
+        pub const fn crypen(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
-        #[doc = "CRYPT peripheral clock enable"]
+        #[doc = "CRYP peripheral clock enable"]
         #[inline(always)]
-        pub fn set_crypten(&mut self, val: bool) {
+        pub fn set_crypen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "HASH peripheral clock enable"]
@@ -871,15 +871,15 @@ pub mod regs {
         pub fn set_dcmilpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "CRYPT peripheral clock enable during CSleep mode"]
+        #[doc = "CRYP peripheral clock enable during CSleep mode"]
         #[inline(always)]
-        pub const fn cryptlpen(&self) -> bool {
+        pub const fn cryplpen(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
-        #[doc = "CRYPT peripheral clock enable during CSleep mode"]
+        #[doc = "CRYP peripheral clock enable during CSleep mode"]
         #[inline(always)]
-        pub fn set_cryptlpen(&mut self, val: bool) {
+        pub fn set_cryplpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "HASH peripheral clock enable during CSleep mode"]
@@ -993,15 +993,15 @@ pub mod regs {
         pub fn set_dcmirst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "Cryptography block reset"]
+        #[doc = "CRYPography block reset"]
         #[inline(always)]
-        pub const fn cryptrst(&self) -> bool {
+        pub const fn cryprst(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
-        #[doc = "Cryptography block reset"]
+        #[doc = "CRYPography block reset"]
         #[inline(always)]
-        pub fn set_cryptrst(&mut self, val: bool) {
+        pub fn set_cryprst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Hash block reset"]
@@ -4857,15 +4857,15 @@ pub mod regs {
         pub fn set_dcmien(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "CRYPT peripheral clock enable"]
+        #[doc = "CRYP peripheral clock enable"]
         #[inline(always)]
-        pub const fn crypten(&self) -> bool {
+        pub const fn crypen(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
-        #[doc = "CRYPT peripheral clock enable"]
+        #[doc = "CRYP peripheral clock enable"]
         #[inline(always)]
-        pub fn set_crypten(&mut self, val: bool) {
+        pub fn set_crypen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "HASH peripheral clock enable"]
@@ -4957,15 +4957,15 @@ pub mod regs {
         pub fn set_dcmilpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "CRYPT peripheral clock enable during CSleep mode"]
+        #[doc = "CRYP peripheral clock enable during CSleep mode"]
         #[inline(always)]
-        pub const fn cryptlpen(&self) -> bool {
+        pub const fn cryplpen(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
-        #[doc = "CRYPT peripheral clock enable during CSleep mode"]
+        #[doc = "CRYP peripheral clock enable during CSleep mode"]
         #[inline(always)]
-        pub fn set_cryptlpen(&mut self, val: bool) {
+        pub fn set_cryplpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "HASH peripheral clock enable during CSleep mode"]

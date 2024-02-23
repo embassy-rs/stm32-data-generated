@@ -1034,6 +1034,18 @@
                         "version": "v2",
                         "block": "CRYP"
                     },
+                    "rcc": {
+                        "bus_clock": "HCLK2",
+                        "kernel_clock": "HCLK2",
+                        "enable": {
+                            "register": "AHB2ENR",
+                            "field": "CRYPEN"
+                        },
+                        "reset": {
+                            "register": "AHB2RSTR",
+                            "field": "CRYPRST"
+                        }
+                    },
                     "interrupts": [
                         {
                             "signal": "GLOBAL",

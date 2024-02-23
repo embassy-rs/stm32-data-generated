@@ -46,12 +46,12 @@ impl AdcCommon {
     }
     #[doc = "identification register"]
     #[inline(always)]
-    pub const fn ipdr(self) -> crate::common::Reg<regs::Ipdr, crate::common::RW> {
+    pub const fn ipdr(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(248usize) as _) }
     }
     #[doc = "size identification register"]
     #[inline(always)]
-    pub const fn sidr(self) -> crate::common::Reg<regs::Sidr, crate::common::RW> {
+    pub const fn sidr(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(252usize) as _) }
     }
 }
@@ -61,29 +61,73 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Ccr(pub u32);
     impl Ccr {
+        #[doc = "Dual ADC mode selection These bits are written by software to select the operating mode. 0 value means Independent Mode. Values 00001 to 01001 means Dual mode, master and slave ADCs are working together. All other combinations are reserved and must not be programmed Note: The software is allowed to write these bits only when the ADCs are disabled (ADCAL = 0, JADSTART = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0)."]
+        #[inline(always)]
+        pub const fn dual(&self) -> super::vals::Dual {
+            let val = (self.0 >> 0usize) & 0x1f;
+            super::vals::Dual::from_bits(val as u8)
+        }
+        #[doc = "Dual ADC mode selection These bits are written by software to select the operating mode. 0 value means Independent Mode. Values 00001 to 01001 means Dual mode, master and slave ADCs are working together. All other combinations are reserved and must not be programmed Note: The software is allowed to write these bits only when the ADCs are disabled (ADCAL = 0, JADSTART = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0)."]
+        #[inline(always)]
+        pub fn set_dual(&mut self, val: super::vals::Dual) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val.to_bits() as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "Delay between 2 sampling phases These bits are set and cleared by software. These bits are used in dual interleaved modes. Refer to for the value of ADC resolution versus DELAY bits values. Note: The software is allowed to write these bits only when the ADCs are disabled (ADCAL = 0, JADSTART = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0)."]
+        #[inline(always)]
+        pub const fn delay(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "Delay between 2 sampling phases These bits are set and cleared by software. These bits are used in dual interleaved modes. Refer to for the value of ADC resolution versus DELAY bits values. Note: The software is allowed to write these bits only when the ADCs are disabled (ADCAL = 0, JADSTART = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0)."]
+        #[inline(always)]
+        pub fn set_delay(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
+        }
+        #[doc = "DMA configuration (for dual ADC mode) This bit is set and cleared by software to select between two DMA modes of operation and is effective only when DMAEN = 1. For more details, refer to Note: The software is allowed to write these bits only when ADSTART = 0 (which ensures that no regular conversion is ongoing)."]
+        #[inline(always)]
+        pub const fn dmacfg(&self) -> super::vals::Dmacfg {
+            let val = (self.0 >> 13usize) & 0x01;
+            super::vals::Dmacfg::from_bits(val as u8)
+        }
+        #[doc = "DMA configuration (for dual ADC mode) This bit is set and cleared by software to select between two DMA modes of operation and is effective only when DMAEN = 1. For more details, refer to Note: The software is allowed to write these bits only when ADSTART = 0 (which ensures that no regular conversion is ongoing)."]
+        #[inline(always)]
+        pub fn set_dmacfg(&mut self, val: super::vals::Dmacfg) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        }
+        #[doc = "Direct memory access mode for dual ADC mode This bitfield is set and cleared by software. Refer to the DMA controller section for more details. Note: The software is allowed to write these bits only when ADSTART = 0 (which ensures that no regular conversion is ongoing)."]
+        #[inline(always)]
+        pub const fn mdma(&self) -> super::vals::Mdma {
+            let val = (self.0 >> 14usize) & 0x03;
+            super::vals::Mdma::from_bits(val as u8)
+        }
+        #[doc = "Direct memory access mode for dual ADC mode This bitfield is set and cleared by software. Refer to the DMA controller section for more details. Note: The software is allowed to write these bits only when ADSTART = 0 (which ensures that no regular conversion is ongoing)."]
+        #[inline(always)]
+        pub fn set_mdma(&mut self, val: super::vals::Mdma) {
+            self.0 = (self.0 & !(0x03 << 14usize)) | (((val.to_bits() as u32) & 0x03) << 14usize);
+        }
         #[doc = "ADC clock mode These bits are set and cleared by software to define the ADC clock scheme (which is common to both master and slave ADCs): In all synchronous clock modes, there is no jitter in the delay from a timer trigger to the start of a conversion. Note: The software is allowed to write these bits only when the ADCs are disabled (ADCAL = 0, JADSTART = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0)."]
         #[inline(always)]
-        pub const fn ckmode(&self) -> u8 {
+        pub const fn ckmode(&self) -> super::vals::Ckmode {
             let val = (self.0 >> 16usize) & 0x03;
-            val as u8
+            super::vals::Ckmode::from_bits(val as u8)
         }
         #[doc = "ADC clock mode These bits are set and cleared by software to define the ADC clock scheme (which is common to both master and slave ADCs): In all synchronous clock modes, there is no jitter in the delay from a timer trigger to the start of a conversion. Note: The software is allowed to write these bits only when the ADCs are disabled (ADCAL = 0, JADSTART = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0)."]
         #[inline(always)]
-        pub fn set_ckmode(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 16usize)) | (((val as u32) & 0x03) << 16usize);
+        pub fn set_ckmode(&mut self, val: super::vals::Ckmode) {
+            self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
         }
         #[doc = "ADC prescaler These bits are set and cleared by software to select the frequency of the clock to the ADC. The clock is common for all the ADCs. other: reserved Note: The software is allowed to write these bits only when the ADC is disabled (ADCAL = 0, JADSTART = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0). The ADC prescaler value is applied only when CKMODE\\[1:0\\]
 = 0b00."]
         #[inline(always)]
-        pub const fn presc(&self) -> u8 {
+        pub const fn presc(&self) -> super::vals::Presc {
             let val = (self.0 >> 18usize) & 0x0f;
-            val as u8
+            super::vals::Presc::from_bits(val as u8)
         }
         #[doc = "ADC prescaler These bits are set and cleared by software to select the frequency of the clock to the ADC. The clock is common for all the ADCs. other: reserved Note: The software is allowed to write these bits only when the ADC is disabled (ADCAL = 0, JADSTART = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0). The ADC prescaler value is applied only when CKMODE\\[1:0\\]
 = 0b00."]
         #[inline(always)]
-        pub fn set_presc(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 18usize)) | (((val as u32) & 0x0f) << 18usize);
+        pub fn set_presc(&mut self, val: super::vals::Presc) {
+            self.0 = (self.0 & !(0x0f << 18usize)) | (((val.to_bits() as u32) & 0x0f) << 18usize);
         }
         #[doc = "VREFINT enable This bit is set and cleared by software to enable/disable the VREFINT channel"]
         #[inline(always)]
@@ -243,36 +287,18 @@ pub mod regs {
         }
         #[doc = "Analog watchdog 1 flag of the master ADC This bit is a copy of the AWD1 bit in the corresponding ADC_ISR register."]
         #[inline(always)]
-        pub const fn awd1_mst(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
+        pub const fn awd_mst(&self, n: usize) -> bool {
+            assert!(n < 3usize);
+            let offs = 7usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "Analog watchdog 1 flag of the master ADC This bit is a copy of the AWD1 bit in the corresponding ADC_ISR register."]
         #[inline(always)]
-        pub fn set_awd1_mst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "Analog watchdog 2 flag of the master ADC This bit is a copy of the AWD2 bit in the corresponding ADC_ISR register."]
-        #[inline(always)]
-        pub const fn awd2_mst(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Analog watchdog 2 flag of the master ADC This bit is a copy of the AWD2 bit in the corresponding ADC_ISR register."]
-        #[inline(always)]
-        pub fn set_awd2_mst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-        #[doc = "Analog watchdog 3 flag of the master ADC This bit is a copy of the AWD3 bit in the corresponding ADC_ISR register."]
-        #[inline(always)]
-        pub const fn awd3_mst(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Analog watchdog 3 flag of the master ADC This bit is a copy of the AWD3 bit in the corresponding ADC_ISR register."]
-        #[inline(always)]
-        pub fn set_awd3_mst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        pub fn set_awd_mst(&mut self, n: usize, val: bool) {
+            assert!(n < 3usize);
+            let offs = 7usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Injected Context Queue Overflow flag of the master ADC This bit is a copy of the JQOVF bit in the corresponding ADC_ISR register."]
         #[inline(always)]
@@ -364,36 +390,18 @@ pub mod regs {
         }
         #[doc = "Analog watchdog 1 flag of the slave ADC This bit is a copy of the AWD1 bit in the corresponding ADC_ISR register."]
         #[inline(always)]
-        pub const fn awd1_slv(&self) -> bool {
-            let val = (self.0 >> 23usize) & 0x01;
+        pub const fn awd_slv(&self, n: usize) -> bool {
+            assert!(n < 3usize);
+            let offs = 23usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "Analog watchdog 1 flag of the slave ADC This bit is a copy of the AWD1 bit in the corresponding ADC_ISR register."]
         #[inline(always)]
-        pub fn set_awd1_slv(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
-        }
-        #[doc = "Analog watchdog 2 flag of the slave ADC This bit is a copy of the AWD2 bit in the corresponding ADC_ISR register."]
-        #[inline(always)]
-        pub const fn awd2_slv(&self) -> bool {
-            let val = (self.0 >> 24usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Analog watchdog 2 flag of the slave ADC This bit is a copy of the AWD2 bit in the corresponding ADC_ISR register."]
-        #[inline(always)]
-        pub fn set_awd2_slv(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
-        }
-        #[doc = "Analog watchdog 3 flag of the slave ADC This bit is a copy of the AWD3 bit in the corresponding ADC_ISR register."]
-        #[inline(always)]
-        pub const fn awd3_slv(&self) -> bool {
-            let val = (self.0 >> 25usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Analog watchdog 3 flag of the slave ADC This bit is a copy of the AWD3 bit in the corresponding ADC_ISR register."]
-        #[inline(always)]
-        pub fn set_awd3_slv(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
+        pub fn set_awd_slv(&mut self, n: usize, val: bool) {
+            assert!(n < 3usize);
+            let offs = 23usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Injected Context Queue Overflow flag of the slave ADC This bit is a copy of the JQOVF bit in the corresponding ADC_ISR register."]
         #[inline(always)]
@@ -453,68 +461,20 @@ pub mod regs {
         }
         #[doc = "Idle value for non-selected channels"]
         #[inline(always)]
-        pub const fn idlevalue(&self) -> u8 {
+        pub const fn idlevalue(&self) -> super::vals::Idlevalue {
             let val = (self.0 >> 12usize) & 0x0f;
-            val as u8
+            super::vals::Idlevalue::from_bits(val as u8)
         }
         #[doc = "Idle value for non-selected channels"]
         #[inline(always)]
-        pub fn set_idlevalue(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 12usize)) | (((val as u32) & 0x0f) << 12usize);
+        pub fn set_idlevalue(&mut self, val: super::vals::Idlevalue) {
+            self.0 = (self.0 & !(0x0f << 12usize)) | (((val.to_bits() as u32) & 0x0f) << 12usize);
         }
     }
     impl Default for Hwcfgr0 {
         #[inline(always)]
         fn default() -> Hwcfgr0 {
             Hwcfgr0(0)
-        }
-    }
-    #[doc = "identification register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ipdr(pub u32);
-    impl Ipdr {
-        #[doc = "Peripheral identifier These bits returns the ADC identifier. ID\\[31:0\\]
-= 0x0011 0006: c7amba_aditf5_90_v1."]
-        #[inline(always)]
-        pub const fn id(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Peripheral identifier These bits returns the ADC identifier. ID\\[31:0\\]
-= 0x0011 0006: c7amba_aditf5_90_v1."]
-        #[inline(always)]
-        pub fn set_id(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Ipdr {
-        #[inline(always)]
-        fn default() -> Ipdr {
-            Ipdr(0)
-        }
-    }
-    #[doc = "size identification register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Sidr(pub u32);
-    impl Sidr {
-        #[doc = "Size Identification SID\\[31:8\\]: fixed code that characterizes the ADC_SIDR register. This field is always read at 0xA3C5DD. SID\\[7:0\\]: read-only numeric field that returns the address offset (in Kbytes) of the identification registers from the IP base address:."]
-        #[inline(always)]
-        pub const fn sid(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Size Identification SID\\[31:8\\]: fixed code that characterizes the ADC_SIDR register. This field is always read at 0xA3C5DD. SID\\[7:0\\]: read-only numeric field that returns the address offset (in Kbytes) of the identification registers from the IP base address:."]
-        #[inline(always)]
-        pub fn set_sid(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Sidr {
-        #[inline(always)]
-        fn default() -> Sidr {
-            Sidr(0)
         }
     }
     #[doc = "version register"]
@@ -549,6 +509,269 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Verr {
             Verr(0)
+        }
+    }
+}
+pub mod vals {
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Ckmode {
+        #[doc = "Use Kernel Clock adc_ker_ck_input divided by PRESC. Asynchronous to AHB clock"]
+        ASYNCHRONOUS = 0,
+        #[doc = "Use AHB clock rcc_hclk3. In this case rcc_hclk must equal sys_d1cpre_ck"]
+        SYNCDIV1 = 0x01,
+        #[doc = "Use AHB clock rcc_hclk3 divided by 2"]
+        SYNCDIV2 = 0x02,
+        #[doc = "Use AHB clock rcc_hclk3 divided by 4"]
+        SYNCDIV4 = 0x03,
+    }
+    impl Ckmode {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Ckmode {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Ckmode {
+        #[inline(always)]
+        fn from(val: u8) -> Ckmode {
+            Ckmode::from_bits(val)
+        }
+    }
+    impl From<Ckmode> for u8 {
+        #[inline(always)]
+        fn from(val: Ckmode) -> u8 {
+            Ckmode::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Dmacfg {
+        #[doc = "DMA One Shot mode selected"]
+        ONESHOT = 0,
+        #[doc = "DMA Circular mode selected"]
+        CIRCULAR = 0x01,
+    }
+    impl Dmacfg {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Dmacfg {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Dmacfg {
+        #[inline(always)]
+        fn from(val: u8) -> Dmacfg {
+            Dmacfg::from_bits(val)
+        }
+    }
+    impl From<Dmacfg> for u8 {
+        #[inline(always)]
+        fn from(val: Dmacfg) -> u8 {
+            Dmacfg::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Dual {
+        #[doc = "Independent mode"]
+        INDEPENDENT = 0,
+        #[doc = "Dual, combined regular simultaneous + injected simultaneous mode"]
+        DUALRJ = 0x01,
+        #[doc = "Dual, combined regular simultaneous + alternate trigger mode"]
+        DUALRA = 0x02,
+        #[doc = "Dual, combined interleaved mode + injected simultaneous mode"]
+        DUALIJ = 0x03,
+        _RESERVED_4 = 0x04,
+        #[doc = "Dual, injected simultaneous mode only"]
+        DUALJ = 0x05,
+        #[doc = "Dual, regular simultaneous mode only"]
+        DUALR = 0x06,
+        #[doc = "Dual, interleaved mode only"]
+        DUALI = 0x07,
+        _RESERVED_8 = 0x08,
+        #[doc = "Dual, alternate trigger mode only"]
+        DUALA = 0x09,
+        _RESERVED_a = 0x0a,
+        _RESERVED_b = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
+        _RESERVED_10 = 0x10,
+        _RESERVED_11 = 0x11,
+        _RESERVED_12 = 0x12,
+        _RESERVED_13 = 0x13,
+        _RESERVED_14 = 0x14,
+        _RESERVED_15 = 0x15,
+        _RESERVED_16 = 0x16,
+        _RESERVED_17 = 0x17,
+        _RESERVED_18 = 0x18,
+        _RESERVED_19 = 0x19,
+        _RESERVED_1a = 0x1a,
+        _RESERVED_1b = 0x1b,
+        _RESERVED_1c = 0x1c,
+        _RESERVED_1d = 0x1d,
+        _RESERVED_1e = 0x1e,
+        _RESERVED_1f = 0x1f,
+    }
+    impl Dual {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Dual {
+            unsafe { core::mem::transmute(val & 0x1f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Dual {
+        #[inline(always)]
+        fn from(val: u8) -> Dual {
+            Dual::from_bits(val)
+        }
+    }
+    impl From<Dual> for u8 {
+        #[inline(always)]
+        fn from(val: Dual) -> u8 {
+            Dual::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Idlevalue {
+        #[doc = "Dummy channel selection is 0x13"]
+        H13 = 0,
+        #[doc = "Dummy channel selection is 0x1F"]
+        H1F = 0x01,
+        _RESERVED_2 = 0x02,
+        _RESERVED_3 = 0x03,
+        _RESERVED_4 = 0x04,
+        _RESERVED_5 = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+        _RESERVED_8 = 0x08,
+        _RESERVED_9 = 0x09,
+        _RESERVED_a = 0x0a,
+        _RESERVED_b = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
+    }
+    impl Idlevalue {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Idlevalue {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Idlevalue {
+        #[inline(always)]
+        fn from(val: u8) -> Idlevalue {
+            Idlevalue::from_bits(val)
+        }
+    }
+    impl From<Idlevalue> for u8 {
+        #[inline(always)]
+        fn from(val: Idlevalue) -> u8 {
+            Idlevalue::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Mdma {
+        #[doc = "Without data packing, CDR/CDR2 not used"]
+        NOPACK = 0,
+        _RESERVED_1 = 0x01,
+        #[doc = "CDR formatted for 32-bit down to 10-bit resolution"]
+        FORMAT32TO10 = 0x02,
+        #[doc = "CDR formatted for 8-bit resolution"]
+        FORMAT8 = 0x03,
+    }
+    impl Mdma {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Mdma {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Mdma {
+        #[inline(always)]
+        fn from(val: u8) -> Mdma {
+            Mdma::from_bits(val)
+        }
+    }
+    impl From<Mdma> for u8 {
+        #[inline(always)]
+        fn from(val: Mdma) -> u8 {
+            Mdma::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Presc {
+        #[doc = "adc_ker_ck_input not divided"]
+        DIV1 = 0,
+        #[doc = "adc_ker_ck_input divided by 2"]
+        DIV2 = 0x01,
+        #[doc = "adc_ker_ck_input divided by 4"]
+        DIV4 = 0x02,
+        #[doc = "adc_ker_ck_input divided by 6"]
+        DIV6 = 0x03,
+        #[doc = "adc_ker_ck_input divided by 8"]
+        DIV8 = 0x04,
+        #[doc = "adc_ker_ck_input divided by 10"]
+        DIV10 = 0x05,
+        #[doc = "adc_ker_ck_input divided by 12"]
+        DIV12 = 0x06,
+        #[doc = "adc_ker_ck_input divided by 16"]
+        DIV16 = 0x07,
+        #[doc = "adc_ker_ck_input divided by 32"]
+        DIV32 = 0x08,
+        #[doc = "adc_ker_ck_input divided by 64"]
+        DIV64 = 0x09,
+        #[doc = "adc_ker_ck_input divided by 128"]
+        DIV128 = 0x0a,
+        #[doc = "adc_ker_ck_input divided by 256"]
+        DIV256 = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
+    }
+    impl Presc {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Presc {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Presc {
+        #[inline(always)]
+        fn from(val: u8) -> Presc {
+            Presc::from_bits(val)
+        }
+    }
+    impl From<Presc> for u8 {
+        #[inline(always)]
+        fn from(val: Presc) -> u8 {
+            Presc::to_bits(val)
         }
     }
 }

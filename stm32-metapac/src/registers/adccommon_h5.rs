@@ -105,9 +105,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Ipdr",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -122,9 +120,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Sidr",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -141,6 +137,68 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
+                    name: "dual",
+                    description: Some(
+                        "Dual ADC mode selection These bits are written by software to select the operating mode. 0 value means Independent Mode. Values 00001 to 01001 means Dual mode, master and slave ADCs are working together. All other combinations are reserved and must not be programmed Note: The software is allowed to write these bits only when the ADCs are disabled (ADCAL = 0, JADSTART = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 5,
+                    array: None,
+                    enumm: Some(
+                        "Dual",
+                    ),
+                },
+                Field {
+                    name: "delay",
+                    description: Some(
+                        "Delay between 2 sampling phases These bits are set and cleared by software. These bits are used in dual interleaved modes. Refer to for the value of ADC resolution versus DELAY bits values. Note: The software is allowed to write these bits only when the ADCs are disabled (ADCAL = 0, JADSTART = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dmacfg",
+                    description: Some(
+                        "DMA configuration (for dual ADC mode) This bit is set and cleared by software to select between two DMA modes of operation and is effective only when DMAEN = 1. For more details, refer to Note: The software is allowed to write these bits only when ADSTART = 0 (which ensures that no regular conversion is ongoing).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Dmacfg",
+                    ),
+                },
+                Field {
+                    name: "mdma",
+                    description: Some(
+                        "Direct memory access mode for dual ADC mode This bitfield is set and cleared by software. Refer to the DMA controller section for more details. Note: The software is allowed to write these bits only when ADSTART = 0 (which ensures that no regular conversion is ongoing).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Mdma",
+                    ),
+                },
+                Field {
                     name: "ckmode",
                     description: Some(
                         "ADC clock mode These bits are set and cleared by software to define the ADC clock scheme (which is common to both master and slave ADCs): In all synchronous clock modes, there is no jitter in the delay from a timer trigger to the start of a conversion. Note: The software is allowed to write these bits only when the ADCs are disabled (ADCAL = 0, JADSTART = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0).",
@@ -152,7 +210,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Ckmode",
+                    ),
                 },
                 Field {
                     name: "presc",
@@ -166,7 +226,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 4,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Presc",
+                    ),
                 },
                 Field {
                     name: "vrefen",
@@ -357,7 +419,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "awd1_mst",
+                    name: "awd_mst",
                     description: Some(
                         "Analog watchdog 1 flag of the master ADC This bit is a copy of the AWD1 bit in the corresponding ADC_ISR register.",
                     ),
@@ -367,35 +429,14 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "awd2_mst",
-                    description: Some(
-                        "Analog watchdog 2 flag of the master ADC This bit is a copy of the AWD2 bit in the corresponding ADC_ISR register.",
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 1,
+                            },
+                        ),
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "awd3_mst",
-                    description: Some(
-                        "Analog watchdog 3 flag of the master ADC This bit is a copy of the AWD3 bit in the corresponding ADC_ISR register.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 9,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
                     enumm: None,
                 },
                 Field {
@@ -511,7 +552,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "awd1_slv",
+                    name: "awd_slv",
                     description: Some(
                         "Analog watchdog 1 flag of the slave ADC This bit is a copy of the AWD1 bit in the corresponding ADC_ISR register.",
                     ),
@@ -521,35 +562,14 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "awd2_slv",
-                    description: Some(
-                        "Analog watchdog 2 flag of the slave ADC This bit is a copy of the AWD2 bit in the corresponding ADC_ISR register.",
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 1,
+                            },
+                        ),
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "awd3_slv",
-                    description: Some(
-                        "Analog watchdog 3 flag of the slave ADC This bit is a copy of the AWD3 bit in the corresponding ADC_ISR register.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 25,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
                     enumm: None,
                 },
                 Field {
@@ -630,55 +650,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 4,
                     array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ipdr",
-            extends: None,
-            description: Some(
-                "identification register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "id",
-                    description: Some(
-                        "Peripheral identifier These bits returns the ADC identifier. ID[31:0] = 0x0011 0006: c7amba_aditf5_90_v1.",
+                    enumm: Some(
+                        "Idlevalue",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Sidr",
-            extends: None,
-            description: Some(
-                "size identification register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sid",
-                    description: Some(
-                        "Size Identification SID[31:8]: fixed code that characterizes the ADC_SIDR register. This field is always read at 0xA3C5DD. SID[7:0]: read-only numeric field that returns the address offset (in Kbytes) of the identification registers from the IP base address:.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
                 },
             ],
         },
@@ -721,5 +695,265 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
     ],
-    enums: &[],
+    enums: &[
+        Enum {
+            name: "Ckmode",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "ASYNCHRONOUS",
+                    description: Some(
+                        "Use Kernel Clock adc_ker_ck_input divided by PRESC. Asynchronous to AHB clock",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SYNCDIV1",
+                    description: Some(
+                        "Use AHB clock rcc_hclk3. In this case rcc_hclk must equal sys_d1cpre_ck",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "SYNCDIV2",
+                    description: Some(
+                        "Use AHB clock rcc_hclk3 divided by 2",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "SYNCDIV4",
+                    description: Some(
+                        "Use AHB clock rcc_hclk3 divided by 4",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Dmacfg",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ONESHOT",
+                    description: Some(
+                        "DMA One Shot mode selected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CIRCULAR",
+                    description: Some(
+                        "DMA Circular mode selected",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Dual",
+            description: None,
+            bit_size: 5,
+            variants: &[
+                EnumVariant {
+                    name: "INDEPENDENT",
+                    description: Some(
+                        "Independent mode",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DUALRJ",
+                    description: Some(
+                        "Dual, combined regular simultaneous + injected simultaneous mode",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "DUALRA",
+                    description: Some(
+                        "Dual, combined regular simultaneous + alternate trigger mode",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DUALIJ",
+                    description: Some(
+                        "Dual, combined interleaved mode + injected simultaneous mode",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DUALJ",
+                    description: Some(
+                        "Dual, injected simultaneous mode only",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DUALR",
+                    description: Some(
+                        "Dual, regular simultaneous mode only",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DUALI",
+                    description: Some(
+                        "Dual, interleaved mode only",
+                    ),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "DUALA",
+                    description: Some(
+                        "Dual, alternate trigger mode only",
+                    ),
+                    value: 9,
+                },
+            ],
+        },
+        Enum {
+            name: "Idlevalue",
+            description: None,
+            bit_size: 4,
+            variants: &[
+                EnumVariant {
+                    name: "H13",
+                    description: Some(
+                        "Dummy channel selection is 0x13",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "H1F",
+                    description: Some(
+                        "Dummy channel selection is 0x1F",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Mdma",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "NOPACK",
+                    description: Some(
+                        "Without data packing, CDR/CDR2 not used",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FORMAT32TO10",
+                    description: Some(
+                        "CDR formatted for 32-bit down to 10-bit resolution",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "FORMAT8",
+                    description: Some(
+                        "CDR formatted for 8-bit resolution",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Presc",
+            description: None,
+            bit_size: 4,
+            variants: &[
+                EnumVariant {
+                    name: "DIV1",
+                    description: Some(
+                        "adc_ker_ck_input not divided",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV2",
+                    description: Some(
+                        "adc_ker_ck_input divided by 2",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: Some(
+                        "adc_ker_ck_input divided by 4",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV6",
+                    description: Some(
+                        "adc_ker_ck_input divided by 6",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: Some(
+                        "adc_ker_ck_input divided by 8",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DIV10",
+                    description: Some(
+                        "adc_ker_ck_input divided by 10",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DIV12",
+                    description: Some(
+                        "adc_ker_ck_input divided by 12",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DIV16",
+                    description: Some(
+                        "adc_ker_ck_input divided by 16",
+                    ),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "DIV32",
+                    description: Some(
+                        "adc_ker_ck_input divided by 32",
+                    ),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "DIV64",
+                    description: Some(
+                        "adc_ker_ck_input divided by 64",
+                    ),
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "DIV128",
+                    description: Some(
+                        "adc_ker_ck_input divided by 128",
+                    ),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "DIV256",
+                    description: Some(
+                        "adc_ker_ck_input divided by 256",
+                    ),
+                    value: 11,
+                },
+            ],
+        },
+    ],
 };

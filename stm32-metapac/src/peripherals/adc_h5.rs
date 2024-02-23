@@ -248,14 +248,14 @@ pub mod regs {
         }
         #[doc = "Direct memory access configuration This bit is set and cleared by software to select between two DMA modes of operation and is effective only when DMAEN = 1. For more details, refer to Note: The software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub const fn dmacfg(&self) -> bool {
+        pub const fn dmacfg(&self) -> super::vals::Dmacfg {
             let val = (self.0 >> 1usize) & 0x01;
-            val != 0
+            super::vals::Dmacfg::from_bits(val as u8)
         }
         #[doc = "Direct memory access configuration This bit is set and cleared by software to select between two DMA modes of operation and is effective only when DMAEN = 1. For more details, refer to Note: The software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_dmacfg(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        pub fn set_dmacfg(&mut self, val: super::vals::Dmacfg) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "Data resolution These bits are written by software to select the resolution of the conversion. Note: The software is allowed to write these bits only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
@@ -296,25 +296,25 @@ pub mod regs {
         }
         #[doc = "Overrun mode This bit is set and cleared by software and configure the way data overrun is managed. Note: The software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing)."]
         #[inline(always)]
-        pub const fn ovrmod(&self) -> bool {
+        pub const fn ovrmod(&self) -> super::vals::Ovrmod {
             let val = (self.0 >> 12usize) & 0x01;
-            val != 0
+            super::vals::Ovrmod::from_bits(val as u8)
         }
         #[doc = "Overrun mode This bit is set and cleared by software and configure the way data overrun is managed. Note: The software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_ovrmod(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        pub fn set_ovrmod(&mut self, val: super::vals::Ovrmod) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
         }
         #[doc = "Single / Continuous conversion mode for regular conversions This bit is set and cleared by software. If it is set, regular conversion takes place continuously until it is cleared. Note: It is not possible to have both Discontinuous mode and Continuous mode enabled: it is forbidden to set both DISCEN = 1 and CONT = 1. The software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing)."]
         #[inline(always)]
-        pub const fn cont(&self) -> bool {
+        pub const fn cont(&self) -> super::vals::Cont {
             let val = (self.0 >> 13usize) & 0x01;
-            val != 0
+            super::vals::Cont::from_bits(val as u8)
         }
         #[doc = "Single / Continuous conversion mode for regular conversions This bit is set and cleared by software. If it is set, regular conversion takes place continuously until it is cleared. Note: It is not possible to have both Discontinuous mode and Continuous mode enabled: it is forbidden to set both DISCEN = 1 and CONT = 1. The software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_cont(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        pub fn set_cont(&mut self, val: super::vals::Cont) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
         }
         #[doc = "Delayed conversion mode This bit is set and cleared by software to enable/disable the Auto Delayed Conversion mode.. Note: The software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
@@ -329,14 +329,14 @@ pub mod regs {
         }
         #[doc = "Data alignment This bit is set and cleared by software to select right or left alignment. Refer to register, data alignment and offset (ADC_DR, OFFSET, OFFSET_CH, ALIGN). Note: The software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub const fn align(&self) -> bool {
+        pub const fn align(&self) -> super::vals::Align {
             let val = (self.0 >> 15usize) & 0x01;
-            val != 0
+            super::vals::Align::from_bits(val as u8)
         }
         #[doc = "Data alignment This bit is set and cleared by software to select right or left alignment. Refer to register, data alignment and offset (ADC_DR, OFFSET, OFFSET_CH, ALIGN). Note: The software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_align(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        pub fn set_align(&mut self, val: super::vals::Align) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
         }
         #[doc = "Discontinuous mode for regular channels This bit is set and cleared by software to enable/disable Discontinuous mode for regular channels. Note: It is not possible to have both Discontinuous mode and Continuous mode enabled: it is forbidden to set both DISCEN = 1 and CONT = 1. It is not possible to use both auto-injected mode and Discontinuous mode simultaneously: the bits DISCEN and JDISCEN must be kept cleared by software when JAUTO is set. The software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing)."]
         #[inline(always)]
@@ -373,27 +373,27 @@ pub mod regs {
         }
         #[doc = "JSQR queue mode This bit is set and cleared by software. It defines how an empty Queue is managed. Refer to for more information. Note: The software is allowed to write this bit only when JADSTART = 0 (which ensures that no injected conversion is ongoing)."]
         #[inline(always)]
-        pub const fn jqm(&self) -> bool {
+        pub const fn jqm(&self) -> super::vals::Jqm {
             let val = (self.0 >> 21usize) & 0x01;
-            val != 0
+            super::vals::Jqm::from_bits(val as u8)
         }
         #[doc = "JSQR queue mode This bit is set and cleared by software. It defines how an empty Queue is managed. Refer to for more information. Note: The software is allowed to write this bit only when JADSTART = 0 (which ensures that no injected conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_jqm(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        pub fn set_jqm(&mut self, val: super::vals::Jqm) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
         }
         #[doc = "Enable the watchdog 1 on a single channel or on all channels This bit is set and cleared by software to enable the analog watchdog on the channel identified by the AWD1CH\\[4:0\\]
 bits or on all the channels Note: The software is allowed to write these bits only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub const fn awd1sgl(&self) -> bool {
+        pub const fn awd1sgl(&self) -> super::vals::Awd1sgl {
             let val = (self.0 >> 22usize) & 0x01;
-            val != 0
+            super::vals::Awd1sgl::from_bits(val as u8)
         }
         #[doc = "Enable the watchdog 1 on a single channel or on all channels This bit is set and cleared by software to enable the analog watchdog on the channel identified by the AWD1CH\\[4:0\\]
 bits or on all the channels Note: The software is allowed to write these bits only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_awd1sgl(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
+        pub fn set_awd1sgl(&mut self, val: super::vals::Awd1sgl) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
         }
         #[doc = "Analog watchdog 1 enable on regular channels This bit is set and cleared by software Note: The software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing)."]
         #[inline(always)]
@@ -510,36 +510,36 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
         }
         #[doc = "Triggered Regular Oversampling This bit is set and cleared by software to enable triggered oversampling Note: The software is allowed to write this bit only when ADSTART = 0 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub const fn trovs(&self) -> bool {
+        pub const fn trovs(&self) -> super::vals::Trovs {
             let val = (self.0 >> 9usize) & 0x01;
-            val != 0
+            super::vals::Trovs::from_bits(val as u8)
         }
         #[doc = "Triggered Regular Oversampling This bit is set and cleared by software to enable triggered oversampling Note: The software is allowed to write this bit only when ADSTART = 0 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_trovs(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        pub fn set_trovs(&mut self, val: super::vals::Trovs) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
         }
         #[doc = "Regular Oversampling mode This bit is set and cleared by software to select the regular oversampling mode. Note: The software is allowed to write this bit only when ADSTART = 0 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub const fn rovsm(&self) -> bool {
+        pub const fn rovsm(&self) -> super::vals::Rovsm {
             let val = (self.0 >> 10usize) & 0x01;
-            val != 0
+            super::vals::Rovsm::from_bits(val as u8)
         }
         #[doc = "Regular Oversampling mode This bit is set and cleared by software to select the regular oversampling mode. Note: The software is allowed to write this bit only when ADSTART = 0 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_rovsm(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        pub fn set_rovsm(&mut self, val: super::vals::Rovsm) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
         }
         #[doc = "Software trigger bit for sampling time control trigger mode This bit is set and cleared by software to enable the bulb sampling mode. Note: The software is allowed to write this bit only when ADSTART = 0 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub const fn swtrig(&self) -> bool {
+        pub const fn swtrig(&self) -> super::vals::Swtrig {
             let val = (self.0 >> 25usize) & 0x01;
-            val != 0
+            super::vals::Swtrig::from_bits(val as u8)
         }
         #[doc = "Software trigger bit for sampling time control trigger mode This bit is set and cleared by software to enable the bulb sampling mode. Note: The software is allowed to write this bit only when ADSTART = 0 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_swtrig(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
+        pub fn set_swtrig(&mut self, val: super::vals::Swtrig) {
+            self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
         }
         #[doc = "Bulb sampling mode This bit is set and cleared by software to enable the bulb sampling mode. SAMPTRIG bit must not be set when the BULB bit is set. The very first ADC conversion is performed with the sampling time specified in SMPx bits. Note: The software is allowed to write this bit only when ADSTART = 0 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
@@ -665,14 +665,14 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
         }
         #[doc = "Differential mode for calibration This bit is set and cleared by software to configure the Single-ended or Differential inputs mode for the calibration. Note: The software is allowed to write this bit only when the ADC is disabled and is not calibrating (ADCAL = 0, JADSTART = 0, JADSTP = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0)."]
         #[inline(always)]
-        pub const fn adcaldif(&self) -> bool {
+        pub const fn adcaldif(&self) -> super::vals::Adcaldif {
             let val = (self.0 >> 30usize) & 0x01;
-            val != 0
+            super::vals::Adcaldif::from_bits(val as u8)
         }
         #[doc = "Differential mode for calibration This bit is set and cleared by software to configure the Single-ended or Differential inputs mode for the calibration. Note: The software is allowed to write this bit only when the ADC is disabled and is not calibrating (ADCAL = 0, JADSTART = 0, JADSTP = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0)."]
         #[inline(always)]
-        pub fn set_adcaldif(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
+        pub fn set_adcaldif(&mut self, val: super::vals::Adcaldif) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
         }
         #[doc = "ADC calibration This bit is set by software to start the calibration of the ADC. Program first the bit ADCALDIF to determine if this calibration applies for Single-ended or Differential inputs mode. It is cleared by hardware after calibration is complete. Note: The software is allowed to launch a calibration by setting ADCAL only when ADEN = 0. The software is allowed to update the calibration factor by writing ADC_CALFACT only when ADEN = 1 and ADSTART = 0 and JADSTART = 0 (ADC enabled and no conversion is ongoing)."]
         #[inline(always)]
@@ -1024,14 +1024,14 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
         }
         #[doc = "External trigger enable and polarity selection for injected channels These bits are set and cleared by software to select the external trigger polarity and enable the trigger of an injected group. Note: The software is allowed to write these bits only when JADSTART = 0 (which ensures that no injected conversion is ongoing). If JQM = 1 and if the Queue of Context becomes empty, the software and hardware triggers of the injected sequence are both internally disabled (refer to Queue of context for injected conversions)."]
         #[inline(always)]
-        pub const fn jexten(&self) -> u8 {
+        pub const fn jexten(&self) -> super::vals::Exten {
             let val = (self.0 >> 7usize) & 0x03;
-            val as u8
+            super::vals::Exten::from_bits(val as u8)
         }
         #[doc = "External trigger enable and polarity selection for injected channels These bits are set and cleared by software to select the external trigger polarity and enable the trigger of an injected group. Note: The software is allowed to write these bits only when JADSTART = 0 (which ensures that no injected conversion is ongoing). If JQM = 1 and if the Queue of Context becomes empty, the software and hardware triggers of the injected sequence are both internally disabled (refer to Queue of context for injected conversions)."]
         #[inline(always)]
-        pub fn set_jexten(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 7usize)) | (((val as u32) & 0x03) << 7usize);
+        pub fn set_jexten(&mut self, val: super::vals::Exten) {
+            self.0 = (self.0 & !(0x03 << 7usize)) | (((val.to_bits() as u32) & 0x03) << 7usize);
         }
         #[doc = "1st-4th conversions in the injected sequence These bits are written by software with the channel number (0 to 19) assigned as the 1st-4th in the injected conversion sequence. Note: The software is allowed to write these bits only when JADSTART = 0 (which ensures that no injected conversion is ongoing)."]
         #[inline(always)]
@@ -1081,14 +1081,14 @@ which is subtracted when converting channel 4."]
         }
         #[doc = "Positive offset This bit is set and cleared by software to enable the positive offset. Note: The software is allowed to write these bits only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub const fn offsetpos(&self) -> bool {
+        pub const fn offsetpos(&self) -> super::vals::Offsetpos {
             let val = (self.0 >> 24usize) & 0x01;
-            val != 0
+            super::vals::Offsetpos::from_bits(val as u8)
         }
         #[doc = "Positive offset This bit is set and cleared by software to enable the positive offset. Note: The software is allowed to write these bits only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_offsetpos(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
+        pub fn set_offsetpos(&mut self, val: super::vals::Offsetpos) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
         }
         #[doc = "Saturation enable This bit is set and cleared by software to enable the saturation at 0x000 and 0xFFF for the offset function. Note: The software is allowed to write these bits only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
@@ -1190,14 +1190,14 @@ setting to the reset value."]
         }
         #[doc = "Addition of one clock cycle to the sampling time. To make sure no conversion is ongoing, the software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0"]
         #[inline(always)]
-        pub const fn smpplus(&self) -> bool {
+        pub const fn smpplus(&self) -> super::vals::Smpplus {
             let val = (self.0 >> 31usize) & 0x01;
-            val != 0
+            super::vals::Smpplus::from_bits(val as u8)
         }
         #[doc = "Addition of one clock cycle to the sampling time. To make sure no conversion is ongoing, the software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0"]
         #[inline(always)]
-        pub fn set_smpplus(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        pub fn set_smpplus(&mut self, val: super::vals::Smpplus) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
         }
     }
     impl Default for Smpr1 {
@@ -1471,6 +1471,156 @@ setting to the reset value."]
 pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Adcaldif {
+        #[doc = "Calibration for single-ended mode"]
+        SINGLEENDED = 0,
+        #[doc = "Calibration for differential mode"]
+        DIFFERENTIAL = 0x01,
+    }
+    impl Adcaldif {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Adcaldif {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Adcaldif {
+        #[inline(always)]
+        fn from(val: u8) -> Adcaldif {
+            Adcaldif::from_bits(val)
+        }
+    }
+    impl From<Adcaldif> for u8 {
+        #[inline(always)]
+        fn from(val: Adcaldif) -> u8 {
+            Adcaldif::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Align {
+        #[doc = "Right alignment"]
+        RIGHT = 0,
+        #[doc = "Left alignment"]
+        LEFT = 0x01,
+    }
+    impl Align {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Align {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Align {
+        #[inline(always)]
+        fn from(val: u8) -> Align {
+            Align::from_bits(val)
+        }
+    }
+    impl From<Align> for u8 {
+        #[inline(always)]
+        fn from(val: Align) -> u8 {
+            Align::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Awd1sgl {
+        #[doc = "Analog watchdog 1 enabled on all channels"]
+        ALL = 0,
+        #[doc = "Analog watchdog 1 enabled on single channel selected in AWD1CH"]
+        SINGLE = 0x01,
+    }
+    impl Awd1sgl {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Awd1sgl {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Awd1sgl {
+        #[inline(always)]
+        fn from(val: u8) -> Awd1sgl {
+            Awd1sgl::from_bits(val)
+        }
+    }
+    impl From<Awd1sgl> for u8 {
+        #[inline(always)]
+        fn from(val: Awd1sgl) -> u8 {
+            Awd1sgl::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Cont {
+        #[doc = "Single conversion mode"]
+        SINGLE = 0,
+        #[doc = "Continuous conversion mode"]
+        CONTINUOUS = 0x01,
+    }
+    impl Cont {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cont {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cont {
+        #[inline(always)]
+        fn from(val: u8) -> Cont {
+            Cont::from_bits(val)
+        }
+    }
+    impl From<Cont> for u8 {
+        #[inline(always)]
+        fn from(val: Cont) -> u8 {
+            Cont::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Dmacfg {
+        #[doc = "DMA One Shot mode selected"]
+        ONESHOT = 0,
+        #[doc = "DMA Circular mode selected"]
+        CIRCULAR = 0x01,
+    }
+    impl Dmacfg {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Dmacfg {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Dmacfg {
+        #[inline(always)]
+        fn from(val: u8) -> Dmacfg {
+            Dmacfg::from_bits(val)
+        }
+    }
+    impl From<Dmacfg> for u8 {
+        #[inline(always)]
+        fn from(val: Dmacfg) -> u8 {
+            Dmacfg::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Exten {
         #[doc = "Hardware trigger detection disabled (conversions can be launched by software)"]
         DISABLED = 0,
@@ -1505,22 +1655,104 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Jqm {
+        #[doc = "JSQR Mode 0: Queue maintains the last written configuration into JSQR"]
+        MODE0 = 0,
+        #[doc = "JSQR Mode 1: An empty queue disables software and hardware triggers of the injected sequence"]
+        MODE1 = 0x01,
+    }
+    impl Jqm {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Jqm {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Jqm {
+        #[inline(always)]
+        fn from(val: u8) -> Jqm {
+            Jqm::from_bits(val)
+        }
+    }
+    impl From<Jqm> for u8 {
+        #[inline(always)]
+        fn from(val: Jqm) -> u8 {
+            Jqm::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Offsetpos {
+        #[doc = "Negative offset"]
+        NEGATIVE = 0,
+        #[doc = "Positive offset"]
+        POSITIVE = 0x01,
+    }
+    impl Offsetpos {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Offsetpos {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Offsetpos {
+        #[inline(always)]
+        fn from(val: u8) -> Offsetpos {
+            Offsetpos::from_bits(val)
+        }
+    }
+    impl From<Offsetpos> for u8 {
+        #[inline(always)]
+        fn from(val: Offsetpos) -> u8 {
+            Offsetpos::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Ovrmod {
+        #[doc = "Preserve DR register when an overrun is detected"]
+        PRESERVE = 0,
+        #[doc = "Overwrite DR register when an overrun is detected"]
+        OVERWRITE = 0x01,
+    }
+    impl Ovrmod {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Ovrmod {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Ovrmod {
+        #[inline(always)]
+        fn from(val: u8) -> Ovrmod {
+            Ovrmod::from_bits(val)
+        }
+    }
+    impl From<Ovrmod> for u8 {
+        #[inline(always)]
+        fn from(val: Ovrmod) -> u8 {
+            Ovrmod::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ovsr {
-        #[doc = "x2"]
         X2 = 0,
-        #[doc = "x4"]
         X4 = 0x01,
-        #[doc = "x8"]
         X8 = 0x02,
-        #[doc = "x16"]
         X16 = 0x03,
-        #[doc = "x32"]
         X32 = 0x04,
-        #[doc = "x64"]
         X64 = 0x05,
-        #[doc = "x128"]
         X128 = 0x06,
-        #[doc = "x256"]
         X256 = 0x07,
     }
     impl Ovsr {
@@ -1549,13 +1781,13 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Res {
         #[doc = "12-bit resolution"]
-        TWELVEBIT = 0,
+        BITS12 = 0,
         #[doc = "10-bit resolution"]
-        TENBIT = 0x01,
+        BITS10 = 0x01,
         #[doc = "8-bit resolution"]
-        EIGHTBIT = 0x02,
+        BITS8 = 0x02,
         #[doc = "6-bit resolution"]
-        SIXBIT = 0x03,
+        BITS6 = 0x03,
     }
     impl Res {
         #[inline(always)]
@@ -1581,22 +1813,52 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Rovsm {
+        #[doc = "Oversampling is temporary stopped and continued after injection sequence"]
+        CONTINUED = 0,
+        #[doc = "Oversampling is aborted and resumed from start after injection sequence"]
+        RESUMED = 0x01,
+    }
+    impl Rovsm {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Rovsm {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Rovsm {
+        #[inline(always)]
+        fn from(val: u8) -> Rovsm {
+            Rovsm::from_bits(val)
+        }
+    }
+    impl From<Rovsm> for u8 {
+        #[inline(always)]
+        fn from(val: Rovsm) -> u8 {
+            Rovsm::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum SampleTime {
-        #[doc = "2.5 ADC cycles"]
+        #[doc = "2.5 ADC clock cycles"]
         CYCLES2_5 = 0,
-        #[doc = "6.5 ADC cycles"]
+        #[doc = "6.5 ADC clock cycles"]
         CYCLES6_5 = 0x01,
-        #[doc = "12.5 ADC cycles"]
+        #[doc = "12.5 ADC clock cycles"]
         CYCLES12_5 = 0x02,
-        #[doc = "24.5 ADC cycles"]
+        #[doc = "24.5 ADC clock cycles"]
         CYCLES24_5 = 0x03,
-        #[doc = "47.5 ADC cycles"]
+        #[doc = "47.5 ADC clock cycles"]
         CYCLES47_5 = 0x04,
-        #[doc = "92.5 ADC cycles"]
+        #[doc = "92.5 ADC clock cycles"]
         CYCLES92_5 = 0x05,
-        #[doc = "247.5 ADC cycles"]
+        #[doc = "247.5 ADC clock cycles"]
         CYCLES247_5 = 0x06,
-        #[doc = "640.5 ADC cycles"]
+        #[doc = "640.5 ADC clock cycles"]
         CYCLES640_5 = 0x07,
     }
     impl SampleTime {
@@ -1619,6 +1881,96 @@ pub mod vals {
         #[inline(always)]
         fn from(val: SampleTime) -> u8 {
             SampleTime::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Smpplus {
+        #[doc = "The sampling time remains set to 2.5 ADC clock cycles remains"]
+        CYCLES2_5 = 0,
+        #[doc = "2.5 ADC clock cycle sampling time becomes 3.5 ADC clock cycles for the ADC_SMPR1 and ADC_SMPR2 registers."]
+        CYCLES3_5 = 0x01,
+    }
+    impl Smpplus {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Smpplus {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Smpplus {
+        #[inline(always)]
+        fn from(val: u8) -> Smpplus {
+            Smpplus::from_bits(val)
+        }
+    }
+    impl From<Smpplus> for u8 {
+        #[inline(always)]
+        fn from(val: Smpplus) -> u8 {
+            Smpplus::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Swtrig {
+        #[doc = "Software trigger starts the conversion for sampling time control trigger mode"]
+        CONVERSION = 0,
+        #[doc = "Software trigger starts the sampling for sampling time control trigger mode"]
+        SAMPLING = 0x01,
+    }
+    impl Swtrig {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Swtrig {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Swtrig {
+        #[inline(always)]
+        fn from(val: u8) -> Swtrig {
+            Swtrig::from_bits(val)
+        }
+    }
+    impl From<Swtrig> for u8 {
+        #[inline(always)]
+        fn from(val: Swtrig) -> u8 {
+            Swtrig::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Trovs {
+        #[doc = "All oversampled conversions for a channel are run following a trigger"]
+        AUTOMATIC = 0,
+        #[doc = "Each oversampled conversion for a channel needs a new trigger"]
+        TRIGGERED = 0x01,
+    }
+    impl Trovs {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Trovs {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Trovs {
+        #[inline(always)]
+        fn from(val: u8) -> Trovs {
+            Trovs::from_bits(val)
+        }
+    }
+    impl From<Trovs> for u8 {
+        #[inline(always)]
+        fn from(val: Trovs) -> u8 {
+            Trovs::to_bits(val)
         }
     }
 }

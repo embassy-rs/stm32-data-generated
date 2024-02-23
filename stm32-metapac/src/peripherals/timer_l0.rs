@@ -433,11 +433,6 @@ impl TimGp16 {
     pub const fn or(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(80usize) as _) }
     }
-    #[doc = "encoder control register"]
-    #[inline(always)]
-    pub const fn ecr(self) -> crate::common::Reg<regs::EcrGp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(88usize) as _) }
-    }
 }
 pub mod regs {
     #[doc = "auto-reload register"]
@@ -1725,95 +1720,6 @@ pub mod regs {
             DmarGp16(0)
         }
     }
-    #[doc = "encoder control register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EcrGp16(pub u32);
-    impl EcrGp16 {
-        #[doc = "Index enable"]
-        #[inline(always)]
-        pub const fn ie(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Index enable"]
-        #[inline(always)]
-        pub fn set_ie(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Index direction"]
-        #[inline(always)]
-        pub const fn idir(&self) -> super::vals::Idir {
-            let val = (self.0 >> 1usize) & 0x03;
-            super::vals::Idir::from_bits(val as u8)
-        }
-        #[doc = "Index direction"]
-        #[inline(always)]
-        pub fn set_idir(&mut self, val: super::vals::Idir) {
-            self.0 = (self.0 & !(0x03 << 1usize)) | (((val.to_bits() as u32) & 0x03) << 1usize);
-        }
-        #[doc = "Index blanking"]
-        #[inline(always)]
-        pub const fn iblk(&self) -> super::vals::Iblk {
-            let val = (self.0 >> 3usize) & 0x03;
-            super::vals::Iblk::from_bits(val as u8)
-        }
-        #[doc = "Index blanking"]
-        #[inline(always)]
-        pub fn set_iblk(&mut self, val: super::vals::Iblk) {
-            self.0 = (self.0 & !(0x03 << 3usize)) | (((val.to_bits() as u32) & 0x03) << 3usize);
-        }
-        #[doc = "First index"]
-        #[inline(always)]
-        pub const fn fidx(&self) -> super::vals::Fidx {
-            let val = (self.0 >> 5usize) & 0x01;
-            super::vals::Fidx::from_bits(val as u8)
-        }
-        #[doc = "First index"]
-        #[inline(always)]
-        pub fn set_fidx(&mut self, val: super::vals::Fidx) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Index positioning"]
-        #[inline(always)]
-        pub const fn ipos(&self) -> u8 {
-            let val = (self.0 >> 6usize) & 0x03;
-            val as u8
-        }
-        #[doc = "Index positioning"]
-        #[inline(always)]
-        pub fn set_ipos(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
-        }
-        #[doc = "Pulse width"]
-        #[inline(always)]
-        pub const fn pw(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0xff;
-            val as u8
-        }
-        #[doc = "Pulse width"]
-        #[inline(always)]
-        pub fn set_pw(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Pulse width prescaler"]
-        #[inline(always)]
-        pub const fn pwprsc(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x03;
-            val as u8
-        }
-        #[doc = "Pulse width prescaler"]
-        #[inline(always)]
-        pub fn set_pwprsc(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 24usize)) | (((val as u32) & 0x03) << 24usize);
-        }
-    }
-    impl Default for EcrGp16 {
-        #[inline(always)]
-        fn default() -> EcrGp16 {
-            EcrGp16(0)
-        }
-    }
     #[doc = "event generation register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2686,36 +2592,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Fidx {
-        #[doc = "Index is always active"]
-        ALWAYSACTIVE = 0,
-        #[doc = "the first Index only resets the counter"]
-        FIRSTONLY = 0x01,
-    }
-    impl Fidx {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Fidx {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Fidx {
-        #[inline(always)]
-        fn from(val: u8) -> Fidx {
-            Fidx::from_bits(val)
-        }
-    }
-    impl From<Fidx> for u8 {
-        #[inline(always)]
-        fn from(val: Fidx) -> u8 {
-            Fidx::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum FilterValue {
         #[doc = "No filter, sampling is done at fDTS"]
         NOFILTER = 0,
@@ -2770,72 +2646,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: FilterValue) -> u8 {
             FilterValue::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Iblk {
-        #[doc = "Index always active"]
-        ALWAYSACTIVE = 0,
-        #[doc = "Index disabled when tim_ti3 input is active, as per CC3P bitfield"]
-        CC3P = 0x01,
-        #[doc = "Index disabled when tim_ti4 input is active, as per CC4P bitfield"]
-        CC4P = 0x02,
-        _RESERVED_3 = 0x03,
-    }
-    impl Iblk {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Iblk {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Iblk {
-        #[inline(always)]
-        fn from(val: u8) -> Iblk {
-            Iblk::from_bits(val)
-        }
-    }
-    impl From<Iblk> for u8 {
-        #[inline(always)]
-        fn from(val: Iblk) -> u8 {
-            Iblk::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Idir {
-        #[doc = "Index resets the counter whatever the direction"]
-        BOTH = 0,
-        #[doc = "Index resets the counter when up-counting only"]
-        UP = 0x01,
-        #[doc = "Index resets the counter when down-counting only"]
-        DOWN = 0x02,
-        _RESERVED_3 = 0x03,
-    }
-    impl Idir {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Idir {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Idir {
-        #[inline(always)]
-        fn from(val: u8) -> Idir {
-            Idir::from_bits(val)
-        }
-    }
-    impl From<Idir> for u8 {
-        #[inline(always)]
-        fn from(val: Idir) -> u8 {
-            Idir::to_bits(val)
         }
     }
     #[repr(u8)]

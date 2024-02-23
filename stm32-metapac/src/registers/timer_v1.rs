@@ -2405,23 +2405,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "ecr",
-                    description: Some(
-                        "encoder control register",
-                    ),
-                    array: None,
-                    byte_offset: 88,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "EcrGp16",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "af1",
                     description: Some(
                         "alternate function register 1",
@@ -2754,23 +2737,6 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: None,
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ecr",
-                    description: Some(
-                        "encoder control register",
-                    ),
-                    array: None,
-                    byte_offset: 88,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "EcrGp16",
-                            ),
                         },
                     ),
                 },
@@ -6450,120 +6416,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "EcrGp16",
-            extends: None,
-            description: Some(
-                "encoder control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ie",
-                    description: Some(
-                        "Index enable",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "idir",
-                    description: Some(
-                        "Index direction",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Idir",
-                    ),
-                },
-                Field {
-                    name: "iblk",
-                    description: Some(
-                        "Index blanking",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Iblk",
-                    ),
-                },
-                Field {
-                    name: "fidx",
-                    description: Some(
-                        "First index",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 5,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Fidx",
-                    ),
-                },
-                Field {
-                    name: "ipos",
-                    description: Some(
-                        "Index positioning",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 6,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pw",
-                    description: Some(
-                        "Pulse width",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pwprsc",
-                    description: Some(
-                        "Pulse width prescaler",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Egr1ch",
             extends: Some(
                 "EGR_CORE",
@@ -8456,27 +8308,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Fidx",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ALWAYSACTIVE",
-                    description: Some(
-                        "Index is always active",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FIRSTONLY",
-                    description: Some(
-                        "the first Index only resets the counter",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "FilterValue",
             description: None,
             bit_size: 4,
@@ -8613,62 +8444,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "TIM_OCxREFC is the logical AND of TIM_OCxREF and TIM_OC5REF",
                     ),
                     value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Iblk",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "ALWAYSACTIVE",
-                    description: Some(
-                        "Index always active",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CC3P",
-                    description: Some(
-                        "Index disabled when tim_ti3 input is active, as per CC3P bitfield",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "CC4P",
-                    description: Some(
-                        "Index disabled when tim_ti4 input is active, as per CC4P bitfield",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Idir",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "BOTH",
-                    description: Some(
-                        "Index resets the counter whatever the direction",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "UP",
-                    description: Some(
-                        "Index resets the counter when up-counting only",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DOWN",
-                    description: Some(
-                        "Index resets the counter when down-counting only",
-                    ),
-                    value: 2,
                 },
             ],
         },

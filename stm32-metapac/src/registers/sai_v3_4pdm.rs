@@ -954,7 +954,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "cken1",
+                    name: "cken",
                     description: Some(
                         "Clock enable of bitstream clock number 1",
                     ),
@@ -964,49 +964,14 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cken2",
-                    description: Some(
-                        "Clock enable of bitstream clock number 2",
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 1,
+                            },
+                        ),
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 9,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cken3",
-                    description: Some(
-                        "Clock enable of bitstream clock number 3",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 10,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cken4",
-                    description: Some(
-                        "Clock enable of bitstream clock number 4",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 11,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
                     enumm: None,
                 },
             ],
@@ -1020,7 +985,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "dlym1l",
+                    name: "dlyml",
                     description: Some(
                         "Delay line adjust for first microphone of pair 1",
                     ),
@@ -1030,11 +995,18 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 3,
-                    array: None,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 8,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
                 Field {
-                    name: "dlym1r",
+                    name: "dlymr",
                     description: Some(
                         "Delay line adjust for second microphone of pair 1",
                     ),
@@ -1044,91 +1016,14 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dlym2l",
-                    description: Some(
-                        "Delay line for first microphone of pair 2",
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 8,
+                            },
+                        ),
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dlym2r",
-                    description: Some(
-                        "Delay line for second microphone of pair 2",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dlym3l",
-                    description: Some(
-                        "Delay line for first microphone of pair 3",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dlym3r",
-                    description: Some(
-                        "Delay line for second microphone of pair 3",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 20,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dlym4l",
-                    description: Some(
-                        "Delay line for first microphone of pair 4",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dlym4r",
-                    description: Some(
-                        "Delay line for second microphone of pair 4",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: None,
                     enumm: None,
                 },
             ],

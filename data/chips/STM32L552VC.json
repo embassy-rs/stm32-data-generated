@@ -2537,6 +2537,11 @@
                 {
                     "name": "SAI1",
                     "address": 1073828864,
+                    "registers": {
+                        "kind": "sai",
+                        "version": "v3_2pdm",
+                        "block": "SAI"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK2",
                         "kernel_clock": "PCLK2",
@@ -2773,6 +2778,11 @@
                 {
                     "name": "SAI2",
                     "address": 1073829888,
+                    "registers": {
+                        "kind": "sai",
+                        "version": "v3_2pdm",
+                        "block": "SAI"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK2",
                         "kernel_clock": "PCLK2",

@@ -377,7 +377,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "AES",
         address: 0x420c0000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "aes",
+            version: "v3b",
+            block: "AES",
+            ir: &aes::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
             kernel_clock: Clock("HCLK2"),
@@ -1607,7 +1612,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "FMC",
         address: 0x60000000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "fmc",
+            version: "v4",
+            block: "FMC",
+            ir: &fmc::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK4",
             kernel_clock: Clock("HCLK4"),
@@ -3020,7 +3030,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "I3C1",
         address: 0x40005c00,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "i3c",
+            version: "v1",
+            block: "I3C",
+            ir: &i3c::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -4967,7 +4982,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SAES",
         address: 0x420c0c00,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "saes",
+            version: "v1a",
+            block: "SAES",
+            ir: &saes::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
             kernel_clock: Clock("HCLK2"),
@@ -5020,7 +5040,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SAI1",
         address: 0x40015400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "sai",
+            version: "v4_2pdm",
+            block: "SAI",
+            ir: &sai::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -5232,7 +5257,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SAI2",
         address: 0x40015800,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "sai",
+            version: "v4_2pdm",
+            block: "SAI",
+            ir: &sai::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -11161,6 +11191,8 @@ pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
 pub mod adc;
 #[path = "../registers/adccommon_h5.rs"]
 pub mod adccommon;
+#[path = "../registers/aes_v3b.rs"]
+pub mod aes;
 #[path = "../registers/can_fdcan_v1.rs"]
 pub mod can;
 #[path = "../registers/cec_v2.rs"]
@@ -11191,6 +11223,8 @@ pub mod fdcanram;
 pub mod flash;
 #[path = "../registers/fmac_v1.rs"]
 pub mod fmac;
+#[path = "../registers/fmc_v4.rs"]
+pub mod fmc;
 #[path = "../registers/gpdma_v1.rs"]
 pub mod gpdma;
 #[path = "../registers/gpio_v2.rs"]
@@ -11199,6 +11233,8 @@ pub mod gpio;
 pub mod hash;
 #[path = "../registers/i2c_v2.rs"]
 pub mod i2c;
+#[path = "../registers/i3c_v1.rs"]
+pub mod i3c;
 #[path = "../registers/icache_v1_4crr.rs"]
 pub mod icache;
 #[path = "../registers/iwdg_v3.rs"]
@@ -11219,6 +11255,10 @@ pub mod rcc;
 pub mod rng;
 #[path = "../registers/rtc_v3u5.rs"]
 pub mod rtc;
+#[path = "../registers/saes_v1a.rs"]
+pub mod saes;
+#[path = "../registers/sai_v4_2pdm.rs"]
+pub mod sai;
 #[path = "../registers/sdmmc_v2.rs"]
 pub mod sdmmc;
 #[path = "../registers/spi_v4.rs"]

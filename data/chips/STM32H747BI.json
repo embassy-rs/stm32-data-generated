@@ -4931,7 +4931,7 @@
                     "address": 1073829888,
                     "registers": {
                         "kind": "sai",
-                        "version": "v3",
+                        "version": "v3_4pdm",
                         "block": "SAI"
                     },
                     "rcc": {
@@ -5085,7 +5085,7 @@
                     "address": 1073830912,
                     "registers": {
                         "kind": "sai",
-                        "version": "v3",
+                        "version": "v3_4pdm",
                         "block": "SAI"
                     },
                     "rcc": {
@@ -5241,7 +5241,7 @@
                     "address": 1073831936,
                     "registers": {
                         "kind": "sai",
-                        "version": "v3",
+                        "version": "v3_4pdm",
                         "block": "SAI"
                     },
                     "rcc": {
@@ -5322,7 +5322,7 @@
                     "address": 1476416512,
                     "registers": {
                         "kind": "sai",
-                        "version": "v3",
+                        "version": "v3_4pdm",
                         "block": "SAI"
                     },
                     "rcc": {
@@ -14568,7 +14568,7 @@
                     "address": 1073829888,
                     "registers": {
                         "kind": "sai",
-                        "version": "v3",
+                        "version": "v3_4pdm",
                         "block": "SAI"
                     },
                     "rcc": {
@@ -14722,7 +14722,7 @@
                     "address": 1073830912,
                     "registers": {
                         "kind": "sai",
-                        "version": "v3",
+                        "version": "v3_4pdm",
                         "block": "SAI"
                     },
                     "rcc": {
@@ -14878,7 +14878,7 @@
                     "address": 1073831936,
                     "registers": {
                         "kind": "sai",
-                        "version": "v3",
+                        "version": "v3_4pdm",
                         "block": "SAI"
                     },
                     "rcc": {
@@ -14959,7 +14959,7 @@
                     "address": 1476416512,
                     "registers": {
                         "kind": "sai",
-                        "version": "v3",
+                        "version": "v3_4pdm",
                         "block": "SAI"
                     },
                     "rcc": {

@@ -2168,7 +2168,7 @@
                     "address": 1073828864,
                     "registers": {
                         "kind": "sai",
-                        "version": "v4",
+                        "version": "v4_4pdm",
                         "block": "SAI"
                     },
                     "rcc": {

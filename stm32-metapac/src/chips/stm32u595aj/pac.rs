@@ -605,8 +605,8 @@ pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4001_3800usiz
 pub const TIM15: timer::Tim2chCmp = unsafe { timer::Tim2chCmp::from_ptr(0x4001_4000usize as _) };
 pub const TIM16: timer::Tim1chCmp = unsafe { timer::Tim1chCmp::from_ptr(0x4001_4400usize as _) };
 pub const TIM17: timer::Tim1chCmp = unsafe { timer::Tim1chCmp::from_ptr(0x4001_4800usize as _) };
-pub const SAI1: *mut () = 0x4001_5400usize as _;
-pub const SAI2: *mut () = 0x4001_5800usize as _;
+pub const SAI1: sai::Sai = unsafe { sai::Sai::from_ptr(0x4001_5400usize as _) };
+pub const SAI2: sai::Sai = unsafe { sai::Sai::from_ptr(0x4001_5800usize as _) };
 pub const GPDMA1: gpdma::Gpdma = unsafe { gpdma::Gpdma::from_ptr(0x4002_0000usize as _) };
 pub const CORDIC: cordic::Cordic = unsafe { cordic::Cordic::from_ptr(0x4002_1000usize as _) };
 pub const FMAC: fmac::Fmac = unsafe { fmac::Fmac::from_ptr(0x4002_1400usize as _) };
@@ -731,6 +731,8 @@ pub mod rcc;
 pub mod rng;
 #[path = "../../peripherals/rtc_v3u5.rs"]
 pub mod rtc;
+#[path = "../../peripherals/sai_v4_2pdm.rs"]
+pub mod sai;
 #[path = "../../peripherals/sdmmc_v2.rs"]
 pub mod sdmmc;
 #[path = "../../peripherals/spi_v5.rs"]

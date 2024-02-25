@@ -71,9 +71,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Ipdr",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -88,9 +86,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Sidr",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -118,7 +114,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Ckmode",
+                    ),
                 },
                 Field {
                     name: "presc",
@@ -132,7 +130,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 4,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Presc",
+                    ),
                 },
                 Field {
                     name: "vrefen",
@@ -240,55 +240,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 4,
                     array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ipdr",
-            extends: None,
-            description: Some(
-                "identification register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "id",
-                    description: Some(
-                        "Peripheral identifier These bits returns the ADC identifier. ID[31:0] = 0x0011 0006: c7amba_aditf5_90_v1.",
+                    enumm: Some(
+                        "Idlevalue",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Sidr",
-            extends: None,
-            description: Some(
-                "size identification register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sid",
-                    description: Some(
-                        "Size Identification SID[31:8]: fixed code that characterizes the ADC_SIDR register. This field is always read at 0xA3C5DD. SID[7:0]: read-only numeric field that returns the address offset (in Kbytes) of the identification registers from the IP base address:.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
                 },
             ],
         },
@@ -331,5 +285,153 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
     ],
-    enums: &[],
+    enums: &[
+        Enum {
+            name: "Ckmode",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "ASYNCHRONOUS",
+                    description: Some(
+                        "Use Kernel Clock adc_ker_ck_input divided by PRESC. Asynchronous to AHB clock",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SYNCDIV1",
+                    description: Some(
+                        "Use AHB clock rcc_hclk3. In this case rcc_hclk must equal sys_d1cpre_ck",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "SYNCDIV2",
+                    description: Some(
+                        "Use AHB clock rcc_hclk3 divided by 2",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "SYNCDIV4",
+                    description: Some(
+                        "Use AHB clock rcc_hclk3 divided by 4",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Idlevalue",
+            description: None,
+            bit_size: 4,
+            variants: &[
+                EnumVariant {
+                    name: "H13",
+                    description: Some(
+                        "Dummy channel selection is 0x13",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "H1F",
+                    description: Some(
+                        "Dummy channel selection is 0x1F",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Presc",
+            description: None,
+            bit_size: 4,
+            variants: &[
+                EnumVariant {
+                    name: "DIV1",
+                    description: Some(
+                        "adc_ker_ck_input not divided",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV2",
+                    description: Some(
+                        "adc_ker_ck_input divided by 2",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: Some(
+                        "adc_ker_ck_input divided by 4",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV6",
+                    description: Some(
+                        "adc_ker_ck_input divided by 6",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: Some(
+                        "adc_ker_ck_input divided by 8",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DIV10",
+                    description: Some(
+                        "adc_ker_ck_input divided by 10",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DIV12",
+                    description: Some(
+                        "adc_ker_ck_input divided by 12",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DIV16",
+                    description: Some(
+                        "adc_ker_ck_input divided by 16",
+                    ),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "DIV32",
+                    description: Some(
+                        "adc_ker_ck_input divided by 32",
+                    ),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "DIV64",
+                    description: Some(
+                        "adc_ker_ck_input divided by 64",
+                    ),
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "DIV128",
+                    description: Some(
+                        "adc_ker_ck_input divided by 128",
+                    ),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "DIV256",
+                    description: Some(
+                        "adc_ker_ck_input divided by 256",
+                    ),
+                    value: 11,
+                },
+            ],
+        },
+    ],
 };

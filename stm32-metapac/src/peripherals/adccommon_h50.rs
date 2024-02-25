@@ -36,12 +36,12 @@ impl AdcCommon {
     }
     #[doc = "identification register"]
     #[inline(always)]
-    pub const fn ipdr(self) -> crate::common::Reg<regs::Ipdr, crate::common::RW> {
+    pub const fn ipdr(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(248usize) as _) }
     }
     #[doc = "size identification register"]
     #[inline(always)]
-    pub const fn sidr(self) -> crate::common::Reg<regs::Sidr, crate::common::RW> {
+    pub const fn sidr(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(252usize) as _) }
     }
 }
@@ -53,27 +53,27 @@ pub mod regs {
     impl Ccr {
         #[doc = "ADC clock mode These bits are set and cleared by software to define the ADC clock scheme (which is common to both master and slave ADCs): In all synchronous clock modes, there is no jitter in the delay from a timer trigger to the start of a conversion. Note: The software is allowed to write these bits only when the ADCs are disabled (ADCAL = 0, JADSTART = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0)."]
         #[inline(always)]
-        pub const fn ckmode(&self) -> u8 {
+        pub const fn ckmode(&self) -> super::vals::Ckmode {
             let val = (self.0 >> 16usize) & 0x03;
-            val as u8
+            super::vals::Ckmode::from_bits(val as u8)
         }
         #[doc = "ADC clock mode These bits are set and cleared by software to define the ADC clock scheme (which is common to both master and slave ADCs): In all synchronous clock modes, there is no jitter in the delay from a timer trigger to the start of a conversion. Note: The software is allowed to write these bits only when the ADCs are disabled (ADCAL = 0, JADSTART = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0)."]
         #[inline(always)]
-        pub fn set_ckmode(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 16usize)) | (((val as u32) & 0x03) << 16usize);
+        pub fn set_ckmode(&mut self, val: super::vals::Ckmode) {
+            self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
         }
         #[doc = "ADC prescaler These bits are set and cleared by software to select the frequency of the clock to the ADC. The clock is common for all the ADCs. other: reserved Note: The software is allowed to write these bits only when the ADC is disabled (ADCAL = 0, JADSTART = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0). The ADC prescaler value is applied only when CKMODE\\[1:0\\]
 = 0b00."]
         #[inline(always)]
-        pub const fn presc(&self) -> u8 {
+        pub const fn presc(&self) -> super::vals::Presc {
             let val = (self.0 >> 18usize) & 0x0f;
-            val as u8
+            super::vals::Presc::from_bits(val as u8)
         }
         #[doc = "ADC prescaler These bits are set and cleared by software to select the frequency of the clock to the ADC. The clock is common for all the ADCs. other: reserved Note: The software is allowed to write these bits only when the ADC is disabled (ADCAL = 0, JADSTART = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0). The ADC prescaler value is applied only when CKMODE\\[1:0\\]
 = 0b00."]
         #[inline(always)]
-        pub fn set_presc(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 18usize)) | (((val as u32) & 0x0f) << 18usize);
+        pub fn set_presc(&mut self, val: super::vals::Presc) {
+            self.0 = (self.0 & !(0x0f << 18usize)) | (((val.to_bits() as u32) & 0x0f) << 18usize);
         }
         #[doc = "VREFINT enable This bit is set and cleared by software to enable/disable the VREFINT channel"]
         #[inline(always)]
@@ -155,68 +155,20 @@ pub mod regs {
         }
         #[doc = "Idle value for non-selected channels"]
         #[inline(always)]
-        pub const fn idlevalue(&self) -> u8 {
+        pub const fn idlevalue(&self) -> super::vals::Idlevalue {
             let val = (self.0 >> 12usize) & 0x0f;
-            val as u8
+            super::vals::Idlevalue::from_bits(val as u8)
         }
         #[doc = "Idle value for non-selected channels"]
         #[inline(always)]
-        pub fn set_idlevalue(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 12usize)) | (((val as u32) & 0x0f) << 12usize);
+        pub fn set_idlevalue(&mut self, val: super::vals::Idlevalue) {
+            self.0 = (self.0 & !(0x0f << 12usize)) | (((val.to_bits() as u32) & 0x0f) << 12usize);
         }
     }
     impl Default for Hwcfgr0 {
         #[inline(always)]
         fn default() -> Hwcfgr0 {
             Hwcfgr0(0)
-        }
-    }
-    #[doc = "identification register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ipdr(pub u32);
-    impl Ipdr {
-        #[doc = "Peripheral identifier These bits returns the ADC identifier. ID\\[31:0\\]
-= 0x0011 0006: c7amba_aditf5_90_v1."]
-        #[inline(always)]
-        pub const fn id(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Peripheral identifier These bits returns the ADC identifier. ID\\[31:0\\]
-= 0x0011 0006: c7amba_aditf5_90_v1."]
-        #[inline(always)]
-        pub fn set_id(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Ipdr {
-        #[inline(always)]
-        fn default() -> Ipdr {
-            Ipdr(0)
-        }
-    }
-    #[doc = "size identification register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Sidr(pub u32);
-    impl Sidr {
-        #[doc = "Size Identification SID\\[31:8\\]: fixed code that characterizes the ADC_SIDR register. This field is always read at 0xA3C5DD. SID\\[7:0\\]: read-only numeric field that returns the address offset (in Kbytes) of the identification registers from the IP base address:."]
-        #[inline(always)]
-        pub const fn sid(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Size Identification SID\\[31:8\\]: fixed code that characterizes the ADC_SIDR register. This field is always read at 0xA3C5DD. SID\\[7:0\\]: read-only numeric field that returns the address offset (in Kbytes) of the identification registers from the IP base address:."]
-        #[inline(always)]
-        pub fn set_sid(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Sidr {
-        #[inline(always)]
-        fn default() -> Sidr {
-            Sidr(0)
         }
     }
     #[doc = "version register"]
@@ -251,6 +203,140 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Verr {
             Verr(0)
+        }
+    }
+}
+pub mod vals {
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Ckmode {
+        #[doc = "Use Kernel Clock adc_ker_ck_input divided by PRESC. Asynchronous to AHB clock"]
+        ASYNCHRONOUS = 0,
+        #[doc = "Use AHB clock rcc_hclk3. In this case rcc_hclk must equal sys_d1cpre_ck"]
+        SYNCDIV1 = 0x01,
+        #[doc = "Use AHB clock rcc_hclk3 divided by 2"]
+        SYNCDIV2 = 0x02,
+        #[doc = "Use AHB clock rcc_hclk3 divided by 4"]
+        SYNCDIV4 = 0x03,
+    }
+    impl Ckmode {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Ckmode {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Ckmode {
+        #[inline(always)]
+        fn from(val: u8) -> Ckmode {
+            Ckmode::from_bits(val)
+        }
+    }
+    impl From<Ckmode> for u8 {
+        #[inline(always)]
+        fn from(val: Ckmode) -> u8 {
+            Ckmode::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Idlevalue {
+        #[doc = "Dummy channel selection is 0x13"]
+        H13 = 0,
+        #[doc = "Dummy channel selection is 0x1F"]
+        H1F = 0x01,
+        _RESERVED_2 = 0x02,
+        _RESERVED_3 = 0x03,
+        _RESERVED_4 = 0x04,
+        _RESERVED_5 = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+        _RESERVED_8 = 0x08,
+        _RESERVED_9 = 0x09,
+        _RESERVED_a = 0x0a,
+        _RESERVED_b = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
+    }
+    impl Idlevalue {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Idlevalue {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Idlevalue {
+        #[inline(always)]
+        fn from(val: u8) -> Idlevalue {
+            Idlevalue::from_bits(val)
+        }
+    }
+    impl From<Idlevalue> for u8 {
+        #[inline(always)]
+        fn from(val: Idlevalue) -> u8 {
+            Idlevalue::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Presc {
+        #[doc = "adc_ker_ck_input not divided"]
+        DIV1 = 0,
+        #[doc = "adc_ker_ck_input divided by 2"]
+        DIV2 = 0x01,
+        #[doc = "adc_ker_ck_input divided by 4"]
+        DIV4 = 0x02,
+        #[doc = "adc_ker_ck_input divided by 6"]
+        DIV6 = 0x03,
+        #[doc = "adc_ker_ck_input divided by 8"]
+        DIV8 = 0x04,
+        #[doc = "adc_ker_ck_input divided by 10"]
+        DIV10 = 0x05,
+        #[doc = "adc_ker_ck_input divided by 12"]
+        DIV12 = 0x06,
+        #[doc = "adc_ker_ck_input divided by 16"]
+        DIV16 = 0x07,
+        #[doc = "adc_ker_ck_input divided by 32"]
+        DIV32 = 0x08,
+        #[doc = "adc_ker_ck_input divided by 64"]
+        DIV64 = 0x09,
+        #[doc = "adc_ker_ck_input divided by 128"]
+        DIV128 = 0x0a,
+        #[doc = "adc_ker_ck_input divided by 256"]
+        DIV256 = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
+    }
+    impl Presc {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Presc {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Presc {
+        #[inline(always)]
+        fn from(val: u8) -> Presc {
+            Presc::from_bits(val)
+        }
+    }
+    impl From<Presc> for u8 {
+        #[inline(always)]
+        fn from(val: Presc) -> u8 {
+            Presc::to_bits(val)
         }
     }
 }

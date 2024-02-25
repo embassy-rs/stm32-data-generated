@@ -31,17 +31,17 @@ impl Aes {
     }
     #[doc = "Data input register"]
     #[inline(always)]
-    pub const fn dinr(self) -> crate::common::Reg<regs::Dinr, crate::common::RW> {
+    pub const fn dinr(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Data output register"]
     #[inline(always)]
-    pub const fn doutr(self) -> crate::common::Reg<regs::Doutr, crate::common::RW> {
+    pub const fn doutr(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Key register"]
     #[inline(always)]
-    pub const fn keyr(self, n: usize) -> crate::common::Reg<regs::Keyr, crate::common::RW> {
+    pub const fn keyr(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 8usize);
         unsafe {
             crate::common::Reg::from_ptr(
@@ -53,13 +53,13 @@ impl Aes {
     }
     #[doc = "Initialization vector register"]
     #[inline(always)]
-    pub const fn ivr(self, n: usize) -> crate::common::Reg<regs::Ivr, crate::common::RW> {
+    pub const fn ivr(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize + n * 4usize) as _) }
     }
     #[doc = "Suspend register"]
     #[inline(always)]
-    pub const fn suspr(self, n: usize) -> crate::common::Reg<regs::Suspr, crate::common::RW> {
+    pub const fn suspr(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize + n * 4usize) as _) }
     }
@@ -118,16 +118,19 @@ pub mod regs {
         pub fn set_mode(&mut self, val: super::vals::Mode) {
             self.0 = (self.0 & !(0x03 << 3usize)) | (((val.to_bits() as u32) & 0x03) << 3usize);
         }
-        #[doc = "Chaining mode bit1 bit0"]
+        #[doc = "Chaining mode selection"]
         #[inline(always)]
-        pub const fn chmod10(&self) -> u8 {
-            let val = (self.0 >> 5usize) & 0x03;
-            val as u8
+        pub const fn chmod(&self) -> super::vals::Chmod {
+            let mut val = 0;
+            val += (((self.0 >> 5usize) & 0x03) << 0usize);
+            val += (((self.0 >> 16usize) & 0x01) << 2usize);
+            super::vals::Chmod::from_bits(val as u8)
         }
-        #[doc = "Chaining mode bit1 bit0"]
+        #[doc = "Chaining mode selection"]
         #[inline(always)]
-        pub fn set_chmod10(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 5usize)) | (((val as u32) & 0x03) << 5usize);
+        pub fn set_chmod(&mut self, val: super::vals::Chmod) {
+            self.0 = (self.0 & !(0x03 << 5usize)) | (((val.to_bits() as u32 >> 0usize) & 0x03) << 5usize);
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32 >> 2usize) & 0x01) << 16usize);
         }
         #[doc = "Enable DMA management of data input phase"]
         #[inline(always)]
@@ -161,17 +164,6 @@ pub mod regs {
         #[inline(always)]
         pub fn set_gcmph(&mut self, val: super::vals::Gcmph) {
             self.0 = (self.0 & !(0x03 << 13usize)) | (((val.to_bits() as u32) & 0x03) << 13usize);
-        }
-        #[doc = "Chaining mode bit2"]
-        #[inline(always)]
-        pub const fn chmod2(&self) -> bool {
-            let val = (self.0 >> 16usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Chaining mode bit2"]
-        #[inline(always)]
-        pub fn set_chmod2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Key size selection"]
         #[inline(always)]
@@ -224,68 +216,11 @@ pub mod regs {
             Cr(0)
         }
     }
-    #[doc = "Data input register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Dinr(pub u32);
-    impl Dinr {
-        #[doc = "Input data word"]
-        #[inline(always)]
-        pub const fn din(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Input data word"]
-        #[inline(always)]
-        pub fn set_din(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Dinr {
-        #[inline(always)]
-        fn default() -> Dinr {
-            Dinr(0)
-        }
-    }
-    #[doc = "Data output register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Doutr(pub u32);
-    impl Doutr {
-        #[doc = "Output data word"]
-        #[inline(always)]
-        pub const fn dout(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Output data word"]
-        #[inline(always)]
-        pub fn set_dout(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Doutr {
-        #[inline(always)]
-        fn default() -> Doutr {
-            Doutr(0)
-        }
-    }
     #[doc = "Interrupt clear register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Icr(pub u32);
     impl Icr {
-        #[doc = "Computation complete flag clear"]
-        #[inline(always)]
-        pub const fn ccf(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Computation complete flag clear"]
-        #[inline(always)]
-        pub fn set_ccf(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
         #[doc = "Read or write error interrupt flag clear"]
         #[inline(always)]
         pub const fn rweif(&self) -> bool {
@@ -405,52 +340,6 @@ pub mod regs {
             Isr(0)
         }
     }
-    #[doc = "Initialization vector register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ivr(pub u32);
-    impl Ivr {
-        #[doc = "Initialization vector input"]
-        #[inline(always)]
-        pub const fn ivi(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Initialization vector input"]
-        #[inline(always)]
-        pub fn set_ivi(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Ivr {
-        #[inline(always)]
-        fn default() -> Ivr {
-            Ivr(0)
-        }
-    }
-    #[doc = "Key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Keyr(pub u32);
-    impl Keyr {
-        #[doc = "Cryptographic key"]
-        #[inline(always)]
-        pub const fn key(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Cryptographic key"]
-        #[inline(always)]
-        pub fn set_key(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Keyr {
-        #[inline(always)]
-        fn default() -> Keyr {
-            Keyr(0)
-        }
-    }
     #[doc = "Status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -518,31 +407,47 @@ pub mod regs {
             Sr(0)
         }
     }
-    #[doc = "Suspend register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Suspr(pub u32);
-    impl Suspr {
-        #[doc = "AES suspend"]
-        #[inline(always)]
-        pub const fn susp(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "AES suspend"]
-        #[inline(always)]
-        pub fn set_susp(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Suspr {
-        #[inline(always)]
-        fn default() -> Suspr {
-            Suspr(0)
-        }
-    }
 }
 pub mod vals {
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Chmod {
+        #[doc = "Electronic codebook"]
+        ECB = 0x0,
+        #[doc = "Cipher-block chaining"]
+        CBC = 0x01,
+        #[doc = "Counter mode"]
+        CTR = 0x02,
+        #[doc = "Galois counter mode and Galois message authentication code"]
+        GCM_GMAC = 0x03,
+        #[doc = "Counter with CBC-MAC"]
+        CCM = 0x04,
+        _RESERVED_5 = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+    }
+    impl Chmod {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Chmod {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Chmod {
+        #[inline(always)]
+        fn from(val: u8) -> Chmod {
+            Chmod::from_bits(val)
+        }
+    }
+    impl From<Chmod> for u8 {
+        #[inline(always)]
+        fn from(val: Chmod) -> u8 {
+            Chmod::to_bits(val)
+        }
+    }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Datatype {

@@ -2658,7 +2658,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "I3C1",
         address: 0x40005c00,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "i3c",
+            version: "v1",
+            block: "I3C",
+            ir: &i3c::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -10515,6 +10520,8 @@ pub mod gpio;
 pub mod hash;
 #[path = "../registers/i2c_v2.rs"]
 pub mod i2c;
+#[path = "../registers/i3c_v1.rs"]
+pub mod i3c;
 #[path = "../registers/icache_v1_4crr.rs"]
 pub mod icache;
 #[path = "../registers/iwdg_v3.rs"]

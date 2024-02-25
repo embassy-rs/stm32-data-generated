@@ -2306,6 +2306,11 @@
                 {
                     "name": "I3C1",
                     "address": 1073765376,
+                    "registers": {
+                        "kind": "i3c",
+                        "version": "v1",
+                        "block": "I3C"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK1",
                         "kernel_clock": {

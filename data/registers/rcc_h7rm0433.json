@@ -639,8 +639,8 @@
         "bit_size": 1
       },
       {
-        "name": "CRYPTEN",
-        "description": "CRYPT peripheral clock enable",
+        "name": "CRYPEN",
+        "description": "CRYP peripheral clock enable",
         "bit_offset": 4,
         "bit_size": 1
       },
@@ -704,8 +704,8 @@
         "bit_size": 1
       },
       {
-        "name": "CRYPTLPEN",
-        "description": "CRYPT peripheral clock enable during CSleep mode",
+        "name": "CRYPLPEN",
+        "description": "CRYP peripheral clock enable during CSleep mode",
         "bit_offset": 4,
         "bit_size": 1
       },
@@ -769,8 +769,8 @@
         "bit_size": 1
       },
       {
-        "name": "CRYPTRST",
-        "description": "Cryptography block reset",
+        "name": "CRYPRST",
+        "description": "CRYPography block reset",
         "bit_offset": 4,
         "bit_size": 1
       },
@@ -2822,8 +2822,8 @@
         "bit_size": 1
       },
       {
-        "name": "CRYPTEN",
-        "description": "CRYPT peripheral clock enable",
+        "name": "CRYPEN",
+        "description": "CRYP peripheral clock enable",
         "bit_offset": 4,
         "bit_size": 1
       },
@@ -2875,8 +2875,8 @@
         "bit_size": 1
       },
       {
-        "name": "CRYPTLPEN",
-        "description": "CRYPT peripheral clock enable during CSleep mode",
+        "name": "CRYPLPEN",
+        "description": "CRYP peripheral clock enable during CSleep mode",
         "bit_offset": 4,
         "bit_size": 1
       },

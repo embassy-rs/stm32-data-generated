@@ -841,8 +841,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "crypten",
-                    description: Some("CRYPT peripheral clock enable"),
+                    name: "crypen",
+                    description: Some("CRYP peripheral clock enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
@@ -937,8 +937,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "cryptlpen",
-                    description: Some("CRYPT peripheral clock enable during CSleep mode"),
+                    name: "cryplpen",
+                    description: Some("CRYP peripheral clock enable during CSleep mode"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
@@ -1033,8 +1033,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "cryptrst",
-                    description: Some("Cryptography block reset"),
+                    name: "cryprst",
+                    description: Some("CRYPography block reset"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,

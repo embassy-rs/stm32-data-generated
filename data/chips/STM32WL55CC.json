@@ -1349,6 +1349,11 @@
                 {
                     "name": "PKA",
                     "address": 1476403200,
+                    "registers": {
+                        "kind": "pka",
+                        "version": "v1c",
+                        "block": "PKA"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK3",
                         "kernel_clock": "HCLK3",
@@ -3912,6 +3917,11 @@
                 {
                     "name": "PKA",
                     "address": 1476403200,
+                    "registers": {
+                        "kind": "pka",
+                        "version": "v1c",
+                        "block": "PKA"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK3",
                         "kernel_clock": "HCLK3",

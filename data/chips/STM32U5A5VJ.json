@@ -3362,6 +3362,11 @@
                 {
                     "name": "PKA",
                     "address": 1108090880,
+                    "registers": {
+                        "kind": "pka",
+                        "version": "v1b",
+                        "block": "PKA"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK2",
                         "kernel_clock": "HCLK2",

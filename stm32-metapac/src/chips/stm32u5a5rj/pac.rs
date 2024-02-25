@@ -649,7 +649,7 @@ pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x420c_0000usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
 pub const SAES: *mut () = 0x420c_0c00usize as _;
-pub const PKA: *mut () = 0x420c_2000usize as _;
+pub const PKA: pka::Pka = unsafe { pka::Pka::from_ptr(0x420c_2000usize as _) };
 pub const OCTOSPIM: octospim::Octospim = unsafe { octospim::Octospim::from_ptr(0x420c_4000usize as _) };
 pub const OTFDEC1: *mut () = 0x420c_5000usize as _;
 pub const OTFDEC2: *mut () = 0x420c_5400usize as _;
@@ -739,6 +739,8 @@ pub mod octospi;
 pub mod octospim;
 #[path = "../../peripherals/otg_v1.rs"]
 pub mod otg;
+#[path = "../../peripherals/pka_v1b.rs"]
+pub mod pka;
 #[path = "../../peripherals/pssi_v1.rs"]
 pub mod pssi;
 #[path = "../../peripherals/pwr_u5.rs"]

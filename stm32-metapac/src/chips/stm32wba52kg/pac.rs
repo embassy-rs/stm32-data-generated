@@ -341,7 +341,7 @@ pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400usize as _
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
 pub const SAES: *mut () = 0x420c_0c00usize as _;
 pub const HSEM: *mut () = 0x420c_1c00usize as _;
-pub const PKA: *mut () = 0x420c_2000usize as _;
+pub const PKA: pka::Pka = unsafe { pka::Pka::from_ptr(0x420c_2000usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4600_0400usize as _) };
 pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4600_2000usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4600_2400usize as _) };
@@ -386,6 +386,8 @@ pub mod icache;
 pub mod iwdg;
 #[path = "../../peripherals/lptim_v1.rs"]
 pub mod lptim;
+#[path = "../../peripherals/pka_v1a.rs"]
+pub mod pka;
 #[path = "../../peripherals/pwr_wba.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_wba.rs"]

@@ -582,7 +582,7 @@ pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x420c_0000usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
 pub const SAES: *mut () = 0x420c_0c00usize as _;
-pub const PKA: *mut () = 0x420c_2000usize as _;
+pub const PKA: pka::Pka = unsafe { pka::Pka::from_ptr(0x420c_2000usize as _) };
 pub const OTFDEC1: *mut () = 0x420c_5000usize as _;
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x420c_8000usize as _) };
 pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x420d_1400usize as _) };
@@ -660,6 +660,8 @@ pub mod iwdg;
 pub mod lptim;
 #[path = "../../peripherals/octospi_v1.rs"]
 pub mod octospi;
+#[path = "../../peripherals/pka_v1b.rs"]
+pub mod pka;
 #[path = "../../peripherals/pssi_v1.rs"]
 pub mod pssi;
 #[path = "../../peripherals/pwr_u5.rs"]

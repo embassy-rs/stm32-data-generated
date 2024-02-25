@@ -200,7 +200,7 @@ pub const IPCC: ipcc::Ipcc = unsafe { ipcc::Ipcc::from_ptr(0x5800_0c00usize as _
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x5800_1000usize as _) };
 pub const HSEM: *mut () = 0x5800_1400usize as _;
 pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x5800_1800usize as _) };
-pub const PKA: *mut () = 0x5800_2000usize as _;
+pub const PKA: pka::Pka = unsafe { pka::Pka::from_ptr(0x5800_2000usize as _) };
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x5800_4000usize as _) };
 pub const SUBGHZSPI: spi::Spi = unsafe { spi::Spi::from_ptr(0x5801_0000usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
@@ -243,6 +243,8 @@ pub mod ipcc;
 pub mod iwdg;
 #[path = "../../peripherals/lptim_v1.rs"]
 pub mod lptim;
+#[path = "../../peripherals/pka_v1c.rs"]
+pub mod pka;
 #[path = "../../peripherals/pwr_wl5.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_wl5.rs"]

@@ -4645,6 +4645,11 @@
                 {
                     "name": "SAES",
                     "address": 1108085760,
+                    "registers": {
+                        "kind": "saes",
+                        "version": "v1b",
+                        "block": "SAES"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK2",
                         "kernel_clock": {

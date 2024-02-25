@@ -22,27 +22,27 @@ impl AdcCommon {
     #[doc = "common control register"]
     #[inline(always)]
     pub const fn ccr(self) -> crate::common::Reg<regs::Ccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "hardware configuration register"]
     #[inline(always)]
     pub const fn hwcfgr0(self) -> crate::common::Reg<regs::Hwcfgr0, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(240usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf0usize) as _) }
     }
     #[doc = "version register"]
     #[inline(always)]
     pub const fn verr(self) -> crate::common::Reg<regs::Verr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(244usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf4usize) as _) }
     }
     #[doc = "identification register"]
     #[inline(always)]
     pub const fn ipdr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(248usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf8usize) as _) }
     }
     #[doc = "size identification register"]
     #[inline(always)]
     pub const fn sidr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(252usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xfcusize) as _) }
     }
 }
 pub mod regs {
@@ -211,7 +211,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ckmode {
         #[doc = "Use Kernel Clock adc_ker_ck_input divided by PRESC. Asynchronous to AHB clock"]
-        ASYNCHRONOUS = 0,
+        ASYNCHRONOUS = 0x0,
         #[doc = "Use AHB clock rcc_hclk3. In this case rcc_hclk must equal sys_d1cpre_ck"]
         SYNCDIV1 = 0x01,
         #[doc = "Use AHB clock rcc_hclk3 divided by 2"]
@@ -245,7 +245,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Idlevalue {
         #[doc = "Dummy channel selection is 0x13"]
-        H13 = 0,
+        H13 = 0x0,
         #[doc = "Dummy channel selection is 0x1F"]
         H1F = 0x01,
         _RESERVED_2 = 0x02,
@@ -289,7 +289,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Presc {
         #[doc = "adc_ker_ck_input not divided"]
-        DIV1 = 0,
+        DIV1 = 0x0,
         #[doc = "adc_ker_ck_input divided by 2"]
         DIV2 = 0x01,
         #[doc = "adc_ker_ck_input divided by 4"]

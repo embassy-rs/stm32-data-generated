@@ -10,7 +10,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "cr1",
                 description: Some("control register 1"),
                 array: None,
-                byte_offset: 0,
+                byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -21,7 +21,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "cr2",
                 description: Some("control register 2"),
                 array: None,
-                byte_offset: 4,
+                byte_offset: 0x4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "cr3",
                 description: Some("control register 3"),
                 array: None,
-                byte_offset: 8,
+                byte_offset: 0x8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -43,7 +43,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "fltcr",
                 description: Some("TAMP filter control register"),
                 array: None,
-                byte_offset: 12,
+                byte_offset: 0xc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -54,7 +54,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "atcr1",
                 description: Some("TAMP active tamper control register 1"),
                 array: None,
-                byte_offset: 16,
+                byte_offset: 0x10,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -65,7 +65,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "atseedr",
                 description: Some("TAMP active tamper seed register"),
                 array: None,
-                byte_offset: 20,
+                byte_offset: 0x14,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
@@ -76,7 +76,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ator",
                 description: Some("TAMP active tamper output register"),
                 array: None,
-                byte_offset: 24,
+                byte_offset: 0x18,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -87,7 +87,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "atcr2",
                 description: Some("TAMP active tamper control register 2"),
                 array: None,
-                byte_offset: 28,
+                byte_offset: 0x1c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -98,7 +98,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "smcr",
                 description: Some("TAMP secure mode register"),
                 array: None,
-                byte_offset: 32,
+                byte_offset: 0x20,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -109,7 +109,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "privcr",
                 description: Some("TAMP privilege mode control register"),
                 array: None,
-                byte_offset: 36,
+                byte_offset: 0x24,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -120,7 +120,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ier",
                 description: Some("TAMP interrupt enable register"),
                 array: None,
-                byte_offset: 44,
+                byte_offset: 0x2c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -131,7 +131,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "sr",
                 description: Some("TAMP status register"),
                 array: None,
-                byte_offset: 48,
+                byte_offset: 0x30,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -142,7 +142,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "misr",
                 description: Some("TAMP masked interrupt status register"),
                 array: None,
-                byte_offset: 52,
+                byte_offset: 0x34,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -153,7 +153,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "smisr",
                 description: Some("TAMP secure masked interrupt status register"),
                 array: None,
-                byte_offset: 56,
+                byte_offset: 0x38,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -164,7 +164,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "scr",
                 description: Some("TAMP status clear register"),
                 array: None,
-                byte_offset: 60,
+                byte_offset: 0x3c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
@@ -175,7 +175,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "countr",
                 description: Some("TAMP monotonic counter register"),
                 array: None,
-                byte_offset: 64,
+                byte_offset: 0x40,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -186,7 +186,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "cfgr",
                 description: Some("TAMP configuration register"),
                 array: None,
-                byte_offset: 80,
+                byte_offset: 0x50,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -197,7 +197,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "bkpr",
                 description: Some("TAMP backup register"),
                 array: Some(Array::Regular(RegularArray { len: 32, stride: 4 })),
-                byte_offset: 256,
+                byte_offset: 0x100,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,

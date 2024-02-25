@@ -22,122 +22,122 @@ impl Syscfg {
     #[doc = "configuration register 1"]
     #[inline(always)]
     pub const fn cfgr1(self) -> crate::common::Reg<regs::Cfgr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "configuration register 2"]
     #[inline(always)]
     pub const fn cfgr2(self) -> crate::common::Reg<regs::Cfgr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "configuration register 3"]
     #[inline(always)]
     pub const fn cfgr3(self) -> crate::common::Reg<regs::Cfgr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[doc = "interrupt line 0 status register"]
     #[inline(always)]
     pub const fn itline0(self) -> crate::common::Reg<regs::Itline0, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(128usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
     }
     #[doc = "interrupt line 2 status register"]
     #[inline(always)]
     pub const fn itline2(self) -> crate::common::Reg<regs::Itline2, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(136usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x88usize) as _) }
     }
     #[doc = "interrupt line 3 status register"]
     #[inline(always)]
     pub const fn itline3(self) -> crate::common::Reg<regs::Itline3, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(140usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x8cusize) as _) }
     }
     #[doc = "interrupt line 4 status register"]
     #[inline(always)]
     pub const fn itline4(self) -> crate::common::Reg<regs::Itline4, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(144usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x90usize) as _) }
     }
     #[doc = "interrupt line 5 status register"]
     #[inline(always)]
     pub const fn itline5(self) -> crate::common::Reg<regs::Itline5, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(148usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x94usize) as _) }
     }
     #[doc = "interrupt line 6 status register"]
     #[inline(always)]
     pub const fn itline6(self) -> crate::common::Reg<regs::Itline6, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(152usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x98usize) as _) }
     }
     #[doc = "interrupt line 7 status register"]
     #[inline(always)]
     pub const fn itline7(self) -> crate::common::Reg<regs::Itline7, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(156usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x9cusize) as _) }
     }
     #[doc = "interrupt line 9 status register"]
     #[inline(always)]
     pub const fn itline9(self) -> crate::common::Reg<regs::Itline9, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(164usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa4usize) as _) }
     }
     #[doc = "interrupt line 10 status register"]
     #[inline(always)]
     pub const fn itline10(self) -> crate::common::Reg<regs::Itline10, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(168usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa8usize) as _) }
     }
     #[doc = "interrupt line 11 status register"]
     #[inline(always)]
     pub const fn itline11(self) -> crate::common::Reg<regs::Itline11, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(172usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xacusize) as _) }
     }
     #[doc = "interrupt line 12 status register"]
     #[inline(always)]
     pub const fn itline12(self) -> crate::common::Reg<regs::Itline12, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(176usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb0usize) as _) }
     }
     #[doc = "interrupt line 13 status register"]
     #[inline(always)]
     pub const fn itline13(self) -> crate::common::Reg<regs::Itline13, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(180usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb4usize) as _) }
     }
     #[doc = "interrupt line 14 status register"]
     #[inline(always)]
     pub const fn itline14(self) -> crate::common::Reg<regs::Itline14, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(184usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb8usize) as _) }
     }
     #[doc = "interrupt line 16 status register"]
     #[inline(always)]
     pub const fn itline16(self) -> crate::common::Reg<regs::Itline16, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(192usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc0usize) as _) }
     }
     #[doc = "interrupt line 19 status register"]
     #[inline(always)]
     pub const fn itline19(self) -> crate::common::Reg<regs::Itline19, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(204usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xccusize) as _) }
     }
     #[doc = "interrupt line 21 status register"]
     #[inline(always)]
     pub const fn itline21(self) -> crate::common::Reg<regs::Itline21, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(212usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd4usize) as _) }
     }
     #[doc = "interrupt line 22 status register"]
     #[inline(always)]
     pub const fn itline22(self) -> crate::common::Reg<regs::Itline22, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(216usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd8usize) as _) }
     }
     #[doc = "interrupt line 23 status register"]
     #[inline(always)]
     pub const fn itline23(self) -> crate::common::Reg<regs::Itline23, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(220usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xdcusize) as _) }
     }
     #[doc = "interrupt line 25 status register"]
     #[inline(always)]
     pub const fn itline25(self) -> crate::common::Reg<regs::Itline25, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(228usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe4usize) as _) }
     }
     #[doc = "interrupt line 27 status register"]
     #[inline(always)]
     pub const fn itline27(self) -> crate::common::Reg<regs::Itline27, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(236usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xecusize) as _) }
     }
     #[doc = "interrupt line 28 status register"]
     #[inline(always)]
     pub const fn itline28(self) -> crate::common::Reg<regs::Itline28, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(240usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf0usize) as _) }
     }
 }
 pub mod regs {
@@ -942,7 +942,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum IrMod {
         #[doc = "TIM16"]
-        TIM16 = 0,
+        TIM16 = 0x0,
         #[doc = "USART1"]
         USART1 = 0x01,
         #[doc = "USART2"]
@@ -975,7 +975,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum MemMode {
         #[doc = "Main Flash memory mapped at address 0"]
-        MAIN_FLASH = 0,
+        MAIN_FLASH = 0x0,
         #[doc = "System Flash memory mapped at address 0"]
         SYSTEM_FLASH = 0x01,
         #[doc = "Main Flash memory mapped at address 0 (alternate encoding)"]
@@ -1009,7 +1009,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pinmux0 {
         #[doc = "PB7"]
-        PB7 = 0,
+        PB7 = 0x0,
         #[doc = "PC14"]
         PC14 = 0x01,
         _RESERVED_2 = 0x02,
@@ -1041,7 +1041,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pinmux1 {
         #[doc = "PF2"]
-        PF2 = 0,
+        PF2 = 0x0,
         #[doc = "PA0"]
         PA0 = 0x01,
         #[doc = "PA1"]
@@ -1075,7 +1075,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pinmux2 {
         #[doc = "PA8"]
-        PA8 = 0,
+        PA8 = 0x0,
         #[doc = "PA11"]
         PA11 = 0x01,
         _RESERVED_2 = 0x02,
@@ -1107,7 +1107,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pinmux3 {
         #[doc = "PA14"]
-        PA14 = 0,
+        PA14 = 0x0,
         #[doc = "PB6"]
         PB6 = 0x01,
         #[doc = "PC15"]
@@ -1140,7 +1140,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pinmux4 {
         #[doc = "PA7"]
-        PA7 = 0,
+        PA7 = 0x0,
         #[doc = "PA12"]
         PA12 = 0x01,
         _RESERVED_2 = 0x02,
@@ -1172,7 +1172,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pinmux5 {
         #[doc = "PA3"]
-        PA3 = 0,
+        PA3 = 0x0,
         #[doc = "PA4"]
         PA4 = 0x01,
         #[doc = "PA5"]

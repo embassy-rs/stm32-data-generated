@@ -11,7 +11,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "cr",
                     description: Some("DMA channel configuration register (DMA_CCR)"),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -22,7 +22,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ndtr",
                     description: Some("DMA channel 1 number of data register"),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -33,7 +33,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "par",
                     description: Some("DMA channel 1 peripheral address register"),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -44,7 +44,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "mar",
                     description: Some("DMA channel 1 memory address register"),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -62,7 +62,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "isr",
                     description: Some("DMA interrupt status register (DMA_ISR)"),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::Read,
                         bit_size: 32,
@@ -73,7 +73,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ifcr",
                     description: Some("DMA interrupt flag clear register (DMA_IFCR)"),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(Register {
                         access: Access::Write,
                         bit_size: 32,
@@ -84,14 +84,14 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ch",
                     description: Some("Channel cluster: CCR?, CNDTR?, CPAR?, and CMAR? registers"),
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 20 })),
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Block(BlockItemBlock { block: "Ch" }),
                 },
                 BlockItem {
                     name: "cselr",
                     description: Some("channel selection register"),
                     array: None,
-                    byte_offset: 168,
+                    byte_offset: 0xa8,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,

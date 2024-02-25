@@ -22,42 +22,42 @@ impl Lptim {
     #[doc = "Interrupt and Status Register"]
     #[inline(always)]
     pub const fn isr(self) -> crate::common::Reg<regs::Isr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Interrupt Clear Register"]
     #[inline(always)]
     pub const fn icr(self) -> crate::common::Reg<regs::Icr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Interrupt Enable Register"]
     #[inline(always)]
     pub const fn ier(self) -> crate::common::Reg<regs::Ier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Configuration Register"]
     #[inline(always)]
     pub const fn cfgr(self) -> crate::common::Reg<regs::Cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Control Register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Compare Register"]
     #[inline(always)]
     pub const fn cmp(self) -> crate::common::Reg<regs::Cmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Autoreload Register"]
     #[inline(always)]
     pub const fn arr(self) -> crate::common::Reg<regs::Arr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Counter Register"]
     #[inline(always)]
     pub const fn cnt(self) -> crate::common::Reg<regs::Cnt, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
 }
 pub mod regs {

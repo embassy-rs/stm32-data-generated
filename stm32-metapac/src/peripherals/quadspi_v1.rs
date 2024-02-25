@@ -22,67 +22,67 @@ impl Quadspi {
     #[doc = "control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "device configuration register"]
     #[inline(always)]
     pub const fn dcr(self) -> crate::common::Reg<regs::Dcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "flag clear register"]
     #[inline(always)]
     pub const fn fcr(self) -> crate::common::Reg<regs::Fcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "data length register"]
     #[inline(always)]
     pub const fn dlr(self) -> crate::common::Reg<regs::Dlr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "communication configuration register"]
     #[inline(always)]
     pub const fn ccr(self) -> crate::common::Reg<regs::Ccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "address register"]
     #[inline(always)]
     pub const fn ar(self) -> crate::common::Reg<regs::Ar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "ABR"]
     #[inline(always)]
     pub const fn abr(self) -> crate::common::Reg<regs::Abr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "data register"]
     #[inline(always)]
     pub const fn dr(self) -> crate::common::Reg<regs::Dr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "polling status mask register"]
     #[inline(always)]
     pub const fn psmkr(self) -> crate::common::Reg<regs::Psmkr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "polling status match register"]
     #[inline(always)]
     pub const fn psmar(self) -> crate::common::Reg<regs::Psmar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "polling interval register"]
     #[inline(always)]
     pub const fn pir(self) -> crate::common::Reg<regs::Pir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "low-power timeout register"]
     #[inline(always)]
     pub const fn lptr(self) -> crate::common::Reg<regs::Lptr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
 }
 pub mod regs {

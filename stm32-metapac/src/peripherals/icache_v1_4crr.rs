@@ -22,38 +22,38 @@ impl Icache {
     #[doc = "ICACHE control register."]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "ICACHE status register."]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "ICACHE interrupt enable register."]
     #[inline(always)]
     pub const fn ier(self) -> crate::common::Reg<regs::Ier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "ICACHE flag clear register."]
     #[inline(always)]
     pub const fn fcr(self) -> crate::common::Reg<regs::Fcr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "ICACHE hit monitor register."]
     #[inline(always)]
     pub const fn hmonr(self) -> crate::common::Reg<u32, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "ICACHE miss monitor register."]
     #[inline(always)]
     pub const fn mmonr(self) -> crate::common::Reg<regs::Mmonr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Cluster CRR%s, container region configuration registers."]
     #[inline(always)]
     pub const fn crr(self, n: usize) -> crate::common::Reg<regs::Crr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize + n * 4usize) as _) }
     }
 }
 pub mod regs {
@@ -365,7 +365,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Hburst {
-        WRAP = 0,
+        WRAP = 0x0,
         INCREMENT = 0x01,
     }
     impl Hburst {
@@ -393,7 +393,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mstsel {
-        MASTER1SELECTED = 0,
+        MASTER1SELECTED = 0x0,
         MASTER2SELECTED = 0x01,
     }
     impl Mstsel {
@@ -421,7 +421,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rsize {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         MEGABYTES2 = 0x01,
         MEGABYTES4 = 0x02,
         MEGABYTES8 = 0x03,
@@ -456,7 +456,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Waysel {
         #[doc = "direct mapped cache (1-way cache)"]
-        DIRECTMAPPED = 0,
+        DIRECTMAPPED = 0x0,
         #[doc = "n-way set associative cache (reset value)"]
         NWAYSETASSOCIATIVE = 0x01,
     }

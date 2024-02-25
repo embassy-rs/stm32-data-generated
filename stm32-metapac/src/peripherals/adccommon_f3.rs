@@ -22,17 +22,17 @@ impl AdcCommon {
     #[doc = "ADC Common status register"]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "ADC common control register"]
     #[inline(always)]
     pub const fn ccr(self) -> crate::common::Reg<regs::Ccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "ADC common regular data register for dual and triple modes"]
     #[inline(always)]
     pub const fn cdr(self) -> crate::common::Reg<regs::Cdr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
 }
 pub mod regs {
@@ -394,7 +394,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ckmode {
         #[doc = "Use Kernel Clock adc_ker_ck_input divided by PRESC. Asynchronous mode"]
-        ASYNCHRONOUS = 0,
+        ASYNCHRONOUS = 0x0,
         #[doc = "Use AHB clock rcc_hclk3. In this case rcc_hclk must equal sys_d1cpre_ck."]
         SYNCDIV1 = 0x01,
         #[doc = "Use AHB clock rcc_hclk3 divided by 2."]
@@ -429,7 +429,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dmacfg {
         #[doc = "DMA one shot mode selected"]
-        ONESHOT = 0,
+        ONESHOT = 0x0,
         #[doc = "DMA circular mode selected"]
         CIRCULATOR = 0x01,
     }
@@ -460,7 +460,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dual {
         #[doc = "Independent mode"]
-        INDEPENDENT = 0,
+        INDEPENDENT = 0x0,
         #[doc = "Dual, combined regular simultaneous + injected simultaneous mode"]
         DUALRJ = 0x01,
         #[doc = "Dual, combined regular simultaneous + alternate trigger mode"]
@@ -527,7 +527,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mdma {
         #[doc = "MDMA mode disabled"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "MDMA mode enabled for 12 and 10-bit resolution"]
         BITS12_10 = 0x02,

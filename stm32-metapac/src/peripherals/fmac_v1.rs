@@ -22,42 +22,42 @@ impl Fmac {
     #[doc = "X1 buffer configuration register"]
     #[inline(always)]
     pub const fn x1bufcfg(self) -> crate::common::Reg<regs::X1bufcfg, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "X2 buffer configuration register"]
     #[inline(always)]
     pub const fn x2bufcfg(self) -> crate::common::Reg<regs::X2bufcfg, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Y buffer configuration register"]
     #[inline(always)]
     pub const fn ybufcfg(self) -> crate::common::Reg<regs::Ybufcfg, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Parameter register"]
     #[inline(always)]
     pub const fn param(self) -> crate::common::Reg<regs::Param, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Write data register"]
     #[inline(always)]
     pub const fn wdata(self) -> crate::common::Reg<regs::Wdata, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Read data register"]
     #[inline(always)]
     pub const fn rdata(self) -> crate::common::Reg<regs::Rdata, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
 }
 pub mod regs {

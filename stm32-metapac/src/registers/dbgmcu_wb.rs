@@ -10,7 +10,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "idcode",
                 description: Some("MCU Device ID Code Register"),
                 array: None,
-                byte_offset: 0,
+                byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -21,7 +21,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "cr",
                 description: Some("Debug MCU Configuration Register"),
                 array: None,
-                byte_offset: 4,
+                byte_offset: 0x4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "apb1fzr1",
                 description: Some("APB1 Low Freeze Register CPU1"),
                 array: None,
-                byte_offset: 60,
+                byte_offset: 0x3c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -43,7 +43,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "c2ap_b1fzr1",
                 description: Some("APB1 Low Freeze Register CPU2"),
                 array: None,
-                byte_offset: 64,
+                byte_offset: 0x40,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -54,7 +54,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "apb1fzr2",
                 description: Some("APB1 High Freeze Register CPU1"),
                 array: None,
-                byte_offset: 68,
+                byte_offset: 0x44,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -65,7 +65,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "c2apb1fzr2",
                 description: Some("APB1 High Freeze Register CPU2"),
                 array: None,
-                byte_offset: 72,
+                byte_offset: 0x48,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -76,7 +76,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "c2apb2fzr",
                 description: Some("APB2 Freeze Register CPU2"),
                 array: None,
-                byte_offset: 72,
+                byte_offset: 0x48,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -87,7 +87,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "apb2fzr",
                 description: Some("APB2 Freeze Register CPU1"),
                 array: None,
-                byte_offset: 76,
+                byte_offset: 0x4c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,

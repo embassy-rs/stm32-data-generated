@@ -9,7 +9,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "data",
             description: Some("Factory calibration"),
             array: None,
-            byte_offset: 0,
+            byte_offset: 0x0,
             inner: BlockItemInner::Register(Register {
                 access: Access::Read,
                 bit_size: 32,

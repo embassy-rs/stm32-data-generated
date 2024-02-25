@@ -10,7 +10,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "acr",
                 description: Some("Access control register"),
                 array: None,
-                byte_offset: 0,
+                byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -21,7 +21,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "keyr",
                 description: Some("Flash key register"),
                 array: None,
-                byte_offset: 8,
+                byte_offset: 0x8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "optkeyr",
                 description: Some("Option byte key register"),
                 array: None,
-                byte_offset: 12,
+                byte_offset: 0xc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
@@ -43,7 +43,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "sr",
                 description: Some("Status register"),
                 array: None,
-                byte_offset: 16,
+                byte_offset: 0x10,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -54,7 +54,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "cr",
                 description: Some("Flash control register"),
                 array: None,
-                byte_offset: 20,
+                byte_offset: 0x14,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -65,7 +65,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "eccr",
                 description: Some("Flash ECC register"),
                 array: None,
-                byte_offset: 24,
+                byte_offset: 0x18,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -76,7 +76,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "optr",
                 description: Some("Flash option register"),
                 array: None,
-                byte_offset: 32,
+                byte_offset: 0x20,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -87,7 +87,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "pcrop1asr",
                 description: Some("Flash Bank 1 PCROP Start address zone A register"),
                 array: None,
-                byte_offset: 36,
+                byte_offset: 0x24,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -98,7 +98,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "pcrop1aer",
                 description: Some("Flash Bank 1 PCROP End address zone A register"),
                 array: None,
-                byte_offset: 40,
+                byte_offset: 0x28,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -109,7 +109,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "wrp1ar",
                 description: Some("Flash Bank 1 WRP area A address register"),
                 array: None,
-                byte_offset: 44,
+                byte_offset: 0x2c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -120,7 +120,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "wrp1br",
                 description: Some("Flash Bank 1 WRP area B address register"),
                 array: None,
-                byte_offset: 48,
+                byte_offset: 0x30,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -131,7 +131,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "pcrop1bsr",
                 description: Some("Flash Bank 1 PCROP Start address area B register"),
                 array: None,
-                byte_offset: 52,
+                byte_offset: 0x34,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -142,7 +142,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "pcrop1ber",
                 description: Some("Flash Bank 1 PCROP End address area B register"),
                 array: None,
-                byte_offset: 56,
+                byte_offset: 0x38,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -153,7 +153,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ipccbr",
                 description: Some("IPCC mailbox data buffer address register"),
                 array: None,
-                byte_offset: 60,
+                byte_offset: 0x3c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -164,7 +164,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "c2acr",
                 description: Some("CPU2 cortex M0 access control register"),
                 array: None,
-                byte_offset: 92,
+                byte_offset: 0x5c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -175,7 +175,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "c2sr",
                 description: Some("CPU2 cortex M0 status register"),
                 array: None,
-                byte_offset: 96,
+                byte_offset: 0x60,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -186,7 +186,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "c2cr",
                 description: Some("CPU2 cortex M0 control register"),
                 array: None,
-                byte_offset: 100,
+                byte_offset: 0x64,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -197,7 +197,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "sfr",
                 description: Some("Secure flash start address register"),
                 array: None,
-                byte_offset: 128,
+                byte_offset: 0x80,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -208,7 +208,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "srrvr",
                 description: Some("Secure SRAM2 start address and cortex M0 reset vector register"),
                 array: None,
-                byte_offset: 132,
+                byte_offset: 0x84,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,

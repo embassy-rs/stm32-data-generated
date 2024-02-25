@@ -22,90 +22,90 @@ impl Rtc {
     #[doc = "Time register"]
     #[inline(always)]
     pub const fn tr(self) -> crate::common::Reg<regs::Tr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Date register"]
     #[inline(always)]
     pub const fn dr(self) -> crate::common::Reg<regs::Dr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Initialization and status register"]
     #[inline(always)]
     pub const fn isr(self) -> crate::common::Reg<regs::Isr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Prescaler register"]
     #[inline(always)]
     pub const fn prer(self) -> crate::common::Reg<regs::Prer, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Wakeup timer register"]
     #[inline(always)]
     pub const fn wutr(self) -> crate::common::Reg<regs::Wutr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Alarm register"]
     #[inline(always)]
     pub const fn alrmr(self, n: usize) -> crate::common::Reg<regs::Alrmr, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize + n * 4usize) as _) }
     }
     #[doc = "Write protection register"]
     #[inline(always)]
     pub const fn wpr(self) -> crate::common::Reg<regs::Wpr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "Sub second register"]
     #[inline(always)]
     pub const fn ssr(self) -> crate::common::Reg<regs::Ssr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "Shift control register"]
     #[inline(always)]
     pub const fn shiftr(self) -> crate::common::Reg<regs::Shiftr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "Timestamp time register"]
     #[inline(always)]
     pub const fn tstr(self) -> crate::common::Reg<regs::Tstr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "Timestamp date register"]
     #[inline(always)]
     pub const fn tsdr(self) -> crate::common::Reg<regs::Tsdr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[doc = "Timestamp sub second register"]
     #[inline(always)]
     pub const fn tsssr(self) -> crate::common::Reg<regs::Tsssr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[doc = "Calibration register"]
     #[inline(always)]
     pub const fn calr(self) -> crate::common::Reg<regs::Calr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[doc = "Tamper and alternate function configuration register"]
     #[inline(always)]
     pub const fn tafcr(self) -> crate::common::Reg<regs::Tafcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[doc = "Alarm sub second register"]
     #[inline(always)]
     pub const fn alrmssr(self, n: usize) -> crate::common::Reg<regs::Alrmssr, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize + n * 4usize) as _) }
     }
     #[doc = "Backup register"]
     #[inline(always)]
     pub const fn bkpr(self, n: usize) -> crate::common::Reg<regs::Bkpr, crate::common::RW> {
         assert!(n < 5usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(80usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize + n * 4usize) as _) }
     }
 }
 pub mod regs {
@@ -1447,7 +1447,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum AlrmrMsk {
         #[doc = "Alarm set if the date/day match"]
-        TOMATCH = 0,
+        TOMATCH = 0x0,
         #[doc = "Date/day don’t care in Alarm comparison"]
         NOTMATCH = 0x01,
     }
@@ -1477,7 +1477,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum AlrmrPm {
         #[doc = "AM or 24-hour format"]
-        AM = 0,
+        AM = 0x0,
         #[doc = "PM"]
         PM = 0x01,
     }
@@ -1508,7 +1508,7 @@ pub mod vals {
     pub enum AlrmrWdsel {
         #[doc = "DU\\[3:0\\]
 represents the date units"]
-        DATEUNITS = 0,
+        DATEUNITS = 0x0,
         #[doc = "DU\\[3:0\\]
 represents the week day. DT\\[1:0\\]
 is don’t care"]
@@ -1540,7 +1540,7 @@ is don’t care"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ampm {
         #[doc = "AM or 24-hour format"]
-        AM = 0,
+        AM = 0x0,
         #[doc = "PM"]
         PM = 0x01,
     }
@@ -1570,7 +1570,7 @@ is don’t care"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Calp {
         #[doc = "No RTCCLK pulses are added"]
-        NOCHANGE = 0,
+        NOCHANGE = 0x0,
         #[doc = "One RTCCLK pulse is effectively inserted every 2^11 pulses (frequency increased by 488.5 ppm)"]
         INCREASEFREQ = 0x01,
     }
@@ -1599,7 +1599,7 @@ is don’t care"]
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Calw16 {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "When CALW16 is set to ‘1’, the 16-second calibration cycle period is selected.This bit must not be set to ‘1’ if CALW8=1"]
         SIXTEEN_SECOND = 0x01,
     }
@@ -1628,7 +1628,7 @@ is don’t care"]
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Calw8 {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "When CALW8 is set to ‘1’, the 8-second calibration cycle period is selected"]
         EIGHT_SECOND = 0x01,
     }
@@ -1658,7 +1658,7 @@ is don’t care"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cosel {
         #[doc = "Calibration output is 512 Hz (with default prescaler setting)"]
-        CALFREQ_512HZ = 0,
+        CALFREQ_512HZ = 0x0,
         #[doc = "Calibration output is 1 Hz (with default prescaler setting)"]
         CALFREQ_1HZ = 0x01,
     }
@@ -1688,7 +1688,7 @@ is don’t care"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fmt {
         #[doc = "24 hour/day format"]
-        TWENTY_FOUR_HOUR = 0,
+        TWENTY_FOUR_HOUR = 0x0,
         #[doc = "AM/PM hour format"]
         AM_PM = 0x01,
     }
@@ -1718,7 +1718,7 @@ is don’t care"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Osel {
         #[doc = "Output disabled"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "Alarm A output enabled"]
         ALARMA = 0x01,
         _RESERVED_2 = 0x02,
@@ -1751,7 +1751,7 @@ is don’t care"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pcmode {
         #[doc = "PCx is controlled by the GPIO configuration Register. Consequently PC15 is floating in Standby mode"]
-        FLOATING = 0,
+        FLOATING = 0x0,
         #[doc = "PCx is forced to push-pull output if LSE is disabled"]
         PUSHPULL = 0x01,
     }
@@ -1781,7 +1781,7 @@ is don’t care"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pcvalue {
         #[doc = "If the LSE is disabled and PCxMODE = 1, set PCxVALUE to logic low"]
-        LOW = 0,
+        LOW = 0x0,
         #[doc = "If the LSE is disabled and PCxMODE = 1, set PCxVALUE to logic high"]
         HIGH = 0x01,
     }
@@ -1811,7 +1811,7 @@ is don’t care"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pol {
         #[doc = "The pin is high when ALRAF/ALRBF/WUTF is asserted (depending on OSEL\\[1:0\\])"]
-        HIGH = 0,
+        HIGH = 0x0,
         #[doc = "The pin is low when ALRAF/ALRBF/WUTF is asserted (depending on OSEL\\[1:0\\])"]
         LOW = 0x01,
     }
@@ -1841,7 +1841,7 @@ is don’t care"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tampflt {
         #[doc = "Tamper event is activated on edge of RTC_TAMPx input transitions to the active level (no internal pull-up on RTC_TAMPx input)"]
-        IMMEDIATE = 0,
+        IMMEDIATE = 0x0,
         #[doc = "Tamper event is activated after 2 consecutive samples at the active level"]
         SAMPLES2 = 0x01,
         #[doc = "Tamper event is activated after 4 consecutive samples at the active level"]
@@ -1875,7 +1875,7 @@ is don’t care"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tampfreq {
         #[doc = "RTCCLK / 32768 (1 Hz when RTCCLK = 32768 Hz)"]
-        DIV32768 = 0,
+        DIV32768 = 0x0,
         #[doc = "RTCCLK / 16384 (2 Hz when RTCCLK = 32768 Hz)"]
         DIV16384 = 0x01,
         #[doc = "RTCCLK / 8192 (4 Hz when RTCCLK = 32768 Hz)"]
@@ -1917,7 +1917,7 @@ is don’t care"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tampprch {
         #[doc = "1 RTCCLK cycle"]
-        CYCLES1 = 0,
+        CYCLES1 = 0x0,
         #[doc = "2 RTCCLK cycles"]
         CYCLES2 = 0x01,
         #[doc = "4 RTCCLK cycles"]
@@ -1951,7 +1951,7 @@ is don’t care"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tamppudis {
         #[doc = "Precharge RTC_TAMPx pins before sampling (enable internal pull-up)"]
-        ENABLED = 0,
+        ENABLED = 0x0,
         #[doc = "Disable precharge of RTC_TAMPx pins"]
         DISABLED = 0x01,
     }
@@ -1981,7 +1981,7 @@ is don’t care"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tamptrg {
         #[doc = "If TAMPFLT = 00: RTC_TAMPx input rising edge triggers a tamper detection event. If TAMPFLT =\u{338} 00: RTC_TAMPx input staying low triggers a tamper detection event."]
-        RISINGEDGE = 0,
+        RISINGEDGE = 0x0,
         #[doc = "If TAMPFLT = 00: RTC_TAMPx input staying high triggers a tamper detection event. If TAMPFLT =\u{338} 00: RTC_TAMPx input falling edge triggers a tamper detection event"]
         FALLINGEDGE = 0x01,
     }
@@ -2011,7 +2011,7 @@ is don’t care"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tsedge {
         #[doc = "RTC_TS input rising edge generates a time-stamp event"]
-        RISINGEDGE = 0,
+        RISINGEDGE = 0x0,
         #[doc = "RTC_TS input falling edge generates a time-stamp event"]
         FALLINGEDGE = 0x01,
     }
@@ -2041,7 +2041,7 @@ is don’t care"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Wucksel {
         #[doc = "RTC/16 clock is selected"]
-        DIV16 = 0,
+        DIV16 = 0x0,
         #[doc = "RTC/8 clock is selected"]
         DIV8 = 0x01,
         #[doc = "RTC/4 clock is selected"]

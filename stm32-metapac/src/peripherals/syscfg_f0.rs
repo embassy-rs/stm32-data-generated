@@ -22,18 +22,18 @@ impl Syscfg {
     #[doc = "configuration register 1"]
     #[inline(always)]
     pub const fn cfgr1(self) -> crate::common::Reg<regs::Cfgr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "external interrupt configuration register 1"]
     #[inline(always)]
     pub const fn exticr(self, n: usize) -> crate::common::Reg<regs::Exticr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize + n * 4usize) as _) }
     }
     #[doc = "configuration register 2"]
     #[inline(always)]
     pub const fn cfgr2(self) -> crate::common::Reg<regs::Cfgr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
 }
 pub mod regs {
@@ -413,7 +413,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fmp {
         #[doc = "Standard"]
-        STANDARD = 0,
+        STANDARD = 0x0,
         #[doc = "FM+"]
         FMP = 0x01,
     }
@@ -443,7 +443,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum IrMod {
         #[doc = "TIM16 selected"]
-        TIM16 = 0,
+        TIM16 = 0x0,
         #[doc = "USART1 selected"]
         USART1 = 0x01,
         #[doc = "USART4 selected"]
@@ -476,7 +476,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum MemMode {
         #[doc = "Main Flash memory mapped at 0x0000_0000"]
-        MAINFLASH = 0,
+        MAINFLASH = 0x0,
         #[doc = "System Flash memory mapped at 0x0000_0000"]
         SYSTEMFLASH = 0x01,
         #[doc = "Main Flash memory mapped at 0x0000_0000"]

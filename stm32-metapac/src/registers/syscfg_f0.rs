@@ -15,7 +15,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "configuration register 1",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -39,7 +39,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -56,7 +56,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "configuration register 2",
                     ),
                     array: None,
-                    byte_offset: 24,
+                    byte_offset: 0x18,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,

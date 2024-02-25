@@ -9,7 +9,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "ram",
             description: Some("FDCAN Message RAM"),
             array: Some(Array::Regular(RegularArray { len: 2560, stride: 4 })),
-            byte_offset: 0,
+            byte_offset: 0x0,
             inner: BlockItemInner::Register(Register {
                 access: Access::ReadWrite,
                 bit_size: 32,

@@ -22,49 +22,49 @@ impl Mdios {
     #[doc = "MDIOS configuration register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "MDIOS write flag register"]
     #[inline(always)]
     pub const fn wrfr(self) -> crate::common::Reg<regs::Wrfr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "MDIOS clear write flag register"]
     #[inline(always)]
     pub const fn cwrfr(self) -> crate::common::Reg<regs::Cwrfr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "MDIOS read flag register"]
     #[inline(always)]
     pub const fn rdfr(self) -> crate::common::Reg<regs::Rdfr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "MDIOS clear read flag register"]
     #[inline(always)]
     pub const fn crdfr(self) -> crate::common::Reg<regs::Crdfr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "MDIOS status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "MDIOS clear flag register"]
     #[inline(always)]
     pub const fn clrfr(self) -> crate::common::Reg<regs::Clrfr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "MDIOS input data register %s"]
     #[inline(always)]
     pub const fn dinr(self, n: usize) -> crate::common::Reg<regs::Dinr, crate::common::R> {
         assert!(n < 32usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize + n * 4usize) as _) }
     }
     #[doc = "MDIOS output data register %s"]
     #[inline(always)]
     pub const fn doutr(self, n: usize) -> crate::common::Reg<regs::Doutr, crate::common::RW> {
         assert!(n < 32usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(156usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x9cusize + n * 4usize) as _) }
     }
 }
 pub mod regs {

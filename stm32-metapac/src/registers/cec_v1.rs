@@ -10,7 +10,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "cfgr",
                 description: Some("configuration register."),
                 array: None,
-                byte_offset: 0,
+                byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -21,7 +21,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "oar",
                 description: Some("CEC own address register."),
                 array: None,
-                byte_offset: 4,
+                byte_offset: 0x4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "pres",
                 description: Some("Rx Data Register."),
                 array: None,
-                byte_offset: 8,
+                byte_offset: 0x8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -43,7 +43,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "esr",
                 description: Some("CEC error status register."),
                 array: None,
-                byte_offset: 12,
+                byte_offset: 0xc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -54,7 +54,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "csr",
                 description: Some("CEC control and status register."),
                 array: None,
-                byte_offset: 16,
+                byte_offset: 0x10,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -65,7 +65,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "txd",
                 description: Some("CEC Tx data register."),
                 array: None,
-                byte_offset: 20,
+                byte_offset: 0x14,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -76,7 +76,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "rxd",
                 description: Some("CEC Rx data register."),
                 array: None,
-                byte_offset: 24,
+                byte_offset: 0x18,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,

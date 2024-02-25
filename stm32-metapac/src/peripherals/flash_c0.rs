@@ -22,67 +22,67 @@ impl Flash {
     #[doc = "Access control register"]
     #[inline(always)]
     pub const fn acr(self) -> crate::common::Reg<regs::Acr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Flash key register"]
     #[inline(always)]
     pub const fn keyr(self) -> crate::common::Reg<u32, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Option byte key register"]
     #[inline(always)]
     pub const fn optkeyr(self) -> crate::common::Reg<u32, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Flash control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Flash option register"]
     #[inline(always)]
     pub const fn optr(self) -> crate::common::Reg<regs::Optr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "Flash PCROP zone A Start address register"]
     #[inline(always)]
     pub const fn pcrop1asr(self) -> crate::common::Reg<regs::Pcrop1asr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "Flash PCROP zone A End address register"]
     #[inline(always)]
     pub const fn pcrop1aer(self) -> crate::common::Reg<regs::Pcrop1aer, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "Flash WRP area A address register"]
     #[inline(always)]
     pub const fn wrp1ar(self) -> crate::common::Reg<regs::Wrp1ar, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "Flash WRP area B address register"]
     #[inline(always)]
     pub const fn wrp1br(self) -> crate::common::Reg<regs::Wrp1br, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "Flash PCROP zone B Start address register"]
     #[inline(always)]
     pub const fn pcrop1bsr(self) -> crate::common::Reg<regs::Pcrop1bsr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[doc = "Flash PCROP zone B End address register"]
     #[inline(always)]
     pub const fn pcrop1ber(self) -> crate::common::Reg<regs::Pcrop1ber, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[doc = "Flash Security register"]
     #[inline(always)]
     pub const fn secr(self) -> crate::common::Reg<regs::Secr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(128usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
     }
 }
 pub mod regs {
@@ -895,7 +895,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum BorfLev {
         #[doc = "BOR falling level 1 with threshold around 2.0V"]
-        FALLING_0 = 0,
+        FALLING_0 = 0x0,
         #[doc = "BOR falling level 2 with threshold around 2.2V"]
         FALLING_1 = 0x01,
         #[doc = "BOR falling level 3 with threshold around 2.5V"]
@@ -929,7 +929,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum BorrLev {
         #[doc = "BOR rising level 1 with threshold around 2.1V"]
-        RISING_0 = 0,
+        RISING_0 = 0x0,
         #[doc = "BOR rising level 2 with threshold around 2.3V"]
         RISING_1 = 0x01,
         #[doc = "BOR rising level 3 with threshold around 2.6V"]
@@ -963,7 +963,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Latency {
         #[doc = "Zero wait states"]
-        WS0 = 0,
+        WS0 = 0x0,
         #[doc = "One wait state"]
         WS1 = 0x01,
         _RESERVED_2 = 0x02,
@@ -998,7 +998,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum NrstMode {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Reset pin is in reset input mode only"]
         INPUT_ONLY = 0x01,
         #[doc = "Reset pin is in GPIO mode only"]

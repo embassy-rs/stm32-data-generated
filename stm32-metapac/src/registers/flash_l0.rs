@@ -10,7 +10,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "acr",
                 description: Some("Access control register"),
                 array: None,
-                byte_offset: 0,
+                byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -21,7 +21,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "pecr",
                 description: Some("Program/erase control register"),
                 array: None,
-                byte_offset: 4,
+                byte_offset: 0x4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "pdkeyr",
                 description: Some("Power down key register"),
                 array: None,
-                byte_offset: 8,
+                byte_offset: 0x8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
@@ -43,7 +43,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "pekeyr",
                 description: Some("Program/erase key register"),
                 array: None,
-                byte_offset: 12,
+                byte_offset: 0xc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
@@ -54,7 +54,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "prgkeyr",
                 description: Some("Program memory key register"),
                 array: None,
-                byte_offset: 16,
+                byte_offset: 0x10,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
@@ -65,7 +65,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "optkeyr",
                 description: Some("Option byte key register"),
                 array: None,
-                byte_offset: 20,
+                byte_offset: 0x14,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
@@ -76,7 +76,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "sr",
                 description: Some("Status register"),
                 array: None,
-                byte_offset: 24,
+                byte_offset: 0x18,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -87,7 +87,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "optr",
                 description: Some("Option byte register"),
                 array: None,
-                byte_offset: 28,
+                byte_offset: 0x1c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -98,7 +98,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "wrprot",
                 description: Some("Write Protection Register 1"),
                 array: None,
-                byte_offset: 32,
+                byte_offset: 0x20,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -109,7 +109,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "wrprot2",
                 description: Some("Write Protection Register 2"),
                 array: None,
-                byte_offset: 128,
+                byte_offset: 0x80,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,

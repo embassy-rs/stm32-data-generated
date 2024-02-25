@@ -10,7 +10,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "jpeg_confr0",
                 description: Some("JPEG codec configuration register 0"),
                 array: None,
-                byte_offset: 0,
+                byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
@@ -21,7 +21,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "jpeg_confr1",
                 description: Some("JPEG codec configuration register 1"),
                 array: None,
-                byte_offset: 4,
+                byte_offset: 0x4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "jpeg_confr2",
                 description: Some("JPEG codec configuration register 2"),
                 array: None,
-                byte_offset: 8,
+                byte_offset: 0x8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -43,7 +43,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "jpeg_confr3",
                 description: Some("JPEG codec configuration register 3"),
                 array: None,
-                byte_offset: 12,
+                byte_offset: 0xc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -54,7 +54,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "jpeg_confr4",
                 description: Some("JPEG codec configuration register 4"),
                 array: None,
-                byte_offset: 16,
+                byte_offset: 0x10,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -65,7 +65,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "jpeg_confr5",
                 description: Some("JPEG codec configuration register 5"),
                 array: None,
-                byte_offset: 20,
+                byte_offset: 0x14,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -76,7 +76,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "jpeg_confr6",
                 description: Some("JPEG codec configuration register 6"),
                 array: None,
-                byte_offset: 24,
+                byte_offset: 0x18,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -87,7 +87,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "jpeg_confr7",
                 description: Some("JPEG codec configuration register 7"),
                 array: None,
-                byte_offset: 28,
+                byte_offset: 0x1c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -98,7 +98,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "jpeg_cr",
                 description: Some("JPEG control register"),
                 array: None,
-                byte_offset: 48,
+                byte_offset: 0x30,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -109,7 +109,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "jpeg_sr",
                 description: Some("JPEG status register"),
                 array: None,
-                byte_offset: 52,
+                byte_offset: 0x34,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -120,7 +120,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "jpeg_cfr",
                 description: Some("JPEG clear flag register"),
                 array: None,
-                byte_offset: 56,
+                byte_offset: 0x38,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
@@ -131,7 +131,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "jpeg_dir",
                 description: Some("JPEG data input register"),
                 array: None,
-                byte_offset: 64,
+                byte_offset: 0x40,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
@@ -142,7 +142,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "jpeg_dor",
                 description: Some("JPEG data output register"),
                 array: None,
-                byte_offset: 68,
+                byte_offset: 0x44,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -153,7 +153,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem0_0",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 80,
+                byte_offset: 0x50,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -164,7 +164,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem0_1",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 84,
+                byte_offset: 0x54,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -175,7 +175,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem0_2",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 88,
+                byte_offset: 0x58,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -186,7 +186,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem0_3",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 92,
+                byte_offset: 0x5c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -197,7 +197,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem0_4",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 96,
+                byte_offset: 0x60,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -208,7 +208,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem0_5",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 100,
+                byte_offset: 0x64,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -219,7 +219,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem0_6",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 104,
+                byte_offset: 0x68,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -230,7 +230,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem0_7",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 108,
+                byte_offset: 0x6c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -241,7 +241,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem0_8",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 112,
+                byte_offset: 0x70,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -252,7 +252,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem0_9",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 116,
+                byte_offset: 0x74,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -263,7 +263,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem0_10",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 120,
+                byte_offset: 0x78,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -274,7 +274,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem0_11",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 124,
+                byte_offset: 0x7c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -285,7 +285,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem0_12",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 128,
+                byte_offset: 0x80,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -296,7 +296,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem0_13",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 132,
+                byte_offset: 0x84,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -307,7 +307,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem0_14",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 136,
+                byte_offset: 0x88,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -318,7 +318,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem0_15",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 140,
+                byte_offset: 0x8c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -329,7 +329,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem1_0",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 144,
+                byte_offset: 0x90,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -340,7 +340,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem1_1",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 148,
+                byte_offset: 0x94,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -351,7 +351,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem1_2",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 152,
+                byte_offset: 0x98,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -362,7 +362,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem1_3",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 156,
+                byte_offset: 0x9c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -373,7 +373,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem1_4",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 160,
+                byte_offset: 0xa0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -384,7 +384,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem1_5",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 164,
+                byte_offset: 0xa4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -395,7 +395,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem1_6",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 168,
+                byte_offset: 0xa8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -406,7 +406,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem1_7",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 172,
+                byte_offset: 0xac,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -417,7 +417,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem1_8",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 176,
+                byte_offset: 0xb0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -428,7 +428,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem1_9",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 180,
+                byte_offset: 0xb4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -439,7 +439,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem1_10",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 184,
+                byte_offset: 0xb8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -450,7 +450,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem1_11",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 188,
+                byte_offset: 0xbc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -461,7 +461,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem1_12",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 192,
+                byte_offset: 0xc0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -472,7 +472,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem1_13",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 196,
+                byte_offset: 0xc4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -483,7 +483,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem1_14",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 200,
+                byte_offset: 0xc8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -494,7 +494,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem1_15",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 204,
+                byte_offset: 0xcc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -505,7 +505,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem2_0",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 208,
+                byte_offset: 0xd0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -516,7 +516,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem2_1",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 212,
+                byte_offset: 0xd4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -527,7 +527,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem2_2",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 216,
+                byte_offset: 0xd8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -538,7 +538,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem2_3",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 220,
+                byte_offset: 0xdc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -549,7 +549,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem2_4",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 224,
+                byte_offset: 0xe0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -560,7 +560,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem2_5",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 228,
+                byte_offset: 0xe4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -571,7 +571,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem2_6",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 232,
+                byte_offset: 0xe8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -582,7 +582,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem2_7",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 236,
+                byte_offset: 0xec,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -593,7 +593,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem2_8",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 240,
+                byte_offset: 0xf0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -604,7 +604,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem2_9",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 244,
+                byte_offset: 0xf4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -615,7 +615,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem2_10",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 248,
+                byte_offset: 0xf8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -626,7 +626,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem2_11",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 252,
+                byte_offset: 0xfc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -637,7 +637,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem2_12",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 256,
+                byte_offset: 0x100,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -648,7 +648,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem2_13",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 260,
+                byte_offset: 0x104,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -659,7 +659,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem2_14",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 264,
+                byte_offset: 0x108,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -670,7 +670,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem2_15",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 268,
+                byte_offset: 0x10c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -681,7 +681,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem3_0",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 272,
+                byte_offset: 0x110,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -692,7 +692,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem3_1",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 276,
+                byte_offset: 0x114,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -703,7 +703,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem3_2",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 280,
+                byte_offset: 0x118,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -714,7 +714,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem3_3",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 284,
+                byte_offset: 0x11c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -725,7 +725,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem3_4",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 288,
+                byte_offset: 0x120,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -736,7 +736,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem3_5",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 292,
+                byte_offset: 0x124,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -747,7 +747,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem3_6",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 296,
+                byte_offset: 0x128,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -758,7 +758,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem3_7",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 300,
+                byte_offset: 0x12c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -769,7 +769,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem3_8",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 304,
+                byte_offset: 0x130,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -780,7 +780,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem3_9",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 308,
+                byte_offset: 0x134,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -791,7 +791,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem3_10",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 312,
+                byte_offset: 0x138,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -802,7 +802,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem3_11",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 316,
+                byte_offset: 0x13c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -813,7 +813,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem3_12",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 320,
+                byte_offset: 0x140,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -824,7 +824,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem3_13",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 324,
+                byte_offset: 0x144,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -835,7 +835,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem3_14",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 328,
+                byte_offset: 0x148,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -846,7 +846,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "qmem3_15",
                 description: Some("JPEG quantization tables"),
                 array: None,
-                byte_offset: 332,
+                byte_offset: 0x14c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -857,7 +857,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffmin_0",
                 description: Some("JPEG HuffMin tables"),
                 array: None,
-                byte_offset: 336,
+                byte_offset: 0x150,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -868,7 +868,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffmin_1",
                 description: Some("JPEG HuffMin tables"),
                 array: None,
-                byte_offset: 340,
+                byte_offset: 0x154,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -879,7 +879,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffmin_2",
                 description: Some("JPEG HuffMin tables"),
                 array: None,
-                byte_offset: 344,
+                byte_offset: 0x158,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -890,7 +890,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffmin_3",
                 description: Some("JPEG HuffMin tables"),
                 array: None,
-                byte_offset: 348,
+                byte_offset: 0x15c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -901,7 +901,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffmin_4",
                 description: Some("JPEG HuffMin tables"),
                 array: None,
-                byte_offset: 352,
+                byte_offset: 0x160,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -912,7 +912,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffmin_5",
                 description: Some("JPEG HuffMin tables"),
                 array: None,
-                byte_offset: 356,
+                byte_offset: 0x164,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -923,7 +923,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffmin_6",
                 description: Some("JPEG HuffMin tables"),
                 array: None,
-                byte_offset: 360,
+                byte_offset: 0x168,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -934,7 +934,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffmin_7",
                 description: Some("JPEG HuffMin tables"),
                 array: None,
-                byte_offset: 364,
+                byte_offset: 0x16c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -945,7 +945,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffmin_8",
                 description: Some("JPEG HuffMin tables"),
                 array: None,
-                byte_offset: 368,
+                byte_offset: 0x170,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -956,7 +956,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffmin_9",
                 description: Some("JPEG HuffMin tables"),
                 array: None,
-                byte_offset: 372,
+                byte_offset: 0x174,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -967,7 +967,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffmin_10",
                 description: Some("JPEG HuffMin tables"),
                 array: None,
-                byte_offset: 376,
+                byte_offset: 0x178,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -978,7 +978,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffmin_11",
                 description: Some("JPEG HuffMin tables"),
                 array: None,
-                byte_offset: 380,
+                byte_offset: 0x17c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -989,7 +989,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffmin_12",
                 description: Some("JPEG HuffMin tables"),
                 array: None,
-                byte_offset: 384,
+                byte_offset: 0x180,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1000,7 +1000,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffmin_13",
                 description: Some("JPEG HuffMin tables"),
                 array: None,
-                byte_offset: 388,
+                byte_offset: 0x184,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1011,7 +1011,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffmin_14",
                 description: Some("JPEG HuffMin tables"),
                 array: None,
-                byte_offset: 392,
+                byte_offset: 0x188,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1022,7 +1022,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffmin_15",
                 description: Some("JPEG HuffMin tables"),
                 array: None,
-                byte_offset: 396,
+                byte_offset: 0x18c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1033,7 +1033,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase0",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 400,
+                byte_offset: 0x190,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1044,7 +1044,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase1",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 404,
+                byte_offset: 0x194,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1055,7 +1055,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase2",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 408,
+                byte_offset: 0x198,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1066,7 +1066,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase3",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 412,
+                byte_offset: 0x19c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1077,7 +1077,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase4",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 416,
+                byte_offset: 0x1a0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1088,7 +1088,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase5",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 420,
+                byte_offset: 0x1a4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1099,7 +1099,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase6",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 424,
+                byte_offset: 0x1a8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1110,7 +1110,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase7",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 428,
+                byte_offset: 0x1ac,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1121,7 +1121,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase8",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 432,
+                byte_offset: 0x1b0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1132,7 +1132,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase9",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 436,
+                byte_offset: 0x1b4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1143,7 +1143,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase10",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 440,
+                byte_offset: 0x1b8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1154,7 +1154,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase11",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 444,
+                byte_offset: 0x1bc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1165,7 +1165,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase12",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 448,
+                byte_offset: 0x1c0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1176,7 +1176,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase13",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 452,
+                byte_offset: 0x1c4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1187,7 +1187,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase14",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 456,
+                byte_offset: 0x1c8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1198,7 +1198,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase15",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 460,
+                byte_offset: 0x1cc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1209,7 +1209,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase16",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 464,
+                byte_offset: 0x1d0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1220,7 +1220,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase17",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 468,
+                byte_offset: 0x1d4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1231,7 +1231,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase18",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 472,
+                byte_offset: 0x1d8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1242,7 +1242,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase19",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 476,
+                byte_offset: 0x1dc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1253,7 +1253,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase20",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 480,
+                byte_offset: 0x1e0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1264,7 +1264,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase21",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 484,
+                byte_offset: 0x1e4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1275,7 +1275,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase22",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 488,
+                byte_offset: 0x1e8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1286,7 +1286,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase23",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 492,
+                byte_offset: 0x1ec,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1297,7 +1297,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase24",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 496,
+                byte_offset: 0x1f0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1308,7 +1308,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase25",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 500,
+                byte_offset: 0x1f4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1319,7 +1319,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase26",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 504,
+                byte_offset: 0x1f8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1330,7 +1330,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase27",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 508,
+                byte_offset: 0x1fc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1341,7 +1341,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase28",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 512,
+                byte_offset: 0x200,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1352,7 +1352,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase29",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 516,
+                byte_offset: 0x204,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1363,7 +1363,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase30",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 520,
+                byte_offset: 0x208,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1374,7 +1374,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffbase31",
                 description: Some("JPEG HuffSymb tables"),
                 array: None,
-                byte_offset: 524,
+                byte_offset: 0x20c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1385,7 +1385,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb0",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 528,
+                byte_offset: 0x210,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1396,7 +1396,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb1",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 532,
+                byte_offset: 0x214,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1407,7 +1407,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb2",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 536,
+                byte_offset: 0x218,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1418,7 +1418,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb3",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 540,
+                byte_offset: 0x21c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1429,7 +1429,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb4",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 544,
+                byte_offset: 0x220,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1440,7 +1440,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb5",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 548,
+                byte_offset: 0x224,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1451,7 +1451,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb6",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 552,
+                byte_offset: 0x228,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1462,7 +1462,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb7",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 556,
+                byte_offset: 0x22c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1473,7 +1473,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb8",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 560,
+                byte_offset: 0x230,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1484,7 +1484,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb9",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 564,
+                byte_offset: 0x234,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1495,7 +1495,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb10",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 568,
+                byte_offset: 0x238,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1506,7 +1506,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb11",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 572,
+                byte_offset: 0x23c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1517,7 +1517,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb12",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 576,
+                byte_offset: 0x240,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1528,7 +1528,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb13",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 580,
+                byte_offset: 0x244,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1539,7 +1539,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb14",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 584,
+                byte_offset: 0x248,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1550,7 +1550,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb15",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 588,
+                byte_offset: 0x24c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1561,7 +1561,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb16",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 592,
+                byte_offset: 0x250,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1572,7 +1572,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb17",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 596,
+                byte_offset: 0x254,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1583,7 +1583,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb18",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 600,
+                byte_offset: 0x258,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1594,7 +1594,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb19",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 604,
+                byte_offset: 0x25c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1605,7 +1605,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb20",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 608,
+                byte_offset: 0x260,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1616,7 +1616,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb21",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 612,
+                byte_offset: 0x264,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1627,7 +1627,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb22",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 616,
+                byte_offset: 0x268,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1638,7 +1638,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb23",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 620,
+                byte_offset: 0x26c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1649,7 +1649,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb24",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 624,
+                byte_offset: 0x270,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1660,7 +1660,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb25",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 628,
+                byte_offset: 0x274,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1671,7 +1671,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb26",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 632,
+                byte_offset: 0x278,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1682,7 +1682,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb27",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 636,
+                byte_offset: 0x27c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1693,7 +1693,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb28",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 640,
+                byte_offset: 0x280,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1704,7 +1704,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb29",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 644,
+                byte_offset: 0x284,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1715,7 +1715,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb30",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 648,
+                byte_offset: 0x288,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1726,7 +1726,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb31",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 652,
+                byte_offset: 0x28c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1737,7 +1737,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb32",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 656,
+                byte_offset: 0x290,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1748,7 +1748,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb33",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 660,
+                byte_offset: 0x294,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1759,7 +1759,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb34",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 664,
+                byte_offset: 0x298,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1770,7 +1770,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb35",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 668,
+                byte_offset: 0x29c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1781,7 +1781,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb36",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 672,
+                byte_offset: 0x2a0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1792,7 +1792,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb37",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 676,
+                byte_offset: 0x2a4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1803,7 +1803,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb38",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 680,
+                byte_offset: 0x2a8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1814,7 +1814,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb39",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 684,
+                byte_offset: 0x2ac,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1825,7 +1825,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb40",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 688,
+                byte_offset: 0x2b0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1836,7 +1836,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb41",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 692,
+                byte_offset: 0x2b4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1847,7 +1847,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb42",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 696,
+                byte_offset: 0x2b8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1858,7 +1858,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb43",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 700,
+                byte_offset: 0x2bc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1869,7 +1869,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb44",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 704,
+                byte_offset: 0x2c0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1880,7 +1880,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb45",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 708,
+                byte_offset: 0x2c4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1891,7 +1891,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb46",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 712,
+                byte_offset: 0x2c8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1902,7 +1902,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb47",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 716,
+                byte_offset: 0x2cc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1913,7 +1913,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb48",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 720,
+                byte_offset: 0x2d0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1924,7 +1924,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb49",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 724,
+                byte_offset: 0x2d4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1935,7 +1935,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb50",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 728,
+                byte_offset: 0x2d8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1946,7 +1946,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb51",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 732,
+                byte_offset: 0x2dc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1957,7 +1957,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb52",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 736,
+                byte_offset: 0x2e0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1968,7 +1968,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb53",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 740,
+                byte_offset: 0x2e4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1979,7 +1979,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb54",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 744,
+                byte_offset: 0x2e8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -1990,7 +1990,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb55",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 748,
+                byte_offset: 0x2ec,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2001,7 +2001,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb56",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 752,
+                byte_offset: 0x2f0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2012,7 +2012,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb57",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 756,
+                byte_offset: 0x2f4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2023,7 +2023,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb58",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 760,
+                byte_offset: 0x2f8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2034,7 +2034,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb59",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 764,
+                byte_offset: 0x2fc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2045,7 +2045,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb60",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 768,
+                byte_offset: 0x300,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2056,7 +2056,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb61",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 772,
+                byte_offset: 0x304,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2067,7 +2067,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb62",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 776,
+                byte_offset: 0x308,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2078,7 +2078,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb63",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 780,
+                byte_offset: 0x30c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2089,7 +2089,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb64",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 784,
+                byte_offset: 0x310,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2100,7 +2100,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb65",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 788,
+                byte_offset: 0x314,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2111,7 +2111,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb66",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 792,
+                byte_offset: 0x318,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2122,7 +2122,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb67",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 796,
+                byte_offset: 0x31c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2133,7 +2133,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb68",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 800,
+                byte_offset: 0x320,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2144,7 +2144,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb69",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 804,
+                byte_offset: 0x324,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2155,7 +2155,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb70",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 808,
+                byte_offset: 0x328,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2166,7 +2166,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb71",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 812,
+                byte_offset: 0x32c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2177,7 +2177,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb72",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 816,
+                byte_offset: 0x330,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2188,7 +2188,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb73",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 820,
+                byte_offset: 0x334,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2199,7 +2199,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb74",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 824,
+                byte_offset: 0x338,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2210,7 +2210,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb75",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 828,
+                byte_offset: 0x33c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2221,7 +2221,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb76",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 832,
+                byte_offset: 0x340,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2232,7 +2232,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb77",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 836,
+                byte_offset: 0x344,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2243,7 +2243,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb78",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 840,
+                byte_offset: 0x348,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2254,7 +2254,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb79",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 844,
+                byte_offset: 0x34c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2265,7 +2265,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb80",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 848,
+                byte_offset: 0x350,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2276,7 +2276,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb81",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 852,
+                byte_offset: 0x354,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2287,7 +2287,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb82",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 856,
+                byte_offset: 0x358,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2298,7 +2298,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffsymb83",
                 description: Some("JPEG HUFFSYMB tables"),
                 array: None,
-                byte_offset: 860,
+                byte_offset: 0x35c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2309,7 +2309,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem0",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 864,
+                byte_offset: 0x360,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2320,7 +2320,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem2",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 868,
+                byte_offset: 0x364,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2331,7 +2331,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem3",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 872,
+                byte_offset: 0x368,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2342,7 +2342,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem4",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 876,
+                byte_offset: 0x36c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2353,7 +2353,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem5",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 880,
+                byte_offset: 0x370,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2364,7 +2364,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem6",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 884,
+                byte_offset: 0x374,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2375,7 +2375,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem7",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 888,
+                byte_offset: 0x378,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2386,7 +2386,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem8",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 892,
+                byte_offset: 0x37c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2397,7 +2397,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem9",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 896,
+                byte_offset: 0x380,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2408,7 +2408,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem10",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 900,
+                byte_offset: 0x384,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2419,7 +2419,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem11",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 904,
+                byte_offset: 0x388,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2430,7 +2430,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem12",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 908,
+                byte_offset: 0x38c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2441,7 +2441,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem13",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 912,
+                byte_offset: 0x390,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2452,7 +2452,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem14",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 916,
+                byte_offset: 0x394,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2463,7 +2463,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem15",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 920,
+                byte_offset: 0x398,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2474,7 +2474,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem16",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 924,
+                byte_offset: 0x39c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2485,7 +2485,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem17",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 928,
+                byte_offset: 0x3a0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2496,7 +2496,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem18",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 932,
+                byte_offset: 0x3a4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2507,7 +2507,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem19",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 936,
+                byte_offset: 0x3a8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2518,7 +2518,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem20",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 940,
+                byte_offset: 0x3ac,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2529,7 +2529,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem21",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 944,
+                byte_offset: 0x3b0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2540,7 +2540,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem22",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 948,
+                byte_offset: 0x3b4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2551,7 +2551,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem23",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 952,
+                byte_offset: 0x3b8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2562,7 +2562,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem24",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 956,
+                byte_offset: 0x3bc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2573,7 +2573,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem25",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 960,
+                byte_offset: 0x3c0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2584,7 +2584,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem26",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 964,
+                byte_offset: 0x3c4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2595,7 +2595,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem27",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 968,
+                byte_offset: 0x3c8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2606,7 +2606,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem28",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 972,
+                byte_offset: 0x3cc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2617,7 +2617,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem29",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 976,
+                byte_offset: 0x3d0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2628,7 +2628,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem30",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 980,
+                byte_offset: 0x3d4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2639,7 +2639,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem31",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 984,
+                byte_offset: 0x3d8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2650,7 +2650,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem32",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 988,
+                byte_offset: 0x3dc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2661,7 +2661,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem33",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 992,
+                byte_offset: 0x3e0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2672,7 +2672,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem34",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 996,
+                byte_offset: 0x3e4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2683,7 +2683,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem35",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1000,
+                byte_offset: 0x3e8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2694,7 +2694,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem36",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1004,
+                byte_offset: 0x3ec,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2705,7 +2705,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem37",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1008,
+                byte_offset: 0x3f0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2716,7 +2716,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem38",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1012,
+                byte_offset: 0x3f4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2727,7 +2727,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem39",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1016,
+                byte_offset: 0x3f8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2738,7 +2738,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem40",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1020,
+                byte_offset: 0x3fc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2749,7 +2749,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem41",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1024,
+                byte_offset: 0x400,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2760,7 +2760,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem42",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1028,
+                byte_offset: 0x404,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2771,7 +2771,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem43",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1032,
+                byte_offset: 0x408,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2782,7 +2782,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem44",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1036,
+                byte_offset: 0x40c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2793,7 +2793,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem45",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1040,
+                byte_offset: 0x410,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2804,7 +2804,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem46",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1044,
+                byte_offset: 0x414,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2815,7 +2815,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem47",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1048,
+                byte_offset: 0x418,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2826,7 +2826,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem48",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1052,
+                byte_offset: 0x41c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2837,7 +2837,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem49",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1056,
+                byte_offset: 0x420,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2848,7 +2848,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem50",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1060,
+                byte_offset: 0x424,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2859,7 +2859,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem51",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1064,
+                byte_offset: 0x428,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2870,7 +2870,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem52",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1068,
+                byte_offset: 0x42c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2881,7 +2881,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem53",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1072,
+                byte_offset: 0x430,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2892,7 +2892,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem54",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1076,
+                byte_offset: 0x434,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2903,7 +2903,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem55",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1080,
+                byte_offset: 0x438,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2914,7 +2914,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem56",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1084,
+                byte_offset: 0x43c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2925,7 +2925,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem57",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1088,
+                byte_offset: 0x440,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2936,7 +2936,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem58",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1092,
+                byte_offset: 0x444,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2947,7 +2947,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem59",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1096,
+                byte_offset: 0x448,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2958,7 +2958,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem60",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1100,
+                byte_offset: 0x44c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2969,7 +2969,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem61",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1104,
+                byte_offset: 0x450,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2980,7 +2980,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem62",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1108,
+                byte_offset: 0x454,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -2991,7 +2991,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem63",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1112,
+                byte_offset: 0x458,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3002,7 +3002,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem64",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1116,
+                byte_offset: 0x45c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3013,7 +3013,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem65",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1120,
+                byte_offset: 0x460,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3024,7 +3024,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem66",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1124,
+                byte_offset: 0x464,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3035,7 +3035,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem67",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1128,
+                byte_offset: 0x468,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3046,7 +3046,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem68",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1132,
+                byte_offset: 0x46c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3057,7 +3057,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem69",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1136,
+                byte_offset: 0x470,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3068,7 +3068,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem70",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1140,
+                byte_offset: 0x474,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3079,7 +3079,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem71",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1144,
+                byte_offset: 0x478,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3090,7 +3090,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem72",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1148,
+                byte_offset: 0x47c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3101,7 +3101,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem73",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1152,
+                byte_offset: 0x480,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3112,7 +3112,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem74",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1156,
+                byte_offset: 0x484,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3123,7 +3123,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem75",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1160,
+                byte_offset: 0x488,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3134,7 +3134,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem76",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1164,
+                byte_offset: 0x48c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3145,7 +3145,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem77",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1168,
+                byte_offset: 0x490,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3156,7 +3156,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem78",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1172,
+                byte_offset: 0x494,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3167,7 +3167,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem79",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1176,
+                byte_offset: 0x498,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3178,7 +3178,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem80",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1180,
+                byte_offset: 0x49c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3189,7 +3189,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem81",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1184,
+                byte_offset: 0x4a0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3200,7 +3200,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem82",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1188,
+                byte_offset: 0x4a4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3211,7 +3211,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem83",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1192,
+                byte_offset: 0x4a8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3222,7 +3222,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem84",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1196,
+                byte_offset: 0x4ac,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3233,7 +3233,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem85",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1200,
+                byte_offset: 0x4b0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3244,7 +3244,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem86",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1204,
+                byte_offset: 0x4b4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3255,7 +3255,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem87",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1208,
+                byte_offset: 0x4b8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3266,7 +3266,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem88",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1212,
+                byte_offset: 0x4bc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3277,7 +3277,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem89",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1216,
+                byte_offset: 0x4c0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3288,7 +3288,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem90",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1220,
+                byte_offset: 0x4c4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3299,7 +3299,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem91",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1224,
+                byte_offset: 0x4c8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3310,7 +3310,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem92",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1228,
+                byte_offset: 0x4cc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3321,7 +3321,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem93",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1232,
+                byte_offset: 0x4d0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3332,7 +3332,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem94",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1236,
+                byte_offset: 0x4d4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3343,7 +3343,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem95",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1240,
+                byte_offset: 0x4d8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3354,7 +3354,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem96",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1244,
+                byte_offset: 0x4dc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3365,7 +3365,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem97",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1248,
+                byte_offset: 0x4e0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3376,7 +3376,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem98",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1252,
+                byte_offset: 0x4e4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3387,7 +3387,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem99",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1256,
+                byte_offset: 0x4e8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3398,7 +3398,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem100",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1260,
+                byte_offset: 0x4ec,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3409,7 +3409,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem101",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1264,
+                byte_offset: 0x4f0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3420,7 +3420,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem102",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1268,
+                byte_offset: 0x4f4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3431,7 +3431,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dhtmem103",
                 description: Some("JPEG DHTMem tables"),
                 array: None,
-                byte_offset: 1272,
+                byte_offset: 0x4f8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3442,7 +3442,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_0",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1280,
+                byte_offset: 0x500,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3453,7 +3453,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_1",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1284,
+                byte_offset: 0x504,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3464,7 +3464,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_2",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1288,
+                byte_offset: 0x508,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3475,7 +3475,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_3",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1292,
+                byte_offset: 0x50c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3486,7 +3486,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_4",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1296,
+                byte_offset: 0x510,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3497,7 +3497,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_5",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1300,
+                byte_offset: 0x514,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3508,7 +3508,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_6",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1304,
+                byte_offset: 0x518,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3519,7 +3519,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_7",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1308,
+                byte_offset: 0x51c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3530,7 +3530,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_8",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1312,
+                byte_offset: 0x520,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3541,7 +3541,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_9",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1316,
+                byte_offset: 0x524,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3552,7 +3552,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_10",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1320,
+                byte_offset: 0x528,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3563,7 +3563,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_11",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1324,
+                byte_offset: 0x52c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3574,7 +3574,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_12",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1328,
+                byte_offset: 0x530,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3585,7 +3585,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_13",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1332,
+                byte_offset: 0x534,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3596,7 +3596,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_14",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1336,
+                byte_offset: 0x538,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3607,7 +3607,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_15",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1340,
+                byte_offset: 0x53c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3618,7 +3618,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_16",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1344,
+                byte_offset: 0x540,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3629,7 +3629,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_17",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1348,
+                byte_offset: 0x544,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3640,7 +3640,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_18",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1352,
+                byte_offset: 0x548,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3651,7 +3651,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_19",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1356,
+                byte_offset: 0x54c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3662,7 +3662,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_20",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1360,
+                byte_offset: 0x550,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3673,7 +3673,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_21",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1364,
+                byte_offset: 0x554,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3684,7 +3684,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_22",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1368,
+                byte_offset: 0x558,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3695,7 +3695,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_23",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1372,
+                byte_offset: 0x55c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3706,7 +3706,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_24",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1376,
+                byte_offset: 0x560,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3717,7 +3717,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_25",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1380,
+                byte_offset: 0x564,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3728,7 +3728,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_26",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1384,
+                byte_offset: 0x568,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3739,7 +3739,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_27",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1388,
+                byte_offset: 0x56c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3750,7 +3750,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_28",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1392,
+                byte_offset: 0x570,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3761,7 +3761,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_29",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1396,
+                byte_offset: 0x574,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3772,7 +3772,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_30",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1400,
+                byte_offset: 0x578,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3783,7 +3783,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_31",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1404,
+                byte_offset: 0x57c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3794,7 +3794,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_32",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1408,
+                byte_offset: 0x580,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3805,7 +3805,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_33",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1412,
+                byte_offset: 0x584,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3816,7 +3816,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_34",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1416,
+                byte_offset: 0x588,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3827,7 +3827,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_35",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1420,
+                byte_offset: 0x58c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3838,7 +3838,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_36",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1424,
+                byte_offset: 0x590,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3849,7 +3849,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_37",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1428,
+                byte_offset: 0x594,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3860,7 +3860,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_38",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1432,
+                byte_offset: 0x598,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3871,7 +3871,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_39",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1436,
+                byte_offset: 0x59c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3882,7 +3882,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_40",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1440,
+                byte_offset: 0x5a0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3893,7 +3893,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_41",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1444,
+                byte_offset: 0x5a4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3904,7 +3904,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_42",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1448,
+                byte_offset: 0x5a8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3915,7 +3915,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_43",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1452,
+                byte_offset: 0x5ac,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3926,7 +3926,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_44",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1456,
+                byte_offset: 0x5b0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3937,7 +3937,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_45",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1460,
+                byte_offset: 0x5b4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3948,7 +3948,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_46",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1464,
+                byte_offset: 0x5b8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3959,7 +3959,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_47",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1468,
+                byte_offset: 0x5bc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3970,7 +3970,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_48",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1472,
+                byte_offset: 0x5c0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3981,7 +3981,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_49",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1476,
+                byte_offset: 0x5c4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -3992,7 +3992,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_50",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1480,
+                byte_offset: 0x5c8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4003,7 +4003,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_51",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1484,
+                byte_offset: 0x5cc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4014,7 +4014,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_52",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1488,
+                byte_offset: 0x5d0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4025,7 +4025,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_53",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1492,
+                byte_offset: 0x5d4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4036,7 +4036,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_54",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1496,
+                byte_offset: 0x5d8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4047,7 +4047,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_55",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1500,
+                byte_offset: 0x5dc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4058,7 +4058,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_56",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1504,
+                byte_offset: 0x5e0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4069,7 +4069,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_57",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1508,
+                byte_offset: 0x5e4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4080,7 +4080,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_58",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1512,
+                byte_offset: 0x5e8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4091,7 +4091,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_59",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1516,
+                byte_offset: 0x5ec,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4102,7 +4102,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_60",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1520,
+                byte_offset: 0x5f0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4113,7 +4113,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_61",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1524,
+                byte_offset: 0x5f4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4124,7 +4124,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_62",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1528,
+                byte_offset: 0x5f8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4135,7 +4135,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_63",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1532,
+                byte_offset: 0x5fc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4146,7 +4146,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_64",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1536,
+                byte_offset: 0x600,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4157,7 +4157,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_65",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1540,
+                byte_offset: 0x604,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4168,7 +4168,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_66",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1544,
+                byte_offset: 0x608,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4179,7 +4179,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_67",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1548,
+                byte_offset: 0x60c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4190,7 +4190,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_68",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1552,
+                byte_offset: 0x610,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4201,7 +4201,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_69",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1556,
+                byte_offset: 0x614,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4212,7 +4212,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_70",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1560,
+                byte_offset: 0x618,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4223,7 +4223,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_71",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1564,
+                byte_offset: 0x61c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4234,7 +4234,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_72",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1568,
+                byte_offset: 0x620,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4245,7 +4245,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_73",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1572,
+                byte_offset: 0x624,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4256,7 +4256,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_74",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1576,
+                byte_offset: 0x628,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4267,7 +4267,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_75",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1580,
+                byte_offset: 0x62c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4278,7 +4278,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_76",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1584,
+                byte_offset: 0x630,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4289,7 +4289,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_77",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1588,
+                byte_offset: 0x634,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4300,7 +4300,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_78",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1592,
+                byte_offset: 0x638,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4311,7 +4311,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_79",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1596,
+                byte_offset: 0x63c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4322,7 +4322,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_80",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1600,
+                byte_offset: 0x640,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4333,7 +4333,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_81",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1604,
+                byte_offset: 0x644,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4344,7 +4344,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_82",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1608,
+                byte_offset: 0x648,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4355,7 +4355,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_83",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1612,
+                byte_offset: 0x64c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4366,7 +4366,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_84",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1616,
+                byte_offset: 0x650,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4377,7 +4377,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_85",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1620,
+                byte_offset: 0x654,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4388,7 +4388,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_86",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1624,
+                byte_offset: 0x658,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4399,7 +4399,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac0_87",
                 description: Some("JPEG encoder, AC Huffman table 0"),
                 array: None,
-                byte_offset: 1628,
+                byte_offset: 0x65c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4410,7 +4410,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_0",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1632,
+                byte_offset: 0x660,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4421,7 +4421,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_1",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1636,
+                byte_offset: 0x664,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4432,7 +4432,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_2",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1640,
+                byte_offset: 0x668,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4443,7 +4443,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_3",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1644,
+                byte_offset: 0x66c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4454,7 +4454,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_4",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1648,
+                byte_offset: 0x670,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4465,7 +4465,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_5",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1652,
+                byte_offset: 0x674,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4476,7 +4476,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_6",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1656,
+                byte_offset: 0x678,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4487,7 +4487,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_7",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1660,
+                byte_offset: 0x67c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4498,7 +4498,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_8",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1664,
+                byte_offset: 0x680,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4509,7 +4509,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_9",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1668,
+                byte_offset: 0x684,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4520,7 +4520,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_10",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1672,
+                byte_offset: 0x688,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4531,7 +4531,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_11",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1676,
+                byte_offset: 0x68c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4542,7 +4542,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_12",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1680,
+                byte_offset: 0x690,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4553,7 +4553,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_13",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1684,
+                byte_offset: 0x694,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4564,7 +4564,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_14",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1688,
+                byte_offset: 0x698,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4575,7 +4575,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_15",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1692,
+                byte_offset: 0x69c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4586,7 +4586,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_16",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1696,
+                byte_offset: 0x6a0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4597,7 +4597,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_17",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1700,
+                byte_offset: 0x6a4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4608,7 +4608,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_18",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1704,
+                byte_offset: 0x6a8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4619,7 +4619,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_19",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1708,
+                byte_offset: 0x6ac,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4630,7 +4630,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_20",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1712,
+                byte_offset: 0x6b0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4641,7 +4641,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_21",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1716,
+                byte_offset: 0x6b4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4652,7 +4652,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_22",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1720,
+                byte_offset: 0x6b8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4663,7 +4663,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_23",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1724,
+                byte_offset: 0x6bc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4674,7 +4674,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_24",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1728,
+                byte_offset: 0x6c0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4685,7 +4685,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_25",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1732,
+                byte_offset: 0x6c4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4696,7 +4696,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_26",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1736,
+                byte_offset: 0x6c8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4707,7 +4707,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_27",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1740,
+                byte_offset: 0x6cc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4718,7 +4718,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_28",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1744,
+                byte_offset: 0x6d0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4729,7 +4729,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_29",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1748,
+                byte_offset: 0x6d4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4740,7 +4740,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_30",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1752,
+                byte_offset: 0x6d8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4751,7 +4751,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_31",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1756,
+                byte_offset: 0x6dc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4762,7 +4762,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_32",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1760,
+                byte_offset: 0x6e0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4773,7 +4773,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_33",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1764,
+                byte_offset: 0x6e4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4784,7 +4784,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_34",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1768,
+                byte_offset: 0x6e8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4795,7 +4795,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_35",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1772,
+                byte_offset: 0x6ec,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4806,7 +4806,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_36",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1776,
+                byte_offset: 0x6f0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4817,7 +4817,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_37",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1780,
+                byte_offset: 0x6f4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4828,7 +4828,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_38",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1784,
+                byte_offset: 0x6f8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4839,7 +4839,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_39",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1788,
+                byte_offset: 0x6fc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4850,7 +4850,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_40",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1792,
+                byte_offset: 0x700,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4861,7 +4861,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_41",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1796,
+                byte_offset: 0x704,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4872,7 +4872,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_42",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1800,
+                byte_offset: 0x708,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4883,7 +4883,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_43",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1804,
+                byte_offset: 0x70c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4894,7 +4894,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_44",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1808,
+                byte_offset: 0x710,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4905,7 +4905,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_45",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1812,
+                byte_offset: 0x714,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4916,7 +4916,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_46",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1816,
+                byte_offset: 0x718,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4927,7 +4927,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_47",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1820,
+                byte_offset: 0x71c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4938,7 +4938,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_48",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1824,
+                byte_offset: 0x720,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4949,7 +4949,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_49",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1828,
+                byte_offset: 0x724,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4960,7 +4960,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_50",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1832,
+                byte_offset: 0x728,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4971,7 +4971,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_51",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1836,
+                byte_offset: 0x72c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4982,7 +4982,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_52",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1840,
+                byte_offset: 0x730,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -4993,7 +4993,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_53",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1844,
+                byte_offset: 0x734,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5004,7 +5004,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_54",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1848,
+                byte_offset: 0x738,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5015,7 +5015,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_55",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1852,
+                byte_offset: 0x73c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5026,7 +5026,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_56",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1856,
+                byte_offset: 0x740,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5037,7 +5037,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_57",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1860,
+                byte_offset: 0x744,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5048,7 +5048,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_58",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1864,
+                byte_offset: 0x748,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5059,7 +5059,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_59",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1868,
+                byte_offset: 0x74c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5070,7 +5070,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_60",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1872,
+                byte_offset: 0x750,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5081,7 +5081,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_61",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1876,
+                byte_offset: 0x754,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5092,7 +5092,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_62",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1880,
+                byte_offset: 0x758,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5103,7 +5103,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_63",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1884,
+                byte_offset: 0x75c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5114,7 +5114,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_64",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1888,
+                byte_offset: 0x760,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5125,7 +5125,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_65",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1892,
+                byte_offset: 0x764,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5136,7 +5136,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_66",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1896,
+                byte_offset: 0x768,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5147,7 +5147,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_67",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1900,
+                byte_offset: 0x76c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5158,7 +5158,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_68",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1904,
+                byte_offset: 0x770,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5169,7 +5169,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_69",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1908,
+                byte_offset: 0x774,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5180,7 +5180,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_70",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1912,
+                byte_offset: 0x778,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5191,7 +5191,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_71",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1916,
+                byte_offset: 0x77c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5202,7 +5202,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_72",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1920,
+                byte_offset: 0x780,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5213,7 +5213,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_73",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1924,
+                byte_offset: 0x784,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5224,7 +5224,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_74",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1928,
+                byte_offset: 0x788,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5235,7 +5235,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_75",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1932,
+                byte_offset: 0x78c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5246,7 +5246,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_76",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1936,
+                byte_offset: 0x790,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5257,7 +5257,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_77",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1940,
+                byte_offset: 0x794,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5268,7 +5268,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_78",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1944,
+                byte_offset: 0x798,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5279,7 +5279,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_79",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1948,
+                byte_offset: 0x79c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5290,7 +5290,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_80",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1952,
+                byte_offset: 0x7a0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5301,7 +5301,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_81",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1956,
+                byte_offset: 0x7a4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5312,7 +5312,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_82",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1960,
+                byte_offset: 0x7a8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5323,7 +5323,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_83",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1964,
+                byte_offset: 0x7ac,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5334,7 +5334,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_84",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1968,
+                byte_offset: 0x7b0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5345,7 +5345,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_85",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1972,
+                byte_offset: 0x7b4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5356,7 +5356,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_86",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1976,
+                byte_offset: 0x7b8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5367,7 +5367,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_ac1_87",
                 description: Some("JPEG encoder, AC Huffman table 1"),
                 array: None,
-                byte_offset: 1980,
+                byte_offset: 0x7bc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5378,7 +5378,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_dc0_0",
                 description: Some("JPEG encoder, DC Huffman table 0"),
                 array: None,
-                byte_offset: 1984,
+                byte_offset: 0x7c0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5389,7 +5389,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_dc0_1",
                 description: Some("JPEG encoder, DC Huffman table 0"),
                 array: None,
-                byte_offset: 1988,
+                byte_offset: 0x7c4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5400,7 +5400,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_dc0_2",
                 description: Some("JPEG encoder, DC Huffman table 0"),
                 array: None,
-                byte_offset: 1992,
+                byte_offset: 0x7c8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5411,7 +5411,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_dc0_3",
                 description: Some("JPEG encoder, DC Huffman table 0"),
                 array: None,
-                byte_offset: 1996,
+                byte_offset: 0x7cc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5422,7 +5422,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_dc0_4",
                 description: Some("JPEG encoder, DC Huffman table 0"),
                 array: None,
-                byte_offset: 2000,
+                byte_offset: 0x7d0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5433,7 +5433,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_dc0_5",
                 description: Some("JPEG encoder, DC Huffman table 0"),
                 array: None,
-                byte_offset: 2004,
+                byte_offset: 0x7d4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5444,7 +5444,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_dc0_6",
                 description: Some("JPEG encoder, DC Huffman table 0"),
                 array: None,
-                byte_offset: 2008,
+                byte_offset: 0x7d8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5455,7 +5455,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_dc0_7",
                 description: Some("JPEG encoder, DC Huffman table 0"),
                 array: None,
-                byte_offset: 2012,
+                byte_offset: 0x7dc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5466,7 +5466,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_dc1_0",
                 description: Some("JPEG encoder, DC Huffman table 1"),
                 array: None,
-                byte_offset: 2016,
+                byte_offset: 0x7e0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5477,7 +5477,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_dc1_1",
                 description: Some("JPEG encoder, DC Huffman table 1"),
                 array: None,
-                byte_offset: 2020,
+                byte_offset: 0x7e4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5488,7 +5488,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_dc1_2",
                 description: Some("JPEG encoder, DC Huffman table 1"),
                 array: None,
-                byte_offset: 2024,
+                byte_offset: 0x7e8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5499,7 +5499,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_dc1_3",
                 description: Some("JPEG encoder, DC Huffman table 1"),
                 array: None,
-                byte_offset: 2028,
+                byte_offset: 0x7ec,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5510,7 +5510,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_dc1_4",
                 description: Some("JPEG encoder, DC Huffman table 1"),
                 array: None,
-                byte_offset: 2032,
+                byte_offset: 0x7f0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5521,7 +5521,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_dc1_5",
                 description: Some("JPEG encoder, DC Huffman table 1"),
                 array: None,
-                byte_offset: 2036,
+                byte_offset: 0x7f4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5532,7 +5532,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_dc1_6",
                 description: Some("JPEG encoder, DC Huffman table 1"),
                 array: None,
-                byte_offset: 2040,
+                byte_offset: 0x7f8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -5543,7 +5543,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "huffenc_dc1_7",
                 description: Some("JPEG encoder, DC Huffman table 1"),
                 array: None,
-                byte_offset: 2044,
+                byte_offset: 0x7fc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,

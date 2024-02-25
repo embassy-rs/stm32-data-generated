@@ -15,7 +15,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Temperature sensor configuration register 1.",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Temperature sensor T0 value register 1.",
                     ),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -49,7 +49,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Temperature sensor ramp value register.",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -66,7 +66,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Temperature sensor interrupt threshold register 1.",
                     ),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 0x14,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -83,7 +83,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Temperature sensor data register.",
                     ),
                     array: None,
-                    byte_offset: 28,
+                    byte_offset: 0x1c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -100,7 +100,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Temperature sensor status register.",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 0x20,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -117,7 +117,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Temperature sensor interrupt enable register.",
                     ),
                     array: None,
-                    byte_offset: 36,
+                    byte_offset: 0x24,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -134,7 +134,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Temperature sensor clear interrupt flag register.",
                     ),
                     array: None,
-                    byte_offset: 40,
+                    byte_offset: 0x28,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -151,7 +151,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Temperature sensor option register.",
                     ),
                     array: None,
-                    byte_offset: 44,
+                    byte_offset: 0x2c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,

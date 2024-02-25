@@ -22,32 +22,32 @@ impl Iwdg {
     #[doc = "Key register"]
     #[inline(always)]
     pub const fn kr(self) -> crate::common::Reg<regs::Kr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Prescaler register"]
     #[inline(always)]
     pub const fn pr(self) -> crate::common::Reg<regs::Pr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Reload register"]
     #[inline(always)]
     pub const fn rlr(self) -> crate::common::Reg<regs::Rlr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Window register"]
     #[inline(always)]
     pub const fn winr(self) -> crate::common::Reg<regs::Winr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "IWDG early wakeup interrupt register."]
     #[inline(always)]
     pub const fn ewcr(self) -> crate::common::Reg<regs::Ewcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
 }
 pub mod regs {
@@ -298,7 +298,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pr {
         #[doc = "Divider /4"]
-        DIVIDEBY4 = 0,
+        DIVIDEBY4 = 0x0,
         #[doc = "Divider /8"]
         DIVIDEBY8 = 0x01,
         #[doc = "Divider /16"]

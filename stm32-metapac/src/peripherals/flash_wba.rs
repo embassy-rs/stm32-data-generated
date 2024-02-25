@@ -22,149 +22,149 @@ impl Flash {
     #[doc = "access control register"]
     #[inline(always)]
     pub const fn acr(self) -> crate::common::Reg<regs::Acr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "key register"]
     #[inline(always)]
     pub const fn nskeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "secure key register"]
     #[inline(always)]
     pub const fn seckeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "option key register"]
     #[inline(always)]
     pub const fn optkeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "power-down key register"]
     #[inline(always)]
     pub const fn pdkeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn nssr(self) -> crate::common::Reg<regs::Nssr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "secure status register"]
     #[inline(always)]
     pub const fn secsr(self) -> crate::common::Reg<regs::Secsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "control register"]
     #[inline(always)]
     pub const fn nscr1(self) -> crate::common::Reg<regs::Nscr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "secure control register"]
     #[inline(always)]
     pub const fn seccr1(self) -> crate::common::Reg<regs::Seccr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "ECC register"]
     #[inline(always)]
     pub const fn eccr(self) -> crate::common::Reg<regs::Eccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "operation status register"]
     #[inline(always)]
     pub const fn opsr(self) -> crate::common::Reg<regs::Opsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[doc = "control 2 register"]
     #[inline(always)]
     pub const fn nscr2(self) -> crate::common::Reg<regs::Nscr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[doc = "secure control 2 register"]
     #[inline(always)]
     pub const fn seccr2(self) -> crate::common::Reg<regs::Seccr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[doc = "option register"]
     #[inline(always)]
     pub const fn optr(self) -> crate::common::Reg<regs::Optr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[doc = "boot address 0 register"]
     #[inline(always)]
     pub const fn nsbootadd0r(self) -> crate::common::Reg<regs::Nsbootadd0r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[doc = "boot address 1 register"]
     #[inline(always)]
     pub const fn nsbootadd1r(self) -> crate::common::Reg<regs::Nsbootadd1r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[doc = "secure boot address 0 register"]
     #[inline(always)]
     pub const fn secbootadd0r(self) -> crate::common::Reg<regs::Secbootadd0r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
     #[doc = "secure watermark register 1"]
     #[inline(always)]
     pub const fn secwmr1(self) -> crate::common::Reg<regs::Secwmr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[doc = "secure watermark register 2"]
     #[inline(always)]
     pub const fn secwmr2(self) -> crate::common::Reg<regs::Secwmr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[doc = "WRP area A address register"]
     #[inline(always)]
     pub const fn wrpar(self) -> crate::common::Reg<regs::Wrpar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize) as _) }
     }
     #[doc = "WRP area B address register"]
     #[inline(always)]
     pub const fn wrpbr(self) -> crate::common::Reg<regs::Wrpbr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(92usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
     }
     #[doc = "OEM1 key register 1"]
     #[inline(always)]
     pub const fn oem1keyr1(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(112usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x70usize) as _) }
     }
     #[doc = "OEM1 key register 2"]
     #[inline(always)]
     pub const fn oem1keyr2(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(116usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x74usize) as _) }
     }
     #[doc = "OEM2 key register 1"]
     #[inline(always)]
     pub const fn oem2keyr1(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(120usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x78usize) as _) }
     }
     #[doc = "OEM2 key register 2"]
     #[inline(always)]
     pub const fn oem2keyr2(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(124usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x7cusize) as _) }
     }
     #[doc = "secure block based register 1"]
     #[inline(always)]
     pub const fn secbbr(self, n: usize) -> crate::common::Reg<regs::Bbr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(128usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize + n * 4usize) as _) }
     }
     #[doc = "secure HDP control register"]
     #[inline(always)]
     pub const fn sechdpcr(self) -> crate::common::Reg<regs::Sechdpcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(192usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc0usize) as _) }
     }
     #[doc = "privilege configuration register"]
     #[inline(always)]
     pub const fn prifcfgr(self) -> crate::common::Reg<regs::Prifcfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(196usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc4usize) as _) }
     }
     #[doc = "privilege block based register 1"]
     #[inline(always)]
     pub const fn privbbr(self, n: usize) -> crate::common::Reg<regs::Bbr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(208usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd0usize + n * 4usize) as _) }
     }
 }
 pub mod regs {
@@ -1461,7 +1461,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum BorLev {
         #[doc = "BOR level 0 (reset level threshold around 1.7�V)"]
-        LEVEL0 = 0,
+        LEVEL0 = 0x0,
         #[doc = "BOR level 1 (reset level threshold around 2.0�V)"]
         LEVEL1 = 0x01,
         #[doc = "BOR level 2 (reset level threshold around 2.2�V)"]
@@ -1500,7 +1500,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum CodeOp {
         #[doc = "No operation interrupted by previous reset"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Single write operation interrupted"]
         B_0X1 = 0x01,
         #[doc = "Burst write operation interrupted"]

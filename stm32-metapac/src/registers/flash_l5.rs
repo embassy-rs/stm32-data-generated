@@ -10,7 +10,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "acr",
                 description: Some("Access control register"),
                 array: None,
-                byte_offset: 0,
+                byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -21,7 +21,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "pdkeyr",
                 description: Some("Power down key register"),
                 array: None,
-                byte_offset: 4,
+                byte_offset: 0x4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "nskeyr",
                 description: Some("Flash non-secure key register"),
                 array: None,
-                byte_offset: 8,
+                byte_offset: 0x8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
@@ -43,7 +43,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "seckeyr",
                 description: Some("Flash secure key register"),
                 array: None,
-                byte_offset: 12,
+                byte_offset: 0xc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
@@ -54,7 +54,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "optkeyr",
                 description: Some("Flash option key register"),
                 array: None,
-                byte_offset: 16,
+                byte_offset: 0x10,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
@@ -65,7 +65,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "lvekeyr",
                 description: Some("Flash low voltage key register"),
                 array: None,
-                byte_offset: 20,
+                byte_offset: 0x14,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
@@ -76,7 +76,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "nssr",
                 description: Some("Flash status register"),
                 array: None,
-                byte_offset: 32,
+                byte_offset: 0x20,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -87,7 +87,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "secsr",
                 description: Some("Flash status register"),
                 array: None,
-                byte_offset: 36,
+                byte_offset: 0x24,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -98,7 +98,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "nscr",
                 description: Some("Flash non-secure control register"),
                 array: None,
-                byte_offset: 40,
+                byte_offset: 0x28,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -109,7 +109,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "seccr",
                 description: Some("Flash secure control register"),
                 array: None,
-                byte_offset: 44,
+                byte_offset: 0x2c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -120,7 +120,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "eccr",
                 description: Some("Flash ECC register"),
                 array: None,
-                byte_offset: 48,
+                byte_offset: 0x30,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -131,7 +131,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "optr",
                 description: Some("Flash option register"),
                 array: None,
-                byte_offset: 64,
+                byte_offset: 0x40,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -142,7 +142,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "nsbootadd0r",
                 description: Some("Flash non-secure boot address 0 register"),
                 array: None,
-                byte_offset: 68,
+                byte_offset: 0x44,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
@@ -153,7 +153,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "nsbootadd1r",
                 description: Some("Flash non-secure boot address 1 register"),
                 array: None,
-                byte_offset: 72,
+                byte_offset: 0x48,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
@@ -164,7 +164,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "secbootadd0r",
                 description: Some("FFlash secure boot address 0 register"),
                 array: None,
-                byte_offset: 76,
+                byte_offset: 0x4c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -175,7 +175,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "secwm1r1",
                 description: Some("Flash bank 1 secure watermak1 register"),
                 array: None,
-                byte_offset: 80,
+                byte_offset: 0x50,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -186,7 +186,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "secwm1r2",
                 description: Some("Flash secure watermak1 register 2"),
                 array: None,
-                byte_offset: 84,
+                byte_offset: 0x54,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -197,7 +197,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "wrp1ar",
                 description: Some("Flash Bank 1 WRP area A address register"),
                 array: None,
-                byte_offset: 88,
+                byte_offset: 0x58,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -208,7 +208,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "wrp1br",
                 description: Some("Flash Bank 1 WRP area B address register"),
                 array: None,
-                byte_offset: 92,
+                byte_offset: 0x5c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -219,7 +219,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "secwm2r1",
                 description: Some("Flash secure watermak2 register"),
                 array: None,
-                byte_offset: 96,
+                byte_offset: 0x60,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -230,7 +230,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "secwm2r2",
                 description: Some("Flash secure watermak2 register2"),
                 array: None,
-                byte_offset: 100,
+                byte_offset: 0x64,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -241,7 +241,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "wrp2ar",
                 description: Some("Flash WPR2 area A address register"),
                 array: None,
-                byte_offset: 104,
+                byte_offset: 0x68,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -252,7 +252,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "wrp2br",
                 description: Some("Flash WPR2 area B address register"),
                 array: None,
-                byte_offset: 108,
+                byte_offset: 0x6c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -263,7 +263,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "secbb1r1",
                 description: Some("FLASH secure block based bank 1 register"),
                 array: None,
-                byte_offset: 128,
+                byte_offset: 0x80,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -274,7 +274,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "secbb1r2",
                 description: Some("FLASH secure block based bank 1 register"),
                 array: None,
-                byte_offset: 132,
+                byte_offset: 0x84,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -285,7 +285,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "secbb1r3",
                 description: Some("FLASH secure block based bank 1 register"),
                 array: None,
-                byte_offset: 136,
+                byte_offset: 0x88,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -296,7 +296,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "secbb1r4",
                 description: Some("FLASH secure block based bank 1 register"),
                 array: None,
-                byte_offset: 140,
+                byte_offset: 0x8c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -307,7 +307,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "secbb2r1",
                 description: Some("FLASH secure block based bank 2 register"),
                 array: None,
-                byte_offset: 160,
+                byte_offset: 0xa0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -318,7 +318,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "secbb2r2",
                 description: Some("FLASH secure block based bank 2 register"),
                 array: None,
-                byte_offset: 164,
+                byte_offset: 0xa4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -329,7 +329,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "secbb2r3",
                 description: Some("FLASH secure block based bank 2 register"),
                 array: None,
-                byte_offset: 168,
+                byte_offset: 0xa8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -340,7 +340,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "secbb2r4",
                 description: Some("FLASH secure block based bank 2 register"),
                 array: None,
-                byte_offset: 172,
+                byte_offset: 0xac,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -351,7 +351,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "sechdpcr",
                 description: Some("FLASH secure HDP control register"),
                 array: None,
-                byte_offset: 192,
+                byte_offset: 0xc0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -362,7 +362,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "privcfgr",
                 description: Some("Power privilege configuration register"),
                 array: None,
-                byte_offset: 196,
+                byte_offset: 0xc4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,

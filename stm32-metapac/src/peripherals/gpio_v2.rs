@@ -22,48 +22,48 @@ impl Gpio {
     #[doc = "GPIO port mode register"]
     #[inline(always)]
     pub const fn moder(self) -> crate::common::Reg<regs::Moder, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "GPIO port output type register"]
     #[inline(always)]
     pub const fn otyper(self) -> crate::common::Reg<regs::Otyper, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "GPIO port output speed register"]
     #[inline(always)]
     pub const fn ospeedr(self) -> crate::common::Reg<regs::Ospeedr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "GPIO port pull-up/pull-down register"]
     #[inline(always)]
     pub const fn pupdr(self) -> crate::common::Reg<regs::Pupdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "GPIO port input data register"]
     #[inline(always)]
     pub const fn idr(self) -> crate::common::Reg<regs::Idr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "GPIO port output data register"]
     #[inline(always)]
     pub const fn odr(self) -> crate::common::Reg<regs::Odr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "GPIO port bit set/reset register"]
     #[inline(always)]
     pub const fn bsrr(self) -> crate::common::Reg<regs::Bsrr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "GPIO port configuration lock register"]
     #[inline(always)]
     pub const fn lckr(self) -> crate::common::Reg<regs::Lckr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "GPIO alternate function registers. The register described in the datasheet as AFRL is index 0 in this array, and AFRH is index 1. Note that when operating on AFRH, you need to subtract 8 from any operations on the field array it contains -- the alternate function for pin 9 is at index 1, for instance."]
     #[inline(always)]
     pub const fn afr(self, n: usize) -> crate::common::Reg<regs::Afr, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize + n * 4usize) as _) }
     }
 }
 pub mod regs {
@@ -342,7 +342,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Idr {
         #[doc = "Input is logic low"]
-        LOW = 0,
+        LOW = 0x0,
         #[doc = "Input is logic high"]
         HIGH = 0x01,
     }
@@ -372,7 +372,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Moder {
         #[doc = "Input mode (reset state)"]
-        INPUT = 0,
+        INPUT = 0x0,
         #[doc = "General purpose output mode"]
         OUTPUT = 0x01,
         #[doc = "Alternate function mode"]
@@ -406,7 +406,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Odr {
         #[doc = "Set output to logic low"]
-        LOW = 0,
+        LOW = 0x0,
         #[doc = "Set output to logic high"]
         HIGH = 0x01,
     }
@@ -436,7 +436,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ospeedr {
         #[doc = "Low speed"]
-        LOWSPEED = 0,
+        LOWSPEED = 0x0,
         #[doc = "Medium speed"]
         MEDIUMSPEED = 0x01,
         #[doc = "High speed"]
@@ -470,7 +470,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ot {
         #[doc = "Output push-pull (reset state)"]
-        PUSHPULL = 0,
+        PUSHPULL = 0x0,
         #[doc = "Output open-drain"]
         OPENDRAIN = 0x01,
     }
@@ -500,7 +500,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pupdr {
         #[doc = "No pull-up, pull-down"]
-        FLOATING = 0,
+        FLOATING = 0x0,
         #[doc = "Pull-up"]
         PULLUP = 0x01,
         #[doc = "Pull-down"]

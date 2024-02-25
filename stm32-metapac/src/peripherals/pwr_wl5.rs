@@ -22,84 +22,84 @@ impl Pwr {
     #[doc = "Power control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Power control register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Power control register 3"]
     #[inline(always)]
     pub const fn cr3(self) -> crate::common::Reg<regs::Cr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Power control register 4"]
     #[inline(always)]
     pub const fn cr4(self) -> crate::common::Reg<regs::Cr4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Power status register 1"]
     #[inline(always)]
     pub const fn sr1(self) -> crate::common::Reg<regs::Sr1, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Power status register 2"]
     #[inline(always)]
     pub const fn sr2(self) -> crate::common::Reg<regs::Sr2, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Power status clear register"]
     #[inline(always)]
     pub const fn scr(self) -> crate::common::Reg<regs::Scr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Power control register 5"]
     #[inline(always)]
     pub const fn cr5(self) -> crate::common::Reg<regs::Cr5, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "Power Port pull-up control register"]
     #[inline(always)]
     pub const fn pucr(self, n: usize) -> crate::common::Reg<regs::Pcr, crate::common::RW> {
         assert!(n < 8usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize + n * 8usize) as _) }
     }
     #[doc = "Power Port pull-down control register"]
     #[inline(always)]
     pub const fn pdcr(self, n: usize) -> crate::common::Reg<regs::Pcr, crate::common::RW> {
         assert!(n < 8usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize + n * 8usize) as _) }
     }
     #[doc = "Power CPU2 control register 1 \\[dual core device only\\]"]
     #[inline(always)]
     pub const fn c2cr1(self) -> crate::common::Reg<regs::C2cr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(128usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
     }
     #[doc = "Power CPU2 control register 3 \\[dual core device only\\]"]
     #[inline(always)]
     pub const fn c2cr3(self) -> crate::common::Reg<regs::C2cr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(132usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x84usize) as _) }
     }
     #[doc = "Power extended status and status clear register"]
     #[inline(always)]
     pub const fn extscr(self) -> crate::common::Reg<regs::Extscr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(136usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x88usize) as _) }
     }
     #[doc = "Power security configuration register \\[dual core device only\\]"]
     #[inline(always)]
     pub const fn seccfgr(self) -> crate::common::Reg<regs::Seccfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(140usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x8cusize) as _) }
     }
     #[doc = "Power SPI3 control register"]
     #[inline(always)]
     pub const fn subghzspicr(self) -> crate::common::Reg<regs::Subghzspicr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(144usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x90usize) as _) }
     }
     #[doc = "RSS Command register \\[dual core device only\\]"]
     #[inline(always)]
     pub const fn rsscmdr(self) -> crate::common::Reg<regs::Rsscmdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(152usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x98usize) as _) }
     }
 }
 pub mod regs {
@@ -1094,7 +1094,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cds {
         #[doc = "CPU is running or in sleep"]
-        RUNNINGORSLEEP = 0,
+        RUNNINGORSLEEP = 0x0,
         #[doc = "CPU is in Deep-Sleep"]
         DEEPSLEEP = 0x01,
     }
@@ -1124,7 +1124,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fpdr {
         #[doc = "Flash memory in Idle mode when system is in LPRun mode"]
-        IDLE = 0,
+        IDLE = 0x0,
         #[doc = "Flash memory in Power-down mode when system is in LPRun mode"]
         POWERDOWN = 0x01,
     }
@@ -1154,7 +1154,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fpds {
         #[doc = "Flash memory in Idle mode when system is in LPSleep mode"]
-        IDLE = 0,
+        IDLE = 0x0,
         #[doc = "Flash memory in Power-down mode when system is in LPSleep mode"]
         POWERDOWN = 0x01,
     }
@@ -1184,7 +1184,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lpms {
         #[doc = "Stop 0 mode"]
-        STOP0 = 0,
+        STOP0 = 0x0,
         #[doc = "Stop 1 mode"]
         STOP1 = 0x01,
         #[doc = "Stop 2 mode"]
@@ -1223,7 +1223,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lpr {
         #[doc = "Voltage regulator in Main mode in Low-power run mode"]
-        MAINMODE = 0,
+        MAINMODE = 0x0,
         #[doc = "Voltage regulator in low-power mode in Low-power run mode"]
         LOWPOWERMODE = 0x01,
     }
@@ -1253,7 +1253,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pls {
         #[doc = "2.0V"]
-        V2_0 = 0,
+        V2_0 = 0x0,
         #[doc = "2.2V"]
         V2_2 = 0x01,
         #[doc = "2.4V"]
@@ -1295,7 +1295,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Subghzspinsssel {
         #[doc = "sub-GHz SPI NSS signal driven from PWR_SUBGHZSPICR.NSS (RFBUSYMS functionality enabled)"]
-        SUBGHZSPICR = 0,
+        SUBGHZSPICR = 0x0,
         #[doc = "sub-GHz SPI NSS signal driven from LPTIM3_OUT (RFBUSYMS functionality disabled)"]
         LPTIM3 = 0x01,
     }
@@ -1325,7 +1325,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Vbrs {
         #[doc = "VBAT charging through a 5 kΩ resistor"]
-        R5K = 0,
+        R5K = 0x0,
         #[doc = "VBAT charging through a 1.5 kΩ resistor"]
         R1_5K = 0x01,
     }
@@ -1354,7 +1354,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Vos {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "1.2 V (range 1)"]
         RANGE1 = 0x01,
         #[doc = "1.0 V (range 2)"]
@@ -1387,7 +1387,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Wp {
         #[doc = "Detection on high level (rising edge)"]
-        RISINGEDGE = 0,
+        RISINGEDGE = 0x0,
         #[doc = "Detection on low level (falling edge)"]
         FALLINGEDGE = 0x01,
     }

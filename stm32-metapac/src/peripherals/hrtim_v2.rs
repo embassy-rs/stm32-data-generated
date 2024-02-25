@@ -22,171 +22,174 @@ impl Hrtim {
     #[doc = "Master Timer Control Register"]
     #[inline(always)]
     pub const fn mcr(self) -> crate::common::Reg<regs::Mcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Master Timer Interrupt Status Register"]
     #[inline(always)]
     pub const fn misr(self) -> crate::common::Reg<regs::Misr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Master Timer Interrupt Clear Register"]
     #[inline(always)]
     pub const fn micr(self) -> crate::common::Reg<regs::Micr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Master Timer DMA / Interrupt Enable Register"]
     #[inline(always)]
     pub const fn mdier(self) -> crate::common::Reg<regs::Mdier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Master Timer Counter Register"]
     #[inline(always)]
     pub const fn mcntr(self) -> crate::common::Reg<regs::Mcntr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Master Timer Period Register"]
     #[inline(always)]
     pub const fn mper(self) -> crate::common::Reg<regs::Mper, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Master Timer Repetition Register"]
     #[inline(always)]
     pub const fn mrep(self) -> crate::common::Reg<regs::Mrep, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Master Timer Compare X Register"]
     #[inline(always)]
     pub const fn mcmp(self, n: usize) -> crate::common::Reg<regs::Mcmpx, crate::common::RW> {
         assert!(n < 4usize);
         unsafe {
-            crate::common::Reg::from_ptr(self.ptr.add(28usize + ([0usize, 8usize, 12usize, 16usize][n] as usize)) as _)
+            crate::common::Reg::from_ptr(
+                self.ptr
+                    .add(0x1cusize + ([0usize, 8usize, 12usize, 16usize][n] as usize)) as _,
+            )
         }
     }
     #[doc = "High Resolution Timer: Timing Unit"]
     #[inline(always)]
     pub const fn tim(self, n: usize) -> HrtimTimx {
         assert!(n < 6usize);
-        unsafe { HrtimTimx::from_ptr(self.ptr.add(128usize + n * 128usize) as _) }
+        unsafe { HrtimTimx::from_ptr(self.ptr.add(0x80usize + n * 128usize) as _) }
     }
     #[doc = "High Resolution Timer: Control Register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::HrtimCr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(896usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0380usize) as _) }
     }
     #[doc = "High Resolution Timer: Control Register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::HrtimCr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(900usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0384usize) as _) }
     }
     #[doc = "High Resolution Timer: Interrupt Status Register"]
     #[inline(always)]
     pub const fn isr(self) -> crate::common::Reg<regs::HrtimIsr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(904usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0388usize) as _) }
     }
     #[doc = "High Resolution Timer: Interrupt Clear Register"]
     #[inline(always)]
     pub const fn icr(self) -> crate::common::Reg<regs::HrtimIcr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(908usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x038cusize) as _) }
     }
     #[doc = "High Resolution Timer: Interrupt Enable Register"]
     #[inline(always)]
     pub const fn ier(self) -> crate::common::Reg<regs::HrtimIer, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(912usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0390usize) as _) }
     }
     #[doc = "High Resolution Timer: Output Enable Register"]
     #[inline(always)]
     pub const fn oenr(self) -> crate::common::Reg<regs::HrtimOenr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(916usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0394usize) as _) }
     }
     #[doc = "High Resolution Timer: Output Disable Register"]
     #[inline(always)]
     pub const fn odisr(self) -> crate::common::Reg<regs::HrtimOdisr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(920usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0398usize) as _) }
     }
     #[doc = "High Resolution Timer: Output Disable Status Register"]
     #[inline(always)]
     pub const fn odsr(self) -> crate::common::Reg<regs::HrtimOdsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(924usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x039cusize) as _) }
     }
     #[doc = "High Resolution Timer: Burst Mode Control Register"]
     #[inline(always)]
     pub const fn bmcr(self) -> crate::common::Reg<regs::HrtimBmcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(928usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03a0usize) as _) }
     }
     #[doc = "High Resolution Timer: Burst Mode Trigger Register"]
     #[inline(always)]
     pub const fn bmtrgr(self) -> crate::common::Reg<regs::HrtimBmtrgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(932usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03a4usize) as _) }
     }
     #[doc = "High Resolution Timer: Burst Mode Compare Register"]
     #[inline(always)]
     pub const fn bmcmpr(self) -> crate::common::Reg<regs::HrtimBmcmpr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(936usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03a8usize) as _) }
     }
     #[doc = "High Resolution Timer: Burst Mode Period Register"]
     #[inline(always)]
     pub const fn bmper(self) -> crate::common::Reg<regs::HrtimBmper, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(940usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03acusize) as _) }
     }
     #[doc = "High Resolution Timer: External Event Control Register 1"]
     #[inline(always)]
     pub const fn eecr1(self) -> crate::common::Reg<regs::HrtimEecr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(944usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03b0usize) as _) }
     }
     #[doc = "High Resolution Timer: External Event Control Register 2"]
     #[inline(always)]
     pub const fn eecr2(self) -> crate::common::Reg<regs::HrtimEecr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(948usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03b4usize) as _) }
     }
     #[doc = "High Resolution Timer: External Event Control Register 3"]
     #[inline(always)]
     pub const fn eecr3(self) -> crate::common::Reg<regs::HrtimEecr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(952usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03b8usize) as _) }
     }
     #[doc = "High Resolution Timer: ADC Trigger \\[1, 3\\]
 Register"]
     #[inline(always)]
     pub const fn adc1r(self, n: usize) -> crate::common::Reg<regs::HrtimAdc1r, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(956usize + ([0usize, 8usize][n] as usize)) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03bcusize + ([0usize, 8usize][n] as usize)) as _) }
     }
     #[doc = "High Resolution Timer: ADC Trigger \\[2, 4\\]
 Register"]
     #[inline(always)]
     pub const fn adc2r(self, n: usize) -> crate::common::Reg<regs::HrtimAdc2r, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(960usize + ([0usize, 8usize][n] as usize)) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03c0usize + ([0usize, 8usize][n] as usize)) as _) }
     }
     #[doc = "High Resolution Timer: DLL Control Register"]
     #[inline(always)]
     pub const fn dllcr(self) -> crate::common::Reg<regs::HrtimDllcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(972usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03ccusize) as _) }
     }
     #[doc = "High Resolution Timer: Fault Input Register 1"]
     #[inline(always)]
     pub const fn fltinr1(self) -> crate::common::Reg<regs::HrtimFltinr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(976usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03d0usize) as _) }
     }
     #[doc = "High Resolution Timer: Fault Input Register 2"]
     #[inline(always)]
     pub const fn fltinr2(self) -> crate::common::Reg<regs::HrtimFltinr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(976usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03d0usize) as _) }
     }
     #[doc = "High Resolution Timer: Burst DMA Master timer update Register"]
     #[inline(always)]
     pub const fn bdmupr(self) -> crate::common::Reg<regs::HrtimBdmupr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(984usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03d8usize) as _) }
     }
     #[doc = "High Resolution Timer: Burst DMA Timer X update Register"]
     #[inline(always)]
     pub const fn bdtupr(self, n: usize) -> crate::common::Reg<regs::HrtimBdtupr, crate::common::RW> {
         assert!(n < 5usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(988usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03dcusize + n * 4usize) as _) }
     }
     #[doc = "High Resolution Timer: Burst DMA Data Register"]
     #[inline(always)]
     pub const fn bdmadr(self) -> crate::common::Reg<regs::HrtimBdmadr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1008usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03f0usize) as _) }
     }
 }
 #[doc = "High Resolution Timer: Timing Unit"]
@@ -208,106 +211,109 @@ impl HrtimTimx {
     #[doc = "Timer X Control Register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Timxcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Timer X Interrupt Status Register"]
     #[inline(always)]
     pub const fn isr(self) -> crate::common::Reg<regs::Timxisr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Timer X Interrupt Clear Register"]
     #[inline(always)]
     pub const fn icr(self) -> crate::common::Reg<regs::Timxicr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Timer X DMA / Interrupt Enable Register"]
     #[inline(always)]
     pub const fn dier(self) -> crate::common::Reg<regs::Timxdier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Timer X Counter Register"]
     #[inline(always)]
     pub const fn cnt(self) -> crate::common::Reg<regs::Timxcnt, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Timer X Period Register"]
     #[inline(always)]
     pub const fn per(self) -> crate::common::Reg<regs::Timxper, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Timer X Repetition Register"]
     #[inline(always)]
     pub const fn rep(self) -> crate::common::Reg<regs::Timxrep, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Timer X Compare X Register"]
     #[inline(always)]
     pub const fn cmp(self, n: usize) -> crate::common::Reg<regs::Timxcmp, crate::common::RW> {
         assert!(n < 4usize);
         unsafe {
-            crate::common::Reg::from_ptr(self.ptr.add(28usize + ([0usize, 8usize, 12usize, 16usize][n] as usize)) as _)
+            crate::common::Reg::from_ptr(
+                self.ptr
+                    .add(0x1cusize + ([0usize, 8usize, 12usize, 16usize][n] as usize)) as _,
+            )
         }
     }
     #[doc = "Timer X Compare X Compound Register"]
     #[inline(always)]
     pub const fn cmpc(self, n: usize) -> crate::common::Reg<regs::Timxcmpc, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize + ([0usize][n] as usize)) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize + ([0usize][n] as usize)) as _) }
     }
     #[doc = "Timer X Capture X Register"]
     #[inline(always)]
     pub const fn cpt(self, n: usize) -> crate::common::Reg<regs::Timxcpt, crate::common::R> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize + n * 4usize) as _) }
     }
     #[doc = "Timer X Deadtime Register"]
     #[inline(always)]
     pub const fn dt(self) -> crate::common::Reg<regs::Timxdt, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[doc = "Timer X Output X Set Register"]
     #[inline(always)]
     pub const fn setr(self, n: usize) -> crate::common::Reg<regs::Timxsetr, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize + ([0usize, 8usize][n] as usize)) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize + ([0usize, 8usize][n] as usize)) as _) }
     }
     #[doc = "Timer X Output X Reset Register"]
     #[inline(always)]
     pub const fn rstr(self, n: usize) -> crate::common::Reg<regs::Timxrstr, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize + ([0usize, 8usize][n] as usize)) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize + ([0usize, 8usize][n] as usize)) as _) }
     }
     #[doc = "Timer X External Event Filtering Register 1"]
     #[inline(always)]
     pub const fn eef(self, n: usize) -> crate::common::Reg<regs::Timxeef, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize + ([0usize, 4usize][n] as usize)) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize + ([0usize, 4usize][n] as usize)) as _) }
     }
     #[doc = "Timer X Reset Register"]
     #[inline(always)]
     pub const fn rst(self) -> crate::common::Reg<regs::Timxrst, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[doc = "Timer X Chopper Register"]
     #[inline(always)]
     pub const fn chp(self) -> crate::common::Reg<regs::Timxchp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize) as _) }
     }
     #[doc = "Timer X Capture X Control Register"]
     #[inline(always)]
     pub const fn ccr(self, n: usize) -> crate::common::Reg<regs::Timxccr, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(92usize + ([0usize, 4usize][n] as usize)) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize + ([0usize, 4usize][n] as usize)) as _) }
     }
     #[doc = "Timer X Output Register"]
     #[inline(always)]
     pub const fn outr(self) -> crate::common::Reg<regs::Timxoutr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(100usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x64usize) as _) }
     }
     #[doc = "Timer X Fault Register"]
     #[inline(always)]
     pub const fn flt(self) -> crate::common::Reg<regs::Timxflt, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(104usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x68usize) as _) }
     }
 }
 pub mod regs {
@@ -4202,7 +4208,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Activeeffect {
         #[doc = "Timer event has no effect"]
-        NOEFFECT = 0,
+        NOEFFECT = 0x0,
         #[doc = "Timer event forces the output to its active state"]
         SETACTIVE = 0x01,
     }
@@ -4232,7 +4238,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Brstdma {
         #[doc = "Update done independently from the DMA burst transfer completion"]
-        INDEPENDENT = 0,
+        INDEPENDENT = 0x0,
         #[doc = "Update done when the DMA burst transfer is completed"]
         COMPLETION = 0x01,
         #[doc = "Update done on master timer roll-over following a DMA burst transfer completion"]
@@ -4265,7 +4271,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Captureeffect {
         #[doc = "Timer event has no effect"]
-        NOEFFECT = 0,
+        NOEFFECT = 0x0,
         #[doc = "Timer event triggers capture"]
         TRIGGERCAPTURE = 0x01,
     }
@@ -4295,7 +4301,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cppstat {
         #[doc = "Signal applied on output 1 and output 2 forced inactive"]
-        OUTPUT1ACTIVE = 0,
+        OUTPUT1ACTIVE = 0x0,
         #[doc = "Signal applied on output 2 and output 1 forced inactive"]
         OUTPUT2ACTIVE = 0x01,
     }
@@ -4325,7 +4331,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dacsync {
         #[doc = "No DAC trigger generated"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "Trigger generated on DACSync1"]
         DACSYNC1 = 0x01,
         #[doc = "Trigger generated on DACSync2"]
@@ -4359,7 +4365,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Delcmp {
         #[doc = "CMP register is always active (standard compare mode)"]
-        STANDARD = 0,
+        STANDARD = 0x0,
         #[doc = "CMP is recomputed and is active following a capture 1 event"]
         CAPTURE1 = 0x01,
         #[doc = "CMP is recomputed and is active following a capture 1 event or a Compare 1 match"]
@@ -4393,7 +4399,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dlyprt {
         #[doc = "Output 1 delayed idle on external event 6"]
-        OUTPUT1_EE6 = 0,
+        OUTPUT1_EE6 = 0x0,
         #[doc = "Output 2 delayed idle on external event 6"]
         OUTPUT2_EE6 = 0x01,
         #[doc = "Output 1 and 2 delayed idle on external event 6"]
@@ -4435,7 +4441,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Eefltr {
         #[doc = "No filtering"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "Blanking from counter reset/roll-over to Compare 1"]
         BLANKRESETTOCOMPARE1 = 0x01,
         #[doc = "Blanking from counter reset/roll-over to Compare 2"]
@@ -4493,7 +4499,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fault {
         #[doc = "No action: the output is not affected by the fault input and stays in run mode"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "Output goes to active state after a fault event"]
         SETACTIVE = 0x01,
         #[doc = "Output goes to inactive state after a fault event"]
@@ -4527,7 +4533,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Flten {
         #[doc = "Fault input ignored"]
-        IGNORED = 0,
+        IGNORED = 0x0,
         #[doc = "Fault input is active and can disable HRTIM outputs"]
         ACTIVE = 0x01,
     }
@@ -4557,7 +4563,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Inactiveeffect {
         #[doc = "Timer event has no effect"]
-        NOEFFECT = 0,
+        NOEFFECT = 0x0,
         #[doc = "Timer event forces the output to its inactive state"]
         SETINACTIVE = 0x01,
     }
@@ -4587,7 +4593,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ippstat {
         #[doc = "Protection occurred when the output 1 was active and output 2 forced inactive"]
-        OUTPUT1ACTIVE = 0,
+        OUTPUT1ACTIVE = 0x0,
         #[doc = "Protection occurred when the output 2 was active and output 1 forced inactive"]
         OUTPUT2ACTIVE = 0x01,
     }
@@ -4617,7 +4623,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Outputstate {
         #[doc = "Output is or was inactive"]
-        INACTIVE = 0,
+        INACTIVE = 0x0,
         #[doc = "Output is or was active"]
         ACTIVE = 0x01,
     }
@@ -4647,7 +4653,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pol {
         #[doc = "Positive polarity (output active high)"]
-        ACTIVEHIGH = 0,
+        ACTIVEHIGH = 0x0,
         #[doc = "Negative polarity (output active low)"]
         ACTIVELOW = 0x01,
     }
@@ -4677,7 +4683,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Reseteffect {
         #[doc = "Timer Y compare Z event has no effect"]
-        NOEFFECT = 0,
+        NOEFFECT = 0x0,
         #[doc = "Timer X counter is reset upon timer Y compare Z event"]
         RESETCOUNTER = 0x01,
     }
@@ -4707,7 +4713,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Sdtf {
         #[doc = "Positive deadtime on falling edge"]
-        POSITIVE = 0,
+        POSITIVE = 0x0,
         #[doc = "Negative deadtime on falling edge"]
         NEGATIVE = 0x01,
     }
@@ -4737,7 +4743,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Sdtr {
         #[doc = "Positive deadtime on rising edge"]
-        POSITIVE = 0,
+        POSITIVE = 0x0,
         #[doc = "Negative deadtime on rising edge"]
         NEGATIVE = 0x01,
     }
@@ -4767,7 +4773,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Syncin {
         #[doc = "Disabled. HRTIM is not synchronized and runs in standalone mode"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "Internal event: the HRTIM is synchronized with the on-chip timer"]
         INTERNAL = 0x02,
@@ -4800,7 +4806,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Syncout {
         #[doc = "Disabled"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "Positive pulse on SCOUT output (16x f_HRTIM clock cycles)"]
         POSITIVEPULSE = 0x02,
@@ -4833,7 +4839,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Syncrst {
         #[doc = "Synchronization event has no effect on Timer x"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "Synchronization event resets Timer x"]
         RESET = 0x01,
     }
@@ -4863,7 +4869,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Syncsrc {
         #[doc = "Master timer Start"]
-        MASTERSTART = 0,
+        MASTERSTART = 0x0,
         #[doc = "Master timer Compare 1 event"]
         MASTERCOMPARE1 = 0x01,
         #[doc = "Timer A start/reset"]
@@ -4897,7 +4903,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Syncstrt {
         #[doc = "Synchronization event has no effect on Timer x"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "Synchronization event starts Timer x"]
         START = 0x01,
     }
@@ -4927,7 +4933,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum TimaisrDlyprt {
         #[doc = "Not in delayed idle or balanced idle mode"]
-        INACTIVE = 0,
+        INACTIVE = 0x0,
         #[doc = "Delayed idle or balanced idle mode entry"]
         ACTIVE = 0x01,
     }
@@ -4957,7 +4963,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Updgat {
         #[doc = "Update occurs independently from the DMA burst transfer"]
-        INDEPENDENT = 0,
+        INDEPENDENT = 0x0,
         #[doc = "Update occurs when the DMA burst transfer is completed"]
         DMABURST = 0x01,
         #[doc = "Update occurs on the update event following DMA burst transfer completion"]

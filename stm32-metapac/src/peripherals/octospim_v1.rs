@@ -22,17 +22,17 @@ impl Octospim {
     #[doc = "control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "OctoSPI IO Manager Port 1 Configuration Register"]
     #[inline(always)]
     pub const fn p1cr(self) -> crate::common::Reg<regs::P1cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "OctoSPI IO Manager Port 2 Configuration Register"]
     #[inline(always)]
     pub const fn p2cr(self) -> crate::common::Reg<regs::P2cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
 }
 pub mod regs {

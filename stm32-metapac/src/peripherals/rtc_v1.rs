@@ -22,52 +22,52 @@ impl Rtc {
     #[doc = "Control Register High"]
     #[inline(always)]
     pub const fn crh(self) -> crate::common::Reg<regs::Crh, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Control Register Low"]
     #[inline(always)]
     pub const fn crl(self) -> crate::common::Reg<regs::Crl, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Prescaler Load Register High"]
     #[inline(always)]
     pub const fn prlh(self) -> crate::common::Reg<regs::Prlh, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Prescaler Load Register Low"]
     #[inline(always)]
     pub const fn prll(self) -> crate::common::Reg<regs::Prll, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Prescaler Divider Register High"]
     #[inline(always)]
     pub const fn divh(self) -> crate::common::Reg<regs::Divh, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Prescaler Divider Register Low"]
     #[inline(always)]
     pub const fn divl(self) -> crate::common::Reg<regs::Divl, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Counter Register High"]
     #[inline(always)]
     pub const fn cnth(self) -> crate::common::Reg<regs::Cnth, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Counter Register Low"]
     #[inline(always)]
     pub const fn cntl(self) -> crate::common::Reg<regs::Cntl, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "Alarm Register High"]
     #[inline(always)]
     pub const fn alrh(self) -> crate::common::Reg<regs::Alrh, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "Alarm Register Low"]
     #[inline(always)]
     pub const fn alrl(self) -> crate::common::Reg<regs::Alrl, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
 }
 pub mod regs {
@@ -384,7 +384,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rtoff {
         #[doc = "Last write operation on RTC registers is still ongoing"]
-        ONGOING = 0,
+        ONGOING = 0x0,
         #[doc = "Last write operation on RTC registers terminated"]
         TERMINATED = 0x01,
     }

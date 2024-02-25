@@ -22,52 +22,52 @@ impl I2c {
     #[doc = "Control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Control register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Own address register 1"]
     #[inline(always)]
     pub const fn oar1(self) -> crate::common::Reg<regs::Oar1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Own address register 2"]
     #[inline(always)]
     pub const fn oar2(self) -> crate::common::Reg<regs::Oar2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Data register"]
     #[inline(always)]
     pub const fn dr(self) -> crate::common::Reg<regs::Dr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Status register 1"]
     #[inline(always)]
     pub const fn sr1(self) -> crate::common::Reg<regs::Sr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Status register 2"]
     #[inline(always)]
     pub const fn sr2(self) -> crate::common::Reg<regs::Sr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Clock control register"]
     #[inline(always)]
     pub const fn ccr(self) -> crate::common::Reg<regs::Ccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "TRISE register"]
     #[inline(always)]
     pub const fn trise(self) -> crate::common::Reg<regs::Trise, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "FLTR register"]
     #[inline(always)]
     pub const fn fltr(self) -> crate::common::Reg<regs::Fltr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
 }
 pub mod regs {
@@ -780,7 +780,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Addmode {
         #[doc = "7-bit addressing mode"]
-        BIT7 = 0,
+        BIT7 = 0x0,
         #[doc = "10-bit addressing mode"]
         BIT10 = 0x01,
     }
@@ -810,7 +810,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dnf {
         #[doc = "Digital filter disabled"]
-        NOFILTER = 0,
+        NOFILTER = 0x0,
         #[doc = "Digital filter enabled and filtering capability up to 1 tI2CCLK"]
         FILTER1 = 0x01,
         #[doc = "Digital filter enabled and filtering capability up to 2 tI2CCLK"]
@@ -868,7 +868,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Duty {
         #[doc = "Duty cycle t_low/t_high = 2/1"]
-        DUTY2_1 = 0,
+        DUTY2_1 = 0x0,
         #[doc = "Duty cycle t_low/t_high = 16/9"]
         DUTY16_9 = 0x01,
     }
@@ -898,7 +898,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Endual {
         #[doc = "Single addressing mode"]
-        SINGLE = 0,
+        SINGLE = 0x0,
         #[doc = "Dual addressing mode"]
         DUAL = 0x01,
     }
@@ -928,7 +928,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum FS {
         #[doc = "Standard mode I2C"]
-        STANDARD = 0,
+        STANDARD = 0x0,
         #[doc = "Fast mode I2C"]
         FAST = 0x01,
     }
@@ -958,7 +958,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pos {
         #[doc = "ACK bit controls the (N)ACK of the current byte being received"]
-        CURRENT = 0,
+        CURRENT = 0x0,
         #[doc = "ACK bit controls the (N)ACK of the next byte to be received"]
         NEXT = 0x01,
     }
@@ -988,7 +988,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Smbtype {
         #[doc = "SMBus Device"]
-        DEVICE = 0,
+        DEVICE = 0x0,
         #[doc = "SMBus Host"]
         HOST = 0x01,
     }
@@ -1018,7 +1018,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Smbus {
         #[doc = "I2C Mode"]
-        I2C = 0,
+        I2C = 0x0,
         #[doc = "SMBus"]
         SMBUS = 0x01,
     }

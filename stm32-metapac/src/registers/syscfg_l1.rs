@@ -10,7 +10,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "memrmp",
                 description: Some("memory remap register"),
                 array: None,
-                byte_offset: 0,
+                byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -21,7 +21,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "pmc",
                 description: Some("peripheral mode configuration register"),
                 array: None,
-                byte_offset: 4,
+                byte_offset: 0x4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "exticr",
                 description: Some("external interrupt configuration register 1"),
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
-                byte_offset: 8,
+                byte_offset: 0x8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,

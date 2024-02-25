@@ -10,7 +10,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "evcr",
                 description: Some("Event Control Register (AFIO_EVCR)"),
                 array: None,
-                byte_offset: 0,
+                byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -21,7 +21,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "mapr",
                 description: Some("AF remap and debug I/O configuration register (AFIO_MAPR)"),
                 array: None,
-                byte_offset: 4,
+                byte_offset: 0x4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "exticr",
                 description: Some("External interrupt configuration register 1 (AFIO_EXTICR1)"),
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
-                byte_offset: 8,
+                byte_offset: 0x8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -43,7 +43,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "mapr2",
                 description: Some("AF remap and debug I/O configuration register"),
                 array: None,
-                byte_offset: 28,
+                byte_offset: 0x1c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,

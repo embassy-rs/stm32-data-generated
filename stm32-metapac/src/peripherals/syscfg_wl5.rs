@@ -22,63 +22,63 @@ impl Syscfg {
     #[doc = "memory remap register"]
     #[inline(always)]
     pub const fn memrmp(self) -> crate::common::Reg<regs::Memrmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "configuration register 1"]
     #[inline(always)]
     pub const fn cfgr1(self) -> crate::common::Reg<regs::Cfgr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "external interrupt configuration register 1"]
     #[inline(always)]
     pub const fn exticr(self, n: usize) -> crate::common::Reg<regs::Exticr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize + n * 4usize) as _) }
     }
     #[doc = "SCSR"]
     #[inline(always)]
     pub const fn scsr(self) -> crate::common::Reg<regs::Scsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "CFGR2"]
     #[inline(always)]
     pub const fn cfgr2(self) -> crate::common::Reg<regs::Cfgr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "SWPR"]
     #[inline(always)]
     pub const fn swpr(self) -> crate::common::Reg<regs::Swpr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "SKR"]
     #[inline(always)]
     pub const fn skr(self) -> crate::common::Reg<regs::Skr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "SYSCFG CPU1 interrupt mask register 1"]
     #[inline(always)]
     pub const fn imr1(self) -> crate::common::Reg<regs::Imr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(256usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
     #[doc = "SYSCFG CPU1 interrupt mask register 2"]
     #[inline(always)]
     pub const fn imr2(self) -> crate::common::Reg<regs::Imr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(260usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
     }
     #[doc = "SYSCFG CPU2 interrupt mask register 1"]
     #[inline(always)]
     pub const fn c2imr1(self) -> crate::common::Reg<regs::C2imr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(264usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize) as _) }
     }
     #[doc = "SYSCFG CPU2 interrupt mask register 2"]
     #[inline(always)]
     pub const fn c2imr2(self) -> crate::common::Reg<regs::C2imr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(268usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x010cusize) as _) }
     }
     #[doc = "radio debug control register"]
     #[inline(always)]
     pub const fn rfdcr(self) -> crate::common::Reg<regs::Rfdcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(520usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0208usize) as _) }
     }
 }
 pub mod regs {

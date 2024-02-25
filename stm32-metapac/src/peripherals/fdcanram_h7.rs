@@ -23,6 +23,6 @@ impl Fdcanram {
     #[inline(always)]
     pub const fn ram(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 2560usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize + n * 4usize) as _) }
     }
 }

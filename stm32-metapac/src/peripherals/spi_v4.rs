@@ -22,67 +22,67 @@ impl Spi {
     #[doc = "control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "control register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "configuration register 1"]
     #[inline(always)]
     pub const fn cfg1(self) -> crate::common::Reg<regs::Cfg1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "configuration register 2"]
     #[inline(always)]
     pub const fn cfg2(self) -> crate::common::Reg<regs::Cfg2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Interrupt Enable Register"]
     #[inline(always)]
     pub const fn ier(self) -> crate::common::Reg<regs::Ier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Status Register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Interrupt/Status Flags Clear Register"]
     #[inline(always)]
     pub const fn ifcr(self) -> crate::common::Reg<regs::Ifcr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Transmit Data Register"]
     #[inline(always)]
     pub const fn txdr(self) -> crate::common::Reg<regs::Txdr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "Receive Data Register"]
     #[inline(always)]
     pub const fn rxdr(self) -> crate::common::Reg<regs::Rxdr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "Polynomial Register"]
     #[inline(always)]
     pub const fn crcpoly(self) -> crate::common::Reg<regs::Crcpoly, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[doc = "Transmitter CRC Register"]
     #[inline(always)]
     pub const fn txcrc(self) -> crate::common::Reg<regs::Txcrc, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[doc = "Receiver CRC Register"]
     #[inline(always)]
     pub const fn rxcrc(self) -> crate::common::Reg<regs::Rxcrc, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[doc = "Underrun Data Register"]
     #[inline(always)]
     pub const fn udrdr(self) -> crate::common::Reg<regs::Udrdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
 }
 pub mod regs {
@@ -1073,7 +1073,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Comm {
         #[doc = "Full duplex"]
-        FULLDUPLEX = 0,
+        FULLDUPLEX = 0x0,
         #[doc = "Simplex transmitter only"]
         TRANSMITTER = 0x01,
         #[doc = "Simplex receiver only"]
@@ -1107,7 +1107,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cpha {
         #[doc = "The first clock transition is the first data capture edge"]
-        FIRSTEDGE = 0,
+        FIRSTEDGE = 0x0,
         #[doc = "The second clock transition is the first data capture edge"]
         SECONDEDGE = 0x01,
     }
@@ -1137,7 +1137,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cpol {
         #[doc = "CK to 0 when idle"]
-        IDLELOW = 0,
+        IDLELOW = 0x0,
         #[doc = "CK to 1 when idle"]
         IDLEHIGH = 0x01,
     }
@@ -1167,7 +1167,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fthlv {
         #[doc = "1 frame"]
-        ONEFRAME = 0,
+        ONEFRAME = 0x0,
         #[doc = "2 frames"]
         TWOFRAMES = 0x01,
         #[doc = "3 frames"]
@@ -1225,7 +1225,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Hddir {
         #[doc = "Receiver in half duplex mode"]
-        RECEIVER = 0,
+        RECEIVER = 0x0,
         #[doc = "Transmitter in half duplex mode"]
         TRANSMITTER = 0x01,
     }
@@ -1255,7 +1255,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lsbfirst {
         #[doc = "Data is transmitted/received with the MSB first"]
-        MSBFIRST = 0,
+        MSBFIRST = 0x0,
         #[doc = "Data is transmitted/received with the LSB first"]
         LSBFIRST = 0x01,
     }
@@ -1285,7 +1285,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Master {
         #[doc = "Slave configuration"]
-        SLAVE = 0,
+        SLAVE = 0x0,
         #[doc = "Master configuration"]
         MASTER = 0x01,
     }
@@ -1315,7 +1315,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mbr {
         #[doc = "f_spi_ker_ck / 2"]
-        DIV2 = 0,
+        DIV2 = 0x0,
         #[doc = "f_spi_ker_ck / 4"]
         DIV4 = 0x01,
         #[doc = "f_spi_ker_ck / 8"]
@@ -1357,7 +1357,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rcrcini {
         #[doc = "All zeros RX CRC initialization pattern"]
-        ALLZEROS = 0,
+        ALLZEROS = 0x0,
         #[doc = "All ones RX CRC initialization pattern"]
         ALLONES = 0x01,
     }
@@ -1387,7 +1387,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rdiom {
         #[doc = "RDY signal is defined internally fixed as permanently active (RDIOP setting has no effect)"]
-        PERMANENTLYACTIVE = 0,
+        PERMANENTLYACTIVE = 0x0,
         #[doc = "RDY signal is overtaken from alternate function input (at master case) or output (at slave case) of the dedicated pin (RDIOP setting takes effect)"]
         FROMINPUT = 0x01,
     }
@@ -1417,7 +1417,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rdiop {
         #[doc = "high level of the signal means the slave is ready for communication"]
-        READYHIGH = 0,
+        READYHIGH = 0x0,
         #[doc = "low level of the signal means the slave is ready for communication"]
         READYLOW = 0x01,
     }
@@ -1447,7 +1447,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rxplvl {
         #[doc = "Zero frames beyond packing ratio available"]
-        ZEROFRAMES = 0,
+        ZEROFRAMES = 0x0,
         #[doc = "One frame beyond packing ratio available"]
         ONEFRAME = 0x01,
         #[doc = "Two frame beyond packing ratio available"]
@@ -1481,7 +1481,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rxwne {
         #[doc = "Less than 32-bit data frame received"]
-        LESSTHAN32 = 0,
+        LESSTHAN32 = 0x0,
         #[doc = "At least 32-bit data frame received"]
         ATLEAST32 = 0x01,
     }
@@ -1511,7 +1511,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Sp {
         #[doc = "Motorola SPI protocol"]
-        MOTOROLA = 0,
+        MOTOROLA = 0x0,
         #[doc = "TI SPI protocol"]
         TI = 0x01,
         _RESERVED_2 = 0x02,
@@ -1547,7 +1547,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ssiop {
         #[doc = "Low level is active for SS signal"]
-        ACTIVELOW = 0,
+        ACTIVELOW = 0x0,
         #[doc = "High level is active for SS signal"]
         ACTIVEHIGH = 0x01,
     }
@@ -1577,7 +1577,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ssom {
         #[doc = "SS is asserted until data transfer complete"]
-        ASSERTED = 0,
+        ASSERTED = 0x0,
         #[doc = "Data frames interleaved with SS not asserted during MIDI"]
         NOTASSERTED = 0x01,
     }
@@ -1607,7 +1607,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tcrcini {
         #[doc = "All zeros TX CRC initialization pattern"]
-        ALLZEROS = 0,
+        ALLZEROS = 0x0,
         #[doc = "All ones TX CRC initialization pattern"]
         ALLONES = 0x01,
     }
@@ -1637,7 +1637,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Udrcfg {
         #[doc = "Slave sends a constant underrun pattern"]
-        CONSTANT = 0,
+        CONSTANT = 0x0,
         #[doc = "Slave repeats last received data frame from master"]
         REPEATRECEIVED = 0x01,
         #[doc = "Slave repeats last transmitted data frame"]

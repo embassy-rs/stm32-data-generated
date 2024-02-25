@@ -22,108 +22,108 @@ impl Sdmmc {
     #[doc = "SDMMC power control register"]
     #[inline(always)]
     pub const fn power(self) -> crate::common::Reg<regs::Power, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "The SDMMC_CLKCR register controls the SDMMC_CK output clock, the SDMMC_RX_CLK receive clock, and the bus width."]
     #[inline(always)]
     pub const fn clkcr(self) -> crate::common::Reg<regs::Clkcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "The SDMMC_ARGR register contains a 32-bit command argument, which is sent to a card as part of a command message."]
     #[inline(always)]
     pub const fn argr(self) -> crate::common::Reg<regs::Argr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "The SDMMC_CMDR register contains the command index and command type bits. The command index is sent to a card as part of a command message. The command type bits control the command path state machine (CPSM)."]
     #[inline(always)]
     pub const fn cmdr(self) -> crate::common::Reg<regs::Cmdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "SDMMC command response register"]
     #[inline(always)]
     pub const fn respcmdr(self) -> crate::common::Reg<regs::Respcmdr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response."]
     #[inline(always)]
     pub const fn respr(self, n: usize) -> crate::common::Reg<regs::RespxR, crate::common::R> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize + n * 4usize) as _) }
     }
     #[doc = "The SDMMC_DTIMER register contains the data timeout period, in card bus clock periods. A counter loads the value from the SDMMC_DTIMER register, and starts decrementing when the data path state machine (DPSM) enters the Wait_R or Busy state. If the timer reaches 0 while the DPSM is in either of these states, the timeout status flag is set."]
     #[inline(always)]
     pub const fn dtimer(self) -> crate::common::Reg<regs::Dtimer, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "The SDMMC_DLENR register contains the number of data bytes to be transferred. The value is loaded into the data counter when data transfer starts."]
     #[inline(always)]
     pub const fn dlenr(self) -> crate::common::Reg<regs::Dlenr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "The SDMMC_DCTRL register control the data path state machine (DPSM)."]
     #[inline(always)]
     pub const fn dctrl(self) -> crate::common::Reg<regs::Dctrl, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "The SDMMC_DCNTR register loads the value from the data length register (see SDMMC_DLENR) when the DPSM moves from the Idle state to the Wait_R or Wait_S state. As data is transferred, the counter decrements the value until it reaches 0. The DPSM then moves to the Idle state and when there has been no error, the data status end flag (DATAEND) is set."]
     #[inline(always)]
     pub const fn dcntr(self) -> crate::common::Reg<regs::Dcntr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "The SDMMC_STAR register is a read-only register. It contains two types of flag:Static flags (bits \\[29,21,11:0\\]): these bits remain asserted until they are cleared by writing to the SDMMC interrupt Clear register (see SDMMC_ICR)Dynamic flags (bits \\[20:12\\]): these bits change state depending on the state of the underlying logic (for example, FIFO full and empty flags are asserted and de-asserted as data while written to the FIFO)"]
     #[inline(always)]
     pub const fn star(self) -> crate::common::Reg<regs::Star, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[doc = "The SDMMC_ICR register is a write-only register. Writing a bit with 1 clears the corresponding bit in the SDMMC_STAR status register."]
     #[inline(always)]
     pub const fn icr(self) -> crate::common::Reg<regs::Icr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[doc = "The interrupt mask register determines which status flags generate an interrupt request by setting the corresponding bit to 1."]
     #[inline(always)]
     pub const fn maskr(self) -> crate::common::Reg<regs::Maskr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[doc = "The SDMMC_ACKTIMER register contains the acknowledgment timeout period, in SDMMC_CK bus clock periods. A counter loads the value from the SDMMC_ACKTIMER register, and starts decrementing when the data path state machine (DPSM) enters the Wait_Ack state. If the timer reaches 0 while the DPSM is in this states, the acknowledgment timeout status flag is set."]
     #[inline(always)]
     pub const fn acktimer(self) -> crate::common::Reg<regs::Acktimer, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[doc = "The receive and transmit FIFOs can be read or written as 32-bit wide registers. The FIFOs contain 32 entries on 32 sequential addresses. This allows the CPU to use its load and store multiple operands to read from/write to the FIFO."]
     #[inline(always)]
     pub const fn idmactrlr(self) -> crate::common::Reg<regs::Idmactrlr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[doc = "The SDMMC_IDMABSIZER register contains the buffers size when in double buffer configuration."]
     #[inline(always)]
     pub const fn idmabsizer(self) -> crate::common::Reg<regs::Idmabsizer, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[doc = "The SDMMC_IDMABASE0R register contains the memory buffer base address in single buffer configuration and the buffer 0 base address in double buffer configuration."]
     #[inline(always)]
     pub const fn idmabase0r(self) -> crate::common::Reg<regs::Idmabase0r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize) as _) }
     }
     #[doc = "The SDMMC_IDMABASE1R register contains the double buffer configuration second buffer memory base address."]
     #[inline(always)]
     pub const fn idmabase1r(self) -> crate::common::Reg<regs::Idmabase1r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(92usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
     }
     #[doc = "The receive and transmit FIFOs can be only read or written as word (32-bit) wide registers. The FIFOs contain 16 entries on sequential addresses. This allows the CPU to use its load and store multiple operands to read from/write to the FIFO.When accessing SDMMC_FIFOR with half word or byte access an AHB bus fault is generated."]
     #[inline(always)]
     pub const fn fifor(self) -> crate::common::Reg<regs::Fifor, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(128usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
     }
     #[doc = "SDMMC IP version register"]
     #[inline(always)]
     pub const fn ver(self) -> crate::common::Reg<regs::Ver, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1012usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03f4usize) as _) }
     }
     #[doc = "SDMMC IP identification register"]
     #[inline(always)]
     pub const fn id(self) -> crate::common::Reg<regs::Id, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1016usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03f8usize) as _) }
     }
 }
 pub mod regs {

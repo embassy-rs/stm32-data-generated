@@ -22,7 +22,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -39,7 +39,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DMAMUX request line multiplexer interrupt channel status register",
                     ),
                     array: None,
-                    byte_offset: 128,
+                    byte_offset: 0x80,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -56,7 +56,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DMAMUX request line multiplexer interrupt clear flag register",
                     ),
                     array: None,
-                    byte_offset: 132,
+                    byte_offset: 0x84,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Write,
@@ -80,7 +80,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 256,
+                    byte_offset: 0x100,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -97,7 +97,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DMAMux - DMA request generator status register",
                     ),
                     array: None,
-                    byte_offset: 320,
+                    byte_offset: 0x140,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -114,7 +114,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DMAMux - DMA request generator clear flag register",
                     ),
                     array: None,
-                    byte_offset: 324,
+                    byte_offset: 0x144,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Write,

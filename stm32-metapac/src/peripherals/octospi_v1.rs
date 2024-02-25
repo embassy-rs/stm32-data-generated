@@ -22,137 +22,137 @@ impl Octospi {
     #[doc = "control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "device configuration register 1"]
     #[inline(always)]
     pub const fn dcr1(self) -> crate::common::Reg<regs::Dcr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "device configuration register 2"]
     #[inline(always)]
     pub const fn dcr2(self) -> crate::common::Reg<regs::Dcr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "device configuration register 3"]
     #[inline(always)]
     pub const fn dcr3(self) -> crate::common::Reg<regs::Dcr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "device configuration register 4"]
     #[inline(always)]
     pub const fn dcr4(self) -> crate::common::Reg<regs::Dcr4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "flag clear register"]
     #[inline(always)]
     pub const fn fcr(self) -> crate::common::Reg<regs::Fcr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "data length register"]
     #[inline(always)]
     pub const fn dlr(self) -> crate::common::Reg<regs::Dlr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[doc = "address register"]
     #[inline(always)]
     pub const fn ar(self) -> crate::common::Reg<regs::Ar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[doc = "data register"]
     #[inline(always)]
     pub const fn dr(self) -> crate::common::Reg<regs::Dr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[doc = "polling status mask register"]
     #[inline(always)]
     pub const fn psmkr(self) -> crate::common::Reg<regs::Psmkr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(128usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
     }
     #[doc = "polling status match register"]
     #[inline(always)]
     pub const fn psmar(self) -> crate::common::Reg<regs::Psmar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(136usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x88usize) as _) }
     }
     #[doc = "polling interval register"]
     #[inline(always)]
     pub const fn pir(self) -> crate::common::Reg<regs::Pir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(144usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x90usize) as _) }
     }
     #[doc = "communication configuration register"]
     #[inline(always)]
     pub const fn ccr(self) -> crate::common::Reg<regs::Ccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(256usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
     #[doc = "timing configuration register"]
     #[inline(always)]
     pub const fn tcr(self) -> crate::common::Reg<regs::Tcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(264usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize) as _) }
     }
     #[doc = "instruction register"]
     #[inline(always)]
     pub const fn ir(self) -> crate::common::Reg<regs::Ir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(272usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0110usize) as _) }
     }
     #[doc = "alternate bytes register"]
     #[inline(always)]
     pub const fn abr(self) -> crate::common::Reg<regs::Abr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(288usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0120usize) as _) }
     }
     #[doc = "low-power timeout register"]
     #[inline(always)]
     pub const fn lptr(self) -> crate::common::Reg<regs::Lptr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(304usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0130usize) as _) }
     }
     #[doc = "wrap communication configuration register"]
     #[inline(always)]
     pub const fn wpccr(self) -> crate::common::Reg<regs::Wpccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(320usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0140usize) as _) }
     }
     #[doc = "wrap timing configuration register"]
     #[inline(always)]
     pub const fn wptcr(self) -> crate::common::Reg<regs::Wptcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(328usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0148usize) as _) }
     }
     #[doc = "wrap instruction register"]
     #[inline(always)]
     pub const fn wpir(self) -> crate::common::Reg<regs::Wpir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(336usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0150usize) as _) }
     }
     #[doc = "wrap alternate bytes register"]
     #[inline(always)]
     pub const fn wpabr(self) -> crate::common::Reg<regs::Wpabr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(352usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0160usize) as _) }
     }
     #[doc = "write communication configuration register"]
     #[inline(always)]
     pub const fn wccr(self) -> crate::common::Reg<regs::Wccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(384usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0180usize) as _) }
     }
     #[doc = "write timing configuration register"]
     #[inline(always)]
     pub const fn wtcr(self) -> crate::common::Reg<regs::Wtcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(392usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0188usize) as _) }
     }
     #[doc = "write instruction register"]
     #[inline(always)]
     pub const fn wir(self) -> crate::common::Reg<regs::Wir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(400usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0190usize) as _) }
     }
     #[doc = "write alternate bytes register"]
     #[inline(always)]
     pub const fn wabr(self) -> crate::common::Reg<regs::Wabr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(416usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01a0usize) as _) }
     }
     #[doc = "OCTOSPI HyperBus latency configuration register"]
     #[inline(always)]
     pub const fn hlcr(self) -> crate::common::Reg<regs::Hlcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(512usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize) as _) }
     }
 }
 pub mod regs {
@@ -1584,7 +1584,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum FlashSelect {
         #[doc = "FLASH 1 selected (data exchanged over IO\\[3:0\\])"]
-        FLASHONE = 0,
+        FLASHONE = 0x0,
         #[doc = "FLASH 2 selected (data exchanged over IO\\[7:4\\])"]
         FLASHTWO = 0x01,
     }
@@ -1614,7 +1614,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum FunctionalMode {
         #[doc = "Indirect-write mode"]
-        INDIRECTWRITE = 0,
+        INDIRECTWRITE = 0x0,
         #[doc = "Indirect-read mode"]
         INDIRECTREAD = 0x01,
         #[doc = "Automatic status-polling mode"]
@@ -1648,7 +1648,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum LatencyMode {
         #[doc = "Variable initial latency"]
-        VARIABLE = 0,
+        VARIABLE = 0x0,
         #[doc = "Fixed latency"]
         FIXED = 0x01,
     }
@@ -1678,7 +1678,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum MatchMode {
         #[doc = "AND-match mode, SMF is set if all the unmasked bits received from the device match the corresponding bits in the match register."]
-        MATCHAND = 0,
+        MATCHAND = 0x0,
         #[doc = "OR-match mode, SMF is set if any of the unmasked bits received from the device matches its corresponding bit in the match register."]
         MATCHOR = 0x01,
     }
@@ -1708,7 +1708,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum MemType {
         #[doc = "Micron mode, D0/D1 ordering in DTR 8-data-bit mode. Regular-command protocol in Single-, Dual-, Quad- and Octal-SPI modes."]
-        MICRON = 0,
+        MICRON = 0x0,
         #[doc = "Macronix mode, D1/D0 ordering in DTR 8-data-bit mode. Regular-command protocol in Single-, Dual-, Quad- and Octal-SPI modes."]
         MACRONIX = 0x01,
         #[doc = "Standard mode"]
@@ -1748,7 +1748,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum PhaseMode {
         #[doc = "No alternate bytes"]
-        NONE = 0,
+        NONE = 0x0,
         #[doc = "Alternate bytes on a single line"]
         ONELINE = 0x01,
         #[doc = "Alternate bytes on two lines"]
@@ -1787,7 +1787,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum SampleShift {
         #[doc = "No shift"]
-        NONE = 0,
+        NONE = 0x0,
         #[doc = "1/2 cycle shift"]
         HALFCYCLE = 0x01,
     }
@@ -1817,7 +1817,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum SizeInBits {
         #[doc = "8-bit alternate bytes"]
-        _8BIT = 0,
+        _8BIT = 0x0,
         #[doc = "16-bit alternate bytes"]
         _16BIT = 0x01,
         #[doc = "24-bit alternate bytes"]
@@ -1852,7 +1852,7 @@ pub mod vals {
     pub struct Threshold(pub u8);
     impl Threshold {
         #[doc = "FTF is set if there are one or more free bytes available to be written to in the FIFO in Indirect-write mode, or if there are one or more valid bytes can be read from the FIFO in Indirect-read mode."]
-        pub const NEEDONEBYTE: Self = Self(0);
+        pub const NEEDONEBYTE: Self = Self(0x0);
         #[doc = "FTF is set if there are two or more free bytes available to be written to in the FIFO in Indirect‑write mode, or if there are two or more valid bytes can be read from the FIFO in Indirect-read mode."]
         pub const NEEDTWOBYTES: Self = Self(0x01);
         #[doc = "FTF is set if there are 32 free bytes available to be written to in the FIFO in Indirect-write mode, or if there are 32 valid bytes can be read from the FIFO in Indirect-read mode."]

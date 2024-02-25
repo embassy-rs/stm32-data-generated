@@ -22,32 +22,32 @@ impl Dbgmcu {
     #[doc = "Identity code"]
     #[inline(always)]
     pub const fn idc(self) -> crate::common::Reg<regs::Idc, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Configuration register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "APB3 peripheral freeze register"]
     #[inline(always)]
     pub const fn apb3fzr1(self) -> crate::common::Reg<regs::Apb3fzr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[doc = "APB1L peripheral freeze register"]
     #[inline(always)]
     pub const fn apb1lfzr1(self) -> crate::common::Reg<regs::Apb1lfzr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[doc = "APB2 peripheral freeze register"]
     #[inline(always)]
     pub const fn apb2fzr1(self) -> crate::common::Reg<regs::Apb2fzr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
     #[doc = "APB4 peripheral freeze register"]
     #[inline(always)]
     pub const fn apb4fzr1(self) -> crate::common::Reg<regs::Apb4fzr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
 }
 pub mod regs {

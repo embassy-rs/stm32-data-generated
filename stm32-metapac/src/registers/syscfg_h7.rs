@@ -10,7 +10,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "pmcr",
                 description: Some("peripheral mode configuration register"),
                 array: None,
-                byte_offset: 4,
+                byte_offset: 0x4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -21,7 +21,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "exticr",
                 description: Some("external interrupt configuration register"),
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
-                byte_offset: 8,
+                byte_offset: 0x8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "cccsr",
                 description: Some("compensation cell control/status register"),
                 array: None,
-                byte_offset: 32,
+                byte_offset: 0x20,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -43,7 +43,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ccvr",
                 description: Some("SYSCFG compensation cell value register"),
                 array: None,
-                byte_offset: 36,
+                byte_offset: 0x24,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -54,7 +54,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "cccr",
                 description: Some("SYSCFG compensation cell code register"),
                 array: None,
-                byte_offset: 40,
+                byte_offset: 0x28,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -65,7 +65,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "pkgr",
                 description: Some("SYSCFG package register"),
                 array: None,
-                byte_offset: 292,
+                byte_offset: 0x124,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -76,7 +76,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ur0",
                 description: Some("SYSCFG user register 0"),
                 array: None,
-                byte_offset: 768,
+                byte_offset: 0x300,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -87,7 +87,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ur2",
                 description: Some("SYSCFG user register 2"),
                 array: None,
-                byte_offset: 776,
+                byte_offset: 0x308,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -98,7 +98,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ur3",
                 description: Some("SYSCFG user register 3"),
                 array: None,
-                byte_offset: 780,
+                byte_offset: 0x30c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -109,7 +109,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ur4",
                 description: Some("SYSCFG user register 4"),
                 array: None,
-                byte_offset: 784,
+                byte_offset: 0x310,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -120,7 +120,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ur5",
                 description: Some("SYSCFG user register 5"),
                 array: None,
-                byte_offset: 788,
+                byte_offset: 0x314,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -131,7 +131,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ur6",
                 description: Some("SYSCFG user register 6"),
                 array: None,
-                byte_offset: 792,
+                byte_offset: 0x318,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -142,7 +142,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ur7",
                 description: Some("SYSCFG user register 7"),
                 array: None,
-                byte_offset: 796,
+                byte_offset: 0x31c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -153,7 +153,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ur8",
                 description: Some("SYSCFG user register 8"),
                 array: None,
-                byte_offset: 800,
+                byte_offset: 0x320,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -164,7 +164,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ur9",
                 description: Some("SYSCFG user register 9"),
                 array: None,
-                byte_offset: 804,
+                byte_offset: 0x324,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -175,7 +175,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ur10",
                 description: Some("SYSCFG user register 10"),
                 array: None,
-                byte_offset: 808,
+                byte_offset: 0x328,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -186,7 +186,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ur11",
                 description: Some("SYSCFG user register 11"),
                 array: None,
-                byte_offset: 812,
+                byte_offset: 0x32c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -197,7 +197,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ur12",
                 description: Some("SYSCFG user register 12"),
                 array: None,
-                byte_offset: 816,
+                byte_offset: 0x330,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -208,7 +208,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ur13",
                 description: Some("SYSCFG user register 13"),
                 array: None,
-                byte_offset: 820,
+                byte_offset: 0x334,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -219,7 +219,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ur14",
                 description: Some("SYSCFG user register 14"),
                 array: None,
-                byte_offset: 824,
+                byte_offset: 0x338,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -230,7 +230,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ur15",
                 description: Some("SYSCFG user register 15"),
                 array: None,
-                byte_offset: 828,
+                byte_offset: 0x33c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -241,7 +241,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ur16",
                 description: Some("SYSCFG user register 16"),
                 array: None,
-                byte_offset: 832,
+                byte_offset: 0x340,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -252,7 +252,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ur17",
                 description: Some("SYSCFG user register 17"),
                 array: None,
-                byte_offset: 836,
+                byte_offset: 0x344,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -263,7 +263,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ur18",
                 description: Some("SYSCFG user register 18"),
                 array: None,
-                byte_offset: 840,
+                byte_offset: 0x348,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,

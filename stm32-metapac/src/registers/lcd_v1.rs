@@ -11,7 +11,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "cr",
                     description: Some("control register"),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -22,7 +22,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "fcr",
                     description: Some("frame control register"),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -33,7 +33,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "sr",
                     description: Some("status register"),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -44,7 +44,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "clr",
                     description: Some("clear register"),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(Register {
                         access: Access::Write,
                         bit_size: 32,
@@ -55,7 +55,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ram_com",
                     description: Some("display memory"),
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 8 })),
-                    byte_offset: 20,
+                    byte_offset: 0x14,
                     inner: BlockItemInner::Block(BlockItemBlock { block: "RamCom" }),
                 },
             ],
@@ -69,7 +69,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "low",
                     description: Some("display memory low word"),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -80,7 +80,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "high",
                     description: Some("display memory high word"),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,

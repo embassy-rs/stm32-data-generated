@@ -15,7 +15,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "TAMP control register 1.",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "TAMP control register 2.",
                     ),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -49,7 +49,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "TAMP control register 3.",
                     ),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -66,7 +66,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "TAMP filter control register.",
                     ),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -83,7 +83,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "TAMP active tamper control register 1.",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -100,7 +100,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "TAMP active tamper seed register.",
                     ),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 0x14,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -115,7 +115,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "TAMP active tamper output register.",
                     ),
                     array: None,
-                    byte_offset: 24,
+                    byte_offset: 0x18,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -132,7 +132,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "TAMP active tamper control register 2.",
                     ),
                     array: None,
-                    byte_offset: 28,
+                    byte_offset: 0x1c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -149,7 +149,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "TAMP secure mode register.",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 0x20,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -166,7 +166,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "TAMP privilege mode control register.",
                     ),
                     array: None,
-                    byte_offset: 36,
+                    byte_offset: 0x24,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -183,7 +183,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "TAMP interrupt enable register.",
                     ),
                     array: None,
-                    byte_offset: 44,
+                    byte_offset: 0x2c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -200,7 +200,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "TAMP status register.",
                     ),
                     array: None,
-                    byte_offset: 48,
+                    byte_offset: 0x30,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -217,7 +217,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "TAMP non-secure masked interrupt status register.",
                     ),
                     array: None,
-                    byte_offset: 52,
+                    byte_offset: 0x34,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -234,7 +234,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "TAMP secure masked interrupt status register.",
                     ),
                     array: None,
-                    byte_offset: 56,
+                    byte_offset: 0x38,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -251,7 +251,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "TAMP status clear register.",
                     ),
                     array: None,
-                    byte_offset: 60,
+                    byte_offset: 0x3c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -268,7 +268,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "TAMP monotonic counter 1 register.",
                     ),
                     array: None,
-                    byte_offset: 64,
+                    byte_offset: 0x40,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -283,7 +283,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "TAMP option register.",
                     ),
                     array: None,
-                    byte_offset: 80,
+                    byte_offset: 0x50,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -300,7 +300,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "TAMP resources protection configuration register.",
                     ),
                     array: None,
-                    byte_offset: 84,
+                    byte_offset: 0x54,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -324,7 +324,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 256,
+                    byte_offset: 0x100,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,

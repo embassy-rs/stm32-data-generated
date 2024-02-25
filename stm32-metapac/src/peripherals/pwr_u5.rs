@@ -22,113 +22,113 @@ impl Pwr {
     #[doc = "control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "control register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "control register 3"]
     #[inline(always)]
     pub const fn cr3(self) -> crate::common::Reg<regs::Cr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "voltage scaling register"]
     #[inline(always)]
     pub const fn vosr(self) -> crate::common::Reg<regs::Vosr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "supply voltage monitoring control register"]
     #[inline(always)]
     pub const fn svmcr(self) -> crate::common::Reg<regs::Svmcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "wakeup control register 1"]
     #[inline(always)]
     pub const fn wucr1(self) -> crate::common::Reg<regs::Wucr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "wakeup control register 2"]
     #[inline(always)]
     pub const fn wucr2(self) -> crate::common::Reg<regs::Wucr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "wakeup control register 3"]
     #[inline(always)]
     pub const fn wucr3(self) -> crate::common::Reg<regs::Wucr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "Backup domain control register 1"]
     #[inline(always)]
     pub const fn bdcr1(self) -> crate::common::Reg<regs::Bdcr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "Backup domain control register 2"]
     #[inline(always)]
     pub const fn bdcr2(self) -> crate::common::Reg<regs::Bdcr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "disable Backup domain register"]
     #[inline(always)]
     pub const fn dbpcr(self) -> crate::common::Reg<regs::Dbpcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "USB Type-C™ and Power Delivery register"]
     #[inline(always)]
     pub const fn ucpdr(self) -> crate::common::Reg<regs::Ucpdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "security configuration register"]
     #[inline(always)]
     pub const fn seccfgr(self) -> crate::common::Reg<regs::Seccfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "privilege control register"]
     #[inline(always)]
     pub const fn privcfgr(self) -> crate::common::Reg<regs::Privcfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[inline(always)]
     pub const fn svmsr(self) -> crate::common::Reg<regs::Svmsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[doc = "Backup domain status register"]
     #[inline(always)]
     pub const fn bdsr(self) -> crate::common::Reg<regs::Bdsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[doc = "wakeup status register"]
     #[inline(always)]
     pub const fn wusr(self) -> crate::common::Reg<regs::Wusr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[doc = "wakeup status clear register"]
     #[inline(always)]
     pub const fn wuscr(self) -> crate::common::Reg<regs::Wuscr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[doc = "apply pull configuration register"]
     #[inline(always)]
     pub const fn apcr(self) -> crate::common::Reg<regs::Apcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
     #[doc = "Power Port pull-up control register"]
     #[inline(always)]
     pub const fn pucr(self, n: usize) -> crate::common::Reg<regs::Pcr, crate::common::RW> {
         assert!(n < 9usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(80usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize + n * 8usize) as _) }
     }
     #[doc = "Power Port pull-down control register"]
     #[inline(always)]
     pub const fn pdcr(self, n: usize) -> crate::common::Reg<regs::Pcr, crate::common::RW> {
         assert!(n < 9usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(84usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize + n * 8usize) as _) }
     }
 }
 pub mod regs {
@@ -1516,7 +1516,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Actvos {
         #[doc = "Range 4 (lowest power)"]
-        RANGE4 = 0,
+        RANGE4 = 0x0,
         #[doc = "Range 3"]
         RANGE3 = 0x01,
         #[doc = "Range 2"]
@@ -1550,7 +1550,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Flashfwu {
         #[doc = "Flash memory enters low-power mode in Stop 0 and Stop 1 modes (lower-power consumption)."]
-        LOWPOWER = 0,
+        LOWPOWER = 0x0,
         #[doc = "Flash memory remains in normal mode in Stop 0 and Stop 1 modes (faster wakeup time)."]
         NORMAL = 0x01,
     }
@@ -1580,7 +1580,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lpms {
         #[doc = "Stop 0 mode"]
-        STOP0 = 0,
+        STOP0 = 0x0,
         #[doc = "Stop 1 mode"]
         STOP1 = 0x01,
         #[doc = "Stop 2 mode"]
@@ -1618,7 +1618,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pds {
         #[doc = "Content retained in Stop modes"]
-        RETAINED = 0,
+        RETAINED = 0x0,
         #[doc = "Content lost in Stop modes"]
         LOST = 0x01,
     }
@@ -1648,7 +1648,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pvdls {
         #[doc = "VPVD0 around 2.0 V"]
-        V20 = 0,
+        V20 = 0x0,
         #[doc = "VPVD1 around 2.2 V"]
         V22 = 0x01,
         #[doc = "VPVD2 around 2.4 V"]
@@ -1690,7 +1690,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pvdo {
         #[doc = "VDD is equal or above the PVD threshold selected by PVDLS\\[2:0\\]."]
-        ABOVEOREQUAL = 0,
+        ABOVEOREQUAL = 0x0,
         #[doc = "VDD is below the PVD threshold selected by PVDLS\\[2:0\\]."]
         BELOW = 0x01,
     }
@@ -1720,7 +1720,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Regsel {
         #[doc = "LDO selected"]
-        LDO = 0,
+        LDO = 0x0,
         #[doc = "SMPS selected"]
         SMPS = 0x01,
     }
@@ -1750,7 +1750,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Sramfwu {
         #[doc = "SRAM4 enters low-power mode in Stop 0, 1 and 2 modes (source biasing for lower-power consumption)."]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "SRAM4 remains in normal mode in Stop 0, 1 and 2 modes (higher consumption but no SRAM4 wakeup time)."]
         B_0X1 = 0x01,
     }
@@ -1780,7 +1780,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Srampd {
         #[doc = "SRAM1 powered on"]
-        POWEREDON = 0,
+        POWEREDON = 0x0,
         #[doc = "SRAM1 powered off"]
         POWEREDOFF = 0x01,
     }
@@ -1810,7 +1810,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Temph {
         #[doc = "Temperature < high threshold"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Temperature ≥ high threshold"]
         B_0X1 = 0x01,
     }
@@ -1840,7 +1840,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Templ {
         #[doc = "Temperature > low threshold"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Temperature ≤ low threshold"]
         B_0X1 = 0x01,
     }
@@ -1870,7 +1870,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Vbath {
         #[doc = "Backup domain voltage level < high threshold"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Backup domain voltage level ≥ high threshold"]
         B_0X1 = 0x01,
     }
@@ -1900,7 +1900,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Vbe {
         #[doc = "VBAT battery charging disabled"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "VBAT battery charging enabled"]
         B_0X1 = 0x01,
     }
@@ -1930,7 +1930,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Vbrs {
         #[doc = "Charge VBAT through a 5 kΩ resistor"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Charge VBAT through a 1.5 kΩ resistor"]
         B_0X1 = 0x01,
     }
@@ -1960,7 +1960,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Vos {
         #[doc = "Range 4 (lowest power)"]
-        RANGE4 = 0,
+        RANGE4 = 0x0,
         #[doc = "Range 3"]
         RANGE3 = 0x01,
         #[doc = "Range 2"]
@@ -1994,7 +1994,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Wupp {
         #[doc = "Detection on high level (rising edge)"]
-        HIGH = 0,
+        HIGH = 0x0,
         #[doc = "Detection on low level (falling edge)"]
         LOW = 0x01,
     }
@@ -2024,7 +2024,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Wusel {
         #[doc = "WKUP7_0"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "WKUP7_1"]
         B_0X1 = 0x01,
         #[doc = "WKUP7_2"]

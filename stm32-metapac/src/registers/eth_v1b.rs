@@ -15,7 +15,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet: media access control (MAC)",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Block(
                         BlockItemBlock {
                             block: "EthernetMac",
@@ -28,7 +28,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet: Precision Time Protocol (PTP)",
                     ),
                     array: None,
-                    byte_offset: 1792,
+                    byte_offset: 0x700,
                     inner: BlockItemInner::Block(
                         BlockItemBlock {
                             block: "EthernetPtp",
@@ -41,7 +41,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet: DMA mode register (DMA)",
                     ),
                     array: None,
-                    byte_offset: 4096,
+                    byte_offset: 0x1000,
                     inner: BlockItemInner::Block(
                         BlockItemBlock {
                             block: "EthernetDma",
@@ -63,7 +63,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet DMA bus mode register",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -80,7 +80,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet DMA transmit poll demand register",
                     ),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -97,7 +97,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "EHERNET DMA receive poll demand register",
                     ),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -114,7 +114,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet DMA receive descriptor list address register",
                     ),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -131,7 +131,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet DMA transmit descriptor list address register",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -148,7 +148,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet DMA status register",
                     ),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 0x14,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -165,7 +165,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet DMA operation mode register",
                     ),
                     array: None,
-                    byte_offset: 24,
+                    byte_offset: 0x18,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -182,7 +182,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet DMA interrupt enable register",
                     ),
                     array: None,
-                    byte_offset: 28,
+                    byte_offset: 0x1c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -199,7 +199,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet DMA missed frame and buffer overflow counter register",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 0x20,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -216,7 +216,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet DMA receive status watchdog timer register",
                     ),
                     array: None,
-                    byte_offset: 36,
+                    byte_offset: 0x24,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -233,7 +233,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet DMA current host transmit descriptor register",
                     ),
                     array: None,
-                    byte_offset: 72,
+                    byte_offset: 0x48,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -250,7 +250,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet DMA current host receive descriptor register",
                     ),
                     array: None,
-                    byte_offset: 76,
+                    byte_offset: 0x4c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -267,7 +267,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet DMA current host transmit buffer address register",
                     ),
                     array: None,
-                    byte_offset: 80,
+                    byte_offset: 0x50,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -284,7 +284,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet DMA current host receive buffer address register",
                     ),
                     array: None,
-                    byte_offset: 84,
+                    byte_offset: 0x54,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -310,7 +310,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MAC configuration register",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -327,7 +327,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MAC frame filter register",
                     ),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -344,7 +344,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MAC hash table high register",
                     ),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -361,7 +361,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MAC hash table low register",
                     ),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -378,7 +378,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MAC MII address register",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -395,7 +395,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MAC MII data register",
                     ),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 0x14,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -412,7 +412,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MAC flow control register",
                     ),
                     array: None,
-                    byte_offset: 24,
+                    byte_offset: 0x18,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -429,7 +429,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MAC VLAN tag register",
                     ),
                     array: None,
-                    byte_offset: 28,
+                    byte_offset: 0x1c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -446,7 +446,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MAC remote wakeup frame filter register",
                     ),
                     array: None,
-                    byte_offset: 40,
+                    byte_offset: 0x28,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -461,7 +461,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MAC PMT control and status register",
                     ),
                     array: None,
-                    byte_offset: 44,
+                    byte_offset: 0x2c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -478,7 +478,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MAC debug register",
                     ),
                     array: None,
-                    byte_offset: 52,
+                    byte_offset: 0x34,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -495,7 +495,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MAC interrupt status register",
                     ),
                     array: None,
-                    byte_offset: 56,
+                    byte_offset: 0x38,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -512,7 +512,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MAC interrupt mask register",
                     ),
                     array: None,
-                    byte_offset: 60,
+                    byte_offset: 0x3c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -529,7 +529,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MAC address 0 high register",
                     ),
                     array: None,
-                    byte_offset: 64,
+                    byte_offset: 0x40,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -546,7 +546,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MAC address 0 low register",
                     ),
                     array: None,
-                    byte_offset: 68,
+                    byte_offset: 0x44,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -570,7 +570,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 72,
+                    byte_offset: 0x48,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -594,7 +594,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 76,
+                    byte_offset: 0x4c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -611,7 +611,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MMC control register",
                     ),
                     array: None,
-                    byte_offset: 256,
+                    byte_offset: 0x100,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -628,7 +628,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MMC receive interrupt register",
                     ),
                     array: None,
-                    byte_offset: 260,
+                    byte_offset: 0x104,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -645,7 +645,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MMC transmit interrupt register",
                     ),
                     array: None,
-                    byte_offset: 264,
+                    byte_offset: 0x108,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -662,7 +662,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MMC receive interrupt mask register",
                     ),
                     array: None,
-                    byte_offset: 268,
+                    byte_offset: 0x10c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -679,7 +679,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MMC transmit interrupt mask register",
                     ),
                     array: None,
-                    byte_offset: 272,
+                    byte_offset: 0x110,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -696,7 +696,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MMC transmitted good frames after a single collision counter",
                     ),
                     array: None,
-                    byte_offset: 332,
+                    byte_offset: 0x14c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -713,7 +713,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MMC transmitted good frames after more than a single collision",
                     ),
                     array: None,
-                    byte_offset: 336,
+                    byte_offset: 0x150,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -730,7 +730,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MMC transmitted good frames counter register",
                     ),
                     array: None,
-                    byte_offset: 360,
+                    byte_offset: 0x168,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -747,7 +747,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MMC received frames with CRC error counter register",
                     ),
                     array: None,
-                    byte_offset: 404,
+                    byte_offset: 0x194,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -764,7 +764,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet MMC received frames with alignment error counter register",
                     ),
                     array: None,
-                    byte_offset: 408,
+                    byte_offset: 0x198,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -781,7 +781,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "MMC received good unicast frames counter register",
                     ),
                     array: None,
-                    byte_offset: 452,
+                    byte_offset: 0x1c4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -807,7 +807,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet PTP time stamp control register",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -824,7 +824,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet PTP subsecond increment register",
                     ),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -841,7 +841,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet PTP time stamp high register",
                     ),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -858,7 +858,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet PTP time stamp low register",
                     ),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -875,7 +875,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet PTP time stamp high update register",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -892,7 +892,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet PTP time stamp low update register",
                     ),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 0x14,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -909,7 +909,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet PTP time stamp addend register",
                     ),
                     array: None,
-                    byte_offset: 24,
+                    byte_offset: 0x18,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -926,7 +926,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet PTP target time high register",
                     ),
                     array: None,
-                    byte_offset: 28,
+                    byte_offset: 0x1c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -943,7 +943,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet PTP target time low register",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 0x20,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -960,7 +960,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet PTP time stamp status register",
                     ),
                     array: None,
-                    byte_offset: 40,
+                    byte_offset: 0x28,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -977,7 +977,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Ethernet PTP PPS control register",
                     ),
                     array: None,
-                    byte_offset: 44,
+                    byte_offset: 0x2c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,

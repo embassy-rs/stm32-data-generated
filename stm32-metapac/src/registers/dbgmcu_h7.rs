@@ -10,7 +10,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "idc",
                 description: Some("Identity code"),
                 array: None,
-                byte_offset: 0,
+                byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -21,7 +21,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "cr",
                 description: Some("Configuration register"),
                 array: None,
-                byte_offset: 4,
+                byte_offset: 0x4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "apb3fzr1",
                 description: Some("APB3 peripheral freeze register"),
                 array: None,
-                byte_offset: 52,
+                byte_offset: 0x34,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -43,7 +43,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "apb1lfzr1",
                 description: Some("APB1L peripheral freeze register"),
                 array: None,
-                byte_offset: 60,
+                byte_offset: 0x3c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -54,7 +54,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "apb2fzr1",
                 description: Some("APB2 peripheral freeze register"),
                 array: None,
-                byte_offset: 76,
+                byte_offset: 0x4c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -65,7 +65,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "apb4fzr1",
                 description: Some("APB4 peripheral freeze register"),
                 array: None,
-                byte_offset: 84,
+                byte_offset: 0x54,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,

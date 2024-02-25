@@ -23,6 +23,6 @@ impl Uid {
     #[inline(always)]
     pub const fn uid(self, n: usize) -> crate::common::Reg<u32, crate::common::R> {
         assert!(n < 3usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize + n * 4usize) as _) }
     }
 }

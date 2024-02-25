@@ -23,19 +23,19 @@ impl Dma {
     #[inline(always)]
     pub const fn isr(self, n: usize) -> crate::common::Reg<regs::Ixr, crate::common::R> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize + n * 4usize) as _) }
     }
     #[doc = "low interrupt flag clear register"]
     #[inline(always)]
     pub const fn ifcr(self, n: usize) -> crate::common::Reg<regs::Ixr, crate::common::W> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize + n * 4usize) as _) }
     }
     #[doc = "Stream cluster: S?CR, S?NDTR, S?M0AR, S?M1AR and S?FCR registers"]
     #[inline(always)]
     pub const fn st(self, n: usize) -> St {
         assert!(n < 8usize);
-        unsafe { St::from_ptr(self.ptr.add(16usize + n * 24usize) as _) }
+        unsafe { St::from_ptr(self.ptr.add(0x10usize + n * 24usize) as _) }
     }
 }
 #[doc = "Stream cluster: S?CR, S?NDTR, S?M0AR, S?M1AR and S?FCR registers"]
@@ -57,32 +57,32 @@ impl St {
     #[doc = "stream x configuration register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "stream x number of data register"]
     #[inline(always)]
     pub const fn ndtr(self) -> crate::common::Reg<regs::Ndtr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "stream x peripheral address register"]
     #[inline(always)]
     pub const fn par(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "stream x memory 0 address register"]
     #[inline(always)]
     pub const fn m0ar(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "stream x memory 1 address register"]
     #[inline(always)]
     pub const fn m1ar(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "stream x FIFO control register"]
     #[inline(always)]
     pub const fn fcr(self) -> crate::common::Reg<regs::Fcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
 }
 pub mod regs {
@@ -479,7 +479,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Burst {
         #[doc = "Single transfer"]
-        SINGLE = 0,
+        SINGLE = 0x0,
         #[doc = "Incremental burst of 4 beats"]
         INCR4 = 0x01,
         #[doc = "Incremental burst of 8 beats"]
@@ -513,7 +513,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ct {
         #[doc = "The current target memory is Memory 0"]
-        MEMORY0 = 0,
+        MEMORY0 = 0x0,
         #[doc = "The current target memory is Memory 1"]
         MEMORY1 = 0x01,
     }
@@ -543,7 +543,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dir {
         #[doc = "Peripheral-to-memory"]
-        PERIPHERALTOMEMORY = 0,
+        PERIPHERALTOMEMORY = 0x0,
         #[doc = "Memory-to-peripheral"]
         MEMORYTOPERIPHERAL = 0x01,
         #[doc = "Memory-to-memory"]
@@ -576,7 +576,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dmdis {
         #[doc = "Direct mode is enabled"]
-        ENABLED = 0,
+        ENABLED = 0x0,
         #[doc = "Direct mode is disabled"]
         DISABLED = 0x01,
     }
@@ -606,7 +606,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fs {
         #[doc = "0 < fifo_level < 1/4"]
-        QUARTER1 = 0,
+        QUARTER1 = 0x0,
         #[doc = "1/4 <= fifo_level < 1/2"]
         QUARTER2 = 0x01,
         #[doc = "1/2 <= fifo_level < 3/4"]
@@ -646,7 +646,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fth {
         #[doc = "1/4 full FIFO"]
-        QUARTER = 0,
+        QUARTER = 0x0,
         #[doc = "1/2 full FIFO"]
         HALF = 0x01,
         #[doc = "3/4 full FIFO"]
@@ -680,7 +680,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pfctrl {
         #[doc = "The DMA is the flow controller"]
-        DMA = 0,
+        DMA = 0x0,
         #[doc = "The peripheral is the flow controller"]
         PERIPHERAL = 0x01,
     }
@@ -710,7 +710,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pincos {
         #[doc = "The offset size for the peripheral address calculation is linked to the PSIZE"]
-        PSIZE = 0,
+        PSIZE = 0x0,
         #[doc = "The offset size for the peripheral address calculation is fixed to 4 (32-bit alignment)"]
         FIXED4 = 0x01,
     }
@@ -740,7 +740,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pl {
         #[doc = "Low"]
-        LOW = 0,
+        LOW = 0x0,
         #[doc = "Medium"]
         MEDIUM = 0x01,
         #[doc = "High"]
@@ -774,7 +774,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Size {
         #[doc = "Byte (8-bit)"]
-        BITS8 = 0,
+        BITS8 = 0x0,
         #[doc = "Half-word (16-bit)"]
         BITS16 = 0x01,
         #[doc = "Word (32-bit)"]

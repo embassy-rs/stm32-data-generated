@@ -8,7 +8,7 @@ pub static METADATA: Metadata = Metadata {
         MemoryRegion {
             name: "BANK_1",
             kind: MemoryRegionKind::Flash,
-            address: 134217728,
+            address: 0x8000000,
             size: 2097152,
             settings: Some(FlashSettings {
                 erase_size: 16384,
@@ -19,7 +19,7 @@ pub static METADATA: Metadata = Metadata {
         MemoryRegion {
             name: "OTP",
             kind: MemoryRegionKind::Flash,
-            address: 200933376,
+            address: 0xbfa0000,
             size: 512,
             settings: Some(FlashSettings {
                 erase_size: 512,
@@ -30,14 +30,14 @@ pub static METADATA: Metadata = Metadata {
         MemoryRegion {
             name: "SRAM",
             kind: MemoryRegionKind::Ram,
-            address: 536870912,
+            address: 0x20000000,
             size: 32768,
             settings: None,
         },
         MemoryRegion {
             name: "SRAM2",
             kind: MemoryRegionKind::Ram,
-            address: 537657344,
+            address: 0x200c0000,
             size: 0,
             settings: None,
         },

@@ -15,7 +15,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN core release register",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN endian register",
                     ),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -49,7 +49,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN data bit timing and prescaler register",
                     ),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -66,7 +66,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN test register",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -83,7 +83,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN RAM watchdog register",
                     ),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 0x14,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -100,7 +100,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN CC control register",
                     ),
                     array: None,
-                    byte_offset: 24,
+                    byte_offset: 0x18,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -117,7 +117,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN nominal bit timing and prescaler register",
                     ),
                     array: None,
-                    byte_offset: 28,
+                    byte_offset: 0x1c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -134,7 +134,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN timestamp counter configuration register",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 0x20,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -151,7 +151,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN timestamp counter value register",
                     ),
                     array: None,
-                    byte_offset: 36,
+                    byte_offset: 0x24,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -168,7 +168,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN timeout counter configuration register",
                     ),
                     array: None,
-                    byte_offset: 40,
+                    byte_offset: 0x28,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -185,7 +185,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN timeout counter value register",
                     ),
                     array: None,
-                    byte_offset: 44,
+                    byte_offset: 0x2c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -202,7 +202,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN error counter register",
                     ),
                     array: None,
-                    byte_offset: 64,
+                    byte_offset: 0x40,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -219,7 +219,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN protocol status register",
                     ),
                     array: None,
-                    byte_offset: 68,
+                    byte_offset: 0x44,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -236,7 +236,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN transmitter delay compensation register",
                     ),
                     array: None,
-                    byte_offset: 72,
+                    byte_offset: 0x48,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -253,7 +253,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN interrupt register",
                     ),
                     array: None,
-                    byte_offset: 80,
+                    byte_offset: 0x50,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -270,7 +270,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN interrupt enable register",
                     ),
                     array: None,
-                    byte_offset: 84,
+                    byte_offset: 0x54,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -287,7 +287,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN interrupt line select register",
                     ),
                     array: None,
-                    byte_offset: 88,
+                    byte_offset: 0x58,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -304,7 +304,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN interrupt line enable register",
                     ),
                     array: None,
-                    byte_offset: 92,
+                    byte_offset: 0x5c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -321,7 +321,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN global filter configuration register",
                     ),
                     array: None,
-                    byte_offset: 128,
+                    byte_offset: 0x80,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -338,7 +338,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN extended ID and mask register",
                     ),
                     array: None,
-                    byte_offset: 132,
+                    byte_offset: 0x84,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -355,7 +355,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN high-priority message status register",
                     ),
                     array: None,
-                    byte_offset: 136,
+                    byte_offset: 0x88,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -381,7 +381,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 144,
+                    byte_offset: 0x90,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -407,7 +407,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 148,
+                    byte_offset: 0x94,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -424,7 +424,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN Tx buffer configuration register",
                     ),
                     array: None,
-                    byte_offset: 192,
+                    byte_offset: 0xc0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -441,7 +441,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN Tx FIFO/queue status register",
                     ),
                     array: None,
-                    byte_offset: 196,
+                    byte_offset: 0xc4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -458,7 +458,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN Tx buffer request pending register",
                     ),
                     array: None,
-                    byte_offset: 200,
+                    byte_offset: 0xc8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -475,7 +475,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN Tx buffer add request register",
                     ),
                     array: None,
-                    byte_offset: 204,
+                    byte_offset: 0xcc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -492,7 +492,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN Tx buffer cancellation request register",
                     ),
                     array: None,
-                    byte_offset: 208,
+                    byte_offset: 0xd0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -509,7 +509,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN Tx buffer transmission occurred register",
                     ),
                     array: None,
-                    byte_offset: 212,
+                    byte_offset: 0xd4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -526,7 +526,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN Tx buffer cancellation finished register",
                     ),
                     array: None,
-                    byte_offset: 216,
+                    byte_offset: 0xd8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -543,7 +543,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN Tx buffer transmission interrupt enable register",
                     ),
                     array: None,
-                    byte_offset: 220,
+                    byte_offset: 0xdc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -560,7 +560,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN Tx buffer cancellation finished interrupt enable register",
                     ),
                     array: None,
-                    byte_offset: 224,
+                    byte_offset: 0xe0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -577,7 +577,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN Tx event FIFO status register",
                     ),
                     array: None,
-                    byte_offset: 228,
+                    byte_offset: 0xe4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -594,7 +594,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN Tx event FIFO acknowledge register",
                     ),
                     array: None,
-                    byte_offset: 232,
+                    byte_offset: 0xe8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -611,7 +611,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FDCAN CFG clock divider register",
                     ),
                     array: None,
-                    byte_offset: 256,
+                    byte_offset: 0x100,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,

@@ -22,23 +22,23 @@ impl Afio {
     #[doc = "Event Control Register (AFIO_EVCR)"]
     #[inline(always)]
     pub const fn evcr(self) -> crate::common::Reg<regs::Evcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "AF remap and debug I/O configuration register (AFIO_MAPR)"]
     #[inline(always)]
     pub const fn mapr(self) -> crate::common::Reg<regs::Mapr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "External interrupt configuration register 1 (AFIO_EXTICR1)"]
     #[inline(always)]
     pub const fn exticr(self, n: usize) -> crate::common::Reg<regs::Exticr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize + n * 4usize) as _) }
     }
     #[doc = "AF remap and debug I/O configuration register"]
     #[inline(always)]
     pub const fn mapr2(self) -> crate::common::Reg<regs::Mapr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
 }
 pub mod regs {

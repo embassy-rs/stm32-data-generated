@@ -22,40 +22,40 @@ impl Gfxmmu {
     #[doc = "GFXMMU configuration register."]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "GFXMMU status register."]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "GFXMMU flag clear register."]
     #[inline(always)]
     pub const fn fcr(self) -> crate::common::Reg<regs::Fcr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "GFXMMU default value register."]
     #[inline(always)]
     pub const fn dvr(self) -> crate::common::Reg<regs::Dvr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "GFXMMU buffer 0 configuration register."]
     #[inline(always)]
     pub const fn bcr(self, n: usize) -> crate::common::Reg<regs::Bcr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize + n * 4usize) as _) }
     }
     #[doc = "GFXMMU LUT entry 0 low."]
     #[inline(always)]
     pub const fn lutl(self, n: usize) -> crate::common::Reg<regs::Lutl, crate::common::RW> {
         assert!(n < 1024usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4096usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1000usize + n * 8usize) as _) }
     }
     #[doc = "GFXMMU LUT entry 0 high."]
     #[inline(always)]
     pub const fn luth(self, n: usize) -> crate::common::Reg<regs::Luth, crate::common::RW> {
         assert!(n < 1024usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4100usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1004usize + n * 8usize) as _) }
     }
 }
 pub mod regs {
@@ -319,7 +319,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Bm192 {
         #[doc = "256 blocks per line."]
-        _256BLOCKSPERLINE = 0,
+        _256BLOCKSPERLINE = 0x0,
         #[doc = "192 blocks per line."]
         _192BLOCKSPERLINE = 0x01,
     }

@@ -23,32 +23,32 @@ impl Gpio {
     #[inline(always)]
     pub const fn cr(self, n: usize) -> crate::common::Reg<regs::Cr, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize + n * 4usize) as _) }
     }
     #[doc = "Port input data register (GPIOn_IDR)"]
     #[inline(always)]
     pub const fn idr(self) -> crate::common::Reg<regs::Idr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Port output data register (GPIOn_ODR)"]
     #[inline(always)]
     pub const fn odr(self) -> crate::common::Reg<regs::Odr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Port bit set/reset register (GPIOn_BSRR)"]
     #[inline(always)]
     pub const fn bsrr(self) -> crate::common::Reg<regs::Bsrr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Port bit reset register (GPIOn_BRR)"]
     #[inline(always)]
     pub const fn brr(self) -> crate::common::Reg<regs::Brr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Port configuration lock register"]
     #[inline(always)]
     pub const fn lckr(self) -> crate::common::Reg<regs::Lckr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
 }
 pub mod regs {
@@ -276,7 +276,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum CnfIn {
         #[doc = "Analog mode"]
-        ANALOG = 0,
+        ANALOG = 0x0,
         #[doc = "Floating input (reset state)"]
         FLOATING = 0x01,
         #[doc = "Input with pull-up/pull-down"]
@@ -309,7 +309,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum CnfOut {
         #[doc = "Push-Pull mode"]
-        PUSHPULL = 0,
+        PUSHPULL = 0x0,
         #[doc = "Open Drain-Mode"]
         OPENDRAIN = 0x01,
         #[doc = "Alternate Function Push-Pull Mode"]
@@ -343,7 +343,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Idr {
         #[doc = "Input is logic low"]
-        LOW = 0,
+        LOW = 0x0,
         #[doc = "Input is logic high"]
         HIGH = 0x01,
     }
@@ -373,7 +373,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mode {
         #[doc = "Input mode (reset state)"]
-        INPUT = 0,
+        INPUT = 0x0,
         #[doc = "Output mode 10 MHz"]
         OUTPUT10MHZ = 0x01,
         #[doc = "Output mode 2 MHz"]
@@ -407,7 +407,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Odr {
         #[doc = "Set output to logic low"]
-        LOW = 0,
+        LOW = 0x0,
         #[doc = "Set output to logic high"]
         HIGH = 0x01,
     }

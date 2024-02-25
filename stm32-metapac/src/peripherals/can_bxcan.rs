@@ -22,81 +22,81 @@ impl Can {
     #[doc = "master control register"]
     #[inline(always)]
     pub const fn mcr(self) -> crate::common::Reg<regs::Mcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "master status register"]
     #[inline(always)]
     pub const fn msr(self) -> crate::common::Reg<regs::Msr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "transmit status register"]
     #[inline(always)]
     pub const fn tsr(self) -> crate::common::Reg<regs::Tsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "receive FIFO 0 register"]
     #[inline(always)]
     pub const fn rfr(self, n: usize) -> crate::common::Reg<regs::Rfr, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize + n * 4usize) as _) }
     }
     #[doc = "interrupt enable register"]
     #[inline(always)]
     pub const fn ier(self) -> crate::common::Reg<regs::Ier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "error status register"]
     #[inline(always)]
     pub const fn esr(self) -> crate::common::Reg<regs::Esr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "bit timing register"]
     #[inline(always)]
     pub const fn btr(self) -> crate::common::Reg<regs::Btr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "CAN Transmit cluster"]
     #[inline(always)]
     pub const fn tx(self, n: usize) -> Tx {
         assert!(n < 3usize);
-        unsafe { Tx::from_ptr(self.ptr.add(384usize + n * 16usize) as _) }
+        unsafe { Tx::from_ptr(self.ptr.add(0x0180usize + n * 16usize) as _) }
     }
     #[doc = "CAN Receive cluster"]
     #[inline(always)]
     pub const fn rx(self, n: usize) -> Rx {
         assert!(n < 2usize);
-        unsafe { Rx::from_ptr(self.ptr.add(432usize + n * 16usize) as _) }
+        unsafe { Rx::from_ptr(self.ptr.add(0x01b0usize + n * 16usize) as _) }
     }
     #[doc = "filter master register"]
     #[inline(always)]
     pub const fn fmr(self) -> crate::common::Reg<regs::Fmr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(512usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize) as _) }
     }
     #[doc = "filter mode register"]
     #[inline(always)]
     pub const fn fm1r(self) -> crate::common::Reg<regs::Fm1r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(516usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0204usize) as _) }
     }
     #[doc = "filter scale register"]
     #[inline(always)]
     pub const fn fs1r(self) -> crate::common::Reg<regs::Fs1r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(524usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x020cusize) as _) }
     }
     #[doc = "filter FIFO assignment register"]
     #[inline(always)]
     pub const fn ffa1r(self) -> crate::common::Reg<regs::Ffa1r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(532usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0214usize) as _) }
     }
     #[doc = "filter activation register"]
     #[inline(always)]
     pub const fn fa1r(self) -> crate::common::Reg<regs::Fa1r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(540usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x021cusize) as _) }
     }
     #[doc = "CAN Filter Bank cluster"]
     #[inline(always)]
     pub const fn fb(self, n: usize) -> Fb {
         assert!(n < 28usize);
-        unsafe { Fb::from_ptr(self.ptr.add(576usize + n * 8usize) as _) }
+        unsafe { Fb::from_ptr(self.ptr.add(0x0240usize + n * 8usize) as _) }
     }
 }
 #[doc = "CAN Filter Bank cluster"]
@@ -118,12 +118,12 @@ impl Fb {
     #[doc = "Filter bank 0 register 1"]
     #[inline(always)]
     pub const fn fr1(self) -> crate::common::Reg<regs::Fr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Filter bank 0 register 2"]
     #[inline(always)]
     pub const fn fr2(self) -> crate::common::Reg<regs::Fr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
 }
 #[doc = "CAN Receive cluster"]
@@ -145,22 +145,22 @@ impl Rx {
     #[doc = "receive FIFO mailbox identifier register"]
     #[inline(always)]
     pub const fn rir(self) -> crate::common::Reg<regs::Rir, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "mailbox data high register"]
     #[inline(always)]
     pub const fn rdtr(self) -> crate::common::Reg<regs::Rdtr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "mailbox data high register"]
     #[inline(always)]
     pub const fn rdlr(self) -> crate::common::Reg<regs::Rdlr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "receive FIFO mailbox data high register"]
     #[inline(always)]
     pub const fn rdhr(self) -> crate::common::Reg<regs::Rdhr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
 }
 #[doc = "CAN Transmit cluster"]
@@ -182,22 +182,22 @@ impl Tx {
     #[doc = "TX mailbox identifier register"]
     #[inline(always)]
     pub const fn tir(self) -> crate::common::Reg<regs::Tir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "mailbox data length control and time stamp register"]
     #[inline(always)]
     pub const fn tdtr(self) -> crate::common::Reg<regs::Tdtr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "mailbox data low register"]
     #[inline(always)]
     pub const fn tdlr(self) -> crate::common::Reg<regs::Tdlr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "mailbox data high register"]
     #[inline(always)]
     pub const fn tdhr(self) -> crate::common::Reg<regs::Tdhr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
 }
 pub mod regs {
@@ -1435,7 +1435,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ide {
         #[doc = "Standard identifier"]
-        STANDARD = 0,
+        STANDARD = 0x0,
         #[doc = "Extended identifier"]
         EXTENDED = 0x01,
     }
@@ -1465,7 +1465,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lec {
         #[doc = "No Error"]
-        NOERROR = 0,
+        NOERROR = 0x0,
         #[doc = "Stuff Error"]
         STUFF = 0x01,
         #[doc = "Form Error"]
@@ -1507,7 +1507,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rtr {
         #[doc = "Data frame"]
-        DATA = 0,
+        DATA = 0x0,
         #[doc = "Remote frame"]
         REMOTE = 0x01,
     }
@@ -1537,7 +1537,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Silm {
         #[doc = "Normal operation"]
-        NORMAL = 0,
+        NORMAL = 0x0,
         #[doc = "Silent Mode"]
         SILENT = 0x01,
     }

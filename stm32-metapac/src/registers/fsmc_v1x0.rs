@@ -10,7 +10,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "bcr",
                 description: Some("SRAM/NOR-Flash chip-select control register 1-4"),
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 8 })),
-                byte_offset: 0,
+                byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -21,7 +21,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "btr",
                 description: Some("SRAM/NOR-Flash chip-select timing register 1-4"),
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 8 })),
-                byte_offset: 4,
+                byte_offset: 0x4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "bwtr",
                 description: Some("SRAM/NOR-Flash write timing registers 1-4"),
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 8 })),
-                byte_offset: 260,
+                byte_offset: 0x104,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,

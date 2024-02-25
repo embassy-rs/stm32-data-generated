@@ -22,7 +22,7 @@ impl Comp {
     #[doc = "Comparator control and status register."]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
 }
 pub mod regs {
@@ -164,7 +164,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Blanksel {
-        NONE = 0,
+        NONE = 0x0,
         #[doc = "TIM1 OC4"]
         TIM1OC4 = 0x01,
         #[doc = "TIM1 OC5"]
@@ -227,7 +227,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Hyst {
-        NONE = 0,
+        NONE = 0x0,
         LOW = 0x01,
         MEDIUM = 0x02,
         HIGH = 0x03,
@@ -257,7 +257,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Polarity {
-        NONINVERTED = 0,
+        NONINVERTED = 0x0,
         INVERTED = 0x01,
     }
     impl Polarity {
@@ -285,7 +285,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pwrmode {
-        HIGHSPEED = 0,
+        HIGHSPEED = 0x0,
         MEDIUMSPEED = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,

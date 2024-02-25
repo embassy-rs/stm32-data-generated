@@ -22,72 +22,72 @@ impl Bank {
     #[doc = "FLASH key register for bank 1"]
     #[inline(always)]
     pub const fn keyr(self) -> crate::common::Reg<u32, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "FLASH control register for bank 1"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "FLASH status register for bank 1"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "FLASH clear control register for bank 1"]
     #[inline(always)]
     pub const fn ccr(self) -> crate::common::Reg<regs::Ccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "FLASH protection address for bank 1"]
     #[inline(always)]
     pub const fn prar_cur(self) -> crate::common::Reg<regs::PrarCur, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "FLASH protection address for bank 1"]
     #[inline(always)]
     pub const fn prar_prg(self) -> crate::common::Reg<regs::PrarPrg, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "FLASH secure address for bank 1"]
     #[inline(always)]
     pub const fn scar_cur(self) -> crate::common::Reg<regs::ScarCur, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "FLASH secure address for bank 1"]
     #[inline(always)]
     pub const fn scar_prg(self) -> crate::common::Reg<regs::ScarPrg, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "FLASH write sector protection for bank 1"]
     #[inline(always)]
     pub const fn wpsn_curr(self) -> crate::common::Reg<regs::WpsnCurr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[doc = "FLASH write sector protection for bank 1"]
     #[inline(always)]
     pub const fn wpsn_prgr(self) -> crate::common::Reg<regs::WpsnPrgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[doc = "FLASH CRC control register for bank 1"]
     #[inline(always)]
     pub const fn crccr(self) -> crate::common::Reg<regs::Crccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
     #[doc = "FLASH CRC start address register for bank 1"]
     #[inline(always)]
     pub const fn crcsaddr(self) -> crate::common::Reg<regs::Crcsaddr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[doc = "FLASH CRC end address register for bank 1"]
     #[inline(always)]
     pub const fn crceaddr(self) -> crate::common::Reg<regs::Crceaddr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[doc = "FLASH ECC fail address for bank 1"]
     #[inline(always)]
     pub const fn far(self) -> crate::common::Reg<regs::Far, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(92usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
     }
 }
 #[doc = "Flash"]
@@ -109,53 +109,53 @@ impl Flash {
     #[doc = "Access control register"]
     #[inline(always)]
     pub const fn acr(self) -> crate::common::Reg<regs::Acr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Cluster BANK%s, containing KEYR?, CR?, SR?, CCR?, PRAR_CUR?, PRAR_PRG?, SCAR_CUR?, SCAR_PRG?, WPSN_CUR?R, WPSN_PRG?R, CRCCR?, CRCSADD?R, CRCEADD?R, ECC_FA?R"]
     #[inline(always)]
     pub const fn bank(self, n: usize) -> Bank {
         assert!(n < 2usize);
-        unsafe { Bank::from_ptr(self.ptr.add(4usize + n * 256usize) as _) }
+        unsafe { Bank::from_ptr(self.ptr.add(0x04usize + n * 256usize) as _) }
     }
     #[doc = "FLASH option key register"]
     #[inline(always)]
     pub const fn optkeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "FLASH option control register"]
     #[inline(always)]
     pub const fn optcr(self) -> crate::common::Reg<regs::Optcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "FLASH option status register"]
     #[inline(always)]
     pub const fn optsr_cur(self) -> crate::common::Reg<regs::OptsrCur, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "FLASH option status register"]
     #[inline(always)]
     pub const fn optsr_prg(self) -> crate::common::Reg<regs::OptsrPrg, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "FLASH option clear control register"]
     #[inline(always)]
     pub const fn optccr(self) -> crate::common::Reg<regs::Optccr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "FLASH register with boot address"]
     #[inline(always)]
     pub const fn boot_curr(self) -> crate::common::Reg<regs::BootCurr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[doc = "FLASH register with boot address"]
     #[inline(always)]
     pub const fn boot_prgr(self) -> crate::common::Reg<regs::BootPrgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[doc = "FLASH CRC data register"]
     #[inline(always)]
     pub const fn crcdatar(self) -> crate::common::Reg<regs::Crcdatar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(92usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
     }
 }
 pub mod regs {

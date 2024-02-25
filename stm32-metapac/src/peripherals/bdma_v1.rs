@@ -22,22 +22,22 @@ impl Ch {
     #[doc = "DMA channel configuration register (DMA_CCR)"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "DMA channel 1 number of data register"]
     #[inline(always)]
     pub const fn ndtr(self) -> crate::common::Reg<regs::Ndtr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "DMA channel 1 peripheral address register"]
     #[inline(always)]
     pub const fn par(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "DMA channel 1 memory address register"]
     #[inline(always)]
     pub const fn mar(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
 }
 #[doc = "DMA controller"]
@@ -59,18 +59,18 @@ impl Dma {
     #[doc = "DMA interrupt status register (DMA_ISR)"]
     #[inline(always)]
     pub const fn isr(self) -> crate::common::Reg<regs::Isr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "DMA interrupt flag clear register (DMA_IFCR)"]
     #[inline(always)]
     pub const fn ifcr(self) -> crate::common::Reg<regs::Isr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Channel cluster: CCR?, CNDTR?, CPAR?, and CMAR? registers"]
     #[inline(always)]
     pub const fn ch(self, n: usize) -> Ch {
         assert!(n < 8usize);
-        unsafe { Ch::from_ptr(self.ptr.add(8usize + n * 20usize) as _) }
+        unsafe { Ch::from_ptr(self.ptr.add(0x08usize + n * 20usize) as _) }
     }
 }
 pub mod regs {
@@ -319,7 +319,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dir {
         #[doc = "Read from peripheral"]
-        FROMPERIPHERAL = 0,
+        FROMPERIPHERAL = 0x0,
         #[doc = "Read from memory"]
         FROMMEMORY = 0x01,
     }
@@ -349,7 +349,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pl {
         #[doc = "Low priority"]
-        LOW = 0,
+        LOW = 0x0,
         #[doc = "Medium priority"]
         MEDIUM = 0x01,
         #[doc = "High priority"]
@@ -383,7 +383,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Size {
         #[doc = "8-bit size"]
-        BITS8 = 0,
+        BITS8 = 0x0,
         #[doc = "16-bit size"]
         BITS16 = 0x01,
         #[doc = "32-bit size"]

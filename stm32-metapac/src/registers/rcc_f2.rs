@@ -10,7 +10,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "cr",
                 description: Some("clock control register"),
                 array: None,
-                byte_offset: 0,
+                byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -21,7 +21,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "pllcfgr",
                 description: Some("PLL configuration register"),
                 array: None,
-                byte_offset: 4,
+                byte_offset: 0x4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "cfgr",
                 description: Some("clock configuration register"),
                 array: None,
-                byte_offset: 8,
+                byte_offset: 0x8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -43,7 +43,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "cir",
                 description: Some("clock interrupt register"),
                 array: None,
-                byte_offset: 12,
+                byte_offset: 0xc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -54,7 +54,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ahb1rstr",
                 description: Some("AHB1 peripheral reset register"),
                 array: None,
-                byte_offset: 16,
+                byte_offset: 0x10,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -65,7 +65,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ahb2rstr",
                 description: Some("AHB2 peripheral reset register"),
                 array: None,
-                byte_offset: 20,
+                byte_offset: 0x14,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -76,7 +76,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ahb3rstr",
                 description: Some("AHB3 peripheral reset register"),
                 array: None,
-                byte_offset: 24,
+                byte_offset: 0x18,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -87,7 +87,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "apb1rstr",
                 description: Some("APB1 peripheral reset register"),
                 array: None,
-                byte_offset: 32,
+                byte_offset: 0x20,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -98,7 +98,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "apb2rstr",
                 description: Some("APB2 peripheral reset register"),
                 array: None,
-                byte_offset: 36,
+                byte_offset: 0x24,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -109,7 +109,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ahb1enr",
                 description: Some("AHB1 peripheral clock register"),
                 array: None,
-                byte_offset: 48,
+                byte_offset: 0x30,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -120,7 +120,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ahb2enr",
                 description: Some("AHB2 peripheral clock enable register"),
                 array: None,
-                byte_offset: 52,
+                byte_offset: 0x34,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -131,7 +131,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ahb3enr",
                 description: Some("AHB3 peripheral clock enable register"),
                 array: None,
-                byte_offset: 56,
+                byte_offset: 0x38,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -142,7 +142,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "apb1enr",
                 description: Some("APB1 peripheral clock enable register"),
                 array: None,
-                byte_offset: 64,
+                byte_offset: 0x40,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -153,7 +153,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "apb2enr",
                 description: Some("APB2 peripheral clock enable register"),
                 array: None,
-                byte_offset: 68,
+                byte_offset: 0x44,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -164,7 +164,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ahb1lpenr",
                 description: Some("AHB1 peripheral clock enable in low power mode register"),
                 array: None,
-                byte_offset: 80,
+                byte_offset: 0x50,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -175,7 +175,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ahb2lpenr",
                 description: Some("AHB2 peripheral clock enable in low power mode register"),
                 array: None,
-                byte_offset: 84,
+                byte_offset: 0x54,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -186,7 +186,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ahb3lpenr",
                 description: Some("AHB3 peripheral clock enable in low power mode register"),
                 array: None,
-                byte_offset: 88,
+                byte_offset: 0x58,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -197,7 +197,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "apb1lpenr",
                 description: Some("APB1 peripheral clock enable in low power mode register"),
                 array: None,
-                byte_offset: 96,
+                byte_offset: 0x60,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -208,7 +208,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "apb2lpenr",
                 description: Some("APB2 peripheral clock enabled in low power mode register"),
                 array: None,
-                byte_offset: 100,
+                byte_offset: 0x64,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -219,7 +219,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "bdcr",
                 description: Some("Backup domain control register"),
                 array: None,
-                byte_offset: 112,
+                byte_offset: 0x70,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -230,7 +230,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "csr",
                 description: Some("clock control & status register"),
                 array: None,
-                byte_offset: 116,
+                byte_offset: 0x74,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -241,7 +241,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "sscgr",
                 description: Some("spread spectrum clock generation register"),
                 array: None,
-                byte_offset: 128,
+                byte_offset: 0x80,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -252,7 +252,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "plli2scfgr",
                 description: Some("PLLI2S configuration register"),
                 array: None,
-                byte_offset: 132,
+                byte_offset: 0x84,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,

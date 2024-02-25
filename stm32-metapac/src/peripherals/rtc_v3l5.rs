@@ -22,108 +22,108 @@ impl Rtc {
     #[doc = "Time register"]
     #[inline(always)]
     pub const fn tr(self) -> crate::common::Reg<regs::Tr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Date register"]
     #[inline(always)]
     pub const fn dr(self) -> crate::common::Reg<regs::Dr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Sub second register"]
     #[inline(always)]
     pub const fn ssr(self) -> crate::common::Reg<regs::Ssr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Initialization control and status register"]
     #[inline(always)]
     pub const fn icsr(self) -> crate::common::Reg<regs::Icsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Prescaler register"]
     #[inline(always)]
     pub const fn prer(self) -> crate::common::Reg<regs::Prer, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Wakeup timer register"]
     #[inline(always)]
     pub const fn wutr(self) -> crate::common::Reg<regs::Wutr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Privilege mode control register"]
     #[inline(always)]
     pub const fn privcr(self) -> crate::common::Reg<regs::Privcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[inline(always)]
     pub const fn smcr(self) -> crate::common::Reg<regs::Smcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "Write protection register"]
     #[inline(always)]
     pub const fn wpr(self) -> crate::common::Reg<regs::Wpr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "Calibration register"]
     #[inline(always)]
     pub const fn calr(self) -> crate::common::Reg<regs::Calr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "Shift control register"]
     #[inline(always)]
     pub const fn shiftr(self) -> crate::common::Reg<regs::Shiftr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "Timestamp time register"]
     #[inline(always)]
     pub const fn tstr(self) -> crate::common::Reg<regs::Tstr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "Timestamp date register"]
     #[inline(always)]
     pub const fn tsdr(self) -> crate::common::Reg<regs::Tsdr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[doc = "Timestamp sub second register"]
     #[inline(always)]
     pub const fn tsssr(self) -> crate::common::Reg<regs::Tsssr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[doc = "Alarm register"]
     #[inline(always)]
     pub const fn alrmr(self, n: usize) -> crate::common::Reg<regs::Alrmr, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize + n * 8usize) as _) }
     }
     #[doc = "Alarm sub second register"]
     #[inline(always)]
     pub const fn alrmssr(self, n: usize) -> crate::common::Reg<regs::Alrmssr, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize + n * 8usize) as _) }
     }
     #[doc = "Status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[doc = "Masked interrupt status register"]
     #[inline(always)]
     pub const fn misr(self) -> crate::common::Reg<regs::Misr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[doc = "Secure masked interrupt status register"]
     #[inline(always)]
     pub const fn smisr(self) -> crate::common::Reg<regs::Smisr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize) as _) }
     }
     #[doc = "Status clear register"]
     #[inline(always)]
     pub const fn scr(self) -> crate::common::Reg<regs::Scr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(92usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
     }
 }
 pub mod regs {
@@ -1725,7 +1725,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Alrf {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when the time/date registers (RTC_TR and RTC_DR) match the Alarm A register (RTC_ALRMAR)"]
         MATCH = 0x01,
     }
@@ -1754,7 +1754,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Alrmf {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when the time/date registers (RTC_TR and RTC_DR) match the Alarm A register (RTC_ALRMAR)"]
         MATCH = 0x01,
     }
@@ -1784,7 +1784,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum AlrmrMsk {
         #[doc = "Alarm set if the date/day match"]
-        TOMATCH = 0,
+        TOMATCH = 0x0,
         #[doc = "Date/day don’t care in Alarm comparison"]
         NOTMATCH = 0x01,
     }
@@ -1814,7 +1814,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum AlrmrPm {
         #[doc = "AM or 24-hour format"]
-        AM = 0,
+        AM = 0x0,
         #[doc = "PM"]
         PM = 0x01,
     }
@@ -1845,7 +1845,7 @@ pub mod vals {
     pub enum AlrmrWdsel {
         #[doc = "DU\\[3:0\\]
 represents the date units"]
-        DATEUNITS = 0,
+        DATEUNITS = 0x0,
         #[doc = "DU\\[3:0\\]
 represents the week day. DT\\[1:0\\]
 is don’t care."]
@@ -1877,7 +1877,7 @@ is don’t care."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ampm {
         #[doc = "AM or 24-hour format"]
-        AM = 0,
+        AM = 0x0,
         #[doc = "PM"]
         PM = 0x01,
     }
@@ -1907,7 +1907,7 @@ is don’t care."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Calp {
         #[doc = "No RTCCLK pulses are added"]
-        NOCHANGE = 0,
+        NOCHANGE = 0x0,
         #[doc = "One RTCCLK pulse is effectively inserted every 2^11 pulses (frequency increased by 488.5 ppm)"]
         INCREASEFREQ = 0x01,
     }
@@ -1936,7 +1936,7 @@ is don’t care."]
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Calrf {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Clear interrupt flag by writing 1"]
         CLEAR = 0x01,
     }
@@ -1965,7 +1965,7 @@ is don’t care."]
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Calw16 {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "When CALW16 is set to ‘1’, the 16-second calibration cycle period is selected.This bit must not be set to ‘1’ if CALW8=1"]
         SIXTEENSECONDS = 0x01,
     }
@@ -1994,7 +1994,7 @@ is don’t care."]
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Calw8 {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "When CALW8 is set to ‘1’, the 8-second calibration cycle period is selected"]
         EIGHTSECONDS = 0x01,
     }
@@ -2024,7 +2024,7 @@ is don’t care."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cosel {
         #[doc = "Calibration output is 512 Hz (with default prescaler setting)"]
-        CALFREQ_512HZ = 0,
+        CALFREQ_512HZ = 0x0,
         #[doc = "Calibration output is 1 Hz (with default prescaler setting)"]
         CALFREQ_1HZ = 0x01,
     }
@@ -2054,7 +2054,7 @@ is don’t care."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fmt {
         #[doc = "24 hour/day format"]
-        TWENTYFOURHOUR = 0,
+        TWENTYFOURHOUR = 0x0,
         #[doc = "AM/PM hour format"]
         AMPM = 0x01,
     }
@@ -2083,7 +2083,7 @@ is don’t care."]
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Itsf {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when a timestamp on the internal event occurs"]
         TIMESTAMPEVENT = 0x01,
     }
@@ -2112,7 +2112,7 @@ is don’t care."]
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Itsmf {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when a timestamp on the internal event occurs"]
         TIMESTAMPEVENT = 0x01,
     }
@@ -2143,7 +2143,7 @@ is don’t care."]
     pub struct Key(pub u8);
     impl Key {
         #[doc = "Activate write protection (any value that is not the keys)"]
-        pub const ACTIVATE: Self = Self(0);
+        pub const ACTIVATE: Self = Self(0x0);
         #[doc = "Key 2"]
         pub const DEACTIVATE2: Self = Self(0x53);
         #[doc = "Key 1"]
@@ -2173,7 +2173,7 @@ is don’t care."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lpcal {
         #[doc = "Calibration window is 220 RTCCLK, which is a high-consumption mode. This mode should be set only when less than 32s calibration window is required"]
-        RTCCLK = 0,
+        RTCCLK = 0x0,
         #[doc = "Calibration window is 220 ck_apre, which is the required configuration for ultra-low consumption mode"]
         CKAPRE = 0x01,
     }
@@ -2203,7 +2203,7 @@ is don’t care."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Osel {
         #[doc = "Output disabled"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "Alarm A output enabled"]
         ALARMA = 0x01,
         #[doc = "Alarm B output enabled"]
@@ -2237,7 +2237,7 @@ is don’t care."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pol {
         #[doc = "The pin is high when ALRAF/ALRBF/WUTF is asserted (depending on OSEL\\[1:0\\])"]
-        HIGH = 0,
+        HIGH = 0x0,
         #[doc = "The pin is low when ALRAF/ALRBF/WUTF is asserted (depending on OSEL\\[1:0\\])"]
         LOW = 0x01,
     }
@@ -2266,7 +2266,7 @@ is don’t care."]
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Recalpf {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "The RECALPF status flag is automatically set to 1 when software writes to the RTC_CALR register, indicating that the RTC_CALR register is blocked. When the new calibration settings are taken into account, this bit returns to 0"]
         PENDING = 0x01,
     }
@@ -2296,7 +2296,7 @@ is don’t care."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum TampalrmType {
         #[doc = "TAMPALRM is push-pull output"]
-        PUSHPULL = 0,
+        PUSHPULL = 0x0,
         #[doc = "TAMPALRM is open-drain output"]
         OPENDRAIN = 0x01,
     }
@@ -2326,7 +2326,7 @@ is don’t care."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tsedge {
         #[doc = "RTC_TS input rising edge generates a time-stamp event"]
-        RISINGEDGE = 0,
+        RISINGEDGE = 0x0,
         #[doc = "RTC_TS input falling edge generates a time-stamp event"]
         FALLINGEDGE = 0x01,
     }
@@ -2355,7 +2355,7 @@ is don’t care."]
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tsf {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when a time-stamp event occurs"]
         TIMESTAMPEVENT = 0x01,
     }
@@ -2384,7 +2384,7 @@ is don’t care."]
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tsmf {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when a time-stamp event occurs"]
         TIMESTAMPEVENT = 0x01,
     }
@@ -2413,7 +2413,7 @@ is don’t care."]
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tsovf {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when a time-stamp event occurs while TSF is already set"]
         OVERFLOW = 0x01,
     }
@@ -2442,7 +2442,7 @@ is don’t care."]
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tsovmf {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when a time-stamp event occurs while TSF is already set"]
         OVERFLOW = 0x01,
     }
@@ -2472,7 +2472,7 @@ is don’t care."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Wucksel {
         #[doc = "RTC/16 clock is selected"]
-        DIV16 = 0,
+        DIV16 = 0x0,
         #[doc = "RTC/8 clock is selected"]
         DIV8 = 0x01,
         #[doc = "RTC/4 clock is selected"]
@@ -2511,7 +2511,7 @@ is don’t care."]
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Wutf {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when the wakeup auto-reload counter reaches 0"]
         ZERO = 0x01,
     }
@@ -2540,7 +2540,7 @@ is don’t care."]
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Wutmf {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when the wakeup auto-reload counter reaches 0"]
         ZERO = 0x01,
     }

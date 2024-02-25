@@ -11,7 +11,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "isr",
                     description: Some("low interrupt status register"),
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 4 })),
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::Read,
                         bit_size: 32,
@@ -22,7 +22,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ifcr",
                     description: Some("low interrupt flag clear register"),
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 4 })),
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(Register {
                         access: Access::Write,
                         bit_size: 32,
@@ -33,7 +33,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "st",
                     description: Some("Stream cluster: S?CR, S?NDTR, S?M0AR, S?M1AR and S?FCR registers"),
                     array: Some(Array::Regular(RegularArray { len: 8, stride: 24 })),
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Block(BlockItemBlock { block: "St" }),
                 },
             ],
@@ -47,7 +47,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "cr",
                     description: Some("stream x configuration register"),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -58,7 +58,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ndtr",
                     description: Some("stream x number of data register"),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -69,7 +69,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "par",
                     description: Some("stream x peripheral address register"),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -80,7 +80,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "m0ar",
                     description: Some("stream x memory 0 address register"),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -91,7 +91,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "m1ar",
                     description: Some("stream x memory 1 address register"),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -102,7 +102,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "fcr",
                     description: Some("stream x FIFO control register"),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 0x14,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,

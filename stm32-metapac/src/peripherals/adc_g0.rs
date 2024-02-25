@@ -22,132 +22,132 @@ impl Adc {
     #[doc = "ADC interrupt and status register"]
     #[inline(always)]
     pub const fn isr(self) -> crate::common::Reg<regs::Isr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "ADC interrupt enable register"]
     #[inline(always)]
     pub const fn ier(self) -> crate::common::Reg<regs::Ier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "ADC control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "ADC configuration register 1"]
     #[inline(always)]
     pub const fn cfgr1(self) -> crate::common::Reg<regs::Cfgr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "ADC configuration register 2"]
     #[inline(always)]
     pub const fn cfgr2(self) -> crate::common::Reg<regs::Cfgr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "ADC sampling time register"]
     #[inline(always)]
     pub const fn smpr(self) -> crate::common::Reg<regs::Smpr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "watchdog threshold register"]
     #[inline(always)]
     pub const fn awd1tr(self) -> crate::common::Reg<regs::Awd1tr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "watchdog threshold register"]
     #[inline(always)]
     pub const fn awd2tr(self) -> crate::common::Reg<regs::Awd2tr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "channel selection register"]
     #[inline(always)]
     pub const fn chselr(self) -> crate::common::Reg<regs::Chselr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "channel selection register CHSELRMOD = 1 in ADC_CFGR1"]
     #[inline(always)]
     pub const fn chselr_1(self) -> crate::common::Reg<regs::Chselr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "watchdog threshold register"]
     #[inline(always)]
     pub const fn awd3tr(self) -> crate::common::Reg<regs::Awd3tr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "ADC group regular conversion data register"]
     #[inline(always)]
     pub const fn dr(self) -> crate::common::Reg<regs::Dr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[doc = "ADC analog watchdog 2 configuration register"]
     #[inline(always)]
     pub const fn awd2cr(self) -> crate::common::Reg<regs::Awd2cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(160usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa0usize) as _) }
     }
     #[doc = "ADC analog watchdog 3 configuration register"]
     #[inline(always)]
     pub const fn awd3cr(self) -> crate::common::Reg<regs::Awd3cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(164usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa4usize) as _) }
     }
     #[doc = "ADC calibration factors register"]
     #[inline(always)]
     pub const fn calfact(self) -> crate::common::Reg<regs::Calfact, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(180usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb4usize) as _) }
     }
     #[doc = "ADC common control register"]
     #[inline(always)]
     pub const fn ccr(self) -> crate::common::Reg<regs::Ccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(776usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0308usize) as _) }
     }
     #[doc = "Hardware Configuration Register"]
     #[inline(always)]
     pub const fn hwcfgr6(self) -> crate::common::Reg<regs::Hwcfgr6, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(984usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03d8usize) as _) }
     }
     #[doc = "Hardware Configuration Register"]
     #[inline(always)]
     pub const fn hwcfgr5(self) -> crate::common::Reg<regs::Hwcfgr5, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(988usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03dcusize) as _) }
     }
     #[doc = "Hardware Configuration Register"]
     #[inline(always)]
     pub const fn hwcfgr4(self) -> crate::common::Reg<regs::Hwcfgr4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(992usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03e0usize) as _) }
     }
     #[doc = "Hardware Configuration Register"]
     #[inline(always)]
     pub const fn hwcfgr3(self) -> crate::common::Reg<regs::Hwcfgr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(996usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03e4usize) as _) }
     }
     #[doc = "Hardware Configuration Register"]
     #[inline(always)]
     pub const fn hwcfgr2(self) -> crate::common::Reg<regs::Hwcfgr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1000usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03e8usize) as _) }
     }
     #[doc = "Hardware Configuration Register"]
     #[inline(always)]
     pub const fn hwcfgr1(self) -> crate::common::Reg<regs::Hwcfgr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1004usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03ecusize) as _) }
     }
     #[doc = "Hardware Configuration Register"]
     #[inline(always)]
     pub const fn hwcfgr0(self) -> crate::common::Reg<regs::Hwcfgr0, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1008usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03f0usize) as _) }
     }
     #[doc = "EXTI IP Version register"]
     #[inline(always)]
     pub const fn verr(self) -> crate::common::Reg<regs::Verr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1012usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03f4usize) as _) }
     }
     #[doc = "EXTI Identification register"]
     #[inline(always)]
     pub const fn ipidr(self) -> crate::common::Reg<regs::Ipidr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1016usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03f8usize) as _) }
     }
     #[doc = "EXTI Size ID register"]
     #[inline(always)]
     pub const fn sidr(self) -> crate::common::Reg<regs::Sidr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1020usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03fcusize) as _) }
     }
 }
 pub mod regs {
@@ -1628,7 +1628,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Res {
         #[doc = "12-bit resolution"]
-        TWELVEBIT = 0,
+        TWELVEBIT = 0x0,
         #[doc = "10-bit resolution"]
         TENBIT = 0x01,
         #[doc = "8-bit resolution"]
@@ -1662,7 +1662,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum SampleTime {
         #[doc = "1.5 ADC cycles"]
-        CYCLES1_5 = 0,
+        CYCLES1_5 = 0x0,
         #[doc = "3.5 ADC cycles"]
         CYCLES3_5 = 0x01,
         #[doc = "7.5 ADC cycles"]

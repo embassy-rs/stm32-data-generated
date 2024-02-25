@@ -22,42 +22,42 @@ impl Dbgmcu {
     #[doc = "Identity Code Register"]
     #[inline(always)]
     pub const fn idcoder(self) -> crate::common::Reg<regs::Idcoder, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Configuration Register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "CPU1 APB1 Peripheral Freeze Register 1"]
     #[inline(always)]
     pub const fn apb1fzr1(self) -> crate::common::Reg<regs::Apb1fzr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[doc = "CPU2 APB1 Peripheral Freeze Register 1 \\[dual core device"]
     #[inline(always)]
     pub const fn c2apb1fzr1(self) -> crate::common::Reg<regs::C2apb1fzr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[doc = "CPU1 APB1 Peripheral Freeze Register 2"]
     #[inline(always)]
     pub const fn apb1fzr2(self) -> crate::common::Reg<regs::Apb1fzr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[doc = "CPU2 APB1 Peripheral Freeze Register 2 \\[dual core device"]
     #[inline(always)]
     pub const fn c2apb1fzr2(self) -> crate::common::Reg<regs::C2apb1fzr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[doc = "CPU1 APB2 Peripheral Freeze Register"]
     #[inline(always)]
     pub const fn apb2fzr(self) -> crate::common::Reg<regs::Apb2fzr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
     #[doc = "CPU2 APB2 Peripheral Freeze Register \\[dual core device"]
     #[inline(always)]
     pub const fn c2apb2fzr(self) -> crate::common::Reg<regs::C2apb2fzr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
 }
 pub mod regs {

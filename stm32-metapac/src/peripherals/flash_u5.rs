@@ -22,232 +22,232 @@ impl Flash {
     #[doc = "FLASH access control register"]
     #[inline(always)]
     pub const fn acr(self) -> crate::common::Reg<regs::Acr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "FLASH non-secure key register"]
     #[inline(always)]
     pub const fn nskeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "FLASH secure key register"]
     #[inline(always)]
     pub const fn seckeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "FLASH option key register"]
     #[inline(always)]
     pub const fn optkeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "FLASH bank 1 power-down key register"]
     #[inline(always)]
     pub const fn pdkey1r(self) -> crate::common::Reg<regs::Pdkey1r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "FLASH bank 2 power-down key register"]
     #[inline(always)]
     pub const fn pdkey2r(self) -> crate::common::Reg<regs::Pdkey2r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "FLASH non-secure status register"]
     #[inline(always)]
     pub const fn nssr(self) -> crate::common::Reg<regs::Nssr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "FLASH secure status register"]
     #[inline(always)]
     pub const fn secsr(self) -> crate::common::Reg<regs::Secsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "FLASH non-secure control register"]
     #[inline(always)]
     pub const fn nscr(self) -> crate::common::Reg<regs::Nscr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "FLASH secure control register"]
     #[inline(always)]
     pub const fn seccr(self) -> crate::common::Reg<regs::Seccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "FLASH ECC register"]
     #[inline(always)]
     pub const fn eccr(self) -> crate::common::Reg<regs::Eccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "FLASH operation status register"]
     #[inline(always)]
     pub const fn opsr(self) -> crate::common::Reg<regs::Opsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[doc = "FLASH option register"]
     #[inline(always)]
     pub const fn optr(self) -> crate::common::Reg<regs::Optr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[doc = "FLASH non-secure boot address 0 register"]
     #[inline(always)]
     pub const fn nsbootadd0r(self) -> crate::common::Reg<regs::Nsbootadd0r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[doc = "FLASH non-secure boot address 1 register"]
     #[inline(always)]
     pub const fn nsbootadd1r(self) -> crate::common::Reg<regs::Nsbootadd1r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[doc = "FLASH secure boot address 0 register"]
     #[inline(always)]
     pub const fn secbootadd0r(self) -> crate::common::Reg<regs::Secbootadd0r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
     #[doc = "FLASH secure watermark1 register 1"]
     #[inline(always)]
     pub const fn secwm1r1(self) -> crate::common::Reg<regs::Secwm1r1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[doc = "FLASH secure watermark1 register 2"]
     #[inline(always)]
     pub const fn secwm1r2(self) -> crate::common::Reg<regs::Secwm1r2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[doc = "FLASH WRP1 area A address register"]
     #[inline(always)]
     pub const fn wrp1ar(self) -> crate::common::Reg<regs::Wrp1ar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize) as _) }
     }
     #[doc = "FLASH WRP1 area B address register"]
     #[inline(always)]
     pub const fn wrp1br(self) -> crate::common::Reg<regs::Wrp1br, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(92usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
     }
     #[doc = "FLASH secure watermark2 register 1"]
     #[inline(always)]
     pub const fn secwm2r1(self) -> crate::common::Reg<regs::Secwm2r1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(96usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize) as _) }
     }
     #[doc = "FLASH secure watermark2 register 2"]
     #[inline(always)]
     pub const fn secwm2r2(self) -> crate::common::Reg<regs::Secwm2r2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(100usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x64usize) as _) }
     }
     #[doc = "FLASH WPR2 area A address register"]
     #[inline(always)]
     pub const fn wrp2ar(self) -> crate::common::Reg<regs::Wrp2ar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(104usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x68usize) as _) }
     }
     #[doc = "FLASH WPR2 area B address register"]
     #[inline(always)]
     pub const fn wrp2br(self) -> crate::common::Reg<regs::Wrp2br, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(108usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x6cusize) as _) }
     }
     #[doc = "FLASH OEM1 key register 1"]
     #[inline(always)]
     pub const fn oem1keyr1(self) -> crate::common::Reg<regs::Oem1keyr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(112usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x70usize) as _) }
     }
     #[doc = "FLASH OEM1 key register 2"]
     #[inline(always)]
     pub const fn oem1keyr2(self) -> crate::common::Reg<regs::Oem1keyr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(116usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x74usize) as _) }
     }
     #[doc = "FLASH OEM2 key register 1"]
     #[inline(always)]
     pub const fn oem2keyr1(self) -> crate::common::Reg<regs::Oem2keyr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(120usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x78usize) as _) }
     }
     #[doc = "FLASH OEM2 key register 2"]
     #[inline(always)]
     pub const fn oem2keyr2(self) -> crate::common::Reg<regs::Oem2keyr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(124usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x7cusize) as _) }
     }
     #[doc = "FLASH secure block based bank 1 register 1"]
     #[inline(always)]
     pub const fn sec1bbr1(self) -> crate::common::Reg<regs::Sec1bbr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(128usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
     }
     #[doc = "FLASH secure block based bank 1 register 2"]
     #[inline(always)]
     pub const fn sec1bbr2(self) -> crate::common::Reg<regs::Sec1bbr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(132usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x84usize) as _) }
     }
     #[doc = "FLASH secure block based bank 1 register 3"]
     #[inline(always)]
     pub const fn sec1bbr3(self) -> crate::common::Reg<regs::Sec1bbr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(136usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x88usize) as _) }
     }
     #[doc = "FLASH secure block based bank 1 register 4"]
     #[inline(always)]
     pub const fn sec1bbr4(self) -> crate::common::Reg<regs::Sec1bbr4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(140usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x8cusize) as _) }
     }
     #[doc = "FLASH secure block based bank 2 register 1"]
     #[inline(always)]
     pub const fn sec2bbr1(self) -> crate::common::Reg<regs::Sec2bbr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(160usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa0usize) as _) }
     }
     #[doc = "FLASH secure block based bank 2 register 2"]
     #[inline(always)]
     pub const fn sec2bbr2(self) -> crate::common::Reg<regs::Sec2bbr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(164usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa4usize) as _) }
     }
     #[doc = "FLASH secure block based bank 2 register 3"]
     #[inline(always)]
     pub const fn sec2bbr3(self) -> crate::common::Reg<regs::Sec2bbr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(168usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa8usize) as _) }
     }
     #[doc = "FLASH secure block based bank 2 register 4"]
     #[inline(always)]
     pub const fn sec2bbr4(self) -> crate::common::Reg<regs::Sec2bbr4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(172usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xacusize) as _) }
     }
     #[doc = "FLASH secure HDP control register"]
     #[inline(always)]
     pub const fn sechdpcr(self) -> crate::common::Reg<regs::Sechdpcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(192usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc0usize) as _) }
     }
     #[doc = "FLASH privilege configuration register"]
     #[inline(always)]
     pub const fn privcfgr(self) -> crate::common::Reg<regs::Privcfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(196usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc4usize) as _) }
     }
     #[doc = "FLASH privilege block based bank 1 register 1"]
     #[inline(always)]
     pub const fn priv1bbr1(self) -> crate::common::Reg<regs::Priv1bbr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(208usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd0usize) as _) }
     }
     #[doc = "FLASH privilege block based bank 1 register 2"]
     #[inline(always)]
     pub const fn priv1bbr2(self) -> crate::common::Reg<regs::Priv1bbr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(212usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd4usize) as _) }
     }
     #[doc = "FLASH privilege block based bank 1 register 3"]
     #[inline(always)]
     pub const fn priv1bbr3(self) -> crate::common::Reg<regs::Priv1bbr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(216usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd8usize) as _) }
     }
     #[doc = "FLASH privilege block based bank 1 register 4"]
     #[inline(always)]
     pub const fn priv1bbr4(self) -> crate::common::Reg<regs::Priv1bbr4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(220usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xdcusize) as _) }
     }
     #[doc = "FLASH privilege block based bank 2 register 1"]
     #[inline(always)]
     pub const fn priv2bbr1(self) -> crate::common::Reg<regs::Priv2bbr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(240usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf0usize) as _) }
     }
     #[doc = "FLASH privilege block based bank 2 register 2"]
     #[inline(always)]
     pub const fn priv2bbr2(self) -> crate::common::Reg<regs::Priv2bbr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(244usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf4usize) as _) }
     }
     #[doc = "FLASH privilege block based bank 2 register 3"]
     #[inline(always)]
     pub const fn priv2bbr3(self) -> crate::common::Reg<regs::Priv2bbr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(248usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf8usize) as _) }
     }
     #[doc = "FLASH privilege block based bank 2 register 4"]
     #[inline(always)]
     pub const fn priv2bbr4(self) -> crate::common::Reg<regs::Priv2bbr4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(252usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xfcusize) as _) }
     }
 }
 pub mod regs {
@@ -7769,7 +7769,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum BkEcc {
         #[doc = "Bank 1"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Bank 2"]
         B_0X1 = 0x01,
     }
@@ -7799,7 +7799,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum BkOp {
         #[doc = "Bank 1"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Bank 2"]
         B_0X1 = 0x01,
     }
@@ -7829,7 +7829,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum BkpsramEcc {
         #[doc = "Backup RAM ECC check enabled"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Backup RAM ECC check disabled"]
         B_0X1 = 0x01,
     }
@@ -7859,7 +7859,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum BorLev {
         #[doc = "BOR level 0 (reset level threshold around 1.7 V)"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "BOR level 1 (reset level threshold around 2.0 V)"]
         B_0X1 = 0x01,
         #[doc = "BOR level 2 (reset level threshold around 2.2 V)"]
@@ -7898,7 +7898,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum CodeOp {
         #[doc = "No Flash operation interrupted by previous reset"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Single write operation interrupted"]
         B_0X1 = 0x01,
         #[doc = "Burst write operation interrupted"]
@@ -7939,7 +7939,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dualbank {
         #[doc = "Single bank Flash with contiguous address in bank 1"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Dual-bank Flash with contiguous addresses"]
         B_0X1 = 0x01,
     }
@@ -7969,7 +7969,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Eccie {
         #[doc = "ECCC interrupt disabled"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "ECCC interrupt enabled."]
         B_0X1 = 0x01,
     }
@@ -7999,7 +7999,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum HdpAccdis {
         #[doc = "Access to HDP2 area granted"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Access to HDP2 area denied (SECWM2Ry option bytes modification bocked -refer to )"]
         B_0X1 = 0x01,
     }
@@ -8029,7 +8029,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum IoVddHslv {
         #[doc = "High-speed IO at low VDD voltage feature disabled (VDD can exceed 2.5 V)"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "High-speed IO at low VDD voltage feature enabled (VDD remains below 2.5 V)"]
         B_0X1 = 0x01,
     }
@@ -8059,7 +8059,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum IoVddioHslv {
         #[doc = "High-speed IO at low VDDIO2 voltage feature disabled (VDDIO2 can exceed 2.5 V)"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "High-speed IO at low VDDIO2 voltage feature enabled (VDDIO2 remains below 2.5 V)"]
         B_0X1 = 0x01,
     }
@@ -8089,7 +8089,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum IwdgStdby {
         #[doc = "Independent watchdog counter frozen in Standby mode"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Independent watchdog counter running in Standby mode"]
         B_0X1 = 0x01,
     }
@@ -8119,7 +8119,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum IwdgStop {
         #[doc = "Independent watchdog counter frozen in Stop mode"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Independent watchdog counter running in Stop mode"]
         B_0X1 = 0x01,
     }
@@ -8149,7 +8149,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum IwdgSw {
         #[doc = "Hardware independent watchdog selected"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Software independent watchdog selected"]
         B_0X1 = 0x01,
     }
@@ -8179,7 +8179,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lpm {
         #[doc = "Flash not in low-power read mode"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Flash in low-power read mode"]
         B_0X1 = 0x01,
     }
@@ -8209,7 +8209,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum NBoot {
         #[doc = "nBOOT0 = 0"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "nBOOT0 = 1"]
         B_0X1 = 0x01,
     }
@@ -8239,7 +8239,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum NRstShdw {
         #[doc = "Reset generated when entering the Shutdown mode"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "No reset generated when entering the Shutdown mode"]
         B_0X1 = 0x01,
     }
@@ -8269,7 +8269,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum NRstStdby {
         #[doc = "Reset generated when entering the Standby mode"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "No reset generate when entering the Standby mode"]
         B_0X1 = 0x01,
     }
@@ -8299,7 +8299,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum NRstStop {
         #[doc = "Reset generated when entering the Stop mode"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "No reset generated when entering the Stop mode"]
         B_0X1 = 0x01,
     }
@@ -8329,7 +8329,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum NSwboot {
         #[doc = "BOOT0 taken from the option bit nBOOT0"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "BOOT0 taken from PH3/BOOT0 pin"]
         B_0X1 = 0x01,
     }
@@ -8359,7 +8359,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum NscrBker {
         #[doc = "Bank 1 selected for non-secure page erase"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Bank 2 selected for non-secure page erase"]
         B_0X1 = 0x01,
     }
@@ -8389,7 +8389,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum NscrEopie {
         #[doc = "Non-secure EOP Interrupt disabled"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Non-secure EOP Interrupt enabled"]
         B_0X1 = 0x01,
     }
@@ -8419,7 +8419,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum NscrErrie {
         #[doc = "Non-secure OPERR error interrupt disabled"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Non-secure OPERR error interrupt enabled"]
         B_0X1 = 0x01,
     }
@@ -8449,7 +8449,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum NscrPer {
         #[doc = "Non-secure page erase disabled"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Non-secure page erase enabled"]
         B_0X1 = 0x01,
     }
@@ -8479,7 +8479,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum NscrPg {
         #[doc = "Non-secure Flash programming disabled"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Non-secure Flash programming enabled"]
         B_0X1 = 0x01,
     }
@@ -8509,7 +8509,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Nspriv {
         #[doc = "Non-secure Flash registers can be read and written by privileged or unprivileged access."]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Non-secure Flash registers can be read and written by privileged access only."]
         B_0X1 = 0x01,
     }
@@ -8539,7 +8539,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum OblLaunch {
         #[doc = "Option byte loading complete"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Option byte loading requested"]
         B_0X1 = 0x01,
     }
@@ -8569,7 +8569,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pdreq {
         #[doc = "No request for bank 2 to enter power-down mode"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Bank 2 requested to enter power-down mode"]
         B_0X1 = 0x01,
     }
@@ -8630,7 +8630,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum SeccrBker {
         #[doc = "Bank 1 selected for secure page erase"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Bank 2 selected for secure page erase"]
         B_0X1 = 0x01,
     }
@@ -8660,7 +8660,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum SeccrEopie {
         #[doc = "Secure EOP Interrupt disabled"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Secure EOP Interrupt enabled"]
         B_0X1 = 0x01,
     }
@@ -8690,7 +8690,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum SeccrErrie {
         #[doc = "Secure OPERR error interrupt disabled"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Secure OPERR error interrupt enabled"]
         B_0X1 = 0x01,
     }
@@ -8720,7 +8720,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum SeccrPer {
         #[doc = "Secure page erase disabled"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Secure page erase enabled"]
         B_0X1 = 0x01,
     }
@@ -8750,7 +8750,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum SeccrPg {
         #[doc = "Secure Flash programming disabled"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Secure Flash programming enabled"]
         B_0X1 = 0x01,
     }
@@ -8780,7 +8780,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum SleepPd {
         #[doc = "Flash in Idle mode during Sleep mode"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Flash in power-down mode during Sleep mode"]
         B_0X1 = 0x01,
     }
@@ -8810,7 +8810,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Spriv {
         #[doc = "Secure Flash registers can be read and written by privileged or unprivileged access."]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Secure Flash registers can be read and written by privileged access only."]
         B_0X1 = 0x01,
     }
@@ -8840,7 +8840,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum SramEcc {
         #[doc = "SRAM3 ECC check enabled"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "SRAM3 ECC check disabled"]
         B_0X1 = 0x01,
     }
@@ -8870,7 +8870,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum SwapBank {
         #[doc = "Bank 1 and bank 2 addresses not swapped"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Bank 1 and bank 2 addresses swapped"]
         B_0X1 = 0x01,
     }
@@ -8900,7 +8900,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum WrparUnlock {
         #[doc = "WRP2A start and end pages locked"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "WRP2A start and end pages unlocked"]
         B_0X1 = 0x01,
     }
@@ -8930,7 +8930,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum WrpbrUnlock {
         #[doc = "WRP2B start and end pages locked"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "WRP2B start and end pages unlocked"]
         B_0X1 = 0x01,
     }
@@ -8960,7 +8960,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum WwdgSw {
         #[doc = "Hardware window watchdog selected"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Software window watchdog selected"]
         B_0X1 = 0x01,
     }

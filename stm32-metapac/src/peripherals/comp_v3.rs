@@ -22,7 +22,7 @@ impl Comp {
     #[doc = "Comparator control and status register."]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
 }
 pub mod regs {
@@ -176,7 +176,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Blanking {
         #[doc = "No blanking."]
-        NOBLANKING = 0,
+        NOBLANKING = 0x0,
         #[doc = "TIM1 OC5 selected as blanking source."]
         TIM1OC5 = 0x01,
         #[doc = "TIM2 OC3 selected as blanking source."]
@@ -212,7 +212,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Hyst {
-        NONE = 0,
+        NONE = 0x0,
         LOW = 0x01,
         MEDIUM = 0x02,
         HIGH = 0x03,
@@ -243,7 +243,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Polarity {
         #[doc = "Output is not inverted."]
-        NOTINVERTED = 0,
+        NOTINVERTED = 0x0,
         #[doc = "Output is inverted."]
         INVERTED = 0x01,
     }
@@ -273,7 +273,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pwrmode {
         #[doc = "High speed / full power."]
-        HIGHSPEED = 0,
+        HIGHSPEED = 0x0,
         #[doc = "Medium speed / medium power."]
         MEDIUMSPEED = 0x01,
         #[doc = "Low speed / low power."]

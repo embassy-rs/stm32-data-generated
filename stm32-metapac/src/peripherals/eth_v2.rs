@@ -22,17 +22,17 @@ impl Eth {
     #[doc = "Ethernet: media access control (MAC)"]
     #[inline(always)]
     pub const fn ethernet_mac(self) -> EthernetMac {
-        unsafe { EthernetMac::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { EthernetMac::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Ethernet: MTL mode register (MTL)"]
     #[inline(always)]
     pub const fn ethernet_mtl(self) -> EthernetMtl {
-        unsafe { EthernetMtl::from_ptr(self.ptr.add(3072usize) as _) }
+        unsafe { EthernetMtl::from_ptr(self.ptr.add(0x0c00usize) as _) }
     }
     #[doc = "Ethernet: DMA mode register (DMA)"]
     #[inline(always)]
     pub const fn ethernet_dma(self) -> EthernetDma {
-        unsafe { EthernetDma::from_ptr(self.ptr.add(4096usize) as _) }
+        unsafe { EthernetDma::from_ptr(self.ptr.add(0x1000usize) as _) }
     }
 }
 #[doc = "Ethernet: DMA mode register (DMA)"]
@@ -54,107 +54,107 @@ impl EthernetDma {
     #[doc = "DMA mode register"]
     #[inline(always)]
     pub const fn dmamr(self) -> crate::common::Reg<regs::Dmamr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "System bus mode register"]
     #[inline(always)]
     pub const fn dmasbmr(self) -> crate::common::Reg<regs::Dmasbmr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Interrupt status register"]
     #[inline(always)]
     pub const fn dmaisr(self) -> crate::common::Reg<regs::Dmaisr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Debug status register"]
     #[inline(always)]
     pub const fn dmadsr(self) -> crate::common::Reg<regs::Dmadsr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Channel control register"]
     #[inline(always)]
     pub const fn dmaccr(self) -> crate::common::Reg<regs::Dmaccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(256usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
     #[doc = "Channel transmit control register"]
     #[inline(always)]
     pub const fn dmactx_cr(self) -> crate::common::Reg<regs::DmactxCr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(260usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
     }
     #[doc = "Channel receive control register"]
     #[inline(always)]
     pub const fn dmacrx_cr(self) -> crate::common::Reg<regs::DmacrxCr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(264usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize) as _) }
     }
     #[doc = "Channel Tx descriptor list address register"]
     #[inline(always)]
     pub const fn dmactx_dlar(self) -> crate::common::Reg<regs::DmactxDlar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(276usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0114usize) as _) }
     }
     #[doc = "Channel Rx descriptor list address register"]
     #[inline(always)]
     pub const fn dmacrx_dlar(self) -> crate::common::Reg<regs::DmacrxDlar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(284usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x011cusize) as _) }
     }
     #[doc = "Channel Tx descriptor tail pointer register"]
     #[inline(always)]
     pub const fn dmactx_dtpr(self) -> crate::common::Reg<regs::DmactxDtpr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(288usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0120usize) as _) }
     }
     #[doc = "Channel Rx descriptor tail pointer register"]
     #[inline(always)]
     pub const fn dmacrx_dtpr(self) -> crate::common::Reg<regs::DmacrxDtpr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(296usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0128usize) as _) }
     }
     #[doc = "Channel Tx descriptor ring length register"]
     #[inline(always)]
     pub const fn dmactx_rlr(self) -> crate::common::Reg<regs::DmactxRlr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(300usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x012cusize) as _) }
     }
     #[doc = "Channel Rx descriptor ring length register"]
     #[inline(always)]
     pub const fn dmacrx_rlr(self) -> crate::common::Reg<regs::DmacrxRlr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(304usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0130usize) as _) }
     }
     #[doc = "Channel interrupt enable register"]
     #[inline(always)]
     pub const fn dmacier(self) -> crate::common::Reg<regs::Dmacier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(308usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0134usize) as _) }
     }
     #[doc = "Channel Rx interrupt watchdog timer register"]
     #[inline(always)]
     pub const fn dmacrx_iwtr(self) -> crate::common::Reg<regs::DmacrxIwtr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(312usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0138usize) as _) }
     }
     #[doc = "Channel current application transmit descriptor register"]
     #[inline(always)]
     pub const fn dmaccatx_dr(self) -> crate::common::Reg<regs::DmaccatxDr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(324usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0144usize) as _) }
     }
     #[doc = "Channel current application receive descriptor register"]
     #[inline(always)]
     pub const fn dmaccarx_dr(self) -> crate::common::Reg<regs::DmaccarxDr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(332usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x014cusize) as _) }
     }
     #[doc = "Channel current application transmit buffer register"]
     #[inline(always)]
     pub const fn dmaccatx_br(self) -> crate::common::Reg<regs::DmaccatxBr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(340usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0154usize) as _) }
     }
     #[doc = "Channel current application receive buffer register"]
     #[inline(always)]
     pub const fn dmaccarx_br(self) -> crate::common::Reg<regs::DmaccarxBr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(348usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x015cusize) as _) }
     }
     #[doc = "Channel status register"]
     #[inline(always)]
     pub const fn dmacsr(self) -> crate::common::Reg<regs::Dmacsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(352usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0160usize) as _) }
     }
     #[doc = "Channel missed frame count register"]
     #[inline(always)]
     pub const fn dmacmfcr(self) -> crate::common::Reg<regs::Dmacmfcr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(364usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x016cusize) as _) }
     }
 }
 #[doc = "Ethernet: media access control (MAC)"]
@@ -176,436 +176,436 @@ impl EthernetMac {
     #[doc = "Operating mode configuration register"]
     #[inline(always)]
     pub const fn maccr(self) -> crate::common::Reg<regs::Maccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Extended operating mode configuration register"]
     #[inline(always)]
     pub const fn macecr(self) -> crate::common::Reg<regs::Macecr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Packet filtering control register"]
     #[inline(always)]
     pub const fn macpfr(self) -> crate::common::Reg<regs::Macpfr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Watchdog timeout register"]
     #[inline(always)]
     pub const fn macwtr(self) -> crate::common::Reg<regs::Macwtr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Hash Table 0/1 register"]
     #[inline(always)]
     pub const fn machtr(self, n: usize) -> crate::common::Reg<regs::Machtr, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize + n * 4usize) as _) }
     }
     #[doc = "VLAN tag register"]
     #[inline(always)]
     pub const fn macvtr(self) -> crate::common::Reg<regs::Macvtr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[doc = "VLAN Hash table register"]
     #[inline(always)]
     pub const fn macvhtr(self) -> crate::common::Reg<regs::Macvhtr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize) as _) }
     }
     #[doc = "VLAN inclusion register"]
     #[inline(always)]
     pub const fn macvir(self) -> crate::common::Reg<regs::Macvir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(96usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize) as _) }
     }
     #[doc = "Inner VLAN inclusion register"]
     #[inline(always)]
     pub const fn macivir(self) -> crate::common::Reg<regs::Macivir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(100usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x64usize) as _) }
     }
     #[doc = "Tx Queue flow control register"]
     #[inline(always)]
     pub const fn macqtx_fcr(self) -> crate::common::Reg<regs::MacqtxFcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(112usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x70usize) as _) }
     }
     #[doc = "Rx flow control register"]
     #[inline(always)]
     pub const fn macrx_fcr(self) -> crate::common::Reg<regs::MacrxFcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(144usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x90usize) as _) }
     }
     #[doc = "Interrupt status register"]
     #[inline(always)]
     pub const fn macisr(self) -> crate::common::Reg<regs::Macisr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(176usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb0usize) as _) }
     }
     #[doc = "Interrupt enable register"]
     #[inline(always)]
     pub const fn macier(self) -> crate::common::Reg<regs::Macier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(180usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb4usize) as _) }
     }
     #[doc = "Rx Tx status register"]
     #[inline(always)]
     pub const fn macrx_tx_sr(self) -> crate::common::Reg<regs::MacrxTxSr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(184usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb8usize) as _) }
     }
     #[doc = "PMT control status register"]
     #[inline(always)]
     pub const fn macpcsr(self) -> crate::common::Reg<regs::Macpcsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(192usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc0usize) as _) }
     }
     #[doc = "Remove wakeup packet filter register"]
     #[inline(always)]
     pub const fn macrwkpfr(self) -> crate::common::Reg<regs::Macrwkpfr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(196usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc4usize) as _) }
     }
     #[doc = "LPI control status register"]
     #[inline(always)]
     pub const fn maclcsr(self) -> crate::common::Reg<regs::Maclcsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(208usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd0usize) as _) }
     }
     #[doc = "LPI timers control register"]
     #[inline(always)]
     pub const fn macltcr(self) -> crate::common::Reg<regs::Macltcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(212usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd4usize) as _) }
     }
     #[doc = "LPI entry timer register"]
     #[inline(always)]
     pub const fn macletr(self) -> crate::common::Reg<regs::Macletr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(216usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd8usize) as _) }
     }
     #[doc = "1-microsecond-tick counter register"]
     #[inline(always)]
     pub const fn mac1ustcr(self) -> crate::common::Reg<regs::Mac1ustcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(220usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xdcusize) as _) }
     }
     #[doc = "Version register"]
     #[inline(always)]
     pub const fn macvr(self) -> crate::common::Reg<regs::Macvr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(272usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0110usize) as _) }
     }
     #[doc = "Debug register"]
     #[inline(always)]
     pub const fn macdr(self) -> crate::common::Reg<regs::Macdr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(276usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0114usize) as _) }
     }
     #[doc = "HW feature 1 register"]
     #[inline(always)]
     pub const fn machwf1r(self) -> crate::common::Reg<regs::Machwf1r, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(288usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0120usize) as _) }
     }
     #[doc = "HW feature 2 register"]
     #[inline(always)]
     pub const fn machwf2r(self) -> crate::common::Reg<regs::Machwf2r, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(292usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0124usize) as _) }
     }
     #[doc = "MDIO address register"]
     #[inline(always)]
     pub const fn macmdioar(self) -> crate::common::Reg<regs::Macmdioar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(512usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize) as _) }
     }
     #[doc = "MDIO data register"]
     #[inline(always)]
     pub const fn macmdiodr(self) -> crate::common::Reg<regs::Macmdiodr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(516usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0204usize) as _) }
     }
     #[doc = "Address 0 high register"]
     #[inline(always)]
     pub const fn maca0hr(self) -> crate::common::Reg<regs::Maca0hr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(768usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0300usize) as _) }
     }
     #[doc = "Address 0 low register"]
     #[inline(always)]
     pub const fn maca0lr(self) -> crate::common::Reg<regs::Maca0lr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(772usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0304usize) as _) }
     }
     #[doc = "Address 1/2/3 high register"]
     #[inline(always)]
     pub const fn macahr(self, n: usize) -> crate::common::Reg<regs::Macahr, crate::common::RW> {
         assert!(n < 3usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(776usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0308usize + n * 8usize) as _) }
     }
     #[doc = "Address 1/2/3 low register"]
     #[inline(always)]
     pub const fn macalr(self, n: usize) -> crate::common::Reg<regs::Macalr, crate::common::RW> {
         assert!(n < 3usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(780usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x030cusize + n * 8usize) as _) }
     }
     #[doc = "MMC control register"]
     #[inline(always)]
     pub const fn mmc_control(self) -> crate::common::Reg<regs::MmcControl, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1792usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0700usize) as _) }
     }
     #[doc = "MMC Rx interrupt register"]
     #[inline(always)]
     pub const fn mmc_rx_interrupt(self) -> crate::common::Reg<regs::MmcRxInterrupt, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1796usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0704usize) as _) }
     }
     #[doc = "MMC Tx interrupt register"]
     #[inline(always)]
     pub const fn mmc_tx_interrupt(self) -> crate::common::Reg<regs::MmcTxInterrupt, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1800usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0708usize) as _) }
     }
     #[doc = "MMC Rx interrupt mask register"]
     #[inline(always)]
     pub const fn mmc_rx_interrupt_mask(self) -> crate::common::Reg<regs::MmcRxInterruptMask, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1804usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x070cusize) as _) }
     }
     #[doc = "MMC Tx interrupt mask register"]
     #[inline(always)]
     pub const fn mmc_tx_interrupt_mask(self) -> crate::common::Reg<regs::MmcTxInterruptMask, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1808usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0710usize) as _) }
     }
     #[doc = "Tx single collision good packets register"]
     #[inline(always)]
     pub const fn tx_single_collision_good_packets(
         self,
     ) -> crate::common::Reg<regs::TxSingleCollisionGoodPackets, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1868usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x074cusize) as _) }
     }
     #[doc = "Tx multiple collision good packets register"]
     #[inline(always)]
     pub const fn tx_multiple_collision_good_packets(
         self,
     ) -> crate::common::Reg<regs::TxMultipleCollisionGoodPackets, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1872usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0750usize) as _) }
     }
     #[doc = "Tx packet count good register"]
     #[inline(always)]
     pub const fn tx_packet_count_good(self) -> crate::common::Reg<regs::TxPacketCountGood, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1896usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0768usize) as _) }
     }
     #[doc = "Rx CRC error packets register"]
     #[inline(always)]
     pub const fn rx_crc_error_packets(self) -> crate::common::Reg<regs::RxCrcErrorPackets, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1940usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0794usize) as _) }
     }
     #[doc = "Rx alignment error packets register"]
     #[inline(always)]
     pub const fn rx_alignment_error_packets(
         self,
     ) -> crate::common::Reg<regs::RxAlignmentErrorPackets, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1944usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0798usize) as _) }
     }
     #[doc = "Rx unicast packets good register"]
     #[inline(always)]
     pub const fn rx_unicast_packets_good(self) -> crate::common::Reg<regs::RxUnicastPacketsGood, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1988usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07c4usize) as _) }
     }
     #[doc = "Tx LPI microsecond timer register"]
     #[inline(always)]
     pub const fn tx_lpi_usec_cntr(self) -> crate::common::Reg<regs::TxLpiUsecCntr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2028usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07ecusize) as _) }
     }
     #[doc = "Tx LPI transition counter register"]
     #[inline(always)]
     pub const fn tx_lpi_tran_cntr(self) -> crate::common::Reg<regs::TxLpiTranCntr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2032usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07f0usize) as _) }
     }
     #[doc = "Rx LPI microsecond counter register"]
     #[inline(always)]
     pub const fn rx_lpi_usec_cntr(self) -> crate::common::Reg<regs::RxLpiUsecCntr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2036usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07f4usize) as _) }
     }
     #[doc = "Rx LPI transition counter register"]
     #[inline(always)]
     pub const fn rx_lpi_tran_cntr(self) -> crate::common::Reg<regs::RxLpiTranCntr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2040usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07f8usize) as _) }
     }
     #[doc = "L3 and L4 control 0 register"]
     #[inline(always)]
     pub const fn macl3l4c0r(self) -> crate::common::Reg<regs::Macl3l4c0r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2304usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0900usize) as _) }
     }
     #[doc = "Layer4 address filter 0 register"]
     #[inline(always)]
     pub const fn macl4a0r(self) -> crate::common::Reg<regs::Macl4a0r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2308usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0904usize) as _) }
     }
     #[doc = "MACL3A00R"]
     #[inline(always)]
     pub const fn macl3a00r(self) -> crate::common::Reg<regs::Macl3a00r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2320usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0910usize) as _) }
     }
     #[doc = "Layer3 address 1 filter 0 register"]
     #[inline(always)]
     pub const fn macl3a10r(self) -> crate::common::Reg<regs::Macl3a10r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2324usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0914usize) as _) }
     }
     #[doc = "Layer3 Address 2 filter 0 register"]
     #[inline(always)]
     pub const fn macl3a20(self) -> crate::common::Reg<regs::Macl3a20, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2328usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0918usize) as _) }
     }
     #[doc = "Layer3 Address 3 filter 0 register"]
     #[inline(always)]
     pub const fn macl3a30(self) -> crate::common::Reg<regs::Macl3a30, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2332usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x091cusize) as _) }
     }
     #[doc = "L3 and L4 control 1 register"]
     #[inline(always)]
     pub const fn macl3l4c1r(self) -> crate::common::Reg<regs::Macl3l4c1r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2352usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0930usize) as _) }
     }
     #[doc = "Layer 4 address filter 1 register"]
     #[inline(always)]
     pub const fn macl4a1r(self) -> crate::common::Reg<regs::Macl4a1r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2356usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0934usize) as _) }
     }
     #[doc = "Layer3 address 0 filter 1 Register"]
     #[inline(always)]
     pub const fn macl3a01r(self) -> crate::common::Reg<regs::Macl3a01r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2368usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0940usize) as _) }
     }
     #[doc = "Layer3 address 1 filter 1 register"]
     #[inline(always)]
     pub const fn macl3a11r(self) -> crate::common::Reg<regs::Macl3a11r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2372usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0944usize) as _) }
     }
     #[doc = "Layer3 address 2 filter 1 Register"]
     #[inline(always)]
     pub const fn macl3a21r(self) -> crate::common::Reg<regs::Macl3a21r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2376usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0948usize) as _) }
     }
     #[doc = "Layer3 address 3 filter 1 register"]
     #[inline(always)]
     pub const fn macl3a31r(self) -> crate::common::Reg<regs::Macl3a31r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2380usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x094cusize) as _) }
     }
     #[doc = "ARP address register"]
     #[inline(always)]
     pub const fn macarpar(self) -> crate::common::Reg<regs::Macarpar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2784usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ae0usize) as _) }
     }
     #[doc = "Timestamp control Register"]
     #[inline(always)]
     pub const fn mactscr(self) -> crate::common::Reg<regs::Mactscr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2816usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b00usize) as _) }
     }
     #[doc = "Sub-second increment register"]
     #[inline(always)]
     pub const fn macssir(self) -> crate::common::Reg<regs::Macssir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2820usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b04usize) as _) }
     }
     #[doc = "System time seconds register"]
     #[inline(always)]
     pub const fn macstsr(self) -> crate::common::Reg<regs::Macstsr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2824usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b08usize) as _) }
     }
     #[doc = "System time nanoseconds register"]
     #[inline(always)]
     pub const fn macstnr(self) -> crate::common::Reg<regs::Macstnr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2828usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b0cusize) as _) }
     }
     #[doc = "System time seconds update register"]
     #[inline(always)]
     pub const fn macstsur(self) -> crate::common::Reg<regs::Macstsur, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2832usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b10usize) as _) }
     }
     #[doc = "System time nanoseconds update register"]
     #[inline(always)]
     pub const fn macstnur(self) -> crate::common::Reg<regs::Macstnur, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2836usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b14usize) as _) }
     }
     #[doc = "Timestamp addend register"]
     #[inline(always)]
     pub const fn mactsar(self) -> crate::common::Reg<regs::Mactsar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2840usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b18usize) as _) }
     }
     #[doc = "Timestamp status register"]
     #[inline(always)]
     pub const fn mactssr(self) -> crate::common::Reg<regs::Mactssr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2848usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b20usize) as _) }
     }
     #[doc = "Tx timestamp status nanoseconds register"]
     #[inline(always)]
     pub const fn mactx_tssnr(self) -> crate::common::Reg<regs::MactxTssnr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2864usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b30usize) as _) }
     }
     #[doc = "Tx timestamp status seconds register"]
     #[inline(always)]
     pub const fn mactx_tsssr(self) -> crate::common::Reg<regs::MactxTsssr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2868usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b34usize) as _) }
     }
     #[doc = "Auxiliary control register"]
     #[inline(always)]
     pub const fn macacr(self) -> crate::common::Reg<regs::Macacr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2880usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b40usize) as _) }
     }
     #[doc = "Auxiliary timestamp nanoseconds register"]
     #[inline(always)]
     pub const fn macatsnr(self) -> crate::common::Reg<regs::Macatsnr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2888usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b48usize) as _) }
     }
     #[doc = "Auxiliary timestamp seconds register"]
     #[inline(always)]
     pub const fn macatssr(self) -> crate::common::Reg<regs::Macatssr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2892usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b4cusize) as _) }
     }
     #[doc = "Timestamp Ingress asymmetric correction register"]
     #[inline(always)]
     pub const fn mactsiacr(self) -> crate::common::Reg<regs::Mactsiacr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2896usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b50usize) as _) }
     }
     #[doc = "Timestamp Egress asymmetric correction register"]
     #[inline(always)]
     pub const fn mactseacr(self) -> crate::common::Reg<regs::Mactseacr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2900usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b54usize) as _) }
     }
     #[doc = "Timestamp Ingress correction nanosecond register"]
     #[inline(always)]
     pub const fn mactsicnr(self) -> crate::common::Reg<regs::Mactsicnr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2904usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b58usize) as _) }
     }
     #[doc = "Timestamp Egress correction nanosecond register"]
     #[inline(always)]
     pub const fn mactsecnr(self) -> crate::common::Reg<regs::Mactsecnr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2908usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b5cusize) as _) }
     }
     #[doc = "PPS control register"]
     #[inline(always)]
     pub const fn macppscr(self) -> crate::common::Reg<regs::Macppscr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2928usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b70usize) as _) }
     }
     #[doc = "PPS target time seconds register"]
     #[inline(always)]
     pub const fn macppsttsr(self) -> crate::common::Reg<regs::Macppsttsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2944usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b80usize) as _) }
     }
     #[doc = "PPS target time nanoseconds register"]
     #[inline(always)]
     pub const fn macppsttnr(self) -> crate::common::Reg<regs::Macppsttnr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2948usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b84usize) as _) }
     }
     #[doc = "PPS interval register"]
     #[inline(always)]
     pub const fn macppsir(self) -> crate::common::Reg<regs::Macppsir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2952usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b88usize) as _) }
     }
     #[doc = "PPS width register"]
     #[inline(always)]
     pub const fn macppswr(self) -> crate::common::Reg<regs::Macppswr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2956usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b8cusize) as _) }
     }
     #[doc = "PTP Offload control register"]
     #[inline(always)]
     pub const fn macpocr(self) -> crate::common::Reg<regs::Macpocr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(3008usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0bc0usize) as _) }
     }
     #[doc = "PTP Source Port Identity 0 Register"]
     #[inline(always)]
     pub const fn macspi0r(self) -> crate::common::Reg<regs::Macspi0r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(3012usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0bc4usize) as _) }
     }
     #[doc = "PTP Source port identity 1 register"]
     #[inline(always)]
     pub const fn macspi1r(self) -> crate::common::Reg<regs::Macspi1r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(3016usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0bc8usize) as _) }
     }
     #[doc = "PTP Source port identity 2 register"]
     #[inline(always)]
     pub const fn macspi2r(self) -> crate::common::Reg<regs::Macspi2r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(3020usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0bccusize) as _) }
     }
     #[doc = "Log message interval register"]
     #[inline(always)]
     pub const fn maclmir(self) -> crate::common::Reg<regs::Maclmir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(3024usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0bd0usize) as _) }
     }
 }
 #[doc = "Ethernet: MTL mode register (MTL)"]
@@ -627,47 +627,47 @@ impl EthernetMtl {
     #[doc = "Operating mode Register"]
     #[inline(always)]
     pub const fn mtlomr(self) -> crate::common::Reg<regs::Mtlomr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Interrupt status Register"]
     #[inline(always)]
     pub const fn mtlisr(self) -> crate::common::Reg<regs::Mtlisr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "Tx queue operating mode Register"]
     #[inline(always)]
     pub const fn mtltx_qomr(self) -> crate::common::Reg<regs::MtltxQomr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(256usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
     #[doc = "Tx queue underflow register"]
     #[inline(always)]
     pub const fn mtltx_qur(self) -> crate::common::Reg<regs::MtltxQur, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(260usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
     }
     #[doc = "Tx queue debug Register"]
     #[inline(always)]
     pub const fn mtltx_qdr(self) -> crate::common::Reg<regs::MtltxQdr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(264usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize) as _) }
     }
     #[doc = "Queue interrupt control status Register"]
     #[inline(always)]
     pub const fn mtlqicsr(self) -> crate::common::Reg<regs::Mtlqicsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(300usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x012cusize) as _) }
     }
     #[doc = "Rx queue operating mode register"]
     #[inline(always)]
     pub const fn mtlrx_qomr(self) -> crate::common::Reg<regs::MtlrxQomr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(304usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0130usize) as _) }
     }
     #[doc = "Rx queue missed packet and overflow counter register"]
     #[inline(always)]
     pub const fn mtlrx_qmpocr(self) -> crate::common::Reg<regs::MtlrxQmpocr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(308usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0134usize) as _) }
     }
     #[doc = "Rx queue debug register"]
     #[inline(always)]
     pub const fn mtlrx_qdr(self) -> crate::common::Reg<regs::MtlrxQdr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(312usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0138usize) as _) }
     }
 }
 pub mod regs {

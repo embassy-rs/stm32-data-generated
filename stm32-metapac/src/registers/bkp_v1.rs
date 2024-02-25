@@ -15,7 +15,7 @@ pub(crate) static REGISTERS: IR = IR {
                         112, 116, 120, 124, 128, 132, 136, 140, 144, 148, 152, 156, 160, 164, 168, 172, 176, 180, 184,
                     ],
                 })),
-                byte_offset: 0,
+                byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -26,7 +26,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "rtccr",
                 description: Some("RTC clock calibration register"),
                 array: None,
-                byte_offset: 40,
+                byte_offset: 0x28,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -37,7 +37,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "cr",
                 description: Some("Control register"),
                 array: None,
-                byte_offset: 44,
+                byte_offset: 0x2c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -48,7 +48,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "csr",
                 description: Some("Control/status register"),
                 array: None,
-                byte_offset: 48,
+                byte_offset: 0x30,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,

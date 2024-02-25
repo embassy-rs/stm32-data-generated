@@ -10,7 +10,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "isr",
                 description: Some("ADC interrupt and status register"),
                 array: None,
-                byte_offset: 0,
+                byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -21,7 +21,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ier",
                 description: Some("ADC interrupt enable register"),
                 array: None,
-                byte_offset: 4,
+                byte_offset: 0x4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "cr",
                 description: Some("ADC control register"),
                 array: None,
-                byte_offset: 8,
+                byte_offset: 0x8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -43,7 +43,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "cfgr1",
                 description: Some("ADC configuration register 1"),
                 array: None,
-                byte_offset: 12,
+                byte_offset: 0xc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -54,7 +54,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "cfgr2",
                 description: Some("ADC configuration register 2"),
                 array: None,
-                byte_offset: 16,
+                byte_offset: 0x10,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -65,7 +65,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "smpr",
                 description: Some("ADC sampling time register"),
                 array: None,
-                byte_offset: 20,
+                byte_offset: 0x14,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -76,7 +76,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "awd1tr",
                 description: Some("watchdog threshold register"),
                 array: None,
-                byte_offset: 32,
+                byte_offset: 0x20,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -87,7 +87,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "awd2tr",
                 description: Some("watchdog threshold register"),
                 array: None,
-                byte_offset: 36,
+                byte_offset: 0x24,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -98,7 +98,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "chselr",
                 description: Some("channel selection register"),
                 array: None,
-                byte_offset: 40,
+                byte_offset: 0x28,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -109,7 +109,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "chselr_1",
                 description: Some("channel selection register CHSELRMOD = 1 in ADC_CFGR1"),
                 array: None,
-                byte_offset: 40,
+                byte_offset: 0x28,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -120,7 +120,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "awd3tr",
                 description: Some("watchdog threshold register"),
                 array: None,
-                byte_offset: 44,
+                byte_offset: 0x2c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -131,7 +131,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dr",
                 description: Some("ADC group regular conversion data register"),
                 array: None,
-                byte_offset: 64,
+                byte_offset: 0x40,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -142,7 +142,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "awd2cr",
                 description: Some("ADC analog watchdog 2 configuration register"),
                 array: None,
-                byte_offset: 160,
+                byte_offset: 0xa0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -153,7 +153,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "awd3cr",
                 description: Some("ADC analog watchdog 3 configuration register"),
                 array: None,
-                byte_offset: 164,
+                byte_offset: 0xa4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -164,7 +164,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "calfact",
                 description: Some("ADC calibration factors register"),
                 array: None,
-                byte_offset: 180,
+                byte_offset: 0xb4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -175,7 +175,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ccr",
                 description: Some("ADC common control register"),
                 array: None,
-                byte_offset: 776,
+                byte_offset: 0x308,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -186,7 +186,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "hwcfgr6",
                 description: Some("Hardware Configuration Register"),
                 array: None,
-                byte_offset: 984,
+                byte_offset: 0x3d8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -197,7 +197,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "hwcfgr5",
                 description: Some("Hardware Configuration Register"),
                 array: None,
-                byte_offset: 988,
+                byte_offset: 0x3dc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -208,7 +208,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "hwcfgr4",
                 description: Some("Hardware Configuration Register"),
                 array: None,
-                byte_offset: 992,
+                byte_offset: 0x3e0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -219,7 +219,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "hwcfgr3",
                 description: Some("Hardware Configuration Register"),
                 array: None,
-                byte_offset: 996,
+                byte_offset: 0x3e4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -230,7 +230,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "hwcfgr2",
                 description: Some("Hardware Configuration Register"),
                 array: None,
-                byte_offset: 1000,
+                byte_offset: 0x3e8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -241,7 +241,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "hwcfgr1",
                 description: Some("Hardware Configuration Register"),
                 array: None,
-                byte_offset: 1004,
+                byte_offset: 0x3ec,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -252,7 +252,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "hwcfgr0",
                 description: Some("Hardware Configuration Register"),
                 array: None,
-                byte_offset: 1008,
+                byte_offset: 0x3f0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -263,7 +263,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "verr",
                 description: Some("EXTI IP Version register"),
                 array: None,
-                byte_offset: 1012,
+                byte_offset: 0x3f4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -274,7 +274,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ipidr",
                 description: Some("EXTI Identification register"),
                 array: None,
-                byte_offset: 1016,
+                byte_offset: 0x3f8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
@@ -285,7 +285,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "sidr",
                 description: Some("EXTI Size ID register"),
                 array: None,
-                byte_offset: 1020,
+                byte_offset: 0x3fc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,

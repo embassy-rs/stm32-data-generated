@@ -22,122 +22,122 @@ impl Rcc {
     #[doc = "Clock control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Internal clock sources calibration register"]
     #[inline(always)]
     pub const fn icscr(self) -> crate::common::Reg<regs::Icscr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Clock configuration register"]
     #[inline(always)]
     pub const fn cfgr(self) -> crate::common::Reg<regs::Cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "PLL configuration register"]
     #[inline(always)]
     pub const fn pllcfgr(self) -> crate::common::Reg<regs::Pllcfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "RCC clock recovery RC register"]
     #[inline(always)]
     pub const fn crrcr(self) -> crate::common::Reg<regs::Crrcr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Clock interrupt enable register"]
     #[inline(always)]
     pub const fn cier(self) -> crate::common::Reg<regs::Cier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Clock interrupt flag register"]
     #[inline(always)]
     pub const fn cifr(self) -> crate::common::Reg<regs::Cifr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "Clock interrupt clear register"]
     #[inline(always)]
     pub const fn cicr(self) -> crate::common::Reg<regs::Cicr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "GPIO reset register"]
     #[inline(always)]
     pub const fn gpiorstr(self) -> crate::common::Reg<regs::Gpiorstr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "AHB peripheral reset register"]
     #[inline(always)]
     pub const fn ahbrstr(self) -> crate::common::Reg<regs::Ahbrstr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "APB peripheral reset register 1"]
     #[inline(always)]
     pub const fn apbrstr1(self) -> crate::common::Reg<regs::Apbrstr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "APB peripheral reset register 2"]
     #[inline(always)]
     pub const fn apbrstr2(self) -> crate::common::Reg<regs::Apbrstr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "GPIO clock enable register"]
     #[inline(always)]
     pub const fn gpioenr(self) -> crate::common::Reg<regs::Gpioenr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[doc = "AHB peripheral clock enable register"]
     #[inline(always)]
     pub const fn ahbenr(self) -> crate::common::Reg<regs::Ahbenr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[doc = "APB peripheral clock enable register 1"]
     #[inline(always)]
     pub const fn apbenr1(self) -> crate::common::Reg<regs::Apbenr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[doc = "APB peripheral clock enable register 2"]
     #[inline(always)]
     pub const fn apbenr2(self) -> crate::common::Reg<regs::Apbenr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[doc = "GPIO in Sleep mode clock enable register"]
     #[inline(always)]
     pub const fn gpiosmenr(self) -> crate::common::Reg<regs::Gpiosmenr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[doc = "AHB peripheral clock enable in Sleep mode register"]
     #[inline(always)]
     pub const fn ahbsmenr(self) -> crate::common::Reg<regs::Ahbsmenr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[doc = "APB peripheral clock enable in Sleep mode register 1"]
     #[inline(always)]
     pub const fn apbsmenr1(self) -> crate::common::Reg<regs::Apbsmenr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
     #[doc = "APB peripheral clock enable in Sleep mode register 2"]
     #[inline(always)]
     pub const fn apbsmenr2(self) -> crate::common::Reg<regs::Apbsmenr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[doc = "Peripherals independent clock configuration register"]
     #[inline(always)]
     pub const fn ccipr(self) -> crate::common::Reg<regs::Ccipr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[doc = "Peripherals independent clock configuration register 2"]
     #[inline(always)]
     pub const fn ccipr2(self) -> crate::common::Reg<regs::Ccipr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize) as _) }
     }
     #[doc = "RTC domain control register"]
     #[inline(always)]
     pub const fn bdcr(self) -> crate::common::Reg<regs::Bdcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(92usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
     }
     #[doc = "Control/status register"]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(96usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize) as _) }
     }
 }
 pub mod regs {
@@ -3097,7 +3097,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Adcsel {
         #[doc = "SYSCLK used as ADC clock source"]
-        SYS = 0,
+        SYS = 0x0,
         #[doc = "PLLPCLK used as ADC clock source"]
         PLL1_P = 0x01,
         #[doc = "HSI used as ADC clock source"]
@@ -3130,7 +3130,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cecsel {
         #[doc = "HSI divided by 488 used as CEC clock"]
-        HSI_DIV_488 = 0,
+        HSI_DIV_488 = 0x0,
         #[doc = "LSE used as CEC clock"]
         LSE = 0x01,
     }
@@ -3160,7 +3160,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fdcansel {
         #[doc = "PCLK used as FDCAN clock source"]
-        PCLK1 = 0,
+        PCLK1 = 0x0,
         #[doc = "PLLQCLK used as FDCAN clock source"]
         PLL1_Q = 0x01,
         #[doc = "HSE used as FDCAN clock source"]
@@ -3193,7 +3193,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Hpre {
         #[doc = "SYSCLK not divided"]
-        DIV1 = 0,
+        DIV1 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -3244,7 +3244,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Hsidiv {
         #[doc = "HSI clock is not divided"]
-        DIV1 = 0,
+        DIV1 = 0x0,
         #[doc = "HSI clock is divided by 2"]
         DIV2 = 0x01,
         #[doc = "HSI clock is divided by 4"]
@@ -3286,7 +3286,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum I2c1sel {
         #[doc = "PCLK used as I2C1 clock source"]
-        PCLK1 = 0,
+        PCLK1 = 0x0,
         #[doc = "SYSCLK used as I2C1 clock source"]
         SYS = 0x01,
         #[doc = "HSI used as I2C1 clock source"]
@@ -3319,7 +3319,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum I2c2i2s1sel {
         #[doc = "PCLK used as I2C2/I2S2 clock source"]
-        PCLK1 = 0,
+        PCLK1 = 0x0,
         #[doc = "SYSCLK used as I2C2/I2S2 clock source"]
         SYS = 0x01,
         #[doc = "HSI used as I2C2/I2S2 clock source"]
@@ -3353,7 +3353,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum I2s1sel {
         #[doc = "SYSCLK used as I2S1 clock source"]
-        SYS = 0,
+        SYS = 0x0,
         #[doc = "PLLPCLK used as I2S1 clock source"]
         PLL1_P = 0x01,
         #[doc = "HSI used as I2S1 clock source"]
@@ -3387,7 +3387,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum I2s2sel {
         #[doc = "SYSCLK used as I2S2 clock source"]
-        SYS = 0,
+        SYS = 0x0,
         #[doc = "PLLPCLK used as I2S2 clock source"]
         PLL1_P = 0x01,
         #[doc = "HSI used as I2S2 clock source"]
@@ -3421,7 +3421,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lptim1sel {
         #[doc = "PCLK used as LPTIM1 clock source"]
-        PCLK1 = 0,
+        PCLK1 = 0x0,
         #[doc = "LSI used as LPTIM1 clock source"]
         LSI = 0x01,
         #[doc = "HSI used as LPTIM1 clock source"]
@@ -3455,7 +3455,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lptim2sel {
         #[doc = "PCLK used as LPTIM2 clock source"]
-        PCLK1 = 0,
+        PCLK1 = 0x0,
         #[doc = "LSI used as LPTIM2 clock source"]
         LSI = 0x01,
         #[doc = "HSI used as LPTIM2 clock source"]
@@ -3489,7 +3489,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lpuart1sel {
         #[doc = "PCLK used as LPUART1 clock source"]
-        PCLK1 = 0,
+        PCLK1 = 0x0,
         #[doc = "SYSCLK used as LPUART1 clock source"]
         SYS = 0x01,
         #[doc = "HSI used as LPUART1 clock source"]
@@ -3523,7 +3523,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lpuart2sel {
         #[doc = "PCLK used as LPUART2 clock source"]
-        PCLK1 = 0,
+        PCLK1 = 0x0,
         #[doc = "SYSCLK used as LPUART2 clock source"]
         SYS = 0x01,
         #[doc = "HSI used as LPUART2 clock source"]
@@ -3557,7 +3557,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lsedrv {
         #[doc = "Low driving capability"]
-        LOW = 0,
+        LOW = 0x0,
         #[doc = "Medium low driving capability"]
         MEDIUMLOW = 0x01,
         #[doc = "Medium high driving capability"]
@@ -3591,7 +3591,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mcopre {
         #[doc = "MCO1 not divided"]
-        DIV1 = 0,
+        DIV1 = 0x0,
         #[doc = "MCO clock is divided by 2"]
         DIV2 = 0x01,
         #[doc = "MCO clock is divided by 4"]
@@ -3644,7 +3644,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mcosel {
         #[doc = "No clock, MCO output disabled"]
-        DISABLE = 0,
+        DISABLE = 0x0,
         #[doc = "SYSCLK selected as MCO source"]
         SYS = 0x01,
         #[doc = "HSI48 selected as MCO source"]
@@ -3697,7 +3697,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllm {
-        DIV1 = 0,
+        DIV1 = 0x0,
         DIV2 = 0x01,
         DIV3 = 0x02,
         DIV4 = 0x03,
@@ -3731,7 +3731,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Plln {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -3885,7 +3885,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllp {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         DIV2 = 0x01,
         DIV3 = 0x02,
         DIV4 = 0x03,
@@ -3943,7 +3943,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllq {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         DIV2 = 0x01,
         DIV3 = 0x02,
         DIV4 = 0x03,
@@ -3977,7 +3977,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllr {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         DIV2 = 0x01,
         DIV3 = 0x02,
         DIV4 = 0x03,
@@ -4012,7 +4012,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllsrc {
         #[doc = "No clock selected as PLL entry clock source"]
-        DISABLE = 0,
+        DISABLE = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "HSI selected as PLL entry clock source"]
         HSI = 0x02,
@@ -4045,7 +4045,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ppre {
         #[doc = "HCLK not divided"]
-        DIV1 = 0,
+        DIV1 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -4084,7 +4084,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rngdiv {
         #[doc = "RNG clock is not divided"]
-        DIV1 = 0,
+        DIV1 = 0x0,
         #[doc = "RNG clock is divided by 2"]
         DIV2 = 0x01,
         #[doc = "RNG clock is divided by 4"]
@@ -4118,7 +4118,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rngsel {
         #[doc = "No clock used as RNG clock source"]
-        DISABLE = 0,
+        DISABLE = 0x0,
         #[doc = "HSI divided by 8 used as RNG clock source"]
         HSI_DIV_8 = 0x01,
         #[doc = "SYSCLK used as RNG clock source"]
@@ -4152,7 +4152,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rtcsel {
         #[doc = "No clock used as RTC clock"]
-        DISABLE = 0,
+        DISABLE = 0x0,
         #[doc = "LSE used as RTC clock"]
         LSE = 0x01,
         #[doc = "LSI used as RTC clock"]
@@ -4186,7 +4186,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Sw {
         #[doc = "HSI selected as system clock"]
-        HSI = 0,
+        HSI = 0x0,
         #[doc = "HSE selected as system clock"]
         HSE = 0x01,
         #[doc = "PLLRCLK selected as system clock"]
@@ -4225,7 +4225,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tim15sel {
         #[doc = "TIMPCLK used as TIM15 clock source"]
-        PCLK1_TIM = 0,
+        PCLK1_TIM = 0x0,
         #[doc = "PLLQCLK used as TIM15 clock source"]
         PLL1_Q = 0x01,
     }
@@ -4255,7 +4255,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tim1sel {
         #[doc = "TIMPCLK used as TIM1 clock source"]
-        PCLK1_TIM = 0,
+        PCLK1_TIM = 0x0,
         #[doc = "PLLQCLK used as TIM1 clock source"]
         PLL1_Q = 0x01,
     }
@@ -4285,7 +4285,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usart1sel {
         #[doc = "PCLK used as USART1 clock source"]
-        PCLK1 = 0,
+        PCLK1 = 0x0,
         #[doc = "SYSCLK used as USART1 clock source"]
         SYS = 0x01,
         #[doc = "HSI used as USART1 clock source"]
@@ -4319,7 +4319,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usart2sel {
         #[doc = "PCLK used as USART2 clock source"]
-        PCLK1 = 0,
+        PCLK1 = 0x0,
         #[doc = "SYSCLK used as USART2 clock source"]
         SYS = 0x01,
         #[doc = "HSI used as USART2 clock source"]
@@ -4353,7 +4353,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usart3sel {
         #[doc = "PCLK used as USART3 clock source"]
-        PCLK1 = 0,
+        PCLK1 = 0x0,
         #[doc = "SYSCLK used as USART3 clock source"]
         SYS = 0x01,
         #[doc = "HSI used as USART3 clock source"]
@@ -4387,7 +4387,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usbsel {
         #[doc = "HSI48 used as USB clock source"]
-        HSI48 = 0,
+        HSI48 = 0x0,
         #[doc = "PLLQCLK used as USB clock source"]
         PLL1_Q = 0x01,
         #[doc = "HSE used as USB clock source"]

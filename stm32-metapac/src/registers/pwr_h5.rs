@@ -15,7 +15,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "PWR power mode control register",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "PWR status register",
                     ),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -49,7 +49,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "PWR voltage scaling control register",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -66,7 +66,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "PWR voltage scaling status register",
                     ),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 0x14,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -83,7 +83,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "PWR Backup domain control register",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 0x20,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -100,7 +100,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "PWR Backup domain control register",
                     ),
                     array: None,
-                    byte_offset: 36,
+                    byte_offset: 0x24,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -117,7 +117,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "PWR Backup domain status register",
                     ),
                     array: None,
-                    byte_offset: 40,
+                    byte_offset: 0x28,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -134,7 +134,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "PWR USB Type-C power delivery register",
                     ),
                     array: None,
-                    byte_offset: 44,
+                    byte_offset: 0x2c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -151,7 +151,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "PWR supply configuration control register",
                     ),
                     array: None,
-                    byte_offset: 48,
+                    byte_offset: 0x30,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -168,7 +168,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "PWR voltage monitor control register",
                     ),
                     array: None,
-                    byte_offset: 52,
+                    byte_offset: 0x34,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -185,7 +185,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "PWR USB supply control register",
                     ),
                     array: None,
-                    byte_offset: 56,
+                    byte_offset: 0x38,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -202,7 +202,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "PWR voltage monitor status register",
                     ),
                     array: None,
-                    byte_offset: 60,
+                    byte_offset: 0x3c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -219,7 +219,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "PWR wakeup status clear register",
                     ),
                     array: None,
-                    byte_offset: 64,
+                    byte_offset: 0x40,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -236,7 +236,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "PWR wakeup status register",
                     ),
                     array: None,
-                    byte_offset: 68,
+                    byte_offset: 0x44,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -253,7 +253,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "PWR wakeup configuration register",
                     ),
                     array: None,
-                    byte_offset: 72,
+                    byte_offset: 0x48,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -270,7 +270,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "PWR I/O retention register",
                     ),
                     array: None,
-                    byte_offset: 80,
+                    byte_offset: 0x50,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -287,7 +287,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "PWR security configuration register",
                     ),
                     array: None,
-                    byte_offset: 256,
+                    byte_offset: 0x100,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -304,7 +304,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "PWR privilege configuration register",
                     ),
                     array: None,
-                    byte_offset: 260,
+                    byte_offset: 0x104,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,

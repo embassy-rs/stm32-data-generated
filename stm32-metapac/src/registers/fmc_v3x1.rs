@@ -15,7 +15,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SRAM/NOR-Flash chip-select control register 1",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -39,7 +39,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -63,7 +63,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -80,7 +80,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "PC Card/NAND Flash control register",
                     ),
                     array: None,
-                    byte_offset: 128,
+                    byte_offset: 0x80,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -97,7 +97,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FIFO status and interrupt register",
                     ),
                     array: None,
-                    byte_offset: 132,
+                    byte_offset: 0x84,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -114,7 +114,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Common memory space timing register",
                     ),
                     array: None,
-                    byte_offset: 136,
+                    byte_offset: 0x88,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -131,7 +131,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Attribute memory space timing register",
                     ),
                     array: None,
-                    byte_offset: 140,
+                    byte_offset: 0x8c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -148,7 +148,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "ECC result register",
                     ),
                     array: None,
-                    byte_offset: 148,
+                    byte_offset: 0x94,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -172,7 +172,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 260,
+                    byte_offset: 0x104,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -196,7 +196,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 320,
+                    byte_offset: 0x140,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -220,7 +220,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 328,
+                    byte_offset: 0x148,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -237,7 +237,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SDRAM Command Mode register",
                     ),
                     array: None,
-                    byte_offset: 336,
+                    byte_offset: 0x150,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -254,7 +254,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SDRAM Refresh Timer register",
                     ),
                     array: None,
-                    byte_offset: 340,
+                    byte_offset: 0x154,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -271,7 +271,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SDRAM Status register",
                     ),
                     array: None,
-                    byte_offset: 344,
+                    byte_offset: 0x158,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,

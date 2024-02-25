@@ -22,54 +22,54 @@ impl Cryp {
     #[doc = "control register."]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "status register."]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "data input register."]
     #[inline(always)]
     pub const fn din(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "data output register."]
     #[inline(always)]
     pub const fn dout(self) -> crate::common::Reg<u32, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "DMA control register."]
     #[inline(always)]
     pub const fn dmacr(self) -> crate::common::Reg<regs::Dmacr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "interrupt mask set/clear register."]
     #[inline(always)]
     pub const fn imscr(self) -> crate::common::Reg<regs::Imscr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "raw interrupt status register."]
     #[inline(always)]
     pub const fn risr(self) -> crate::common::Reg<regs::Risr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "masked interrupt status register."]
     #[inline(always)]
     pub const fn misr(self) -> crate::common::Reg<regs::Misr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "Cluster KEY%s, containing K?LR, K?RR."]
     #[inline(always)]
     pub const fn key(self, n: usize) -> Key {
         assert!(n < 4usize);
-        unsafe { Key::from_ptr(self.ptr.add(32usize + n * 8usize) as _) }
+        unsafe { Key::from_ptr(self.ptr.add(0x20usize + n * 8usize) as _) }
     }
     #[doc = "Cluster INIT%s, containing IV?LR, IV?RR."]
     #[inline(always)]
     pub const fn init(self, n: usize) -> Init {
         assert!(n < 2usize);
-        unsafe { Init::from_ptr(self.ptr.add(64usize + n * 8usize) as _) }
+        unsafe { Init::from_ptr(self.ptr.add(0x40usize + n * 8usize) as _) }
     }
 }
 #[doc = "Cluster INIT%s, containing IV?LR, IV?RR."]
@@ -91,12 +91,12 @@ impl Init {
     #[doc = "initialization vector registers."]
     #[inline(always)]
     pub const fn ivlr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "initialization vector registers."]
     #[inline(always)]
     pub const fn ivrr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
 }
 #[doc = "Cluster KEY%s, containing K?LR, K?RR."]
@@ -118,12 +118,12 @@ impl Key {
     #[doc = "key registers."]
     #[inline(always)]
     pub const fn klr(self) -> crate::common::Reg<u32, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "key registers."]
     #[inline(always)]
     pub const fn krr(self) -> crate::common::Reg<u32, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
 }
 pub mod regs {

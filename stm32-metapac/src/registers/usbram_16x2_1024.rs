@@ -9,7 +9,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "mem",
             description: Some("USB Endpoint memory"),
             array: Some(Array::Regular(RegularArray { len: 512, stride: 2 })),
-            byte_offset: 0,
+            byte_offset: 0x0,
             inner: BlockItemInner::Register(Register {
                 access: Access::ReadWrite,
                 bit_size: 16,

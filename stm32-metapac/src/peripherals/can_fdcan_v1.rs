@@ -22,179 +22,179 @@ impl Fdcan {
     #[doc = "FDCAN core release register"]
     #[inline(always)]
     pub const fn crel(self) -> crate::common::Reg<regs::Crel, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "FDCAN endian register"]
     #[inline(always)]
     pub const fn endn(self) -> crate::common::Reg<regs::Endn, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "FDCAN data bit timing and prescaler register"]
     #[inline(always)]
     pub const fn dbtp(self) -> crate::common::Reg<regs::Dbtp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "FDCAN test register"]
     #[inline(always)]
     pub const fn test(self) -> crate::common::Reg<regs::Test, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "FDCAN RAM watchdog register"]
     #[inline(always)]
     pub const fn rwd(self) -> crate::common::Reg<regs::Rwd, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "FDCAN CC control register"]
     #[inline(always)]
     pub const fn cccr(self) -> crate::common::Reg<regs::Cccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "FDCAN nominal bit timing and prescaler register"]
     #[inline(always)]
     pub const fn nbtp(self) -> crate::common::Reg<regs::Nbtp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "FDCAN timestamp counter configuration register"]
     #[inline(always)]
     pub const fn tscc(self) -> crate::common::Reg<regs::Tscc, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "FDCAN timestamp counter value register"]
     #[inline(always)]
     pub const fn tscv(self) -> crate::common::Reg<regs::Tscv, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "FDCAN timeout counter configuration register"]
     #[inline(always)]
     pub const fn tocc(self) -> crate::common::Reg<regs::Tocc, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "FDCAN timeout counter value register"]
     #[inline(always)]
     pub const fn tocv(self) -> crate::common::Reg<regs::Tocv, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "FDCAN error counter register"]
     #[inline(always)]
     pub const fn ecr(self) -> crate::common::Reg<regs::Ecr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[doc = "FDCAN protocol status register"]
     #[inline(always)]
     pub const fn psr(self) -> crate::common::Reg<regs::Psr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[doc = "FDCAN transmitter delay compensation register"]
     #[inline(always)]
     pub const fn tdcr(self) -> crate::common::Reg<regs::Tdcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[doc = "FDCAN interrupt register"]
     #[inline(always)]
     pub const fn ir(self) -> crate::common::Reg<regs::Ir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[doc = "FDCAN interrupt enable register"]
     #[inline(always)]
     pub const fn ie(self) -> crate::common::Reg<regs::Ie, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[doc = "FDCAN interrupt line select register"]
     #[inline(always)]
     pub const fn ils(self) -> crate::common::Reg<regs::Ils, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize) as _) }
     }
     #[doc = "FDCAN interrupt line enable register"]
     #[inline(always)]
     pub const fn ile(self) -> crate::common::Reg<regs::Ile, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(92usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
     }
     #[doc = "FDCAN global filter configuration register"]
     #[inline(always)]
     pub const fn rxgfc(self) -> crate::common::Reg<regs::Rxgfc, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(128usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
     }
     #[doc = "FDCAN extended ID and mask register"]
     #[inline(always)]
     pub const fn xidam(self) -> crate::common::Reg<regs::Xidam, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(132usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x84usize) as _) }
     }
     #[doc = "FDCAN high-priority message status register"]
     #[inline(always)]
     pub const fn hpms(self) -> crate::common::Reg<regs::Hpms, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(136usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x88usize) as _) }
     }
     #[doc = "FDCAN Rx FIFO X status register"]
     #[inline(always)]
     pub const fn rxfs(self, n: usize) -> crate::common::Reg<regs::Rxfs, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(144usize + ([0usize, 8usize][n] as usize)) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x90usize + ([0usize, 8usize][n] as usize)) as _) }
     }
     #[doc = "CAN Rx FIFO X acknowledge register"]
     #[inline(always)]
     pub const fn rxfa(self, n: usize) -> crate::common::Reg<regs::Rxfa, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(148usize + ([0usize, 8usize][n] as usize)) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x94usize + ([0usize, 8usize][n] as usize)) as _) }
     }
     #[doc = "FDCAN Tx buffer configuration register"]
     #[inline(always)]
     pub const fn txbc(self) -> crate::common::Reg<regs::Txbc, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(192usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc0usize) as _) }
     }
     #[doc = "FDCAN Tx FIFO/queue status register"]
     #[inline(always)]
     pub const fn txfqs(self) -> crate::common::Reg<regs::Txfqs, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(196usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc4usize) as _) }
     }
     #[doc = "FDCAN Tx buffer request pending register"]
     #[inline(always)]
     pub const fn txbrp(self) -> crate::common::Reg<regs::Txbrp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(200usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc8usize) as _) }
     }
     #[doc = "FDCAN Tx buffer add request register"]
     #[inline(always)]
     pub const fn txbar(self) -> crate::common::Reg<regs::Txbar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(204usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xccusize) as _) }
     }
     #[doc = "FDCAN Tx buffer cancellation request register"]
     #[inline(always)]
     pub const fn txbcr(self) -> crate::common::Reg<regs::Txbcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(208usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd0usize) as _) }
     }
     #[doc = "FDCAN Tx buffer transmission occurred register"]
     #[inline(always)]
     pub const fn txbto(self) -> crate::common::Reg<regs::Txbto, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(212usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd4usize) as _) }
     }
     #[doc = "FDCAN Tx buffer cancellation finished register"]
     #[inline(always)]
     pub const fn txbcf(self) -> crate::common::Reg<regs::Txbcf, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(216usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd8usize) as _) }
     }
     #[doc = "FDCAN Tx buffer transmission interrupt enable register"]
     #[inline(always)]
     pub const fn txbtie(self) -> crate::common::Reg<regs::Txbtie, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(220usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xdcusize) as _) }
     }
     #[doc = "FDCAN Tx buffer cancellation finished interrupt enable register"]
     #[inline(always)]
     pub const fn txbcie(self) -> crate::common::Reg<regs::Txbcie, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(224usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe0usize) as _) }
     }
     #[doc = "FDCAN Tx event FIFO status register"]
     #[inline(always)]
     pub const fn txefs(self) -> crate::common::Reg<regs::Txefs, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(228usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe4usize) as _) }
     }
     #[doc = "FDCAN Tx event FIFO acknowledge register"]
     #[inline(always)]
     pub const fn txefa(self) -> crate::common::Reg<regs::Txefa, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(232usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe8usize) as _) }
     }
     #[doc = "FDCAN CFG clock divider register"]
     #[inline(always)]
     pub const fn ckdiv(self) -> crate::common::Reg<regs::Ckdiv, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(256usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
 }
 pub mod regs {
@@ -2405,7 +2405,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Act {
         #[doc = "Synchronizing: node is synchronizing on CAN communication."]
-        SYNC = 0,
+        SYNC = 0x0,
         #[doc = "Idle: node is neither receiver nor transmitter."]
         IDLE = 0x01,
         #[doc = "Receiver: node is operating as receiver."]
@@ -2439,7 +2439,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Anfe {
         #[doc = "Accept in Rx FIFO 0"]
-        ACCEPT_FIFO_0 = 0,
+        ACCEPT_FIFO_0 = 0x0,
         #[doc = "Accept in Rx FIFO 1"]
         ACCEPT_FIFO_1 = 0x01,
         #[doc = "Reject"]
@@ -2472,7 +2472,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Anfs {
         #[doc = "Accept in Rx FIFO 0"]
-        ACCEPT_FIFO_0 = 0,
+        ACCEPT_FIFO_0 = 0x0,
         #[doc = "Accept in Rx FIFO 1"]
         ACCEPT_FIFO_1 = 0x01,
         #[doc = "Reject"]
@@ -2505,7 +2505,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lec {
         #[doc = "No Error: No error occurred since LEC has been reset by successful reception or transmission."]
-        NO_ERROR = 0,
+        NO_ERROR = 0x0,
         #[doc = "Stuff Error: More than 5 equal bits in a sequence have occurred in a part of a received message where this is not allowed."]
         STUFF = 0x01,
         #[doc = "Form Error: A fixed format part of a received frame has the wrong format."]
@@ -2547,7 +2547,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Msi {
         #[doc = "No FIFO selected"]
-        NO_FIFO = 0,
+        NO_FIFO = 0x0,
         #[doc = "FIFO overrun"]
         OVERRUN = 0x01,
         #[doc = "Message stored in FIFO 0"]
@@ -2581,7 +2581,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pdiv {
         #[doc = "Divide by 1"]
-        DIV_1 = 0,
+        DIV_1 = 0x0,
         #[doc = "Divide by 2"]
         DIV_2 = 0x01,
         #[doc = "Divide by 4"]
@@ -2639,7 +2639,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tos {
         #[doc = "Continuous operation"]
-        CONTINUOUS = 0,
+        CONTINUOUS = 0x0,
         #[doc = "Timeout controlled by Tx event FIFO"]
         TX_EVENT_FIFO = 0x01,
         #[doc = "Timeout controlled by Rx FIFO 0"]
@@ -2673,7 +2673,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tss {
         #[doc = "Timestamp counter value always 0x0000"]
-        ZERO = 0,
+        ZERO = 0x0,
         #[doc = "Timestamp counter value incremented according to TCP"]
         INCREMENT = 0x01,
         #[doc = "External timestamp counter from TIM3 value (tim3_cnt\\[0:15\\])"]
@@ -2706,7 +2706,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tx {
         #[doc = "Reset value, FDCANx_TX TX is controlled by the CAN core, updated at the end of the CAN bit time"]
-        RESET = 0,
+        RESET = 0x0,
         #[doc = "Sample point can be monitored at pin FDCANx_TX"]
         SAMPLE_POINT = 0x01,
         #[doc = "Dominant (0) level at pin FDCANx_TX"]

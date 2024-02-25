@@ -15,7 +15,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "ADF Global Control Register.",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "ADF clock generator control register.",
                     ),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -49,7 +49,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "ADF serial interface control register 0.",
                     ),
                     array: None,
-                    byte_offset: 128,
+                    byte_offset: 0x80,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -66,7 +66,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "ADF bitstream matrix control register 0.",
                     ),
                     array: None,
-                    byte_offset: 132,
+                    byte_offset: 0x84,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -83,7 +83,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "ADF digital filter control register 0.",
                     ),
                     array: None,
-                    byte_offset: 136,
+                    byte_offset: 0x88,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -100,7 +100,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "ADF digital filer configuration register 0.",
                     ),
                     array: None,
-                    byte_offset: 140,
+                    byte_offset: 0x8c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -117,7 +117,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "ADF reshape filter configuration register 0.",
                     ),
                     array: None,
-                    byte_offset: 144,
+                    byte_offset: 0x90,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -134,7 +134,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "ADF delay control register 0.",
                     ),
                     array: None,
-                    byte_offset: 164,
+                    byte_offset: 0xa4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -151,7 +151,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "ADF DFLT0 interrupt enable register.",
                     ),
                     array: None,
-                    byte_offset: 172,
+                    byte_offset: 0xac,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -168,7 +168,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "ADF DFLT0 interrupt status register 0.",
                     ),
                     array: None,
-                    byte_offset: 176,
+                    byte_offset: 0xb0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -185,7 +185,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "ADF SAD control register.",
                     ),
                     array: None,
-                    byte_offset: 184,
+                    byte_offset: 0xb8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -202,7 +202,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "ADF SAD configuration register.",
                     ),
                     array: None,
-                    byte_offset: 188,
+                    byte_offset: 0xbc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -219,7 +219,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "ADF SAD sound level register.",
                     ),
                     array: None,
-                    byte_offset: 192,
+                    byte_offset: 0xc0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -236,7 +236,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "ADF SAD ambient noise level register.",
                     ),
                     array: None,
-                    byte_offset: 196,
+                    byte_offset: 0xc4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -253,7 +253,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "ADF digital filter data register 0.",
                     ),
                     array: None,
-                    byte_offset: 240,
+                    byte_offset: 0xf0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,

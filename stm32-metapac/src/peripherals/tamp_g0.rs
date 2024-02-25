@@ -22,68 +22,68 @@ impl Tamp {
     #[doc = "control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "control register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "TAMP filter control register"]
     #[inline(always)]
     pub const fn fltcr(self) -> crate::common::Reg<regs::Fltcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "TAMP interrupt enable register"]
     #[inline(always)]
     pub const fn ier(self) -> crate::common::Reg<regs::Ier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "TAMP status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "TAMP masked interrupt status register"]
     #[inline(always)]
     pub const fn misr(self) -> crate::common::Reg<regs::Misr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[doc = "TAMP status clear register"]
     #[inline(always)]
     pub const fn scr(self) -> crate::common::Reg<regs::Scr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[doc = "TAMP backup register"]
     #[inline(always)]
     pub const fn bkpr(self, n: usize) -> crate::common::Reg<regs::Bkpr, crate::common::RW> {
         assert!(n < 5usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(256usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize + n * 4usize) as _) }
     }
     #[doc = "TAMP hardware configuration register 2"]
     #[inline(always)]
     pub const fn hwcfgr2(self) -> crate::common::Reg<regs::Hwcfgr2, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1004usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03ecusize) as _) }
     }
     #[doc = "TAMP hardware configuration register 1"]
     #[inline(always)]
     pub const fn hwcfgr1(self) -> crate::common::Reg<regs::Hwcfgr1, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1008usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03f0usize) as _) }
     }
     #[doc = "EXTI IP Version register"]
     #[inline(always)]
     pub const fn verr(self) -> crate::common::Reg<regs::Verr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1012usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03f4usize) as _) }
     }
     #[doc = "EXTI Identification register"]
     #[inline(always)]
     pub const fn ipidr(self) -> crate::common::Reg<regs::Ipidr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1016usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03f8usize) as _) }
     }
     #[doc = "EXTI Size ID register"]
     #[inline(always)]
     pub const fn sidr(self) -> crate::common::Reg<regs::Sidr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1020usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03fcusize) as _) }
     }
 }
 pub mod regs {

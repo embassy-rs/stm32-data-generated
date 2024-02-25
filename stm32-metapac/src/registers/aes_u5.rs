@@ -10,7 +10,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "cr",
                 description: Some("Control register"),
                 array: None,
-                byte_offset: 0,
+                byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -21,7 +21,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "sr",
                 description: Some("Status register"),
                 array: None,
-                byte_offset: 4,
+                byte_offset: 0x4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "dinr",
                 description: Some("Data input register"),
                 array: None,
-                byte_offset: 8,
+                byte_offset: 0x8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -43,7 +43,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "doutr",
                 description: Some("Data output register"),
                 array: None,
-                byte_offset: 12,
+                byte_offset: 0xc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -56,7 +56,7 @@ pub(crate) static REGISTERS: IR = IR {
                 array: Some(Array::Cursed(CursedArray {
                     offsets: &[0, 4, 8, 12, 32, 36, 40, 44],
                 })),
-                byte_offset: 16,
+                byte_offset: 0x10,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -67,7 +67,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ivr",
                 description: Some("Initialization vector register"),
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
-                byte_offset: 32,
+                byte_offset: 0x20,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -78,7 +78,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "suspr",
                 description: Some("Suspend register"),
                 array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
-                byte_offset: 64,
+                byte_offset: 0x40,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -89,7 +89,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "ier",
                 description: Some("interrupt enable register"),
                 array: None,
-                byte_offset: 768,
+                byte_offset: 0x300,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -100,7 +100,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "isr",
                 description: Some("interrupt status register"),
                 array: None,
-                byte_offset: 772,
+                byte_offset: 0x304,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -111,7 +111,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "icr",
                 description: Some("interrupt clear register"),
                 array: None,
-                byte_offset: 776,
+                byte_offset: 0x308,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,

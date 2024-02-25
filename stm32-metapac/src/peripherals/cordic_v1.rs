@@ -22,17 +22,17 @@ impl Cordic {
     #[doc = "Control and status register."]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Argument register."]
     #[inline(always)]
     pub const fn wdata(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Result register."]
     #[inline(always)]
     pub const fn rdata(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
 }
 pub mod regs {
@@ -175,7 +175,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Argsize {
         #[doc = "Use 32 bit input values."]
-        BITS32 = 0,
+        BITS32 = 0x0,
         #[doc = "Use 16 bit input values."]
         BITS16 = 0x01,
     }
@@ -205,7 +205,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Func {
         #[doc = "Cosine function."]
-        COSINE = 0,
+        COSINE = 0x0,
         #[doc = "Sine function."]
         SINE = 0x01,
         #[doc = "Phase function."]
@@ -257,7 +257,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Nargs {
         #[doc = "Only single argument write is needed for next calculation."]
-        NUM1 = 0,
+        NUM1 = 0x0,
         #[doc = "Two argument writes need to be performed for next calculation."]
         NUM2 = 0x01,
     }
@@ -287,7 +287,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Nres {
         #[doc = "Only single result value will be returned. After a single read RRDY will be automatically cleared."]
-        NUM1 = 0,
+        NUM1 = 0x0,
         #[doc = "Two return reads need to be performed. After two reads RRDY will be automatically cleared."]
         NUM2 = 0x01,
     }
@@ -316,7 +316,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Precision {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "4 iterations."]
         ITERS4 = 0x01,
         #[doc = "8 iterations."]
@@ -374,7 +374,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ressize {
         #[doc = "Use 32 bit output values."]
-        BITS32 = 0,
+        BITS32 = 0x0,
         #[doc = "Use 16 bit output values."]
         BITS16 = 0x01,
     }

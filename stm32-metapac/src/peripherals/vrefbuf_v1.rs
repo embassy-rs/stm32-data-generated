@@ -22,12 +22,12 @@ impl Vrefbuf {
     #[doc = "control and status register."]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "calibration control register."]
     #[inline(always)]
     pub const fn ccr(self) -> crate::common::Reg<regs::Ccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
 }
 pub mod regs {
@@ -116,7 +116,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Hiz {
         #[doc = "VREF+ pin is internally connected to the voltage reference buffer output."]
-        CONNECTED = 0,
+        CONNECTED = 0x0,
         #[doc = "VREF+ pin is high impedance."]
         HIGHZ = 0x01,
     }
@@ -146,7 +146,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Vrs {
         #[doc = "Voltage reference set to VREF_OUT1 (around 2.048 V)."]
-        VREF0 = 0,
+        VREF0 = 0x0,
         #[doc = "Voltage reference set to VREF_OUT2 (around 2.5 V)."]
         VREF1 = 0x01,
     }

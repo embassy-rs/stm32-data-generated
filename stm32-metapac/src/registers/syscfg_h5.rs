@@ -15,7 +15,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SBS temporal isolation control register",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SBS temporal isolation status register",
                     ),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 0x14,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -49,7 +49,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SBS next HDPL control register",
                     ),
                     array: None,
-                    byte_offset: 24,
+                    byte_offset: 0x18,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -66,7 +66,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SBS debug control register",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 0x20,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -83,7 +83,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SBS debug lock register",
                     ),
                     array: None,
-                    byte_offset: 36,
+                    byte_offset: 0x24,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -100,7 +100,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SBS RSS command register",
                     ),
                     array: None,
-                    byte_offset: 52,
+                    byte_offset: 0x34,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -117,7 +117,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SBS EPOCH selection control register",
                     ),
                     array: None,
-                    byte_offset: 160,
+                    byte_offset: 0xa0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -134,7 +134,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SBS security mode configuration control register",
                     ),
                     array: None,
-                    byte_offset: 192,
+                    byte_offset: 0xc0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -151,7 +151,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SBS product mode and configuration register",
                     ),
                     array: None,
-                    byte_offset: 256,
+                    byte_offset: 0x100,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -168,7 +168,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SBS FPU interrupt mask register",
                     ),
                     array: None,
-                    byte_offset: 260,
+                    byte_offset: 0x104,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -185,7 +185,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SBS memory erase status register",
                     ),
                     array: None,
-                    byte_offset: 264,
+                    byte_offset: 0x108,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -202,7 +202,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SBS compensation cell for I/Os control and status register",
                     ),
                     array: None,
-                    byte_offset: 272,
+                    byte_offset: 0x110,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -219,7 +219,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SBS compensation cell for I/Os value register",
                     ),
                     array: None,
-                    byte_offset: 276,
+                    byte_offset: 0x114,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -236,7 +236,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SBS compensation cell for I/Os software code register",
                     ),
                     array: None,
-                    byte_offset: 280,
+                    byte_offset: 0x118,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -253,7 +253,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SBS Class B register",
                     ),
                     array: None,
-                    byte_offset: 288,
+                    byte_offset: 0x120,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -270,7 +270,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SBS CPU non-secure lock register",
                     ),
                     array: None,
-                    byte_offset: 324,
+                    byte_offset: 0x144,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -287,7 +287,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SBS CPU secure lock register",
                     ),
                     array: None,
-                    byte_offset: 328,
+                    byte_offset: 0x148,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -304,7 +304,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "SBS flift ECC NMI mask register",
                     ),
                     array: None,
-                    byte_offset: 332,
+                    byte_offset: 0x14c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,

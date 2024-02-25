@@ -22,47 +22,47 @@ impl Lpuart {
     #[doc = "Control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Control register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Control register 3"]
     #[inline(always)]
     pub const fn cr3(self) -> crate::common::Reg<regs::Cr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Baud rate register"]
     #[inline(always)]
     pub const fn brr(self) -> crate::common::Reg<regs::Brr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Request register"]
     #[inline(always)]
     pub const fn rqr(self) -> crate::common::Reg<regs::Rqr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Interrupt & status register"]
     #[inline(always)]
     pub const fn isr(self) -> crate::common::Reg<regs::Isr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "Interrupt flag clear register"]
     #[inline(always)]
     pub const fn icr(self) -> crate::common::Reg<regs::Icr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "Receive data register"]
     #[inline(always)]
     pub const fn rdr(self) -> crate::common::Reg<regs::Dr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "Transmit data register"]
     #[inline(always)]
     pub const fn tdr(self) -> crate::common::Reg<regs::Dr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
 }
 #[doc = "Universal synchronous asynchronous receiver transmitter"]
@@ -84,57 +84,57 @@ impl Usart {
     #[doc = "Control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Control register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Control register 3"]
     #[inline(always)]
     pub const fn cr3(self) -> crate::common::Reg<regs::Cr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Baud rate register"]
     #[inline(always)]
     pub const fn brr(self) -> crate::common::Reg<regs::Brr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Guard time and prescaler register"]
     #[inline(always)]
     pub const fn gtpr(self) -> crate::common::Reg<regs::Gtpr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Receiver timeout register"]
     #[inline(always)]
     pub const fn rtor(self) -> crate::common::Reg<regs::Rtor, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Request register"]
     #[inline(always)]
     pub const fn rqr(self) -> crate::common::Reg<regs::Rqr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Interrupt & status register"]
     #[inline(always)]
     pub const fn isr(self) -> crate::common::Reg<regs::Isr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "Interrupt flag clear register"]
     #[inline(always)]
     pub const fn icr(self) -> crate::common::Reg<regs::Icr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "Receive data register"]
     #[inline(always)]
     pub const fn rdr(self) -> crate::common::Reg<regs::Dr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "Transmit data register"]
     #[inline(always)]
     pub const fn tdr(self) -> crate::common::Reg<regs::Dr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
 }
 pub mod regs {
@@ -1397,7 +1397,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Abrmod {
         #[doc = "Measurement of the start bit is used to detect the baud rate"]
-        START = 0,
+        START = 0x0,
         #[doc = "Falling edge to falling edge measurement"]
         EDGE = 0x01,
         #[doc = "0x7F frame detection"]
@@ -1431,7 +1431,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Addm {
         #[doc = "4-bit address detection"]
-        BIT4 = 0,
+        BIT4 = 0x0,
         #[doc = "7-bit address detection"]
         BIT7 = 0x01,
     }
@@ -1461,7 +1461,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cpha {
         #[doc = "The first clock transition is the first data capture edge"]
-        FIRST = 0,
+        FIRST = 0x0,
         #[doc = "The second clock transition is the first data capture edge"]
         SECOND = 0x01,
     }
@@ -1491,7 +1491,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cpol {
         #[doc = "Steady low value on CK pin outside transmission window"]
-        LOW = 0,
+        LOW = 0x0,
         #[doc = "Steady high value on CK pin outside transmission window"]
         HIGH = 0x01,
     }
@@ -1521,7 +1521,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dep {
         #[doc = "DE signal is active high"]
-        HIGH = 0,
+        HIGH = 0x0,
         #[doc = "DE signal is active low"]
         LOW = 0x01,
     }
@@ -1551,7 +1551,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Irlp {
         #[doc = "Normal mode"]
-        NORMAL = 0,
+        NORMAL = 0x0,
         #[doc = "Low-power mode"]
         LOWPOWER = 0x01,
     }
@@ -1581,7 +1581,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lbdl {
         #[doc = "10-bit break detection"]
-        BIT10 = 0,
+        BIT10 = 0x0,
         #[doc = "11-bit break detection"]
         BIT11 = 0x01,
     }
@@ -1611,7 +1611,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum M0 {
         #[doc = "1 start bit, 8 data bits, n stop bits"]
-        BIT8 = 0,
+        BIT8 = 0x0,
         #[doc = "1 start bit, 9 data bits, n stop bits"]
         BIT9 = 0x01,
     }
@@ -1641,7 +1641,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum M1 {
         #[doc = "Use M0 to set the data bits"]
-        M0 = 0,
+        M0 = 0x0,
         #[doc = "1 start bit, 7 data bits, n stop bits"]
         BIT7 = 0x01,
     }
@@ -1671,7 +1671,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Msbfirst {
         #[doc = "data is transmitted/received with data bit 0 first, following the start bit"]
-        LSB = 0,
+        LSB = 0x0,
         #[doc = "data is transmitted/received with MSB (bit 7/8/9) first, following the start bit"]
         MSB = 0x01,
     }
@@ -1701,7 +1701,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Over8 {
         #[doc = "Oversampling by 16"]
-        OVERSAMPLING16 = 0,
+        OVERSAMPLING16 = 0x0,
         #[doc = "Oversampling by 8"]
         OVERSAMPLING8 = 0x01,
     }
@@ -1731,7 +1731,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ps {
         #[doc = "Even parity"]
-        EVEN = 0,
+        EVEN = 0x0,
         #[doc = "Odd parity"]
         ODD = 0x01,
     }
@@ -1761,7 +1761,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rwu {
         #[doc = "Receiver in active mode"]
-        ACTIVE = 0,
+        ACTIVE = 0x0,
         #[doc = "Receiver in mute mode"]
         MUTE = 0x01,
     }
@@ -1791,7 +1791,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Stop {
         #[doc = "1 stop bit"]
-        STOP1 = 0,
+        STOP1 = 0x0,
         #[doc = "0.5 stop bits"]
         STOP0P5 = 0x01,
         #[doc = "2 stop bits"]
@@ -1825,7 +1825,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Wake {
         #[doc = "USART wakeup on idle line"]
-        IDLELINE = 0,
+        IDLELINE = 0x0,
         #[doc = "USART wakeup on address mark"]
         ADDRESSMARK = 0x01,
     }
@@ -1855,7 +1855,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Wus {
         #[doc = "WUF active on address match"]
-        ADDRESS = 0,
+        ADDRESS = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "WuF active on Start bit detection"]
         START = 0x02,

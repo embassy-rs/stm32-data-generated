@@ -15,7 +15,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC clock control register",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC internal clock sources calibration register 3",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -49,7 +49,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC clock configuration register 1",
                     ),
                     array: None,
-                    byte_offset: 28,
+                    byte_offset: 0x1c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -66,7 +66,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC clock configuration register 2",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 0x20,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -83,7 +83,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC clock configuration register 3",
                     ),
                     array: None,
-                    byte_offset: 36,
+                    byte_offset: 0x24,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -100,7 +100,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC PLL1 configuration register",
                     ),
                     array: None,
-                    byte_offset: 40,
+                    byte_offset: 0x28,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -117,7 +117,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC PLL1 dividers register",
                     ),
                     array: None,
-                    byte_offset: 52,
+                    byte_offset: 0x34,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -134,7 +134,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC PLL1 fractional divider register",
                     ),
                     array: None,
-                    byte_offset: 56,
+                    byte_offset: 0x38,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -151,7 +151,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC clock interrupt enable register",
                     ),
                     array: None,
-                    byte_offset: 80,
+                    byte_offset: 0x50,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -168,7 +168,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC clock interrupt flag register",
                     ),
                     array: None,
-                    byte_offset: 84,
+                    byte_offset: 0x54,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -185,7 +185,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC clock interrupt clear register",
                     ),
                     array: None,
-                    byte_offset: 88,
+                    byte_offset: 0x58,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -202,7 +202,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC AHB1 peripheral reset register",
                     ),
                     array: None,
-                    byte_offset: 96,
+                    byte_offset: 0x60,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -219,7 +219,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC AHB2 peripheral reset register",
                     ),
                     array: None,
-                    byte_offset: 100,
+                    byte_offset: 0x64,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -236,7 +236,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC AHB4 peripheral reset register",
                     ),
                     array: None,
-                    byte_offset: 108,
+                    byte_offset: 0x6c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -253,7 +253,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC AHB5 peripheral reset register",
                     ),
                     array: None,
-                    byte_offset: 112,
+                    byte_offset: 0x70,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -270,7 +270,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC APB1 peripheral reset register 1",
                     ),
                     array: None,
-                    byte_offset: 116,
+                    byte_offset: 0x74,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -287,7 +287,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC APB1 peripheral reset register 2",
                     ),
                     array: None,
-                    byte_offset: 120,
+                    byte_offset: 0x78,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -304,7 +304,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC APB2 peripheral reset register",
                     ),
                     array: None,
-                    byte_offset: 124,
+                    byte_offset: 0x7c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -321,7 +321,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC APB7 peripheral reset register",
                     ),
                     array: None,
-                    byte_offset: 128,
+                    byte_offset: 0x80,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -338,7 +338,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC AHB1 peripheral clock enable register",
                     ),
                     array: None,
-                    byte_offset: 136,
+                    byte_offset: 0x88,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -355,7 +355,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC AHB2 peripheral clock enable register",
                     ),
                     array: None,
-                    byte_offset: 140,
+                    byte_offset: 0x8c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -372,7 +372,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC AHB4 peripheral clock enable register",
                     ),
                     array: None,
-                    byte_offset: 148,
+                    byte_offset: 0x94,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -389,7 +389,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC AHB5 peripheral clock enable register",
                     ),
                     array: None,
-                    byte_offset: 152,
+                    byte_offset: 0x98,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -406,7 +406,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC APB1 peripheral clock enable register 1",
                     ),
                     array: None,
-                    byte_offset: 156,
+                    byte_offset: 0x9c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -423,7 +423,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC APB1 peripheral clock enable register 2",
                     ),
                     array: None,
-                    byte_offset: 160,
+                    byte_offset: 0xa0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -440,7 +440,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC APB2 peripheral clock enable register",
                     ),
                     array: None,
-                    byte_offset: 164,
+                    byte_offset: 0xa4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -457,7 +457,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC APB7 peripheral clock enable register",
                     ),
                     array: None,
-                    byte_offset: 168,
+                    byte_offset: 0xa8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -474,7 +474,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC AHB1 peripheral clocks enable in Sleep and Stop modes register",
                     ),
                     array: None,
-                    byte_offset: 176,
+                    byte_offset: 0xb0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -491,7 +491,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC AHB2 peripheral clocks enable in Sleep and Stop modes register",
                     ),
                     array: None,
-                    byte_offset: 180,
+                    byte_offset: 0xb4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -508,7 +508,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC AHB4 peripheral clocks enable in Sleep and Stop modes register",
                     ),
                     array: None,
-                    byte_offset: 188,
+                    byte_offset: 0xbc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -525,7 +525,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC AHB5 peripheral clocks enable in Sleep and Stop modes register",
                     ),
                     array: None,
-                    byte_offset: 192,
+                    byte_offset: 0xc0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -542,7 +542,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC APB1 peripheral clocks enable in Sleep and Stop modes\tregister 1",
                     ),
                     array: None,
-                    byte_offset: 196,
+                    byte_offset: 0xc4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -559,7 +559,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC APB1 peripheral clocks enable in Sleep and Stop modes \tregister 2",
                     ),
                     array: None,
-                    byte_offset: 200,
+                    byte_offset: 0xc8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -576,7 +576,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC APB2 peripheral clocks enable in Sleep and Stop modes register",
                     ),
                     array: None,
-                    byte_offset: 204,
+                    byte_offset: 0xcc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -593,7 +593,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC APB7 peripheral clock enable in Sleep and Stop modes register",
                     ),
                     array: None,
-                    byte_offset: 208,
+                    byte_offset: 0xd0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -610,7 +610,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC peripherals independent clock configuration register 1",
                     ),
                     array: None,
-                    byte_offset: 224,
+                    byte_offset: 0xe0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -627,7 +627,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC peripherals independent clock configuration register 2",
                     ),
                     array: None,
-                    byte_offset: 228,
+                    byte_offset: 0xe4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -644,7 +644,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC peripherals independent clock configuration register 3",
                     ),
                     array: None,
-                    byte_offset: 232,
+                    byte_offset: 0xe8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -661,7 +661,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC backup domain control register",
                     ),
                     array: None,
-                    byte_offset: 240,
+                    byte_offset: 0xf0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -678,7 +678,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC control/status register",
                     ),
                     array: None,
-                    byte_offset: 244,
+                    byte_offset: 0xf4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -695,7 +695,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC secure configuration register",
                     ),
                     array: None,
-                    byte_offset: 272,
+                    byte_offset: 0x110,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -712,7 +712,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC privilege configuration register",
                     ),
                     array: None,
-                    byte_offset: 276,
+                    byte_offset: 0x114,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -729,7 +729,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC clock configuration register 2",
                     ),
                     array: None,
-                    byte_offset: 512,
+                    byte_offset: 0x200,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -746,7 +746,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC RADIO peripheral clock enable register",
                     ),
                     array: None,
-                    byte_offset: 520,
+                    byte_offset: 0x208,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -763,7 +763,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "RCC external clock sources calibration register 1",
                     ),
                     array: None,
-                    byte_offset: 528,
+                    byte_offset: 0x210,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,

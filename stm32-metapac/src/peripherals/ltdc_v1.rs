@@ -22,62 +22,62 @@ impl Layer {
     #[doc = "Layerx Control Register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Layerx Window Horizontal Position Configuration Register"]
     #[inline(always)]
     pub const fn whpcr(self) -> crate::common::Reg<regs::Whpcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Layerx Window Vertical Position Configuration Register"]
     #[inline(always)]
     pub const fn wvpcr(self) -> crate::common::Reg<regs::Wvpcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Layerx Color Keying Configuration Register"]
     #[inline(always)]
     pub const fn ckcr(self) -> crate::common::Reg<regs::Ckcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Layerx Pixel Format Configuration Register"]
     #[inline(always)]
     pub const fn pfcr(self) -> crate::common::Reg<regs::Pfcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Layerx Constant Alpha Configuration Register"]
     #[inline(always)]
     pub const fn cacr(self) -> crate::common::Reg<regs::Cacr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Layerx Default Color Configuration Register"]
     #[inline(always)]
     pub const fn dccr(self) -> crate::common::Reg<regs::Dccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Layerx Blending Factors Configuration Register"]
     #[inline(always)]
     pub const fn bfcr(self) -> crate::common::Reg<regs::Bfcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "Layerx Color Frame Buffer Address Register"]
     #[inline(always)]
     pub const fn cfbar(self) -> crate::common::Reg<regs::Cfbar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "Layerx Color Frame Buffer Length Register"]
     #[inline(always)]
     pub const fn cfblr(self) -> crate::common::Reg<regs::Cfblr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "Layerx ColorFrame Buffer Line Number Register"]
     #[inline(always)]
     pub const fn cfblnr(self) -> crate::common::Reg<regs::Cfblnr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "Layerx CLUT Write Register"]
     #[inline(always)]
     pub const fn clutwr(self) -> crate::common::Reg<regs::Clutwr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
 }
 #[doc = "LCD-TFT Controller"]
@@ -99,73 +99,73 @@ impl Ltdc {
     #[doc = "Synchronization Size Configuration Register"]
     #[inline(always)]
     pub const fn sscr(self) -> crate::common::Reg<regs::Sscr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Back Porch Configuration Register"]
     #[inline(always)]
     pub const fn bpcr(self) -> crate::common::Reg<regs::Bpcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Active Width Configuration Register"]
     #[inline(always)]
     pub const fn awcr(self) -> crate::common::Reg<regs::Awcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Total Width Configuration Register"]
     #[inline(always)]
     pub const fn twcr(self) -> crate::common::Reg<regs::Twcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Global Control Register"]
     #[inline(always)]
     pub const fn gcr(self) -> crate::common::Reg<regs::Gcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Shadow Reload Configuration Register"]
     #[inline(always)]
     pub const fn srcr(self) -> crate::common::Reg<regs::Srcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "Background Color Configuration Register"]
     #[inline(always)]
     pub const fn bccr(self) -> crate::common::Reg<regs::Bccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "Interrupt Enable Register"]
     #[inline(always)]
     pub const fn ier(self) -> crate::common::Reg<regs::Ier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[doc = "Interrupt Status Register"]
     #[inline(always)]
     pub const fn isr(self) -> crate::common::Reg<regs::Isr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[doc = "Interrupt Clear Register"]
     #[inline(always)]
     pub const fn icr(self) -> crate::common::Reg<regs::Icr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[doc = "Line Interrupt Position Configuration Register"]
     #[inline(always)]
     pub const fn lipcr(self) -> crate::common::Reg<regs::Lipcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[doc = "Current Position Status Register"]
     #[inline(always)]
     pub const fn cpsr(self) -> crate::common::Reg<regs::Cpsr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[doc = "Current Display Status Register"]
     #[inline(always)]
     pub const fn cdsr(self) -> crate::common::Reg<regs::Cdsr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[doc = "Cluster LAYER%s, containing L?CR, L?WHPCR, L?WVPCR, L?CKCR, L?PFCR, L?CACR, L?DCCR, L?BFCR, L?CFBAR, L?CFBLR, L?CFBLNR, L?CLUTWR"]
     #[inline(always)]
     pub const fn layer(self, n: usize) -> Layer {
         assert!(n < 2usize);
-        unsafe { Layer::from_ptr(self.ptr.add(132usize + n * 128usize) as _) }
+        unsafe { Layer::from_ptr(self.ptr.add(0x84usize + n * 128usize) as _) }
     }
 }
 pub mod regs {
@@ -1204,7 +1204,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Bf2 {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -1240,7 +1240,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cfuif {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Clears the FUIF flag in the ISR register"]
         CLEAR = 0x01,
     }
@@ -1269,7 +1269,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Clif {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Clears the LIF flag in the ISR register"]
         CLEAR = 0x01,
     }
@@ -1298,7 +1298,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Crrif {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Clears the RRIF flag in the ISR register"]
         CLEAR = 0x01,
     }
@@ -1327,7 +1327,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cterrif {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Clears the TERRIF flag in the ISR register"]
         CLEAR = 0x01,
     }
@@ -1357,7 +1357,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Depol {
         #[doc = "Data enable polarity is active low"]
-        ACTIVELOW = 0,
+        ACTIVELOW = 0x0,
         #[doc = "Data enable polarity is active high"]
         ACTIVEHIGH = 0x01,
     }
@@ -1387,7 +1387,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Hspol {
         #[doc = "Horizontal synchronization polarity is active low"]
-        ACTIVELOW = 0,
+        ACTIVELOW = 0x0,
         #[doc = "Horizontal synchronization polarity is active high"]
         ACTIVEHIGH = 0x01,
     }
@@ -1417,7 +1417,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Imr {
         #[doc = "This bit is set by software and cleared only by hardware after reload (it cannot be cleared through register write once it is set)"]
-        NOEFFECT = 0,
+        NOEFFECT = 0x0,
         #[doc = "The shadow registers are reloaded immediately. This bit is set by software and cleared only by hardware after reload"]
         RELOAD = 0x01,
     }
@@ -1447,7 +1447,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pcpol {
         #[doc = "Pixel clock on rising edge"]
-        RISINGEDGE = 0,
+        RISINGEDGE = 0x0,
         #[doc = "Pixel clock on falling edge"]
         FALLINGEDGE = 0x01,
     }
@@ -1477,7 +1477,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pf {
         #[doc = "ARGB8888"]
-        ARGB8888 = 0,
+        ARGB8888 = 0x0,
         #[doc = "RGB888"]
         RGB888 = 0x01,
         #[doc = "RGB565"]
@@ -1519,7 +1519,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Vbr {
         #[doc = "This bit is set by software and cleared only by hardware after reload (it cannot be cleared through register write once it is set)"]
-        NOEFFECT = 0,
+        NOEFFECT = 0x0,
         #[doc = "The shadow registers are reloaded during the vertical blanking period (at the beginning of the first line after the active display area)."]
         RELOAD = 0x01,
     }
@@ -1549,7 +1549,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Vspol {
         #[doc = "Vertical synchronization polarity is active low"]
-        ACTIVELOW = 0,
+        ACTIVELOW = 0x0,
         #[doc = "Vertical synchronization polarity is active high"]
         ACTIVEHIGH = 0x01,
     }

@@ -23,7 +23,7 @@ impl Ipcc {
     #[inline(always)]
     pub const fn cpu(self, n: usize) -> IpccCpu {
         assert!(n < 2usize);
-        unsafe { IpccCpu::from_ptr(self.ptr.add(0usize + n * 16usize) as _) }
+        unsafe { IpccCpu::from_ptr(self.ptr.add(0x0usize + n * 16usize) as _) }
     }
 }
 #[doc = "IPCC"]
@@ -45,22 +45,22 @@ impl IpccCpu {
     #[doc = "Control register CPUx"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::CxCr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Mask register CPUx"]
     #[inline(always)]
     pub const fn mr(self) -> crate::common::Reg<regs::CxMr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Status Set or Clear register CPUx"]
     #[inline(always)]
     pub const fn scr(self) -> crate::common::Reg<regs::CxScr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "CPUx to CPUy status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::CxToySr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
 }
 pub mod regs {

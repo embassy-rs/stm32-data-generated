@@ -15,7 +15,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Control and status register",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Interrupt register",
                     ),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -49,7 +49,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "AHB configuration register",
                     ),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -66,7 +66,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "USB configuration register",
                     ),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -83,7 +83,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Reset register",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -100,7 +100,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Core interrupt register",
                     ),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 0x14,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -117,7 +117,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Interrupt mask register",
                     ),
                     array: None,
-                    byte_offset: 24,
+                    byte_offset: 0x18,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -134,7 +134,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Receive status debug read register",
                     ),
                     array: None,
-                    byte_offset: 28,
+                    byte_offset: 0x1c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -151,7 +151,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Status read and pop register",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 0x20,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -168,7 +168,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Receive FIFO size register",
                     ),
                     array: None,
-                    byte_offset: 36,
+                    byte_offset: 0x24,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -185,7 +185,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Endpoint 0 transmit FIFO size register (device mode)",
                     ),
                     array: None,
-                    byte_offset: 40,
+                    byte_offset: 0x28,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -202,7 +202,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Non-periodic transmit FIFO size register (host mode)",
                     ),
                     array: None,
-                    byte_offset: 40,
+                    byte_offset: 0x28,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -219,7 +219,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Non-periodic transmit FIFO/queue status register (host mode)",
                     ),
                     array: None,
-                    byte_offset: 44,
+                    byte_offset: 0x2c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -236,7 +236,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "OTG I2C access register",
                     ),
                     array: None,
-                    byte_offset: 48,
+                    byte_offset: 0x30,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -253,7 +253,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "General core configuration register, for core_id 0x0000_1xxx",
                     ),
                     array: None,
-                    byte_offset: 56,
+                    byte_offset: 0x38,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -270,7 +270,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "General core configuration register, for core_id 0x0000_[23]xxx",
                     ),
                     array: None,
-                    byte_offset: 56,
+                    byte_offset: 0x38,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -287,7 +287,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Core ID register",
                     ),
                     array: None,
-                    byte_offset: 60,
+                    byte_offset: 0x3c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -304,7 +304,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "OTG core LPM configuration register",
                     ),
                     array: None,
-                    byte_offset: 84,
+                    byte_offset: 0x54,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -321,7 +321,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Host periodic transmit FIFO size register",
                     ),
                     array: None,
-                    byte_offset: 256,
+                    byte_offset: 0x100,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -345,7 +345,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 260,
+                    byte_offset: 0x104,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -362,7 +362,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Host configuration register",
                     ),
                     array: None,
-                    byte_offset: 1024,
+                    byte_offset: 0x400,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -379,7 +379,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Host frame interval register",
                     ),
                     array: None,
-                    byte_offset: 1028,
+                    byte_offset: 0x404,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -396,7 +396,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Host frame number/frame time remaining register",
                     ),
                     array: None,
-                    byte_offset: 1032,
+                    byte_offset: 0x408,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -413,7 +413,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Periodic transmit FIFO/queue status register",
                     ),
                     array: None,
-                    byte_offset: 1040,
+                    byte_offset: 0x410,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -430,7 +430,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Host all channels interrupt register",
                     ),
                     array: None,
-                    byte_offset: 1044,
+                    byte_offset: 0x414,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -447,7 +447,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Host all channels interrupt mask register",
                     ),
                     array: None,
-                    byte_offset: 1048,
+                    byte_offset: 0x418,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -464,7 +464,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Host port control and status register",
                     ),
                     array: None,
-                    byte_offset: 1088,
+                    byte_offset: 0x440,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -488,7 +488,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 1280,
+                    byte_offset: 0x500,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -512,7 +512,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 1284,
+                    byte_offset: 0x504,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -534,7 +534,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 1288,
+                    byte_offset: 0x508,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -558,7 +558,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 1292,
+                    byte_offset: 0x50c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -582,7 +582,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 1296,
+                    byte_offset: 0x510,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -599,7 +599,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Device configuration register",
                     ),
                     array: None,
-                    byte_offset: 2048,
+                    byte_offset: 0x800,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -616,7 +616,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Device control register",
                     ),
                     array: None,
-                    byte_offset: 2052,
+                    byte_offset: 0x804,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -633,7 +633,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Device status register",
                     ),
                     array: None,
-                    byte_offset: 2056,
+                    byte_offset: 0x808,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -650,7 +650,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Device IN endpoint common interrupt mask register",
                     ),
                     array: None,
-                    byte_offset: 2064,
+                    byte_offset: 0x810,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -667,7 +667,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Device OUT endpoint common interrupt mask register",
                     ),
                     array: None,
-                    byte_offset: 2068,
+                    byte_offset: 0x814,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -684,7 +684,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Device all endpoints interrupt register",
                     ),
                     array: None,
-                    byte_offset: 2072,
+                    byte_offset: 0x818,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -701,7 +701,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "All endpoints interrupt mask register",
                     ),
                     array: None,
-                    byte_offset: 2076,
+                    byte_offset: 0x81c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -718,7 +718,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Device VBUS discharge time register",
                     ),
                     array: None,
-                    byte_offset: 2088,
+                    byte_offset: 0x828,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -735,7 +735,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Device VBUS pulsing time register",
                     ),
                     array: None,
-                    byte_offset: 2092,
+                    byte_offset: 0x82c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -752,7 +752,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Device IN endpoint FIFO empty interrupt mask register",
                     ),
                     array: None,
-                    byte_offset: 2100,
+                    byte_offset: 0x834,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -776,7 +776,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 2304,
+                    byte_offset: 0x900,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -800,7 +800,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 2312,
+                    byte_offset: 0x908,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -824,7 +824,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 2320,
+                    byte_offset: 0x910,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -848,7 +848,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 2328,
+                    byte_offset: 0x918,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -872,7 +872,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 2816,
+                    byte_offset: 0xb00,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -896,7 +896,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 2824,
+                    byte_offset: 0xb08,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -920,7 +920,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 2832,
+                    byte_offset: 0xb10,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -937,7 +937,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Power and clock gating control register",
                     ),
                     array: None,
-                    byte_offset: 3584,
+                    byte_offset: 0xe00,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -961,7 +961,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 4096,
+                    byte_offset: 0x1000,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,

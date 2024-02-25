@@ -15,7 +15,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "configuration register 1",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "configuration register 1",
                     ),
                     array: None,
-                    byte_offset: 24,
+                    byte_offset: 0x18,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -49,7 +49,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "VREFBUF control and status register",
                     ),
                     array: None,
-                    byte_offset: 48,
+                    byte_offset: 0x30,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -66,7 +66,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "VREFBUF calibration control register",
                     ),
                     array: None,
-                    byte_offset: 52,
+                    byte_offset: 0x34,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -83,7 +83,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 0 status register",
                     ),
                     array: None,
-                    byte_offset: 128,
+                    byte_offset: 0x80,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -100,7 +100,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 1 status register",
                     ),
                     array: None,
-                    byte_offset: 132,
+                    byte_offset: 0x84,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -117,7 +117,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 2 status register",
                     ),
                     array: None,
-                    byte_offset: 136,
+                    byte_offset: 0x88,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -134,7 +134,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 3 status register",
                     ),
                     array: None,
-                    byte_offset: 140,
+                    byte_offset: 0x8c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -151,7 +151,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 4 status register",
                     ),
                     array: None,
-                    byte_offset: 144,
+                    byte_offset: 0x90,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -168,7 +168,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 5 status register",
                     ),
                     array: None,
-                    byte_offset: 148,
+                    byte_offset: 0x94,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -185,7 +185,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 6 status register",
                     ),
                     array: None,
-                    byte_offset: 152,
+                    byte_offset: 0x98,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -202,7 +202,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 7 status register",
                     ),
                     array: None,
-                    byte_offset: 156,
+                    byte_offset: 0x9c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -219,7 +219,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 8 status register",
                     ),
                     array: None,
-                    byte_offset: 160,
+                    byte_offset: 0xa0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -236,7 +236,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 9 status register",
                     ),
                     array: None,
-                    byte_offset: 164,
+                    byte_offset: 0xa4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -253,7 +253,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 10 status register",
                     ),
                     array: None,
-                    byte_offset: 168,
+                    byte_offset: 0xa8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -270,7 +270,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 11 status register",
                     ),
                     array: None,
-                    byte_offset: 172,
+                    byte_offset: 0xac,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -287,7 +287,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 12 status register",
                     ),
                     array: None,
-                    byte_offset: 176,
+                    byte_offset: 0xb0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -304,7 +304,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 13 status register",
                     ),
                     array: None,
-                    byte_offset: 180,
+                    byte_offset: 0xb4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -321,7 +321,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 14 status register",
                     ),
                     array: None,
-                    byte_offset: 184,
+                    byte_offset: 0xb8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -338,7 +338,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 15 status register",
                     ),
                     array: None,
-                    byte_offset: 188,
+                    byte_offset: 0xbc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -355,7 +355,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 16 status register",
                     ),
                     array: None,
-                    byte_offset: 192,
+                    byte_offset: 0xc0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -372,7 +372,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 17 status register",
                     ),
                     array: None,
-                    byte_offset: 196,
+                    byte_offset: 0xc4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -389,7 +389,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 18 status register",
                     ),
                     array: None,
-                    byte_offset: 200,
+                    byte_offset: 0xc8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -406,7 +406,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 19 status register",
                     ),
                     array: None,
-                    byte_offset: 204,
+                    byte_offset: 0xcc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -423,7 +423,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 20 status register",
                     ),
                     array: None,
-                    byte_offset: 208,
+                    byte_offset: 0xd0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -440,7 +440,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 21 status register",
                     ),
                     array: None,
-                    byte_offset: 212,
+                    byte_offset: 0xd4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -457,7 +457,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 22 status register",
                     ),
                     array: None,
-                    byte_offset: 216,
+                    byte_offset: 0xd8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -474,7 +474,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 23 status register",
                     ),
                     array: None,
-                    byte_offset: 220,
+                    byte_offset: 0xdc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -491,7 +491,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 24 status register",
                     ),
                     array: None,
-                    byte_offset: 224,
+                    byte_offset: 0xe0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -508,7 +508,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 25 status register",
                     ),
                     array: None,
-                    byte_offset: 228,
+                    byte_offset: 0xe4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -525,7 +525,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 26 status register",
                     ),
                     array: None,
-                    byte_offset: 232,
+                    byte_offset: 0xe8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -542,7 +542,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 27 status register",
                     ),
                     array: None,
-                    byte_offset: 236,
+                    byte_offset: 0xec,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -559,7 +559,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 28 status register",
                     ),
                     array: None,
-                    byte_offset: 240,
+                    byte_offset: 0xf0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -576,7 +576,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 29 status register",
                     ),
                     array: None,
-                    byte_offset: 244,
+                    byte_offset: 0xf4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -593,7 +593,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 30 status register",
                     ),
                     array: None,
-                    byte_offset: 248,
+                    byte_offset: 0xf8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -610,7 +610,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt line 31 status register",
                     ),
                     array: None,
-                    byte_offset: 252,
+                    byte_offset: 0xfc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,

@@ -11,7 +11,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "sr",
                     description: Some("Status register"),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -22,7 +22,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "dr",
                     description: Some("Data register"),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -33,7 +33,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "brr",
                     description: Some("Baud rate register"),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -44,7 +44,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "cr1",
                     description: Some("Control register 1"),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -55,7 +55,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "cr2",
                     description: Some("Control register 2"),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -66,7 +66,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "cr3",
                     description: Some("Control register 3"),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 0x14,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -84,7 +84,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "sr",
                     description: Some("Status register"),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -95,7 +95,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "dr",
                     description: Some("Data register"),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -106,7 +106,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "brr",
                     description: Some("Baud rate register"),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -117,7 +117,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "cr1",
                     description: Some("Control register 1"),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -128,7 +128,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "cr2",
                     description: Some("Control register 2"),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -139,7 +139,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "cr3",
                     description: Some("Control register 3"),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 0x14,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -150,7 +150,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "gtpr",
                     description: Some("Guard time and prescaler register"),
                     array: None,
-                    byte_offset: 24,
+                    byte_offset: 0x18,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,

@@ -11,7 +11,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "mcr",
                     description: Some("master control register"),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -22,7 +22,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "msr",
                     description: Some("master status register"),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -33,7 +33,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "tsr",
                     description: Some("transmit status register"),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -44,7 +44,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "rfr",
                     description: Some("receive FIFO 0 register"),
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 4 })),
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -55,7 +55,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ier",
                     description: Some("interrupt enable register"),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 0x14,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -66,7 +66,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "esr",
                     description: Some("error status register"),
                     array: None,
-                    byte_offset: 24,
+                    byte_offset: 0x18,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -77,7 +77,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "btr",
                     description: Some("bit timing register"),
                     array: None,
-                    byte_offset: 28,
+                    byte_offset: 0x1c,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -88,21 +88,21 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "tx",
                     description: Some("CAN Transmit cluster"),
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 16 })),
-                    byte_offset: 384,
+                    byte_offset: 0x180,
                     inner: BlockItemInner::Block(BlockItemBlock { block: "Tx" }),
                 },
                 BlockItem {
                     name: "rx",
                     description: Some("CAN Receive cluster"),
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
-                    byte_offset: 432,
+                    byte_offset: 0x1b0,
                     inner: BlockItemInner::Block(BlockItemBlock { block: "Rx" }),
                 },
                 BlockItem {
                     name: "fmr",
                     description: Some("filter master register"),
                     array: None,
-                    byte_offset: 512,
+                    byte_offset: 0x200,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -113,7 +113,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "fm1r",
                     description: Some("filter mode register"),
                     array: None,
-                    byte_offset: 516,
+                    byte_offset: 0x204,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -124,7 +124,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "fs1r",
                     description: Some("filter scale register"),
                     array: None,
-                    byte_offset: 524,
+                    byte_offset: 0x20c,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -135,7 +135,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ffa1r",
                     description: Some("filter FIFO assignment register"),
                     array: None,
-                    byte_offset: 532,
+                    byte_offset: 0x214,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -146,7 +146,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "fa1r",
                     description: Some("filter activation register"),
                     array: None,
-                    byte_offset: 540,
+                    byte_offset: 0x21c,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -157,7 +157,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "fb",
                     description: Some("CAN Filter Bank cluster"),
                     array: Some(Array::Regular(RegularArray { len: 28, stride: 8 })),
-                    byte_offset: 576,
+                    byte_offset: 0x240,
                     inner: BlockItemInner::Block(BlockItemBlock { block: "Fb" }),
                 },
             ],
@@ -171,7 +171,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "fr1",
                     description: Some("Filter bank 0 register 1"),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -182,7 +182,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "fr2",
                     description: Some("Filter bank 0 register 2"),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -200,7 +200,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "rir",
                     description: Some("receive FIFO mailbox identifier register"),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::Read,
                         bit_size: 32,
@@ -211,7 +211,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "rdtr",
                     description: Some("mailbox data high register"),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(Register {
                         access: Access::Read,
                         bit_size: 32,
@@ -222,7 +222,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "rdlr",
                     description: Some("mailbox data high register"),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(Register {
                         access: Access::Read,
                         bit_size: 32,
@@ -233,7 +233,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "rdhr",
                     description: Some("receive FIFO mailbox data high register"),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(Register {
                         access: Access::Read,
                         bit_size: 32,
@@ -251,7 +251,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "tir",
                     description: Some("TX mailbox identifier register"),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -262,7 +262,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "tdtr",
                     description: Some("mailbox data length control and time stamp register"),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -273,7 +273,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "tdlr",
                     description: Some("mailbox data low register"),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -284,7 +284,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "tdhr",
                     description: Some("mailbox data high register"),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,

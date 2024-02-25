@@ -15,7 +15,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "common control register",
                     ),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "hardware configuration register",
                     ),
                     array: None,
-                    byte_offset: 240,
+                    byte_offset: 0xf0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -49,7 +49,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "version register",
                     ),
                     array: None,
-                    byte_offset: 244,
+                    byte_offset: 0xf4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -66,7 +66,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "identification register",
                     ),
                     array: None,
-                    byte_offset: 248,
+                    byte_offset: 0xf8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -81,7 +81,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "size identification register",
                     ),
                     array: None,
-                    byte_offset: 252,
+                    byte_offset: 0xfc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,

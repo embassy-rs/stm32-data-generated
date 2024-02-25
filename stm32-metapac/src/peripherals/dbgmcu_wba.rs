@@ -22,102 +22,102 @@ impl Dbgmcu {
     #[doc = "identity code register"]
     #[inline(always)]
     pub const fn idcode(self) -> crate::common::Reg<regs::Idcode, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "status and configuration register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "APB1L peripheral freeze register"]
     #[inline(always)]
     pub const fn apb1lfzr(self) -> crate::common::Reg<regs::Apb1lfzr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "APB1H peripheral freeze register"]
     #[inline(always)]
     pub const fn apb1hfzr(self) -> crate::common::Reg<regs::Apb1hfzr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "APB2 peripheral freeze register"]
     #[inline(always)]
     pub const fn apb2fzr(self) -> crate::common::Reg<regs::Apb2fzr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "APB7 peripheral freeze register"]
     #[inline(always)]
     pub const fn apb7fzr(self) -> crate::common::Reg<regs::Apb7fzr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "AHB1 peripheral freeze register"]
     #[inline(always)]
     pub const fn ahb1fzr(self) -> crate::common::Reg<regs::Ahb1fzr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(252usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xfcusize) as _) }
     }
     #[doc = "debug host authentication register"]
     #[inline(always)]
     pub const fn dbg_auth_host(self) -> crate::common::Reg<regs::DbgAuthHost, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(256usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
     #[doc = "debug device authentication register"]
     #[inline(always)]
     pub const fn dbg_auth_device(self) -> crate::common::Reg<regs::DbgAuthDevice, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(260usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
     }
     #[doc = "part number codification register"]
     #[inline(always)]
     pub const fn pncr(self) -> crate::common::Reg<regs::Pncr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2012usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07dcusize) as _) }
     }
     #[doc = "CoreSight peripheral identity register 4"]
     #[inline(always)]
     pub const fn pidr4(self) -> crate::common::Reg<regs::Pidr4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4048usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fd0usize) as _) }
     }
     #[doc = "CoreSight peripheral identity register 0"]
     #[inline(always)]
     pub const fn pidr0(self) -> crate::common::Reg<regs::Pidr0, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4064usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fe0usize) as _) }
     }
     #[doc = "CoreSight peripheral identity register 1"]
     #[inline(always)]
     pub const fn pidr1(self) -> crate::common::Reg<regs::Pidr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4068usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fe4usize) as _) }
     }
     #[doc = "CoreSight peripheral identity register 2"]
     #[inline(always)]
     pub const fn pidr2(self) -> crate::common::Reg<regs::Pidr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4072usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fe8usize) as _) }
     }
     #[doc = "CoreSight peripheral identity register 3"]
     #[inline(always)]
     pub const fn pidr3(self) -> crate::common::Reg<regs::Pidr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4076usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fecusize) as _) }
     }
     #[doc = "CoreSight component identity register 0"]
     #[inline(always)]
     pub const fn cidr0(self) -> crate::common::Reg<regs::Cidr0, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4080usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ff0usize) as _) }
     }
     #[doc = "CoreSight peripheral identity register 1"]
     #[inline(always)]
     pub const fn cidr1(self) -> crate::common::Reg<regs::Cidr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4084usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ff4usize) as _) }
     }
     #[doc = "CoreSight component identity register 2"]
     #[inline(always)]
     pub const fn cidr2(self) -> crate::common::Reg<regs::Cidr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4088usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ff8usize) as _) }
     }
     #[doc = "CoreSight component identity register 3"]
     #[inline(always)]
     pub const fn cidr3(self) -> crate::common::Reg<regs::Cidr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4092usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ffcusize) as _) }
     }
 }
 pub mod regs {

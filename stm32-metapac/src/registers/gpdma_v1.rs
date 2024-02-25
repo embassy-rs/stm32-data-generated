@@ -13,7 +13,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "GPDMA channel 15 linked-list base address register",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -30,7 +30,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "GPDMA channel 15 flag clear register",
                     ),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -47,7 +47,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "GPDMA channel 15 status register",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -64,7 +64,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "GPDMA channel 15 control register",
                     ),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 0x14,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -81,7 +81,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "GPDMA channel 15 transfer register 1",
                     ),
                     array: None,
-                    byte_offset: 64,
+                    byte_offset: 0x40,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -98,7 +98,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "GPDMA channel 15 transfer register 2",
                     ),
                     array: None,
-                    byte_offset: 68,
+                    byte_offset: 0x44,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -115,7 +115,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "GPDMA channel 15 alternate block register 1",
                     ),
                     array: None,
-                    byte_offset: 72,
+                    byte_offset: 0x48,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -132,7 +132,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "GPDMA channel 15 source address register",
                     ),
                     array: None,
-                    byte_offset: 76,
+                    byte_offset: 0x4c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -147,7 +147,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "GPDMA channel 15 destination address register",
                     ),
                     array: None,
-                    byte_offset: 80,
+                    byte_offset: 0x50,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -162,7 +162,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "GPDMA channel 15 transfer register 3",
                     ),
                     array: None,
-                    byte_offset: 84,
+                    byte_offset: 0x54,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -179,7 +179,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "GPDMA channel 15 block register 2",
                     ),
                     array: None,
-                    byte_offset: 88,
+                    byte_offset: 0x58,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -196,7 +196,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "GPDMA channel 15 alternate linked-list address register",
                     ),
                     array: None,
-                    byte_offset: 124,
+                    byte_offset: 0x7c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -222,7 +222,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "GPDMA secure configuration register",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -239,7 +239,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "GPDMA privileged configuration register",
                     ),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -256,7 +256,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "GPDMA configuration lock register",
                     ),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -273,7 +273,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "GPDMA non-secure masked interrupt status register",
                     ),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -290,7 +290,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "GPDMA secure masked interrupt status register",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -312,7 +312,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 80,
+                    byte_offset: 0x50,
                     inner: BlockItemInner::Block(
                         BlockItemBlock {
                             block: "Channel",

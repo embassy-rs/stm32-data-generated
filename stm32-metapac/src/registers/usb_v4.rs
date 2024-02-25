@@ -22,7 +22,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -39,7 +39,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "control register",
                     ),
                     array: None,
-                    byte_offset: 64,
+                    byte_offset: 0x40,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -56,7 +56,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt status register",
                     ),
                     array: None,
-                    byte_offset: 68,
+                    byte_offset: 0x44,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -73,7 +73,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "frame number register",
                     ),
                     array: None,
-                    byte_offset: 72,
+                    byte_offset: 0x48,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -90,7 +90,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "device address",
                     ),
                     array: None,
-                    byte_offset: 76,
+                    byte_offset: 0x4c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -107,7 +107,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "LPM control and status register",
                     ),
                     array: None,
-                    byte_offset: 84,
+                    byte_offset: 0x54,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -124,7 +124,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Battery charging detector",
                     ),
                     array: None,
-                    byte_offset: 88,
+                    byte_offset: 0x58,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,

@@ -22,22 +22,22 @@ impl Pwr {
     #[doc = "power control register"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "power control/status register"]
     #[inline(always)]
     pub const fn csr1(self) -> crate::common::Reg<regs::Csr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "power control register"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "power control/status register"]
     #[inline(always)]
     pub const fn csr2(self) -> crate::common::Reg<regs::Csr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
 }
 pub mod regs {
@@ -419,7 +419,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pdds {
         #[doc = "Enter Stop mode when the CPU enters deepsleep"]
-        STOP_MODE = 0,
+        STOP_MODE = 0x0,
         #[doc = "Enter Standby mode when the CPU enters deepsleep"]
         STANDBY_MODE = 0x01,
     }
@@ -448,7 +448,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Vos {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Scale 3 mode"]
         SCALE3 = 0x01,
         #[doc = "Scale 2 mode"]

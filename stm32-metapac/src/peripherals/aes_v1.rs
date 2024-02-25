@@ -22,34 +22,34 @@ impl Aes {
     #[doc = "Control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Data input register"]
     #[inline(always)]
     pub const fn dinr(self) -> crate::common::Reg<regs::Dinr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Data output register"]
     #[inline(always)]
     pub const fn doutr(self) -> crate::common::Reg<regs::Doutr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Key register"]
     #[inline(always)]
     pub const fn keyr(self, n: usize) -> crate::common::Reg<regs::Keyr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize + n * 4usize) as _) }
     }
     #[doc = "Initialization vector register"]
     #[inline(always)]
     pub const fn ivr(self, n: usize) -> crate::common::Reg<regs::Ivr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize + n * 4usize) as _) }
     }
 }
 pub mod regs {
@@ -318,7 +318,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Datatype {
         #[doc = "Word"]
-        NONE = 0,
+        NONE = 0x0,
         #[doc = "Half-word (16-bit)"]
         HALFWORD = 0x01,
         #[doc = "Byte (8-bit)"]
@@ -352,7 +352,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mode {
         #[doc = "Encryption"]
-        MODE1 = 0,
+        MODE1 = 0x0,
         #[doc = "Key derivation (or key preparation for ECB/CBC decryption)"]
         MODE2 = 0x01,
         #[doc = "Decryption"]

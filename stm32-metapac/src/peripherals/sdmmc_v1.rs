@@ -22,78 +22,78 @@ impl Sdmmc {
     #[doc = "power control register"]
     #[inline(always)]
     pub const fn power(self) -> crate::common::Reg<regs::Power, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "SDI clock control register"]
     #[inline(always)]
     pub const fn clkcr(self) -> crate::common::Reg<regs::Clkcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "argument register"]
     #[inline(always)]
     pub const fn argr(self) -> crate::common::Reg<regs::Argr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "command register"]
     #[inline(always)]
     pub const fn cmdr(self) -> crate::common::Reg<regs::Cmdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "command response register"]
     #[inline(always)]
     pub const fn respcmdr(self) -> crate::common::Reg<regs::Respcmdr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "response 1..4 register"]
     #[inline(always)]
     pub const fn respr(self, n: usize) -> crate::common::Reg<regs::RespxR, crate::common::R> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize + n * 4usize) as _) }
     }
     #[doc = "data timer register"]
     #[inline(always)]
     pub const fn dtimer(self) -> crate::common::Reg<regs::Dtimer, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "data length register"]
     #[inline(always)]
     pub const fn dlenr(self) -> crate::common::Reg<regs::Dlenr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "data control register"]
     #[inline(always)]
     pub const fn dctrl(self) -> crate::common::Reg<regs::Dctrl, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "data counter register"]
     #[inline(always)]
     pub const fn dcntr(self) -> crate::common::Reg<regs::Dcntr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn star(self) -> crate::common::Reg<regs::Star, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[doc = "interrupt clear register"]
     #[inline(always)]
     pub const fn icr(self) -> crate::common::Reg<regs::Icr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[doc = "mask register"]
     #[inline(always)]
     pub const fn maskr(self) -> crate::common::Reg<regs::Maskr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[doc = "FIFO counter register"]
     #[inline(always)]
     pub const fn fifocnt(self) -> crate::common::Reg<regs::Fifocnt, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[doc = "data FIFO register"]
     #[inline(always)]
     pub const fn fifor(self) -> crate::common::Reg<regs::Fifor, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(128usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
     }
 }
 pub mod regs {

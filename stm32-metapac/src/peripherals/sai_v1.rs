@@ -22,42 +22,42 @@ impl Ch {
     #[doc = "Configuration register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Configuration register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "This register has no meaning in AC97 and SPDIF audio protocol"]
     #[inline(always)]
     pub const fn frcr(self) -> crate::common::Reg<regs::Frcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "This register has no meaning in AC97 and SPDIF audio protocol"]
     #[inline(always)]
     pub const fn slotr(self) -> crate::common::Reg<regs::Slotr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Interrupt mask register 2"]
     #[inline(always)]
     pub const fn im(self) -> crate::common::Reg<regs::Im, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Clear flag register"]
     #[inline(always)]
     pub const fn clrfr(self) -> crate::common::Reg<regs::Clrfr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Data register"]
     #[inline(always)]
     pub const fn dr(self) -> crate::common::Reg<regs::Dr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
 }
 #[doc = "Serial audio interface"]
@@ -80,7 +80,7 @@ impl Sai {
     #[inline(always)]
     pub const fn ch(self, n: usize) -> Ch {
         assert!(n < 2usize);
-        unsafe { Ch::from_ptr(self.ptr.add(4usize + n * 32usize) as _) }
+        unsafe { Ch::from_ptr(self.ptr.add(0x04usize + n * 32usize) as _) }
     }
 }
 pub mod regs {
@@ -769,7 +769,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ckstr {
         #[doc = "Data strobing edge is falling edge of SCK"]
-        FALLINGEDGE = 0,
+        FALLINGEDGE = 0x0,
         #[doc = "Data strobing edge is rising edge of SCK"]
         RISINGEDGE = 0x01,
     }
@@ -799,7 +799,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cnrdy {
         #[doc = "External AC’97 Codec is ready"]
-        READY = 0,
+        READY = 0x0,
         #[doc = "External AC’97 Codec is not ready"]
         NOTREADY = 0x01,
     }
@@ -829,7 +829,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Comp {
         #[doc = "No companding algorithm"]
-        NOCOMPANDING = 0,
+        NOCOMPANDING = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "μ-Law algorithm"]
         MULAW = 0x02,
@@ -862,7 +862,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cpl {
         #[doc = "1’s complement representation"]
-        ONESCOMPLEMENT = 0,
+        ONESCOMPLEMENT = 0x0,
         #[doc = "2’s complement representation"]
         TWOSCOMPLEMENT = 0x01,
     }
@@ -891,7 +891,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ds {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "8 bits"]
         BIT8 = 0x02,
@@ -932,7 +932,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Flvl {
         #[doc = "FIFO empty"]
-        EMPTY = 0,
+        EMPTY = 0x0,
         #[doc = "FIFO <= 1⁄4 but not empty"]
         QUARTER1 = 0x01,
         #[doc = "1⁄4 < FIFO <= 1⁄2"]
@@ -972,7 +972,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fsoff {
         #[doc = "FS is asserted on the first bit of the slot 0"]
-        ONFIRST = 0,
+        ONFIRST = 0x0,
         #[doc = "FS is asserted one bit before the first bit of the slot 0"]
         BEFOREFIRST = 0x01,
     }
@@ -1002,7 +1002,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fspol {
         #[doc = "FS is active low (falling edge)"]
-        FALLINGEDGE = 0,
+        FALLINGEDGE = 0x0,
         #[doc = "FS is active high (rising edge)"]
         RISINGEDGE = 0x01,
     }
@@ -1032,7 +1032,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fth {
         #[doc = "FIFO empty"]
-        EMPTY = 0,
+        EMPTY = 0x0,
         #[doc = "1⁄4 FIFO"]
         QUARTER1 = 0x01,
         #[doc = "1⁄2 FIFO"]
@@ -1071,7 +1071,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lsbfirst {
         #[doc = "Data are transferred with MSB first"]
-        MSBFIRST = 0,
+        MSBFIRST = 0x0,
         #[doc = "Data are transferred with LSB first"]
         LSBFIRST = 0x01,
     }
@@ -1101,7 +1101,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mode {
         #[doc = "Master transmitter"]
-        MASTERTX = 0,
+        MASTERTX = 0x0,
         #[doc = "Master receiver"]
         MASTERRX = 0x01,
         #[doc = "Slave transmitter"]
@@ -1135,7 +1135,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mono {
         #[doc = "Stereo mode"]
-        STEREO = 0,
+        STEREO = 0x0,
         #[doc = "Mono mode"]
         MONO = 0x01,
     }
@@ -1165,7 +1165,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Muteval {
         #[doc = "Bit value 0 is sent during the mute mode"]
-        SENDZERO = 0,
+        SENDZERO = 0x0,
         #[doc = "Last values are sent during the mute mode"]
         SENDLAST = 0x01,
     }
@@ -1195,7 +1195,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Nodiv {
         #[doc = "MCLK output is enabled. Forces the ratio between FS and MCLK to 256 or 512 according to the OSR value"]
-        MASTERCLOCK = 0,
+        MASTERCLOCK = 0x0,
         #[doc = "MCLK output enable set by the MCKEN bit (where present, else 0). Ratio between FS and MCLK depends on FRL."]
         NODIV = 0x01,
     }
@@ -1225,7 +1225,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Outdriv {
         #[doc = "Audio block output driven when SAIEN is set"]
-        ONSTART = 0,
+        ONSTART = 0x0,
         #[doc = "Audio block output driven immediately after the setting of this bit"]
         IMMEDIATELY = 0x01,
     }
@@ -1255,7 +1255,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Prtcfg {
         #[doc = "Free protocol. Free protocol allows to use the powerful configuration of the audio block to address a specific audio protocol"]
-        FREE = 0,
+        FREE = 0x0,
         #[doc = "SPDIF protocol"]
         SPDIF = 0x01,
         #[doc = "AC’97 protocol"]
@@ -1289,7 +1289,7 @@ pub mod vals {
     pub struct Sloten(pub u16);
     impl Sloten {
         #[doc = "Inactive slot"]
-        pub const INACTIVE: Self = Self(0);
+        pub const INACTIVE: Self = Self(0x0);
         #[doc = "Active slot"]
         pub const ACTIVE: Self = Self(0x01);
     }
@@ -1318,7 +1318,7 @@ pub mod vals {
     pub enum Slotsz {
         #[doc = "The slot size is equivalent to the data size (specified in DS\\[3:0\\]
 in the SAI_xCR1 register)"]
-        DATASIZE = 0,
+        DATASIZE = 0x0,
         #[doc = "16-bit"]
         BIT16 = 0x01,
         #[doc = "32-bit"]
@@ -1351,7 +1351,7 @@ in the SAI_xCR1 register)"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Syncen {
         #[doc = "audio sub-block in asynchronous mode"]
-        ASYNCHRONOUS = 0,
+        ASYNCHRONOUS = 0x0,
         #[doc = "audio sub-block is synchronous with the other internal audio sub-block. In this case, the audio sub-block must be configured in slave mode"]
         INTERNAL = 0x01,
         #[doc = "audio sub-block is synchronous with an external SAI embedded peripheral. In this case the audio sub-block should be configured in Slave mode"]
@@ -1384,7 +1384,7 @@ in the SAI_xCR1 register)"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Wckcfg {
         #[doc = "Clock configuration is correct"]
-        CORRECT = 0,
+        CORRECT = 0x0,
         #[doc = "Clock configuration does not respect the rule concerning the frame length specification"]
         WRONG = 0x01,
     }

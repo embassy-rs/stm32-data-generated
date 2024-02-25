@@ -15,7 +15,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH access control register",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH non-secure key register",
                     ),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -47,7 +47,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH secure key register",
                     ),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -62,7 +62,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH option key register",
                     ),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -77,7 +77,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH non-secure OBK key register",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -92,7 +92,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH secure OBK key register",
                     ),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 0x14,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -107,7 +107,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH operation status register",
                     ),
                     array: None,
-                    byte_offset: 24,
+                    byte_offset: 0x18,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -124,7 +124,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH option control register",
                     ),
                     array: None,
-                    byte_offset: 28,
+                    byte_offset: 0x1c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -141,7 +141,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH non-secure status register",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 0x20,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -158,7 +158,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH secure status register",
                     ),
                     array: None,
-                    byte_offset: 36,
+                    byte_offset: 0x24,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -175,7 +175,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH non-secure control register",
                     ),
                     array: None,
-                    byte_offset: 40,
+                    byte_offset: 0x28,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -192,7 +192,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH secure control register",
                     ),
                     array: None,
-                    byte_offset: 44,
+                    byte_offset: 0x2c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -209,7 +209,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH non-secure clear control register",
                     ),
                     array: None,
-                    byte_offset: 48,
+                    byte_offset: 0x30,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -226,7 +226,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH secure clear control register",
                     ),
                     array: None,
-                    byte_offset: 52,
+                    byte_offset: 0x34,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -243,7 +243,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH privilege configuration register",
                     ),
                     array: None,
-                    byte_offset: 60,
+                    byte_offset: 0x3c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -260,7 +260,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH non-secure OBK configuration register",
                     ),
                     array: None,
-                    byte_offset: 64,
+                    byte_offset: 0x40,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -277,7 +277,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH secure OBK configuration register",
                     ),
                     array: None,
-                    byte_offset: 68,
+                    byte_offset: 0x44,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -294,7 +294,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH HDP extension register",
                     ),
                     array: None,
-                    byte_offset: 72,
+                    byte_offset: 0x48,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -311,7 +311,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH option status register",
                     ),
                     array: None,
-                    byte_offset: 80,
+                    byte_offset: 0x50,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -328,7 +328,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH option status register",
                     ),
                     array: None,
-                    byte_offset: 84,
+                    byte_offset: 0x54,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -345,7 +345,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH non-secure EPOCH register",
                     ),
                     array: None,
-                    byte_offset: 96,
+                    byte_offset: 0x60,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -362,7 +362,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH secure EPOCH register",
                     ),
                     array: None,
-                    byte_offset: 104,
+                    byte_offset: 0x68,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -379,7 +379,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH option status register 2",
                     ),
                     array: None,
-                    byte_offset: 112,
+                    byte_offset: 0x70,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -396,7 +396,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH option status register 2",
                     ),
                     array: None,
-                    byte_offset: 116,
+                    byte_offset: 0x74,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -413,7 +413,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH non-secure boot register",
                     ),
                     array: None,
-                    byte_offset: 128,
+                    byte_offset: 0x80,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -430,7 +430,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH non-secure boot register",
                     ),
                     array: None,
-                    byte_offset: 132,
+                    byte_offset: 0x84,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -447,7 +447,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH secure boot register",
                     ),
                     array: None,
-                    byte_offset: 136,
+                    byte_offset: 0x88,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -464,7 +464,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH secure boot register",
                     ),
                     array: None,
-                    byte_offset: 140,
+                    byte_offset: 0x8c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -481,7 +481,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH non-secure OTP block lock",
                     ),
                     array: None,
-                    byte_offset: 144,
+                    byte_offset: 0x90,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -498,7 +498,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH non-secure OTP block lock",
                     ),
                     array: None,
-                    byte_offset: 148,
+                    byte_offset: 0x94,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -515,7 +515,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH secure block based register for Bank 1",
                     ),
                     array: None,
-                    byte_offset: 160,
+                    byte_offset: 0xa0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -532,7 +532,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH secure block based register for Bank 1",
                     ),
                     array: None,
-                    byte_offset: 164,
+                    byte_offset: 0xa4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -549,7 +549,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH secure block based register for Bank 1",
                     ),
                     array: None,
-                    byte_offset: 168,
+                    byte_offset: 0xa8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -566,7 +566,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH secure block based register for Bank 1",
                     ),
                     array: None,
-                    byte_offset: 172,
+                    byte_offset: 0xac,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -583,7 +583,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH privilege block based register for Bank 1",
                     ),
                     array: None,
-                    byte_offset: 192,
+                    byte_offset: 0xc0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -600,7 +600,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH privilege block based register for Bank 1",
                     ),
                     array: None,
-                    byte_offset: 196,
+                    byte_offset: 0xc4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -617,7 +617,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH privilege block based register for Bank 1",
                     ),
                     array: None,
-                    byte_offset: 200,
+                    byte_offset: 0xc8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -634,7 +634,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH privilege block based register for Bank 1",
                     ),
                     array: None,
-                    byte_offset: 204,
+                    byte_offset: 0xcc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -651,7 +651,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH security watermark for Bank 1",
                     ),
                     array: None,
-                    byte_offset: 224,
+                    byte_offset: 0xe0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -668,7 +668,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH security watermark for Bank 1",
                     ),
                     array: None,
-                    byte_offset: 228,
+                    byte_offset: 0xe4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -685,7 +685,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH write sector group protection for Bank 1",
                     ),
                     array: None,
-                    byte_offset: 232,
+                    byte_offset: 0xe8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -702,7 +702,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH write sector group protection for Bank 1",
                     ),
                     array: None,
-                    byte_offset: 236,
+                    byte_offset: 0xec,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -719,7 +719,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH data sector configuration Bank 1",
                     ),
                     array: None,
-                    byte_offset: 240,
+                    byte_offset: 0xf0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -736,7 +736,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH data sector configuration Bank 1",
                     ),
                     array: None,
-                    byte_offset: 244,
+                    byte_offset: 0xf4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -753,7 +753,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH HDP Bank 1 configuration",
                     ),
                     array: None,
-                    byte_offset: 248,
+                    byte_offset: 0xf8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -770,7 +770,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH HDP Bank 1 configuration",
                     ),
                     array: None,
-                    byte_offset: 252,
+                    byte_offset: 0xfc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -787,7 +787,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH ECC correction register",
                     ),
                     array: None,
-                    byte_offset: 256,
+                    byte_offset: 0x100,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -804,7 +804,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH ECC detection register",
                     ),
                     array: None,
-                    byte_offset: 260,
+                    byte_offset: 0x104,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -821,7 +821,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH ECC data",
                     ),
                     array: None,
-                    byte_offset: 264,
+                    byte_offset: 0x108,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -838,7 +838,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH secure block-based register for Bank 2",
                     ),
                     array: None,
-                    byte_offset: 416,
+                    byte_offset: 0x1a0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -855,7 +855,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH secure block-based register for Bank 2",
                     ),
                     array: None,
-                    byte_offset: 420,
+                    byte_offset: 0x1a4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -872,7 +872,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH secure block-based register for Bank 2",
                     ),
                     array: None,
-                    byte_offset: 424,
+                    byte_offset: 0x1a8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -889,7 +889,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH secure block-based register for Bank 2",
                     ),
                     array: None,
-                    byte_offset: 428,
+                    byte_offset: 0x1ac,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -906,7 +906,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH privilege block-based register for Bank 2",
                     ),
                     array: None,
-                    byte_offset: 448,
+                    byte_offset: 0x1c0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -923,7 +923,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH privilege block-based register for Bank 2",
                     ),
                     array: None,
-                    byte_offset: 452,
+                    byte_offset: 0x1c4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -940,7 +940,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH privilege block-based register for Bank 2",
                     ),
                     array: None,
-                    byte_offset: 456,
+                    byte_offset: 0x1c8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -957,7 +957,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH privilege block-based register for Bank 2",
                     ),
                     array: None,
-                    byte_offset: 460,
+                    byte_offset: 0x1cc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -974,7 +974,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH security watermark for Bank 2",
                     ),
                     array: None,
-                    byte_offset: 480,
+                    byte_offset: 0x1e0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -991,7 +991,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH security watermark for Bank 2",
                     ),
                     array: None,
-                    byte_offset: 484,
+                    byte_offset: 0x1e4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -1008,7 +1008,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH write sector group protection for Bank 2",
                     ),
                     array: None,
-                    byte_offset: 488,
+                    byte_offset: 0x1e8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -1025,7 +1025,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH write sector group protection for Bank 2",
                     ),
                     array: None,
-                    byte_offset: 492,
+                    byte_offset: 0x1ec,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -1042,7 +1042,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH data sectors configuration Bank 2",
                     ),
                     array: None,
-                    byte_offset: 496,
+                    byte_offset: 0x1f0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -1059,7 +1059,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH data sector configuration Bank 2",
                     ),
                     array: None,
-                    byte_offset: 500,
+                    byte_offset: 0x1f4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -1076,7 +1076,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH HDP Bank 2 configuration",
                     ),
                     array: None,
-                    byte_offset: 504,
+                    byte_offset: 0x1f8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -1093,7 +1093,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "FLASH HDP Bank 2 configuration",
                     ),
                     array: None,
-                    byte_offset: 508,
+                    byte_offset: 0x1fc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,

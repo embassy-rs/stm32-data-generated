@@ -22,89 +22,89 @@ impl Ucpd {
     #[doc = "configuration register 1"]
     #[inline(always)]
     pub const fn cfgr1(self) -> crate::common::Reg<regs::Cfgr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "configuration register 2"]
     #[inline(always)]
     pub const fn cfgr2(self) -> crate::common::Reg<regs::Cfgr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "configuration register 3"]
     #[inline(always)]
     pub const fn cfgr3(self) -> crate::common::Reg<regs::Cfgr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "interrupt mask register"]
     #[inline(always)]
     pub const fn imr(self) -> crate::common::Reg<regs::Imr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "interrupt clear register"]
     #[inline(always)]
     pub const fn icr(self) -> crate::common::Reg<regs::Icr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Tx ordered set type register"]
     #[inline(always)]
     pub const fn tx_ordsetr(self) -> crate::common::Reg<regs::TxOrdsetr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "Tx payload size register"]
     #[inline(always)]
     pub const fn tx_payszr(self) -> crate::common::Reg<regs::TxPayszr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "Tx data register"]
     #[inline(always)]
     pub const fn txdr(self) -> crate::common::Reg<regs::Txdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[inline(always)]
     pub const fn rx_ordsetr(self) -> crate::common::Reg<regs::RxOrdsetr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[inline(always)]
     pub const fn rx_payszr(self) -> crate::common::Reg<regs::RxPayszr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[inline(always)]
     pub const fn rxdr(self) -> crate::common::Reg<regs::Rxdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "Rx ordered set extension register 1"]
     #[inline(always)]
     pub const fn rx_ordextr1(self) -> crate::common::Reg<regs::RxOrdextr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[doc = "Rx ordered set extension register 2"]
     #[inline(always)]
     pub const fn rx_ordextr2(self) -> crate::common::Reg<regs::RxOrdextr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[doc = "UCPD IP ID register"]
     #[inline(always)]
     pub const fn ipver(self) -> crate::common::Reg<regs::Ipver, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1012usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03f4usize) as _) }
     }
     #[doc = "UCPD IP ID register"]
     #[inline(always)]
     pub const fn ipid(self) -> crate::common::Reg<regs::Ipid, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1016usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03f8usize) as _) }
     }
     #[doc = "UCPD IP ID register"]
     #[inline(always)]
     pub const fn mid(self) -> crate::common::Reg<regs::Mid, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1020usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03fcusize) as _) }
     }
 }
 pub mod regs {
@@ -1351,7 +1351,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Anamode {
         #[doc = "Source"]
-        SOURCE = 0,
+        SOURCE = 0x0,
         #[doc = "Sink"]
         SINK = 0x01,
     }
@@ -1381,7 +1381,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ccenable {
         #[doc = "Disable both PHYs"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "Enable CC1 PHY"]
         CC1 = 0x01,
         #[doc = "Enable CC2 PHY"]
@@ -1415,7 +1415,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Phyccsel {
         #[doc = "Use CC1 IO for Power Delivery communication"]
-        CC1 = 0,
+        CC1 = 0x0,
         #[doc = "Use CC2 IO for Power Delivery communication"]
         CC2 = 0x01,
     }
@@ -1445,7 +1445,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum PscUsbpdclk {
         #[doc = "1 (bypass)"]
-        DIV1 = 0,
+        DIV1 = 0x0,
         #[doc = "2"]
         DIV2 = 0x01,
         #[doc = "4"]
@@ -1484,7 +1484,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rxordset {
         #[doc = "SOP code detected in receiver"]
-        SOP = 0,
+        SOP = 0x0,
         #[doc = "SOP' code detected in receiver"]
         SOPPRIME = 0x01,
         #[doc = "SOP'' code detected in receiver"]
@@ -1526,7 +1526,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rxsopkinvalid {
         #[doc = "No K‑code corrupted"]
-        NONE = 0,
+        NONE = 0x0,
         #[doc = "First K‑code corrupted"]
         FIRST = 0x01,
         #[doc = "Second K‑code corrupted"]
@@ -1565,7 +1565,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Txmode {
         #[doc = "Transmission of Tx packet previously defined in other registers"]
-        PACKET = 0,
+        PACKET = 0x0,
         #[doc = "Cable Reset sequence"]
         CABLERESET = 0x01,
         #[doc = "BIST test sequence (BIST Carrier Mode 2)"]
@@ -1598,7 +1598,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum TypecVstateCc {
         #[doc = "Lowest"]
-        LOWEST = 0,
+        LOWEST = 0x0,
         #[doc = "Low"]
         LOW = 0x01,
         #[doc = "High"]

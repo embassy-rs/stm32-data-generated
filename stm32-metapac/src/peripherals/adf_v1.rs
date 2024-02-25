@@ -22,77 +22,77 @@ impl Adf {
     #[doc = "ADF Global Control Register."]
     #[inline(always)]
     pub const fn gcr(self) -> crate::common::Reg<regs::Gcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "ADF clock generator control register."]
     #[inline(always)]
     pub const fn ckgcr(self) -> crate::common::Reg<regs::Ckgcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "ADF serial interface control register 0."]
     #[inline(always)]
     pub const fn sitfcr(self) -> crate::common::Reg<regs::Sitfcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(128usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
     }
     #[doc = "ADF bitstream matrix control register 0."]
     #[inline(always)]
     pub const fn bsmxcr(self) -> crate::common::Reg<regs::Bsmxcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(132usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x84usize) as _) }
     }
     #[doc = "ADF digital filter control register 0."]
     #[inline(always)]
     pub const fn dfltcr(self) -> crate::common::Reg<regs::Dfltcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(136usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x88usize) as _) }
     }
     #[doc = "ADF digital filer configuration register 0."]
     #[inline(always)]
     pub const fn dfltcicr(self) -> crate::common::Reg<regs::Dfltcicr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(140usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x8cusize) as _) }
     }
     #[doc = "ADF reshape filter configuration register 0."]
     #[inline(always)]
     pub const fn dfltrsfr(self) -> crate::common::Reg<regs::Dfltrsfr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(144usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x90usize) as _) }
     }
     #[doc = "ADF delay control register 0."]
     #[inline(always)]
     pub const fn dlycr(self) -> crate::common::Reg<regs::Dlycr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(164usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa4usize) as _) }
     }
     #[doc = "ADF DFLT0 interrupt enable register."]
     #[inline(always)]
     pub const fn dfltier(self) -> crate::common::Reg<regs::Dfltier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(172usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xacusize) as _) }
     }
     #[doc = "ADF DFLT0 interrupt status register 0."]
     #[inline(always)]
     pub const fn dfltisr(self) -> crate::common::Reg<regs::Dfltisr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(176usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb0usize) as _) }
     }
     #[doc = "ADF SAD control register."]
     #[inline(always)]
     pub const fn sadcr(self) -> crate::common::Reg<regs::Sadcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(184usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb8usize) as _) }
     }
     #[doc = "ADF SAD configuration register."]
     #[inline(always)]
     pub const fn sadcfgr(self) -> crate::common::Reg<regs::Sadcfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(188usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xbcusize) as _) }
     }
     #[doc = "ADF SAD sound level register."]
     #[inline(always)]
     pub const fn sadsdlvr(self) -> crate::common::Reg<regs::Sadsdlvr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(192usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc0usize) as _) }
     }
     #[doc = "ADF SAD ambient noise level register."]
     #[inline(always)]
     pub const fn sadanlvr(self) -> crate::common::Reg<regs::Sadanlvr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(196usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc4usize) as _) }
     }
     #[doc = "ADF digital filter data register 0."]
     #[inline(always)]
     pub const fn dfltdr(self) -> crate::common::Reg<regs::Dfltdr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(240usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf0usize) as _) }
     }
 }
 pub mod regs {
@@ -1029,7 +1029,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Acqmod {
         #[doc = "Asynchronous continuous acquisition mode."]
-        ASYNCHRONOUSCONTINUOUS = 0,
+        ASYNCHRONOUSCONTINUOUS = 0x0,
         #[doc = "Asynchronous single-shot acquisition mode"]
         ASYNCHRONOUSSINGLESHOT = 0x01,
         #[doc = "Synchronous continuous acquisition mode."]
@@ -1069,7 +1069,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Bssel {
         #[doc = "bsx_r provided to DFLTy (and SCDy)."]
-        BS0_R = 0,
+        BS0_R = 0x0,
         #[doc = "bsx_f provided to DFLTy (and SCDy)."]
         BS0_F = 0x01,
         #[doc = "bsx_r provided to DFLTy (and SCDy)."]
@@ -1160,7 +1160,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cckdir {
         #[doc = "CCK is an input."]
-        INPUT = 0,
+        INPUT = 0x0,
         #[doc = "CCK is an output."]
         OUTPUT = 0x01,
     }
@@ -1191,7 +1191,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cckdiv {
         #[doc = "The ADF_CCK clock is adf_proc_ck."]
-        DIV1 = 0,
+        DIV1 = 0x0,
         #[doc = "The ADF_CCK clock is adf_proc_ck divided by 2."]
         DIV2 = 0x01,
         #[doc = "The ADF_CCK clock is adf_proc_ck divided by 3."]
@@ -1250,7 +1250,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ccken {
         #[doc = "Bitstream clock not generated."]
-        NOTGENERATED = 0,
+        NOTGENERATED = 0x0,
         #[doc = "Bitstream clock generated on the CCK pin."]
         GENERATED = 0x01,
     }
@@ -1280,7 +1280,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cicmod {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -1318,7 +1318,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ckgmod {
         #[doc = "The kernel clock is provided to the dividers as soon as CKGDEN is set to 1."]
-        IMMEDIATE = 0,
+        IMMEDIATE = 0x0,
         #[doc = "The kernel clock is provided to the dividers when CKGDEN is set to 1 and the trigger condition met."]
         TRIGGER = 0x01,
     }
@@ -1349,7 +1349,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Datcap {
         #[doc = "Samples from DFLT0 not transfered into the memory."]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "Samples from DFLT0 transfered into the memory when SAD is in DETECT state."]
         ONDETECTED = 0x01,
         #[doc = "Samples from DFLT0 transfered into memory when SAD and DFLT0 are enabled."]
@@ -1383,7 +1383,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Datsrc {
         #[doc = "Stream coming from the BSMX selected"]
-        BSMX = 0,
+        BSMX = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "Stream coming from the ADCITF1 selected"]
         ADCITF1 = 0x02,
@@ -1417,7 +1417,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Detcfg {
         #[doc = "sddet_evt generated when SAD enters the MONITOR state."]
-        MONITOR = 0,
+        MONITOR = 0x0,
         #[doc = "sddet_evt generated when SAD enters or exits the DETECT state."]
         DETECT = 0x01,
     }
@@ -1448,7 +1448,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Frsize {
         #[doc = "8 sample."]
-        SAMPLES8 = 0,
+        SAMPLES8 = 0x0,
         #[doc = "16 samples."]
         SAMPLES16 = 0x01,
         #[doc = "32 samples."]
@@ -1490,7 +1490,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Hgovr {
         #[doc = "SAD back to MONITOR state if sound is below threshold for 4 frames."]
-        FRAMES4 = 0,
+        FRAMES4 = 0x0,
         #[doc = "SAD back to MONITOR state if sound is below threshold for 4 frames."]
         FRAMES8 = 0x01,
         #[doc = "SAD back to MONITOR state if sound is below threshold for 4 frames."]
@@ -1533,7 +1533,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Hpfc {
         #[doc = "Cut-off frequency = 0.000625 x FPCM."]
-        LOW = 0,
+        LOW = 0x0,
         #[doc = "Cut-off frequency = 0.00125 x FPCM."]
         MEDIUM = 0x01,
         #[doc = "Cut-off frequency = 0.00250 x FPCM"]
@@ -1568,7 +1568,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lfrnb {
         #[doc = "2 samples."]
-        FRAMES2 = 0,
+        FRAMES2 = 0x0,
         #[doc = "4 samples."]
         FRAMES4 = 0x01,
         #[doc = "8 samples."]
@@ -1608,7 +1608,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rsfltd {
         #[doc = "Decimation ratio is 4 (default value)."]
-        DECIMATION4 = 0,
+        DECIMATION4 = 0x0,
         #[doc = "Decimation ratio is 1."]
         DECIMATION1 = 0x01,
     }
@@ -1639,7 +1639,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rxfifo {
         #[doc = "RXFIFO threshold event generated when the RXFIFO is not empty"]
-        NOTEMPTY = 0,
+        NOTEMPTY = 0x0,
         #[doc = "RXFIFO threshold event generated when the RXFIFO is half-full"]
         HALFFULL = 0x01,
     }
@@ -1670,7 +1670,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Sadmod {
         #[doc = "Threshold value computed according to the estimated ambient noise. The SAD triggers when the sound level (SDLVL) is bigger than the defined threshold. In this mode, the SAD works like a voice activity detector."]
-        THRESHOLDESTIMATEDAMBIENTNOISE = 0,
+        THRESHOLDESTIMATEDAMBIENTNOISE = 0x0,
         #[doc = "Threshold value equal to ANMIN\\[12:0\\], multiplied by the gain selected by SNTHR\\[3:0\\]
 The SAD triggers when the sound level (SDLVL) is bigger than the defined threshold. In this mode, the SAD works like a sound detector."]
         THRESHOLDMINIMUMNOISELEVEL = 0x01,
@@ -1706,7 +1706,7 @@ is bigger than the defined threshold. In this mode, the SAD is working like an a
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Sadst {
         #[doc = "SAD in LEARN state."]
-        LEARN = 0,
+        LEARN = 0x0,
         #[doc = "SAD in MONITOR state."]
         MONITOR = 0x01,
         #[doc = "SAD in DETECT state."]
@@ -1740,7 +1740,7 @@ is bigger than the defined threshold. In this mode, the SAD is working like an a
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Scksrc {
         #[doc = "Serial clock source is CCK0."]
-        CCK0 = 0,
+        CCK0 = 0x0,
         #[doc = "Serial clock source is CCK1."]
         CCK1 = 0x01,
         #[doc = "Serial clock source is CCI0."]
@@ -1775,7 +1775,7 @@ is bigger than the defined threshold. In this mode, the SAD is working like an a
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Sitfmod {
         #[doc = "LF_MASTER SPI mode."]
-        MASTERSPI = 0,
+        MASTERSPI = 0x0,
         #[doc = "Normal SPI mode."]
         NORMALSPI = 0x01,
         #[doc = "Manchester mode rising edge = logic 0, falling edge = logic 1."]
@@ -1810,7 +1810,7 @@ is bigger than the defined threshold. In this mode, the SAD is working like an a
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Snthr {
         #[doc = "Threshold is 3.5 dB higher than ANLVL"]
-        NOISEPLUS3_5 = 0,
+        NOISEPLUS3_5 = 0x0,
         #[doc = "Threshold is 6.0 dB higher than ANLVL"]
         NOISEPLUS6_0 = 0x01,
         #[doc = "Threshold is 9.5 dB higher than ANLVL"]
@@ -1863,7 +1863,7 @@ is bigger than the defined threshold. In this mode, the SAD is working like an a
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Trgsens {
         #[doc = "A rising edge event triggers the activation of CKGEN dividers."]
-        RISINGEDGE = 0,
+        RISINGEDGE = 0x0,
         #[doc = "A falling edge even triggers the activation of CKGEN dividers."]
         FALLINGEDGE = 0x01,
     }
@@ -1894,7 +1894,7 @@ is bigger than the defined threshold. In this mode, the SAD is working like an a
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Trgsrc {
         #[doc = "TRGO Selected."]
-        TRGO = 0,
+        TRGO = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "adf_trg1 selected."]
         TRG1 = 0x02,

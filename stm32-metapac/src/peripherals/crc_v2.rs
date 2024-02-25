@@ -22,32 +22,32 @@ impl Crc {
     #[doc = "Data register"]
     #[inline(always)]
     pub const fn dr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Data register - half-word sized"]
     #[inline(always)]
     pub const fn dr16(self) -> crate::common::Reg<u16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Data register - byte sized"]
     #[inline(always)]
     pub const fn dr8(self) -> crate::common::Reg<u8, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Independent Data register"]
     #[inline(always)]
     pub const fn idr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Initial CRC value"]
     #[inline(always)]
     pub const fn init(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
 }
 pub mod regs {
@@ -113,7 +113,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Polysize {
         #[doc = "32-bit polynomial"]
-        POLYSIZE32 = 0,
+        POLYSIZE32 = 0x0,
         #[doc = "16-bit polynomial"]
         POLYSIZE16 = 0x01,
         #[doc = "8-bit polynomial"]
@@ -147,7 +147,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum RevIn {
         #[doc = "Bit order not affected"]
-        NORMAL = 0,
+        NORMAL = 0x0,
         #[doc = "Bit reversal done by byte"]
         BYTE = 0x01,
         #[doc = "Bit reversal done by half-word"]
@@ -181,7 +181,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum RevOut {
         #[doc = "Bit order not affected"]
-        NORMAL = 0,
+        NORMAL = 0x0,
         #[doc = "Bit reversed output"]
         REVERSED = 0x01,
     }

@@ -22,42 +22,42 @@ impl Flash {
     #[doc = "Flash access control register"]
     #[inline(always)]
     pub const fn acr(self) -> crate::common::Reg<regs::Acr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Flash key register"]
     #[inline(always)]
     pub const fn keyr(self) -> crate::common::Reg<u32, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Flash option key register"]
     #[inline(always)]
     pub const fn optkeyr(self) -> crate::common::Reg<u32, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Flash status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Flash control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Flash address register"]
     #[inline(always)]
     pub const fn ar(self) -> crate::common::Reg<regs::Ar, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Option byte register"]
     #[inline(always)]
     pub const fn obr(self) -> crate::common::Reg<regs::Obr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "Write protection register"]
     #[inline(always)]
     pub const fn wrpr(self) -> crate::common::Reg<regs::Wrpr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
 }
 pub mod regs {
@@ -491,7 +491,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Latency {
         #[doc = "0 wait states, if 0 < HCLK <= 24 MHz"]
-        WS0 = 0,
+        WS0 = 0x0,
         #[doc = "1 wait state, if 24 < HCLK <= 48 MHz"]
         WS1 = 0x01,
         #[doc = "2 wait states, if 48 < HCLK <= 72 MHz"]
@@ -528,7 +528,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum NRstStdby {
         #[doc = "Reset generated when entering Standby mode"]
-        RESET = 0,
+        RESET = 0x0,
         #[doc = "No reset generated"]
         NORESET = 0x01,
     }
@@ -558,7 +558,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum NRstStop {
         #[doc = "Reset generated when entering Stop mode"]
-        RESET = 0,
+        RESET = 0x0,
         #[doc = "No reset generated"]
         NORESET = 0x01,
     }
@@ -588,7 +588,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rdprt {
         #[doc = "Level 0"]
-        LEVEL0 = 0,
+        LEVEL0 = 0x0,
         #[doc = "Level 1"]
         LEVEL1 = 0x01,
         _RESERVED_2 = 0x02,
@@ -621,7 +621,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum WdgSw {
         #[doc = "Hardware watchdog"]
-        HARDWARE = 0,
+        HARDWARE = 0x0,
         #[doc = "Software watchdog"]
         SOFTWARE = 0x01,
     }

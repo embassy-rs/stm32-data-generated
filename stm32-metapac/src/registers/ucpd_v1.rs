@@ -15,7 +15,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "configuration register 1",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "configuration register 2",
                     ),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -49,7 +49,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "configuration register 3",
                     ),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -66,7 +66,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "control register",
                     ),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -83,7 +83,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt mask register",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -100,7 +100,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "status register",
                     ),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 0x14,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -117,7 +117,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "interrupt clear register",
                     ),
                     array: None,
-                    byte_offset: 24,
+                    byte_offset: 0x18,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -134,7 +134,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Tx ordered set type register",
                     ),
                     array: None,
-                    byte_offset: 28,
+                    byte_offset: 0x1c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -151,7 +151,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Tx payload size register",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 0x20,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -168,7 +168,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Tx data register",
                     ),
                     array: None,
-                    byte_offset: 36,
+                    byte_offset: 0x24,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -183,7 +183,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "rx_ordsetr",
                     description: None,
                     array: None,
-                    byte_offset: 40,
+                    byte_offset: 0x28,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -198,7 +198,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "rx_payszr",
                     description: None,
                     array: None,
-                    byte_offset: 44,
+                    byte_offset: 0x2c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -213,7 +213,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "rxdr",
                     description: None,
                     array: None,
-                    byte_offset: 48,
+                    byte_offset: 0x30,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -230,7 +230,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Rx ordered set extension register 1",
                     ),
                     array: None,
-                    byte_offset: 52,
+                    byte_offset: 0x34,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -247,7 +247,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Rx ordered set extension register 2",
                     ),
                     array: None,
-                    byte_offset: 56,
+                    byte_offset: 0x38,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -264,7 +264,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "UCPD IP ID register",
                     ),
                     array: None,
-                    byte_offset: 1012,
+                    byte_offset: 0x3f4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -281,7 +281,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "UCPD IP ID register",
                     ),
                     array: None,
-                    byte_offset: 1016,
+                    byte_offset: 0x3f8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -298,7 +298,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "UCPD IP ID register",
                     ),
                     array: None,
-                    byte_offset: 1020,
+                    byte_offset: 0x3fc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,

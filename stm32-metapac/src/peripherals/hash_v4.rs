@@ -22,45 +22,45 @@ impl Hash {
     #[doc = "control register."]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "data input register."]
     #[inline(always)]
     pub const fn din(self) -> crate::common::Reg<u32, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "start register."]
     #[inline(always)]
     pub const fn str(self) -> crate::common::Reg<regs::Str, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "digest registers."]
     #[inline(always)]
     pub const fn hra(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 5usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize + n * 4usize) as _) }
     }
     #[doc = "interrupt enable register."]
     #[inline(always)]
     pub const fn imr(self) -> crate::common::Reg<regs::Imr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "status register."]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "context swap registers."]
     #[inline(always)]
     pub const fn csr(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 54usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(248usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf8usize + n * 4usize) as _) }
     }
     #[doc = "HASH digest register."]
     #[inline(always)]
     pub const fn hr(self, n: usize) -> crate::common::Reg<u32, crate::common::R> {
         assert!(n < 8usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(784usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0310usize + n * 4usize) as _) }
     }
 }
 pub mod regs {

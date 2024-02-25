@@ -22,17 +22,17 @@ impl Eth {
     #[doc = "Ethernet: media access control (MAC)"]
     #[inline(always)]
     pub const fn ethernet_mac(self) -> EthernetMac {
-        unsafe { EthernetMac::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { EthernetMac::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Ethernet: Precision Time Protocol (PTP)"]
     #[inline(always)]
     pub const fn ethernet_ptp(self) -> EthernetPtp {
-        unsafe { EthernetPtp::from_ptr(self.ptr.add(1792usize) as _) }
+        unsafe { EthernetPtp::from_ptr(self.ptr.add(0x0700usize) as _) }
     }
     #[doc = "Ethernet: DMA mode register (DMA)"]
     #[inline(always)]
     pub const fn ethernet_dma(self) -> EthernetDma {
-        unsafe { EthernetDma::from_ptr(self.ptr.add(4096usize) as _) }
+        unsafe { EthernetDma::from_ptr(self.ptr.add(0x1000usize) as _) }
     }
 }
 #[doc = "Ethernet: DMA controller operation"]
@@ -54,72 +54,72 @@ impl EthernetDma {
     #[doc = "Ethernet DMA bus mode register"]
     #[inline(always)]
     pub const fn dmabmr(self) -> crate::common::Reg<regs::Dmabmr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Ethernet DMA transmit poll demand register"]
     #[inline(always)]
     pub const fn dmatpdr(self) -> crate::common::Reg<regs::Dmatpdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "EHERNET DMA receive poll demand register"]
     #[inline(always)]
     pub const fn dmarpdr(self) -> crate::common::Reg<regs::Dmarpdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Ethernet DMA receive descriptor list address register"]
     #[inline(always)]
     pub const fn dmardlar(self) -> crate::common::Reg<regs::Dmardlar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Ethernet DMA transmit descriptor list address register"]
     #[inline(always)]
     pub const fn dmatdlar(self) -> crate::common::Reg<regs::Dmatdlar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Ethernet DMA status register"]
     #[inline(always)]
     pub const fn dmasr(self) -> crate::common::Reg<regs::Dmasr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Ethernet DMA operation mode register"]
     #[inline(always)]
     pub const fn dmaomr(self) -> crate::common::Reg<regs::Dmaomr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Ethernet DMA interrupt enable register"]
     #[inline(always)]
     pub const fn dmaier(self) -> crate::common::Reg<regs::Dmaier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "Ethernet DMA missed frame and buffer overflow counter register"]
     #[inline(always)]
     pub const fn dmamfbocr(self) -> crate::common::Reg<regs::Dmamfbocr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "Ethernet DMA receive status watchdog timer register"]
     #[inline(always)]
     pub const fn dmarswtr(self) -> crate::common::Reg<regs::Dmarswtr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "Ethernet DMA current host transmit descriptor register"]
     #[inline(always)]
     pub const fn dmachtdr(self) -> crate::common::Reg<regs::Dmachtdr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[doc = "Ethernet DMA current host receive descriptor register"]
     #[inline(always)]
     pub const fn dmachrdr(self) -> crate::common::Reg<regs::Dmachrdr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
     #[doc = "Ethernet DMA current host transmit buffer address register"]
     #[inline(always)]
     pub const fn dmachtbar(self) -> crate::common::Reg<regs::Dmachtbar, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[doc = "Ethernet DMA current host receive buffer address register"]
     #[inline(always)]
     pub const fn dmachrbar(self) -> crate::common::Reg<regs::Dmachrbar, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
 }
 #[doc = "Ethernet: media access control (MAC)"]
@@ -141,144 +141,144 @@ impl EthernetMac {
     #[doc = "Ethernet MAC configuration register"]
     #[inline(always)]
     pub const fn maccr(self) -> crate::common::Reg<regs::Maccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Ethernet MAC frame filter register"]
     #[inline(always)]
     pub const fn macffr(self) -> crate::common::Reg<regs::Macffr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Ethernet MAC hash table high register"]
     #[inline(always)]
     pub const fn machthr(self) -> crate::common::Reg<regs::Machthr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Ethernet MAC hash table low register"]
     #[inline(always)]
     pub const fn machtlr(self) -> crate::common::Reg<regs::Machtlr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Ethernet MAC MII address register"]
     #[inline(always)]
     pub const fn macmiiar(self) -> crate::common::Reg<regs::Macmiiar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Ethernet MAC MII data register"]
     #[inline(always)]
     pub const fn macmiidr(self) -> crate::common::Reg<regs::Macmiidr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Ethernet MAC flow control register"]
     #[inline(always)]
     pub const fn macfcr(self) -> crate::common::Reg<regs::Macfcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Ethernet MAC VLAN tag register"]
     #[inline(always)]
     pub const fn macvlantr(self) -> crate::common::Reg<regs::Macvlantr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "Ethernet MAC remote wakeup frame filter register"]
     #[inline(always)]
     pub const fn macrwuffr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "Ethernet MAC PMT control and status register"]
     #[inline(always)]
     pub const fn macpmtcsr(self) -> crate::common::Reg<regs::Macpmtcsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "Ethernet MAC debug register"]
     #[inline(always)]
     pub const fn macdbgr(self) -> crate::common::Reg<regs::Macdbgr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[doc = "Ethernet MAC interrupt status register"]
     #[inline(always)]
     pub const fn macsr(self) -> crate::common::Reg<regs::Macsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[doc = "Ethernet MAC interrupt mask register"]
     #[inline(always)]
     pub const fn macimr(self) -> crate::common::Reg<regs::Macimr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[doc = "Ethernet MAC address 0 high register"]
     #[inline(always)]
     pub const fn maca0hr(self) -> crate::common::Reg<regs::Maca0hr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[doc = "Ethernet MAC address 0 low register"]
     #[inline(always)]
     pub const fn maca0lr(self) -> crate::common::Reg<regs::Maca0lr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[doc = "Ethernet MAC address 1/2/3 high register"]
     #[inline(always)]
     pub const fn macahr(self, n: usize) -> crate::common::Reg<regs::Macahr, crate::common::RW> {
         assert!(n < 3usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize + n * 8usize) as _) }
     }
     #[doc = "Ethernet MAC address 1/2/3 low register"]
     #[inline(always)]
     pub const fn macalr(self, n: usize) -> crate::common::Reg<regs::Macalr, crate::common::RW> {
         assert!(n < 3usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize + n * 8usize) as _) }
     }
     #[doc = "Ethernet MMC control register"]
     #[inline(always)]
     pub const fn mmccr(self) -> crate::common::Reg<regs::Mmccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(256usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
     #[doc = "Ethernet MMC receive interrupt register"]
     #[inline(always)]
     pub const fn mmcrir(self) -> crate::common::Reg<regs::Mmcrir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(260usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
     }
     #[doc = "Ethernet MMC transmit interrupt register"]
     #[inline(always)]
     pub const fn mmctir(self) -> crate::common::Reg<regs::Mmctir, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(264usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize) as _) }
     }
     #[doc = "Ethernet MMC receive interrupt mask register"]
     #[inline(always)]
     pub const fn mmcrimr(self) -> crate::common::Reg<regs::Mmcrimr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(268usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x010cusize) as _) }
     }
     #[doc = "Ethernet MMC transmit interrupt mask register"]
     #[inline(always)]
     pub const fn mmctimr(self) -> crate::common::Reg<regs::Mmctimr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(272usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0110usize) as _) }
     }
     #[doc = "Ethernet MMC transmitted good frames after a single collision counter"]
     #[inline(always)]
     pub const fn mmctgfsccr(self) -> crate::common::Reg<regs::Mmctgfsccr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(332usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x014cusize) as _) }
     }
     #[doc = "Ethernet MMC transmitted good frames after more than a single collision"]
     #[inline(always)]
     pub const fn mmctgfmsccr(self) -> crate::common::Reg<regs::Mmctgfmsccr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(336usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0150usize) as _) }
     }
     #[doc = "Ethernet MMC transmitted good frames counter register"]
     #[inline(always)]
     pub const fn mmctgfcr(self) -> crate::common::Reg<regs::Mmctgfcr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(360usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0168usize) as _) }
     }
     #[doc = "Ethernet MMC received frames with CRC error counter register"]
     #[inline(always)]
     pub const fn mmcrfcecr(self) -> crate::common::Reg<regs::Mmcrfcecr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(404usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0194usize) as _) }
     }
     #[doc = "Ethernet MMC received frames with alignment error counter register"]
     #[inline(always)]
     pub const fn mmcrfaecr(self) -> crate::common::Reg<regs::Mmcrfaecr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(408usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0198usize) as _) }
     }
     #[doc = "MMC received good unicast frames counter register"]
     #[inline(always)]
     pub const fn mmcrgufcr(self) -> crate::common::Reg<regs::Mmcrgufcr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(452usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c4usize) as _) }
     }
 }
 #[doc = "Ethernet: Precision time protocol"]
@@ -300,57 +300,57 @@ impl EthernetPtp {
     #[doc = "Ethernet PTP time stamp control register"]
     #[inline(always)]
     pub const fn ptptscr(self) -> crate::common::Reg<regs::Ptptscr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Ethernet PTP subsecond increment register"]
     #[inline(always)]
     pub const fn ptpssir(self) -> crate::common::Reg<regs::Ptpssir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Ethernet PTP time stamp high register"]
     #[inline(always)]
     pub const fn ptptshr(self) -> crate::common::Reg<regs::Ptptshr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Ethernet PTP time stamp low register"]
     #[inline(always)]
     pub const fn ptptslr(self) -> crate::common::Reg<regs::Ptptslr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Ethernet PTP time stamp high update register"]
     #[inline(always)]
     pub const fn ptptshur(self) -> crate::common::Reg<regs::Ptptshur, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Ethernet PTP time stamp low update register"]
     #[inline(always)]
     pub const fn ptptslur(self) -> crate::common::Reg<regs::Ptptslur, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Ethernet PTP time stamp addend register"]
     #[inline(always)]
     pub const fn ptptsar(self) -> crate::common::Reg<regs::Ptptsar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Ethernet PTP target time high register"]
     #[inline(always)]
     pub const fn ptptthr(self) -> crate::common::Reg<regs::Ptptthr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "Ethernet PTP target time low register"]
     #[inline(always)]
     pub const fn ptpttlr(self) -> crate::common::Reg<regs::Ptpttlr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "Ethernet PTP time stamp status register"]
     #[inline(always)]
     pub const fn ptptssr(self) -> crate::common::Reg<regs::Ptptssr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "Ethernet PTP PPS control register"]
     #[inline(always)]
     pub const fn ptpppscr(self) -> crate::common::Reg<regs::Ptpppscr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
 }
 pub mod regs {
@@ -3239,7 +3239,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Apcs {
         #[doc = "MAC passes all incoming frames unmodified"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "MAC strips the Pad/FCS field on incoming frames only for lengths less than or equal to 1500 bytes"]
         STRIP = 0x01,
     }
@@ -3269,7 +3269,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Bfd {
         #[doc = "Address filters pass all received broadcast frames"]
-        ENABLED = 0,
+        ENABLED = 0x0,
         #[doc = "Address filters filter all incoming broadcast frames"]
         DISABLED = 0x01,
     }
@@ -3299,7 +3299,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Bl {
         #[doc = "For retransmission n, wait up to 2^min(n, 10) time slots"]
-        BL10 = 0,
+        BL10 = 0x0,
         #[doc = "For retransmission n, wait up to 2^min(n, 8) time slots"]
         BL8 = 0x01,
         #[doc = "For retransmission n, wait up to 2^min(n, 4) time slots"]
@@ -3332,7 +3332,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum CounterReset {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Reset all counters. Cleared automatically"]
         RESET = 0x01,
     }
@@ -3362,7 +3362,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cr {
         #[doc = "60-100MHz HCLK/42"]
-        CR_60_100 = 0,
+        CR_60_100 = 0x0,
         #[doc = "100-150 MHz HCLK/62"]
         CR_100_150 = 0x01,
         #[doc = "20-35MHz HCLK/16"]
@@ -3401,7 +3401,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Csd {
         #[doc = "Errors generated due to loss of carrier"]
-        ENABLED = 0,
+        ENABLED = 0x0,
         #[doc = "No error generated due to loss of carrier"]
         DISABLED = 0x01,
     }
@@ -3431,7 +3431,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Csr {
         #[doc = "Counters roll over to zero after reaching the maximum value"]
-        ROLLOVER = 0,
+        ROLLOVER = 0x0,
         #[doc = "Counters do not roll over to zero after reaching the maximum value"]
         NOTROLLOVER = 0x01,
     }
@@ -3461,7 +3461,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Da {
         #[doc = "Round-robin with Rx:Tx priority given by PM"]
-        ROUNDROBIN = 0,
+        ROUNDROBIN = 0x0,
         #[doc = "Rx has priority over Tx"]
         RXPRIORITY = 0x01,
     }
@@ -3491,7 +3491,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Daif {
         #[doc = "Normal filtering of frames"]
-        NORMAL = 0,
+        NORMAL = 0x0,
         #[doc = "Address check block operates in inverse filtering mode for the DA address comparison"]
         INVERT = 0x01,
     }
@@ -3521,7 +3521,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dm {
         #[doc = "MAC operates in half-duplex mode"]
-        HALFDUPLEX = 0,
+        HALFDUPLEX = 0x0,
         #[doc = "MAC operates in full-duplex mode"]
         FULLDUPLEX = 0x01,
     }
@@ -3551,7 +3551,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum DmaomrSr {
         #[doc = "Reception is stopped after transfer of the current frame"]
-        STOPPED = 0,
+        STOPPED = 0x0,
         #[doc = "Reception is placed in the Running state"]
         STARTED = 0x01,
     }
@@ -3581,7 +3581,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dtcefd {
         #[doc = "Drop frames with errors only in the receive checksum offload engine"]
-        ENABLED = 0,
+        ENABLED = 0x0,
         #[doc = "Do not drop frames that only have errors in the receive checksum offload engine"]
         DISABLED = 0x01,
     }
@@ -3611,7 +3611,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fb {
         #[doc = "AHB uses SINGLE and INCR burst transfers"]
-        VARIABLE = 0,
+        VARIABLE = 0x0,
         #[doc = "AHB uses only fixed burst transfers"]
         FIXED = 0x01,
     }
@@ -3641,7 +3641,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fcb {
         #[doc = "In half duplex only, deasserts back pressure"]
-        DISABLEBACKPRESSURE = 0,
+        DISABLEBACKPRESSURE = 0x0,
         #[doc = "In full duplex, initiate a Pause control frame. In half duplex, assert back pressure"]
         PAUSEORBACKPRESSURE = 0x01,
     }
@@ -3671,7 +3671,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fef {
         #[doc = "Rx FIFO drops frames with error status"]
-        DROP = 0,
+        DROP = 0x0,
         #[doc = "All frames except runt error frames are forwarded to the DMA"]
         FORWARD = 0x01,
     }
@@ -3701,7 +3701,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fes {
         #[doc = "10 Mbit/s"]
-        FES10 = 0,
+        FES10 = 0x0,
         #[doc = "100 Mbit/s"]
         FES100 = 0x01,
     }
@@ -3731,7 +3731,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fpm {
         #[doc = "PBL values used as-is"]
-        X1 = 0,
+        X1 = 0x0,
         #[doc = "PBL values multiplied by 4"]
         X4 = 0x01,
     }
@@ -3760,7 +3760,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ftf {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Transmit FIFO controller logic is reset to its default values. Cleared automatically"]
         FLUSH = 0x01,
     }
@@ -3790,7 +3790,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fugf {
         #[doc = "Rx FIFO drops all frames of less than 64 bytes"]
-        DROP = 0,
+        DROP = 0x0,
         #[doc = "Rx FIFO forwards undersized frames"]
         FORWARD = 0x01,
     }
@@ -3820,7 +3820,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Hm {
         #[doc = "MAC performs a perfect destination address filtering for multicast frames"]
-        PERFECT = 0,
+        PERFECT = 0x0,
         #[doc = "MAC performs destination address filtering of received multicast frames according to the hash table"]
         HASH = 0x01,
     }
@@ -3850,7 +3850,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Hpf {
         #[doc = "If HM or HU is set, only frames that match the Hash filter are passed"]
-        HASHONLY = 0,
+        HASHONLY = 0x0,
         #[doc = "If HM or HU is set, frames that match either the perfect filter or the hash filter are passed"]
         HASHORPERFECT = 0x01,
     }
@@ -3880,7 +3880,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Hu {
         #[doc = "MAC performs a perfect destination address filtering for unicast frames"]
-        PERFECT = 0,
+        PERFECT = 0x0,
         #[doc = "MAC performs destination address filtering of received unicast frames according to the hash table"]
         HASH = 0x01,
     }
@@ -3910,7 +3910,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ifg {
         #[doc = "96 bit times"]
-        IFG96 = 0,
+        IFG96 = 0x0,
         #[doc = "88 bit times"]
         IFG88 = 0x01,
         #[doc = "80 bit times"]
@@ -3952,7 +3952,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ipco {
         #[doc = "IPv4 checksum offload disabled"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "IPv4 checksums are checked in received frames"]
         OFFLOAD = 0x01,
     }
@@ -3982,7 +3982,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Jd {
         #[doc = "Jabber enabled, transmit frames up to 2048 bytes"]
-        ENABLED = 0,
+        ENABLED = 0x0,
         #[doc = "Jabber disabled, transmit frames up to 16384 bytes"]
         DISABLED = 0x01,
     }
@@ -4012,7 +4012,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lm {
         #[doc = "Normal mode"]
-        NORMAL = 0,
+        NORMAL = 0x0,
         #[doc = "MAC operates in loopback mode at the MII"]
         LOOPBACK = 0x01,
     }
@@ -4042,7 +4042,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum MacahrSa {
         #[doc = "This address is used for comparison with DA fields of the received frame"]
-        DESTINATION = 0,
+        DESTINATION = 0x0,
         #[doc = "This address is used for comparison with SA fields of received frames"]
         SOURCE = 0x01,
     }
@@ -4072,7 +4072,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mb {
         #[doc = "Fixed burst transfers (INCRx and SINGLE) for burst lengths of 16 and below"]
-        NORMAL = 0,
+        NORMAL = 0x0,
         #[doc = "If FB is low, start all bursts greater than 16 with INCR (undefined burst)"]
         MIXED = 0x01,
     }
@@ -4101,7 +4101,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum MbProgress {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "This bit is set to 1 by the application to indicate that a read or write access is in progress"]
         BUSY = 0x01,
     }
@@ -4131,7 +4131,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mcfhp {
         #[doc = "When MCP is set, MMC counters are preset to almost-half value 0x7FFF_FFF0"]
-        ALMOSTHALF = 0,
+        ALMOSTHALF = 0x0,
         #[doc = "When MCP is set, MMC counters are preset to almost-full value 0xFFFF_FFF0"]
         ALMOSTFULL = 0x01,
     }
@@ -4160,7 +4160,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mcp {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "MMC counters will be preset to almost full or almost half. Cleared automatically"]
         PRESET = 0x01,
     }
@@ -4190,7 +4190,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mw {
         #[doc = "Read operation"]
-        READ = 0,
+        READ = 0x0,
         #[doc = "Write operation"]
         WRITE = 0x01,
     }
@@ -4219,7 +4219,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pbl {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Maximum of 1 beat per DMA transaction"]
         PBL1 = 0x01,
         #[doc = "Maximum of 2 beats per DMA transaction"]
@@ -4316,7 +4316,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pcf {
         #[doc = "MAC prevents all control frames from reaching the application"]
-        PREVENTALL = 0,
+        PREVENTALL = 0x0,
         #[doc = "MAC forwards all control frames to application except Pause"]
         FORWARDALLEXCEPTPAUSE = 0x01,
         #[doc = "MAC forwards all control frames to application even if they fail the address filter"]
@@ -4349,7 +4349,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pd {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "All received frames will be dropped. Cleared automatically when a magic packet or wakeup frame is received"]
         ENABLED = 0x01,
     }
@@ -4379,7 +4379,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Plt {
         #[doc = "Pause time minus 4 slot times"]
-        PLT4 = 0,
+        PLT4 = 0x0,
         #[doc = "Pause time minus 28 slot times"]
         PLT28 = 0x01,
         #[doc = "Pause time minus 144 slot times"]
@@ -4413,7 +4413,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pmtim {
         #[doc = "PMT Status interrupt generation enabled"]
-        UNMASKED = 0,
+        UNMASKED = 0x0,
         #[doc = "PMT Status interrupt generation disabled"]
         MASKED = 0x01,
     }
@@ -4443,7 +4443,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum PriorityRxOverTx {
         #[doc = "RxDMA priority over TxDMA is 1:1"]
-        ONETOONE = 0,
+        ONETOONE = 0x0,
         #[doc = "RxDMA priority over TxDMA is 2:1"]
         TWOTOONE = 0x01,
         #[doc = "RxDMA priority over TxDMA is 3:1"]
@@ -4477,7 +4477,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rd {
         #[doc = "MAC attempts retries based on the settings of BL"]
-        ENABLED = 0,
+        ENABLED = 0x0,
         #[doc = "MAC attempts only 1 transmission"]
         DISABLED = 0x01,
     }
@@ -4506,7 +4506,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rdp {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "1 beat per RxDMA transaction"]
         RDP1 = 0x01,
         #[doc = "2 beats per RxDMA transaction"]
@@ -4603,7 +4603,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rfaem {
         #[doc = "Received-alignment-error counter half-full interrupt enabled"]
-        UNMASKED = 0,
+        UNMASKED = 0x0,
         #[doc = "Received-alignment-error counter half-full interrupt disabled"]
         MASKED = 0x01,
     }
@@ -4633,7 +4633,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rfcem {
         #[doc = "Received-crc-error counter half-full interrupt enabled"]
-        UNMASKED = 0,
+        UNMASKED = 0x0,
         #[doc = "Received-crc-error counter half-full interrupt disabled"]
         MASKED = 0x01,
     }
@@ -4663,7 +4663,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rgufm {
         #[doc = "Received-good-unicast counter half-full interrupt enabled"]
-        UNMASKED = 0,
+        UNMASKED = 0x0,
         #[doc = "Received-good-unicast counter half-full interrupt disabled"]
         MASKED = 0x01,
     }
@@ -4693,7 +4693,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rod {
         #[doc = "MAC receives all packets from PHY while transmitting"]
-        ENABLED = 0,
+        ENABLED = 0x0,
         #[doc = "MAC disables reception of frames in half-duplex mode"]
         DISABLED = 0x01,
     }
@@ -4724,7 +4724,7 @@ pub mod vals {
     pub struct Rpd(pub u32);
     impl Rpd {
         #[doc = "Poll the receive descriptor list"]
-        pub const POLL: Self = Self(0);
+        pub const POLL: Self = Self(0x0);
     }
     impl Rpd {
         pub const fn from_bits(val: u32) -> Rpd {
@@ -4750,7 +4750,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rps {
         #[doc = "Stopped, reset or Stop Receive command issued"]
-        STOPPED = 0,
+        STOPPED = 0x0,
         #[doc = "Running, fetching receive transfer descriptor"]
         RUNNINGFETCHING = 0x01,
         _RESERVED_2 = 0x02,
@@ -4789,7 +4789,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rsf {
         #[doc = "Rx FIFO operates in cut-through mode, subject to RTC bits"]
-        CUTTHROUGH = 0,
+        CUTTHROUGH = 0x0,
         #[doc = "Frames are read from Rx FIFO after complete frame has been written"]
         STOREFORWARD = 0x01,
     }
@@ -4819,7 +4819,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rtc {
         #[doc = "64 bytes"]
-        RTC64 = 0,
+        RTC64 = 0x0,
         #[doc = "32 bytes"]
         RTC32 = 0x01,
         #[doc = "96 bytes"]
@@ -4853,7 +4853,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Saif {
         #[doc = "Source address filter operates normally"]
-        NORMAL = 0,
+        NORMAL = 0x0,
         #[doc = "Source address filter operation inverted"]
         INVERT = 0x01,
     }
@@ -4883,7 +4883,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum St {
         #[doc = "Transmission is placed in the Stopped state"]
-        STOPPED = 0,
+        STOPPED = 0x0,
         #[doc = "Transmission is placed in Running state"]
         STARTED = 0x01,
     }
@@ -4913,7 +4913,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tgfm {
         #[doc = "Transmitted-good counter half-full interrupt enabled"]
-        UNMASKED = 0,
+        UNMASKED = 0x0,
         #[doc = "Transmitted-good counter half-full interrupt disabled"]
         MASKED = 0x01,
     }
@@ -4943,7 +4943,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tgfmscm {
         #[doc = "Transmitted-good-multiple-collision half-full interrupt enabled"]
-        UNMASKED = 0,
+        UNMASKED = 0x0,
         #[doc = "Transmitted-good-multiple-collision half-full interrupt disabled"]
         MASKED = 0x01,
     }
@@ -4973,7 +4973,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tgfscm {
         #[doc = "Transmitted-good-single-collision half-full interrupt enabled"]
-        UNMASKED = 0,
+        UNMASKED = 0x0,
         #[doc = "Transmitted-good-single-collision half-full interrupt disabled"]
         MASKED = 0x01,
     }
@@ -5004,7 +5004,7 @@ pub mod vals {
     pub struct Tpd(pub u32);
     impl Tpd {
         #[doc = "Poll the transmit descriptor list"]
-        pub const POLL: Self = Self(0);
+        pub const POLL: Self = Self(0x0);
     }
     impl Tpd {
         pub const fn from_bits(val: u32) -> Tpd {
@@ -5030,7 +5030,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tps {
         #[doc = "Stopped, Reset or Stop Transmit command issued"]
-        STOPPED = 0,
+        STOPPED = 0x0,
         #[doc = "Running, fetching transmit transfer descriptor"]
         RUNNINGFETCHING = 0x01,
         #[doc = "Running, waiting for status"]
@@ -5070,7 +5070,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tsf {
         #[doc = "Transmission starts when the frame size in the Tx FIFO exceeds TTC threshold"]
-        CUTTHROUGH = 0,
+        CUTTHROUGH = 0x0,
         #[doc = "Transmission starts when a full frame is in the Tx FIFO"]
         STOREFORWARD = 0x01,
     }
@@ -5100,7 +5100,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tstim {
         #[doc = "Time stamp interrupt generation enabled"]
-        UNMASKED = 0,
+        UNMASKED = 0x0,
         #[doc = "Time stamp interrupt generation disabled"]
         MASKED = 0x01,
     }
@@ -5130,7 +5130,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ttc {
         #[doc = "64 bytes"]
-        TTC64 = 0,
+        TTC64 = 0x0,
         #[doc = "128 bytes"]
         TTC128 = 0x01,
         #[doc = "192 bytes"]
@@ -5172,7 +5172,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usp {
         #[doc = "PBL value used for both Rx and Tx DMA"]
-        COMBINED = 0,
+        COMBINED = 0x0,
         #[doc = "RxDMA uses RDP value, TxDMA uses PBL value"]
         SEPARATE = 0x01,
     }
@@ -5202,7 +5202,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Vlantc {
         #[doc = "Full 16 bit VLAN identifiers are used for comparison and filtering"]
-        VLANTC16 = 0,
+        VLANTC16 = 0x0,
         #[doc = "12 bit VLAN identifies are used for comparison and filtering"]
         VLANTC12 = 0x01,
     }
@@ -5232,7 +5232,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Wd {
         #[doc = "Watchdog enabled, receive frames limited to 2048 bytes"]
-        ENABLED = 0,
+        ENABLED = 0x0,
         #[doc = "Watchdog disabled, receive frames may be up to to 16384 bytes"]
         DISABLED = 0x01,
     }
@@ -5261,7 +5261,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Wffrpr {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Reset wakeup frame filter register point to 0b000. Automatically cleared"]
         RESET = 0x01,
     }
@@ -5291,7 +5291,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Zqpd {
         #[doc = "Normal operation with automatic zero-quanta pause control frame generation"]
-        ENABLED = 0,
+        ENABLED = 0x0,
         #[doc = "Automatic generation of zero-quanta pause control frames is disabled"]
         DISABLED = 0x01,
     }

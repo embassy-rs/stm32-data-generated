@@ -22,17 +22,17 @@ impl AdcCommon {
     #[doc = "ADC Common status register"]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "ADC common control register"]
     #[inline(always)]
     pub const fn ccr(self) -> crate::common::Reg<regs::Ccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "ADC common regular data register for dual and triple modes"]
     #[inline(always)]
     pub const fn cdr(self) -> crate::common::Reg<regs::Cdr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
 }
 pub mod regs {
@@ -260,7 +260,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Adcpre {
         #[doc = "PCLK2 divided by 2"]
-        DIV2 = 0,
+        DIV2 = 0x0,
         #[doc = "PCLK2 divided by 4"]
         DIV4 = 0x01,
         #[doc = "PCLK2 divided by 6"]
@@ -294,7 +294,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dds {
         #[doc = "No new DMA request is issued after the last transfer"]
-        SINGLE = 0,
+        SINGLE = 0x0,
         #[doc = "DMA requests are issued as long as data are converted and DMA=01, 10 or 11"]
         CONTINUOUS = 0x01,
     }
@@ -324,7 +324,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dma {
         #[doc = "DMA mode disabled"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "DMA mode 1 enabled (2 / 3 half-words one by one - 1 then 2 then 3)"]
         MODE1 = 0x01,
         #[doc = "DMA mode 2 enabled (2 / 3 half-words by pairs - 2&1 then 1&3 then 3&2)"]
@@ -358,7 +358,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Multi {
         #[doc = "All the ADCs independent: independent mode"]
-        INDEPENDENT = 0,
+        INDEPENDENT = 0x0,
         #[doc = "Dual ADC1 and ADC2, combined regular and injected simultaneous mode"]
         DUALRJ = 0x01,
         #[doc = "Dual ADC1 and ADC2, combined regular and alternate trigger mode"]

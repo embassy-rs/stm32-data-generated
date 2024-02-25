@@ -23,19 +23,19 @@ impl Fsmc {
     #[inline(always)]
     pub const fn bcr(self, n: usize) -> crate::common::Reg<regs::Bcr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize + n * 8usize) as _) }
     }
     #[doc = "SRAM/NOR-Flash chip-select timing register 1-4"]
     #[inline(always)]
     pub const fn btr(self, n: usize) -> crate::common::Reg<regs::Btr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize + n * 8usize) as _) }
     }
     #[doc = "SRAM/NOR-Flash write timing registers 1-4"]
     #[inline(always)]
     pub const fn bwtr(self, n: usize) -> crate::common::Reg<regs::Bwtr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(260usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize + n * 8usize) as _) }
     }
 }
 pub mod regs {
@@ -378,7 +378,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Accmod {
         #[doc = "Access mode A"]
-        A = 0,
+        A = 0x0,
         #[doc = "Access mode B"]
         B = 0x01,
         #[doc = "Access mode C"]
@@ -412,7 +412,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cpsize {
         #[doc = "No burst split when crossing page boundary"]
-        NOBURSTSPLIT = 0,
+        NOBURSTSPLIT = 0x0,
         #[doc = "128 bytes CRAM page size"]
         BYTES128 = 0x01,
         #[doc = "256 bytes CRAM page size"]
@@ -451,7 +451,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mtyp {
         #[doc = "SRAM memory type"]
-        SRAM = 0,
+        SRAM = 0x0,
         #[doc = "PSRAM (CRAM) memory type"]
         PSRAM = 0x01,
         #[doc = "NOR Flash/OneNAND Flash"]
@@ -484,7 +484,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mwid {
         #[doc = "Memory data bus width 8 bits"]
-        BITS8 = 0,
+        BITS8 = 0x0,
         #[doc = "Memory data bus width 16 bits"]
         BITS16 = 0x01,
         #[doc = "Memory data bus width 32 bits"]
@@ -517,7 +517,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Waitcfg {
         #[doc = "NWAIT signal is active one data cycle before wait state"]
-        BEFOREWAITSTATE = 0,
+        BEFOREWAITSTATE = 0x0,
         #[doc = "NWAIT signal is active during wait state"]
         DURINGWAITSTATE = 0x01,
     }
@@ -547,7 +547,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Waitpol {
         #[doc = "NWAIT active low"]
-        ACTIVELOW = 0,
+        ACTIVELOW = 0x0,
         #[doc = "NWAIT active high"]
         ACTIVEHIGH = 0x01,
     }

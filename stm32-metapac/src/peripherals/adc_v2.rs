@@ -22,74 +22,74 @@ impl Adc {
     #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "control register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "sample time register 1"]
     #[inline(always)]
     pub const fn smpr1(self) -> crate::common::Reg<regs::Smpr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "sample time register 2"]
     #[inline(always)]
     pub const fn smpr2(self) -> crate::common::Reg<regs::Smpr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "injected channel data offset register x"]
     #[inline(always)]
     pub const fn jofr(self, n: usize) -> crate::common::Reg<regs::Jofr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize + n * 4usize) as _) }
     }
     #[doc = "watchdog higher threshold register"]
     #[inline(always)]
     pub const fn htr(self) -> crate::common::Reg<regs::Htr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "watchdog lower threshold register"]
     #[inline(always)]
     pub const fn ltr(self) -> crate::common::Reg<regs::Ltr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "regular sequence register 1"]
     #[inline(always)]
     pub const fn sqr1(self) -> crate::common::Reg<regs::Sqr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "regular sequence register 2"]
     #[inline(always)]
     pub const fn sqr2(self) -> crate::common::Reg<regs::Sqr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "regular sequence register 3"]
     #[inline(always)]
     pub const fn sqr3(self) -> crate::common::Reg<regs::Sqr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[doc = "injected sequence register"]
     #[inline(always)]
     pub const fn jsqr(self) -> crate::common::Reg<regs::Jsqr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[doc = "injected data register x"]
     #[inline(always)]
     pub const fn jdr(self, n: usize) -> crate::common::Reg<regs::Jdr, crate::common::R> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize + n * 4usize) as _) }
     }
     #[doc = "regular data register"]
     #[inline(always)]
     pub const fn dr(self) -> crate::common::Reg<regs::Dr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
 }
 pub mod regs {
@@ -808,7 +808,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Align {
         #[doc = "Right alignment"]
-        RIGHT = 0,
+        RIGHT = 0x0,
         #[doc = "Left alignment"]
         LEFT = 0x01,
     }
@@ -838,7 +838,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Awdsgl {
         #[doc = "Analog watchdog enabled on all channels"]
-        ALLCHANNELS = 0,
+        ALLCHANNELS = 0x0,
         #[doc = "Analog watchdog enabled on a single channel"]
         SINGLECHANNEL = 0x01,
     }
@@ -868,7 +868,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cont {
         #[doc = "Single conversion mode"]
-        SINGLE = 0,
+        SINGLE = 0x0,
         #[doc = "Continuous conversion mode"]
         CONTINUOUS = 0x01,
     }
@@ -898,7 +898,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dds {
         #[doc = "No new DMA request is issued after the last transfer"]
-        SINGLE = 0,
+        SINGLE = 0x0,
         #[doc = "DMA requests are issued as long as data are converted and DMA=1"]
         CONTINUOUS = 0x01,
     }
@@ -928,7 +928,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Eocs {
         #[doc = "The EOC bit is set at the end of each sequence of regular conversions"]
-        EACHSEQUENCE = 0,
+        EACHSEQUENCE = 0x0,
         #[doc = "The EOC bit is set at the end of each regular conversion"]
         EACHCONVERSION = 0x01,
     }
@@ -958,7 +958,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Exten {
         #[doc = "Trigger detection disabled"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "Trigger detection on the rising edge"]
         RISINGEDGE = 0x01,
         #[doc = "Trigger detection on the falling edge"]
@@ -992,7 +992,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Jexten {
         #[doc = "Trigger detection disabled"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "Trigger detection on the rising edge"]
         RISINGEDGE = 0x01,
         #[doc = "Trigger detection on the falling edge"]
@@ -1026,7 +1026,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Res {
         #[doc = "12-bit (15 ADCCLK cycles)"]
-        TWELVEBIT = 0,
+        TWELVEBIT = 0x0,
         #[doc = "10-bit (13 ADCCLK cycles)"]
         TENBIT = 0x01,
         #[doc = "8-bit (11 ADCCLK cycles)"]
@@ -1060,7 +1060,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum SampleTime {
         #[doc = "3 cycles"]
-        CYCLES3 = 0,
+        CYCLES3 = 0x0,
         #[doc = "15 cycles"]
         CYCLES15 = 0x01,
         #[doc = "28 cycles"]
@@ -1103,7 +1103,7 @@ pub mod vals {
     pub struct SmprSmpxX(pub u32);
     impl SmprSmpxX {
         #[doc = "3 cycles"]
-        pub const CYCLES3: Self = Self(0);
+        pub const CYCLES3: Self = Self(0x0);
         #[doc = "15 cycles"]
         pub const CYCLES15: Self = Self(0x01);
         #[doc = "28 cycles"]

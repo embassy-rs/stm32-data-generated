@@ -2,7 +2,7 @@
 pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "ADC4",
-        address: 1174540288,
+        address: 0x46021000,
         registers: None,
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK4",
@@ -81,7 +81,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "AES",
-        address: 1108082688,
+        address: 0x420c0000,
         registers: None,
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
@@ -120,7 +120,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "CRC",
-        address: 1073885184,
+        address: 0x40023000,
         registers: Some(PeripheralRegisters {
             kind: "crc",
             version: "v3",
@@ -146,7 +146,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "DBGMCU",
-        address: 3758374912,
+        address: 0xe0044000,
         registers: Some(PeripheralRegisters {
             kind: "dbgmcu",
             version: "wba",
@@ -160,7 +160,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "EXTI",
-        address: 1174544384,
+        address: 0x46022000,
         registers: Some(PeripheralRegisters {
             kind: "exti",
             version: "l5",
@@ -239,7 +239,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "FLASH",
-        address: 1073881088,
+        address: 0x40022000,
         registers: Some(PeripheralRegisters {
             kind: "flash",
             version: "wba",
@@ -265,7 +265,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "GPDMA1",
-        address: 1073872896,
+        address: 0x40020000,
         registers: Some(PeripheralRegisters {
             kind: "gpdma",
             version: "v1",
@@ -324,7 +324,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "GPIOA",
-        address: 1107427328,
+        address: 0x42020000,
         registers: Some(PeripheralRegisters {
             kind: "gpio",
             version: "v2",
@@ -350,7 +350,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "GPIOB",
-        address: 1107428352,
+        address: 0x42020400,
         registers: Some(PeripheralRegisters {
             kind: "gpio",
             version: "v2",
@@ -376,7 +376,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "GPIOC",
-        address: 1107429376,
+        address: 0x42020800,
         registers: Some(PeripheralRegisters {
             kind: "gpio",
             version: "v2",
@@ -402,7 +402,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "GPIOH",
-        address: 1107434496,
+        address: 0x42021c00,
         registers: Some(PeripheralRegisters {
             kind: "gpio",
             version: "v2",
@@ -428,7 +428,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "HASH",
-        address: 1108083712,
+        address: 0x420c0400,
         registers: Some(PeripheralRegisters {
             kind: "hash",
             version: "v4",
@@ -463,7 +463,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "HSEM",
-        address: 1108089856,
+        address: 0x420c1c00,
         registers: None,
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
@@ -487,7 +487,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "I2C1",
-        address: 1073763328,
+        address: 0x40005400,
         registers: Some(PeripheralRegisters {
             kind: "i2c",
             version: "v2",
@@ -573,7 +573,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "I2C3",
-        address: 1174415360,
+        address: 0x46002800,
         registers: Some(PeripheralRegisters {
             kind: "i2c",
             version: "v2",
@@ -659,7 +659,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "ICACHE",
-        address: 1073939456,
+        address: 0x40030400,
         registers: Some(PeripheralRegisters {
             kind: "icache",
             version: "v1_4crr",
@@ -676,7 +676,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "IWDG",
-        address: 1073754112,
+        address: 0x40003000,
         registers: Some(PeripheralRegisters {
             kind: "iwdg",
             version: "v3",
@@ -693,7 +693,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "LPTIM1",
-        address: 1174422528,
+        address: 0x46004400,
         registers: Some(PeripheralRegisters {
             kind: "lptim",
             version: "v1",
@@ -783,7 +783,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "LPTIM2",
-        address: 1073779712,
+        address: 0x40009400,
         registers: Some(PeripheralRegisters {
             kind: "lptim",
             version: "v1",
@@ -868,7 +868,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "LPUART1",
-        address: 1174414336,
+        address: 0x46002400,
         registers: Some(PeripheralRegisters {
             kind: "usart",
             version: "v4",
@@ -971,7 +971,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "PKA",
-        address: 1108090880,
+        address: 0x420c2000,
         registers: None,
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
@@ -995,7 +995,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "PWR",
-        address: 1174538240,
+        address: 0x46020800,
         registers: Some(PeripheralRegisters {
             kind: "pwr",
             version: "wba",
@@ -1112,7 +1112,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "RCC",
-        address: 1174539264,
+        address: 0x46020c00,
         registers: Some(PeripheralRegisters {
             kind: "rcc",
             version: "wba",
@@ -1150,7 +1150,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "RNG",
-        address: 1108084736,
+        address: 0x420c0800,
         registers: Some(PeripheralRegisters {
             kind: "rng",
             version: "v1",
@@ -1182,7 +1182,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "RTC",
-        address: 1174435840,
+        address: 0x46007800,
         registers: Some(PeripheralRegisters {
             kind: "rtc",
             version: "v3u5",
@@ -1247,7 +1247,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "SAES",
-        address: 1108085760,
+        address: 0x420c0c00,
         registers: None,
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
@@ -1286,7 +1286,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "SPI1",
-        address: 1073819648,
+        address: 0x40013000,
         registers: Some(PeripheralRegisters {
             kind: "spi",
             version: "v5",
@@ -1364,7 +1364,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "SPI3",
-        address: 1174413312,
+        address: 0x46002000,
         registers: Some(PeripheralRegisters {
             kind: "spi",
             version: "v5",
@@ -1442,7 +1442,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "SYSCFG",
-        address: 1174406144,
+        address: 0x46000400,
         registers: Some(PeripheralRegisters {
             kind: "syscfg",
             version: "wba",
@@ -1468,7 +1468,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "TAMP",
-        address: 1174436864,
+        address: 0x46007c00,
         registers: None,
         rcc: None,
         pins: &[
@@ -1531,7 +1531,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "TIM1",
-        address: 1073818624,
+        address: 0x40012c00,
         registers: Some(PeripheralRegisters {
             kind: "timer",
             version: "v2",
@@ -1709,7 +1709,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "TIM16",
-        address: 1073824768,
+        address: 0x40014400,
         registers: Some(PeripheralRegisters {
             kind: "timer",
             version: "v2",
@@ -1802,7 +1802,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "TIM17",
-        address: 1073825792,
+        address: 0x40014800,
         registers: Some(PeripheralRegisters {
             kind: "timer",
             version: "v2",
@@ -1885,7 +1885,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "TIM2",
-        address: 1073741824,
+        address: 0x40000000,
         registers: Some(PeripheralRegisters {
             kind: "timer",
             version: "v2",
@@ -2014,7 +2014,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "TIM3",
-        address: 1073742848,
+        address: 0x40000400,
         registers: Some(PeripheralRegisters {
             kind: "timer",
             version: "v2",
@@ -2165,7 +2165,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "TSC",
-        address: 1073889280,
+        address: 0x40024000,
         registers: None,
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK1",
@@ -2300,7 +2300,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "UID",
-        address: 200869632,
+        address: 0xbf90700,
         registers: Some(PeripheralRegisters {
             kind: "uid",
             version: "v1",
@@ -2314,7 +2314,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "USART1",
-        address: 1073821696,
+        address: 0x40013800,
         registers: Some(PeripheralRegisters {
             kind: "usart",
             version: "v4",
@@ -2427,7 +2427,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "USART2",
-        address: 1073759232,
+        address: 0x40004400,
         registers: Some(PeripheralRegisters {
             kind: "usart",
             version: "v4",
@@ -2540,7 +2540,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "WWDG",
-        address: 1073753088,
+        address: 0x40002c00,
         registers: Some(PeripheralRegisters {
             kind: "wwdg",
             version: "v2",

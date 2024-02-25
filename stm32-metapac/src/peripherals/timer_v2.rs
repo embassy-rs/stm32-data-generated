@@ -22,81 +22,81 @@ impl Tim1ch {
     #[doc = "control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr11ch, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "DMA/Interrupt enable register"]
     #[inline(always)]
     pub const fn dier(self) -> crate::common::Reg<regs::Dier1ch, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr1ch, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "event generation register"]
     #[inline(always)]
     pub const fn egr(self) -> crate::common::Reg<regs::Egr1ch, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "capture/compare mode register 1 (input mode)"]
     #[inline(always)]
     pub const fn ccmr_input(self, n: usize) -> crate::common::Reg<regs::CcmrInput1ch, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare mode register 1 (output mode)"]
     #[inline(always)]
     pub const fn ccmr_output(self, n: usize) -> crate::common::Reg<regs::CcmrOutput1ch, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare enable register"]
     #[inline(always)]
     pub const fn ccer(self) -> crate::common::Reg<regs::Ccer1ch, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "counter"]
     #[inline(always)]
     pub const fn cnt(self) -> crate::common::Reg<regs::CntCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "prescaler"]
     #[inline(always)]
     pub const fn psc(self) -> crate::common::Reg<regs::PscCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "auto-reload register (Dither mode disabled)"]
     #[inline(always)]
     pub const fn arr(self) -> crate::common::Reg<regs::ArrCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "auto-reload register (Dither mode enabled)"]
     #[inline(always)]
     pub const fn arr_dither(self) -> crate::common::Reg<regs::ArrDitherCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "capture/compare register x (x=1) (Dither mode disabled)"]
     #[inline(always)]
     pub const fn ccr(self, n: usize) -> crate::common::Reg<regs::Ccr1ch, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare register x (x=1) (Dither mode enabled)"]
     #[inline(always)]
     pub const fn ccr_dither(self, n: usize) -> crate::common::Reg<regs::CcrDither1ch, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize + n * 4usize) as _) }
     }
     #[doc = "input selection register"]
     #[inline(always)]
     pub const fn tisel(self) -> crate::common::Reg<regs::Tisel1ch, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(92usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
     }
     #[doc = "Option register 1 Note: Check Reference Manual to parse this register content"]
     #[inline(always)]
     pub const fn or(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(104usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x68usize) as _) }
     }
 }
 #[doc = "1-channel with one complementary output timers"]
@@ -118,121 +118,121 @@ impl Tim1chCmp {
     #[doc = "control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr11ch, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "control register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr21chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "DMA/Interrupt enable register"]
     #[inline(always)]
     pub const fn dier(self) -> crate::common::Reg<regs::Dier1chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr1chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "event generation register"]
     #[inline(always)]
     pub const fn egr(self) -> crate::common::Reg<regs::Egr1chCmp, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "capture/compare mode register 1 (input mode)"]
     #[inline(always)]
     pub const fn ccmr_input(self, n: usize) -> crate::common::Reg<regs::CcmrInput1ch, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare mode register 1 (output mode)"]
     #[inline(always)]
     pub const fn ccmr_output(self, n: usize) -> crate::common::Reg<regs::CcmrOutput1ch, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare enable register"]
     #[inline(always)]
     pub const fn ccer(self) -> crate::common::Reg<regs::Ccer1chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "counter"]
     #[inline(always)]
     pub const fn cnt(self) -> crate::common::Reg<regs::CntCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "prescaler"]
     #[inline(always)]
     pub const fn psc(self) -> crate::common::Reg<regs::PscCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "auto-reload register (Dither mode disabled)"]
     #[inline(always)]
     pub const fn arr(self) -> crate::common::Reg<regs::ArrCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "auto-reload register (Dither mode enabled)"]
     #[inline(always)]
     pub const fn arr_dither(self) -> crate::common::Reg<regs::ArrDitherCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "repetition counter register"]
     #[inline(always)]
     pub const fn rcr(self) -> crate::common::Reg<regs::Rcr1chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "capture/compare register x (x=1) (Dither mode disabled)"]
     #[inline(always)]
     pub const fn ccr(self, n: usize) -> crate::common::Reg<regs::Ccr1ch, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare register x (x=1) (Dither mode enabled)"]
     #[inline(always)]
     pub const fn ccr_dither(self, n: usize) -> crate::common::Reg<regs::CcrDither1ch, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize + n * 4usize) as _) }
     }
     #[doc = "break and dead-time register"]
     #[inline(always)]
     pub const fn bdtr(self) -> crate::common::Reg<regs::Bdtr1chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[doc = "break and dead-time register"]
     #[inline(always)]
     pub const fn dtr2(self) -> crate::common::Reg<regs::Dtr21chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[doc = "input selection register"]
     #[inline(always)]
     pub const fn tisel(self) -> crate::common::Reg<regs::Tisel1ch, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(92usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
     }
     #[doc = "alternate function register 1"]
     #[inline(always)]
     pub const fn af1(self) -> crate::common::Reg<regs::Af11chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(96usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize) as _) }
     }
     #[doc = "alternate function register 2"]
     #[inline(always)]
     pub const fn af2(self) -> crate::common::Reg<regs::Af21chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(100usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x64usize) as _) }
     }
     #[doc = "Option register 1 Note: Check Reference Manual to parse this register content"]
     #[inline(always)]
     pub const fn or(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(104usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x68usize) as _) }
     }
     #[doc = "DMA control register"]
     #[inline(always)]
     pub const fn dcr(self) -> crate::common::Reg<regs::Dcr1chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(988usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03dcusize) as _) }
     }
     #[doc = "DMA address for full transfer"]
     #[inline(always)]
     pub const fn dmar(self) -> crate::common::Reg<regs::Dmar1chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(992usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03e0usize) as _) }
     }
 }
 #[doc = "2-channel timers"]
@@ -254,91 +254,91 @@ impl Tim2ch {
     #[doc = "control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr11ch, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "control register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr22ch, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "slave mode control register"]
     #[inline(always)]
     pub const fn smcr(self) -> crate::common::Reg<regs::Smcr2ch, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "DMA/Interrupt enable register"]
     #[inline(always)]
     pub const fn dier(self) -> crate::common::Reg<regs::Dier2ch, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr2ch, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "event generation register"]
     #[inline(always)]
     pub const fn egr(self) -> crate::common::Reg<regs::Egr2ch, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "capture/compare mode register 1 (input mode)"]
     #[inline(always)]
     pub const fn ccmr_input(self, n: usize) -> crate::common::Reg<regs::CcmrInput2ch, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare mode register 1 (output mode)"]
     #[inline(always)]
     pub const fn ccmr_output(self, n: usize) -> crate::common::Reg<regs::CcmrOutput2ch, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare enable register"]
     #[inline(always)]
     pub const fn ccer(self) -> crate::common::Reg<regs::Ccer2ch, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "counter"]
     #[inline(always)]
     pub const fn cnt(self) -> crate::common::Reg<regs::CntCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "prescaler"]
     #[inline(always)]
     pub const fn psc(self) -> crate::common::Reg<regs::PscCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "auto-reload register (Dither mode disabled)"]
     #[inline(always)]
     pub const fn arr(self) -> crate::common::Reg<regs::ArrCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "auto-reload register (Dither mode enabled)"]
     #[inline(always)]
     pub const fn arr_dither(self) -> crate::common::Reg<regs::ArrDitherCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "capture/compare register x (x=1-2) (Dither mode disabled)"]
     #[inline(always)]
     pub const fn ccr(self, n: usize) -> crate::common::Reg<regs::Ccr1ch, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare register x (x=1-2) (Dither mode enabled)"]
     #[inline(always)]
     pub const fn ccr_dither(self, n: usize) -> crate::common::Reg<regs::CcrDither1ch, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize + n * 4usize) as _) }
     }
     #[doc = "input selection register"]
     #[inline(always)]
     pub const fn tisel(self) -> crate::common::Reg<regs::Tisel2ch, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(92usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
     }
     #[doc = "Option register 1 Note: Check Reference Manual to parse this register content"]
     #[inline(always)]
     pub const fn or(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(104usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x68usize) as _) }
     }
 }
 #[doc = "2-channel with one complementary output timers"]
@@ -360,126 +360,126 @@ impl Tim2chCmp {
     #[doc = "control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr11ch, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "control register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr22chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "slave mode control register"]
     #[inline(always)]
     pub const fn smcr(self) -> crate::common::Reg<regs::Smcr2chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "DMA/Interrupt enable register"]
     #[inline(always)]
     pub const fn dier(self) -> crate::common::Reg<regs::Dier2chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr2chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "event generation register"]
     #[inline(always)]
     pub const fn egr(self) -> crate::common::Reg<regs::Egr2chCmp, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "capture/compare mode register 1 (input mode)"]
     #[inline(always)]
     pub const fn ccmr_input(self, n: usize) -> crate::common::Reg<regs::CcmrInput1ch, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare mode register 1 (output mode)"]
     #[inline(always)]
     pub const fn ccmr_output(self, n: usize) -> crate::common::Reg<regs::CcmrOutput1ch, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare enable register"]
     #[inline(always)]
     pub const fn ccer(self) -> crate::common::Reg<regs::Ccer2chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "counter"]
     #[inline(always)]
     pub const fn cnt(self) -> crate::common::Reg<regs::CntCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "prescaler"]
     #[inline(always)]
     pub const fn psc(self) -> crate::common::Reg<regs::PscCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "auto-reload register (Dither mode disabled)"]
     #[inline(always)]
     pub const fn arr(self) -> crate::common::Reg<regs::ArrCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "auto-reload register (Dither mode enabled)"]
     #[inline(always)]
     pub const fn arr_dither(self) -> crate::common::Reg<regs::ArrDitherCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "repetition counter register"]
     #[inline(always)]
     pub const fn rcr(self) -> crate::common::Reg<regs::Rcr1chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "capture/compare register x (x=1-2)"]
     #[inline(always)]
     pub const fn ccr(self, n: usize) -> crate::common::Reg<regs::Ccr1ch, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare register x (x=1) (Dither mode enabled)"]
     #[inline(always)]
     pub const fn ccr_dither(self, n: usize) -> crate::common::Reg<regs::CcrDither1ch, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize + n * 4usize) as _) }
     }
     #[doc = "break and dead-time register"]
     #[inline(always)]
     pub const fn bdtr(self) -> crate::common::Reg<regs::Bdtr1chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[doc = "break and dead-time register"]
     #[inline(always)]
     pub const fn dtr2(self) -> crate::common::Reg<regs::Dtr21chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[doc = "input selection register"]
     #[inline(always)]
     pub const fn tisel(self) -> crate::common::Reg<regs::Tisel2ch, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(92usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
     }
     #[doc = "alternate function register 1"]
     #[inline(always)]
     pub const fn af1(self) -> crate::common::Reg<regs::Af11chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(96usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize) as _) }
     }
     #[doc = "alternate function register 2"]
     #[inline(always)]
     pub const fn af2(self) -> crate::common::Reg<regs::Af21chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(100usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x64usize) as _) }
     }
     #[doc = "Option register 1 Note: Check Reference Manual to parse this register content"]
     #[inline(always)]
     pub const fn or(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(104usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x68usize) as _) }
     }
     #[doc = "DMA control register"]
     #[inline(always)]
     pub const fn dcr(self) -> crate::common::Reg<regs::Dcr1chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(988usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03dcusize) as _) }
     }
     #[doc = "DMA address for full transfer"]
     #[inline(always)]
     pub const fn dmar(self) -> crate::common::Reg<regs::Dmar1chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(992usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03e0usize) as _) }
     }
 }
 #[doc = "Advanced Control timers"]
@@ -501,151 +501,151 @@ impl TimAdv {
     #[doc = "control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1Gp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "control register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr2Adv, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "slave mode control register"]
     #[inline(always)]
     pub const fn smcr(self) -> crate::common::Reg<regs::SmcrAdv, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "DMA/Interrupt enable register"]
     #[inline(always)]
     pub const fn dier(self) -> crate::common::Reg<regs::DierAdv, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::SrAdv, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "event generation register"]
     #[inline(always)]
     pub const fn egr(self) -> crate::common::Reg<regs::EgrAdv, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "capture/compare mode register 1-2 (input mode)"]
     #[inline(always)]
     pub const fn ccmr_input(self, n: usize) -> crate::common::Reg<regs::CcmrInput2ch, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare mode register 1-2 (output mode)"]
     #[inline(always)]
     pub const fn ccmr_output(self, n: usize) -> crate::common::Reg<regs::CcmrOutputGp16, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare enable register"]
     #[inline(always)]
     pub const fn ccer(self) -> crate::common::Reg<regs::CcerAdv, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "counter"]
     #[inline(always)]
     pub const fn cnt(self) -> crate::common::Reg<regs::CntCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "prescaler"]
     #[inline(always)]
     pub const fn psc(self) -> crate::common::Reg<regs::PscCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "auto-reload register (Dither mode disabled)"]
     #[inline(always)]
     pub const fn arr(self) -> crate::common::Reg<regs::ArrCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "auto-reload register (Dither mode enabled)"]
     #[inline(always)]
     pub const fn arr_dither(self) -> crate::common::Reg<regs::ArrDitherCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "repetition counter register"]
     #[inline(always)]
     pub const fn rcr(self) -> crate::common::Reg<regs::RcrAdv, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "capture/compare register x (x=1-4)"]
     #[inline(always)]
     pub const fn ccr(self, n: usize) -> crate::common::Reg<regs::Ccr1ch, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare register x (x=1) (Dither mode enabled)"]
     #[inline(always)]
     pub const fn ccr_dither(self, n: usize) -> crate::common::Reg<regs::CcrDither1ch, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize + n * 4usize) as _) }
     }
     #[doc = "break and dead-time register"]
     #[inline(always)]
     pub const fn bdtr(self) -> crate::common::Reg<regs::BdtrAdv, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[doc = "capture/compare register 5 (Dither mode disabled)"]
     #[inline(always)]
     pub const fn ccr5(self) -> crate::common::Reg<regs::Ccr5Adv, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[doc = "capture/compare register 5 (Dither mode enabled)"]
     #[inline(always)]
     pub const fn ccr5_dither(self) -> crate::common::Reg<regs::Ccr5DitherAdv, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[doc = "capture/compare register 6 (Dither mode disabled)"]
     #[inline(always)]
     pub const fn ccr6(self) -> crate::common::Reg<regs::Ccr1ch, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
     #[doc = "capture/compare register 6 (Dither mode enabled)"]
     #[inline(always)]
     pub const fn ccr6_dither(self) -> crate::common::Reg<regs::CcrDither1ch, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
     #[doc = "capture/compare mode register 3"]
     #[inline(always)]
     pub const fn ccmr3(self) -> crate::common::Reg<regs::Ccmr3Adv, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[doc = "break and dead-time register"]
     #[inline(always)]
     pub const fn dtr2(self) -> crate::common::Reg<regs::Dtr21chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[doc = "input selection register"]
     #[inline(always)]
     pub const fn tisel(self) -> crate::common::Reg<regs::TiselGp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(92usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
     }
     #[doc = "alternate function register 1"]
     #[inline(always)]
     pub const fn af1(self) -> crate::common::Reg<regs::Af1Adv, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(96usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize) as _) }
     }
     #[doc = "alternate function register 2"]
     #[inline(always)]
     pub const fn af2(self) -> crate::common::Reg<regs::Af2Adv, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(100usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x64usize) as _) }
     }
     #[doc = "Option register 1 Note: Check Reference Manual to parse this register content"]
     #[inline(always)]
     pub const fn or(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(104usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x68usize) as _) }
     }
     #[doc = "DMA control register"]
     #[inline(always)]
     pub const fn dcr(self) -> crate::common::Reg<regs::Dcr1chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(988usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03dcusize) as _) }
     }
     #[doc = "DMA address for full transfer"]
     #[inline(always)]
     pub const fn dmar(self) -> crate::common::Reg<regs::Dmar1chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(992usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03e0usize) as _) }
     }
 }
 #[doc = "Basic timers"]
@@ -667,47 +667,47 @@ impl TimBasic {
     #[doc = "control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1Core, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "control register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr2Basic, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "DMA/Interrupt enable register"]
     #[inline(always)]
     pub const fn dier(self) -> crate::common::Reg<regs::DierBasicNoCr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::SrCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "event generation register"]
     #[inline(always)]
     pub const fn egr(self) -> crate::common::Reg<regs::EgrCore, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "counter"]
     #[inline(always)]
     pub const fn cnt(self) -> crate::common::Reg<regs::CntCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "prescaler"]
     #[inline(always)]
     pub const fn psc(self) -> crate::common::Reg<regs::PscCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "auto-reload register (Dither mode disabled)"]
     #[inline(always)]
     pub const fn arr(self) -> crate::common::Reg<regs::ArrCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "auto-reload register (Dither mode enabled)"]
     #[inline(always)]
     pub const fn arr_dither(self) -> crate::common::Reg<regs::ArrDitherCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
 }
 #[doc = "Virtual Basic timers without CR2 register for common part of TIM_BASIC and TIM_1CH_CMP"]
@@ -729,42 +729,42 @@ impl TimBasicNoCr2 {
     #[doc = "control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1Core, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "DMA/Interrupt enable register"]
     #[inline(always)]
     pub const fn dier(self) -> crate::common::Reg<regs::DierBasicNoCr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::SrCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "event generation register"]
     #[inline(always)]
     pub const fn egr(self) -> crate::common::Reg<regs::EgrCore, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "counter"]
     #[inline(always)]
     pub const fn cnt(self) -> crate::common::Reg<regs::CntCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "prescaler"]
     #[inline(always)]
     pub const fn psc(self) -> crate::common::Reg<regs::PscCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "auto-reload register (Dither mode disabled)"]
     #[inline(always)]
     pub const fn arr(self) -> crate::common::Reg<regs::ArrCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "auto-reload register (Dither mode enabled)"]
     #[inline(always)]
     pub const fn arr_dither(self) -> crate::common::Reg<regs::ArrDitherCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
 }
 #[doc = "Virtual timer for common part of TIM_BASIC and TIM_1CH"]
@@ -786,42 +786,42 @@ impl TimCore {
     #[doc = "control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1Core, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "DMA/Interrupt enable register"]
     #[inline(always)]
     pub const fn dier(self) -> crate::common::Reg<regs::DierCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::SrCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "event generation register"]
     #[inline(always)]
     pub const fn egr(self) -> crate::common::Reg<regs::EgrCore, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "counter"]
     #[inline(always)]
     pub const fn cnt(self) -> crate::common::Reg<regs::CntCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "prescaler"]
     #[inline(always)]
     pub const fn psc(self) -> crate::common::Reg<regs::PscCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "auto-reload register (Dither mode disabled)"]
     #[inline(always)]
     pub const fn arr(self) -> crate::common::Reg<regs::ArrCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "auto-reload register (Dither mode enabled)"]
     #[inline(always)]
     pub const fn arr_dither(self) -> crate::common::Reg<regs::ArrDitherCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
 }
 #[doc = "General purpose 16-bit timers"]
@@ -843,116 +843,116 @@ impl TimGp16 {
     #[doc = "control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1Gp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "control register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr2Gp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "slave mode control register"]
     #[inline(always)]
     pub const fn smcr(self) -> crate::common::Reg<regs::SmcrGp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "DMA/Interrupt enable register"]
     #[inline(always)]
     pub const fn dier(self) -> crate::common::Reg<regs::DierGp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::SrGp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "event generation register"]
     #[inline(always)]
     pub const fn egr(self) -> crate::common::Reg<regs::EgrGp16, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "capture/compare mode register 1-2 (input mode)"]
     #[inline(always)]
     pub const fn ccmr_input(self, n: usize) -> crate::common::Reg<regs::CcmrInput2ch, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare mode register 1-2 (output mode)"]
     #[inline(always)]
     pub const fn ccmr_output(self, n: usize) -> crate::common::Reg<regs::CcmrOutputGp16, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare enable register"]
     #[inline(always)]
     pub const fn ccer(self) -> crate::common::Reg<regs::CcerGp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "counter"]
     #[inline(always)]
     pub const fn cnt(self) -> crate::common::Reg<regs::CntCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "prescaler"]
     #[inline(always)]
     pub const fn psc(self) -> crate::common::Reg<regs::PscCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "auto-reload register (Dither mode disabled)"]
     #[inline(always)]
     pub const fn arr(self) -> crate::common::Reg<regs::ArrCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "auto-reload register (Dither mode enabled)"]
     #[inline(always)]
     pub const fn arr_dither(self) -> crate::common::Reg<regs::ArrDitherCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "capture/compare register x (x=1-4) (Dither mode disabled)"]
     #[inline(always)]
     pub const fn ccr(self, n: usize) -> crate::common::Reg<regs::Ccr1ch, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare register x (x=1-4) (Dither mode enabled)"]
     #[inline(always)]
     pub const fn ccr_dither(self, n: usize) -> crate::common::Reg<regs::CcrDither1ch, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize + n * 4usize) as _) }
     }
     #[doc = "encoder control register"]
     #[inline(always)]
     pub const fn ecr(self) -> crate::common::Reg<regs::EcrGp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize) as _) }
     }
     #[doc = "input selection register"]
     #[inline(always)]
     pub const fn tisel(self) -> crate::common::Reg<regs::TiselGp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(92usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
     }
     #[doc = "alternate function register 1"]
     #[inline(always)]
     pub const fn af1(self) -> crate::common::Reg<regs::Af1Gp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(96usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize) as _) }
     }
     #[doc = "alternate function register 2"]
     #[inline(always)]
     pub const fn af2(self) -> crate::common::Reg<regs::Af21chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(100usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x64usize) as _) }
     }
     #[doc = "Option register 1 Note: Check Reference Manual to parse this register content"]
     #[inline(always)]
     pub const fn or(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(104usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x68usize) as _) }
     }
     #[doc = "DMA control register"]
     #[inline(always)]
     pub const fn dcr(self) -> crate::common::Reg<regs::Dcr1chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(988usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03dcusize) as _) }
     }
     #[doc = "DMA address for full transfer"]
     #[inline(always)]
     pub const fn dmar(self) -> crate::common::Reg<regs::Dmar1chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(992usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03e0usize) as _) }
     }
 }
 #[doc = "General purpose 32-bit timers"]
@@ -974,121 +974,121 @@ impl TimGp32 {
     #[doc = "control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1Gp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "control register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr2Gp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "slave mode control register"]
     #[inline(always)]
     pub const fn smcr(self) -> crate::common::Reg<regs::SmcrGp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "DMA/Interrupt enable register"]
     #[inline(always)]
     pub const fn dier(self) -> crate::common::Reg<regs::DierGp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::SrGp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "event generation register"]
     #[inline(always)]
     pub const fn egr(self) -> crate::common::Reg<regs::EgrGp16, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "capture/compare mode register 1-2 (input mode)"]
     #[inline(always)]
     pub const fn ccmr_input(self, n: usize) -> crate::common::Reg<regs::CcmrInput2ch, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare mode register 1-2 (output mode)"]
     #[inline(always)]
     pub const fn ccmr_output(self, n: usize) -> crate::common::Reg<regs::CcmrOutputGp16, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare enable register"]
     #[inline(always)]
     pub const fn ccer(self) -> crate::common::Reg<regs::CcerGp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "counter (Dither mode disabled)"]
     #[inline(always)]
     pub const fn cnt(self) -> crate::common::Reg<regs::CntGp32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "counter (Dither mode enbled)"]
     #[inline(always)]
     pub const fn cnt_dither(self) -> crate::common::Reg<regs::CntDitherGp32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "prescaler"]
     #[inline(always)]
     pub const fn psc(self) -> crate::common::Reg<regs::PscCore, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "auto-reload register (Dither mode disabled)"]
     #[inline(always)]
     pub const fn arr(self) -> crate::common::Reg<regs::ArrGp32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "auto-reload register (Dither mode enabled)"]
     #[inline(always)]
     pub const fn arr_dither(self) -> crate::common::Reg<regs::ArrDitherGp32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "capture/compare register x (x=1-4) (Dither mode disabled)"]
     #[inline(always)]
     pub const fn ccr(self, n: usize) -> crate::common::Reg<regs::CcrGp32, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize + n * 4usize) as _) }
     }
     #[doc = "capture/compare register x (x=1-4) (Dither mode enabled)"]
     #[inline(always)]
     pub const fn ccr_dither(self, n: usize) -> crate::common::Reg<regs::CcrDitherGp32, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize + n * 4usize) as _) }
     }
     #[doc = "encoder control register"]
     #[inline(always)]
     pub const fn ecr(self) -> crate::common::Reg<regs::EcrGp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize) as _) }
     }
     #[doc = "input selection register"]
     #[inline(always)]
     pub const fn tisel(self) -> crate::common::Reg<regs::TiselGp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(92usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
     }
     #[doc = "alternate function register 1"]
     #[inline(always)]
     pub const fn af1(self) -> crate::common::Reg<regs::Af1Gp16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(96usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize) as _) }
     }
     #[doc = "alternate function register 2"]
     #[inline(always)]
     pub const fn af2(self) -> crate::common::Reg<regs::Af21chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(100usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x64usize) as _) }
     }
     #[doc = "Option register 1 Note: Check Reference Manual to parse this register content"]
     #[inline(always)]
     pub const fn or(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(104usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x68usize) as _) }
     }
     #[doc = "DMA control register"]
     #[inline(always)]
     pub const fn dcr(self) -> crate::common::Reg<regs::Dcr1chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(988usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03dcusize) as _) }
     }
     #[doc = "DMA address for full transfer"]
     #[inline(always)]
     pub const fn dmar(self) -> crate::common::Reg<regs::Dmar1chCmp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(992usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03e0usize) as _) }
     }
 }
 pub mod regs {
@@ -5900,7 +5900,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Bkbid {
         #[doc = "Break input tim_brk in input mode"]
-        INPUT = 0,
+        INPUT = 0x0,
         #[doc = "Break input tim_brk in bidirectional mode"]
         BIDIRECTIONAL = 0x01,
     }
@@ -5930,7 +5930,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Bkdsrm {
         #[doc = "Break input tim_brk is armed"]
-        ARMED = 0,
+        ARMED = 0x0,
         #[doc = "Break input tim_brk is disarmed"]
         DISARMED = 0x01,
     }
@@ -5960,7 +5960,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Bkinp {
         #[doc = "input polarity is not inverted (active low if BKxP = 0, active high if BKxP = 1)"]
-        NOTINVERTED = 0,
+        NOTINVERTED = 0x0,
         #[doc = "input polarity is inverted (active high if BKxP = 0, active low if BKxP = 1)"]
         INVERTED = 0x01,
     }
@@ -5990,7 +5990,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Bkp {
         #[doc = "Break input tim_brk is active low"]
-        ACTIVELOW = 0,
+        ACTIVELOW = 0x0,
         #[doc = "Break input tim_brk is active high"]
         ACTIVEHIGH = 0x01,
     }
@@ -6020,7 +6020,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ccds {
         #[doc = "CCx DMA request sent when CCx event occurs"]
-        ONCOMPARE = 0,
+        ONCOMPARE = 0x0,
         #[doc = "CCx DMA request sent when update event occurs"]
         ONUPDATE = 0x01,
     }
@@ -6049,7 +6049,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum CcmrInputCcs {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "CCx channel is configured as input, normal mapping: ICx mapped to TIx"]
         TI4 = 0x01,
         #[doc = "CCx channel is configured as input, alternate mapping (switches 1 with 2, 3 with 4)"]
@@ -6083,7 +6083,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum CcmrOutputCcs {
         #[doc = "CCx channel is configured as output"]
-        OUTPUT = 0,
+        OUTPUT = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -6114,7 +6114,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ckd {
         #[doc = "t_DTS = t_CK_INT"]
-        DIV1 = 0,
+        DIV1 = 0x0,
         #[doc = "t_DTS = 2 × t_CK_INT"]
         DIV2 = 0x01,
         #[doc = "t_DTS = 4 × t_CK_INT"]
@@ -6147,7 +6147,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cms {
         #[doc = "The counter counts up or down depending on the direction bit"]
-        EDGEALIGNED = 0,
+        EDGEALIGNED = 0x0,
         #[doc = "The counter counts up and down alternatively. Output compare interrupt flags are set only when the counter is counting down."]
         CENTERALIGNED1 = 0x01,
         #[doc = "The counter counts up and down alternatively. Output compare interrupt flags are set only when the counter is counting up."]
@@ -6180,7 +6180,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dbss {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Update"]
         UPDATE = 0x01,
         #[doc = "CC1"]
@@ -6230,7 +6230,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dir {
         #[doc = "Counter used as upcounter"]
-        UP = 0,
+        UP = 0x0,
         #[doc = "Counter used as downcounter"]
         DOWN = 0x01,
     }
@@ -6261,7 +6261,7 @@ pub mod vals {
     pub enum Dtae {
         #[doc = "Deadtime on rising and falling edges are identical, and defined with DTG\\[7:0\\]
 register"]
-        IDENTICAL = 0,
+        IDENTICAL = 0x0,
         #[doc = "Deadtime on rising edge is defined with DTG\\[7:0\\]
 register and deadtime on falling edge is defined with DTGF\\[7:0\\]
 bits."]
@@ -6293,7 +6293,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Etp {
         #[doc = "ETR is noninverted, active at high level or rising edge"]
-        NOTINVERTED = 0,
+        NOTINVERTED = 0x0,
         #[doc = "ETR is inverted, active at low level or falling edge"]
         INVERTED = 0x01,
     }
@@ -6323,7 +6323,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Etps {
         #[doc = "Prescaler OFF"]
-        DIV1 = 0,
+        DIV1 = 0x0,
         #[doc = "ETRP frequency divided by 2"]
         DIV2 = 0x01,
         #[doc = "ETRP frequency divided by 4"]
@@ -6357,7 +6357,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fidx {
         #[doc = "Index is always active"]
-        ALWAYSACTIVE = 0,
+        ALWAYSACTIVE = 0x0,
         #[doc = "the first Index only resets the counter"]
         FIRSTONLY = 0x01,
     }
@@ -6387,7 +6387,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum FilterValue {
         #[doc = "No filter, sampling is done at fDTS"]
-        NOFILTER = 0,
+        NOFILTER = 0x0,
         #[doc = "fSAMPLING=fCK_INT, N=2"]
         FCK_INT_N2 = 0x01,
         #[doc = "fSAMPLING=fCK_INT, N=4"]
@@ -6445,7 +6445,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Gc5c {
         #[doc = "No effect of TIM_OC5REF on TIM_OCxREFC (x=1-3)"]
-        NOEFFECT = 0,
+        NOEFFECT = 0x0,
         #[doc = "TIM_OCxREFC is the logical AND of TIM_OCxREF and TIM_OC5REF"]
         LOGICALAND = 0x01,
     }
@@ -6475,7 +6475,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Iblk {
         #[doc = "Index always active"]
-        ALWAYSACTIVE = 0,
+        ALWAYSACTIVE = 0x0,
         #[doc = "Index disabled when tim_ti3 input is active, as per CC3P bitfield"]
         CC3P = 0x01,
         #[doc = "Index disabled when tim_ti4 input is active, as per CC4P bitfield"]
@@ -6508,7 +6508,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Idir {
         #[doc = "Index resets the counter whatever the direction"]
-        BOTH = 0,
+        BOTH = 0x0,
         #[doc = "Index resets the counter when up-counting only"]
         UP = 0x01,
         #[doc = "Index resets the counter when down-counting only"]
@@ -6541,7 +6541,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lock {
         #[doc = "No bit is write protected"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "DTG bits in TIMx_BDTR register, OISx and OISxN bits in TIMx_CR2 register and BKBID/BKE/BKP/AOE bits in TIMx_BDTR register can no longer be written"]
         LEVEL1 = 0x01,
         #[doc = "LOCK Level 1 + CC Polarity bits (CCxP/CCxNP bits in TIMx_CCER register, as long as the related channel is configured in output through the CCxS bits) as well as OSSR and OSSI bits can no longer be written."]
@@ -6575,7 +6575,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mms {
         #[doc = "The UG bit from the TIMx_EGR register is used as trigger output"]
-        RESET = 0,
+        RESET = 0x0,
         #[doc = "The counter enable signal, CNT_EN, is used as trigger output"]
         ENABLE = 0x01,
         #[doc = "The update event is selected as trigger output"]
@@ -6626,7 +6626,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mms2 {
         #[doc = "The UG bit from the TIMx_EGR register is used as TRGO2"]
-        RESET = 0,
+        RESET = 0x0,
         #[doc = "The counter enable signal, CNT_EN, is used as TRGO2"]
         ENABLE = 0x01,
         #[doc = "The update event is selected as TRGO2"]
@@ -6684,7 +6684,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Msm {
         #[doc = "No action"]
-        NOSYNC = 0,
+        NOSYNC = 0x0,
         #[doc = "The effect of an event on the trigger input (TRGI) is delayed to allow a perfect synchronization between the current timer and its slaves (through TRGO). It is useful if we want to synchronize several timers on a single external event."]
         SYNC = 0x01,
     }
@@ -6714,7 +6714,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Occs {
         #[doc = "tim_ocref_clr_int is connected to the tim_ocref_clr input"]
-        INPUT = 0,
+        INPUT = 0x0,
         #[doc = "tim_ocref_clr_int is connected to tim_etrf"]
         ETRF = 0x01,
     }
@@ -6744,7 +6744,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ocm {
         #[doc = "The comparison between the output compare register TIMx_CCRy and the counter TIMx_CNT has no effect on the outputs"]
-        FROZEN = 0,
+        FROZEN = 0x0,
         #[doc = "Set channel to active level on match. OCyREF signal is forced high when the counter matches the capture/compare register"]
         ACTIVEONMATCH = 0x01,
         #[doc = "Set channel to inactive level on match. OCyREF signal is forced low when the counter matches the capture/compare register"]
@@ -6802,7 +6802,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ossi {
         #[doc = "When inactive, OC/OCN outputs are disabled"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "When inactive, OC/OCN outputs are forced to idle level"]
         IDLELEVEL = 0x01,
     }
@@ -6832,7 +6832,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ossr {
         #[doc = "When inactive, OC/OCN outputs are disabled"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "When inactive, OC/OCN outputs are enabled with their inactive level"]
         IDLELEVEL = 0x01,
     }
@@ -6862,7 +6862,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Sms {
         #[doc = "Slave mode disabled - if CEN = '1' then the prescaler is clocked directly by the internal clock."]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "Encoder mode 1 - Counter counts up/down on TI2FP1 edge depending on TI1FP2 level."]
         ENCODER_MODE_1 = 0x01,
         #[doc = "Encoder mode 2 - Counter counts up/down on TI1FP2 edge depending on TI2FP1 level."]
@@ -6920,7 +6920,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Smsps {
         #[doc = "The transfer is triggered by the Timer’s Update event"]
-        UPDATE = 0,
+        UPDATE = 0x0,
         #[doc = "The transfer is triggered by the Index event"]
         INDEX = 0x01,
     }
@@ -6950,7 +6950,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ti1s {
         #[doc = "The TIMx_CH1 pin is connected to TI1 input"]
-        NORMAL = 0,
+        NORMAL = 0x0,
         #[doc = "The TIMx_CH1, CH2, CH3 pins are connected to TI1 input"]
         XOR = 0x01,
     }
@@ -6980,7 +6980,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ts {
         #[doc = "Internal Trigger 0"]
-        ITR0 = 0,
+        ITR0 = 0x0,
         #[doc = "Internal Trigger 1"]
         ITR1 = 0x01,
         #[doc = "Internal Trigger 2"]
@@ -7058,7 +7058,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Urs {
         #[doc = "Any of counter overflow/underflow, setting UG, or update through slave mode, generates an update interrupt or DMA request"]
-        ANYEVENT = 0,
+        ANYEVENT = 0x0,
         #[doc = "Only counter overflow/underflow generates an update interrupt or DMA request"]
         COUNTERONLY = 0x01,
     }

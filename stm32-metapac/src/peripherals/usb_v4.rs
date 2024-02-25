@@ -23,37 +23,37 @@ impl Usb {
     #[inline(always)]
     pub const fn epr(self, n: usize) -> crate::common::Reg<regs::Epr, crate::common::RW> {
         assert!(n < 8usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize + n * 4usize) as _) }
     }
     #[doc = "control register"]
     #[inline(always)]
     pub const fn cntr(self) -> crate::common::Reg<regs::Cntr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[doc = "interrupt status register"]
     #[inline(always)]
     pub const fn istr(self) -> crate::common::Reg<regs::Istr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[doc = "frame number register"]
     #[inline(always)]
     pub const fn fnr(self) -> crate::common::Reg<regs::Fnr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[doc = "device address"]
     #[inline(always)]
     pub const fn daddr(self) -> crate::common::Reg<regs::Daddr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
     #[doc = "LPM control and status register"]
     #[inline(always)]
     pub const fn lpmcsr(self) -> crate::common::Reg<regs::Lpmcsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[doc = "Battery charging detector"]
     #[inline(always)]
     pub const fn bcdr(self) -> crate::common::Reg<regs::Bcdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize) as _) }
     }
 }
 pub mod regs {
@@ -875,7 +875,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dir {
         #[doc = "data transmitted by the USB peripheral to the host PC"]
-        TO = 0,
+        TO = 0x0,
         #[doc = "data received by the USB peripheral from the host PC"]
         FROM = 0x01,
     }
@@ -905,7 +905,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum EpType {
         #[doc = "Bulk endpoint"]
-        BULK = 0,
+        BULK = 0x0,
         #[doc = "Control endpoint"]
         CONTROL = 0x01,
         #[doc = "Iso endpoint"]
@@ -939,7 +939,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lpmack {
         #[doc = "The valid LPM Token will be NYET / NYET answer"]
-        NYET = 0,
+        NYET = 0x0,
         #[doc = "The valid LPM Token will be ACK / ACK answer"]
         ACK = 0x01,
     }
@@ -969,7 +969,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Sdet {
         #[doc = "CDP detected"]
-        CDP = 0,
+        CDP = 0x0,
         #[doc = "DCP detected"]
         DCP = 0x01,
     }
@@ -999,7 +999,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Stat {
         #[doc = "all requests addressed to this endpoint are ignored"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "the endpoint is stalled and all requests result in a STALL handshake"]
         STALL = 0x01,
         #[doc = "the endpoint is naked and all requests result in a NAK handshake"]

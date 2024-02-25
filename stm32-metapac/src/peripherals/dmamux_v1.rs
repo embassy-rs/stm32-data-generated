@@ -23,33 +23,33 @@ impl Dmamux {
     #[inline(always)]
     pub const fn ccr(self, n: usize) -> crate::common::Reg<regs::Ccr, crate::common::RW> {
         assert!(n < 16usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize + n * 4usize) as _) }
     }
     #[doc = "DMAMUX request line multiplexer interrupt channel status register"]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(128usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
     }
     #[doc = "DMAMUX request line multiplexer interrupt clear flag register"]
     #[inline(always)]
     pub const fn cfr(self) -> crate::common::Reg<regs::Csr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(132usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x84usize) as _) }
     }
     #[doc = "DMAMux - DMA request generator channel x control register"]
     #[inline(always)]
     pub const fn rgcr(self, n: usize) -> crate::common::Reg<regs::Rgcr, crate::common::RW> {
         assert!(n < 8usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(256usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize + n * 4usize) as _) }
     }
     #[doc = "DMAMux - DMA request generator status register"]
     #[inline(always)]
     pub const fn rgsr(self) -> crate::common::Reg<regs::Rgsr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(320usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0140usize) as _) }
     }
     #[doc = "DMAMux - DMA request generator clear flag register"]
     #[inline(always)]
     pub const fn rgcfr(self) -> crate::common::Reg<regs::Rgsr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(324usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0144usize) as _) }
     }
 }
 pub mod regs {
@@ -269,7 +269,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pol {
         #[doc = "No event, i.e. no synchronization nor detection"]
-        NOEDGE = 0,
+        NOEDGE = 0x0,
         #[doc = "Rising edge"]
         RISINGEDGE = 0x01,
         #[doc = "Falling edge"]

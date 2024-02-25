@@ -22,17 +22,17 @@ impl Wwdg {
     #[doc = "Control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Configuration register"]
     #[inline(always)]
     pub const fn cfr(self) -> crate::common::Reg<regs::Cfr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
 }
 pub mod regs {
@@ -144,7 +144,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Wdgtb {
         #[doc = "Counter clock (PCLK1 div 4096) div 1"]
-        DIV1 = 0,
+        DIV1 = 0x0,
         #[doc = "Counter clock (PCLK1 div 4096) div 2"]
         DIV2 = 0x01,
         #[doc = "Counter clock (PCLK1 div 4096) div 4"]

@@ -15,7 +15,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "access control register",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "key register",
                     ),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -47,7 +47,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "secure key register",
                     ),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -62,7 +62,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "option key register",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -77,7 +77,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "power-down key register",
                     ),
                     array: None,
-                    byte_offset: 24,
+                    byte_offset: 0x18,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -92,7 +92,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "status register",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 0x20,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -109,7 +109,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "secure status register",
                     ),
                     array: None,
-                    byte_offset: 36,
+                    byte_offset: 0x24,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -126,7 +126,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "control register",
                     ),
                     array: None,
-                    byte_offset: 40,
+                    byte_offset: 0x28,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -143,7 +143,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "secure control register",
                     ),
                     array: None,
-                    byte_offset: 44,
+                    byte_offset: 0x2c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -160,7 +160,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "ECC register",
                     ),
                     array: None,
-                    byte_offset: 48,
+                    byte_offset: 0x30,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -177,7 +177,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "operation status register",
                     ),
                     array: None,
-                    byte_offset: 52,
+                    byte_offset: 0x34,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -194,7 +194,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "control 2 register",
                     ),
                     array: None,
-                    byte_offset: 56,
+                    byte_offset: 0x38,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -211,7 +211,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "secure control 2 register",
                     ),
                     array: None,
-                    byte_offset: 60,
+                    byte_offset: 0x3c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -228,7 +228,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "option register",
                     ),
                     array: None,
-                    byte_offset: 64,
+                    byte_offset: 0x40,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -245,7 +245,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "boot address 0 register",
                     ),
                     array: None,
-                    byte_offset: 68,
+                    byte_offset: 0x44,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -262,7 +262,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "boot address 1 register",
                     ),
                     array: None,
-                    byte_offset: 72,
+                    byte_offset: 0x48,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -279,7 +279,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "secure boot address 0 register",
                     ),
                     array: None,
-                    byte_offset: 76,
+                    byte_offset: 0x4c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -296,7 +296,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "secure watermark register 1",
                     ),
                     array: None,
-                    byte_offset: 80,
+                    byte_offset: 0x50,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -313,7 +313,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "secure watermark register 2",
                     ),
                     array: None,
-                    byte_offset: 84,
+                    byte_offset: 0x54,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -330,7 +330,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "WRP area A address register",
                     ),
                     array: None,
-                    byte_offset: 88,
+                    byte_offset: 0x58,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -347,7 +347,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "WRP area B address register",
                     ),
                     array: None,
-                    byte_offset: 92,
+                    byte_offset: 0x5c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -364,7 +364,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "OEM1 key register 1",
                     ),
                     array: None,
-                    byte_offset: 112,
+                    byte_offset: 0x70,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -379,7 +379,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "OEM1 key register 2",
                     ),
                     array: None,
-                    byte_offset: 116,
+                    byte_offset: 0x74,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -394,7 +394,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "OEM2 key register 1",
                     ),
                     array: None,
-                    byte_offset: 120,
+                    byte_offset: 0x78,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -409,7 +409,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "OEM2 key register 2",
                     ),
                     array: None,
-                    byte_offset: 124,
+                    byte_offset: 0x7c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -431,7 +431,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 128,
+                    byte_offset: 0x80,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -448,7 +448,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "secure HDP control register",
                     ),
                     array: None,
-                    byte_offset: 192,
+                    byte_offset: 0xc0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -465,7 +465,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "privilege configuration register",
                     ),
                     array: None,
-                    byte_offset: 196,
+                    byte_offset: 0xc4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -489,7 +489,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 208,
+                    byte_offset: 0xd0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,

@@ -15,7 +15,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DBGMCU identity code register.",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -32,7 +32,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DBGMCU configuration register.",
                     ),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -49,7 +49,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DBGMCU APB1L peripheral freeze register.",
                     ),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -66,7 +66,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DBGMCU APB1H peripheral freeze register.",
                     ),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -83,7 +83,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DBGMCU APB2 peripheral freeze register.",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -100,7 +100,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DBGMCU APB3 peripheral freeze register.",
                     ),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 0x14,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -117,7 +117,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DBGMCU AHB1 peripheral freeze register.",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 0x20,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -134,7 +134,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DBGMCU status register.",
                     ),
                     array: None,
-                    byte_offset: 252,
+                    byte_offset: 0xfc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -151,7 +151,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DBGMCU debug authentication mailbox host register.",
                     ),
                     array: None,
-                    byte_offset: 256,
+                    byte_offset: 0x100,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -166,7 +166,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DBGMCU debug authentication mailbox device register.",
                     ),
                     array: None,
-                    byte_offset: 260,
+                    byte_offset: 0x104,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -181,7 +181,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DBGMCU debug authentication mailbox acknowledge register.",
                     ),
                     array: None,
-                    byte_offset: 264,
+                    byte_offset: 0x108,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -198,7 +198,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DBGMCU CoreSight peripheral identity register 4.",
                     ),
                     array: None,
-                    byte_offset: 4048,
+                    byte_offset: 0xfd0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -215,7 +215,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DBGMCU CoreSight peripheral identity register 0.",
                     ),
                     array: None,
-                    byte_offset: 4064,
+                    byte_offset: 0xfe0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -232,7 +232,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DBGMCU CoreSight peripheral identity register 1.",
                     ),
                     array: None,
-                    byte_offset: 4068,
+                    byte_offset: 0xfe4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -249,7 +249,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DBGMCU CoreSight peripheral identity register 2.",
                     ),
                     array: None,
-                    byte_offset: 4072,
+                    byte_offset: 0xfe8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -266,7 +266,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DBGMCU CoreSight peripheral identity register 3.",
                     ),
                     array: None,
-                    byte_offset: 4076,
+                    byte_offset: 0xfec,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -283,7 +283,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DBGMCU CoreSight component identity register 0.",
                     ),
                     array: None,
-                    byte_offset: 4080,
+                    byte_offset: 0xff0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -300,7 +300,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DBGMCU CoreSight component identity register 1.",
                     ),
                     array: None,
-                    byte_offset: 4084,
+                    byte_offset: 0xff4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -317,7 +317,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DBGMCU CoreSight component identity register 2.",
                     ),
                     array: None,
-                    byte_offset: 4088,
+                    byte_offset: 0xff8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -334,7 +334,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DBGMCU CoreSight component identity register 3.",
                     ),
                     array: None,
-                    byte_offset: 4092,
+                    byte_offset: 0xffc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,

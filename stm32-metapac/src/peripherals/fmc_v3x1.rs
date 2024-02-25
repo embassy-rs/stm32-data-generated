@@ -22,77 +22,77 @@ impl Fmc {
     #[doc = "SRAM/NOR-Flash chip-select control register 1"]
     #[inline(always)]
     pub const fn bcr1(self) -> crate::common::Reg<regs::Bcr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "SRAM/NOR-Flash chip-select timing register 1-4"]
     #[inline(always)]
     pub const fn btr(self, n: usize) -> crate::common::Reg<regs::Btr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize + n * 8usize) as _) }
     }
     #[doc = "SRAM/NOR-Flash chip-select control register 2-4"]
     #[inline(always)]
     pub const fn bcr(self, n: usize) -> crate::common::Reg<regs::Bcr, crate::common::RW> {
         assert!(n < 3usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize + n * 8usize) as _) }
     }
     #[doc = "PC Card/NAND Flash control register"]
     #[inline(always)]
     pub const fn pcr(self) -> crate::common::Reg<regs::Pcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(128usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
     }
     #[doc = "FIFO status and interrupt register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(132usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x84usize) as _) }
     }
     #[doc = "Common memory space timing register"]
     #[inline(always)]
     pub const fn pmem(self) -> crate::common::Reg<regs::Pmem, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(136usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x88usize) as _) }
     }
     #[doc = "Attribute memory space timing register"]
     #[inline(always)]
     pub const fn patt(self) -> crate::common::Reg<regs::Patt, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(140usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x8cusize) as _) }
     }
     #[doc = "ECC result register"]
     #[inline(always)]
     pub const fn eccr(self) -> crate::common::Reg<regs::Eccr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(148usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x94usize) as _) }
     }
     #[doc = "SRAM/NOR-Flash write timing registers 1-4"]
     #[inline(always)]
     pub const fn bwtr(self, n: usize) -> crate::common::Reg<regs::Bwtr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(260usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize + n * 8usize) as _) }
     }
     #[doc = "SDRAM Control Register 1-2"]
     #[inline(always)]
     pub const fn sdcr(self, n: usize) -> crate::common::Reg<regs::Sdcr, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(320usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0140usize + n * 4usize) as _) }
     }
     #[doc = "SDRAM Timing register 1-2"]
     #[inline(always)]
     pub const fn sdtr(self, n: usize) -> crate::common::Reg<regs::Sdtr, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(328usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0148usize + n * 4usize) as _) }
     }
     #[doc = "SDRAM Command Mode register"]
     #[inline(always)]
     pub const fn sdcmr(self) -> crate::common::Reg<regs::Sdcmr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(336usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0150usize) as _) }
     }
     #[doc = "SDRAM Refresh Timer register"]
     #[inline(always)]
     pub const fn sdrtr(self) -> crate::common::Reg<regs::Sdrtr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(340usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0154usize) as _) }
     }
     #[doc = "SDRAM Status register"]
     #[inline(always)]
     pub const fn sdsr(self) -> crate::common::Reg<regs::Sdsr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(344usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0158usize) as _) }
     }
 }
 pub mod regs {
@@ -1304,7 +1304,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Accmod {
         #[doc = "Access mode A"]
-        A = 0,
+        A = 0x0,
         #[doc = "Access mode B"]
         B = 0x01,
         #[doc = "Access mode C"]
@@ -1337,7 +1337,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cas {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "1 cycle"]
         CLOCKS1 = 0x01,
         #[doc = "2 cycles"]
@@ -1371,7 +1371,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cpsize {
         #[doc = "No burst split when crossing page boundary"]
-        NOBURSTSPLIT = 0,
+        NOBURSTSPLIT = 0x0,
         #[doc = "128 bytes CRAM page size"]
         BYTES128 = 0x01,
         #[doc = "256 bytes CRAM page size"]
@@ -1410,7 +1410,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Eccps {
         #[doc = "ECC page size 256 bytes"]
-        BYTES256 = 0,
+        BYTES256 = 0x0,
         #[doc = "ECC page size 512 bytes"]
         BYTES512 = 0x01,
         #[doc = "ECC page size 1024 bytes"]
@@ -1450,7 +1450,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mode {
         #[doc = "Normal Mode"]
-        NORMAL = 0,
+        NORMAL = 0x0,
         #[doc = "Clock Configuration Enable"]
         CLOCKCONFIGURATIONENABLE = 0x01,
         #[doc = "PALL (All Bank Precharge) command"]
@@ -1491,7 +1491,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Modes {
         #[doc = "Normal Mode"]
-        NORMAL = 0,
+        NORMAL = 0x0,
         #[doc = "Self-refresh mode"]
         SELFREFRESH = 0x01,
         #[doc = "Power-down mode"]
@@ -1524,7 +1524,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mtyp {
         #[doc = "SRAM memory type"]
-        SRAM = 0,
+        SRAM = 0x0,
         #[doc = "PSRAM (CRAM) memory type"]
         PSRAM = 0x01,
         #[doc = "NOR Flash/OneNAND Flash"]
@@ -1557,7 +1557,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mwid {
         #[doc = "Memory data bus width 8 bits"]
-        BITS8 = 0,
+        BITS8 = 0x0,
         #[doc = "Memory data bus width 16 bits"]
         BITS16 = 0x01,
         #[doc = "Memory data bus width 32 bits"]
@@ -1590,7 +1590,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Nb {
         #[doc = "Two internal Banks"]
-        NB2 = 0,
+        NB2 = 0x0,
         #[doc = "Four internal Banks"]
         NB4 = 0x01,
     }
@@ -1620,7 +1620,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Nc {
         #[doc = "8 bits"]
-        BITS8 = 0,
+        BITS8 = 0x0,
         #[doc = "9 bits"]
         BITS9 = 0x01,
         #[doc = "10 bits"]
@@ -1654,7 +1654,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Nr {
         #[doc = "11 bits"]
-        BITS11 = 0,
+        BITS11 = 0x0,
         #[doc = "12 bits"]
         BITS12 = 0x01,
         #[doc = "13 bits"]
@@ -1687,7 +1687,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pwid {
         #[doc = "External memory device width 8 bits"]
-        BITS8 = 0,
+        BITS8 = 0x0,
         #[doc = "External memory device width 16 bits"]
         BITS16 = 0x01,
         _RESERVED_2 = 0x02,
@@ -1719,7 +1719,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rpipe {
         #[doc = "No clock cycle delay"]
-        NODELAY = 0,
+        NODELAY = 0x0,
         #[doc = "One clock cycle delay"]
         CLOCKS1 = 0x01,
         #[doc = "Two clock cycles delay"]
@@ -1752,7 +1752,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Sdclk {
         #[doc = "SDCLK clock disabled"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "SDCLK period = 2 x HCLK period"]
         DIV2 = 0x02,
@@ -1785,7 +1785,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Waitcfg {
         #[doc = "NWAIT signal is active one data cycle before wait state"]
-        BEFOREWAITSTATE = 0,
+        BEFOREWAITSTATE = 0x0,
         #[doc = "NWAIT signal is active during wait state"]
         DURINGWAITSTATE = 0x01,
     }
@@ -1815,7 +1815,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Waitpol {
         #[doc = "NWAIT active low"]
-        ACTIVELOW = 0,
+        ACTIVELOW = 0x0,
         #[doc = "NWAIT active high"]
         ACTIVEHIGH = 0x01,
     }

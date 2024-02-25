@@ -22,112 +22,112 @@ impl Dma2d {
     #[doc = "control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Interrupt Status Register"]
     #[inline(always)]
     pub const fn isr(self) -> crate::common::Reg<regs::Isr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "interrupt flag clear register"]
     #[inline(always)]
     pub const fn ifcr(self) -> crate::common::Reg<regs::Ifcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "foreground memory address register"]
     #[inline(always)]
     pub const fn fgmar(self) -> crate::common::Reg<regs::Fgmar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "foreground offset register"]
     #[inline(always)]
     pub const fn fgor(self) -> crate::common::Reg<regs::Fgor, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "background memory address register"]
     #[inline(always)]
     pub const fn bgmar(self) -> crate::common::Reg<regs::Bgmar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "background offset register"]
     #[inline(always)]
     pub const fn bgor(self) -> crate::common::Reg<regs::Bgor, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "foreground PFC control register"]
     #[inline(always)]
     pub const fn fgpfccr(self) -> crate::common::Reg<regs::Fgpfccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "foreground color register"]
     #[inline(always)]
     pub const fn fgcolr(self) -> crate::common::Reg<regs::Fgcolr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "background PFC control register"]
     #[inline(always)]
     pub const fn bgpfccr(self) -> crate::common::Reg<regs::Bgpfccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "background color register"]
     #[inline(always)]
     pub const fn bgcolr(self) -> crate::common::Reg<regs::Bgcolr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "foreground CLUT memory address register"]
     #[inline(always)]
     pub const fn fgcmar(self) -> crate::common::Reg<regs::Fgcmar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "background CLUT memory address register"]
     #[inline(always)]
     pub const fn bgcmar(self) -> crate::common::Reg<regs::Bgcmar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "output PFC control register"]
     #[inline(always)]
     pub const fn opfccr(self) -> crate::common::Reg<regs::Opfccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[doc = "output color register"]
     #[inline(always)]
     pub const fn ocolr(self) -> crate::common::Reg<regs::Ocolr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[doc = "output memory address register"]
     #[inline(always)]
     pub const fn omar(self) -> crate::common::Reg<regs::Omar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[doc = "output offset register"]
     #[inline(always)]
     pub const fn oor(self) -> crate::common::Reg<regs::Oor, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[doc = "number of line register"]
     #[inline(always)]
     pub const fn nlr(self) -> crate::common::Reg<regs::Nlr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[doc = "line watermark register"]
     #[inline(always)]
     pub const fn lwr(self) -> crate::common::Reg<regs::Lwr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[doc = "AHB master timer configuration register"]
     #[inline(always)]
     pub const fn amtcr(self) -> crate::common::Reg<regs::Amtcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
     #[doc = "FGCLUT"]
     #[inline(always)]
     pub const fn fgclut(self) -> crate::common::Reg<regs::Fgclut, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1024usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0400usize) as _) }
     }
     #[doc = "BGCLUT"]
     #[inline(always)]
     pub const fn bgclut(self) -> crate::common::Reg<regs::Bgclut, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2048usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0800usize) as _) }
     }
 }
 pub mod regs {
@@ -1126,7 +1126,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Abort {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Transfer abort requested"]
         ABORTREQUEST = 0x01,
     }
@@ -1156,7 +1156,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum BgpfccrAm {
         #[doc = "No modification of alpha channel"]
-        NOMODIFY = 0,
+        NOMODIFY = 0x0,
         #[doc = "Replace with value in ALPHA\\[7:0\\]"]
         REPLACE = 0x01,
         #[doc = "Multiply with value in ALPHA\\[7:0\\]"]
@@ -1189,7 +1189,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum BgpfccrCcm {
         #[doc = "CLUT color format ARGB8888"]
-        ARGB8888 = 0,
+        ARGB8888 = 0x0,
         #[doc = "CLUT color format RGB888"]
         RGB888 = 0x01,
     }
@@ -1219,7 +1219,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum BgpfccrCm {
         #[doc = "Color mode ARGB8888"]
-        ARGB8888 = 0,
+        ARGB8888 = 0x0,
         #[doc = "Color mode RGB888"]
         RGB888 = 0x01,
         #[doc = "Color mode RGB565"]
@@ -1271,7 +1271,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum BgpfccrStart {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Start the automatic loading of the CLUT"]
         START = 0x01,
     }
@@ -1300,7 +1300,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Caecif {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Clear the CAEIF flag in the ISR register"]
         CLEAR = 0x01,
     }
@@ -1329,7 +1329,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cceif {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Clear the CEIF flag in the ISR register"]
         CLEAR = 0x01,
     }
@@ -1358,7 +1358,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cctcif {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Clear the CTCIF flag in the ISR register"]
         CLEAR = 0x01,
     }
@@ -1387,7 +1387,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum CrStart {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Launch the DMA2D"]
         START = 0x01,
     }
@@ -1416,7 +1416,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ctcif {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Clear the TCIF flag in the ISR register"]
         CLEAR = 0x01,
     }
@@ -1445,7 +1445,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cteif {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Clear the TEIF flag in the ISR register"]
         CLEAR = 0x01,
     }
@@ -1474,7 +1474,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ctwif {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Clear the TWIF flag in the ISR register"]
         CLEAR = 0x01,
     }
@@ -1504,7 +1504,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum FgpfccrAm {
         #[doc = "No modification of alpha channel"]
-        NOMODIFY = 0,
+        NOMODIFY = 0x0,
         #[doc = "Replace with value in ALPHA\\[7:0\\]"]
         REPLACE = 0x01,
         #[doc = "Multiply with value in ALPHA\\[7:0\\]"]
@@ -1537,7 +1537,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum FgpfccrCcm {
         #[doc = "CLUT color format ARGB8888"]
-        ARGB8888 = 0,
+        ARGB8888 = 0x0,
         #[doc = "CLUT color format RGB888"]
         RGB888 = 0x01,
     }
@@ -1567,7 +1567,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum FgpfccrCm {
         #[doc = "Color mode ARGB8888"]
-        ARGB8888 = 0,
+        ARGB8888 = 0x0,
         #[doc = "Color mode RGB888"]
         RGB888 = 0x01,
         #[doc = "Color mode RGB565"]
@@ -1619,7 +1619,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum FgpfccrStart {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Start the automatic loading of the CLUT"]
         START = 0x01,
     }
@@ -1649,7 +1649,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mode {
         #[doc = "Memory-to-memory (FG fetch only)"]
-        MEMORYTOMEMORY = 0,
+        MEMORYTOMEMORY = 0x0,
         #[doc = "Memory-to-memory with PFC (FG fetch only with FG PFC active)"]
         MEMORYTOMEMORYPFC = 0x01,
         #[doc = "Memory-to-memory with blending (FG and BG fetch with PFC and blending)"]
@@ -1683,7 +1683,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum OpfccrCm {
         #[doc = "ARGB8888"]
-        ARGB8888 = 0,
+        ARGB8888 = 0x0,
         #[doc = "RGB888"]
         RGB888 = 0x01,
         #[doc = "RGB565"]

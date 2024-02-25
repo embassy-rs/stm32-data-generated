@@ -22,47 +22,47 @@ impl Spi {
     #[doc = "control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "control register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "data register"]
     #[inline(always)]
     pub const fn dr(self) -> crate::common::Reg<regs::Dr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "CRC polynomial register"]
     #[inline(always)]
     pub const fn crcpr(self) -> crate::common::Reg<regs::Crcpr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "RX CRC register"]
     #[inline(always)]
     pub const fn rxcrcr(self) -> crate::common::Reg<regs::Rxcrcr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "TX CRC register"]
     #[inline(always)]
     pub const fn txcrcr(self) -> crate::common::Reg<regs::Txcrcr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "I2S configuration register"]
     #[inline(always)]
     pub const fn i2scfgr(self) -> crate::common::Reg<regs::I2scfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "I2S prescaler register"]
     #[inline(always)]
     pub const fn i2spr(self) -> crate::common::Reg<regs::I2spr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
 }
 pub mod regs {
@@ -763,7 +763,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Bidimode {
         #[doc = "2-line unidirectional data mode selected"]
-        UNIDIRECTIONAL = 0,
+        UNIDIRECTIONAL = 0x0,
         #[doc = "1-line bidirectional data mode selected"]
         BIDIRECTIONAL = 0x01,
     }
@@ -793,7 +793,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Bidioe {
         #[doc = "Output disabled (receive-only mode)"]
-        RECEIVE = 0,
+        RECEIVE = 0x0,
         #[doc = "Output enabled (transmit-only mode)"]
         TRANSMIT = 0x01,
     }
@@ -823,7 +823,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Br {
         #[doc = "f_PCLK / 2"]
-        DIV2 = 0,
+        DIV2 = 0x0,
         #[doc = "f_PCLK / 4"]
         DIV4 = 0x01,
         #[doc = "f_PCLK / 8"]
@@ -865,7 +865,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Chlen {
         #[doc = "16-bit wide"]
-        SIXTEENBIT = 0,
+        SIXTEENBIT = 0x0,
         #[doc = "32-bit wide"]
         THIRTYTWOBIT = 0x01,
     }
@@ -895,7 +895,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Chside {
         #[doc = "Channel left has to be transmitted or has been received"]
-        LEFT = 0,
+        LEFT = 0x0,
         #[doc = "Channel right has to be transmitted or has been received"]
         RIGHT = 0x01,
     }
@@ -925,7 +925,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ckpol {
         #[doc = "I2S clock inactive state is low level"]
-        IDLELOW = 0,
+        IDLELOW = 0x0,
         #[doc = "I2S clock inactive state is high level"]
         IDLEHIGH = 0x01,
     }
@@ -955,7 +955,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cpha {
         #[doc = "The first clock transition is the first data capture edge"]
-        FIRSTEDGE = 0,
+        FIRSTEDGE = 0x0,
         #[doc = "The second clock transition is the first data capture edge"]
         SECONDEDGE = 0x01,
     }
@@ -985,7 +985,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cpol {
         #[doc = "CK to 0 when idle"]
-        IDLELOW = 0,
+        IDLELOW = 0x0,
         #[doc = "CK to 1 when idle"]
         IDLEHIGH = 0x01,
     }
@@ -1015,7 +1015,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Crcl {
         #[doc = "8-bit CRC length"]
-        EIGHTBIT = 0,
+        EIGHTBIT = 0x0,
         #[doc = "16-bit CRC length"]
         SIXTEENBIT = 0x01,
     }
@@ -1045,7 +1045,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Crcnext {
         #[doc = "Next transmit value is from Tx buffer"]
-        TXBUFFER = 0,
+        TXBUFFER = 0x0,
         #[doc = "Next transmit value is from Tx CRC register"]
         CRC = 0x01,
     }
@@ -1075,7 +1075,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Datlen {
         #[doc = "16-bit data length"]
-        SIXTEENBIT = 0,
+        SIXTEENBIT = 0x0,
         #[doc = "24-bit data length"]
         TWENTYFOURBIT = 0x01,
         #[doc = "32-bit data length"]
@@ -1107,7 +1107,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ds {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "4-bit"]
@@ -1163,7 +1163,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Frf {
         #[doc = "SPI Motorola mode"]
-        MOTOROLA = 0,
+        MOTOROLA = 0x0,
         #[doc = "SPI TI mode"]
         TI = 0x01,
     }
@@ -1193,7 +1193,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Frlvl {
         #[doc = "Rx FIFO Empty"]
-        EMPTY = 0,
+        EMPTY = 0x0,
         #[doc = "Rx 1/4 FIFO"]
         QUARTER = 0x01,
         #[doc = "Rx 1/2 FIFO"]
@@ -1227,7 +1227,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Frxth {
         #[doc = "RXNE event is generated if the FIFO level is greater than or equal to 1/2 (16-bit)"]
-        HALF = 0,
+        HALF = 0x0,
         #[doc = "RXNE event is generated if the FIFO level is greater than or equal to 1/4 (8-bit)"]
         QUARTER = 0x01,
     }
@@ -1257,7 +1257,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ftlvl {
         #[doc = "Tx FIFO Empty"]
-        EMPTY = 0,
+        EMPTY = 0x0,
         #[doc = "Tx 1/4 FIFO"]
         QUARTER = 0x01,
         #[doc = "Tx 1/2 FIFO"]
@@ -1291,7 +1291,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Iscfg {
         #[doc = "Slave - transmit"]
-        SLAVETX = 0,
+        SLAVETX = 0x0,
         #[doc = "Slave - receive"]
         SLAVERX = 0x01,
         #[doc = "Master - transmit"]
@@ -1325,7 +1325,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ismod {
         #[doc = "SPI mode is selected"]
-        SPIMODE = 0,
+        SPIMODE = 0x0,
         #[doc = "I2S mode is selected"]
         I2SMODE = 0x01,
     }
@@ -1355,7 +1355,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Isstd {
         #[doc = "I2S Philips standard"]
-        PHILIPS = 0,
+        PHILIPS = 0x0,
         #[doc = "MSB justified standard"]
         MSB = 0x01,
         #[doc = "LSB justified standard"]
@@ -1389,7 +1389,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum LdmaRx {
         #[doc = "Number of data to transfer for receive is even"]
-        EVEN = 0,
+        EVEN = 0x0,
         #[doc = "Number of data to transfer for receive is odd"]
         ODD = 0x01,
     }
@@ -1419,7 +1419,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum LdmaTx {
         #[doc = "Number of data to transfer for transmit is even"]
-        EVEN = 0,
+        EVEN = 0x0,
         #[doc = "Number of data to transfer for transmit is odd"]
         ODD = 0x01,
     }
@@ -1449,7 +1449,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lsbfirst {
         #[doc = "Data is transmitted/received with the MSB first"]
-        MSBFIRST = 0,
+        MSBFIRST = 0x0,
         #[doc = "Data is transmitted/received with the LSB first"]
         LSBFIRST = 0x01,
     }
@@ -1479,7 +1479,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mstr {
         #[doc = "Slave configuration"]
-        SLAVE = 0,
+        SLAVE = 0x0,
         #[doc = "Master configuration"]
         MASTER = 0x01,
     }
@@ -1509,7 +1509,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Odd {
         #[doc = "Real divider value is I2SDIV * 2"]
-        EVEN = 0,
+        EVEN = 0x0,
         #[doc = "Real divider value is (I2SDIV * 2) + 1"]
         ODD = 0x01,
     }
@@ -1539,7 +1539,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pcmsync {
         #[doc = "Short frame synchronisation"]
-        SHORT = 0,
+        SHORT = 0x0,
         #[doc = "Long frame synchronisation"]
         LONG = 0x01,
     }
@@ -1569,7 +1569,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rxonly {
         #[doc = "Full duplex (Transmit and receive)"]
-        FULLDUPLEX = 0,
+        FULLDUPLEX = 0x0,
         #[doc = "Output disabled (Receive-only mode)"]
         OUTPUTDISABLED = 0x01,
     }

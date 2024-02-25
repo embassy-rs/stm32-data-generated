@@ -22,12 +22,12 @@ impl Opamp {
     #[doc = "OPAMP control/status register"]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "OPAMP control/status register"]
     #[inline(always)]
     pub const fn tcmr(self) -> crate::common::Reg<regs::Tcmr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
 }
 pub mod regs {
@@ -281,7 +281,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Calsel {
         #[doc = "VREFOPAMP=3.3% VDDA"]
-        PERCENT3_3 = 0,
+        PERCENT3_3 = 0x0,
         #[doc = "VREFOPAMP=10% VDDA"]
         PERCENT10 = 0x01,
         #[doc = "VREFOPAMP=50% VDDA"]
@@ -315,7 +315,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum ForceVp {
         #[doc = "Normal operating mode"]
-        NORMAL = 0,
+        NORMAL = 0x0,
         #[doc = "Calibration mode. Non-inverting input connected to calibration reference"]
         CALIBRATION = 0x01,
     }
@@ -345,7 +345,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Opahsm {
         #[doc = "OpAmp in normal mode"]
-        NORMAL = 0,
+        NORMAL = 0x0,
         #[doc = "OpAmp in high speed mode"]
         HIGHSPEED = 0x01,
     }
@@ -375,7 +375,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Opaintoen {
         #[doc = "Output is connected to the output Pin"]
-        OUTPUTPIN = 0,
+        OUTPUTPIN = 0x0,
         #[doc = "Output is connected internally to ADC channel"]
         ADCCHANNEL = 0x01,
     }
@@ -405,7 +405,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Outcal {
         #[doc = "Non-inverting < inverting"]
-        LOW = 0,
+        LOW = 0x0,
         #[doc = "Non-inverting > inverting"]
         HIGH = 0x01,
     }
@@ -435,7 +435,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum PgaGain {
         #[doc = "Gain 2"]
-        GAIN2 = 0,
+        GAIN2 = 0x0,
         #[doc = "Gain 4"]
         GAIN4 = 0x01,
         #[doc = "Gain 8"]
@@ -517,7 +517,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usertrim {
         #[doc = "Factory trim used"]
-        FACTORY = 0,
+        FACTORY = 0x0,
         #[doc = "User trim used"]
         USER = 0x01,
     }
@@ -547,7 +547,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum VmSel {
         #[doc = "VINM0 connected to VINM input"]
-        VINM0 = 0,
+        VINM0 = 0x0,
         #[doc = "VINM1 connected to VINM input"]
         VINM1 = 0x01,
         #[doc = "Feedback resistor connected to VINM (PGA mode)"]
@@ -581,7 +581,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum VpSel {
         #[doc = "VINP0 connected to VINP input"]
-        VINP0 = 0,
+        VINP0 = 0x0,
         #[doc = "VINP1 connected to VINP input"]
         VINP1 = 0x01,
         #[doc = "VINP2 connected to VINP input"]
@@ -615,7 +615,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum VpsSel {
         #[doc = "VINP0 connected to VINP input"]
-        VINP0 = 0,
+        VINP0 = 0x0,
         #[doc = "VINP1 connected to VINP input"]
         VINP1 = 0x01,
         #[doc = "VINP2 connected to VINP input"]

@@ -23,36 +23,36 @@ impl Fdcanram {
     #[inline(always)]
     pub const fn flssa(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 28usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize + n * 4usize) as _) }
     }
     #[doc = "29-bit filter"]
     #[inline(always)]
     pub const fn flesa(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 16usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(112usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x70usize + n * 4usize) as _) }
     }
     #[doc = "Rx FIFO 0"]
     #[inline(always)]
     pub const fn rxfifo0(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 54usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(176usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb0usize + n * 4usize) as _) }
     }
     #[doc = "Rx FIFO 1"]
     #[inline(always)]
     pub const fn rxfifo1(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 54usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(392usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0188usize + n * 4usize) as _) }
     }
     #[doc = "Tx event FIFO"]
     #[inline(always)]
     pub const fn txefifo(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 6usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(608usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0260usize + n * 4usize) as _) }
     }
     #[doc = "Tx buffer"]
     #[inline(always)]
     pub const fn txbuf(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 54usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(632usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0278usize + n * 4usize) as _) }
     }
 }

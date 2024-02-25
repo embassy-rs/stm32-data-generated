@@ -22,7 +22,7 @@ impl Comp {
     #[doc = "Comparator control and status register."]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
 }
 pub mod regs {
@@ -153,7 +153,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Hyst {
-        NONE = 0,
+        NONE = 0x0,
         #[doc = "10mV hysteresis"]
         HYST10M = 0x01,
         #[doc = "20mV hysteresis"]
@@ -195,7 +195,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Polarity {
         #[doc = "Non-inverted polarity"]
-        NONINVERTED = 0,
+        NONINVERTED = 0x0,
         #[doc = "Inverted polarity"]
         INVERTED = 0x01,
     }

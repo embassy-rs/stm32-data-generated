@@ -22,67 +22,67 @@ impl Syscfg {
     #[doc = "SBS temporal isolation control register"]
     #[inline(always)]
     pub const fn hdplcr(self) -> crate::common::Reg<regs::Hdplcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "SBS temporal isolation status register"]
     #[inline(always)]
     pub const fn hdplsr(self) -> crate::common::Reg<regs::Hdplsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "SBS debug control register"]
     #[inline(always)]
     pub const fn dbgcr(self) -> crate::common::Reg<regs::Dbgcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "SBS debug lock register"]
     #[inline(always)]
     pub const fn dbglockr(self) -> crate::common::Reg<regs::Dbglockr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "SBS product mode and configuration register"]
     #[inline(always)]
     pub const fn pmcr(self) -> crate::common::Reg<regs::Pmcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(256usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
     #[doc = "SBS FPU interrupt mask register"]
     #[inline(always)]
     pub const fn fpuimr(self) -> crate::common::Reg<regs::Fpuimr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(260usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
     }
     #[doc = "SBS memory erase status register"]
     #[inline(always)]
     pub const fn mesr(self) -> crate::common::Reg<regs::Mesr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(264usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize) as _) }
     }
     #[doc = "SBS compensation cell for I/Os control and status register"]
     #[inline(always)]
     pub const fn cccsr(self) -> crate::common::Reg<regs::Cccsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(272usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0110usize) as _) }
     }
     #[doc = "SBS compensation cell for I/Os value register"]
     #[inline(always)]
     pub const fn ccvalr(self) -> crate::common::Reg<regs::Ccvalr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(276usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0114usize) as _) }
     }
     #[doc = "SBS compensation cell for I/Os software code register"]
     #[inline(always)]
     pub const fn ccswcr(self) -> crate::common::Reg<regs::Ccswcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(280usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0118usize) as _) }
     }
     #[doc = "SBS Class B register"]
     #[inline(always)]
     pub const fn cfgr2(self) -> crate::common::Reg<regs::Cfgr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(288usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0120usize) as _) }
     }
     #[doc = "SBS CPU lock register"]
     #[inline(always)]
     pub const fn cnslckr(self) -> crate::common::Reg<regs::Cnslckr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(324usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0144usize) as _) }
     }
     #[doc = "SBS flift ECC NMI mask register"]
     #[inline(always)]
     pub const fn eccnmir(self) -> crate::common::Reg<regs::Eccnmir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(332usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x014cusize) as _) }
     }
 }
 pub mod regs {
@@ -612,7 +612,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cs {
         #[doc = "Code from the cell (available in SBS_CCVR)"]
-        CELL = 0,
+        CELL = 0x0,
         #[doc = "Code from SBS_CCCR"]
         SOFTWARE = 0x01,
     }

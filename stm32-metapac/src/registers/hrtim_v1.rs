@@ -11,7 +11,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "mcr",
                     description: Some("Master Timer Control Register"),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -22,7 +22,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "misr",
                     description: Some("Master Timer Interrupt Status Register"),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(Register {
                         access: Access::Read,
                         bit_size: 32,
@@ -33,7 +33,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "micr",
                     description: Some("Master Timer Interrupt Clear Register"),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(Register {
                         access: Access::Write,
                         bit_size: 32,
@@ -44,7 +44,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "mdier",
                     description: Some("Master Timer DMA / Interrupt Enable Register"),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -55,7 +55,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "mcntr",
                     description: Some("Master Timer Counter Register"),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -66,7 +66,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "mper",
                     description: Some("Master Timer Period Register"),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 0x14,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -77,7 +77,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "mrep",
                     description: Some("Master Timer Repetition Register"),
                     array: None,
-                    byte_offset: 24,
+                    byte_offset: 0x18,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -90,7 +90,7 @@ pub(crate) static REGISTERS: IR = IR {
                     array: Some(Array::Cursed(CursedArray {
                         offsets: &[0, 8, 12, 16],
                     })),
-                    byte_offset: 28,
+                    byte_offset: 0x1c,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -101,14 +101,14 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "tim",
                     description: Some("High Resolution Timer: Timing Unit"),
                     array: Some(Array::Regular(RegularArray { len: 5, stride: 128 })),
-                    byte_offset: 128,
+                    byte_offset: 0x80,
                     inner: BlockItemInner::Block(BlockItemBlock { block: "HrtimTimx" }),
                 },
                 BlockItem {
                     name: "cr1",
                     description: Some("High Resolution Timer: Control Register 1"),
                     array: None,
-                    byte_offset: 896,
+                    byte_offset: 0x380,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -119,7 +119,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "cr2",
                     description: Some("High Resolution Timer: Control Register 2"),
                     array: None,
-                    byte_offset: 900,
+                    byte_offset: 0x384,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -130,7 +130,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "isr",
                     description: Some("High Resolution Timer: Interrupt Status Register"),
                     array: None,
-                    byte_offset: 904,
+                    byte_offset: 0x388,
                     inner: BlockItemInner::Register(Register {
                         access: Access::Read,
                         bit_size: 32,
@@ -141,7 +141,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "icr",
                     description: Some("High Resolution Timer: Interrupt Clear Register"),
                     array: None,
-                    byte_offset: 908,
+                    byte_offset: 0x38c,
                     inner: BlockItemInner::Register(Register {
                         access: Access::Write,
                         bit_size: 32,
@@ -152,7 +152,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ier",
                     description: Some("High Resolution Timer: Interrupt Enable Register"),
                     array: None,
-                    byte_offset: 912,
+                    byte_offset: 0x390,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -163,7 +163,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "oenr",
                     description: Some("High Resolution Timer: Output Enable Register"),
                     array: None,
-                    byte_offset: 916,
+                    byte_offset: 0x394,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -174,7 +174,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "odisr",
                     description: Some("High Resolution Timer: Output Disable Register"),
                     array: None,
-                    byte_offset: 920,
+                    byte_offset: 0x398,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -185,7 +185,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "odsr",
                     description: Some("High Resolution Timer: Output Disable Status Register"),
                     array: None,
-                    byte_offset: 924,
+                    byte_offset: 0x39c,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -196,7 +196,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "bmcr",
                     description: Some("High Resolution Timer: Burst Mode Control Register"),
                     array: None,
-                    byte_offset: 928,
+                    byte_offset: 0x3a0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -207,7 +207,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "bmtrgr",
                     description: Some("High Resolution Timer: Burst Mode Trigger Register"),
                     array: None,
-                    byte_offset: 932,
+                    byte_offset: 0x3a4,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -218,7 +218,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "bmcmpr",
                     description: Some("High Resolution Timer: Burst Mode Compare Register"),
                     array: None,
-                    byte_offset: 936,
+                    byte_offset: 0x3a8,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -229,7 +229,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "bmper",
                     description: Some("High Resolution Timer: Burst Mode Period Register"),
                     array: None,
-                    byte_offset: 940,
+                    byte_offset: 0x3ac,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -240,7 +240,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "eecr1",
                     description: Some("High Resolution Timer: External Event Control Register 1"),
                     array: None,
-                    byte_offset: 944,
+                    byte_offset: 0x3b0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -251,7 +251,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "eecr2",
                     description: Some("High Resolution Timer: External Event Control Register 2"),
                     array: None,
-                    byte_offset: 948,
+                    byte_offset: 0x3b4,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -262,7 +262,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "eecr3",
                     description: Some("High Resolution Timer: External Event Control Register 3"),
                     array: None,
-                    byte_offset: 952,
+                    byte_offset: 0x3b8,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -273,7 +273,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "adc1r",
                     description: Some("High Resolution Timer: ADC Trigger [1, 3] Register"),
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 8] })),
-                    byte_offset: 956,
+                    byte_offset: 0x3bc,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -284,7 +284,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "adc2r",
                     description: Some("High Resolution Timer: ADC Trigger [2, 4] Register"),
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 8] })),
-                    byte_offset: 960,
+                    byte_offset: 0x3c0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -295,7 +295,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "dllcr",
                     description: Some("High Resolution Timer: DLL Control Register"),
                     array: None,
-                    byte_offset: 972,
+                    byte_offset: 0x3cc,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -306,7 +306,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "fltinr1",
                     description: Some("High Resolution Timer: Fault Input Register 1"),
                     array: None,
-                    byte_offset: 976,
+                    byte_offset: 0x3d0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -317,7 +317,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "fltinr2",
                     description: Some("High Resolution Timer: Fault Input Register 2"),
                     array: None,
-                    byte_offset: 976,
+                    byte_offset: 0x3d0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -328,7 +328,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "bdmupr",
                     description: Some("High Resolution Timer: Burst DMA Master timer update Register"),
                     array: None,
-                    byte_offset: 984,
+                    byte_offset: 0x3d8,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -339,7 +339,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "bdtupr",
                     description: Some("High Resolution Timer: Burst DMA Timer X update Register"),
                     array: Some(Array::Regular(RegularArray { len: 5, stride: 4 })),
-                    byte_offset: 988,
+                    byte_offset: 0x3dc,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -350,7 +350,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "bdmadr",
                     description: Some("High Resolution Timer: Burst DMA Data Register"),
                     array: None,
-                    byte_offset: 1008,
+                    byte_offset: 0x3f0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::Write,
                         bit_size: 32,
@@ -368,7 +368,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "cr",
                     description: Some("Timer X Control Register"),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 0x0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -379,7 +379,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "isr",
                     description: Some("Timer X Interrupt Status Register"),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0x4,
                     inner: BlockItemInner::Register(Register {
                         access: Access::Read,
                         bit_size: 32,
@@ -390,7 +390,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "icr",
                     description: Some("Timer X Interrupt Clear Register"),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 0x8,
                     inner: BlockItemInner::Register(Register {
                         access: Access::Write,
                         bit_size: 32,
@@ -401,7 +401,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "dier",
                     description: Some("Timer X DMA / Interrupt Enable Register"),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -412,7 +412,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "cnt",
                     description: Some("Timer X Counter Register"),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0x10,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -423,7 +423,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "per",
                     description: Some("Timer X Period Register"),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 0x14,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -434,7 +434,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "rep",
                     description: Some("Timer X Repetition Register"),
                     array: None,
-                    byte_offset: 24,
+                    byte_offset: 0x18,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -447,7 +447,7 @@ pub(crate) static REGISTERS: IR = IR {
                     array: Some(Array::Cursed(CursedArray {
                         offsets: &[0, 8, 12, 16],
                     })),
-                    byte_offset: 28,
+                    byte_offset: 0x1c,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -458,7 +458,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "cmpc",
                     description: Some("Timer X Compare X Compound Register"),
                     array: Some(Array::Cursed(CursedArray { offsets: &[0] })),
-                    byte_offset: 32,
+                    byte_offset: 0x20,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -469,7 +469,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "cpt",
                     description: Some("Timer X Capture X Register"),
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 4 })),
-                    byte_offset: 48,
+                    byte_offset: 0x30,
                     inner: BlockItemInner::Register(Register {
                         access: Access::Read,
                         bit_size: 32,
@@ -480,7 +480,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "dt",
                     description: Some("Timer X Deadtime Register"),
                     array: None,
-                    byte_offset: 56,
+                    byte_offset: 0x38,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -491,7 +491,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "setr",
                     description: Some("Timer X Output X Set Register"),
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 8] })),
-                    byte_offset: 60,
+                    byte_offset: 0x3c,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -502,7 +502,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "rstr",
                     description: Some("Timer X Output X Reset Register"),
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 8] })),
-                    byte_offset: 64,
+                    byte_offset: 0x40,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -513,7 +513,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "eef",
                     description: Some("Timer X External Event Filtering Register 1"),
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 4] })),
-                    byte_offset: 76,
+                    byte_offset: 0x4c,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -524,7 +524,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "rst",
                     description: Some("Timer X Reset Register"),
                     array: None,
-                    byte_offset: 84,
+                    byte_offset: 0x54,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -535,7 +535,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "chp",
                     description: Some("Timer X Chopper Register"),
                     array: None,
-                    byte_offset: 88,
+                    byte_offset: 0x58,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -546,7 +546,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ccr",
                     description: Some("Timer X Capture X Control Register"),
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 4] })),
-                    byte_offset: 92,
+                    byte_offset: 0x5c,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -557,7 +557,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "outr",
                     description: Some("Timer X Output Register"),
                     array: None,
-                    byte_offset: 100,
+                    byte_offset: 0x64,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -568,7 +568,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "flt",
                     description: Some("Timer X Fault Register"),
                     array: None,
-                    byte_offset: 104,
+                    byte_offset: 0x68,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,

@@ -25,7 +25,7 @@ impl Bkp {
         assert!(n < 42usize);
         unsafe {
             crate::common::Reg::from_ptr(self.ptr.add(
-                0usize
+                0x0usize
                     + ([
                         0usize, 4usize, 8usize, 12usize, 16usize, 20usize, 24usize, 28usize, 32usize, 36usize, 60usize,
                         64usize, 68usize, 72usize, 76usize, 80usize, 84usize, 88usize, 92usize, 96usize, 100usize,
@@ -39,17 +39,17 @@ impl Bkp {
     #[doc = "RTC clock calibration register"]
     #[inline(always)]
     pub const fn rtccr(self) -> crate::common::Reg<regs::Rtccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "Control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "Control/status register"]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
 }
 pub mod regs {
@@ -239,7 +239,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Asos {
         #[doc = "RTC Alarm pulse output selected"]
-        ALARM = 0,
+        ALARM = 0x0,
         #[doc = "RTC Second pulse output selected"]
         SECOND = 0x01,
     }
@@ -269,7 +269,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tpal {
         #[doc = "A high level on the TAMPER pin resets all data backup registers (if TPE bit is set)"]
-        HIGH = 0,
+        HIGH = 0x0,
         #[doc = "A low level on the TAMPER pin resets all data backup registers (if TPE bit is set)"]
         LOW = 0x01,
     }

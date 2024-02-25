@@ -22,77 +22,77 @@ impl Pwr {
     #[doc = "PWR power mode control register"]
     #[inline(always)]
     pub const fn pmcr(self) -> crate::common::Reg<regs::Pmcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "PWR status register"]
     #[inline(always)]
     pub const fn pmsr(self) -> crate::common::Reg<regs::Pmsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "PWR voltage scaling control register"]
     #[inline(always)]
     pub const fn voscr(self) -> crate::common::Reg<regs::Voscr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "PWR voltage scaling status register"]
     #[inline(always)]
     pub const fn vossr(self) -> crate::common::Reg<regs::Vossr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "PWR Backup domain control register"]
     #[inline(always)]
     pub const fn bdcr(self) -> crate::common::Reg<regs::Bdcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "PWR disable backup protection control register"]
     #[inline(always)]
     pub const fn dbpcr(self) -> crate::common::Reg<regs::Dbpcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "PWR Backup domain status register"]
     #[inline(always)]
     pub const fn bdsr(self) -> crate::common::Reg<regs::Bdsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "PWR supply configuration control register"]
     #[inline(always)]
     pub const fn sccr(self) -> crate::common::Reg<regs::Sccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "PWR voltage monitor control register"]
     #[inline(always)]
     pub const fn vmcr(self) -> crate::common::Reg<regs::Vmcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[doc = "PWR voltage monitor status register"]
     #[inline(always)]
     pub const fn vmsr(self) -> crate::common::Reg<regs::Vmsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[doc = "PWR wakeup status clear register"]
     #[inline(always)]
     pub const fn wuscr(self) -> crate::common::Reg<regs::Wuscr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[doc = "PWR wakeup status register"]
     #[inline(always)]
     pub const fn wusr(self) -> crate::common::Reg<regs::Wusr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[doc = "PWR wakeup configuration register"]
     #[inline(always)]
     pub const fn wucr(self) -> crate::common::Reg<regs::Wucr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[doc = "PWR I/O retention register"]
     #[inline(always)]
     pub const fn ioretr(self) -> crate::common::Reg<regs::Ioretr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[doc = "PWR privilege configuration register"]
     #[inline(always)]
     pub const fn privcfgr(self) -> crate::common::Reg<regs::Privcfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(260usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
     }
 }
 pub mod regs {
@@ -753,7 +753,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Actvos {
         #[doc = "VOS3 (lowest power)"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "VOS2"]
         B_0X1 = 0x01,
         #[doc = "VOS1"]
@@ -787,7 +787,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Als {
         #[doc = "1.7 V"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "2.1 V"]
         B_0X1 = 0x01,
         #[doc = "2.5 V"]
@@ -822,7 +822,7 @@ pub mod vals {
     pub enum Avdo {
         #[doc = "V<sub>DDA</sub> is equal or higher than the AVD threshold selected with the ALS\\[2:0\\]
 bits."]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "V<sub>DDA</sub> is lower than the AVD threshold selected with the ALS\\[2:0\\]
 bits."]
         B_0X1 = 0x01,
@@ -853,7 +853,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pls {
         #[doc = "1.95 V"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "2.1 V"]
         B_0X1 = 0x01,
         #[doc = "2.25 V"]
@@ -895,7 +895,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Priv {
         #[doc = "Read and write to PWR functions can be done by privileged or unprivileged access."]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Read and write to PWR functions can be done by privileged access only."]
         B_0X1 = 0x01,
     }
@@ -926,7 +926,7 @@ bits."]
     pub enum Pvdo {
         #[doc = "V<sub>DD</sub> is equal or higher than the PVD threshold selected through the PLS\\[2:0\\]
 bits."]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "V<sub>DD</sub> is lower than the PVD threshold selected through the PLS\\[2:0\\]
 bits."]
         B_0X1 = 0x01,
@@ -957,7 +957,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Svos {
         #[doc = "reserved"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "SVOS5 scale 5"]
         B_0X1 = 0x01,
         #[doc = "SVOS4 scale 4"]
@@ -991,7 +991,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Vbrs {
         #[doc = "Charge V<sub>BAT</sub> through a 5 kΩ resistor."]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "Charge V<sub>BAT</sub> through a 1.5 kΩ resistor."]
         B_0X1 = 0x01,
     }
@@ -1021,7 +1021,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Vos {
         #[doc = "scale 3 (default)"]
-        SCALE3 = 0,
+        SCALE3 = 0x0,
         #[doc = "scale 2"]
         SCALE2 = 0x01,
         #[doc = "scale 1"]
@@ -1055,7 +1055,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Wupp {
         #[doc = "detection on high level (rising edge)"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "detection on low level (falling edge)"]
         B_0X1 = 0x01,
     }
@@ -1085,7 +1085,7 @@ bits."]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Wuppupd {
         #[doc = "no pull-up"]
-        B_0X0 = 0,
+        B_0X0 = 0x0,
         #[doc = "pull-up"]
         B_0X1 = 0x01,
         #[doc = "pull-down"]

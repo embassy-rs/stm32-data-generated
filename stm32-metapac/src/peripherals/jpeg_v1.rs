@@ -22,2522 +22,2522 @@ impl Jpeg {
     #[doc = "JPEG codec configuration register 0"]
     #[inline(always)]
     pub const fn jpeg_confr0(self) -> crate::common::Reg<regs::JpegConfr0, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "JPEG codec configuration register 1"]
     #[inline(always)]
     pub const fn jpeg_confr1(self) -> crate::common::Reg<regs::JpegConfr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "JPEG codec configuration register 2"]
     #[inline(always)]
     pub const fn jpeg_confr2(self) -> crate::common::Reg<regs::JpegConfr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "JPEG codec configuration register 3"]
     #[inline(always)]
     pub const fn jpeg_confr3(self) -> crate::common::Reg<regs::JpegConfr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "JPEG codec configuration register 4"]
     #[inline(always)]
     pub const fn jpeg_confr4(self) -> crate::common::Reg<regs::JpegConfr4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "JPEG codec configuration register 5"]
     #[inline(always)]
     pub const fn jpeg_confr5(self) -> crate::common::Reg<regs::JpegConfr5, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "JPEG codec configuration register 6"]
     #[inline(always)]
     pub const fn jpeg_confr6(self) -> crate::common::Reg<regs::JpegConfr6, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "JPEG codec configuration register 7"]
     #[inline(always)]
     pub const fn jpeg_confr7(self) -> crate::common::Reg<regs::JpegConfr7, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "JPEG control register"]
     #[inline(always)]
     pub const fn jpeg_cr(self) -> crate::common::Reg<regs::JpegCr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "JPEG status register"]
     #[inline(always)]
     pub const fn jpeg_sr(self) -> crate::common::Reg<regs::JpegSr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[doc = "JPEG clear flag register"]
     #[inline(always)]
     pub const fn jpeg_cfr(self) -> crate::common::Reg<regs::JpegCfr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[doc = "JPEG data input register"]
     #[inline(always)]
     pub const fn jpeg_dir(self) -> crate::common::Reg<regs::JpegDir, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[doc = "JPEG data output register"]
     #[inline(always)]
     pub const fn jpeg_dor(self) -> crate::common::Reg<regs::JpegDor, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem0_0(self) -> crate::common::Reg<regs::Qmem00, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem0_1(self) -> crate::common::Reg<regs::Qmem01, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem0_2(self) -> crate::common::Reg<regs::Qmem02, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem0_3(self) -> crate::common::Reg<regs::Qmem03, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(92usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem0_4(self) -> crate::common::Reg<regs::Qmem04, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(96usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem0_5(self) -> crate::common::Reg<regs::Qmem05, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(100usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x64usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem0_6(self) -> crate::common::Reg<regs::Qmem06, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(104usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x68usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem0_7(self) -> crate::common::Reg<regs::Qmem07, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(108usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x6cusize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem0_8(self) -> crate::common::Reg<regs::Qmem08, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(112usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x70usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem0_9(self) -> crate::common::Reg<regs::Qmem09, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(116usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x74usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem0_10(self) -> crate::common::Reg<regs::Qmem010, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(120usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x78usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem0_11(self) -> crate::common::Reg<regs::Qmem011, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(124usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x7cusize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem0_12(self) -> crate::common::Reg<regs::Qmem012, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(128usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem0_13(self) -> crate::common::Reg<regs::Qmem013, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(132usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x84usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem0_14(self) -> crate::common::Reg<regs::Qmem014, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(136usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x88usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem0_15(self) -> crate::common::Reg<regs::Qmem015, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(140usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x8cusize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem1_0(self) -> crate::common::Reg<regs::Qmem10, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(144usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x90usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem1_1(self) -> crate::common::Reg<regs::Qmem11, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(148usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x94usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem1_2(self) -> crate::common::Reg<regs::Qmem12, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(152usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x98usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem1_3(self) -> crate::common::Reg<regs::Qmem13, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(156usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x9cusize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem1_4(self) -> crate::common::Reg<regs::Qmem14, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(160usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa0usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem1_5(self) -> crate::common::Reg<regs::Qmem15, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(164usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa4usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem1_6(self) -> crate::common::Reg<regs::Qmem16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(168usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa8usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem1_7(self) -> crate::common::Reg<regs::Qmem17, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(172usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xacusize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem1_8(self) -> crate::common::Reg<regs::Qmem18, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(176usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb0usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem1_9(self) -> crate::common::Reg<regs::Qmem19, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(180usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb4usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem1_10(self) -> crate::common::Reg<regs::Qmem110, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(184usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb8usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem1_11(self) -> crate::common::Reg<regs::Qmem111, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(188usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xbcusize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem1_12(self) -> crate::common::Reg<regs::Qmem112, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(192usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc0usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem1_13(self) -> crate::common::Reg<regs::Qmem113, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(196usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc4usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem1_14(self) -> crate::common::Reg<regs::Qmem114, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(200usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc8usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem1_15(self) -> crate::common::Reg<regs::Qmem115, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(204usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xccusize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem2_0(self) -> crate::common::Reg<regs::Qmem20, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(208usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd0usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem2_1(self) -> crate::common::Reg<regs::Qmem21, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(212usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd4usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem2_2(self) -> crate::common::Reg<regs::Qmem22, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(216usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd8usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem2_3(self) -> crate::common::Reg<regs::Qmem23, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(220usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xdcusize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem2_4(self) -> crate::common::Reg<regs::Qmem24, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(224usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe0usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem2_5(self) -> crate::common::Reg<regs::Qmem25, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(228usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe4usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem2_6(self) -> crate::common::Reg<regs::Qmem26, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(232usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe8usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem2_7(self) -> crate::common::Reg<regs::Qmem27, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(236usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xecusize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem2_8(self) -> crate::common::Reg<regs::Qmem28, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(240usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf0usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem2_9(self) -> crate::common::Reg<regs::Qmem29, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(244usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf4usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem2_10(self) -> crate::common::Reg<regs::Qmem210, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(248usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf8usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem2_11(self) -> crate::common::Reg<regs::Qmem211, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(252usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xfcusize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem2_12(self) -> crate::common::Reg<regs::Qmem212, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(256usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem2_13(self) -> crate::common::Reg<regs::Qmem213, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(260usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem2_14(self) -> crate::common::Reg<regs::Qmem214, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(264usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem2_15(self) -> crate::common::Reg<regs::Qmem215, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(268usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x010cusize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem3_0(self) -> crate::common::Reg<regs::Qmem30, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(272usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0110usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem3_1(self) -> crate::common::Reg<regs::Qmem31, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(276usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0114usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem3_2(self) -> crate::common::Reg<regs::Qmem32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(280usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0118usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem3_3(self) -> crate::common::Reg<regs::Qmem33, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(284usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x011cusize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem3_4(self) -> crate::common::Reg<regs::Qmem34, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(288usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0120usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem3_5(self) -> crate::common::Reg<regs::Qmem35, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(292usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0124usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem3_6(self) -> crate::common::Reg<regs::Qmem36, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(296usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0128usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem3_7(self) -> crate::common::Reg<regs::Qmem37, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(300usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x012cusize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem3_8(self) -> crate::common::Reg<regs::Qmem38, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(304usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0130usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem3_9(self) -> crate::common::Reg<regs::Qmem39, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(308usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0134usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem3_10(self) -> crate::common::Reg<regs::Qmem310, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(312usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0138usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem3_11(self) -> crate::common::Reg<regs::Qmem311, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(316usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x013cusize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem3_12(self) -> crate::common::Reg<regs::Qmem312, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(320usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0140usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem3_13(self) -> crate::common::Reg<regs::Qmem313, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(324usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0144usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem3_14(self) -> crate::common::Reg<regs::Qmem314, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(328usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0148usize) as _) }
     }
     #[doc = "JPEG quantization tables"]
     #[inline(always)]
     pub const fn qmem3_15(self) -> crate::common::Reg<regs::Qmem315, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(332usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x014cusize) as _) }
     }
     #[doc = "JPEG HuffMin tables"]
     #[inline(always)]
     pub const fn huffmin_0(self) -> crate::common::Reg<regs::Huffmin0, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(336usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0150usize) as _) }
     }
     #[doc = "JPEG HuffMin tables"]
     #[inline(always)]
     pub const fn huffmin_1(self) -> crate::common::Reg<regs::Huffmin1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(340usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0154usize) as _) }
     }
     #[doc = "JPEG HuffMin tables"]
     #[inline(always)]
     pub const fn huffmin_2(self) -> crate::common::Reg<regs::Huffmin2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(344usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0158usize) as _) }
     }
     #[doc = "JPEG HuffMin tables"]
     #[inline(always)]
     pub const fn huffmin_3(self) -> crate::common::Reg<regs::Huffmin3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(348usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x015cusize) as _) }
     }
     #[doc = "JPEG HuffMin tables"]
     #[inline(always)]
     pub const fn huffmin_4(self) -> crate::common::Reg<regs::Huffmin4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(352usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0160usize) as _) }
     }
     #[doc = "JPEG HuffMin tables"]
     #[inline(always)]
     pub const fn huffmin_5(self) -> crate::common::Reg<regs::Huffmin5, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(356usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0164usize) as _) }
     }
     #[doc = "JPEG HuffMin tables"]
     #[inline(always)]
     pub const fn huffmin_6(self) -> crate::common::Reg<regs::Huffmin6, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(360usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0168usize) as _) }
     }
     #[doc = "JPEG HuffMin tables"]
     #[inline(always)]
     pub const fn huffmin_7(self) -> crate::common::Reg<regs::Huffmin7, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(364usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x016cusize) as _) }
     }
     #[doc = "JPEG HuffMin tables"]
     #[inline(always)]
     pub const fn huffmin_8(self) -> crate::common::Reg<regs::Huffmin8, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(368usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0170usize) as _) }
     }
     #[doc = "JPEG HuffMin tables"]
     #[inline(always)]
     pub const fn huffmin_9(self) -> crate::common::Reg<regs::Huffmin9, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(372usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0174usize) as _) }
     }
     #[doc = "JPEG HuffMin tables"]
     #[inline(always)]
     pub const fn huffmin_10(self) -> crate::common::Reg<regs::Huffmin10, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(376usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0178usize) as _) }
     }
     #[doc = "JPEG HuffMin tables"]
     #[inline(always)]
     pub const fn huffmin_11(self) -> crate::common::Reg<regs::Huffmin11, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(380usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x017cusize) as _) }
     }
     #[doc = "JPEG HuffMin tables"]
     #[inline(always)]
     pub const fn huffmin_12(self) -> crate::common::Reg<regs::Huffmin12, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(384usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0180usize) as _) }
     }
     #[doc = "JPEG HuffMin tables"]
     #[inline(always)]
     pub const fn huffmin_13(self) -> crate::common::Reg<regs::Huffmin13, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(388usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0184usize) as _) }
     }
     #[doc = "JPEG HuffMin tables"]
     #[inline(always)]
     pub const fn huffmin_14(self) -> crate::common::Reg<regs::Huffmin14, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(392usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0188usize) as _) }
     }
     #[doc = "JPEG HuffMin tables"]
     #[inline(always)]
     pub const fn huffmin_15(self) -> crate::common::Reg<regs::Huffmin15, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(396usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x018cusize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase0(self) -> crate::common::Reg<regs::Huffbase0, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(400usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0190usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase1(self) -> crate::common::Reg<regs::Huffbase1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(404usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0194usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase2(self) -> crate::common::Reg<regs::Huffbase2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(408usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0198usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase3(self) -> crate::common::Reg<regs::Huffbase3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(412usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x019cusize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase4(self) -> crate::common::Reg<regs::Huffbase4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(416usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01a0usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase5(self) -> crate::common::Reg<regs::Huffbase5, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(420usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01a4usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase6(self) -> crate::common::Reg<regs::Huffbase6, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(424usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01a8usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase7(self) -> crate::common::Reg<regs::Huffbase7, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(428usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01acusize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase8(self) -> crate::common::Reg<regs::Huffbase8, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(432usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01b0usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase9(self) -> crate::common::Reg<regs::Huffbase9, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(436usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01b4usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase10(self) -> crate::common::Reg<regs::Huffbase10, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(440usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01b8usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase11(self) -> crate::common::Reg<regs::Huffbase11, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(444usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01bcusize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase12(self) -> crate::common::Reg<regs::Huffbase12, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(448usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c0usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase13(self) -> crate::common::Reg<regs::Huffbase13, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(452usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c4usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase14(self) -> crate::common::Reg<regs::Huffbase14, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(456usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c8usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase15(self) -> crate::common::Reg<regs::Huffbase15, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(460usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01ccusize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase16(self) -> crate::common::Reg<regs::Huffbase16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(464usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01d0usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase17(self) -> crate::common::Reg<regs::Huffbase17, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(468usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01d4usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase18(self) -> crate::common::Reg<regs::Huffbase18, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(472usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01d8usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase19(self) -> crate::common::Reg<regs::Huffbase19, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(476usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01dcusize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase20(self) -> crate::common::Reg<regs::Huffbase20, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(480usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01e0usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase21(self) -> crate::common::Reg<regs::Huffbase21, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(484usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01e4usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase22(self) -> crate::common::Reg<regs::Huffbase22, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(488usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01e8usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase23(self) -> crate::common::Reg<regs::Huffbase23, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(492usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01ecusize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase24(self) -> crate::common::Reg<regs::Huffbase24, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(496usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01f0usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase25(self) -> crate::common::Reg<regs::Huffbase25, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(500usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01f4usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase26(self) -> crate::common::Reg<regs::Huffbase26, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(504usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01f8usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase27(self) -> crate::common::Reg<regs::Huffbase27, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(508usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01fcusize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase28(self) -> crate::common::Reg<regs::Huffbase28, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(512usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase29(self) -> crate::common::Reg<regs::Huffbase29, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(516usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0204usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase30(self) -> crate::common::Reg<regs::Huffbase30, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(520usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0208usize) as _) }
     }
     #[doc = "JPEG HuffSymb tables"]
     #[inline(always)]
     pub const fn huffbase31(self) -> crate::common::Reg<regs::Huffbase31, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(524usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x020cusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb0(self) -> crate::common::Reg<regs::Huffsymb0, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(528usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0210usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb1(self) -> crate::common::Reg<regs::Huffsymb1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(532usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0214usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb2(self) -> crate::common::Reg<regs::Huffsymb2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(536usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0218usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb3(self) -> crate::common::Reg<regs::Huffsymb3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(540usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x021cusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb4(self) -> crate::common::Reg<regs::Huffsymb4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(544usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0220usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb5(self) -> crate::common::Reg<regs::Huffsymb5, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(548usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0224usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb6(self) -> crate::common::Reg<regs::Huffsymb6, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(552usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0228usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb7(self) -> crate::common::Reg<regs::Huffsymb7, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(556usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x022cusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb8(self) -> crate::common::Reg<regs::Huffsymb8, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(560usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0230usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb9(self) -> crate::common::Reg<regs::Huffsymb9, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(564usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0234usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb10(self) -> crate::common::Reg<regs::Huffsymb10, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(568usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0238usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb11(self) -> crate::common::Reg<regs::Huffsymb11, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(572usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x023cusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb12(self) -> crate::common::Reg<regs::Huffsymb12, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(576usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0240usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb13(self) -> crate::common::Reg<regs::Huffsymb13, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(580usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0244usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb14(self) -> crate::common::Reg<regs::Huffsymb14, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(584usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0248usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb15(self) -> crate::common::Reg<regs::Huffsymb15, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(588usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x024cusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb16(self) -> crate::common::Reg<regs::Huffsymb16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(592usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0250usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb17(self) -> crate::common::Reg<regs::Huffsymb17, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(596usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0254usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb18(self) -> crate::common::Reg<regs::Huffsymb18, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(600usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0258usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb19(self) -> crate::common::Reg<regs::Huffsymb19, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(604usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x025cusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb20(self) -> crate::common::Reg<regs::Huffsymb20, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(608usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0260usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb21(self) -> crate::common::Reg<regs::Huffsymb21, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(612usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0264usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb22(self) -> crate::common::Reg<regs::Huffsymb22, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(616usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0268usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb23(self) -> crate::common::Reg<regs::Huffsymb23, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(620usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x026cusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb24(self) -> crate::common::Reg<regs::Huffsymb24, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(624usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0270usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb25(self) -> crate::common::Reg<regs::Huffsymb25, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(628usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0274usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb26(self) -> crate::common::Reg<regs::Huffsymb26, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(632usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0278usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb27(self) -> crate::common::Reg<regs::Huffsymb27, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(636usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x027cusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb28(self) -> crate::common::Reg<regs::Huffsymb28, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(640usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0280usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb29(self) -> crate::common::Reg<regs::Huffsymb29, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(644usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0284usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb30(self) -> crate::common::Reg<regs::Huffsymb30, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(648usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0288usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb31(self) -> crate::common::Reg<regs::Huffsymb31, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(652usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x028cusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb32(self) -> crate::common::Reg<regs::Huffsymb32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(656usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0290usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb33(self) -> crate::common::Reg<regs::Huffsymb33, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(660usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0294usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb34(self) -> crate::common::Reg<regs::Huffsymb34, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(664usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0298usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb35(self) -> crate::common::Reg<regs::Huffsymb35, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(668usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x029cusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb36(self) -> crate::common::Reg<regs::Huffsymb36, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(672usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02a0usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb37(self) -> crate::common::Reg<regs::Huffsymb37, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(676usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02a4usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb38(self) -> crate::common::Reg<regs::Huffsymb38, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(680usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02a8usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb39(self) -> crate::common::Reg<regs::Huffsymb39, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(684usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02acusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb40(self) -> crate::common::Reg<regs::Huffsymb40, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(688usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02b0usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb41(self) -> crate::common::Reg<regs::Huffsymb41, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(692usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02b4usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb42(self) -> crate::common::Reg<regs::Huffsymb42, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(696usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02b8usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb43(self) -> crate::common::Reg<regs::Huffsymb43, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(700usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02bcusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb44(self) -> crate::common::Reg<regs::Huffsymb44, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(704usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02c0usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb45(self) -> crate::common::Reg<regs::Huffsymb45, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(708usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02c4usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb46(self) -> crate::common::Reg<regs::Huffsymb46, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(712usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02c8usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb47(self) -> crate::common::Reg<regs::Huffsymb47, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(716usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02ccusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb48(self) -> crate::common::Reg<regs::Huffsymb48, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(720usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02d0usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb49(self) -> crate::common::Reg<regs::Huffsymb49, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(724usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02d4usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb50(self) -> crate::common::Reg<regs::Huffsymb50, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(728usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02d8usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb51(self) -> crate::common::Reg<regs::Huffsymb51, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(732usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02dcusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb52(self) -> crate::common::Reg<regs::Huffsymb52, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(736usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02e0usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb53(self) -> crate::common::Reg<regs::Huffsymb53, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(740usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02e4usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb54(self) -> crate::common::Reg<regs::Huffsymb54, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(744usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02e8usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb55(self) -> crate::common::Reg<regs::Huffsymb55, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(748usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02ecusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb56(self) -> crate::common::Reg<regs::Huffsymb56, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(752usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02f0usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb57(self) -> crate::common::Reg<regs::Huffsymb57, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(756usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02f4usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb58(self) -> crate::common::Reg<regs::Huffsymb58, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(760usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02f8usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb59(self) -> crate::common::Reg<regs::Huffsymb59, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(764usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02fcusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb60(self) -> crate::common::Reg<regs::Huffsymb60, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(768usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0300usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb61(self) -> crate::common::Reg<regs::Huffsymb61, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(772usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0304usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb62(self) -> crate::common::Reg<regs::Huffsymb62, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(776usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0308usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb63(self) -> crate::common::Reg<regs::Huffsymb63, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(780usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x030cusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb64(self) -> crate::common::Reg<regs::Huffsymb64, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(784usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0310usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb65(self) -> crate::common::Reg<regs::Huffsymb65, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(788usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0314usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb66(self) -> crate::common::Reg<regs::Huffsymb66, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(792usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0318usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb67(self) -> crate::common::Reg<regs::Huffsymb67, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(796usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x031cusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb68(self) -> crate::common::Reg<regs::Huffsymb68, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(800usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0320usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb69(self) -> crate::common::Reg<regs::Huffsymb69, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(804usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0324usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb70(self) -> crate::common::Reg<regs::Huffsymb70, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(808usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0328usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb71(self) -> crate::common::Reg<regs::Huffsymb71, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(812usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x032cusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb72(self) -> crate::common::Reg<regs::Huffsymb72, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(816usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0330usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb73(self) -> crate::common::Reg<regs::Huffsymb73, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(820usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0334usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb74(self) -> crate::common::Reg<regs::Huffsymb74, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(824usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0338usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb75(self) -> crate::common::Reg<regs::Huffsymb75, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(828usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x033cusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb76(self) -> crate::common::Reg<regs::Huffsymb76, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(832usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0340usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb77(self) -> crate::common::Reg<regs::Huffsymb77, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(836usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0344usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb78(self) -> crate::common::Reg<regs::Huffsymb78, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(840usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0348usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb79(self) -> crate::common::Reg<regs::Huffsymb79, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(844usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x034cusize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb80(self) -> crate::common::Reg<regs::Huffsymb80, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(848usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0350usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb81(self) -> crate::common::Reg<regs::Huffsymb81, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(852usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0354usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb82(self) -> crate::common::Reg<regs::Huffsymb82, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(856usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0358usize) as _) }
     }
     #[doc = "JPEG HUFFSYMB tables"]
     #[inline(always)]
     pub const fn huffsymb83(self) -> crate::common::Reg<regs::Huffsymb83, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(860usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x035cusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem0(self) -> crate::common::Reg<regs::Dhtmem0, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(864usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0360usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem2(self) -> crate::common::Reg<regs::Dhtmem2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(868usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0364usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem3(self) -> crate::common::Reg<regs::Dhtmem3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(872usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0368usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem4(self) -> crate::common::Reg<regs::Dhtmem4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(876usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x036cusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem5(self) -> crate::common::Reg<regs::Dhtmem5, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(880usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0370usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem6(self) -> crate::common::Reg<regs::Dhtmem6, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(884usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0374usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem7(self) -> crate::common::Reg<regs::Dhtmem7, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(888usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0378usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem8(self) -> crate::common::Reg<regs::Dhtmem8, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(892usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x037cusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem9(self) -> crate::common::Reg<regs::Dhtmem9, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(896usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0380usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem10(self) -> crate::common::Reg<regs::Dhtmem10, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(900usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0384usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem11(self) -> crate::common::Reg<regs::Dhtmem11, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(904usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0388usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem12(self) -> crate::common::Reg<regs::Dhtmem12, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(908usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x038cusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem13(self) -> crate::common::Reg<regs::Dhtmem13, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(912usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0390usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem14(self) -> crate::common::Reg<regs::Dhtmem14, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(916usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0394usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem15(self) -> crate::common::Reg<regs::Dhtmem15, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(920usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0398usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem16(self) -> crate::common::Reg<regs::Dhtmem16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(924usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x039cusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem17(self) -> crate::common::Reg<regs::Dhtmem17, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(928usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03a0usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem18(self) -> crate::common::Reg<regs::Dhtmem18, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(932usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03a4usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem19(self) -> crate::common::Reg<regs::Dhtmem19, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(936usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03a8usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem20(self) -> crate::common::Reg<regs::Dhtmem20, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(940usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03acusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem21(self) -> crate::common::Reg<regs::Dhtmem21, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(944usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03b0usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem22(self) -> crate::common::Reg<regs::Dhtmem22, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(948usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03b4usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem23(self) -> crate::common::Reg<regs::Dhtmem23, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(952usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03b8usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem24(self) -> crate::common::Reg<regs::Dhtmem24, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(956usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03bcusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem25(self) -> crate::common::Reg<regs::Dhtmem25, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(960usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03c0usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem26(self) -> crate::common::Reg<regs::Dhtmem26, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(964usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03c4usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem27(self) -> crate::common::Reg<regs::Dhtmem27, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(968usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03c8usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem28(self) -> crate::common::Reg<regs::Dhtmem28, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(972usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03ccusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem29(self) -> crate::common::Reg<regs::Dhtmem29, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(976usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03d0usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem30(self) -> crate::common::Reg<regs::Dhtmem30, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(980usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03d4usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem31(self) -> crate::common::Reg<regs::Dhtmem31, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(984usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03d8usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem32(self) -> crate::common::Reg<regs::Dhtmem32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(988usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03dcusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem33(self) -> crate::common::Reg<regs::Dhtmem33, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(992usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03e0usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem34(self) -> crate::common::Reg<regs::Dhtmem34, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(996usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03e4usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem35(self) -> crate::common::Reg<regs::Dhtmem35, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1000usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03e8usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem36(self) -> crate::common::Reg<regs::Dhtmem36, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1004usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03ecusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem37(self) -> crate::common::Reg<regs::Dhtmem37, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1008usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03f0usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem38(self) -> crate::common::Reg<regs::Dhtmem38, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1012usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03f4usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem39(self) -> crate::common::Reg<regs::Dhtmem39, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1016usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03f8usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem40(self) -> crate::common::Reg<regs::Dhtmem40, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1020usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03fcusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem41(self) -> crate::common::Reg<regs::Dhtmem41, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1024usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0400usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem42(self) -> crate::common::Reg<regs::Dhtmem42, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1028usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0404usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem43(self) -> crate::common::Reg<regs::Dhtmem43, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1032usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0408usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem44(self) -> crate::common::Reg<regs::Dhtmem44, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1036usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x040cusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem45(self) -> crate::common::Reg<regs::Dhtmem45, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1040usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0410usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem46(self) -> crate::common::Reg<regs::Dhtmem46, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1044usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0414usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem47(self) -> crate::common::Reg<regs::Dhtmem47, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1048usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0418usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem48(self) -> crate::common::Reg<regs::Dhtmem48, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1052usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x041cusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem49(self) -> crate::common::Reg<regs::Dhtmem49, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1056usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0420usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem50(self) -> crate::common::Reg<regs::Dhtmem50, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1060usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0424usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem51(self) -> crate::common::Reg<regs::Dhtmem51, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1064usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0428usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem52(self) -> crate::common::Reg<regs::Dhtmem52, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1068usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x042cusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem53(self) -> crate::common::Reg<regs::Dhtmem53, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1072usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0430usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem54(self) -> crate::common::Reg<regs::Dhtmem54, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1076usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0434usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem55(self) -> crate::common::Reg<regs::Dhtmem55, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1080usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0438usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem56(self) -> crate::common::Reg<regs::Dhtmem56, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1084usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x043cusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem57(self) -> crate::common::Reg<regs::Dhtmem57, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1088usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0440usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem58(self) -> crate::common::Reg<regs::Dhtmem58, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1092usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0444usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem59(self) -> crate::common::Reg<regs::Dhtmem59, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1096usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0448usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem60(self) -> crate::common::Reg<regs::Dhtmem60, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1100usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x044cusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem61(self) -> crate::common::Reg<regs::Dhtmem61, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1104usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0450usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem62(self) -> crate::common::Reg<regs::Dhtmem62, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1108usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0454usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem63(self) -> crate::common::Reg<regs::Dhtmem63, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1112usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0458usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem64(self) -> crate::common::Reg<regs::Dhtmem64, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1116usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x045cusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem65(self) -> crate::common::Reg<regs::Dhtmem65, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1120usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0460usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem66(self) -> crate::common::Reg<regs::Dhtmem66, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1124usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0464usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem67(self) -> crate::common::Reg<regs::Dhtmem67, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1128usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0468usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem68(self) -> crate::common::Reg<regs::Dhtmem68, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1132usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x046cusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem69(self) -> crate::common::Reg<regs::Dhtmem69, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1136usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0470usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem70(self) -> crate::common::Reg<regs::Dhtmem70, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1140usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0474usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem71(self) -> crate::common::Reg<regs::Dhtmem71, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1144usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0478usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem72(self) -> crate::common::Reg<regs::Dhtmem72, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1148usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x047cusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem73(self) -> crate::common::Reg<regs::Dhtmem73, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1152usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0480usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem74(self) -> crate::common::Reg<regs::Dhtmem74, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1156usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0484usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem75(self) -> crate::common::Reg<regs::Dhtmem75, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1160usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0488usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem76(self) -> crate::common::Reg<regs::Dhtmem76, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1164usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x048cusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem77(self) -> crate::common::Reg<regs::Dhtmem77, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1168usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0490usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem78(self) -> crate::common::Reg<regs::Dhtmem78, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1172usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0494usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem79(self) -> crate::common::Reg<regs::Dhtmem79, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1176usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0498usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem80(self) -> crate::common::Reg<regs::Dhtmem80, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1180usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x049cusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem81(self) -> crate::common::Reg<regs::Dhtmem81, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1184usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04a0usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem82(self) -> crate::common::Reg<regs::Dhtmem82, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1188usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04a4usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem83(self) -> crate::common::Reg<regs::Dhtmem83, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1192usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04a8usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem84(self) -> crate::common::Reg<regs::Dhtmem84, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1196usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04acusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem85(self) -> crate::common::Reg<regs::Dhtmem85, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1200usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04b0usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem86(self) -> crate::common::Reg<regs::Dhtmem86, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1204usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04b4usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem87(self) -> crate::common::Reg<regs::Dhtmem87, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1208usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04b8usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem88(self) -> crate::common::Reg<regs::Dhtmem88, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1212usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04bcusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem89(self) -> crate::common::Reg<regs::Dhtmem89, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1216usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04c0usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem90(self) -> crate::common::Reg<regs::Dhtmem90, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1220usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04c4usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem91(self) -> crate::common::Reg<regs::Dhtmem91, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1224usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04c8usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem92(self) -> crate::common::Reg<regs::Dhtmem92, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1228usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04ccusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem93(self) -> crate::common::Reg<regs::Dhtmem93, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1232usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04d0usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem94(self) -> crate::common::Reg<regs::Dhtmem94, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1236usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04d4usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem95(self) -> crate::common::Reg<regs::Dhtmem95, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1240usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04d8usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem96(self) -> crate::common::Reg<regs::Dhtmem96, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1244usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04dcusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem97(self) -> crate::common::Reg<regs::Dhtmem97, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1248usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04e0usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem98(self) -> crate::common::Reg<regs::Dhtmem98, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1252usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04e4usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem99(self) -> crate::common::Reg<regs::Dhtmem99, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1256usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04e8usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem100(self) -> crate::common::Reg<regs::Dhtmem100, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1260usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04ecusize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem101(self) -> crate::common::Reg<regs::Dhtmem101, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1264usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04f0usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem102(self) -> crate::common::Reg<regs::Dhtmem102, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1268usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04f4usize) as _) }
     }
     #[doc = "JPEG DHTMem tables"]
     #[inline(always)]
     pub const fn dhtmem103(self) -> crate::common::Reg<regs::Dhtmem103, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1272usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04f8usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_0(self) -> crate::common::Reg<regs::HuffencAc00, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1280usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0500usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_1(self) -> crate::common::Reg<regs::HuffencAc01, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1284usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0504usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_2(self) -> crate::common::Reg<regs::HuffencAc02, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1288usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0508usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_3(self) -> crate::common::Reg<regs::HuffencAc03, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1292usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x050cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_4(self) -> crate::common::Reg<regs::HuffencAc04, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1296usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0510usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_5(self) -> crate::common::Reg<regs::HuffencAc05, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1300usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0514usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_6(self) -> crate::common::Reg<regs::HuffencAc06, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1304usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0518usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_7(self) -> crate::common::Reg<regs::HuffencAc07, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1308usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x051cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_8(self) -> crate::common::Reg<regs::HuffencAc08, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1312usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0520usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_9(self) -> crate::common::Reg<regs::HuffencAc09, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1316usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0524usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_10(self) -> crate::common::Reg<regs::HuffencAc010, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1320usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0528usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_11(self) -> crate::common::Reg<regs::HuffencAc011, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1324usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x052cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_12(self) -> crate::common::Reg<regs::HuffencAc012, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1328usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0530usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_13(self) -> crate::common::Reg<regs::HuffencAc013, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1332usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0534usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_14(self) -> crate::common::Reg<regs::HuffencAc014, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1336usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0538usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_15(self) -> crate::common::Reg<regs::HuffencAc015, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1340usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x053cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_16(self) -> crate::common::Reg<regs::HuffencAc016, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1344usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0540usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_17(self) -> crate::common::Reg<regs::HuffencAc017, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1348usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0544usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_18(self) -> crate::common::Reg<regs::HuffencAc018, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1352usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0548usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_19(self) -> crate::common::Reg<regs::HuffencAc019, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1356usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x054cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_20(self) -> crate::common::Reg<regs::HuffencAc020, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1360usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0550usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_21(self) -> crate::common::Reg<regs::HuffencAc021, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1364usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0554usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_22(self) -> crate::common::Reg<regs::HuffencAc022, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1368usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0558usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_23(self) -> crate::common::Reg<regs::HuffencAc023, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1372usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x055cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_24(self) -> crate::common::Reg<regs::HuffencAc024, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1376usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0560usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_25(self) -> crate::common::Reg<regs::HuffencAc025, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1380usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0564usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_26(self) -> crate::common::Reg<regs::HuffencAc026, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1384usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0568usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_27(self) -> crate::common::Reg<regs::HuffencAc027, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1388usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x056cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_28(self) -> crate::common::Reg<regs::HuffencAc028, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1392usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0570usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_29(self) -> crate::common::Reg<regs::HuffencAc029, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1396usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0574usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_30(self) -> crate::common::Reg<regs::HuffencAc030, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1400usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0578usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_31(self) -> crate::common::Reg<regs::HuffencAc031, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1404usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x057cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_32(self) -> crate::common::Reg<regs::HuffencAc032, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1408usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0580usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_33(self) -> crate::common::Reg<regs::HuffencAc033, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1412usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0584usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_34(self) -> crate::common::Reg<regs::HuffencAc034, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1416usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0588usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_35(self) -> crate::common::Reg<regs::HuffencAc035, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1420usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x058cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_36(self) -> crate::common::Reg<regs::HuffencAc036, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1424usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0590usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_37(self) -> crate::common::Reg<regs::HuffencAc037, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1428usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0594usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_38(self) -> crate::common::Reg<regs::HuffencAc038, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1432usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0598usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_39(self) -> crate::common::Reg<regs::HuffencAc039, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1436usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x059cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_40(self) -> crate::common::Reg<regs::HuffencAc040, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1440usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05a0usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_41(self) -> crate::common::Reg<regs::HuffencAc041, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1444usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05a4usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_42(self) -> crate::common::Reg<regs::HuffencAc042, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1448usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05a8usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_43(self) -> crate::common::Reg<regs::HuffencAc043, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1452usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05acusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_44(self) -> crate::common::Reg<regs::HuffencAc044, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1456usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05b0usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_45(self) -> crate::common::Reg<regs::HuffencAc045, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1460usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05b4usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_46(self) -> crate::common::Reg<regs::HuffencAc046, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1464usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05b8usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_47(self) -> crate::common::Reg<regs::HuffencAc047, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1468usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05bcusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_48(self) -> crate::common::Reg<regs::HuffencAc048, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1472usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05c0usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_49(self) -> crate::common::Reg<regs::HuffencAc049, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1476usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05c4usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_50(self) -> crate::common::Reg<regs::HuffencAc050, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1480usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05c8usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_51(self) -> crate::common::Reg<regs::HuffencAc051, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1484usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05ccusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_52(self) -> crate::common::Reg<regs::HuffencAc052, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1488usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05d0usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_53(self) -> crate::common::Reg<regs::HuffencAc053, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1492usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05d4usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_54(self) -> crate::common::Reg<regs::HuffencAc054, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1496usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05d8usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_55(self) -> crate::common::Reg<regs::HuffencAc055, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1500usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05dcusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_56(self) -> crate::common::Reg<regs::HuffencAc056, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1504usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05e0usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_57(self) -> crate::common::Reg<regs::HuffencAc057, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1508usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05e4usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_58(self) -> crate::common::Reg<regs::HuffencAc058, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1512usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05e8usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_59(self) -> crate::common::Reg<regs::HuffencAc059, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1516usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05ecusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_60(self) -> crate::common::Reg<regs::HuffencAc060, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1520usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05f0usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_61(self) -> crate::common::Reg<regs::HuffencAc061, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1524usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05f4usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_62(self) -> crate::common::Reg<regs::HuffencAc062, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1528usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05f8usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_63(self) -> crate::common::Reg<regs::HuffencAc063, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1532usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05fcusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_64(self) -> crate::common::Reg<regs::HuffencAc064, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1536usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0600usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_65(self) -> crate::common::Reg<regs::HuffencAc065, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1540usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0604usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_66(self) -> crate::common::Reg<regs::HuffencAc066, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1544usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0608usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_67(self) -> crate::common::Reg<regs::HuffencAc067, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1548usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x060cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_68(self) -> crate::common::Reg<regs::HuffencAc068, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1552usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0610usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_69(self) -> crate::common::Reg<regs::HuffencAc069, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1556usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0614usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_70(self) -> crate::common::Reg<regs::HuffencAc070, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1560usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0618usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_71(self) -> crate::common::Reg<regs::HuffencAc071, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1564usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x061cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_72(self) -> crate::common::Reg<regs::HuffencAc072, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1568usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0620usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_73(self) -> crate::common::Reg<regs::HuffencAc073, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1572usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0624usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_74(self) -> crate::common::Reg<regs::HuffencAc074, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1576usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0628usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_75(self) -> crate::common::Reg<regs::HuffencAc075, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1580usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x062cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_76(self) -> crate::common::Reg<regs::HuffencAc076, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1584usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0630usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_77(self) -> crate::common::Reg<regs::HuffencAc077, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1588usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0634usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_78(self) -> crate::common::Reg<regs::HuffencAc078, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1592usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0638usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_79(self) -> crate::common::Reg<regs::HuffencAc079, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1596usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x063cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_80(self) -> crate::common::Reg<regs::HuffencAc080, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1600usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0640usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_81(self) -> crate::common::Reg<regs::HuffencAc081, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1604usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0644usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_82(self) -> crate::common::Reg<regs::HuffencAc082, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1608usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0648usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_83(self) -> crate::common::Reg<regs::HuffencAc083, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1612usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x064cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_84(self) -> crate::common::Reg<regs::HuffencAc084, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1616usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0650usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_85(self) -> crate::common::Reg<regs::HuffencAc085, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1620usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0654usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_86(self) -> crate::common::Reg<regs::HuffencAc086, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1624usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0658usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_ac0_87(self) -> crate::common::Reg<regs::HuffencAc087, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1628usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x065cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_0(self) -> crate::common::Reg<regs::HuffencAc10, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1632usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0660usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_1(self) -> crate::common::Reg<regs::HuffencAc11, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1636usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0664usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_2(self) -> crate::common::Reg<regs::HuffencAc12, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1640usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0668usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_3(self) -> crate::common::Reg<regs::HuffencAc13, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1644usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x066cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_4(self) -> crate::common::Reg<regs::HuffencAc14, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1648usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0670usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_5(self) -> crate::common::Reg<regs::HuffencAc15, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1652usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0674usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_6(self) -> crate::common::Reg<regs::HuffencAc16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1656usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0678usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_7(self) -> crate::common::Reg<regs::HuffencAc17, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1660usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x067cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_8(self) -> crate::common::Reg<regs::HuffencAc18, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1664usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0680usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_9(self) -> crate::common::Reg<regs::HuffencAc19, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1668usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0684usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_10(self) -> crate::common::Reg<regs::HuffencAc110, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1672usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0688usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_11(self) -> crate::common::Reg<regs::HuffencAc111, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1676usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x068cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_12(self) -> crate::common::Reg<regs::HuffencAc112, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1680usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0690usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_13(self) -> crate::common::Reg<regs::HuffencAc113, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1684usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0694usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_14(self) -> crate::common::Reg<regs::HuffencAc114, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1688usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0698usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_15(self) -> crate::common::Reg<regs::HuffencAc115, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1692usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x069cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_16(self) -> crate::common::Reg<regs::HuffencAc116, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1696usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06a0usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_17(self) -> crate::common::Reg<regs::HuffencAc117, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1700usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06a4usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_18(self) -> crate::common::Reg<regs::HuffencAc118, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1704usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06a8usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_19(self) -> crate::common::Reg<regs::HuffencAc119, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1708usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06acusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_20(self) -> crate::common::Reg<regs::HuffencAc120, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1712usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06b0usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_21(self) -> crate::common::Reg<regs::HuffencAc121, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1716usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06b4usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_22(self) -> crate::common::Reg<regs::HuffencAc122, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1720usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06b8usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_23(self) -> crate::common::Reg<regs::HuffencAc123, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1724usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06bcusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_24(self) -> crate::common::Reg<regs::HuffencAc124, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1728usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06c0usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_25(self) -> crate::common::Reg<regs::HuffencAc125, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1732usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06c4usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_26(self) -> crate::common::Reg<regs::HuffencAc126, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1736usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06c8usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_27(self) -> crate::common::Reg<regs::HuffencAc127, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1740usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06ccusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_28(self) -> crate::common::Reg<regs::HuffencAc128, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1744usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06d0usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_29(self) -> crate::common::Reg<regs::HuffencAc129, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1748usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06d4usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_30(self) -> crate::common::Reg<regs::HuffencAc130, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1752usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06d8usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_31(self) -> crate::common::Reg<regs::HuffencAc131, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1756usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06dcusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_32(self) -> crate::common::Reg<regs::HuffencAc132, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1760usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06e0usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_33(self) -> crate::common::Reg<regs::HuffencAc133, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1764usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06e4usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_34(self) -> crate::common::Reg<regs::HuffencAc134, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1768usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06e8usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_35(self) -> crate::common::Reg<regs::HuffencAc135, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1772usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06ecusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_36(self) -> crate::common::Reg<regs::HuffencAc136, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1776usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06f0usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_37(self) -> crate::common::Reg<regs::HuffencAc137, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1780usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06f4usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_38(self) -> crate::common::Reg<regs::HuffencAc138, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1784usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06f8usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_39(self) -> crate::common::Reg<regs::HuffencAc139, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1788usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06fcusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_40(self) -> crate::common::Reg<regs::HuffencAc140, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1792usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0700usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_41(self) -> crate::common::Reg<regs::HuffencAc141, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1796usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0704usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_42(self) -> crate::common::Reg<regs::HuffencAc142, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1800usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0708usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_43(self) -> crate::common::Reg<regs::HuffencAc143, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1804usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x070cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_44(self) -> crate::common::Reg<regs::HuffencAc144, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1808usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0710usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_45(self) -> crate::common::Reg<regs::HuffencAc145, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1812usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0714usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_46(self) -> crate::common::Reg<regs::HuffencAc146, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1816usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0718usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_47(self) -> crate::common::Reg<regs::HuffencAc147, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1820usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x071cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_48(self) -> crate::common::Reg<regs::HuffencAc148, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1824usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0720usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_49(self) -> crate::common::Reg<regs::HuffencAc149, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1828usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0724usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_50(self) -> crate::common::Reg<regs::HuffencAc150, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1832usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0728usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_51(self) -> crate::common::Reg<regs::HuffencAc151, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1836usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x072cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_52(self) -> crate::common::Reg<regs::HuffencAc152, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1840usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0730usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_53(self) -> crate::common::Reg<regs::HuffencAc153, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1844usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0734usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_54(self) -> crate::common::Reg<regs::HuffencAc154, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1848usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0738usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_55(self) -> crate::common::Reg<regs::HuffencAc155, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1852usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x073cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_56(self) -> crate::common::Reg<regs::HuffencAc156, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1856usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0740usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_57(self) -> crate::common::Reg<regs::HuffencAc157, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1860usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0744usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_58(self) -> crate::common::Reg<regs::HuffencAc158, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1864usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0748usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_59(self) -> crate::common::Reg<regs::HuffencAc159, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1868usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x074cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_60(self) -> crate::common::Reg<regs::HuffencAc160, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1872usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0750usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_61(self) -> crate::common::Reg<regs::HuffencAc161, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1876usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0754usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_62(self) -> crate::common::Reg<regs::HuffencAc162, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1880usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0758usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_63(self) -> crate::common::Reg<regs::HuffencAc163, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1884usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x075cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_64(self) -> crate::common::Reg<regs::HuffencAc164, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1888usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0760usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_65(self) -> crate::common::Reg<regs::HuffencAc165, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1892usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0764usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_66(self) -> crate::common::Reg<regs::HuffencAc166, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1896usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0768usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_67(self) -> crate::common::Reg<regs::HuffencAc167, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1900usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x076cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_68(self) -> crate::common::Reg<regs::HuffencAc168, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1904usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0770usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_69(self) -> crate::common::Reg<regs::HuffencAc169, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1908usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0774usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_70(self) -> crate::common::Reg<regs::HuffencAc170, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1912usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0778usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_71(self) -> crate::common::Reg<regs::HuffencAc171, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1916usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x077cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_72(self) -> crate::common::Reg<regs::HuffencAc172, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1920usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0780usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_73(self) -> crate::common::Reg<regs::HuffencAc173, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1924usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0784usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_74(self) -> crate::common::Reg<regs::HuffencAc174, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1928usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0788usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_75(self) -> crate::common::Reg<regs::HuffencAc175, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1932usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x078cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_76(self) -> crate::common::Reg<regs::HuffencAc176, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1936usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0790usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_77(self) -> crate::common::Reg<regs::HuffencAc177, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1940usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0794usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_78(self) -> crate::common::Reg<regs::HuffencAc178, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1944usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0798usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_79(self) -> crate::common::Reg<regs::HuffencAc179, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1948usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x079cusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_80(self) -> crate::common::Reg<regs::HuffencAc180, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1952usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07a0usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_81(self) -> crate::common::Reg<regs::HuffencAc181, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1956usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07a4usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_82(self) -> crate::common::Reg<regs::HuffencAc182, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1960usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07a8usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_83(self) -> crate::common::Reg<regs::HuffencAc183, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1964usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07acusize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_84(self) -> crate::common::Reg<regs::HuffencAc184, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1968usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07b0usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_85(self) -> crate::common::Reg<regs::HuffencAc185, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1972usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07b4usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_86(self) -> crate::common::Reg<regs::HuffencAc186, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1976usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07b8usize) as _) }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_ac1_87(self) -> crate::common::Reg<regs::HuffencAc187, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1980usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07bcusize) as _) }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_dc0_0(self) -> crate::common::Reg<regs::HuffencDc00, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1984usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07c0usize) as _) }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_dc0_1(self) -> crate::common::Reg<regs::HuffencDc01, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1988usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07c4usize) as _) }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_dc0_2(self) -> crate::common::Reg<regs::HuffencDc02, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1992usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07c8usize) as _) }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_dc0_3(self) -> crate::common::Reg<regs::HuffencDc03, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1996usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07ccusize) as _) }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_dc0_4(self) -> crate::common::Reg<regs::HuffencDc04, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2000usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07d0usize) as _) }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_dc0_5(self) -> crate::common::Reg<regs::HuffencDc05, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2004usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07d4usize) as _) }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_dc0_6(self) -> crate::common::Reg<regs::HuffencDc06, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2008usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07d8usize) as _) }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
     #[inline(always)]
     pub const fn huffenc_dc0_7(self) -> crate::common::Reg<regs::HuffencDc07, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2012usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07dcusize) as _) }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_dc1_0(self) -> crate::common::Reg<regs::HuffencDc10, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2016usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07e0usize) as _) }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_dc1_1(self) -> crate::common::Reg<regs::HuffencDc11, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2020usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07e4usize) as _) }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_dc1_2(self) -> crate::common::Reg<regs::HuffencDc12, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2024usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07e8usize) as _) }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_dc1_3(self) -> crate::common::Reg<regs::HuffencDc13, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2028usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07ecusize) as _) }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_dc1_4(self) -> crate::common::Reg<regs::HuffencDc14, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2032usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07f0usize) as _) }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_dc1_5(self) -> crate::common::Reg<regs::HuffencDc15, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2036usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07f4usize) as _) }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_dc1_6(self) -> crate::common::Reg<regs::HuffencDc16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2040usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07f8usize) as _) }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
     #[inline(always)]
     pub const fn huffenc_dc1_7(self) -> crate::common::Reg<regs::HuffencDc17, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2044usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07fcusize) as _) }
     }
 }
 pub mod regs {

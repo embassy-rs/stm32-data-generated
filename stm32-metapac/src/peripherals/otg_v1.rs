@@ -22,271 +22,271 @@ impl Otg {
     #[doc = "Control and status register"]
     #[inline(always)]
     pub const fn gotgctl(self) -> crate::common::Reg<regs::Gotgctl, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Interrupt register"]
     #[inline(always)]
     pub const fn gotgint(self) -> crate::common::Reg<regs::Gotgint, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "AHB configuration register"]
     #[inline(always)]
     pub const fn gahbcfg(self) -> crate::common::Reg<regs::Gahbcfg, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "USB configuration register"]
     #[inline(always)]
     pub const fn gusbcfg(self) -> crate::common::Reg<regs::Gusbcfg, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Reset register"]
     #[inline(always)]
     pub const fn grstctl(self) -> crate::common::Reg<regs::Grstctl, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Core interrupt register"]
     #[inline(always)]
     pub const fn gintsts(self) -> crate::common::Reg<regs::Gintsts, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Interrupt mask register"]
     #[inline(always)]
     pub const fn gintmsk(self) -> crate::common::Reg<regs::Gintmsk, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Receive status debug read register"]
     #[inline(always)]
     pub const fn grxstsr(self) -> crate::common::Reg<regs::Grxsts, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "Status read and pop register"]
     #[inline(always)]
     pub const fn grxstsp(self) -> crate::common::Reg<regs::Grxsts, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "Receive FIFO size register"]
     #[inline(always)]
     pub const fn grxfsiz(self) -> crate::common::Reg<regs::Grxfsiz, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "Endpoint 0 transmit FIFO size register (device mode)"]
     #[inline(always)]
     pub const fn dieptxf0(self) -> crate::common::Reg<regs::Fsiz, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "Non-periodic transmit FIFO size register (host mode)"]
     #[inline(always)]
     pub const fn hnptxfsiz(self) -> crate::common::Reg<regs::Fsiz, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "Non-periodic transmit FIFO/queue status register (host mode)"]
     #[inline(always)]
     pub const fn hnptxsts(self) -> crate::common::Reg<regs::Hnptxsts, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "OTG I2C access register"]
     #[inline(always)]
     pub const fn gi2cctl(self) -> crate::common::Reg<regs::Gi2cctl, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "General core configuration register, for core_id 0x0000_1xxx"]
     #[inline(always)]
     pub const fn gccfg_v1(self) -> crate::common::Reg<regs::GccfgV1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[doc = "General core configuration register, for core_id 0x0000_\\[23\\]xxx"]
     #[inline(always)]
     pub const fn gccfg_v2(self) -> crate::common::Reg<regs::GccfgV2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[doc = "Core ID register"]
     #[inline(always)]
     pub const fn cid(self) -> crate::common::Reg<regs::Cid, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[doc = "OTG core LPM configuration register"]
     #[inline(always)]
     pub const fn glpmcfg(self) -> crate::common::Reg<regs::Glpmcfg, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[doc = "Host periodic transmit FIFO size register"]
     #[inline(always)]
     pub const fn hptxfsiz(self) -> crate::common::Reg<regs::Fsiz, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(256usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
     #[doc = "Device IN endpoint transmit FIFO size register"]
     #[inline(always)]
     pub const fn dieptxf(self, n: usize) -> crate::common::Reg<regs::Fsiz, crate::common::RW> {
         assert!(n < 7usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(260usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize + n * 4usize) as _) }
     }
     #[doc = "Host configuration register"]
     #[inline(always)]
     pub const fn hcfg(self) -> crate::common::Reg<regs::Hcfg, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1024usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0400usize) as _) }
     }
     #[doc = "Host frame interval register"]
     #[inline(always)]
     pub const fn hfir(self) -> crate::common::Reg<regs::Hfir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1028usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0404usize) as _) }
     }
     #[doc = "Host frame number/frame time remaining register"]
     #[inline(always)]
     pub const fn hfnum(self) -> crate::common::Reg<regs::Hfnum, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1032usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0408usize) as _) }
     }
     #[doc = "Periodic transmit FIFO/queue status register"]
     #[inline(always)]
     pub const fn hptxsts(self) -> crate::common::Reg<regs::Hptxsts, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1040usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0410usize) as _) }
     }
     #[doc = "Host all channels interrupt register"]
     #[inline(always)]
     pub const fn haint(self) -> crate::common::Reg<regs::Haint, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1044usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0414usize) as _) }
     }
     #[doc = "Host all channels interrupt mask register"]
     #[inline(always)]
     pub const fn haintmsk(self) -> crate::common::Reg<regs::Haintmsk, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1048usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0418usize) as _) }
     }
     #[doc = "Host port control and status register"]
     #[inline(always)]
     pub const fn hprt(self) -> crate::common::Reg<regs::Hprt, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1088usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0440usize) as _) }
     }
     #[doc = "Host channel characteristics register"]
     #[inline(always)]
     pub const fn hcchar(self, n: usize) -> crate::common::Reg<regs::Hcchar, crate::common::RW> {
         assert!(n < 12usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1280usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0500usize + n * 32usize) as _) }
     }
     #[doc = "Host channel split control register"]
     #[inline(always)]
     pub const fn hcsplt(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 12usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1284usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0504usize + n * 32usize) as _) }
     }
     #[doc = "Host channel interrupt register"]
     #[inline(always)]
     pub const fn hcint(self, n: usize) -> crate::common::Reg<regs::Hcint, crate::common::RW> {
         assert!(n < 12usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1288usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0508usize + n * 32usize) as _) }
     }
     #[doc = "Host channel mask register"]
     #[inline(always)]
     pub const fn hcintmsk(self, n: usize) -> crate::common::Reg<regs::Hcintmsk, crate::common::RW> {
         assert!(n < 12usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1292usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x050cusize + n * 32usize) as _) }
     }
     #[doc = "Host channel transfer size register"]
     #[inline(always)]
     pub const fn hctsiz(self, n: usize) -> crate::common::Reg<regs::Hctsiz, crate::common::RW> {
         assert!(n < 12usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(1296usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0510usize + n * 32usize) as _) }
     }
     #[doc = "Device configuration register"]
     #[inline(always)]
     pub const fn dcfg(self) -> crate::common::Reg<regs::Dcfg, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2048usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0800usize) as _) }
     }
     #[doc = "Device control register"]
     #[inline(always)]
     pub const fn dctl(self) -> crate::common::Reg<regs::Dctl, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2052usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0804usize) as _) }
     }
     #[doc = "Device status register"]
     #[inline(always)]
     pub const fn dsts(self) -> crate::common::Reg<regs::Dsts, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2056usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0808usize) as _) }
     }
     #[doc = "Device IN endpoint common interrupt mask register"]
     #[inline(always)]
     pub const fn diepmsk(self) -> crate::common::Reg<regs::Diepmsk, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2064usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0810usize) as _) }
     }
     #[doc = "Device OUT endpoint common interrupt mask register"]
     #[inline(always)]
     pub const fn doepmsk(self) -> crate::common::Reg<regs::Doepmsk, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2068usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0814usize) as _) }
     }
     #[doc = "Device all endpoints interrupt register"]
     #[inline(always)]
     pub const fn daint(self) -> crate::common::Reg<regs::Daint, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2072usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0818usize) as _) }
     }
     #[doc = "All endpoints interrupt mask register"]
     #[inline(always)]
     pub const fn daintmsk(self) -> crate::common::Reg<regs::Daintmsk, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2076usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x081cusize) as _) }
     }
     #[doc = "Device VBUS discharge time register"]
     #[inline(always)]
     pub const fn dvbusdis(self) -> crate::common::Reg<regs::Dvbusdis, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2088usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0828usize) as _) }
     }
     #[doc = "Device VBUS pulsing time register"]
     #[inline(always)]
     pub const fn dvbuspulse(self) -> crate::common::Reg<regs::Dvbuspulse, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2092usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x082cusize) as _) }
     }
     #[doc = "Device IN endpoint FIFO empty interrupt mask register"]
     #[inline(always)]
     pub const fn diepempmsk(self) -> crate::common::Reg<regs::Diepempmsk, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2100usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0834usize) as _) }
     }
     #[doc = "Device IN endpoint control register"]
     #[inline(always)]
     pub const fn diepctl(self, n: usize) -> crate::common::Reg<regs::Diepctl, crate::common::RW> {
         assert!(n < 16usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2304usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0900usize + n * 32usize) as _) }
     }
     #[doc = "Device IN endpoint interrupt register"]
     #[inline(always)]
     pub const fn diepint(self, n: usize) -> crate::common::Reg<regs::Diepint, crate::common::RW> {
         assert!(n < 16usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2312usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0908usize + n * 32usize) as _) }
     }
     #[doc = "Device IN endpoint transfer size register"]
     #[inline(always)]
     pub const fn dieptsiz(self, n: usize) -> crate::common::Reg<regs::Dieptsiz, crate::common::RW> {
         assert!(n < 16usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2320usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0910usize + n * 32usize) as _) }
     }
     #[doc = "Device IN endpoint transmit FIFO status register"]
     #[inline(always)]
     pub const fn dtxfsts(self, n: usize) -> crate::common::Reg<regs::Dtxfsts, crate::common::R> {
         assert!(n < 16usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2328usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0918usize + n * 32usize) as _) }
     }
     #[doc = "Device OUT endpoint control register"]
     #[inline(always)]
     pub const fn doepctl(self, n: usize) -> crate::common::Reg<regs::Doepctl, crate::common::RW> {
         assert!(n < 16usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2816usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b00usize + n * 32usize) as _) }
     }
     #[doc = "Device OUT endpoint interrupt register"]
     #[inline(always)]
     pub const fn doepint(self, n: usize) -> crate::common::Reg<regs::Doepint, crate::common::RW> {
         assert!(n < 16usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2824usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b08usize + n * 32usize) as _) }
     }
     #[doc = "Device OUT endpoint transfer size register"]
     #[inline(always)]
     pub const fn doeptsiz(self, n: usize) -> crate::common::Reg<regs::Doeptsiz, crate::common::RW> {
         assert!(n < 16usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(2832usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b10usize + n * 32usize) as _) }
     }
     #[doc = "Power and clock gating control register"]
     #[inline(always)]
     pub const fn pcgcctl(self) -> crate::common::Reg<regs::Pcgcctl, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(3584usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e00usize) as _) }
     }
     #[doc = "Device endpoint / host channel FIFO register"]
     #[inline(always)]
     pub const fn fifo(self, n: usize) -> crate::common::Reg<regs::Fifo, crate::common::RW> {
         assert!(n < 16usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4096usize + n * 4096usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1000usize + n * 4096usize) as _) }
     }
 }
 pub mod regs {
@@ -4169,7 +4169,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dpid {
-        DATA0 = 0,
+        DATA0 = 0x0,
         DATA2 = 0x01,
         DATA1 = 0x02,
         MDATA = 0x03,
@@ -4200,7 +4200,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dspd {
         #[doc = "High speed"]
-        HIGH_SPEED = 0,
+        HIGH_SPEED = 0x0,
         #[doc = "Full speed using external ULPI PHY"]
         FULL_SPEED_EXTERNAL = 0x01,
         _RESERVED_2 = 0x02,
@@ -4232,7 +4232,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Eptyp {
-        CONTROL = 0,
+        CONTROL = 0x0,
         ISOCHRONOUS = 0x01,
         BULK = 0x02,
         INTERRUPT = 0x03,
@@ -4263,7 +4263,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pfivl {
         #[doc = "80% of the frame interval"]
-        FRAME_INTERVAL_80 = 0,
+        FRAME_INTERVAL_80 = 0x0,
         #[doc = "85% of the frame interval"]
         FRAME_INTERVAL_85 = 0x01,
         #[doc = "90% of the frame interval"]
@@ -4296,7 +4296,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pktstsd {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "Global OUT NAK (triggers an interrupt)"]
         OUT_NAK = 0x01,
         #[doc = "OUT data packet received"]
@@ -4343,7 +4343,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pktstsh {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "IN data packet received"]
         IN_DATA_RX = 0x02,

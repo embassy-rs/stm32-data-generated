@@ -9,7 +9,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "uid",
             description: Some("Factory programmed 96-bit unique device identifier word 0"),
             array: Some(Array::Regular(RegularArray { len: 3, stride: 4 })),
-            byte_offset: 0,
+            byte_offset: 0x0,
             inner: BlockItemInner::Register(Register {
                 access: Access::Read,
                 bit_size: 32,

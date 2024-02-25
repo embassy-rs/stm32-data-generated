@@ -22,7 +22,7 @@ impl Opamp {
     #[doc = "OPAMP control/status register"]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
 }
 pub mod regs {
@@ -220,7 +220,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Calsel {
         #[doc = "VREFOPAMP=3.3% VDDA"]
-        PERCENT3_3 = 0,
+        PERCENT3_3 = 0x0,
         #[doc = "VREFOPAMP=10% VDDA"]
         PERCENT10 = 0x01,
         #[doc = "VREFOPAMP=50% VDDA"]
@@ -254,7 +254,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum ForceVp {
         #[doc = "Normal operating mode"]
-        NORMAL = 0,
+        NORMAL = 0x0,
         #[doc = "Calibration mode. Non-inverting input connected to calibration reference"]
         CALIBRATION = 0x01,
     }
@@ -284,7 +284,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Outcal {
         #[doc = "Non-inverting < inverting"]
-        LOW = 0,
+        LOW = 0x0,
         #[doc = "Non-inverting > inverting"]
         HIGH = 0x01,
     }
@@ -314,7 +314,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum PgaGain {
         #[doc = "Gain 2"]
-        GAIN2 = 0,
+        GAIN2 = 0x0,
         #[doc = "Gain 4"]
         GAIN4 = 0x01,
         #[doc = "Gain 8"]
@@ -368,7 +368,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum VmSel {
         #[doc = "PC5 (VM0) used as OPAMP2 inverting input"]
-        PC5 = 0,
+        PC5 = 0x0,
         #[doc = "PA5 (VM1) used as OPAMP2 inverting input"]
         PA5 = 0x01,
         #[doc = "Resistor feedback output (PGA mode)"]
@@ -402,7 +402,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum VmsSel {
         #[doc = "PC5 (VM0) used as OPAMP2 inverting input when TCM_EN=1"]
-        PC5 = 0,
+        PC5 = 0x0,
         #[doc = "PA5 (VM1) used as OPAMP2 inverting input when TCM_EN=1"]
         PA5 = 0x01,
     }
@@ -431,7 +431,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum VpSel {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "PB14 used as OPAMP2 non-inverting input"]
         PB14 = 0x01,
         #[doc = "PB0 used as OPAMP2 non-inverting input"]
@@ -464,7 +464,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum VpsSel {
-        _RESERVED_0 = 0,
+        _RESERVED_0 = 0x0,
         #[doc = "PB14 used as OPAMP2 non-inverting input when TCM_EN=1"]
         PB14 = 0x01,
         #[doc = "PB0 used as OPAMP2 non-inverting input when TCM_EN=1"]

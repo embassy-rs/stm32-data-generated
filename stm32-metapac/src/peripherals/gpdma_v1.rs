@@ -21,62 +21,62 @@ impl Channel {
     #[doc = "GPDMA channel 15 linked-list base address register"]
     #[inline(always)]
     pub const fn lbar(self) -> crate::common::Reg<regs::ChLbar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "GPDMA channel 15 flag clear register"]
     #[inline(always)]
     pub const fn fcr(self) -> crate::common::Reg<regs::ChFcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "GPDMA channel 15 status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::ChSr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "GPDMA channel 15 control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::ChCr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "GPDMA channel 15 transfer register 1"]
     #[inline(always)]
     pub const fn tr1(self) -> crate::common::Reg<regs::ChTr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[doc = "GPDMA channel 15 transfer register 2"]
     #[inline(always)]
     pub const fn tr2(self) -> crate::common::Reg<regs::ChTr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[doc = "GPDMA channel 15 alternate block register 1"]
     #[inline(always)]
     pub const fn br1(self) -> crate::common::Reg<regs::ChBr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[doc = "GPDMA channel 15 source address register"]
     #[inline(always)]
     pub const fn sar(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
     #[doc = "GPDMA channel 15 destination address register"]
     #[inline(always)]
     pub const fn dar(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[doc = "GPDMA channel 15 transfer register 3"]
     #[inline(always)]
     pub const fn tr3(self) -> crate::common::Reg<regs::ChTr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[doc = "GPDMA channel 15 block register 2"]
     #[inline(always)]
     pub const fn br2(self) -> crate::common::Reg<regs::ChBr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize) as _) }
     }
     #[doc = "GPDMA channel 15 alternate linked-list address register"]
     #[inline(always)]
     pub const fn llr(self) -> crate::common::Reg<regs::ChLlr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(124usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x7cusize) as _) }
     }
 }
 #[doc = "GPDMA"]
@@ -98,32 +98,32 @@ impl Gpdma {
     #[doc = "GPDMA secure configuration register"]
     #[inline(always)]
     pub const fn seccfgr(self) -> crate::common::Reg<regs::Seccfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "GPDMA privileged configuration register"]
     #[inline(always)]
     pub const fn privcfgr(self) -> crate::common::Reg<regs::Privcfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "GPDMA configuration lock register"]
     #[inline(always)]
     pub const fn rcfglockr(self) -> crate::common::Reg<regs::Rcfglockr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "GPDMA non-secure masked interrupt status register"]
     #[inline(always)]
     pub const fn misr(self) -> crate::common::Reg<regs::Misr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "GPDMA secure masked interrupt status register"]
     #[inline(always)]
     pub const fn smisr(self) -> crate::common::Reg<regs::Misr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
     pub const fn ch(self, n: usize) -> Channel {
         assert!(n < 16usize);
-        unsafe { Channel::from_ptr(self.ptr.add(80usize + n * 128usize) as _) }
+        unsafe { Channel::from_ptr(self.ptr.add(0x50usize + n * 128usize) as _) }
     }
 }
 pub mod regs {
@@ -1220,7 +1220,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum ChBr1Dec {
         #[doc = "The address is incremented by the programmed offset."]
-        ADD = 0,
+        ADD = 0x0,
         #[doc = "The address is decremented by the programmed offset."]
         SUBTRACT = 0x01,
     }
@@ -1250,7 +1250,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum ChCrLap {
         #[doc = "port 0 (AHB) allocated"]
-        PORT0 = 0,
+        PORT0 = 0x0,
         #[doc = "port 1 (AHB) allocated"]
         PORT1 = 0x01,
     }
@@ -1283,7 +1283,7 @@ pub mod vals {
 = 0) and all the update bits are null (UT1 =UB1 = UT2 = USA = UDA = ULL = 0 and UT3 = UB2 = 0 if present). Then CH\\[x\\].BR1.BNDT\\[15:0\\]
 = 0 and CH\\[x\\].BR1.BRC\\[10:0\\]
 = 0 if present."]
-        RUNTOCOMPLETION = 0,
+        RUNTOCOMPLETION = 0x0,
         #[doc = "channel executed once for the current LLI"]
         LINKSTEP = 0x01,
     }
@@ -1313,7 +1313,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum ChCrPrio {
         #[doc = "low priority, low weight"]
-        LOWWITHLOWHWEIGHT = 0,
+        LOWWITHLOWHWEIGHT = 0x0,
         #[doc = "low priority, mid weight"]
         LOWWITHMIDWEIGHT = 0x01,
         #[doc = "low priority, high weight"]
@@ -1347,7 +1347,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum ChTr1Ap {
         #[doc = "port 0 (AHB) allocated"]
-        PORT0 = 0,
+        PORT0 = 0x0,
         #[doc = "port 1 (AHB) allocated"]
         PORT1 = 0x01,
     }
@@ -1377,7 +1377,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum ChTr1Dw {
         #[doc = "byte"]
-        BYTE = 0,
+        BYTE = 0x0,
         #[doc = "half-word (2 bytes)"]
         HALFWORD = 0x01,
         #[doc = "word (4 bytes)"]
@@ -1410,7 +1410,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum ChTr1Pam {
         #[doc = "If destination is wider: source data is transferred as right aligned, padded with 0s up to the destination data width If source is wider: source data is transferred as right aligned, left-truncated down to the destination data width"]
-        ZEROEXTENDORLEFTTRUNCATE = 0,
+        ZEROEXTENDORLEFTTRUNCATE = 0x0,
         #[doc = "If destination is wider: source data is transferred as right aligned, sign extended up to the destination data width If source is wider: source data is transferred as left-aligned, right-truncated down to the destination data width"]
         SIGNEXTENDORRIGHTTRUNCATE = 0x01,
         #[doc = "source data is FIFO queued and packed/unpacked at the destination data width, to be transferred in a left (LSB) to right (MSB) order (named little endian) to the destination"]
@@ -1443,7 +1443,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum ChTr2Breq {
         #[doc = "the selected hardware request is driven by a peripheral with a hardware request/acknowledge protocol at a burst level."]
-        BURST = 0,
+        BURST = 0x0,
         #[doc = "the selected hardware request is driven by a peripheral with a hardware request/acknowledge protocol at a block level (see )."]
         BLOCK = 0x01,
     }
@@ -1473,7 +1473,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum ChTr2Dreq {
         #[doc = "selected hardware request driven by a source peripheral (request signal taken into account by the GPDMA transfer scheduler over the source/read port)"]
-        SOURCEPERIPHERAL = 0,
+        SOURCEPERIPHERAL = 0x0,
         #[doc = "selected hardware request driven by a destination peripheral (request signal taken into account by the GPDMA transfer scheduler over the destination/write port)"]
         DESTINATIONPERIPHERAL = 0x01,
     }
@@ -1504,7 +1504,7 @@ pub mod vals {
     pub enum ChTr2Swreq {
         #[doc = "no software request. The selected hardware request REQSEL\\[6:0\\]
 is taken into account."]
-        HARDWARE = 0,
+        HARDWARE = 0x0,
         #[doc = "software request for a memory-to-memory transfer. The default selected hardware request as per REQSEL\\[6:0\\]
 is ignored."]
         SOFTWARE = 0x01,
@@ -1536,7 +1536,7 @@ is ignored."]
     pub enum ChTr2Tcem {
         #[doc = "at block level (when CH\\[x\\].BR1.BNDT\\[15:0\\]
 = 0): the complete (and the half) transfer event is generated at the (respectively half of the) end of a block."]
-        EACHBLOCK = 0,
+        EACHBLOCK = 0x0,
         #[doc = "channel x = 0 to 11, same as 00; channel x=12 to 15, at 2D/repeated block level (when CH\\[x\\].BR1.BRC\\[10:0\\]
 = 0 and CH\\[x\\].BR1.BNDT\\[15:0\\]
 = 0), the complete (and the half) transfer event is generated at the end (respectively half of the end) of the 2D/repeated block."]
@@ -1574,7 +1574,7 @@ to zero and clears all the CH\\[x\\].LLR update bits (UT1, UT2, UB1, USA, UDA an
     pub enum ChTr2Trigm {
         #[doc = "at block level: the first burst read of each block transfer is conditioned by one hit trigger (channel x = 12 to 15, for each block if a 2D/repeated block is configured with CH\\[x\\].BR1.BRC\\[10:0\\]
 ≠ 0)."]
-        BLOCK = 0,
+        BLOCK = 0x0,
         #[doc = "channel x = 0 to 11, same as 00; channel x=12 to 15, at 2D/repeated block level, the"]
         _2DBLOCK = 0x01,
         #[doc = "at link level: a LLI link transfer is conditioned by one hit trigger. The LLI data transfer (if any) is not conditioned."]
@@ -1608,7 +1608,7 @@ to zero and clears all the CH\\[x\\].LLR update bits (UT1, UT2, UB1, USA, UDA an
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum ChTr2Trigpol {
         #[doc = "no trigger (masked trigger event)"]
-        NONE = 0,
+        NONE = 0x0,
         #[doc = "trigger on the rising edge"]
         RISINGEDGE = 0x01,
         #[doc = "trigger on the falling edge"]

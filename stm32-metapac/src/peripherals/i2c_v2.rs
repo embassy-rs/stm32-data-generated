@@ -22,57 +22,57 @@ impl I2c {
     #[doc = "Control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Control register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "Own address register 1"]
     #[inline(always)]
     pub const fn oar1(self) -> crate::common::Reg<regs::Oar1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "Own address register 2"]
     #[inline(always)]
     pub const fn oar2(self) -> crate::common::Reg<regs::Oar2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "Timing register"]
     #[inline(always)]
     pub const fn timingr(self) -> crate::common::Reg<regs::Timingr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "Timeout register"]
     #[inline(always)]
     pub const fn timeoutr(self) -> crate::common::Reg<regs::Timeoutr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "Interrupt and Status register"]
     #[inline(always)]
     pub const fn isr(self) -> crate::common::Reg<regs::Isr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "Interrupt clear register"]
     #[inline(always)]
     pub const fn icr(self) -> crate::common::Reg<regs::Icr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "PEC register"]
     #[inline(always)]
     pub const fn pecr(self) -> crate::common::Reg<regs::Pecr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "Receive data register"]
     #[inline(always)]
     pub const fn rxdr(self) -> crate::common::Reg<regs::Rxdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "Transmit data register"]
     #[inline(always)]
     pub const fn txdr(self) -> crate::common::Reg<regs::Txdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
 }
 pub mod regs {
@@ -1039,7 +1039,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Addmode {
         #[doc = "7-bit addressing mode"]
-        BIT7 = 0,
+        BIT7 = 0x0,
         #[doc = "10-bit addressing mode"]
         BIT10 = 0x01,
     }
@@ -1069,7 +1069,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Autoend {
         #[doc = "Software end mode: TC flag is set when NBYTES data are transferred, stretching SCL low"]
-        SOFTWARE = 0,
+        SOFTWARE = 0x0,
         #[doc = "Automatic end mode: a STOP condition is automatically sent when NBYTES data are transferred"]
         AUTOMATIC = 0x01,
     }
@@ -1099,7 +1099,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dir {
         #[doc = "Write transfer, slave enters receiver mode"]
-        WRITE = 0,
+        WRITE = 0x0,
         #[doc = "Read transfer, slave enters transmitter mode"]
         READ = 0x01,
     }
@@ -1129,7 +1129,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dnf {
         #[doc = "Digital filter disabled"]
-        NOFILTER = 0,
+        NOFILTER = 0x0,
         #[doc = "Digital filter enabled and filtering capability up to 1 tI2CCLK"]
         FILTER1 = 0x01,
         #[doc = "Digital filter enabled and filtering capability up to 2 tI2CCLK"]
@@ -1187,7 +1187,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Headr {
         #[doc = "The master sends the complete 10 bit slave address read sequence"]
-        COMPLETE = 0,
+        COMPLETE = 0x0,
         #[doc = "The master only sends the 1st 7 bits of the 10 bit address, followed by Read direction"]
         PARTIAL = 0x01,
     }
@@ -1217,7 +1217,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Oamsk {
         #[doc = "No mask"]
-        NOMASK = 0,
+        NOMASK = 0x0,
         #[doc = "OA2\\[1\\]
 is masked and don’t care. Only OA2\\[7:2\\]
 are compared"]
@@ -1272,7 +1272,7 @@ are masked and don’t care. No comparison is done, and all (except reserved) 7-
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Reload {
         #[doc = "The transfer is completed after the NBYTES data transfer (STOP or RESTART will follow)"]
-        COMPLETED = 0,
+        COMPLETED = 0x0,
         #[doc = "The transfer is not completed after the NBYTES data transfer (NBYTES will be reloaded)"]
         NOTCOMPLETED = 0x01,
     }

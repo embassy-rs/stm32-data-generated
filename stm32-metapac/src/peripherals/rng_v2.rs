@@ -22,22 +22,22 @@ impl Rng {
     #[doc = "control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "data register"]
     #[inline(always)]
     pub const fn dr(self) -> crate::common::Reg<u32, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "health test control register"]
     #[inline(always)]
     pub const fn htcr(self) -> crate::common::Reg<regs::Htcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
 }
 pub mod regs {
@@ -259,7 +259,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Clkdiv {
         #[doc = "Internal RNG clock after divider is similar to incoming RNG clock"]
-        NODIV = 0,
+        NODIV = 0x0,
         #[doc = "Divide RNG clock by 2^1"]
         DIV_2_1 = 0x01,
         #[doc = "Divide RNG clock by 2^2"]
@@ -346,7 +346,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Nistc {
         #[doc = "Hardware default values for NIST compliant RNG. In this configuration per 128-bit output two conditioning loops are performed and 256 bits of noise source are used"]
-        DEFAULT = 0,
+        DEFAULT = 0x0,
         #[doc = "Custom values for NIST compliant RNG"]
         CUSTOM = 0x01,
     }
@@ -405,7 +405,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum RngConfig2 {
         #[doc = "Recommended value for config A and B"]
-        CONFIGA_B = 0,
+        CONFIGA_B = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -440,7 +440,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum RngConfig3 {
         #[doc = "Recommended value for config B (not NIST certifiable)"]
-        CONFIGB = 0,
+        CONFIGB = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,

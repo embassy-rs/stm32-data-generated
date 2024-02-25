@@ -22,57 +22,57 @@ impl Adc {
     #[doc = "interrupt and status register"]
     #[inline(always)]
     pub const fn isr(self) -> crate::common::Reg<regs::Isr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "interrupt enable register"]
     #[inline(always)]
     pub const fn ier(self) -> crate::common::Reg<regs::Ier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "configuration register 1"]
     #[inline(always)]
     pub const fn cfgr1(self) -> crate::common::Reg<regs::Cfgr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "configuration register 2"]
     #[inline(always)]
     pub const fn cfgr2(self) -> crate::common::Reg<regs::Cfgr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "sampling time register"]
     #[inline(always)]
     pub const fn smpr(self) -> crate::common::Reg<regs::Smpr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "watchdog threshold register"]
     #[inline(always)]
     pub const fn tr(self) -> crate::common::Reg<regs::Tr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "channel selection register"]
     #[inline(always)]
     pub const fn chselr(self) -> crate::common::Reg<regs::Chselr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "data register"]
     #[inline(always)]
     pub const fn dr(self) -> crate::common::Reg<regs::Dr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[doc = "ADC Calibration factor."]
     #[inline(always)]
     pub const fn calfact(self) -> crate::common::Reg<regs::Calfact, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(180usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb4usize) as _) }
     }
     #[doc = "common configuration register"]
     #[inline(always)]
     pub const fn ccr(self) -> crate::common::Reg<regs::Ccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(776usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0308usize) as _) }
     }
 }
 pub mod regs {
@@ -768,7 +768,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Align {
         #[doc = "Right alignment"]
-        RIGHT = 0,
+        RIGHT = 0x0,
         #[doc = "Left alignment"]
         LEFT = 0x01,
     }
@@ -798,7 +798,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Awdsgl {
         #[doc = "Analog watchdog enabled on all channels"]
-        ALLCHANNELS = 0,
+        ALLCHANNELS = 0x0,
         #[doc = "Analog watchdog enabled on a single channel"]
         SINGLECHANNEL = 0x01,
     }
@@ -828,7 +828,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ckmode {
         #[doc = "Asynchronous clock mode"]
-        ADCCLK = 0,
+        ADCCLK = 0x0,
         #[doc = "Synchronous clock mode (PCLK/2)"]
         PCLK_DIV2 = 0x01,
         #[doc = "Sychronous clock mode (PCLK/4)"]
@@ -862,7 +862,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dmacfg {
         #[doc = "DMA one shot mode"]
-        ONESHOT = 0,
+        ONESHOT = 0x0,
         #[doc = "DMA circular mode"]
         CIRCULAR = 0x01,
     }
@@ -892,7 +892,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Exten {
         #[doc = "Trigger detection disabled"]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "Trigger detection on the rising edge"]
         RISINGEDGE = 0x01,
         #[doc = "Trigger detection on the falling edge"]
@@ -926,7 +926,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ovrmod {
         #[doc = "ADC_DR register is preserved with the old data when an overrun is detected"]
-        PRESERVED = 0,
+        PRESERVED = 0x0,
         #[doc = "ADC_DR register is overwritten with the last conversion result when an overrun is detected"]
         OVERWRITTEN = 0x01,
     }
@@ -956,7 +956,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Presc {
         #[doc = "Input ADC clock not divided."]
-        DIV1 = 0,
+        DIV1 = 0x0,
         #[doc = "Input ADC clock divided by 2."]
         DIV2 = 0x01,
         #[doc = "Input ADC clock divided by 4."]
@@ -1010,7 +1010,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Res {
         #[doc = "12-bit (14 ADCCLK cycles)"]
-        TWELVEBIT = 0,
+        TWELVEBIT = 0x0,
         #[doc = "10-bit (13 ADCCLK cycles)"]
         TENBIT = 0x01,
         #[doc = "8-bit (11 ADCCLK cycles)"]
@@ -1044,7 +1044,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum SampleTime {
         #[doc = "1.5 cycles"]
-        CYCLES1_5 = 0,
+        CYCLES1_5 = 0x0,
         #[doc = "3.5 cycles"]
         CYCLES3_5 = 0x01,
         #[doc = "7.5 cycles"]
@@ -1086,7 +1086,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Scandir {
         #[doc = "Upward scan (from CHSEL0 to CHSEL18)"]
-        UPWARD = 0,
+        UPWARD = 0x0,
         #[doc = "Backward scan (from CHSEL18 to CHSEL0)"]
         BACKWARD = 0x01,
     }

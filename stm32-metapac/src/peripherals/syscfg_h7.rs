@@ -22,123 +22,123 @@ impl Syscfg {
     #[doc = "peripheral mode configuration register"]
     #[inline(always)]
     pub const fn pmcr(self) -> crate::common::Reg<regs::Pmcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "external interrupt configuration register"]
     #[inline(always)]
     pub const fn exticr(self, n: usize) -> crate::common::Reg<regs::Exticr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize + n * 4usize) as _) }
     }
     #[doc = "compensation cell control/status register"]
     #[inline(always)]
     pub const fn cccsr(self) -> crate::common::Reg<regs::Cccsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "SYSCFG compensation cell value register"]
     #[inline(always)]
     pub const fn ccvr(self) -> crate::common::Reg<regs::Ccvr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "SYSCFG compensation cell code register"]
     #[inline(always)]
     pub const fn cccr(self) -> crate::common::Reg<regs::Cccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "SYSCFG package register"]
     #[inline(always)]
     pub const fn pkgr(self) -> crate::common::Reg<regs::Pkgr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(292usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0124usize) as _) }
     }
     #[doc = "SYSCFG user register 0"]
     #[inline(always)]
     pub const fn ur0(self) -> crate::common::Reg<regs::Ur0, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(768usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0300usize) as _) }
     }
     #[doc = "SYSCFG user register 2"]
     #[inline(always)]
     pub const fn ur2(self) -> crate::common::Reg<regs::Ur2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(776usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0308usize) as _) }
     }
     #[doc = "SYSCFG user register 3"]
     #[inline(always)]
     pub const fn ur3(self) -> crate::common::Reg<regs::Ur3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(780usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x030cusize) as _) }
     }
     #[doc = "SYSCFG user register 4"]
     #[inline(always)]
     pub const fn ur4(self) -> crate::common::Reg<regs::Ur4, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(784usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0310usize) as _) }
     }
     #[doc = "SYSCFG user register 5"]
     #[inline(always)]
     pub const fn ur5(self) -> crate::common::Reg<regs::Ur5, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(788usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0314usize) as _) }
     }
     #[doc = "SYSCFG user register 6"]
     #[inline(always)]
     pub const fn ur6(self) -> crate::common::Reg<regs::Ur6, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(792usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0318usize) as _) }
     }
     #[doc = "SYSCFG user register 7"]
     #[inline(always)]
     pub const fn ur7(self) -> crate::common::Reg<regs::Ur7, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(796usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x031cusize) as _) }
     }
     #[doc = "SYSCFG user register 8"]
     #[inline(always)]
     pub const fn ur8(self) -> crate::common::Reg<regs::Ur8, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(800usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0320usize) as _) }
     }
     #[doc = "SYSCFG user register 9"]
     #[inline(always)]
     pub const fn ur9(self) -> crate::common::Reg<regs::Ur9, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(804usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0324usize) as _) }
     }
     #[doc = "SYSCFG user register 10"]
     #[inline(always)]
     pub const fn ur10(self) -> crate::common::Reg<regs::Ur10, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(808usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0328usize) as _) }
     }
     #[doc = "SYSCFG user register 11"]
     #[inline(always)]
     pub const fn ur11(self) -> crate::common::Reg<regs::Ur11, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(812usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x032cusize) as _) }
     }
     #[doc = "SYSCFG user register 12"]
     #[inline(always)]
     pub const fn ur12(self) -> crate::common::Reg<regs::Ur12, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(816usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0330usize) as _) }
     }
     #[doc = "SYSCFG user register 13"]
     #[inline(always)]
     pub const fn ur13(self) -> crate::common::Reg<regs::Ur13, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(820usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0334usize) as _) }
     }
     #[doc = "SYSCFG user register 14"]
     #[inline(always)]
     pub const fn ur14(self) -> crate::common::Reg<regs::Ur14, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(824usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0338usize) as _) }
     }
     #[doc = "SYSCFG user register 15"]
     #[inline(always)]
     pub const fn ur15(self) -> crate::common::Reg<regs::Ur15, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(828usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x033cusize) as _) }
     }
     #[doc = "SYSCFG user register 16"]
     #[inline(always)]
     pub const fn ur16(self) -> crate::common::Reg<regs::Ur16, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(832usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0340usize) as _) }
     }
     #[doc = "SYSCFG user register 17"]
     #[inline(always)]
     pub const fn ur17(self) -> crate::common::Reg<regs::Ur17, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(836usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0344usize) as _) }
     }
     #[doc = "SYSCFG user register 18"]
     #[inline(always)]
     pub const fn ur18(self) -> crate::common::Reg<regs::Ur18, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(840usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0348usize) as _) }
     }
 }
 pub mod regs {
@@ -1045,7 +1045,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum ItcmAxiRamSize {
         #[doc = "64 Kbyte ITCM-RAM / 320 Kbyte AXI-SRAM"]
-        ITCM64AXI320 = 0,
+        ITCM64AXI320 = 0x0,
         #[doc = "128 Kbyte ITCM-RAM / 256 Kbyte AXI-SRAM"]
         ITCM128AXI256 = 0x01,
         #[doc = "192 Kbyte ITCM-RAM / 192 Kbyte AXI-SRAM"]

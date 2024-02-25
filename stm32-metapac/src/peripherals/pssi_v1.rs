@@ -22,37 +22,37 @@ impl Pssi {
     #[doc = "PSSI control register."]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "PSSI status register."]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[doc = "PSSI raw interrupt status register."]
     #[inline(always)]
     pub const fn ris(self) -> crate::common::Reg<regs::Ris, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[doc = "PSSI interrupt enable register."]
     #[inline(always)]
     pub const fn ier(self) -> crate::common::Reg<regs::Ier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "PSSI masked interrupt status register."]
     #[inline(always)]
     pub const fn mis(self) -> crate::common::Reg<regs::Mis, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[doc = "PSSI interrupt clear register."]
     #[inline(always)]
     pub const fn icr(self) -> crate::common::Reg<regs::Icr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[doc = "PSSI data register."]
     #[inline(always)]
     pub const fn dr(self) -> crate::common::Reg<regs::Dr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
 }
 pub mod regs {
@@ -315,7 +315,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ckpol {
         #[doc = "Falling edge active for inputs or rising edge active for outputs."]
-        FALLINGEDGE = 0,
+        FALLINGEDGE = 0x0,
         #[doc = "Rising edge active for inputs or falling edge active for outputs."]
         RISINGEDGE = 0x01,
     }
@@ -345,7 +345,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Depol {
         #[doc = "PSSI_DE active low (0 indicates that data is valid)."]
-        ACTIVELOW = 0,
+        ACTIVELOW = 0x0,
         #[doc = "PSSI_DE active high (1 indicates that data is valid)."]
         ACTIVEHIGH = 0x01,
     }
@@ -375,7 +375,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Derdycfg {
         #[doc = "PSSI_DE and PSSI_RDY both disabled."]
-        DISABLED = 0,
+        DISABLED = 0x0,
         #[doc = "Only PSSI_RDY enabled."]
         RDY = 0x01,
         #[doc = "Only PSSI_DE enabled."]
@@ -417,7 +417,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Edm {
         #[doc = "Interface captures 8-bit data on every parallel data clock."]
-        BITWIDTH8 = 0,
+        BITWIDTH8 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "The interface captures 16-bit data on every parallel data clock."]
@@ -449,7 +449,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Outen {
         #[doc = "Data is input synchronously with PSSI_PDCK."]
-        RECEIVEMODE = 0,
+        RECEIVEMODE = 0x0,
         #[doc = "Data is output synchronously with PSSI_PDCK."]
         TRANSMITMODE = 0x01,
     }
@@ -479,7 +479,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rdypol {
         #[doc = "PSSI_RDY active low (0 indicates that the receiver is ready to receive)."]
-        ACTIVELOW = 0,
+        ACTIVELOW = 0x0,
         #[doc = "PSSI_RDY active high (1 indicates that the receiver is ready to receive)."]
         ACTIVEHIGH = 0x01,
     }

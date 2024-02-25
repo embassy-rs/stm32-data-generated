@@ -82,7 +82,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "AES",
         address: 0x420c0000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "aes",
+            version: "v3b",
+            block: "AES",
+            ir: &aes::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
             kernel_clock: Clock("HCLK2"),
@@ -1253,7 +1258,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SAES",
         address: 0x420c0c00,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "saes",
+            version: "v1a",
+            block: "SAES",
+            ir: &saes::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
             kernel_clock: Clock("HCLK2"),
@@ -2903,6 +2913,8 @@ pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
         dmamux_channel: None,
     },
 ];
+#[path = "../registers/aes_v3b.rs"]
+pub mod aes;
 #[path = "../registers/crc_v3.rs"]
 pub mod crc;
 #[path = "../registers/dbgmcu_wba.rs"]
@@ -2935,6 +2947,8 @@ pub mod rcc;
 pub mod rng;
 #[path = "../registers/rtc_v3u5.rs"]
 pub mod rtc;
+#[path = "../registers/saes_v1a.rs"]
+pub mod saes;
 #[path = "../registers/spi_v5.rs"]
 pub mod spi;
 #[path = "../registers/syscfg_wba.rs"]

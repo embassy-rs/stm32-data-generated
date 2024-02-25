@@ -651,7 +651,7 @@ pub const USB_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4204_0000usize as
 pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x420c_0000usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
-pub const SAES: *mut () = 0x420c_0c00usize as _;
+pub const SAES: saes::Saes = unsafe { saes::Saes::from_ptr(0x420c_0c00usize as _) };
 pub const PKA: pka::Pka = unsafe { pka::Pka::from_ptr(0x420c_2000usize as _) };
 pub const OCTOSPIM: octospim::Octospim = unsafe { octospim::Octospim::from_ptr(0x420c_4000usize as _) };
 pub const OTFDEC1: *mut () = 0x420c_5000usize as _;
@@ -695,7 +695,7 @@ pub fn GPIO(n: usize) -> gpio::Gpio {
 }
 #[path = "../../peripherals/adf_v1.rs"]
 pub mod adf;
-#[path = "../../peripherals/aes_u5.rs"]
+#[path = "../../peripherals/aes_v3a.rs"]
 pub mod aes;
 #[path = "../../peripherals/can_fdcan_v1.rs"]
 pub mod can;
@@ -755,6 +755,8 @@ pub mod rcc;
 pub mod rng;
 #[path = "../../peripherals/rtc_v3u5.rs"]
 pub mod rtc;
+#[path = "../../peripherals/saes_v1b.rs"]
+pub mod saes;
 #[path = "../../peripherals/sdmmc_v2.rs"]
 pub mod sdmmc;
 #[path = "../../peripherals/spi_v5.rs"]

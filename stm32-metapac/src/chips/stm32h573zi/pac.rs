@@ -596,7 +596,7 @@ pub const UART4: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4c00usize
 pub const UART5: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_5000usize as _) };
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400usize as _) };
 pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5800usize as _) };
-pub const I3C1: *mut () = 0x4000_5c00usize as _;
+pub const I3C1: i3c::I3c = unsafe { i3c::I3c::from_ptr(0x4000_5c00usize as _) };
 pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_6000usize as _) };
 pub const USART6: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_6400usize as _) };
 pub const USART10: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_6800usize as _) };
@@ -650,10 +650,10 @@ pub const ADC_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from
 pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4202_8400usize as _) };
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4202_c000usize as _) };
 pub const PSSI: pssi::Pssi = unsafe { pssi::Pssi::from_ptr(0x4202_c400usize as _) };
-pub const AES: *mut () = 0x420c_0000usize as _;
+pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x420c_0000usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
-pub const SAES: *mut () = 0x420c_0c00usize as _;
+pub const SAES: saes::Saes = unsafe { saes::Saes::from_ptr(0x420c_0c00usize as _) };
 pub const PKA: pka::Pka = unsafe { pka::Pka::from_ptr(0x420c_2000usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4400_0400usize as _) };
 pub const SPI5: spi::Spi = unsafe { spi::Spi::from_ptr(0x4400_2000usize as _) };
@@ -676,7 +676,7 @@ pub const OTFDEC1: *mut () = 0x4600_5000usize as _;
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4600_8000usize as _) };
 pub const SDMMC2: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4600_8c00usize as _) };
 pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x4700_1400usize as _) };
-pub const FMC: *mut () = 0x6000_0000usize as _;
+pub const FMC: fmc::Fmc = unsafe { fmc::Fmc::from_ptr(0x6000_0000usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 4;
@@ -691,6 +691,8 @@ pub fn GPIO(n: usize) -> gpio::Gpio {
 pub mod adc;
 #[path = "../../peripherals/adccommon_h5.rs"]
 pub mod adccommon;
+#[path = "../../peripherals/aes_v3b.rs"]
+pub mod aes;
 #[path = "../../peripherals/can_fdcan_v1.rs"]
 pub mod can;
 #[path = "../../peripherals/cec_v2.rs"]
@@ -721,6 +723,8 @@ pub mod fdcanram;
 pub mod flash;
 #[path = "../../peripherals/fmac_v1.rs"]
 pub mod fmac;
+#[path = "../../peripherals/fmc_v4.rs"]
+pub mod fmc;
 #[path = "../../peripherals/gpdma_v1.rs"]
 pub mod gpdma;
 #[path = "../../peripherals/gpio_v2.rs"]
@@ -729,6 +733,8 @@ pub mod gpio;
 pub mod hash;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;
+#[path = "../../peripherals/i3c_v1.rs"]
+pub mod i3c;
 #[path = "../../peripherals/icache_v1_4crr.rs"]
 pub mod icache;
 #[path = "../../peripherals/iwdg_v3.rs"]
@@ -749,6 +755,8 @@ pub mod rcc;
 pub mod rng;
 #[path = "../../peripherals/rtc_v3u5.rs"]
 pub mod rtc;
+#[path = "../../peripherals/saes_v1a.rs"]
+pub mod saes;
 #[path = "../../peripherals/sdmmc_v2.rs"]
 pub mod sdmmc;
 #[path = "../../peripherals/spi_v4.rs"]

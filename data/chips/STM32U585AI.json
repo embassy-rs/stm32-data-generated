@@ -712,7 +712,7 @@
                     "address": 1108082688,
                     "registers": {
                         "kind": "aes",
-                        "version": "u5",
+                        "version": "v3a",
                         "block": "AES"
                     },
                     "rcc": {
@@ -4807,6 +4807,11 @@
                 {
                     "name": "SAI1",
                     "address": 1073828864,
+                    "registers": {
+                        "kind": "sai",
+                        "version": "v4_2pdm",
+                        "block": "SAI"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK2",
                         "kernel_clock": {
@@ -5071,6 +5076,11 @@
                 {
                     "name": "SAI2",
                     "address": 1073829888,
+                    "registers": {
+                        "kind": "sai",
+                        "version": "v4_2pdm",
+                        "block": "SAI"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK2",
                         "kernel_clock": {

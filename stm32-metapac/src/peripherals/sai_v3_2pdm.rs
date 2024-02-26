@@ -333,17 +333,6 @@ bits must be configured before setting DMAEN to avoid a DMA request in receiver 
         pub fn set_osr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
-        #[doc = "Master clock generation enable"]
-        #[inline(always)]
-        pub const fn mcken(&self) -> bool {
-            let val = (self.0 >> 27usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Master clock generation enable"]
-        #[inline(always)]
-        pub fn set_mcken(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
-        }
     }
     impl Default for Cr1 {
         #[inline(always)]
@@ -705,47 +694,18 @@ bits and the audio block is operates as a receiver."]
         }
         #[doc = "Clock enable of bitstream clock number 1"]
         #[inline(always)]
-        pub const fn cken1(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
+        pub const fn cken(&self, n: usize) -> bool {
+            assert!(n < 2usize);
+            let offs = 8usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "Clock enable of bitstream clock number 1"]
         #[inline(always)]
-        pub fn set_cken1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-        #[doc = "Clock enable of bitstream clock number 2"]
-        #[inline(always)]
-        pub const fn cken2(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Clock enable of bitstream clock number 2"]
-        #[inline(always)]
-        pub fn set_cken2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
-        }
-        #[doc = "Clock enable of bitstream clock number 3"]
-        #[inline(always)]
-        pub const fn cken3(&self) -> bool {
-            let val = (self.0 >> 10usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Clock enable of bitstream clock number 3"]
-        #[inline(always)]
-        pub fn set_cken3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
-        }
-        #[doc = "Clock enable of bitstream clock number 4"]
-        #[inline(always)]
-        pub const fn cken4(&self) -> bool {
-            let val = (self.0 >> 11usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Clock enable of bitstream clock number 4"]
-        #[inline(always)]
-        pub fn set_cken4(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        pub fn set_cken(&mut self, n: usize, val: bool) {
+            assert!(n < 2usize);
+            let offs = 8usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
     impl Default for Pdmcr {
@@ -761,91 +721,33 @@ bits and the audio block is operates as a receiver."]
     impl Pdmdly {
         #[doc = "Delay line adjust for first microphone of pair 1"]
         #[inline(always)]
-        pub const fn dlym1l(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x07;
+        pub const fn dlyml(&self, n: usize) -> u8 {
+            assert!(n < 4usize);
+            let offs = 0usize + n * 8usize;
+            let val = (self.0 >> offs) & 0x07;
             val as u8
         }
         #[doc = "Delay line adjust for first microphone of pair 1"]
         #[inline(always)]
-        pub fn set_dlym1l(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        pub fn set_dlyml(&mut self, n: usize, val: u8) {
+            assert!(n < 4usize);
+            let offs = 0usize + n * 8usize;
+            self.0 = (self.0 & !(0x07 << offs)) | (((val as u32) & 0x07) << offs);
         }
         #[doc = "Delay line adjust for second microphone of pair 1"]
         #[inline(always)]
-        pub const fn dlym1r(&self) -> u8 {
-            let val = (self.0 >> 4usize) & 0x07;
+        pub const fn dlymr(&self, n: usize) -> u8 {
+            assert!(n < 4usize);
+            let offs = 4usize + n * 8usize;
+            let val = (self.0 >> offs) & 0x07;
             val as u8
         }
         #[doc = "Delay line adjust for second microphone of pair 1"]
         #[inline(always)]
-        pub fn set_dlym1r(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
-        }
-        #[doc = "Delay line for first microphone of pair 2"]
-        #[inline(always)]
-        pub const fn dlym2l(&self) -> u8 {
-            let val = (self.0 >> 8usize) & 0x07;
-            val as u8
-        }
-        #[doc = "Delay line for first microphone of pair 2"]
-        #[inline(always)]
-        pub fn set_dlym2l(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u32) & 0x07) << 8usize);
-        }
-        #[doc = "Delay line for second microphone of pair 2"]
-        #[inline(always)]
-        pub const fn dlym2r(&self) -> u8 {
-            let val = (self.0 >> 12usize) & 0x07;
-            val as u8
-        }
-        #[doc = "Delay line for second microphone of pair 2"]
-        #[inline(always)]
-        pub fn set_dlym2r(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 12usize)) | (((val as u32) & 0x07) << 12usize);
-        }
-        #[doc = "Delay line for first microphone of pair 3"]
-        #[inline(always)]
-        pub const fn dlym3l(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x07;
-            val as u8
-        }
-        #[doc = "Delay line for first microphone of pair 3"]
-        #[inline(always)]
-        pub fn set_dlym3l(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
-        }
-        #[doc = "Delay line for second microphone of pair 3"]
-        #[inline(always)]
-        pub const fn dlym3r(&self) -> u8 {
-            let val = (self.0 >> 20usize) & 0x07;
-            val as u8
-        }
-        #[doc = "Delay line for second microphone of pair 3"]
-        #[inline(always)]
-        pub fn set_dlym3r(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 20usize)) | (((val as u32) & 0x07) << 20usize);
-        }
-        #[doc = "Delay line for first microphone of pair 4"]
-        #[inline(always)]
-        pub const fn dlym4l(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x07;
-            val as u8
-        }
-        #[doc = "Delay line for first microphone of pair 4"]
-        #[inline(always)]
-        pub fn set_dlym4l(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 24usize)) | (((val as u32) & 0x07) << 24usize);
-        }
-        #[doc = "Delay line for second microphone of pair 4"]
-        #[inline(always)]
-        pub const fn dlym4r(&self) -> u8 {
-            let val = (self.0 >> 28usize) & 0x07;
-            val as u8
-        }
-        #[doc = "Delay line for second microphone of pair 4"]
-        #[inline(always)]
-        pub fn set_dlym4r(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 28usize)) | (((val as u32) & 0x07) << 28usize);
+        pub fn set_dlymr(&mut self, n: usize, val: u8) {
+            assert!(n < 4usize);
+            let offs = 4usize + n * 8usize;
+            self.0 = (self.0 & !(0x07 << offs)) | (((val as u32) & 0x07) << offs);
         }
     }
     impl Default for Pdmdly {

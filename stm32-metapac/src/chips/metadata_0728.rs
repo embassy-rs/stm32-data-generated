@@ -390,7 +390,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x420c0000,
         registers: Some(PeripheralRegisters {
             kind: "aes",
-            version: "u5",
+            version: "v3a",
             block: "AES",
             ir: &aes::REGISTERS,
         }),
@@ -3384,7 +3384,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SAI1",
         address: 0x40015400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "sai",
+            version: "v4_2pdm",
+            block: "SAI",
+            ir: &sai::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -6906,7 +6911,7 @@ pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
 ];
 #[path = "../registers/adf_v1.rs"]
 pub mod adf;
-#[path = "../registers/aes_u5.rs"]
+#[path = "../registers/aes_v3a.rs"]
 pub mod aes;
 #[path = "../registers/can_fdcan_v1.rs"]
 pub mod can;
@@ -6968,6 +6973,8 @@ pub mod rng;
 pub mod rtc;
 #[path = "../registers/saes_v1b.rs"]
 pub mod saes;
+#[path = "../registers/sai_v4_2pdm.rs"]
+pub mod sai;
 #[path = "../registers/sdmmc_v2.rs"]
 pub mod sdmmc;
 #[path = "../registers/spi_v5.rs"]

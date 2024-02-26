@@ -2022,7 +2022,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "I3C1",
         address: 0x40005c00,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "i3c",
+            version: "v1",
+            block: "I3C",
+            ir: &i3c::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -3360,7 +3365,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SAI1",
         address: 0x40015400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "sai",
+            version: "v4_2pdm",
+            block: "SAI",
+            ir: &sai::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -3482,7 +3492,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SAI2",
         address: 0x40015800,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "sai",
+            version: "v4_2pdm",
+            block: "SAI",
+            ir: &sai::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -7871,6 +7886,8 @@ pub mod gpio;
 pub mod hash;
 #[path = "../registers/i2c_v2.rs"]
 pub mod i2c;
+#[path = "../registers/i3c_v1.rs"]
+pub mod i3c;
 #[path = "../registers/icache_v1_4crr.rs"]
 pub mod icache;
 #[path = "../registers/iwdg_v3.rs"]
@@ -7889,6 +7906,8 @@ pub mod rcc;
 pub mod rng;
 #[path = "../registers/rtc_v3u5.rs"]
 pub mod rtc;
+#[path = "../registers/sai_v4_2pdm.rs"]
+pub mod sai;
 #[path = "../registers/sdmmc_v2.rs"]
 pub mod sdmmc;
 #[path = "../registers/spi_v4.rs"]

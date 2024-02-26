@@ -36,7 +36,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Dinr"),
+                    fieldset: None,
                 }),
             },
             BlockItem {
@@ -47,7 +47,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Doutr"),
+                    fieldset: None,
                 }),
             },
             BlockItem {
@@ -60,7 +60,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Keyr"),
+                    fieldset: None,
                 }),
             },
             BlockItem {
@@ -71,7 +71,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Ivr"),
+                    fieldset: None,
                 }),
             },
             BlockItem {
@@ -82,7 +82,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Suspr"),
+                    fieldset: None,
                 }),
             },
             BlockItem {
@@ -152,12 +152,14 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some("Mode"),
                 },
                 Field {
-                    name: "chmod10",
-                    description: Some("Chaining mode bit1 bit0"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
-                    bit_size: 2,
+                    name: "chmod",
+                    description: Some("Chaining mode selection"),
+                    bit_offset: BitOffset::Cursed(CursedBitOffset {
+                        ranges: &[5..=6, 16..=16],
+                    }),
+                    bit_size: 3,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Chmod"),
                 },
                 Field {
                     name: "dmainen",
@@ -182,14 +184,6 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some("Gcmph"),
-                },
-                Field {
-                    name: "chmod2",
-                    description: Some("Chaining mode bit2"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
                 },
                 Field {
                     name: "keysize",
@@ -226,47 +220,11 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Dinr",
-            extends: None,
-            description: Some("Data input register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "din",
-                description: Some("Input data word"),
-                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Doutr",
-            extends: None,
-            description: Some("Data output register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "dout",
-                description: Some("Output data word"),
-                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Icr",
             extends: None,
             description: Some("Interrupt clear register"),
             bit_size: 32,
             fields: &[
-                Field {
-                    name: "ccf",
-                    description: Some("Computation complete flag clear"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
                 Field {
                     name: "rweif",
                     description: Some("Read or write error interrupt flag clear"),
@@ -350,34 +308,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ivr",
-            extends: None,
-            description: Some("Initialization vector register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "ivi",
-                description: Some("Initialization vector input"),
-                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Keyr",
-            extends: None,
-            description: Some("Key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "key",
-                description: Some("Cryptographic key"),
-                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Sr",
             extends: None,
             description: Some("Status register"),
@@ -425,22 +355,40 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        FieldSet {
-            name: "Suspr",
-            extends: None,
-            description: Some("Suspend register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "susp",
-                description: Some("AES suspend"),
-                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
     ],
     enums: &[
+        Enum {
+            name: "Chmod",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "ECB",
+                    description: Some("Electronic codebook"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CBC",
+                    description: Some("Cipher-block chaining"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "CTR",
+                    description: Some("Counter mode"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "GCM_GMAC",
+                    description: Some("Galois counter mode and Galois message authentication code"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "CCM",
+                    description: Some("Counter with CBC-MAC"),
+                    value: 4,
+                },
+            ],
+        },
         Enum {
             name: "Datatype",
             description: None,

@@ -432,7 +432,7 @@ pub const USART2: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4400usiz
 pub const USART3: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4800usize as _) };
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400usize as _) };
 pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5800usize as _) };
-pub const I3C1: *mut () = 0x4000_5c00usize as _;
+pub const I3C1: i3c::I3c = unsafe { i3c::I3c::from_ptr(0x4000_5c00usize as _) };
 pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_6000usize as _) };
 pub const DTS: dts::Dts = unsafe { dts::Dts::from_ptr(0x4000_8c00usize as _) };
 pub const LPTIM2: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_9400usize as _) };
@@ -460,7 +460,7 @@ pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400usize as _
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4400_0400usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4400_2400usize as _) };
-pub const I3C2: *mut () = 0x4400_3000usize as _;
+pub const I3C2: i3c::I3c = unsafe { i3c::I3c::from_ptr(0x4400_3000usize as _) };
 pub const LPTIM1: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4400_4400usize as _) };
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4400_7800usize as _) };
 pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4400_7c00usize as _) };
@@ -508,6 +508,8 @@ pub mod gpio;
 pub mod hash;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;
+#[path = "../../peripherals/i3c_v1.rs"]
+pub mod i3c;
 #[path = "../../peripherals/icache_v1_0crr.rs"]
 pub mod icache;
 #[path = "../../peripherals/iwdg_v3.rs"]

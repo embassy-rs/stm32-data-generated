@@ -1220,6 +1220,11 @@
                 {
                     "name": "FMC",
                     "address": 1610612736,
+                    "registers": {
+                        "kind": "fmc",
+                        "version": "v4",
+                        "block": "FMC"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK4",
                         "kernel_clock": "HCLK4",
@@ -2264,6 +2269,11 @@
                 {
                     "name": "I3C1",
                     "address": 1073765376,
+                    "registers": {
+                        "kind": "i3c",
+                        "version": "v1",
+                        "block": "I3C"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK1",
                         "kernel_clock": {
@@ -3620,6 +3630,11 @@
                 {
                     "name": "SAI1",
                     "address": 1073828864,
+                    "registers": {
+                        "kind": "sai",
+                        "version": "v4_2pdm",
+                        "block": "SAI"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK2",
                         "kernel_clock": {
@@ -3789,6 +3804,11 @@
                 {
                     "name": "SAI2",
                     "address": 1073829888,
+                    "registers": {
+                        "kind": "sai",
+                        "version": "v4_2pdm",
+                        "block": "SAI"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK2",
                         "kernel_clock": {

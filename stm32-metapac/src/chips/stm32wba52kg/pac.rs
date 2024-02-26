@@ -336,7 +336,7 @@ pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0000usize as 
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0400usize as _) };
 pub const GPIOC: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0800usize as _) };
 pub const GPIOH: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1c00usize as _) };
-pub const AES: *mut () = 0x420c_0000usize as _;
+pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x420c_0000usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
 pub const SAES: saes::Saes = unsafe { saes::Saes::from_ptr(0x420c_0c00usize as _) };
@@ -364,6 +364,8 @@ pub use Interrupt as interrupt;
 pub fn GPIO(n: usize) -> gpio::Gpio {
     unsafe { gpio::Gpio::from_ptr((1107427328 + 1024 * n) as _) }
 }
+#[path = "../../peripherals/aes_v3b.rs"]
+pub mod aes;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/dbgmcu_wba.rs"]

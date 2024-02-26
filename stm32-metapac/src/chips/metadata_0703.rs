@@ -2587,7 +2587,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SAI1",
         address: 0x40015400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "sai",
+            version: "v4_2pdm",
+            block: "SAI",
+            ir: &sai::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -5585,6 +5590,8 @@ pub mod rcc;
 pub mod rng;
 #[path = "../registers/rtc_v3u5.rs"]
 pub mod rtc;
+#[path = "../registers/sai_v4_2pdm.rs"]
+pub mod sai;
 #[path = "../registers/spi_v5.rs"]
 pub mod spi;
 #[path = "../registers/syscfg_u5.rs"]

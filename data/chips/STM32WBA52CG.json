@@ -124,6 +124,11 @@
                 {
                     "name": "AES",
                     "address": 1108082688,
+                    "registers": {
+                        "kind": "aes",
+                        "version": "v3b",
+                        "block": "AES"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK2",
                         "kernel_clock": "HCLK2",

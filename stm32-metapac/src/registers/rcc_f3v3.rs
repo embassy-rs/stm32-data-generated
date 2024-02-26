@@ -3738,7 +3738,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PLL1_P",
+                    name: "PLL1_P_MUL_2",
                     description: Some(
                         "PLL vco output (running up to 144 MHz)",
                     ),
@@ -3759,7 +3759,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PLL1_P",
+                    name: "PLL1_P_MUL_2",
                     description: Some(
                         "PLL vco output (running up to 144 MHz)",
                     ),

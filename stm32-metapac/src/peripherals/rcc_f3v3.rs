@@ -2862,7 +2862,7 @@ pub mod vals {
         #[doc = "PCLK2 clock (doubled frequency when prescaled)"]
         PCLK1_TIM = 0x0,
         #[doc = "PLL vco output (running up to 144 MHz)"]
-        PLL1_P = 0x01,
+        PLL1_P_MUL_2 = 0x01,
     }
     impl Tim2sw {
         #[inline(always)]
@@ -2892,7 +2892,7 @@ pub mod vals {
         #[doc = "PCLK2 clock (doubled frequency when prescaled)"]
         PCLK2_TIM = 0x0,
         #[doc = "PLL vco output (running up to 144 MHz)"]
-        PLL1_P = 0x01,
+        PLL1_P_MUL_2 = 0x01,
     }
     impl Timsw {
         #[inline(always)]

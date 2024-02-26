@@ -685,12 +685,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "SIXTEENBIT",
+                    name: "BITS16",
                     description: Some("16-bit wide"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "THIRTYTWOBIT",
+                    name: "BITS32",
                     description: Some("32-bit wide"),
                     value: 1,
                 },
@@ -770,12 +770,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "EIGHTBIT",
+                    name: "BITS8",
                     description: Some("8-bit CRC length"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SIXTEENBIT",
+                    name: "BITS16",
                     description: Some("16-bit CRC length"),
                     value: 1,
                 },
@@ -804,17 +804,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "SIXTEENBIT",
+                    name: "BITS16",
                     description: Some("16-bit data length"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "TWENTYFOURBIT",
+                    name: "BITS24",
                     description: Some("24-bit data length"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "THIRTYTWOBIT",
+                    name: "BITS32",
                     description: Some("32-bit data length"),
                     value: 2,
                 },
@@ -826,67 +826,67 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "FOURBIT",
+                    name: "BITS4",
                     description: Some("4-bit"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "FIVEBIT",
+                    name: "BITS5",
                     description: Some("5-bit"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "SIXBIT",
+                    name: "BITS6",
                     description: Some("6-bit"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "SEVENBIT",
+                    name: "BITS7",
                     description: Some("7-bit"),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "EIGHTBIT",
+                    name: "BITS8",
                     description: Some("8-bit"),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "NINEBIT",
+                    name: "BITS9",
                     description: Some("9-bit"),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "TENBIT",
+                    name: "BITS10",
                     description: Some("10-bit"),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "ELEVENBIT",
+                    name: "BITS11",
                     description: Some("11-bit"),
                     value: 10,
                 },
                 EnumVariant {
-                    name: "TWELVEBIT",
+                    name: "BITS12",
                     description: Some("12-bit"),
                     value: 11,
                 },
                 EnumVariant {
-                    name: "THIRTEENBIT",
+                    name: "BITS13",
                     description: Some("13-bit"),
                     value: 12,
                 },
                 EnumVariant {
-                    name: "FOURTEENBIT",
+                    name: "BITS14",
                     description: Some("14-bit"),
                     value: 13,
                 },
                 EnumVariant {
-                    name: "FIFTEENBIT",
+                    name: "BITS15",
                     description: Some("15-bit"),
                     value: 14,
                 },
                 EnumVariant {
-                    name: "SIXTEENBIT",
+                    name: "BITS16",
                     description: Some("16-bit"),
                     value: 15,
                 },

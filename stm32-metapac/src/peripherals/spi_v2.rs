@@ -865,9 +865,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Chlen {
         #[doc = "16-bit wide"]
-        SIXTEENBIT = 0x0,
+        BITS16 = 0x0,
         #[doc = "32-bit wide"]
-        THIRTYTWOBIT = 0x01,
+        BITS32 = 0x01,
     }
     impl Chlen {
         #[inline(always)]
@@ -1015,9 +1015,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Crcl {
         #[doc = "8-bit CRC length"]
-        EIGHTBIT = 0x0,
+        BITS8 = 0x0,
         #[doc = "16-bit CRC length"]
-        SIXTEENBIT = 0x01,
+        BITS16 = 0x01,
     }
     impl Crcl {
         #[inline(always)]
@@ -1075,11 +1075,11 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Datlen {
         #[doc = "16-bit data length"]
-        SIXTEENBIT = 0x0,
+        BITS16 = 0x0,
         #[doc = "24-bit data length"]
-        TWENTYFOURBIT = 0x01,
+        BITS24 = 0x01,
         #[doc = "32-bit data length"]
-        THIRTYTWOBIT = 0x02,
+        BITS32 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Datlen {
@@ -1111,31 +1111,31 @@ pub mod vals {
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "4-bit"]
-        FOURBIT = 0x03,
+        BITS4 = 0x03,
         #[doc = "5-bit"]
-        FIVEBIT = 0x04,
+        BITS5 = 0x04,
         #[doc = "6-bit"]
-        SIXBIT = 0x05,
+        BITS6 = 0x05,
         #[doc = "7-bit"]
-        SEVENBIT = 0x06,
+        BITS7 = 0x06,
         #[doc = "8-bit"]
-        EIGHTBIT = 0x07,
+        BITS8 = 0x07,
         #[doc = "9-bit"]
-        NINEBIT = 0x08,
+        BITS9 = 0x08,
         #[doc = "10-bit"]
-        TENBIT = 0x09,
+        BITS10 = 0x09,
         #[doc = "11-bit"]
-        ELEVENBIT = 0x0a,
+        BITS11 = 0x0a,
         #[doc = "12-bit"]
-        TWELVEBIT = 0x0b,
+        BITS12 = 0x0b,
         #[doc = "13-bit"]
-        THIRTEENBIT = 0x0c,
+        BITS13 = 0x0c,
         #[doc = "14-bit"]
-        FOURTEENBIT = 0x0d,
+        BITS14 = 0x0d,
         #[doc = "15-bit"]
-        FIFTEENBIT = 0x0e,
+        BITS15 = 0x0e,
         #[doc = "16-bit"]
-        SIXTEENBIT = 0x0f,
+        BITS16 = 0x0f,
     }
     impl Ds {
         #[inline(always)]

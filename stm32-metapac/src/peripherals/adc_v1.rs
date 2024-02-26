@@ -839,13 +839,13 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Res {
         #[doc = "12-bit (14 ADCCLK cycles)"]
-        TWELVEBIT = 0x0,
+        BITS12 = 0x0,
         #[doc = "10-bit (13 ADCCLK cycles)"]
-        TENBIT = 0x01,
+        BITS10 = 0x01,
         #[doc = "8-bit (11 ADCCLK cycles)"]
-        EIGHTBIT = 0x02,
+        BITS8 = 0x02,
         #[doc = "6-bit (9 ADCCLK cycles)"]
-        SIXBIT = 0x03,
+        BITS6 = 0x03,
     }
     impl Res {
         #[inline(always)]

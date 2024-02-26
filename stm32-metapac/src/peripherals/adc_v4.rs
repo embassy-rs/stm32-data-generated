@@ -1924,20 +1924,20 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Res {
         #[doc = "16-bit resolution"]
-        SIXTEENBIT = 0x0,
+        BITS16 = 0x0,
         #[doc = "14-bit resolution in legacy mode (not optimized power consumption)"]
-        FOURTEENBIT = 0x01,
+        BITS14 = 0x01,
         #[doc = "12-bit resolution in legacy mode (not optimized power consumption)"]
-        TWELVEBIT = 0x02,
+        BITS12 = 0x02,
         #[doc = "10-bit resolution"]
-        TENBIT = 0x03,
+        BITS10 = 0x03,
         _RESERVED_4 = 0x04,
         #[doc = "14-bit resolution"]
-        FOURTEENBITV = 0x05,
+        BITS14V = 0x05,
         #[doc = "12-bit resolution"]
-        TWELVEBITV = 0x06,
+        BITS12V = 0x06,
         #[doc = "8-bit resolution"]
-        EIGHTBIT = 0x07,
+        BITS8 = 0x07,
     }
     impl Res {
         #[inline(always)]

@@ -528,12 +528,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "SixteenBit",
+        "name": "Bits16",
         "description": "16-bit wide",
         "value": 0
       },
       {
-        "name": "ThirtyTwoBit",
+        "name": "Bits32",
         "description": "32-bit wide",
         "value": 1
       }
@@ -603,12 +603,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "EightBit",
+        "name": "Bits8",
         "description": "8-bit CRC length",
         "value": 0
       },
       {
-        "name": "SixteenBit",
+        "name": "Bits16",
         "description": "16-bit CRC length",
         "value": 1
       }
@@ -633,17 +633,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "SixteenBit",
+        "name": "Bits16",
         "description": "16-bit data length",
         "value": 0
       },
       {
-        "name": "TwentyFourBit",
+        "name": "Bits24",
         "description": "24-bit data length",
         "value": 1
       },
       {
-        "name": "ThirtyTwoBit",
+        "name": "Bits32",
         "description": "32-bit data length",
         "value": 2
       }
@@ -653,67 +653,67 @@
     "bit_size": 4,
     "variants": [
       {
-        "name": "FourBit",
+        "name": "Bits4",
         "description": "4-bit",
         "value": 3
       },
       {
-        "name": "FiveBit",
+        "name": "Bits5",
         "description": "5-bit",
         "value": 4
       },
       {
-        "name": "SixBit",
+        "name": "Bits6",
         "description": "6-bit",
         "value": 5
       },
       {
-        "name": "SevenBit",
+        "name": "Bits7",
         "description": "7-bit",
         "value": 6
       },
       {
-        "name": "EightBit",
+        "name": "Bits8",
         "description": "8-bit",
         "value": 7
       },
       {
-        "name": "NineBit",
+        "name": "Bits9",
         "description": "9-bit",
         "value": 8
       },
       {
-        "name": "TenBit",
+        "name": "Bits10",
         "description": "10-bit",
         "value": 9
       },
       {
-        "name": "ElevenBit",
+        "name": "Bits11",
         "description": "11-bit",
         "value": 10
       },
       {
-        "name": "TwelveBit",
+        "name": "Bits12",
         "description": "12-bit",
         "value": 11
       },
       {
-        "name": "ThirteenBit",
+        "name": "Bits13",
         "description": "13-bit",
         "value": 12
       },
       {
-        "name": "FourteenBit",
+        "name": "Bits14",
         "description": "14-bit",
         "value": 13
       },
       {
-        "name": "FifteenBit",
+        "name": "Bits15",
         "description": "15-bit",
         "value": 14
       },
       {
-        "name": "SixteenBit",
+        "name": "Bits16",
         "description": "16-bit",
         "value": 15
       }

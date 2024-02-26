@@ -809,22 +809,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "TWELVEBIT",
+                    name: "BITS12",
                     description: Some("12-bit (14 ADCCLK cycles)"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "TENBIT",
+                    name: "BITS10",
                     description: Some("10-bit (13 ADCCLK cycles)"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "EIGHTBIT",
+                    name: "BITS8",
                     description: Some("8-bit (11 ADCCLK cycles)"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SIXBIT",
+                    name: "BITS6",
                     description: Some("6-bit (9 ADCCLK cycles)"),
                     value: 3,
                 },

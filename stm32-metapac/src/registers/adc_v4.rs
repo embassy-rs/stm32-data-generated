@@ -1475,37 +1475,37 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "SIXTEENBIT",
+                    name: "BITS16",
                     description: Some("16-bit resolution"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FOURTEENBIT",
+                    name: "BITS14",
                     description: Some("14-bit resolution in legacy mode (not optimized power consumption)"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "TWELVEBIT",
+                    name: "BITS12",
                     description: Some("12-bit resolution in legacy mode (not optimized power consumption)"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "TENBIT",
+                    name: "BITS10",
                     description: Some("10-bit resolution"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "FOURTEENBITV",
+                    name: "BITS14V",
                     description: Some("14-bit resolution"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "TWELVEBITV",
+                    name: "BITS12V",
                     description: Some("12-bit resolution"),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "EIGHTBIT",
+                    name: "BITS8",
                     description: Some("8-bit resolution"),
                     value: 7,
                 },

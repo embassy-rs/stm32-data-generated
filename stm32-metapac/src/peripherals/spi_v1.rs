@@ -777,9 +777,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Chlen {
         #[doc = "16-bit wide"]
-        SIXTEENBIT = 0x0,
+        BITS16 = 0x0,
         #[doc = "32-bit wide"]
-        THIRTYTWOBIT = 0x01,
+        BITS32 = 0x01,
     }
     impl Chlen {
         #[inline(always)]
@@ -957,11 +957,11 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Datlen {
         #[doc = "16-bit data length"]
-        SIXTEENBIT = 0x0,
+        BITS16 = 0x0,
         #[doc = "24-bit data length"]
-        TWENTYFOURBIT = 0x01,
+        BITS24 = 0x01,
         #[doc = "32-bit data length"]
-        THIRTYTWOBIT = 0x02,
+        BITS32 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Datlen {
@@ -990,9 +990,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dff {
         #[doc = "8-bit data frame format is selected for transmission/reception"]
-        EIGHTBIT = 0x0,
+        BITS8 = 0x0,
         #[doc = "16-bit data frame format is selected for transmission/reception"]
-        SIXTEENBIT = 0x01,
+        BITS16 = 0x01,
     }
     impl Dff {
         #[inline(always)]

@@ -399,7 +399,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "BIT8_6",
+                    name: "BITS8_6",
                     description: Some("MDMA mode enabled for 8 and 6-bit resolution"),
                     value: 3,
                 },

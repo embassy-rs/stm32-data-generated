@@ -621,12 +621,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "SIXTEENBIT",
+                    name: "BITS16",
                     description: Some("16-bit wide"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "THIRTYTWOBIT",
+                    name: "BITS32",
                     description: Some("32-bit wide"),
                     value: 1,
                 },
@@ -723,17 +723,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "SIXTEENBIT",
+                    name: "BITS16",
                     description: Some("16-bit data length"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "TWENTYFOURBIT",
+                    name: "BITS24",
                     description: Some("24-bit data length"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "THIRTYTWOBIT",
+                    name: "BITS32",
                     description: Some("32-bit data length"),
                     value: 2,
                 },
@@ -745,12 +745,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "EIGHTBIT",
+                    name: "BITS8",
                     description: Some("8-bit data frame format is selected for transmission/reception"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SIXTEENBIT",
+                    name: "BITS16",
                     description: Some("16-bit data frame format is selected for transmission/reception"),
                     value: 1,
                 },

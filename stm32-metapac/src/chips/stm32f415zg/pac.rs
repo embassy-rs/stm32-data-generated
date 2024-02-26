@@ -435,7 +435,7 @@ pub mod adccommon;
 pub mod can;
 #[path = "../../peripherals/crc_v1.rs"]
 pub mod crc;
-#[path = "../../peripherals/cryp_v2.rs"]
+#[path = "../../peripherals/cryp_v3.rs"]
 pub mod cryp;
 #[path = "../../peripherals/dac_v2.rs"]
 pub mod dac;

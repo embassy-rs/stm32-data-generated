@@ -478,7 +478,7 @@ pub const USB_OTG_FS: otg::Otg = unsafe { otg::Otg::from_ptr(0x5000_0000usize as
 pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x5004_0000usize as _) };
 pub const ADC2: adc::Adc = unsafe { adc::Adc::from_ptr(0x5004_0100usize as _) };
 pub const ADC_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x5004_0300usize as _) };
-pub const PKA: *mut () = 0x5005_e000usize as _;
+pub const PKA: pka::Pka = unsafe { pka::Pka::from_ptr(0x5005_e000usize as _) };
 pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x5006_0000usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x5006_0400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x5006_0800usize as _) };
@@ -539,6 +539,8 @@ pub mod octospi;
 pub mod octospim;
 #[path = "../../peripherals/otg_v1.rs"]
 pub mod otg;
+#[path = "../../peripherals/pka_v1c.rs"]
+pub mod pka;
 #[path = "../../peripherals/pwr_l4.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_l4plus.rs"]

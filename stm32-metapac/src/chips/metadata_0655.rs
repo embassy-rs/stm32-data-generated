@@ -2008,7 +2008,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "PKA",
         address: 0x5005e000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "pka",
+            version: "v1c",
+            block: "PKA",
+            ir: &pka::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
             kernel_clock: Clock("HCLK2"),
@@ -5093,6 +5098,8 @@ pub mod octospi;
 pub mod octospim;
 #[path = "../registers/otg_v1.rs"]
 pub mod otg;
+#[path = "../registers/pka_v1c.rs"]
+pub mod pka;
 #[path = "../registers/pwr_l4.rs"]
 pub mod pwr;
 #[path = "../registers/rcc_l4plus.rs"]

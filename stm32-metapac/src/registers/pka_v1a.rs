@@ -6,7 +6,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Pka",
             extends: None,
             description: Some(
-                "Private key accelerator.",
+                "Public key accelerator.",
             ),
             items: &[
                 BlockItem {
@@ -57,6 +57,28 @@ pub(crate) static REGISTERS: IR = IR {
                             fieldset: Some(
                                 "Clrfr",
                             ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ram",
+                    description: Some(
+                        "PKA internal memeory.",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 1334,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 0x400,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: None,
                         },
                     ),
                 },

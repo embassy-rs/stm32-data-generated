@@ -2687,7 +2687,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "OTFDEC1",
         address: 0x420c5000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "otfdec",
+            version: "v1",
+            block: "OTFDEC",
+            ir: &otfdec::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
             kernel_clock: Clock("HCLK2"),
@@ -6881,6 +6886,8 @@ pub mod iwdg;
 pub mod lptim;
 #[path = "../registers/octospi_v1.rs"]
 pub mod octospi;
+#[path = "../registers/otfdec_v1.rs"]
+pub mod otfdec;
 #[path = "../registers/pka_v1b.rs"]
 pub mod pka;
 #[path = "../registers/pssi_v1.rs"]

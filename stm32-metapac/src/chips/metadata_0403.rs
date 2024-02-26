@@ -3994,7 +3994,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "OTFDEC1",
         address: 0x5200b800,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "otfdec",
+            version: "v1",
+            block: "OTFDEC",
+            ir: &otfdec::REGISTERS,
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -4006,7 +4011,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "OTFDEC2",
         address: 0x5200bc00,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "otfdec",
+            version: "v1",
+            block: "OTFDEC",
+            ir: &otfdec::REGISTERS,
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -9276,6 +9286,8 @@ pub mod mdios;
 pub mod octospi;
 #[path = "../registers/octospim_v1.rs"]
 pub mod octospim;
+#[path = "../registers/otfdec_v1.rs"]
+pub mod otfdec;
 #[path = "../registers/otg_v1.rs"]
 pub mod otg;
 #[path = "../registers/pssi_v1.rs"]

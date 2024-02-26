@@ -4755,6 +4755,11 @@
                 {
                     "name": "OTFDEC1",
                     "address": 1375778816,
+                    "registers": {
+                        "kind": "otfdec",
+                        "version": "v1",
+                        "block": "OTFDEC"
+                    },
                     "interrupts": [
                         {
                             "signal": "GLOBAL",
@@ -4765,6 +4770,11 @@
                 {
                     "name": "OTFDEC2",
                     "address": 1375779840,
+                    "registers": {
+                        "kind": "otfdec",
+                        "version": "v1",
+                        "block": "OTFDEC"
+                    },
                     "interrupts": [
                         {
                             "signal": "GLOBAL",

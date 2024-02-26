@@ -2887,6 +2887,11 @@
                 {
                     "name": "OTFDEC1",
                     "address": 1108103168,
+                    "registers": {
+                        "kind": "otfdec",
+                        "version": "v1",
+                        "block": "OTFDEC"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK2",
                         "kernel_clock": "HCLK2",
@@ -2909,6 +2914,11 @@
                 {
                     "name": "OTFDEC2",
                     "address": 1108104192,
+                    "registers": {
+                        "kind": "otfdec",
+                        "version": "v1",
+                        "block": "OTFDEC"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK2",
                         "kernel_clock": "HCLK2",

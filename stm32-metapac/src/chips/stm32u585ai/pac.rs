@@ -625,8 +625,8 @@ pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
 pub const SAES: saes::Saes = unsafe { saes::Saes::from_ptr(0x420c_0c00usize as _) };
 pub const PKA: pka::Pka = unsafe { pka::Pka::from_ptr(0x420c_2000usize as _) };
 pub const OCTOSPIM: octospim::Octospim = unsafe { octospim::Octospim::from_ptr(0x420c_4000usize as _) };
-pub const OTFDEC1: *mut () = 0x420c_5000usize as _;
-pub const OTFDEC2: *mut () = 0x420c_5400usize as _;
+pub const OTFDEC1: otfdec::Otfdec = unsafe { otfdec::Otfdec::from_ptr(0x420c_5000usize as _) };
+pub const OTFDEC2: otfdec::Otfdec = unsafe { otfdec::Otfdec::from_ptr(0x420c_5400usize as _) };
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x420c_8000usize as _) };
 pub const SDMMC2: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x420c_8c00usize as _) };
 pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x420d_1400usize as _) };
@@ -712,6 +712,8 @@ pub mod lptim;
 pub mod octospi;
 #[path = "../../peripherals/octospim_v1.rs"]
 pub mod octospim;
+#[path = "../../peripherals/otfdec_v1.rs"]
+pub mod otfdec;
 #[path = "../../peripherals/otg_v1.rs"]
 pub mod otg;
 #[path = "../../peripherals/pka_v1b.rs"]

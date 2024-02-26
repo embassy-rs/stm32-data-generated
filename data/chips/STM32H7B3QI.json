@@ -3957,6 +3957,11 @@
                 {
                     "name": "OTFDEC1",
                     "address": 1375778816,
+                    "registers": {
+                        "kind": "otfdec",
+                        "version": "v1",
+                        "block": "OTFDEC"
+                    },
                     "interrupts": [
                         {
                             "signal": "GLOBAL",

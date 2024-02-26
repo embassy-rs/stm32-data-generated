@@ -702,8 +702,8 @@ pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x520
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x5200_7000usize as _) };
 pub const OCTOSPI2: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x5200_a000usize as _) };
 pub const OCTOSPIM: octospim::Octospim = unsafe { octospim::Octospim::from_ptr(0x5200_b400usize as _) };
-pub const OTFDEC1: *mut () = 0x5200_b800usize as _;
-pub const OTFDEC2: *mut () = 0x5200_bc00usize as _;
+pub const OTFDEC1: otfdec::Otfdec = unsafe { otfdec::Otfdec::from_ptr(0x5200_b800usize as _) };
+pub const OTFDEC2: otfdec::Otfdec = unsafe { otfdec::Otfdec::from_ptr(0x5200_bc00usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x5800_0000usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x5800_0400usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x5800_0c00usize as _) };
@@ -808,6 +808,8 @@ pub mod mdios;
 pub mod octospi;
 #[path = "../../peripherals/octospim_v1.rs"]
 pub mod octospim;
+#[path = "../../peripherals/otfdec_v1.rs"]
+pub mod otfdec;
 #[path = "../../peripherals/otg_v1.rs"]
 pub mod otg;
 #[path = "../../peripherals/pssi_v1.rs"]

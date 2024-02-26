@@ -553,7 +553,7 @@ pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x420c_0000usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
 pub const PKA: pka::Pka = unsafe { pka::Pka::from_ptr(0x420c_2000usize as _) };
-pub const OTFDEC1: *mut () = 0x420c_5000usize as _;
+pub const OTFDEC1: otfdec::Otfdec = unsafe { otfdec::Otfdec::from_ptr(0x420c_5000usize as _) };
 pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x4402_1000usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_4000usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
@@ -606,6 +606,8 @@ pub mod iwdg;
 pub mod lptim;
 #[path = "../../peripherals/octospi_v2.rs"]
 pub mod octospi;
+#[path = "../../peripherals/otfdec_v1.rs"]
+pub mod otfdec;
 #[path = "../../peripherals/pka_v1c.rs"]
 pub mod pka;
 #[path = "../../peripherals/pwr_l5.rs"]

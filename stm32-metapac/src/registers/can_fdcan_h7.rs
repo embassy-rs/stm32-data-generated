@@ -3344,7 +3344,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Tfqm"),
                 },
             ],
         },
@@ -3619,5 +3619,21 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
     ],
-    enums: &[],
+    enums: &[Enum {
+        name: "Tfqm",
+        description: None,
+        bit_size: 1,
+        variants: &[
+            EnumVariant {
+                name: "FIFO",
+                description: Some("Tx FIFO operation"),
+                value: 0,
+            },
+            EnumVariant {
+                name: "QUEUE",
+                description: Some("Tx queue operation"),
+                value: 1,
+            },
+        ],
+    }],
 };

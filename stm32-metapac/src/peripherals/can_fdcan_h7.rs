@@ -4113,14 +4113,14 @@ pub mod regs {
         }
         #[doc = "Tx FIFO/Queue Mode"]
         #[inline(always)]
-        pub const fn tfqm(&self) -> bool {
+        pub const fn tfqm(&self) -> super::vals::Tfqm {
             let val = (self.0 >> 30usize) & 0x01;
-            val != 0
+            super::vals::Tfqm::from_bits(val as u8)
         }
         #[doc = "Tx FIFO/Queue Mode"]
         #[inline(always)]
-        pub fn set_tfqm(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
+        pub fn set_tfqm(&mut self, val: super::vals::Tfqm) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
         }
     }
     impl Default for Txbc {
@@ -4560,6 +4560,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Xidfc {
             Xidfc(0)
+        }
+    }
+}
+pub mod vals {
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Tfqm {
+        #[doc = "Tx FIFO operation"]
+        FIFO = 0x0,
+        #[doc = "Tx queue operation"]
+        QUEUE = 0x01,
+    }
+    impl Tfqm {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Tfqm {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Tfqm {
+        #[inline(always)]
+        fn from(val: u8) -> Tfqm {
+            Tfqm::from_bits(val)
+        }
+    }
+    impl From<Tfqm> for u8 {
+        #[inline(always)]
+        fn from(val: Tfqm) -> u8 {
+            Tfqm::to_bits(val)
         }
     }
 }

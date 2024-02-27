@@ -2040,16 +2040,16 @@ depending on the configuration of TSCC\\[TCP\\]. A wrap around sets interrupt fl
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
         #[inline(always)]
-        pub const fn tfqm(&self) -> bool {
+        pub const fn tfqm(&self) -> super::vals::Tfqm {
             let val = (self.0 >> 24usize) & 0x01;
-            val != 0
+            super::vals::Tfqm::from_bits(val as u8)
         }
         #[doc = "Tx FIFO/queue mode. This is a protected write (P) bit, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
         #[inline(always)]
-        pub fn set_tfqm(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
+        pub fn set_tfqm(&mut self, val: super::vals::Tfqm) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
         }
     }
     impl Default for Txbc {
@@ -2633,6 +2633,36 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Pdiv) -> u8 {
             Pdiv::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Tfqm {
+        #[doc = "Tx FIFO operation"]
+        FIFO = 0x0,
+        #[doc = "Tx queue operation"]
+        QUEUE = 0x01,
+    }
+    impl Tfqm {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Tfqm {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Tfqm {
+        #[inline(always)]
+        fn from(val: u8) -> Tfqm {
+            Tfqm::from_bits(val)
+        }
+    }
+    impl From<Tfqm> for u8 {
+        #[inline(always)]
+        fn from(val: Tfqm) -> u8 {
+            Tfqm::to_bits(val)
         }
     }
     #[repr(u8)]

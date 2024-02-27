@@ -1180,7 +1180,8 @@
         "name": "TFQM",
         "description": "Tx FIFO/queue mode. This is a protected write (P) bit, which means that write access by the bits is possible only when the bit 1 [CCE] and bit 0 [INIT] of CCCR register are set to 1",
         "bit_offset": 24,
-        "bit_size": 1
+        "bit_size": 1,
+        "enum": "TFQM"
       }
     ]
   },
@@ -1577,6 +1578,21 @@
         "name": "DIV_30",
         "description": "Divide by 30",
         "value": 15
+      }
+    ]
+  },
+  "enum/TFQM": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "FIFO",
+        "description": "Tx FIFO operation",
+        "value": 0
+      },
+      {
+        "name": "QUEUE",
+        "description": "Tx queue operation",
+        "value": 1
       }
     ]
   },

@@ -645,8 +645,8 @@ pub const UART7: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_7800usize
 pub const UART8: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_7c00usize as _) };
 pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_8400usize as _) };
 pub const SWPMI1: *mut () = 0x4000_8800usize as _;
-pub const OPAMP1: *mut () = 0x4000_9000usize as _;
-pub const OPAMP2: *mut () = 0x4000_9010usize as _;
+pub const OPAMP1: opamp::Opamp = unsafe { opamp::Opamp::from_ptr(0x4000_9000usize as _) };
+pub const OPAMP2: opamp::Opamp = unsafe { opamp::Opamp::from_ptr(0x4000_9010usize as _) };
 pub const MDIOS: mdios::Mdios = unsafe { mdios::Mdios::from_ptr(0x4000_9400usize as _) };
 pub const FDCAN1: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a000usize as _) };
 pub const FDCAN2: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a400usize as _) };
@@ -789,6 +789,8 @@ pub mod jpeg;
 pub mod lptim;
 #[path = "../../peripherals/mdios_v1.rs"]
 pub mod mdios;
+#[path = "../../peripherals/opamp_h_v1.rs"]
+pub mod opamp;
 #[path = "../../peripherals/otg_v1.rs"]
 pub mod otg;
 #[path = "../../peripherals/pwr_h7rm0433.rs"]

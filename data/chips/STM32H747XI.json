@@ -4707,6 +4707,11 @@
                 {
                     "name": "OPAMP1",
                     "address": 1073778688,
+                    "registers": {
+                        "kind": "opamp",
+                        "version": "h_v1",
+                        "block": "OPAMP"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK1",
                         "kernel_clock": "PCLK1",
@@ -4749,6 +4754,11 @@
                 {
                     "name": "OPAMP2",
                     "address": 1073778704,
+                    "registers": {
+                        "kind": "opamp",
+                        "version": "h_v1",
+                        "block": "OPAMP"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK1",
                         "kernel_clock": "PCLK1",
@@ -14698,6 +14708,11 @@
                 {
                     "name": "OPAMP1",
                     "address": 1073778688,
+                    "registers": {
+                        "kind": "opamp",
+                        "version": "h_v1",
+                        "block": "OPAMP"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK1",
                         "kernel_clock": "PCLK1",
@@ -14740,6 +14755,11 @@
                 {
                     "name": "OPAMP2",
                     "address": 1073778704,
+                    "registers": {
+                        "kind": "opamp",
+                        "version": "h_v1",
+                        "block": "OPAMP"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK1",
                         "kernel_clock": "PCLK1",

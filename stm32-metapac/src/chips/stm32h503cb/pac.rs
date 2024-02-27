@@ -424,7 +424,7 @@ pub const TIM6: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4000_1000
 pub const TIM7: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4000_1400usize as _) };
 pub const WWDG: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x4000_2c00usize as _) };
 pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000usize as _) };
-pub const OPAMP1: *mut () = 0x4000_3400usize as _;
+pub const OPAMP1: opamp::Opamp = unsafe { opamp::Opamp::from_ptr(0x4000_3400usize as _) };
 pub const SPI2: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3800usize as _) };
 pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3c00usize as _) };
 pub const COMP1: comp::Comp = unsafe { comp::Comp::from_ptr(0x4000_4000usize as _) };
@@ -518,6 +518,8 @@ pub mod icache;
 pub mod iwdg;
 #[path = "../../peripherals/lptim_v1.rs"]
 pub mod lptim;
+#[path = "../../peripherals/opamp_h_v2.rs"]
+pub mod opamp;
 #[path = "../../peripherals/pwr_h50.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_h50.rs"]

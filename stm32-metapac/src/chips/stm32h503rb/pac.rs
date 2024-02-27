@@ -427,7 +427,7 @@ pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000usize as _
 pub const OPAMP1: *mut () = 0x4000_3400usize as _;
 pub const SPI2: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3800usize as _) };
 pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3c00usize as _) };
-pub const COMP1: *mut () = 0x4000_4000usize as _;
+pub const COMP1: comp::Comp = unsafe { comp::Comp::from_ptr(0x4000_4000usize as _) };
 pub const USART2: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4400usize as _) };
 pub const USART3: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4800usize as _) };
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400usize as _) };
@@ -484,6 +484,8 @@ pub mod adc;
 pub mod adccommon;
 #[path = "../../peripherals/can_fdcan_v1.rs"]
 pub mod can;
+#[path = "../../peripherals/comp_h5.rs"]
+pub mod comp;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]

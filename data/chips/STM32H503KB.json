@@ -171,6 +171,11 @@
                 {
                     "name": "COMP1",
                     "address": 1073758208,
+                    "registers": {
+                        "kind": "comp",
+                        "version": "h5",
+                        "block": "COMP"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK1",
                         "kernel_clock": "PCLK1",

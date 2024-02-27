@@ -711,8 +711,8 @@ pub const LPTIM2: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x5800_2400usiz
 pub const LPTIM3: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x5800_2800usize as _) };
 pub const LPTIM4: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x5800_2c00usize as _) };
 pub const LPTIM5: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x5800_3000usize as _) };
-pub const COMP1: *mut () = 0x5800_380cusize as _;
-pub const COMP2: *mut () = 0x5800_3810usize as _;
+pub const COMP1: comp::Comp = unsafe { comp::Comp::from_ptr(0x5800_380cusize as _) };
+pub const COMP2: comp::Comp = unsafe { comp::Comp::from_ptr(0x5800_3810usize as _) };
 pub const VREFBUF: vrefbuf::Vrefbuf = unsafe { vrefbuf::Vrefbuf::from_ptr(0x5800_3c00usize as _) };
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x5800_4000usize as _) };
 pub const IWDG1: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x5800_4800usize as _) };
@@ -757,6 +757,8 @@ pub mod bdma;
 pub mod can;
 #[path = "../../peripherals/cec_v2.rs"]
 pub mod cec;
+#[path = "../../peripherals/comp_h7_b.rs"]
+pub mod comp;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]

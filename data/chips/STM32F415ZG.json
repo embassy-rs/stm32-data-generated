@@ -814,7 +814,7 @@
                     "address": 1342570496,
                     "registers": {
                         "kind": "cryp",
-                        "version": "v3",
+                        "version": "v1",
                         "block": "CRYP"
                     },
                     "rcc": {

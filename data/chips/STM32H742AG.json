@@ -835,6 +835,11 @@
                 {
                     "name": "COMP1",
                     "address": 1476409356,
+                    "registers": {
+                        "kind": "comp",
+                        "version": "h7_b",
+                        "block": "COMP"
+                    },
                     "pins": [
                         {
                             "pin": "PB0",
@@ -867,6 +872,11 @@
                 {
                     "name": "COMP2",
                     "address": 1476409360,
+                    "registers": {
+                        "kind": "comp",
+                        "version": "h7_b",
+                        "block": "COMP"
+                    },
                     "pins": [
                         {
                             "pin": "PE10",

@@ -926,7 +926,7 @@
                     "address": 1342570496,
                     "registers": {
                         "kind": "cryp",
-                        "version": "v3",
+                        "version": "v2",
                         "block": "CRYP"
                     },
                     "rcc": {

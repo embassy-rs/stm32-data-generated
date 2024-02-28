@@ -43,13 +43,13 @@ pub mod regs {
     impl Csr {
         #[doc = "Operational amplifier Enable."]
         #[inline(always)]
-        pub const fn opaen(&self) -> bool {
+        pub const fn opampen(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[doc = "Operational amplifier Enable."]
         #[inline(always)]
-        pub fn set_opaen(&mut self, val: bool) {
+        pub fn set_opampen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Force internal reference on VP (reserved for test."]
@@ -120,14 +120,14 @@ pub mod regs {
         }
         #[doc = "allows to switch from AOP offset trimmed values to AOP offset."]
         #[inline(always)]
-        pub const fn pga_gain(&self) -> u8 {
+        pub const fn pga_gain(&self) -> super::vals::PgaGain {
             let val = (self.0 >> 14usize) & 0x0f;
-            val as u8
+            super::vals::PgaGain::from_bits(val as u8)
         }
         #[doc = "allows to switch from AOP offset trimmed values to AOP offset."]
         #[inline(always)]
-        pub fn set_pga_gain(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 14usize)) | (((val as u32) & 0x0f) << 14usize);
+        pub fn set_pga_gain(&mut self, val: super::vals::PgaGain) {
+            self.0 = (self.0 & !(0x0f << 14usize)) | (((val.to_bits() as u32) & 0x0f) << 14usize);
         }
         #[doc = "User trimming enable."]
         #[inline(always)]
@@ -391,6 +391,64 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Opahsm) -> u8 {
             Opahsm::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum PgaGain {
+        #[doc = "Non-inverting internal Gain 2, VREF- referenced"]
+        GAIN2 = 0x0,
+        #[doc = "Non-inverting internal Gain 4, VREF- referenced"]
+        GAIN4 = 0x01,
+        #[doc = "Non-inverting internal Gain 8, VREF- referenced"]
+        GAIN8 = 0x02,
+        #[doc = "Non-inverting internal Gain 16, VREF- referenced"]
+        GAIN16 = 0x03,
+        #[doc = "Non-inverting internal Gain 2 with filtering on INM0, VREF- referenced"]
+        GAIN2_FILTERINGVINM0 = 0x04,
+        #[doc = "Non-inverting internal Gain 4 with filtering on INM0, VREF- referenced"]
+        GAIN4_FILTERINGVINM0 = 0x05,
+        #[doc = "Non-inverting internal Gain 8 with filtering on INM0, VREF- referenced"]
+        GAIN8_FILTERINGVINM0 = 0x06,
+        #[doc = "Non-inverting internal Gain 8 with filtering on INM0, VREF- referenced"]
+        GAIN16_FILTERINGVINM0 = 0x07,
+        #[doc = "Inverting gain=-1/ Non-inverting gain =2 with INM0 node for input or bias"]
+        GAIN2INVGAINNEG1_INPUTVINM0 = 0x08,
+        #[doc = "Inverting gain=-3/ Non-inverting gain =4 with INM0 node for input or bias"]
+        GAIN4INVGAINNEG3_INPUTVINM0 = 0x09,
+        #[doc = "Inverting gain=-7/ Non-inverting gain =8 with INM0 node for input or bias"]
+        GAIN8INVGAINNEG7_INPUTVINM0 = 0x0a,
+        #[doc = "Inverting gain=-15/ Non-inverting gain =16 with INM0 node for input or bias"]
+        GAIN16INVGAINNEG15_INPUTVINM0 = 0x0b,
+        #[doc = "Inverting gain=-1/ Non-inverting gain =2 with INM0 node for input or bias, INM1 node for filtering"]
+        GAIN2INVGAINNEG1_INPUTVINM0FILTERINGVINM1 = 0x0c,
+        #[doc = "Inverting gain=-3/ Non-inverting gain =4 with INM0 node for input or bias, INM1 node for filtering"]
+        GAIN4INVGAINNEG3_INPUTVINM0FILTERINGVINM1 = 0x0d,
+        #[doc = "Inverting gain=-7/ Non-inverting gain =8 with INM0 node for input or bias, INM1 node for filtering"]
+        GAIN8INVGAINNEG7_INPUTVINM0FILTERINGVINM1 = 0x0e,
+        #[doc = "Inverting gain=-15/ Non-inverting gain =16 with INM0 node for input or bias, INM1 node for filtering"]
+        GAIN16INVGAINNEG15_INPUTVINM0FILTERINGVINM1 = 0x0f,
+    }
+    impl PgaGain {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> PgaGain {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for PgaGain {
+        #[inline(always)]
+        fn from(val: u8) -> PgaGain {
+            PgaGain::from_bits(val)
+        }
+    }
+    impl From<PgaGain> for u8 {
+        #[inline(always)]
+        fn from(val: PgaGain) -> u8 {
+            PgaGain::to_bits(val)
         }
     }
     #[repr(u8)]

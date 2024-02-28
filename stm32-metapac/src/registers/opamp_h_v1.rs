@@ -73,7 +73,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "opaen",
+                    name: "opampen",
                     description: Some(
                         "Operational amplifier Enable.",
                     ),
@@ -194,7 +194,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 4,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "PgaGain",
+                    ),
                 },
                 Field {
                     name: "usertrim",
@@ -438,6 +440,125 @@ pub(crate) static REGISTERS: IR = IR {
                         "operational amplifier in high-speed mode",
                     ),
                     value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "PgaGain",
+            description: None,
+            bit_size: 4,
+            variants: &[
+                EnumVariant {
+                    name: "GAIN2",
+                    description: Some(
+                        "Non-inverting internal Gain 2, VREF- referenced",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "GAIN4",
+                    description: Some(
+                        "Non-inverting internal Gain 4, VREF- referenced",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "GAIN8",
+                    description: Some(
+                        "Non-inverting internal Gain 8, VREF- referenced",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "GAIN16",
+                    description: Some(
+                        "Non-inverting internal Gain 16, VREF- referenced",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "GAIN2_FILTERINGVINM0",
+                    description: Some(
+                        "Non-inverting internal Gain 2 with filtering on INM0, VREF- referenced",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "GAIN4_FILTERINGVINM0",
+                    description: Some(
+                        "Non-inverting internal Gain 4 with filtering on INM0, VREF- referenced",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "GAIN8_FILTERINGVINM0",
+                    description: Some(
+                        "Non-inverting internal Gain 8 with filtering on INM0, VREF- referenced",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "GAIN16_FILTERINGVINM0",
+                    description: Some(
+                        "Non-inverting internal Gain 8 with filtering on INM0, VREF- referenced",
+                    ),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "GAIN2INVGAINNEG1_INPUTVINM0",
+                    description: Some(
+                        "Inverting gain=-1/ Non-inverting gain =2 with INM0 node for input or bias",
+                    ),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "GAIN4INVGAINNEG3_INPUTVINM0",
+                    description: Some(
+                        "Inverting gain=-3/ Non-inverting gain =4 with INM0 node for input or bias",
+                    ),
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "GAIN8INVGAINNEG7_INPUTVINM0",
+                    description: Some(
+                        "Inverting gain=-7/ Non-inverting gain =8 with INM0 node for input or bias",
+                    ),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "GAIN16INVGAINNEG15_INPUTVINM0",
+                    description: Some(
+                        "Inverting gain=-15/ Non-inverting gain =16 with INM0 node for input or bias",
+                    ),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "GAIN2INVGAINNEG1_INPUTVINM0FILTERINGVINM1",
+                    description: Some(
+                        "Inverting gain=-1/ Non-inverting gain =2 with INM0 node for input or bias, INM1 node for filtering",
+                    ),
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "GAIN4INVGAINNEG3_INPUTVINM0FILTERINGVINM1",
+                    description: Some(
+                        "Inverting gain=-3/ Non-inverting gain =4 with INM0 node for input or bias, INM1 node for filtering",
+                    ),
+                    value: 13,
+                },
+                EnumVariant {
+                    name: "GAIN8INVGAINNEG7_INPUTVINM0FILTERINGVINM1",
+                    description: Some(
+                        "Inverting gain=-7/ Non-inverting gain =8 with INM0 node for input or bias, INM1 node for filtering",
+                    ),
+                    value: 14,
+                },
+                EnumVariant {
+                    name: "GAIN16INVGAINNEG15_INPUTVINM0FILTERINGVINM1",
+                    description: Some(
+                        "Inverting gain=-15/ Non-inverting gain =16 with INM0 node for input or bias, INM1 node for filtering",
+                    ),
+                    value: 15,
                 },
             ],
         },

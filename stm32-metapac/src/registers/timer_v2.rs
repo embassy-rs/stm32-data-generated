@@ -714,9 +714,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Dmar1chCmp",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -1485,9 +1483,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Dmar1chCmp",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -2015,9 +2011,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Dmar1chCmp",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -2882,9 +2876,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Dmar1chCmp",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -3077,9 +3069,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "CntGp32",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -3128,9 +3118,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "ArrGp32",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -3169,9 +3157,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "CcrGp32",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -3310,9 +3296,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Dmar1chCmp",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -3747,30 +3731,6 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 28,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "ArrGp32",
-            extends: None,
-            description: Some(
-                "auto-reload register (Dither mode disabled)",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "arr",
-                    description: Some(
-                        "Auto-reload value",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -5509,30 +5469,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "CcrGp32",
-            extends: None,
-            description: Some(
-                "capture/compare register x (x=1-4,6) (Dither mode disabled)",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ccr",
-                    description: Some(
-                        "capture/compare x (x=1-4,6) value",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "CntCore",
             extends: None,
             description: Some(
@@ -5603,30 +5539,6 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "CntGp32",
-            extends: None,
-            description: Some(
-                "counter (Dither mode disabled)",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cnt",
-                    description: Some(
-                        "counter value",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -7273,20 +7185,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "bie",
-                    description: Some(
-                        "Break interrupt enable",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 7,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
                     name: "ude",
                     description: Some(
                         "Update DMA request enable",
@@ -7388,30 +7286,6 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dmar1chCmp",
-            extends: None,
-            description: Some(
-                "DMA address for full transfer",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dmab",
-                    description: Some(
-                        "DMA register for burst accesses",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },

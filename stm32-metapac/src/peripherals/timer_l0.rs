@@ -1642,17 +1642,6 @@ pub mod regs {
         pub fn set_tie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
-        #[doc = "Break interrupt enable"]
-        #[inline(always)]
-        pub const fn bie(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Break interrupt enable"]
-        #[inline(always)]
-        pub fn set_bie(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
         #[doc = "Update DMA request enable"]
         #[inline(always)]
         pub const fn ude(&self) -> bool {

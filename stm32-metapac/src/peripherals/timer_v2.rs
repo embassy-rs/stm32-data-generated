@@ -231,7 +231,7 @@ impl Tim1chCmp {
     }
     #[doc = "DMA address for full transfer"]
     #[inline(always)]
-    pub const fn dmar(self) -> crate::common::Reg<regs::Dmar1chCmp, crate::common::RW> {
+    pub const fn dmar(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03e0usize) as _) }
     }
 }
@@ -478,7 +478,7 @@ impl Tim2chCmp {
     }
     #[doc = "DMA address for full transfer"]
     #[inline(always)]
-    pub const fn dmar(self) -> crate::common::Reg<regs::Dmar1chCmp, crate::common::RW> {
+    pub const fn dmar(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03e0usize) as _) }
     }
 }
@@ -644,7 +644,7 @@ impl TimAdv {
     }
     #[doc = "DMA address for full transfer"]
     #[inline(always)]
-    pub const fn dmar(self) -> crate::common::Reg<regs::Dmar1chCmp, crate::common::RW> {
+    pub const fn dmar(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03e0usize) as _) }
     }
 }
@@ -951,7 +951,7 @@ impl TimGp16 {
     }
     #[doc = "DMA address for full transfer"]
     #[inline(always)]
-    pub const fn dmar(self) -> crate::common::Reg<regs::Dmar1chCmp, crate::common::RW> {
+    pub const fn dmar(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03e0usize) as _) }
     }
 }
@@ -1020,7 +1020,7 @@ impl TimGp32 {
     }
     #[doc = "counter (Dither mode disabled)"]
     #[inline(always)]
-    pub const fn cnt(self) -> crate::common::Reg<regs::CntGp32, crate::common::RW> {
+    pub const fn cnt(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "counter (Dither mode enbled)"]
@@ -1035,7 +1035,7 @@ impl TimGp32 {
     }
     #[doc = "auto-reload register (Dither mode disabled)"]
     #[inline(always)]
-    pub const fn arr(self) -> crate::common::Reg<regs::ArrGp32, crate::common::RW> {
+    pub const fn arr(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "auto-reload register (Dither mode enabled)"]
@@ -1045,7 +1045,7 @@ impl TimGp32 {
     }
     #[doc = "capture/compare register x (x=1-4) (Dither mode disabled)"]
     #[inline(always)]
-    pub const fn ccr(self, n: usize) -> crate::common::Reg<regs::CcrGp32, crate::common::RW> {
+    pub const fn ccr(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize + n * 4usize) as _) }
     }
@@ -1087,7 +1087,7 @@ impl TimGp32 {
     }
     #[doc = "DMA address for full transfer"]
     #[inline(always)]
-    pub const fn dmar(self) -> crate::common::Reg<regs::Dmar1chCmp, crate::common::RW> {
+    pub const fn dmar(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03e0usize) as _) }
     }
 }
@@ -1441,29 +1441,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> ArrDitherGp32 {
             ArrDitherGp32(0)
-        }
-    }
-    #[doc = "auto-reload register (Dither mode disabled)"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ArrGp32(pub u32);
-    impl ArrGp32 {
-        #[doc = "Auto-reload value"]
-        #[inline(always)]
-        pub const fn arr(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Auto-reload value"]
-        #[inline(always)]
-        pub fn set_arr(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ArrGp32 {
-        #[inline(always)]
-        fn default() -> ArrGp32 {
-            ArrGp32(0)
         }
     }
     #[doc = "break and dead-time register"]
@@ -2774,29 +2751,6 @@ pub mod regs {
             CcrDitherGp32(0)
         }
     }
-    #[doc = "capture/compare register x (x=1-4,6) (Dither mode disabled)"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CcrGp32(pub u32);
-    impl CcrGp32 {
-        #[doc = "capture/compare x (x=1-4,6) value"]
-        #[inline(always)]
-        pub const fn ccr(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "capture/compare x (x=1-4,6) value"]
-        #[inline(always)]
-        pub fn set_ccr(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CcrGp32 {
-        #[inline(always)]
-        fn default() -> CcrGp32 {
-            CcrGp32(0)
-        }
-    }
     #[doc = "counter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2863,29 +2817,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CntDitherGp32 {
             CntDitherGp32(0)
-        }
-    }
-    #[doc = "counter (Dither mode disabled)"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CntGp32(pub u32);
-    impl CntGp32 {
-        #[doc = "counter value"]
-        #[inline(always)]
-        pub const fn cnt(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "counter value"]
-        #[inline(always)]
-        pub fn set_cnt(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CntGp32 {
-        #[inline(always)]
-        fn default() -> CntGp32 {
-            CntGp32(0)
         }
     }
     #[doc = "control register 1"]
@@ -4173,17 +4104,6 @@ pub mod regs {
         pub fn set_tie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
-        #[doc = "Break interrupt enable"]
-        #[inline(always)]
-        pub const fn bie(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Break interrupt enable"]
-        #[inline(always)]
-        pub fn set_bie(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
         #[doc = "Update DMA request enable"]
         #[inline(always)]
         pub const fn ude(&self) -> bool {
@@ -4270,29 +4190,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DierGp16 {
             DierGp16(0)
-        }
-    }
-    #[doc = "DMA address for full transfer"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Dmar1chCmp(pub u32);
-    impl Dmar1chCmp {
-        #[doc = "DMA register for burst accesses"]
-        #[inline(always)]
-        pub const fn dmab(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "DMA register for burst accesses"]
-        #[inline(always)]
-        pub fn set_dmab(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Dmar1chCmp {
-        #[inline(always)]
-        fn default() -> Dmar1chCmp {
-            Dmar1chCmp(0)
         }
     }
     #[doc = "deadtime register 2"]

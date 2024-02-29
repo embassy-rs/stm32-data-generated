@@ -1065,7 +1065,7 @@
                     "address": 1208094720,
                     "registers": {
                         "kind": "cryp",
-                        "version": "v2",
+                        "version": "v3",
                         "block": "CRYP"
                     },
                     "rcc": {
@@ -11139,7 +11139,7 @@
                     "address": 1208094720,
                     "registers": {
                         "kind": "cryp",
-                        "version": "v2",
+                        "version": "v3",
                         "block": "CRYP"
                     },
                     "rcc": {

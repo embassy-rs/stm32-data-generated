@@ -746,7 +746,7 @@ pub mod comp;
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]
 pub mod crs;
-#[path = "../../peripherals/cryp_v2.rs"]
+#[path = "../../peripherals/cryp_v3.rs"]
 pub mod cryp;
 #[path = "../../peripherals/dac_v4.rs"]
 pub mod dac;

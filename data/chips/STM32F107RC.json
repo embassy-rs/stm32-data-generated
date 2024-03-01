@@ -2417,7 +2417,7 @@
                     },
                     "rcc": {
                         "bus_clock": "HCLK1",
-                        "kernel_clock": "HCLK1",
+                        "kernel_clock": "USB",
                         "enable": {
                             "register": "AHBENR",
                             "field": "USB_OTG_FSEN"

@@ -4827,7 +4827,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
-            kernel_clock: Clock("HCLK2"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR1",
+                field: "ICLKSEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "AHB2ENR1",
                 field: "USB_OTG_FSEN",

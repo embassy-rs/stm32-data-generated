@@ -1484,7 +1484,7 @@
                     },
                     "rcc": {
                         "bus_clock": "PCLK1",
-                        "kernel_clock": "PCLK1",
+                        "kernel_clock": "USB",
                         "enable": {
                             "register": "APB1ENR",
                             "field": "USBEN"

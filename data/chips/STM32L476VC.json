@@ -5892,7 +5892,10 @@
                     },
                     "rcc": {
                         "bus_clock": "HCLK2",
-                        "kernel_clock": "HCLK2",
+                        "kernel_clock": {
+                            "register": "CCIPR",
+                            "field": "CLK48SEL"
+                        },
                         "enable": {
                             "register": "AHB2ENR",
                             "field": "USB_OTG_FSEN"

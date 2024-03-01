@@ -5776,7 +5776,10 @@
                     },
                     "rcc": {
                         "bus_clock": "PCLK2",
-                        "kernel_clock": "PCLK2",
+                        "kernel_clock": {
+                            "register": "CCIPR1",
+                            "field": "ICLKSEL"
+                        },
                         "enable": {
                             "register": "APB2ENR",
                             "field": "USBEN"

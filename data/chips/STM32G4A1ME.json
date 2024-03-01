@@ -5078,7 +5078,10 @@
                     },
                     "rcc": {
                         "bus_clock": "PCLK1",
-                        "kernel_clock": "PCLK1",
+                        "kernel_clock": {
+                            "register": "CCIPR",
+                            "field": "CLK48SEL"
+                        },
                         "enable": {
                             "register": "APB1ENR1",
                             "field": "USBEN"

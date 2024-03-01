@@ -3246,7 +3246,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 Field {
-                    name: "ckpersel",
+                    name: "persel",
                     description: Some(
                         "per_ck clock source selection",
                     ),
@@ -3258,7 +3258,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Ckpersel",
+                        "Persel",
                     ),
                 },
             ],
@@ -4716,34 +4716,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ckpersel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "HSI",
-                    description: Some(
-                        "hsi_ker_ck selected as kernel clock (default after reset)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CSI",
-                    description: Some(
-                        "csi_ker_ck selected as kernel clock",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSE",
-                    description: Some(
-                        "hse_ck selected as kernel clock",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
             name: "Dacholdsel",
             description: None,
             bit_size: 1,
@@ -5391,6 +5363,34 @@ pub(crate) static REGISTERS: IR = IR {
                         "Divide by 15",
                     ),
                     value: 15,
+                },
+            ],
+        },
+        Enum {
+            name: "Persel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "HSI",
+                    description: Some(
+                        "hsi_ker_ck selected as kernel clock (default after reset)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CSI",
+                    description: Some(
+                        "csi_ker_ck selected as kernel clock",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSE",
+                    description: Some(
+                        "hse_ck selected as kernel clock",
+                    ),
+                    value: 2,
                 },
             ],
         },

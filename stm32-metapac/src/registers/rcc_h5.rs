@@ -5731,7 +5731,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 Field {
-                    name: "ckpersel",
+                    name: "persel",
                     description: Some(
                         "per_ck clock source selection",
                     ),
@@ -5743,7 +5743,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Ckpersel",
+                        "Persel",
                     ),
                 },
             ],
@@ -7347,7 +7347,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ckperselsec",
+                    name: "perselsec",
                     description: Some(
                         "per_ck selection security\r Set and reset by software.",
                     ),
@@ -7436,34 +7436,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "CSI_DIV_122",
                     description: Some(
                         "csi_ker_ck/122 selected as kernel clock",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Ckpersel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "HSI",
-                    description: Some(
-                        "hsi_ker_ck selected as kernel clock (default after reset)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CSI",
-                    description: Some(
-                        "csi_ker_ck selected as kernel clock",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSE",
-                    description: Some(
-                        "hse_ck selected as kernel clock",
                     ),
                     value: 2,
                 },
@@ -8187,6 +8159,34 @@ pub(crate) static REGISTERS: IR = IR {
                         "per_ck selected as kernel clock",
                     ),
                     value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Persel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "HSI",
+                    description: Some(
+                        "hsi_ker_ck selected as kernel clock (default after reset)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CSI",
+                    description: Some(
+                        "csi_ker_ck selected as kernel clock",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSE",
+                    description: Some(
+                        "hse_ck selected as kernel clock",
+                    ),
+                    value: 2,
                 },
             ],
         },

@@ -2429,11 +2429,11 @@
         "enum": "SAISEL"
       },
       {
-        "name": "CKPERSEL",
+        "name": "PERSEL",
         "description": "per_ck clock source selection",
         "bit_offset": 30,
         "bit_size": 2,
-        "enum": "CKPERSEL"
+        "enum": "PERSEL"
       }
     ]
   },
@@ -3142,7 +3142,7 @@
         "bit_size": 1
       },
       {
-        "name": "CKPERSELSEC",
+        "name": "PERSELSEC",
         "description": "per_ck selection security\r Set and reset by software.",
         "bit_offset": 13,
         "bit_size": 1
@@ -3200,26 +3200,6 @@
       {
         "name": "CSI_DIV_122",
         "description": "csi_ker_ck/122 selected as kernel clock",
-        "value": 2
-      }
-    ]
-  },
-  "enum/CKPERSEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "HSI",
-        "description": "hsi_ker_ck selected as kernel clock (default after reset)",
-        "value": 0
-      },
-      {
-        "name": "CSI",
-        "description": "csi_ker_ck selected as kernel clock",
-        "value": 1
-      },
-      {
-        "name": "HSE",
-        "description": "hse_ck selected as kernel clock",
         "value": 2
       }
     ]
@@ -3736,6 +3716,26 @@
         "name": "PER",
         "description": "per_ck selected as kernel clock",
         "value": 3
+      }
+    ]
+  },
+  "enum/PERSEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "HSI",
+        "description": "hsi_ker_ck selected as kernel clock (default after reset)",
+        "value": 0
+      },
+      {
+        "name": "CSI",
+        "description": "csi_ker_ck selected as kernel clock",
+        "value": 1
+      },
+      {
+        "name": "HSE",
+        "description": "hse_ck selected as kernel clock",
+        "value": 2
       }
     ]
   },

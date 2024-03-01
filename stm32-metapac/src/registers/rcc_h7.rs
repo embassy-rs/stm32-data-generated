@@ -6411,12 +6411,12 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some("Sdmmcsel"),
                 },
                 Field {
-                    name: "ckpersel",
+                    name: "persel",
                     description: Some("per_ck clock source selection"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Ckpersel"),
+                    enumm: Some("Persel"),
                 },
             ],
         },
@@ -7239,28 +7239,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ckpersel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "HSI",
-                    description: Some("HSI selected as peripheral clock"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CSI",
-                    description: Some("CSI selected as peripheral clock"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSE",
-                    description: Some("HSE selected as peripheral clock"),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
             name: "Dfsdmsel",
             description: None,
             bit_size: 1,
@@ -7762,6 +7740,28 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV15",
                     description: Some("Divide by 15"),
                     value: 15,
+                },
+            ],
+        },
+        Enum {
+            name: "Persel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "HSI",
+                    description: Some("HSI selected as peripheral clock"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CSI",
+                    description: Some("CSI selected as peripheral clock"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSE",
+                    description: Some("HSE selected as peripheral clock"),
+                    value: 2,
                 },
             ],
         },

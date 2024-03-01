@@ -8956,7 +8956,10 @@
                     },
                     "rcc": {
                         "bus_clock": "HCLK1",
-                        "kernel_clock": "HCLK1",
+                        "kernel_clock": {
+                            "register": "D2CCIP2R",
+                            "field": "USBSEL"
+                        },
                         "enable": {
                             "register": "AHB1ENR",
                             "field": "USB_OTG_FSEN"
@@ -9021,7 +9024,10 @@
                     },
                     "rcc": {
                         "bus_clock": "HCLK1",
-                        "kernel_clock": "HCLK1",
+                        "kernel_clock": {
+                            "register": "D2CCIP2R",
+                            "field": "USBSEL"
+                        },
                         "enable": {
                             "register": "AHB1ENR",
                             "field": "USB_OTG_HSEN"
@@ -18526,7 +18532,10 @@
                     },
                     "rcc": {
                         "bus_clock": "HCLK1",
-                        "kernel_clock": "HCLK1",
+                        "kernel_clock": {
+                            "register": "D2CCIP2R",
+                            "field": "USBSEL"
+                        },
                         "enable": {
                             "register": "AHB1ENR",
                             "field": "USB_OTG_FSEN"
@@ -18591,7 +18600,10 @@
                     },
                     "rcc": {
                         "bus_clock": "HCLK1",
-                        "kernel_clock": "HCLK1",
+                        "kernel_clock": {
+                            "register": "D2CCIP2R",
+                            "field": "USBSEL"
+                        },
                         "enable": {
                             "register": "AHB1ENR",
                             "field": "USB_OTG_HSEN"

@@ -4183,13 +4183,13 @@ pub mod regs {
         }
         #[doc = "per_ck clock source selection"]
         #[inline(always)]
-        pub const fn ckpersel(&self) -> super::vals::Ckpersel {
+        pub const fn persel(&self) -> super::vals::Persel {
             let val = (self.0 >> 30usize) & 0x03;
-            super::vals::Ckpersel::from_bits(val as u8)
+            super::vals::Persel::from_bits(val as u8)
         }
         #[doc = "per_ck clock source selection"]
         #[inline(always)]
-        pub fn set_ckpersel(&mut self, val: super::vals::Ckpersel) {
+        pub fn set_persel(&mut self, val: super::vals::Persel) {
             self.0 = (self.0 & !(0x03 << 30usize)) | (((val.to_bits() as u32) & 0x03) << 30usize);
         }
     }
@@ -5465,13 +5465,13 @@ pub mod regs {
         }
         #[doc = "per_ck selection security Set and reset by software."]
         #[inline(always)]
-        pub const fn ckperselsec(&self) -> bool {
+        pub const fn perselsec(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
             val != 0
         }
         #[doc = "per_ck selection security Set and reset by software."]
         #[inline(always)]
-        pub fn set_ckperselsec(&mut self, val: bool) {
+        pub fn set_perselsec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
     }
@@ -5554,39 +5554,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Cecsel) -> u8 {
             Cecsel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ckpersel {
-        #[doc = "hsi_ker_ck selected as kernel clock (default after reset)"]
-        HSI = 0x0,
-        #[doc = "csi_ker_ck selected as kernel clock"]
-        CSI = 0x01,
-        #[doc = "hse_ck selected as kernel clock"]
-        HSE = 0x02,
-        _RESERVED_3 = 0x03,
-    }
-    impl Ckpersel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ckpersel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ckpersel {
-        #[inline(always)]
-        fn from(val: u8) -> Ckpersel {
-            Ckpersel::from_bits(val)
-        }
-    }
-    impl From<Ckpersel> for u8 {
-        #[inline(always)]
-        fn from(val: Ckpersel) -> u8 {
-            Ckpersel::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -6246,6 +6213,39 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Octospisel) -> u8 {
             Octospisel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Persel {
+        #[doc = "hsi_ker_ck selected as kernel clock (default after reset)"]
+        HSI = 0x0,
+        #[doc = "csi_ker_ck selected as kernel clock"]
+        CSI = 0x01,
+        #[doc = "hse_ck selected as kernel clock"]
+        HSE = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl Persel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Persel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Persel {
+        #[inline(always)]
+        fn from(val: u8) -> Persel {
+            Persel::from_bits(val)
+        }
+    }
+    impl From<Persel> for u8 {
+        #[inline(always)]
+        fn from(val: Persel) -> u8 {
+            Persel::to_bits(val)
         }
     }
     #[repr(u8)]

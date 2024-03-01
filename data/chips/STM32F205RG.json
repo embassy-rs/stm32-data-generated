@@ -3652,7 +3652,7 @@
                     },
                     "rcc": {
                         "bus_clock": "HCLK2",
-                        "kernel_clock": "HCLK2",
+                        "kernel_clock": "PLL1_Q",
                         "enable": {
                             "register": "AHB2ENR",
                             "field": "USB_OTG_FSEN"
@@ -3717,7 +3717,7 @@
                     },
                     "rcc": {
                         "bus_clock": "HCLK1",
-                        "kernel_clock": "HCLK1",
+                        "kernel_clock": "PLL1_Q",
                         "enable": {
                             "register": "AHB1ENR",
                             "field": "USB_OTG_HSEN"

@@ -1190,68 +1190,57 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cr(pub u32);
     impl Cr {
-        #[doc = "System clock division factor This bitfield controlled by software sets the division factor of the system clock divider to produce SYSCLK clock:"]
-        #[inline(always)]
-        pub const fn sysdiv(&self) -> super::vals::Sysdiv {
-            let val = (self.0 >> 2usize) & 0x07;
-            super::vals::Sysdiv::from_bits(val as u8)
-        }
-        #[doc = "System clock division factor This bitfield controlled by software sets the division factor of the system clock divider to produce SYSCLK clock:"]
-        #[inline(always)]
-        pub fn set_sysdiv(&mut self, val: super::vals::Sysdiv) {
-            self.0 = (self.0 & !(0x07 << 2usize)) | (((val.to_bits() as u32) & 0x07) << 2usize);
-        }
-        #[doc = "HSI48 kernel clock division factor This bitfield controlled by software sets the division factor of the kernel clock divider to produce HSIKER clock:"]
+        #[doc = "HSI kernel clock division factor This bitfield controlled by software sets the division factor of the kernel clock divider to produce HSIKER clock:"]
         #[inline(always)]
         pub const fn hsikerdiv(&self) -> super::vals::Hsikerdiv {
             let val = (self.0 >> 5usize) & 0x07;
             super::vals::Hsikerdiv::from_bits(val as u8)
         }
-        #[doc = "HSI48 kernel clock division factor This bitfield controlled by software sets the division factor of the kernel clock divider to produce HSIKER clock:"]
+        #[doc = "HSI kernel clock division factor This bitfield controlled by software sets the division factor of the kernel clock divider to produce HSIKER clock:"]
         #[inline(always)]
         pub fn set_hsikerdiv(&mut self, val: super::vals::Hsikerdiv) {
             self.0 = (self.0 & !(0x07 << 5usize)) | (((val.to_bits() as u32) & 0x07) << 5usize);
         }
-        #[doc = "HSI48 clock enable Set and cleared by software and hardware, with hardware taking priority. Kept low by hardware as long as the device is in a low-power mode. Kept high by hardware as long as the system is clocked with a clock derived from HSI48. This includes the exit from low-power modes and the system clock fall-back to HSI48 upon failing HSE oscillator clock selected as system clock source."]
+        #[doc = "HSI clock enable Set and cleared by software and hardware, with hardware taking priority. Kept low by hardware as long as the device is in a low-power mode. Kept high by hardware as long as the system is clocked with a clock derived from HSI. This includes the exit from low-power modes and the system clock fall-back to HSI upon failing HSE oscillator clock selected as system clock source."]
         #[inline(always)]
         pub const fn hsion(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI48 clock enable Set and cleared by software and hardware, with hardware taking priority. Kept low by hardware as long as the device is in a low-power mode. Kept high by hardware as long as the system is clocked with a clock derived from HSI48. This includes the exit from low-power modes and the system clock fall-back to HSI48 upon failing HSE oscillator clock selected as system clock source."]
+        #[doc = "HSI clock enable Set and cleared by software and hardware, with hardware taking priority. Kept low by hardware as long as the device is in a low-power mode. Kept high by hardware as long as the system is clocked with a clock derived from HSI. This includes the exit from low-power modes and the system clock fall-back to HSI upon failing HSE oscillator clock selected as system clock source."]
         #[inline(always)]
         pub fn set_hsion(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
-        #[doc = "HSI48 always-enable for peripheral kernels. Set and cleared by software. Setting the bit activates the HSI48 oscillator in Run and Stop modes, regardless of the HSION bit state. The HSI48 clock can only feed USART1, USART2, and I2C1 peripherals configured with HSI48 as kernel clock. Note: Keeping the HSI48 active in Stop mode allows speeding up the serial interface communication as the HSI48 clock is ready immediately upon exiting Stop mode."]
+        #[doc = "HSI always-enable for peripheral kernels. Set and cleared by software. Setting the bit activates the HSI oscillator in Run and Stop modes, regardless of the HSION bit state. The HSI clock can only feed USART1, USART2, and I2C1 peripherals configured with HSI as kernel clock. Note: Keeping the HSI active in Stop mode allows speeding up the serial interface communication as the HSI clock is ready immediately upon exiting Stop mode."]
         #[inline(always)]
         pub const fn hsikeron(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI48 always-enable for peripheral kernels. Set and cleared by software. Setting the bit activates the HSI48 oscillator in Run and Stop modes, regardless of the HSION bit state. The HSI48 clock can only feed USART1, USART2, and I2C1 peripherals configured with HSI48 as kernel clock. Note: Keeping the HSI48 active in Stop mode allows speeding up the serial interface communication as the HSI48 clock is ready immediately upon exiting Stop mode."]
+        #[doc = "HSI always-enable for peripheral kernels. Set and cleared by software. Setting the bit activates the HSI oscillator in Run and Stop modes, regardless of the HSION bit state. The HSI clock can only feed USART1, USART2, and I2C1 peripherals configured with HSI as kernel clock. Note: Keeping the HSI active in Stop mode allows speeding up the serial interface communication as the HSI clock is ready immediately upon exiting Stop mode."]
         #[inline(always)]
         pub fn set_hsikeron(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
-        #[doc = "HSI48 clock ready flag Set by hardware when the HSI48 oscillator is enabled through HSION and ready to use (stable). Note: Upon clearing HSION, HSIRDY goes low after six HSI48 clock cycles."]
+        #[doc = "HSI clock ready flag Set by hardware when the HSI oscillator is enabled through HSION and ready to use (stable). Note: Upon clearing HSION, HSIRDY goes low after six HSI clock cycles."]
         #[inline(always)]
         pub const fn hsirdy(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI48 clock ready flag Set by hardware when the HSI48 oscillator is enabled through HSION and ready to use (stable). Note: Upon clearing HSION, HSIRDY goes low after six HSI48 clock cycles."]
+        #[doc = "HSI clock ready flag Set by hardware when the HSI oscillator is enabled through HSION and ready to use (stable). Note: Upon clearing HSION, HSIRDY goes low after six HSI clock cycles."]
         #[inline(always)]
         pub fn set_hsirdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
-        #[doc = "HSI48 clock division factor This bitfield controlled by software sets the division factor of the HSI48 clock divider to produce HSISYS clock:"]
+        #[doc = "HSI clock division factor This bitfield controlled by software sets the division factor of the HSI clock divider to produce HSISYS clock:"]
         #[inline(always)]
         pub const fn hsidiv(&self) -> super::vals::Hsidiv {
             let val = (self.0 >> 11usize) & 0x07;
             super::vals::Hsidiv::from_bits(val as u8)
         }
-        #[doc = "HSI48 clock division factor This bitfield controlled by software sets the division factor of the HSI48 clock divider to produce HSISYS clock:"]
+        #[doc = "HSI clock division factor This bitfield controlled by software sets the division factor of the HSI clock divider to produce HSISYS clock:"]
         #[inline(always)]
         pub fn set_hsidiv(&mut self, val: super::vals::Hsidiv) {
             self.0 = (self.0 & !(0x07 << 11usize)) | (((val.to_bits() as u32) & 0x07) << 11usize);
@@ -1768,32 +1757,32 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Icscr(pub u32);
     impl Icscr {
-        #[doc = "HSI48 clock calibration This bitfield directly acts on the HSI48 clock frequency. Its value is a sum of an internal factory-programmed number and the value of the HSITRIM\\[6:0\\]
-bitfield. In the factory, the internal number is set to calibrate the HSI48 clock frequency to 48 MHz (with HSITRIM\\[6:0\\]
-left at its reset value). Refer to the device datasheet for HSI48 calibration accuracy and for the frequency trimming granularity. Note: The trimming effect presents discontinuities at HSICAL\\[7:0\\]
+        #[doc = "HSI clock calibration This bitfield directly acts on the HSI clock frequency. Its value is a sum of an internal factory-programmed number and the value of the HSITRIM\\[6:0\\]
+bitfield. In the factory, the internal number is set to calibrate the HSI clock frequency to 48 MHz (with HSITRIM\\[6:0\\]
+left at its reset value). Refer to the device datasheet for HSI calibration accuracy and for the frequency trimming granularity. Note: The trimming effect presents discontinuities at HSICAL\\[7:0\\]
 multiples of 64."]
         #[inline(always)]
         pub const fn hsical(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
             val as u8
         }
-        #[doc = "HSI48 clock calibration This bitfield directly acts on the HSI48 clock frequency. Its value is a sum of an internal factory-programmed number and the value of the HSITRIM\\[6:0\\]
-bitfield. In the factory, the internal number is set to calibrate the HSI48 clock frequency to 48 MHz (with HSITRIM\\[6:0\\]
-left at its reset value). Refer to the device datasheet for HSI48 calibration accuracy and for the frequency trimming granularity. Note: The trimming effect presents discontinuities at HSICAL\\[7:0\\]
+        #[doc = "HSI clock calibration This bitfield directly acts on the HSI clock frequency. Its value is a sum of an internal factory-programmed number and the value of the HSITRIM\\[6:0\\]
+bitfield. In the factory, the internal number is set to calibrate the HSI clock frequency to 48 MHz (with HSITRIM\\[6:0\\]
+left at its reset value). Refer to the device datasheet for HSI calibration accuracy and for the frequency trimming granularity. Note: The trimming effect presents discontinuities at HSICAL\\[7:0\\]
 multiples of 64."]
         #[inline(always)]
         pub fn set_hsical(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
-        #[doc = "HSI48 clock trimming The value of this bitfield contributes to the HSICAL\\[7:0\\]
-bitfield value. It allows HSI48 clock frequency user trimming. The HSI48 frequency accuracy as stated in the device datasheet applies when this bitfield is left at its reset value."]
+        #[doc = "HSI clock trimming The value of this bitfield contributes to the HSICAL\\[7:0\\]
+bitfield value. It allows HSI clock frequency user trimming. The HSI frequency accuracy as stated in the device datasheet applies when this bitfield is left at its reset value."]
         #[inline(always)]
         pub const fn hsitrim(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x7f;
             val as u8
         }
-        #[doc = "HSI48 clock trimming The value of this bitfield contributes to the HSICAL\\[7:0\\]
-bitfield value. It allows HSI48 clock frequency user trimming. The HSI48 frequency accuracy as stated in the device datasheet applies when this bitfield is left at its reset value."]
+        #[doc = "HSI clock trimming The value of this bitfield contributes to the HSICAL\\[7:0\\]
+bitfield value. It allows HSI clock frequency user trimming. The HSI frequency accuracy as stated in the device datasheet applies when this bitfield is left at its reset value."]
         #[inline(always)]
         pub fn set_hsitrim(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 8usize)) | (((val as u32) & 0x7f) << 8usize);
@@ -1814,7 +1803,7 @@ pub mod vals {
         SYS = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "HSIKER"]
-        HSI = 0x02,
+        HSIKER = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Adcsel {
@@ -1982,7 +1971,7 @@ pub mod vals {
         #[doc = "SYSCLK"]
         SYS = 0x01,
         #[doc = "HSIKER"]
-        HSI = 0x02,
+        HSIKER = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl I2c1sel {
@@ -2014,7 +2003,7 @@ pub mod vals {
         SYS = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "HSIKER"]
-        HSI = 0x02,
+        HSIKER = 0x02,
         #[doc = "I2S_CKIN"]
         I2S_CKIN = 0x03,
     }
@@ -2162,8 +2151,8 @@ pub mod vals {
         #[doc = "SYSCLK selected as MCO source"]
         SYS = 0x01,
         _RESERVED_2 = 0x02,
-        #[doc = "HSI48 selected as MCO source"]
-        HSI48 = 0x03,
+        #[doc = "HSI selected as MCO source"]
+        HSI = 0x03,
         #[doc = "HSE selected as MCO source"]
         HSE = 0x04,
         _RESERVED_5 = 0x05,
@@ -2278,8 +2267,8 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Sw {
-        #[doc = "HSI selected as system clock"]
-        HSI = 0x0,
+        #[doc = "HSISYS (HSI divided by HSIDIV) selected as system clock"]
+        HSISYS = 0x0,
         #[doc = "HSE selected as system clock"]
         HSE = 0x01,
         _RESERVED_2 = 0x02,
@@ -2315,55 +2304,13 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Sysdiv {
-        #[doc = "1"]
-        DIV1 = 0x0,
-        #[doc = "2"]
-        DIV2 = 0x01,
-        #[doc = "3 (reset value)"]
-        DIV3 = 0x02,
-        #[doc = "4"]
-        DIV4 = 0x03,
-        #[doc = "5"]
-        DIV5 = 0x04,
-        #[doc = "6"]
-        DIV6 = 0x05,
-        #[doc = "7"]
-        DIV7 = 0x06,
-        #[doc = "8"]
-        DIV8 = 0x07,
-    }
-    impl Sysdiv {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Sysdiv {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Sysdiv {
-        #[inline(always)]
-        fn from(val: u8) -> Sysdiv {
-            Sysdiv::from_bits(val)
-        }
-    }
-    impl From<Sysdiv> for u8 {
-        #[inline(always)]
-        fn from(val: Sysdiv) -> u8 {
-            Sysdiv::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usart1sel {
         #[doc = "PCLK"]
         PCLK1 = 0x0,
         #[doc = "SYSCLK"]
         SYS = 0x01,
         #[doc = "HSIKER"]
-        HSI = 0x02,
+        HSIKER = 0x02,
         #[doc = "LSE"]
         LSE = 0x03,
     }

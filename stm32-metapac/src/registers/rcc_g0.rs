@@ -1525,7 +1525,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Usart1sel"),
+                    enumm: Some("Usartsel"),
                 },
                 Field {
                     name: "usart2sel",
@@ -1533,7 +1533,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Usart2sel"),
+                    enumm: Some("Usartsel"),
                 },
                 Field {
                     name: "usart3sel",
@@ -1541,7 +1541,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Usart3sel"),
+                    enumm: Some("Usartsel"),
                 },
                 Field {
                     name: "cecsel",
@@ -3825,82 +3825,28 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Usart1sel",
+            name: "Usartsel",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
                     name: "PCLK1",
-                    description: Some("PCLK used as USART1 clock source"),
+                    description: Some("PCLK used as USART clock source"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "SYS",
-                    description: Some("SYSCLK used as USART1 clock source"),
+                    description: Some("SYSCLK used as USART clock source"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI used as USART1 clock source"),
+                    description: Some("HSI used as USART clock source"),
                     value: 2,
                 },
                 EnumVariant {
                     name: "LSE",
-                    description: Some("LSE used as USART1 clock source"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Usart2sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PCLK1",
-                    description: Some("PCLK used as USART2 clock source"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SYS",
-                    description: Some("SYSCLK used as USART2 clock source"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI",
-                    description: Some("HSI used as USART2 clock source"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "LSE",
-                    description: Some("LSE used as USART2 clock source"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Usart3sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PCLK1",
-                    description: Some("PCLK used as USART3 clock source"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SYS",
-                    description: Some("SYSCLK used as USART3 clock source"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI",
-                    description: Some("HSI used as USART3 clock source"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "LSE",
-                    description: Some("LSE used as USART3 clock source"),
+                    description: Some("LSE used as USART clock source"),
                     value: 3,
                 },
             ],

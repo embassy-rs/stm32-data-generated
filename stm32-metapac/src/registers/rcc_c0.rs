@@ -1677,25 +1677,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "sysdiv",
-                    description: Some(
-                        "System clock division factor\r This bitfield controlled by software sets the division factor of the system clock divider to produce SYSCLK clock:",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Sysdiv",
-                    ),
-                },
-                Field {
                     name: "hsikerdiv",
                     description: Some(
-                        "HSI48 kernel clock division factor\r This bitfield controlled by software sets the division factor of the kernel clock divider to produce HSIKER clock:",
+                        "HSI kernel clock division factor\r This bitfield controlled by software sets the division factor of the kernel clock divider to produce HSIKER clock:",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1711,7 +1695,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsion",
                     description: Some(
-                        "HSI48 clock enable\r Set and cleared by software and hardware, with hardware taking priority.\r Kept low by hardware as long as the device is in a low-power mode.\r Kept high by hardware as long as the system is clocked with a clock derived from HSI48. This includes the exit from low-power modes and the system clock fall-back to HSI48 upon failing HSE oscillator clock selected as system clock source.",
+                        "HSI clock enable\r Set and cleared by software and hardware, with hardware taking priority.\r Kept low by hardware as long as the device is in a low-power mode.\r Kept high by hardware as long as the system is clocked with a clock derived from HSI. This includes the exit from low-power modes and the system clock fall-back to HSI upon failing HSE oscillator clock selected as system clock source.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1725,7 +1709,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsikeron",
                     description: Some(
-                        "HSI48 always-enable for peripheral kernels.\r Set and cleared by software.\r Setting the bit activates the HSI48 oscillator in Run and Stop modes, regardless of the HSION bit state. The HSI48 clock can only feed USART1, USART2, and I2C1 peripherals configured with HSI48 as kernel clock.\r Note: Keeping the HSI48 active in Stop mode allows speeding up the serial interface communication as the HSI48 clock is ready immediately upon exiting Stop mode.",
+                        "HSI always-enable for peripheral kernels.\r Set and cleared by software.\r Setting the bit activates the HSI oscillator in Run and Stop modes, regardless of the HSION bit state. The HSI clock can only feed USART1, USART2, and I2C1 peripherals configured with HSI as kernel clock.\r Note: Keeping the HSI active in Stop mode allows speeding up the serial interface communication as the HSI clock is ready immediately upon exiting Stop mode.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1739,7 +1723,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsirdy",
                     description: Some(
-                        "HSI48 clock ready flag\r Set by hardware when the HSI48 oscillator is enabled through HSION and ready to use (stable).\r Note: Upon clearing HSION, HSIRDY goes low after six HSI48 clock cycles.",
+                        "HSI clock ready flag\r Set by hardware when the HSI oscillator is enabled through HSION and ready to use (stable).\r Note: Upon clearing HSION, HSIRDY goes low after six HSI clock cycles.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1753,7 +1737,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsidiv",
                     description: Some(
-                        "HSI48 clock division factor\r This bitfield controlled by software sets the division factor of the HSI48 clock divider to produce HSISYS clock:",
+                        "HSI clock division factor\r This bitfield controlled by software sets the division factor of the HSI clock divider to produce HSISYS clock:",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -2395,7 +2379,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsical",
                     description: Some(
-                        "HSI48 clock calibration\r This bitfield directly acts on the HSI48 clock frequency. Its value is a sum of an internal factory-programmed number and the value of the HSITRIM[6:0] bitfield. In the factory, the internal number is set to calibrate the HSI48 clock frequency to 48 MHz (with HSITRIM[6:0] left at its reset value). Refer to the device datasheet for HSI48 calibration accuracy and for the frequency trimming granularity.\r Note: The trimming effect presents discontinuities at HSICAL[7:0] multiples of 64.",
+                        "HSI clock calibration\r This bitfield directly acts on the HSI clock frequency. Its value is a sum of an internal factory-programmed number and the value of the HSITRIM[6:0] bitfield. In the factory, the internal number is set to calibrate the HSI clock frequency to 48 MHz (with HSITRIM[6:0] left at its reset value). Refer to the device datasheet for HSI calibration accuracy and for the frequency trimming granularity.\r Note: The trimming effect presents discontinuities at HSICAL[7:0] multiples of 64.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -2409,7 +2393,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsitrim",
                     description: Some(
-                        "HSI48 clock trimming\r The value of this bitfield contributes to the HSICAL[7:0] bitfield value.\r It allows HSI48 clock frequency user trimming.\r The HSI48 frequency accuracy as stated in the device datasheet applies when this bitfield is left at its reset value.",
+                        "HSI clock trimming\r The value of this bitfield contributes to the HSICAL[7:0] bitfield value.\r It allows HSI clock frequency user trimming.\r The HSI frequency accuracy as stated in the device datasheet applies when this bitfield is left at its reset value.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -2437,7 +2421,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HSI",
+                    name: "HSIKER",
                     description: Some(
                         "HSIKER",
                     ),
@@ -2661,7 +2645,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSI",
+                    name: "HSIKER",
                     description: Some(
                         "HSIKER",
                     ),
@@ -2682,7 +2666,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HSI",
+                    name: "HSIKER",
                     description: Some(
                         "HSIKER",
                     ),
@@ -2836,9 +2820,9 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSI48",
+                    name: "HSI",
                     description: Some(
-                        "HSI48 selected as MCO source",
+                        "HSI selected as MCO source",
                     ),
                     value: 3,
                 },
@@ -2948,9 +2932,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "HSI",
+                    name: "HSISYS",
                     description: Some(
-                        "HSI selected as system clock",
+                        "HSISYS (HSI divided by HSIDIV) selected as system clock",
                     ),
                     value: 0,
                 },
@@ -2978,69 +2962,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Sysdiv",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "1",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "2",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "3 (reset value)",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "4",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV5",
-                    description: Some(
-                        "5",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "DIV6",
-                    description: Some(
-                        "6",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "DIV7",
-                    description: Some(
-                        "7",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: Some(
-                        "8",
-                    ),
-                    value: 7,
-                },
-            ],
-        },
-        Enum {
             name: "Usart1sel",
             description: None,
             bit_size: 2,
@@ -3060,7 +2981,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSI",
+                    name: "HSIKER",
                     description: Some(
                         "HSIKER",
                     ),

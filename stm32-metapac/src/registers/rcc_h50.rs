@@ -4672,7 +4672,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "HCLK1",
+                    name: "HCLK2",
                     description: Some(
                         "rcc_hclk selected as kernel clock (default after reset)",
                     ),

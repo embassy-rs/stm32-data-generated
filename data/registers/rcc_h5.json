@@ -3153,7 +3153,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "HCLK1",
+        "name": "HCLK2",
         "description": "rcc_hclk selected as kernel clock (default after reset)",
         "value": 0
       },

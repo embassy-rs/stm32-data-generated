@@ -3429,7 +3429,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Adcdacsel {
         #[doc = "rcc_hclk selected as kernel clock (default after reset)"]
-        HCLK1 = 0x0,
+        HCLK2 = 0x0,
         #[doc = "sys_ck selected as kernel clock"]
         SYS = 0x01,
         #[doc = "pll2_r_ck selected as kernel clock"]

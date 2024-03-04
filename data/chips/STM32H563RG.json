@@ -65,7 +65,10 @@
                     },
                     "rcc": {
                         "bus_clock": "HCLK2",
-                        "kernel_clock": "HCLK2",
+                        "kernel_clock": {
+                            "register": "CCIPR5",
+                            "field": "ADCDACSEL"
+                        },
                         "enable": {
                             "register": "AHB2ENR",
                             "field": "ADC12EN"
@@ -202,7 +205,10 @@
                     },
                     "rcc": {
                         "bus_clock": "HCLK2",
-                        "kernel_clock": "HCLK2",
+                        "kernel_clock": {
+                            "register": "CCIPR5",
+                            "field": "ADCDACSEL"
+                        },
                         "enable": {
                             "register": "AHB2ENR",
                             "field": "ADC12EN"
@@ -470,7 +476,10 @@
                     },
                     "rcc": {
                         "bus_clock": "HCLK2",
-                        "kernel_clock": "HCLK2",
+                        "kernel_clock": {
+                            "register": "CCIPR5",
+                            "field": "ADCDACSEL"
+                        },
                         "enable": {
                             "register": "AHB2ENR",
                             "field": "DAC1EN"

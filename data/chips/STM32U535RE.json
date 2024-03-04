@@ -68,7 +68,10 @@
                     "address": 1107460096,
                     "rcc": {
                         "bus_clock": "HCLK2",
-                        "kernel_clock": "HCLK2",
+                        "kernel_clock": {
+                            "register": "CCIPR3",
+                            "field": "ADCDACSEL"
+                        },
                         "enable": {
                             "register": "AHB2ENR1",
                             "field": "ADC12EN"
@@ -167,7 +170,10 @@
                     "address": 1174540288,
                     "rcc": {
                         "bus_clock": "HCLK3",
-                        "kernel_clock": "HCLK3",
+                        "kernel_clock": {
+                            "register": "CCIPR3",
+                            "field": "ADCDACSEL"
+                        },
                         "enable": {
                             "register": "AHB3ENR",
                             "field": "ADC4EN"

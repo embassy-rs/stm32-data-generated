@@ -109,46 +109,46 @@ pub mod regs {
         }
         #[doc = "Number of results in the RDATA register."]
         #[inline(always)]
-        pub const fn nres(&self) -> super::vals::Nres {
+        pub const fn nres(&self) -> super::vals::Num {
             let val = (self.0 >> 19usize) & 0x01;
-            super::vals::Nres::from_bits(val as u8)
+            super::vals::Num::from_bits(val as u8)
         }
         #[doc = "Number of results in the RDATA register."]
         #[inline(always)]
-        pub fn set_nres(&mut self, val: super::vals::Nres) {
+        pub fn set_nres(&mut self, val: super::vals::Num) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
         }
         #[doc = "Number of arguments expected by the WDATA register."]
         #[inline(always)]
-        pub const fn nargs(&self) -> super::vals::Nargs {
+        pub const fn nargs(&self) -> super::vals::Num {
             let val = (self.0 >> 20usize) & 0x01;
-            super::vals::Nargs::from_bits(val as u8)
+            super::vals::Num::from_bits(val as u8)
         }
         #[doc = "Number of arguments expected by the WDATA register."]
         #[inline(always)]
-        pub fn set_nargs(&mut self, val: super::vals::Nargs) {
+        pub fn set_nargs(&mut self, val: super::vals::Num) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
         }
         #[doc = "Width of output data."]
         #[inline(always)]
-        pub const fn ressize(&self) -> super::vals::Ressize {
+        pub const fn ressize(&self) -> super::vals::Size {
             let val = (self.0 >> 21usize) & 0x01;
-            super::vals::Ressize::from_bits(val as u8)
+            super::vals::Size::from_bits(val as u8)
         }
         #[doc = "Width of output data."]
         #[inline(always)]
-        pub fn set_ressize(&mut self, val: super::vals::Ressize) {
+        pub fn set_ressize(&mut self, val: super::vals::Size) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
         }
         #[doc = "Width of input data."]
         #[inline(always)]
-        pub const fn argsize(&self) -> super::vals::Argsize {
+        pub const fn argsize(&self) -> super::vals::Size {
             let val = (self.0 >> 22usize) & 0x01;
-            super::vals::Argsize::from_bits(val as u8)
+            super::vals::Size::from_bits(val as u8)
         }
         #[doc = "Width of input data."]
         #[inline(always)]
-        pub fn set_argsize(&mut self, val: super::vals::Argsize) {
+        pub fn set_argsize(&mut self, val: super::vals::Size) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
         }
         #[doc = "Result ready flag."]
@@ -171,36 +171,6 @@ pub mod regs {
     }
 }
 pub mod vals {
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Argsize {
-        #[doc = "Use 32 bit input values."]
-        BITS32 = 0x0,
-        #[doc = "Use 16 bit input values."]
-        BITS16 = 0x01,
-    }
-    impl Argsize {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Argsize {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Argsize {
-        #[inline(always)]
-        fn from(val: u8) -> Argsize {
-            Argsize::from_bits(val)
-        }
-    }
-    impl From<Argsize> for u8 {
-        #[inline(always)]
-        fn from(val: Argsize) -> u8 {
-            Argsize::to_bits(val)
-        }
-    }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Func {
@@ -255,15 +225,15 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Nargs {
-        #[doc = "Only single argument write is needed for next calculation."]
+    pub enum Num {
+        #[doc = "1 input/output"]
         NUM1 = 0x0,
-        #[doc = "Two argument writes need to be performed for next calculation."]
+        #[doc = "2 input/output"]
         NUM2 = 0x01,
     }
-    impl Nargs {
+    impl Num {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Nargs {
+        pub const fn from_bits(val: u8) -> Num {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -271,46 +241,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Nargs {
+    impl From<u8> for Num {
         #[inline(always)]
-        fn from(val: u8) -> Nargs {
-            Nargs::from_bits(val)
+        fn from(val: u8) -> Num {
+            Num::from_bits(val)
         }
     }
-    impl From<Nargs> for u8 {
+    impl From<Num> for u8 {
         #[inline(always)]
-        fn from(val: Nargs) -> u8 {
-            Nargs::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Nres {
-        #[doc = "Only single result value will be returned. After a single read RRDY will be automatically cleared."]
-        NUM1 = 0x0,
-        #[doc = "Two return reads need to be performed. After two reads RRDY will be automatically cleared."]
-        NUM2 = 0x01,
-    }
-    impl Nres {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Nres {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Nres {
-        #[inline(always)]
-        fn from(val: u8) -> Nres {
-            Nres::from_bits(val)
-        }
-    }
-    impl From<Nres> for u8 {
-        #[inline(always)]
-        fn from(val: Nres) -> u8 {
-            Nres::to_bits(val)
+        fn from(val: Num) -> u8 {
+            Num::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -372,15 +312,15 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ressize {
-        #[doc = "Use 32 bit output values."]
+    pub enum Size {
+        #[doc = "Use 32 bit input/output values."]
         BITS32 = 0x0,
-        #[doc = "Use 16 bit output values."]
+        #[doc = "Use 16 bit input/output values."]
         BITS16 = 0x01,
     }
-    impl Ressize {
+    impl Size {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ressize {
+        pub const fn from_bits(val: u8) -> Size {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -388,16 +328,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Ressize {
+    impl From<u8> for Size {
         #[inline(always)]
-        fn from(val: u8) -> Ressize {
-            Ressize::from_bits(val)
+        fn from(val: u8) -> Size {
+            Size::from_bits(val)
         }
     }
-    impl From<Ressize> for u8 {
+    impl From<Size> for u8 {
         #[inline(always)]
-        fn from(val: Ressize) -> u8 {
-            Ressize::to_bits(val)
+        fn from(val: Size) -> u8 {
+            Size::to_bits(val)
         }
     }
 }

@@ -5107,7 +5107,10 @@
                     },
                     "rcc": {
                         "bus_clock": "PCLK2",
-                        "kernel_clock": "PCLK2",
+                        "kernel_clock": {
+                            "register": "D2CCIP1R",
+                            "field": "SAI23SEL"
+                        },
                         "enable": {
                             "register": "APB2ENR",
                             "field": "SAI2EN"
@@ -5263,7 +5266,10 @@
                     },
                     "rcc": {
                         "bus_clock": "PCLK2",
-                        "kernel_clock": "PCLK2",
+                        "kernel_clock": {
+                            "register": "D2CCIP1R",
+                            "field": "SAI23SEL"
+                        },
                         "enable": {
                             "register": "APB2ENR",
                             "field": "SAI3EN"

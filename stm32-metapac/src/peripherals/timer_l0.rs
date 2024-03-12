@@ -63,7 +63,7 @@ impl Tim1ch {
     }
     #[doc = "prescaler"]
     #[inline(always)]
-    pub const fn psc(self) -> crate::common::Reg<regs::PscCore, crate::common::RW> {
+    pub const fn psc(self) -> crate::common::Reg<u16, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "auto-reload register"]
@@ -153,7 +153,7 @@ impl Tim2ch {
     }
     #[doc = "prescaler"]
     #[inline(always)]
-    pub const fn psc(self) -> crate::common::Reg<regs::PscCore, crate::common::RW> {
+    pub const fn psc(self) -> crate::common::Reg<u16, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "auto-reload register"]
@@ -221,7 +221,7 @@ impl TimBasic {
     }
     #[doc = "prescaler"]
     #[inline(always)]
-    pub const fn psc(self) -> crate::common::Reg<regs::PscCore, crate::common::RW> {
+    pub const fn psc(self) -> crate::common::Reg<u16, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "auto-reload register"]
@@ -273,7 +273,7 @@ impl TimBasicNoCr2 {
     }
     #[doc = "prescaler"]
     #[inline(always)]
-    pub const fn psc(self) -> crate::common::Reg<regs::PscCore, crate::common::RW> {
+    pub const fn psc(self) -> crate::common::Reg<u16, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "auto-reload register"]
@@ -325,7 +325,7 @@ impl TimCore {
     }
     #[doc = "prescaler"]
     #[inline(always)]
-    pub const fn psc(self) -> crate::common::Reg<regs::PscCore, crate::common::RW> {
+    pub const fn psc(self) -> crate::common::Reg<u16, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "auto-reload register"]
@@ -404,7 +404,7 @@ impl TimGp16 {
     }
     #[doc = "prescaler"]
     #[inline(always)]
-    pub const fn psc(self) -> crate::common::Reg<regs::PscCore, crate::common::RW> {
+    pub const fn psc(self) -> crate::common::Reg<u16, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "auto-reload register"]
@@ -1866,29 +1866,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> EgrGp16 {
             EgrGp16(0)
-        }
-    }
-    #[doc = "prescaler"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PscCore(pub u32);
-    impl PscCore {
-        #[doc = "Prescaler value"]
-        #[inline(always)]
-        pub const fn psc(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[doc = "Prescaler value"]
-        #[inline(always)]
-        pub fn set_psc(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for PscCore {
-        #[inline(always)]
-        fn default() -> PscCore {
-            PscCore(0)
         }
     }
     #[doc = "slave mode control register"]

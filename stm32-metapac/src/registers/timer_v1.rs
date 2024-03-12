@@ -21,7 +21,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "Cr11ch",
                             ),
@@ -72,7 +72,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Write,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "Egr1ch",
                             ),
@@ -171,10 +171,8 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "PscCore",
-                            ),
+                            bit_size: 16,
+                            fieldset: None,
                         },
                     ),
                 },
@@ -272,7 +270,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "Cr11ch",
                             ),
@@ -340,7 +338,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Write,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "Egr1chCmp",
                             ),
@@ -439,10 +437,8 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "PscCore",
-                            ),
+                            bit_size: 16,
+                            fieldset: None,
                         },
                     ),
                 },
@@ -473,7 +469,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "Rcr1chCmp",
                             ),
@@ -625,7 +621,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "Cr11ch",
                             ),
@@ -710,7 +706,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Write,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "Egr2ch",
                             ),
@@ -809,10 +805,8 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "PscCore",
-                            ),
+                            bit_size: 16,
+                            fieldset: None,
                         },
                     ),
                 },
@@ -910,7 +904,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "Cr11ch",
                             ),
@@ -995,7 +989,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Write,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "Egr2chCmp",
                             ),
@@ -1094,10 +1088,8 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "PscCore",
-                            ),
+                            bit_size: 16,
+                            fieldset: None,
                         },
                     ),
                 },
@@ -1128,7 +1120,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "Rcr1chCmp",
                             ),
@@ -1280,7 +1272,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "Cr1Gp16",
                             ),
@@ -1365,7 +1357,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Write,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "EgrAdv",
                             ),
@@ -1464,10 +1456,8 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "PscCore",
-                            ),
+                            bit_size: 16,
+                            fieldset: None,
                         },
                     ),
                 },
@@ -1498,7 +1488,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "RcrAdv",
                             ),
@@ -1716,7 +1706,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "Cr1Core",
                             ),
@@ -1784,7 +1774,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Write,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "EgrCore",
                             ),
@@ -1818,10 +1808,8 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "PscCore",
-                            ),
+                            bit_size: 16,
+                            fieldset: None,
                         },
                     ),
                 },
@@ -1863,7 +1851,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "Cr1Core",
                             ),
@@ -1914,7 +1902,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Write,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "EgrCore",
                             ),
@@ -1948,10 +1936,8 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "PscCore",
-                            ),
+                            bit_size: 16,
+                            fieldset: None,
                         },
                     ),
                 },
@@ -1991,7 +1977,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "Cr1Core",
                             ),
@@ -2042,7 +2028,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Write,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "EgrCore",
                             ),
@@ -2076,10 +2062,8 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "PscCore",
-                            ),
+                            bit_size: 16,
+                            fieldset: None,
                         },
                     ),
                 },
@@ -2121,7 +2105,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "Cr1Gp16",
                             ),
@@ -2206,7 +2190,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Write,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "EgrGp16",
                             ),
@@ -2305,10 +2289,8 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "PscCore",
-                            ),
+                            bit_size: 16,
+                            fieldset: None,
                         },
                     ),
                 },
@@ -2457,7 +2439,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "Cr1Gp16",
                             ),
@@ -2542,7 +2524,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Write,
-                            bit_size: 32,
+                            bit_size: 16,
                             fieldset: Some(
                                 "EgrGp16",
                             ),
@@ -2639,10 +2621,8 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "PscCore",
-                            ),
+                            bit_size: 16,
+                            fieldset: None,
                         },
                     ),
                 },
@@ -6759,30 +6739,6 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "PscCore",
-            extends: None,
-            description: Some(
-                "prescaler",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "psc",
-                    description: Some(
-                        "Prescaler value",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },

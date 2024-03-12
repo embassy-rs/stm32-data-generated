@@ -7,6 +7,7 @@
         "name": "CR1",
         "description": "control register 1",
         "byte_offset": 0,
+        "bit_size": 16,
         "fieldset": "CR1_1CH"
       },
       {
@@ -26,6 +27,7 @@
         "description": "event generation register",
         "byte_offset": 20,
         "access": "Write",
+        "bit_size": 16,
         "fieldset": "EGR_1CH"
       },
       {
@@ -104,6 +106,7 @@
         "description": "event generation register",
         "byte_offset": 20,
         "access": "Write",
+        "bit_size": 16,
         "fieldset": "EGR_1CH_CMP"
       },
       {
@@ -116,6 +119,7 @@
         "name": "RCR",
         "description": "repetition counter register",
         "byte_offset": 48,
+        "bit_size": 16,
         "fieldset": "RCR_1CH_CMP"
       },
       {
@@ -177,6 +181,7 @@
         "description": "event generation register",
         "byte_offset": 20,
         "access": "Write",
+        "bit_size": 16,
         "fieldset": "EGR_2CH"
       },
       {
@@ -256,6 +261,7 @@
         "description": "event generation register",
         "byte_offset": 20,
         "access": "Write",
+        "bit_size": 16,
         "fieldset": "EGR_2CH_CMP"
       },
       {
@@ -328,6 +334,7 @@
         "name": "CR1",
         "description": "control register 1",
         "byte_offset": 0,
+        "bit_size": 16,
         "fieldset": "CR1_GP16"
       },
       {
@@ -359,6 +366,7 @@
         "description": "event generation register",
         "byte_offset": 20,
         "access": "Write",
+        "bit_size": 16,
         "fieldset": "EGR_ADV"
       },
       {
@@ -391,6 +399,7 @@
         "name": "RCR",
         "description": "repetition counter register",
         "byte_offset": 48,
+        "bit_size": 16,
         "fieldset": "RCR_ADV"
       },
       {
@@ -483,6 +492,7 @@
         "name": "CR1",
         "description": "control register 1",
         "byte_offset": 0,
+        "bit_size": 16,
         "fieldset": "CR1_CORE"
       },
       {
@@ -502,6 +512,7 @@
         "description": "event generation register",
         "byte_offset": 20,
         "access": "Write",
+        "bit_size": 16,
         "fieldset": "EGR_CORE"
       },
       {
@@ -514,7 +525,7 @@
         "name": "PSC",
         "description": "prescaler",
         "byte_offset": 40,
-        "fieldset": "PSC_CORE"
+        "bit_size": 16
       },
       {
         "name": "ARR",
@@ -532,6 +543,7 @@
         "name": "CR1",
         "description": "control register 1",
         "byte_offset": 0,
+        "bit_size": 16,
         "fieldset": "CR1_GP16"
       },
       {
@@ -563,6 +575,7 @@
         "description": "event generation register",
         "byte_offset": 20,
         "access": "Write",
+        "bit_size": 16,
         "fieldset": "EGR_GP16"
       },
       {
@@ -1959,17 +1972,6 @@
         "description": "Trigger generation",
         "bit_offset": 6,
         "bit_size": 1
-      }
-    ]
-  },
-  "fieldset/PSC_CORE": {
-    "description": "prescaler",
-    "fields": [
-      {
-        "name": "PSC",
-        "description": "Prescaler value",
-        "bit_offset": 0,
-        "bit_size": 16
       }
     ]
   },

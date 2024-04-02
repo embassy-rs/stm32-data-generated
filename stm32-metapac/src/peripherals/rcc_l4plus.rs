@@ -680,13 +680,13 @@ pub mod regs {
         }
         #[doc = "OctoSPI IO manager clock enable"]
         #[inline(always)]
-        pub const fn ospimen(&self) -> bool {
+        pub const fn octospimen(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
         #[doc = "OctoSPI IO manager clock enable"]
         #[inline(always)]
-        pub fn set_ospimen(&mut self, val: bool) {
+        pub fn set_octospimen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "SDMMC1 clock enable"]
@@ -901,13 +901,13 @@ pub mod regs {
         }
         #[doc = "OCTOSPI IO manager reset"]
         #[inline(always)]
-        pub const fn ospimrst(&self) -> bool {
+        pub const fn octospimrst(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
         #[doc = "OCTOSPI IO manager reset"]
         #[inline(always)]
-        pub fn set_ospimrst(&mut self, val: bool) {
+        pub fn set_octospimrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "SDMMC1 reset"]
@@ -1166,13 +1166,13 @@ pub mod regs {
         }
         #[doc = "OctoSPI IO manager clocks enable during Sleep and Stop modes"]
         #[inline(always)]
-        pub const fn ospimsmen(&self) -> bool {
+        pub const fn octospimsmen(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
         #[doc = "OctoSPI IO manager clocks enable during Sleep and Stop modes"]
         #[inline(always)]
-        pub fn set_ospimsmen(&mut self, val: bool) {
+        pub fn set_octospimsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "SDMMC1 clocks enable during Sleep and Stop modes"]
@@ -1222,24 +1222,24 @@ pub mod regs {
         }
         #[doc = "OctoSPI1 memory interface clock enable"]
         #[inline(always)]
-        pub const fn ospi1en(&self) -> bool {
+        pub const fn octospi1en(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
         #[doc = "OctoSPI1 memory interface clock enable"]
         #[inline(always)]
-        pub fn set_ospi1en(&mut self, val: bool) {
+        pub fn set_octospi1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "OSPI2EN memory interface clock enable"]
         #[inline(always)]
-        pub const fn ospi2en(&self) -> bool {
+        pub const fn octospi2en(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
             val != 0
         }
         #[doc = "OSPI2EN memory interface clock enable"]
         #[inline(always)]
-        pub fn set_ospi2en(&mut self, val: bool) {
+        pub fn set_octospi2en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
     }
@@ -1267,24 +1267,24 @@ pub mod regs {
         }
         #[doc = "OctoSPI1 memory interface reset"]
         #[inline(always)]
-        pub const fn ospi1rst(&self) -> bool {
+        pub const fn octospi1rst(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
         #[doc = "OctoSPI1 memory interface reset"]
         #[inline(always)]
-        pub fn set_ospi1rst(&mut self, val: bool) {
+        pub fn set_octospi1rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "OctOSPI2 memory interface reset"]
         #[inline(always)]
-        pub const fn ospi2rst(&self) -> bool {
+        pub const fn octospi2rst(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
             val != 0
         }
         #[doc = "OctOSPI2 memory interface reset"]
         #[inline(always)]
-        pub fn set_ospi2rst(&mut self, val: bool) {
+        pub fn set_octospi2rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
     }
@@ -1312,24 +1312,24 @@ pub mod regs {
         }
         #[doc = "OctoSPI1 memory interface clocks enable during Sleep and Stop modes"]
         #[inline(always)]
-        pub const fn ospi1smen(&self) -> bool {
+        pub const fn octospi1smen(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
         #[doc = "OctoSPI1 memory interface clocks enable during Sleep and Stop modes"]
         #[inline(always)]
-        pub fn set_ospi1smen(&mut self, val: bool) {
+        pub fn set_octospi1smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "OctoSPI2 memory interface clocks enable during Sleep and Stop modes"]
         #[inline(always)]
-        pub const fn octospi2(&self) -> bool {
+        pub const fn octospi2smen(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
             val != 0
         }
         #[doc = "OctoSPI2 memory interface clocks enable during Sleep and Stop modes"]
         #[inline(always)]
-        pub fn set_octospi2(&mut self, val: bool) {
+        pub fn set_octospi2smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
     }
@@ -3117,13 +3117,13 @@ pub mod regs {
         }
         #[doc = "Octospi clock source selection"]
         #[inline(always)]
-        pub const fn ospisel(&self) -> super::vals::Ospisel {
+        pub const fn octospisel(&self) -> super::vals::Octospisel {
             let val = (self.0 >> 20usize) & 0x03;
-            super::vals::Ospisel::from_bits(val as u8)
+            super::vals::Octospisel::from_bits(val as u8)
         }
         #[doc = "Octospi clock source selection"]
         #[inline(always)]
-        pub fn set_ospisel(&mut self, val: super::vals::Ospisel) {
+        pub fn set_octospisel(&mut self, val: super::vals::Octospisel) {
             self.0 = (self.0 & !(0x03 << 20usize)) | (((val.to_bits() as u32) & 0x03) << 20usize);
         }
     }
@@ -5065,7 +5065,7 @@ in the RCC_CR register"]
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ospisel {
+    pub enum Octospisel {
         #[doc = "System clock selected as OctoSPI kernel clock"]
         SYS = 0x0,
         #[doc = "MSI clock selected as OctoSPI kernel clock"]
@@ -5074,9 +5074,9 @@ in the RCC_CR register"]
         PLL1_Q = 0x02,
         _RESERVED_3 = 0x03,
     }
-    impl Ospisel {
+    impl Octospisel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ospisel {
+        pub const fn from_bits(val: u8) -> Octospisel {
             unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
@@ -5084,16 +5084,16 @@ in the RCC_CR register"]
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Ospisel {
+    impl From<u8> for Octospisel {
         #[inline(always)]
-        fn from(val: u8) -> Ospisel {
-            Ospisel::from_bits(val)
+        fn from(val: u8) -> Octospisel {
+            Octospisel::from_bits(val)
         }
     }
-    impl From<Ospisel> for u8 {
+    impl From<Octospisel> for u8 {
         #[inline(always)]
-        fn from(val: Ospisel) -> u8 {
-            Ospisel::to_bits(val)
+        fn from(val: Octospisel) -> u8 {
+            Octospisel::to_bits(val)
         }
     }
     #[repr(u8)]

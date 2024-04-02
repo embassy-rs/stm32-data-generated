@@ -2124,6 +2124,18 @@
                         "version": "v2",
                         "block": "OCTOSPI"
                     },
+                    "rcc": {
+                        "bus_clock": "HCLK3",
+                        "kernel_clock": "HCLK3",
+                        "enable": {
+                            "register": "AHB3ENR",
+                            "field": "OCTOSPI1EN"
+                        },
+                        "reset": {
+                            "register": "AHB3RSTR",
+                            "field": "OCTOSPI1RST"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA1",

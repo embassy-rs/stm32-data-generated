@@ -1240,8 +1240,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ospi1en",
-                    description: Some("OSPI1EN"),
+                    name: "octospi1en",
+                    description: Some("OCTOSPI1EN"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
@@ -1264,8 +1264,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ospi1rst",
-                    description: Some("OSPI1RST"),
+                    name: "octospi1rst",
+                    description: Some("OCTOSPI1RST"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
@@ -1288,8 +1288,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ospi1secf",
-                    description: Some("OSPI1SECF"),
+                    name: "octospi1secf",
+                    description: Some("OCTOSPI1SECF"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
@@ -1312,8 +1312,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ospi1smen",
-                    description: Some("OSPI1SMEN"),
+                    name: "octospi1smen",
+                    description: Some("OCTOSPI1SMEN"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
@@ -2976,7 +2976,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ospisel",
+                    name: "octospisel",
                     description: Some("Octospi clock source selection"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 2,

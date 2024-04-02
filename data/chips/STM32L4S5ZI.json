@@ -2849,6 +2849,21 @@
                         "version": "v1",
                         "block": "OCTOSPI"
                     },
+                    "rcc": {
+                        "bus_clock": "HCLK3",
+                        "kernel_clock": {
+                            "register": "CCIPR2",
+                            "field": "OCTOSPISEL"
+                        },
+                        "enable": {
+                            "register": "AHB3ENR",
+                            "field": "OCTOSPI1EN"
+                        },
+                        "reset": {
+                            "register": "AHB3RSTR",
+                            "field": "OCTOSPI1RST"
+                        }
+                    },
                     "interrupts": [
                         {
                             "signal": "GLOBAL",
@@ -2871,6 +2886,21 @@
                         "version": "v1",
                         "block": "OCTOSPI"
                     },
+                    "rcc": {
+                        "bus_clock": "HCLK3",
+                        "kernel_clock": {
+                            "register": "CCIPR2",
+                            "field": "OCTOSPISEL"
+                        },
+                        "enable": {
+                            "register": "AHB3ENR",
+                            "field": "OCTOSPI2EN"
+                        },
+                        "reset": {
+                            "register": "AHB3RSTR",
+                            "field": "OCTOSPI2RST"
+                        }
+                    },
                     "interrupts": [
                         {
                             "signal": "GLOBAL",
@@ -2892,6 +2922,18 @@
                         "kind": "octospim",
                         "version": "v1",
                         "block": "OCTOSPIM"
+                    },
+                    "rcc": {
+                        "bus_clock": "HCLK2",
+                        "kernel_clock": "HCLK2",
+                        "enable": {
+                            "register": "AHB2ENR",
+                            "field": "OCTOSPIMEN"
+                        },
+                        "reset": {
+                            "register": "AHB2RSTR",
+                            "field": "OCTOSPIMRST"
+                        }
                     },
                     "pins": [
                         {

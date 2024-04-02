@@ -1312,15 +1312,15 @@ pub mod regs {
         pub fn set_fmcen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "OSPI1EN"]
+        #[doc = "OCTOSPI1EN"]
         #[inline(always)]
-        pub const fn ospi1en(&self) -> bool {
+        pub const fn octospi1en(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
-        #[doc = "OSPI1EN"]
+        #[doc = "OCTOSPI1EN"]
         #[inline(always)]
-        pub fn set_ospi1en(&mut self, val: bool) {
+        pub fn set_octospi1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
     }
@@ -1346,15 +1346,15 @@ pub mod regs {
         pub fn set_fmcrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "OSPI1RST"]
+        #[doc = "OCTOSPI1RST"]
         #[inline(always)]
-        pub const fn ospi1rst(&self) -> bool {
+        pub const fn octospi1rst(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
-        #[doc = "OSPI1RST"]
+        #[doc = "OCTOSPI1RST"]
         #[inline(always)]
-        pub fn set_ospi1rst(&mut self, val: bool) {
+        pub fn set_octospi1rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
     }
@@ -1380,15 +1380,15 @@ pub mod regs {
         pub fn set_fsmcsecf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "OSPI1SECF"]
+        #[doc = "OCTOSPI1SECF"]
         #[inline(always)]
-        pub const fn ospi1secf(&self) -> bool {
+        pub const fn octospi1secf(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
-        #[doc = "OSPI1SECF"]
+        #[doc = "OCTOSPI1SECF"]
         #[inline(always)]
-        pub fn set_ospi1secf(&mut self, val: bool) {
+        pub fn set_octospi1secf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
     }
@@ -1414,15 +1414,15 @@ pub mod regs {
         pub fn set_fmcsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "OSPI1SMEN"]
+        #[doc = "OCTOSPI1SMEN"]
         #[inline(always)]
-        pub const fn ospi1smen(&self) -> bool {
+        pub const fn octospi1smen(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
-        #[doc = "OSPI1SMEN"]
+        #[doc = "OCTOSPI1SMEN"]
         #[inline(always)]
-        pub fn set_ospi1smen(&mut self, val: bool) {
+        pub fn set_octospi1smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
     }
@@ -3719,13 +3719,13 @@ pub mod regs {
         }
         #[doc = "Octospi clock source selection"]
         #[inline(always)]
-        pub const fn ospisel(&self) -> u8 {
+        pub const fn octospisel(&self) -> u8 {
             let val = (self.0 >> 20usize) & 0x03;
             val as u8
         }
         #[doc = "Octospi clock source selection"]
         #[inline(always)]
-        pub fn set_ospisel(&mut self, val: u8) {
+        pub fn set_octospisel(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 20usize)) | (((val as u32) & 0x03) << 20usize);
         }
     }

@@ -836,8 +836,8 @@
         "bit_size": 1
       },
       {
-        "name": "OSPI1EN",
-        "description": "OSPI1EN",
+        "name": "OCTOSPI1EN",
+        "description": "OCTOSPI1EN",
         "bit_offset": 8,
         "bit_size": 1
       }
@@ -853,8 +853,8 @@
         "bit_size": 1
       },
       {
-        "name": "OSPI1RST",
-        "description": "OSPI1RST",
+        "name": "OCTOSPI1RST",
+        "description": "OCTOSPI1RST",
         "bit_offset": 8,
         "bit_size": 1
       }
@@ -870,8 +870,8 @@
         "bit_size": 1
       },
       {
-        "name": "OSPI1SECF",
-        "description": "OSPI1SECF",
+        "name": "OCTOSPI1SECF",
+        "description": "OCTOSPI1SECF",
         "bit_offset": 8,
         "bit_size": 1
       }
@@ -887,8 +887,8 @@
         "bit_size": 1
       },
       {
-        "name": "OSPI1SMEN",
-        "description": "OSPI1SMEN",
+        "name": "OCTOSPI1SMEN",
+        "description": "OCTOSPI1SMEN",
         "bit_offset": 8,
         "bit_size": 1
       }
@@ -2126,7 +2126,7 @@
         "bit_size": 1
       },
       {
-        "name": "OSPISEL",
+        "name": "OCTOSPISEL",
         "description": "Octospi clock source selection",
         "bit_offset": 20,
         "bit_size": 2

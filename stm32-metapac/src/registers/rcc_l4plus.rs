@@ -1187,7 +1187,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ospimen",
+                    name: "octospimen",
                     description: Some(
                         "OctoSPI IO manager clock enable",
                     ),
@@ -1463,7 +1463,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ospimrst",
+                    name: "octospimrst",
                     description: Some(
                         "OCTOSPI IO manager reset",
                     ),
@@ -1795,7 +1795,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ospimsmen",
+                    name: "octospimsmen",
                     description: Some(
                         "OctoSPI IO manager clocks enable during Sleep and Stop modes",
                     ),
@@ -1861,7 +1861,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ospi1en",
+                    name: "octospi1en",
                     description: Some(
                         "OctoSPI1 memory interface clock enable",
                     ),
@@ -1875,7 +1875,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ospi2en",
+                    name: "octospi2en",
                     description: Some(
                         "OSPI2EN memory interface clock enable",
                     ),
@@ -1913,7 +1913,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ospi1rst",
+                    name: "octospi1rst",
                     description: Some(
                         "OctoSPI1 memory interface reset",
                     ),
@@ -1927,7 +1927,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ospi2rst",
+                    name: "octospi2rst",
                     description: Some(
                         "OctOSPI2 memory interface reset",
                     ),
@@ -1965,7 +1965,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ospi1smen",
+                    name: "octospi1smen",
                     description: Some(
                         "OctoSPI1 memory interface clocks enable during Sleep and Stop modes",
                     ),
@@ -1979,7 +1979,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "octospi2",
+                    name: "octospi2smen",
                     description: Some(
                         "OctoSPI2 memory interface clocks enable during Sleep and Stop modes",
                     ),
@@ -4245,7 +4245,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ospisel",
+                    name: "octospisel",
                     description: Some(
                         "Octospi clock source selection",
                     ),
@@ -4257,7 +4257,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Ospisel",
+                        "Octospisel",
                     ),
                 },
             ],
@@ -6535,7 +6535,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ospisel",
+            name: "Octospisel",
             description: None,
             bit_size: 2,
             variants: &[

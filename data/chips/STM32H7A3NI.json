@@ -4318,6 +4318,21 @@
                         "version": "v1",
                         "block": "OCTOSPI"
                     },
+                    "rcc": {
+                        "bus_clock": "HCLK3",
+                        "kernel_clock": {
+                            "register": "D1CCIPR",
+                            "field": "OCTOSPISEL"
+                        },
+                        "enable": {
+                            "register": "AHB3ENR",
+                            "field": "OCTOSPI1EN"
+                        },
+                        "reset": {
+                            "register": "AHB3RSTR",
+                            "field": "OCTOSPI1RST"
+                        }
+                    },
                     "interrupts": [
                         {
                             "signal": "GLOBAL",

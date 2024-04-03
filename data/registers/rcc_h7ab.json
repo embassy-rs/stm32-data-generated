@@ -732,8 +732,8 @@
         "bit_size": 1
       },
       {
-        "name": "QUADSPIEN",
-        "description": "QUADSPI and QUADSPI Delay Clock Enable",
+        "name": "OCTOSPI1EN",
+        "description": "OCTOSPI1 and OCTOSPI1 Delay Clock Enable",
         "bit_offset": 14,
         "bit_size": 1
       },
@@ -827,8 +827,8 @@
         "bit_size": 1
       },
       {
-        "name": "QUADSPILPEN",
-        "description": "QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode",
+        "name": "OCTOSPI1LPEN",
+        "description": "OCTOSPI1 and OCTOSPI1 Delay Clock Enable During CSleep Mode",
         "bit_offset": 14,
         "bit_size": 1
       },
@@ -916,8 +916,8 @@
         "bit_size": 1
       },
       {
-        "name": "QUADSPIRST",
-        "description": "QUADSPI and QUADSPI delay block reset",
+        "name": "OCTOSPI1RST",
+        "description": "OCTOSPI1 and OCTOSPI1 delay block reset",
         "bit_offset": 14,
         "bit_size": 1
       },

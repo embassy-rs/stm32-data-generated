@@ -1048,15 +1048,15 @@ pub mod regs {
         pub fn set_fmcen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
-        #[doc = "QUADSPI and QUADSPI Delay Clock Enable"]
+        #[doc = "OCTOSPI1 and OCTOSPI1 Delay Clock Enable"]
         #[inline(always)]
-        pub const fn quadspien(&self) -> bool {
+        pub const fn octospi1en(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
             val != 0
         }
-        #[doc = "QUADSPI and QUADSPI Delay Clock Enable"]
+        #[doc = "OCTOSPI1 and OCTOSPI1 Delay Clock Enable"]
         #[inline(always)]
-        pub fn set_quadspien(&mut self, val: bool) {
+        pub fn set_octospi1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "SDMMC1 and SDMMC1 Delay Clock Enable"]
@@ -1225,15 +1225,15 @@ pub mod regs {
         pub fn set_fmclpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
-        #[doc = "QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode"]
+        #[doc = "OCTOSPI1 and OCTOSPI1 Delay Clock Enable During CSleep Mode"]
         #[inline(always)]
-        pub const fn quadspilpen(&self) -> bool {
+        pub const fn octospi1lpen(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
             val != 0
         }
-        #[doc = "QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode"]
+        #[doc = "OCTOSPI1 and OCTOSPI1 Delay Clock Enable During CSleep Mode"]
         #[inline(always)]
-        pub fn set_quadspilpen(&mut self, val: bool) {
+        pub fn set_octospi1lpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "SDMMC1 and SDMMC1 Delay Clock Enable During CSleep Mode"]
@@ -1391,15 +1391,15 @@ pub mod regs {
         pub fn set_fmcrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
-        #[doc = "QUADSPI and QUADSPI delay block reset"]
+        #[doc = "OCTOSPI1 and OCTOSPI1 delay block reset"]
         #[inline(always)]
-        pub const fn quadspirst(&self) -> bool {
+        pub const fn octospi1rst(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
             val != 0
         }
-        #[doc = "QUADSPI and QUADSPI delay block reset"]
+        #[doc = "OCTOSPI1 and OCTOSPI1 delay block reset"]
         #[inline(always)]
-        pub fn set_quadspirst(&mut self, val: bool) {
+        pub fn set_octospi1rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "SDMMC1 and SDMMC1 delay block reset"]

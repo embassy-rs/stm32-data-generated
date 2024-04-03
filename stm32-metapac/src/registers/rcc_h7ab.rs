@@ -1129,8 +1129,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "quadspien",
-                    description: Some("QUADSPI and QUADSPI Delay Clock Enable"),
+                    name: "octospi1en",
+                    description: Some("OCTOSPI1 and OCTOSPI1 Delay Clock Enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
@@ -1257,8 +1257,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "quadspilpen",
-                    description: Some("QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode"),
+                    name: "octospi1lpen",
+                    description: Some("OCTOSPI1 and OCTOSPI1 Delay Clock Enable During CSleep Mode"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
@@ -1377,8 +1377,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "quadspirst",
-                    description: Some("QUADSPI and QUADSPI delay block reset"),
+                    name: "octospi1rst",
+                    description: Some("OCTOSPI1 and OCTOSPI1 delay block reset"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,

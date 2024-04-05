@@ -1339,8 +1339,8 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x44004400,
         registers: Some(PeripheralRegisters {
             kind: "lptim",
-            version: "v1",
-            block: "LPTIM",
+            version: "v2b",
+            block: "LPTIM_ADV",
             ir: &lptim::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -1510,8 +1510,8 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40009400,
         registers: Some(PeripheralRegisters {
             kind: "lptim",
-            version: "v1",
-            block: "LPTIM",
+            version: "v2b",
+            block: "LPTIM_ADV",
             ir: &lptim::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -4890,7 +4890,7 @@ pub mod i3c;
 pub mod icache;
 #[path = "../registers/iwdg_v3.rs"]
 pub mod iwdg;
-#[path = "../registers/lptim_v1.rs"]
+#[path = "../registers/lptim_v2b.rs"]
 pub mod lptim;
 #[path = "../registers/opamp_h_v2.rs"]
 pub mod opamp;

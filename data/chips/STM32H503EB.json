@@ -1143,8 +1143,8 @@
                     "address": 1140868096,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v1",
-                        "block": "LPTIM"
+                        "version": "v2b",
+                        "block": "LPTIM_ADV"
                     },
                     "rcc": {
                         "bus_clock": "PCLK3",
@@ -1268,8 +1268,8 @@
                     "address": 1073779712,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v1",
-                        "block": "LPTIM"
+                        "version": "v2b",
+                        "block": "LPTIM_ADV"
                     },
                     "rcc": {
                         "bus_clock": "PCLK1",

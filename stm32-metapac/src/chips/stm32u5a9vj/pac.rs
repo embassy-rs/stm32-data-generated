@@ -635,7 +635,7 @@ pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5800usize as _) };
 pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_6000usize as _) };
 pub const USART6: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_6400usize as _) };
 pub const I2C4: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_8400usize as _) };
-pub const LPTIM2: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_9400usize as _) };
+pub const LPTIM2: lptim::LptimAdv = unsafe { lptim::LptimAdv::from_ptr(0x4000_9400usize as _) };
 pub const I2C5: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_9800usize as _) };
 pub const I2C6: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_9c00usize as _) };
 pub const FDCAN1: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a400usize as _) };
@@ -696,9 +696,9 @@ pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4600_0400
 pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4600_2000usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4600_2400usize as _) };
 pub const I2C3: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4600_2800usize as _) };
-pub const LPTIM1: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4600_4400usize as _) };
-pub const LPTIM3: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4600_4800usize as _) };
-pub const LPTIM4: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4600_4c00usize as _) };
+pub const LPTIM1: lptim::LptimAdv = unsafe { lptim::LptimAdv::from_ptr(0x4600_4400usize as _) };
+pub const LPTIM3: lptim::LptimAdv = unsafe { lptim::LptimAdv::from_ptr(0x4600_4800usize as _) };
+pub const LPTIM4: lptim::LptimBasic = unsafe { lptim::LptimBasic::from_ptr(0x4600_4c00usize as _) };
 pub const OPAMP1: *mut () = 0x4600_5000usize as _;
 pub const OPAMP2: *mut () = 0x4600_5010usize as _;
 pub const COMP1: *mut () = 0x4600_5400usize as _;
@@ -769,7 +769,7 @@ pub mod i2c;
 pub mod icache;
 #[path = "../../peripherals/iwdg_v3.rs"]
 pub mod iwdg;
-#[path = "../../peripherals/lptim_v1.rs"]
+#[path = "../../peripherals/lptim_v2b.rs"]
 pub mod lptim;
 #[path = "../../peripherals/ltdc_v1.rs"]
 pub mod ltdc;

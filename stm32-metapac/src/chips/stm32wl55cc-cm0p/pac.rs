@@ -241,7 +241,7 @@ pub mod i2c;
 pub mod ipcc;
 #[path = "../../peripherals/iwdg_v2.rs"]
 pub mod iwdg;
-#[path = "../../peripherals/lptim_v1.rs"]
+#[path = "../../peripherals/lptim_v2a.rs"]
 pub mod lptim;
 #[path = "../../peripherals/pka_v1c.rs"]
 pub mod pka;

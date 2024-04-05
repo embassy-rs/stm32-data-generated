@@ -602,7 +602,7 @@ pub mod i2c;
 pub mod icache;
 #[path = "../../peripherals/iwdg_v2.rs"]
 pub mod iwdg;
-#[path = "../../peripherals/lptim_v1.rs"]
+#[path = "../../peripherals/lptim_v2a.rs"]
 pub mod lptim;
 #[path = "../../peripherals/octospi_v2.rs"]
 pub mod octospi;

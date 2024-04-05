@@ -2191,8 +2191,8 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x46004400,
         registers: Some(PeripheralRegisters {
             kind: "lptim",
-            version: "v1",
-            block: "LPTIM",
+            version: "v2b",
+            block: "LPTIM_ADV",
             ir: &lptim::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -2306,8 +2306,8 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40009400,
         registers: Some(PeripheralRegisters {
             kind: "lptim",
-            version: "v1",
-            block: "LPTIM",
+            version: "v2b",
+            block: "LPTIM_ADV",
             ir: &lptim::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -2436,8 +2436,8 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x46004800,
         registers: Some(PeripheralRegisters {
             kind: "lptim",
-            version: "v1",
-            block: "LPTIM",
+            version: "v2b",
+            block: "LPTIM_ADV",
             ir: &lptim::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -2558,8 +2558,8 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x46004c00,
         registers: Some(PeripheralRegisters {
             kind: "lptim",
-            version: "v1",
-            block: "LPTIM",
+            version: "v2b",
+            block: "LPTIM_BASIC",
             ir: &lptim::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -7970,7 +7970,7 @@ pub mod i2c;
 pub mod icache;
 #[path = "../registers/iwdg_v3.rs"]
 pub mod iwdg;
-#[path = "../registers/lptim_v1.rs"]
+#[path = "../registers/lptim_v2b.rs"]
 pub mod lptim;
 #[path = "../registers/octospi_v1.rs"]
 pub mod octospi;

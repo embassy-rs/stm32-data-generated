@@ -5,7 +5,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x50000000,
         registers: Some(PeripheralRegisters {
             kind: "adc",
-            version: "v4",
+            version: "g4",
             block: "ADC",
             ir: &adc::REGISTERS,
         }),
@@ -114,7 +114,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x50000100,
         registers: Some(PeripheralRegisters {
             kind: "adc",
-            version: "v4",
+            version: "g4",
             block: "ADC",
             ir: &adc::REGISTERS,
         }),
@@ -233,7 +233,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x50000400,
         registers: Some(PeripheralRegisters {
             kind: "adc",
-            version: "v4",
+            version: "g4",
             block: "ADC",
             ir: &adc::REGISTERS,
         }),
@@ -287,7 +287,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x50000500,
         registers: Some(PeripheralRegisters {
             kind: "adc",
-            version: "v4",
+            version: "g4",
             block: "ADC",
             ir: &adc::REGISTERS,
         }),
@@ -341,7 +341,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x50000600,
         registers: Some(PeripheralRegisters {
             kind: "adc",
-            version: "v4",
+            version: "g4",
             block: "ADC",
             ir: &adc::REGISTERS,
         }),
@@ -6723,7 +6723,7 @@ pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
         dmamux_channel: Some(15),
     },
 ];
-#[path = "../registers/adc_v4.rs"]
+#[path = "../registers/adc_g4.rs"]
 pub mod adc;
 #[path = "../registers/adccommon_v4.rs"]
 pub mod adccommon;

@@ -254,7 +254,7 @@
                     "address": 1342177280,
                     "registers": {
                         "kind": "adc",
-                        "version": "v4",
+                        "version": "g4",
                         "block": "ADC"
                     },
                     "rcc": {
@@ -317,7 +317,7 @@
                     "address": 1342177536,
                     "registers": {
                         "kind": "adc",
-                        "version": "v4",
+                        "version": "g4",
                         "block": "ADC"
                     },
                     "rcc": {

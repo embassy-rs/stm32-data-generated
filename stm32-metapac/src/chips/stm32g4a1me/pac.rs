@@ -500,7 +500,7 @@ pub use Interrupt as interrupt;
 pub fn GPIO(n: usize) -> gpio::Gpio {
     unsafe { gpio::Gpio::from_ptr((1207959552 + 1024 * n) as _) }
 }
-#[path = "../../peripherals/adc_v4.rs"]
+#[path = "../../peripherals/adc_g4.rs"]
 pub mod adc;
 #[path = "../../peripherals/adccommon_v4.rs"]
 pub mod adccommon;

@@ -34,9 +34,14 @@ impl Spi {
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
-    #[doc = "data register"]
+    #[doc = "data register - half-word sized"]
     #[inline(always)]
-    pub const fn dr(self) -> crate::common::Reg<regs::Dr, crate::common::RW> {
+    pub const fn dr16(self) -> crate::common::Reg<u16, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+    }
+    #[doc = "data register - byte sized"]
+    #[inline(always)]
+    pub const fn dr8(self) -> crate::common::Reg<u8, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[doc = "CRC polynomial register"]
@@ -397,29 +402,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Crcpr {
             Crcpr(0)
-        }
-    }
-    #[doc = "data register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Dr(pub u32);
-    impl Dr {
-        #[doc = "Data register"]
-        #[inline(always)]
-        pub const fn dr(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[doc = "Data register"]
-        #[inline(always)]
-        pub fn set_dr(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for Dr {
-        #[inline(always)]
-        fn default() -> Dr {
-            Dr(0)
         }
     }
     #[doc = "I2S configuration register"]

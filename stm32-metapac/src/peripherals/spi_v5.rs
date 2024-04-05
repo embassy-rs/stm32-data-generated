@@ -58,14 +58,34 @@ impl Spi {
     pub const fn autocr(self) -> crate::common::Reg<regs::Autocr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
+    #[doc = "Transmit Data Register - half-word sized"]
+    #[inline(always)]
+    pub const fn txdr16(self) -> crate::common::Reg<u16, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+    }
     #[doc = "Transmit Data Register"]
     #[inline(always)]
-    pub const fn txdr(self) -> crate::common::Reg<regs::Txdr, crate::common::W> {
+    pub const fn txdr32(self) -> crate::common::Reg<u32, crate::common::W> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+    }
+    #[doc = "Transmit Data Register - byte sized"]
+    #[inline(always)]
+    pub const fn txdr8(self) -> crate::common::Reg<u8, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+    }
+    #[doc = "Receive Data Register - half-word sized"]
+    #[inline(always)]
+    pub const fn rxdr16(self) -> crate::common::Reg<u16, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "Receive Data Register"]
     #[inline(always)]
-    pub const fn rxdr(self) -> crate::common::Reg<regs::Rxdr, crate::common::R> {
+    pub const fn rxdr32(self) -> crate::common::Reg<u32, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
+    }
+    #[doc = "Receive Data Register - byte sized"]
+    #[inline(always)]
+    pub const fn rxdr8(self) -> crate::common::Reg<u8, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[doc = "Polynomial Register"]
@@ -846,29 +866,6 @@ pub mod regs {
             Rxcrc(0)
         }
     }
-    #[doc = "Receive Data Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Rxdr(pub u32);
-    impl Rxdr {
-        #[doc = "Receive data register"]
-        #[inline(always)]
-        pub const fn rxdr(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Receive data register"]
-        #[inline(always)]
-        pub fn set_rxdr(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Rxdr {
-        #[inline(always)]
-        fn default() -> Rxdr {
-            Rxdr(0)
-        }
-    }
     #[doc = "Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1067,29 +1064,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Txcrc {
             Txcrc(0)
-        }
-    }
-    #[doc = "Transmit Data Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Txdr(pub u32);
-    impl Txdr {
-        #[doc = "Transmit data register"]
-        #[inline(always)]
-        pub const fn txdr(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Transmit data register"]
-        #[inline(always)]
-        pub fn set_txdr(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Txdr {
-        #[inline(always)]
-        fn default() -> Txdr {
-            Txdr(0)
         }
     }
     #[doc = "Underrun Data Register"]

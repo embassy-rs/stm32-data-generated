@@ -144,7 +144,22 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "txdr",
+                    name: "txdr16",
+                    description: Some(
+                        "Transmit Data Register - half-word sized",
+                    ),
+                    array: None,
+                    byte_offset: 0x20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 16,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "txdr32",
                     description: Some(
                         "Transmit Data Register",
                     ),
@@ -154,14 +169,42 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::Write,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Txdr",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
                 BlockItem {
-                    name: "rxdr",
+                    name: "txdr8",
+                    description: Some(
+                        "Transmit Data Register - byte sized",
+                    ),
+                    array: None,
+                    byte_offset: 0x20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 8,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rxdr16",
+                    description: Some(
+                        "Receive Data Register - half-word sized",
+                    ),
+                    array: None,
+                    byte_offset: 0x30,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 16,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rxdr32",
                     description: Some(
                         "Receive Data Register",
                     ),
@@ -171,9 +214,22 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::Read,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Rxdr",
-                            ),
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rxdr8",
+                    description: Some(
+                        "Receive Data Register - byte sized",
+                    ),
+                    array: None,
+                    byte_offset: 0x30,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 8,
+                            fieldset: None,
                         },
                     ),
                 },
@@ -1198,30 +1254,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Rxdr",
-            extends: None,
-            description: Some(
-                "Receive Data Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rxdr",
-                    description: Some(
-                        "Receive data register",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Sr",
             extends: None,
             description: Some(
@@ -1457,30 +1489,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "txcrc",
                     description: Some(
                         "CRC register for transmitter",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Txdr",
-            extends: None,
-            description: Some(
-                "Transmit Data Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "txdr",
-                    description: Some(
-                        "Transmit data register",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {

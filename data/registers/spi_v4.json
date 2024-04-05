@@ -47,18 +47,44 @@
         "fieldset": "IFCR"
       },
       {
-        "name": "TXDR",
+        "name": "TXDR32",
         "description": "Transmit Data Register",
         "byte_offset": 32,
-        "access": "Write",
-        "fieldset": "TXDR"
+        "access": "Write"
       },
       {
-        "name": "RXDR",
+        "name": "TXDR16",
+        "description": "Transmit Data Register - half-word sized",
+        "byte_offset": 32,
+        "access": "Write",
+        "bit_size": 16
+      },
+      {
+        "name": "TXDR8",
+        "description": "Transmit Data Register - byte sized",
+        "byte_offset": 32,
+        "access": "Write",
+        "bit_size": 8
+      },
+      {
+        "name": "RXDR32",
         "description": "Receive Data Register",
         "byte_offset": 48,
+        "access": "Read"
+      },
+      {
+        "name": "RXDR16",
+        "description": "Receive Data Register - half-word sized",
+        "byte_offset": 48,
         "access": "Read",
-        "fieldset": "RXDR"
+        "bit_size": 16
+      },
+      {
+        "name": "RXDR8",
+        "description": "Receive Data Register - byte sized",
+        "byte_offset": 48,
+        "access": "Read",
+        "bit_size": 8
       },
       {
         "name": "CRCPOLY",
@@ -478,17 +504,6 @@
       }
     ]
   },
-  "fieldset/RXDR": {
-    "description": "Receive Data Register",
-    "fields": [
-      {
-        "name": "RXDR",
-        "description": "Receive data register",
-        "bit_offset": 0,
-        "bit_size": 32
-      }
-    ]
-  },
   "fieldset/SR": {
     "description": "Status Register",
     "fields": [
@@ -592,17 +607,6 @@
       {
         "name": "TXCRC",
         "description": "CRC register for transmitter",
-        "bit_offset": 0,
-        "bit_size": 32
-      }
-    ]
-  },
-  "fieldset/TXDR": {
-    "description": "Transmit Data Register",
-    "fields": [
-      {
-        "name": "TXDR",
-        "description": "Transmit data register",
         "bit_offset": 0,
         "bit_size": 32
       }

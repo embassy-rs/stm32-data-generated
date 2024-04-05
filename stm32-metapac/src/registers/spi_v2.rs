@@ -40,14 +40,25 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "dr",
-                description: Some("data register"),
+                name: "dr16",
+                description: Some("data register - half-word sized"),
                 array: None,
                 byte_offset: 0xc,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Dr"),
+                    bit_size: 16,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "dr8",
+                description: Some("data register - byte sized"),
+                array: None,
+                byte_offset: 0xc,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 8,
+                    fieldset: None,
                 }),
             },
             BlockItem {
@@ -340,20 +351,6 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "crcpoly",
                 description: Some("CRC polynomial register"),
-                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                bit_size: 16,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Dr",
-            extends: None,
-            description: Some("data register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "dr",
-                description: Some("Data register"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: None,

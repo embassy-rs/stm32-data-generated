@@ -19,14 +19,14 @@ impl Crc {
     pub const fn as_ptr(&self) -> *mut () {
         self.ptr as _
     }
-    #[doc = "Data register"]
-    #[inline(always)]
-    pub const fn dr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
-    }
     #[doc = "Data register - half-word sized"]
     #[inline(always)]
     pub const fn dr16(self) -> crate::common::Reg<u16, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+    }
+    #[doc = "Data register"]
+    #[inline(always)]
+    pub const fn dr32(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Data register - byte sized"]

@@ -471,7 +471,7 @@ pub mod dmamux;
 pub mod exti;
 #[path = "../../peripherals/fdcanram_v1.rs"]
 pub mod fdcanram;
-#[path = "../../peripherals/flash_g4.rs"]
+#[path = "../../peripherals/flash_g4c2.rs"]
 pub mod flash;
 #[path = "../../peripherals/fmac_v1.rs"]
 pub mod fmac;

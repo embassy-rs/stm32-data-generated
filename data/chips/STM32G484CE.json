@@ -1565,7 +1565,7 @@
                     "address": 1073881088,
                     "registers": {
                         "kind": "flash",
-                        "version": "g4",
+                        "version": "g4c3",
                         "block": "FLASH"
                     },
                     "rcc": {

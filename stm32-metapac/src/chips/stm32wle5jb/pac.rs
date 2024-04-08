@@ -328,7 +328,7 @@ pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x5800_0000usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x5800_0400usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x5800_0800usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x5800_1000usize as _) };
-pub const HSEM: *mut () = 0x5800_1400usize as _;
+pub const HSEM: hsem::Hsem = unsafe { hsem::Hsem::from_ptr(0x5800_1400usize as _) };
 pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x5800_1800usize as _) };
 pub const PKA: pka::Pka = unsafe { pka::Pka::from_ptr(0x5800_2000usize as _) };
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x5800_4000usize as _) };
@@ -368,6 +368,8 @@ pub mod exti;
 pub mod flash;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../../peripherals/hsem_v4.rs"]
+pub mod hsem;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;
 #[path = "../../peripherals/iwdg_v2.rs"]

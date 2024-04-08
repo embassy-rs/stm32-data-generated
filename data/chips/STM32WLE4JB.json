@@ -684,6 +684,11 @@
                 {
                     "name": "HSEM",
                     "address": 1476400128,
+                    "registers": {
+                        "kind": "hsem",
+                        "version": "v4",
+                        "block": "HSEM"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK3",
                         "kernel_clock": "HCLK3",

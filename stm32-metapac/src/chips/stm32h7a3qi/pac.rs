@@ -659,6 +659,7 @@ pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000usize as _) };
 pub const USB_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4004_0000usize as _) };
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4802_0000usize as _) };
 pub const PSSI: pssi::Pssi = unsafe { pssi::Pssi::from_ptr(0x4802_0400usize as _) };
+pub const HSEM: *mut () = 0x4802_0800usize as _;
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x4802_1800usize as _) };
 pub const SDMMC2: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4802_2400usize as _) };
 pub const BDMA1: bdma::Dma = unsafe { bdma::Dma::from_ptr(0x4802_2c00usize as _) };

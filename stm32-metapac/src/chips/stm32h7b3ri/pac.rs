@@ -661,6 +661,7 @@ pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000usize as _) };
 pub const USB_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4004_0000usize as _) };
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4802_0000usize as _) };
 pub const PSSI: pssi::Pssi = unsafe { pssi::Pssi::from_ptr(0x4802_0400usize as _) };
+pub const HSEM: hsem::Hsem = unsafe { hsem::Hsem::from_ptr(0x4802_0800usize as _) };
 pub const CRYP: cryp::Cryp = unsafe { cryp::Cryp::from_ptr(0x4802_1000usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x4802_1400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x4802_1800usize as _) };
@@ -761,6 +762,8 @@ pub mod flash;
 pub mod gpio;
 #[path = "../../peripherals/hash_v2.rs"]
 pub mod hash;
+#[path = "../../peripherals/hsem_v2.rs"]
+pub mod hsem;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;
 #[path = "../../peripherals/iwdg_v2.rs"]

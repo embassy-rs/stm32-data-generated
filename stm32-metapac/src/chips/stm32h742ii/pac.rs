@@ -706,6 +706,7 @@ pub const BDMA: bdma::Dma = unsafe { bdma::Dma::from_ptr(0x5802_5400usize as _) 
 pub const DMAMUX2: dmamux::Dmamux = unsafe { dmamux::Dmamux::from_ptr(0x5802_5800usize as _) };
 pub const ADC3: adc::Adc = unsafe { adc::Adc::from_ptr(0x5802_6000usize as _) };
 pub const ADC3_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x5802_6300usize as _) };
+pub const HSEM: *mut () = 0x5802_6400usize as _;
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0x5c00_1000usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]

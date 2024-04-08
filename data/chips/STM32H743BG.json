@@ -3293,6 +3293,27 @@
                     ]
                 },
                 {
+                    "name": "HSEM",
+                    "address": 1476551680,
+                    "registers": {
+                        "kind": "hsem",
+                        "version": "v2",
+                        "block": "HSEM"
+                    },
+                    "rcc": {
+                        "bus_clock": "HCLK4",
+                        "kernel_clock": "HCLK4",
+                        "enable": {
+                            "register": "AHB4ENR",
+                            "field": "HSEMEN"
+                        },
+                        "reset": {
+                            "register": "AHB4RSTR",
+                            "field": "HSEMRST"
+                        }
+                    }
+                },
+                {
                     "name": "I2C1",
                     "address": 1073763328,
                     "registers": {

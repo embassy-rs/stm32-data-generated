@@ -18,7 +18,7 @@
             "size": 262144,
             "settings": {
                 "erase_size": 2048,
-                "write_size": 16,
+                "write_size": 8,
                 "erase_value": 255
             }
         },

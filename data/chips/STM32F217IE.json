@@ -49,17 +49,6 @@
             }
         },
         {
-            "name": "OTP",
-            "kind": "flash",
-            "address": 536836096,
-            "size": 512,
-            "settings": {
-                "erase_size": 512,
-                "write_size": 4,
-                "erase_value": 255
-            }
-        },
-        {
             "name": "SRAM",
             "kind": "ram",
             "address": 536870912,

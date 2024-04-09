@@ -28,17 +28,6 @@ pub static METADATA: Metadata = Metadata {
             }),
         },
         MemoryRegion {
-            name: "OTP",
-            kind: MemoryRegionKind::Flash,
-            address: 0x1fff7800,
-            size: 528,
-            settings: Some(FlashSettings {
-                erase_size: 528,
-                write_size: 4,
-                erase_value: 255,
-            }),
-        },
-        MemoryRegion {
             name: "SRAM",
             kind: MemoryRegionKind::Ram,
             address: 0x20000000,

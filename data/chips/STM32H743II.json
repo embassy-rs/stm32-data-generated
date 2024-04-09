@@ -16,20 +16,15 @@
     ],
     "memory": [
         {
+            "name": "D1_ITCMRAM",
+            "kind": "ram",
+            "address": 0,
+            "size": 0
+        },
+        {
             "name": "BANK_1",
             "kind": "flash",
             "address": 134217728,
-            "size": 1048576,
-            "settings": {
-                "erase_size": 131072,
-                "write_size": 32,
-                "erase_value": 255
-            }
-        },
-        {
-            "name": "BANK_2",
-            "kind": "flash",
-            "address": 135266304,
             "size": 1048576,
             "settings": {
                 "erase_size": 131072,
@@ -44,21 +39,26 @@
             "size": 0
         },
         {
-            "name": "D1_AXIICP",
+            "name": "BANK_2",
             "kind": "flash",
-            "address": 535822336,
+            "address": 135266304,
+            "size": 1048576,
+            "settings": {
+                "erase_size": 131072,
+                "write_size": 32,
+                "erase_value": 255
+            }
+        },
+        {
+            "name": "D2_AXISRAM",
+            "kind": "ram",
+            "address": 268435456,
             "size": 0
         },
         {
-            "name": "SRAM",
-            "kind": "ram",
-            "address": 603979776,
-            "size": 524288
-        },
-        {
-            "name": "D1_ITCMRAM",
-            "kind": "ram",
-            "address": 0,
+            "name": "D1_AXIICP",
+            "kind": "flash",
+            "address": 535822336,
             "size": 0
         },
         {
@@ -68,21 +68,21 @@
             "size": 0
         },
         {
-            "name": "D2_AXISRAM",
+            "name": "SRAM",
             "kind": "ram",
-            "address": 268435456,
+            "address": 603979776,
+            "size": 524288
+        },
+        {
+            "name": "D3_SRAM",
+            "kind": "ram",
+            "address": 939524096,
             "size": 0
         },
         {
             "name": "D3_BKPSRAM",
             "kind": "ram",
             "address": 947912704,
-            "size": 0
-        },
-        {
-            "name": "D3_SRAM",
-            "kind": "ram",
-            "address": 939524096,
             "size": 0
         }
     ],

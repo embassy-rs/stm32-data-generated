@@ -374,6 +374,6 @@ pub mod vrefintcal;
 #[path = "../../peripherals/wwdg_v1.rs"]
 pub mod wwdg;
 pub const CORE_INDEX: usize = 0;
-pub const FLASH_BASE: usize = 134479872;
+pub const FLASH_BASE: usize = 134217728;
 pub const FLASH_SIZE: usize = 393216;
 pub const WRITE_SIZE: usize = 4;

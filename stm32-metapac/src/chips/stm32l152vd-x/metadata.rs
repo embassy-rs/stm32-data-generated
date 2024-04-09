@@ -6,10 +6,10 @@ pub static METADATA: Metadata = Metadata {
     line: "STM32L151/152",
     memory: &[
         MemoryRegion {
-            name: "BANK_2",
+            name: "BANK_1",
             kind: MemoryRegionKind::Flash,
-            address: 0x8040000,
-            size: 262144,
+            address: 0x8000000,
+            size: 131072,
             settings: Some(FlashSettings {
                 erase_size: 256,
                 write_size: 4,
@@ -17,10 +17,10 @@ pub static METADATA: Metadata = Metadata {
             }),
         },
         MemoryRegion {
-            name: "BANK_1",
+            name: "BANK_2",
             kind: MemoryRegionKind::Flash,
-            address: 0x8000000,
-            size: 131072,
+            address: 0x8040000,
+            size: 262144,
             settings: Some(FlashSettings {
                 erase_size: 256,
                 write_size: 4,

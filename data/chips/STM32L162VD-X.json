@@ -12,10 +12,10 @@
     ],
     "memory": [
         {
-            "name": "BANK_2",
+            "name": "BANK_1",
             "kind": "flash",
-            "address": 134479872,
-            "size": 262144,
+            "address": 134217728,
+            "size": 131072,
             "settings": {
                 "erase_size": 256,
                 "write_size": 4,
@@ -23,10 +23,10 @@
             }
         },
         {
-            "name": "BANK_1",
+            "name": "BANK_2",
             "kind": "flash",
-            "address": 134217728,
-            "size": 131072,
+            "address": 134479872,
+            "size": 262144,
             "settings": {
                 "erase_size": 256,
                 "write_size": 4,

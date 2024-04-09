@@ -6,6 +6,13 @@ pub static METADATA: Metadata = Metadata {
     line: "STM32H723/733",
     memory: &[
         MemoryRegion {
+            name: "D1_ITCMRAM",
+            kind: MemoryRegionKind::Ram,
+            address: 0x0,
+            size: 0,
+            settings: None,
+        },
+        MemoryRegion {
             name: "BANK_1",
             kind: MemoryRegionKind::Flash,
             address: 0x8000000,
@@ -31,20 +38,6 @@ pub static METADATA: Metadata = Metadata {
             settings: None,
         },
         MemoryRegion {
-            name: "SRAM",
-            kind: MemoryRegionKind::Ram,
-            address: 0x24000000,
-            size: 131072,
-            settings: None,
-        },
-        MemoryRegion {
-            name: "D1_ITCMRAM",
-            kind: MemoryRegionKind::Ram,
-            address: 0x0,
-            size: 0,
-            settings: None,
-        },
-        MemoryRegion {
             name: "D1_DTCMRAM",
             kind: MemoryRegionKind::Ram,
             address: 0x20000000,
@@ -52,16 +45,23 @@ pub static METADATA: Metadata = Metadata {
             settings: None,
         },
         MemoryRegion {
-            name: "D3_BKPSRAM",
+            name: "SRAM",
             kind: MemoryRegionKind::Ram,
-            address: 0x38800000,
-            size: 0,
+            address: 0x24000000,
+            size: 131072,
             settings: None,
         },
         MemoryRegion {
             name: "D3_SRAM",
             kind: MemoryRegionKind::Ram,
             address: 0x38000000,
+            size: 0,
+            settings: None,
+        },
+        MemoryRegion {
+            name: "D3_BKPSRAM",
+            kind: MemoryRegionKind::Ram,
+            address: 0x38800000,
             size: 0,
             settings: None,
         },

@@ -20,7 +20,7 @@ pub static METADATA: Metadata = Metadata {
             name: "SRAM",
             kind: MemoryRegionKind::Ram,
             address: 0x20000000,
-            size: 8184,
+            size: 8192,
             settings: None,
         },
     ],

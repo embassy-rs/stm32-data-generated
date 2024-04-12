@@ -70,6 +70,7 @@
         "name": "OPTSR_CUR",
         "description": "FLASH option status register",
         "byte_offset": 80,
+        "access": "Read",
         "fieldset": "OPTSR"
       },
       {
@@ -82,6 +83,7 @@
         "name": "OPTSR2_CUR",
         "description": "FLASH option status register 2",
         "byte_offset": 112,
+        "access": "Read",
         "fieldset": "OPTSR2"
       },
       {
@@ -94,6 +96,7 @@
         "name": "NSBOOTR_CUR",
         "description": "FLASH non-secure unique boot entry register",
         "byte_offset": 128,
+        "access": "Read",
         "fieldset": "NSBOOTR"
       },
       {
@@ -106,6 +109,7 @@
         "name": "OTPBLR_CUR",
         "description": "FLASH non-secure OTP block lock",
         "byte_offset": 144,
+        "access": "Read",
         "fieldset": "OTPBLR"
       },
       {
@@ -124,6 +128,7 @@
         "name": "WRPSGN1R_CUR",
         "description": "FLASH write sector protection for Bank1",
         "byte_offset": 232,
+        "access": "Read",
         "fieldset": "WRP"
       },
       {
@@ -136,6 +141,7 @@
         "name": "HDP1R_CUR",
         "description": "FLASH HDP Bank1 register",
         "byte_offset": 248,
+        "access": "Read",
         "fieldset": "HDP1R"
       },
       {
@@ -166,6 +172,7 @@
         "name": "WRPSGN2R_CUR",
         "description": "FLASH write sector protection for Bank2",
         "byte_offset": 488,
+        "access": "Read",
         "fieldset": "WRP"
       },
       {
@@ -178,6 +185,7 @@
         "name": "HDP2R_CUR",
         "description": "FLASH HDP Bank2 register",
         "byte_offset": 504,
+        "access": "Read",
         "fieldset": "HDP2R"
       },
       {
@@ -624,8 +632,7 @@
         "name": "SWAP_BANK",
         "description": "Bank swapping option configuration bit\r SWAP_BANK controls whether Bank1 and Bank2 are swapped or not. This bit is loaded with the SWAP_BANK bit of FLASH_OPTSR_CUR register only after reset or POR.",
         "bit_offset": 31,
-        "bit_size": 1,
-        "enum": "OPTCR_SWAP_BANK"
+        "bit_size": 1
       }
     ]
   },
@@ -682,9 +689,10 @@
       },
       {
         "name": "PRODUCT_STATE",
-        "description": "Life state code (based on Hamming 8,4). More information in .",
+        "description": "Life state code (based on Hamming 8,4).",
         "bit_offset": 8,
-        "bit_size": 8
+        "bit_size": 8,
+        "enum": "PRODUCT_STATE"
       },
       {
         "name": "IO_VDD_HSLV",
@@ -718,8 +726,7 @@
         "name": "SWAP_BANK",
         "description": "Bank swapping option status bit\r SWAP_BANK reflects whether Bank1 and Bank2 are swapped or not.\r SWAP_BANK is loaded to SWAP_BANK of FLASH_OPTCR after a reset.",
         "bit_offset": 31,
-        "bit_size": 1,
-        "enum": "OPTSR_SWAP_BANK"
+        "bit_size": 1
       }
     ]
   },
@@ -864,13 +871,13 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "BANK1",
         "description": "Bank1 is selected for Bank erase / sector erase / interrupt enable",
         "value": 0
       },
       {
-        "name": "B_0x1",
-        "description": "Bank2 is selected for BER / SER",
+        "name": "BANK2",
+        "description": "Bank1 is selected for Bank erase / sector erase / interrupt enable",
         "value": 1
       }
     ]
@@ -936,21 +943,6 @@
       {
         "name": "B_0x1",
         "description": "access to non secure registers is denied in case of non privileged access.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/OPTCR_SWAP_BANK": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "Bank1 and Bank2 not swapped",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "Bank1 and Bank2 swapped",
         "value": 1
       }
     ]
@@ -1130,21 +1122,6 @@
       }
     ]
   },
-  "enum/OPTSR_SWAP_BANK": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "Bank1 and Bank2 not swapped",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "Bank1 and Bank2 swapped",
-        "value": 1
-      }
-    ]
-  },
   "enum/OPTSR_WWDG_SW": {
     "bit_size": 1,
     "variants": [
@@ -1172,6 +1149,41 @@
         "name": "B_0x1",
         "description": "sector y in bank 1 is privileged",
         "value": 1
+      }
+    ]
+  },
+  "enum/PRODUCT_STATE": {
+    "bit_size": 8,
+    "variants": [
+      {
+        "name": "OPEN",
+        "description": "Open",
+        "value": 237
+      },
+      {
+        "name": "PROVISIONING",
+        "description": "Provisioning",
+        "value": 23
+      },
+      {
+        "name": "IROT_PROVISIONED",
+        "description": "iROT-Provisioned",
+        "value": 46
+      },
+      {
+        "name": "CLOSED",
+        "description": "Closed",
+        "value": 114
+      },
+      {
+        "name": "LOCKED",
+        "description": "Locked",
+        "value": 92
+      },
+      {
+        "name": "REGRESSION",
+        "description": "Regression",
+        "value": 154
       }
     ]
   }

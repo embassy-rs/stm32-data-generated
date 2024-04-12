@@ -201,7 +201,7 @@ pub(crate) static REGISTERS: IR = IR {
                     byte_offset: 0x50,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
                                 "Optsr",
@@ -235,7 +235,7 @@ pub(crate) static REGISTERS: IR = IR {
                     byte_offset: 0x70,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
                                 "Optsr2",
@@ -269,7 +269,7 @@ pub(crate) static REGISTERS: IR = IR {
                     byte_offset: 0x80,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
                                 "Nsbootr",
@@ -303,7 +303,7 @@ pub(crate) static REGISTERS: IR = IR {
                     byte_offset: 0x90,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
                                 "Otpblr",
@@ -354,7 +354,7 @@ pub(crate) static REGISTERS: IR = IR {
                     byte_offset: 0xe8,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
                                 "Wrp",
@@ -388,7 +388,7 @@ pub(crate) static REGISTERS: IR = IR {
                     byte_offset: 0xf8,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
                                 "Hdp1r",
@@ -473,7 +473,7 @@ pub(crate) static REGISTERS: IR = IR {
                     byte_offset: 0x1e8,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
                                 "Wrp",
@@ -507,7 +507,7 @@ pub(crate) static REGISTERS: IR = IR {
                     byte_offset: 0x1f8,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
                                 "Hdp2r",
@@ -1536,9 +1536,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "OptcrSwapBank",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -1663,7 +1661,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "product_state",
                     description: Some(
-                        "Life state code (based on Hamming 8,4). More information in .",
+                        "Life state code (based on Hamming 8,4).",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1672,7 +1670,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 8,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "ProductState",
+                    ),
                 },
                 Field {
                     name: "io_vdd_hslv",
@@ -1750,9 +1750,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "OptsrSwapBank",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -2072,16 +2070,16 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "BANK1",
                     description: Some(
                         "Bank1 is selected for Bank erase / sector erase / interrupt enable",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "BANK2",
                     description: Some(
-                        "Bank2 is selected for BER / SER",
+                        "Bank1 is selected for Bank erase / sector erase / interrupt enable",
                     ),
                     value: 1,
                 },
@@ -2173,27 +2171,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "B_0X1",
                     description: Some(
                         "access to non secure registers is denied in case of non privileged access.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptcrSwapBank",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "Bank1 and Bank2 not swapped",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "Bank1 and Bank2 swapped",
                     ),
                     value: 1,
                 },
@@ -2445,27 +2422,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "OptsrSwapBank",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "Bank1 and Bank2 not swapped",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "Bank1 and Bank2 swapped",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "OptsrWwdgSw",
             description: None,
             bit_size: 1,
@@ -2504,6 +2460,55 @@ pub(crate) static REGISTERS: IR = IR {
                         "sector y in bank 1 is privileged",
                     ),
                     value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "ProductState",
+            description: None,
+            bit_size: 8,
+            variants: &[
+                EnumVariant {
+                    name: "PROVISIONING",
+                    description: Some(
+                        "Provisioning",
+                    ),
+                    value: 23,
+                },
+                EnumVariant {
+                    name: "IROT_PROVISIONED",
+                    description: Some(
+                        "iROT-Provisioned",
+                    ),
+                    value: 46,
+                },
+                EnumVariant {
+                    name: "LOCKED",
+                    description: Some(
+                        "Locked",
+                    ),
+                    value: 92,
+                },
+                EnumVariant {
+                    name: "CLOSED",
+                    description: Some(
+                        "Closed",
+                    ),
+                    value: 114,
+                },
+                EnumVariant {
+                    name: "REGRESSION",
+                    description: Some(
+                        "Regression",
+                    ),
+                    value: 154,
+                },
+                EnumVariant {
+                    name: "OPEN",
+                    description: Some(
+                        "Open",
+                    ),
+                    value: 237,
                 },
             ],
         },

@@ -1,885 +1,1397 @@
 
-use crate::metadata::ir::*;
-pub(crate) static REGISTERS: IR = IR {
-    blocks: &[Block {
-        name: "Rcc",
-        extends: None,
-        description: Some("Reset and clock control"),
-        items: &[
-            BlockItem {
-                name: "cr",
-                description: Some("clock control register"),
-                array: None,
-                byte_offset: 0x0,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cr"),
-                }),
-            },
-            BlockItem {
-                name: "hsicfgr",
-                description: Some("RCC HSI configuration register"),
-                array: None,
-                byte_offset: 0x4,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Hsicfgr"),
-                }),
-            },
-            BlockItem {
-                name: "icscr",
-                description: Some("RCC Internal Clock Source Calibration Register"),
-                array: None,
-                byte_offset: 0x4,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Icscr"),
-                }),
-            },
-            BlockItem {
-                name: "crrcr",
-                description: Some("RCC Clock Recovery RC Register"),
-                array: None,
-                byte_offset: 0x8,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Read,
-                    bit_size: 32,
-                    fieldset: Some("Crrcr"),
-                }),
-            },
-            BlockItem {
-                name: "csicfgr",
-                description: Some("RCC CSI configuration register"),
-                array: None,
-                byte_offset: 0xc,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Csicfgr"),
-                }),
-            },
-            BlockItem {
-                name: "cfgr",
-                description: Some("RCC Clock Configuration Register"),
-                array: None,
-                byte_offset: 0x10,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cfgr"),
-                }),
-            },
-            BlockItem {
-                name: "d1cfgr",
-                description: Some("RCC Domain 1 Clock Configuration Register"),
-                array: None,
-                byte_offset: 0x18,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("D1cfgr"),
-                }),
-            },
-            BlockItem {
-                name: "d2cfgr",
-                description: Some("RCC Domain 2 Clock Configuration Register"),
-                array: None,
-                byte_offset: 0x1c,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("D2cfgr"),
-                }),
-            },
-            BlockItem {
-                name: "d3cfgr",
-                description: Some("RCC Domain 3 Clock Configuration Register"),
-                array: None,
-                byte_offset: 0x20,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("D3cfgr"),
-                }),
-            },
-            BlockItem {
-                name: "pllckselr",
-                description: Some("RCC PLLs Clock Source Selection Register"),
-                array: None,
-                byte_offset: 0x28,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Pllckselr"),
-                }),
-            },
-            BlockItem {
-                name: "pllcfgr",
-                description: Some("RCC PLLs Configuration Register"),
-                array: None,
-                byte_offset: 0x2c,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Pllcfgr"),
-                }),
-            },
-            BlockItem {
-                name: "plldivr",
-                description: Some("RCC PLL1 Dividers Configuration Register"),
-                array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
-                byte_offset: 0x30,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Plldivr"),
-                }),
-            },
-            BlockItem {
-                name: "pllfracr",
-                description: Some("RCC PLL1 Fractional Divider Register"),
-                array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
-                byte_offset: 0x34,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Pllfracr"),
-                }),
-            },
-            BlockItem {
-                name: "d1ccipr",
-                description: Some("RCC Domain 1 Kernel Clock Configuration Register"),
-                array: None,
-                byte_offset: 0x4c,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("D1ccipr"),
-                }),
-            },
-            BlockItem {
-                name: "d2ccip1r",
-                description: Some("RCC Domain 2 Kernel Clock Configuration Register"),
-                array: None,
-                byte_offset: 0x50,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("D2ccip1r"),
-                }),
-            },
-            BlockItem {
-                name: "d2ccip2r",
-                description: Some("RCC Domain 2 Kernel Clock Configuration Register"),
-                array: None,
-                byte_offset: 0x54,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("D2ccip2r"),
-                }),
-            },
-            BlockItem {
-                name: "d3ccipr",
-                description: Some("RCC Domain 3 Kernel Clock Configuration Register"),
-                array: None,
-                byte_offset: 0x58,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("D3ccipr"),
-                }),
-            },
-            BlockItem {
-                name: "cier",
-                description: Some("RCC Clock Source Interrupt Enable Register"),
-                array: None,
-                byte_offset: 0x60,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cier"),
-                }),
-            },
-            BlockItem {
-                name: "cifr",
-                description: Some("RCC Clock Source Interrupt Flag Register"),
-                array: None,
-                byte_offset: 0x64,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Read,
-                    bit_size: 32,
-                    fieldset: Some("Cifr"),
-                }),
-            },
-            BlockItem {
-                name: "cicr",
-                description: Some("RCC Clock Source Interrupt Clear Register"),
-                array: None,
-                byte_offset: 0x68,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cicr"),
-                }),
-            },
-            BlockItem {
-                name: "bdcr",
-                description: Some("RCC Backup Domain Control Register"),
-                array: None,
-                byte_offset: 0x70,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Bdcr"),
-                }),
-            },
-            BlockItem {
-                name: "csr",
-                description: Some("RCC Clock Control and Status Register"),
-                array: None,
-                byte_offset: 0x74,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Csr"),
-                }),
-            },
-            BlockItem {
-                name: "ahb3rstr",
-                description: Some("RCC AHB3 Reset Register"),
-                array: None,
-                byte_offset: 0x7c,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Ahb3rstr"),
-                }),
-            },
-            BlockItem {
-                name: "ahb1rstr",
-                description: Some("RCC AHB1 Peripheral Reset Register"),
-                array: None,
-                byte_offset: 0x80,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Ahb1rstr"),
-                }),
-            },
-            BlockItem {
-                name: "ahb2rstr",
-                description: Some("RCC AHB2 Peripheral Reset Register"),
-                array: None,
-                byte_offset: 0x84,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Ahb2rstr"),
-                }),
-            },
-            BlockItem {
-                name: "ahb4rstr",
-                description: Some("RCC AHB4 Peripheral Reset Register"),
-                array: None,
-                byte_offset: 0x88,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Ahb4rstr"),
-                }),
-            },
-            BlockItem {
-                name: "apb3rstr",
-                description: Some("RCC APB3 Peripheral Reset Register"),
-                array: None,
-                byte_offset: 0x8c,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb3rstr"),
-                }),
-            },
-            BlockItem {
-                name: "apb1lrstr",
-                description: Some("RCC APB1 Peripheral Reset Register"),
-                array: None,
-                byte_offset: 0x90,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb1lrstr"),
-                }),
-            },
-            BlockItem {
-                name: "apb1hrstr",
-                description: Some("RCC APB1 Peripheral Reset Register"),
-                array: None,
-                byte_offset: 0x94,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb1hrstr"),
-                }),
-            },
-            BlockItem {
-                name: "apb2rstr",
-                description: Some("RCC APB2 Peripheral Reset Register"),
-                array: None,
-                byte_offset: 0x98,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb2rstr"),
-                }),
-            },
-            BlockItem {
-                name: "apb4rstr",
-                description: Some("RCC APB4 Peripheral Reset Register"),
-                array: None,
-                byte_offset: 0x9c,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb4rstr"),
-                }),
-            },
-            BlockItem {
-                name: "gcr",
-                description: Some("Global Control Register"),
-                array: None,
-                byte_offset: 0xa0,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Gcr"),
-                }),
-            },
-            BlockItem {
-                name: "d3amr",
-                description: Some("RCC D3 Autonomous mode Register"),
-                array: None,
-                byte_offset: 0xa8,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("D3amr"),
-                }),
-            },
-            BlockItem {
-                name: "rsr",
-                description: Some("RCC Reset Status Register"),
-                array: None,
-                byte_offset: 0xd0,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Rsr"),
-                }),
-            },
-            BlockItem {
-                name: "ahb3enr",
-                description: Some("RCC AHB3 Clock Register"),
-                array: None,
-                byte_offset: 0xd4,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Ahb3enr"),
-                }),
-            },
-            BlockItem {
-                name: "ahb1enr",
-                description: Some("RCC AHB1 Clock Register"),
-                array: None,
-                byte_offset: 0xd8,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Ahb1enr"),
-                }),
-            },
-            BlockItem {
-                name: "ahb2enr",
-                description: Some("RCC AHB2 Clock Register"),
-                array: None,
-                byte_offset: 0xdc,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Ahb2enr"),
-                }),
-            },
-            BlockItem {
-                name: "ahb4enr",
-                description: Some("RCC AHB4 Clock Register"),
-                array: None,
-                byte_offset: 0xe0,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Ahb4enr"),
-                }),
-            },
-            BlockItem {
-                name: "apb3enr",
-                description: Some("RCC APB3 Clock Register"),
-                array: None,
-                byte_offset: 0xe4,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb3enr"),
-                }),
-            },
-            BlockItem {
-                name: "apb1lenr",
-                description: Some("RCC APB1 Clock Register"),
-                array: None,
-                byte_offset: 0xe8,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb1lenr"),
-                }),
-            },
-            BlockItem {
-                name: "apb1henr",
-                description: Some("RCC APB1 Clock Register"),
-                array: None,
-                byte_offset: 0xec,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb1henr"),
-                }),
-            },
-            BlockItem {
-                name: "apb2enr",
-                description: Some("RCC APB2 Clock Register"),
-                array: None,
-                byte_offset: 0xf0,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb2enr"),
-                }),
-            },
-            BlockItem {
-                name: "apb4enr",
-                description: Some("RCC APB4 Clock Register"),
-                array: None,
-                byte_offset: 0xf4,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb4enr"),
-                }),
-            },
-            BlockItem {
-                name: "ahb3lpenr",
-                description: Some("RCC AHB3 Sleep Clock Register"),
-                array: None,
-                byte_offset: 0xfc,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Ahb3lpenr"),
-                }),
-            },
-            BlockItem {
-                name: "ahb1lpenr",
-                description: Some("RCC AHB1 Sleep Clock Register"),
-                array: None,
-                byte_offset: 0x100,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Ahb1lpenr"),
-                }),
-            },
-            BlockItem {
-                name: "ahb2lpenr",
-                description: Some("RCC AHB2 Sleep Clock Register"),
-                array: None,
-                byte_offset: 0x104,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Ahb2lpenr"),
-                }),
-            },
-            BlockItem {
-                name: "ahb4lpenr",
-                description: Some("RCC AHB4 Sleep Clock Register"),
-                array: None,
-                byte_offset: 0x108,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Ahb4lpenr"),
-                }),
-            },
-            BlockItem {
-                name: "apb3lpenr",
-                description: Some("RCC APB3 Sleep Clock Register"),
-                array: None,
-                byte_offset: 0x10c,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb3lpenr"),
-                }),
-            },
-            BlockItem {
-                name: "apb1llpenr",
-                description: Some("RCC APB1 Low Sleep Clock Register"),
-                array: None,
-                byte_offset: 0x110,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb1llpenr"),
-                }),
-            },
-            BlockItem {
-                name: "apb1hlpenr",
-                description: Some("RCC APB1 High Sleep Clock Register"),
-                array: None,
-                byte_offset: 0x114,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb1hlpenr"),
-                }),
-            },
-            BlockItem {
-                name: "apb2lpenr",
-                description: Some("RCC APB2 Sleep Clock Register"),
-                array: None,
-                byte_offset: 0x118,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb2lpenr"),
-                }),
-            },
-            BlockItem {
-                name: "apb4lpenr",
-                description: Some("RCC APB4 Sleep Clock Register"),
-                array: None,
-                byte_offset: 0x11c,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb4lpenr"),
-                }),
-            },
-            BlockItem {
-                name: "c1_rsr",
-                description: Some("RCC Reset Status Register"),
-                array: None,
-                byte_offset: 0x130,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("C1Rsr"),
-                }),
-            },
-            BlockItem {
-                name: "c1_ahb3enr",
-                description: Some("RCC AHB3 Clock Register"),
-                array: None,
-                byte_offset: 0x134,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("C1Ahb3enr"),
-                }),
-            },
-            BlockItem {
-                name: "c1_ahb1enr",
-                description: Some("RCC AHB1 Clock Register"),
-                array: None,
-                byte_offset: 0x138,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("C1Ahb1enr"),
-                }),
-            },
-            BlockItem {
-                name: "c1_ahb2enr",
-                description: Some("RCC AHB2 Clock Register"),
-                array: None,
-                byte_offset: 0x13c,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("C1Ahb2enr"),
-                }),
-            },
-            BlockItem {
-                name: "c1_ahb4enr",
-                description: Some("RCC AHB4 Clock Register"),
-                array: None,
-                byte_offset: 0x140,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("C1Ahb4enr"),
-                }),
-            },
-            BlockItem {
-                name: "c1_apb3enr",
-                description: Some("RCC APB3 Clock Register"),
-                array: None,
-                byte_offset: 0x144,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("C1Apb3enr"),
-                }),
-            },
-            BlockItem {
-                name: "c1_apb1lenr",
-                description: Some("RCC APB1 Clock Register"),
-                array: None,
-                byte_offset: 0x148,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("C1Apb1lenr"),
-                }),
-            },
-            BlockItem {
-                name: "c1_apb1henr",
-                description: Some("RCC APB1 Clock Register"),
-                array: None,
-                byte_offset: 0x14c,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("C1Apb1henr"),
-                }),
-            },
-            BlockItem {
-                name: "c1_apb2enr",
-                description: Some("RCC APB2 Clock Register"),
-                array: None,
-                byte_offset: 0x150,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("C1Apb2enr"),
-                }),
-            },
-            BlockItem {
-                name: "c1_apb4enr",
-                description: Some("RCC APB4 Clock Register"),
-                array: None,
-                byte_offset: 0x154,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("C1Apb4enr"),
-                }),
-            },
-            BlockItem {
-                name: "c1_ahb3lpenr",
-                description: Some("RCC AHB3 Sleep Clock Register"),
-                array: None,
-                byte_offset: 0x15c,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("C1Ahb3lpenr"),
-                }),
-            },
-            BlockItem {
-                name: "c1_ahb1lpenr",
-                description: Some("RCC AHB1 Sleep Clock Register"),
-                array: None,
-                byte_offset: 0x160,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("C1Ahb1lpenr"),
-                }),
-            },
-            BlockItem {
-                name: "c1_ahb2lpenr",
-                description: Some("RCC AHB2 Sleep Clock Register"),
-                array: None,
-                byte_offset: 0x164,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("C1Ahb2lpenr"),
-                }),
-            },
-            BlockItem {
-                name: "c1_ahb4lpenr",
-                description: Some("RCC AHB4 Sleep Clock Register"),
-                array: None,
-                byte_offset: 0x168,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("C1Ahb4lpenr"),
-                }),
-            },
-            BlockItem {
-                name: "c1_apb3lpenr",
-                description: Some("RCC APB3 Sleep Clock Register"),
-                array: None,
-                byte_offset: 0x16c,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("C1Apb3lpenr"),
-                }),
-            },
-            BlockItem {
-                name: "c1_apb1llpenr",
-                description: Some("RCC APB1 Low Sleep Clock Register"),
-                array: None,
-                byte_offset: 0x170,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("C1Apb1llpenr"),
-                }),
-            },
-            BlockItem {
-                name: "c1_apb1hlpenr",
-                description: Some("RCC APB1 High Sleep Clock Register"),
-                array: None,
-                byte_offset: 0x174,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("C1Apb1hlpenr"),
-                }),
-            },
-            BlockItem {
-                name: "c1_apb2lpenr",
-                description: Some("RCC APB2 Sleep Clock Register"),
-                array: None,
-                byte_offset: 0x178,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("C1Apb2lpenr"),
-                }),
-            },
-            BlockItem {
-                name: "c1_apb4lpenr",
-                description: Some("RCC APB4 Sleep Clock Register"),
-                array: None,
-                byte_offset: 0x17c,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("C1Apb4lpenr"),
-                }),
-            },
-        ],
-    }],
+                    use crate::metadata::ir::*;
+                    pub(crate) static REGISTERS: IR = IR {
+    blocks: &[
+        Block {
+            name: "Rcc",
+            extends: None,
+            description: Some(
+                "Reset and clock control",
+            ),
+            items: &[
+                BlockItem {
+                    name: "cr",
+                    description: Some(
+                        "clock control register",
+                    ),
+                    array: None,
+                    byte_offset: 0x0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hsicfgr",
+                    description: Some(
+                        "RCC HSI configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 0x4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hsicfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "icscr",
+                    description: Some(
+                        "RCC Internal Clock Source Calibration Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Icscr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "crrcr",
+                    description: Some(
+                        "RCC Clock Recovery RC Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Crrcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "csicfgr",
+                    description: Some(
+                        "RCC CSI configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 0xc,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Csicfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cfgr",
+                    description: Some(
+                        "RCC Clock Configuration Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x10,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "d1cfgr",
+                    description: Some(
+                        "RCC Domain 1 Clock Configuration Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x18,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "D1cfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "d2cfgr",
+                    description: Some(
+                        "RCC Domain 2 Clock Configuration Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x1c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "D2cfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "d3cfgr",
+                    description: Some(
+                        "RCC Domain 3 Clock Configuration Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "D3cfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pllckselr",
+                    description: Some(
+                        "RCC PLLs Clock Source Selection Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x28,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Pllckselr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pllcfgr",
+                    description: Some(
+                        "RCC PLLs Configuration Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x2c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Pllcfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "plldivr",
+                    description: Some(
+                        "RCC PLL1 Dividers Configuration Register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 8,
+                            },
+                        ),
+                    ),
+                    byte_offset: 0x30,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Plldivr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pllfracr",
+                    description: Some(
+                        "RCC PLL1 Fractional Divider Register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 8,
+                            },
+                        ),
+                    ),
+                    byte_offset: 0x34,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Pllfracr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "d1ccipr",
+                    description: Some(
+                        "RCC Domain 1 Kernel Clock Configuration Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x4c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "D1ccipr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "d2ccip1r",
+                    description: Some(
+                        "RCC Domain 2 Kernel Clock Configuration Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x50,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "D2ccip1r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "d2ccip2r",
+                    description: Some(
+                        "RCC Domain 2 Kernel Clock Configuration Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x54,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "D2ccip2r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "d3ccipr",
+                    description: Some(
+                        "RCC Domain 3 Kernel Clock Configuration Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x58,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "D3ccipr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cier",
+                    description: Some(
+                        "RCC Clock Source Interrupt Enable Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x60,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cier",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cifr",
+                    description: Some(
+                        "RCC Clock Source Interrupt Flag Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x64,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cifr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cicr",
+                    description: Some(
+                        "RCC Clock Source Interrupt Clear Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x68,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cicr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "bdcr",
+                    description: Some(
+                        "RCC Backup Domain Control Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x70,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Bdcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "csr",
+                    description: Some(
+                        "RCC Clock Control and Status Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x74,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Csr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahb3rstr",
+                    description: Some(
+                        "RCC AHB3 Reset Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x7c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahb3rstr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahb1rstr",
+                    description: Some(
+                        "RCC AHB1 Peripheral Reset Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x80,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahb1rstr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahb2rstr",
+                    description: Some(
+                        "RCC AHB2 Peripheral Reset Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x84,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahb2rstr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahb4rstr",
+                    description: Some(
+                        "RCC AHB4 Peripheral Reset Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x88,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahb4rstr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb3rstr",
+                    description: Some(
+                        "RCC APB3 Peripheral Reset Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x8c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb3rstr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb1lrstr",
+                    description: Some(
+                        "RCC APB1 Peripheral Reset Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x90,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb1lrstr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb1hrstr",
+                    description: Some(
+                        "RCC APB1 Peripheral Reset Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x94,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb1hrstr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb2rstr",
+                    description: Some(
+                        "RCC APB2 Peripheral Reset Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x98,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb2rstr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb4rstr",
+                    description: Some(
+                        "RCC APB4 Peripheral Reset Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x9c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb4rstr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "gcr",
+                    description: Some(
+                        "Global Control Register",
+                    ),
+                    array: None,
+                    byte_offset: 0xa0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Gcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "d3amr",
+                    description: Some(
+                        "RCC D3 Autonomous mode Register",
+                    ),
+                    array: None,
+                    byte_offset: 0xa8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "D3amr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rsr",
+                    description: Some(
+                        "RCC Reset Status Register",
+                    ),
+                    array: None,
+                    byte_offset: 0xd0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Rsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahb3enr",
+                    description: Some(
+                        "RCC AHB3 Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0xd4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahb3enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahb1enr",
+                    description: Some(
+                        "RCC AHB1 Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0xd8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahb1enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahb2enr",
+                    description: Some(
+                        "RCC AHB2 Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0xdc,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahb2enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahb4enr",
+                    description: Some(
+                        "RCC AHB4 Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0xe0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahb4enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb3enr",
+                    description: Some(
+                        "RCC APB3 Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0xe4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb3enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb1lenr",
+                    description: Some(
+                        "RCC APB1 Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0xe8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb1lenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb1henr",
+                    description: Some(
+                        "RCC APB1 Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0xec,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb1henr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb2enr",
+                    description: Some(
+                        "RCC APB2 Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0xf0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb2enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb4enr",
+                    description: Some(
+                        "RCC APB4 Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0xf4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb4enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahb3lpenr",
+                    description: Some(
+                        "RCC AHB3 Sleep Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0xfc,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahb3lpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahb1lpenr",
+                    description: Some(
+                        "RCC AHB1 Sleep Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x100,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahb1lpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahb2lpenr",
+                    description: Some(
+                        "RCC AHB2 Sleep Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x104,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahb2lpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahb4lpenr",
+                    description: Some(
+                        "RCC AHB4 Sleep Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x108,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahb4lpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb3lpenr",
+                    description: Some(
+                        "RCC APB3 Sleep Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x10c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb3lpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb1llpenr",
+                    description: Some(
+                        "RCC APB1 Low Sleep Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x110,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb1llpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb1hlpenr",
+                    description: Some(
+                        "RCC APB1 High Sleep Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x114,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb1hlpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb2lpenr",
+                    description: Some(
+                        "RCC APB2 Sleep Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x118,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb2lpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb4lpenr",
+                    description: Some(
+                        "RCC APB4 Sleep Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x11c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb4lpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "c1_rsr",
+                    description: Some(
+                        "RCC Reset Status Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x130,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "C1Rsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "c1_ahb3enr",
+                    description: Some(
+                        "RCC AHB3 Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x134,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "C1Ahb3enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "c1_ahb1enr",
+                    description: Some(
+                        "RCC AHB1 Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x138,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "C1Ahb1enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "c1_ahb2enr",
+                    description: Some(
+                        "RCC AHB2 Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x13c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "C1Ahb2enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "c1_ahb4enr",
+                    description: Some(
+                        "RCC AHB4 Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x140,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "C1Ahb4enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "c1_apb3enr",
+                    description: Some(
+                        "RCC APB3 Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x144,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "C1Apb3enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "c1_apb1lenr",
+                    description: Some(
+                        "RCC APB1 Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x148,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "C1Apb1lenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "c1_apb1henr",
+                    description: Some(
+                        "RCC APB1 Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x14c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "C1Apb1henr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "c1_apb2enr",
+                    description: Some(
+                        "RCC APB2 Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x150,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "C1Apb2enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "c1_apb4enr",
+                    description: Some(
+                        "RCC APB4 Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x154,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "C1Apb4enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "c1_ahb3lpenr",
+                    description: Some(
+                        "RCC AHB3 Sleep Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x15c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "C1Ahb3lpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "c1_ahb1lpenr",
+                    description: Some(
+                        "RCC AHB1 Sleep Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x160,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "C1Ahb1lpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "c1_ahb2lpenr",
+                    description: Some(
+                        "RCC AHB2 Sleep Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x164,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "C1Ahb2lpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "c1_ahb4lpenr",
+                    description: Some(
+                        "RCC AHB4 Sleep Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x168,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "C1Ahb4lpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "c1_apb3lpenr",
+                    description: Some(
+                        "RCC APB3 Sleep Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x16c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "C1Apb3lpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "c1_apb1llpenr",
+                    description: Some(
+                        "RCC APB1 Low Sleep Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x170,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "C1Apb1llpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "c1_apb1hlpenr",
+                    description: Some(
+                        "RCC APB1 High Sleep Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x174,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "C1Apb1hlpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "c1_apb2lpenr",
+                    description: Some(
+                        "RCC APB2 Sleep Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x178,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "C1Apb2lpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "c1_apb4lpenr",
+                    description: Some(
+                        "RCC APB4 Sleep Clock Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x17c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "C1Apb4lpenr",
+                            ),
+                        },
+                    ),
+                },
+            ],
+        },
+    ],
     fieldsets: &[
         FieldSet {
             name: "Ahb1enr",
             extends: None,
-            description: Some("RCC AHB1 Clock Register"),
+            description: Some(
+                "RCC AHB1 Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "dma1en",
-                    description: Some("DMA1 Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "DMA1 Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dma2en",
-                    description: Some("DMA2 Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "DMA2 Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "adc12en",
-                    description: Some("ADC1/2 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "ADC1/2 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "arten",
-                    description: Some("ART Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "ART Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "eth1macen",
-                    description: Some("Ethernet MAC bus interface Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    description: Some(
+                        "Ethernet MAC bus interface Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "eth1txen",
-                    description: Some("Ethernet Transmission Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "Ethernet Transmission Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "eth1rxen",
-                    description: Some("Ethernet Reception Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "Ethernet Reception Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usb_otg_hsen",
-                    description: Some("USB_OTG_HS Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
+                    description: Some(
+                        "USB_OTG_HS Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usb_otg_hs_ulpien",
-                    description: Some("USB_OTG_HS ULPI clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
+                    description: Some(
+                        "USB_OTG_HS ULPI clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usb_otg_fsen",
-                    description: Some("USB_OTG_FS Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 27 }),
+                    description: Some(
+                        "USB_OTG_FS Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usb_otg_fs_ulpien",
-                    description: Some("USB_OTG_FS ULPI clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "USB_OTG_FS ULPI clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -889,93 +1401,161 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Ahb1lpenr",
             extends: None,
-            description: Some("RCC AHB1 Sleep Clock Register"),
+            description: Some(
+                "RCC AHB1 Sleep Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "dma1lpen",
-                    description: Some("DMA1 Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "DMA1 Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dma2lpen",
-                    description: Some("DMA2 Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "DMA2 Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "adc12lpen",
-                    description: Some("ADC1/2 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "ADC1/2 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "artlpen",
-                    description: Some("ART Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "ART Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "eth1maclpen",
-                    description: Some("Ethernet MAC bus interface Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    description: Some(
+                        "Ethernet MAC bus interface Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "eth1txlpen",
-                    description: Some("Ethernet Transmission Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "Ethernet Transmission Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "eth1rxlpen",
-                    description: Some("Ethernet Reception Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "Ethernet Reception Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usb_otg_hslpen",
-                    description: Some("USB_OTG_HS peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
+                    description: Some(
+                        "USB_OTG_HS peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usb_otg_hs_ulpilpen",
-                    description: Some("USB_PHY1 clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
+                    description: Some(
+                        "USB_PHY1 clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usb_otg_fslpen",
-                    description: Some("USB_OTG_FS peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 27 }),
+                    description: Some(
+                        "USB_OTG_FS peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usb_otg_fs_ulpilpen",
-                    description: Some("USB_PHY2 clocks enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "USB_PHY2 clocks enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -985,61 +1565,105 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Ahb1rstr",
             extends: None,
-            description: Some("RCC AHB1 Peripheral Reset Register"),
+            description: Some(
+                "RCC AHB1 Peripheral Reset Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "dma1rst",
-                    description: Some("DMA1 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "DMA1 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dma2rst",
-                    description: Some("DMA2 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "DMA2 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "adc12rst",
-                    description: Some("ADC1&2 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "ADC1&2 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "artrst",
-                    description: Some("ART block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "ART block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "eth1macrst",
-                    description: Some("ETH1MAC block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    description: Some(
+                        "ETH1MAC block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usb_otg_hsrst",
-                    description: Some("USB_OTG_HS block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
+                    description: Some(
+                        "USB_OTG_HS block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usb_otg_fsrst",
-                    description: Some("USB_OTG_FS block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 27 }),
+                    description: Some(
+                        "USB_OTG_FS block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1049,85 +1673,147 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Ahb2enr",
             extends: None,
-            description: Some("RCC AHB2 Clock Register"),
+            description: Some(
+                "RCC AHB2 Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "dcmien",
-                    description: Some("DCMI peripheral clock"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "DCMI peripheral clock",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "crypen",
-                    description: Some("CRYP peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "CRYP peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hashen",
-                    description: Some("HASH peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "HASH peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rngen",
-                    description: Some("RNG peripheral clocks enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "RNG peripheral clocks enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sdmmc2en",
-                    description: Some("SDMMC2 and SDMMC2 delay clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "SDMMC2 and SDMMC2 delay clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "fmacen",
-                    description: Some("FMAC enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "FMAC enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cordicen",
-                    description: Some("CORDIC enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "CORDIC enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sram1en",
-                    description: Some("SRAM1 block enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "SRAM1 block enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sram2en",
-                    description: Some("SRAM2 block enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
+                    description: Some(
+                        "SRAM2 block enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sram3en",
-                    description: Some("SRAM3 block enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
+                    description: Some(
+                        "SRAM3 block enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1137,85 +1823,147 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Ahb2lpenr",
             extends: None,
-            description: Some("RCC AHB2 Sleep Clock Register"),
+            description: Some(
+                "RCC AHB2 Sleep Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "dcmilpen",
-                    description: Some("DCMI peripheral clock enable during csleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "DCMI peripheral clock enable during csleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cryplpen",
-                    description: Some("CRYP peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "CRYP peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hashlpen",
-                    description: Some("HASH peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "HASH peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rnglpen",
-                    description: Some("RNG peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "RNG peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sdmmc2lpen",
-                    description: Some("SDMMC2 and SDMMC2 Delay Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "SDMMC2 and SDMMC2 Delay Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "fmaclpen",
-                    description: Some("FMAC enable during CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "FMAC enable during CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cordiclpen",
-                    description: Some("CORDIC enable during CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "CORDIC enable during CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sram1lpen",
-                    description: Some("SRAM1 Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "SRAM1 Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sram2lpen",
-                    description: Some("SRAM2 Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
+                    description: Some(
+                        "SRAM2 Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sram3lpen",
-                    description: Some("SRAM3 Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
+                    description: Some(
+                        "SRAM3 Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1225,61 +1973,105 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Ahb2rstr",
             extends: None,
-            description: Some("RCC AHB2 Peripheral Reset Register"),
+            description: Some(
+                "RCC AHB2 Peripheral Reset Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "dcmirst",
-                    description: Some("DCMI block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "DCMI block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cryprst",
-                    description: Some("CRYPography block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "CRYPography block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hashrst",
-                    description: Some("Hash block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "Hash block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rngrst",
-                    description: Some("Random Number Generator block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "Random Number Generator block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sdmmc2rst",
-                    description: Some("SDMMC2 and SDMMC2 Delay block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "SDMMC2 and SDMMC2 Delay block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "fmacrst",
-                    description: Some("FMAC reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "FMAC reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cordicrst",
-                    description: Some("CORDIC reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "CORDIC reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1289,117 +2081,203 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Ahb3enr",
             extends: None,
-            description: Some("RCC AHB3 Clock Register"),
+            description: Some(
+                "RCC AHB3 Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "mdmaen",
-                    description: Some("MDMA Peripheral Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "MDMA Peripheral Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dma2den",
-                    description: Some("DMA2D Peripheral Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "DMA2D Peripheral Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "jpgdecen",
-                    description: Some("JPGDEC Peripheral Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "JPGDEC Peripheral Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "fmcen",
-                    description: Some("FMC Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "FMC Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "quadspien",
-                    description: Some("QUADSPI and QUADSPI Delay Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "QUADSPI and QUADSPI Delay Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sdmmc1en",
-                    description: Some("SDMMC1 and SDMMC1 Delay Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "SDMMC1 and SDMMC1 Delay Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "octospi2en",
-                    description: Some("OCTOSPI2 and OCTOSPI2 delay block enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
+                    description: Some(
+                        "OCTOSPI2 and OCTOSPI2 delay block enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "iomngren",
-                    description: Some("OCTOSPI IO manager enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "OCTOSPI IO manager enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "otfd1en",
-                    description: Some("OTFDEC1 enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
+                    description: Some(
+                        "OTFDEC1 enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "otfd2en",
-                    description: Some("OTFDEC2 enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
+                    description: Some(
+                        "OTFDEC2 enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dtcm1en",
-                    description: Some("D1 DTCM1 block enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "D1 DTCM1 block enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dtcm2en",
-                    description: Some("D1 DTCM2 block enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "D1 DTCM2 block enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "itcm1en",
-                    description: Some("D1 ITCM block enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
+                    description: Some(
+                        "D1 ITCM block enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "axisramen",
-                    description: Some("AXISRAM block enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
+                    description: Some(
+                        "AXISRAM block enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1409,125 +2287,217 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Ahb3lpenr",
             extends: None,
-            description: Some("RCC AHB3 Sleep Clock Register"),
+            description: Some(
+                "RCC AHB3 Sleep Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "mdmalpen",
-                    description: Some("MDMA Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "MDMA Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dma2dlpen",
-                    description: Some("DMA2D Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "DMA2D Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "jpgdeclpen",
-                    description: Some("JPGDEC Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "JPGDEC Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "flashlpen",
-                    description: Some("FLASH Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "FLASH Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "fmclpen",
-                    description: Some("FMC Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "FMC Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "quadspilpen",
-                    description: Some("QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sdmmc1lpen",
-                    description: Some("SDMMC1 and SDMMC1 Delay Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "SDMMC1 and SDMMC1 Delay Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "octospi2lpen",
-                    description: Some("OCTOSPI2 and OCTOSPI2 delay block enable during CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
+                    description: Some(
+                        "OCTOSPI2 and OCTOSPI2 delay block enable during CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "iomngrlpen",
-                    description: Some("OCTOSPI IO manager enable during CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "OCTOSPI IO manager enable during CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "otfd1lpen",
-                    description: Some("OTFDEC1 enable during CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
+                    description: Some(
+                        "OTFDEC1 enable during CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "otfd2lpen",
-                    description: Some("OTFDEC2 enable during CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
+                    description: Some(
+                        "OTFDEC2 enable during CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "d1dtcm1lpen",
-                    description: Some("D1DTCM1 Block Clock Enable During CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "D1DTCM1 Block Clock Enable During CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dtcm2lpen",
-                    description: Some("D1 DTCM2 Block Clock Enable During CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "D1 DTCM2 Block Clock Enable During CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "itcmlpen",
-                    description: Some("D1ITCM Block Clock Enable During CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
+                    description: Some(
+                        "D1ITCM Block Clock Enable During CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "axisramlpen",
-                    description: Some("AXISRAM Block Clock Enable During CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
+                    description: Some(
+                        "AXISRAM Block Clock Enable During CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1537,93 +2507,161 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Ahb3rstr",
             extends: None,
-            description: Some("RCC AHB3 Reset Register"),
+            description: Some(
+                "RCC AHB3 Reset Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "mdmarst",
-                    description: Some("MDMA block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "MDMA block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dma2drst",
-                    description: Some("DMA2D block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "DMA2D block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "jpgdecrst",
-                    description: Some("JPGDEC block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "JPGDEC block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "fmcrst",
-                    description: Some("FMC block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "FMC block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "quadspirst",
-                    description: Some("QUADSPI and QUADSPI delay block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "QUADSPI and QUADSPI delay block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sdmmc1rst",
-                    description: Some("SDMMC1 and SDMMC1 delay block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "SDMMC1 and SDMMC1 delay block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "octospi2rst",
-                    description: Some("OCTOSPI2 and OCTOSPI2 delay block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
+                    description: Some(
+                        "OCTOSPI2 and OCTOSPI2 delay block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "iomngrrst",
-                    description: Some("OCTOSPI IO manager reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "OCTOSPI IO manager reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "otfd1rst",
-                    description: Some("OTFDEC1 reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
+                    description: Some(
+                        "OTFDEC1 reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "otfd2rst",
-                    description: Some("OTFDEC2 reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
+                    description: Some(
+                        "OTFDEC2 reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cpurst",
-                    description: Some("CPU reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
+                    description: Some(
+                        "CPU reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1633,133 +2671,231 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Ahb4enr",
             extends: None,
-            description: Some("RCC AHB4 Clock Register"),
+            description: Some(
+                "RCC AHB4 Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "gpioaen",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioben",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiocen",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioden",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioeen",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiofen",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiogen",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiohen",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioien",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiojen",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioken",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "crcen",
-                    description: Some("CRC peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
+                    description: Some(
+                        "CRC peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "bdmaen",
-                    description: Some("BDMA and DMAMUX2 Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "BDMA and DMAMUX2 Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "adc3en",
-                    description: Some("ADC3 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "ADC3 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hsemen",
-                    description: Some("HSEM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
+                    description: Some(
+                        "HSEM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "bkpsramen",
-                    description: Some("Backup RAM Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "Backup RAM Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1769,133 +2905,231 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Ahb4lpenr",
             extends: None,
-            description: Some("RCC AHB4 Sleep Clock Register"),
+            description: Some(
+                "RCC AHB4 Sleep Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "gpioalpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioblpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioclpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiodlpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioelpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioflpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioglpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiohlpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioilpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiojlpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioklpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "crclpen",
-                    description: Some("CRC peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
+                    description: Some(
+                        "CRC peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "bdmalpen",
-                    description: Some("BDMA Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "BDMA Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "adc3lpen",
-                    description: Some("ADC3 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "ADC3 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "bkpsramlpen",
-                    description: Some("Backup RAM Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "Backup RAM Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sram4lpen",
-                    description: Some("SRAM4 Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "SRAM4 Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1905,125 +3139,217 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Ahb4rstr",
             extends: None,
-            description: Some("RCC AHB4 Peripheral Reset Register"),
+            description: Some(
+                "RCC AHB4 Peripheral Reset Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "gpioarst",
-                    description: Some("GPIO block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "GPIO block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiobrst",
-                    description: Some("GPIO block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "GPIO block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiocrst",
-                    description: Some("GPIO block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "GPIO block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiodrst",
-                    description: Some("GPIO block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "GPIO block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioerst",
-                    description: Some("GPIO block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "GPIO block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiofrst",
-                    description: Some("GPIO block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "GPIO block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiogrst",
-                    description: Some("GPIO block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "GPIO block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiohrst",
-                    description: Some("GPIO block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "GPIO block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioirst",
-                    description: Some("GPIO block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "GPIO block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiojrst",
-                    description: Some("GPIO block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "GPIO block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiokrst",
-                    description: Some("GPIO block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
+                    description: Some(
+                        "GPIO block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "crcrst",
-                    description: Some("CRC block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
+                    description: Some(
+                        "CRC block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "bdmarst",
-                    description: Some("BDMA block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "BDMA block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "adc3rst",
-                    description: Some("ADC3 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "ADC3 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hsemrst",
-                    description: Some("HSEM block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
+                    description: Some(
+                        "HSEM block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2033,61 +3359,105 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Apb1henr",
             extends: None,
-            description: Some("RCC APB1 Clock Register"),
+            description: Some(
+                "RCC APB1 Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "crsen",
-                    description: Some("Clock Recovery System peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "Clock Recovery System peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "swpmien",
-                    description: Some("SWPMI Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "SWPMI Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "opampen",
-                    description: Some("OPAMP peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "OPAMP peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "mdiosen",
-                    description: Some("MDIOS peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "MDIOS peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "fdcanen",
-                    description: Some("FDCAN Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "FDCAN Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim23en",
-                    description: Some("TIM23 block enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "TIM23 block enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim24en",
-                    description: Some("TIM24 block enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
+                    description: Some(
+                        "TIM24 block enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2097,61 +3467,105 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Apb1hlpenr",
             extends: None,
-            description: Some("RCC APB1 High Sleep Clock Register"),
+            description: Some(
+                "RCC APB1 High Sleep Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "crslpen",
-                    description: Some("Clock Recovery System peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "Clock Recovery System peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "swpmilpen",
-                    description: Some("SWPMI Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "SWPMI Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "opamplpen",
-                    description: Some("OPAMP peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "OPAMP peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "mdioslpen",
-                    description: Some("MDIOS peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "MDIOS peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "fdcanlpen",
-                    description: Some("FDCAN Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "FDCAN Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim23lpen",
-                    description: Some("TIM23 block enable during CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "TIM23 block enable during CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim24lpen",
-                    description: Some("TIM24 block enable during CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
+                    description: Some(
+                        "TIM24 block enable during CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2161,61 +3575,105 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Apb1hrstr",
             extends: None,
-            description: Some("RCC APB1 Peripheral Reset Register"),
+            description: Some(
+                "RCC APB1 Peripheral Reset Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "crsrst",
-                    description: Some("Clock Recovery System reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "Clock Recovery System reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "swpmirst",
-                    description: Some("SWPMI block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "SWPMI block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "opamprst",
-                    description: Some("OPAMP block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "OPAMP block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "mdiosrst",
-                    description: Some("MDIOS block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "MDIOS block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "fdcanrst",
-                    description: Some("FDCAN block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "FDCAN block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim23rst",
-                    description: Some("TIM23 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "TIM23 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim24rst",
-                    description: Some("TIM24 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
+                    description: Some(
+                        "TIM24 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2225,213 +3683,371 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Apb1lenr",
             extends: None,
-            description: Some("RCC APB1 Clock Register"),
+            description: Some(
+                "RCC APB1 Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "tim2en",
-                    description: Some("TIM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "TIM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim3en",
-                    description: Some("TIM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "TIM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim4en",
-                    description: Some("TIM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "TIM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim5en",
-                    description: Some("TIM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "TIM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim6en",
-                    description: Some("TIM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "TIM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim7en",
-                    description: Some("TIM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "TIM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim12en",
-                    description: Some("TIM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "TIM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim13en",
-                    description: Some("TIM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "TIM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim14en",
-                    description: Some("TIM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "TIM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim1en",
-                    description: Some("LPTIM1 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "LPTIM1 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "wwdg2en",
-                    description: Some("WWDG2 peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
+                    description: Some(
+                        "WWDG2 peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi2en",
-                    description: Some("SPI2 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "SPI2 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi3en",
-                    description: Some("SPI3 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    description: Some(
+                        "SPI3 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spdifrxen",
-                    description: Some("SPDIFRX Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "SPDIFRX Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart2en",
-                    description: Some("USART2 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "USART2 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart3en",
-                    description: Some("USART3 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
+                    description: Some(
+                        "USART3 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart4en",
-                    description: Some("UART4 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
+                    description: Some(
+                        "UART4 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart5en",
-                    description: Some("UART5 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
+                    description: Some(
+                        "UART5 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c1en",
-                    description: Some("I2C1 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "I2C1 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c2en",
-                    description: Some("I2C2 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
+                    description: Some(
+                        "I2C2 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c3en",
-                    description: Some("I2C3 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
+                    description: Some(
+                        "I2C3 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c5en",
-                    description: Some("I2C5 Peripheral Clocks\r Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
+                    description: Some(
+                        "I2C5 Peripheral Clocks\r Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cecen",
-                    description: Some("HDMI-CEC peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 27 }),
+                    description: Some(
+                        "HDMI-CEC peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dac12en",
-                    description: Some("DAC1&2 peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "DAC1&2 peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart7en",
-                    description: Some("UART7 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
+                    description: Some(
+                        "UART7 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart8en",
-                    description: Some("UART8 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
+                    description: Some(
+                        "UART8 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2441,213 +4057,371 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Apb1llpenr",
             extends: None,
-            description: Some("RCC APB1 Low Sleep Clock Register"),
+            description: Some(
+                "RCC APB1 Low Sleep Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "tim2lpen",
-                    description: Some("TIM2 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "TIM2 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim3lpen",
-                    description: Some("TIM3 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "TIM3 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim4lpen",
-                    description: Some("TIM4 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "TIM4 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim5lpen",
-                    description: Some("TIM5 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "TIM5 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim6lpen",
-                    description: Some("TIM6 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "TIM6 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim7lpen",
-                    description: Some("TIM7 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "TIM7 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim12lpen",
-                    description: Some("TIM12 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "TIM12 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim13lpen",
-                    description: Some("TIM13 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "TIM13 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim14lpen",
-                    description: Some("TIM14 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "TIM14 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim1lpen",
-                    description: Some("LPTIM1 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "LPTIM1 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "wwdg2lpen",
-                    description: Some("WWDG2 peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
+                    description: Some(
+                        "WWDG2 peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi2lpen",
-                    description: Some("SPI2 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "SPI2 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi3lpen",
-                    description: Some("SPI3 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    description: Some(
+                        "SPI3 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spdifrxlpen",
-                    description: Some("SPDIFRX Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "SPDIFRX Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart2lpen",
-                    description: Some("USART2 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "USART2 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart3lpen",
-                    description: Some("USART3 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
+                    description: Some(
+                        "USART3 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart4lpen",
-                    description: Some("UART4 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
+                    description: Some(
+                        "UART4 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart5lpen",
-                    description: Some("UART5 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
+                    description: Some(
+                        "UART5 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c1lpen",
-                    description: Some("I2C1 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "I2C1 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c2lpen",
-                    description: Some("I2C2 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
+                    description: Some(
+                        "I2C2 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c3lpen",
-                    description: Some("I2C3 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
+                    description: Some(
+                        "I2C3 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c5lpen",
-                    description: Some("I2C5 block enable during CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
+                    description: Some(
+                        "I2C5 block enable during CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ceclpen",
-                    description: Some("HDMI-CEC Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 27 }),
+                    description: Some(
+                        "HDMI-CEC Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dac12lpen",
-                    description: Some("DAC1/2 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "DAC1/2 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart7lpen",
-                    description: Some("UART7 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
+                    description: Some(
+                        "UART7 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart8lpen",
-                    description: Some("UART8 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
+                    description: Some(
+                        "UART8 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2657,205 +4431,357 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Apb1lrstr",
             extends: None,
-            description: Some("RCC APB1 Peripheral Reset Register"),
+            description: Some(
+                "RCC APB1 Peripheral Reset Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "tim2rst",
-                    description: Some("TIM block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "TIM block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim3rst",
-                    description: Some("TIM block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "TIM block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim4rst",
-                    description: Some("TIM block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "TIM block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim5rst",
-                    description: Some("TIM block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "TIM block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim6rst",
-                    description: Some("TIM block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "TIM block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim7rst",
-                    description: Some("TIM block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "TIM block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim12rst",
-                    description: Some("TIM block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "TIM block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim13rst",
-                    description: Some("TIM block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "TIM block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim14rst",
-                    description: Some("TIM block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "TIM block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim1rst",
-                    description: Some("TIM block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "TIM block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi2rst",
-                    description: Some("SPI2 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "SPI2 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi3rst",
-                    description: Some("SPI3 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    description: Some(
+                        "SPI3 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spdifrxrst",
-                    description: Some("SPDIFRX block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "SPDIFRX block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart2rst",
-                    description: Some("USART2 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "USART2 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart3rst",
-                    description: Some("USART3 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
+                    description: Some(
+                        "USART3 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart4rst",
-                    description: Some("UART4 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
+                    description: Some(
+                        "UART4 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart5rst",
-                    description: Some("UART5 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
+                    description: Some(
+                        "UART5 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c1rst",
-                    description: Some("I2C1 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "I2C1 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c2rst",
-                    description: Some("I2C2 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
+                    description: Some(
+                        "I2C2 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c3rst",
-                    description: Some("I2C3 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
+                    description: Some(
+                        "I2C3 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c5rst",
-                    description: Some("I2C5 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
+                    description: Some(
+                        "I2C5 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cecrst",
-                    description: Some("HDMI-CEC block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 27 }),
+                    description: Some(
+                        "HDMI-CEC block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dac12rst",
-                    description: Some("DAC1 and 2 Blocks Reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "DAC1 and 2 Blocks Reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart7rst",
-                    description: Some("UART7 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
+                    description: Some(
+                        "UART7 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart8rst",
-                    description: Some("UART8 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
+                    description: Some(
+                        "UART8 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2865,141 +4791,245 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Apb2enr",
             extends: None,
-            description: Some("RCC APB2 Clock Register"),
+            description: Some(
+                "RCC APB2 Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "tim1en",
-                    description: Some("TIM1 peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "TIM1 peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim8en",
-                    description: Some("TIM8 peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "TIM8 peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart1en",
-                    description: Some("USART1 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "USART1 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart6en",
-                    description: Some("USART6 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "USART6 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart9en",
-                    description: Some("UART9 Peripheral Clocks\r Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "UART9 Peripheral Clocks\r Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart10en",
-                    description: Some("USART10 Peripheral Clocks\r Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "USART10 Peripheral Clocks\r Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi1en",
-                    description: Some("SPI1 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "SPI1 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi4en",
-                    description: Some("SPI4 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
+                    description: Some(
+                        "SPI4 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim15en",
-                    description: Some("TIM15 peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "TIM15 peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim16en",
-                    description: Some("TIM16 peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "TIM16 peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim17en",
-                    description: Some("TIM17 peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
+                    description: Some(
+                        "TIM17 peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi5en",
-                    description: Some("SPI5 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
+                    description: Some(
+                        "SPI5 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai1en",
-                    description: Some("SAI1 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
+                    description: Some(
+                        "SAI1 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai2en",
-                    description: Some("SAI2 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
+                    description: Some(
+                        "SAI2 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai3en",
-                    description: Some("SAI3 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "SAI3 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dfsdm1en",
-                    description: Some("DFSDM1 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "DFSDM1 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hrtimen",
-                    description: Some("HRTIM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "HRTIM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3009,125 +5039,217 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Apb2lpenr",
             extends: None,
-            description: Some("RCC APB2 Sleep Clock Register"),
+            description: Some(
+                "RCC APB2 Sleep Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "tim1lpen",
-                    description: Some("TIM1 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "TIM1 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim8lpen",
-                    description: Some("TIM8 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "TIM8 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart1lpen",
-                    description: Some("USART1 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "USART1 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart6lpen",
-                    description: Some("USART6 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "USART6 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi1lpen",
-                    description: Some("SPI1 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "SPI1 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi4lpen",
-                    description: Some("SPI4 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
+                    description: Some(
+                        "SPI4 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim15lpen",
-                    description: Some("TIM15 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "TIM15 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim16lpen",
-                    description: Some("TIM16 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "TIM16 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim17lpen",
-                    description: Some("TIM17 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
+                    description: Some(
+                        "TIM17 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi5lpen",
-                    description: Some("SPI5 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
+                    description: Some(
+                        "SPI5 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai1lpen",
-                    description: Some("SAI1 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
+                    description: Some(
+                        "SAI1 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai2lpen",
-                    description: Some("SAI2 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
+                    description: Some(
+                        "SAI2 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai3lpen",
-                    description: Some("SAI3 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "SAI3 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dfsdm1lpen",
-                    description: Some("DFSDM1 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "DFSDM1 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hrtimlpen",
-                    description: Some("HRTIM peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "HRTIM peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3137,141 +5259,245 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Apb2rstr",
             extends: None,
-            description: Some("RCC APB2 Peripheral Reset Register"),
+            description: Some(
+                "RCC APB2 Peripheral Reset Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "tim1rst",
-                    description: Some("TIM1 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "TIM1 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim8rst",
-                    description: Some("TIM8 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "TIM8 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart1rst",
-                    description: Some("USART1 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "USART1 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart6rst",
-                    description: Some("USART6 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "USART6 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart9rst",
-                    description: Some("UART9 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "UART9 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart10rst",
-                    description: Some("USART10 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "USART10 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi1rst",
-                    description: Some("SPI1 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "SPI1 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi4rst",
-                    description: Some("SPI4 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
+                    description: Some(
+                        "SPI4 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim15rst",
-                    description: Some("TIM15 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "TIM15 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim16rst",
-                    description: Some("TIM16 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "TIM16 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim17rst",
-                    description: Some("TIM17 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
+                    description: Some(
+                        "TIM17 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi5rst",
-                    description: Some("SPI5 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
+                    description: Some(
+                        "SPI5 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai1rst",
-                    description: Some("SAI1 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
+                    description: Some(
+                        "SAI1 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai2rst",
-                    description: Some("SAI2 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
+                    description: Some(
+                        "SAI2 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai3rst",
-                    description: Some("SAI3 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "SAI3 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dfsdm1rst",
-                    description: Some("DFSDM1 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "DFSDM1 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hrtimrst",
-                    description: Some("HRTIM block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "HRTIM block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3281,29 +5507,49 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Apb3enr",
             extends: None,
-            description: Some("RCC APB3 Clock Register"),
+            description: Some(
+                "RCC APB3 Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "ltdcen",
-                    description: Some("LTDC peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "LTDC peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dsien",
-                    description: Some("DSI Peripheral clocks enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "DSI Peripheral clocks enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "wwdg1en",
-                    description: Some("WWDG1 Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "WWDG1 Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3313,29 +5559,49 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Apb3lpenr",
             extends: None,
-            description: Some("RCC APB3 Sleep Clock Register"),
+            description: Some(
+                "RCC APB3 Sleep Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "ltdclpen",
-                    description: Some("LTDC peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "LTDC peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dsilpen",
-                    description: Some("DSI Peripheral Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "DSI Peripheral Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "wwdg1lpen",
-                    description: Some("WWDG1 Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "WWDG1 Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3345,21 +5611,35 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Apb3rstr",
             extends: None,
-            description: Some("RCC APB3 Peripheral Reset Register"),
+            description: Some(
+                "RCC APB3 Peripheral Reset Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "ltdcrst",
-                    description: Some("LTDC block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "LTDC block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dsirst",
-                    description: Some("DSI block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "DSI block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3369,117 +5649,203 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Apb4enr",
             extends: None,
-            description: Some("RCC APB4 Clock Register"),
+            description: Some(
+                "RCC APB4 Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "syscfgen",
-                    description: Some("SYSCFG peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "SYSCFG peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lpuart1en",
-                    description: Some("LPUART1 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "LPUART1 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi6en",
-                    description: Some("SPI6 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "SPI6 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c4en",
-                    description: Some("I2C4 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "I2C4 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim2en",
-                    description: Some("LPTIM2 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "LPTIM2 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim3en",
-                    description: Some("LPTIM3 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
+                    description: Some(
+                        "LPTIM3 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim4en",
-                    description: Some("LPTIM4 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
+                    description: Some(
+                        "LPTIM4 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim5en",
-                    description: Some("LPTIM5 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "LPTIM5 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dac2en",
-                    description: Some("DAC2 (containing one converter) peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
+                    description: Some(
+                        "DAC2 (containing one converter) peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "comp12en",
-                    description: Some("COMP1/2 peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "COMP1/2 peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "vrefen",
-                    description: Some("VREF peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    description: Some(
+                        "VREF peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rtcapben",
-                    description: Some("RTC APB Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "RTC APB Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai4en",
-                    description: Some("SAI4 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "SAI4 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dtsen",
-                    description: Some("Digital temperature sensor block enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
+                    description: Some(
+                        "Digital temperature sensor block enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3489,117 +5855,203 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Apb4lpenr",
             extends: None,
-            description: Some("RCC APB4 Sleep Clock Register"),
+            description: Some(
+                "RCC APB4 Sleep Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "syscfglpen",
-                    description: Some("SYSCFG peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "SYSCFG peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lpuart1lpen",
-                    description: Some("LPUART1 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "LPUART1 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi6lpen",
-                    description: Some("SPI6 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "SPI6 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c4lpen",
-                    description: Some("I2C4 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "I2C4 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim2lpen",
-                    description: Some("LPTIM2 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "LPTIM2 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim3lpen",
-                    description: Some("LPTIM3 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
+                    description: Some(
+                        "LPTIM3 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim4lpen",
-                    description: Some("LPTIM4 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
+                    description: Some(
+                        "LPTIM4 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim5lpen",
-                    description: Some("LPTIM5 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "LPTIM5 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dac2lpen",
-                    description: Some("DAC2 (containing one converter) peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
+                    description: Some(
+                        "DAC2 (containing one converter) peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "comp12lpen",
-                    description: Some("COMP1/2 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "COMP1/2 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "vreflpen",
-                    description: Some("VREF peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    description: Some(
+                        "VREF peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rtcapblpen",
-                    description: Some("RTC APB Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "RTC APB Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai4lpen",
-                    description: Some("SAI4 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "SAI4 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dtslpen",
-                    description: Some("Digital temperature sensor block enable during CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
+                    description: Some(
+                        "Digital temperature sensor block enable during CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3609,109 +6061,189 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Apb4rstr",
             extends: None,
-            description: Some("RCC APB4 Peripheral Reset Register"),
+            description: Some(
+                "RCC APB4 Peripheral Reset Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "syscfgrst",
-                    description: Some("SYSCFG block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "SYSCFG block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lpuart1rst",
-                    description: Some("LPUART1 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "LPUART1 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi6rst",
-                    description: Some("SPI6 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "SPI6 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c4rst",
-                    description: Some("I2C4 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "I2C4 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim2rst",
-                    description: Some("LPTIM2 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "LPTIM2 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim3rst",
-                    description: Some("LPTIM3 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
+                    description: Some(
+                        "LPTIM3 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim4rst",
-                    description: Some("LPTIM4 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
+                    description: Some(
+                        "LPTIM4 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim5rst",
-                    description: Some("LPTIM5 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "LPTIM5 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dac2rst",
-                    description: Some("DAC2 (containing one converter) reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
+                    description: Some(
+                        "DAC2 (containing one converter) reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "comp12rst",
-                    description: Some("COMP12 Blocks Reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "COMP12 Blocks Reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "vrefrst",
-                    description: Some("VREF block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    description: Some(
+                        "VREF block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai4rst",
-                    description: Some("SAI4 block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "SAI4 block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dtsrst",
-                    description: Some("Digital temperature sensor block reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
+                    description: Some(
+                        "Digital temperature sensor block reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3721,77 +6253,137 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Bdcr",
             extends: None,
-            description: Some("RCC Backup Domain Control Register"),
+            description: Some(
+                "RCC Backup Domain Control Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "lseon",
-                    description: Some("LSE oscillator enabled"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "LSE oscillator enabled",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lserdy",
-                    description: Some("LSE oscillator ready"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "LSE oscillator ready",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lsebyp",
-                    description: Some("LSE oscillator bypass"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "LSE oscillator bypass",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lsedrv",
-                    description: Some("LSE oscillator driving capability"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "LSE oscillator driving capability",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Lsedrv"),
+                    enumm: Some(
+                        "Lsedrv",
+                    ),
                 },
                 Field {
                     name: "lsecsson",
-                    description: Some("LSE clock security system enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "LSE clock security system enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lsecssd",
-                    description: Some("LSE clock security system failure detection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "LSE clock security system failure detection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rtcsel",
-                    description: Some("RTC clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "RTC clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Rtcsel"),
+                    enumm: Some(
+                        "Rtcsel",
+                    ),
                 },
                 Field {
                     name: "rtcen",
-                    description: Some("RTC clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    description: Some(
+                        "RTC clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "bdrst",
-                    description: Some("VSwitch domain software reset"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "VSwitch domain software reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3801,93 +6393,161 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "C1Ahb1enr",
             extends: None,
-            description: Some("RCC AHB1 Clock Register"),
+            description: Some(
+                "RCC AHB1 Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "dma1en",
-                    description: Some("DMA1 Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "DMA1 Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dma2en",
-                    description: Some("DMA2 Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "DMA2 Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "adc12en",
-                    description: Some("ADC1/2 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "ADC1/2 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "arten",
-                    description: Some("ART Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "ART Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "eth1macen",
-                    description: Some("Ethernet MAC bus interface Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    description: Some(
+                        "Ethernet MAC bus interface Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "eth1txen",
-                    description: Some("Ethernet Transmission Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "Ethernet Transmission Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "eth1rxen",
-                    description: Some("Ethernet Reception Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "Ethernet Reception Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usb_otg_hsen",
-                    description: Some("USB_OTG_HS Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
+                    description: Some(
+                        "USB_OTG_HS Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usb_otg_hs_ulpien",
-                    description: Some("USB_PHY1 Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
+                    description: Some(
+                        "USB_PHY1 Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usb_otg_fsen",
-                    description: Some("USB_OTG_FS Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 27 }),
+                    description: Some(
+                        "USB_OTG_FS Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usb_otg_fs_ulpien",
-                    description: Some("USB_PHY2 Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "USB_PHY2 Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3897,93 +6557,161 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "C1Ahb1lpenr",
             extends: None,
-            description: Some("RCC AHB1 Sleep Clock Register"),
+            description: Some(
+                "RCC AHB1 Sleep Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "dma1lpen",
-                    description: Some("DMA1 Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "DMA1 Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dma2lpen",
-                    description: Some("DMA2 Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "DMA2 Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "adc12lpen",
-                    description: Some("ADC1/2 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "ADC1/2 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "artlpen",
-                    description: Some("ART Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "ART Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "eth1maclpen",
-                    description: Some("Ethernet MAC bus interface Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    description: Some(
+                        "Ethernet MAC bus interface Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "eth1txlpen",
-                    description: Some("Ethernet Transmission Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "Ethernet Transmission Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "eth1rxlpen",
-                    description: Some("Ethernet Reception Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "Ethernet Reception Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usb_otg_hslpen",
-                    description: Some("USB_OTG_HS peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
+                    description: Some(
+                        "USB_OTG_HS peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usb_otg_hs_ulpilpen",
-                    description: Some("USB_PHY1 clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
+                    description: Some(
+                        "USB_PHY1 clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usb_otg_fslpen",
-                    description: Some("USB_OTG_FS peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 27 }),
+                    description: Some(
+                        "USB_OTG_FS peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usb_otg_fs_ulpilpen",
-                    description: Some("USB_PHY2 clocks enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "USB_PHY2 clocks enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3993,69 +6721,119 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "C1Ahb2enr",
             extends: None,
-            description: Some("RCC AHB2 Clock Register"),
+            description: Some(
+                "RCC AHB2 Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "dcmien",
-                    description: Some("DCMI peripheral clock"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "DCMI peripheral clock",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "crypen",
-                    description: Some("CRYP peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "CRYP peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hashen",
-                    description: Some("HASH peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "HASH peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rngen",
-                    description: Some("RNG peripheral clocks enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "RNG peripheral clocks enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sdmmc2en",
-                    description: Some("SDMMC2 and SDMMC2 delay clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "SDMMC2 and SDMMC2 delay clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sram1en",
-                    description: Some("SRAM1 block enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "SRAM1 block enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sram2en",
-                    description: Some("SRAM2 block enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
+                    description: Some(
+                        "SRAM2 block enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sram3en",
-                    description: Some("SRAM3 block enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
+                    description: Some(
+                        "SRAM3 block enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4065,85 +6843,147 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "C1Ahb2lpenr",
             extends: None,
-            description: Some("RCC AHB2 Sleep Clock Register"),
+            description: Some(
+                "RCC AHB2 Sleep Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "dcmilpen",
-                    description: Some("DCMI peripheral clock enable during csleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "DCMI peripheral clock enable during csleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cryplpen",
-                    description: Some("CRYP peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "CRYP peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hashlpen",
-                    description: Some("HASH peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "HASH peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rnglpen",
-                    description: Some("RNG peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "RNG peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sdmmc2lpen",
-                    description: Some("SDMMC2 and SDMMC2 Delay Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "SDMMC2 and SDMMC2 Delay Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "fmaclpen",
-                    description: Some("FMAC enable during CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "FMAC enable during CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cordiclpen",
-                    description: Some("CORDIC enable during CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "CORDIC enable during CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sram1lpen",
-                    description: Some("SRAM1 Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "SRAM1 Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sram2lpen",
-                    description: Some("SRAM2 Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
+                    description: Some(
+                        "SRAM2 Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sram3lpen",
-                    description: Some("SRAM3 Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
+                    description: Some(
+                        "SRAM3 Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4153,53 +6993,91 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "C1Ahb3enr",
             extends: None,
-            description: Some("RCC AHB3 Clock Register"),
+            description: Some(
+                "RCC AHB3 Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "mdmaen",
-                    description: Some("MDMA Peripheral Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "MDMA Peripheral Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dma2den",
-                    description: Some("DMA2D Peripheral Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "DMA2D Peripheral Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "jpgdecen",
-                    description: Some("JPGDEC Peripheral Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "JPGDEC Peripheral Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "fmcen",
-                    description: Some("FMC Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "FMC Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "quadspien",
-                    description: Some("QUADSPI and QUADSPI Delay Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "QUADSPI and QUADSPI Delay Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sdmmc1en",
-                    description: Some("SDMMC1 and SDMMC1 Delay Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "SDMMC1 and SDMMC1 Delay Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4209,125 +7087,217 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "C1Ahb3lpenr",
             extends: None,
-            description: Some("RCC AHB3 Sleep Clock Register"),
+            description: Some(
+                "RCC AHB3 Sleep Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "mdmalpen",
-                    description: Some("MDMA Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "MDMA Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dma2dlpen",
-                    description: Some("DMA2D Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "DMA2D Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "jpgdeclpen",
-                    description: Some("JPGDEC Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "JPGDEC Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "flashpren",
-                    description: Some("Flash interface clock enable during csleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "Flash interface clock enable during csleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "fmclpen",
-                    description: Some("FMC Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "FMC Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "quadspilpen",
-                    description: Some("QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sdmmc1lpen",
-                    description: Some("SDMMC1 and SDMMC1 Delay Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "SDMMC1 and SDMMC1 Delay Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "octospi2lpen",
-                    description: Some("OCTOSPI2 and OCTOSPI2 delay block enable during CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
+                    description: Some(
+                        "OCTOSPI2 and OCTOSPI2 delay block enable during CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "iomngrlpen",
-                    description: Some("OCTOSPI IO manager enable during CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "OCTOSPI IO manager enable during CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "otfd1lpen",
-                    description: Some("OTFDEC1 enable during CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
+                    description: Some(
+                        "OTFDEC1 enable during CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "otfd2lpen",
-                    description: Some("OTFDEC2 enable during CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
+                    description: Some(
+                        "OTFDEC2 enable during CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "d1dtcm1lpen",
-                    description: Some("D1DTCM1 Block Clock Enable During CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "D1DTCM1 Block Clock Enable During CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dtcm2lpen",
-                    description: Some("D1 DTCM2 Block Clock Enable During CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "D1 DTCM2 Block Clock Enable During CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "itcmlpen",
-                    description: Some("D1ITCM Block Clock Enable During CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
+                    description: Some(
+                        "D1ITCM Block Clock Enable During CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "axisramlpen",
-                    description: Some("AXISRAM Block Clock Enable During CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
+                    description: Some(
+                        "AXISRAM Block Clock Enable During CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4337,133 +7307,231 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "C1Ahb4enr",
             extends: None,
-            description: Some("RCC AHB4 Clock Register"),
+            description: Some(
+                "RCC AHB4 Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "gpioaen",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioben",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiocen",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioden",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioeen",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiofen",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiogen",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiohen",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioien",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiojen",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioken",
-                    description: Some("0GPIO peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
+                    description: Some(
+                        "0GPIO peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "crcen",
-                    description: Some("CRC peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
+                    description: Some(
+                        "CRC peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "bdmaen",
-                    description: Some("BDMA and DMAMUX2 Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "BDMA and DMAMUX2 Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "adc3en",
-                    description: Some("ADC3 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "ADC3 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hsemen",
-                    description: Some("HSEM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
+                    description: Some(
+                        "HSEM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "bkpsramen",
-                    description: Some("Backup RAM Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "Backup RAM Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4473,133 +7541,231 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "C1Ahb4lpenr",
             extends: None,
-            description: Some("RCC AHB4 Sleep Clock Register"),
+            description: Some(
+                "RCC AHB4 Sleep Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "gpioalpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioblpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioclpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiodlpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioelpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioflpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioglpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiohlpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioilpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpiojlpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "gpioklpen",
-                    description: Some("GPIO peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
+                    description: Some(
+                        "GPIO peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "crclpen",
-                    description: Some("CRC peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
+                    description: Some(
+                        "CRC peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "bdmalpen",
-                    description: Some("BDMA Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "BDMA Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "adc3lpen",
-                    description: Some("ADC3 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "ADC3 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "bkpsramlpen",
-                    description: Some("Backup RAM Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "Backup RAM Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sram4lpen",
-                    description: Some("SRAM4 Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "SRAM4 Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4609,45 +7775,77 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "C1Apb1henr",
             extends: None,
-            description: Some("RCC APB1 Clock Register"),
+            description: Some(
+                "RCC APB1 Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "crsen",
-                    description: Some("Clock Recovery System peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "Clock Recovery System peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "swpmien",
-                    description: Some("SWPMI Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "SWPMI Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "opampen",
-                    description: Some("OPAMP peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "OPAMP peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "mdiosen",
-                    description: Some("MDIOS peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "MDIOS peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "fdcanen",
-                    description: Some("FDCAN Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "FDCAN Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4657,61 +7855,105 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "C1Apb1hlpenr",
             extends: None,
-            description: Some("RCC APB1 High Sleep Clock Register"),
+            description: Some(
+                "RCC APB1 High Sleep Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "crslpen",
-                    description: Some("Clock Recovery System peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "Clock Recovery System peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "swpmilpen",
-                    description: Some("SWPMI Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "SWPMI Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "opamplpen",
-                    description: Some("OPAMP peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "OPAMP peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "mdioslpen",
-                    description: Some("MDIOS peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "MDIOS peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "fdcanlpen",
-                    description: Some("FDCAN Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "FDCAN Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim23lpen",
-                    description: Some("TIM23 block enable during CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "TIM23 block enable during CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim24lpen",
-                    description: Some("TIM24 block enable during CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
+                    description: Some(
+                        "TIM24 block enable during CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4721,213 +7963,371 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "C1Apb1lenr",
             extends: None,
-            description: Some("RCC APB1 Clock Register"),
+            description: Some(
+                "RCC APB1 Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "tim2en",
-                    description: Some("TIM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "TIM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim3en",
-                    description: Some("TIM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "TIM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim4en",
-                    description: Some("TIM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "TIM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim5en",
-                    description: Some("TIM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "TIM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim6en",
-                    description: Some("TIM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "TIM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim7en",
-                    description: Some("TIM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "TIM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim12en",
-                    description: Some("TIM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "TIM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim13en",
-                    description: Some("TIM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "TIM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim14en",
-                    description: Some("TIM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "TIM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim1en",
-                    description: Some("LPTIM1 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "LPTIM1 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "wwdg2en",
-                    description: Some("WWDG2 peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
+                    description: Some(
+                        "WWDG2 peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi2en",
-                    description: Some("SPI2 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "SPI2 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi3en",
-                    description: Some("SPI3 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    description: Some(
+                        "SPI3 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spdifrxen",
-                    description: Some("SPDIFRX Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "SPDIFRX Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart2en",
-                    description: Some("USART2 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "USART2 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart3en",
-                    description: Some("USART3 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
+                    description: Some(
+                        "USART3 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart4en",
-                    description: Some("UART4 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
+                    description: Some(
+                        "UART4 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart5en",
-                    description: Some("UART5 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
+                    description: Some(
+                        "UART5 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c1en",
-                    description: Some("I2C1 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "I2C1 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c2en",
-                    description: Some("I2C2 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
+                    description: Some(
+                        "I2C2 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c3en",
-                    description: Some("I2C3 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
+                    description: Some(
+                        "I2C3 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c5en",
-                    description: Some("I2C5 Peripheral Clocks\r Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
+                    description: Some(
+                        "I2C5 Peripheral Clocks\r Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cecen",
-                    description: Some("HDMI-CEC peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 27 }),
+                    description: Some(
+                        "HDMI-CEC peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dac12en",
-                    description: Some("DAC1&2 peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "DAC1&2 peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart7en",
-                    description: Some("UART7 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
+                    description: Some(
+                        "UART7 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart8en",
-                    description: Some("UART8 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
+                    description: Some(
+                        "UART8 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4937,213 +8337,371 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "C1Apb1llpenr",
             extends: None,
-            description: Some("RCC APB1 Low Sleep Clock Register"),
+            description: Some(
+                "RCC APB1 Low Sleep Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "tim2lpen",
-                    description: Some("TIM2 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "TIM2 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim3lpen",
-                    description: Some("TIM3 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "TIM3 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim4lpen",
-                    description: Some("TIM4 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "TIM4 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim5lpen",
-                    description: Some("TIM5 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "TIM5 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim6lpen",
-                    description: Some("TIM6 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "TIM6 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim7lpen",
-                    description: Some("TIM7 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "TIM7 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim12lpen",
-                    description: Some("TIM12 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "TIM12 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim13lpen",
-                    description: Some("TIM13 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "TIM13 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim14lpen",
-                    description: Some("TIM14 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "TIM14 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim1lpen",
-                    description: Some("LPTIM1 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "LPTIM1 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "wwdg2lpen",
-                    description: Some("WWDG2 peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
+                    description: Some(
+                        "WWDG2 peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi2lpen",
-                    description: Some("SPI2 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "SPI2 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi3lpen",
-                    description: Some("SPI3 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    description: Some(
+                        "SPI3 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spdifrxlpen",
-                    description: Some("SPDIFRX Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "SPDIFRX Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart2lpen",
-                    description: Some("USART2 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "USART2 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart3lpen",
-                    description: Some("USART3 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
+                    description: Some(
+                        "USART3 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart4lpen",
-                    description: Some("UART4 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
+                    description: Some(
+                        "UART4 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart5lpen",
-                    description: Some("UART5 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
+                    description: Some(
+                        "UART5 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c1lpen",
-                    description: Some("I2C1 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "I2C1 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c2lpen",
-                    description: Some("I2C2 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
+                    description: Some(
+                        "I2C2 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c3lpen",
-                    description: Some("I2C3 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
+                    description: Some(
+                        "I2C3 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c5lpen",
-                    description: Some("I2C5 block enable during CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
+                    description: Some(
+                        "I2C5 block enable during CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ceclpen",
-                    description: Some("HDMI-CEC Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 27 }),
+                    description: Some(
+                        "HDMI-CEC Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dac12lpen",
-                    description: Some("DAC1/2 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "DAC1/2 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart7lpen",
-                    description: Some("UART7 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
+                    description: Some(
+                        "UART7 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart8lpen",
-                    description: Some("UART8 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
+                    description: Some(
+                        "UART8 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5153,141 +8711,245 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "C1Apb2enr",
             extends: None,
-            description: Some("RCC APB2 Clock Register"),
+            description: Some(
+                "RCC APB2 Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "tim1en",
-                    description: Some("TIM1 peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "TIM1 peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim8en",
-                    description: Some("TIM8 peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "TIM8 peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart1en",
-                    description: Some("USART1 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "USART1 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart6en",
-                    description: Some("USART6 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "USART6 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "uart9en",
-                    description: Some("UART9 Peripheral Clocks\r Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "UART9 Peripheral Clocks\r Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart10en",
-                    description: Some("USART10 Peripheral Clocks\r Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "USART10 Peripheral Clocks\r Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi1en",
-                    description: Some("SPI1 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "SPI1 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi4en",
-                    description: Some("SPI4 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
+                    description: Some(
+                        "SPI4 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim15en",
-                    description: Some("TIM15 peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "TIM15 peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim16en",
-                    description: Some("TIM16 peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "TIM16 peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim17en",
-                    description: Some("TIM17 peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
+                    description: Some(
+                        "TIM17 peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi5en",
-                    description: Some("SPI5 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
+                    description: Some(
+                        "SPI5 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai1en",
-                    description: Some("SAI1 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
+                    description: Some(
+                        "SAI1 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai2en",
-                    description: Some("SAI2 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
+                    description: Some(
+                        "SAI2 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai3en",
-                    description: Some("SAI3 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "SAI3 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dfsdm1en",
-                    description: Some("DFSDM1 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "DFSDM1 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hrtimen",
-                    description: Some("HRTIM peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "HRTIM peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5297,125 +8959,217 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "C1Apb2lpenr",
             extends: None,
-            description: Some("RCC APB2 Sleep Clock Register"),
+            description: Some(
+                "RCC APB2 Sleep Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "tim1lpen",
-                    description: Some("TIM1 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "TIM1 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim8lpen",
-                    description: Some("TIM8 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "TIM8 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart1lpen",
-                    description: Some("USART1 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "USART1 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "usart6lpen",
-                    description: Some("USART6 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "USART6 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi1lpen",
-                    description: Some("SPI1 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "SPI1 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi4lpen",
-                    description: Some("SPI4 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
+                    description: Some(
+                        "SPI4 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim15lpen",
-                    description: Some("TIM15 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "TIM15 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim16lpen",
-                    description: Some("TIM16 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "TIM16 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "tim17lpen",
-                    description: Some("TIM17 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
+                    description: Some(
+                        "TIM17 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi5lpen",
-                    description: Some("SPI5 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
+                    description: Some(
+                        "SPI5 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai1lpen",
-                    description: Some("SAI1 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
+                    description: Some(
+                        "SAI1 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai2lpen",
-                    description: Some("SAI2 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
+                    description: Some(
+                        "SAI2 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai3lpen",
-                    description: Some("SAI3 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "SAI3 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dfsdm1lpen",
-                    description: Some("DFSDM1 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "DFSDM1 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hrtimlpen",
-                    description: Some("HRTIM peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "HRTIM peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5425,29 +9179,49 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "C1Apb3enr",
             extends: None,
-            description: Some("RCC APB3 Clock Register"),
+            description: Some(
+                "RCC APB3 Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "ltdcen",
-                    description: Some("LTDC peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "LTDC peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dsien",
-                    description: Some("DSI Peripheral clocks enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "DSI Peripheral clocks enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "wwdg1en",
-                    description: Some("WWDG1 Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "WWDG1 Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5457,29 +9231,49 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "C1Apb3lpenr",
             extends: None,
-            description: Some("RCC APB3 Sleep Clock Register"),
+            description: Some(
+                "RCC APB3 Sleep Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "ltdclpen",
-                    description: Some("LTDC peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "LTDC peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dsilpen",
-                    description: Some("DSI Peripheral Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "DSI Peripheral Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "wwdg1lpen",
-                    description: Some("WWDG1 Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "WWDG1 Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5489,101 +9283,175 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "C1Apb4enr",
             extends: None,
-            description: Some("RCC APB4 Clock Register"),
+            description: Some(
+                "RCC APB4 Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "syscfgen",
-                    description: Some("SYSCFG peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "SYSCFG peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lpuart1en",
-                    description: Some("LPUART1 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "LPUART1 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi6en",
-                    description: Some("SPI6 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "SPI6 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c4en",
-                    description: Some("I2C4 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "I2C4 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim2en",
-                    description: Some("LPTIM2 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "LPTIM2 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim3en",
-                    description: Some("LPTIM3 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
+                    description: Some(
+                        "LPTIM3 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim4en",
-                    description: Some("LPTIM4 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
+                    description: Some(
+                        "LPTIM4 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim5en",
-                    description: Some("LPTIM5 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "LPTIM5 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "comp12en",
-                    description: Some("COMP1/2 peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "COMP1/2 peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "vrefen",
-                    description: Some("VREF peripheral clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    description: Some(
+                        "VREF peripheral clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rtcapben",
-                    description: Some("RTC APB Clock Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "RTC APB Clock Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai4en",
-                    description: Some("SAI4 Peripheral Clocks Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "SAI4 Peripheral Clocks Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5593,109 +9461,189 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "C1Apb4lpenr",
             extends: None,
-            description: Some("RCC APB4 Sleep Clock Register"),
+            description: Some(
+                "RCC APB4 Sleep Clock Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "syscfglpen",
-                    description: Some("SYSCFG peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "SYSCFG peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lpuart1lpen",
-                    description: Some("LPUART1 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "LPUART1 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi6lpen",
-                    description: Some("SPI6 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "SPI6 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c4lpen",
-                    description: Some("I2C4 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "I2C4 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim2lpen",
-                    description: Some("LPTIM2 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "LPTIM2 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim3lpen",
-                    description: Some("LPTIM3 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
+                    description: Some(
+                        "LPTIM3 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim4lpen",
-                    description: Some("LPTIM4 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
+                    description: Some(
+                        "LPTIM4 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim5lpen",
-                    description: Some("LPTIM5 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "LPTIM5 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "comp12lpen",
-                    description: Some("COMP1/2 peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "COMP1/2 peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "vreflpen",
-                    description: Some("VREF peripheral clock enable during CSleep mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    description: Some(
+                        "VREF peripheral clock enable during CSleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rtcapblpen",
-                    description: Some("RTC APB Clock Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "RTC APB Clock Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai4lpen",
-                    description: Some("SAI4 Peripheral Clocks Enable During CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "SAI4 Peripheral Clocks Enable During CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dtslpen",
-                    description: Some("Digital temperature sensor block enable during CSleep Mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
+                    description: Some(
+                        "Digital temperature sensor block enable during CSleep Mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5705,93 +9653,161 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "C1Rsr",
             extends: None,
-            description: Some("RCC Reset Status Register"),
+            description: Some(
+                "RCC Reset Status Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "rmvf",
-                    description: Some("Remove reset flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "Remove reset flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cpurstf",
-                    description: Some("CPU reset flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "CPU reset flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "d1rstf",
-                    description: Some("D1 domain power switch reset flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
+                    description: Some(
+                        "D1 domain power switch reset flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "d2rstf",
-                    description: Some("D2 domain power switch reset flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
+                    description: Some(
+                        "D2 domain power switch reset flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "borrstf",
-                    description: Some("BOR reset flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "BOR reset flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "pinrstf",
-                    description: Some("Pin reset flag (NRST)"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
+                    description: Some(
+                        "Pin reset flag (NRST)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "porrstf",
-                    description: Some("POR/PDR reset flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
+                    description: Some(
+                        "POR/PDR reset flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sftrstf",
-                    description: Some("System reset from CPU reset flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "System reset from CPU reset flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "iwdg1rstf",
-                    description: Some("Independent Watchdog reset flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
+                    description: Some(
+                        "Independent Watchdog reset flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "wwdg1rstf",
-                    description: Some("Window Watchdog reset flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "Window Watchdog reset flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lpwrrstf",
-                    description: Some("Reset due to illegal D1 DStandby or CPU CStop flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
+                    description: Some(
+                        "Reset due to illegal D1 DStandby or CPU CStop flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5801,173 +9817,324 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Cfgr",
             extends: None,
-            description: Some("RCC Clock Configuration Register"),
+            description: Some(
+                "RCC Clock Configuration Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "sw",
-                    description: Some("System clock switch"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "System clock switch",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Sw"),
+                    enumm: Some(
+                        "Sw",
+                    ),
                 },
                 Field {
                     name: "sws",
-                    description: Some("System clock switch status"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "System clock switch status",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Sw"),
+                    enumm: Some(
+                        "Sw",
+                    ),
                 },
                 Field {
                     name: "stopwuck",
-                    description: Some("System clock selection after a wake up from system Stop"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "System clock selection after a wake up from system Stop",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Stopwuck"),
+                    enumm: Some(
+                        "Stopwuck",
+                    ),
                 },
                 Field {
                     name: "stopkerwuck",
-                    description: Some("Kernel clock selection after a wake up from system Stop"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "Kernel clock selection after a wake up from system Stop",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Stopwuck"),
+                    enumm: Some(
+                        "Stopwuck",
+                    ),
                 },
                 Field {
                     name: "rtcpre",
-                    description: Some("HSE division factor for RTC clock"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "HSE division factor for RTC clock",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 6,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hrtimsel",
-                    description: Some("High Resolution Timer clock prescaler selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "High Resolution Timer clock prescaler selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hrtimsel"),
+                    enumm: Some(
+                        "Hrtimsel",
+                    ),
                 },
                 Field {
                     name: "timpre",
-                    description: Some("Timers clocks prescaler selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    description: Some(
+                        "Timers clocks prescaler selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Timpre"),
+                    enumm: Some(
+                        "Timpre",
+                    ),
                 },
                 Field {
                     name: "mco1pre",
-                    description: Some("MCO1 prescaler"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
+                    description: Some(
+                        "MCO1 prescaler",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
-                    enumm: Some("Mcopre"),
+                    enumm: Some(
+                        "Mcopre",
+                    ),
                 },
                 Field {
                     name: "mco1sel",
-                    description: Some("Micro-controller clock output 1"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
+                    description: Some(
+                        "Micro-controller clock output 1",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Mco1sel"),
+                    enumm: Some(
+                        "Mco1sel",
+                    ),
                 },
                 Field {
                     name: "mco2pre",
-                    description: Some("MCO2 prescaler"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
+                    description: Some(
+                        "MCO2 prescaler",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
-                    enumm: Some("Mcopre"),
+                    enumm: Some(
+                        "Mcopre",
+                    ),
                 },
                 Field {
                     name: "mco2sel",
-                    description: Some("Micro-controller clock output 2"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "Micro-controller clock output 2",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Mco2sel"),
+                    enumm: Some(
+                        "Mco2sel",
+                    ),
                 },
             ],
         },
         FieldSet {
             name: "Cicr",
             extends: None,
-            description: Some("RCC Clock Source Interrupt Clear Register"),
+            description: Some(
+                "RCC Clock Source Interrupt Clear Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "lsirdyc",
-                    description: Some("LSI ready Interrupt Clear"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "LSI ready Interrupt Clear",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lserdyc",
-                    description: Some("LSE ready Interrupt Clear"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "LSE ready Interrupt Clear",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hsirdyc",
-                    description: Some("HSI ready Interrupt Clear"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "HSI ready Interrupt Clear",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hserdyc",
-                    description: Some("HSE ready Interrupt Clear"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "HSE ready Interrupt Clear",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hse_ready_interrupt_clear",
-                    description: Some("CSI ready Interrupt Clear"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "CSI ready Interrupt Clear",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hsi48rdyc",
-                    description: Some("RC48 ready Interrupt Clear"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "RC48 ready Interrupt Clear",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "pllrdyc",
-                    description: Some("PLL1 ready Interrupt Clear"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "PLL1 ready Interrupt Clear",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 1 })),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 1,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
                 Field {
                     name: "lsecssc",
-                    description: Some("LSE clock security system Interrupt Clear"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "LSE clock security system Interrupt Clear",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hsecssc",
-                    description: Some("HSE clock security system Interrupt Clear"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
+                    description: Some(
+                        "HSE clock security system Interrupt Clear",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -5977,69 +10144,126 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Cier",
             extends: None,
-            description: Some("RCC Clock Source Interrupt Enable Register"),
+            description: Some(
+                "RCC Clock Source Interrupt Enable Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "lsirdyie",
-                    description: Some("LSI ready Interrupt Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "LSI ready Interrupt Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lserdyie",
-                    description: Some("LSE ready Interrupt Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "LSE ready Interrupt Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hsirdyie",
-                    description: Some("HSI ready Interrupt Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "HSI ready Interrupt Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hserdyie",
-                    description: Some("HSE ready Interrupt Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "HSE ready Interrupt Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "csirdyie",
-                    description: Some("CSI ready Interrupt Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "CSI ready Interrupt Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hsi48rdyie",
-                    description: Some("RC48 ready Interrupt Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "RC48 ready Interrupt Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "pllrdyie",
-                    description: Some("PLL1 ready Interrupt Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "PLL1 ready Interrupt Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 1 })),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 1,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
                 Field {
                     name: "lsecssie",
-                    description: Some("LSE clock security system Interrupt Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "LSE clock security system Interrupt Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6049,77 +10273,140 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Cifr",
             extends: None,
-            description: Some("RCC Clock Source Interrupt Flag Register"),
+            description: Some(
+                "RCC Clock Source Interrupt Flag Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "lsirdyf",
-                    description: Some("LSI ready Interrupt Flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "LSI ready Interrupt Flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lserdyf",
-                    description: Some("LSE ready Interrupt Flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "LSE ready Interrupt Flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hsirdyf",
-                    description: Some("HSI ready Interrupt Flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "HSI ready Interrupt Flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hserdyf",
-                    description: Some("HSE ready Interrupt Flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "HSE ready Interrupt Flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "csirdy",
-                    description: Some("CSI ready Interrupt Flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "CSI ready Interrupt Flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hsi48rdyf",
-                    description: Some("RC48 ready Interrupt Flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "RC48 ready Interrupt Flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "pllrdyf",
-                    description: Some("PLL1 ready Interrupt Flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "PLL1 ready Interrupt Flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 1 })),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 1,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
                 Field {
                     name: "lsecssf",
-                    description: Some("LSE clock security system Interrupt Flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "LSE clock security system Interrupt Flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hsecssf",
-                    description: Some("HSE clock security system Interrupt Flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
+                    description: Some(
+                        "HSE clock security system Interrupt Flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6129,151 +10416,277 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Cr",
             extends: None,
-            description: Some("clock control register"),
+            description: Some(
+                "clock control register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "hsion",
-                    description: Some("Internal high-speed clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "Internal high-speed clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hsikeron",
-                    description: Some("High Speed Internal clock enable in Stop mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "High Speed Internal clock enable in Stop mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hsirdy",
-                    description: Some("HSI clock ready flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "HSI clock ready flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hsidiv",
-                    description: Some("HSI clock divider"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "HSI clock divider",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Hsidiv"),
+                    enumm: Some(
+                        "Hsidiv",
+                    ),
                 },
                 Field {
                     name: "hsidivf",
-                    description: Some("HSI divider flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "HSI divider flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "csion",
-                    description: Some("CSI clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "CSI clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "csirdy",
-                    description: Some("CSI clock ready flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "CSI clock ready flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "csikeron",
-                    description: Some("CSI clock enable in Stop mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "CSI clock enable in Stop mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hsi48on",
-                    description: Some("RC48 clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "RC48 clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hsi48rdy",
-                    description: Some("RC48 clock ready flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
+                    description: Some(
+                        "RC48 clock ready flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "d1ckrdy",
-                    description: Some("D1 domain clocks ready flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "D1 domain clocks ready flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "d2ckrdy",
-                    description: Some("D2 domain clocks ready flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    description: Some(
+                        "D2 domain clocks ready flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hseon",
-                    description: Some("HSE clock enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "HSE clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hserdy",
-                    description: Some("HSE clock ready flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "HSE clock ready flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hsebyp",
-                    description: Some("HSE clock bypass"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
+                    description: Some(
+                        "HSE clock bypass",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hsecsson",
-                    description: Some("HSE Clock Security System enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
+                    description: Some(
+                        "HSE Clock Security System enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "pllon",
-                    description: Some("PLL1 enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "PLL1 enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 2 })),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 2,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
                 Field {
                     name: "pllrdy",
-                    description: Some("PLL1 clock ready flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
+                    description: Some(
+                        "PLL1 clock ready flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 2 })),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 2,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
             ],
@@ -6281,35 +10694,59 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Crrcr",
             extends: None,
-            description: Some("RCC Clock Recovery RC Register"),
+            description: Some(
+                "RCC Clock Recovery RC Register",
+            ),
             bit_size: 32,
-            fields: &[Field {
-                name: "hsi48cal",
-                description: Some("Internal RC 48 MHz clock calibration"),
-                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                bit_size: 10,
-                array: None,
-                enumm: None,
-            }],
+            fields: &[
+                Field {
+                    name: "hsi48cal",
+                    description: Some(
+                        "Internal RC 48 MHz clock calibration",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 10,
+                    array: None,
+                    enumm: None,
+                },
+            ],
         },
         FieldSet {
             name: "Csicfgr",
             extends: None,
-            description: Some("RCC CSI configuration register"),
+            description: Some(
+                "RCC CSI configuration register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "csical",
-                    description: Some("CSI clock calibration"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "CSI clock calibration",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 9,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "csitrim",
-                    description: Some("CSI clock trimming"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "CSI clock trimming",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 6,
                     array: None,
                     enumm: None,
@@ -6319,21 +10756,35 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Csr",
             extends: None,
-            description: Some("RCC Clock Control and Status Register"),
+            description: Some(
+                "RCC Clock Control and Status Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "lsion",
-                    description: Some("LSI oscillator enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "LSI oscillator enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lsirdy",
-                    description: Some("LSI oscillator ready"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "LSI oscillator ready",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6343,389 +10794,707 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "D1ccipr",
             extends: None,
-            description: Some("RCC Domain 1 Kernel Clock Configuration Register"),
+            description: Some(
+                "RCC Domain 1 Kernel Clock Configuration Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "fmcsel",
-                    description: Some("FMC kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "FMC kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Fmcsel"),
+                    enumm: Some(
+                        "Fmcsel",
+                    ),
                 },
                 Field {
                     name: "quadspisel",
-                    description: Some("QUADSPI kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "QUADSPI kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Fmcsel"),
+                    enumm: Some(
+                        "Fmcsel",
+                    ),
                 },
                 Field {
                     name: "dsisel",
-                    description: Some("kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sdmmcsel",
-                    description: Some("SDMMC kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "SDMMC kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Sdmmcsel"),
+                    enumm: Some(
+                        "Sdmmcsel",
+                    ),
                 },
                 Field {
                     name: "persel",
-                    description: Some("per_ck clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "per_ck clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Persel"),
+                    enumm: Some(
+                        "Persel",
+                    ),
                 },
             ],
         },
         FieldSet {
             name: "D1cfgr",
             extends: None,
-            description: Some("RCC Domain 1 Clock Configuration Register"),
+            description: Some(
+                "RCC Domain 1 Clock Configuration Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "hpre",
-                    description: Some("D1 domain AHB prescaler"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "D1 domain AHB prescaler",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
-                    enumm: Some("Hpre"),
+                    enumm: Some(
+                        "Hpre",
+                    ),
                 },
                 Field {
                     name: "d1ppre",
-                    description: Some("D1 domain APB3 prescaler"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "D1 domain APB3 prescaler",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Ppre"),
+                    enumm: Some(
+                        "Ppre",
+                    ),
                 },
                 Field {
                     name: "d1cpre",
-                    description: Some("D1 domain Core prescaler"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "D1 domain Core prescaler",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
-                    enumm: Some("Hpre"),
+                    enumm: Some(
+                        "Hpre",
+                    ),
                 },
             ],
         },
         FieldSet {
             name: "D2ccip1r",
             extends: None,
-            description: Some("RCC Domain 2 Kernel Clock Configuration Register"),
+            description: Some(
+                "RCC Domain 2 Kernel Clock Configuration Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "sai1sel",
-                    description: Some("SAI1 and DFSDM1 kernel Aclk clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "SAI1 and DFSDM1 kernel Aclk clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Saisel"),
+                    enumm: Some(
+                        "Saisel",
+                    ),
                 },
                 Field {
                     name: "sai23sel",
-                    description: Some("SAI2 and SAI3 kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "SAI2 and SAI3 kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Saisel"),
+                    enumm: Some(
+                        "Saisel",
+                    ),
                 },
                 Field {
                     name: "spi123sel",
-                    description: Some("SPI/I2S1,2 and 3 kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "SPI/I2S1,2 and 3 kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Saisel"),
+                    enumm: Some(
+                        "Saisel",
+                    ),
                 },
                 Field {
                     name: "spi45sel",
-                    description: Some("SPI4 and 5 kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "SPI4 and 5 kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Spi45sel"),
+                    enumm: Some(
+                        "Spi45sel",
+                    ),
                 },
                 Field {
                     name: "spdifrxsel",
-                    description: Some("SPDIFRX kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
+                    description: Some(
+                        "SPDIFRX kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Spdifrxsel"),
+                    enumm: Some(
+                        "Spdifrxsel",
+                    ),
                 },
                 Field {
                     name: "dfsdm1sel",
-                    description: Some("DFSDM1 kernel Clk clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "DFSDM1 kernel Clk clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Dfsdmsel"),
+                    enumm: Some(
+                        "Dfsdmsel",
+                    ),
                 },
                 Field {
                     name: "fdcansel",
-                    description: Some("FDCAN kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "FDCAN kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Fdcansel"),
+                    enumm: Some(
+                        "Fdcansel",
+                    ),
                 },
                 Field {
                     name: "swpmisel",
-                    description: Some("SWPMI kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
+                    description: Some(
+                        "SWPMI kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Swpmisel"),
+                    enumm: Some(
+                        "Swpmisel",
+                    ),
                 },
             ],
         },
         FieldSet {
             name: "D2ccip2r",
             extends: None,
-            description: Some("RCC Domain 2 Kernel Clock Configuration Register"),
+            description: Some(
+                "RCC Domain 2 Kernel Clock Configuration Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "usart234578sel",
-                    description: Some("USART2/3, UART4,5, 7/8 (APB1) kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "USART2/3, UART4,5, 7/8 (APB1) kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Usart234578sel"),
+                    enumm: Some(
+                        "Usart234578sel",
+                    ),
                 },
                 Field {
                     name: "usart16910sel",
-                    description: Some("USART1, 6, 9 and 10 kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "USART1, 6, 9 and 10 kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Usart16910sel"),
+                    enumm: Some(
+                        "Usart16910sel",
+                    ),
                 },
                 Field {
                     name: "rngsel",
-                    description: Some("RNG kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "RNG kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Rngsel"),
+                    enumm: Some(
+                        "Rngsel",
+                    ),
                 },
                 Field {
                     name: "i2c1235sel",
-                    description: Some("I2C1,2,3 kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "I2C1,2,3 kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("I2c1235sel"),
+                    enumm: Some(
+                        "I2c1235sel",
+                    ),
                 },
                 Field {
                     name: "usbsel",
-                    description: Some("USBOTG 1 and 2 kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
+                    description: Some(
+                        "USBOTG 1 and 2 kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Usbsel"),
+                    enumm: Some(
+                        "Usbsel",
+                    ),
                 },
                 Field {
                     name: "cecsel",
-                    description: Some("HDMI-CEC kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
+                    description: Some(
+                        "HDMI-CEC kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Cecsel"),
+                    enumm: Some(
+                        "Cecsel",
+                    ),
                 },
                 Field {
                     name: "lptim1sel",
-                    description: Some("LPTIM1 kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "LPTIM1 kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Lptim1sel"),
+                    enumm: Some(
+                        "Lptim1sel",
+                    ),
                 },
             ],
         },
         FieldSet {
             name: "D2cfgr",
             extends: None,
-            description: Some("RCC Domain 2 Clock Configuration Register"),
+            description: Some(
+                "RCC Domain 2 Clock Configuration Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "d2ppre1",
-                    description: Some("D2 domain APB1 prescaler"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "D2 domain APB1 prescaler",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Ppre"),
+                    enumm: Some(
+                        "Ppre",
+                    ),
                 },
                 Field {
                     name: "d2ppre2",
-                    description: Some("D2 domain APB2 prescaler"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "D2 domain APB2 prescaler",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Ppre"),
+                    enumm: Some(
+                        "Ppre",
+                    ),
                 },
             ],
         },
         FieldSet {
             name: "D3amr",
             extends: None,
-            description: Some("RCC D3 Autonomous mode Register"),
+            description: Some(
+                "RCC D3 Autonomous mode Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "bdmaamen",
-                    description: Some("BDMA and DMAMUX Autonomous mode enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "BDMA and DMAMUX Autonomous mode enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lpuart1amen",
-                    description: Some("LPUART1 Autonomous mode enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "LPUART1 Autonomous mode enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi6amen",
-                    description: Some("SPI6 Autonomous mode enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
+                    description: Some(
+                        "SPI6 Autonomous mode enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "i2c4amen",
-                    description: Some("I2C4 Autonomous mode enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
+                    description: Some(
+                        "I2C4 Autonomous mode enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim2amen",
-                    description: Some("LPTIM2 Autonomous mode enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "LPTIM2 Autonomous mode enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim3amen",
-                    description: Some("LPTIM3 Autonomous mode enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
+                    description: Some(
+                        "LPTIM3 Autonomous mode enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim4amen",
-                    description: Some("LPTIM4 Autonomous mode enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
+                    description: Some(
+                        "LPTIM4 Autonomous mode enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lptim5amen",
-                    description: Some("LPTIM5 Autonomous mode enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "LPTIM5 Autonomous mode enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dac2amen",
-                    description: Some("DAC2 (containing one converter) Autonomous mode enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
+                    description: Some(
+                        "DAC2 (containing one converter) Autonomous mode enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "comp12amen",
-                    description: Some("COMP12 Autonomous mode enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "COMP12 Autonomous mode enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "vrefamen",
-                    description: Some("VREF Autonomous mode enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    description: Some(
+                        "VREF Autonomous mode enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rtcamen",
-                    description: Some("RTC Autonomous mode enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "RTC Autonomous mode enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "crcamen",
-                    description: Some("CRC Autonomous mode enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
+                    description: Some(
+                        "CRC Autonomous mode enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sai4amen",
-                    description: Some("SAI4 Autonomous mode enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "SAI4 Autonomous mode enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "adc3amen",
-                    description: Some("ADC3 Autonomous mode enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "ADC3 Autonomous mode enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dtsamen",
-                    description: Some("Digital temperature sensor Autonomous mode enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
+                    description: Some(
+                        "Digital temperature sensor Autonomous mode enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "bkpsramamen",
-                    description: Some("Backup RAM Autonomous mode enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "Backup RAM Autonomous mode enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sram4amen",
-                    description: Some("SRAM4 Autonomous mode enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
+                    description: Some(
+                        "SRAM4 Autonomous mode enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6735,131 +11504,241 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "D3ccipr",
             extends: None,
-            description: Some("RCC Domain 3 Kernel Clock Configuration Register"),
+            description: Some(
+                "RCC Domain 3 Kernel Clock Configuration Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "lpuart1sel",
-                    description: Some("LPUART1 kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "LPUART1 kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Lpuartsel"),
+                    enumm: Some(
+                        "Lpuartsel",
+                    ),
                 },
                 Field {
                     name: "i2c4sel",
-                    description: Some("I2C4 kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "I2C4 kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("I2c4sel"),
+                    enumm: Some(
+                        "I2c4sel",
+                    ),
                 },
                 Field {
                     name: "lptim2sel",
-                    description: Some("LPTIM2 kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
+                    description: Some(
+                        "LPTIM2 kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Lptim2sel"),
+                    enumm: Some(
+                        "Lptim2sel",
+                    ),
                 },
                 Field {
                     name: "lptim345sel",
-                    description: Some("LPTIM3,4,5 kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
+                    description: Some(
+                        "LPTIM3,4,5 kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Lptim2sel"),
+                    enumm: Some(
+                        "Lptim2sel",
+                    ),
                 },
                 Field {
                     name: "adcsel",
-                    description: Some("SAR ADC kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "SAR ADC kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Adcsel"),
+                    enumm: Some(
+                        "Adcsel",
+                    ),
                 },
                 Field {
                     name: "sai4asel",
-                    description: Some("Sub-Block A of SAI4 kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "Sub-Block A of SAI4 kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Saiasel"),
+                    enumm: Some(
+                        "Saiasel",
+                    ),
                 },
                 Field {
                     name: "sai4bsel",
-                    description: Some("Sub-Block B of SAI4 kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "Sub-Block B of SAI4 kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Saiasel"),
+                    enumm: Some(
+                        "Saiasel",
+                    ),
                 },
                 Field {
                     name: "dfsdm2sel",
-                    description: Some("DFSDM2 kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 27 }),
+                    description: Some(
+                        "DFSDM2 kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "spi6sel",
-                    description: Some("SPI6 kernel clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "SPI6 kernel clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Spi6sel"),
+                    enumm: Some(
+                        "Spi6sel",
+                    ),
                 },
             ],
         },
         FieldSet {
             name: "D3cfgr",
             extends: None,
-            description: Some("RCC Domain 3 Clock Configuration Register"),
+            description: Some(
+                "RCC Domain 3 Clock Configuration Register",
+            ),
             bit_size: 32,
-            fields: &[Field {
-                name: "d3ppre",
-                description: Some("D3 domain APB4 prescaler"),
-                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
-                bit_size: 3,
-                array: None,
-                enumm: Some("Ppre"),
-            }],
+            fields: &[
+                Field {
+                    name: "d3ppre",
+                    description: Some(
+                        "D3 domain APB4 prescaler",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Ppre",
+                    ),
+                },
+            ],
         },
         FieldSet {
             name: "Gcr",
             extends: None,
-            description: Some("Global Control Register"),
+            description: Some(
+                "Global Control Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "ww1rsc",
-                    description: Some("WWDG1 reset scope control"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "WWDG1 reset scope control",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ww2rsc",
-                    description: Some("WWDG2 reset scope control"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "WWDG2 reset scope control",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "boot_c1",
-                    description: Some("Force allow CPU1 to boot"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "Force allow CPU1 to boot",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "boot_c2",
-                    description: Some("Force allow CPU2 to boot"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "Force allow CPU2 to boot",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -6869,21 +11748,35 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Hsicfgr",
             extends: None,
-            description: Some("RCC HSI configuration register"),
+            description: Some(
+                "RCC HSI configuration register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "hsical",
-                    description: Some("HSI clock calibration"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "HSI clock calibration",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 12,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hsitrim",
-                    description: Some("HSI clock trimming"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "HSI clock trimming",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -6893,37 +11786,63 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Icscr",
             extends: None,
-            description: Some("RCC Internal Clock Source Calibration Register"),
+            description: Some(
+                "RCC Internal Clock Source Calibration Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "hsical",
-                    description: Some("HSI clock calibration"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "HSI clock calibration",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 12,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hsitrim",
-                    description: Some("HSI clock trimming"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "HSI clock trimming",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 6,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "csical",
-                    description: Some("CSI clock calibration"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
+                    description: Some(
+                        "CSI clock calibration",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 8,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "csitrim",
-                    description: Some("CSI clock trimming"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
+                    description: Some(
+                        "CSI clock trimming",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -6933,55 +11852,139 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Pllcfgr",
             extends: None,
-            description: Some("RCC PLLs Configuration Register"),
+            description: Some(
+                "RCC PLLs Configuration Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "pllfracen",
-                    description: Some("PLL1 fractional latch enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "PLL1 fractional latch enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 4 })),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 4,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
                 Field {
                     name: "pllvcosel",
-                    description: Some("PLL1 VCO selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "PLL1 VCO selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 4 })),
-                    enumm: Some("Pllvcosel"),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    enumm: Some(
+                        "Pllvcosel",
+                    ),
                 },
                 Field {
                     name: "pllrge",
-                    description: Some("PLL1 input frequency range"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "PLL1 input frequency range",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 2,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 4 })),
-                    enumm: Some("Pllrge"),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    enumm: Some(
+                        "Pllrge",
+                    ),
                 },
                 Field {
                     name: "divpen",
-                    description: Some("PLL1 DIVP divider output enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "PLL1 DIVP divider output enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 3 })),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 3,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
                 Field {
                     name: "divqen",
-                    description: Some("PLL1 DIVQ divider output enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "PLL1 DIVQ divider output enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 3 })),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 3,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
                 Field {
                     name: "divren",
-                    description: Some("PLL1 DIVR divider output enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
+                    description: Some(
+                        "PLL1 DIVR divider output enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 3 })),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 3,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
             ],
@@ -6989,171 +11992,308 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Pllckselr",
             extends: None,
-            description: Some("RCC PLLs Clock Source Selection Register"),
+            description: Some(
+                "RCC PLLs Clock Source Selection Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "pllsrc",
-                    description: Some("DIVMx and PLLs clock source selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "DIVMx and PLLs clock source selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Pllsrc"),
+                    enumm: Some(
+                        "Pllsrc",
+                    ),
                 },
                 Field {
                     name: "divm",
-                    description: Some("Prescaler for PLLx"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "Prescaler for PLLx",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 6,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
-                    enumm: Some("Pllm"),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 8,
+                            },
+                        ),
+                    ),
+                    enumm: Some(
+                        "Pllm",
+                    ),
                 },
             ],
         },
         FieldSet {
             name: "Plldivr",
             extends: None,
-            description: Some("RCC PLL1 Dividers Configuration Register"),
+            description: Some(
+                "RCC PLL1 Dividers Configuration Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "plln",
-                    description: Some("Multiplication factor for PLL1 VCO"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "Multiplication factor for PLL1 VCO",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 9,
                     array: None,
-                    enumm: Some("Plln"),
+                    enumm: Some(
+                        "Plln",
+                    ),
                 },
                 Field {
                     name: "pllp",
-                    description: Some("PLL DIVP division factor"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                    description: Some(
+                        "PLL DIVP division factor",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
-                    enumm: Some("Plldiv"),
+                    enumm: Some(
+                        "Plldiv",
+                    ),
                 },
                 Field {
                     name: "pllq",
-                    description: Some("PLL DIVQ division factor"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "PLL DIVQ division factor",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
-                    enumm: Some("Plldiv"),
+                    enumm: Some(
+                        "Plldiv",
+                    ),
                 },
                 Field {
                     name: "pllr",
-                    description: Some("PLL DIVR division factor"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "PLL DIVR division factor",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 7,
                     array: None,
-                    enumm: Some("Plldiv"),
+                    enumm: Some(
+                        "Plldiv",
+                    ),
                 },
             ],
         },
         FieldSet {
             name: "Pllfracr",
             extends: None,
-            description: Some("RCC PLL Fractional Divider Register"),
+            description: Some(
+                "RCC PLL Fractional Divider Register",
+            ),
             bit_size: 32,
-            fields: &[Field {
-                name: "fracn",
-                description: Some("Fractional part of the multiplication factor for PLL VCO"),
-                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
-                bit_size: 13,
-                array: None,
-                enumm: None,
-            }],
+            fields: &[
+                Field {
+                    name: "fracn",
+                    description: Some(
+                        "Fractional part of the multiplication factor for PLL VCO",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
         },
         FieldSet {
             name: "Rsr",
             extends: None,
-            description: Some("RCC Reset Status Register"),
+            description: Some(
+                "RCC Reset Status Register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "rmvf",
-                    description: Some("Remove reset flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "Remove reset flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cpurstf",
-                    description: Some("CPU reset flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    description: Some(
+                        "CPU reset flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "d1rstf",
-                    description: Some("D1 domain power switch reset flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
+                    description: Some(
+                        "D1 domain power switch reset flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "d2rstf",
-                    description: Some("D2 domain power switch reset flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
+                    description: Some(
+                        "D2 domain power switch reset flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "borrstf",
-                    description: Some("BOR reset flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    description: Some(
+                        "BOR reset flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "pinrstf",
-                    description: Some("Pin reset flag (NRST)"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
+                    description: Some(
+                        "Pin reset flag (NRST)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "porrstf",
-                    description: Some("POR/PDR reset flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
+                    description: Some(
+                        "POR/PDR reset flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sftrstf",
-                    description: Some("System reset from CPU reset flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "System reset from CPU reset flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "iwdg1rstf",
-                    description: Some("Independent Watchdog reset flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
+                    description: Some(
+                        "Independent Watchdog reset flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "wwdg1rstf",
-                    description: Some("Window Watchdog reset flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
+                    description: Some(
+                        "Window Watchdog reset flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lpwrrstf",
-                    description: Some("Reset due to illegal D1 DStandby or CPU CStop flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
+                    description: Some(
+                        "Reset due to illegal D1 DStandby or CPU CStop flag",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7169,17 +12309,23 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PLL2_P",
-                    description: Some("pll2_p selected as peripheral clock"),
+                    description: Some(
+                        "pll2_p selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLL3_R",
-                    description: Some("pll3_r selected as peripheral clock"),
+                    description: Some(
+                        "pll3_r selected as peripheral clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "PER",
-                    description: Some("PER selected as peripheral clock"),
+                    description: Some(
+                        "PER selected as peripheral clock",
+                    ),
                     value: 2,
                 },
             ],
@@ -7191,17 +12337,23 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "LSE",
-                    description: Some("LSE selected as peripheral clock"),
+                    description: Some(
+                        "LSE selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "LSI",
-                    description: Some("LSI selected as peripheral clock"),
+                    description: Some(
+                        "LSI selected as peripheral clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "CSI",
-                    description: Some("csi_ker selected as peripheral clock"),
+                    description: Some(
+                        "csi_ker selected as peripheral clock",
+                    ),
                     value: 2,
                 },
             ],
@@ -7213,12 +12365,16 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PCLK2",
-                    description: Some("rcc_pclk2 selected as peripheral clock"),
+                    description: Some(
+                        "rcc_pclk2 selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "SYS",
-                    description: Some("System clock selected as peripheral clock"),
+                    description: Some(
+                        "System clock selected as peripheral clock",
+                    ),
                     value: 1,
                 },
             ],
@@ -7230,17 +12386,23 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "HSE",
-                    description: Some("HSE selected as peripheral clock"),
+                    description: Some(
+                        "HSE selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLL1_Q",
-                    description: Some("pll1_q selected as peripheral clock"),
+                    description: Some(
+                        "pll1_q selected as peripheral clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "PLL2_Q",
-                    description: Some("pll2_q selected as peripheral clock"),
+                    description: Some(
+                        "pll2_q selected as peripheral clock",
+                    ),
                     value: 2,
                 },
             ],
@@ -7252,22 +12414,30 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "HCLK3",
-                    description: Some("rcc_hclk3 selected as peripheral clock"),
+                    description: Some(
+                        "rcc_hclk3 selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLL1_Q",
-                    description: Some("pll1_q selected as peripheral clock"),
+                    description: Some(
+                        "pll1_q selected as peripheral clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "PLL2_R",
-                    description: Some("pll2_r selected as peripheral clock"),
+                    description: Some(
+                        "pll2_r selected as peripheral clock",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "PER",
-                    description: Some("PER selected as peripheral clock"),
+                    description: Some(
+                        "PER selected as peripheral clock",
+                    ),
                     value: 3,
                 },
             ],
@@ -7279,47 +12449,65 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "DIV1",
-                    description: Some("sys_ck not divided"),
+                    description: Some(
+                        "sys_ck not divided",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "DIV2",
-                    description: Some("sys_ck divided by 2"),
+                    description: Some(
+                        "sys_ck divided by 2",
+                    ),
                     value: 8,
                 },
                 EnumVariant {
                     name: "DIV4",
-                    description: Some("sys_ck divided by 4"),
+                    description: Some(
+                        "sys_ck divided by 4",
+                    ),
                     value: 9,
                 },
                 EnumVariant {
                     name: "DIV8",
-                    description: Some("sys_ck divided by 8"),
+                    description: Some(
+                        "sys_ck divided by 8",
+                    ),
                     value: 10,
                 },
                 EnumVariant {
                     name: "DIV16",
-                    description: Some("sys_ck divided by 16"),
+                    description: Some(
+                        "sys_ck divided by 16",
+                    ),
                     value: 11,
                 },
                 EnumVariant {
                     name: "DIV64",
-                    description: Some("sys_ck divided by 64"),
+                    description: Some(
+                        "sys_ck divided by 64",
+                    ),
                     value: 12,
                 },
                 EnumVariant {
                     name: "DIV128",
-                    description: Some("sys_ck divided by 128"),
+                    description: Some(
+                        "sys_ck divided by 128",
+                    ),
                     value: 13,
                 },
                 EnumVariant {
                     name: "DIV256",
-                    description: Some("sys_ck divided by 256"),
+                    description: Some(
+                        "sys_ck divided by 256",
+                    ),
                     value: 14,
                 },
                 EnumVariant {
                     name: "DIV512",
-                    description: Some("sys_ck divided by 512"),
+                    description: Some(
+                        "sys_ck divided by 512",
+                    ),
                     value: 15,
                 },
             ],
@@ -7331,12 +12519,16 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "TIMY_KER",
-                    description: Some("The HRTIM prescaler clock source is the same as other timers (rcc_timy_ker_ck)"),
+                    description: Some(
+                        "The HRTIM prescaler clock source is the same as other timers (rcc_timy_ker_ck)",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "C_CK",
-                    description: Some("The HRTIM prescaler clock source is the CPU clock (c_ck)"),
+                    description: Some(
+                        "The HRTIM prescaler clock source is the CPU clock (c_ck)",
+                    ),
                     value: 1,
                 },
             ],
@@ -7348,22 +12540,30 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "DIV1",
-                    description: Some("No division"),
+                    description: Some(
+                        "No division",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "DIV2",
-                    description: Some("Division by 2"),
+                    description: Some(
+                        "Division by 2",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "DIV4",
-                    description: Some("Division by 4"),
+                    description: Some(
+                        "Division by 4",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "DIV8",
-                    description: Some("Division by 8"),
+                    description: Some(
+                        "Division by 8",
+                    ),
                     value: 3,
                 },
             ],
@@ -7375,22 +12575,30 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PCLK1",
-                    description: Some("rcc_pclk1 selected as peripheral clock"),
+                    description: Some(
+                        "rcc_pclk1 selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLL3_R",
-                    description: Some("pll3_r selected as peripheral clock"),
+                    description: Some(
+                        "pll3_r selected as peripheral clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("hsi_ker selected as peripheral clock"),
+                    description: Some(
+                        "hsi_ker selected as peripheral clock",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "CSI",
-                    description: Some("csi_ker selected as peripheral clock"),
+                    description: Some(
+                        "csi_ker selected as peripheral clock",
+                    ),
                     value: 3,
                 },
             ],
@@ -7402,22 +12610,30 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PCLK4",
-                    description: Some("rcc_pclk4 selected as peripheral clock"),
+                    description: Some(
+                        "rcc_pclk4 selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLL3_R",
-                    description: Some("pll3_r selected as peripheral clock"),
+                    description: Some(
+                        "pll3_r selected as peripheral clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("hsi_ker selected as peripheral clock"),
+                    description: Some(
+                        "hsi_ker selected as peripheral clock",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "CSI",
-                    description: Some("csi_ker selected as peripheral clock"),
+                    description: Some(
+                        "csi_ker selected as peripheral clock",
+                    ),
                     value: 3,
                 },
             ],
@@ -7429,32 +12645,44 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PCLK1",
-                    description: Some("rcc_pclk1 selected as peripheral clock"),
+                    description: Some(
+                        "rcc_pclk1 selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLL2_P",
-                    description: Some("pll2_p selected as peripheral clock"),
+                    description: Some(
+                        "pll2_p selected as peripheral clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "PLL3_R",
-                    description: Some("pll3_r selected as peripheral clock"),
+                    description: Some(
+                        "pll3_r selected as peripheral clock",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "LSE",
-                    description: Some("LSE selected as peripheral clock"),
+                    description: Some(
+                        "LSE selected as peripheral clock",
+                    ),
                     value: 3,
                 },
                 EnumVariant {
                     name: "LSI",
-                    description: Some("LSI selected as peripheral clock"),
+                    description: Some(
+                        "LSI selected as peripheral clock",
+                    ),
                     value: 4,
                 },
                 EnumVariant {
                     name: "PER",
-                    description: Some("PER selected as peripheral clock"),
+                    description: Some(
+                        "PER selected as peripheral clock",
+                    ),
                     value: 5,
                 },
             ],
@@ -7466,32 +12694,44 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PCLK4",
-                    description: Some("rcc_pclk4 selected as peripheral clock"),
+                    description: Some(
+                        "rcc_pclk4 selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLL2_P",
-                    description: Some("pll2_p selected as peripheral clock"),
+                    description: Some(
+                        "pll2_p selected as peripheral clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "PLL3_R",
-                    description: Some("pll3_r selected as peripheral clock"),
+                    description: Some(
+                        "pll3_r selected as peripheral clock",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "LSE",
-                    description: Some("LSE selected as peripheral clock"),
+                    description: Some(
+                        "LSE selected as peripheral clock",
+                    ),
                     value: 3,
                 },
                 EnumVariant {
                     name: "LSI",
-                    description: Some("LSI selected as peripheral clock"),
+                    description: Some(
+                        "LSI selected as peripheral clock",
+                    ),
                     value: 4,
                 },
                 EnumVariant {
                     name: "PER",
-                    description: Some("PER selected as peripheral clock"),
+                    description: Some(
+                        "PER selected as peripheral clock",
+                    ),
                     value: 5,
                 },
             ],
@@ -7503,32 +12743,44 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PCLK4",
-                    description: Some("rcc_pclk_d4 selected as peripheral clock"),
+                    description: Some(
+                        "rcc_pclk_d4 selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLL2_Q",
-                    description: Some("pll2_q selected as peripheral clock"),
+                    description: Some(
+                        "pll2_q selected as peripheral clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "PLL3_Q",
-                    description: Some("pll3_q selected as peripheral clock"),
+                    description: Some(
+                        "pll3_q selected as peripheral clock",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("hsi_ker selected as peripheral clock"),
+                    description: Some(
+                        "hsi_ker selected as peripheral clock",
+                    ),
                     value: 3,
                 },
                 EnumVariant {
                     name: "CSI",
-                    description: Some("csi_ker selected as peripheral clock"),
+                    description: Some(
+                        "csi_ker selected as peripheral clock",
+                    ),
                     value: 4,
                 },
                 EnumVariant {
                     name: "LSE",
-                    description: Some("LSE selected as peripheral clock"),
+                    description: Some(
+                        "LSE selected as peripheral clock",
+                    ),
                     value: 5,
                 },
             ],
@@ -7540,22 +12792,30 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "LOW",
-                    description: Some("Low driving capability"),
+                    description: Some(
+                        "Low driving capability",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "MEDIUMHIGH",
-                    description: Some("Medium high driving capability"),
+                    description: Some(
+                        "Medium high driving capability",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "MEDIUMLOW",
-                    description: Some("Medium low driving capability"),
+                    description: Some(
+                        "Medium low driving capability",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "HIGH",
-                    description: Some("High driving capability"),
+                    description: Some(
+                        "High driving capability",
+                    ),
                     value: 3,
                 },
             ],
@@ -7567,27 +12827,37 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI selected for micro-controller clock output"),
+                    description: Some(
+                        "HSI selected for micro-controller clock output",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "LSE",
-                    description: Some("LSE selected for micro-controller clock output"),
+                    description: Some(
+                        "LSE selected for micro-controller clock output",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "HSE",
-                    description: Some("HSE selected for micro-controller clock output"),
+                    description: Some(
+                        "HSE selected for micro-controller clock output",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "PLL1_Q",
-                    description: Some("pll1_q selected for micro-controller clock output"),
+                    description: Some(
+                        "pll1_q selected for micro-controller clock output",
+                    ),
                     value: 3,
                 },
                 EnumVariant {
                     name: "HSI48",
-                    description: Some("HSI48 selected for micro-controller clock output"),
+                    description: Some(
+                        "HSI48 selected for micro-controller clock output",
+                    ),
                     value: 4,
                 },
             ],
@@ -7599,32 +12869,44 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "SYS",
-                    description: Some("System clock selected for micro-controller clock output"),
+                    description: Some(
+                        "System clock selected for micro-controller clock output",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLL2_P",
-                    description: Some("pll2_p selected for micro-controller clock output"),
+                    description: Some(
+                        "pll2_p selected for micro-controller clock output",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "HSE",
-                    description: Some("HSE selected for micro-controller clock output"),
+                    description: Some(
+                        "HSE selected for micro-controller clock output",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "PLL1_P",
-                    description: Some("pll1_p selected for micro-controller clock output"),
+                    description: Some(
+                        "pll1_p selected for micro-controller clock output",
+                    ),
                     value: 3,
                 },
                 EnumVariant {
                     name: "CSI",
-                    description: Some("CSI selected for micro-controller clock output"),
+                    description: Some(
+                        "CSI selected for micro-controller clock output",
+                    ),
                     value: 4,
                 },
                 EnumVariant {
                     name: "LSI",
-                    description: Some("LSI selected for micro-controller clock output"),
+                    description: Some(
+                        "LSI selected for micro-controller clock output",
+                    ),
                     value: 5,
                 },
             ],
@@ -7636,77 +12918,107 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "DIV1",
-                    description: Some("Divide by 1"),
+                    description: Some(
+                        "Divide by 1",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "DIV2",
-                    description: Some("Divide by 2"),
+                    description: Some(
+                        "Divide by 2",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "DIV3",
-                    description: Some("Divide by 3"),
+                    description: Some(
+                        "Divide by 3",
+                    ),
                     value: 3,
                 },
                 EnumVariant {
                     name: "DIV4",
-                    description: Some("Divide by 4"),
+                    description: Some(
+                        "Divide by 4",
+                    ),
                     value: 4,
                 },
                 EnumVariant {
                     name: "DIV5",
-                    description: Some("Divide by 5"),
+                    description: Some(
+                        "Divide by 5",
+                    ),
                     value: 5,
                 },
                 EnumVariant {
                     name: "DIV6",
-                    description: Some("Divide by 6"),
+                    description: Some(
+                        "Divide by 6",
+                    ),
                     value: 6,
                 },
                 EnumVariant {
                     name: "DIV7",
-                    description: Some("Divide by 7"),
+                    description: Some(
+                        "Divide by 7",
+                    ),
                     value: 7,
                 },
                 EnumVariant {
                     name: "DIV8",
-                    description: Some("Divide by 8"),
+                    description: Some(
+                        "Divide by 8",
+                    ),
                     value: 8,
                 },
                 EnumVariant {
                     name: "DIV9",
-                    description: Some("Divide by 9"),
+                    description: Some(
+                        "Divide by 9",
+                    ),
                     value: 9,
                 },
                 EnumVariant {
                     name: "DIV10",
-                    description: Some("Divide by 10"),
+                    description: Some(
+                        "Divide by 10",
+                    ),
                     value: 10,
                 },
                 EnumVariant {
                     name: "DIV11",
-                    description: Some("Divide by 11"),
+                    description: Some(
+                        "Divide by 11",
+                    ),
                     value: 11,
                 },
                 EnumVariant {
                     name: "DIV12",
-                    description: Some("Divide by 12"),
+                    description: Some(
+                        "Divide by 12",
+                    ),
                     value: 12,
                 },
                 EnumVariant {
                     name: "DIV13",
-                    description: Some("Divide by 13"),
+                    description: Some(
+                        "Divide by 13",
+                    ),
                     value: 13,
                 },
                 EnumVariant {
                     name: "DIV14",
-                    description: Some("Divide by 14"),
+                    description: Some(
+                        "Divide by 14",
+                    ),
                     value: 14,
                 },
                 EnumVariant {
                     name: "DIV15",
-                    description: Some("Divide by 15"),
+                    description: Some(
+                        "Divide by 15",
+                    ),
                     value: 15,
                 },
             ],
@@ -7718,17 +13030,23 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI selected as peripheral clock"),
+                    description: Some(
+                        "HSI selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "CSI",
-                    description: Some("CSI selected as peripheral clock"),
+                    description: Some(
+                        "CSI selected as peripheral clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "HSE",
-                    description: Some("HSE selected as peripheral clock"),
+                    description: Some(
+                        "HSE selected as peripheral clock",
+                    ),
                     value: 2,
                 },
             ],
@@ -11256,22 +16574,30 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "RANGE1",
-                    description: Some("Frequency is between 1 and 2 MHz"),
+                    description: Some(
+                        "Frequency is between 1 and 2 MHz",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "RANGE2",
-                    description: Some("Frequency is between 2 and 4 MHz"),
+                    description: Some(
+                        "Frequency is between 2 and 4 MHz",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "RANGE4",
-                    description: Some("Frequency is between 4 and 8 MHz"),
+                    description: Some(
+                        "Frequency is between 4 and 8 MHz",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "RANGE8",
-                    description: Some("Frequency is between 8 and 16 MHz"),
+                    description: Some(
+                        "Frequency is between 8 and 16 MHz",
+                    ),
                     value: 3,
                 },
             ],
@@ -11283,22 +16609,30 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI selected as PLL clock"),
+                    description: Some(
+                        "HSI selected as PLL clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "CSI",
-                    description: Some("CSI selected as PLL clock"),
+                    description: Some(
+                        "CSI selected as PLL clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "HSE",
-                    description: Some("HSE selected as PLL clock"),
+                    description: Some(
+                        "HSE selected as PLL clock",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "DISABLE",
-                    description: Some("No clock sent to DIVMx dividers and PLLs"),
+                    description: Some(
+                        "No clock sent to DIVMx dividers and PLLs",
+                    ),
                     value: 3,
                 },
             ],
@@ -11310,12 +16644,16 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "WIDEVCO",
-                    description: Some("VCO frequency range 192 to 836 MHz"),
+                    description: Some(
+                        "VCO frequency range 192 to 836 MHz",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "MEDIUMVCO",
-                    description: Some("VCO frequency range 150 to 420 MHz"),
+                    description: Some(
+                        "VCO frequency range 150 to 420 MHz",
+                    ),
                     value: 1,
                 },
             ],
@@ -11327,27 +16665,37 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "DIV1",
-                    description: Some("rcc_hclk not divided"),
+                    description: Some(
+                        "rcc_hclk not divided",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "DIV2",
-                    description: Some("rcc_hclk divided by 2"),
+                    description: Some(
+                        "rcc_hclk divided by 2",
+                    ),
                     value: 4,
                 },
                 EnumVariant {
                     name: "DIV4",
-                    description: Some("rcc_hclk divided by 4"),
+                    description: Some(
+                        "rcc_hclk divided by 4",
+                    ),
                     value: 5,
                 },
                 EnumVariant {
                     name: "DIV8",
-                    description: Some("rcc_hclk divided by 8"),
+                    description: Some(
+                        "rcc_hclk divided by 8",
+                    ),
                     value: 6,
                 },
                 EnumVariant {
                     name: "DIV16",
-                    description: Some("rcc_hclk divided by 16"),
+                    description: Some(
+                        "rcc_hclk divided by 16",
+                    ),
                     value: 7,
                 },
             ],
@@ -11359,22 +16707,30 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "HSI48",
-                    description: Some("HSI48 selected as peripheral clock"),
+                    description: Some(
+                        "HSI48 selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLL1_Q",
-                    description: Some("pll1_q selected as peripheral clock"),
+                    description: Some(
+                        "pll1_q selected as peripheral clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "LSE",
-                    description: Some("LSE selected as peripheral clock"),
+                    description: Some(
+                        "LSE selected as peripheral clock",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "LSI",
-                    description: Some("LSI selected as peripheral clock"),
+                    description: Some(
+                        "LSI selected as peripheral clock",
+                    ),
                     value: 3,
                 },
             ],
@@ -11386,22 +16742,30 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "DISABLE",
-                    description: Some("No clock"),
+                    description: Some(
+                        "No clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "LSE",
-                    description: Some("LSE oscillator clock used as RTC clock"),
+                    description: Some(
+                        "LSE oscillator clock used as RTC clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "LSI",
-                    description: Some("LSI oscillator clock used as RTC clock"),
+                    description: Some(
+                        "LSI oscillator clock used as RTC clock",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "HSE",
-                    description: Some("HSE oscillator clock divided by a prescaler used as RTC clock"),
+                    description: Some(
+                        "HSE oscillator clock divided by a prescaler used as RTC clock",
+                    ),
                     value: 3,
                 },
             ],
@@ -11413,27 +16777,37 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PLL1_Q",
-                    description: Some("pll1_q selected as peripheral clock"),
+                    description: Some(
+                        "pll1_q selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLL2_P",
-                    description: Some("pll2_p selected as peripheral clock"),
+                    description: Some(
+                        "pll2_p selected as peripheral clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "PLL3_P",
-                    description: Some("pll3_p selected as peripheral clock"),
+                    description: Some(
+                        "pll3_p selected as peripheral clock",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "I2S_CKIN",
-                    description: Some("i2s_ckin selected as peripheral clock"),
+                    description: Some(
+                        "i2s_ckin selected as peripheral clock",
+                    ),
                     value: 3,
                 },
                 EnumVariant {
                     name: "PER",
-                    description: Some("PER selected as peripheral clock"),
+                    description: Some(
+                        "PER selected as peripheral clock",
+                    ),
                     value: 4,
                 },
             ],
@@ -11445,27 +16819,37 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PLL1_Q",
-                    description: Some("pll1_q selected as peripheral clock"),
+                    description: Some(
+                        "pll1_q selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLL2_P",
-                    description: Some("pll2_p selected as peripheral clock"),
+                    description: Some(
+                        "pll2_p selected as peripheral clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "PLL3_P",
-                    description: Some("pll3_p selected as peripheral clock"),
+                    description: Some(
+                        "pll3_p selected as peripheral clock",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "I2S_CKIN",
-                    description: Some("I2S_CKIN selected as peripheral clock"),
+                    description: Some(
+                        "I2S_CKIN selected as peripheral clock",
+                    ),
                     value: 3,
                 },
                 EnumVariant {
                     name: "PER",
-                    description: Some("PER selected as peripheral clock"),
+                    description: Some(
+                        "PER selected as peripheral clock",
+                    ),
                     value: 4,
                 },
             ],
@@ -11477,12 +16861,16 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PLL1_Q",
-                    description: Some("pll1_q selected as peripheral clock"),
+                    description: Some(
+                        "pll1_q selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLL2_R",
-                    description: Some("pll2_r selected as peripheral clock"),
+                    description: Some(
+                        "pll2_r selected as peripheral clock",
+                    ),
                     value: 1,
                 },
             ],
@@ -11494,22 +16882,30 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PLL1_Q",
-                    description: Some("pll1_q selected as peripheral clock"),
+                    description: Some(
+                        "pll1_q selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLL2_R",
-                    description: Some("pll2_r selected as peripheral clock"),
+                    description: Some(
+                        "pll2_r selected as peripheral clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "PLL3_R",
-                    description: Some("pll3_r selected as peripheral clock"),
+                    description: Some(
+                        "pll3_r selected as peripheral clock",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("hsi_ker selected as peripheral clock"),
+                    description: Some(
+                        "hsi_ker selected as peripheral clock",
+                    ),
                     value: 3,
                 },
             ],
@@ -11521,32 +16917,44 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PCLK2",
-                    description: Some("APB2 clock selected as peripheral clock"),
+                    description: Some(
+                        "APB2 clock selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLL2_Q",
-                    description: Some("pll2_q selected as peripheral clock"),
+                    description: Some(
+                        "pll2_q selected as peripheral clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "PLL3_Q",
-                    description: Some("pll3_q selected as peripheral clock"),
+                    description: Some(
+                        "pll3_q selected as peripheral clock",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("hsi_ker selected as peripheral clock"),
+                    description: Some(
+                        "hsi_ker selected as peripheral clock",
+                    ),
                     value: 3,
                 },
                 EnumVariant {
                     name: "CSI",
-                    description: Some("csi_ker selected as peripheral clock"),
+                    description: Some(
+                        "csi_ker selected as peripheral clock",
+                    ),
                     value: 4,
                 },
                 EnumVariant {
                     name: "HSE",
-                    description: Some("HSE selected as peripheral clock"),
+                    description: Some(
+                        "HSE selected as peripheral clock",
+                    ),
                     value: 5,
                 },
             ],
@@ -11558,32 +16966,44 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PCLK4",
-                    description: Some("rcc_pclk4 selected as peripheral clock"),
+                    description: Some(
+                        "rcc_pclk4 selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLL2_Q",
-                    description: Some("pll2_q selected as peripheral clock"),
+                    description: Some(
+                        "pll2_q selected as peripheral clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "PLL3_Q",
-                    description: Some("pll3_q selected as peripheral clock"),
+                    description: Some(
+                        "pll3_q selected as peripheral clock",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("hsi_ker selected as peripheral clock"),
+                    description: Some(
+                        "hsi_ker selected as peripheral clock",
+                    ),
                     value: 3,
                 },
                 EnumVariant {
                     name: "CSI",
-                    description: Some("csi_ker selected as peripheral clock"),
+                    description: Some(
+                        "csi_ker selected as peripheral clock",
+                    ),
                     value: 4,
                 },
                 EnumVariant {
                     name: "HSE",
-                    description: Some("HSE selected as peripheral clock"),
+                    description: Some(
+                        "HSE selected as peripheral clock",
+                    ),
                     value: 5,
                 },
             ],
@@ -11595,12 +17015,16 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI selected as wake up clock from system Stop"),
+                    description: Some(
+                        "HSI selected as wake up clock from system Stop",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "CSI",
-                    description: Some("CSI selected as wake up clock from system Stop"),
+                    description: Some(
+                        "CSI selected as wake up clock from system Stop",
+                    ),
                     value: 1,
                 },
             ],
@@ -11612,22 +17036,30 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI selected as system clock"),
+                    description: Some(
+                        "HSI selected as system clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "CSI",
-                    description: Some("CSI selected as system clock"),
+                    description: Some(
+                        "CSI selected as system clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "HSE",
-                    description: Some("HSE selected as system clock"),
+                    description: Some(
+                        "HSE selected as system clock",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "PLL1_P",
-                    description: Some("PLL1 selected as system clock"),
+                    description: Some(
+                        "PLL1 selected as system clock",
+                    ),
                     value: 3,
                 },
             ],
@@ -11639,12 +17071,16 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PCLK1",
-                    description: Some("pclk selected as peripheral clock"),
+                    description: Some(
+                        "pclk selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("hsi_ker selected as peripheral clock"),
+                    description: Some(
+                        "hsi_ker selected as peripheral clock",
+                    ),
                     value: 1,
                 },
             ],
@@ -11656,12 +17092,16 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "DEFAULTX2",
-                    description: Some("Timer kernel clock equal to 2x pclk by default"),
+                    description: Some(
+                        "Timer kernel clock equal to 2x pclk by default",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "DEFAULTX4",
-                    description: Some("Timer kernel clock equal to 4x pclk by default"),
+                    description: Some(
+                        "Timer kernel clock equal to 4x pclk by default",
+                    ),
                     value: 1,
                 },
             ],
@@ -11673,32 +17113,44 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PCLK2",
-                    description: Some("rcc_pclk2 selected as peripheral clock"),
+                    description: Some(
+                        "rcc_pclk2 selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLL2_Q",
-                    description: Some("pll2_q selected as peripheral clock"),
+                    description: Some(
+                        "pll2_q selected as peripheral clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "PLL3_Q",
-                    description: Some("pll3_q selected as peripheral clock"),
+                    description: Some(
+                        "pll3_q selected as peripheral clock",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("hsi_ker selected as peripheral clock"),
+                    description: Some(
+                        "hsi_ker selected as peripheral clock",
+                    ),
                     value: 3,
                 },
                 EnumVariant {
                     name: "CSI",
-                    description: Some("csi_ker selected as peripheral clock"),
+                    description: Some(
+                        "csi_ker selected as peripheral clock",
+                    ),
                     value: 4,
                 },
                 EnumVariant {
                     name: "LSE",
-                    description: Some("LSE selected as peripheral clock"),
+                    description: Some(
+                        "LSE selected as peripheral clock",
+                    ),
                     value: 5,
                 },
             ],
@@ -11710,32 +17162,44 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PCLK1",
-                    description: Some("rcc_pclk1 selected as peripheral clock"),
+                    description: Some(
+                        "rcc_pclk1 selected as peripheral clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLL2_Q",
-                    description: Some("pll2_q selected as peripheral clock"),
+                    description: Some(
+                        "pll2_q selected as peripheral clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "PLL3_Q",
-                    description: Some("pll3_q selected as peripheral clock"),
+                    description: Some(
+                        "pll3_q selected as peripheral clock",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("hsi_ker selected as peripheral clock"),
+                    description: Some(
+                        "hsi_ker selected as peripheral clock",
+                    ),
                     value: 3,
                 },
                 EnumVariant {
                     name: "CSI",
-                    description: Some("csi_ker selected as peripheral clock"),
+                    description: Some(
+                        "csi_ker selected as peripheral clock",
+                    ),
                     value: 4,
                 },
                 EnumVariant {
                     name: "LSE",
-                    description: Some("LSE selected as peripheral clock"),
+                    description: Some(
+                        "LSE selected as peripheral clock",
+                    ),
                     value: 5,
                 },
             ],
@@ -11747,25 +17211,34 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "DISABLE",
-                    description: Some("Disable the kernel clock"),
+                    description: Some(
+                        "Disable the kernel clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLL1_Q",
-                    description: Some("pll1_q selected as peripheral clock"),
+                    description: Some(
+                        "pll1_q selected as peripheral clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "PLL3_Q",
-                    description: Some("pll3_q selected as peripheral clock"),
+                    description: Some(
+                        "pll3_q selected as peripheral clock",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "HSI48",
-                    description: Some("HSI48 selected as peripheral clock"),
+                    description: Some(
+                        "HSI48 selected as peripheral clock",
+                    ),
                     value: 3,
                 },
             ],
         },
     ],
 };
+                

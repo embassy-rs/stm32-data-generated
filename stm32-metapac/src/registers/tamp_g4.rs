@@ -1,6 +1,6 @@
 
-use crate::metadata::ir::*;
-pub(crate) static REGISTERS: IR = IR {
+                    use crate::metadata::ir::*;
+                    pub(crate) static REGISTERS: IR = IR {
     blocks: &[
         Block {
             name: "Tamp",
@@ -582,3 +582,4 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[],
 };
+                

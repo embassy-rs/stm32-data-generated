@@ -1,159 +1,271 @@
 
-use crate::metadata::ir::*;
-pub(crate) static REGISTERS: IR = IR {
-    blocks: &[Block {
-        name: "Comp",
-        extends: None,
-        description: Some("COMP1."),
-        items: &[
-            BlockItem {
-                name: "sr",
-                description: Some("Comparator status register."),
-                array: None,
-                byte_offset: 0x0,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Read,
-                    bit_size: 32,
-                    fieldset: Some("Sr"),
-                }),
-            },
-            BlockItem {
-                name: "icfr",
-                description: Some("Comparator interrupt clear flag register."),
-                array: None,
-                byte_offset: 0x4,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Write,
-                    bit_size: 32,
-                    fieldset: Some("Icfr"),
-                }),
-            },
-            BlockItem {
-                name: "or",
-                description: Some("Comparator option register."),
-                array: None,
-                byte_offset: 0x8,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Or"),
-                }),
-            },
-            BlockItem {
-                name: "cfgr1",
-                description: Some("Comparator configuration register 1."),
-                array: None,
-                byte_offset: 0xc,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cfgr1"),
-                }),
-            },
-            BlockItem {
-                name: "cfgr2",
-                description: Some("Comparator configuration register 2."),
-                array: None,
-                byte_offset: 0x10,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cfgr2"),
-                }),
-            },
-        ],
-    }],
+                    use crate::metadata::ir::*;
+                    pub(crate) static REGISTERS: IR = IR {
+    blocks: &[
+        Block {
+            name: "Comp",
+            extends: None,
+            description: Some(
+                "COMP1.",
+            ),
+            items: &[
+                BlockItem {
+                    name: "sr",
+                    description: Some(
+                        "Comparator status register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Sr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "icfr",
+                    description: Some(
+                        "Comparator interrupt clear flag register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Icfr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "or",
+                    description: Some(
+                        "Comparator option register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Or",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cfgr1",
+                    description: Some(
+                        "Comparator configuration register 1.",
+                    ),
+                    array: None,
+                    byte_offset: 0xc,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cfgr1",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cfgr2",
+                    description: Some(
+                        "Comparator configuration register 2.",
+                    ),
+                    array: None,
+                    byte_offset: 0x10,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cfgr2",
+                            ),
+                        },
+                    ),
+                },
+            ],
+        },
+    ],
     fieldsets: &[
         FieldSet {
             name: "Cfgr1",
             extends: None,
-            description: Some("Comparator configuration register 1."),
+            description: Some(
+                "Comparator configuration register 1.",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "en",
-                    description: Some("COMP channel 1 enable bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "COMP channel 1 enable bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "brgen",
-                    description: Some("Scaler bridge enable."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "Scaler bridge enable.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "scalen",
-                    description: Some("Voltage scaler enable bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "Voltage scaler enable bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "polarity",
-                    description: Some("COMP channel 1 polarity selection bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "COMP channel 1 polarity selection bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "iten",
-                    description: Some("COMP channel 1 interrupt enable."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "COMP channel 1 interrupt enable.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hyst",
-                    description: Some("COMP channel 1 hysteresis selection bits."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "COMP channel 1 hysteresis selection bits.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Hyst"),
+                    enumm: Some(
+                        "Hyst",
+                    ),
                 },
                 Field {
                     name: "pwrmode",
-                    description: Some("Power Mode of the COMP channel 1."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "Power Mode of the COMP channel 1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Pwrmode"),
+                    enumm: Some(
+                        "Pwrmode",
+                    ),
                 },
                 Field {
                     name: "inmsel",
-                    description: Some("COMP channel 1 inverting input selection field."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "COMP channel 1 inverting input selection field.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Inmsel"),
+                    enumm: Some(
+                        "Inmsel",
+                    ),
                 },
                 Field {
                     name: "inpsel",
-                    description: Some("COMP channel 1 non-inverting input selection bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
+                    description: Some(
+                        "COMP channel 1 non-inverting input selection bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Inpsel"),
+                    enumm: Some(
+                        "Inpsel",
+                    ),
                 },
                 Field {
                     name: "blanking",
-                    description: Some("COMP channel 1 blanking source selection bits."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "COMP channel 1 blanking source selection bits.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
-                    enumm: Some("Blanking"),
+                    enumm: Some(
+                        "Blanking",
+                    ),
                 },
                 Field {
                     name: "lock",
-                    description: Some("Lock bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
+                    description: Some(
+                        "Lock bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -162,102 +274,188 @@ pub(crate) static REGISTERS: IR = IR {
         },
         FieldSet {
             name: "Cfgr2",
-            extends: Some("CFGR1"),
-            description: Some("Comparator configuration register 2."),
+            extends: Some(
+                "CFGR1",
+            ),
+            description: Some(
+                "Comparator configuration register 2.",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "en",
-                    description: Some("COMP channel 1 enable bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "COMP channel 1 enable bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "brgen",
-                    description: Some("Scaler bridge enable."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "Scaler bridge enable.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "scalen",
-                    description: Some("Voltage scaler enable bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "Voltage scaler enable bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "polarity",
-                    description: Some("COMP channel 1 polarity selection bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    description: Some(
+                        "COMP channel 1 polarity selection bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "winmode",
-                    description: Some("Window comparator mode selection bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "Window comparator mode selection bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "iten",
-                    description: Some("COMP channel 1 interrupt enable."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    description: Some(
+                        "COMP channel 1 interrupt enable.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hyst",
-                    description: Some("COMP channel 1 hysteresis selection bits."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "COMP channel 1 hysteresis selection bits.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Hyst"),
+                    enumm: Some(
+                        "Hyst",
+                    ),
                 },
                 Field {
                     name: "pwrmode",
-                    description: Some("Power Mode of the COMP channel 1."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "Power Mode of the COMP channel 1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Pwrmode"),
+                    enumm: Some(
+                        "Pwrmode",
+                    ),
                 },
                 Field {
                     name: "inmsel",
-                    description: Some("COMP channel 1 inverting input selection field."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "COMP channel 1 inverting input selection field.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Inmsel"),
+                    enumm: Some(
+                        "Inmsel",
+                    ),
                 },
                 Field {
                     name: "inpsel",
-                    description: Some("COMP channel 1 non-inverting input selection bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
+                    description: Some(
+                        "COMP channel 1 non-inverting input selection bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Inpsel"),
+                    enumm: Some(
+                        "Inpsel",
+                    ),
                 },
                 Field {
                     name: "blanking",
-                    description: Some("COMP channel 1 blanking source selection bits."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
+                    description: Some(
+                        "COMP channel 1 blanking source selection bits.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
                     bit_size: 4,
                     array: None,
-                    enumm: Some("Blanking"),
+                    enumm: Some(
+                        "Blanking",
+                    ),
                 },
                 Field {
                     name: "lock",
-                    description: Some("Lock bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
+                    description: Some(
+                        "Lock bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -267,51 +465,106 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Icfr",
             extends: None,
-            description: Some("Comparator interrupt clear flag register."),
+            description: Some(
+                "Comparator interrupt clear flag register.",
+            ),
             bit_size: 32,
-            fields: &[Field {
-                name: "ccif",
-                description: Some("Clear COMP channel 1 Interrupt Flag."),
-                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
-                bit_size: 1,
-                array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
-                enumm: None,
-            }],
+            fields: &[
+                Field {
+                    name: "ccif",
+                    description: Some(
+                        "Clear COMP channel 1 Interrupt Flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
         },
         FieldSet {
             name: "Or",
             extends: None,
-            description: Some("Comparator option register."),
+            description: Some(
+                "Comparator option register.",
+            ),
             bit_size: 32,
-            fields: &[Field {
-                name: "afop",
-                description: Some("Selection of source for alternate function of output ports."),
-                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                bit_size: 11,
-                array: None,
-                enumm: None,
-            }],
+            fields: &[
+                Field {
+                    name: "afop",
+                    description: Some(
+                        "Selection of source for alternate function of output ports.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 11,
+                    array: None,
+                    enumm: None,
+                },
+            ],
         },
         FieldSet {
             name: "Sr",
             extends: None,
-            description: Some("Comparator status register."),
+            description: Some(
+                "Comparator status register.",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "cval",
-                    description: Some("COMP channel 1 output status bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "COMP channel 1 output status bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 1,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
                 Field {
                     name: "cif",
-                    description: Some("COMP channel 1 Interrupt Flag."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    description: Some(
+                        "COMP channel 1 Interrupt Flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 1,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
             ],
@@ -458,25 +711,34 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "HIGH",
-                    description: Some("High speed / full power"),
+                    description: Some(
+                        "High speed / full power",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "MEDIUM",
-                    description: Some("Medium speed / medium power"),
+                    description: Some(
+                        "Medium speed / medium power",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "MEDIUMEITHER",
-                    description: Some("Medium speed / medium power"),
+                    description: Some(
+                        "Medium speed / medium power",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "LOW",
-                    description: Some("Ultra low power / ultra-low-power"),
+                    description: Some(
+                        "Ultra low power / ultra-low-power",
+                    ),
                     value: 3,
                 },
             ],
         },
     ],
 };
+                

@@ -1,6 +1,6 @@
 
-use crate::metadata::ir::*;
-pub(crate) static REGISTERS: IR = IR {
+                    use crate::metadata::ir::*;
+                    pub(crate) static REGISTERS: IR = IR {
     blocks: &[
         Block {
             name: "Ch",
@@ -1769,3 +1769,4 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
 };
+                

@@ -588,6 +588,16 @@
                             "af": 5
                         }
                     ],
+                    "interrupts": [
+                        {
+                            "signal": "ER",
+                            "interrupt": "I2C2_3"
+                        },
+                        {
+                            "signal": "EV",
+                            "interrupt": "I2C2_3"
+                        }
+                    ],
                     "dma_channels": [
                         {
                             "signal": "RX",
@@ -634,6 +644,16 @@
                             "pin": "PA7",
                             "signal": "SCL",
                             "af": 4
+                        }
+                    ],
+                    "interrupts": [
+                        {
+                            "signal": "ER",
+                            "interrupt": "I2C2_3"
+                        },
+                        {
+                            "signal": "EV",
+                            "interrupt": "I2C2_3"
                         }
                     ],
                     "dma_channels": [

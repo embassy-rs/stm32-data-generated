@@ -519,11 +519,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "INN15",
                 af: None,
             },
-            PeripheralPin {
-                pin: "PH5",
-                signal: "INP16",
-                af: None,
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {

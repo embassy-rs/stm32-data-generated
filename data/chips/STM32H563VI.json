@@ -860,6 +860,11 @@
                             "af": 11
                         },
                         {
+                            "pin": "PB11",
+                            "signal": "TX_EN",
+                            "af": 11
+                        },
+                        {
                             "pin": "PB12",
                             "signal": "TXD0",
                             "af": 11

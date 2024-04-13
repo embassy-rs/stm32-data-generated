@@ -3664,6 +3664,72 @@
                     ]
                 },
                 {
+                    "name": "UART4",
+                    "address": 1073761280,
+                    "registers": {
+                        "kind": "usart",
+                        "version": "v4",
+                        "block": "USART"
+                    },
+                    "rcc": {
+                        "bus_clock": "PCLK1",
+                        "kernel_clock": "PCLK1",
+                        "enable": {
+                            "register": "APB1ENR1",
+                            "field": "UART4EN"
+                        },
+                        "reset": {
+                            "register": "APB1RSTR1",
+                            "field": "UART4RST"
+                        }
+                    },
+                    "pins": [
+                        {
+                            "pin": "PA15",
+                            "signal": "DE",
+                            "af": 8
+                        },
+                        {
+                            "pin": "PA15",
+                            "signal": "RTS",
+                            "af": 8
+                        },
+                        {
+                            "pin": "PB7",
+                            "signal": "CTS",
+                            "af": 14
+                        },
+                        {
+                            "pin": "PC10",
+                            "signal": "TX",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PC11",
+                            "signal": "RX",
+                            "af": 5
+                        }
+                    ],
+                    "interrupts": [
+                        {
+                            "signal": "GLOBAL",
+                            "interrupt": "UART4"
+                        }
+                    ],
+                    "dma_channels": [
+                        {
+                            "signal": "RX",
+                            "dmamux": "DMAMUX1",
+                            "request": 30
+                        },
+                        {
+                            "signal": "TX",
+                            "dmamux": "DMAMUX1",
+                            "request": 31
+                        }
+                    ]
+                },
+                {
                     "name": "UCPD1",
                     "address": 1073782784,
                     "registers": {

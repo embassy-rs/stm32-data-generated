@@ -1922,6 +1922,11 @@
                             "af": 11
                         },
                         {
+                            "pin": "PA9",
+                            "signal": "TX_ER",
+                            "af": 11
+                        },
+                        {
                             "pin": "PB0",
                             "signal": "RXD2",
                             "af": 11
@@ -1949,6 +1954,11 @@
                         {
                             "pin": "PB13",
                             "signal": "TXD1",
+                            "af": 11
+                        },
+                        {
+                            "pin": "PB2",
+                            "signal": "TX_ER",
                             "af": 11
                         },
                         {
@@ -11602,6 +11612,11 @@
                             "af": 11
                         },
                         {
+                            "pin": "PA9",
+                            "signal": "TX_ER",
+                            "af": 11
+                        },
+                        {
                             "pin": "PB0",
                             "signal": "RXD2",
                             "af": 11
@@ -11629,6 +11644,11 @@
                         {
                             "pin": "PB13",
                             "signal": "TXD1",
+                            "af": 11
+                        },
+                        {
+                            "pin": "PB2",
+                            "signal": "TX_ER",
                             "af": 11
                         },
                         {

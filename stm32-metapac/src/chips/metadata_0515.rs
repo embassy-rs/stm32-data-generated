@@ -888,7 +888,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PB12",
-                signal: "VLCD2",
+                signal: "VLCD1",
                 af: None,
             },
             PeripheralPin {
@@ -908,7 +908,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PB2",
-                signal: "VLCD1",
+                signal: "VLCD2",
                 af: None,
             },
             PeripheralPin {

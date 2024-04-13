@@ -1152,7 +1152,7 @@
                         },
                         {
                             "pin": "PB12",
-                            "signal": "VLCD2"
+                            "signal": "VLCD1"
                         },
                         {
                             "pin": "PB13",
@@ -1171,7 +1171,7 @@
                         },
                         {
                             "pin": "PB2",
-                            "signal": "VLCD1"
+                            "signal": "VLCD2"
                         },
                         {
                             "pin": "PB3",

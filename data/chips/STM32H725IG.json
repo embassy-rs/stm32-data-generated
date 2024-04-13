@@ -760,10 +760,6 @@
                         {
                             "pin": "PH5",
                             "signal": "INN15"
-                        },
-                        {
-                            "pin": "PH5",
-                            "signal": "INP16"
                         }
                     ],
                     "interrupts": [

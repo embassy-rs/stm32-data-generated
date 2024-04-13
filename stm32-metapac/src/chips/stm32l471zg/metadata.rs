@@ -28,13 +28,6 @@ pub static METADATA: Metadata = Metadata {
             }),
         },
         MemoryRegion {
-            name: "SRAM2",
-            kind: MemoryRegionKind::Ram,
-            address: 0x10000000,
-            size: 0,
-            settings: None,
-        },
-        MemoryRegion {
             name: "SRAM",
             kind: MemoryRegionKind::Ram,
             address: 0x20000000,

@@ -16,12 +16,6 @@
     ],
     "memory": [
         {
-            "name": "D1_ITCMRAM",
-            "kind": "ram",
-            "address": 0,
-            "size": 0
-        },
-        {
             "name": "BANK_1",
             "kind": "flash",
             "address": 134217728,
@@ -31,12 +25,6 @@
                 "write_size": 32,
                 "erase_value": 255
             }
-        },
-        {
-            "name": "D1_AXIFLASH",
-            "kind": "flash",
-            "address": 134217728,
-            "size": 0
         },
         {
             "name": "BANK_2",
@@ -50,40 +38,10 @@
             }
         },
         {
-            "name": "D2_AXISRAM",
-            "kind": "ram",
-            "address": 268435456,
-            "size": 0
-        },
-        {
-            "name": "D1_AXIICP",
-            "kind": "flash",
-            "address": 535822336,
-            "size": 0
-        },
-        {
-            "name": "D1_DTCMRAM",
-            "kind": "ram",
-            "address": 536870912,
-            "size": 0
-        },
-        {
             "name": "SRAM",
             "kind": "ram",
             "address": 603979776,
             "size": 524288
-        },
-        {
-            "name": "D3_SRAM",
-            "kind": "ram",
-            "address": 939524096,
-            "size": 0
-        },
-        {
-            "name": "D3_BKPSRAM",
-            "kind": "ram",
-            "address": 947912704,
-            "size": 0
         }
     ],
     "docs": [

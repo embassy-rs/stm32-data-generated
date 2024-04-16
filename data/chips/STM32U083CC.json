@@ -41,6 +41,11 @@
                 {
                     "name": "ADC1",
                     "address": 1073816576,
+                    "registers": {
+                        "kind": "adc",
+                        "version": "u0",
+                        "block": "ADC"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK1",
                         "kernel_clock": {
@@ -114,11 +119,21 @@
                 },
                 {
                     "name": "ADC_COMMON",
-                    "address": 1073817352
+                    "address": 1073817352,
+                    "registers": {
+                        "kind": "adccommon",
+                        "version": "v3",
+                        "block": "ADC_COMMON"
+                    }
                 },
                 {
                     "name": "AES",
                     "address": 1073897472,
+                    "registers": {
+                        "kind": "aes",
+                        "version": "v2",
+                        "block": "AES"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK1",
                         "kernel_clock": "HCLK1",
@@ -147,6 +162,11 @@
                 {
                     "name": "COMP1",
                     "address": 1073807872,
+                    "registers": {
+                        "kind": "comp",
+                        "version": "u0",
+                        "block": "COMP"
+                    },
                     "pins": [
                         {
                             "pin": "PA0",
@@ -212,6 +232,11 @@
                 {
                     "name": "COMP2",
                     "address": 1073807876,
+                    "registers": {
+                        "kind": "comp",
+                        "version": "u0",
+                        "block": "COMP"
+                    },
                     "pins": [
                         {
                             "pin": "PA2",
@@ -276,6 +301,11 @@
                 {
                     "name": "CRC",
                     "address": 1073885184,
+                    "registers": {
+                        "kind": "crc",
+                        "version": "v3",
+                        "block": "CRC"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK1",
                         "kernel_clock": "HCLK1",
@@ -292,6 +322,11 @@
                 {
                     "name": "CRS",
                     "address": 1073769472,
+                    "registers": {
+                        "kind": "crs",
+                        "version": "v1",
+                        "block": "CRS"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK1",
                         "kernel_clock": "PCLK1",
@@ -315,6 +350,11 @@
                 {
                     "name": "DAC1",
                     "address": 1073771520,
+                    "registers": {
+                        "kind": "dac",
+                        "version": "v4",
+                        "block": "DAC"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK1",
                         "kernel_clock": "PCLK1",
@@ -1739,6 +1779,11 @@
                 {
                     "name": "OPAMP1",
                     "address": 1073772544,
+                    "registers": {
+                        "kind": "opamp",
+                        "version": "u0",
+                        "block": "OPAMP"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK1",
                         "kernel_clock": "PCLK1",
@@ -1897,6 +1942,11 @@
                 {
                     "name": "RNG",
                     "address": 1073893376,
+                    "registers": {
+                        "kind": "rng",
+                        "version": "v3",
+                        "block": "RNG"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK1",
                         "kernel_clock": "HCLK1",
@@ -1919,6 +1969,11 @@
                 {
                     "name": "RTC",
                     "address": 1073752064,
+                    "registers": {
+                        "kind": "rtc",
+                        "version": "v3",
+                        "block": "RTC"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK1",
                         "kernel_clock": "PCLK1",
@@ -2945,6 +3000,11 @@
                 {
                     "name": "TSC",
                     "address": 1073889280,
+                    "registers": {
+                        "kind": "tsc",
+                        "version": "v2",
+                        "block": "TSC"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK1",
                         "kernel_clock": "HCLK1",
@@ -3443,6 +3503,11 @@
                 {
                     "name": "USB",
                     "address": 1073765376,
+                    "registers": {
+                        "kind": "usb",
+                        "version": "v4",
+                        "block": "USB"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK1",
                         "kernel_clock": {
@@ -3490,7 +3555,12 @@
                 },
                 {
                     "name": "USBRAM",
-                    "address": 1073780736
+                    "address": 1073780736,
+                    "registers": {
+                        "kind": "usbram",
+                        "version": "32_1024",
+                        "block": "USBRAM"
+                    }
                 },
                 {
                     "name": "VREFBUF",

@@ -3,7 +3,14 @@
     Peripheral {
         name: "ADC1",
         address: 0x40012400,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "adc",
+                version: "u0",
+                block: "ADC",
+                ir: &adc::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "PCLK1",
@@ -133,7 +140,14 @@
     Peripheral {
         name: "ADC_COMMON",
         address: 0x40012708,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "adccommon",
+                version: "v3",
+                block: "ADC_COMMON",
+                ir: &adccommon::REGISTERS,
+            },
+        ),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -142,7 +156,14 @@
     Peripheral {
         name: "AES",
         address: 0x40026000,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "aes",
+                version: "v2",
+                block: "AES",
+                ir: &aes::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "HCLK1",
@@ -194,7 +215,14 @@
     Peripheral {
         name: "COMP1",
         address: 0x40010200,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "comp",
+                version: "u0",
+                block: "COMP",
+                ir: &comp::REGISTERS,
+            },
+        ),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -294,7 +322,14 @@
     Peripheral {
         name: "COMP2",
         address: 0x40010204,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "comp",
+                version: "u0",
+                block: "COMP",
+                ir: &comp::REGISTERS,
+            },
+        ),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -382,7 +417,14 @@
     Peripheral {
         name: "CRC",
         address: 0x40023000,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "crc",
+                version: "v3",
+                block: "CRC",
+                ir: &crc::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "HCLK1",
@@ -411,7 +453,14 @@
     Peripheral {
         name: "CRS",
         address: 0x40006c00,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "crs",
+                version: "v1",
+                block: "CRS",
+                ir: &crs::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "PCLK1",
@@ -448,7 +497,14 @@
     Peripheral {
         name: "DAC1",
         address: 0x40007400,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "dac",
+                version: "v4",
+                block: "DAC",
+                ir: &dac::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "PCLK1",
@@ -3119,7 +3175,14 @@
     Peripheral {
         name: "OPAMP1",
         address: 0x40007800,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "opamp",
+                version: "u0",
+                block: "OPAMP",
+                ir: &opamp::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "PCLK1",
@@ -3350,7 +3413,14 @@
     Peripheral {
         name: "RNG",
         address: 0x40025000,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "rng",
+                version: "v3",
+                block: "RNG",
+                ir: &rng::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "HCLK1",
@@ -3384,7 +3454,14 @@
     Peripheral {
         name: "RTC",
         address: 0x40002800,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "rtc",
+                version: "v3",
+                block: "RTC",
+                ir: &rtc::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "PCLK1",
@@ -5041,7 +5118,14 @@
     Peripheral {
         name: "TSC",
         address: 0x40024000,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "tsc",
+                version: "v2",
+                block: "TSC",
+                ir: &tsc::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "HCLK1",
@@ -6002,7 +6086,14 @@
     Peripheral {
         name: "USB",
         address: 0x40005c00,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "usb",
+                version: "v4",
+                block: "USB",
+                ir: &usb::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "PCLK1",
@@ -6072,7 +6163,14 @@
     Peripheral {
         name: "USBRAM",
         address: 0x40009800,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "usbram",
+                version: "32_1024",
+                block: "USBRAM",
+                ir: &usbram::REGISTERS,
+            },
+        ),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -6388,7 +6486,14 @@
         ),
     },
 ];
-            #[path="../registers/bdma_v1.rs"] pub mod bdma;
+            #[path="../registers/adc_u0.rs"] pub mod adc;
+#[path="../registers/adccommon_v3.rs"] pub mod adccommon;
+#[path="../registers/aes_v2.rs"] pub mod aes;
+#[path="../registers/bdma_v1.rs"] pub mod bdma;
+#[path="../registers/comp_u0.rs"] pub mod comp;
+#[path="../registers/crc_v3.rs"] pub mod crc;
+#[path="../registers/crs_v1.rs"] pub mod crs;
+#[path="../registers/dac_v4.rs"] pub mod dac;
 #[path="../registers/dmamux_v1.rs"] pub mod dmamux;
 #[path="../registers/exti_u0.rs"] pub mod exti;
 #[path="../registers/flash_u0.rs"] pub mod flash;
@@ -6396,11 +6501,17 @@
 #[path="../registers/i2c_v2.rs"] pub mod i2c;
 #[path="../registers/iwdg_v3.rs"] pub mod iwdg;
 #[path="../registers/lptim_v1.rs"] pub mod lptim;
+#[path="../registers/opamp_u0.rs"] pub mod opamp;
 #[path="../registers/pwr_u0.rs"] pub mod pwr;
 #[path="../registers/rcc_u0.rs"] pub mod rcc;
+#[path="../registers/rng_v3.rs"] pub mod rng;
+#[path="../registers/rtc_v3.rs"] pub mod rtc;
 #[path="../registers/spi_v2.rs"] pub mod spi;
 #[path="../registers/syscfg_u0.rs"] pub mod syscfg;
 #[path="../registers/timer_v2.rs"] pub mod timer;
+#[path="../registers/tsc_v2.rs"] pub mod tsc;
 #[path="../registers/uid_v1.rs"] pub mod uid;
 #[path="../registers/usart_v4.rs"] pub mod usart;
+#[path="../registers/usb_v4.rs"] pub mod usb;
+#[path="../registers/usbram_32_1024.rs"] pub mod usbram;
 #[path="../registers/wwdg_v2.rs"] pub mod wwdg;

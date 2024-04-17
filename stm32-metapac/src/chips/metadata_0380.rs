@@ -2881,7 +2881,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "lptim",
-                version: "v2b",
+                version: "v2a",
                 block: "LPTIM_ADV",
                 ir: &lptim::REGISTERS,
             },
@@ -3035,7 +3035,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "lptim",
-                version: "v2b",
+                version: "v2a",
                 block: "LPTIM_ADV",
                 ir: &lptim::REGISTERS,
             },
@@ -3217,7 +3217,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "lptim",
-                version: "v2b",
+                version: "v2a",
                 block: "LPTIM_ADV",
                 ir: &lptim::REGISTERS,
             },
@@ -3392,7 +3392,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "lptim",
-                version: "v2b",
+                version: "v2a",
                 block: "LPTIM_BASIC",
                 ir: &lptim::REGISTERS,
             },
@@ -3444,7 +3444,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "lptim",
-                version: "v2b",
+                version: "v2a",
                 block: "LPTIM_ADV",
                 ir: &lptim::REGISTERS,
             },
@@ -3563,7 +3563,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "lptim",
-                version: "v2b",
+                version: "v2a",
                 block: "LPTIM_ADV",
                 ir: &lptim::REGISTERS,
             },
@@ -10553,7 +10553,7 @@
 #[path="../registers/i3c_v1.rs"] pub mod i3c;
 #[path="../registers/icache_v1_4crr.rs"] pub mod icache;
 #[path="../registers/iwdg_v3.rs"] pub mod iwdg;
-#[path="../registers/lptim_v2b.rs"] pub mod lptim;
+#[path="../registers/lptim_v2a.rs"] pub mod lptim;
 #[path="../registers/octospi_v2.rs"] pub mod octospi;
 #[path="../registers/pssi_v1.rs"] pub mod pssi;
 #[path="../registers/pwr_h5.rs"] pub mod pwr;

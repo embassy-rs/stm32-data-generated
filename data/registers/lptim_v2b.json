@@ -1,64 +1,24 @@
 {
-  "block/LPTIM_ADV": {
-    "extends": "LPTIM_BASIC",
+  "block/LPTIM": {
     "description": "Low power timer with Output Compare",
     "items": [
       {
         "name": "ISR",
         "description": "LPTIM interrupt and status register.",
         "byte_offset": 0,
-        "fieldset": "ISR_ADV"
+        "fieldset": "ISR"
       },
       {
         "name": "ICR",
         "description": "LPTIM interrupt clear register.",
         "byte_offset": 4,
-        "fieldset": "ICR_ADV"
+        "fieldset": "ICR"
       },
       {
         "name": "DIER",
         "description": "LPTIM interrupt enable register.",
         "byte_offset": 8,
-        "fieldset": "DIER_ADV"
-      },
-      {
-        "name": "CCR",
-        "description": "LPTIM compare register 1.",
-        "array": {
-          "len": 2,
-          "stride": 32
-        },
-        "byte_offset": 20,
-        "fieldset": "CCR"
-      },
-      {
-        "name": "CCMR",
-        "description": "LPTIM capture/compare mode register 1.",
-        "byte_offset": 44,
-        "fieldset": "CCMR"
-      }
-    ]
-  },
-  "block/LPTIM_BASIC": {
-    "description": "Low power timer with Output Compare",
-    "items": [
-      {
-        "name": "ISR",
-        "description": "LPTIM interrupt and status register.",
-        "byte_offset": 0,
-        "fieldset": "ISR_BASIC"
-      },
-      {
-        "name": "ICR",
-        "description": "LPTIM interrupt clear register.",
-        "byte_offset": 4,
-        "fieldset": "ICR_BASIC"
-      },
-      {
-        "name": "DIER",
-        "description": "LPTIM interrupt enable register.",
-        "byte_offset": 8,
-        "fieldset": "DIER_BASIC"
+        "fieldset": "DIER"
       },
       {
         "name": "CFGR",
@@ -76,8 +36,12 @@
         "name": "CCR",
         "description": "LPTIM compare register 1.",
         "array": {
-          "len": 1,
-          "stride": 32
+          "offsets": [
+            0,
+            32,
+            36,
+            40
+          ]
         },
         "byte_offset": 20,
         "fieldset": "CCR"
@@ -105,6 +69,16 @@
         "description": "LPTIM repetition register.",
         "byte_offset": 40,
         "fieldset": "RCR"
+      },
+      {
+        "name": "CCMR",
+        "description": "LPTIM capture/compare mode register 1.",
+        "array": {
+          "len": 2,
+          "stride": 1
+        },
+        "byte_offset": 44,
+        "fieldset": "CCMR"
       }
     ]
   },
@@ -208,7 +182,7 @@
         "description": "Clock selector The CKSEL bit selects which clock source the LPTIM uses:.",
         "bit_offset": 0,
         "bit_size": 1,
-        "enum": "CKSEL"
+        "enum": "ClockSource"
       },
       {
         "name": "CKPOL",
@@ -264,12 +238,6 @@
         "bit_size": 1
       },
       {
-        "name": "WAVPOL",
-        "description": "Waveform shape polarity The WAVEPOL bit controls the output polarity Note: If the LPTIM implements at least one capture/compare channel, this bit is reserved. Please refer to.",
-        "bit_offset": 21,
-        "bit_size": 1
-      },
-      {
         "name": "PRELOAD",
         "description": "Registers update mode The PRELOAD bit controls the LPTIM_ARR, LPTIM_RCR and the LPTIM_CCRx registers update modality.",
         "bit_offset": 22,
@@ -279,7 +247,8 @@
         "name": "COUNTMODE",
         "description": "counter mode enabled The COUNTMODE bit selects which clock source is used by the LPTIM to clock the counter:.",
         "bit_offset": 23,
-        "bit_size": 1
+        "bit_size": 1,
+        "enum": "ClockSource"
       },
       {
         "name": "ENC",
@@ -360,8 +329,7 @@
       }
     ]
   },
-  "fieldset/DIER_ADV": {
-    "extends": "DIER_BASIC",
+  "fieldset/DIER": {
     "description": "LPTIM interrupt enable register.",
     "fields": [
       {
@@ -370,53 +338,12 @@
         "bit_offset": 0,
         "bit_size": 1,
         "array": {
-          "len": 2,
-          "stride": 9
-        }
-      },
-      {
-        "name": "CMPOKIE",
-        "description": "Compare register 1 update OK interrupt enable.",
-        "bit_offset": 3,
-        "bit_size": 1,
-        "array": {
-          "len": 2,
-          "stride": 16
-        }
-      },
-      {
-        "name": "CCOIE",
-        "description": "Capture/compare 1 over-capture interrupt enable Note: If LPTIM does not implement at least 1 channel this bit is reserved. Please refer to.",
-        "bit_offset": 12,
-        "bit_size": 1,
-        "array": {
-          "len": 2,
-          "stride": 1
-        }
-      },
-      {
-        "name": "CCDE",
-        "description": "Capture/compare 1 DMA request enable Note: If LPTIM does not implement at least 1 channel this bit is reserved. Please refer to.",
-        "bit_offset": 16,
-        "bit_size": 1,
-        "array": {
-          "len": 2,
-          "stride": 9
-        }
-      }
-    ]
-  },
-  "fieldset/DIER_BASIC": {
-    "description": "LPTIM interrupt enable register.",
-    "fields": [
-      {
-        "name": "CCIE",
-        "description": "Capture/compare 1 interrupt enable.",
-        "bit_offset": 0,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 9
+          "offsets": [
+            0,
+            9,
+            10,
+            11
+          ]
         }
       },
       {
@@ -437,8 +364,12 @@
         "bit_offset": 3,
         "bit_size": 1,
         "array": {
-          "len": 1,
-          "stride": 16
+          "offsets": [
+            0,
+            16,
+            17,
+            18
+          ]
         }
       },
       {
@@ -470,46 +401,34 @@
         "description": "Repetition register update OK interrupt Enable.",
         "bit_offset": 8,
         "bit_size": 1
-      }
-    ]
-  },
-  "fieldset/ICR_ADV": {
-    "extends": "ICR_BASIC",
-    "description": "LPTIM interrupt clear register.",
-    "fields": [
-      {
-        "name": "CCCF",
-        "description": "Capture/compare 1 clear flag Writing 1 to this bit clears the CC1IF flag in the LPTIM_ISR register.",
-        "bit_offset": 0,
-        "bit_size": 1,
-        "array": {
-          "len": 2,
-          "stride": 9
-        }
       },
       {
-        "name": "CMPOKCF",
-        "description": "Compare register 1 update OK clear flag Writing 1 to this bit clears the CMP1OK flag in the LPTIM_ISR register.",
-        "bit_offset": 3,
-        "bit_size": 1,
-        "array": {
-          "len": 2,
-          "stride": 16
-        }
-      },
-      {
-        "name": "CCOCF",
-        "description": "Capture/compare 1 over-capture clear flag Writing 1 to this bit clears the CC1OF flag in the LPTIM_ISR register. Note: If LPTIM does not implement at least 1 channel this bit is reserved. Please refer to.",
+        "name": "CCOIE",
+        "description": "Capture/compare 1 over-capture interrupt enable Note: If LPTIM does not implement at least 1 channel this bit is reserved. Please refer to.",
         "bit_offset": 12,
         "bit_size": 1,
         "array": {
-          "len": 2,
+          "len": 4,
           "stride": 1
+        }
+      },
+      {
+        "name": "CCDE",
+        "description": "Capture/compare 1 DMA request enable Note: If LPTIM does not implement at least 1 channel this bit is reserved. Please refer to.",
+        "bit_offset": 16,
+        "bit_size": 1,
+        "array": {
+          "offsets": [
+            0,
+            9,
+            10,
+            11
+          ]
         }
       }
     ]
   },
-  "fieldset/ICR_BASIC": {
+  "fieldset/ICR": {
     "description": "LPTIM interrupt clear register.",
     "fields": [
       {
@@ -518,8 +437,12 @@
         "bit_offset": 0,
         "bit_size": 1,
         "array": {
-          "len": 1,
-          "stride": 9
+          "offsets": [
+            0,
+            9,
+            10,
+            11
+          ]
         }
       },
       {
@@ -540,8 +463,12 @@
         "bit_offset": 3,
         "bit_size": 1,
         "array": {
-          "len": 1,
-          "stride": 16
+          "offsets": [
+            0,
+            16,
+            17,
+            18
+          ]
         }
       },
       {
@@ -575,6 +502,16 @@
         "bit_size": 1
       },
       {
+        "name": "CCOCF",
+        "description": "Capture/compare 1 over-capture clear flag Writing 1 to this bit clears the CC1OF flag in the LPTIM_ISR register. Note: If LPTIM does not implement at least 1 channel this bit is reserved. Please refer to.",
+        "bit_offset": 12,
+        "bit_size": 1,
+        "array": {
+          "len": 4,
+          "stride": 1
+        }
+      },
+      {
         "name": "DIEROKCF",
         "description": "Interrupt enable register update OK clear flag Writing 1 to this bit clears the DIEROK flag in the LPTIM_ISR register.",
         "bit_offset": 24,
@@ -582,8 +519,7 @@
       }
     ]
   },
-  "fieldset/ISR_ADV": {
-    "extends": "ISR_BASIC",
+  "fieldset/ISR": {
     "description": "LPTIM interrupt and status register.",
     "fields": [
       {
@@ -592,43 +528,12 @@
         "bit_offset": 0,
         "bit_size": 1,
         "array": {
-          "len": 2,
-          "stride": 9
-        }
-      },
-      {
-        "name": "CMPOK",
-        "description": "Compare register 1 update OK CMP1OK is set by hardware to inform application that the APB bus write operation to the LPTIM_CCR1 register has been successfully completed. CMP1OK flag can be cleared by writing 1 to the CMP1OKCF bit in the LPTIM_ICR register.",
-        "bit_offset": 3,
-        "bit_size": 1,
-        "array": {
-          "len": 2,
-          "stride": 16
-        }
-      },
-      {
-        "name": "CCOF",
-        "description": "Capture 1 over-capture flag This flag is set by hardware only when the corresponding channel is configured in input capture mode. It is cleared by software by writing 1 to the CC1OCF bit in the LPTIM_ICR register. Note: If LPTIM does not implement at least 1 channel this bit is reserved. Please refer to.",
-        "bit_offset": 12,
-        "bit_size": 1,
-        "array": {
-          "len": 2,
-          "stride": 1
-        }
-      }
-    ]
-  },
-  "fieldset/ISR_BASIC": {
-    "description": "LPTIM interrupt and status register.",
-    "fields": [
-      {
-        "name": "CCIF",
-        "description": "Compare 1 interrupt flag The CC1IF flag is set by hardware to inform application that LPTIM_CNT register value matches the compare register's value. The CC1IF flag can be cleared by writing 1 to the CC1CF bit in the LPTIM_ICR register.",
-        "bit_offset": 0,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 9
+          "offsets": [
+            0,
+            9,
+            10,
+            11
+          ]
         }
       },
       {
@@ -649,8 +554,12 @@
         "bit_offset": 3,
         "bit_size": 1,
         "array": {
-          "len": 1,
-          "stride": 16
+          "offsets": [
+            0,
+            16,
+            17,
+            18
+          ]
         }
       },
       {
@@ -682,6 +591,16 @@
         "description": "Repetition register update OK REPOK is set by hardware to inform application that the APB bus write operation to the LPTIM_RCR register has been successfully completed. REPOK flag can be cleared by writing 1 to the REPOKCF bit in the LPTIM_ICR register.",
         "bit_offset": 8,
         "bit_size": 1
+      },
+      {
+        "name": "CCOF",
+        "description": "Capture 1 over-capture flag This flag is set by hardware only when the corresponding channel is configured in input capture mode. It is cleared by software by writing 1 to the CC1OCF bit in the LPTIM_ICR register. Note: If LPTIM does not implement at least 1 channel this bit is reserved. Please refer to.",
+        "bit_offset": 12,
+        "bit_size": 1,
+        "array": {
+          "len": 4,
+          "stride": 1
+        }
       },
       {
         "name": "DIEROK",
@@ -767,17 +686,17 @@
       }
     ]
   },
-  "enum/CKSEL": {
+  "enum/ClockSource": {
     "bit_size": 1,
     "variants": [
       {
         "name": "Internal",
-        "description": "LPTIM is clocked by internal clock source (APB clock or any of the embedded oscillators)",
+        "description": "clocked by internal clock source (APB clock or any of the embedded oscillators)",
         "value": 0
       },
       {
         "name": "External",
-        "description": "LPTIM is clocked by an external clock source through the LPTIM external Input1",
+        "description": "clocked by an external clock source through the LPTIM external Input1",
         "value": 1
       }
     ]

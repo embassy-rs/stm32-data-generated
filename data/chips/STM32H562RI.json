@@ -1765,7 +1765,7 @@
                     "address": 1140868096,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v2b",
+                        "version": "v2a",
                         "block": "LPTIM_ADV"
                     },
                     "rcc": {
@@ -1860,7 +1860,7 @@
                     "address": 1073779712,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v2b",
+                        "version": "v2a",
                         "block": "LPTIM_ADV"
                     },
                     "rcc": {
@@ -1975,7 +1975,7 @@
                     "address": 1140869120,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v2b",
+                        "version": "v2a",
                         "block": "LPTIM_ADV"
                     },
                     "rcc": {
@@ -2085,7 +2085,7 @@
                     "address": 1140870144,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v2b",
+                        "version": "v2a",
                         "block": "LPTIM_BASIC"
                     },
                     "rcc": {
@@ -2123,7 +2123,7 @@
                     "address": 1140871168,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v2b",
+                        "version": "v2a",
                         "block": "LPTIM_ADV"
                     },
                     "rcc": {
@@ -2193,7 +2193,7 @@
                     "address": 1140872192,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v2b",
+                        "version": "v2a",
                         "block": "LPTIM_ADV"
                     },
                     "rcc": {

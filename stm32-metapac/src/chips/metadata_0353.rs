@@ -3958,7 +3958,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "lptim",
-                version: "v1",
+                version: "v1b_g4",
                 block: "LPTIM",
                 ir: &lptim::REGISTERS,
             },
@@ -10681,7 +10681,7 @@
 #[path="../registers/hrtim_v2.rs"] pub mod hrtim;
 #[path="../registers/i2c_v2.rs"] pub mod i2c;
 #[path="../registers/iwdg_v2.rs"] pub mod iwdg;
-#[path="../registers/lptim_v1.rs"] pub mod lptim;
+#[path="../registers/lptim_v1b_g4.rs"] pub mod lptim;
 #[path="../registers/opamp_g4.rs"] pub mod opamp;
 #[path="../registers/pwr_g4.rs"] pub mod pwr;
 #[path="../registers/quadspi_v1.rs"] pub mod quadspi;

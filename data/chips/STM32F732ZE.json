@@ -1929,7 +1929,7 @@
                     "address": 1073751040,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v1",
+                        "version": "v1a",
                         "block": "LPTIM"
                     },
                     "rcc": {

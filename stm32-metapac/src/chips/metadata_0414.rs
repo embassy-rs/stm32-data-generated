@@ -4759,7 +4759,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "lptim",
-                version: "v1",
+                version: "v1b_h7",
                 block: "LPTIM",
                 ir: &lptim::REGISTERS,
             },
@@ -4867,7 +4867,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "lptim",
-                version: "v1",
+                version: "v1b_h7",
                 block: "LPTIM",
                 ir: &lptim::REGISTERS,
             },
@@ -4954,7 +4954,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "lptim",
-                version: "v1",
+                version: "v1b_h7",
                 block: "LPTIM",
                 ir: &lptim::REGISTERS,
             },
@@ -5003,7 +5003,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "lptim",
-                version: "v1",
+                version: "v1b_h7",
                 block: "LPTIM",
                 ir: &lptim::REGISTERS,
             },
@@ -5052,7 +5052,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "lptim",
-                version: "v1",
+                version: "v1b_h7",
                 block: "LPTIM",
                 ir: &lptim::REGISTERS,
             },
@@ -14017,7 +14017,7 @@
 #[path="../registers/i2c_v2.rs"] pub mod i2c;
 #[path="../registers/iwdg_v2.rs"] pub mod iwdg;
 #[path="../registers/jpeg_v1.rs"] pub mod jpeg;
-#[path="../registers/lptim_v1.rs"] pub mod lptim;
+#[path="../registers/lptim_v1b_h7.rs"] pub mod lptim;
 #[path="../registers/mdios_v1.rs"] pub mod mdios;
 #[path="../registers/opamp_h_v1.rs"] pub mod opamp;
 #[path="../registers/otg_v1.rs"] pub mod otg;

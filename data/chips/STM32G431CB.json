@@ -1508,7 +1508,7 @@
                     "address": 1073773568,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v1",
+                        "version": "v1b_g4",
                         "block": "LPTIM"
                     },
                     "rcc": {

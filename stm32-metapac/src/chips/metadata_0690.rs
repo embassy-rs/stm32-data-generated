@@ -1695,7 +1695,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "lptim",
-                version: "v2a",
+                version: "v1c",
                 block: "LPTIM",
                 ir: &lptim::REGISTERS,
             },
@@ -1772,7 +1772,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "lptim",
-                version: "v2a",
+                version: "v1c",
                 block: "LPTIM",
                 ir: &lptim::REGISTERS,
             },
@@ -1842,7 +1842,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "lptim",
-                version: "v2a",
+                version: "v1c",
                 block: "LPTIM",
                 ir: &lptim::REGISTERS,
             },
@@ -6419,7 +6419,7 @@
 #[path="../registers/i2c_v2.rs"] pub mod i2c;
 #[path="../registers/icache_v1_4crr.rs"] pub mod icache;
 #[path="../registers/iwdg_v2.rs"] pub mod iwdg;
-#[path="../registers/lptim_v2a.rs"] pub mod lptim;
+#[path="../registers/lptim_v1c.rs"] pub mod lptim;
 #[path="../registers/octospi_v2.rs"] pub mod octospi;
 #[path="../registers/pwr_l5.rs"] pub mod pwr;
 #[path="../registers/rcc_l5.rs"] pub mod rcc;

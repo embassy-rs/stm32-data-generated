@@ -1449,7 +1449,7 @@
                     "address": 1174422528,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v2b",
+                        "version": "v2a",
                         "block": "LPTIM_ADV"
                     },
                     "rcc": {
@@ -1559,7 +1559,7 @@
                     "address": 1073779712,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v2b",
+                        "version": "v2a",
                         "block": "LPTIM_ADV"
                     },
                     "rcc": {
@@ -1659,7 +1659,7 @@
                     "address": 1174423552,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v2b",
+                        "version": "v2a",
                         "block": "LPTIM_ADV"
                     },
                     "rcc": {
@@ -1756,7 +1756,7 @@
                     "address": 1174424576,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v2b",
+                        "version": "v2a",
                         "block": "LPTIM_BASIC"
                     },
                     "rcc": {

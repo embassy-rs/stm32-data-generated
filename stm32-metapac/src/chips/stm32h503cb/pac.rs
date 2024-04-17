@@ -109,7 +109,7 @@ pub use Interrupt as interrupt ;pub fn GPIO(n: usize) -> gpio::Gpio {
 #[path="../../peripherals/i3c_v1.rs"] pub mod i3c;
 #[path="../../peripherals/icache_v1_0crr.rs"] pub mod icache;
 #[path="../../peripherals/iwdg_v3.rs"] pub mod iwdg;
-#[path="../../peripherals/lptim_v2b.rs"] pub mod lptim;
+#[path="../../peripherals/lptim_v2a.rs"] pub mod lptim;
 #[path="../../peripherals/opamp_h_v2.rs"] pub mod opamp;
 #[path="../../peripherals/pwr_h50.rs"] pub mod pwr;
 #[path="../../peripherals/rcc_h50.rs"] pub mod rcc;

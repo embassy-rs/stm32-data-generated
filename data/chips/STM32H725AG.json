@@ -3566,7 +3566,7 @@
                     "address": 1073751040,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v1",
+                        "version": "v1b_h7",
                         "block": "LPTIM"
                     },
                     "rcc": {
@@ -3644,7 +3644,7 @@
                     "address": 1476404224,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v1",
+                        "version": "v1b_h7",
                         "block": "LPTIM"
                     },
                     "rcc": {
@@ -3707,7 +3707,7 @@
                     "address": 1476405248,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v1",
+                        "version": "v1b_h7",
                         "block": "LPTIM"
                     },
                     "rcc": {
@@ -3742,7 +3742,7 @@
                     "address": 1476406272,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v1",
+                        "version": "v1b_h7",
                         "block": "LPTIM"
                     },
                     "rcc": {
@@ -3777,7 +3777,7 @@
                     "address": 1476407296,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v1",
+                        "version": "v1b_h7",
                         "block": "LPTIM"
                     },
                     "rcc": {

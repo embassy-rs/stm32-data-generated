@@ -987,7 +987,7 @@
                     "address": 1073773568,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v2a",
+                        "version": "v1c",
                         "block": "LPTIM"
                     },
                     "rcc": {
@@ -1067,7 +1067,7 @@
                     "address": 1073779712,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v2a",
+                        "version": "v1c",
                         "block": "LPTIM"
                     },
                     "rcc": {
@@ -1127,7 +1127,7 @@
                     "address": 1073780736,
                     "registers": {
                         "kind": "lptim",
-                        "version": "v2a",
+                        "version": "v1c",
                         "block": "LPTIM"
                     },
                     "rcc": {

@@ -1270,7 +1270,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "lptim",
-                version: "v1",
+                version: "v1b",
                 block: "LPTIM",
                 ir: &lptim::REGISTERS,
             },
@@ -1350,7 +1350,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "lptim",
-                version: "v1",
+                version: "v1b",
                 block: "LPTIM",
                 ir: &lptim::REGISTERS,
             },
@@ -3601,7 +3601,7 @@
 #[path="../registers/i2c_v2.rs"] pub mod i2c;
 #[path="../registers/ipcc_v1.rs"] pub mod ipcc;
 #[path="../registers/iwdg_v2.rs"] pub mod iwdg;
-#[path="../registers/lptim_v1.rs"] pub mod lptim;
+#[path="../registers/lptim_v1b.rs"] pub mod lptim;
 #[path="../registers/pka_v1c.rs"] pub mod pka;
 #[path="../registers/pwr_wb55.rs"] pub mod pwr;
 #[path="../registers/quadspi_v1.rs"] pub mod quadspi;

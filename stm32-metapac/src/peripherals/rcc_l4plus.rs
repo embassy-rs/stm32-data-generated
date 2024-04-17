@@ -1624,7 +1624,7 @@ fn from (val : u8) -> Dfsdmsel { Dfsdmsel :: from_bits (val) } } impl From < Dfs
 fn from (val : Dfsdmsel) -> u8 { Dfsdmsel :: to_bits (val) } } # [repr (u8)]
 # [derive (Copy , Clone , Eq , PartialEq , Ord , PartialOrd)]
 pub enum Dsisel { # [doc = "DSI-PHY is selected as DSI byte lane clock source (usual case)"]
-DSIPHY = 0x0 , # [doc = "PLLDSICLK is selected as DSI byte lane clock source, used in case DSI PLL and DSIPHY are off (low-power mode)"]
+DSI_PHY = 0x0 , # [doc = "PLLDSICLK is selected as DSI byte lane clock source, used in case DSI PLL and DSIPHY are off (low-power mode)"]
 PLLSAI2_Q = 0x01 , } impl Dsisel { # [inline (always)]
 pub const fn from_bits (val : u8) -> Dsisel { unsafe { core :: mem :: transmute (val & 0x01) } } # [inline (always)]
 pub const fn to_bits (self) -> u8 { unsafe { core :: mem :: transmute (self) } } } impl From < u8 > for Dsisel { # [inline (always)]

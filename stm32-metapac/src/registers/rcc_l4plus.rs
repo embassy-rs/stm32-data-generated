@@ -5952,7 +5952,7 @@
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DSIPHY",
+                    name: "DSI_PHY",
                     description: Some(
                         "DSI-PHY is selected as DSI byte lane clock source (usual case)",
                     ),

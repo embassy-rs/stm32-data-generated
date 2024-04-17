@@ -1633,6 +1633,48 @@
                     ]
                 },
                 {
+                    "name": "DSIHOST",
+                    "address": 1342177280,
+                    "registers": {
+                        "kind": "dsihost",
+                        "version": "v1",
+                        "block": "DSIHOST"
+                    },
+                    "rcc": {
+                        "bus_clock": "PCLK3",
+                        "kernel_clock": {
+                            "register": "D1CCIPR",
+                            "field": "DSISEL"
+                        },
+                        "enable": {
+                            "register": "APB3ENR",
+                            "field": "DSIEN"
+                        },
+                        "reset": {
+                            "register": "APB3RSTR",
+                            "field": "DSIRST"
+                        }
+                    },
+                    "pins": [
+                        {
+                            "pin": "PA15",
+                            "signal": "TE",
+                            "af": 13
+                        },
+                        {
+                            "pin": "PB11",
+                            "signal": "TE",
+                            "af": 13
+                        }
+                    ],
+                    "interrupts": [
+                        {
+                            "signal": "GLOBAL",
+                            "interrupt": "DSI"
+                        }
+                    ]
+                },
+                {
                     "name": "ETH",
                     "address": 1073905664,
                     "registers": {
@@ -10654,6 +10696,48 @@
                         {
                             "signal": "OVR",
                             "interrupt": "DMAMUX2_OVR"
+                        }
+                    ]
+                },
+                {
+                    "name": "DSIHOST",
+                    "address": 1342177280,
+                    "registers": {
+                        "kind": "dsihost",
+                        "version": "v1",
+                        "block": "DSIHOST"
+                    },
+                    "rcc": {
+                        "bus_clock": "PCLK3",
+                        "kernel_clock": {
+                            "register": "D1CCIPR",
+                            "field": "DSISEL"
+                        },
+                        "enable": {
+                            "register": "APB3ENR",
+                            "field": "DSIEN"
+                        },
+                        "reset": {
+                            "register": "APB3RSTR",
+                            "field": "DSIRST"
+                        }
+                    },
+                    "pins": [
+                        {
+                            "pin": "PA15",
+                            "signal": "TE",
+                            "af": 13
+                        },
+                        {
+                            "pin": "PB11",
+                            "signal": "TE",
+                            "af": 13
+                        }
+                    ],
+                    "interrupts": [
+                        {
+                            "signal": "GLOBAL",
+                            "interrupt": "DSI"
                         }
                     ]
                 },

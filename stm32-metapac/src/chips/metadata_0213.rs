@@ -1343,6 +1343,65 @@
         ],
     },
     Peripheral {
+        name: "DSIHOST",
+        address: 0x40016c00,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "dsihost",
+                version: "v1",
+                block: "DSIHOST",
+                ir: &dsihost::REGISTERS,
+            },
+        ),
+        rcc: Some(
+            PeripheralRcc {
+                bus_clock: "PCLK2",
+                kernel_clock: Mux(
+                    PeripheralRccRegister {
+                        register: "DCKCFGR",
+                        field: "DSISEL",
+                    },
+                ),
+                enable: Some(
+                    PeripheralRccRegister {
+                        register: "APB2ENR",
+                        field: "DSIEN",
+                    },
+                ),
+                reset: Some(
+                    PeripheralRccRegister {
+                        register: "APB2RSTR",
+                        field: "DSIRST",
+                    },
+                ),
+                stop_mode: StopMode::Stop1,
+            },
+        ),
+        pins: &[
+            PeripheralPin {
+                pin: "PB11",
+                signal: "TE",
+                af: Some(
+                    13,
+                ),
+            },
+            PeripheralPin {
+                pin: "PJ2",
+                signal: "TE",
+                af: Some(
+                    13,
+                ),
+            },
+        ],
+        dma_channels: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "DSI",
+            },
+        ],
+    },
+    Peripheral {
         name: "ETH",
         address: 0x40028000,
         registers: Some(
@@ -9645,6 +9704,7 @@
 #[path="../registers/dcmi_v1.rs"] pub mod dcmi;
 #[path="../registers/dma_v2.rs"] pub mod dma;
 #[path="../registers/dma2d_v1.rs"] pub mod dma2d;
+#[path="../registers/dsihost_v1.rs"] pub mod dsihost;
 #[path="../registers/eth_v1b.rs"] pub mod eth;
 #[path="../registers/exti_v1.rs"] pub mod exti;
 #[path="../registers/flash_f4.rs"] pub mod flash;

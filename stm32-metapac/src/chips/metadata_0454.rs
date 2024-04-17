@@ -1888,6 +1888,65 @@
         ],
     },
     Peripheral {
+        name: "DSIHOST",
+        address: 0x50000000,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "dsihost",
+                version: "v1",
+                block: "DSIHOST",
+                ir: &dsihost::REGISTERS,
+            },
+        ),
+        rcc: Some(
+            PeripheralRcc {
+                bus_clock: "PCLK3",
+                kernel_clock: Mux(
+                    PeripheralRccRegister {
+                        register: "D1CCIPR",
+                        field: "DSISEL",
+                    },
+                ),
+                enable: Some(
+                    PeripheralRccRegister {
+                        register: "APB3ENR",
+                        field: "DSIEN",
+                    },
+                ),
+                reset: Some(
+                    PeripheralRccRegister {
+                        register: "APB3RSTR",
+                        field: "DSIRST",
+                    },
+                ),
+                stop_mode: StopMode::Stop1,
+            },
+        ),
+        pins: &[
+            PeripheralPin {
+                pin: "PA15",
+                signal: "TE",
+                af: Some(
+                    13,
+                ),
+            },
+            PeripheralPin {
+                pin: "PB11",
+                signal: "TE",
+                af: Some(
+                    13,
+                ),
+            },
+        ],
+        dma_channels: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "DSI",
+            },
+        ],
+    },
+    Peripheral {
         name: "ETH",
         address: 0x40028000,
         registers: Some(
@@ -12866,6 +12925,7 @@
 #[path="../registers/dma_v1.rs"] pub mod dma;
 #[path="../registers/dma2d_v2.rs"] pub mod dma2d;
 #[path="../registers/dmamux_v1.rs"] pub mod dmamux;
+#[path="../registers/dsihost_v1.rs"] pub mod dsihost;
 #[path="../registers/eth_v2.rs"] pub mod eth;
 #[path="../registers/exti_h7.rs"] pub mod exti;
 #[path="../registers/fdcanram_h7.rs"] pub mod fdcanram;

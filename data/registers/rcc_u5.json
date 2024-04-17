@@ -3741,8 +3741,8 @@
         "value": 0
       },
       {
-        "name": "DCLK",
-        "description": "DSI PHY PLL output selected",
+        "name": "DSI_PHY",
+        "description": "DSI PHY PLL output selected (formerly called DCLK, renamed to DSI_PHY to match other chip families)",
         "value": 1
       }
     ]

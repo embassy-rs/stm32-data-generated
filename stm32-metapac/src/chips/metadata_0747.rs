@@ -1431,6 +1431,72 @@
         ],
     },
     Peripheral {
+        name: "DSIHOST",
+        address: 0x40016c00,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "dsihost",
+                version: "u5",
+                block: "DSIHOST",
+                ir: &dsihost::REGISTERS,
+            },
+        ),
+        rcc: Some(
+            PeripheralRcc {
+                bus_clock: "PCLK2",
+                kernel_clock: Mux(
+                    PeripheralRccRegister {
+                        register: "CCIPR2",
+                        field: "DSISEL",
+                    },
+                ),
+                enable: Some(
+                    PeripheralRccRegister {
+                        register: "APB2ENR",
+                        field: "DSIEN",
+                    },
+                ),
+                reset: Some(
+                    PeripheralRccRegister {
+                        register: "APB2RSTR",
+                        field: "DSIRST",
+                    },
+                ),
+                stop_mode: StopMode::Stop1,
+            },
+        ),
+        pins: &[
+            PeripheralPin {
+                pin: "PF10",
+                signal: "TE",
+                af: Some(
+                    11,
+                ),
+            },
+            PeripheralPin {
+                pin: "PF11",
+                signal: "TE",
+                af: Some(
+                    11,
+                ),
+            },
+            PeripheralPin {
+                pin: "PG5",
+                signal: "TE",
+                af: Some(
+                    11,
+                ),
+            },
+        ],
+        dma_channels: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "DSI",
+            },
+        ],
+    },
+    Peripheral {
         name: "EXTI",
         address: 0x46022000,
         registers: Some(
@@ -13140,6 +13206,7 @@
 #[path="../registers/dcache_v1.rs"] pub mod dcache;
 #[path="../registers/dcmi_v1.rs"] pub mod dcmi;
 #[path="../registers/dma2d_v1.rs"] pub mod dma2d;
+#[path="../registers/dsihost_u5.rs"] pub mod dsihost;
 #[path="../registers/exti_u5.rs"] pub mod exti;
 #[path="../registers/fdcanram_v1.rs"] pub mod fdcanram;
 #[path="../registers/flash_u5.rs"] pub mod flash;

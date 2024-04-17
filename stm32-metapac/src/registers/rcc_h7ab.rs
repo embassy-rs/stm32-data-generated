@@ -7152,20 +7152,6 @@
                     ),
                 },
                 Field {
-                    name: "dsisel",
-                    description: Some(
-                        "kernel clock source selection",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
                     name: "sdmmcsel",
                     description: Some(
                         "SDMMC kernel clock source selection",

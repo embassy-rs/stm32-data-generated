@@ -2571,7 +2571,7 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "DSIPHY",
+        "name": "DSI_PHY",
         "description": "DSI-PHY is selected as DSI byte lane clock source (usual case)",
         "value": 0
       },

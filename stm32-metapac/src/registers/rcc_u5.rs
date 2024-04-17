@@ -8660,9 +8660,9 @@
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DCLK",
+                    name: "DSI_PHY",
                     description: Some(
-                        "DSI PHY PLL output selected",
+                        "DSI PHY PLL output selected (formerly called DCLK, renamed to DSI_PHY to match other chip families)",
                     ),
                     value: 1,
                 },

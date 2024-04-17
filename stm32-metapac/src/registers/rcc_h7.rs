@@ -10892,7 +10892,7 @@
                 Field {
                     name: "dsisel",
                     description: Some(
-                        "kernel clock source selection",
+                        "DSI clock source selection (not available on all chips)",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -10901,7 +10901,9 @@
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Dsisel",
+                    ),
                 },
                 Field {
                     name: "sdmmcsel",
@@ -12432,6 +12434,27 @@
                     name: "SYS",
                     description: Some(
                         "System clock selected as peripheral clock",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Dsisel",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DSI_PHY",
+                    description: Some(
+                        "DSI-PHY used as DSI byte lane clock source (usual case)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PLL2_Q",
+                    description: Some(
+                        "PLL2_Q used as DSI byte lane clock source, used in case DSI PLL and DSI-PHY are off (low power mode)",
                     ),
                     value: 1,
                 },

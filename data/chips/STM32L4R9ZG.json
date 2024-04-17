@@ -1393,6 +1393,58 @@
                     ]
                 },
                 {
+                    "name": "DSIHOST",
+                    "address": 1073835008,
+                    "registers": {
+                        "kind": "dsihost",
+                        "version": "v1",
+                        "block": "DSIHOST"
+                    },
+                    "rcc": {
+                        "bus_clock": "PCLK2",
+                        "kernel_clock": {
+                            "register": "CCIPR2",
+                            "field": "DSISEL"
+                        },
+                        "enable": {
+                            "register": "APB2ENR",
+                            "field": "DSIEN"
+                        },
+                        "reset": {
+                            "register": "APB2RSTR",
+                            "field": "DSIRST"
+                        }
+                    },
+                    "pins": [
+                        {
+                            "pin": "PB11",
+                            "signal": "TE",
+                            "af": 11
+                        },
+                        {
+                            "pin": "PB7",
+                            "signal": "TE",
+                            "af": 11
+                        },
+                        {
+                            "pin": "PF11",
+                            "signal": "TE",
+                            "af": 11
+                        },
+                        {
+                            "pin": "PG6",
+                            "signal": "TE",
+                            "af": 11
+                        }
+                    ],
+                    "interrupts": [
+                        {
+                            "signal": "GLOBAL",
+                            "interrupt": "DSI"
+                        }
+                    ]
+                },
+                {
                     "name": "EXTI",
                     "address": 1073808384,
                     "registers": {

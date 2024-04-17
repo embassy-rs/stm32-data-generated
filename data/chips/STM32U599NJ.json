@@ -1071,6 +1071,53 @@
                     ]
                 },
                 {
+                    "name": "DSIHOST",
+                    "address": 1073835008,
+                    "registers": {
+                        "kind": "dsihost",
+                        "version": "u5",
+                        "block": "DSIHOST"
+                    },
+                    "rcc": {
+                        "bus_clock": "PCLK2",
+                        "kernel_clock": {
+                            "register": "CCIPR2",
+                            "field": "DSISEL"
+                        },
+                        "enable": {
+                            "register": "APB2ENR",
+                            "field": "DSIEN"
+                        },
+                        "reset": {
+                            "register": "APB2RSTR",
+                            "field": "DSIRST"
+                        }
+                    },
+                    "pins": [
+                        {
+                            "pin": "PF10",
+                            "signal": "TE",
+                            "af": 11
+                        },
+                        {
+                            "pin": "PF11",
+                            "signal": "TE",
+                            "af": 11
+                        },
+                        {
+                            "pin": "PG5",
+                            "signal": "TE",
+                            "af": 11
+                        }
+                    ],
+                    "interrupts": [
+                        {
+                            "signal": "GLOBAL",
+                            "interrupt": "DSI"
+                        }
+                    ]
+                },
+                {
                     "name": "EXTI",
                     "address": 1174544384,
                     "registers": {

@@ -1300,6 +1300,43 @@
                     ]
                 },
                 {
+                    "name": "DSIHOST",
+                    "address": 1073835008,
+                    "registers": {
+                        "kind": "dsihost",
+                        "version": "v1",
+                        "block": "DSIHOST"
+                    },
+                    "rcc": {
+                        "bus_clock": "PCLK2",
+                        "kernel_clock": {
+                            "register": "DCKCFGR",
+                            "field": "DSISEL"
+                        },
+                        "enable": {
+                            "register": "APB2ENR",
+                            "field": "DSIEN"
+                        },
+                        "reset": {
+                            "register": "APB2RSTR",
+                            "field": "DSIRST"
+                        }
+                    },
+                    "pins": [
+                        {
+                            "pin": "PB11",
+                            "signal": "TE",
+                            "af": 13
+                        }
+                    ],
+                    "interrupts": [
+                        {
+                            "signal": "GLOBAL",
+                            "interrupt": "DSI"
+                        }
+                    ]
+                },
+                {
                     "name": "ETH",
                     "address": 1073905664,
                     "registers": {

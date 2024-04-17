@@ -1536,6 +1536,79 @@
         ],
     },
     Peripheral {
+        name: "DSIHOST",
+        address: 0x40016c00,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "dsihost",
+                version: "v1",
+                block: "DSIHOST",
+                ir: &dsihost::REGISTERS,
+            },
+        ),
+        rcc: Some(
+            PeripheralRcc {
+                bus_clock: "PCLK2",
+                kernel_clock: Mux(
+                    PeripheralRccRegister {
+                        register: "CCIPR2",
+                        field: "DSISEL",
+                    },
+                ),
+                enable: Some(
+                    PeripheralRccRegister {
+                        register: "APB2ENR",
+                        field: "DSIEN",
+                    },
+                ),
+                reset: Some(
+                    PeripheralRccRegister {
+                        register: "APB2RSTR",
+                        field: "DSIRST",
+                    },
+                ),
+                stop_mode: StopMode::Stop1,
+            },
+        ),
+        pins: &[
+            PeripheralPin {
+                pin: "PB11",
+                signal: "TE",
+                af: Some(
+                    11,
+                ),
+            },
+            PeripheralPin {
+                pin: "PB7",
+                signal: "TE",
+                af: Some(
+                    11,
+                ),
+            },
+            PeripheralPin {
+                pin: "PF11",
+                signal: "TE",
+                af: Some(
+                    11,
+                ),
+            },
+            PeripheralPin {
+                pin: "PG6",
+                signal: "TE",
+                af: Some(
+                    11,
+                ),
+            },
+        ],
+        dma_channels: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "DSI",
+            },
+        ],
+    },
+    Peripheral {
         name: "EXTI",
         address: 0x40010400,
         registers: Some(
@@ -9995,6 +10068,7 @@
 #[path="../registers/dcmi_v1.rs"] pub mod dcmi;
 #[path="../registers/dma2d_v1.rs"] pub mod dma2d;
 #[path="../registers/dmamux_v1.rs"] pub mod dmamux;
+#[path="../registers/dsihost_v1.rs"] pub mod dsihost;
 #[path="../registers/exti_v1.rs"] pub mod exti;
 #[path="../registers/flash_l4.rs"] pub mod flash;
 #[path="../registers/gfxmmu_v1.rs"] pub mod gfxmmu;

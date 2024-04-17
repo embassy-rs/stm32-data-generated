@@ -566,7 +566,7 @@
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "bf",
+                    name: "bf2",
                     description: Some(
                         "Blending Factor 2",
                     ),
@@ -576,16 +576,25 @@
                         },
                     ),
                     bit_size: 3,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 8,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: Some(
                         "Bf2",
+                    ),
+                },
+                Field {
+                    name: "bf1",
+                    description: Some(
+                        "Blending Factor 1",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Bf1",
                     ),
                 },
             ],
@@ -1674,6 +1683,27 @@
         },
     ],
     enums: &[
+        Enum {
+            name: "Bf1",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "CONSTANT",
+                    description: Some(
+                        "BF1 = constant alpha",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "PIXEL",
+                    description: Some(
+                        "BF1 = pixel alpha * constant alpha",
+                    ),
+                    value: 7,
+                },
+            ],
+        },
         Enum {
             name: "Bf2",
             description: None,

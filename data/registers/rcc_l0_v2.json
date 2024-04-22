@@ -155,7 +155,7 @@
         "bit_size": 1
       },
       {
-        "name": "TOUCHEN",
+        "name": "TSCEN",
         "description": "Touch Sensing clock enable",
         "bit_offset": 16,
         "bit_size": 1
@@ -196,7 +196,7 @@
         "bit_size": 1
       },
       {
-        "name": "TOUCHRST",
+        "name": "TSCRST",
         "description": "Touch Sensing reset",
         "bit_offset": 16,
         "bit_size": 1
@@ -243,7 +243,7 @@
         "bit_size": 1
       },
       {
-        "name": "TOUCHSMEN",
+        "name": "TSCSMEN",
         "description": "Touch Sensing clock enable during sleep mode",
         "bit_offset": 16,
         "bit_size": 1

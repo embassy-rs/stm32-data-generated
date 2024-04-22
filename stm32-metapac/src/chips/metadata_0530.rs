@@ -3218,7 +3218,27 @@
                 ir: &tsc::REGISTERS,
             },
         ),
-        rcc: None,
+        rcc: Some(
+            PeripheralRcc {
+                bus_clock: "HCLK1",
+                kernel_clock: Clock(
+                    "HCLK1",
+                ),
+                enable: Some(
+                    PeripheralRccRegister {
+                        register: "AHBENR",
+                        field: "TSCEN",
+                    },
+                ),
+                reset: Some(
+                    PeripheralRccRegister {
+                        register: "AHBRSTR",
+                        field: "TSCRST",
+                    },
+                ),
+                stop_mode: StopMode::Stop1,
+            },
+        ),
         pins: &[
             PeripheralPin {
                 pin: "PA0",

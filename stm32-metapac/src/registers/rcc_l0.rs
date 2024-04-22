@@ -404,7 +404,7 @@
                     enumm: None,
                 },
                 Field {
-                    name: "touchen",
+                    name: "tscen",
                     description: Some(
                         "Touch Sensing clock enable",
                     ),
@@ -498,7 +498,7 @@
                     enumm: None,
                 },
                 Field {
-                    name: "touchrst",
+                    name: "tscrst",
                     description: Some(
                         "Touch Sensing reset",
                     ),
@@ -606,7 +606,7 @@
                     enumm: None,
                 },
                 Field {
-                    name: "touchsmen",
+                    name: "tscsmen",
                     description: Some(
                         "Touch Sensing clock enable during sleep mode",
                     ),

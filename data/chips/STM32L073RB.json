@@ -2601,6 +2601,18 @@
                         "version": "v3",
                         "block": "TSC"
                     },
+                    "rcc": {
+                        "bus_clock": "HCLK1",
+                        "kernel_clock": "HCLK1",
+                        "enable": {
+                            "register": "AHBENR",
+                            "field": "TSCEN"
+                        },
+                        "reset": {
+                            "register": "AHBRSTR",
+                            "field": "TSCRST"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA0",

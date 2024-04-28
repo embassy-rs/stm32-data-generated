@@ -133,9 +133,16 @@
         ],
     },
     Peripheral {
-        name: "ADC_COMMON",
+        name: "ADC1_COMMON",
         address: 0x40012400,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "adccommon",
+                version: "f3",
+                block: "ADC_COMMON",
+                ir: &adccommon::REGISTERS,
+            },
+        ),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -274,7 +281,12 @@
         ),
         pins: &[],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "CEC",
+            },
+        ],
     },
     Peripheral {
         name: "COMP1",
@@ -5942,6 +5954,7 @@
     },
 ];
             #[path="../registers/adc_f3_v2.rs"] pub mod adc;
+#[path="../registers/adccommon_f3.rs"] pub mod adccommon;
 #[path="../registers/bdma_v1.rs"] pub mod bdma;
 #[path="../registers/can_bxcan.rs"] pub mod can;
 #[path="../registers/cec_v2.rs"] pub mod cec;

@@ -101,9 +101,16 @@
         ],
     },
     Peripheral {
-        name: "ADC_COMMON",
+        name: "ADC1_COMMON",
         address: 0x40012700,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "adccommon",
+                version: "v3",
+                block: "ADC_COMMON",
+                ir: &adccommon::REGISTERS,
+            },
+        ),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -2669,7 +2676,8 @@
         ),
     },
 ];
-            #[path="../registers/bdma_v1.rs"] pub mod bdma;
+            #[path="../registers/adccommon_v3.rs"] pub mod adccommon;
+#[path="../registers/bdma_v1.rs"] pub mod bdma;
 #[path="../registers/crc_v3.rs"] pub mod crc;
 #[path="../registers/dbgmcu_wb.rs"] pub mod dbgmcu;
 #[path="../registers/dmamux_v1.rs"] pub mod dmamux;

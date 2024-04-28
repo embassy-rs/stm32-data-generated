@@ -107,6 +107,15 @@
                     ]
                 },
                 {
+                    "name": "ADC4_COMMON",
+                    "address": 1174541064,
+                    "registers": {
+                        "kind": "adccommon",
+                        "version": "v3",
+                        "block": "ADC_COMMON"
+                    }
+                },
+                {
                     "name": "AES",
                     "address": 1108082688,
                     "registers": {

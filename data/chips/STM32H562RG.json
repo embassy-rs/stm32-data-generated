@@ -185,6 +185,15 @@
                     ]
                 },
                 {
+                    "name": "ADC12_COMMON",
+                    "address": 1107460864,
+                    "registers": {
+                        "kind": "adccommon",
+                        "version": "h5",
+                        "block": "ADC_COMMON"
+                    }
+                },
+                {
                     "name": "ADC2",
                     "address": 1107460352,
                     "registers": {
@@ -325,15 +334,6 @@
                     ]
                 },
                 {
-                    "name": "ADC_COMMON",
-                    "address": 1107460864,
-                    "registers": {
-                        "kind": "adccommon",
-                        "version": "h5",
-                        "block": "ADC_COMMON"
-                    }
-                },
-                {
                     "name": "CEC",
                     "address": 1073770496,
                     "registers": {
@@ -355,7 +355,13 @@
                             "register": "APB1LRSTR",
                             "field": "CECRST"
                         }
-                    }
+                    },
+                    "interrupts": [
+                        {
+                            "signal": "GLOBAL",
+                            "interrupt": "CEC"
+                        }
+                    ]
                 },
                 {
                     "name": "CORDIC",

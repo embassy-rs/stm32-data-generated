@@ -216,7 +216,7 @@
             "name": "cm4",
             "peripherals": [
                 {
-                    "name": "ADC",
+                    "name": "ADC1",
                     "address": 1073816576,
                     "registers": {
                         "kind": "adc",
@@ -291,7 +291,7 @@
                     ]
                 },
                 {
-                    "name": "ADC_COMMON",
+                    "name": "ADC1_COMMON",
                     "address": 1073817352,
                     "registers": {
                         "kind": "adccommon",
@@ -1744,6 +1744,12 @@
                             "pin": "PA7",
                             "signal": "MOSI",
                             "af": 13
+                        }
+                    ],
+                    "interrupts": [
+                        {
+                            "signal": "RADIO",
+                            "interrupt": "SUBGHZ_Radio"
                         }
                     ],
                     "dma_channels": [

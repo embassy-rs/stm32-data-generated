@@ -445,6 +445,15 @@
                     ]
                 },
                 {
+                    "name": "ADC123_COMMON",
+                    "address": 1073816320,
+                    "registers": {
+                        "kind": "adccommon",
+                        "version": "v2",
+                        "block": "ADC_COMMON"
+                    }
+                },
+                {
                     "name": "ADC2",
                     "address": 1073815808,
                     "registers": {
@@ -647,15 +656,6 @@
                     ]
                 },
                 {
-                    "name": "ADC_COMMON",
-                    "address": 1073816320,
-                    "registers": {
-                        "kind": "adccommon",
-                        "version": "v2",
-                        "block": "ADC_COMMON"
-                    }
-                },
-                {
                     "name": "CAN1",
                     "address": 1073767424,
                     "registers": {
@@ -819,7 +819,13 @@
                             "register": "APB1RSTR",
                             "field": "CECRST"
                         }
-                    }
+                    },
+                    "interrupts": [
+                        {
+                            "signal": "GLOBAL",
+                            "interrupt": "CEC"
+                        }
+                    ]
                 },
                 {
                     "name": "CRC",

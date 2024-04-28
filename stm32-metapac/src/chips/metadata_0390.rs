@@ -204,6 +204,22 @@
         ],
     },
     Peripheral {
+        name: "ADC12_COMMON",
+        address: 0x42028300,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "adccommon",
+                version: "h5",
+                block: "ADC_COMMON",
+                ir: &adccommon::REGISTERS,
+            },
+        ),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+    },
+    Peripheral {
         name: "ADC2",
         address: 0x42028100,
         registers: Some(
@@ -407,22 +423,6 @@
         ],
     },
     Peripheral {
-        name: "ADC_COMMON",
-        address: 0x42028300,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "adccommon",
-                version: "h5",
-                block: "ADC_COMMON",
-                ir: &adccommon::REGISTERS,
-            },
-        ),
-        rcc: None,
-        pins: &[],
-        dma_channels: &[],
-        interrupts: &[],
-    },
-    Peripheral {
         name: "AES",
         address: 0x420c0000,
         registers: Some(
@@ -545,7 +545,12 @@
         ),
         pins: &[],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "CEC",
+            },
+        ],
     },
     Peripheral {
         name: "CORDIC",

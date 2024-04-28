@@ -335,6 +335,15 @@
                     ]
                 },
                 {
+                    "name": "ADC12_COMMON",
+                    "address": 1342178048,
+                    "registers": {
+                        "kind": "adccommon",
+                        "version": "v4",
+                        "block": "ADC_COMMON"
+                    }
+                },
+                {
                     "name": "ADC2",
                     "address": 1342177536,
                     "registers": {
@@ -489,6 +498,15 @@
                     ]
                 },
                 {
+                    "name": "ADC345_COMMON",
+                    "address": 1342179072,
+                    "registers": {
+                        "kind": "adccommon",
+                        "version": "v4",
+                        "block": "ADC_COMMON"
+                    }
+                },
+                {
                     "name": "ADC4",
                     "address": 1342178560,
                     "registers": {
@@ -585,15 +603,6 @@
                             "request": 39
                         }
                     ]
-                },
-                {
-                    "name": "ADC_COMMON",
-                    "address": 1342178048,
-                    "registers": {
-                        "kind": "adccommon",
-                        "version": "v4",
-                        "block": "ADC_COMMON"
-                    }
                 },
                 {
                     "name": "AES",

@@ -385,6 +385,10 @@
                     ]
                 },
                 {
+                    "name": "ADC12_COMMON",
+                    "address": 1073816576
+                },
+                {
                     "name": "ADC2",
                     "address": 1073817600,
                     "registers": {
@@ -563,10 +567,6 @@
                             "channel": "DMA2_CH5"
                         }
                     ]
-                },
-                {
-                    "name": "ADC_COMMON",
-                    "address": 1073816576
                 },
                 {
                     "name": "AFIO",

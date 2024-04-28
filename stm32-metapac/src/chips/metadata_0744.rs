@@ -136,6 +136,15 @@
         ],
     },
     Peripheral {
+        name: "ADC12_COMMON",
+        address: 0x42028300,
+        registers: None,
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+    },
+    Peripheral {
         name: "ADC2",
         address: 0x42028100,
         registers: None,
@@ -384,8 +393,8 @@
         ],
     },
     Peripheral {
-        name: "ADC_COMMON",
-        address: 0x42028300,
+        name: "ADC4_COMMON",
+        address: 0x46021300,
         registers: None,
         rcc: None,
         pins: &[],

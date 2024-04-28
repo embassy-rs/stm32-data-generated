@@ -96,6 +96,22 @@
         ],
     },
     Peripheral {
+        name: "ADC4_COMMON",
+        address: 0x46021308,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "adccommon",
+                version: "v3",
+                block: "ADC_COMMON",
+                ir: &adccommon::REGISTERS,
+            },
+        ),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+    },
+    Peripheral {
         name: "AES",
         address: 0x420c0000,
         registers: Some(
@@ -3793,7 +3809,8 @@
         dmamux_channel: None,
     },
 ];
-            #[path="../registers/aes_v3b.rs"] pub mod aes;
+            #[path="../registers/adccommon_v3.rs"] pub mod adccommon;
+#[path="../registers/aes_v3b.rs"] pub mod aes;
 #[path="../registers/crc_v3.rs"] pub mod crc;
 #[path="../registers/dbgmcu_wba.rs"] pub mod dbgmcu;
 #[path="../registers/exti_l5.rs"] pub mod exti;

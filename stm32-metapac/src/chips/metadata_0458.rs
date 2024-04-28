@@ -208,6 +208,22 @@
         ],
     },
     Peripheral {
+        name: "ADC12_COMMON",
+        address: 0x40022300,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "adccommon",
+                version: "v4",
+                block: "ADC_COMMON",
+                ir: &adccommon::REGISTERS,
+            },
+        ),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+    },
+    Peripheral {
         name: "ADC2",
         address: 0x40022100,
         registers: Some(
@@ -619,22 +635,6 @@
         interrupts: &[],
     },
     Peripheral {
-        name: "ADC_COMMON",
-        address: 0x40022300,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "adccommon",
-                version: "v4",
-                block: "ADC_COMMON",
-                ir: &adccommon::REGISTERS,
-            },
-        ),
-        rcc: None,
-        pins: &[],
-        dma_channels: &[],
-        interrupts: &[],
-    },
-    Peripheral {
         name: "BDMA",
         address: 0x58025400,
         registers: Some(
@@ -740,7 +740,12 @@
         ),
         pins: &[],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "CEC",
+            },
+        ],
     },
     Peripheral {
         name: "COMP1",
@@ -4075,7 +4080,7 @@
         ],
     },
     Peripheral {
-        name: "HRTIM",
+        name: "HRTIM1",
         address: 0x40017400,
         registers: Some(
             PeripheralRegisters {
@@ -4089,7 +4094,7 @@
             PeripheralRcc {
                 bus_clock: "PCLK2",
                 kernel_clock: Clock(
-                    "PCLK2",
+                    "PCLK2_TIM",
                 ),
                 enable: Some(
                     PeripheralRccRegister {

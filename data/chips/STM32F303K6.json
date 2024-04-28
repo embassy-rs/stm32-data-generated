@@ -369,6 +369,15 @@
                     ]
                 },
                 {
+                    "name": "ADC12_COMMON",
+                    "address": 1342178048,
+                    "registers": {
+                        "kind": "adccommon",
+                        "version": "f3",
+                        "block": "ADC_COMMON"
+                    }
+                },
+                {
                     "name": "ADC2",
                     "address": 1342177536,
                     "registers": {
@@ -422,15 +431,6 @@
                             "channel": "DMA1_CH4"
                         }
                     ]
-                },
-                {
-                    "name": "ADC_COMMON",
-                    "address": 1342178048,
-                    "registers": {
-                        "kind": "adccommon",
-                        "version": "f3",
-                        "block": "ADC_COMMON"
-                    }
                 },
                 {
                     "name": "CAN",

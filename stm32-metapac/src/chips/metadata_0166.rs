@@ -111,7 +111,7 @@
         ],
     },
     Peripheral {
-        name: "ADC_COMMON",
+        name: "ADC1_COMMON",
         address: 0x40012300,
         registers: Some(
             PeripheralRegisters {

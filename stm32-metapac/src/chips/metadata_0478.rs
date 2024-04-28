@@ -178,6 +178,22 @@
         ],
     },
     Peripheral {
+        name: "ADC12_COMMON",
+        address: 0x40022300,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "adccommon",
+                version: "v4",
+                block: "ADC_COMMON",
+                ir: &adccommon::REGISTERS,
+            },
+        ),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+    },
+    Peripheral {
         name: "ADC2",
         address: 0x40022100,
         registers: Some(
@@ -323,22 +339,6 @@
                 interrupt: "ADC",
             },
         ],
-    },
-    Peripheral {
-        name: "ADC_COMMON",
-        address: 0x40022300,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "adccommon",
-                version: "v4",
-                block: "ADC_COMMON",
-                ir: &adccommon::REGISTERS,
-            },
-        ),
-        rcc: None,
-        pins: &[],
-        dma_channels: &[],
-        interrupts: &[],
     },
     Peripheral {
         name: "BDMA1",
@@ -515,7 +515,12 @@
         ),
         pins: &[],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "CEC",
+            },
+        ],
     },
     Peripheral {
         name: "COMP1",

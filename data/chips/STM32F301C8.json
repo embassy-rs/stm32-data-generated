@@ -371,7 +371,7 @@
                     ]
                 },
                 {
-                    "name": "ADC_COMMON",
+                    "name": "ADC1_COMMON",
                     "address": 1342178048,
                     "registers": {
                         "kind": "adccommon",

@@ -133,7 +133,7 @@
         ],
     },
     Peripheral {
-        name: "ADC_COMMON",
+        name: "ADC1_COMMON",
         address: 0x40012400,
         registers: None,
         rcc: None,
@@ -247,7 +247,12 @@
         ),
         pins: &[],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "CEC",
+            },
+        ],
     },
     Peripheral {
         name: "CRC",

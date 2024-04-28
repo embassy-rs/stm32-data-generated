@@ -170,6 +170,10 @@
                     ]
                 },
                 {
+                    "name": "ADC12_COMMON",
+                    "address": 1107460864
+                },
+                {
                     "name": "ADC2",
                     "address": 1107460352,
                     "rcc": {
@@ -347,8 +351,8 @@
                     ]
                 },
                 {
-                    "name": "ADC_COMMON",
-                    "address": 1107460864
+                    "name": "ADC4_COMMON",
+                    "address": 1174541056
                 },
                 {
                     "name": "ADF1",

@@ -441,6 +441,15 @@
                     ]
                 },
                 {
+                    "name": "ADC12_COMMON",
+                    "address": 1073881856,
+                    "registers": {
+                        "kind": "adccommon",
+                        "version": "v4",
+                        "block": "ADC_COMMON"
+                    }
+                },
+                {
                     "name": "ADC2",
                     "address": 1073881344,
                     "registers": {
@@ -733,15 +742,6 @@
                     }
                 },
                 {
-                    "name": "ADC_COMMON",
-                    "address": 1073881856,
-                    "registers": {
-                        "kind": "adccommon",
-                        "version": "v4",
-                        "block": "ADC_COMMON"
-                    }
-                },
-                {
                     "name": "BDMA",
                     "address": 1476547584,
                     "registers": {
@@ -818,7 +818,13 @@
                             "register": "APB1LRSTR",
                             "field": "CECRST"
                         }
-                    }
+                    },
+                    "interrupts": [
+                        {
+                            "signal": "GLOBAL",
+                            "interrupt": "CEC"
+                        }
+                    ]
                 },
                 {
                     "name": "COMP1",

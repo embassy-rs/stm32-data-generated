@@ -108,6 +108,22 @@
         ],
     },
     Peripheral {
+        name: "ADC12_COMMON",
+        address: 0x50000300,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "adccommon",
+                version: "v4",
+                block: "ADC_COMMON",
+                ir: &adccommon::REGISTERS,
+            },
+        ),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+    },
+    Peripheral {
         name: "ADC2",
         address: 0x50000100,
         registers: Some(
@@ -292,6 +308,22 @@
         ],
     },
     Peripheral {
+        name: "ADC345_COMMON",
+        address: 0x50000700,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "adccommon",
+                version: "v4",
+                block: "ADC_COMMON",
+                ir: &adccommon::REGISTERS,
+            },
+        ),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+    },
+    Peripheral {
         name: "ADC4",
         address: 0x50000500,
         registers: Some(
@@ -429,22 +461,6 @@
                 interrupt: "ADC5",
             },
         ],
-    },
-    Peripheral {
-        name: "ADC_COMMON",
-        address: 0x50000300,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "adccommon",
-                version: "v4",
-                block: "ADC_COMMON",
-                ir: &adccommon::REGISTERS,
-            },
-        ),
-        rcc: None,
-        pins: &[],
-        dma_channels: &[],
-        interrupts: &[],
     },
     Peripheral {
         name: "AES",

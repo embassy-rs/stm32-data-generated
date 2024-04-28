@@ -516,6 +516,15 @@
                     ]
                 },
                 {
+                    "name": "ADC123_COMMON",
+                    "address": 1342440192,
+                    "registers": {
+                        "kind": "adccommon",
+                        "version": "v3",
+                        "block": "ADC_COMMON"
+                    }
+                },
+                {
                     "name": "ADC2",
                     "address": 1342439680,
                     "registers": {
@@ -682,15 +691,6 @@
                             "request": 0
                         }
                     ]
-                },
-                {
-                    "name": "ADC_COMMON",
-                    "address": 1342440192,
-                    "registers": {
-                        "kind": "adccommon",
-                        "version": "v3",
-                        "block": "ADC_COMMON"
-                    }
                 },
                 {
                     "name": "CAN1",

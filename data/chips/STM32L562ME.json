@@ -379,6 +379,15 @@
                     ]
                 },
                 {
+                    "name": "ADC12_COMMON",
+                    "address": 1107460864,
+                    "registers": {
+                        "kind": "adccommon",
+                        "version": "v3",
+                        "block": "ADC_COMMON"
+                    }
+                },
+                {
                     "name": "ADC2",
                     "address": 1107460352,
                     "registers": {
@@ -476,15 +485,6 @@
                             "request": 6
                         }
                     ]
-                },
-                {
-                    "name": "ADC_COMMON",
-                    "address": 1107460864,
-                    "registers": {
-                        "kind": "adccommon",
-                        "version": "v3",
-                        "block": "ADC_COMMON"
-                    }
                 },
                 {
                     "name": "AES",

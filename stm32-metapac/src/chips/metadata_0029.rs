@@ -1,7 +1,7 @@
 
                 pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
-        name: "ADC",
+        name: "ADC1",
         address: 0x40012400,
         registers: Some(
             PeripheralRegisters {
@@ -107,7 +107,7 @@
         ],
     },
     Peripheral {
-        name: "ADC_COMMON",
+        name: "ADC1_COMMON",
         address: 0x40012708,
         registers: None,
         rcc: None,
@@ -152,7 +152,12 @@
         ),
         pins: &[],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "CEC_CAN",
+            },
+        ],
     },
     Peripheral {
         name: "CRC",

@@ -103,6 +103,15 @@
         ],
     },
     Peripheral {
+        name: "ADC12_COMMON",
+        address: 0x40012400,
+        registers: None,
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+    },
+    Peripheral {
         name: "ADC2",
         address: 0x40012800,
         registers: Some(
@@ -193,15 +202,6 @@
                 interrupt: "ADC1_2",
             },
         ],
-    },
-    Peripheral {
-        name: "ADC_COMMON",
-        address: 0x40012400,
-        registers: None,
-        rcc: None,
-        pins: &[],
-        dma_channels: &[],
-        interrupts: &[],
     },
     Peripheral {
         name: "AFIO",

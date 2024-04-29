@@ -159,11 +159,6 @@
                 af: None,
             },
             PeripheralPin {
-                pin: "PF10",
-                signal: "IN31",
-                af: None,
-            },
-            PeripheralPin {
                 pin: "PF11",
                 signal: "IN1b",
                 af: None,
@@ -448,11 +443,6 @@
                 af: None,
             },
             PeripheralPin {
-                pin: "PF10",
-                signal: "INP",
-                af: None,
-            },
-            PeripheralPin {
                 pin: "PF7",
                 signal: "INP",
                 af: None,
@@ -581,7 +571,7 @@
         interrupts: &[],
     },
     Peripheral {
-        name: "DAC",
+        name: "DAC1",
         address: 0x40007400,
         registers: Some(
             PeripheralRegisters {
@@ -1847,11 +1837,6 @@
                 af: None,
             },
             PeripheralPin {
-                pin: "PA2",
-                signal: "VINM",
-                af: None,
-            },
-            PeripheralPin {
                 pin: "PA3",
                 signal: "VOUT",
                 af: None,
@@ -1869,11 +1854,6 @@
             PeripheralPin {
                 pin: "PA6",
                 signal: "VINP",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PA7",
-                signal: "VINM",
                 af: None,
             },
             PeripheralPin {

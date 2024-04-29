@@ -375,6 +375,11 @@
                             "signal": "ADC4",
                             "dma": "GPDMA1",
                             "request": 1
+                        },
+                        {
+                            "signal": "ADC4",
+                            "dma": "LPDMA1",
+                            "request": 7
                         }
                     ]
                 },
@@ -454,6 +459,11 @@
                         }
                     ],
                     "dma_channels": [
+                        {
+                            "signal": "FLT0",
+                            "dma": "LPDMA1",
+                            "request": 10
+                        },
                         {
                             "signal": "FLT0",
                             "dma": "GPDMA1",
@@ -707,6 +717,16 @@
                             "signal": "CH2",
                             "dma": "GPDMA1",
                             "request": 3
+                        },
+                        {
+                            "signal": "CH1",
+                            "dma": "LPDMA1",
+                            "request": 8
+                        },
+                        {
+                            "signal": "CH2",
+                            "dma": "LPDMA1",
+                            "request": 9
                         }
                     ]
                 },
@@ -2314,6 +2334,21 @@
                     "dma_channels": [
                         {
                             "signal": "RX",
+                            "dma": "LPDMA1",
+                            "request": 4
+                        },
+                        {
+                            "signal": "TX",
+                            "dma": "LPDMA1",
+                            "request": 5
+                        },
+                        {
+                            "signal": "EVC",
+                            "dma": "LPDMA1",
+                            "request": 6
+                        },
+                        {
+                            "signal": "RX",
                             "dma": "GPDMA1",
                             "request": 18
                         },
@@ -2764,6 +2799,21 @@
                     "dma_channels": [
                         {
                             "signal": "IC1",
+                            "dma": "LPDMA1",
+                            "request": 11
+                        },
+                        {
+                            "signal": "IC2",
+                            "dma": "LPDMA1",
+                            "request": 12
+                        },
+                        {
+                            "signal": "UE",
+                            "dma": "LPDMA1",
+                            "request": 13
+                        },
+                        {
+                            "signal": "IC1",
                             "dma": "GPDMA1",
                             "request": 105
                         },
@@ -3026,6 +3076,21 @@
                     "dma_channels": [
                         {
                             "signal": "IC1",
+                            "dma": "LPDMA1",
+                            "request": 14
+                        },
+                        {
+                            "signal": "IC2",
+                            "dma": "LPDMA1",
+                            "request": 15
+                        },
+                        {
+                            "signal": "UE",
+                            "dma": "LPDMA1",
+                            "request": 16
+                        },
+                        {
+                            "signal": "IC1",
                             "dma": "GPDMA1",
                             "request": 111
                         },
@@ -3219,6 +3284,16 @@
                         }
                     ],
                     "dma_channels": [
+                        {
+                            "signal": "RX",
+                            "dma": "LPDMA1",
+                            "request": 0
+                        },
+                        {
+                            "signal": "TX",
+                            "dma": "LPDMA1",
+                            "request": 1
+                        },
                         {
                             "signal": "RX",
                             "dma": "GPDMA1",
@@ -5651,6 +5726,16 @@
                         }
                     ],
                     "dma_channels": [
+                        {
+                            "signal": "RX",
+                            "dma": "LPDMA1",
+                            "request": 2
+                        },
+                        {
+                            "signal": "TX",
+                            "dma": "LPDMA1",
+                            "request": 3
+                        },
                         {
                             "signal": "RX",
                             "dma": "GPDMA1",
@@ -8770,6 +8855,30 @@
                 }
             ],
             "dma_channels": [
+                {
+                    "name": "LPDMA1_CH0",
+                    "dma": "LPDMA1",
+                    "channel": 0,
+                    "supports_2d": false
+                },
+                {
+                    "name": "LPDMA1_CH1",
+                    "dma": "LPDMA1",
+                    "channel": 1,
+                    "supports_2d": false
+                },
+                {
+                    "name": "LPDMA1_CH2",
+                    "dma": "LPDMA1",
+                    "channel": 2,
+                    "supports_2d": false
+                },
+                {
+                    "name": "LPDMA1_CH3",
+                    "dma": "LPDMA1",
+                    "channel": 3,
+                    "supports_2d": false
+                },
                 {
                     "name": "GPDMA1_CH0",
                     "dma": "GPDMA1",

@@ -807,7 +807,7 @@
                     }
                 },
                 {
-                    "name": "DAC",
+                    "name": "DAC1",
                     "address": 1073771520,
                     "registers": {
                         "kind": "dac",

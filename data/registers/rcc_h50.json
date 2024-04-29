@@ -995,7 +995,7 @@
     "description": "RCC APB3 peripheral clock register",
     "fields": [
       {
-        "name": "SBSEN",
+        "name": "SYSCFGEN",
         "description": "SBS clock enable\r Set and reset by software.",
         "bit_offset": 1,
         "bit_size": 1
@@ -1036,7 +1036,7 @@
     "description": "RCC APB3 sleep clock register",
     "fields": [
       {
-        "name": "SBSLPEN",
+        "name": "SYSCFGLPEN",
         "description": "SBS clock enable during sleep mode\r Set and reset by software.",
         "bit_offset": 1,
         "bit_size": 1
@@ -1077,7 +1077,7 @@
     "description": "RCC APB3 peripheral reset register",
     "fields": [
       {
-        "name": "SBSRST",
+        "name": "SYSCFGRST",
         "description": "SBS block reset\r Set and reset by software.",
         "bit_offset": 1,
         "bit_size": 1

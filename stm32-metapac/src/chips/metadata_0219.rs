@@ -722,7 +722,7 @@
         ],
     },
     Peripheral {
-        name: "DAC",
+        name: "DAC1",
         address: 0x40007400,
         registers: Some(
             PeripheralRegisters {

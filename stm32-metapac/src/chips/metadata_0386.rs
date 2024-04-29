@@ -178,7 +178,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     0,
@@ -189,7 +189,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     0,
@@ -397,7 +397,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     1,
@@ -408,7 +408,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     1,
@@ -419,92 +419,6 @@
             PeripheralInterrupt {
                 signal: "GLOBAL",
                 interrupt: "ADC2",
-            },
-        ],
-    },
-    Peripheral {
-        name: "AES",
-        address: 0x420c0000,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "aes",
-                version: "v3b",
-                block: "AES",
-                ir: &aes::REGISTERS,
-            },
-        ),
-        rcc: Some(
-            PeripheralRcc {
-                bus_clock: "HCLK2",
-                kernel_clock: Clock(
-                    "HCLK2",
-                ),
-                enable: Some(
-                    PeripheralRccRegister {
-                        register: "AHB2ENR",
-                        field: "AESEN",
-                    },
-                ),
-                reset: Some(
-                    PeripheralRccRegister {
-                        register: "AHB2RSTR",
-                        field: "AESRST",
-                    },
-                ),
-                stop_mode: StopMode::Stop1,
-            },
-        ),
-        pins: &[],
-        dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "OUT",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    109,
-                ),
-            },
-            PeripheralDmaChannel {
-                signal: "OUT",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA1",
-                ),
-                request: Some(
-                    109,
-                ),
-            },
-            PeripheralDmaChannel {
-                signal: "IN",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    110,
-                ),
-            },
-            PeripheralDmaChannel {
-                signal: "IN",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA1",
-                ),
-                request: Some(
-                    110,
-                ),
-            },
-        ],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "AES",
             },
         ],
     },
@@ -591,7 +505,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     114,
@@ -602,7 +516,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     114,
@@ -613,7 +527,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     115,
@@ -624,7 +538,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     115,
@@ -771,7 +685,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     2,
@@ -782,7 +696,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     2,
@@ -793,7 +707,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     3,
@@ -804,7 +718,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     3,
@@ -1247,13 +1161,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PH9",
-                signal: "D0",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
                 pin: "PI0",
                 signal: "D13",
                 af: Some(
@@ -1289,13 +1196,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PI5",
-                signal: "VSYNC",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
                 pin: "PI6",
                 signal: "D6",
                 af: Some(
@@ -1316,7 +1216,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     108,
@@ -1327,7 +1227,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     108,
@@ -1646,13 +1546,6 @@
                     11,
                 ),
             },
-            PeripheralPin {
-                pin: "PI10",
-                signal: "RX_ER",
-                af: Some(
-                    11,
-                ),
-            },
         ],
         dma_channels: &[],
         interrupts: &[
@@ -1867,20 +1760,6 @@
                     9,
                 ),
             },
-            PeripheralPin {
-                pin: "PI10",
-                signal: "RX",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
-                pin: "PI9",
-                signal: "RX",
-                af: Some(
-                    9,
-                ),
-            },
         ],
         dma_channels: &[],
         interrupts: &[
@@ -2077,7 +1956,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     116,
@@ -2088,7 +1967,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     116,
@@ -2099,7 +1978,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     117,
@@ -2110,7 +1989,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     117,
@@ -3409,7 +3288,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     111,
@@ -3420,7 +3299,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     111,
@@ -3512,7 +3391,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     12,
@@ -3523,7 +3402,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     12,
@@ -3534,7 +3413,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     13,
@@ -3545,7 +3424,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     13,
@@ -3683,7 +3562,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     15,
@@ -3694,7 +3573,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     15,
@@ -3705,7 +3584,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     16,
@@ -3716,7 +3595,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     16,
@@ -3805,26 +3684,8 @@
                     4,
                 ),
             },
-            PeripheralPin {
-                pin: "PH9",
-                signal: "SMBA",
-                af: Some(
-                    4,
-                ),
-            },
         ],
         dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "RX",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    18,
-                ),
-            },
             PeripheralDmaChannel {
                 signal: "RX",
                 channel: None,
@@ -3837,11 +3698,22 @@
                 ),
             },
             PeripheralDmaChannel {
-                signal: "TX",
+                signal: "RX",
                 channel: None,
                 dmamux: None,
                 dma: Some(
                     "GPDMA2",
+                ),
+                request: Some(
+                    18,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "TX",
+                channel: None,
+                dmamux: None,
+                dma: Some(
+                    "GPDMA1",
                 ),
                 request: Some(
                     19,
@@ -3852,7 +3724,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     19,
@@ -4025,7 +3897,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     124,
@@ -4036,7 +3908,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     124,
@@ -4047,7 +3919,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     125,
@@ -4058,7 +3930,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     125,
@@ -4203,7 +4075,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     120,
@@ -4214,7 +4086,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     120,
@@ -4225,7 +4097,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     121,
@@ -4236,7 +4108,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     121,
@@ -4247,7 +4119,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     122,
@@ -4258,7 +4130,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     122,
@@ -4269,7 +4141,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     123,
@@ -4280,7 +4152,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     123,
@@ -4495,7 +4367,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     102,
@@ -4506,7 +4378,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     102,
@@ -4517,7 +4389,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     103,
@@ -4528,7 +4400,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     103,
@@ -4539,7 +4411,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     104,
@@ -4550,7 +4422,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     104,
@@ -4691,7 +4563,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     105,
@@ -4702,7 +4574,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     105,
@@ -4713,7 +4585,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     106,
@@ -4724,7 +4596,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     106,
@@ -4735,7 +4607,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     107,
@@ -4746,7 +4618,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     107,
@@ -4908,7 +4780,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     127,
@@ -4919,7 +4791,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     127,
@@ -4930,7 +4802,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     128,
@@ -4941,7 +4813,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     128,
@@ -4952,7 +4824,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     129,
@@ -4963,7 +4835,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     129,
@@ -5191,7 +5063,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     130,
@@ -5202,7 +5074,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     130,
@@ -5213,7 +5085,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     131,
@@ -5224,7 +5096,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     131,
@@ -5235,7 +5107,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     132,
@@ -5246,7 +5118,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     132,
@@ -5345,7 +5217,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     133,
@@ -5356,7 +5228,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     133,
@@ -5367,7 +5239,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     134,
@@ -5378,7 +5250,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     134,
@@ -5389,7 +5261,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     135,
@@ -5400,7 +5272,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     135,
@@ -5499,7 +5371,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     45,
@@ -5510,7 +5382,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     45,
@@ -5521,7 +5393,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     46,
@@ -5532,7 +5404,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     46,
@@ -5945,47 +5817,6 @@
             PeripheralInterrupt {
                 signal: "GLOBAL",
                 interrupt: "OCTOSPI1",
-            },
-        ],
-    },
-    Peripheral {
-        name: "OTFDEC1",
-        address: 0x46005000,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "otfdec",
-                version: "v1",
-                block: "OTFDEC",
-                ir: &otfdec::REGISTERS,
-            },
-        ),
-        rcc: Some(
-            PeripheralRcc {
-                bus_clock: "HCLK4",
-                kernel_clock: Clock(
-                    "HCLK4",
-                ),
-                enable: Some(
-                    PeripheralRccRegister {
-                        register: "AHB4ENR",
-                        field: "OTFDEC1EN",
-                    },
-                ),
-                reset: Some(
-                    PeripheralRccRegister {
-                        register: "AHB4RSTR",
-                        field: "OTFDEC1RST",
-                    },
-                ),
-                stop_mode: StopMode::Stop1,
-            },
-        ),
-        pins: &[],
-        dma_channels: &[],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "OTFDEC1",
             },
         ],
     },
@@ -6442,13 +6273,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PH9",
-                signal: "D0",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
                 pin: "PI0",
                 signal: "D13",
                 af: Some(
@@ -6458,13 +6282,6 @@
             PeripheralPin {
                 pin: "PI1",
                 signal: "D8",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PI10",
-                signal: "D14",
                 af: Some(
                     13,
                 ),
@@ -6493,13 +6310,6 @@
             PeripheralPin {
                 pin: "PI4",
                 signal: "D5",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PI5",
-                signal: "RDY",
                 af: Some(
                     13,
                 ),
@@ -6795,92 +6605,6 @@
         ],
     },
     Peripheral {
-        name: "SAES",
-        address: 0x420c0c00,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "saes",
-                version: "v1a",
-                block: "SAES",
-                ir: &saes::REGISTERS,
-            },
-        ),
-        rcc: Some(
-            PeripheralRcc {
-                bus_clock: "HCLK2",
-                kernel_clock: Clock(
-                    "HCLK2",
-                ),
-                enable: Some(
-                    PeripheralRccRegister {
-                        register: "AHB2ENR",
-                        field: "SAESEN",
-                    },
-                ),
-                reset: Some(
-                    PeripheralRccRegister {
-                        register: "AHB2RSTR",
-                        field: "SAESRST",
-                    },
-                ),
-                stop_mode: StopMode::Stop1,
-            },
-        ),
-        pins: &[],
-        dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "OUT",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    118,
-                ),
-            },
-            PeripheralDmaChannel {
-                signal: "OUT",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA1",
-                ),
-                request: Some(
-                    118,
-                ),
-            },
-            PeripheralDmaChannel {
-                signal: "IN",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    119,
-                ),
-            },
-            PeripheralDmaChannel {
-                signal: "IN",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA1",
-                ),
-                request: Some(
-                    119,
-                ),
-            },
-        ],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "SAES",
-            },
-        ],
-    },
-    Peripheral {
         name: "SAI1",
         address: 0x40015400,
         registers: Some(
@@ -7140,7 +6864,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     53,
@@ -7151,7 +6875,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     53,
@@ -7162,7 +6886,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     54,
@@ -7173,7 +6897,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     54,
@@ -7371,13 +7095,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PI5",
-                signal: "SCK_A",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
                 pin: "PI6",
                 signal: "SD_A",
                 af: Some(
@@ -7398,7 +7115,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     55,
@@ -7409,7 +7126,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     55,
@@ -7420,7 +7137,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     56,
@@ -7431,7 +7148,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     56,
@@ -8047,7 +7764,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     6,
@@ -8058,7 +7775,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     6,
@@ -8069,7 +7786,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     7,
@@ -8080,7 +7797,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     7,
@@ -8452,7 +8169,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     8,
@@ -8463,7 +8180,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     8,
@@ -8474,7 +8191,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     9,
@@ -8485,7 +8202,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     9,
@@ -8703,7 +8420,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     10,
@@ -8714,7 +8431,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     10,
@@ -8725,7 +8442,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     11,
@@ -8736,7 +8453,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     11,
@@ -8870,7 +8587,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     47,
@@ -8881,7 +8598,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     47,
@@ -8892,7 +8609,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     48,
@@ -8903,7 +8620,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     48,
@@ -9030,26 +8747,8 @@
                     5,
                 ),
             },
-            PeripheralPin {
-                pin: "PH9",
-                signal: "NSS",
-                af: Some(
-                    5,
-                ),
-            },
         ],
         dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "RX",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    49,
-                ),
-            },
             PeripheralDmaChannel {
                 signal: "RX",
                 channel: None,
@@ -9062,11 +8761,22 @@
                 ),
             },
             PeripheralDmaChannel {
-                signal: "TX",
+                signal: "RX",
                 channel: None,
                 dmamux: None,
                 dma: Some(
                     "GPDMA2",
+                ),
+                request: Some(
+                    49,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "TX",
+                channel: None,
+                dmamux: None,
+                dma: Some(
+                    "GPDMA1",
                 ),
                 request: Some(
                     50,
@@ -9077,7 +8787,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     50,
@@ -9246,7 +8956,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     51,
@@ -9257,7 +8967,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     51,
@@ -9268,7 +8978,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     52,
@@ -9279,7 +8989,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     52,
@@ -9313,13 +9023,13 @@
                 enable: Some(
                     PeripheralRccRegister {
                         register: "APB3ENR",
-                        field: "SBSEN",
+                        field: "SYSCFGEN",
                     },
                 ),
                 reset: Some(
                     PeripheralRccRegister {
                         register: "APB3RSTR",
-                        field: "SBSRST",
+                        field: "SYSCFGRST",
                     },
                 ),
                 stop_mode: StopMode::Stop1,
@@ -9737,26 +9447,8 @@
                     1,
                 ),
             },
-            PeripheralPin {
-                pin: "PH9",
-                signal: "CH2",
-                af: Some(
-                    1,
-                ),
-            },
         ],
         dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "CC1",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    58,
-                ),
-            },
             PeripheralDmaChannel {
                 signal: "CC1",
                 channel: None,
@@ -9769,11 +9461,22 @@
                 ),
             },
             PeripheralDmaChannel {
-                signal: "CC2",
+                signal: "CC1",
                 channel: None,
                 dmamux: None,
                 dma: Some(
                     "GPDMA2",
+                ),
+                request: Some(
+                    58,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "CC2",
+                channel: None,
+                dmamux: None,
+                dma: Some(
+                    "GPDMA1",
                 ),
                 request: Some(
                     59,
@@ -9784,7 +9487,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     59,
@@ -9795,7 +9498,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     60,
@@ -9806,7 +9509,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     60,
@@ -9817,7 +9520,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     61,
@@ -9828,7 +9531,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     61,
@@ -9839,7 +9542,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     62,
@@ -9850,7 +9553,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     62,
@@ -9861,7 +9564,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     63,
@@ -9872,7 +9575,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     63,
@@ -9883,7 +9586,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     64,
@@ -9894,7 +9597,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     64,
@@ -9974,13 +9677,6 @@
             PeripheralPin {
                 pin: "PH6",
                 signal: "CH1",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PH9",
-                signal: "CH2",
                 af: Some(
                     2,
                 ),
@@ -10264,7 +9960,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     94,
@@ -10275,7 +9971,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     94,
@@ -10286,7 +9982,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     95,
@@ -10297,7 +9993,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     95,
@@ -10308,7 +10004,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     96,
@@ -10319,7 +10015,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     96,
@@ -10330,7 +10026,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     97,
@@ -10341,7 +10037,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     97,
@@ -10460,7 +10156,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     98,
@@ -10471,7 +10167,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     98,
@@ -10482,7 +10178,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     99,
@@ -10493,7 +10189,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     99,
@@ -10612,7 +10308,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     100,
@@ -10623,7 +10319,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     100,
@@ -10634,7 +10330,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     101,
@@ -10645,7 +10341,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     101,
@@ -10806,7 +10502,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     72,
@@ -10817,7 +10513,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     72,
@@ -10828,7 +10524,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     73,
@@ -10839,7 +10535,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     73,
@@ -10850,7 +10546,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     74,
@@ -10861,7 +10557,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     74,
@@ -10872,7 +10568,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     75,
@@ -10883,7 +10579,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     75,
@@ -10894,7 +10590,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     76,
@@ -10905,7 +10601,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     76,
@@ -11052,7 +10748,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     77,
@@ -11063,7 +10759,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     77,
@@ -11074,7 +10770,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     78,
@@ -11085,7 +10781,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     78,
@@ -11096,7 +10792,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     79,
@@ -11107,7 +10803,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     79,
@@ -11118,7 +10814,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     80,
@@ -11129,7 +10825,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     80,
@@ -11140,7 +10836,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     81,
@@ -11151,7 +10847,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     81,
@@ -11162,7 +10858,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     82,
@@ -11173,7 +10869,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     82,
@@ -11313,7 +11009,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     83,
@@ -11324,7 +11020,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     83,
@@ -11335,7 +11031,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     84,
@@ -11346,7 +11042,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     84,
@@ -11357,7 +11053,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     85,
@@ -11368,7 +11064,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     85,
@@ -11379,7 +11075,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     86,
@@ -11390,7 +11086,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     86,
@@ -11401,7 +11097,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     87,
@@ -11412,7 +11108,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     87,
@@ -11552,7 +11248,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     88,
@@ -11563,7 +11259,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     88,
@@ -11574,7 +11270,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     89,
@@ -11585,7 +11281,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     89,
@@ -11596,7 +11292,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     90,
@@ -11607,7 +11303,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     90,
@@ -11618,7 +11314,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     91,
@@ -11629,7 +11325,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     91,
@@ -11640,7 +11336,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     92,
@@ -11651,7 +11347,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     92,
@@ -11662,7 +11358,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     93,
@@ -11673,7 +11369,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     93,
@@ -11742,7 +11438,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     4,
@@ -11753,7 +11449,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     4,
@@ -11822,7 +11518,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     5,
@@ -11833,7 +11529,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     5,
@@ -12093,13 +11789,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PH9",
-                signal: "CH2N",
-                af: Some(
-                    3,
-                ),
-            },
-            PeripheralPin {
                 pin: "PI1",
                 signal: "BKIN2",
                 af: Some(
@@ -12128,13 +11817,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PI5",
-                signal: "CH1",
-                af: Some(
-                    3,
-                ),
-            },
-            PeripheralPin {
                 pin: "PI6",
                 signal: "CH2",
                 af: Some(
@@ -12155,7 +11837,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     65,
@@ -12166,7 +11848,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     65,
@@ -12177,7 +11859,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     66,
@@ -12188,7 +11870,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     66,
@@ -12199,7 +11881,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     67,
@@ -12210,7 +11892,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     67,
@@ -12221,7 +11903,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     68,
@@ -12232,7 +11914,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     68,
@@ -12243,7 +11925,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     69,
@@ -12254,7 +11936,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     69,
@@ -12265,7 +11947,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     70,
@@ -12276,7 +11958,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     70,
@@ -12287,7 +11969,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     71,
@@ -12298,7 +11980,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     71,
@@ -12438,7 +12120,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     43,
@@ -12449,7 +12131,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     43,
@@ -12460,7 +12142,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     44,
@@ -12471,7 +12153,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     44,
@@ -12661,26 +12343,8 @@
                     8,
                 ),
             },
-            PeripheralPin {
-                pin: "PI9",
-                signal: "RX",
-                af: Some(
-                    8,
-                ),
-            },
         ],
         dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "RX",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    27,
-                ),
-            },
             PeripheralDmaChannel {
                 signal: "RX",
                 channel: None,
@@ -12693,11 +12357,22 @@
                 ),
             },
             PeripheralDmaChannel {
-                signal: "TX",
+                signal: "RX",
                 channel: None,
                 dmamux: None,
                 dma: Some(
                     "GPDMA2",
+                ),
+                request: Some(
+                    27,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "TX",
+                channel: None,
+                dmamux: None,
+                dma: Some(
+                    "GPDMA1",
                 ),
                 request: Some(
                     28,
@@ -12708,7 +12383,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     28,
@@ -12835,7 +12510,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     29,
@@ -12846,7 +12521,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     29,
@@ -12857,7 +12532,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     30,
@@ -12868,7 +12543,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     30,
@@ -13009,7 +12684,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     33,
@@ -13020,7 +12695,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     33,
@@ -13031,7 +12706,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     34,
@@ -13042,7 +12717,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     34,
@@ -13141,7 +12816,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     35,
@@ -13152,7 +12827,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     35,
@@ -13163,7 +12838,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     36,
@@ -13174,7 +12849,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     36,
@@ -13273,7 +12948,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     37,
@@ -13284,7 +12959,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     37,
@@ -13295,7 +12970,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     38,
@@ -13306,7 +12981,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     38,
@@ -13408,7 +13083,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     112,
@@ -13419,7 +13094,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     112,
@@ -13430,7 +13105,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     113,
@@ -13441,7 +13116,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     113,
@@ -13584,7 +13259,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     21,
@@ -13595,7 +13270,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     21,
@@ -13606,7 +13281,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     22,
@@ -13617,7 +13292,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     22,
@@ -13995,7 +13670,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     23,
@@ -14006,7 +13681,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     23,
@@ -14017,7 +13692,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     24,
@@ -14028,7 +13703,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     24,
@@ -14197,7 +13872,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     25,
@@ -14208,7 +13883,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     25,
@@ -14219,7 +13894,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     26,
@@ -14230,7 +13905,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     26,
@@ -14371,7 +14046,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     31,
@@ -14382,7 +14057,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     31,
@@ -14393,7 +14068,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     32,
@@ -14404,7 +14079,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     32,
@@ -14709,10 +14384,6 @@
     Interrupt {
         name: "IWDG",
         number: 35,
-    },
-    Interrupt {
-        name: "SAES",
-        number: 36,
     },
     Interrupt {
         name: "ADC1",
@@ -15027,14 +14698,6 @@
         number: 114,
     },
     Interrupt {
-        name: "OTFDEC1",
-        number: 115,
-    },
-    Interrupt {
-        name: "AES",
-        number: 116,
-    },
-    Interrupt {
         name: "HASH",
         number: 117,
     },
@@ -15093,62 +14756,6 @@
 ];
                 pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
     DmaChannel {
-        name: "GPDMA2_CH0",
-        dma: "GPDMA2",
-        channel: 0,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
-        name: "GPDMA2_CH1",
-        dma: "GPDMA2",
-        channel: 1,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
-        name: "GPDMA2_CH2",
-        dma: "GPDMA2",
-        channel: 2,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
-        name: "GPDMA2_CH3",
-        dma: "GPDMA2",
-        channel: 3,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
-        name: "GPDMA2_CH4",
-        dma: "GPDMA2",
-        channel: 4,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
-        name: "GPDMA2_CH5",
-        dma: "GPDMA2",
-        channel: 5,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
-        name: "GPDMA2_CH6",
-        dma: "GPDMA2",
-        channel: 6,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
-        name: "GPDMA2_CH7",
-        dma: "GPDMA2",
-        channel: 7,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
         name: "GPDMA1_CH0",
         dma: "GPDMA1",
         channel: 0,
@@ -15204,10 +14811,65 @@
         dmamux: None,
         dmamux_channel: None,
     },
+    DmaChannel {
+        name: "GPDMA2_CH0",
+        dma: "GPDMA2",
+        channel: 0,
+        dmamux: None,
+        dmamux_channel: None,
+    },
+    DmaChannel {
+        name: "GPDMA2_CH1",
+        dma: "GPDMA2",
+        channel: 1,
+        dmamux: None,
+        dmamux_channel: None,
+    },
+    DmaChannel {
+        name: "GPDMA2_CH2",
+        dma: "GPDMA2",
+        channel: 2,
+        dmamux: None,
+        dmamux_channel: None,
+    },
+    DmaChannel {
+        name: "GPDMA2_CH3",
+        dma: "GPDMA2",
+        channel: 3,
+        dmamux: None,
+        dmamux_channel: None,
+    },
+    DmaChannel {
+        name: "GPDMA2_CH4",
+        dma: "GPDMA2",
+        channel: 4,
+        dmamux: None,
+        dmamux_channel: None,
+    },
+    DmaChannel {
+        name: "GPDMA2_CH5",
+        dma: "GPDMA2",
+        channel: 5,
+        dmamux: None,
+        dmamux_channel: None,
+    },
+    DmaChannel {
+        name: "GPDMA2_CH6",
+        dma: "GPDMA2",
+        channel: 6,
+        dmamux: None,
+        dmamux_channel: None,
+    },
+    DmaChannel {
+        name: "GPDMA2_CH7",
+        dma: "GPDMA2",
+        channel: 7,
+        dmamux: None,
+        dmamux_channel: None,
+    },
 ];
             #[path="../registers/adc_h5.rs"] pub mod adc;
 #[path="../registers/adccommon_h5.rs"] pub mod adccommon;
-#[path="../registers/aes_v3b.rs"] pub mod aes;
 #[path="../registers/can_fdcan_v1.rs"] pub mod can;
 #[path="../registers/cec_v2.rs"] pub mod cec;
 #[path="../registers/cordic_v1.rs"] pub mod cordic;
@@ -15233,14 +14895,12 @@
 #[path="../registers/iwdg_v3.rs"] pub mod iwdg;
 #[path="../registers/lptim_v2a.rs"] pub mod lptim;
 #[path="../registers/octospi_v2.rs"] pub mod octospi;
-#[path="../registers/otfdec_v1.rs"] pub mod otfdec;
 #[path="../registers/pka_v1a.rs"] pub mod pka;
 #[path="../registers/pssi_v1.rs"] pub mod pssi;
 #[path="../registers/pwr_h5.rs"] pub mod pwr;
 #[path="../registers/rcc_h5.rs"] pub mod rcc;
 #[path="../registers/rng_v3.rs"] pub mod rng;
 #[path="../registers/rtc_v3u5.rs"] pub mod rtc;
-#[path="../registers/saes_v1a.rs"] pub mod saes;
 #[path="../registers/sai_v4_2pdm.rs"] pub mod sai;
 #[path="../registers/sdmmc_v2.rs"] pub mod sdmmc;
 #[path="../registers/spi_v4.rs"] pub mod spi;

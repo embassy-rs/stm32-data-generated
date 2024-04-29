@@ -2404,7 +2404,7 @@
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "sbsen",
+                    name: "syscfgen",
                     description: Some(
                         "SBS clock enable\r Set and reset by software.",
                     ),
@@ -2498,7 +2498,7 @@
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "sbslpen",
+                    name: "syscfglpen",
                     description: Some(
                         "SBS clock enable during sleep mode\r Set and reset by software.",
                     ),
@@ -2592,7 +2592,7 @@
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "sbsrst",
+                    name: "syscfgrst",
                     description: Some(
                         "SBS block reset\r Set and reset by software.",
                     ),

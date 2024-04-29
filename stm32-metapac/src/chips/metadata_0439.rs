@@ -850,70 +850,6 @@
         interrupts: &[],
     },
     Peripheral {
-        name: "CRYP",
-        address: 0x48021000,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "cryp",
-                version: "v3",
-                block: "CRYP",
-                ir: &cryp::REGISTERS,
-            },
-        ),
-        rcc: Some(
-            PeripheralRcc {
-                bus_clock: "HCLK2",
-                kernel_clock: Clock(
-                    "HCLK2",
-                ),
-                enable: Some(
-                    PeripheralRccRegister {
-                        register: "AHB2ENR",
-                        field: "CRYPEN",
-                    },
-                ),
-                reset: Some(
-                    PeripheralRccRegister {
-                        register: "AHB2RSTR",
-                        field: "CRYPRST",
-                    },
-                ),
-                stop_mode: StopMode::Stop1,
-            },
-        ),
-        pins: &[],
-        dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "IN",
-                channel: None,
-                dmamux: Some(
-                    "DMAMUX1",
-                ),
-                dma: None,
-                request: Some(
-                    76,
-                ),
-            },
-            PeripheralDmaChannel {
-                signal: "OUT",
-                channel: None,
-                dmamux: Some(
-                    "DMAMUX1",
-                ),
-                dma: None,
-                request: Some(
-                    77,
-                ),
-            },
-        ],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "CRYP",
-            },
-        ],
-    },
-    Peripheral {
         name: "DAC1",
         address: 0x40007400,
         registers: Some(
@@ -1283,6 +1219,48 @@
                 ),
             },
             PeripheralPin {
+                pin: "PH14",
+                signal: "D4",
+                af: Some(
+                    13,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH15",
+                signal: "D11",
+                af: Some(
+                    13,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH6",
+                signal: "D8",
+                af: Some(
+                    13,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH7",
+                signal: "D9",
+                af: Some(
+                    13,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH8",
+                signal: "HSYNC",
+                af: Some(
+                    13,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH9",
+                signal: "D0",
+                af: Some(
+                    13,
+                ),
+            },
+            PeripheralPin {
                 pin: "PI0",
                 signal: "D13",
                 af: Some(
@@ -1306,6 +1284,20 @@
             PeripheralPin {
                 pin: "PI3",
                 signal: "D10",
+                af: Some(
+                    13,
+                ),
+            },
+            PeripheralPin {
+                pin: "PI4",
+                signal: "D5",
+                af: Some(
+                    13,
+                ),
+            },
+            PeripheralPin {
+                pin: "PI5",
+                signal: "VSYNC",
                 af: Some(
                     13,
                 ),
@@ -1991,6 +1983,65 @@
         ],
     },
     Peripheral {
+        name: "DSIHOST",
+        address: 0x50000000,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "dsihost",
+                version: "v1",
+                block: "DSIHOST",
+                ir: &dsihost::REGISTERS,
+            },
+        ),
+        rcc: Some(
+            PeripheralRcc {
+                bus_clock: "PCLK3",
+                kernel_clock: Mux(
+                    PeripheralRccRegister {
+                        register: "D1CCIPR",
+                        field: "DSISEL",
+                    },
+                ),
+                enable: Some(
+                    PeripheralRccRegister {
+                        register: "APB3ENR",
+                        field: "DSIEN",
+                    },
+                ),
+                reset: Some(
+                    PeripheralRccRegister {
+                        register: "APB3RSTR",
+                        field: "DSIRST",
+                    },
+                ),
+                stop_mode: StopMode::Stop1,
+            },
+        ),
+        pins: &[
+            PeripheralPin {
+                pin: "PA15",
+                signal: "TE",
+                af: Some(
+                    13,
+                ),
+            },
+            PeripheralPin {
+                pin: "PB11",
+                signal: "TE",
+                af: Some(
+                    13,
+                ),
+            },
+        ],
+        dma_channels: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "DSI",
+            },
+        ],
+    },
+    Peripheral {
         name: "ETH",
         address: 0x40028000,
         registers: Some(
@@ -2234,8 +2285,22 @@
                 ),
             },
             PeripheralPin {
-                pin: "PI12",
-                signal: "TX_ER",
+                pin: "PH6",
+                signal: "RXD2",
+                af: Some(
+                    11,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH7",
+                signal: "RXD3",
+                af: Some(
+                    11,
+                ),
+            },
+            PeripheralPin {
+                pin: "PI10",
+                signal: "RX_ER",
                 af: Some(
                     11,
                 ),
@@ -2408,6 +2473,27 @@
             PeripheralPin {
                 pin: "PD1",
                 signal: "TX",
+                af: Some(
+                    9,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH13",
+                signal: "TX",
+                af: Some(
+                    9,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH14",
+                signal: "RX",
+                af: Some(
+                    9,
+                ),
+            },
+            PeripheralPin {
+                pin: "PI9",
+                signal: "RX",
                 af: Some(
                     9,
                 ),
@@ -3238,6 +3324,27 @@
                 ),
             },
             PeripheralPin {
+                pin: "PH13",
+                signal: "D21",
+                af: Some(
+                    12,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH14",
+                signal: "D22",
+                af: Some(
+                    12,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH15",
+                signal: "D23",
+                af: Some(
+                    12,
+                ),
+            },
+            PeripheralPin {
                 pin: "PH2",
                 signal: "SDCKE0",
                 af: Some(
@@ -3259,6 +3366,34 @@
                 ),
             },
             PeripheralPin {
+                pin: "PH6",
+                signal: "SDNE1",
+                af: Some(
+                    12,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH7",
+                signal: "SDCKE1",
+                af: Some(
+                    12,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH8",
+                signal: "D16",
+                af: Some(
+                    12,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH9",
+                signal: "D17",
+                af: Some(
+                    12,
+                ),
+            },
+            PeripheralPin {
                 pin: "PI0",
                 signal: "D24",
                 af: Some(
@@ -3268,6 +3403,13 @@
             PeripheralPin {
                 pin: "PI1",
                 signal: "D25",
+                af: Some(
+                    12,
+                ),
+            },
+            PeripheralPin {
+                pin: "PI10",
+                signal: "D31",
                 af: Some(
                     12,
                 ),
@@ -3287,6 +3429,20 @@
                 ),
             },
             PeripheralPin {
+                pin: "PI4",
+                signal: "NBL2",
+                af: Some(
+                    12,
+                ),
+            },
+            PeripheralPin {
+                pin: "PI5",
+                signal: "NBL3",
+                af: Some(
+                    12,
+                ),
+            },
+            PeripheralPin {
                 pin: "PI6",
                 signal: "D28",
                 af: Some(
@@ -3296,6 +3452,13 @@
             PeripheralPin {
                 pin: "PI7",
                 signal: "D29",
+                af: Some(
+                    12,
+                ),
+            },
+            PeripheralPin {
+                pin: "PI9",
+                signal: "D30",
                 af: Some(
                     12,
                 ),
@@ -3706,59 +3869,6 @@
         interrupts: &[],
     },
     Peripheral {
-        name: "HASH",
-        address: 0x48021400,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "hash",
-                version: "v2",
-                block: "HASH",
-                ir: &hash::REGISTERS,
-            },
-        ),
-        rcc: Some(
-            PeripheralRcc {
-                bus_clock: "HCLK2",
-                kernel_clock: Clock(
-                    "HCLK2",
-                ),
-                enable: Some(
-                    PeripheralRccRegister {
-                        register: "AHB2ENR",
-                        field: "HASHEN",
-                    },
-                ),
-                reset: Some(
-                    PeripheralRccRegister {
-                        register: "AHB2RSTR",
-                        field: "HASHRST",
-                    },
-                ),
-                stop_mode: StopMode::Stop1,
-            },
-        ),
-        pins: &[],
-        dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "IN",
-                channel: None,
-                dmamux: Some(
-                    "DMAMUX1",
-                ),
-                dma: None,
-                request: Some(
-                    78,
-                ),
-            },
-        ],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "HASH_RNG",
-            },
-        ],
-    },
-    Peripheral {
         name: "HRTIM1",
         address: 0x40017400,
         registers: Some(
@@ -4100,7 +4210,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "hsem",
-                version: "v2",
+                version: "v1",
                 block: "HSEM",
                 ir: &hsem::REGISTERS,
             },
@@ -4329,6 +4439,13 @@
                     4,
                 ),
             },
+            PeripheralPin {
+                pin: "PH6",
+                signal: "SMBA",
+                af: Some(
+                    4,
+                ),
+            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -4418,6 +4535,27 @@
             PeripheralPin {
                 pin: "PC9",
                 signal: "SDA",
+                af: Some(
+                    4,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH7",
+                signal: "SCL",
+                af: Some(
+                    4,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH8",
+                signal: "SDA",
+                af: Some(
+                    4,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH9",
+                signal: "SMBA",
                 af: Some(
                     4,
                 ),
@@ -4638,6 +4776,22 @@
     Peripheral {
         name: "IWDG1",
         address: 0x58004800,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "iwdg",
+                version: "v2",
+                block: "IWDG",
+                ir: &iwdg::REGISTERS,
+            },
+        ),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+    },
+    Peripheral {
+        name: "IWDG2",
+        address: 0x58004c00,
         registers: Some(
             PeripheralRegisters {
                 kind: "iwdg",
@@ -5529,6 +5683,27 @@
                 ),
             },
             PeripheralPin {
+                pin: "PH13",
+                signal: "G2",
+                af: Some(
+                    14,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH14",
+                signal: "G3",
+                af: Some(
+                    14,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH15",
+                signal: "G4",
+                af: Some(
+                    14,
+                ),
+            },
+            PeripheralPin {
                 pin: "PH2",
                 signal: "R0",
                 af: Some(
@@ -5557,6 +5732,20 @@
                 ),
             },
             PeripheralPin {
+                pin: "PH8",
+                signal: "R2",
+                af: Some(
+                    14,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH9",
+                signal: "R3",
+                af: Some(
+                    14,
+                ),
+            },
+            PeripheralPin {
                 pin: "PI0",
                 signal: "G5",
                 af: Some(
@@ -5571,6 +5760,13 @@
                 ),
             },
             PeripheralPin {
+                pin: "PI10",
+                signal: "HSYNC",
+                af: Some(
+                    14,
+                ),
+            },
+            PeripheralPin {
                 pin: "PI11",
                 signal: "G6",
                 af: Some(
@@ -5578,15 +5774,15 @@
                 ),
             },
             PeripheralPin {
-                pin: "PI12",
-                signal: "HSYNC",
+                pin: "PI15",
+                signal: "G2",
                 af: Some(
-                    14,
+                    9,
                 ),
             },
             PeripheralPin {
-                pin: "PI13",
-                signal: "VSYNC",
+                pin: "PI15",
+                signal: "R0",
                 af: Some(
                     14,
                 ),
@@ -5594,6 +5790,20 @@
             PeripheralPin {
                 pin: "PI2",
                 signal: "G7",
+                af: Some(
+                    14,
+                ),
+            },
+            PeripheralPin {
+                pin: "PI4",
+                signal: "B4",
+                af: Some(
+                    14,
+                ),
+            },
+            PeripheralPin {
+                pin: "PI5",
+                signal: "B5",
                 af: Some(
                     14,
                 ),
@@ -5613,22 +5823,8 @@
                 ),
             },
             PeripheralPin {
-                pin: "PJ0",
-                signal: "R1",
-                af: Some(
-                    14,
-                ),
-            },
-            PeripheralPin {
-                pin: "PJ0",
-                signal: "R7",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
-                pin: "PJ1",
-                signal: "R2",
+                pin: "PI9",
+                signal: "VSYNC",
                 af: Some(
                     14,
                 ),
@@ -5894,7 +6090,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "pwr",
-                version: "h7rm0433",
+                version: "h7rm0399",
                 block: "PWR",
                 ir: &pwr::REGISTERS,
             },
@@ -5944,6 +6140,11 @@
             PeripheralPin {
                 pin: "PI11",
                 signal: "WKUP5",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PI8",
+                signal: "WKUP3",
                 af: None,
             },
         ],
@@ -6176,7 +6377,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "rcc",
-                version: "h7rm0433",
+                version: "h7",
                 block: "RCC",
                 ir: &rcc::REGISTERS,
             },
@@ -6270,7 +6471,7 @@
         interrupts: &[
             PeripheralInterrupt {
                 signal: "GLOBAL",
-                interrupt: "HASH_RNG",
+                interrupt: "RNG",
             },
         ],
     },
@@ -6346,6 +6547,11 @@
             PeripheralPin {
                 pin: "PC13",
                 signal: "TS",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PI8",
+                signal: "TAMP2",
                 af: None,
             },
         ],
@@ -6756,6 +6962,20 @@
             PeripheralPin {
                 pin: "PH3",
                 signal: "MCLK_B",
+                af: Some(
+                    10,
+                ),
+            },
+            PeripheralPin {
+                pin: "PI4",
+                signal: "MCLK_A",
+                af: Some(
+                    10,
+                ),
+            },
+            PeripheralPin {
+                pin: "PI5",
+                signal: "SCK_A",
                 af: Some(
                     10,
                 ),
@@ -8402,6 +8622,20 @@
                     5,
                 ),
             },
+            PeripheralPin {
+                pin: "PH6",
+                signal: "SCK",
+                af: Some(
+                    5,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH7",
+                signal: "MISO",
+                af: Some(
+                    5,
+                ),
+            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -9109,6 +9343,20 @@
             },
             PeripheralPin {
                 pin: "PB15",
+                signal: "CH2",
+                af: Some(
+                    2,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH6",
+                signal: "CH1",
+                af: Some(
+                    2,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH9",
                 signal: "CH2",
                 af: Some(
                     2,
@@ -10344,6 +10592,13 @@
                 ),
             },
             PeripheralPin {
+                pin: "PH8",
+                signal: "ETR",
+                af: Some(
+                    2,
+                ),
+            },
+            PeripheralPin {
                 pin: "PI0",
                 signal: "CH4",
                 af: Some(
@@ -10782,6 +11037,27 @@
                 ),
             },
             PeripheralPin {
+                pin: "PH13",
+                signal: "CH1N",
+                af: Some(
+                    3,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH14",
+                signal: "CH2N",
+                af: Some(
+                    3,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH15",
+                signal: "CH3N",
+                af: Some(
+                    3,
+                ),
+            },
+            PeripheralPin {
                 pin: "PI1",
                 signal: "BKIN2",
                 af: Some(
@@ -10812,6 +11088,34 @@
             PeripheralPin {
                 pin: "PI3",
                 signal: "ETR",
+                af: Some(
+                    3,
+                ),
+            },
+            PeripheralPin {
+                pin: "PI4",
+                signal: "BKIN",
+                af: Some(
+                    3,
+                ),
+            },
+            PeripheralPin {
+                pin: "PI4",
+                signal: "BKIN_COMP1",
+                af: Some(
+                    11,
+                ),
+            },
+            PeripheralPin {
+                pin: "PI4",
+                signal: "BKIN_COMP2",
+                af: Some(
+                    11,
+                ),
+            },
+            PeripheralPin {
+                pin: "PI5",
+                signal: "CH1",
                 af: Some(
                     3,
                 ),
@@ -11077,6 +11381,27 @@
             PeripheralPin {
                 pin: "PD1",
                 signal: "TX",
+                af: Some(
+                    8,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH13",
+                signal: "TX",
+                af: Some(
+                    8,
+                ),
+            },
+            PeripheralPin {
+                pin: "PH14",
+                signal: "RX",
+                af: Some(
+                    8,
+                ),
+            },
+            PeripheralPin {
+                pin: "PI9",
+                signal: "RX",
                 af: Some(
                     8,
                 ),
@@ -12527,6 +12852,42 @@
             },
         ],
     },
+    Peripheral {
+        name: "WWDG2",
+        address: 0x40002c00,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "wwdg",
+                version: "v2",
+                block: "WWDG",
+                ir: &wwdg::REGISTERS,
+            },
+        ),
+        rcc: Some(
+            PeripheralRcc {
+                bus_clock: "PCLK1",
+                kernel_clock: Clock(
+                    "PCLK1",
+                ),
+                enable: Some(
+                    PeripheralRccRegister {
+                        register: "APB1LENR",
+                        field: "WWDG2EN",
+                    },
+                ),
+                reset: None,
+                stop_mode: StopMode::Stop1,
+            },
+        ),
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "RST",
+                interrupt: "WWDG_RST",
+            },
+        ],
+    },
 ];
                 pub(crate) static INTERRUPTS: &[Interrupt] = &[
     Interrupt {
@@ -12782,6 +13143,14 @@
         number: 63,
     },
     Interrupt {
+        name: "CM7_SEV",
+        number: 64,
+    },
+    Interrupt {
+        name: "CM4_SEV",
+        number: 65,
+    },
+    Interrupt {
         name: "DMA2_STREAM5",
         number: 68,
     },
@@ -12826,11 +13195,7 @@
         number: 78,
     },
     Interrupt {
-        name: "CRYP",
-        number: 79,
-    },
-    Interrupt {
-        name: "HASH_RNG",
+        name: "RNG",
         number: 80,
     },
     Interrupt {
@@ -13002,12 +13367,20 @@
         number: 122,
     },
     Interrupt {
+        name: "DSI",
+        number: 123,
+    },
+    Interrupt {
         name: "SDMMC2",
         number: 124,
     },
     Interrupt {
         name: "HSEM1",
         number: 125,
+    },
+    Interrupt {
+        name: "HSEM2",
+        number: 126,
     },
     Interrupt {
         name: "ADC3",
@@ -13070,6 +13443,10 @@
         number: 142,
     },
     Interrupt {
+        name: "WWDG_RST",
+        number: 143,
+    },
+    Interrupt {
         name: "CRS",
         number: 144,
     },
@@ -13080,6 +13457,10 @@
     Interrupt {
         name: "SAI4",
         number: 146,
+    },
+    Interrupt {
+        name: "HOLD_CORE",
+        number: 148,
     },
     Interrupt {
         name: "WAKEUP_PIN",
@@ -13360,22 +13741,21 @@
 #[path="../registers/comp_h7_b.rs"] pub mod comp;
 #[path="../registers/crc_v3.rs"] pub mod crc;
 #[path="../registers/crs_v1.rs"] pub mod crs;
-#[path="../registers/cryp_v3.rs"] pub mod cryp;
 #[path="../registers/dac_v4.rs"] pub mod dac;
 #[path="../registers/dbgmcu_h7.rs"] pub mod dbgmcu;
 #[path="../registers/dcmi_v1.rs"] pub mod dcmi;
 #[path="../registers/dma_v1.rs"] pub mod dma;
 #[path="../registers/dma2d_v2.rs"] pub mod dma2d;
 #[path="../registers/dmamux_v1.rs"] pub mod dmamux;
+#[path="../registers/dsihost_v1.rs"] pub mod dsihost;
 #[path="../registers/eth_v2.rs"] pub mod eth;
 #[path="../registers/exti_h7.rs"] pub mod exti;
 #[path="../registers/fdcanram_h7.rs"] pub mod fdcanram;
 #[path="../registers/flash_h7.rs"] pub mod flash;
 #[path="../registers/fmc_v3x1.rs"] pub mod fmc;
 #[path="../registers/gpio_v2.rs"] pub mod gpio;
-#[path="../registers/hash_v2.rs"] pub mod hash;
 #[path="../registers/hrtim_v1.rs"] pub mod hrtim;
-#[path="../registers/hsem_v2.rs"] pub mod hsem;
+#[path="../registers/hsem_v1.rs"] pub mod hsem;
 #[path="../registers/i2c_v2.rs"] pub mod i2c;
 #[path="../registers/iwdg_v2.rs"] pub mod iwdg;
 #[path="../registers/jpeg_v1.rs"] pub mod jpeg;
@@ -13383,9 +13763,9 @@
 #[path="../registers/mdios_v1.rs"] pub mod mdios;
 #[path="../registers/opamp_h_v1.rs"] pub mod opamp;
 #[path="../registers/otg_v1.rs"] pub mod otg;
-#[path="../registers/pwr_h7rm0433.rs"] pub mod pwr;
+#[path="../registers/pwr_h7rm0399.rs"] pub mod pwr;
 #[path="../registers/quadspi_v1.rs"] pub mod quadspi;
-#[path="../registers/rcc_h7rm0433.rs"] pub mod rcc;
+#[path="../registers/rcc_h7.rs"] pub mod rcc;
 #[path="../registers/rng_v1.rs"] pub mod rng;
 #[path="../registers/rtc_v2h7.rs"] pub mod rtc;
 #[path="../registers/sai_v3_4pdm.rs"] pub mod sai;

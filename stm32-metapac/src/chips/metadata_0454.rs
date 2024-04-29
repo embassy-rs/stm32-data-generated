@@ -1893,65 +1893,6 @@
         ],
     },
     Peripheral {
-        name: "DSIHOST",
-        address: 0x50000000,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "dsihost",
-                version: "v1",
-                block: "DSIHOST",
-                ir: &dsihost::REGISTERS,
-            },
-        ),
-        rcc: Some(
-            PeripheralRcc {
-                bus_clock: "PCLK3",
-                kernel_clock: Mux(
-                    PeripheralRccRegister {
-                        register: "D1CCIPR",
-                        field: "DSISEL",
-                    },
-                ),
-                enable: Some(
-                    PeripheralRccRegister {
-                        register: "APB3ENR",
-                        field: "DSIEN",
-                    },
-                ),
-                reset: Some(
-                    PeripheralRccRegister {
-                        register: "APB3RSTR",
-                        field: "DSIRST",
-                    },
-                ),
-                stop_mode: StopMode::Stop1,
-            },
-        ),
-        pins: &[
-            PeripheralPin {
-                pin: "PA15",
-                signal: "TE",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PB11",
-                signal: "TE",
-                af: Some(
-                    13,
-                ),
-            },
-        ],
-        dma_channels: &[],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "DSI",
-            },
-        ],
-    },
-    Peripheral {
         name: "ETH",
         address: 0x40028000,
         registers: Some(
@@ -3956,7 +3897,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "hsem",
-                version: "v1",
+                version: "v2",
                 block: "HSEM",
                 ir: &hsem::REGISTERS,
             },
@@ -4459,22 +4400,6 @@
     Peripheral {
         name: "IWDG1",
         address: 0x58004800,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "iwdg",
-                version: "v2",
-                block: "IWDG",
-                ir: &iwdg::REGISTERS,
-            },
-        ),
-        rcc: None,
-        pins: &[],
-        dma_channels: &[],
-        interrupts: &[],
-    },
-    Peripheral {
-        name: "IWDG2",
-        address: 0x58004c00,
         registers: Some(
             PeripheralRegisters {
                 kind: "iwdg",
@@ -5598,7 +5523,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "pwr",
-                version: "h7rm0399",
+                version: "h7rm0433",
                 block: "PWR",
                 ir: &pwr::REGISTERS,
             },
@@ -5861,7 +5786,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "rcc",
-                version: "h7",
+                version: "h7rm0433",
                 block: "RCC",
                 ir: &rcc::REGISTERS,
             },
@@ -12021,42 +11946,6 @@
         dma_channels: &[],
         interrupts: &[
             PeripheralInterrupt {
-                signal: "RST",
-                interrupt: "WWDG_RST",
-            },
-        ],
-    },
-    Peripheral {
-        name: "WWDG2",
-        address: 0x40002c00,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "wwdg",
-                version: "v2",
-                block: "WWDG",
-                ir: &wwdg::REGISTERS,
-            },
-        ),
-        rcc: Some(
-            PeripheralRcc {
-                bus_clock: "PCLK1",
-                kernel_clock: Clock(
-                    "PCLK1",
-                ),
-                enable: Some(
-                    PeripheralRccRegister {
-                        register: "APB1LENR",
-                        field: "WWDG2EN",
-                    },
-                ),
-                reset: None,
-                stop_mode: StopMode::Stop1,
-            },
-        ),
-        pins: &[],
-        dma_channels: &[],
-        interrupts: &[
-            PeripheralInterrupt {
                 signal: "GLOBAL",
                 interrupt: "WWDG",
             },
@@ -12321,14 +12210,6 @@
         number: 63,
     },
     Interrupt {
-        name: "CM7_SEV",
-        number: 64,
-    },
-    Interrupt {
-        name: "CM4_SEV",
-        number: 65,
-    },
-    Interrupt {
         name: "DMA2_STREAM5",
         number: 68,
     },
@@ -12549,20 +12430,12 @@
         number: 122,
     },
     Interrupt {
-        name: "DSI",
-        number: 123,
-    },
-    Interrupt {
         name: "SDMMC2",
         number: 124,
     },
     Interrupt {
         name: "HSEM1",
         number: 125,
-    },
-    Interrupt {
-        name: "HSEM2",
-        number: 126,
     },
     Interrupt {
         name: "ADC3",
@@ -12625,10 +12498,6 @@
         number: 142,
     },
     Interrupt {
-        name: "WWDG_RST",
-        number: 143,
-    },
-    Interrupt {
         name: "CRS",
         number: 144,
     },
@@ -12639,10 +12508,6 @@
     Interrupt {
         name: "SAI4",
         number: 146,
-    },
-    Interrupt {
-        name: "HOLD_CORE",
-        number: 148,
     },
     Interrupt {
         name: "WAKEUP_PIN",
@@ -12930,7 +12795,6 @@
 #[path="../registers/dma_v1.rs"] pub mod dma;
 #[path="../registers/dma2d_v2.rs"] pub mod dma2d;
 #[path="../registers/dmamux_v1.rs"] pub mod dmamux;
-#[path="../registers/dsihost_v1.rs"] pub mod dsihost;
 #[path="../registers/eth_v2.rs"] pub mod eth;
 #[path="../registers/exti_h7.rs"] pub mod exti;
 #[path="../registers/fdcanram_h7.rs"] pub mod fdcanram;
@@ -12939,7 +12803,7 @@
 #[path="../registers/gpio_v2.rs"] pub mod gpio;
 #[path="../registers/hash_v2.rs"] pub mod hash;
 #[path="../registers/hrtim_v1.rs"] pub mod hrtim;
-#[path="../registers/hsem_v1.rs"] pub mod hsem;
+#[path="../registers/hsem_v2.rs"] pub mod hsem;
 #[path="../registers/i2c_v2.rs"] pub mod i2c;
 #[path="../registers/iwdg_v2.rs"] pub mod iwdg;
 #[path="../registers/jpeg_v1.rs"] pub mod jpeg;
@@ -12947,9 +12811,9 @@
 #[path="../registers/mdios_v1.rs"] pub mod mdios;
 #[path="../registers/opamp_h_v1.rs"] pub mod opamp;
 #[path="../registers/otg_v1.rs"] pub mod otg;
-#[path="../registers/pwr_h7rm0399.rs"] pub mod pwr;
+#[path="../registers/pwr_h7rm0433.rs"] pub mod pwr;
 #[path="../registers/quadspi_v1.rs"] pub mod quadspi;
-#[path="../registers/rcc_h7.rs"] pub mod rcc;
+#[path="../registers/rcc_h7rm0433.rs"] pub mod rcc;
 #[path="../registers/rng_v1.rs"] pub mod rng;
 #[path="../registers/rtc_v2h7.rs"] pub mod rtc;
 #[path="../registers/sai_v3_4pdm.rs"] pub mod sai;

@@ -113,6 +113,7 @@ PROVIDE(FMAC = DefaultHandler);
 PROVIDE(DTS = DefaultHandler);
 PROVIDE(RNG = DefaultHandler);
 PROVIDE(HASH = DefaultHandler);
+PROVIDE(PKA = DefaultHandler);
 PROVIDE(CEC = DefaultHandler);
 PROVIDE(TIM12 = DefaultHandler);
 PROVIDE(TIM13 = DefaultHandler);

@@ -163,7 +163,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     0,
@@ -174,7 +174,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     0,
@@ -367,7 +367,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     1,
@@ -378,7 +378,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     1,
@@ -389,92 +389,6 @@
             PeripheralInterrupt {
                 signal: "GLOBAL",
                 interrupt: "ADC2",
-            },
-        ],
-    },
-    Peripheral {
-        name: "AES",
-        address: 0x420c0000,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "aes",
-                version: "v3b",
-                block: "AES",
-                ir: &aes::REGISTERS,
-            },
-        ),
-        rcc: Some(
-            PeripheralRcc {
-                bus_clock: "HCLK2",
-                kernel_clock: Clock(
-                    "HCLK2",
-                ),
-                enable: Some(
-                    PeripheralRccRegister {
-                        register: "AHB2ENR",
-                        field: "AESEN",
-                    },
-                ),
-                reset: Some(
-                    PeripheralRccRegister {
-                        register: "AHB2RSTR",
-                        field: "AESRST",
-                    },
-                ),
-                stop_mode: StopMode::Stop1,
-            },
-        ),
-        pins: &[],
-        dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "OUT",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    109,
-                ),
-            },
-            PeripheralDmaChannel {
-                signal: "OUT",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA1",
-                ),
-                request: Some(
-                    109,
-                ),
-            },
-            PeripheralDmaChannel {
-                signal: "IN",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    110,
-                ),
-            },
-            PeripheralDmaChannel {
-                signal: "IN",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA1",
-                ),
-                request: Some(
-                    110,
-                ),
-            },
-        ],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "AES",
             },
         ],
     },
@@ -561,7 +475,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     114,
@@ -572,7 +486,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     114,
@@ -583,7 +497,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     115,
@@ -594,7 +508,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     115,
@@ -741,7 +655,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     2,
@@ -752,7 +666,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     2,
@@ -763,7 +677,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     3,
@@ -774,7 +688,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     3,
@@ -958,13 +872,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB9",
-                signal: "D7",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
                 pin: "PC10",
                 signal: "D8",
                 af: Some(
@@ -1014,71 +921,8 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD12",
-                signal: "D12",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD13",
-                signal: "D13",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
                 pin: "PD2",
                 signal: "D11",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD3",
-                signal: "D5",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD6",
-                signal: "D10",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE0",
-                signal: "D2",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE2",
-                signal: "D3",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE4",
-                signal: "D4",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE5",
-                signal: "D6",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE6",
-                signal: "D7",
                 af: Some(
                     13,
                 ),
@@ -1090,7 +934,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     108,
@@ -1101,7 +945,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     108,
@@ -1274,13 +1118,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB11",
-                signal: "TX_EN",
-                af: Some(
-                    11,
-                ),
-            },
-            PeripheralPin {
                 pin: "PB12",
                 signal: "TXD0",
                 af: Some(
@@ -1346,13 +1183,6 @@
             PeripheralPin {
                 pin: "PC5",
                 signal: "RXD1",
-                af: Some(
-                    11,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE2",
-                signal: "TXD3",
                 af: Some(
                     11,
                 ),
@@ -1516,13 +1346,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB9",
-                signal: "TX",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
                 pin: "PD0",
                 signal: "RX",
                 af: Some(
@@ -1532,20 +1355,6 @@
             PeripheralPin {
                 pin: "PD1",
                 signal: "TX",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD5",
-                signal: "TX",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE0",
-                signal: "RX",
                 af: Some(
                     9,
                 ),
@@ -1630,13 +1439,6 @@
             PeripheralPin {
                 pin: "PB6",
                 signal: "TX",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD9",
-                signal: "RX",
                 af: Some(
                     9,
                 ),
@@ -1746,7 +1548,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     116,
@@ -1757,7 +1559,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     116,
@@ -1768,7 +1570,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     117,
@@ -1779,7 +1581,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     117,
@@ -1857,13 +1659,6 @@
             PeripheralPin {
                 pin: "PA9",
                 signal: "NWE",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PB11",
-                signal: "NBL1",
                 af: Some(
                     12,
                 ),
@@ -2009,55 +1804,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD10",
-                signal: "D15",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD10",
-                signal: "DA15",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD11",
-                signal: "A16",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD11",
-                signal: "CLE",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "A17",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "ALE",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD13",
-                signal: "A18",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
                 pin: "PD14",
                 signal: "D0",
                 af: Some(
@@ -2086,83 +1832,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD3",
-                signal: "CLK",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD4",
-                signal: "NOE",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD5",
-                signal: "NWE",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD6",
-                signal: "NWAIT",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD7",
-                signal: "NCE",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD7",
-                signal: "NE1",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD8",
-                signal: "D13",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD8",
-                signal: "DA13",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD9",
-                signal: "D14",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD9",
-                signal: "DA14",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE0",
-                signal: "NBL0",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
                 pin: "PE10",
                 signal: "D7",
                 af: Some(
@@ -2172,111 +1841,6 @@
             PeripheralPin {
                 pin: "PE10",
                 signal: "DA7",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE11",
-                signal: "D8",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE11",
-                signal: "DA8",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE12",
-                signal: "D9",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE12",
-                signal: "DA9",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE13",
-                signal: "D10",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE13",
-                signal: "DA10",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE14",
-                signal: "D11",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE14",
-                signal: "DA11",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE15",
-                signal: "D12",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE15",
-                signal: "DA12",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE2",
-                signal: "A23",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE3",
-                signal: "A19",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE4",
-                signal: "A20",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE5",
-                signal: "A21",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE6",
-                signal: "A22",
                 af: Some(
                     12,
                 ),
@@ -2833,7 +2397,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     111,
@@ -2844,7 +2408,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     111,
@@ -2922,26 +2486,8 @@
                     4,
                 ),
             },
-            PeripheralPin {
-                pin: "PB9",
-                signal: "SDA",
-                af: Some(
-                    4,
-                ),
-            },
         ],
         dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "RX",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    12,
-                ),
-            },
             PeripheralDmaChannel {
                 signal: "RX",
                 channel: None,
@@ -2954,11 +2500,22 @@
                 ),
             },
             PeripheralDmaChannel {
-                signal: "TX",
+                signal: "RX",
                 channel: None,
                 dmamux: None,
                 dma: Some(
                     "GPDMA2",
+                ),
+                request: Some(
+                    12,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "TX",
+                channel: None,
+                dmamux: None,
+                dma: Some(
+                    "GPDMA1",
                 ),
                 request: Some(
                     13,
@@ -2969,7 +2526,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     13,
@@ -3031,13 +2588,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB11",
-                signal: "SDA",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
                 pin: "PB12",
                 signal: "SDA",
                 af: Some(
@@ -3065,7 +2615,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     15,
@@ -3076,7 +2626,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     15,
@@ -3087,7 +2637,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     16,
@@ -3098,7 +2648,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     16,
@@ -3180,7 +2730,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     18,
@@ -3191,7 +2741,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     18,
@@ -3202,7 +2752,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     19,
@@ -3213,7 +2763,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     19,
@@ -3295,47 +2845,8 @@
                     6,
                 ),
             },
-            PeripheralPin {
-                pin: "PB9",
-                signal: "SDA",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD11",
-                signal: "SMBA",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "SCL",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD13",
-                signal: "SDA",
-                af: Some(
-                    4,
-                ),
-            },
         ],
         dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "RX",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    124,
-                ),
-            },
             PeripheralDmaChannel {
                 signal: "RX",
                 channel: None,
@@ -3348,11 +2859,22 @@
                 ),
             },
             PeripheralDmaChannel {
-                signal: "TX",
+                signal: "RX",
                 channel: None,
                 dmamux: None,
                 dma: Some(
                     "GPDMA2",
+                ),
+                request: Some(
+                    124,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "TX",
+                channel: None,
+                dmamux: None,
+                dma: Some(
+                    "GPDMA1",
                 ),
                 request: Some(
                     125,
@@ -3363,7 +2885,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     125,
@@ -3438,40 +2960,8 @@
                     3,
                 ),
             },
-            PeripheralPin {
-                pin: "PB9",
-                signal: "SDA",
-                af: Some(
-                    3,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "SCL",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD13",
-                signal: "SDA",
-                af: Some(
-                    5,
-                ),
-            },
         ],
         dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "RX",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    120,
-                ),
-            },
             PeripheralDmaChannel {
                 signal: "RX",
                 channel: None,
@@ -3484,11 +2974,22 @@
                 ),
             },
             PeripheralDmaChannel {
-                signal: "TX",
+                signal: "RX",
                 channel: None,
                 dmamux: None,
                 dma: Some(
                     "GPDMA2",
+                ),
+                request: Some(
+                    120,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "TX",
+                channel: None,
+                dmamux: None,
+                dma: Some(
+                    "GPDMA1",
                 ),
                 request: Some(
                     121,
@@ -3499,7 +3000,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     121,
@@ -3510,7 +3011,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     122,
@@ -3521,7 +3022,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     122,
@@ -3532,7 +3033,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     123,
@@ -3543,7 +3044,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     123,
@@ -3667,47 +3168,8 @@
                     4,
                 ),
             },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "IN1",
-                af: Some(
-                    1,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD13",
-                signal: "CH1",
-                af: Some(
-                    1,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE0",
-                signal: "ETR",
-                af: Some(
-                    1,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE2",
-                signal: "IN2",
-                af: Some(
-                    1,
-                ),
-            },
         ],
         dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "IC1",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    102,
-                ),
-            },
             PeripheralDmaChannel {
                 signal: "IC1",
                 channel: None,
@@ -3720,11 +3182,22 @@
                 ),
             },
             PeripheralDmaChannel {
-                signal: "IC2",
+                signal: "IC1",
                 channel: None,
                 dmamux: None,
                 dma: Some(
                     "GPDMA2",
+                ),
+                request: Some(
+                    102,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "IC2",
+                channel: None,
+                dmamux: None,
+                dma: Some(
+                    "GPDMA1",
                 ),
                 request: Some(
                     103,
@@ -3735,7 +3208,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     103,
@@ -3746,7 +3219,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     104,
@@ -3757,7 +3230,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     104,
@@ -3829,13 +3302,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB11",
-                signal: "ETR",
-                af: Some(
-                    3,
-                ),
-            },
-            PeripheralPin {
                 pin: "PB13",
                 signal: "CH1",
                 af: Some(
@@ -3849,61 +3315,8 @@
                     3,
                 ),
             },
-            PeripheralPin {
-                pin: "PD10",
-                signal: "CH2",
-                af: Some(
-                    3,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD11",
-                signal: "IN2",
-                af: Some(
-                    3,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "IN1",
-                af: Some(
-                    3,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD13",
-                signal: "CH1",
-                af: Some(
-                    3,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE0",
-                signal: "CH2",
-                af: Some(
-                    3,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE0",
-                signal: "ETR",
-                af: Some(
-                    4,
-                ),
-            },
         ],
         dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "IC1",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    105,
-                ),
-            },
             PeripheralDmaChannel {
                 signal: "IC1",
                 channel: None,
@@ -3916,11 +3329,22 @@
                 ),
             },
             PeripheralDmaChannel {
-                signal: "IC2",
+                signal: "IC1",
                 channel: None,
                 dmamux: None,
                 dma: Some(
                     "GPDMA2",
+                ),
+                request: Some(
+                    105,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "IC2",
+                channel: None,
+                dmamux: None,
+                dma: Some(
+                    "GPDMA1",
                 ),
                 request: Some(
                     106,
@@ -3931,7 +3355,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     106,
@@ -3942,7 +3366,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     107,
@@ -3953,7 +3377,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     107,
@@ -4073,7 +3497,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     127,
@@ -4084,7 +3508,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     127,
@@ -4095,7 +3519,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     128,
@@ -4106,7 +3530,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     128,
@@ -4117,7 +3541,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     129,
@@ -4128,7 +3552,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     129,
@@ -4179,22 +3603,8 @@
         ),
         pins: &[
             PeripheralPin {
-                pin: "PD13",
-                signal: "IN1",
-                af: Some(
-                    14,
-                ),
-            },
-            PeripheralPin {
                 pin: "PD2",
                 signal: "ETR",
-                af: Some(
-                    14,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD7",
-                signal: "OUT",
                 af: Some(
                     14,
                 ),
@@ -4258,7 +3668,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     130,
@@ -4269,7 +3679,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     130,
@@ -4280,7 +3690,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     131,
@@ -4291,7 +3701,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     131,
@@ -4302,7 +3712,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     132,
@@ -4313,7 +3723,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     132,
@@ -4377,7 +3787,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     133,
@@ -4388,7 +3798,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     133,
@@ -4399,7 +3809,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     134,
@@ -4410,7 +3820,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     134,
@@ -4421,7 +3831,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     135,
@@ -4432,7 +3842,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     135,
@@ -4531,7 +3941,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     45,
@@ -4542,7 +3952,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     45,
@@ -4553,7 +3963,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     46,
@@ -4564,7 +3974,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     46,
@@ -4804,73 +4214,10 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD11",
-                signal: "IO0",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "IO1",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD13",
-                signal: "IO3",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD4",
-                signal: "IO4",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD5",
-                signal: "IO5",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD6",
-                signal: "IO6",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD7",
-                signal: "IO7",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
                 pin: "PE10",
                 signal: "IO7",
                 af: Some(
                     10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE11",
-                signal: "NCS",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE2",
-                signal: "IO2",
-                af: Some(
-                    9,
                 ),
             },
             PeripheralPin {
@@ -4900,47 +4247,6 @@
             PeripheralInterrupt {
                 signal: "GLOBAL",
                 interrupt: "OCTOSPI1",
-            },
-        ],
-    },
-    Peripheral {
-        name: "OTFDEC1",
-        address: 0x46005000,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "otfdec",
-                version: "v1",
-                block: "OTFDEC",
-                ir: &otfdec::REGISTERS,
-            },
-        ),
-        rcc: Some(
-            PeripheralRcc {
-                bus_clock: "HCLK4",
-                kernel_clock: Clock(
-                    "HCLK4",
-                ),
-                enable: Some(
-                    PeripheralRccRegister {
-                        register: "AHB4ENR",
-                        field: "OTFDEC1EN",
-                    },
-                ),
-                reset: Some(
-                    PeripheralRccRegister {
-                        register: "AHB4RSTR",
-                        field: "OTFDEC1RST",
-                    },
-                ),
-                stop_mode: StopMode::Stop1,
-            },
-        ),
-        pins: &[],
-        dma_channels: &[],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "OTFDEC1",
             },
         ],
     },
@@ -5110,13 +4416,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB9",
-                signal: "D7",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
                 pin: "PC10",
                 signal: "D8",
                 af: Some(
@@ -5173,71 +4472,8 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD12",
-                signal: "D12",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD13",
-                signal: "D13",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
                 pin: "PD2",
                 signal: "D11",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD3",
-                signal: "D5",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD6",
-                signal: "D10",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE0",
-                signal: "D2",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE2",
-                signal: "D3",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE4",
-                signal: "D4",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE5",
-                signal: "D6",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE6",
-                signal: "D7",
                 af: Some(
                     13,
                 ),
@@ -5311,11 +4547,6 @@
             PeripheralPin {
                 pin: "PD2",
                 signal: "WKUP7",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PD3",
-                signal: "WKUP8",
                 af: None,
             },
         ],
@@ -5509,92 +4740,6 @@
         ],
     },
     Peripheral {
-        name: "SAES",
-        address: 0x420c0c00,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "saes",
-                version: "v1a",
-                block: "SAES",
-                ir: &saes::REGISTERS,
-            },
-        ),
-        rcc: Some(
-            PeripheralRcc {
-                bus_clock: "HCLK2",
-                kernel_clock: Clock(
-                    "HCLK2",
-                ),
-                enable: Some(
-                    PeripheralRccRegister {
-                        register: "AHB2ENR",
-                        field: "SAESEN",
-                    },
-                ),
-                reset: Some(
-                    PeripheralRccRegister {
-                        register: "AHB2RSTR",
-                        field: "SAESRST",
-                    },
-                ),
-                stop_mode: StopMode::Stop1,
-            },
-        ),
-        pins: &[],
-        dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "OUT",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    118,
-                ),
-            },
-            PeripheralDmaChannel {
-                signal: "OUT",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA1",
-                ),
-                request: Some(
-                    118,
-                ),
-            },
-            PeripheralDmaChannel {
-                signal: "IN",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    119,
-                ),
-            },
-            PeripheralDmaChannel {
-                signal: "IN",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA1",
-                ),
-                request: Some(
-                    119,
-                ),
-            },
-        ],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "SAES",
-            },
-        ],
-    },
-    Peripheral {
         name: "SAI1",
         address: 0x40015400,
         registers: Some(
@@ -5707,110 +4852,8 @@
                     6,
                 ),
             },
-            PeripheralPin {
-                pin: "PD11",
-                signal: "CK1",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "D1",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD6",
-                signal: "D1",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD6",
-                signal: "SD_A",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE2",
-                signal: "CK1",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE2",
-                signal: "MCLK_A",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE3",
-                signal: "SD_B",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE4",
-                signal: "D2",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE4",
-                signal: "FS_A",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE5",
-                signal: "CK2",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE5",
-                signal: "SCK_A",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE6",
-                signal: "D1",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE6",
-                signal: "SD_A",
-                af: Some(
-                    6,
-                ),
-            },
         ],
         dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "A",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    53,
-                ),
-            },
             PeripheralDmaChannel {
                 signal: "A",
                 channel: None,
@@ -5823,11 +4866,22 @@
                 ),
             },
             PeripheralDmaChannel {
-                signal: "B",
+                signal: "A",
                 channel: None,
                 dmamux: None,
                 dma: Some(
                     "GPDMA2",
+                ),
+                request: Some(
+                    53,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "B",
+                channel: None,
+                dmamux: None,
+                dma: Some(
+                    "GPDMA1",
                 ),
                 request: Some(
                     54,
@@ -5838,7 +4892,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     54,
@@ -5930,82 +4984,8 @@
                     8,
                 ),
             },
-            PeripheralPin {
-                pin: "PD11",
-                signal: "SD_A",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "FS_A",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD13",
-                signal: "SCK_A",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE0",
-                signal: "MCLK_A",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE11",
-                signal: "SD_B",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE12",
-                signal: "SCK_B",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE13",
-                signal: "FS_B",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE14",
-                signal: "MCLK_B",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE6",
-                signal: "MCLK_B",
-                af: Some(
-                    10,
-                ),
-            },
         ],
         dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "A",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    55,
-                ),
-            },
             PeripheralDmaChannel {
                 signal: "A",
                 channel: None,
@@ -6018,11 +4998,22 @@
                 ),
             },
             PeripheralDmaChannel {
-                signal: "B",
+                signal: "A",
                 channel: None,
                 dmamux: None,
                 dma: Some(
                     "GPDMA2",
+                ),
+                request: Some(
+                    55,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "B",
+                channel: None,
+                dmamux: None,
+                dma: Some(
+                    "GPDMA1",
                 ),
                 request: Some(
                     56,
@@ -6033,7 +5024,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     56,
@@ -6114,20 +5105,6 @@
             PeripheralPin {
                 pin: "PB8",
                 signal: "D4",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PB9",
-                signal: "CDIR",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PB9",
-                signal: "D5",
                 af: Some(
                     12,
                 ),
@@ -6380,40 +5357,8 @@
                     5,
                 ),
             },
-            PeripheralPin {
-                pin: "PD7",
-                signal: "I2S_SDO",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD7",
-                signal: "MOSI",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE11",
-                signal: "RDY",
-                af: Some(
-                    4,
-                ),
-            },
         ],
         dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "RX",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    6,
-                ),
-            },
             PeripheralDmaChannel {
                 signal: "RX",
                 channel: None,
@@ -6426,11 +5371,22 @@
                 ),
             },
             PeripheralDmaChannel {
-                signal: "TX",
+                signal: "RX",
                 channel: None,
                 dmamux: None,
                 dma: Some(
                     "GPDMA2",
+                ),
+                request: Some(
+                    6,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "TX",
+                channel: None,
+                dmamux: None,
+                dma: Some(
+                    "GPDMA1",
                 ),
                 request: Some(
                     7,
@@ -6441,7 +5397,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     7,
@@ -6562,13 +5518,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB11",
-                signal: "RDY",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
                 pin: "PB12",
                 signal: "I2S_WS",
                 af: Some(
@@ -6636,20 +5585,6 @@
                 signal: "NSS",
                 af: Some(
                     7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PB9",
-                signal: "I2S_WS",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PB9",
-                signal: "NSS",
-                af: Some(
-                    5,
                 ),
             },
             PeripheralPin {
@@ -6708,40 +5643,8 @@
                     5,
                 ),
             },
-            PeripheralPin {
-                pin: "PD3",
-                signal: "I2S_CK",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD3",
-                signal: "SCK",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD5",
-                signal: "RDY",
-                af: Some(
-                    5,
-                ),
-            },
         ],
         dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "RX",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    8,
-                ),
-            },
             PeripheralDmaChannel {
                 signal: "RX",
                 channel: None,
@@ -6754,11 +5657,22 @@
                 ),
             },
             PeripheralDmaChannel {
-                signal: "TX",
+                signal: "RX",
                 channel: None,
                 dmamux: None,
                 dma: Some(
                     "GPDMA2",
+                ),
+                request: Some(
+                    8,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "TX",
+                channel: None,
+                dmamux: None,
+                dma: Some(
+                    "GPDMA1",
                 ),
                 request: Some(
                     9,
@@ -6769,7 +5683,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     9,
@@ -6959,40 +5873,8 @@
                     6,
                 ),
             },
-            PeripheralPin {
-                pin: "PD6",
-                signal: "I2S_SDO",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD6",
-                signal: "MOSI",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE0",
-                signal: "RDY",
-                af: Some(
-                    6,
-                ),
-            },
         ],
         dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "RX",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    10,
-                ),
-            },
             PeripheralDmaChannel {
                 signal: "RX",
                 channel: None,
@@ -7005,11 +5887,22 @@
                 ),
             },
             PeripheralDmaChannel {
-                signal: "TX",
+                signal: "RX",
                 channel: None,
                 dmamux: None,
                 dma: Some(
                     "GPDMA2",
+                ),
+                request: Some(
+                    10,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "TX",
+                channel: None,
+                dmamux: None,
+                dma: Some(
+                    "GPDMA1",
                 ),
                 request: Some(
                     11,
@@ -7020,7 +5913,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     11,
@@ -7031,166 +5924,6 @@
             PeripheralInterrupt {
                 signal: "GLOBAL",
                 interrupt: "SPI3",
-            },
-        ],
-    },
-    Peripheral {
-        name: "SPI4",
-        address: 0x40014c00,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "spi",
-                version: "v4",
-                block: "SPI",
-                ir: &spi::REGISTERS,
-            },
-        ),
-        rcc: Some(
-            PeripheralRcc {
-                bus_clock: "PCLK2",
-                kernel_clock: Mux(
-                    PeripheralRccRegister {
-                        register: "CCIPR3",
-                        field: "SPI4SEL",
-                    },
-                ),
-                enable: Some(
-                    PeripheralRccRegister {
-                        register: "APB2ENR",
-                        field: "SPI4EN",
-                    },
-                ),
-                reset: Some(
-                    PeripheralRccRegister {
-                        register: "APB2RSTR",
-                        field: "SPI4RST",
-                    },
-                ),
-                stop_mode: StopMode::Stop1,
-            },
-        ),
-        pins: &[
-            PeripheralPin {
-                pin: "PB11",
-                signal: "RDY",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
-                pin: "PB8",
-                signal: "RDY",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE11",
-                signal: "NSS",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE12",
-                signal: "SCK",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE13",
-                signal: "MISO",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE14",
-                signal: "MOSI",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE2",
-                signal: "SCK",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE4",
-                signal: "NSS",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE5",
-                signal: "MISO",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE6",
-                signal: "MOSI",
-                af: Some(
-                    5,
-                ),
-            },
-        ],
-        dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "RX",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    47,
-                ),
-            },
-            PeripheralDmaChannel {
-                signal: "RX",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA1",
-                ),
-                request: Some(
-                    47,
-                ),
-            },
-            PeripheralDmaChannel {
-                signal: "TX",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    48,
-                ),
-            },
-            PeripheralDmaChannel {
-                signal: "TX",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA1",
-                ),
-                request: Some(
-                    48,
-                ),
-            },
-        ],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "SPI4",
             },
         ],
     },
@@ -7307,7 +6040,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     51,
@@ -7318,7 +6051,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     51,
@@ -7329,7 +6062,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     52,
@@ -7340,7 +6073,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     52,
@@ -7374,13 +6107,13 @@
                 enable: Some(
                     PeripheralRccRegister {
                         register: "APB3ENR",
-                        field: "SBSEN",
+                        field: "SYSCFGEN",
                     },
                 ),
                 reset: Some(
                     PeripheralRccRegister {
                         register: "APB3RSTR",
-                        field: "SBSRST",
+                        field: "SYSCFGRST",
                     },
                 ),
                 stop_mode: StopMode::Stop1,
@@ -7456,46 +6189,6 @@
             PeripheralPin {
                 pin: "PC13",
                 signal: "OUT3",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PE3",
-                signal: "IN6",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PE3",
-                signal: "OUT3",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PE4",
-                signal: "IN7",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PE4",
-                signal: "OUT8",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PE5",
-                signal: "IN8",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PE5",
-                signal: "OUT7",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PE6",
-                signal: "IN3",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PE6",
-                signal: "OUT6",
                 af: None,
             },
         ],
@@ -7639,64 +6332,8 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD5",
-                signal: "CH4N",
-                af: Some(
-                    1,
-                ),
-            },
-            PeripheralPin {
                 pin: "PE10",
                 signal: "CH2N",
-                af: Some(
-                    1,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE11",
-                signal: "CH2",
-                af: Some(
-                    1,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE12",
-                signal: "CH3N",
-                af: Some(
-                    1,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE13",
-                signal: "CH3",
-                af: Some(
-                    1,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE14",
-                signal: "CH4",
-                af: Some(
-                    1,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE15",
-                signal: "BKIN",
-                af: Some(
-                    1,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE15",
-                signal: "CH4N",
-                af: Some(
-                    3,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE6",
-                signal: "BKIN2",
                 af: Some(
                     1,
                 ),
@@ -7729,7 +6366,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     58,
@@ -7740,7 +6377,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     58,
@@ -7751,7 +6388,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     59,
@@ -7762,7 +6399,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     59,
@@ -7773,7 +6410,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     60,
@@ -7784,7 +6421,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     60,
@@ -7795,7 +6432,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     61,
@@ -7806,7 +6443,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     61,
@@ -7817,7 +6454,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     62,
@@ -7828,7 +6465,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     62,
@@ -7839,7 +6476,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     63,
@@ -7850,7 +6487,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     63,
@@ -7861,7 +6498,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     64,
@@ -7872,7 +6509,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     64,
@@ -8179,47 +6816,8 @@
                     4,
                 ),
             },
-            PeripheralPin {
-                pin: "PE3",
-                signal: "BKIN",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE4",
-                signal: "CH1N",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE5",
-                signal: "CH1",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE6",
-                signal: "CH2",
-                af: Some(
-                    4,
-                ),
-            },
         ],
         dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "CC1",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    94,
-                ),
-            },
             PeripheralDmaChannel {
                 signal: "CC1",
                 channel: None,
@@ -8232,11 +6830,22 @@
                 ),
             },
             PeripheralDmaChannel {
-                signal: "UPD",
+                signal: "CC1",
                 channel: None,
                 dmamux: None,
                 dma: Some(
                     "GPDMA2",
+                ),
+                request: Some(
+                    94,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "UPD",
+                channel: None,
+                dmamux: None,
+                dma: Some(
+                    "GPDMA1",
                 ),
                 request: Some(
                     95,
@@ -8247,7 +6856,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     95,
@@ -8258,7 +6867,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     96,
@@ -8269,7 +6878,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     96,
@@ -8280,7 +6889,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     97,
@@ -8291,7 +6900,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     97,
@@ -8389,7 +6998,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     98,
@@ -8400,7 +7009,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     98,
@@ -8411,7 +7020,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     99,
@@ -8422,7 +7031,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     99,
@@ -8500,13 +7109,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB9",
-                signal: "CH1",
-                af: Some(
-                    1,
-                ),
-            },
-            PeripheralPin {
                 pin: "PC2",
                 signal: "CH1",
                 af: Some(
@@ -8520,7 +7122,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     100,
@@ -8531,7 +7133,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     100,
@@ -8542,7 +7144,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     101,
@@ -8553,7 +7155,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     101,
@@ -8687,13 +7289,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB11",
-                signal: "CH4",
-                af: Some(
-                    1,
-                ),
-            },
-            PeripheralPin {
                 pin: "PB3",
                 signal: "CH2",
                 af: Some(
@@ -8714,7 +7309,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     72,
@@ -8725,7 +7320,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     72,
@@ -8736,7 +7331,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     73,
@@ -8747,7 +7342,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     73,
@@ -8758,7 +7353,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     74,
@@ -8769,7 +7364,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     74,
@@ -8780,7 +7375,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     75,
@@ -8791,7 +7386,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     75,
@@ -8802,7 +7397,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     76,
@@ -8813,7 +7408,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     76,
@@ -8960,7 +7555,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     77,
@@ -8971,7 +7566,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     77,
@@ -8982,7 +7577,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     78,
@@ -8993,7 +7588,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     78,
@@ -9004,7 +7599,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     79,
@@ -9015,7 +7610,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     79,
@@ -9026,7 +7621,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     80,
@@ -9037,7 +7632,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     80,
@@ -9048,7 +7643,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     81,
@@ -9059,7 +7654,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     81,
@@ -9070,7 +7665,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     82,
@@ -9081,7 +7676,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     82,
@@ -9166,29 +7761,8 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB9",
-                signal: "CH4",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
                 pin: "PC2",
                 signal: "CH4",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "CH1",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD13",
-                signal: "CH2",
                 af: Some(
                     2,
                 ),
@@ -9207,26 +7781,8 @@
                     2,
                 ),
             },
-            PeripheralPin {
-                pin: "PE0",
-                signal: "ETR",
-                af: Some(
-                    2,
-                ),
-            },
         ],
         dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "CC1",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    83,
-                ),
-            },
             PeripheralDmaChannel {
                 signal: "CC1",
                 channel: None,
@@ -9239,11 +7795,22 @@
                 ),
             },
             PeripheralDmaChannel {
-                signal: "CC2",
+                signal: "CC1",
                 channel: None,
                 dmamux: None,
                 dma: Some(
                     "GPDMA2",
+                ),
+                request: Some(
+                    83,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "CC2",
+                channel: None,
+                dmamux: None,
+                dma: Some(
+                    "GPDMA1",
                 ),
                 request: Some(
                     84,
@@ -9254,7 +7821,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     84,
@@ -9265,7 +7832,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     85,
@@ -9276,7 +7843,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     85,
@@ -9287,7 +7854,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     86,
@@ -9298,7 +7865,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     86,
@@ -9309,7 +7876,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     87,
@@ -9320,7 +7887,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     87,
@@ -9425,7 +7992,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     88,
@@ -9436,7 +8003,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     88,
@@ -9447,7 +8014,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     89,
@@ -9458,7 +8025,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     89,
@@ -9469,7 +8036,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     90,
@@ -9480,7 +8047,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     90,
@@ -9491,7 +8058,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     91,
@@ -9502,7 +8069,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     91,
@@ -9513,7 +8080,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     92,
@@ -9524,7 +8091,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     92,
@@ -9535,7 +8102,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     93,
@@ -9546,7 +8113,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     93,
@@ -9615,7 +8182,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     4,
@@ -9626,7 +8193,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     4,
@@ -9695,7 +8262,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     5,
@@ -9706,7 +8273,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     5,
@@ -9881,7 +8448,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     65,
@@ -9892,7 +8459,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     65,
@@ -9903,7 +8470,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     66,
@@ -9914,7 +8481,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     66,
@@ -9925,7 +8492,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     67,
@@ -9936,7 +8503,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     67,
@@ -9947,7 +8514,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     68,
@@ -9958,7 +8525,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     68,
@@ -9969,7 +8536,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     69,
@@ -9980,7 +8547,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     69,
@@ -9991,7 +8558,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     70,
@@ -10002,7 +8569,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     70,
@@ -10013,7 +8580,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     71,
@@ -10024,7 +8591,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     71,
@@ -10136,7 +8703,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     43,
@@ -10147,7 +8714,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     43,
@@ -10158,7 +8725,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     44,
@@ -10169,7 +8736,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     44,
@@ -10297,13 +8864,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB9",
-                signal: "TX",
-                af: Some(
-                    8,
-                ),
-            },
-            PeripheralPin {
                 pin: "PC10",
                 signal: "TX",
                 af: Some(
@@ -10331,33 +8891,8 @@
                     8,
                 ),
             },
-            PeripheralPin {
-                pin: "PD11",
-                signal: "RX",
-                af: Some(
-                    8,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "TX",
-                af: Some(
-                    8,
-                ),
-            },
         ],
         dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "RX",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    27,
-                ),
-            },
             PeripheralDmaChannel {
                 signal: "RX",
                 channel: None,
@@ -10370,11 +8905,22 @@
                 ),
             },
             PeripheralDmaChannel {
-                signal: "TX",
+                signal: "RX",
                 channel: None,
                 dmamux: None,
                 dma: Some(
                     "GPDMA2",
+                ),
+                request: Some(
+                    27,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "TX",
+                channel: None,
+                dmamux: None,
+                dma: Some(
+                    "GPDMA1",
                 ),
                 request: Some(
                     28,
@@ -10385,7 +8931,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     28,
@@ -10512,7 +9058,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     29,
@@ -10523,7 +9069,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     29,
@@ -10534,7 +9080,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     30,
@@ -10545,7 +9091,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     30,
@@ -10658,7 +9204,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     33,
@@ -10669,7 +9215,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     33,
@@ -10680,7 +9226,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     34,
@@ -10691,7 +9237,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     34,
@@ -10702,124 +9248,6 @@
             PeripheralInterrupt {
                 signal: "GLOBAL",
                 interrupt: "UART7",
-            },
-        ],
-    },
-    Peripheral {
-        name: "UART8",
-        address: 0x40007c00,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "usart",
-                version: "v4",
-                block: "USART",
-                ir: &usart::REGISTERS,
-            },
-        ),
-        rcc: Some(
-            PeripheralRcc {
-                bus_clock: "PCLK1",
-                kernel_clock: Mux(
-                    PeripheralRccRegister {
-                        register: "CCIPR1",
-                        field: "UART8SEL",
-                    },
-                ),
-                enable: Some(
-                    PeripheralRccRegister {
-                        register: "APB1LENR",
-                        field: "UART8EN",
-                    },
-                ),
-                reset: Some(
-                    PeripheralRccRegister {
-                        register: "APB1LRSTR",
-                        field: "UART8RST",
-                    },
-                ),
-                stop_mode: StopMode::Stop1,
-            },
-        ),
-        pins: &[
-            PeripheralPin {
-                pin: "PD14",
-                signal: "CTS",
-                af: Some(
-                    8,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD15",
-                signal: "RTS",
-                af: Some(
-                    8,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE0",
-                signal: "RX",
-                af: Some(
-                    8,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE2",
-                signal: "TX",
-                af: Some(
-                    8,
-                ),
-            },
-        ],
-        dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "RX",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    35,
-                ),
-            },
-            PeripheralDmaChannel {
-                signal: "RX",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA1",
-                ),
-                request: Some(
-                    35,
-                ),
-            },
-            PeripheralDmaChannel {
-                signal: "TX",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    36,
-                ),
-            },
-            PeripheralDmaChannel {
-                signal: "TX",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA1",
-                ),
-                request: Some(
-                    36,
-                ),
-            },
-        ],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "UART8",
             },
         ],
     },
@@ -10867,13 +9295,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD13",
-                signal: "RTS",
-                af: Some(
-                    11,
-                ),
-            },
-            PeripheralPin {
                 pin: "PD14",
                 signal: "RX",
                 af: Some(
@@ -10894,7 +9315,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     37,
@@ -10905,7 +9326,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     37,
@@ -10916,7 +9337,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     38,
@@ -10927,7 +9348,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     38,
@@ -11015,7 +9436,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     112,
@@ -11026,7 +9447,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     112,
@@ -11037,7 +9458,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     113,
@@ -11048,7 +9469,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     113,
@@ -11191,7 +9612,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     21,
@@ -11202,7 +9623,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     21,
@@ -11213,7 +9634,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     22,
@@ -11224,7 +9645,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     22,
@@ -11235,72 +9656,6 @@
             PeripheralInterrupt {
                 signal: "GLOBAL",
                 interrupt: "USART1",
-            },
-        ],
-    },
-    Peripheral {
-        name: "USART10",
-        address: 0x40006800,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "usart",
-                version: "v4",
-                block: "USART",
-                ir: &usart::REGISTERS,
-            },
-        ),
-        rcc: Some(
-            PeripheralRcc {
-                bus_clock: "PCLK1",
-                kernel_clock: Mux(
-                    PeripheralRccRegister {
-                        register: "CCIPR1",
-                        field: "USART10SEL",
-                    },
-                ),
-                enable: Some(
-                    PeripheralRccRegister {
-                        register: "APB1LENR",
-                        field: "USART10EN",
-                    },
-                ),
-                reset: Some(
-                    PeripheralRccRegister {
-                        register: "APB1LRSTR",
-                        field: "USART10RST",
-                    },
-                ),
-                stop_mode: StopMode::Stop1,
-            },
-        ),
-        pins: &[
-            PeripheralPin {
-                pin: "PE15",
-                signal: "CK",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE2",
-                signal: "RX",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE3",
-                signal: "TX",
-                af: Some(
-                    7,
-                ),
-            },
-        ],
-        dma_channels: &[],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "USART10",
             },
         ],
     },
@@ -11469,61 +9824,8 @@
                     7,
                 ),
             },
-            PeripheralPin {
-                pin: "PD3",
-                signal: "CTS",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD3",
-                signal: "NSS",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD4",
-                signal: "RTS",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD5",
-                signal: "TX",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD6",
-                signal: "RX",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD7",
-                signal: "CK",
-                af: Some(
-                    7,
-                ),
-            },
         ],
         dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "RX",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    23,
-                ),
-            },
             PeripheralDmaChannel {
                 signal: "RX",
                 channel: None,
@@ -11536,11 +9838,22 @@
                 ),
             },
             PeripheralDmaChannel {
-                signal: "TX",
+                signal: "RX",
                 channel: None,
                 dmamux: None,
                 dma: Some(
                     "GPDMA2",
+                ),
+                request: Some(
+                    23,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "TX",
+                channel: None,
+                dmamux: None,
+                dma: Some(
+                    "GPDMA1",
                 ),
                 request: Some(
                     24,
@@ -11551,7 +9864,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     24,
@@ -11604,13 +9917,6 @@
             PeripheralPin {
                 pin: "PB10",
                 signal: "TX",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PB11",
-                signal: "RX",
                 af: Some(
                     7,
                 ),
@@ -11671,61 +9977,8 @@
                     7,
                 ),
             },
-            PeripheralPin {
-                pin: "PD10",
-                signal: "CK",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD11",
-                signal: "CTS",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD11",
-                signal: "NSS",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "RTS",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD8",
-                signal: "TX",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD9",
-                signal: "RX",
-                af: Some(
-                    7,
-                ),
-            },
         ],
         dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "RX",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA2",
-                ),
-                request: Some(
-                    25,
-                ),
-            },
             PeripheralDmaChannel {
                 signal: "RX",
                 channel: None,
@@ -11738,11 +9991,22 @@
                 ),
             },
             PeripheralDmaChannel {
-                signal: "TX",
+                signal: "RX",
                 channel: None,
                 dmamux: None,
                 dma: Some(
                     "GPDMA2",
+                ),
+                request: Some(
+                    25,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "TX",
+                channel: None,
+                dmamux: None,
+                dma: Some(
+                    "GPDMA1",
                 ),
                 request: Some(
                     26,
@@ -11753,7 +10017,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     26,
@@ -11831,7 +10095,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     31,
@@ -11842,7 +10106,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     31,
@@ -11853,7 +10117,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA2",
+                    "GPDMA1",
                 ),
                 request: Some(
                     32,
@@ -11864,7 +10128,7 @@
                 channel: None,
                 dmamux: None,
                 dma: Some(
-                    "GPDMA1",
+                    "GPDMA2",
                 ),
                 request: Some(
                     32,
@@ -12169,10 +10433,6 @@
     Interrupt {
         name: "IWDG",
         number: 35,
-    },
-    Interrupt {
-        name: "SAES",
-        number: 36,
     },
     Interrupt {
         name: "ADC1",
@@ -12487,14 +10747,6 @@
         number: 114,
     },
     Interrupt {
-        name: "OTFDEC1",
-        number: 115,
-    },
-    Interrupt {
-        name: "AES",
-        number: 116,
-    },
-    Interrupt {
         name: "HASH",
         number: 117,
     },
@@ -12553,62 +10805,6 @@
 ];
                 pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
     DmaChannel {
-        name: "GPDMA2_CH0",
-        dma: "GPDMA2",
-        channel: 0,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
-        name: "GPDMA2_CH1",
-        dma: "GPDMA2",
-        channel: 1,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
-        name: "GPDMA2_CH2",
-        dma: "GPDMA2",
-        channel: 2,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
-        name: "GPDMA2_CH3",
-        dma: "GPDMA2",
-        channel: 3,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
-        name: "GPDMA2_CH4",
-        dma: "GPDMA2",
-        channel: 4,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
-        name: "GPDMA2_CH5",
-        dma: "GPDMA2",
-        channel: 5,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
-        name: "GPDMA2_CH6",
-        dma: "GPDMA2",
-        channel: 6,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
-        name: "GPDMA2_CH7",
-        dma: "GPDMA2",
-        channel: 7,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
         name: "GPDMA1_CH0",
         dma: "GPDMA1",
         channel: 0,
@@ -12664,10 +10860,65 @@
         dmamux: None,
         dmamux_channel: None,
     },
+    DmaChannel {
+        name: "GPDMA2_CH0",
+        dma: "GPDMA2",
+        channel: 0,
+        dmamux: None,
+        dmamux_channel: None,
+    },
+    DmaChannel {
+        name: "GPDMA2_CH1",
+        dma: "GPDMA2",
+        channel: 1,
+        dmamux: None,
+        dmamux_channel: None,
+    },
+    DmaChannel {
+        name: "GPDMA2_CH2",
+        dma: "GPDMA2",
+        channel: 2,
+        dmamux: None,
+        dmamux_channel: None,
+    },
+    DmaChannel {
+        name: "GPDMA2_CH3",
+        dma: "GPDMA2",
+        channel: 3,
+        dmamux: None,
+        dmamux_channel: None,
+    },
+    DmaChannel {
+        name: "GPDMA2_CH4",
+        dma: "GPDMA2",
+        channel: 4,
+        dmamux: None,
+        dmamux_channel: None,
+    },
+    DmaChannel {
+        name: "GPDMA2_CH5",
+        dma: "GPDMA2",
+        channel: 5,
+        dmamux: None,
+        dmamux_channel: None,
+    },
+    DmaChannel {
+        name: "GPDMA2_CH6",
+        dma: "GPDMA2",
+        channel: 6,
+        dmamux: None,
+        dmamux_channel: None,
+    },
+    DmaChannel {
+        name: "GPDMA2_CH7",
+        dma: "GPDMA2",
+        channel: 7,
+        dmamux: None,
+        dmamux_channel: None,
+    },
 ];
             #[path="../registers/adc_h5.rs"] pub mod adc;
 #[path="../registers/adccommon_h5.rs"] pub mod adccommon;
-#[path="../registers/aes_v3b.rs"] pub mod aes;
 #[path="../registers/can_fdcan_v1.rs"] pub mod can;
 #[path="../registers/cec_v2.rs"] pub mod cec;
 #[path="../registers/cordic_v1.rs"] pub mod cordic;
@@ -12693,14 +10944,12 @@
 #[path="../registers/iwdg_v3.rs"] pub mod iwdg;
 #[path="../registers/lptim_v2a.rs"] pub mod lptim;
 #[path="../registers/octospi_v2.rs"] pub mod octospi;
-#[path="../registers/otfdec_v1.rs"] pub mod otfdec;
 #[path="../registers/pka_v1a.rs"] pub mod pka;
 #[path="../registers/pssi_v1.rs"] pub mod pssi;
 #[path="../registers/pwr_h5.rs"] pub mod pwr;
 #[path="../registers/rcc_h5.rs"] pub mod rcc;
 #[path="../registers/rng_v3.rs"] pub mod rng;
 #[path="../registers/rtc_v3u5.rs"] pub mod rtc;
-#[path="../registers/saes_v1a.rs"] pub mod saes;
 #[path="../registers/sai_v4_2pdm.rs"] pub mod sai;
 #[path="../registers/sdmmc_v2.rs"] pub mod sdmmc;
 #[path="../registers/spi_v4.rs"] pub mod spi;

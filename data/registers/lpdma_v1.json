@@ -3,113 +3,113 @@
     "items": [
       {
         "name": "LBAR",
-        "description": "GPDMA channel 15 linked-list base address register",
+        "description": "LPDMA channel 15 linked-list base address register",
         "byte_offset": 0,
         "fieldset": "CH_LBAR"
       },
       {
         "name": "FCR",
-        "description": "GPDMA channel 15 flag clear register",
+        "description": "LPDMA channel 15 flag clear register",
         "byte_offset": 12,
         "fieldset": "CH_FCR"
       },
       {
         "name": "SR",
-        "description": "GPDMA channel 15 status register",
+        "description": "LPDMA channel 15 status register",
         "byte_offset": 16,
         "fieldset": "CH_SR"
       },
       {
         "name": "CR",
-        "description": "GPDMA channel 15 control register",
+        "description": "LPDMA channel 15 control register",
         "byte_offset": 20,
         "fieldset": "CH_CR"
       },
       {
         "name": "TR1",
-        "description": "GPDMA channel 15 transfer register 1",
+        "description": "LPDMA channel 15 transfer register 1",
         "byte_offset": 64,
         "fieldset": "CH_TR1"
       },
       {
         "name": "TR2",
-        "description": "GPDMA channel 15 transfer register 2",
+        "description": "LPDMA channel 15 transfer register 2",
         "byte_offset": 68,
         "fieldset": "CH_TR2"
       },
       {
         "name": "BR1",
-        "description": "GPDMA channel 15 alternate block register 1",
+        "description": "LPDMA channel 15 alternate block register 1",
         "byte_offset": 72,
         "fieldset": "CH_BR1"
       },
       {
         "name": "SAR",
-        "description": "GPDMA channel 15 source address register",
+        "description": "LPDMA channel 15 source address register",
         "byte_offset": 76
       },
       {
         "name": "DAR",
-        "description": "GPDMA channel 15 destination address register",
+        "description": "LPDMA channel 15 destination address register",
         "byte_offset": 80
       },
       {
         "name": "TR3",
-        "description": "GPDMA channel 15 transfer register 3",
+        "description": "LPDMA channel 15 transfer register 3",
         "byte_offset": 84,
         "fieldset": "CH_TR3"
       },
       {
         "name": "BR2",
-        "description": "GPDMA channel 15 block register 2",
+        "description": "LPDMA channel 15 block register 2",
         "byte_offset": 88,
         "fieldset": "CH_BR2"
       },
       {
         "name": "LLR",
-        "description": "GPDMA channel 15 alternate linked-list address register",
+        "description": "LPDMA channel 15 alternate linked-list address register",
         "byte_offset": 124,
         "fieldset": "CH_LLR"
       }
     ]
   },
-  "block/GPDMA": {
-    "description": "GPDMA",
+  "block/LPDMA": {
+    "description": "LPDMA",
     "items": [
       {
         "name": "SECCFGR",
-        "description": "GPDMA secure configuration register",
+        "description": "LPDMA secure configuration register",
         "byte_offset": 0,
         "fieldset": "SECCFGR"
       },
       {
         "name": "PRIVCFGR",
-        "description": "GPDMA privileged configuration register",
+        "description": "LPDMA privileged configuration register",
         "byte_offset": 4,
         "fieldset": "PRIVCFGR"
       },
       {
         "name": "RCFGLOCKR",
-        "description": "GPDMA configuration lock register",
+        "description": "LPDMA configuration lock register",
         "byte_offset": 8,
         "fieldset": "RCFGLOCKR"
       },
       {
         "name": "MISR",
-        "description": "GPDMA non-secure masked interrupt status register",
+        "description": "LPDMA non-secure masked interrupt status register",
         "byte_offset": 12,
         "fieldset": "MISR"
       },
       {
         "name": "SMISR",
-        "description": "GPDMA secure masked interrupt status register",
+        "description": "LPDMA secure masked interrupt status register",
         "byte_offset": 16,
         "fieldset": "MISR"
       },
       {
         "name": "CH",
         "array": {
-          "len": 16,
+          "len": 4,
           "stride": 128
         },
         "byte_offset": 80,
@@ -118,7 +118,7 @@
     ]
   },
   "fieldset/CH_BR1": {
-    "description": "GPDMA channel 15 alternate block register 1",
+    "description": "LPDMA channel 15 alternate block register 1",
     "fields": [
       {
         "name": "BNDT",
@@ -163,7 +163,7 @@
     ]
   },
   "fieldset/CH_BR2": {
-    "description": "GPDMA channel 12 block register 2",
+    "description": "LPDMA channel 12 block register 2",
     "fields": [
       {
         "name": "BRSAO",
@@ -180,7 +180,7 @@
     ]
   },
   "fieldset/CH_CR": {
-    "description": "GPDMA channel 11 control register",
+    "description": "LPDMA channel 11 control register",
     "fields": [
       {
         "name": "EN",
@@ -196,7 +196,7 @@
       },
       {
         "name": "SUSP",
-        "description": "suspend. Writing 1 into the field RESET (bit 1) causes the hardware to de-assert this bit, whatever is written into this bit 2. Else: Software must write 1 in order to suspend an active channel i.e. a channel with an on-going GPDMA transfer over its master ports. The software must write 0 in order to resume a suspended channel, following the programming sequence detailed in .",
+        "description": "suspend. Writing 1 into the field RESET (bit 1) causes the hardware to de-assert this bit, whatever is written into this bit 2. Else: Software must write 1 in order to suspend an active channel i.e. a channel with an on-going LPDMA transfer over its master ports. The software must write 0 in order to resume a suspended channel, following the programming sequence detailed in .",
         "bit_offset": 2,
         "bit_size": 1
       },
@@ -250,15 +250,8 @@
         "enum": "LSM"
       },
       {
-        "name": "LAP",
-        "description": "linked-list allocated port. This bit is used to allocate the master port for the update of the GPDMA linked-list registers from the memory. Note: This bit must be written when EN=0. This bit is read-only when EN=1.",
-        "bit_offset": 17,
-        "bit_size": 1,
-        "enum": "AP"
-      },
-      {
         "name": "PRIO",
-        "description": "priority level of the channel x GPDMA transfer versus others. Note: This bit must be written when EN = 0. This bit is read-only when EN = 1.",
+        "description": "priority level of the channel x LPDMA transfer versus others. Note: This bit must be written when EN = 0. This bit is read-only when EN = 1.",
         "bit_offset": 22,
         "bit_size": 2,
         "enum": "PRIO"
@@ -266,7 +259,7 @@
     ]
   },
   "fieldset/CH_FCR": {
-    "description": "GPDMA channel 7 flag clear register",
+    "description": "LPDMA channel 7 flag clear register",
     "fields": [
       {
         "name": "TCF",
@@ -313,22 +306,22 @@
     ]
   },
   "fieldset/CH_LBAR": {
-    "description": "GPDMA channel 14 linked-list base address register",
+    "description": "LPDMA channel 14 linked-list base address register",
     "fields": [
       {
         "name": "LBA",
-        "description": "linked-list base address of GPDMA channel x",
+        "description": "linked-list base address of LPDMA channel x",
         "bit_offset": 16,
         "bit_size": 16
       }
     ]
   },
   "fieldset/CH_LLR": {
-    "description": "GPDMA channel 15 alternate linked-list address register",
+    "description": "LPDMA channel 15 alternate linked-list address register",
     "fields": [
       {
         "name": "LA",
-        "description": "pointer (16-bit low-significant address) to the next linked-list data structure. If UT1 = UT2 = UB1 = USA = UDA = ULL = 0 and if LA[15:20] = 0, the current LLI is the last one. The channel transfer is completed without any update of the linked-list GPDMA register file. Else, this field is the pointer to the memory address offset from which the next linked-list data structure is automatically fetched from, once the data transfer is completed, in order to conditionally update the linked-list GPDMA internal register file (CH[x].CTR1, CH[x].TR2, CH[x].BR1, CH[x].SAR, CH[x].DAR and CH[x].LLR). Note: The user must program the pointer to be 32-bit aligned. The two low-significant bits are write ignored.",
+        "description": "pointer (16-bit low-significant address) to the next linked-list data structure. If UT1 = UT2 = UB1 = USA = UDA = ULL = 0 and if LA[15:20] = 0, the current LLI is the last one. The channel transfer is completed without any update of the linked-list LPDMA register file. Else, this field is the pointer to the memory address offset from which the next linked-list data structure is automatically fetched from, once the data transfer is completed, in order to conditionally update the linked-list LPDMA internal register file (CH[x].CTR1, CH[x].TR2, CH[x].BR1, CH[x].SAR, CH[x].DAR and CH[x].LLR). Note: The user must program the pointer to be 32-bit aligned. The two low-significant bits are write ignored.",
         "bit_offset": 2,
         "bit_size": 14
       },
@@ -383,7 +376,7 @@
     ]
   },
   "fieldset/CH_SR": {
-    "description": "GPDMA channel 15 status register",
+    "description": "LPDMA channel 15 status register",
     "fields": [
       {
         "name": "IDLEF",
@@ -432,17 +425,11 @@
         "description": "trigger overrun flag",
         "bit_offset": 14,
         "bit_size": 1
-      },
-      {
-        "name": "FIFOL",
-        "description": "monitored FIFO level. Number of available write beats in the FIFO, in units of the programmed destination data width (see CH[x].TR1.DDW[1:0], in units of bytes, half-words, or words). Note: After having suspended an active transfer, the user may need to read FIFOL[7:0], additionally to CH[x].BR1.BDNT[15:0] and CH[x].BR1.BRC[10:0], to know how many data have been transferred to the destination. Before reading, the user may wait for the transfer to be suspended (CH[x].SR.SUSPF = 1).",
-        "bit_offset": 16,
-        "bit_size": 8
       }
     ]
   },
   "fieldset/CH_TR1": {
-    "description": "GPDMA channel 8 transfer register 1",
+    "description": "LPDMA channel 8 transfer register 1",
     "fields": [
       {
         "name": "SDW",
@@ -458,12 +445,6 @@
         "bit_size": 1
       },
       {
-        "name": "SBL_1",
-        "description": "source burst length minus 1, between 0 and 63. The burst length unit is one data named beat within a burst. If SBL_1[5:0] =0 , the burst can be named as single. Each data/beat has a width defined by the destination data width SDW_LOG2[1:0]. Note: If a burst transfer crossed a 1-Kbyte address boundary on a AHB transfer, the GPDMA modifies and shortens the programmed burst into singles or bursts of lower length, to be compliant with the AHB protocol. If a burst transfer is of length greater than the FIFO size of the channel x, the GPDMA modifies and shortens the programmed burst into singles or bursts of lower length, to be compliant with the FIFO size. Transfer performance is lower, with GPDMA re-arbitration between effective and lower bursts/singles, but the data integrity is guaranteed.",
-        "bit_offset": 4,
-        "bit_size": 6
-      },
-      {
         "name": "PAM",
         "description": "padding/alignment mode. If DDW[1:0] = SDW_LOG2[1:0]: if the data width of a burst destination transfer is equal to the data width of a burst source transfer, these bits are ignored. Else: - Case 1: If destination data width > source data width. 1x: successive source data are FIFO queued and packed at the destination data width, in a left (LSB) to right (MSB) order (named little endian), before a destination transfer. - Case 2: If destination data width < source data width. 1x: source data is FIFO queued and unpacked at the destination data width, to be transferred in a left (LSB) to right (MSB) order (named little endian) to the destination. Note:",
         "bit_offset": 11,
@@ -471,21 +452,8 @@
         "enum": "PAM"
       },
       {
-        "name": "SBX",
-        "description": "source byte exchange within the unaligned half-word of each source word. If set, the two consecutive bytes within the unaligned half-word of each source word are exchanged. If the source data width is shorter than a word, this bit is ignored.",
-        "bit_offset": 13,
-        "bit_size": 1
-      },
-      {
-        "name": "SAP",
-        "description": "source allocated port. This bit is used to allocate the master port for the source transfer. Note: This bit must be written when EN = 0. This bit is read-only when EN = 1.",
-        "bit_offset": 14,
-        "bit_size": 1,
-        "enum": "AP"
-      },
-      {
         "name": "SSEC",
-        "description": "security attribute of the GPDMA transfer from the source. If SECCFGR.SECx = 1 and the access is secure: This is a secure register bit. This bit can only be read by a secure software. This bit must be written by a secure software when SECCFGR.SECx =1 . A secure write is ignored when SECCFGR.SECx = 0. When SECCFGR.SECx is de-asserted, this SSEC bit is also de-asserted by hardware (on a secure reconfiguration of the channel as non-secure), and the GPDMA transfer from the source is non-secure.",
+        "description": "security attribute of the LPDMA transfer from the source. If SECCFGR.SECx = 1 and the access is secure: This is a secure register bit. This bit can only be read by a secure software. This bit must be written by a secure software when SECCFGR.SECx =1 . A secure write is ignored when SECCFGR.SECx = 0. When SECCFGR.SECx is de-asserted, this SSEC bit is also de-asserted by hardware (on a secure reconfiguration of the channel as non-secure), and the LPDMA transfer from the source is non-secure.",
         "bit_offset": 15,
         "bit_size": 1
       },
@@ -503,44 +471,19 @@
         "bit_size": 1
       },
       {
-        "name": "DBL_1",
-        "description": "destination burst length minus 1, between 0 and 63. The burst length unit is one data named beat within a burst. If DBL_1[5:0] =0 , the burst can be named as single. Each data/beat has a width defined by the destination data width DDW[1:0]. Note: If a burst transfer crossed a 1-Kbyte address boundary on a AHB transfer, the GPDMA modifies and shortens the programmed burst into singles or bursts of lower length, to be compliant with the AHB protocol. If a burst transfer is of length greater than the FIFO size of the channel x, the GPDMA modifies and shortens the programmed burst into singles or bursts of lower length, to be compliant with the FIFO size. Transfer performance is lower, with GPDMA re-arbitration between effective and lower bursts/singles, but the data integrity is guaranteed.",
-        "bit_offset": 20,
-        "bit_size": 6
-      },
-      {
-        "name": "DBX",
-        "description": "destination byte exchange. IF set, the two consecutive (post PAM) bytes are exchanged in each destination half-word. If the destination data size is a byte, this bit is ignored.",
-        "bit_offset": 26,
-        "bit_size": 1
-      },
-      {
-        "name": "DHX",
-        "description": "destination half-word exchange. If set, e two consecutive (post PAM) half-words are exchanged in each destination word. If the destination data size is shorter than a word, this bit is ignored.",
-        "bit_offset": 27,
-        "bit_size": 1
-      },
-      {
-        "name": "DAP",
-        "description": "destination allocated port. This bit is used to allocate the master port for the destination transfer. Note: This bit must be written when EN = 0. This bit is read-only when EN = 1.",
-        "bit_offset": 30,
-        "bit_size": 1,
-        "enum": "AP"
-      },
-      {
         "name": "DSEC",
-        "description": "security attribute of the GPDMA transfer to the destination. If SECCFGR.SECx = 1 and the access is secure: This is a secure register bit. This bit can only be read by a secure software. This bit must be written by a secure software when SECCFGR.SECx = 1. A secure write is ignored when SECCFGR.SECx = 0. When SECCFGR.SECx is de-asserted, this DSEC bit is also de-asserted by hardware (on a secure reconfiguration of the channel as non-secure), and the GPDMA transfer to the destination is non-secure.",
+        "description": "security attribute of the LPDMA transfer to the destination. If SECCFGR.SECx = 1 and the access is secure: This is a secure register bit. This bit can only be read by a secure software. This bit must be written by a secure software when SECCFGR.SECx = 1. A secure write is ignored when SECCFGR.SECx = 0. When SECCFGR.SECx is de-asserted, this DSEC bit is also de-asserted by hardware (on a secure reconfiguration of the channel as non-secure), and the LPDMA transfer to the destination is non-secure.",
         "bit_offset": 31,
         "bit_size": 1
       }
     ]
   },
   "fieldset/CH_TR2": {
-    "description": "GPDMA channel 10 transfer register 2",
+    "description": "LPDMA channel 10 transfer register 2",
     "fields": [
       {
         "name": "REQSEL",
-        "description": "GPDMA hardware request selection. These bits are ignored if channel x is activated (CH[x].CR.EN asserted) with SWREQ = 1 (software request for a memory-to-memory transfer). Else, the selected hardware request is internally taken into account as per . The user must not assign a same input hardware request (same REQSEL[6:0] value) to different active GPDMA channels (CH[x].CR.EN = 1 and CH[x].TR2.SWREQ = 0 for these channels). GPDMA is not intended to hardware support the case of simultaneous enabled channels incorrectly configured with a same hardware peripheral request signal, and there is no user setting error reporting.",
+        "description": "LPDMA hardware request selection. These bits are ignored if channel x is activated (CH[x].CR.EN asserted) with SWREQ = 1 (software request for a memory-to-memory transfer). Else, the selected hardware request is internally taken into account as per . The user must not assign a same input hardware request (same REQSEL[6:0] value) to different active LPDMA channels (CH[x].CR.EN = 1 and CH[x].TR2.SWREQ = 0 for these channels). LPDMA is not intended to hardware support the case of simultaneous enabled channels incorrectly configured with a same hardware peripheral request signal, and there is no user setting error reporting.",
         "bit_offset": 0,
         "bit_size": 7
       },
@@ -567,14 +510,14 @@
       },
       {
         "name": "TRIGM",
-        "description": "trigger mode. These bits define the transfer granularity for its conditioning by the trigger. If the channel x is enabled (CH[x].CR.EN asserted) with TRIGPOL[1:0] = 00 or 11, these TRIGM[1:0] bits are ignored. Else, a GPDMA transfer is conditioned by at least one trigger hit: first burst read of a 2D/repeated block transfer is conditioned by one hit trigger. – If the peripheral is programmed as a source (DREQ = 0) of the LLI data transfer, each programmed burst read is conditioned. – If the peripheral is programmed as a destination (DREQ = 1) of the LLI data transfer, each programmed burst write is conditioned. The first memory burst read of a (possibly 2D/repeated) block, also named as the first ready FIFO-based source burst, is gated by the occurrence of both the hardware request and the first trigger hit. The GPDMA monitoring of a trigger for channel x is started when the channel is enabled/loaded with a new active trigger configuration: rising or falling edge on a selected trigger (TRIGPOL[1:0] = 01 or respectively TRIGPOL[1:0] = 10). The monitoring of this trigger is kept active during the triggered and uncompleted (data or link) transfer; and if a new trigger is detected then, this hit is internally memorized to grant the next transfer, as long as the defined rising or falling edge is not modified, and the TRIGSEL[5:0] is not modified, and the channel is enabled. Transferring a next LLIn+1 that updates the CH[x].TR2 with a new value for any of TRIGSEL[5:0] or TRIGPOL[1:0], resets the monitoring, trashing the memorized hit of the formerly defined LLIn trigger. After a first new trigger hitn+1 is memorized, if another second trigger hitn+2 is detected and if the hitn triggered transfer is still not completed, hitn+2 is lost and not memorized.memorized. A trigger overrun flag is reported (CH[x].SR.TOF =1 ), and an interrupt is generated if enabled (CH[x].CR.TOIE = 1). The channel is not automatically disabled by hardware due to a trigger overrun. Note: When the source block size is not a multiple of the source burst size and is a multiple of the source data width, then the last programmed source burst is not completed and is internally shorten to match the block size. In this case, if TRIGM[1:0] = 11 and (SWREQ =1  or (SWREQ = 0 and DREQ =0 )), the shortened burst transfer (by singles or/and by bursts of lower length) is conditioned once by the trigger. When the programmed destination burst is internally shortened by singles or/and by bursts of lower length (versus FIFO size, versus block size, 1-Kbyte boundary address crossing): if the trigger is conditioning the programmed destination burst (if TRIGM[1:0] = 11 and SWREQ = 0 and DREQ = 1), this shortened destination burst transfer is conditioned once by the trigger.",
+        "description": "trigger mode. These bits define the transfer granularity for its conditioning by the trigger. If the channel x is enabled (CH[x].CR.EN asserted) with TRIGPOL[1:0] = 00 or 11, these TRIGM[1:0] bits are ignored. Else, a LPDMA transfer is conditioned by at least one trigger hit: first burst read of a 2D/repeated block transfer is conditioned by one hit trigger. – If the peripheral is programmed as a source (DREQ = 0) of the LLI data transfer, each programmed burst read is conditioned. – If the peripheral is programmed as a destination (DREQ = 1) of the LLI data transfer, each programmed burst write is conditioned. The first memory burst read of a (possibly 2D/repeated) block, also named as the first ready FIFO-based source burst, is gated by the occurrence of both the hardware request and the first trigger hit. The LPDMA monitoring of a trigger for channel x is started when the channel is enabled/loaded with a new active trigger configuration: rising or falling edge on a selected trigger (TRIGPOL[1:0] = 01 or respectively TRIGPOL[1:0] = 10). The monitoring of this trigger is kept active during the triggered and uncompleted (data or link) transfer; and if a new trigger is detected then, this hit is internally memorized to grant the next transfer, as long as the defined rising or falling edge is not modified, and the TRIGSEL[5:0] is not modified, and the channel is enabled. Transferring a next LLIn+1 that updates the CH[x].TR2 with a new value for any of TRIGSEL[5:0] or TRIGPOL[1:0], resets the monitoring, trashing the memorized hit of the formerly defined LLIn trigger. After a first new trigger hitn+1 is memorized, if another second trigger hitn+2 is detected and if the hitn triggered transfer is still not completed, hitn+2 is lost and not memorized.memorized. A trigger overrun flag is reported (CH[x].SR.TOF =1 ), and an interrupt is generated if enabled (CH[x].CR.TOIE = 1). The channel is not automatically disabled by hardware due to a trigger overrun. Note: When the source block size is not a multiple of the source burst size and is a multiple of the source data width, then the last programmed source burst is not completed and is internally shorten to match the block size. In this case, if TRIGM[1:0] = 11 and (SWREQ =1  or (SWREQ = 0 and DREQ =0 )), the shortened burst transfer (by singles or/and by bursts of lower length) is conditioned once by the trigger. When the programmed destination burst is internally shortened by singles or/and by bursts of lower length (versus FIFO size, versus block size, 1-Kbyte boundary address crossing): if the trigger is conditioning the programmed destination burst (if TRIGM[1:0] = 11 and SWREQ = 0 and DREQ = 1), this shortened destination burst transfer is conditioned once by the trigger.",
         "bit_offset": 14,
         "bit_size": 2,
         "enum": "TRIGM"
       },
       {
         "name": "TRIGSEL",
-        "description": "trigger event input selection. These bits select the trigger event input of the GPDMA transfer (as per ), with an active trigger event if TRIGPOL[1:0] ≠ 00.",
+        "description": "trigger event input selection. These bits select the trigger event input of the LPDMA transfer (as per ), with an active trigger event if TRIGPOL[1:0] ≠ 00.",
         "bit_offset": 16,
         "bit_size": 6
       },
@@ -595,7 +538,7 @@
     ]
   },
   "fieldset/CH_TR3": {
-    "description": "GPDMA channel 14 transfer register 3",
+    "description": "LPDMA channel 14 transfer register 3",
     "fields": [
       {
         "name": "SAO",
@@ -612,7 +555,7 @@
     ]
   },
   "fieldset/MISR": {
-    "description": "GPDMA secure masked interrupt status register",
+    "description": "LPDMA secure masked interrupt status register",
     "fields": [
       {
         "name": "MIS",
@@ -627,7 +570,7 @@
     ]
   },
   "fieldset/PRIVCFGR": {
-    "description": "GPDMA privileged configuration register",
+    "description": "LPDMA privileged configuration register",
     "fields": [
       {
         "name": "PRIV",
@@ -642,7 +585,7 @@
     ]
   },
   "fieldset/RCFGLOCKR": {
-    "description": "GPDMA configuration lock register",
+    "description": "LPDMA configuration lock register",
     "fields": [
       {
         "name": "LOCK",
@@ -657,7 +600,7 @@
     ]
   },
   "fieldset/SECCFGR": {
-    "description": "GPDMA secure configuration register",
+    "description": "LPDMA secure configuration register",
     "fields": [
       {
         "name": "SEC",
@@ -668,21 +611,6 @@
           "len": 16,
           "stride": 1
         }
-      }
-    ]
-  },
-  "enum/AP": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Port0",
-        "description": "port 0 (AHB) allocated",
-        "value": 0
-      },
-      {
-        "name": "Port1",
-        "description": "port 1 (AHB) allocated",
-        "value": 1
       }
     ]
   },
@@ -721,12 +649,12 @@
     "variants": [
       {
         "name": "SourcePeripheral",
-        "description": "selected hardware request driven by a source peripheral (request signal taken into account by the GPDMA transfer scheduler over the source/read port)",
+        "description": "selected hardware request driven by a source peripheral (request signal taken into account by the LPDMA transfer scheduler over the source/read port)",
         "value": 0
       },
       {
         "name": "DestinationPeripheral",
-        "description": "selected hardware request driven by a destination peripheral (request signal taken into account by the GPDMA transfer scheduler over the destination/write port)",
+        "description": "selected hardware request driven by a destination peripheral (request signal taken into account by the LPDMA transfer scheduler over the destination/write port)",
         "value": 1
       }
     ]

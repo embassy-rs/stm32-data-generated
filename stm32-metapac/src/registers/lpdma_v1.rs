@@ -10,7 +10,7 @@
                 BlockItem {
                     name: "lbar",
                     description: Some(
-                        "GPDMA channel 15 linked-list base address register",
+                        "LPDMA channel 15 linked-list base address register",
                     ),
                     array: None,
                     byte_offset: 0x0,
@@ -27,7 +27,7 @@
                 BlockItem {
                     name: "fcr",
                     description: Some(
-                        "GPDMA channel 15 flag clear register",
+                        "LPDMA channel 15 flag clear register",
                     ),
                     array: None,
                     byte_offset: 0xc,
@@ -44,7 +44,7 @@
                 BlockItem {
                     name: "sr",
                     description: Some(
-                        "GPDMA channel 15 status register",
+                        "LPDMA channel 15 status register",
                     ),
                     array: None,
                     byte_offset: 0x10,
@@ -61,7 +61,7 @@
                 BlockItem {
                     name: "cr",
                     description: Some(
-                        "GPDMA channel 15 control register",
+                        "LPDMA channel 15 control register",
                     ),
                     array: None,
                     byte_offset: 0x14,
@@ -78,7 +78,7 @@
                 BlockItem {
                     name: "tr1",
                     description: Some(
-                        "GPDMA channel 15 transfer register 1",
+                        "LPDMA channel 15 transfer register 1",
                     ),
                     array: None,
                     byte_offset: 0x40,
@@ -95,7 +95,7 @@
                 BlockItem {
                     name: "tr2",
                     description: Some(
-                        "GPDMA channel 15 transfer register 2",
+                        "LPDMA channel 15 transfer register 2",
                     ),
                     array: None,
                     byte_offset: 0x44,
@@ -112,7 +112,7 @@
                 BlockItem {
                     name: "br1",
                     description: Some(
-                        "GPDMA channel 15 alternate block register 1",
+                        "LPDMA channel 15 alternate block register 1",
                     ),
                     array: None,
                     byte_offset: 0x48,
@@ -129,7 +129,7 @@
                 BlockItem {
                     name: "sar",
                     description: Some(
-                        "GPDMA channel 15 source address register",
+                        "LPDMA channel 15 source address register",
                     ),
                     array: None,
                     byte_offset: 0x4c,
@@ -144,7 +144,7 @@
                 BlockItem {
                     name: "dar",
                     description: Some(
-                        "GPDMA channel 15 destination address register",
+                        "LPDMA channel 15 destination address register",
                     ),
                     array: None,
                     byte_offset: 0x50,
@@ -159,7 +159,7 @@
                 BlockItem {
                     name: "tr3",
                     description: Some(
-                        "GPDMA channel 15 transfer register 3",
+                        "LPDMA channel 15 transfer register 3",
                     ),
                     array: None,
                     byte_offset: 0x54,
@@ -176,7 +176,7 @@
                 BlockItem {
                     name: "br2",
                     description: Some(
-                        "GPDMA channel 15 block register 2",
+                        "LPDMA channel 15 block register 2",
                     ),
                     array: None,
                     byte_offset: 0x58,
@@ -193,7 +193,7 @@
                 BlockItem {
                     name: "llr",
                     description: Some(
-                        "GPDMA channel 15 alternate linked-list address register",
+                        "LPDMA channel 15 alternate linked-list address register",
                     ),
                     array: None,
                     byte_offset: 0x7c,
@@ -210,16 +210,16 @@
             ],
         },
         Block {
-            name: "Gpdma",
+            name: "Lpdma",
             extends: None,
             description: Some(
-                "GPDMA",
+                "LPDMA",
             ),
             items: &[
                 BlockItem {
                     name: "seccfgr",
                     description: Some(
-                        "GPDMA secure configuration register",
+                        "LPDMA secure configuration register",
                     ),
                     array: None,
                     byte_offset: 0x0,
@@ -236,7 +236,7 @@
                 BlockItem {
                     name: "privcfgr",
                     description: Some(
-                        "GPDMA privileged configuration register",
+                        "LPDMA privileged configuration register",
                     ),
                     array: None,
                     byte_offset: 0x4,
@@ -253,7 +253,7 @@
                 BlockItem {
                     name: "rcfglockr",
                     description: Some(
-                        "GPDMA configuration lock register",
+                        "LPDMA configuration lock register",
                     ),
                     array: None,
                     byte_offset: 0x8,
@@ -270,7 +270,7 @@
                 BlockItem {
                     name: "misr",
                     description: Some(
-                        "GPDMA non-secure masked interrupt status register",
+                        "LPDMA non-secure masked interrupt status register",
                     ),
                     array: None,
                     byte_offset: 0xc,
@@ -287,7 +287,7 @@
                 BlockItem {
                     name: "smisr",
                     description: Some(
-                        "GPDMA secure masked interrupt status register",
+                        "LPDMA secure masked interrupt status register",
                     ),
                     array: None,
                     byte_offset: 0x10,
@@ -307,7 +307,7 @@
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 16,
+                                len: 4,
                                 stride: 128,
                             },
                         ),
@@ -327,7 +327,7 @@
             name: "ChBr1",
             extends: None,
             description: Some(
-                "GPDMA channel 15 alternate block register 1",
+                "LPDMA channel 15 alternate block register 1",
             ),
             bit_size: 32,
             fields: &[
@@ -429,7 +429,7 @@
             name: "ChBr2",
             extends: None,
             description: Some(
-                "GPDMA channel 12 block register 2",
+                "LPDMA channel 12 block register 2",
             ),
             bit_size: 32,
             fields: &[
@@ -467,7 +467,7 @@
             name: "ChCr",
             extends: None,
             description: Some(
-                "GPDMA channel 11 control register",
+                "LPDMA channel 11 control register",
             ),
             bit_size: 32,
             fields: &[
@@ -502,7 +502,7 @@
                 Field {
                     name: "susp",
                     description: Some(
-                        "suspend. Writing 1 into the field RESET (bit 1) causes the hardware to de-assert this bit, whatever is written into this bit 2. Else: Software must write 1 in order to suspend an active channel i.e. a channel with an on-going GPDMA transfer over its master ports. The software must write 0 in order to resume a suspended channel, following the programming sequence detailed in .",
+                        "suspend. Writing 1 into the field RESET (bit 1) causes the hardware to de-assert this bit, whatever is written into this bit 2. Else: Software must write 1 in order to suspend an active channel i.e. a channel with an on-going LPDMA transfer over its master ports. The software must write 0 in order to resume a suspended channel, following the programming sequence detailed in .",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -628,25 +628,9 @@
                     ),
                 },
                 Field {
-                    name: "lap",
-                    description: Some(
-                        "linked-list allocated port. This bit is used to allocate the master port for the update of the GPDMA linked-list registers from the memory. Note: This bit must be written when EN=0. This bit is read-only when EN=1.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 17,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Ap",
-                    ),
-                },
-                Field {
                     name: "prio",
                     description: Some(
-                        "priority level of the channel x GPDMA transfer versus others. Note: This bit must be written when EN = 0. This bit is read-only when EN = 1.",
+                        "priority level of the channel x LPDMA transfer versus others. Note: This bit must be written when EN = 0. This bit is read-only when EN = 1.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -665,7 +649,7 @@
             name: "ChFcr",
             extends: None,
             description: Some(
-                "GPDMA channel 7 flag clear register",
+                "LPDMA channel 7 flag clear register",
             ),
             bit_size: 32,
             fields: &[
@@ -773,14 +757,14 @@
             name: "ChLbar",
             extends: None,
             description: Some(
-                "GPDMA channel 14 linked-list base address register",
+                "LPDMA channel 14 linked-list base address register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "lba",
                     description: Some(
-                        "linked-list base address of GPDMA channel x",
+                        "linked-list base address of LPDMA channel x",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -797,14 +781,14 @@
             name: "ChLlr",
             extends: None,
             description: Some(
-                "GPDMA channel 15 alternate linked-list address register",
+                "LPDMA channel 15 alternate linked-list address register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "la",
                     description: Some(
-                        "pointer (16-bit low-significant address) to the next linked-list data structure. If UT1 = UT2 = UB1 = USA = UDA = ULL = 0 and if LA[15:20] = 0, the current LLI is the last one. The channel transfer is completed without any update of the linked-list GPDMA register file. Else, this field is the pointer to the memory address offset from which the next linked-list data structure is automatically fetched from, once the data transfer is completed, in order to conditionally update the linked-list GPDMA internal register file (CH[x].CTR1, CH[x].TR2, CH[x].BR1, CH[x].SAR, CH[x].DAR and CH[x].LLR). Note: The user must program the pointer to be 32-bit aligned. The two low-significant bits are write ignored.",
+                        "pointer (16-bit low-significant address) to the next linked-list data structure. If UT1 = UT2 = UB1 = USA = UDA = ULL = 0 and if LA[15:20] = 0, the current LLI is the last one. The channel transfer is completed without any update of the linked-list LPDMA register file. Else, this field is the pointer to the memory address offset from which the next linked-list data structure is automatically fetched from, once the data transfer is completed, in order to conditionally update the linked-list LPDMA internal register file (CH[x].CTR1, CH[x].TR2, CH[x].BR1, CH[x].SAR, CH[x].DAR and CH[x].LLR). Note: The user must program the pointer to be 32-bit aligned. The two low-significant bits are write ignored.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -933,7 +917,7 @@
             name: "ChSr",
             extends: None,
             description: Some(
-                "GPDMA channel 15 status register",
+                "LPDMA channel 15 status register",
             ),
             bit_size: 32,
             fields: &[
@@ -1049,27 +1033,13 @@
                     array: None,
                     enumm: None,
                 },
-                Field {
-                    name: "fifol",
-                    description: Some(
-                        "monitored FIFO level. Number of available write beats in the FIFO, in units of the programmed destination data width (see CH[x].TR1.DDW[1:0], in units of bytes, half-words, or words). Note: After having suspended an active transfer, the user may need to read FIFOL[7:0], additionally to CH[x].BR1.BDNT[15:0] and CH[x].BR1.BRC[10:0], to know how many data have been transferred to the destination. Before reading, the user may wait for the transfer to be suspended (CH[x].SR.SUSPF = 1).",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
             ],
         },
         FieldSet {
             name: "ChTr1",
             extends: None,
             description: Some(
-                "GPDMA channel 8 transfer register 1",
+                "LPDMA channel 8 transfer register 1",
             ),
             bit_size: 32,
             fields: &[
@@ -1104,20 +1074,6 @@
                     enumm: None,
                 },
                 Field {
-                    name: "sbl_1",
-                    description: Some(
-                        "source burst length minus 1, between 0 and 63. The burst length unit is one data named beat within a burst. If SBL_1[5:0] =0 , the burst can be named as single. Each data/beat has a width defined by the destination data width SDW_LOG2[1:0]. Note: If a burst transfer crossed a 1-Kbyte address boundary on a AHB transfer, the GPDMA modifies and shortens the programmed burst into singles or bursts of lower length, to be compliant with the AHB protocol. If a burst transfer is of length greater than the FIFO size of the channel x, the GPDMA modifies and shortens the programmed burst into singles or bursts of lower length, to be compliant with the FIFO size. Transfer performance is lower, with GPDMA re-arbitration between effective and lower bursts/singles, but the data integrity is guaranteed.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
                     name: "pam",
                     description: Some(
                         "padding/alignment mode. If DDW[1:0] = SDW_LOG2[1:0]: if the data width of a burst destination transfer is equal to the data width of a burst source transfer, these bits are ignored. Else: - Case 1: If destination data width > source data width. 1x: successive source data are FIFO queued and packed at the destination data width, in a left (LSB) to right (MSB) order (named little endian), before a destination transfer. - Case 2: If destination data width < source data width. 1x: source data is FIFO queued and unpacked at the destination data width, to be transferred in a left (LSB) to right (MSB) order (named little endian) to the destination. Note:",
@@ -1134,39 +1090,9 @@
                     ),
                 },
                 Field {
-                    name: "sbx",
-                    description: Some(
-                        "source byte exchange within the unaligned half-word of each source word. If set, the two consecutive bytes within the unaligned half-word of each source word are exchanged. If the source data width is shorter than a word, this bit is ignored.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 13,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sap",
-                    description: Some(
-                        "source allocated port. This bit is used to allocate the master port for the source transfer. Note: This bit must be written when EN = 0. This bit is read-only when EN = 1.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 14,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Ap",
-                    ),
-                },
-                Field {
                     name: "ssec",
                     description: Some(
-                        "security attribute of the GPDMA transfer from the source. If SECCFGR.SECx = 1 and the access is secure: This is a secure register bit. This bit can only be read by a secure software. This bit must be written by a secure software when SECCFGR.SECx =1 . A secure write is ignored when SECCFGR.SECx = 0. When SECCFGR.SECx is de-asserted, this SSEC bit is also de-asserted by hardware (on a secure reconfiguration of the channel as non-secure), and the GPDMA transfer from the source is non-secure.",
+                        "security attribute of the LPDMA transfer from the source. If SECCFGR.SECx = 1 and the access is secure: This is a secure register bit. This bit can only be read by a secure software. This bit must be written by a secure software when SECCFGR.SECx =1 . A secure write is ignored when SECCFGR.SECx = 0. When SECCFGR.SECx is de-asserted, this SSEC bit is also de-asserted by hardware (on a secure reconfiguration of the channel as non-secure), and the LPDMA transfer from the source is non-secure.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1208,67 +1134,9 @@
                     enumm: None,
                 },
                 Field {
-                    name: "dbl_1",
-                    description: Some(
-                        "destination burst length minus 1, between 0 and 63. The burst length unit is one data named beat within a burst. If DBL_1[5:0] =0 , the burst can be named as single. Each data/beat has a width defined by the destination data width DDW[1:0]. Note: If a burst transfer crossed a 1-Kbyte address boundary on a AHB transfer, the GPDMA modifies and shortens the programmed burst into singles or bursts of lower length, to be compliant with the AHB protocol. If a burst transfer is of length greater than the FIFO size of the channel x, the GPDMA modifies and shortens the programmed burst into singles or bursts of lower length, to be compliant with the FIFO size. Transfer performance is lower, with GPDMA re-arbitration between effective and lower bursts/singles, but the data integrity is guaranteed.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 20,
-                        },
-                    ),
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbx",
-                    description: Some(
-                        "destination byte exchange. IF set, the two consecutive (post PAM) bytes are exchanged in each destination half-word. If the destination data size is a byte, this bit is ignored.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 26,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dhx",
-                    description: Some(
-                        "destination half-word exchange. If set, e two consecutive (post PAM) half-words are exchanged in each destination word. If the destination data size is shorter than a word, this bit is ignored.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 27,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dap",
-                    description: Some(
-                        "destination allocated port. This bit is used to allocate the master port for the destination transfer. Note: This bit must be written when EN = 0. This bit is read-only when EN = 1.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 30,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Ap",
-                    ),
-                },
-                Field {
                     name: "dsec",
                     description: Some(
-                        "security attribute of the GPDMA transfer to the destination. If SECCFGR.SECx = 1 and the access is secure: This is a secure register bit. This bit can only be read by a secure software. This bit must be written by a secure software when SECCFGR.SECx = 1. A secure write is ignored when SECCFGR.SECx = 0. When SECCFGR.SECx is de-asserted, this DSEC bit is also de-asserted by hardware (on a secure reconfiguration of the channel as non-secure), and the GPDMA transfer to the destination is non-secure.",
+                        "security attribute of the LPDMA transfer to the destination. If SECCFGR.SECx = 1 and the access is secure: This is a secure register bit. This bit can only be read by a secure software. This bit must be written by a secure software when SECCFGR.SECx = 1. A secure write is ignored when SECCFGR.SECx = 0. When SECCFGR.SECx is de-asserted, this DSEC bit is also de-asserted by hardware (on a secure reconfiguration of the channel as non-secure), and the LPDMA transfer to the destination is non-secure.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1285,14 +1153,14 @@
             name: "ChTr2",
             extends: None,
             description: Some(
-                "GPDMA channel 10 transfer register 2",
+                "LPDMA channel 10 transfer register 2",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "reqsel",
                     description: Some(
-                        "GPDMA hardware request selection. These bits are ignored if channel x is activated (CH[x].CR.EN asserted) with SWREQ = 1 (software request for a memory-to-memory transfer). Else, the selected hardware request is internally taken into account as per . The user must not assign a same input hardware request (same REQSEL[6:0] value) to different active GPDMA channels (CH[x].CR.EN = 1 and CH[x].TR2.SWREQ = 0 for these channels). GPDMA is not intended to hardware support the case of simultaneous enabled channels incorrectly configured with a same hardware peripheral request signal, and there is no user setting error reporting.",
+                        "LPDMA hardware request selection. These bits are ignored if channel x is activated (CH[x].CR.EN asserted) with SWREQ = 1 (software request for a memory-to-memory transfer). Else, the selected hardware request is internally taken into account as per . The user must not assign a same input hardware request (same REQSEL[6:0] value) to different active LPDMA channels (CH[x].CR.EN = 1 and CH[x].TR2.SWREQ = 0 for these channels). LPDMA is not intended to hardware support the case of simultaneous enabled channels incorrectly configured with a same hardware peripheral request signal, and there is no user setting error reporting.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1354,7 +1222,7 @@
                 Field {
                     name: "trigm",
                     description: Some(
-                        "trigger mode. These bits define the transfer granularity for its conditioning by the trigger. If the channel x is enabled (CH[x].CR.EN asserted) with TRIGPOL[1:0] = 00 or 11, these TRIGM[1:0] bits are ignored. Else, a GPDMA transfer is conditioned by at least one trigger hit: first burst read of a 2D/repeated block transfer is conditioned by one hit trigger. – If the peripheral is programmed as a source (DREQ = 0) of the LLI data transfer, each programmed burst read is conditioned. – If the peripheral is programmed as a destination (DREQ = 1) of the LLI data transfer, each programmed burst write is conditioned. The first memory burst read of a (possibly 2D/repeated) block, also named as the first ready FIFO-based source burst, is gated by the occurrence of both the hardware request and the first trigger hit. The GPDMA monitoring of a trigger for channel x is started when the channel is enabled/loaded with a new active trigger configuration: rising or falling edge on a selected trigger (TRIGPOL[1:0] = 01 or respectively TRIGPOL[1:0] = 10). The monitoring of this trigger is kept active during the triggered and uncompleted (data or link) transfer; and if a new trigger is detected then, this hit is internally memorized to grant the next transfer, as long as the defined rising or falling edge is not modified, and the TRIGSEL[5:0] is not modified, and the channel is enabled. Transferring a next LLIn+1 that updates the CH[x].TR2 with a new value for any of TRIGSEL[5:0] or TRIGPOL[1:0], resets the monitoring, trashing the memorized hit of the formerly defined LLIn trigger. After a first new trigger hitn+1 is memorized, if another second trigger hitn+2 is detected and if the hitn triggered transfer is still not completed, hitn+2 is lost and not memorized.memorized. A trigger overrun flag is reported (CH[x].SR.TOF =1 ), and an interrupt is generated if enabled (CH[x].CR.TOIE = 1). The channel is not automatically disabled by hardware due to a trigger overrun. Note: When the source block size is not a multiple of the source burst size and is a multiple of the source data width, then the last programmed source burst is not completed and is internally shorten to match the block size. In this case, if TRIGM[1:0] = 11 and (SWREQ =1  or (SWREQ = 0 and DREQ =0 )), the shortened burst transfer (by singles or/and by bursts of lower length) is conditioned once by the trigger. When the programmed destination burst is internally shortened by singles or/and by bursts of lower length (versus FIFO size, versus block size, 1-Kbyte boundary address crossing): if the trigger is conditioning the programmed destination burst (if TRIGM[1:0] = 11 and SWREQ = 0 and DREQ = 1), this shortened destination burst transfer is conditioned once by the trigger.",
+                        "trigger mode. These bits define the transfer granularity for its conditioning by the trigger. If the channel x is enabled (CH[x].CR.EN asserted) with TRIGPOL[1:0] = 00 or 11, these TRIGM[1:0] bits are ignored. Else, a LPDMA transfer is conditioned by at least one trigger hit: first burst read of a 2D/repeated block transfer is conditioned by one hit trigger. – If the peripheral is programmed as a source (DREQ = 0) of the LLI data transfer, each programmed burst read is conditioned. – If the peripheral is programmed as a destination (DREQ = 1) of the LLI data transfer, each programmed burst write is conditioned. The first memory burst read of a (possibly 2D/repeated) block, also named as the first ready FIFO-based source burst, is gated by the occurrence of both the hardware request and the first trigger hit. The LPDMA monitoring of a trigger for channel x is started when the channel is enabled/loaded with a new active trigger configuration: rising or falling edge on a selected trigger (TRIGPOL[1:0] = 01 or respectively TRIGPOL[1:0] = 10). The monitoring of this trigger is kept active during the triggered and uncompleted (data or link) transfer; and if a new trigger is detected then, this hit is internally memorized to grant the next transfer, as long as the defined rising or falling edge is not modified, and the TRIGSEL[5:0] is not modified, and the channel is enabled. Transferring a next LLIn+1 that updates the CH[x].TR2 with a new value for any of TRIGSEL[5:0] or TRIGPOL[1:0], resets the monitoring, trashing the memorized hit of the formerly defined LLIn trigger. After a first new trigger hitn+1 is memorized, if another second trigger hitn+2 is detected and if the hitn triggered transfer is still not completed, hitn+2 is lost and not memorized.memorized. A trigger overrun flag is reported (CH[x].SR.TOF =1 ), and an interrupt is generated if enabled (CH[x].CR.TOIE = 1). The channel is not automatically disabled by hardware due to a trigger overrun. Note: When the source block size is not a multiple of the source burst size and is a multiple of the source data width, then the last programmed source burst is not completed and is internally shorten to match the block size. In this case, if TRIGM[1:0] = 11 and (SWREQ =1  or (SWREQ = 0 and DREQ =0 )), the shortened burst transfer (by singles or/and by bursts of lower length) is conditioned once by the trigger. When the programmed destination burst is internally shortened by singles or/and by bursts of lower length (versus FIFO size, versus block size, 1-Kbyte boundary address crossing): if the trigger is conditioning the programmed destination burst (if TRIGM[1:0] = 11 and SWREQ = 0 and DREQ = 1), this shortened destination burst transfer is conditioned once by the trigger.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1370,7 +1238,7 @@
                 Field {
                     name: "trigsel",
                     description: Some(
-                        "trigger event input selection. These bits select the trigger event input of the GPDMA transfer (as per ), with an active trigger event if TRIGPOL[1:0] ≠ 00.",
+                        "trigger event input selection. These bits select the trigger event input of the LPDMA transfer (as per ), with an active trigger event if TRIGPOL[1:0] ≠ 00.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1419,7 +1287,7 @@
             name: "ChTr3",
             extends: None,
             description: Some(
-                "GPDMA channel 14 transfer register 3",
+                "LPDMA channel 14 transfer register 3",
             ),
             bit_size: 32,
             fields: &[
@@ -1457,7 +1325,7 @@
             name: "Misr",
             extends: None,
             description: Some(
-                "GPDMA secure masked interrupt status register",
+                "LPDMA secure masked interrupt status register",
             ),
             bit_size: 32,
             fields: &[
@@ -1488,7 +1356,7 @@
             name: "Privcfgr",
             extends: None,
             description: Some(
-                "GPDMA privileged configuration register",
+                "LPDMA privileged configuration register",
             ),
             bit_size: 32,
             fields: &[
@@ -1519,7 +1387,7 @@
             name: "Rcfglockr",
             extends: None,
             description: Some(
-                "GPDMA configuration lock register",
+                "LPDMA configuration lock register",
             ),
             bit_size: 32,
             fields: &[
@@ -1550,7 +1418,7 @@
             name: "Seccfgr",
             extends: None,
             description: Some(
-                "GPDMA secure configuration register",
+                "LPDMA secure configuration register",
             ),
             bit_size: 32,
             fields: &[
@@ -1579,27 +1447,6 @@
         },
     ],
     enums: &[
-        Enum {
-            name: "Ap",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "PORT0",
-                    description: Some(
-                        "port 0 (AHB) allocated",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PORT1",
-                    description: Some(
-                        "port 1 (AHB) allocated",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
         Enum {
             name: "Breq",
             description: None,
@@ -1650,14 +1497,14 @@
                 EnumVariant {
                     name: "SOURCEPERIPHERAL",
                     description: Some(
-                        "selected hardware request driven by a source peripheral (request signal taken into account by the GPDMA transfer scheduler over the source/read port)",
+                        "selected hardware request driven by a source peripheral (request signal taken into account by the LPDMA transfer scheduler over the source/read port)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "DESTINATIONPERIPHERAL",
                     description: Some(
-                        "selected hardware request driven by a destination peripheral (request signal taken into account by the GPDMA transfer scheduler over the destination/write port)",
+                        "selected hardware request driven by a destination peripheral (request signal taken into account by the LPDMA transfer scheduler over the destination/write port)",
                     ),
                     value: 1,
                 },

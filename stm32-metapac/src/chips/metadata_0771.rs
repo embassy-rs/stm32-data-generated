@@ -3471,7 +3471,14 @@
     Peripheral {
         name: "LPDMA1",
         address: 0x46025000,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "lpdma",
+                version: "v1",
+                block: "LPDMA",
+                ir: &lpdma::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "HCLK3",
@@ -11539,6 +11546,7 @@
 #[path="../registers/icache_v1_3crr.rs"] pub mod icache;
 #[path="../registers/iwdg_v3.rs"] pub mod iwdg;
 #[path="../registers/jpeg_v1.rs"] pub mod jpeg;
+#[path="../registers/lpdma_v1.rs"] pub mod lpdma;
 #[path="../registers/lptim_v2a.rs"] pub mod lptim;
 #[path="../registers/ltdc_v1.rs"] pub mod ltdc;
 #[path="../registers/octospi_v1.rs"] pub mod octospi;

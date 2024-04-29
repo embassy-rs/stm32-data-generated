@@ -1811,6 +1811,11 @@
                 {
                     "name": "LPDMA1",
                     "address": 1174556672,
+                    "registers": {
+                        "kind": "lpdma",
+                        "version": "v1",
+                        "block": "LPDMA"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK3",
                         "kernel_clock": "HCLK3",

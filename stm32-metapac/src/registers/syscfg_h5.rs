@@ -1262,21 +1262,21 @@
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "MII_GMII",
                     description: Some(
                         "GMII or MII",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "RESERVEDRGMII",
                     description: Some(
                         "reserved (RGMII)",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X4",
+                    name: "RMII",
                     description: Some(
                         "RMII",
                     ),

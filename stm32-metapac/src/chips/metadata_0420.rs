@@ -1688,13 +1688,13 @@
                 enable: Some(
                     PeripheralRccRegister {
                         register: "AHB1ENR",
-                        field: "ETH1MACEN",
+                        field: "ETHEN",
                     },
                 ),
                 reset: Some(
                     PeripheralRccRegister {
                         register: "AHB1RSTR",
-                        field: "ETH1MACRST",
+                        field: "ETHRST",
                     },
                 ),
                 stop_mode: StopMode::Stop1,
@@ -5044,7 +5044,11 @@
         ],
         interrupts: &[
             PeripheralInterrupt {
-                signal: "GLOBAL",
+                signal: "A",
+                interrupt: "SAI1",
+            },
+            PeripheralInterrupt {
+                signal: "B",
                 interrupt: "SAI1",
             },
         ],
@@ -5210,7 +5214,11 @@
         ],
         interrupts: &[
             PeripheralInterrupt {
-                signal: "GLOBAL",
+                signal: "A",
+                interrupt: "SAI2",
+            },
+            PeripheralInterrupt {
+                signal: "B",
                 interrupt: "SAI2",
             },
         ],
@@ -5334,7 +5342,11 @@
         ],
         interrupts: &[
             PeripheralInterrupt {
-                signal: "GLOBAL",
+                signal: "A",
+                interrupt: "SAI3",
+            },
+            PeripheralInterrupt {
+                signal: "B",
                 interrupt: "SAI3",
             },
         ],
@@ -5511,7 +5523,11 @@
         ],
         interrupts: &[
             PeripheralInterrupt {
-                signal: "GLOBAL",
+                signal: "A",
+                interrupt: "SAI4",
+            },
+            PeripheralInterrupt {
+                signal: "B",
                 interrupt: "SAI4",
             },
         ],

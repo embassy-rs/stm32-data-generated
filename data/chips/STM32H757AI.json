@@ -1749,11 +1749,11 @@
                         "kernel_clock": "HCLK1",
                         "enable": {
                             "register": "AHB1ENR",
-                            "field": "ETH1MACEN"
+                            "field": "ETHEN"
                         },
                         "reset": {
                             "register": "AHB1RSTR",
-                            "field": "ETH1MACRST"
+                            "field": "ETHRST"
                         }
                     },
                     "pins": [
@@ -4739,7 +4739,11 @@
                     ],
                     "interrupts": [
                         {
-                            "signal": "GLOBAL",
+                            "signal": "A",
+                            "interrupt": "SAI1"
+                        },
+                        {
+                            "signal": "B",
                             "interrupt": "SAI1"
                         }
                     ],
@@ -4868,7 +4872,11 @@
                     ],
                     "interrupts": [
                         {
-                            "signal": "GLOBAL",
+                            "signal": "A",
+                            "interrupt": "SAI2"
+                        },
+                        {
+                            "signal": "B",
                             "interrupt": "SAI2"
                         }
                     ],
@@ -4952,7 +4960,11 @@
                     ],
                     "interrupts": [
                         {
-                            "signal": "GLOBAL",
+                            "signal": "A",
+                            "interrupt": "SAI3"
+                        },
+                        {
+                            "signal": "B",
                             "interrupt": "SAI3"
                         }
                     ],
@@ -5098,7 +5110,11 @@
                     ],
                     "interrupts": [
                         {
-                            "signal": "GLOBAL",
+                            "signal": "A",
+                            "interrupt": "SAI4"
+                        },
+                        {
+                            "signal": "B",
                             "interrupt": "SAI4"
                         }
                     ],
@@ -10899,11 +10915,11 @@
                         "kernel_clock": "HCLK1",
                         "enable": {
                             "register": "AHB1ENR",
-                            "field": "ETH1MACEN"
+                            "field": "ETHEN"
                         },
                         "reset": {
                             "register": "AHB1RSTR",
-                            "field": "ETH1MACRST"
+                            "field": "ETHRST"
                         }
                     },
                     "pins": [
@@ -13889,7 +13905,11 @@
                     ],
                     "interrupts": [
                         {
-                            "signal": "GLOBAL",
+                            "signal": "A",
+                            "interrupt": "SAI1"
+                        },
+                        {
+                            "signal": "B",
                             "interrupt": "SAI1"
                         }
                     ],
@@ -14018,7 +14038,11 @@
                     ],
                     "interrupts": [
                         {
-                            "signal": "GLOBAL",
+                            "signal": "A",
+                            "interrupt": "SAI2"
+                        },
+                        {
+                            "signal": "B",
                             "interrupt": "SAI2"
                         }
                     ],
@@ -14102,7 +14126,11 @@
                     ],
                     "interrupts": [
                         {
-                            "signal": "GLOBAL",
+                            "signal": "A",
+                            "interrupt": "SAI3"
+                        },
+                        {
+                            "signal": "B",
                             "interrupt": "SAI3"
                         }
                     ],
@@ -14248,7 +14276,11 @@
                     ],
                     "interrupts": [
                         {
-                            "signal": "GLOBAL",
+                            "signal": "A",
+                            "interrupt": "SAI4"
+                        },
+                        {
+                            "signal": "B",
                             "interrupt": "SAI4"
                         }
                     ],

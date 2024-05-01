@@ -5173,7 +5173,11 @@
         ],
         interrupts: &[
             PeripheralInterrupt {
-                signal: "GLOBAL",
+                signal: "A",
+                interrupt: "SAI1",
+            },
+            PeripheralInterrupt {
+                signal: "B",
                 interrupt: "SAI1",
             },
         ],
@@ -5435,7 +5439,11 @@
         ],
         interrupts: &[
             PeripheralInterrupt {
-                signal: "GLOBAL",
+                signal: "A",
+                interrupt: "SAI2",
+            },
+            PeripheralInterrupt {
+                signal: "B",
                 interrupt: "SAI2",
             },
         ],

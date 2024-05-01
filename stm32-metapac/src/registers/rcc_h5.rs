@@ -1269,7 +1269,7 @@
                 Field {
                     name: "ethrst",
                     description: Some(
-                        "ETHRST block reset\r Set and reset by software",
+                        "ETH1 block reset\r Set and reset by software",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {

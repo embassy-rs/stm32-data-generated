@@ -195,18 +195,18 @@
     "description": "configuration register 1",
     "fields": [
       {
-        "name": "DMAEN",
-        "description": "Direct memory access enable",
-        "bit_offset": 0,
-        "bit_size": 1,
-        "enum": "DMAEN"
-      },
-      {
         "name": "DMACFG",
         "description": "direct memory access configuration",
         "bit_offset": 0,
         "bit_size": 1,
         "enum": "DMACFG"
+      },
+      {
+        "name": "DMAEN",
+        "description": "Direct memory access enable",
+        "bit_offset": 0,
+        "bit_size": 1,
+        "enum": "DMAEN"
       },
       {
         "name": "RES",

@@ -428,7 +428,7 @@
                     ],
                     "interrupts": [
                         {
-                            "signal": "GLOBAL",
+                            "signal": "FLT0",
                             "interrupt": "ADF1"
                         }
                     ],
@@ -4319,7 +4319,11 @@
                     ],
                     "interrupts": [
                         {
-                            "signal": "GLOBAL",
+                            "signal": "A",
+                            "interrupt": "SAI1"
+                        },
+                        {
+                            "signal": "B",
                             "interrupt": "SAI1"
                         }
                     ],
@@ -4438,7 +4442,11 @@
                     ],
                     "interrupts": [
                         {
-                            "signal": "GLOBAL",
+                            "signal": "A",
+                            "interrupt": "SAI2"
+                        },
+                        {
+                            "signal": "B",
                             "interrupt": "SAI2"
                         }
                     ],

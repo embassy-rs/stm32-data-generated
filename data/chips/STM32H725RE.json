@@ -3232,7 +3232,11 @@
                     ],
                     "interrupts": [
                         {
-                            "signal": "GLOBAL",
+                            "signal": "A",
+                            "interrupt": "SAI4"
+                        },
+                        {
+                            "signal": "B",
                             "interrupt": "SAI4"
                         }
                     ],

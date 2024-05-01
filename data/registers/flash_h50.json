@@ -1156,11 +1156,6 @@
     "bit_size": 8,
     "variants": [
       {
-        "name": "OPEN",
-        "description": "Open",
-        "value": 237
-      },
-      {
         "name": "PROVISIONING",
         "description": "Provisioning",
         "value": 23
@@ -1171,19 +1166,24 @@
         "value": 46
       },
       {
-        "name": "CLOSED",
-        "description": "Closed",
-        "value": 114
-      },
-      {
         "name": "LOCKED",
         "description": "Locked",
         "value": 92
       },
       {
+        "name": "CLOSED",
+        "description": "Closed",
+        "value": 114
+      },
+      {
         "name": "REGRESSION",
         "description": "Regression",
         "value": 154
+      },
+      {
+        "name": "OPEN",
+        "description": "Open",
+        "value": 237
       }
     ]
   }

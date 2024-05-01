@@ -503,7 +503,7 @@
                     enumm: None,
                 },
                 Field {
-                    name: "ready",
+                    name: "rdy",
                     description: Some(
                         "Compensation cell ready flag",
                     ),
@@ -774,9 +774,9 @@
                     enumm: None,
                 },
                 Field {
-                    name: "epis",
+                    name: "eth_sel_phy",
                     description: Some(
-                        "Ethernet PHY Interface Selection",
+                        "Ethernet PHY interface selection.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -785,7 +785,9 @@
                     ),
                     bit_size: 3,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "EthSelPhy",
+                    ),
                 },
                 Field {
                     name: "pa0so",
@@ -1432,6 +1434,28 @@
             ],
         },
     ],
-    enums: &[],
+    enums: &[
+        Enum {
+            name: "EthSelPhy",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "MII_GMII",
+                    description: Some(
+                        "GMII or MII",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "RMII",
+                    description: Some(
+                        "RMII",
+                    ),
+                    value: 4,
+                },
+            ],
+        },
+    ],
 };
                 

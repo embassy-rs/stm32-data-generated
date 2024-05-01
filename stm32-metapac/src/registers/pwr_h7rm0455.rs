@@ -897,7 +897,9 @@
                             },
                         ),
                     ),
-                    enumm: None,
+                    enumm: Some(
+                        "Wkuppupd",
+                    ),
                 },
             ],
         },
@@ -985,6 +987,34 @@
                     name: "SCALE0",
                     description: None,
                     value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Wkuppupd",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "NOPULL",
+                    description: Some(
+                        "No pull-up.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PULLUP",
+                    description: Some(
+                        "Pull-up.",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "PULLDOWN",
+                    description: Some(
+                        "Pull-down.",
+                    ),
+                    value: 2,
                 },
             ],
         },

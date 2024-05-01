@@ -959,7 +959,7 @@
                     enumm: None,
                 },
                 Field {
-                    name: "eth1macen",
+                    name: "ethen",
                     description: Some(
                         "Ethernet MAC bus interface Clock Enable",
                     ),
@@ -973,7 +973,7 @@
                     enumm: None,
                 },
                 Field {
-                    name: "eth1txen",
+                    name: "ethtxen",
                     description: Some(
                         "Ethernet Transmission Clock Enable",
                     ),
@@ -987,7 +987,7 @@
                     enumm: None,
                 },
                 Field {
-                    name: "eth1rxen",
+                    name: "ethrxen",
                     description: Some(
                         "Ethernet Reception Clock Enable",
                     ),
@@ -1123,7 +1123,7 @@
                     enumm: None,
                 },
                 Field {
-                    name: "eth1maclpen",
+                    name: "ethlpen",
                     description: Some(
                         "Ethernet MAC bus interface Clock Enable During CSleep Mode",
                     ),
@@ -1137,7 +1137,7 @@
                     enumm: None,
                 },
                 Field {
-                    name: "eth1txlpen",
+                    name: "ethtxlpen",
                     description: Some(
                         "Ethernet Transmission Clock Enable During CSleep Mode",
                     ),
@@ -1151,7 +1151,7 @@
                     enumm: None,
                 },
                 Field {
-                    name: "eth1rxlpen",
+                    name: "ethrxlpen",
                     description: Some(
                         "Ethernet Reception Clock Enable During CSleep Mode",
                     ),
@@ -1287,9 +1287,9 @@
                     enumm: None,
                 },
                 Field {
-                    name: "eth1macrst",
+                    name: "ethrst",
                     description: Some(
-                        "ETH1MAC block reset",
+                        "ETH block reset",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -6655,7 +6655,7 @@
                     enumm: None,
                 },
                 Field {
-                    name: "csirdy",
+                    name: "csirdyf",
                     description: Some(
                         "CSI ready Interrupt Flag",
                     ),

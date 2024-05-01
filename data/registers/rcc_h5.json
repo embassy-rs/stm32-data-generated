@@ -493,7 +493,7 @@
       },
       {
         "name": "ETHRST",
-        "description": "ETHRST block reset\r Set and reset by software",
+        "description": "ETH1 block reset\r Set and reset by software",
         "bit_offset": 19,
         "bit_size": 1
       },

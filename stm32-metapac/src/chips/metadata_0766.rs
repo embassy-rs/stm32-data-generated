@@ -105,11 +105,6 @@
                 af: None,
             },
             PeripheralPin {
-                pin: "PC4",
-                signal: "IN13",
-                af: None,
-            },
-            PeripheralPin {
                 pin: "PC5",
                 signal: "IN14",
                 af: None,
@@ -131,141 +126,18 @@
         interrupts: &[
             PeripheralInterrupt {
                 signal: "GLOBAL",
-                interrupt: "ADC1_2",
+                interrupt: "ADC1",
             },
         ],
     },
     Peripheral {
         name: "ADC12_COMMON",
-        address: 0x42028300,
+        address: 0x42028308,
         registers: None,
         rcc: None,
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
-    },
-    Peripheral {
-        name: "ADC2",
-        address: 0x42028100,
-        registers: None,
-        rcc: Some(
-            PeripheralRcc {
-                bus_clock: "HCLK2",
-                kernel_clock: Mux(
-                    PeripheralRccRegister {
-                        register: "CCIPR3",
-                        field: "ADCDACSEL",
-                    },
-                ),
-                enable: Some(
-                    PeripheralRccRegister {
-                        register: "AHB2ENR1",
-                        field: "ADC12EN",
-                    },
-                ),
-                reset: Some(
-                    PeripheralRccRegister {
-                        register: "AHB2RSTR1",
-                        field: "ADC12RST",
-                    },
-                ),
-                stop_mode: StopMode::Stop1,
-            },
-        ),
-        pins: &[
-            PeripheralPin {
-                pin: "PA0",
-                signal: "IN5",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PA1",
-                signal: "IN6",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PA2",
-                signal: "IN7",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PA3",
-                signal: "IN8",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PA4",
-                signal: "IN9",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PA5",
-                signal: "IN10",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PA6",
-                signal: "IN11",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PA7",
-                signal: "IN12",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PB0",
-                signal: "IN15",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PB1",
-                signal: "IN16",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PB2",
-                signal: "IN17",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PC0",
-                signal: "IN1",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PC1",
-                signal: "IN2",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PC2",
-                signal: "IN3",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PC3",
-                signal: "IN4",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PC4",
-                signal: "IN13",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PC5",
-                signal: "IN14",
-                af: None,
-            },
-        ],
-        dma_channels: &[],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "ADC1_2",
-            },
-        ],
     },
     Peripheral {
         name: "ADC4",
@@ -347,48 +219,8 @@
                 af: None,
             },
             PeripheralPin {
-                pin: "PC4",
-                signal: "IN22",
-                af: None,
-            },
-            PeripheralPin {
                 pin: "PC5",
                 signal: "IN23",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PD11",
-                signal: "IN15",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "IN16",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PD13",
-                signal: "IN17",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PF14",
-                signal: "IN5",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PF15",
-                signal: "IN6",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PG0",
-                signal: "IN7",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PG1",
-                signal: "IN8",
                 af: None,
             },
         ],
@@ -425,7 +257,7 @@
     },
     Peripheral {
         name: "ADC4_COMMON",
-        address: 0x46021300,
+        address: 0x46021308,
         registers: None,
         rcc: None,
         pins: &[],
@@ -510,20 +342,6 @@
                     3,
                 ),
             },
-            PeripheralPin {
-                pin: "PF3",
-                signal: "CCK0",
-                af: Some(
-                    3,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF4",
-                signal: "SDI0",
-                af: Some(
-                    3,
-                ),
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -551,7 +369,7 @@
         ],
         interrupts: &[
             PeripheralInterrupt {
-                signal: "GLOBAL",
+                signal: "FLT0",
                 interrupt: "ADF1",
             },
         ],
@@ -676,11 +494,6 @@
                 af: None,
             },
             PeripheralPin {
-                pin: "PC4",
-                signal: "INM",
-                af: None,
-            },
-            PeripheralPin {
                 pin: "PC5",
                 signal: "INP",
                 af: None,
@@ -720,13 +533,6 @@
             },
         ),
         pins: &[
-            PeripheralPin {
-                pin: "PB11",
-                signal: "OUT",
-                af: Some(
-                    12,
-                ),
-            },
             PeripheralPin {
                 pin: "PB3",
                 signal: "INM",
@@ -1233,48 +1039,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD3",
-                signal: "D5",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD6",
-                signal: "D10",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD8",
-                signal: "HSYNC",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD9",
-                signal: "PIXCLK",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE0",
-                signal: "D2",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE1",
-                signal: "D3",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
                 pin: "PE4",
                 signal: "D4",
                 af: Some(
@@ -1291,34 +1055,6 @@
             PeripheralPin {
                 pin: "PE6",
                 signal: "D7",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF10",
-                signal: "D11",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF11",
-                signal: "D12",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF6",
-                signal: "D12",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG15",
-                signal: "D13",
                 af: Some(
                     10,
                 ),
@@ -1544,20 +1280,6 @@
                     9,
                 ),
             },
-            PeripheralPin {
-                pin: "PF7",
-                signal: "RX",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF8",
-                signal: "TX",
-                af: Some(
-                    9,
-                ),
-            },
         ],
         dma_channels: &[],
         interrupts: &[
@@ -1736,55 +1458,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD10",
-                signal: "D15",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD10",
-                signal: "DA15",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD11",
-                signal: "A16",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD11",
-                signal: "CLE",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "A17",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "ALE",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD13",
-                signal: "A18",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
                 pin: "PD14",
                 signal: "D0",
                 af: Some(
@@ -1813,13 +1486,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD3",
-                signal: "CLK",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
                 pin: "PD4",
                 signal: "NOE",
                 af: Some(
@@ -1834,69 +1500,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD6",
-                signal: "NWAIT",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD7",
-                signal: "NCE",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD7",
-                signal: "NE1",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD8",
-                signal: "D13",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD8",
-                signal: "DA13",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD9",
-                signal: "D14",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD9",
-                signal: "DA14",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE0",
-                signal: "NBL0",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE1",
-                signal: "NBL1",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
                 pin: "PE10",
                 signal: "D7",
                 af: Some(
@@ -1906,83 +1509,6 @@
             PeripheralPin {
                 pin: "PE10",
                 signal: "DA7",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE11",
-                signal: "D8",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE11",
-                signal: "DA8",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE12",
-                signal: "D9",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE12",
-                signal: "DA9",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE13",
-                signal: "D10",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE13",
-                signal: "DA10",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE14",
-                signal: "D11",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE14",
-                signal: "DA11",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE15",
-                signal: "D12",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE15",
-                signal: "DA12",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE2",
-                signal: "A23",
                 af: Some(
                     12,
                 ),
@@ -2058,90 +1584,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PF0",
-                signal: "A0",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF1",
-                signal: "A1",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF12",
-                signal: "A6",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF13",
-                signal: "A7",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF14",
-                signal: "A8",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF15",
-                signal: "A9",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF2",
-                signal: "A2",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF3",
-                signal: "A3",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF4",
-                signal: "A4",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF5",
-                signal: "A5",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG0",
-                signal: "A10",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG1",
-                signal: "A11",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
                 pin: "PG10",
                 signal: "NE3",
                 af: Some(
@@ -2165,41 +1607,6 @@
             PeripheralPin {
                 pin: "PG14",
                 signal: "A25",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG2",
-                signal: "A12",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG3",
-                signal: "A13",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG4",
-                signal: "A14",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG5",
-                signal: "A15",
-                af: Some(
-                    12,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG7",
-                signal: "INT",
                 af: Some(
                     12,
                 ),
@@ -2653,42 +2060,6 @@
         interrupts: &[],
     },
     Peripheral {
-        name: "GPIOJ",
-        address: 0x42022400,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "gpio",
-                version: "v2",
-                block: "GPIO",
-                ir: &gpio::REGISTERS,
-            },
-        ),
-        rcc: Some(
-            PeripheralRcc {
-                bus_clock: "HCLK2",
-                kernel_clock: Clock(
-                    "HCLK2",
-                ),
-                enable: Some(
-                    PeripheralRccRegister {
-                        register: "AHB2ENR1",
-                        field: "GPIOJEN",
-                    },
-                ),
-                reset: Some(
-                    PeripheralRccRegister {
-                        register: "AHB2RSTR1",
-                        field: "GPIOJRST",
-                    },
-                ),
-                stop_mode: StopMode::Stop1,
-            },
-        ),
-        pins: &[],
-        dma_channels: &[],
-        interrupts: &[],
-    },
-    Peripheral {
         name: "HASH",
         address: 0x420c0400,
         registers: Some(
@@ -2847,13 +2218,6 @@
                     4,
                 ),
             },
-            PeripheralPin {
-                pin: "PG15",
-                signal: "SMBA",
-                af: Some(
-                    4,
-                ),
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -2945,20 +2309,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB11",
-                signal: "SDA",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PB12",
-                signal: "SMBA",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
                 pin: "PB13",
                 signal: "SCL",
                 af: Some(
@@ -2968,27 +2318,6 @@
             PeripheralPin {
                 pin: "PB14",
                 signal: "SDA",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF0",
-                signal: "SDA",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF1",
-                signal: "SCL",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF2",
-                signal: "SMBA",
                 af: Some(
                     4,
                 ),
@@ -3106,27 +2435,6 @@
             },
             PeripheralPin {
                 pin: "PC1",
-                signal: "SDA",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG6",
-                signal: "SMBA",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG7",
-                signal: "SCL",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG8",
                 signal: "SDA",
                 af: Some(
                     4,
@@ -3263,13 +2571,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB11",
-                signal: "SDA",
-                af: Some(
-                    3,
-                ),
-            },
-            PeripheralPin {
                 pin: "PB6",
                 signal: "SCL",
                 af: Some(
@@ -3281,48 +2582,6 @@
                 signal: "SDA",
                 af: Some(
                     5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD11",
-                signal: "SMBA",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "SCL",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD13",
-                signal: "SDA",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF13",
-                signal: "SMBA",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF14",
-                signal: "SCL",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF15",
-                signal: "SDA",
-                af: Some(
-                    4,
                 ),
             },
         ],
@@ -3369,181 +2628,6 @@
             PeripheralInterrupt {
                 signal: "EV",
                 interrupt: "I2C4_EV",
-            },
-        ],
-    },
-    Peripheral {
-        name: "I2C5",
-        address: 0x40009800,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "i2c",
-                version: "v2",
-                block: "I2C",
-                ir: &i2c::REGISTERS,
-            },
-        ),
-        rcc: Some(
-            PeripheralRcc {
-                bus_clock: "PCLK1",
-                kernel_clock: Mux(
-                    PeripheralRccRegister {
-                        register: "CCIPR2",
-                        field: "I2C5SEL",
-                    },
-                ),
-                enable: Some(
-                    PeripheralRccRegister {
-                        register: "APB1ENR2",
-                        field: "I2C5EN",
-                    },
-                ),
-                reset: Some(
-                    PeripheralRccRegister {
-                        register: "APB1RSTR2",
-                        field: "I2C5RST",
-                    },
-                ),
-                stop_mode: StopMode::Stop1,
-            },
-        ),
-        pins: &[
-            PeripheralPin {
-                pin: "PD0",
-                signal: "SDA",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD1",
-                signal: "SCL",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD10",
-                signal: "SMBA",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD2",
-                signal: "SMBA",
-                af: Some(
-                    4,
-                ),
-            },
-        ],
-        dma_channels: &[],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "ER",
-                interrupt: "I2C5_ER",
-            },
-            PeripheralInterrupt {
-                signal: "EV",
-                interrupt: "I2C5_EV",
-            },
-        ],
-    },
-    Peripheral {
-        name: "I2C6",
-        address: 0x40009c00,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "i2c",
-                version: "v2",
-                block: "I2C",
-                ir: &i2c::REGISTERS,
-            },
-        ),
-        rcc: Some(
-            PeripheralRcc {
-                bus_clock: "PCLK1",
-                kernel_clock: Mux(
-                    PeripheralRccRegister {
-                        register: "CCIPR2",
-                        field: "I2C6SEL",
-                    },
-                ),
-                enable: Some(
-                    PeripheralRccRegister {
-                        register: "APB1ENR2",
-                        field: "I2C6EN",
-                    },
-                ),
-                reset: Some(
-                    PeripheralRccRegister {
-                        register: "APB1RSTR2",
-                        field: "I2C6RST",
-                    },
-                ),
-                stop_mode: StopMode::Stop1,
-            },
-        ),
-        pins: &[
-            PeripheralPin {
-                pin: "PB12",
-                signal: "SMBA",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PC4",
-                signal: "SMBA",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD0",
-                signal: "SDA",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD1",
-                signal: "SCL",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD3",
-                signal: "SMBA",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF0",
-                signal: "SDA",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF1",
-                signal: "SCL",
-                af: Some(
-                    2,
-                ),
-            },
-        ],
-        dma_channels: &[],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "ER",
-                interrupt: "I2C6_ER",
-            },
-            PeripheralInterrupt {
-                signal: "EV",
-                interrupt: "I2C6_EV",
             },
         ],
     },
@@ -3790,13 +2874,6 @@
                     1,
                 ),
             },
-            PeripheralPin {
-                pin: "PG15",
-                signal: "CH1",
-                af: Some(
-                    1,
-                ),
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -3979,41 +3056,6 @@
                     14,
                 ),
             },
-            PeripheralPin {
-                pin: "PD10",
-                signal: "CH2",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD11",
-                signal: "ETR",
-                af: Some(
-                    14,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "IN1",
-                af: Some(
-                    14,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD13",
-                signal: "CH1",
-                af: Some(
-                    14,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD9",
-                signal: "IN2",
-                af: Some(
-                    2,
-                ),
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -4161,13 +3203,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD10",
-                signal: "ETR",
-                af: Some(
-                    14,
-                ),
-            },
-            PeripheralPin {
                 pin: "PD14",
                 signal: "CH1",
                 af: Some(
@@ -4179,41 +3214,6 @@
                 signal: "CH2",
                 af: Some(
                     14,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD9",
-                signal: "IN1",
-                af: Some(
-                    14,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF2",
-                signal: "CH2",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF3",
-                signal: "IN1",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF4",
-                signal: "ETR",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF5",
-                signal: "CH1",
-                af: Some(
-                    2,
                 ),
             },
         ],
@@ -4326,43 +3326,8 @@
         ),
         pins: &[
             PeripheralPin {
-                pin: "PD13",
-                signal: "IN1",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
                 pin: "PD2",
                 signal: "ETR",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD7",
-                signal: "OUT",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF11",
-                signal: "IN1",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF12",
-                signal: "ETR",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF13",
-                signal: "OUT",
                 af: Some(
                     13,
                 ),
@@ -4455,27 +3420,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB11",
-                signal: "TX",
-                af: Some(
-                    8,
-                ),
-            },
-            PeripheralPin {
-                pin: "PB12",
-                signal: "DE",
-                af: Some(
-                    8,
-                ),
-            },
-            PeripheralPin {
-                pin: "PB12",
-                signal: "RTS",
-                af: Some(
-                    8,
-                ),
-            },
-            PeripheralPin {
                 pin: "PB13",
                 signal: "CTS",
                 af: Some(
@@ -4492,41 +3436,6 @@
             PeripheralPin {
                 pin: "PC1",
                 signal: "TX",
-                af: Some(
-                    8,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG5",
-                signal: "CTS",
-                af: Some(
-                    8,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG6",
-                signal: "DE",
-                af: Some(
-                    8,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG6",
-                signal: "RTS",
-                af: Some(
-                    8,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG7",
-                signal: "TX",
-                af: Some(
-                    8,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG8",
-                signal: "RX",
                 af: Some(
                     8,
                 ),
@@ -4622,13 +3531,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB12",
-                signal: "SDI1",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
                 pin: "PB13",
                 signal: "CKI1",
                 af: Some(
@@ -4713,13 +3615,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD3",
-                signal: "SDI0",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
                 pin: "PD4",
                 signal: "CKI0",
                 af: Some(
@@ -4727,43 +3622,8 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD6",
-                signal: "SDI1",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD7",
-                signal: "CKI1",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
                 pin: "PE10",
                 signal: "SDI4",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE11",
-                signal: "CKI4",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE12",
-                signal: "SDI5",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE13",
-                signal: "CKI5",
                 af: Some(
                     6,
                 ),
@@ -4798,41 +3658,6 @@
             },
             PeripheralPin {
                 pin: "PE9",
-                signal: "CCK0",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF10",
-                signal: "CCK1",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF3",
-                signal: "CCK0",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF4",
-                signal: "SDI0",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF5",
-                signal: "CKI0",
-                af: Some(
-                    6,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG7",
                 signal: "CCK0",
                 af: Some(
                     6,
@@ -5157,20 +3982,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB11",
-                signal: "P1_NCS",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PB12",
-                signal: "P1_NCLK",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
                 pin: "PB2",
                 signal: "P1_DQS",
                 af: Some(
@@ -5220,20 +4031,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PC4",
-                signal: "P1_IO7",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD3",
-                signal: "P2_NCS",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
                 pin: "PD4",
                 signal: "P1_IO4",
                 af: Some(
@@ -5248,57 +4045,8 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD6",
-                signal: "P1_IO6",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD7",
-                signal: "P1_IO7",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
                 pin: "PE10",
                 signal: "P1_CLK",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE11",
-                signal: "P1_NCS",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE12",
-                signal: "P1_IO0",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE13",
-                signal: "P1_IO1",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE14",
-                signal: "P1_IO2",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE15",
-                signal: "P1_IO3",
                 af: Some(
                     10,
                 ),
@@ -5318,118 +4066,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PF0",
-                signal: "P2_IO0",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF1",
-                signal: "P2_IO1",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF10",
-                signal: "P1_CLK",
-                af: Some(
-                    3,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF11",
-                signal: "P1_NCLK",
-                af: Some(
-                    3,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF12",
-                signal: "P2_DQS",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF2",
-                signal: "P2_IO2",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF3",
-                signal: "P2_IO3",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF4",
-                signal: "P2_CLK",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF5",
-                signal: "P2_NCLK",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF6",
-                signal: "P1_IO3",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF6",
-                signal: "P2_NCS",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF7",
-                signal: "P1_IO2",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF8",
-                signal: "P1_IO0",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF9",
-                signal: "P1_IO1",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG0",
-                signal: "P2_IO4",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG1",
-                signal: "P2_IO5",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
                 pin: "PG10",
                 signal: "P2_IO7",
                 af: Some(
@@ -5446,27 +4082,6 @@
             PeripheralPin {
                 pin: "PG12",
                 signal: "P2_NCS",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG15",
-                signal: "P2_DQS",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG6",
-                signal: "P1_DQS",
-                af: Some(
-                    3,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG7",
-                signal: "P2_DQS",
                 af: Some(
                     5,
                 ),
@@ -5856,48 +4471,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD3",
-                signal: "D5",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD6",
-                signal: "D10",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD8",
-                signal: "DE",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD9",
-                signal: "PDCK",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE0",
-                signal: "D2",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE1",
-                signal: "D3",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
                 pin: "PE4",
                 signal: "D4",
                 af: Some(
@@ -5914,55 +4487,6 @@
             PeripheralPin {
                 pin: "PE6",
                 signal: "D7",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF10",
-                signal: "D11",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF10",
-                signal: "D15",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF11",
-                signal: "D12",
-                af: Some(
-                    10,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF6",
-                signal: "D12",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF8",
-                signal: "D14",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF9",
-                signal: "D15",
-                af: Some(
-                    4,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG15",
-                signal: "D13",
                 af: Some(
                     10,
                 ),
@@ -6164,11 +4688,6 @@
             PeripheralPin {
                 pin: "PE8",
                 signal: "WKUP7",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PF2",
-                signal: "WKUP8",
                 af: None,
             },
         ],
@@ -6622,36 +5141,8 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD6",
-                signal: "D1",
-                af: Some(
-                    3,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD6",
-                signal: "SD_A",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
                 pin: "PE10",
                 signal: "MCLK_B",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE2",
-                signal: "CK1",
-                af: Some(
-                    3,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE2",
-                signal: "MCLK_A",
                 af: Some(
                     13,
                 ),
@@ -6726,55 +5217,6 @@
                     13,
                 ),
             },
-            PeripheralPin {
-                pin: "PF10",
-                signal: "D3",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF6",
-                signal: "SD_B",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF7",
-                signal: "MCLK_B",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF8",
-                signal: "SCK_B",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF9",
-                signal: "FS_B",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG7",
-                signal: "CK1",
-                af: Some(
-                    3,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG7",
-                signal: "MCLK_A",
-                af: Some(
-                    13,
-                ),
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -6802,237 +5244,12 @@
         ],
         interrupts: &[
             PeripheralInterrupt {
-                signal: "GLOBAL",
+                signal: "A",
                 interrupt: "SAI1",
             },
-        ],
-    },
-    Peripheral {
-        name: "SAI2",
-        address: 0x40015800,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "sai",
-                version: "v4_2pdm",
-                block: "SAI",
-                ir: &sai::REGISTERS,
-            },
-        ),
-        rcc: Some(
-            PeripheralRcc {
-                bus_clock: "PCLK2",
-                kernel_clock: Mux(
-                    PeripheralRccRegister {
-                        register: "CCIPR2",
-                        field: "SAI2SEL",
-                    },
-                ),
-                enable: Some(
-                    PeripheralRccRegister {
-                        register: "APB2ENR",
-                        field: "SAI2EN",
-                    },
-                ),
-                reset: Some(
-                    PeripheralRccRegister {
-                        register: "APB2RSTR",
-                        field: "SAI2RST",
-                    },
-                ),
-                stop_mode: StopMode::Stop1,
-            },
-        ),
-        pins: &[
-            PeripheralPin {
-                pin: "PA15",
-                signal: "FS_B",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PB12",
-                signal: "FS_A",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PB13",
-                signal: "SCK_A",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PB14",
-                signal: "MCLK_A",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PB15",
-                signal: "SD_A",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PC0",
-                signal: "FS_A",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PC10",
-                signal: "SCK_B",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PC11",
-                signal: "MCLK_B",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PC12",
-                signal: "SD_B",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PC6",
-                signal: "MCLK_A",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PC7",
-                signal: "MCLK_B",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD10",
-                signal: "SCK_A",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD11",
-                signal: "SD_A",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "FS_A",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD9",
-                signal: "MCLK_A",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG10",
-                signal: "FS_A",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG11",
-                signal: "MCLK_A",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG12",
-                signal: "SD_A",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG2",
-                signal: "SCK_B",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG3",
-                signal: "FS_B",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG4",
-                signal: "MCLK_B",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG5",
-                signal: "SD_B",
-                af: Some(
-                    13,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG9",
-                signal: "SCK_A",
-                af: Some(
-                    13,
-                ),
-            },
-        ],
-        dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "A",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA1",
-                ),
-                request: Some(
-                    38,
-                ),
-            },
-            PeripheralDmaChannel {
-                signal: "B",
-                channel: None,
-                dmamux: None,
-                dma: Some(
-                    "GPDMA1",
-                ),
-                request: Some(
-                    39,
-                ),
-            },
-        ],
-        interrupts: &[
             PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "SAI2",
+                signal: "B",
+                interrupt: "SAI1",
             },
         ],
     },
@@ -7292,20 +5509,6 @@
                     11,
                 ),
             },
-            PeripheralPin {
-                pin: "PD6",
-                signal: "CK",
-                af: Some(
-                    11,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD7",
-                signal: "CMD",
-                af: Some(
-                    11,
-                ),
-            },
         ],
         dma_channels: &[],
         interrupts: &[
@@ -7456,76 +5659,6 @@
                     5,
                 ),
             },
-            PeripheralPin {
-                pin: "PE11",
-                signal: "RDY",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE12",
-                signal: "NSS",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE13",
-                signal: "SCK",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE14",
-                signal: "MISO",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE15",
-                signal: "MOSI",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG2",
-                signal: "SCK",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG3",
-                signal: "MISO",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG4",
-                signal: "MOSI",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG5",
-                signal: "NSS",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG6",
-                signal: "RDY",
-                af: Some(
-                    5,
-                ),
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -7609,20 +5742,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB11",
-                signal: "RDY",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PB12",
-                signal: "NSS",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
                 pin: "PB13",
                 signal: "SCK",
                 af: Some(
@@ -7690,20 +5809,6 @@
                 signal: "SCK",
                 af: Some(
                     5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD3",
-                signal: "MISO",
-                af: Some(
-                    5,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD3",
-                signal: "SCK",
-                af: Some(
-                    3,
                 ),
             },
             PeripheralPin {
@@ -7856,13 +5961,6 @@
                 signal: "MOSI",
                 af: Some(
                     6,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD6",
-                signal: "MOSI",
-                af: Some(
-                    5,
                 ),
             },
             PeripheralPin {
@@ -8196,13 +6294,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB12",
-                signal: "BKIN",
-                af: Some(
-                    1,
-                ),
-            },
-            PeripheralPin {
                 pin: "PB13",
                 signal: "CH1N",
                 af: Some(
@@ -8235,55 +6326,6 @@
                 signal: "CH2N",
                 af: Some(
                     1,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE11",
-                signal: "CH2",
-                af: Some(
-                    1,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE12",
-                signal: "CH3N",
-                af: Some(
-                    1,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE13",
-                signal: "CH3",
-                af: Some(
-                    1,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE14",
-                signal: "BKIN2",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE14",
-                signal: "CH4",
-                af: Some(
-                    1,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE15",
-                signal: "BKIN",
-                af: Some(
-                    1,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE15",
-                signal: "CH4N",
-                af: Some(
-                    3,
                 ),
             },
             PeripheralPin {
@@ -8472,13 +6514,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB12",
-                signal: "BKIN",
-                af: Some(
-                    14,
-                ),
-            },
-            PeripheralPin {
                 pin: "PB13",
                 signal: "CH1N",
                 af: Some(
@@ -8495,20 +6530,6 @@
             PeripheralPin {
                 pin: "PB15",
                 signal: "CH2",
-                af: Some(
-                    14,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF10",
-                signal: "CH2",
-                af: Some(
-                    14,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF9",
-                signal: "CH1",
                 af: Some(
                     14,
                 ),
@@ -8665,13 +6686,6 @@
                     14,
                 ),
             },
-            PeripheralPin {
-                pin: "PE0",
-                signal: "CH1",
-                af: Some(
-                    14,
-                ),
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -8783,13 +6797,6 @@
             },
             PeripheralPin {
                 pin: "PB9",
-                signal: "CH1",
-                af: Some(
-                    14,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE1",
                 signal: "CH1",
                 af: Some(
                     14,
@@ -8942,13 +6949,6 @@
             PeripheralPin {
                 pin: "PB10",
                 signal: "CH3",
-                af: Some(
-                    1,
-                ),
-            },
-            PeripheralPin {
-                pin: "PB11",
-                signal: "CH4",
                 af: Some(
                     1,
                 ),
@@ -9152,13 +7152,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PE2",
-                signal: "ETR",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
                 pin: "PE3",
                 signal: "CH1",
                 af: Some(
@@ -9340,20 +7333,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD12",
-                signal: "CH1",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD13",
-                signal: "CH2",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
                 pin: "PD14",
                 signal: "CH3",
                 af: Some(
@@ -9363,13 +7342,6 @@
             PeripheralPin {
                 pin: "PD15",
                 signal: "CH4",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE0",
-                signal: "ETR",
                 af: Some(
                     2,
                 ),
@@ -9511,41 +7483,6 @@
             },
             PeripheralPin {
                 pin: "PA3",
-                signal: "CH4",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF6",
-                signal: "CH1",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF6",
-                signal: "ETR",
-                af: Some(
-                    1,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF7",
-                signal: "CH2",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF8",
-                signal: "CH3",
-                af: Some(
-                    2,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF9",
                 signal: "CH4",
                 af: Some(
                     2,
@@ -10077,13 +8014,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB12",
-                signal: "G1_IO1",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
                 pin: "PB13",
                 signal: "G1_IO2",
                 af: Some(
@@ -10175,34 +8105,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD10",
-                signal: "G6_IO1",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD11",
-                signal: "G6_IO2",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "G6_IO3",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD13",
-                signal: "G6_IO4",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
                 pin: "PD2",
                 signal: "SYNC",
                 af: Some(
@@ -10212,34 +8114,6 @@
             PeripheralPin {
                 pin: "PE10",
                 signal: "G5_IO1",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE11",
-                signal: "G5_IO2",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE12",
-                signal: "G5_IO3",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE13",
-                signal: "G5_IO4",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE2",
-                signal: "G7_IO1",
                 af: Some(
                     9,
                 ),
@@ -10261,34 +8135,6 @@
             PeripheralPin {
                 pin: "PE5",
                 signal: "G7_IO4",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF14",
-                signal: "G8_IO1",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF15",
-                signal: "G8_IO2",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG0",
-                signal: "G8_IO3",
-                af: Some(
-                    9,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG1",
-                signal: "G8_IO4",
                 af: Some(
                     9,
                 ),
@@ -10490,20 +8336,6 @@
                     8,
                 ),
             },
-            PeripheralPin {
-                pin: "PF3",
-                signal: "TX",
-                af: Some(
-                    8,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF4",
-                signal: "RX",
-                af: Some(
-                    8,
-                ),
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -10605,27 +8437,6 @@
             },
             PeripheralPin {
                 pin: "PC11",
-                signal: "FRSTX2",
-                af: Some(
-                    11,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF13",
-                signal: "FRSTX2",
-                af: Some(
-                    11,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG6",
-                signal: "FRSTX1",
-                af: Some(
-                    11,
-                ),
-            },
-            PeripheralPin {
-                pin: "PG7",
                 signal: "FRSTX2",
                 af: Some(
                     11,
@@ -10959,13 +8770,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD3",
-                signal: "CTS",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
                 pin: "PD4",
                 signal: "DE",
                 af: Some(
@@ -10982,20 +8786,6 @@
             PeripheralPin {
                 pin: "PD5",
                 signal: "TX",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD6",
-                signal: "RX",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD7",
-                signal: "CK",
                 af: Some(
                     7,
                 ),
@@ -11132,20 +8922,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PB11",
-                signal: "RX",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PB12",
-                signal: "CK",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
                 pin: "PB13",
                 signal: "CTS",
                 af: Some(
@@ -11188,13 +8964,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PC4",
-                signal: "TX",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
                 pin: "PC5",
                 signal: "RX",
                 af: Some(
@@ -11202,34 +8971,6 @@
                 ),
             },
             PeripheralPin {
-                pin: "PD10",
-                signal: "CK",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD11",
-                signal: "CTS",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "DE",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD12",
-                signal: "RTS",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
                 pin: "PD2",
                 signal: "DE",
                 af: Some(
@@ -11239,20 +8980,6 @@
             PeripheralPin {
                 pin: "PD2",
                 signal: "RTS",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD8",
-                signal: "TX",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD9",
-                signal: "RX",
                 af: Some(
                     7,
                 ),
@@ -11290,206 +9017,7 @@
         ],
     },
     Peripheral {
-        name: "USART6",
-        address: 0x40006400,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "usart",
-                version: "v4",
-                block: "USART",
-                ir: &usart::REGISTERS,
-            },
-        ),
-        rcc: Some(
-            PeripheralRcc {
-                bus_clock: "PCLK1",
-                kernel_clock: Mux(
-                    PeripheralRccRegister {
-                        register: "CCIPR2",
-                        field: "USART6SEL",
-                    },
-                ),
-                enable: Some(
-                    PeripheralRccRegister {
-                        register: "APB1ENR1",
-                        field: "USART6EN",
-                    },
-                ),
-                reset: Some(
-                    PeripheralRccRegister {
-                        register: "APB1RSTR1",
-                        field: "USART6RST",
-                    },
-                ),
-                stop_mode: StopMode::Stop1,
-            },
-        ),
-        pins: &[
-            PeripheralPin {
-                pin: "PC0",
-                signal: "CTS",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PC1",
-                signal: "CK",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PC2",
-                signal: "RX",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PC3",
-                signal: "TX",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PC8",
-                signal: "RX",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PC9",
-                signal: "TX",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD13",
-                signal: "CTS",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD14",
-                signal: "CK",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD15",
-                signal: "DE",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PD15",
-                signal: "RTS",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE0",
-                signal: "RX",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE1",
-                signal: "TX",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE2",
-                signal: "CK",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE3",
-                signal: "CTS",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE4",
-                signal: "DE",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PE4",
-                signal: "RTS",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF0",
-                signal: "TX",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF1",
-                signal: "RX",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF2",
-                signal: "CK",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF3",
-                signal: "CTS",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF4",
-                signal: "DE",
-                af: Some(
-                    7,
-                ),
-            },
-            PeripheralPin {
-                pin: "PF4",
-                signal: "RTS",
-                af: Some(
-                    7,
-                ),
-            },
-        ],
-        dma_channels: &[],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "USART6",
-            },
-        ],
-    },
-    Peripheral {
-        name: "USB_OTG_HS",
+        name: "USB_OTG_FS",
         address: 0x42040000,
         registers: Some(
             PeripheralRegisters {
@@ -11511,13 +9039,13 @@
                 enable: Some(
                     PeripheralRccRegister {
                         register: "AHB2ENR1",
-                        field: "USB_OTG_HSEN",
+                        field: "USB_OTG_FSEN",
                     },
                 ),
                 reset: Some(
                     PeripheralRccRegister {
                         register: "AHB2RSTR1",
-                        field: "USB_OTG_HSRST",
+                        field: "USB_OTG_FSRST",
                     },
                 ),
                 stop_mode: StopMode::Stop1,
@@ -11534,12 +9062,23 @@
             PeripheralPin {
                 pin: "PA11",
                 signal: "DM",
-                af: None,
+                af: Some(
+                    10,
+                ),
             },
             PeripheralPin {
                 pin: "PA12",
                 signal: "DP",
-                af: None,
+                af: Some(
+                    10,
+                ),
+            },
+            PeripheralPin {
+                pin: "PA13",
+                signal: "NOE",
+                af: Some(
+                    10,
+                ),
             },
             PeripheralPin {
                 pin: "PA14",
@@ -11560,24 +9099,31 @@
                 signal: "VBUS",
                 af: None,
             },
+            PeripheralPin {
+                pin: "PC9",
+                signal: "NOE",
+                af: Some(
+                    10,
+                ),
+            },
         ],
         dma_channels: &[],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "EP1_IN",
-                interrupt: "OTG_HS",
+                interrupt: "OTG_FS",
             },
             PeripheralInterrupt {
                 signal: "EP1_OUT",
-                interrupt: "OTG_HS",
+                interrupt: "OTG_FS",
             },
             PeripheralInterrupt {
                 signal: "GLOBAL",
-                interrupt: "OTG_HS",
+                interrupt: "OTG_FS",
             },
             PeripheralInterrupt {
                 signal: "WKUP",
-                interrupt: "OTG_HS",
+                interrupt: "OTG_FS",
             },
         ],
     },
@@ -11788,7 +9334,7 @@
         number: 36,
     },
     Interrupt {
-        name: "ADC1_2",
+        name: "ADC1",
         number: 37,
     },
     Interrupt {
@@ -11932,7 +9478,7 @@
         number: 72,
     },
     Interrupt {
-        name: "OTG_HS",
+        name: "OTG_FS",
         number: 73,
     },
     Interrupt {
@@ -12142,30 +9688,6 @@
     Interrupt {
         name: "LSECSSD",
         number: 125,
-    },
-    Interrupt {
-        name: "USART6",
-        number: 126,
-    },
-    Interrupt {
-        name: "I2C5_ER",
-        number: 127,
-    },
-    Interrupt {
-        name: "I2C5_EV",
-        number: 128,
-    },
-    Interrupt {
-        name: "I2C6_ER",
-        number: 129,
-    },
-    Interrupt {
-        name: "I2C6_EV",
-        number: 130,
-    },
-    Interrupt {
-        name: "HSPI1",
-        number: 131,
     },
 ];
                 pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[

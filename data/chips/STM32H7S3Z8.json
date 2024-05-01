@@ -2299,6 +2299,21 @@
                         "version": "v3",
                         "block": "I2C"
                     },
+                    "rcc": {
+                        "bus_clock": "PCLK1",
+                        "kernel_clock": {
+                            "register": "APB1PERCKSELR",
+                            "field": "I2C1_I3C1SEL"
+                        },
+                        "enable": {
+                            "register": "APB1ENR1",
+                            "field": "I2C1_I3C1EN"
+                        },
+                        "reset": {
+                            "register": "APB1RSTR1",
+                            "field": "I2C1_I3C1RST"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PB5",

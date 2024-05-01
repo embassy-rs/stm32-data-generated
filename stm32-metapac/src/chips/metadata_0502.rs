@@ -3354,7 +3354,30 @@
                 ir: &i2c::REGISTERS,
             },
         ),
-        rcc: None,
+        rcc: Some(
+            PeripheralRcc {
+                bus_clock: "PCLK1",
+                kernel_clock: Mux(
+                    PeripheralRccRegister {
+                        register: "APB1PERCKSELR",
+                        field: "I2C1_I3C1SEL",
+                    },
+                ),
+                enable: Some(
+                    PeripheralRccRegister {
+                        register: "APB1ENR1",
+                        field: "I2C1_I3C1EN",
+                    },
+                ),
+                reset: Some(
+                    PeripheralRccRegister {
+                        register: "APB1RSTR1",
+                        field: "I2C1_I3C1RST",
+                    },
+                ),
+                stop_mode: StopMode::Stop1,
+            },
+        ),
         pins: &[
             PeripheralPin {
                 pin: "PB5",

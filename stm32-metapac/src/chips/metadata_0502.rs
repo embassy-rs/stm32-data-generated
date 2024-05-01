@@ -3346,7 +3346,14 @@
     Peripheral {
         name: "I2C1",
         address: 0x40005400,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "i2c",
+                version: "v3",
+                block: "I2C",
+                ir: &i2c::REGISTERS,
+            },
+        ),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -3423,7 +3430,14 @@
     Peripheral {
         name: "I2C2",
         address: 0x40005800,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "i2c",
+                version: "v3",
+                block: "I2C",
+                ir: &i2c::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "PCLK1",
@@ -3527,7 +3541,14 @@
     Peripheral {
         name: "I2C3",
         address: 0x40005c00,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "i2c",
+                version: "v3",
+                block: "I2C",
+                ir: &i2c::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "PCLK1",
@@ -11604,6 +11625,7 @@
 #[path="../registers/gpdma_v1.rs"] pub mod gpdma;
 #[path="../registers/gpio_v2.rs"] pub mod gpio;
 #[path="../registers/hash_v3.rs"] pub mod hash;
+#[path="../registers/i2c_v3.rs"] pub mod i2c;
 #[path="../registers/iwdg_v3.rs"] pub mod iwdg;
 #[path="../registers/jpeg_v1.rs"] pub mod jpeg;
 #[path="../registers/lptim_v1b_h7.rs"] pub mod lptim;

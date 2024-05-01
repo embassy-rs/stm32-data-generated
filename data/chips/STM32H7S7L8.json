@@ -2833,6 +2833,11 @@
                 {
                     "name": "I2C1",
                     "address": 1073763328,
+                    "registers": {
+                        "kind": "i2c",
+                        "version": "v3",
+                        "block": "I2C"
+                    },
                     "pins": [
                         {
                             "pin": "PB5",
@@ -2886,6 +2891,11 @@
                 {
                     "name": "I2C2",
                     "address": 1073764352,
+                    "registers": {
+                        "kind": "i2c",
+                        "version": "v3",
+                        "block": "I2C"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK1",
                         "kernel_clock": "PCLK1",
@@ -2956,6 +2966,11 @@
                 {
                     "name": "I2C3",
                     "address": 1073765376,
+                    "registers": {
+                        "kind": "i2c",
+                        "version": "v3",
+                        "block": "I2C"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK1",
                         "kernel_clock": "PCLK1",

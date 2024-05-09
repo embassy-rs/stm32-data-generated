@@ -7,7 +7,129 @@
     "packages": [
         {
             "name": "STM32L041F6Px",
-            "package": "TSSOP20"
+            "package": "TSSOP20",
+            "pins": [
+                {
+                    "position": "1",
+                    "signals": [
+                        "BOOT0"
+                    ]
+                },
+                {
+                    "position": "2",
+                    "signals": [
+                        "PC14"
+                    ]
+                },
+                {
+                    "position": "3",
+                    "signals": [
+                        "PC15"
+                    ]
+                },
+                {
+                    "position": "4",
+                    "signals": [
+                        "NRST"
+                    ]
+                },
+                {
+                    "position": "5",
+                    "signals": [
+                        "VDDA"
+                    ]
+                },
+                {
+                    "position": "6",
+                    "signals": [
+                        "PA0"
+                    ]
+                },
+                {
+                    "position": "7",
+                    "signals": [
+                        "PA1"
+                    ]
+                },
+                {
+                    "position": "8",
+                    "signals": [
+                        "PA2"
+                    ]
+                },
+                {
+                    "position": "9",
+                    "signals": [
+                        "PA3"
+                    ]
+                },
+                {
+                    "position": "10",
+                    "signals": [
+                        "PA4"
+                    ]
+                },
+                {
+                    "position": "11",
+                    "signals": [
+                        "PA5"
+                    ]
+                },
+                {
+                    "position": "12",
+                    "signals": [
+                        "PA6"
+                    ]
+                },
+                {
+                    "position": "13",
+                    "signals": [
+                        "PA7"
+                    ]
+                },
+                {
+                    "position": "14",
+                    "signals": [
+                        "PB1"
+                    ]
+                },
+                {
+                    "position": "15",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "16",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "17",
+                    "signals": [
+                        "PA9"
+                    ]
+                },
+                {
+                    "position": "18",
+                    "signals": [
+                        "PA10"
+                    ]
+                },
+                {
+                    "position": "19",
+                    "signals": [
+                        "PA13"
+                    ]
+                },
+                {
+                    "position": "20",
+                    "signals": [
+                        "PA14"
+                    ]
+                }
+            ]
         }
     ],
     "memory": [

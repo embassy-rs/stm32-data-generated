@@ -7,7 +7,171 @@
     "packages": [
         {
             "name": "STM32U031G6Yx",
-            "package": "WLCSP27"
+            "package": "WLCSP27",
+            "pins": [
+                {
+                    "position": "A2",
+                    "signals": [
+                        "PB6"
+                    ]
+                },
+                {
+                    "position": "A4",
+                    "signals": [
+                        "PB7"
+                    ]
+                },
+                {
+                    "position": "A6",
+                    "signals": [
+                        "PF3"
+                    ]
+                },
+                {
+                    "position": "A8",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "B1",
+                    "signals": [
+                        "PA14"
+                    ]
+                },
+                {
+                    "position": "B3",
+                    "signals": [
+                        "PB5"
+                    ]
+                },
+                {
+                    "position": "B5",
+                    "signals": [
+                        "PA12"
+                    ]
+                },
+                {
+                    "position": "B7",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "B9",
+                    "signals": [
+                        "PC14"
+                    ]
+                },
+                {
+                    "position": "C2",
+                    "signals": [
+                        "PA13"
+                    ]
+                },
+                {
+                    "position": "C4",
+                    "signals": [
+                        "PA11"
+                    ]
+                },
+                {
+                    "position": "C6",
+                    "signals": [
+                        "PA0"
+                    ]
+                },
+                {
+                    "position": "C8",
+                    "signals": [
+                        "PC15"
+                    ]
+                },
+                {
+                    "position": "D1",
+                    "signals": [
+                        "PA10"
+                    ]
+                },
+                {
+                    "position": "D3",
+                    "signals": [
+                        "PA9"
+                    ]
+                },
+                {
+                    "position": "D5",
+                    "signals": [
+                        "PA6"
+                    ]
+                },
+                {
+                    "position": "D7",
+                    "signals": [
+                        "PA1"
+                    ]
+                },
+                {
+                    "position": "D9",
+                    "signals": [
+                        "PF2"
+                    ]
+                },
+                {
+                    "position": "E2",
+                    "signals": [
+                        "PA8"
+                    ]
+                },
+                {
+                    "position": "E4",
+                    "signals": [
+                        "PA7"
+                    ]
+                },
+                {
+                    "position": "E6",
+                    "signals": [
+                        "PA5"
+                    ]
+                },
+                {
+                    "position": "E8",
+                    "signals": [
+                        "PA2"
+                    ]
+                },
+                {
+                    "position": "F1",
+                    "signals": [
+                        "PB1"
+                    ]
+                },
+                {
+                    "position": "F3",
+                    "signals": [
+                        "PB0"
+                    ]
+                },
+                {
+                    "position": "F5",
+                    "signals": [
+                        "PA4"
+                    ]
+                },
+                {
+                    "position": "F7",
+                    "signals": [
+                        "PA3"
+                    ]
+                },
+                {
+                    "position": "F9",
+                    "signals": [
+                        "VDDA/VREF+"
+                    ]
+                }
+            ]
         }
     ],
     "memory": [

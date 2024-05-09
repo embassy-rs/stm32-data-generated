@@ -7,7 +7,91 @@
     "packages": [
         {
             "name": "STM32C011D6Yx",
-            "package": "WLCSP12"
+            "package": "WLCSP12",
+            "pins": [
+                {
+                    "position": "A2",
+                    "signals": [
+                        "PB6"
+                    ]
+                },
+                {
+                    "position": "A4",
+                    "signals": [
+                        "PC15"
+                    ]
+                },
+                {
+                    "position": "B1",
+                    "signals": [
+                        "PA13"
+                    ]
+                },
+                {
+                    "position": "B3",
+                    "signals": [
+                        "PC14"
+                    ]
+                },
+                {
+                    "position": "C2",
+                    "signals": [
+                        "PA14"
+                    ]
+                },
+                {
+                    "position": "C4",
+                    "signals": [
+                        "VDD/VDDA"
+                    ]
+                },
+                {
+                    "position": "D1",
+                    "signals": [
+                        "PA11",
+                        "PA8",
+                        "PA9"
+                    ]
+                },
+                {
+                    "position": "D3",
+                    "signals": [
+                        "PB7"
+                    ]
+                },
+                {
+                    "position": "E2",
+                    "signals": [
+                        "PA10",
+                        "PA12",
+                        "PA7"
+                    ]
+                },
+                {
+                    "position": "E4",
+                    "signals": [
+                        "VSS/VSSA"
+                    ]
+                },
+                {
+                    "position": "F1",
+                    "signals": [
+                        "PA3",
+                        "PA4",
+                        "PA5",
+                        "PA6"
+                    ]
+                },
+                {
+                    "position": "F3",
+                    "signals": [
+                        "PA0",
+                        "PA1",
+                        "PA2",
+                        "PF2"
+                    ]
+                }
+            ]
         }
     ],
     "memory": [

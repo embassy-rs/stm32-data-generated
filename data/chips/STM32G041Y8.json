@@ -7,7 +7,130 @@
     "packages": [
         {
             "name": "STM32G041Y8Yx",
-            "package": "WLCSP18"
+            "package": "WLCSP18",
+            "pins": [
+                {
+                    "position": "A1",
+                    "signals": [
+                        "PA13"
+                    ]
+                },
+                {
+                    "position": "A3",
+                    "signals": [
+                        "PA14",
+                        "PA15"
+                    ]
+                },
+                {
+                    "position": "A5",
+                    "signals": [
+                        "PB7",
+                        "PB8"
+                    ]
+                },
+                {
+                    "position": "A7",
+                    "signals": [
+                        "PC15"
+                    ]
+                },
+                {
+                    "position": "B2",
+                    "signals": [
+                        "PA10",
+                        "PA12"
+                    ]
+                },
+                {
+                    "position": "B4",
+                    "signals": [
+                        "PB3",
+                        "PB4",
+                        "PB5",
+                        "PB6"
+                    ]
+                },
+                {
+                    "position": "B6",
+                    "signals": [
+                        "PB9",
+                        "PC14"
+                    ]
+                },
+                {
+                    "position": "C1",
+                    "signals": [
+                        "PA11",
+                        "PA9"
+                    ]
+                },
+                {
+                    "position": "C3",
+                    "signals": [
+                        "PA5"
+                    ]
+                },
+                {
+                    "position": "C5",
+                    "signals": [
+                        "PA1"
+                    ]
+                },
+                {
+                    "position": "C7",
+                    "signals": [
+                        "VDD/VDDA"
+                    ]
+                },
+                {
+                    "position": "D2",
+                    "signals": [
+                        "PA7"
+                    ]
+                },
+                {
+                    "position": "D4",
+                    "signals": [
+                        "PA3",
+                        "PA4"
+                    ]
+                },
+                {
+                    "position": "D6",
+                    "signals": [
+                        "VSS/VSSA"
+                    ]
+                },
+                {
+                    "position": "E1",
+                    "signals": [
+                        "PA8",
+                        "PB0",
+                        "PB1",
+                        "PB2"
+                    ]
+                },
+                {
+                    "position": "E3",
+                    "signals": [
+                        "PA6"
+                    ]
+                },
+                {
+                    "position": "E5",
+                    "signals": [
+                        "PA2"
+                    ]
+                },
+                {
+                    "position": "E7",
+                    "signals": [
+                        "PA0",
+                        "PF2"
+                    ]
+                }
+            ]
         }
     ],
     "memory": [

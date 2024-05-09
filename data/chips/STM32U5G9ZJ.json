@@ -7,11 +7,1731 @@
     "packages": [
         {
             "name": "STM32U5G9ZJJxQ",
-            "package": "UFBGA144"
+            "package": "UFBGA144",
+            "pins": [
+                {
+                    "position": "A1",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "A10",
+                    "signals": [
+                        "PD3"
+                    ]
+                },
+                {
+                    "position": "A11",
+                    "signals": [
+                        "PC12"
+                    ]
+                },
+                {
+                    "position": "A12",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "A2",
+                    "signals": [
+                        "PB9"
+                    ]
+                },
+                {
+                    "position": "A3",
+                    "signals": [
+                        "PH3"
+                    ]
+                },
+                {
+                    "position": "A4",
+                    "signals": [
+                        "PB6"
+                    ]
+                },
+                {
+                    "position": "A5",
+                    "signals": [
+                        "PB4"
+                    ]
+                },
+                {
+                    "position": "A6",
+                    "signals": [
+                        "PG14"
+                    ]
+                },
+                {
+                    "position": "A7",
+                    "signals": [
+                        "PG12"
+                    ]
+                },
+                {
+                    "position": "A8",
+                    "signals": [
+                        "PG10"
+                    ]
+                },
+                {
+                    "position": "A9",
+                    "signals": [
+                        "PD7"
+                    ]
+                },
+                {
+                    "position": "B1",
+                    "signals": [
+                        "PE2"
+                    ]
+                },
+                {
+                    "position": "B10",
+                    "signals": [
+                        "PC10"
+                    ]
+                },
+                {
+                    "position": "B11",
+                    "signals": [
+                        "PA14"
+                    ]
+                },
+                {
+                    "position": "B12",
+                    "signals": [
+                        "PA10"
+                    ]
+                },
+                {
+                    "position": "B2",
+                    "signals": [
+                        "PE3"
+                    ]
+                },
+                {
+                    "position": "B3",
+                    "signals": [
+                        "PE0"
+                    ]
+                },
+                {
+                    "position": "B4",
+                    "signals": [
+                        "PB8"
+                    ]
+                },
+                {
+                    "position": "B5",
+                    "signals": [
+                        "PB5"
+                    ]
+                },
+                {
+                    "position": "B6",
+                    "signals": [
+                        "PG15"
+                    ]
+                },
+                {
+                    "position": "B7",
+                    "signals": [
+                        "PG9"
+                    ]
+                },
+                {
+                    "position": "B8",
+                    "signals": [
+                        "PD5"
+                    ]
+                },
+                {
+                    "position": "B9",
+                    "signals": [
+                        "PD2"
+                    ]
+                },
+                {
+                    "position": "C1",
+                    "signals": [
+                        "PC14"
+                    ]
+                },
+                {
+                    "position": "C10",
+                    "signals": [
+                        "PA13"
+                    ]
+                },
+                {
+                    "position": "C11",
+                    "signals": [
+                        "PA12"
+                    ]
+                },
+                {
+                    "position": "C12",
+                    "signals": [
+                        "PA11"
+                    ]
+                },
+                {
+                    "position": "C2",
+                    "signals": [
+                        "VBAT"
+                    ]
+                },
+                {
+                    "position": "C3",
+                    "signals": [
+                        "PE4"
+                    ]
+                },
+                {
+                    "position": "C4",
+                    "signals": [
+                        "PE5"
+                    ]
+                },
+                {
+                    "position": "C5",
+                    "signals": [
+                        "PB7"
+                    ]
+                },
+                {
+                    "position": "C6",
+                    "signals": [
+                        "PG13"
+                    ]
+                },
+                {
+                    "position": "C7",
+                    "signals": [
+                        "PD4"
+                    ]
+                },
+                {
+                    "position": "C8",
+                    "signals": [
+                        "PC11"
+                    ]
+                },
+                {
+                    "position": "C9",
+                    "signals": [
+                        "PA15"
+                    ]
+                },
+                {
+                    "position": "D1",
+                    "signals": [
+                        "VSSDSI"
+                    ]
+                },
+                {
+                    "position": "D10",
+                    "signals": [
+                        "VDDUSB"
+                    ]
+                },
+                {
+                    "position": "D11",
+                    "signals": [
+                        "PA8"
+                    ]
+                },
+                {
+                    "position": "D12",
+                    "signals": [
+                        "PC8"
+                    ]
+                },
+                {
+                    "position": "D2",
+                    "signals": [
+                        "PC15"
+                    ]
+                },
+                {
+                    "position": "D3",
+                    "signals": [
+                        "PE6"
+                    ]
+                },
+                {
+                    "position": "D5",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "D6",
+                    "signals": [
+                        "PB3"
+                    ]
+                },
+                {
+                    "position": "D7",
+                    "signals": [
+                        "PD6"
+                    ]
+                },
+                {
+                    "position": "D8",
+                    "signals": [
+                        "PD0"
+                    ]
+                },
+                {
+                    "position": "D9",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "E1",
+                    "signals": [
+                        "DSI_D0N"
+                    ]
+                },
+                {
+                    "position": "E10",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "E11",
+                    "signals": [
+                        "PI2"
+                    ]
+                },
+                {
+                    "position": "E12",
+                    "signals": [
+                        "PI3"
+                    ]
+                },
+                {
+                    "position": "E2",
+                    "signals": [
+                        "DSI_D0P"
+                    ]
+                },
+                {
+                    "position": "E3",
+                    "signals": [
+                        "VDDDSI"
+                    ]
+                },
+                {
+                    "position": "E4",
+                    "signals": [
+                        "PC13"
+                    ]
+                },
+                {
+                    "position": "E5",
+                    "signals": [
+                        "PF0"
+                    ]
+                },
+                {
+                    "position": "E6",
+                    "signals": [
+                        "VDDIO2"
+                    ]
+                },
+                {
+                    "position": "E7",
+                    "signals": [
+                        "PD1"
+                    ]
+                },
+                {
+                    "position": "E8",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "E9",
+                    "signals": [
+                        "PA9"
+                    ]
+                },
+                {
+                    "position": "F1",
+                    "signals": [
+                        "DSI_CKN"
+                    ]
+                },
+                {
+                    "position": "F10",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "F11",
+                    "signals": [
+                        "PI0"
+                    ]
+                },
+                {
+                    "position": "F12",
+                    "signals": [
+                        "PI1"
+                    ]
+                },
+                {
+                    "position": "F2",
+                    "signals": [
+                        "DSI_CKP"
+                    ]
+                },
+                {
+                    "position": "F3",
+                    "signals": [
+                        "VSSDSI"
+                    ]
+                },
+                {
+                    "position": "F4",
+                    "signals": [
+                        "PF1"
+                    ]
+                },
+                {
+                    "position": "F5",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "F6",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "F7",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "F8",
+                    "signals": [
+                        "PC9"
+                    ]
+                },
+                {
+                    "position": "F9",
+                    "signals": [
+                        "PC7"
+                    ]
+                },
+                {
+                    "position": "G1",
+                    "signals": [
+                        "DSI_D1N"
+                    ]
+                },
+                {
+                    "position": "G10",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "G11",
+                    "signals": [
+                        "PH14"
+                    ]
+                },
+                {
+                    "position": "G12",
+                    "signals": [
+                        "PH15"
+                    ]
+                },
+                {
+                    "position": "G2",
+                    "signals": [
+                        "DSI_D1P"
+                    ]
+                },
+                {
+                    "position": "G3",
+                    "signals": [
+                        "VDD11DSI"
+                    ]
+                },
+                {
+                    "position": "G4",
+                    "signals": [
+                        "PF2"
+                    ]
+                },
+                {
+                    "position": "G5",
+                    "signals": [
+                        "PC2"
+                    ]
+                },
+                {
+                    "position": "G6",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "G7",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "G8",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "G9",
+                    "signals": [
+                        "PC6"
+                    ]
+                },
+                {
+                    "position": "H1",
+                    "signals": [
+                        "VSSDSI"
+                    ]
+                },
+                {
+                    "position": "H10",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "H11",
+                    "signals": [
+                        "PH12"
+                    ]
+                },
+                {
+                    "position": "H12",
+                    "signals": [
+                        "PH13"
+                    ]
+                },
+                {
+                    "position": "H2",
+                    "signals": [
+                        "PH0"
+                    ]
+                },
+                {
+                    "position": "H3",
+                    "signals": [
+                        "VREF+"
+                    ]
+                },
+                {
+                    "position": "H4",
+                    "signals": [
+                        "PA0"
+                    ]
+                },
+                {
+                    "position": "H5",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "H6",
+                    "signals": [
+                        "PB2"
+                    ]
+                },
+                {
+                    "position": "H7",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "H8",
+                    "signals": [
+                        "PE8"
+                    ]
+                },
+                {
+                    "position": "H9",
+                    "signals": [
+                        "PD15"
+                    ]
+                },
+                {
+                    "position": "J1",
+                    "signals": [
+                        "PH1"
+                    ]
+                },
+                {
+                    "position": "J10",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "J11",
+                    "signals": [
+                        "PH11"
+                    ]
+                },
+                {
+                    "position": "J12",
+                    "signals": [
+                        "PH10"
+                    ]
+                },
+                {
+                    "position": "J2",
+                    "signals": [
+                        "NRST"
+                    ]
+                },
+                {
+                    "position": "J3",
+                    "signals": [
+                        "VSSA"
+                    ]
+                },
+                {
+                    "position": "J4",
+                    "signals": [
+                        "VDDA"
+                    ]
+                },
+                {
+                    "position": "J5",
+                    "signals": [
+                        "PB0"
+                    ]
+                },
+                {
+                    "position": "J6",
+                    "signals": [
+                        "PG1"
+                    ]
+                },
+                {
+                    "position": "J7",
+                    "signals": [
+                        "PE10"
+                    ]
+                },
+                {
+                    "position": "J8",
+                    "signals": [
+                        "PE12"
+                    ]
+                },
+                {
+                    "position": "K1",
+                    "signals": [
+                        "PC1"
+                    ]
+                },
+                {
+                    "position": "K10",
+                    "signals": [
+                        "PD9"
+                    ]
+                },
+                {
+                    "position": "K11",
+                    "signals": [
+                        "PD12"
+                    ]
+                },
+                {
+                    "position": "K12",
+                    "signals": [
+                        "PH9"
+                    ]
+                },
+                {
+                    "position": "K2",
+                    "signals": [
+                        "PC0"
+                    ]
+                },
+                {
+                    "position": "K3",
+                    "signals": [
+                        "PA1"
+                    ]
+                },
+                {
+                    "position": "K4",
+                    "signals": [
+                        "PA5"
+                    ]
+                },
+                {
+                    "position": "K5",
+                    "signals": [
+                        "PG0"
+                    ]
+                },
+                {
+                    "position": "K6",
+                    "signals": [
+                        "PE9"
+                    ]
+                },
+                {
+                    "position": "K7",
+                    "signals": [
+                        "PE14"
+                    ]
+                },
+                {
+                    "position": "K8",
+                    "signals": [
+                        "PB10"
+                    ]
+                },
+                {
+                    "position": "K9",
+                    "signals": [
+                        "PD13"
+                    ]
+                },
+                {
+                    "position": "L1",
+                    "signals": [
+                        "PC3"
+                    ]
+                },
+                {
+                    "position": "L10",
+                    "signals": [
+                        "PB14"
+                    ]
+                },
+                {
+                    "position": "L11",
+                    "signals": [
+                        "PD10"
+                    ]
+                },
+                {
+                    "position": "L12",
+                    "signals": [
+                        "PD14"
+                    ]
+                },
+                {
+                    "position": "L2",
+                    "signals": [
+                        "PA2"
+                    ]
+                },
+                {
+                    "position": "L3",
+                    "signals": [
+                        "PA4"
+                    ]
+                },
+                {
+                    "position": "L4",
+                    "signals": [
+                        "PA7"
+                    ]
+                },
+                {
+                    "position": "L5",
+                    "signals": [
+                        "PE7"
+                    ]
+                },
+                {
+                    "position": "L6",
+                    "signals": [
+                        "PE13"
+                    ]
+                },
+                {
+                    "position": "L7",
+                    "signals": [
+                        "PB11"
+                    ]
+                },
+                {
+                    "position": "L8",
+                    "signals": [
+                        "VSSSMPS"
+                    ]
+                },
+                {
+                    "position": "L9",
+                    "signals": [
+                        "PD11"
+                    ]
+                },
+                {
+                    "position": "M1",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "M10",
+                    "signals": [
+                        "PB13"
+                    ]
+                },
+                {
+                    "position": "M11",
+                    "signals": [
+                        "PD8"
+                    ]
+                },
+                {
+                    "position": "M12",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "M2",
+                    "signals": [
+                        "PA3"
+                    ]
+                },
+                {
+                    "position": "M3",
+                    "signals": [
+                        "PA6"
+                    ]
+                },
+                {
+                    "position": "M4",
+                    "signals": [
+                        "PB1"
+                    ]
+                },
+                {
+                    "position": "M5",
+                    "signals": [
+                        "PE11"
+                    ]
+                },
+                {
+                    "position": "M6",
+                    "signals": [
+                        "PE15"
+                    ]
+                },
+                {
+                    "position": "M7",
+                    "signals": [
+                        "VLXSMPS"
+                    ]
+                },
+                {
+                    "position": "M8",
+                    "signals": [
+                        "VDDSMPS"
+                    ]
+                },
+                {
+                    "position": "M9",
+                    "signals": [
+                        "PB15"
+                    ]
+                }
+            ]
         },
         {
             "name": "STM32U5G9ZJTxQ",
-            "package": "LQFP144"
+            "package": "LQFP144",
+            "pins": [
+                {
+                    "position": "1",
+                    "signals": [
+                        "PE2"
+                    ]
+                },
+                {
+                    "position": "2",
+                    "signals": [
+                        "PE3"
+                    ]
+                },
+                {
+                    "position": "3",
+                    "signals": [
+                        "PE4"
+                    ]
+                },
+                {
+                    "position": "4",
+                    "signals": [
+                        "PE5"
+                    ]
+                },
+                {
+                    "position": "5",
+                    "signals": [
+                        "PE6"
+                    ]
+                },
+                {
+                    "position": "6",
+                    "signals": [
+                        "VBAT"
+                    ]
+                },
+                {
+                    "position": "7",
+                    "signals": [
+                        "PC13"
+                    ]
+                },
+                {
+                    "position": "8",
+                    "signals": [
+                        "PC14"
+                    ]
+                },
+                {
+                    "position": "9",
+                    "signals": [
+                        "PC15"
+                    ]
+                },
+                {
+                    "position": "10",
+                    "signals": [
+                        "PF0"
+                    ]
+                },
+                {
+                    "position": "11",
+                    "signals": [
+                        "PF1"
+                    ]
+                },
+                {
+                    "position": "12",
+                    "signals": [
+                        "PF2"
+                    ]
+                },
+                {
+                    "position": "13",
+                    "signals": [
+                        "VDDDSI"
+                    ]
+                },
+                {
+                    "position": "14",
+                    "signals": [
+                        "VDD11DSI"
+                    ]
+                },
+                {
+                    "position": "15",
+                    "signals": [
+                        "DSI_D0P"
+                    ]
+                },
+                {
+                    "position": "16",
+                    "signals": [
+                        "DSI_D0N"
+                    ]
+                },
+                {
+                    "position": "17",
+                    "signals": [
+                        "VSSDSI"
+                    ]
+                },
+                {
+                    "position": "18",
+                    "signals": [
+                        "DSI_CKP"
+                    ]
+                },
+                {
+                    "position": "19",
+                    "signals": [
+                        "DSI_CKN"
+                    ]
+                },
+                {
+                    "position": "20",
+                    "signals": [
+                        "VDD11DSI"
+                    ]
+                },
+                {
+                    "position": "21",
+                    "signals": [
+                        "DSI_D1P"
+                    ]
+                },
+                {
+                    "position": "22",
+                    "signals": [
+                        "DSI_D1N"
+                    ]
+                },
+                {
+                    "position": "23",
+                    "signals": [
+                        "VSSDSI"
+                    ]
+                },
+                {
+                    "position": "24",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "25",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "26",
+                    "signals": [
+                        "PH0"
+                    ]
+                },
+                {
+                    "position": "27",
+                    "signals": [
+                        "PH1"
+                    ]
+                },
+                {
+                    "position": "28",
+                    "signals": [
+                        "NRST"
+                    ]
+                },
+                {
+                    "position": "29",
+                    "signals": [
+                        "PC0"
+                    ]
+                },
+                {
+                    "position": "30",
+                    "signals": [
+                        "PC1"
+                    ]
+                },
+                {
+                    "position": "31",
+                    "signals": [
+                        "PC2"
+                    ]
+                },
+                {
+                    "position": "32",
+                    "signals": [
+                        "PC3"
+                    ]
+                },
+                {
+                    "position": "33",
+                    "signals": [
+                        "VSSA"
+                    ]
+                },
+                {
+                    "position": "34",
+                    "signals": [
+                        "VREF+"
+                    ]
+                },
+                {
+                    "position": "35",
+                    "signals": [
+                        "VDDA"
+                    ]
+                },
+                {
+                    "position": "36",
+                    "signals": [
+                        "PA0"
+                    ]
+                },
+                {
+                    "position": "37",
+                    "signals": [
+                        "PA1"
+                    ]
+                },
+                {
+                    "position": "38",
+                    "signals": [
+                        "PA2"
+                    ]
+                },
+                {
+                    "position": "39",
+                    "signals": [
+                        "PA3"
+                    ]
+                },
+                {
+                    "position": "40",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "41",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "42",
+                    "signals": [
+                        "PA4"
+                    ]
+                },
+                {
+                    "position": "43",
+                    "signals": [
+                        "PA5"
+                    ]
+                },
+                {
+                    "position": "44",
+                    "signals": [
+                        "PA6"
+                    ]
+                },
+                {
+                    "position": "45",
+                    "signals": [
+                        "PA7"
+                    ]
+                },
+                {
+                    "position": "46",
+                    "signals": [
+                        "PB0"
+                    ]
+                },
+                {
+                    "position": "47",
+                    "signals": [
+                        "PB1"
+                    ]
+                },
+                {
+                    "position": "48",
+                    "signals": [
+                        "PB2"
+                    ]
+                },
+                {
+                    "position": "49",
+                    "signals": [
+                        "PG0"
+                    ]
+                },
+                {
+                    "position": "50",
+                    "signals": [
+                        "PG1"
+                    ]
+                },
+                {
+                    "position": "51",
+                    "signals": [
+                        "PE7"
+                    ]
+                },
+                {
+                    "position": "52",
+                    "signals": [
+                        "PE8"
+                    ]
+                },
+                {
+                    "position": "53",
+                    "signals": [
+                        "PE9"
+                    ]
+                },
+                {
+                    "position": "54",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "55",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "56",
+                    "signals": [
+                        "PE10"
+                    ]
+                },
+                {
+                    "position": "57",
+                    "signals": [
+                        "PE11"
+                    ]
+                },
+                {
+                    "position": "58",
+                    "signals": [
+                        "PE12"
+                    ]
+                },
+                {
+                    "position": "59",
+                    "signals": [
+                        "PE13"
+                    ]
+                },
+                {
+                    "position": "60",
+                    "signals": [
+                        "PE14"
+                    ]
+                },
+                {
+                    "position": "61",
+                    "signals": [
+                        "PE15"
+                    ]
+                },
+                {
+                    "position": "62",
+                    "signals": [
+                        "PB10"
+                    ]
+                },
+                {
+                    "position": "63",
+                    "signals": [
+                        "PB11"
+                    ]
+                },
+                {
+                    "position": "64",
+                    "signals": [
+                        "VLXSMPS"
+                    ]
+                },
+                {
+                    "position": "65",
+                    "signals": [
+                        "VDDSMPS"
+                    ]
+                },
+                {
+                    "position": "66",
+                    "signals": [
+                        "VSSSMPS"
+                    ]
+                },
+                {
+                    "position": "67",
+                    "signals": [
+                        "VDD11"
+                    ]
+                },
+                {
+                    "position": "68",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "69",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "70",
+                    "signals": [
+                        "PB13"
+                    ]
+                },
+                {
+                    "position": "71",
+                    "signals": [
+                        "PB14"
+                    ]
+                },
+                {
+                    "position": "72",
+                    "signals": [
+                        "PB15"
+                    ]
+                },
+                {
+                    "position": "73",
+                    "signals": [
+                        "PD8"
+                    ]
+                },
+                {
+                    "position": "74",
+                    "signals": [
+                        "PD9"
+                    ]
+                },
+                {
+                    "position": "75",
+                    "signals": [
+                        "PD10"
+                    ]
+                },
+                {
+                    "position": "76",
+                    "signals": [
+                        "PD11"
+                    ]
+                },
+                {
+                    "position": "77",
+                    "signals": [
+                        "PD12"
+                    ]
+                },
+                {
+                    "position": "78",
+                    "signals": [
+                        "PD13"
+                    ]
+                },
+                {
+                    "position": "79",
+                    "signals": [
+                        "PD14"
+                    ]
+                },
+                {
+                    "position": "80",
+                    "signals": [
+                        "PD15"
+                    ]
+                },
+                {
+                    "position": "81",
+                    "signals": [
+                        "PH9"
+                    ]
+                },
+                {
+                    "position": "82",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "83",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "84",
+                    "signals": [
+                        "PH10"
+                    ]
+                },
+                {
+                    "position": "85",
+                    "signals": [
+                        "PH11"
+                    ]
+                },
+                {
+                    "position": "86",
+                    "signals": [
+                        "PH12"
+                    ]
+                },
+                {
+                    "position": "87",
+                    "signals": [
+                        "PH13"
+                    ]
+                },
+                {
+                    "position": "88",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "89",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "90",
+                    "signals": [
+                        "PH14"
+                    ]
+                },
+                {
+                    "position": "91",
+                    "signals": [
+                        "PH15"
+                    ]
+                },
+                {
+                    "position": "92",
+                    "signals": [
+                        "PI0"
+                    ]
+                },
+                {
+                    "position": "93",
+                    "signals": [
+                        "PI1"
+                    ]
+                },
+                {
+                    "position": "94",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "95",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "96",
+                    "signals": [
+                        "PI2"
+                    ]
+                },
+                {
+                    "position": "97",
+                    "signals": [
+                        "PI3"
+                    ]
+                },
+                {
+                    "position": "98",
+                    "signals": [
+                        "PC6"
+                    ]
+                },
+                {
+                    "position": "99",
+                    "signals": [
+                        "PC7"
+                    ]
+                },
+                {
+                    "position": "100",
+                    "signals": [
+                        "PC8"
+                    ]
+                },
+                {
+                    "position": "101",
+                    "signals": [
+                        "PC9"
+                    ]
+                },
+                {
+                    "position": "102",
+                    "signals": [
+                        "PA8"
+                    ]
+                },
+                {
+                    "position": "103",
+                    "signals": [
+                        "PA9"
+                    ]
+                },
+                {
+                    "position": "104",
+                    "signals": [
+                        "PA10"
+                    ]
+                },
+                {
+                    "position": "105",
+                    "signals": [
+                        "PA11"
+                    ]
+                },
+                {
+                    "position": "106",
+                    "signals": [
+                        "PA12"
+                    ]
+                },
+                {
+                    "position": "107",
+                    "signals": [
+                        "PA13"
+                    ]
+                },
+                {
+                    "position": "108",
+                    "signals": [
+                        "VDDUSB"
+                    ]
+                },
+                {
+                    "position": "109",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "110",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "111",
+                    "signals": [
+                        "PA14"
+                    ]
+                },
+                {
+                    "position": "112",
+                    "signals": [
+                        "PA15"
+                    ]
+                },
+                {
+                    "position": "113",
+                    "signals": [
+                        "PC10"
+                    ]
+                },
+                {
+                    "position": "114",
+                    "signals": [
+                        "PC11"
+                    ]
+                },
+                {
+                    "position": "115",
+                    "signals": [
+                        "PC12"
+                    ]
+                },
+                {
+                    "position": "116",
+                    "signals": [
+                        "PD0"
+                    ]
+                },
+                {
+                    "position": "117",
+                    "signals": [
+                        "PD1"
+                    ]
+                },
+                {
+                    "position": "118",
+                    "signals": [
+                        "PD2"
+                    ]
+                },
+                {
+                    "position": "119",
+                    "signals": [
+                        "PD3"
+                    ]
+                },
+                {
+                    "position": "120",
+                    "signals": [
+                        "PD4"
+                    ]
+                },
+                {
+                    "position": "121",
+                    "signals": [
+                        "PD5"
+                    ]
+                },
+                {
+                    "position": "122",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "123",
+                    "signals": [
+                        "PD6"
+                    ]
+                },
+                {
+                    "position": "124",
+                    "signals": [
+                        "PD7"
+                    ]
+                },
+                {
+                    "position": "125",
+                    "signals": [
+                        "PG9"
+                    ]
+                },
+                {
+                    "position": "126",
+                    "signals": [
+                        "PG10"
+                    ]
+                },
+                {
+                    "position": "127",
+                    "signals": [
+                        "PG12"
+                    ]
+                },
+                {
+                    "position": "128",
+                    "signals": [
+                        "PG13"
+                    ]
+                },
+                {
+                    "position": "129",
+                    "signals": [
+                        "PG14"
+                    ]
+                },
+                {
+                    "position": "130",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "131",
+                    "signals": [
+                        "VDDIO2"
+                    ]
+                },
+                {
+                    "position": "132",
+                    "signals": [
+                        "PG15"
+                    ]
+                },
+                {
+                    "position": "133",
+                    "signals": [
+                        "PB3"
+                    ]
+                },
+                {
+                    "position": "134",
+                    "signals": [
+                        "PB4"
+                    ]
+                },
+                {
+                    "position": "135",
+                    "signals": [
+                        "PB5"
+                    ]
+                },
+                {
+                    "position": "136",
+                    "signals": [
+                        "PB6"
+                    ]
+                },
+                {
+                    "position": "137",
+                    "signals": [
+                        "PB7"
+                    ]
+                },
+                {
+                    "position": "138",
+                    "signals": [
+                        "PH3"
+                    ]
+                },
+                {
+                    "position": "139",
+                    "signals": [
+                        "PB8"
+                    ]
+                },
+                {
+                    "position": "140",
+                    "signals": [
+                        "PB9"
+                    ]
+                },
+                {
+                    "position": "141",
+                    "signals": [
+                        "PE0"
+                    ]
+                },
+                {
+                    "position": "142",
+                    "signals": [
+                        "VDD11"
+                    ]
+                },
+                {
+                    "position": "143",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "144",
+                    "signals": [
+                        "VDD"
+                    ]
+                }
+            ]
         }
     ],
     "memory": [

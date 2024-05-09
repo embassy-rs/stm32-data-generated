@@ -7,7 +7,179 @@
     "packages": [
         {
             "name": "STM32G041G8Ux",
-            "package": "UFQFPN28"
+            "package": "UFQFPN28",
+            "pins": [
+                {
+                    "position": "1",
+                    "signals": [
+                        "PC14"
+                    ]
+                },
+                {
+                    "position": "2",
+                    "signals": [
+                        "PC15"
+                    ]
+                },
+                {
+                    "position": "3",
+                    "signals": [
+                        "VDD/VDDA"
+                    ]
+                },
+                {
+                    "position": "4",
+                    "signals": [
+                        "VSS/VSSA"
+                    ]
+                },
+                {
+                    "position": "5",
+                    "signals": [
+                        "PF2"
+                    ]
+                },
+                {
+                    "position": "6",
+                    "signals": [
+                        "PA0"
+                    ]
+                },
+                {
+                    "position": "7",
+                    "signals": [
+                        "PA1"
+                    ]
+                },
+                {
+                    "position": "8",
+                    "signals": [
+                        "PA2"
+                    ]
+                },
+                {
+                    "position": "9",
+                    "signals": [
+                        "PA3"
+                    ]
+                },
+                {
+                    "position": "10",
+                    "signals": [
+                        "PA4"
+                    ]
+                },
+                {
+                    "position": "11",
+                    "signals": [
+                        "PA5"
+                    ]
+                },
+                {
+                    "position": "12",
+                    "signals": [
+                        "PA6"
+                    ]
+                },
+                {
+                    "position": "13",
+                    "signals": [
+                        "PA7"
+                    ]
+                },
+                {
+                    "position": "14",
+                    "signals": [
+                        "PB0"
+                    ]
+                },
+                {
+                    "position": "15",
+                    "signals": [
+                        "PB1"
+                    ]
+                },
+                {
+                    "position": "16",
+                    "signals": [
+                        "PA8"
+                    ]
+                },
+                {
+                    "position": "17",
+                    "signals": [
+                        "PC6"
+                    ]
+                },
+                {
+                    "position": "18",
+                    "signals": [
+                        "PA11",
+                        "PA9"
+                    ]
+                },
+                {
+                    "position": "19",
+                    "signals": [
+                        "PA10",
+                        "PA12"
+                    ]
+                },
+                {
+                    "position": "20",
+                    "signals": [
+                        "PA13"
+                    ]
+                },
+                {
+                    "position": "21",
+                    "signals": [
+                        "PA14"
+                    ]
+                },
+                {
+                    "position": "22",
+                    "signals": [
+                        "PA15"
+                    ]
+                },
+                {
+                    "position": "23",
+                    "signals": [
+                        "PB3"
+                    ]
+                },
+                {
+                    "position": "24",
+                    "signals": [
+                        "PB4"
+                    ]
+                },
+                {
+                    "position": "25",
+                    "signals": [
+                        "PB5"
+                    ]
+                },
+                {
+                    "position": "26",
+                    "signals": [
+                        "PB6"
+                    ]
+                },
+                {
+                    "position": "27",
+                    "signals": [
+                        "PB7"
+                    ]
+                },
+                {
+                    "position": "28",
+                    "signals": [
+                        "PB8"
+                    ]
+                }
+            ]
         }
     ],
     "memory": [

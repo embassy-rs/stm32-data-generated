@@ -7,7 +7,140 @@
     "packages": [
         {
             "name": "STM32G050F6Px",
-            "package": "TSSOP20"
+            "package": "TSSOP20",
+            "pins": [
+                {
+                    "position": "1",
+                    "signals": [
+                        "PB7",
+                        "PB8"
+                    ]
+                },
+                {
+                    "position": "2",
+                    "signals": [
+                        "PB9",
+                        "PC14"
+                    ]
+                },
+                {
+                    "position": "3",
+                    "signals": [
+                        "PC15"
+                    ]
+                },
+                {
+                    "position": "4",
+                    "signals": [
+                        "VDD/VDDA"
+                    ]
+                },
+                {
+                    "position": "5",
+                    "signals": [
+                        "VSS/VSSA"
+                    ]
+                },
+                {
+                    "position": "6",
+                    "signals": [
+                        "PF2"
+                    ]
+                },
+                {
+                    "position": "7",
+                    "signals": [
+                        "PA0"
+                    ]
+                },
+                {
+                    "position": "8",
+                    "signals": [
+                        "PA1"
+                    ]
+                },
+                {
+                    "position": "9",
+                    "signals": [
+                        "PA2"
+                    ]
+                },
+                {
+                    "position": "10",
+                    "signals": [
+                        "PA3"
+                    ]
+                },
+                {
+                    "position": "11",
+                    "signals": [
+                        "PA4"
+                    ]
+                },
+                {
+                    "position": "12",
+                    "signals": [
+                        "PA5"
+                    ]
+                },
+                {
+                    "position": "13",
+                    "signals": [
+                        "PA6"
+                    ]
+                },
+                {
+                    "position": "14",
+                    "signals": [
+                        "PA7"
+                    ]
+                },
+                {
+                    "position": "15",
+                    "signals": [
+                        "PA8",
+                        "PB0",
+                        "PB1",
+                        "PB2"
+                    ]
+                },
+                {
+                    "position": "16",
+                    "signals": [
+                        "PA11",
+                        "PA9"
+                    ]
+                },
+                {
+                    "position": "17",
+                    "signals": [
+                        "PA10",
+                        "PA12"
+                    ]
+                },
+                {
+                    "position": "18",
+                    "signals": [
+                        "PA13"
+                    ]
+                },
+                {
+                    "position": "19",
+                    "signals": [
+                        "PA14",
+                        "PA15"
+                    ]
+                },
+                {
+                    "position": "20",
+                    "signals": [
+                        "PB3",
+                        "PB4",
+                        "PB5",
+                        "PB6"
+                    ]
+                }
+            ]
         }
     ],
     "memory": [

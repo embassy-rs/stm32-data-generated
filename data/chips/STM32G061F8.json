@@ -7,11 +7,277 @@
     "packages": [
         {
             "name": "STM32G061F8Px",
-            "package": "TSSOP20"
+            "package": "TSSOP20",
+            "pins": [
+                {
+                    "position": "1",
+                    "signals": [
+                        "PB7",
+                        "PB8"
+                    ]
+                },
+                {
+                    "position": "2",
+                    "signals": [
+                        "PB9",
+                        "PC14"
+                    ]
+                },
+                {
+                    "position": "3",
+                    "signals": [
+                        "PC15"
+                    ]
+                },
+                {
+                    "position": "4",
+                    "signals": [
+                        "VDD/VDDA"
+                    ]
+                },
+                {
+                    "position": "5",
+                    "signals": [
+                        "VSS/VSSA"
+                    ]
+                },
+                {
+                    "position": "6",
+                    "signals": [
+                        "PF2"
+                    ]
+                },
+                {
+                    "position": "7",
+                    "signals": [
+                        "PA0"
+                    ]
+                },
+                {
+                    "position": "8",
+                    "signals": [
+                        "PA1"
+                    ]
+                },
+                {
+                    "position": "9",
+                    "signals": [
+                        "PA2"
+                    ]
+                },
+                {
+                    "position": "10",
+                    "signals": [
+                        "PA3"
+                    ]
+                },
+                {
+                    "position": "11",
+                    "signals": [
+                        "PA4"
+                    ]
+                },
+                {
+                    "position": "12",
+                    "signals": [
+                        "PA5"
+                    ]
+                },
+                {
+                    "position": "13",
+                    "signals": [
+                        "PA6"
+                    ]
+                },
+                {
+                    "position": "14",
+                    "signals": [
+                        "PA7"
+                    ]
+                },
+                {
+                    "position": "15",
+                    "signals": [
+                        "PA8",
+                        "PB0",
+                        "PB1",
+                        "PB2"
+                    ]
+                },
+                {
+                    "position": "16",
+                    "signals": [
+                        "PA11",
+                        "PA9"
+                    ]
+                },
+                {
+                    "position": "17",
+                    "signals": [
+                        "PA10",
+                        "PA12"
+                    ]
+                },
+                {
+                    "position": "18",
+                    "signals": [
+                        "PA13"
+                    ]
+                },
+                {
+                    "position": "19",
+                    "signals": [
+                        "PA14",
+                        "PA15"
+                    ]
+                },
+                {
+                    "position": "20",
+                    "signals": [
+                        "PB3",
+                        "PB4",
+                        "PB5",
+                        "PB6"
+                    ]
+                }
+            ]
         },
         {
             "name": "STM32G061F8Yx",
-            "package": "WLCSP20"
+            "package": "WLCSP20",
+            "pins": [
+                {
+                    "position": "A1",
+                    "signals": [
+                        "PA10",
+                        "PA12"
+                    ]
+                },
+                {
+                    "position": "A2",
+                    "signals": [
+                        "PB3",
+                        "PB4",
+                        "PB5",
+                        "PB6"
+                    ]
+                },
+                {
+                    "position": "A3",
+                    "signals": [
+                        "PB7",
+                        "PB8"
+                    ]
+                },
+                {
+                    "position": "A4",
+                    "signals": [
+                        "PB9",
+                        "PC14"
+                    ]
+                },
+                {
+                    "position": "B1",
+                    "signals": [
+                        "PA11",
+                        "PA9"
+                    ]
+                },
+                {
+                    "position": "B2",
+                    "signals": [
+                        "PA13"
+                    ]
+                },
+                {
+                    "position": "B3",
+                    "signals": [
+                        "PA14",
+                        "PA15"
+                    ]
+                },
+                {
+                    "position": "B4",
+                    "signals": [
+                        "PC15"
+                    ]
+                },
+                {
+                    "position": "C1",
+                    "signals": [
+                        "PA6"
+                    ]
+                },
+                {
+                    "position": "C2",
+                    "signals": [
+                        "PA3"
+                    ]
+                },
+                {
+                    "position": "C3",
+                    "signals": [
+                        "PA0"
+                    ]
+                },
+                {
+                    "position": "C4",
+                    "signals": [
+                        "VDD/VDDA"
+                    ]
+                },
+                {
+                    "position": "D1",
+                    "signals": [
+                        "PA7"
+                    ]
+                },
+                {
+                    "position": "D2",
+                    "signals": [
+                        "PA5"
+                    ]
+                },
+                {
+                    "position": "D3",
+                    "signals": [
+                        "PA1"
+                    ]
+                },
+                {
+                    "position": "D4",
+                    "signals": [
+                        "VSS/VSSA"
+                    ]
+                },
+                {
+                    "position": "E1",
+                    "signals": [
+                        "PA8",
+                        "PB0",
+                        "PB1",
+                        "PB2"
+                    ]
+                },
+                {
+                    "position": "E2",
+                    "signals": [
+                        "PA4"
+                    ]
+                },
+                {
+                    "position": "E3",
+                    "signals": [
+                        "PA2"
+                    ]
+                },
+                {
+                    "position": "E4",
+                    "signals": [
+                        "PF2"
+                    ]
+                }
+            ]
         }
     ],
     "memory": [

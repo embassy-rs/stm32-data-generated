@@ -7,11 +7,447 @@
     "packages": [
         {
             "name": "STM32L412TBYx",
-            "package": "WLCSP36"
+            "package": "WLCSP36",
+            "pins": [
+                {
+                    "position": "A1",
+                    "signals": [
+                        "PA12"
+                    ]
+                },
+                {
+                    "position": "A2",
+                    "signals": [
+                        "PA14"
+                    ]
+                },
+                {
+                    "position": "A3",
+                    "signals": [
+                        "PB4"
+                    ]
+                },
+                {
+                    "position": "A4",
+                    "signals": [
+                        "PB7"
+                    ]
+                },
+                {
+                    "position": "A5",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "A6",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "B1",
+                    "signals": [
+                        "PA11"
+                    ]
+                },
+                {
+                    "position": "B2",
+                    "signals": [
+                        "PA13"
+                    ]
+                },
+                {
+                    "position": "B3",
+                    "signals": [
+                        "PB3"
+                    ]
+                },
+                {
+                    "position": "B4",
+                    "signals": [
+                        "PB6"
+                    ]
+                },
+                {
+                    "position": "B5",
+                    "signals": [
+                        "PB8"
+                    ]
+                },
+                {
+                    "position": "B6",
+                    "signals": [
+                        "PC14"
+                    ]
+                },
+                {
+                    "position": "C1",
+                    "signals": [
+                        "PA9"
+                    ]
+                },
+                {
+                    "position": "C2",
+                    "signals": [
+                        "PA10"
+                    ]
+                },
+                {
+                    "position": "C3",
+                    "signals": [
+                        "PA15"
+                    ]
+                },
+                {
+                    "position": "C4",
+                    "signals": [
+                        "PB5"
+                    ]
+                },
+                {
+                    "position": "C5",
+                    "signals": [
+                        "PH3"
+                    ]
+                },
+                {
+                    "position": "C6",
+                    "signals": [
+                        "PC15"
+                    ]
+                },
+                {
+                    "position": "D1",
+                    "signals": [
+                        "PA8"
+                    ]
+                },
+                {
+                    "position": "D2",
+                    "signals": [
+                        "PB1"
+                    ]
+                },
+                {
+                    "position": "D3",
+                    "signals": [
+                        "PA6"
+                    ]
+                },
+                {
+                    "position": "D4",
+                    "signals": [
+                        "PA1"
+                    ]
+                },
+                {
+                    "position": "D5",
+                    "signals": [
+                        "PA0"
+                    ]
+                },
+                {
+                    "position": "D6",
+                    "signals": [
+                        "NRST"
+                    ]
+                },
+                {
+                    "position": "E1",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "E2",
+                    "signals": [
+                        "PB2"
+                    ]
+                },
+                {
+                    "position": "E3",
+                    "signals": [
+                        "PA7"
+                    ]
+                },
+                {
+                    "position": "E4",
+                    "signals": [
+                        "PA5"
+                    ]
+                },
+                {
+                    "position": "E5",
+                    "signals": [
+                        "PA2"
+                    ]
+                },
+                {
+                    "position": "E6",
+                    "signals": [
+                        "VREF+"
+                    ]
+                },
+                {
+                    "position": "F1",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "F2",
+                    "signals": [
+                        "PB10"
+                    ]
+                },
+                {
+                    "position": "F3",
+                    "signals": [
+                        "PB0"
+                    ]
+                },
+                {
+                    "position": "F4",
+                    "signals": [
+                        "PA4"
+                    ]
+                },
+                {
+                    "position": "F5",
+                    "signals": [
+                        "PA3"
+                    ]
+                },
+                {
+                    "position": "F6",
+                    "signals": [
+                        "VDDA"
+                    ]
+                }
+            ]
         },
         {
             "name": "STM32L412TBYxP",
-            "package": "WLCSP36"
+            "package": "WLCSP36",
+            "pins": [
+                {
+                    "position": "A1",
+                    "signals": [
+                        "PA12"
+                    ]
+                },
+                {
+                    "position": "A2",
+                    "signals": [
+                        "PA14"
+                    ]
+                },
+                {
+                    "position": "A3",
+                    "signals": [
+                        "PB4"
+                    ]
+                },
+                {
+                    "position": "A4",
+                    "signals": [
+                        "PB7"
+                    ]
+                },
+                {
+                    "position": "A5",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "A6",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "B1",
+                    "signals": [
+                        "PA11"
+                    ]
+                },
+                {
+                    "position": "B2",
+                    "signals": [
+                        "PA13"
+                    ]
+                },
+                {
+                    "position": "B3",
+                    "signals": [
+                        "PB3"
+                    ]
+                },
+                {
+                    "position": "B4",
+                    "signals": [
+                        "PB6"
+                    ]
+                },
+                {
+                    "position": "B5",
+                    "signals": [
+                        "VDD12"
+                    ]
+                },
+                {
+                    "position": "B6",
+                    "signals": [
+                        "PC14"
+                    ]
+                },
+                {
+                    "position": "C1",
+                    "signals": [
+                        "PA9"
+                    ]
+                },
+                {
+                    "position": "C2",
+                    "signals": [
+                        "PA10"
+                    ]
+                },
+                {
+                    "position": "C3",
+                    "signals": [
+                        "PA15"
+                    ]
+                },
+                {
+                    "position": "C4",
+                    "signals": [
+                        "PB5"
+                    ]
+                },
+                {
+                    "position": "C5",
+                    "signals": [
+                        "PH3"
+                    ]
+                },
+                {
+                    "position": "C6",
+                    "signals": [
+                        "PC15"
+                    ]
+                },
+                {
+                    "position": "D1",
+                    "signals": [
+                        "PA8"
+                    ]
+                },
+                {
+                    "position": "D2",
+                    "signals": [
+                        "PB1"
+                    ]
+                },
+                {
+                    "position": "D3",
+                    "signals": [
+                        "PA6"
+                    ]
+                },
+                {
+                    "position": "D4",
+                    "signals": [
+                        "PA2"
+                    ]
+                },
+                {
+                    "position": "D5",
+                    "signals": [
+                        "PA1"
+                    ]
+                },
+                {
+                    "position": "D6",
+                    "signals": [
+                        "NRST"
+                    ]
+                },
+                {
+                    "position": "E1",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "E2",
+                    "signals": [
+                        "PB10"
+                    ]
+                },
+                {
+                    "position": "E3",
+                    "signals": [
+                        "PB0"
+                    ]
+                },
+                {
+                    "position": "E4",
+                    "signals": [
+                        "PA5"
+                    ]
+                },
+                {
+                    "position": "E5",
+                    "signals": [
+                        "PA3"
+                    ]
+                },
+                {
+                    "position": "E6",
+                    "signals": [
+                        "VDDA/VREF+"
+                    ]
+                },
+                {
+                    "position": "F1",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "F2",
+                    "signals": [
+                        "VDD12"
+                    ]
+                },
+                {
+                    "position": "F3",
+                    "signals": [
+                        "PB2"
+                    ]
+                },
+                {
+                    "position": "F4",
+                    "signals": [
+                        "PA7"
+                    ]
+                },
+                {
+                    "position": "F5",
+                    "signals": [
+                        "PA4"
+                    ]
+                },
+                {
+                    "position": "F6",
+                    "signals": [
+                        "PA0"
+                    ]
+                }
+            ]
         }
     ],
     "memory": [

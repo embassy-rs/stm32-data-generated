@@ -7,7 +7,139 @@
     "packages": [
         {
             "name": "STM32U031F4Px",
-            "package": "TSSOP20"
+            "package": "TSSOP20",
+            "pins": [
+                {
+                    "position": "1",
+                    "signals": [
+                        "PB8",
+                        "PB9"
+                    ]
+                },
+                {
+                    "position": "2",
+                    "signals": [
+                        "VSS"
+                    ]
+                },
+                {
+                    "position": "3",
+                    "signals": [
+                        "VDD"
+                    ]
+                },
+                {
+                    "position": "4",
+                    "signals": [
+                        "PC14"
+                    ]
+                },
+                {
+                    "position": "5",
+                    "signals": [
+                        "PC15"
+                    ]
+                },
+                {
+                    "position": "6",
+                    "signals": [
+                        "PF2"
+                    ]
+                },
+                {
+                    "position": "7",
+                    "signals": [
+                        "VDDA/VREF+"
+                    ]
+                },
+                {
+                    "position": "8",
+                    "signals": [
+                        "PA0"
+                    ]
+                },
+                {
+                    "position": "9",
+                    "signals": [
+                        "PA1",
+                        "PA2"
+                    ]
+                },
+                {
+                    "position": "10",
+                    "signals": [
+                        "PA3",
+                        "PA4"
+                    ]
+                },
+                {
+                    "position": "11",
+                    "signals": [
+                        "PA5",
+                        "PA6"
+                    ]
+                },
+                {
+                    "position": "12",
+                    "signals": [
+                        "PA7",
+                        "PB0"
+                    ]
+                },
+                {
+                    "position": "13",
+                    "signals": [
+                        "PB1"
+                    ]
+                },
+                {
+                    "position": "14",
+                    "signals": [
+                        "PA10",
+                        "PA8",
+                        "PA9"
+                    ]
+                },
+                {
+                    "position": "15",
+                    "signals": [
+                        "PA11"
+                    ]
+                },
+                {
+                    "position": "16",
+                    "signals": [
+                        "PA12"
+                    ]
+                },
+                {
+                    "position": "17",
+                    "signals": [
+                        "PA13"
+                    ]
+                },
+                {
+                    "position": "18",
+                    "signals": [
+                        "PA14",
+                        "PB4",
+                        "PB5",
+                        "PB6"
+                    ]
+                },
+                {
+                    "position": "19",
+                    "signals": [
+                        "PB7"
+                    ]
+                },
+                {
+                    "position": "20",
+                    "signals": [
+                        "PF3"
+                    ]
+                }
+            ]
         }
     ],
     "memory": [

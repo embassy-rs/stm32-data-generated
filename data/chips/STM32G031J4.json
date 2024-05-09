@@ -7,7 +7,71 @@
     "packages": [
         {
             "name": "STM32G031J4Mx",
-            "package": "SO8N"
+            "package": "SO8N",
+            "pins": [
+                {
+                    "position": "1",
+                    "signals": [
+                        "PB7",
+                        "PB8",
+                        "PB9",
+                        "PC14"
+                    ]
+                },
+                {
+                    "position": "2",
+                    "signals": [
+                        "VDD/VDDA"
+                    ]
+                },
+                {
+                    "position": "3",
+                    "signals": [
+                        "VSS/VSSA"
+                    ]
+                },
+                {
+                    "position": "4",
+                    "signals": [
+                        "PA0",
+                        "PA1",
+                        "PA2",
+                        "PF2"
+                    ]
+                },
+                {
+                    "position": "5",
+                    "signals": [
+                        "PA11",
+                        "PA8",
+                        "PA9",
+                        "PB0",
+                        "PB1"
+                    ]
+                },
+                {
+                    "position": "6",
+                    "signals": [
+                        "PA10",
+                        "PA12"
+                    ]
+                },
+                {
+                    "position": "7",
+                    "signals": [
+                        "PA13"
+                    ]
+                },
+                {
+                    "position": "8",
+                    "signals": [
+                        "PA14",
+                        "PA15",
+                        "PB5",
+                        "PB6"
+                    ]
+                }
+            ]
         }
     ],
     "memory": [

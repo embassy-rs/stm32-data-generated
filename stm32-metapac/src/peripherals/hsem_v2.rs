@@ -15,7 +15,7 @@ pub const fn rlr (self , n : usize) -> crate :: common :: Reg < regs :: Rlr , cr
 # [inline (always)]
 pub const fn ier (self , n : usize) -> crate :: common :: Reg < regs :: Ier , crate :: common :: RW > { assert ! (n < 1usize) ; unsafe { crate :: common :: Reg :: from_ptr (self . ptr . add (0x0100usize + n * 16usize) as _) } } # [doc = "HSEM Interrupt clear register."]
 # [inline (always)]
-pub const fn icr (self , n : usize) -> crate :: common :: Reg < regs :: Icr , crate :: common :: R > { assert ! (n < 1usize) ; unsafe { crate :: common :: Reg :: from_ptr (self . ptr . add (0x0104usize + n * 16usize) as _) } } # [doc = "HSEM Interrupt status register."]
+pub const fn icr (self , n : usize) -> crate :: common :: Reg < regs :: Icr , crate :: common :: RW > { assert ! (n < 1usize) ; unsafe { crate :: common :: Reg :: from_ptr (self . ptr . add (0x0104usize + n * 16usize) as _) } } # [doc = "HSEM Interrupt status register."]
 # [inline (always)]
 pub const fn isr (self , n : usize) -> crate :: common :: Reg < regs :: Isr , crate :: common :: R > { assert ! (n < 1usize) ; unsafe { crate :: common :: Reg :: from_ptr (self . ptr . add (0x0108usize + n * 16usize) as _) } } # [doc = "HSEM Masked interrupt status register."]
 # [inline (always)]

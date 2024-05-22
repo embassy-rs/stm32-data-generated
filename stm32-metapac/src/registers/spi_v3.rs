@@ -286,6 +286,23 @@
                         },
                     ),
                 },
+                BlockItem {
+                    name: "i2scfgr",
+                    description: Some(
+                        "I2S Configuration Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x50,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "I2scfgr",
+                            ),
+                        },
+                    ),
+                },
             ],
         },
     ],
@@ -869,6 +886,216 @@
                         },
                     ),
                     bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "I2scfgr",
+            extends: None,
+            description: Some(
+                "I2S Configuration Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "i2smod",
+                    description: Some(
+                        "I2S mode selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2scfg",
+                    description: Some(
+                        "I2S configuration mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "I2scfg",
+                    ),
+                },
+                Field {
+                    name: "i2sstd",
+                    description: Some(
+                        "I2S standard selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "I2sstd",
+                    ),
+                },
+                Field {
+                    name: "pcmsync",
+                    description: Some(
+                        "PCM frame synchronization",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pcmsync",
+                    ),
+                },
+                Field {
+                    name: "datlen",
+                    description: Some(
+                        "Data length to be transferred",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Datlen",
+                    ),
+                },
+                Field {
+                    name: "chlen",
+                    description: Some(
+                        "Channel length (number of bits per audio channel)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Chlen",
+                    ),
+                },
+                Field {
+                    name: "ckpol",
+                    description: Some(
+                        "Serial audio clock polarity",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Ckpol",
+                    ),
+                },
+                Field {
+                    name: "fixch",
+                    description: Some(
+                        "Fixed channel length in slave",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Fixch",
+                    ),
+                },
+                Field {
+                    name: "wsinv",
+                    description: Some(
+                        "Word select inversion",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "datfmt",
+                    description: Some(
+                        "Data format",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Datfmt",
+                    ),
+                },
+                Field {
+                    name: "i2sdiv",
+                    description: Some(
+                        "I2S linear prescaler",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "odd",
+                    description: Some(
+                        "Odd factor for the prescaler",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Odd",
+                    ),
+                },
+                Field {
+                    name: "mckoe",
+                    description: Some(
+                        "Master clock output enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -1487,6 +1714,48 @@
     ],
     enums: &[
         Enum {
+            name: "Chlen",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "BITS16",
+                    description: Some(
+                        "16 bits per channel",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BITS32",
+                    description: Some(
+                        "32 bits per channel",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ckpol",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "IDLELOW",
+                    description: Some(
+                        "CK idle Level is Low. Signals are sampled on rising and changed on falling clock edges",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "IDLEHIGH",
+                    description: Some(
+                        "CK idle level is High. Signals are sampled on falling and changed on rising clock edges",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Comm",
             description: None,
             bit_size: 2,
@@ -1550,14 +1819,84 @@
                 EnumVariant {
                     name: "IDLELOW",
                     description: Some(
-                        "CK to 0 when idle",
+                        "SCK to 0 when idle",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "IDLEHIGH",
                     description: Some(
-                        "CK to 1 when idle",
+                        "SCK to 1 when idle",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Datfmt",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "RIGHTALIGNED",
+                    description: Some(
+                        "The data inside RXDR and TXDR are right aligned",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LEFTALIGNED",
+                    description: Some(
+                        "The data inside RXDR and TXDR are left aligned",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Datlen",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "BITS16",
+                    description: Some(
+                        "16-bit data length",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BITS24",
+                    description: Some(
+                        "24-bit data length",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "BITS32",
+                    description: Some(
+                        "32-bit data length",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Fixch",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTFIXED",
+                    description: Some(
+                        "The channel length in slave mode is different from 16 or 32 bits (CHLEN not taken into account)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FIXED",
+                    description: Some(
+                        "The channel length in slave mode is supposed to be 16 or 32 bits (according to CHLEN)",
                     ),
                     value: 1,
                 },
@@ -1704,6 +2043,90 @@
             ],
         },
         Enum {
+            name: "I2scfg",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "SLAVETX",
+                    description: Some(
+                        "Slave, transmit",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SLAVERX",
+                    description: Some(
+                        "Slave, receive",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "MASTERTX",
+                    description: Some(
+                        "Master, transmit",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "MASTERRX",
+                    description: Some(
+                        "Master, receive",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "SLAVEFULLDUPLEX",
+                    description: Some(
+                        "Slave, full duplex",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "MASTERFULLDUPLEX",
+                    description: Some(
+                        "Master, full duplex",
+                    ),
+                    value: 5,
+                },
+            ],
+        },
+        Enum {
+            name: "I2sstd",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PHILIPS",
+                    description: Some(
+                        "I2S Philips standard",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MSB",
+                    description: Some(
+                        "MSB/left justified standard",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "LSB",
+                    description: Some(
+                        "LSB/right justified standard",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "PCM",
+                    description: Some(
+                        "PCM standard",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
             name: "Lsbfirst",
             description: None,
             bit_size: 1,
@@ -1805,6 +2228,48 @@
                         "f_spi_ker_ck / 256",
                     ),
                     value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "Odd",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "EVEN",
+                    description: Some(
+                        "Real divider value is I2SDIV*2",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ODD",
+                    description: Some(
+                        "Real divider value is I2SDIV*2 + 1",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Pcmsync",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "SHORT",
+                    description: Some(
+                        "Short PCM frame synchronization",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LONG",
+                    description: Some(
+                        "Long PCM frame synchronization",
+                    ),
+                    value: 1,
                 },
             ],
         },

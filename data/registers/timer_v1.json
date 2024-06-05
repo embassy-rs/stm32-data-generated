@@ -67,15 +67,15 @@
         "fieldset": "CCR_1CH"
       },
       {
-        "name": "OR",
-        "description": "Option register 1\nNote: Check Reference Manual to parse this register content",
-        "byte_offset": 80
-      },
-      {
         "name": "TISEL",
         "description": "input selection register",
         "byte_offset": 104,
         "fieldset": "TISEL_1CH"
+      },
+      {
+        "name": "OR",
+        "description": "Option register 1\nNote: Check Reference Manual to parse this register content",
+        "byte_offset": 80
       }
     ]
   },
@@ -307,18 +307,6 @@
         "fieldset": "BDTR_1CH_CMP"
       },
       {
-        "name": "DCR",
-        "description": "DMA control register",
-        "byte_offset": 72,
-        "fieldset": "DCR_1CH_CMP"
-      },
-      {
-        "name": "DMAR",
-        "description": "DMA address for full transfer",
-        "byte_offset": 76,
-        "fieldset": "DMAR_GP16"
-      },
-      {
         "name": "TISEL",
         "description": "input selection register",
         "byte_offset": 104,
@@ -347,7 +335,7 @@
         "name": "SMCR",
         "description": "slave mode control register",
         "byte_offset": 8,
-        "fieldset": "SMCR_ADV"
+        "fieldset": "SMCR_GP16"
       },
       {
         "name": "DIER",
@@ -613,12 +601,6 @@
         },
         "byte_offset": 52,
         "fieldset": "CCR_1CH"
-      },
-      {
-        "name": "DCR",
-        "description": "DMA control register",
-        "byte_offset": 72,
-        "fieldset": "DCR_GP16"
       },
       {
         "name": "DMAR",
@@ -1627,19 +1609,6 @@
       }
     ]
   },
-  "fieldset/DCR_GP16": {
-    "extends": "DCR_1CH_CMP",
-    "description": "DMA control register",
-    "fields": [
-      {
-        "name": "DBSS",
-        "description": "DMA burst source selection",
-        "bit_offset": 16,
-        "bit_size": 4,
-        "enum": "DBSS"
-      }
-    ]
-  },
   "fieldset/DIER_1CH": {
     "extends": "DIER_CORE",
     "description": "DMA/Interrupt enable register",
@@ -1743,12 +1712,6 @@
           "len": 4,
           "stride": 1
         }
-      },
-      {
-        "name": "BIE",
-        "description": "Break interrupt enable",
-        "bit_offset": 7,
-        "bit_size": 1
       },
       {
         "name": "CCDE",
@@ -2041,39 +2004,6 @@
       }
     ]
   },
-  "fieldset/SMCR_ADV": {
-    "extends": "SMCR_2CH",
-    "description": "slave mode control register",
-    "fields": [
-      {
-        "name": "ETF",
-        "description": "External trigger filter",
-        "bit_offset": 8,
-        "bit_size": 4,
-        "enum": "FilterValue"
-      },
-      {
-        "name": "ETPS",
-        "description": "External trigger prescaler",
-        "bit_offset": 12,
-        "bit_size": 2,
-        "enum": "ETPS"
-      },
-      {
-        "name": "ECE",
-        "description": "External clock mode 2 enable",
-        "bit_offset": 14,
-        "bit_size": 1
-      },
-      {
-        "name": "ETP",
-        "description": "External trigger polarity",
-        "bit_offset": 15,
-        "bit_size": 1,
-        "enum": "ETP"
-      }
-    ]
-  },
   "fieldset/SMCR_GP16": {
     "extends": "SMCR_2CH",
     "description": "slave mode control register",
@@ -2255,7 +2185,7 @@
       },
       {
         "name": "SBIF",
-        "description": "System Break interrupt flag",
+        "description": "System break interrupt flag",
         "bit_offset": 13,
         "bit_size": 1
       },
@@ -2479,46 +2409,6 @@
         "name": "CenterAligned3",
         "description": "The counter counts up and down alternatively. Output compare interrupt flags are set both when the counter is counting up or down.",
         "value": 3
-      }
-    ]
-  },
-  "enum/DBSS": {
-    "bit_size": 4,
-    "variants": [
-      {
-        "name": "Update",
-        "description": "Update",
-        "value": 1
-      },
-      {
-        "name": "CC1",
-        "description": "CC1",
-        "value": 2
-      },
-      {
-        "name": "CC2",
-        "description": "CC2",
-        "value": 3
-      },
-      {
-        "name": "CC3",
-        "description": "CC3",
-        "value": 4
-      },
-      {
-        "name": "CC4",
-        "description": "CC4",
-        "value": 5
-      },
-      {
-        "name": "COM",
-        "description": "COM",
-        "value": 6
-      },
-      {
-        "name": "Trigger",
-        "description": "Trigger",
-        "value": 7
       }
     ]
   },

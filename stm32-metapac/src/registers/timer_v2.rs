@@ -1326,12 +1326,12 @@
                 BlockItem {
                     name: "ccr_dither",
                     description: Some(
-                        "capture/compare register x (x=1) (Dither mode enabled)",
+                        "capture/compare register x (x=1-2) (Dither mode enabled)",
                     ),
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 1,
+                                len: 2,
                                 stride: 4,
                             },
                         ),
@@ -1767,12 +1767,12 @@
                 BlockItem {
                     name: "ccr_dither",
                     description: Some(
-                        "capture/compare register x (x=1) (Dither mode enabled)",
+                        "capture/compare register x (x=1-2) (Dither mode enabled)",
                     ),
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 1,
+                                len: 2,
                                 stride: 4,
                             },
                         ),
@@ -1903,6 +1903,23 @@
                             bit_size: 32,
                             fieldset: Some(
                                 "Dtr21chCmp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecr",
+                    description: Some(
+                        "encoder control register",
+                    ),
+                    array: None,
+                    byte_offset: 0x58,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EcrGp16",
                             ),
                         },
                     ),

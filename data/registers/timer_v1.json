@@ -603,6 +603,12 @@
         "fieldset": "CCR_1CH"
       },
       {
+        "name": "DCR",
+        "description": "DMA control register",
+        "byte_offset": 72,
+        "fieldset": "DCR_1CH_CMP"
+      },
+      {
         "name": "DMAR",
         "description": "DMA address for full transfer",
         "byte_offset": 76,
@@ -644,12 +650,6 @@
           "stride": 4
         },
         "byte_offset": 52
-      },
-      {
-        "name": "DCR",
-        "description": "DMA control register",
-        "byte_offset": 72,
-        "fieldset": "DCR_1CH_CMP"
       }
     ]
   },
@@ -1685,6 +1685,12 @@
     "extends": "DIER_1CH_CMP",
     "description": "DMA/Interrupt enable register",
     "fields": [
+      {
+        "name": "TIE",
+        "description": "Trigger interrupt enable",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
       {
         "name": "COMDE",
         "description": "COM DMA request enable",

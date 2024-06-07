@@ -6786,6 +6786,20 @@
                     enumm: None,
                 },
                 Field {
+                    name: "tie",
+                    description: Some(
+                        "Trigger interrupt enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "bie",
                     description: Some(
                         "Break interrupt enable",
@@ -6917,6 +6931,20 @@
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tie",
+                    description: Some(
+                        "Trigger interrupt enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
                         },
                     ),
                     bit_size: 1,

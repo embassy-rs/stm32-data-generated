@@ -2336,6 +2336,23 @@
                     ),
                 },
                 BlockItem {
+                    name: "dcr",
+                    description: Some(
+                        "DMA control register",
+                    ),
+                    array: None,
+                    byte_offset: 0x48,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dcr1chCmp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "dmar",
                     description: Some(
                         "DMA address for full transfer",
@@ -5790,6 +5807,20 @@
                     enumm: None,
                 },
                 Field {
+                    name: "tie",
+                    description: Some(
+                        "Trigger interrupt enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "bie",
                     description: Some(
                         "Break interrupt enable",
@@ -5921,6 +5952,20 @@
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tie",
+                    description: Some(
+                        "Trigger interrupt enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
                         },
                     ),
                     bit_size: 1,

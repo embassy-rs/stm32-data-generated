@@ -87,7 +87,7 @@
         "name": "SMCR",
         "description": "slave mode control register",
         "byte_offset": 8,
-        "fieldset": "SMCR_2CH"
+        "fieldset": "SMCR_GP16"
       },
       {
         "name": "DIER",
@@ -792,13 +792,6 @@
         "description": "DMA burst length",
         "bit_offset": 8,
         "bit_size": 5
-      },
-      {
-        "name": "DBSS",
-        "description": "DMA burst source selection",
-        "bit_offset": 16,
-        "bit_size": 4,
-        "enum": "DBSS"
       }
     ]
   },
@@ -983,7 +976,7 @@
       }
     ]
   },
-  "fieldset/SMCR_2CH": {
+  "fieldset/SMCR_GP16": {
     "description": "slave mode control register",
     "fields": [
       {
@@ -1007,39 +1000,6 @@
         "bit_size": 1,
         "enum": "MSM"
       },
-      {
-        "name": "ETF",
-        "description": "External trigger filter",
-        "bit_offset": 8,
-        "bit_size": 4,
-        "enum": "FilterValue"
-      },
-      {
-        "name": "ETPS",
-        "description": "External trigger prescaler",
-        "bit_offset": 12,
-        "bit_size": 2,
-        "enum": "ETPS"
-      },
-      {
-        "name": "ECE",
-        "description": "External clock mode 2 enable",
-        "bit_offset": 14,
-        "bit_size": 1
-      },
-      {
-        "name": "ETP",
-        "description": "External trigger polarity",
-        "bit_offset": 15,
-        "bit_size": 1,
-        "enum": "ETP"
-      }
-    ]
-  },
-  "fieldset/SMCR_GP16": {
-    "extends": "SMCR_2CH",
-    "description": "slave mode control register",
-    "fields": [
       {
         "name": "ETF",
         "description": "External trigger filter",
@@ -1257,46 +1217,6 @@
         "name": "CenterAligned3",
         "description": "The counter counts up and down alternatively. Output compare interrupt flags are set both when the counter is counting up or down.",
         "value": 3
-      }
-    ]
-  },
-  "enum/DBSS": {
-    "bit_size": 4,
-    "variants": [
-      {
-        "name": "Update",
-        "description": "Update",
-        "value": 1
-      },
-      {
-        "name": "CC1",
-        "description": "CC1",
-        "value": 2
-      },
-      {
-        "name": "CC2",
-        "description": "CC2",
-        "value": 3
-      },
-      {
-        "name": "CC3",
-        "description": "CC3",
-        "value": 4
-      },
-      {
-        "name": "CC4",
-        "description": "CC4",
-        "value": 5
-      },
-      {
-        "name": "COM",
-        "description": "COM",
-        "value": 6
-      },
-      {
-        "name": "Trigger",
-        "description": "Trigger",
-        "value": 7
       }
     ]
   },
@@ -1550,7 +1470,7 @@
     "variants": [
       {
         "name": "Disabled",
-        "description": "Slave mode disabled - if CEN = ‘1 then the prescaler is clocked directly by the internal clock.",
+        "description": "Slave mode disabled - if CEN = '1' then the prescaler is clocked directly by the internal clock.",
         "value": 0
       },
       {

@@ -1231,16 +1231,28 @@
             }
         },
         {
-            "name": "SRAM",
+            "name": "CCMRAM_ICODE",
+            "kind": "ram",
+            "address": 268435456,
+            "size": 32768
+        },
+        {
+            "name": "SRAM1",
             "kind": "ram",
             "address": 536870912,
-            "size": 98304
+            "size": 81920
         },
         {
             "name": "SRAM2",
             "kind": "ram",
             "address": 536952832,
-            "size": 0
+            "size": 16384
+        },
+        {
+            "name": "CCMRAM_DCODE",
+            "kind": "ram",
+            "address": 536969216,
+            "size": 32768
         }
     ],
     "docs": [

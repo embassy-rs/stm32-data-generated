@@ -427,7 +427,7 @@
             "name": "SRAM",
             "kind": "ram",
             "address": 536870912,
-            "size": 131072
+            "size": 147456
         }
     ],
     "docs": [

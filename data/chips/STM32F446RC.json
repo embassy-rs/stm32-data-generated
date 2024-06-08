@@ -435,12 +435,6 @@
             "kind": "ram",
             "address": 536870912,
             "size": 131072
-        },
-        {
-            "name": "SRAM2",
-            "kind": "ram",
-            "address": 536985600,
-            "size": 0
         }
     ],
     "docs": [

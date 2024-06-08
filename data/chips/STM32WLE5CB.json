@@ -313,16 +313,16 @@
             }
         },
         {
-            "name": "SRAM",
+            "name": "SRAM1",
             "kind": "ram",
             "address": 536870912,
-            "size": 12288
+            "size": 24576
         },
         {
             "name": "SRAM2",
             "kind": "ram",
-            "address": 536903680,
-            "size": 0
+            "address": 536895488,
+            "size": 24576
         }
     ],
     "docs": [

@@ -1604,6 +1604,12 @@
     ],
     "memory": [
         {
+            "name": "ITCM",
+            "kind": "ram",
+            "address": 0,
+            "size": 65536
+        },
+        {
             "name": "BANK_1",
             "kind": "flash",
             "address": 134217728,
@@ -1615,7 +1621,36 @@
             }
         },
         {
-            "name": "SRAM",
+            "name": "BANK_2",
+            "kind": "flash",
+            "address": 135266304,
+            "size": 1048576,
+            "settings": {
+                "erase_size": 131072,
+                "write_size": 32,
+                "erase_value": 255
+            }
+        },
+        {
+            "name": "RAM_D2",
+            "kind": "ram",
+            "address": 268435456,
+            "size": 294912
+        },
+        {
+            "name": "RAM_D3",
+            "kind": "ram",
+            "address": 402653184,
+            "size": 65536
+        },
+        {
+            "name": "DTCM",
+            "kind": "ram",
+            "address": 536870912,
+            "size": 131072
+        },
+        {
+            "name": "RAM_D1",
             "kind": "ram",
             "address": 603979776,
             "size": 524288

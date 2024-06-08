@@ -9,7 +9,7 @@ include!("../metadata_0593.rs");
         name: "BANK_1",
         kind: MemoryRegionKind::Flash,
         address: 0x8000000,
-        size: 131072,
+        size: 196608,
         settings: Some(
             FlashSettings {
                 erase_size: 256,
@@ -21,8 +21,8 @@ include!("../metadata_0593.rs");
     MemoryRegion {
         name: "BANK_2",
         kind: MemoryRegionKind::Flash,
-        address: 0x8040000,
-        size: 262144,
+        address: 0x8030000,
+        size: 196608,
         settings: Some(
             FlashSettings {
                 erase_size: 256,

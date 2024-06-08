@@ -2348,16 +2348,16 @@
             }
         },
         {
+            "name": "CCMRAM",
+            "kind": "ram",
+            "address": 268435456,
+            "size": 65536
+        },
+        {
             "name": "SRAM",
             "kind": "ram",
             "address": 536870912,
             "size": 196608
-        },
-        {
-            "name": "SRAM2",
-            "kind": "ram",
-            "address": 536985600,
-            "size": 0
         }
     ],
     "docs": [

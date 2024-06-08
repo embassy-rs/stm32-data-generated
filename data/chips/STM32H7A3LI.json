@@ -1364,6 +1364,12 @@
     ],
     "memory": [
         {
+            "name": "ITCM",
+            "kind": "ram",
+            "address": 0,
+            "size": 65536
+        },
+        {
             "name": "BANK_1",
             "kind": "flash",
             "address": 134217728,
@@ -1384,6 +1390,12 @@
                 "write_size": 32,
                 "erase_value": 255
             }
+        },
+        {
+            "name": "DTCM",
+            "kind": "ram",
+            "address": 536870912,
+            "size": 131072
         },
         {
             "name": "SRAM",

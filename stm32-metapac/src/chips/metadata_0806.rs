@@ -183,7 +183,14 @@
     Peripheral {
         name: "AES2",
         address: 0x58001800,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "aes",
+                version: "v2",
+                block: "AES",
+                ir: &aes::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "HCLK3",
@@ -3829,6 +3836,7 @@
 ];
             #[path="../registers/adc_v3.rs"] pub mod adc;
 #[path="../registers/adccommon_v3.rs"] pub mod adccommon;
+#[path="../registers/aes_v2.rs"] pub mod aes;
 #[path="../registers/bdma_v1.rs"] pub mod bdma;
 #[path="../registers/crc_v3.rs"] pub mod crc;
 #[path="../registers/crs_v1.rs"] pub mod crs;

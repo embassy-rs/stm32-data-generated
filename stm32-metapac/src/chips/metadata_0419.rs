@@ -7796,8 +7796,11 @@
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "PCLK2",
-                kernel_clock: Clock(
-                    "PCLK2",
+                kernel_clock: Mux(
+                    PeripheralRccRegister {
+                        register: "D2CCIP1R",
+                        field: "SPI45SEL",
+                    },
                 ),
                 enable: Some(
                     PeripheralRccRegister {
@@ -7917,8 +7920,11 @@
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "PCLK2",
-                kernel_clock: Clock(
-                    "PCLK2",
+                kernel_clock: Mux(
+                    PeripheralRccRegister {
+                        register: "D2CCIP1R",
+                        field: "SPI45SEL",
+                    },
                 ),
                 enable: Some(
                     PeripheralRccRegister {

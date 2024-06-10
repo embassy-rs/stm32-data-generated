@@ -2524,7 +2524,7 @@ fn from (val : u8) -> Spi123sel { Spi123sel :: from_bits (val) } } impl From < S
 fn from (val : Spi123sel) -> u8 { Spi123sel :: to_bits (val) } } # [repr (u8)]
 # [derive (Copy , Clone , Eq , PartialEq , Ord , PartialOrd)]
 pub enum Spi45sel { # [doc = "APB2 clock selected as peripheral clock"]
-HCLK2 = 0x0 , # [doc = "pll2_q selected as peripheral clock"]
+PCLK2 = 0x0 , # [doc = "pll2_q selected as peripheral clock"]
 PLL2_Q = 0x01 , # [doc = "pll3_q selected as peripheral clock"]
 PLL3_Q = 0x02 , # [doc = "hsi_ker selected as peripheral clock"]
 HSI = 0x03 , # [doc = "csi_ker selected as peripheral clock"]

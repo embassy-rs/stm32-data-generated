@@ -332,6 +332,16 @@
         "fieldset": "CCR_1CH"
       },
       {
+        "name": "CCR_DITHER",
+        "description": "capture/compare register x (x=1-2) (Dither mode enabled)",
+        "array": {
+          "len": 2,
+          "stride": 4
+        },
+        "byte_offset": 52,
+        "fieldset": "CCR_DITHER_1CH"
+      },
+      {
         "name": "BDTR",
         "description": "break and dead-time register",
         "byte_offset": 68,
@@ -432,6 +442,12 @@
         "fieldset": "CCR_1CH"
       },
       {
+        "name": "ECR",
+        "description": "encoder control register",
+        "byte_offset": 88,
+        "fieldset": "ECR_GP16"
+      },
+      {
         "name": "BDTR",
         "description": "break and dead-time register",
         "byte_offset": 68,
@@ -468,12 +484,6 @@
         "fieldset": "CCMR3_ADV"
       },
       {
-        "name": "TISEL",
-        "description": "input selection register",
-        "byte_offset": 92,
-        "fieldset": "TISEL_GP16"
-      },
-      {
         "name": "AF1",
         "description": "alternate function register 1",
         "byte_offset": 96,
@@ -484,6 +494,12 @@
         "description": "alternate function register 2",
         "byte_offset": 100,
         "fieldset": "AF2_ADV"
+      },
+      {
+        "name": "TISEL",
+        "description": "input selection register",
+        "byte_offset": 92,
+        "fieldset": "TISEL_GP16"
       }
     ]
   },
@@ -663,10 +679,15 @@
         "fieldset": "ECR_GP16"
       },
       {
-        "name": "TISEL",
-        "description": "input selection register",
-        "byte_offset": 92,
-        "fieldset": "TISEL_GP16"
+        "name": "DCR",
+        "description": "DMA control register",
+        "byte_offset": 988,
+        "fieldset": "DCR_1CH_CMP"
+      },
+      {
+        "name": "DMAR",
+        "description": "DMA address for full transfer",
+        "byte_offset": 992
       },
       {
         "name": "AF1",
@@ -681,15 +702,10 @@
         "fieldset": "AF2_1CH_CMP"
       },
       {
-        "name": "DCR",
-        "description": "DMA control register",
-        "byte_offset": 988,
-        "fieldset": "DCR_1CH_CMP"
-      },
-      {
-        "name": "DMAR",
-        "description": "DMA address for full transfer",
-        "byte_offset": 992
+        "name": "TISEL",
+        "description": "input selection register",
+        "byte_offset": 92,
+        "fieldset": "TISEL_GP16"
       }
     ]
   },
@@ -1985,6 +2001,12 @@
     "extends": "DIER_1CH_CMP",
     "description": "DMA/Interrupt enable register",
     "fields": [
+      {
+        "name": "TIE",
+        "description": "Trigger interrupt enable",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
       {
         "name": "COMDE",
         "description": "COM DMA request enable",

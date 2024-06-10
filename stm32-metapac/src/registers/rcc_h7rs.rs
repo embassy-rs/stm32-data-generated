@@ -12459,7 +12459,7 @@
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "HCLK2",
+                    name: "PCLK2",
                     description: Some(
                         "APB2 clock selected as peripheral clock",
                     ),

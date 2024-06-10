@@ -5833,7 +5833,10 @@
                     },
                     "rcc": {
                         "bus_clock": "PCLK2",
-                        "kernel_clock": "PCLK2",
+                        "kernel_clock": {
+                            "register": "APB2PERCKSELR",
+                            "field": "SPI45SEL"
+                        },
                         "enable": {
                             "register": "APB2ENR",
                             "field": "SPI4EN"
@@ -5934,7 +5937,10 @@
                     },
                     "rcc": {
                         "bus_clock": "PCLK2",
-                        "kernel_clock": "PCLK2",
+                        "kernel_clock": {
+                            "register": "APB2PERCKSELR",
+                            "field": "SPI45SEL"
+                        },
                         "enable": {
                             "register": "APB2ENR",
                             "field": "SPI5EN"

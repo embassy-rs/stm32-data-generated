@@ -47,7 +47,7 @@ cortex-m = "0.7.6"
 cortex-m-rt = { version = ">=0.6.15,<0.8", optional = true }
 
 [features]
-default = ["pac"]
+default = ["pac", "stm32wb55vg"]
 
 # Build the actual PAC. Set by default.
 # If you just want the metadata, unset it with `default-features = false`. 

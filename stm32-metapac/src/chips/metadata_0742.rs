@@ -1485,7 +1485,14 @@
     Peripheral {
         name: "LCD",
         address: 0x40002400,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "lcd",
+                version: "v2",
+                block: "LCD",
+                ir: &lcd::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "PCLK1",
@@ -5495,6 +5502,7 @@
 #[path="../registers/gpio_v2.rs"] pub mod gpio;
 #[path="../registers/i2c_v2.rs"] pub mod i2c;
 #[path="../registers/iwdg_v3.rs"] pub mod iwdg;
+#[path="../registers/lcd_v2.rs"] pub mod lcd;
 #[path="../registers/lptim_v2b.rs"] pub mod lptim;
 #[path="../registers/opamp_u0.rs"] pub mod opamp;
 #[path="../registers/pwr_u0.rs"] pub mod pwr;

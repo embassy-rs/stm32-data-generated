@@ -4050,6 +4050,11 @@
                 {
                     "name": "LTDC",
                     "address": 1073833984,
+                    "registers": {
+                        "kind": "ltdc",
+                        "version": "v1",
+                        "block": "LTDC"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK2",
                         "kernel_clock": "PCLK2",

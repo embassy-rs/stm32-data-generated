@@ -97,7 +97,7 @@
                     byte_offset: 0x104,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
                                 "Icr",

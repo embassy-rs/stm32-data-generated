@@ -289,7 +289,7 @@
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Smcr2ch",
+                                "SmcrGp16",
                             ),
                         },
                     ),
@@ -2503,22 +2503,6 @@
                     array: None,
                     enumm: None,
                 },
-                Field {
-                    name: "dbss",
-                    description: Some(
-                        "DMA burst source selection",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 4,
-                    array: None,
-                    enumm: Some(
-                        "Dbss",
-                    ),
-                },
             ],
         },
         FieldSet {
@@ -3021,130 +3005,8 @@
             ],
         },
         FieldSet {
-            name: "Smcr2ch",
-            extends: None,
-            description: Some(
-                "slave mode control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sms",
-                    description: Some(
-                        "Slave mode selection",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Sms",
-                    ),
-                },
-                Field {
-                    name: "ts",
-                    description: Some(
-                        "Trigger selection",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Ts",
-                    ),
-                },
-                Field {
-                    name: "msm",
-                    description: Some(
-                        "Master/Slave mode",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 7,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Msm",
-                    ),
-                },
-                Field {
-                    name: "etf",
-                    description: Some(
-                        "External trigger filter",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 4,
-                    array: None,
-                    enumm: Some(
-                        "FilterValue",
-                    ),
-                },
-                Field {
-                    name: "etps",
-                    description: Some(
-                        "External trigger prescaler",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Etps",
-                    ),
-                },
-                Field {
-                    name: "ece",
-                    description: Some(
-                        "External clock mode 2 enable",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 14,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "etp",
-                    description: Some(
-                        "External trigger polarity",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 15,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Etp",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
             name: "SmcrGp16",
-            extends: Some(
-                "SMCR_2CH",
-            ),
+            extends: None,
             description: Some(
                 "slave mode control register",
             ),
@@ -3647,62 +3509,6 @@
             ],
         },
         Enum {
-            name: "Dbss",
-            description: None,
-            bit_size: 4,
-            variants: &[
-                EnumVariant {
-                    name: "UPDATE",
-                    description: Some(
-                        "Update",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "CC1",
-                    description: Some(
-                        "CC1",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "CC2",
-                    description: Some(
-                        "CC2",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "CC3",
-                    description: Some(
-                        "CC3",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "CC4",
-                    description: Some(
-                        "CC4",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "COM",
-                    description: Some(
-                        "COM",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "TRIGGER",
-                    description: Some(
-                        "Trigger",
-                    ),
-                    value: 7,
-                },
-            ],
-        },
-        Enum {
             name: "Dir",
             description: None,
             bit_size: 1,
@@ -4053,7 +3859,7 @@
                 EnumVariant {
                     name: "DISABLED",
                     description: Some(
-                        "Slave mode disabled - if CEN = ‘1 then the prescaler is clocked directly by the internal clock.",
+                        "Slave mode disabled - if CEN = '1' then the prescaler is clocked directly by the internal clock.",
                     ),
                     value: 0,
                 },

@@ -41,7 +41,6 @@
           "stride": 16
         },
         "byte_offset": 260,
-        "access": "Read",
         "fieldset": "ICR"
       },
       {

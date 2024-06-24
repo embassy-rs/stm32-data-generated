@@ -1308,7 +1308,7 @@
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "SmcrAdv",
+                                "SmcrGp16",
                             ),
                         },
                     ),
@@ -2347,7 +2347,7 @@
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "DcrGp16",
+                                "Dcr1chCmp",
                             ),
                         },
                     ),
@@ -5530,62 +5530,6 @@
             ],
         },
         FieldSet {
-            name: "DcrGp16",
-            extends: Some(
-                "DCR_1CH_CMP",
-            ),
-            description: Some(
-                "DMA control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dba",
-                    description: Some(
-                        "DMA base address",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbl",
-                    description: Some(
-                        "DMA burst length",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbss",
-                    description: Some(
-                        "DMA burst source selection",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 4,
-                    array: None,
-                    enumm: Some(
-                        "Dbss",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
             name: "Dier1ch",
             extends: Some(
                 "DIER_CORE",
@@ -5863,6 +5807,20 @@
                     enumm: None,
                 },
                 Field {
+                    name: "tie",
+                    description: Some(
+                        "Trigger interrupt enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "bie",
                     description: Some(
                         "Break interrupt enable",
@@ -5994,6 +5952,20 @@
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tie",
+                    description: Some(
+                        "Trigger interrupt enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
                         },
                     ),
                     bit_size: 1,
@@ -6857,134 +6829,6 @@
             ],
         },
         FieldSet {
-            name: "SmcrAdv",
-            extends: Some(
-                "SMCR_2CH",
-            ),
-            description: Some(
-                "slave mode control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sms",
-                    description: Some(
-                        "Slave mode selection",
-                    ),
-                    bit_offset: BitOffset::Cursed(
-                        CursedBitOffset {
-                            ranges: &[
-                                0..=2,
-                                16..=16,
-                            ],
-                        },
-                    ),
-                    bit_size: 4,
-                    array: None,
-                    enumm: Some(
-                        "Sms",
-                    ),
-                },
-                Field {
-                    name: "ts",
-                    description: Some(
-                        "Trigger selection",
-                    ),
-                    bit_offset: BitOffset::Cursed(
-                        CursedBitOffset {
-                            ranges: &[
-                                4..=6,
-                                20..=21,
-                            ],
-                        },
-                    ),
-                    bit_size: 5,
-                    array: None,
-                    enumm: Some(
-                        "Ts",
-                    ),
-                },
-                Field {
-                    name: "msm",
-                    description: Some(
-                        "Master/Slave mode",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 7,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Msm",
-                    ),
-                },
-                Field {
-                    name: "etf",
-                    description: Some(
-                        "External trigger filter",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 4,
-                    array: None,
-                    enumm: Some(
-                        "FilterValue",
-                    ),
-                },
-                Field {
-                    name: "etps",
-                    description: Some(
-                        "External trigger prescaler",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Etps",
-                    ),
-                },
-                Field {
-                    name: "ece",
-                    description: Some(
-                        "External clock mode 2 enable",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 14,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "etp",
-                    description: Some(
-                        "External trigger polarity",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 15,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Etp",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
             name: "SmcrGp16",
             extends: Some(
                 "SMCR_2CH",
@@ -7600,7 +7444,7 @@
                 Field {
                     name: "sbif",
                     description: Some(
-                        "System Break interrupt flag",
+                        "System break interrupt flag",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -8009,62 +7853,6 @@
                         "The counter counts up and down alternatively. Output compare interrupt flags are set both when the counter is counting up or down.",
                     ),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Dbss",
-            description: None,
-            bit_size: 4,
-            variants: &[
-                EnumVariant {
-                    name: "UPDATE",
-                    description: Some(
-                        "Update",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "CC1",
-                    description: Some(
-                        "CC1",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "CC2",
-                    description: Some(
-                        "CC2",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "CC3",
-                    description: Some(
-                        "CC3",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "CC4",
-                    description: Some(
-                        "CC4",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "COM",
-                    description: Some(
-                        "COM",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "TRIGGER",
-                    description: Some(
-                        "Trigger",
-                    ),
-                    value: 7,
                 },
             ],
         },

@@ -3759,6 +3759,11 @@
                 {
                     "name": "LTDC",
                     "address": 1342181376,
+                    "registers": {
+                        "kind": "ltdc",
+                        "version": "v1",
+                        "block": "LTDC"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK3",
                         "kernel_clock": "PCLK3",

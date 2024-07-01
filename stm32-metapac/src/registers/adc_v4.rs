@@ -689,7 +689,7 @@
                 Field {
                     name: "cont",
                     description: Some(
-                        "group regular continuous conversion mode",
+                        "Continuous conversion",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {

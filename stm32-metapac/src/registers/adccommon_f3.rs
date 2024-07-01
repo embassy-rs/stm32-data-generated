@@ -105,7 +105,7 @@
                 Field {
                     name: "dmacfg",
                     description: Some(
-                        "DMA configuration (for multi-ADC mode)",
+                        "Direct memory access configuration",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -547,22 +547,20 @@
         },
         Enum {
             name: "Dmacfg",
-            description: Some(
-                "DMA configuration (for multi-ADC mode)",
-            ),
+            description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "ONESHOT",
                     description: Some(
-                        "DMA one shot mode selected",
+                        "DMA One Shot mode selected",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "CIRCULATOR",
                     description: Some(
-                        "DMA circular mode selected",
+                        "DMA Circular mode selected",
                     ),
                     value: 1,
                 },

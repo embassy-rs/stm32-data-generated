@@ -218,7 +218,7 @@
       },
       {
         "name": "CONT",
-        "description": "continuous conversion",
+        "description": "Continuous conversion",
         "bit_offset": 1,
         "bit_size": 1
       },

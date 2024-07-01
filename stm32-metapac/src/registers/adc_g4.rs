@@ -515,7 +515,7 @@
                 Field {
                     name: "dmacfg",
                     description: Some(
-                        "direct memory access configuration",
+                        "Direct memory access configuration",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -609,7 +609,7 @@
                 Field {
                     name: "cont",
                     description: Some(
-                        "single / continuous conversion mode for regular conversions",
+                        "Continuous conversion",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -2123,14 +2123,14 @@
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ONESHOTMODE",
+                    name: "ONESHOT",
                     description: Some(
                         "DMA One Shot mode selected",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CIRCULARMODE",
+                    name: "CIRCULAR",
                     description: Some(
                         "DMA Circular mode selected",
                     ),

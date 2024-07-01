@@ -42,7 +42,7 @@
       },
       {
         "name": "DMACFG",
-        "description": "DMA configuration (for multi-ADC mode)",
+        "description": "Direct memory access configuration",
         "bit_offset": 13,
         "bit_size": 1,
         "enum": "DMACFG"
@@ -245,17 +245,16 @@
     ]
   },
   "enum/DMACFG": {
-    "description": "DMA configuration (for multi-ADC mode)",
     "bit_size": 1,
     "variants": [
       {
         "name": "OneShot",
-        "description": "DMA one shot mode selected",
+        "description": "DMA One Shot mode selected",
         "value": 0
       },
       {
         "name": "Circulator",
-        "description": "DMA circular mode selected",
+        "description": "DMA Circular mode selected",
         "value": 1
       }
     ]

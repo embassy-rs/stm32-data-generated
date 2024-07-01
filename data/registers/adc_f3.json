@@ -183,7 +183,8 @@
         "name": "DMACFG",
         "description": "Direct memory access configuration",
         "bit_offset": 1,
-        "bit_size": 1
+        "bit_size": 1,
+        "enum": "DMACFG"
       },
       {
         "name": "RES",
@@ -220,7 +221,7 @@
       },
       {
         "name": "CONT",
-        "description": "Single / continuous conversion mode for regular conversions",
+        "description": "Continuous conversion",
         "bit_offset": 13,
         "bit_size": 1
       },
@@ -894,6 +895,21 @@
       {
         "name": "Differential",
         "description": "Input channel is configured in differential mode",
+        "value": 1
+      }
+    ]
+  },
+  "enum/DMACFG": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "OneShot",
+        "description": "DMA One Shot mode selected",
+        "value": 0
+      },
+      {
+        "name": "Circular",
+        "description": "DMA Circular mode selected",
         "value": 1
       }
     ]

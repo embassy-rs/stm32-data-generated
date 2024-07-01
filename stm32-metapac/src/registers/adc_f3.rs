@@ -477,7 +477,9 @@
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Dmacfg",
+                    ),
                 },
                 Field {
                     name: "res",
@@ -558,7 +560,7 @@
                 Field {
                     name: "cont",
                     description: Some(
-                        "Single / continuous conversion mode for regular conversions",
+                        "Continuous conversion",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -2018,6 +2020,27 @@
                     name: "DIFFERENTIAL",
                     description: Some(
                         "Input channel is configured in differential mode",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Dmacfg",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ONESHOT",
+                    description: Some(
+                        "DMA One Shot mode selected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CIRCULAR",
+                    description: Some(
+                        "DMA Circular mode selected",
                     ),
                     value: 1,
                 },

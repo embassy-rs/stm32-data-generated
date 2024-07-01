@@ -475,7 +475,7 @@
                 Field {
                     name: "dmacfg",
                     description: Some(
-                        "DMACFG",
+                        "Direct memory access configuration",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -484,7 +484,9 @@
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Dmacfg",
+                    ),
                 },
                 Field {
                     name: "res",
@@ -1695,6 +1697,27 @@
         },
     ],
     enums: &[
+        Enum {
+            name: "Dmacfg",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ONESHOT",
+                    description: Some(
+                        "DMA One Shot mode selected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CIRCULAR",
+                    description: Some(
+                        "DMA Circular mode selected",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
         Enum {
             name: "Res",
             description: None,

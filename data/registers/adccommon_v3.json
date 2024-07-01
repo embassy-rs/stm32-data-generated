@@ -41,9 +41,10 @@
       },
       {
         "name": "DMACFG",
-        "description": "DMA configuration (for multi-ADC mode)",
+        "description": "Direct memory access configuration",
         "bit_offset": 13,
-        "bit_size": 1
+        "bit_size": 1,
+        "enum": "DMACFG"
       },
       {
         "name": "MDMA",
@@ -212,6 +213,21 @@
         "description": "Injected Context Queue Overflow flag of the slave ADC",
         "bit_offset": 26,
         "bit_size": 1
+      }
+    ]
+  },
+  "enum/DMACFG": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "OneShot",
+        "description": "DMA One Shot mode selected",
+        "value": 0
+      },
+      {
+        "name": "Circular",
+        "description": "DMA Circular mode selected",
+        "value": 1
       }
     ]
   }

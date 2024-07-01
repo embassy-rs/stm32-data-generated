@@ -202,8 +202,7 @@
         "name": "CONT",
         "description": "Continuous conversion",
         "bit_offset": 1,
-        "bit_size": 1,
-        "enum": "CONT"
+        "bit_size": 1
       },
       {
         "name": "DMA",
@@ -512,21 +511,6 @@
       {
         "name": "SingleChannel",
         "description": "Analog watchdog enabled on a single channel",
-        "value": 1
-      }
-    ]
-  },
-  "enum/CONT": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Single",
-        "description": "Single conversion mode",
-        "value": 0
-      },
-      {
-        "name": "Continuous",
-        "description": "Continuous conversion mode",
         "value": 1
       }
     ]

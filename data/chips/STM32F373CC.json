@@ -1581,6 +1581,11 @@
                 {
                     "name": "SDADC1",
                     "address": 1073831936,
+                    "registers": {
+                        "kind": "sdadc",
+                        "version": "v1",
+                        "block": "SDADC"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK2",
                         "kernel_clock": "PCLK2",
@@ -1639,6 +1644,11 @@
                 {
                     "name": "SDADC2",
                     "address": 1073832960,
+                    "registers": {
+                        "kind": "sdadc",
+                        "version": "v1",
+                        "block": "SDADC"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK2",
                         "kernel_clock": "PCLK2",
@@ -1685,6 +1695,11 @@
                 {
                     "name": "SDADC3",
                     "address": 1073833984,
+                    "registers": {
+                        "kind": "sdadc",
+                        "version": "v1",
+                        "block": "SDADC"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK2",
                         "kernel_clock": "PCLK2",

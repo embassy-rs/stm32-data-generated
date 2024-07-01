@@ -1454,7 +1454,14 @@
     Peripheral {
         name: "SDADC1",
         address: 0x40016000,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "sdadc",
+                version: "v1",
+                block: "SDADC",
+                ir: &sdadc::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "PCLK2",
@@ -1534,7 +1541,14 @@
     Peripheral {
         name: "SDADC2",
         address: 0x40016400,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "sdadc",
+                version: "v1",
+                block: "SDADC",
+                ir: &sdadc::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "PCLK2",
@@ -1599,7 +1613,14 @@
     Peripheral {
         name: "SDADC3",
         address: 0x40016800,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "sdadc",
+                version: "v1",
+                block: "SDADC",
+                ir: &sdadc::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "PCLK2",
@@ -5514,6 +5535,7 @@
 #[path="../registers/pwr_f3.rs"] pub mod pwr;
 #[path="../registers/rcc_f37.rs"] pub mod rcc;
 #[path="../registers/rtc_v2f3.rs"] pub mod rtc;
+#[path="../registers/sdadc_v1.rs"] pub mod sdadc;
 #[path="../registers/spi_v2.rs"] pub mod spi;
 #[path="../registers/syscfg_f3.rs"] pub mod syscfg;
 #[path="../registers/timer_v1.rs"] pub mod timer;

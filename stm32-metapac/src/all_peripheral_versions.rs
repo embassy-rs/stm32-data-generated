@@ -8,7 +8,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("bkp", &["v1", ]),
     ("can", &["bxcan", "fdcan_h7", "fdcan_v1", ]),
     ("cec", &["v1", "v2", ]),
-    ("comp", &["h5", "h7_a", "h7_b", "u0", "v1", "v2", "v3", ]),
+    ("comp", &["h5", "h7_a", "h7_b", "u0", "u5", "v1", "v2", "v3", ]),
     ("cordic", &["v1", ]),
     ("crc", &["v1", "v2", "v3", ]),
     ("crs", &["v1", ]),

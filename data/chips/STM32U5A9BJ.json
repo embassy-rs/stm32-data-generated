@@ -1759,6 +1759,11 @@
                 {
                     "name": "COMP1",
                     "address": 1174426624,
+                    "registers": {
+                        "kind": "comp",
+                        "version": "u5",
+                        "block": "COMP"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK3",
                         "kernel_clock": "PCLK3",
@@ -1813,6 +1818,11 @@
                 {
                     "name": "COMP2",
                     "address": 1174426628,
+                    "registers": {
+                        "kind": "comp",
+                        "version": "u5",
+                        "block": "COMP"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK3",
                         "kernel_clock": "PCLK3",

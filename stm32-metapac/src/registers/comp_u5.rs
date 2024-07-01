@@ -64,7 +64,9 @@
                     ),
                     bit_size: 4,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Inm",
+                    ),
                 },
                 Field {
                     name: "inpsel",
@@ -141,7 +143,7 @@
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Hyst",
+                        "Hysteresis",
                     ),
                 },
                 Field {
@@ -157,7 +159,7 @@
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Pwrmode",
+                        "PowerMode",
                     ),
                 },
                 Field {
@@ -221,44 +223,30 @@
                     value: 0,
                 },
                 EnumVariant {
-                    name: "TIM1OC4",
+                    name: "BLANK1",
                     description: Some(
-                        "TIM1 OC4 enabled as blanking source",
+                        "Check data sheet for blanking options",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "TIM1OC5",
+                    name: "BLANK2",
                     description: Some(
-                        "TIM1 OC5 enabled as blanking source",
+                        "Check data sheet for blanking options",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "TIM2OC3",
+                    name: "BLANK3",
                     description: Some(
-                        "TIM5 OC3 enabled as blanking source",
+                        "Check data sheet for blanking options",
                     ),
                     value: 4,
-                },
-                EnumVariant {
-                    name: "TIM3OC3",
-                    description: Some(
-                        "TIM3 OC3 enabled as blanking source",
-                    ),
-                    value: 8,
-                },
-                EnumVariant {
-                    name: "TIM15OC2",
-                    description: Some(
-                        "TIM15 OC2 enabled as blanking source",
-                    ),
-                    value: 16,
                 },
             ],
         },
         Enum {
-            name: "Hyst",
+            name: "Hysteresis",
             description: None,
             bit_size: 2,
             variants: &[
@@ -285,6 +273,69 @@
             ],
         },
         Enum {
+            name: "Inm",
+            description: None,
+            bit_size: 4,
+            variants: &[
+                EnumVariant {
+                    name: "QUARTERVREF",
+                    description: Some(
+                        "Inverting input set to 1/4 VRef",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HALFVREF",
+                    description: Some(
+                        "Inverting input set to 1/2 VRef",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "THREEQUARTERVREF",
+                    description: Some(
+                        "Inverting input set to 3/4 VRef",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "VREF",
+                    description: Some(
+                        "Inverting input set to VRef",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DAC1",
+                    description: Some(
+                        "Inverting input set to DAC1 output",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DAC2",
+                    description: Some(
+                        "Inverting input set to DAC2 output",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "INM1",
+                    description: Some(
+                        "Inverting input set to IO1 (PB7)",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "INM2",
+                    description: Some(
+                        "Inverting input set to IO2 (PB3)",
+                    ),
+                    value: 7,
+                },
+            ],
+        },
+        Enum {
             name: "Polarity",
             description: None,
             bit_size: 1,
@@ -306,7 +357,7 @@
             ],
         },
         Enum {
-            name: "Pwrmode",
+            name: "PowerMode",
             description: None,
             bit_size: 2,
             variants: &[
@@ -325,7 +376,7 @@
                     value: 1,
                 },
                 EnumVariant {
-                    name: "LOWSPEED",
+                    name: "ULTRALOW",
                     description: Some(
                         "Very-low speed / ultra-low power.",
                     ),

@@ -422,7 +422,14 @@
     Peripheral {
         name: "COMP1",
         address: 0x46005400,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "comp",
+                version: "u5",
+                block: "COMP",
+                ir: &comp::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "PCLK3",
@@ -496,7 +503,14 @@
     Peripheral {
         name: "COMP2",
         address: 0x46005404,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "comp",
+                version: "u5",
+                block: "COMP",
+                ir: &comp::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "PCLK3",
@@ -11458,6 +11472,7 @@
 ];
             #[path="../registers/adf_v1.rs"] pub mod adf;
 #[path="../registers/can_fdcan_v1.rs"] pub mod can;
+#[path="../registers/comp_u5.rs"] pub mod comp;
 #[path="../registers/cordic_v1.rs"] pub mod cordic;
 #[path="../registers/crc_v3.rs"] pub mod crc;
 #[path="../registers/crs_v1.rs"] pub mod crs;

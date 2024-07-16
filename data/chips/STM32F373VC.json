@@ -1731,6 +1731,11 @@
                 {
                     "name": "COMP1",
                     "address": 1073807388,
+                    "registers": {
+                        "kind": "comp",
+                        "version": "f3_v1",
+                        "block": "COMP"
+                    },
                     "pins": [
                         {
                             "pin": "PA0",
@@ -1771,6 +1776,11 @@
                 {
                     "name": "COMP2",
                     "address": 1073807390,
+                    "registers": {
+                        "kind": "comp",
+                        "version": "f3_v1",
+                        "block": "COMP"
+                    },
                     "pins": [
                         {
                             "pin": "PA12",

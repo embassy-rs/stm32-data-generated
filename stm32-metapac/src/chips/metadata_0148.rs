@@ -291,7 +291,14 @@
     Peripheral {
         name: "COMP1",
         address: 0x4001001c,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "comp",
+                version: "f3_v1",
+                block: "COMP",
+                ir: &comp::REGISTERS,
+            },
+        ),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -344,7 +351,14 @@
     Peripheral {
         name: "COMP2",
         address: 0x4001001e,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "comp",
+                version: "f3_v1",
+                block: "COMP",
+                ir: &comp::REGISTERS,
+            },
+        ),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -5979,6 +5993,7 @@
 #[path="../registers/bdma_v1.rs"] pub mod bdma;
 #[path="../registers/can_bxcan.rs"] pub mod can;
 #[path="../registers/cec_v2.rs"] pub mod cec;
+#[path="../registers/comp_f3_v1.rs"] pub mod comp;
 #[path="../registers/crc_v3.rs"] pub mod crc;
 #[path="../registers/dac_v2.rs"] pub mod dac;
 #[path="../registers/dbgmcu_f3.rs"] pub mod dbgmcu;

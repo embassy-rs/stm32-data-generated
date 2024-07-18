@@ -7,17 +7,6 @@
         "description": "Factory calibration",
         "byte_offset": 0,
         "access": "Read",
-        "fieldset": "DATA"
-      }
-    ]
-  },
-  "fieldset/DATA": {
-    "description": "Factory calibration data",
-    "fields": [
-      {
-        "name": "VALUE",
-        "description": "Calibration value",
-        "bit_offset": 0,
         "bit_size": 16
       }
     ]

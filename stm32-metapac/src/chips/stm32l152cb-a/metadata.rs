@@ -22,7 +22,7 @@ include!("../metadata_0598.rs");
         name: "SRAM",
         kind: MemoryRegionKind::Ram,
         address: 0x20000000,
-        size: 16384,
+        size: 32768,
         settings: None,
     },
 ],

@@ -3235,7 +3235,14 @@
     Peripheral {
         name: "TSC",
         address: 0x40024000,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "tsc",
+                version: "v1",
+                block: "TSC",
+                ir: &tsc::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "HCLK1",
@@ -4440,6 +4447,7 @@
 #[path="../registers/spi_v2.rs"] pub mod spi;
 #[path="../registers/syscfg_f0.rs"] pub mod syscfg;
 #[path="../registers/timer_v1.rs"] pub mod timer;
+#[path="../registers/tsc_v1.rs"] pub mod tsc;
 #[path="../registers/uid_v1.rs"] pub mod uid;
 #[path="../registers/usart_v3.rs"] pub mod usart;
 #[path="../registers/wwdg_v1.rs"] pub mod wwdg;

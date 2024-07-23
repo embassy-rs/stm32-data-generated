@@ -558,7 +558,7 @@
                 Field {
                     name: "cont",
                     description: Some(
-                        "continuous conversion",
+                        "Continuous conversion",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {

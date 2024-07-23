@@ -6,10 +6,17 @@ include!("../metadata_0477.rs");
                 line: "STM32H7A3/7B3",
                 memory: &[
     MemoryRegion {
+        name: "ITCM",
+        kind: MemoryRegionKind::Ram,
+        address: 0x0,
+        size: 65536,
+        settings: None,
+    },
+    MemoryRegion {
         name: "BANK_1",
         kind: MemoryRegionKind::Flash,
         address: 0x8000000,
-        size: 1048576,
+        size: 524288,
         settings: Some(
             FlashSettings {
                 erase_size: 8192,
@@ -17,6 +24,26 @@ include!("../metadata_0477.rs");
                 erase_value: 255,
             },
         ),
+    },
+    MemoryRegion {
+        name: "BANK_2",
+        kind: MemoryRegionKind::Flash,
+        address: 0x8100000,
+        size: 524288,
+        settings: Some(
+            FlashSettings {
+                erase_size: 8192,
+                write_size: 32,
+                erase_value: 255,
+            },
+        ),
+    },
+    MemoryRegion {
+        name: "DTCM",
+        kind: MemoryRegionKind::Ram,
+        address: 0x20000000,
+        size: 131072,
+        settings: None,
     },
     MemoryRegion {
         name: "SRAM",

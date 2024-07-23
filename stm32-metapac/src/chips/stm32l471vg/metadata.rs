@@ -32,6 +32,13 @@ include!("../metadata_0662.rs");
         ),
     },
     MemoryRegion {
+        name: "SRAM2_ICODE",
+        kind: MemoryRegionKind::Ram,
+        address: 0x10000000,
+        size: 32768,
+        settings: None,
+    },
+    MemoryRegion {
         name: "SRAM",
         kind: MemoryRegionKind::Ram,
         address: 0x20000000,

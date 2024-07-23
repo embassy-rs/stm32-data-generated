@@ -587,16 +587,22 @@
             }
         },
         {
+            "name": "CCMRAM",
+            "kind": "ram",
+            "address": 268435456,
+            "size": 65536
+        },
+        {
             "name": "SRAM",
             "kind": "ram",
             "address": 536870912,
-            "size": 131072
+            "size": 114688
         },
         {
             "name": "SRAM2",
             "kind": "ram",
             "address": 536985600,
-            "size": 0
+            "size": 16384
         }
     ],
     "docs": [

@@ -271,7 +271,7 @@
       },
       {
         "name": "CONT",
-        "description": "group regular continuous conversion mode",
+        "description": "Continuous conversion",
         "bit_offset": 13,
         "bit_size": 1
       },

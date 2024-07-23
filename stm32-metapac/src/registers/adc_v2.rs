@@ -509,9 +509,7 @@
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Cont",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "dma",
@@ -1168,27 +1166,6 @@
                     name: "SINGLECHANNEL",
                     description: Some(
                         "Analog watchdog enabled on a single channel",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Cont",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "SINGLE",
-                    description: Some(
-                        "Single conversion mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CONTINUOUS",
-                    description: Some(
-                        "Continuous conversion mode",
                     ),
                     value: 1,
                 },

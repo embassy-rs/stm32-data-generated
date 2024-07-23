@@ -3339,6 +3339,11 @@
                 {
                     "name": "TSC",
                     "address": 1073889280,
+                    "registers": {
+                        "kind": "tsc",
+                        "version": "v1",
+                        "block": "TSC"
+                    },
                     "rcc": {
                         "bus_clock": "HCLK1",
                         "kernel_clock": "HCLK1",

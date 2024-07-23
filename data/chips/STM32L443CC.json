@@ -1207,10 +1207,22 @@
             }
         },
         {
+            "name": "SRAM2_ICODE",
+            "kind": "ram",
+            "address": 268435456,
+            "size": 16384
+        },
+        {
             "name": "SRAM",
             "kind": "ram",
             "address": 536870912,
             "size": 49152
+        },
+        {
+            "name": "SRAM2",
+            "kind": "ram",
+            "address": 536920064,
+            "size": 16384
         }
     ],
     "docs": [

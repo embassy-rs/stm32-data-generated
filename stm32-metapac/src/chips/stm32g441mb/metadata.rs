@@ -19,7 +19,7 @@ include!("../metadata_0325.rs");
         ),
     },
     MemoryRegion {
-        name: "CCM_SRAM_ICODE",
+        name: "CCMRAM_ICODE",
         kind: MemoryRegionKind::Ram,
         address: 0x10000000,
         size: 10240,
@@ -40,7 +40,7 @@ include!("../metadata_0325.rs");
         settings: None,
     },
     MemoryRegion {
-        name: "CCM_SRAM_DCODE",
+        name: "CCMRAM_DCODE",
         kind: MemoryRegionKind::Ram,
         address: 0x20005800,
         size: 10240,

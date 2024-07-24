@@ -5071,7 +5071,14 @@
     Peripheral {
         name: "LTDC",
         address: 0x50001000,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "ltdc",
+                version: "v1",
+                block: "LTDC",
+                ir: &ltdc::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "PCLK3",
@@ -14313,6 +14320,7 @@
 #[path="../registers/i2c_v2.rs"] pub mod i2c;
 #[path="../registers/iwdg_v2.rs"] pub mod iwdg;
 #[path="../registers/lptim_v1b_h7.rs"] pub mod lptim;
+#[path="../registers/ltdc_v1.rs"] pub mod ltdc;
 #[path="../registers/mdios_v1.rs"] pub mod mdios;
 #[path="../registers/octospi_v1.rs"] pub mod octospi;
 #[path="../registers/octospim_v1.rs"] pub mod octospim;

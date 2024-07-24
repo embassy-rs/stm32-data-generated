@@ -1028,6 +1028,12 @@
     ],
     "memory": [
         {
+            "name": "ITCM",
+            "kind": "ram",
+            "address": 0,
+            "size": 65536
+        },
+        {
             "name": "BANK_1",
             "kind": "flash",
             "address": 134217728,
@@ -1039,10 +1045,28 @@
             }
         },
         {
-            "name": "SRAM",
+            "name": "DTCM",
+            "kind": "ram",
+            "address": 536870912,
+            "size": 131072
+        },
+        {
+            "name": "RAM_D1",
             "kind": "ram",
             "address": 603979776,
-            "size": 131072
+            "size": 327680
+        },
+        {
+            "name": "RAM_D2",
+            "kind": "ram",
+            "address": 805306368,
+            "size": 32768
+        },
+        {
+            "name": "RAM_D3",
+            "kind": "ram",
+            "address": 939524096,
+            "size": 16384
         }
     ],
     "docs": [
@@ -4906,6 +4930,11 @@
                 {
                     "name": "LTDC",
                     "address": 1342181376,
+                    "registers": {
+                        "kind": "ltdc",
+                        "version": "v1",
+                        "block": "LTDC"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK3",
                         "kernel_clock": "PCLK3",

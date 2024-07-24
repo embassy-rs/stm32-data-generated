@@ -911,16 +911,16 @@
             }
         },
         {
+            "name": "DTCM",
+            "kind": "ram",
+            "address": 536870912,
+            "size": 65536
+        },
+        {
             "name": "SRAM",
             "kind": "ram",
             "address": 536936448,
             "size": 196608
-        },
-        {
-            "name": "SRAM2",
-            "kind": "ram",
-            "address": 537116672,
-            "size": 0
         }
     ],
     "docs": [

@@ -87,13 +87,13 @@
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
-                            offset: 14,
+                            offset: 11,
                         },
                     ),
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Winmode",
+                        "WindowMode",
                     ),
                 },
                 Field {
@@ -109,7 +109,7 @@
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Winout",
+                        "WindowOut",
                     ),
                 },
                 Field {
@@ -175,20 +175,6 @@
                     enumm: Some(
                         "Blanking",
                     ),
-                },
-                Field {
-                    name: "brgen",
-                    description: Some(
-                        "Scaler bridge enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 22,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
                 },
                 Field {
                     name: "value",
@@ -341,13 +327,6 @@
                 EnumVariant {
                     name: "LOWSPEED",
                     description: Some(
-                        "Low speed / low power.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "VERYLOWSPEED",
-                    description: Some(
                         "Very-low speed / ultra-low power.",
                     ),
                     value: 3,
@@ -355,7 +334,7 @@
             ],
         },
         Enum {
-            name: "Winmode",
+            name: "WindowMode",
             description: None,
             bit_size: 1,
             variants: &[
@@ -376,7 +355,7 @@
             ],
         },
         Enum {
-            name: "Winout",
+            name: "WindowOut",
             description: None,
             bit_size: 1,
             variants: &[

@@ -907,7 +907,7 @@
             }
         },
         {
-            "name": "CCM_SRAM_ICODE",
+            "name": "CCMRAM_ICODE",
             "kind": "ram",
             "address": 268435456,
             "size": 10240
@@ -925,7 +925,7 @@
             "size": 6144
         },
         {
-            "name": "CCM_SRAM_DCODE",
+            "name": "CCMRAM_DCODE",
             "kind": "ram",
             "address": 536893440,
             "size": 10240

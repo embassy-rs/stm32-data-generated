@@ -1775,16 +1775,16 @@
             }
         },
         {
+            "name": "CCMRAM",
+            "kind": "ram",
+            "address": 268435456,
+            "size": 65536
+        },
+        {
             "name": "SRAM",
             "kind": "ram",
             "address": 536870912,
             "size": 196608
-        },
-        {
-            "name": "SRAM2",
-            "kind": "ram",
-            "address": 536985600,
-            "size": 0
         }
     ],
     "docs": [
@@ -4217,6 +4217,11 @@
                 {
                     "name": "LTDC",
                     "address": 1073833984,
+                    "registers": {
+                        "kind": "ltdc",
+                        "version": "v1",
+                        "block": "LTDC"
+                    },
                     "rcc": {
                         "bus_clock": "PCLK2",
                         "kernel_clock": "PCLK2",

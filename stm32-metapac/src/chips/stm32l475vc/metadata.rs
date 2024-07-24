@@ -9,7 +9,7 @@ include!("../metadata_0665.rs");
         name: "BANK_1",
         kind: MemoryRegionKind::Flash,
         address: 0x8000000,
-        size: 262144,
+        size: 131072,
         settings: Some(
             FlashSettings {
                 erase_size: 2048,
@@ -17,6 +17,26 @@ include!("../metadata_0665.rs");
                 erase_value: 255,
             },
         ),
+    },
+    MemoryRegion {
+        name: "BANK_2",
+        kind: MemoryRegionKind::Flash,
+        address: 0x8020000,
+        size: 131072,
+        settings: Some(
+            FlashSettings {
+                erase_size: 2048,
+                write_size: 8,
+                erase_value: 255,
+            },
+        ),
+    },
+    MemoryRegion {
+        name: "SRAM2_ICODE",
+        kind: MemoryRegionKind::Ram,
+        address: 0x10000000,
+        size: 32768,
+        settings: None,
     },
     MemoryRegion {
         name: "SRAM",

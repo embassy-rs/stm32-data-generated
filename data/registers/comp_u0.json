@@ -34,23 +34,23 @@
       {
         "name": "WINMODE",
         "description": "Comparator 1 noninverting input selector for window mode.",
-        "bit_offset": 14,
+        "bit_offset": 11,
         "bit_size": 1,
-        "enum": "WINMODE"
+        "enum": "WindowMode"
       },
       {
         "name": "WINOUT",
         "description": "Comparator 1 output selector.",
         "bit_offset": 14,
         "bit_size": 1,
-        "enum": "WINOUT"
+        "enum": "WindowOut"
       },
       {
         "name": "POLARITY",
         "description": "Polarity selection bit.",
         "bit_offset": 15,
         "bit_size": 1,
-        "enum": "POLARITY"
+        "enum": "Polarity"
       },
       {
         "name": "HYST",
@@ -72,12 +72,6 @@
         "bit_offset": 20,
         "bit_size": 5,
         "enum": "BLANKING"
-      },
-      {
-        "name": "BRGEN",
-        "description": "Scaler bridge enable.",
-        "bit_offset": 22,
-        "bit_size": 1
       },
       {
         "name": "VALUE",
@@ -149,21 +143,6 @@
       }
     ]
   },
-  "enum/POLARITY": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NotInverted",
-        "description": "Output is not inverted.",
-        "value": 0
-      },
-      {
-        "name": "Inverted",
-        "description": "Output is inverted.",
-        "value": 1
-      }
-    ]
-  },
   "enum/PWRMODE": {
     "bit_size": 2,
     "variants": [
@@ -179,17 +158,27 @@
       },
       {
         "name": "LowSpeed",
-        "description": "Low speed / low power.",
-        "value": 2
-      },
-      {
-        "name": "VeryLowSpeed",
         "description": "Very-low speed / ultra-low power.",
         "value": 3
       }
     ]
   },
-  "enum/WINMODE": {
+  "enum/Polarity": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "NotInverted",
+        "description": "Output is not inverted.",
+        "value": 0
+      },
+      {
+        "name": "Inverted",
+        "description": "Output is inverted.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/WindowMode": {
     "bit_size": 1,
     "variants": [
       {
@@ -204,7 +193,7 @@
       }
     ]
   },
-  "enum/WINOUT": {
+  "enum/WindowOut": {
     "bit_size": 1,
     "variants": [
       {

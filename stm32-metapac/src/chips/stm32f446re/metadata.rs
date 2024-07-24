@@ -51,13 +51,6 @@ include!("../metadata_0209.rs");
         size: 131072,
         settings: None,
     },
-    MemoryRegion {
-        name: "SRAM2",
-        kind: MemoryRegionKind::Ram,
-        address: 0x2001c000,
-        size: 0,
-        settings: None,
-    },
 ],
                 peripherals: PERIPHERALS,
                 nvic_priority_bits: Some(4),

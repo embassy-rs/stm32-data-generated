@@ -99,7 +99,7 @@
       },
       {
         "name": "DMACFG",
-        "description": "Direct memery access configuration",
+        "description": "Direct memory access configuration",
         "bit_offset": 1,
         "bit_size": 1,
         "enum": "DMACFG"
@@ -147,7 +147,7 @@
       },
       {
         "name": "CONT",
-        "description": "Single / continuous conversion mode",
+        "description": "Continuous conversion",
         "bit_offset": 13,
         "bit_size": 1
       },
@@ -429,12 +429,12 @@
     "variants": [
       {
         "name": "OneShot",
-        "description": "DMA one shot mode",
+        "description": "DMA One Shot mode selected",
         "value": 0
       },
       {
         "name": "Circular",
-        "description": "DMA circular mode",
+        "description": "DMA Circular mode selected",
         "value": 1
       }
     ]

@@ -19,6 +19,13 @@ include!("../metadata_0152.rs");
         ),
     },
     MemoryRegion {
+        name: "CCMRAM",
+        kind: MemoryRegionKind::Ram,
+        address: 0x10000000,
+        size: 16384,
+        settings: None,
+    },
+    MemoryRegion {
         name: "SRAM",
         kind: MemoryRegionKind::Ram,
         address: 0x20000000,

@@ -68,5 +68,5 @@ pub use Interrupt as interrupt ;pub fn GPIO(n: usize) -> gpio::Gpio {
 #[path="../../peripherals/wwdg_v2.rs"] pub mod wwdg;
 pub const CORE_INDEX: usize = 0;
 pub const FLASH_BASE: usize = 134217728;
-pub const FLASH_SIZE: usize = 65536;
+pub const FLASH_SIZE: usize = 32768;
 pub const WRITE_SIZE: usize = 8;

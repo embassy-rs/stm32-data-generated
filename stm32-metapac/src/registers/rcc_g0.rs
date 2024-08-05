@@ -5818,16 +5818,16 @@
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PLL1_Q",
+                    name: "HSE",
                     description: Some(
-                        "PLLQCLK used as USB clock source",
+                        "HSE used as USB clock source",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSE",
+                    name: "PLL1_Q",
                     description: Some(
-                        "HSE used as USB clock source",
+                        "PLLQCLK used as USB clock source",
                     ),
                     value: 2,
                 },

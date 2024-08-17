@@ -366,6 +366,22 @@
                 signal: "CH3",
                 interrupt: "DMA1_CHANNEL2_3",
             },
+            PeripheralInterrupt {
+                signal: "CH4",
+                interrupt: "DMA1_CH4_7_DMAMUX_OVR",
+            },
+            PeripheralInterrupt {
+                signal: "CH5",
+                interrupt: "DMA1_CH4_7_DMAMUX_OVR",
+            },
+            PeripheralInterrupt {
+                signal: "CH6",
+                interrupt: "DMA1_CH4_7_DMAMUX_OVR",
+            },
+            PeripheralInterrupt {
+                signal: "CH7",
+                interrupt: "DMA1_CH4_7_DMAMUX_OVR",
+            },
         ],
     },
     Peripheral {

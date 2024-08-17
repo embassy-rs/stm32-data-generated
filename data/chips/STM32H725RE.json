@@ -1125,11 +1125,23 @@
               "signal": "OUT",
               "af": 13
             }
+          ],
+          "interrupts": [
+            {
+              "signal": "WKUP",
+              "interrupt": "COMP"
+            }
           ]
         },
         {
           "name": "COMP2",
-          "address": 1476409360
+          "address": 1476409360,
+          "interrupts": [
+            {
+              "signal": "WKUP",
+              "interrupt": "COMP"
+            }
+          ]
         },
         {
           "name": "CORDIC",
@@ -7103,6 +7115,10 @@
         {
           "name": "BDMA_Channel7",
           "number": 136
+        },
+        {
+          "name": "COMP",
+          "number": 137
         },
         {
           "name": "LPTIM2",

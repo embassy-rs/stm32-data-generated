@@ -2152,6 +2152,12 @@
               "signal": "OUT",
               "af": 13
             }
+          ],
+          "interrupts": [
+            {
+              "signal": "WKUP",
+              "interrupt": "COMP"
+            }
           ]
         },
         {
@@ -2188,6 +2194,12 @@
             {
               "pin": "PE9",
               "signal": "INP"
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "WKUP",
+              "interrupt": "COMP"
             }
           ]
         },
@@ -11252,6 +11264,10 @@
         {
           "name": "BDMA_Channel7",
           "number": 136
+        },
+        {
+          "name": "COMP",
+          "number": 137
         },
         {
           "name": "LPTIM2",
@@ -12004,6 +12020,12 @@
               "signal": "OUT",
               "af": 13
             }
+          ],
+          "interrupts": [
+            {
+              "signal": "WKUP",
+              "interrupt": "COMP"
+            }
           ]
         },
         {
@@ -12040,6 +12062,12 @@
             {
               "pin": "PE9",
               "signal": "INP"
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "WKUP",
+              "interrupt": "COMP"
             }
           ]
         },
@@ -21104,6 +21132,10 @@
         {
           "name": "BDMA_Channel7",
           "number": 136
+        },
+        {
+          "name": "COMP",
+          "number": 137
         },
         {
           "name": "LPTIM2",

@@ -2314,6 +2314,10 @@
         number: 41,
     },
     Interrupt {
+        name: "PWR_SOTF_BLEACT_RFPHASE",
+        number: 43,
+    },
+    Interrupt {
         name: "IPCC_C1_RX",
         number: 44,
     },

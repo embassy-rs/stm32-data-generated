@@ -1032,16 +1032,6 @@
               "signal": "RX",
               "channel": "DMA1_CH3",
               "request": 2
-            },
-            {
-              "signal": "TX",
-              "channel": "DMA1_CH6",
-              "request": 2
-            },
-            {
-              "signal": "RX",
-              "channel": "DMA1_CH7",
-              "request": 2
             }
           ]
         },
@@ -1399,16 +1389,6 @@
               "signal": "TX",
               "channel": "DMA1_CH5",
               "request": 3
-            },
-            {
-              "signal": "RX",
-              "channel": "DMA1_CH6",
-              "request": 3
-            },
-            {
-              "signal": "TX",
-              "channel": "DMA1_CH7",
-              "request": 3
             }
           ]
         },
@@ -1581,21 +1561,6 @@
             {
               "signal": "CH3",
               "channel": "DMA1_CH5",
-              "request": 4
-            },
-            {
-              "signal": "CH1",
-              "channel": "DMA1_CH6",
-              "request": 4
-            },
-            {
-              "signal": "CH2",
-              "channel": "DMA1_CH6",
-              "request": 4
-            },
-            {
-              "signal": "CH3",
-              "channel": "DMA1_CH6",
               "request": 4
             }
           ]
@@ -1851,16 +1816,6 @@
               "signal": "UP",
               "channel": "DMA1_CH4",
               "request": 7
-            },
-            {
-              "signal": "CH1",
-              "channel": "DMA1_CH6",
-              "request": 7
-            },
-            {
-              "signal": "UP",
-              "channel": "DMA1_CH6",
-              "request": 7
             }
           ]
         },
@@ -1952,16 +1907,6 @@
             {
               "signal": "UP",
               "channel": "DMA1_CH2",
-              "request": 7
-            },
-            {
-              "signal": "CH1",
-              "channel": "DMA1_CH7",
-              "request": 7
-            },
-            {
-              "signal": "UP",
-              "channel": "DMA1_CH7",
               "request": 7
             }
           ]
@@ -2064,16 +2009,6 @@
             {
               "signal": "TRIG",
               "channel": "DMA1_CH4",
-              "request": 6
-            },
-            {
-              "signal": "CH1",
-              "channel": "DMA1_CH6",
-              "request": 6
-            },
-            {
-              "signal": "TRIG",
-              "channel": "DMA1_CH6",
               "request": 6
             }
           ]
@@ -2283,16 +2218,6 @@
               "signal": "RX",
               "channel": "DMA1_CH5",
               "request": 8
-            },
-            {
-              "signal": "RX",
-              "channel": "DMA1_CH6",
-              "request": 8
-            },
-            {
-              "signal": "TX",
-              "channel": "DMA1_CH7",
-              "request": 8
             }
           ]
         },
@@ -2391,16 +2316,6 @@
             {
               "signal": "RX",
               "channel": "DMA1_CH5",
-              "request": 9
-            },
-            {
-              "signal": "RX",
-              "channel": "DMA1_CH6",
-              "request": 9
-            },
-            {
-              "signal": "TX",
-              "channel": "DMA1_CH7",
               "request": 9
             }
           ]
@@ -2511,16 +2426,6 @@
               "signal": "RX",
               "channel": "DMA1_CH5",
               "request": 10
-            },
-            {
-              "signal": "RX",
-              "channel": "DMA1_CH6",
-              "request": 10
-            },
-            {
-              "signal": "TX",
-              "channel": "DMA1_CH7",
-              "request": 10
             }
           ]
         },
@@ -2601,16 +2506,6 @@
             {
               "signal": "RX",
               "channel": "DMA1_CH5",
-              "request": 11
-            },
-            {
-              "signal": "RX",
-              "channel": "DMA1_CH6",
-              "request": 11
-            },
-            {
-              "signal": "TX",
-              "channel": "DMA1_CH7",
               "request": 11
             }
           ]
@@ -2693,16 +2588,6 @@
               "signal": "RX",
               "channel": "DMA1_CH5",
               "request": 12
-            },
-            {
-              "signal": "RX",
-              "channel": "DMA1_CH6",
-              "request": 12
-            },
-            {
-              "signal": "TX",
-              "channel": "DMA1_CH7",
-              "request": 12
             }
           ]
         },
@@ -2768,16 +2653,6 @@
             {
               "signal": "RX",
               "channel": "DMA1_CH5",
-              "request": 13
-            },
-            {
-              "signal": "RX",
-              "channel": "DMA1_CH6",
-              "request": 13
-            },
-            {
-              "signal": "TX",
-              "channel": "DMA1_CH7",
               "request": 13
             }
           ]
@@ -2950,16 +2825,6 @@
           "name": "DMA1_CH5",
           "dma": "DMA1",
           "channel": 4
-        },
-        {
-          "name": "DMA1_CH6",
-          "dma": "DMA1",
-          "channel": 5
-        },
-        {
-          "name": "DMA1_CH7",
-          "dma": "DMA1",
-          "channel": 6
         }
       ]
     }

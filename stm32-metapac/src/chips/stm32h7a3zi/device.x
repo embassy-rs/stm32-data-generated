@@ -118,6 +118,7 @@ PROVIDE(BDMA2_CHANNEL4 = DefaultHandler);
 PROVIDE(BDMA2_CHANNEL5 = DefaultHandler);
 PROVIDE(BDMA2_CHANNEL6 = DefaultHandler);
 PROVIDE(BDMA2_CHANNEL7 = DefaultHandler);
+PROVIDE(COMP = DefaultHandler);
 PROVIDE(LPTIM2 = DefaultHandler);
 PROVIDE(LPTIM3 = DefaultHandler);
 PROVIDE(UART9 = DefaultHandler);

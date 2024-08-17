@@ -1137,6 +1137,12 @@
               "signal": "OUT",
               "af": 13
             }
+          ],
+          "interrupts": [
+            {
+              "signal": "WKUP",
+              "interrupt": "COMP"
+            }
           ]
         },
         {
@@ -7200,6 +7206,10 @@
         {
           "name": "BDMA2_Channel7",
           "number": 136
+        },
+        {
+          "name": "COMP",
+          "number": 137
         },
         {
           "name": "LPTIM2",

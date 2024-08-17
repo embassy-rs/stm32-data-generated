@@ -31,6 +31,7 @@ PROVIDE(SPI1 = DefaultHandler);
 PROVIDE(USART1 = DefaultHandler);
 PROVIDE(EXTI15_10 = DefaultHandler);
 PROVIDE(RTC_ALARM = DefaultHandler);
+PROVIDE(PWR_SOTF_BLEACT_802ACT_RFPHASE = DefaultHandler);
 PROVIDE(IPCC_C1_RX = DefaultHandler);
 PROVIDE(IPCC_C1_TX = DefaultHandler);
 PROVIDE(HSEM = DefaultHandler);

@@ -1014,14 +1014,6 @@
             {
               "signal": "RX",
               "channel": "DMA1_CH3"
-            },
-            {
-              "signal": "TX",
-              "channel": "DMA1_CH6"
-            },
-            {
-              "signal": "RX",
-              "channel": "DMA1_CH7"
             }
           ]
         },
@@ -1358,14 +1350,6 @@
             {
               "signal": "TX",
               "channel": "DMA1_CH5"
-            },
-            {
-              "signal": "RX",
-              "channel": "DMA1_CH6"
-            },
-            {
-              "signal": "TX",
-              "channel": "DMA1_CH7"
             }
           ]
         },
@@ -1531,18 +1515,6 @@
             {
               "signal": "UP",
               "channel": "DMA1_CH5"
-            },
-            {
-              "signal": "CH1",
-              "channel": "DMA1_CH6"
-            },
-            {
-              "signal": "CH2",
-              "channel": "DMA1_CH6"
-            },
-            {
-              "signal": "CH3",
-              "channel": "DMA1_CH6"
             }
           ]
         },
@@ -1789,14 +1761,6 @@
             {
               "signal": "UP",
               "channel": "DMA1_CH4"
-            },
-            {
-              "signal": "CH1",
-              "channel": "DMA1_CH6"
-            },
-            {
-              "signal": "UP",
-              "channel": "DMA1_CH6"
             }
           ]
         },
@@ -1885,14 +1849,6 @@
             {
               "signal": "UP",
               "channel": "DMA1_CH2"
-            },
-            {
-              "signal": "CH1",
-              "channel": "DMA1_CH7"
-            },
-            {
-              "signal": "UP",
-              "channel": "DMA1_CH7"
             }
           ]
         },
@@ -1990,14 +1946,6 @@
             {
               "signal": "TRIG",
               "channel": "DMA1_CH4"
-            },
-            {
-              "signal": "CH1",
-              "channel": "DMA1_CH6"
-            },
-            {
-              "signal": "TRIG",
-              "channel": "DMA1_CH6"
             }
           ]
         },
@@ -2277,14 +2225,6 @@
             {
               "signal": "RX",
               "channel": "DMA1_CH5"
-            },
-            {
-              "signal": "RX",
-              "channel": "DMA1_CH6"
-            },
-            {
-              "signal": "TX",
-              "channel": "DMA1_CH7"
             }
           ]
         },
@@ -2377,14 +2317,6 @@
             {
               "signal": "RX",
               "channel": "DMA1_CH3"
-            },
-            {
-              "signal": "RX",
-              "channel": "DMA1_CH6"
-            },
-            {
-              "signal": "TX",
-              "channel": "DMA1_CH7"
             }
           ]
         },
@@ -2439,16 +2371,6 @@
             {
               "signal": "GLOBAL",
               "interrupt": "USART3_4"
-            }
-          ],
-          "dma_channels": [
-            {
-              "signal": "RX",
-              "channel": "DMA1_CH6"
-            },
-            {
-              "signal": "TX",
-              "channel": "DMA1_CH7"
             }
           ]
         },
@@ -2686,16 +2608,6 @@
           "name": "DMA1_CH5",
           "dma": "DMA1",
           "channel": 4
-        },
-        {
-          "name": "DMA1_CH6",
-          "dma": "DMA1",
-          "channel": 5
-        },
-        {
-          "name": "DMA1_CH7",
-          "dma": "DMA1",
-          "channel": 6
         }
       ]
     }

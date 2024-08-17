@@ -7009,28 +7009,6 @@
         ),
     },
     DmaChannel {
-        name: "DMA1_CH7",
-        dma: "DMA1",
-        channel: 6,
-        dmamux: Some(
-            "DMAMUX1",
-        ),
-        dmamux_channel: Some(
-            6,
-        ),
-    },
-    DmaChannel {
-        name: "DMA1_CH8",
-        dma: "DMA1",
-        channel: 7,
-        dmamux: Some(
-            "DMAMUX1",
-        ),
-        dmamux_channel: Some(
-            7,
-        ),
-    },
-    DmaChannel {
         name: "DMA2_CH1",
         dma: "DMA2",
         channel: 0,
@@ -7094,28 +7072,6 @@
         ),
         dmamux_channel: Some(
             13,
-        ),
-    },
-    DmaChannel {
-        name: "DMA2_CH7",
-        dma: "DMA2",
-        channel: 6,
-        dmamux: Some(
-            "DMAMUX1",
-        ),
-        dmamux_channel: Some(
-            14,
-        ),
-    },
-    DmaChannel {
-        name: "DMA2_CH8",
-        dma: "DMA2",
-        channel: 7,
-        dmamux: Some(
-            "DMAMUX1",
-        ),
-        dmamux_channel: Some(
-            15,
         ),
     },
 ];

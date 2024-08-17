@@ -50,3 +50,4 @@ PROVIDE(DMA2_CHANNEL1 = DefaultHandler);
 PROVIDE(DMA2_CHANNEL2 = DefaultHandler);
 PROVIDE(DMA2_CHANNEL3 = DefaultHandler);
 PROVIDE(DMA2_CHANNEL4 = DefaultHandler);
+PROVIDE(DMA2_CHANNEL5 = DefaultHandler);

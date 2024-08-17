@@ -496,6 +496,10 @@
                 signal: "CH4",
                 interrupt: "DMA2_CHANNEL4",
             },
+            PeripheralInterrupt {
+                signal: "CH5",
+                interrupt: "DMA2_CHANNEL5",
+            },
         ],
     },
     Peripheral {
@@ -3970,6 +3974,10 @@
     Interrupt {
         name: "DMA2_CHANNEL4",
         number: 59,
+    },
+    Interrupt {
+        name: "DMA2_CHANNEL5",
+        number: 60,
     },
 ];
                 pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[

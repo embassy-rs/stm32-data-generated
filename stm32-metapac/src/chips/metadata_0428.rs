@@ -681,7 +681,12 @@
             },
         ],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "WKUP",
+                interrupt: "COMP",
+            },
+        ],
     },
     Peripheral {
         name: "COMP2",
@@ -732,7 +737,12 @@
             },
         ],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "WKUP",
+                interrupt: "COMP",
+            },
+        ],
     },
     Peripheral {
         name: "CRC",
@@ -12384,6 +12394,10 @@
     Interrupt {
         name: "BDMA_CHANNEL7",
         number: 136,
+    },
+    Interrupt {
+        name: "COMP",
+        number: 137,
     },
     Interrupt {
         name: "LPTIM2",

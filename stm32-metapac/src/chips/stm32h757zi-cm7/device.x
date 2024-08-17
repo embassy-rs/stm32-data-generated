@@ -132,6 +132,7 @@ PROVIDE(BDMA_CHANNEL4 = DefaultHandler);
 PROVIDE(BDMA_CHANNEL5 = DefaultHandler);
 PROVIDE(BDMA_CHANNEL6 = DefaultHandler);
 PROVIDE(BDMA_CHANNEL7 = DefaultHandler);
+PROVIDE(COMP = DefaultHandler);
 PROVIDE(LPTIM2 = DefaultHandler);
 PROVIDE(LPTIM3 = DefaultHandler);
 PROVIDE(LPTIM4 = DefaultHandler);

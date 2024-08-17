@@ -1467,6 +1467,10 @@
             {
               "signal": "CH4",
               "interrupt": "DMA2_Channel4"
+            },
+            {
+              "signal": "CH5",
+              "interrupt": "DMA2_Channel5"
             }
           ]
         },
@@ -4061,6 +4065,10 @@
         {
           "name": "DMA2_Channel4",
           "number": 59
+        },
+        {
+          "name": "DMA2_Channel5",
+          "number": 60
         }
       ],
       "dma_channels": [

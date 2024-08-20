@@ -141,7 +141,7 @@
                             },
                         ),
                     ),
-                    byte_offset: 0x1c,
+                    byte_offset: 0x100,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
@@ -165,7 +165,7 @@
                             },
                         ),
                     ),
-                    byte_offset: 0x9c,
+                    byte_offset: 0x180,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,

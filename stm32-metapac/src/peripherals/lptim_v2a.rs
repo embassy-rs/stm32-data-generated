@@ -5,7 +5,7 @@
 
 # [doc = "Low power timer with Output Compare"]
 # [derive (Copy , Clone , Eq , PartialEq)]
-pub struct LptimAdv { ptr : * mut u8 } unsafe impl Send for LptimAdv { } unsafe impl Sync for LptimAdv { } impl LptimAdv { # [inline (always)]
+pub struct Lptim { ptr : * mut u8 } unsafe impl Send for Lptim { } unsafe impl Sync for Lptim { } impl Lptim { # [inline (always)]
 pub const unsafe fn from_ptr (ptr : * mut ()) -> Self { Self { ptr : ptr as _ , } } # [inline (always)]
 pub const fn as_ptr (& self) -> * mut () { self . ptr as _ } # [doc = "LPTIM interrupt and status register."]
 # [inline (always)]
@@ -29,7 +29,7 @@ pub const fn cfgr2 (self) -> crate :: common :: Reg < regs :: Cfgr2 , crate :: c
 # [inline (always)]
 pub const fn rcr (self) -> crate :: common :: Reg < regs :: Rcr , crate :: common :: RW > { unsafe { crate :: common :: Reg :: from_ptr (self . ptr . add (0x28usize) as _) } } # [doc = "LPTIM capture/compare mode register 1."]
 # [inline (always)]
-pub const fn ccmr (self) -> crate :: common :: Reg < regs :: Ccmr , crate :: common :: RW > { unsafe { crate :: common :: Reg :: from_ptr (self . ptr . add (0x2cusize) as _) } } } # [doc = "Low power timer with Output Compare"]
+pub const fn ccmr (self , n : usize) -> crate :: common :: Reg < regs :: Ccmr , crate :: common :: RW > { assert ! (n < 1usize) ; unsafe { crate :: common :: Reg :: from_ptr (self . ptr . add (0x2cusize + n * 1usize) as _) } } } # [doc = "Low power timer with Output Compare"]
 # [derive (Copy , Clone , Eq , PartialEq)]
 pub struct LptimBasic { ptr : * mut u8 } unsafe impl Send for LptimBasic { } unsafe impl Sync for LptimBasic { } impl LptimBasic { # [inline (always)]
 pub const unsafe fn from_ptr (ptr : * mut ()) -> Self { Self { ptr : ptr as _ , } } # [inline (always)]

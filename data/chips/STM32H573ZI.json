@@ -4545,7 +4545,7 @@
           "registers": {
             "kind": "lptim",
             "version": "v2a",
-            "block": "LPTIM_ADV"
+            "block": "LPTIM"
           },
           "rcc": {
             "bus_clock": "PCLK3",
@@ -4680,7 +4680,7 @@
           "registers": {
             "kind": "lptim",
             "version": "v2a",
-            "block": "LPTIM_ADV"
+            "block": "LPTIM"
           },
           "rcc": {
             "bus_clock": "PCLK1",
@@ -4805,7 +4805,7 @@
           "registers": {
             "kind": "lptim",
             "version": "v2a",
-            "block": "LPTIM_ADV"
+            "block": "LPTIM"
           },
           "rcc": {
             "bus_clock": "PCLK3",
@@ -5003,7 +5003,7 @@
           "registers": {
             "kind": "lptim",
             "version": "v2a",
-            "block": "LPTIM_ADV"
+            "block": "LPTIM"
           },
           "rcc": {
             "bus_clock": "PCLK3",
@@ -5133,7 +5133,7 @@
           "registers": {
             "kind": "lptim",
             "version": "v2a",
-            "block": "LPTIM_ADV"
+            "block": "LPTIM"
           },
           "rcc": {
             "bus_clock": "PCLK3",

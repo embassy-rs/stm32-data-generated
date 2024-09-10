@@ -7020,7 +7020,7 @@
           ]
         },
         {
-          "name": "SPDIFRX",
+          "name": "SPDIFRX1",
           "address": 1073758208,
           "registers": {
             "kind": "spdifrx",
@@ -7085,6 +7085,18 @@
             {
               "signal": "GLOBAL",
               "interrupt": "SPDIF_RX"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "RX",
+              "channel": "DMA1_CH1",
+              "request": 0
+            },
+            {
+              "signal": "RX",
+              "channel": "DMA1_CH6",
+              "request": 0
             }
           ]
         },

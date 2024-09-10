@@ -1023,7 +1023,7 @@
           "registers": {
             "kind": "lptim",
             "version": "v2a",
-            "block": "LPTIM_ADV"
+            "block": "LPTIM"
           },
           "rcc": {
             "bus_clock": "PCLK7",
@@ -1108,7 +1108,7 @@
           "registers": {
             "kind": "lptim",
             "version": "v2a",
-            "block": "LPTIM_ADV"
+            "block": "LPTIM"
           },
           "rcc": {
             "bus_clock": "PCLK1",

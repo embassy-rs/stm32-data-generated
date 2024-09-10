@@ -7792,6 +7792,130 @@
         ],
     },
     Peripheral {
+        name: "SPDIFRX1",
+        address: 0x40004000,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "spdifrx",
+                version: "h7",
+                block: "SPDIFRX",
+                ir: &spdifrx::REGISTERS,
+            },
+        ),
+        rcc: Some(
+            PeripheralRcc {
+                bus_clock: "PCLK1",
+                kernel_clock: Mux(
+                    PeripheralRccRegister {
+                        register: "D2CCIP1R",
+                        field: "SPDIFRXSEL",
+                    },
+                ),
+                enable: Some(
+                    PeripheralRccRegister {
+                        register: "APB1LENR",
+                        field: "SPDIFRXEN",
+                    },
+                ),
+                reset: Some(
+                    PeripheralRccRegister {
+                        register: "APB1LRSTR",
+                        field: "SPDIFRXRST",
+                    },
+                ),
+                stop_mode: StopMode::Stop1,
+            },
+        ),
+        pins: &[
+            PeripheralPin {
+                pin: "PC4",
+                signal: "IN2",
+                af: Some(
+                    9,
+                ),
+            },
+            PeripheralPin {
+                pin: "PC5",
+                signal: "IN3",
+                af: Some(
+                    9,
+                ),
+            },
+            PeripheralPin {
+                pin: "PD7",
+                signal: "IN0",
+                af: Some(
+                    9,
+                ),
+            },
+            PeripheralPin {
+                pin: "PD8",
+                signal: "IN1",
+                af: Some(
+                    9,
+                ),
+            },
+            PeripheralPin {
+                pin: "PG11",
+                signal: "IN0",
+                af: Some(
+                    8,
+                ),
+            },
+            PeripheralPin {
+                pin: "PG12",
+                signal: "IN1",
+                af: Some(
+                    8,
+                ),
+            },
+            PeripheralPin {
+                pin: "PG8",
+                signal: "IN2",
+                af: Some(
+                    8,
+                ),
+            },
+            PeripheralPin {
+                pin: "PG9",
+                signal: "IN3",
+                af: Some(
+                    8,
+                ),
+            },
+        ],
+        dma_channels: &[
+            PeripheralDmaChannel {
+                signal: "RX",
+                channel: None,
+                dmamux: Some(
+                    "DMAMUX1",
+                ),
+                dma: None,
+                request: Some(
+                    93,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "RX",
+                channel: None,
+                dmamux: Some(
+                    "DMAMUX1",
+                ),
+                dma: None,
+                request: Some(
+                    94,
+                ),
+            },
+        ],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "SPDIF_RX",
+            },
+        ],
+    },
+    Peripheral {
         name: "SPI1",
         address: 0x40013000,
         registers: Some(
@@ -13937,6 +14061,7 @@
 #[path="../registers/rtc_v2h7.rs"] pub mod rtc;
 #[path="../registers/sai_v3_4pdm.rs"] pub mod sai;
 #[path="../registers/sdmmc_v2.rs"] pub mod sdmmc;
+#[path="../registers/spdifrx_h7.rs"] pub mod spdifrx;
 #[path="../registers/spi_v3.rs"] pub mod spi;
 #[path="../registers/syscfg_h7od.rs"] pub mod syscfg;
 #[path="../registers/timer_v1.rs"] pub mod timer;

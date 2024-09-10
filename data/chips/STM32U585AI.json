@@ -2469,6 +2469,11 @@
         {
           "name": "ADC1",
           "address": 1107460096,
+          "registers": {
+            "kind": "adc",
+            "version": "u5",
+            "block": "ADC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -2575,6 +2580,11 @@
         {
           "name": "ADC4",
           "address": 1174540288,
+          "registers": {
+            "kind": "adc",
+            "version": "u5",
+            "block": "ADC"
+          },
           "rcc": {
             "bus_clock": "HCLK3",
             "kernel_clock": {
@@ -4870,7 +4880,7 @@
           "registers": {
             "kind": "lptim",
             "version": "v2a",
-            "block": "LPTIM_ADV"
+            "block": "LPTIM"
           },
           "rcc": {
             "bus_clock": "PCLK3",
@@ -5020,7 +5030,7 @@
           "registers": {
             "kind": "lptim",
             "version": "v2a",
-            "block": "LPTIM_ADV"
+            "block": "LPTIM"
           },
           "rcc": {
             "bus_clock": "PCLK1",
@@ -5145,7 +5155,7 @@
           "registers": {
             "kind": "lptim",
             "version": "v2a",
-            "block": "LPTIM_ADV"
+            "block": "LPTIM"
           },
           "rcc": {
             "bus_clock": "PCLK3",

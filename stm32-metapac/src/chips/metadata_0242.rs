@@ -4594,7 +4594,7 @@
         ],
     },
     Peripheral {
-        name: "SPDIFRX",
+        name: "SPDIFRX1",
         address: 0x40004000,
         registers: Some(
             PeripheralRegisters {
@@ -4683,7 +4683,30 @@
                 ),
             },
         ],
-        dma_channels: &[],
+        dma_channels: &[
+            PeripheralDmaChannel {
+                signal: "RX",
+                channel: Some(
+                    "DMA1_CH1",
+                ),
+                dmamux: None,
+                dma: None,
+                request: Some(
+                    0,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "RX",
+                channel: Some(
+                    "DMA1_CH6",
+                ),
+                dmamux: None,
+                dma: None,
+                request: Some(
+                    0,
+                ),
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "GLOBAL",

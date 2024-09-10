@@ -1,5 +1,5 @@
 pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
-    ("adc", &["f1", "f3", "f3_v1_1", "f3_v2", "g0", "g4", "h5", "l0", "u0", "v1", "v2", "v3", "v4", ]),
+    ("adc", &["f1", "f3", "f3_v1_1", "f3_v2", "g0", "g4", "h5", "l0", "u0", "u5", "v1", "v2", "v3", "v4", ]),
     ("adccommon", &["f3", "h5", "h50", "v2", "v3", "v4", ]),
     ("adf", &["v1", ]),
     ("aes", &["f7", "v1", "v2", "v3a", "v3b", ]),
@@ -62,7 +62,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("sai", &["v1", "v2", "v3_2pdm", "v3_4pdm", "v4_2pdm", "v4_4pdm", ]),
     ("sdadc", &["v1", ]),
     ("sdmmc", &["v1", "v2", ]),
-    ("spdifrx", &["v1", ]),
+    ("spdifrx", &["h7", "v1", ]),
     ("spi", &["f1", "v1", "v2", "v3", "v4", "v5", ]),
     ("syscfg", &["c0", "f0", "f2", "f3", "f4", "f7", "g0", "g4", "h5", "h50", "h7", "h7od", "h7rs", "l0", "l1", "l4", "l5", "u0", "u5", "wb", "wba", "wl5", "wle", ]),
     ("tamp", &["g0", "g4", "h5", "l5", "u5", "wl", ]),

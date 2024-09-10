@@ -193,7 +193,7 @@
                 BlockItem {
                     name: "ccmr",
                     description: Some(
-                        "LPTIM capture/compare mode register 1.",
+                        "LPTIM capture/compare mode register.",
                     ),
                     array: Some(
                         Array::Regular(
@@ -246,14 +246,14 @@
             name: "Ccmr",
             extends: None,
             description: Some(
-                "LPTIM capture/compare mode register 1.",
+                "LPTIM capture/compare mode register.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "ccsel",
                     description: Some(
-                        "Capture/compare 1 selection This bitfield defines the direction of the channel input (capture) or output mode.",
+                        "Capture/compare selection. This bitfield defines the direction of the channel input (capture) or output mode.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -276,7 +276,7 @@
                 Field {
                     name: "cce",
                     description: Some(
-                        "Capture/compare 1 output enable. This bit determines if a capture of the counter value can actually be done into the input capture/compare register 1 (LPTIM_CCR1) or not.",
+                        "Capture/compare output enable. This bit determines if a capture of the counter value can actually be done into the input capture/compare register 1 (LPTIM_CCR1) or not.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -297,7 +297,7 @@
                 Field {
                     name: "ccp_input",
                     description: Some(
-                        "Capture/compare 1 output polarity. Only bit2 is used to set polarity when output mode is enabled, bit3 is don't care. This field is used to select the IC1 polarity for capture operations.",
+                        "Capture/compare output polarity. Only bit2 is used to set polarity when output mode is enabled, bit3 is don't care. This field is used to select the IC1 polarity for capture operations.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -320,7 +320,7 @@
                 Field {
                     name: "ccp_output",
                     description: Some(
-                        "Capture/compare 1 output polarity. Only bit2 is used to set polarity when output mode is enabled, bit3 is don't care. This field is used to select the IC1 polarity for capture operations.",
+                        "Capture/compare output polarity. Only bit2 is used to set polarity when output mode is enabled, bit3 is don't care. This field is used to select the IC1 polarity for capture operations.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -343,7 +343,7 @@
                 Field {
                     name: "icpsc",
                     description: Some(
-                        "Input capture 1 prescaler This bitfield defines the ratio of the prescaler acting on the CC1 input (IC1).",
+                        "Input capture prescaler This bitfield defines the ratio of the prescaler acting on the CC1 input (IC1).",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -366,7 +366,7 @@
                 Field {
                     name: "icf",
                     description: Some(
-                        "Input capture 1 filter This bitfield defines the number of consecutive equal samples that should be detected when a level change occurs on an external input capture signal before it is considered as a valid level transition. An internal clock source must be present to use this feature.",
+                        "Input capture filter This bitfield defines the number of consecutive equal samples that should be detected when a level change occurs on an external input capture signal before it is considered as a valid level transition. An internal clock source must be present to use this feature.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {

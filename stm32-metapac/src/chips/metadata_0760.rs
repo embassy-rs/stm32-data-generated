@@ -3,7 +3,14 @@
     Peripheral {
         name: "ADC1",
         address: 0x42028000,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "adc",
+                version: "u5",
+                block: "ADC",
+                ir: &adc::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "HCLK2",
@@ -147,7 +154,14 @@
     Peripheral {
         name: "ADC4",
         address: 0x46021000,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "adc",
+                version: "u5",
+                block: "ADC",
+                ir: &adc::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "HCLK3",
@@ -3223,7 +3237,7 @@
             PeripheralRegisters {
                 kind: "lptim",
                 version: "v2a",
-                block: "LPTIM_ADV",
+                block: "LPTIM",
                 ir: &lptim::REGISTERS,
             },
         ),
@@ -3454,7 +3468,7 @@
             PeripheralRegisters {
                 kind: "lptim",
                 version: "v2a",
-                block: "LPTIM_ADV",
+                block: "LPTIM",
                 ir: &lptim::REGISTERS,
             },
         ),
@@ -3638,7 +3652,7 @@
             PeripheralRegisters {
                 kind: "lptim",
                 version: "v2a",
-                block: "LPTIM_ADV",
+                block: "LPTIM",
                 ir: &lptim::REGISTERS,
             },
         ),
@@ -11274,7 +11288,8 @@
         dmamux_channel: None,
     },
 ];
-            #[path="../registers/adf_v1.rs"] pub mod adf;
+            #[path="../registers/adc_u5.rs"] pub mod adc;
+#[path="../registers/adf_v1.rs"] pub mod adf;
 #[path="../registers/can_fdcan_v1.rs"] pub mod can;
 #[path="../registers/comp_u5.rs"] pub mod comp;
 #[path="../registers/cordic_v1.rs"] pub mod cordic;

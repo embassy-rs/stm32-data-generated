@@ -5991,6 +5991,70 @@
           ]
         },
         {
+          "name": "SPDIFRX1",
+          "address": 1073758208,
+          "registers": {
+            "kind": "spdifrx",
+            "version": "h7",
+            "block": "SPDIFRX"
+          },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "D2CCIP1R",
+              "field": "SPDIFRXSEL"
+            },
+            "enable": {
+              "register": "APB1LENR",
+              "field": "SPDIFRXEN"
+            },
+            "reset": {
+              "register": "APB1LRSTR",
+              "field": "SPDIFRXRST"
+            }
+          },
+          "pins": [
+            {
+              "pin": "PC4",
+              "signal": "IN2",
+              "af": 9
+            },
+            {
+              "pin": "PC5",
+              "signal": "IN3",
+              "af": 9
+            },
+            {
+              "pin": "PD7",
+              "signal": "IN0",
+              "af": 9
+            },
+            {
+              "pin": "PD8",
+              "signal": "IN1",
+              "af": 9
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "SPDIF_RX"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "RX",
+              "dmamux": "DMAMUX1",
+              "request": 93
+            },
+            {
+              "signal": "RX",
+              "dmamux": "DMAMUX1",
+              "request": 94
+            }
+          ]
+        },
+        {
           "name": "SPI1",
           "address": 1073819648,
           "registers": {

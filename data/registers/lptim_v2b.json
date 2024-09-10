@@ -72,7 +72,7 @@
       },
       {
         "name": "CCMR",
-        "description": "LPTIM capture/compare mode register 1.",
+        "description": "LPTIM capture/compare mode register.",
         "array": {
           "len": 2,
           "stride": 1
@@ -94,11 +94,11 @@
     ]
   },
   "fieldset/CCMR": {
-    "description": "LPTIM capture/compare mode register 1.",
+    "description": "LPTIM capture/compare mode register.",
     "fields": [
       {
         "name": "CCSEL",
-        "description": "Capture/compare 1 selection This bitfield defines the direction of the channel input (capture) or output mode.",
+        "description": "Capture/compare selection. This bitfield defines the direction of the channel input (capture) or output mode.",
         "bit_offset": 0,
         "bit_size": 1,
         "array": {
@@ -109,7 +109,7 @@
       },
       {
         "name": "CCE",
-        "description": "Capture/compare 1 output enable. This bit determines if a capture of the counter value can actually be done into the input capture/compare register 1 (LPTIM_CCR1) or not.",
+        "description": "Capture/compare output enable. This bit determines if a capture of the counter value can actually be done into the input capture/compare register 1 (LPTIM_CCR1) or not.",
         "bit_offset": 1,
         "bit_size": 1,
         "array": {
@@ -119,7 +119,7 @@
       },
       {
         "name": "CCP_Input",
-        "description": "Capture/compare 1 output polarity. Only bit2 is used to set polarity when output mode is enabled, bit3 is don't care. This field is used to select the IC1 polarity for capture operations.",
+        "description": "Capture/compare output polarity. Only bit2 is used to set polarity when output mode is enabled, bit3 is don't care. This field is used to select the IC1 polarity for capture operations.",
         "bit_offset": 2,
         "bit_size": 2,
         "array": {
@@ -130,7 +130,7 @@
       },
       {
         "name": "CCP_Output",
-        "description": "Capture/compare 1 output polarity. Only bit2 is used to set polarity when output mode is enabled, bit3 is don't care. This field is used to select the IC1 polarity for capture operations.",
+        "description": "Capture/compare output polarity. Only bit2 is used to set polarity when output mode is enabled, bit3 is don't care. This field is used to select the IC1 polarity for capture operations.",
         "bit_offset": 2,
         "bit_size": 2,
         "array": {
@@ -141,7 +141,7 @@
       },
       {
         "name": "ICPSC",
-        "description": "Input capture 1 prescaler This bitfield defines the ratio of the prescaler acting on the CC1 input (IC1).",
+        "description": "Input capture prescaler This bitfield defines the ratio of the prescaler acting on the CC1 input (IC1).",
         "bit_offset": 8,
         "bit_size": 2,
         "array": {
@@ -152,7 +152,7 @@
       },
       {
         "name": "ICF",
-        "description": "Input capture 1 filter This bitfield defines the number of consecutive equal samples that should be detected when a level change occurs on an external input capture signal before it is considered as a valid level transition. An internal clock source must be present to use this feature.",
+        "description": "Input capture filter This bitfield defines the number of consecutive equal samples that should be detected when a level change occurs on an external input capture signal before it is considered as a valid level transition. An internal clock source must be present to use this feature.",
         "bit_offset": 12,
         "bit_size": 2,
         "array": {

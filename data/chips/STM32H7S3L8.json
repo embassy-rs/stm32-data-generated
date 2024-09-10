@@ -7466,8 +7466,13 @@
           ]
         },
         {
-          "name": "SPDIFRX",
+          "name": "SPDIFRX1",
           "address": 1073758208,
+          "registers": {
+            "kind": "spdifrx",
+            "version": "h7",
+            "block": "SPDIFRX"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {

@@ -3,7 +3,7 @@
                     pub(crate) static REGISTERS: IR = IR {
     blocks: &[
         Block {
-            name: "LptimAdv",
+            name: "Lptim",
             extends: Some(
                 "LPTIM_BASIC",
             ),
@@ -193,7 +193,14 @@
                     description: Some(
                         "LPTIM capture/compare mode register 1.",
                     ),
-                    array: None,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 1,
+                                stride: 1,
+                            },
+                        ),
+                    ),
                     byte_offset: 0x2c,
                     inner: BlockItemInner::Register(
                         Register {

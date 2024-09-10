@@ -7,7 +7,6 @@
         "description": "Data register",
         "array": {
           "offsets": [
-            0,
             4,
             8,
             12,
@@ -17,7 +16,7 @@
             28,
             32,
             36,
-            60,
+            40,
             64,
             68,
             72,
@@ -48,7 +47,8 @@
             172,
             176,
             180,
-            184
+            184,
+            188
           ]
         },
         "byte_offset": 0,
@@ -57,19 +57,19 @@
       {
         "name": "RTCCR",
         "description": "RTC clock calibration register",
-        "byte_offset": 40,
+        "byte_offset": 44,
         "fieldset": "RTCCR"
       },
       {
         "name": "CR",
         "description": "Control register",
-        "byte_offset": 44,
+        "byte_offset": 48,
         "fieldset": "CR"
       },
       {
         "name": "CSR",
         "description": "Control/status register",
-        "byte_offset": 48,
+        "byte_offset": 52,
         "fieldset": "CSR"
       }
     ]

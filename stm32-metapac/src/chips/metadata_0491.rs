@@ -7055,9 +7055,16 @@
         ],
     },
     Peripheral {
-        name: "SPDIFRX",
+        name: "SPDIFRX1",
         address: 0x40004000,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "spdifrx",
+                version: "h7",
+                block: "SPDIFRX",
+                ir: &spdifrx::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "PCLK1",
@@ -7124,7 +7131,30 @@
                 af: None,
             },
         ],
-        dma_channels: &[],
+        dma_channels: &[
+            PeripheralDmaChannel {
+                signal: "RX",
+                channel: None,
+                dmamux: Some(
+                    "DMAMUX1",
+                ),
+                dma: None,
+                request: Some(
+                    93,
+                ),
+            },
+            PeripheralDmaChannel {
+                signal: "RX",
+                channel: None,
+                dmamux: Some(
+                    "DMAMUX1",
+                ),
+                dma: None,
+                request: Some(
+                    94,
+                ),
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "GLOBAL",
@@ -13305,6 +13335,7 @@
 #[path="../registers/rtc_v2h7.rs"] pub mod rtc;
 #[path="../registers/sai_v4_4pdm.rs"] pub mod sai;
 #[path="../registers/sdmmc_v2.rs"] pub mod sdmmc;
+#[path="../registers/spdifrx_h7.rs"] pub mod spdifrx;
 #[path="../registers/spi_v3.rs"] pub mod spi;
 #[path="../registers/syscfg_h7.rs"] pub mod syscfg;
 #[path="../registers/timer_v1.rs"] pub mod timer;

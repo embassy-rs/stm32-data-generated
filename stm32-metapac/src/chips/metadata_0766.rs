@@ -2747,7 +2747,7 @@
             PeripheralRegisters {
                 kind: "lptim",
                 version: "v2a",
-                block: "LPTIM_ADV",
+                block: "LPTIM",
                 ir: &lptim::REGISTERS,
             },
         ),
@@ -2971,7 +2971,7 @@
             PeripheralRegisters {
                 kind: "lptim",
                 version: "v2a",
-                block: "LPTIM_ADV",
+                block: "LPTIM",
                 ir: &lptim::REGISTERS,
             },
         ),
@@ -3120,7 +3120,7 @@
             PeripheralRegisters {
                 kind: "lptim",
                 version: "v2a",
-                block: "LPTIM_ADV",
+                block: "LPTIM",
                 ir: &lptim::REGISTERS,
             },
         ),

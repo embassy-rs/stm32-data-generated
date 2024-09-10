@@ -7448,8 +7448,13 @@
           ]
         },
         {
-          "name": "SPDIFRX",
+          "name": "SPDIFRX1",
           "address": 1073758208,
+          "registers": {
+            "kind": "spdifrx",
+            "version": "h7",
+            "block": "SPDIFRX"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
@@ -7503,6 +7508,18 @@
             {
               "signal": "GLOBAL",
               "interrupt": "SPDIF_RX"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "RX",
+              "dmamux": "DMAMUX1",
+              "request": 93
+            },
+            {
+              "signal": "RX",
+              "dmamux": "DMAMUX1",
+              "request": 94
             }
           ]
         },

@@ -18,7 +18,6 @@
                         Array::Cursed(
                             CursedArray {
                                 offsets: &[
-                                    0,
                                     4,
                                     8,
                                     12,
@@ -28,7 +27,7 @@
                                     28,
                                     32,
                                     36,
-                                    60,
+                                    40,
                                     64,
                                     68,
                                     72,
@@ -60,6 +59,7 @@
                                     176,
                                     180,
                                     184,
+                                    188,
                                 ],
                             },
                         ),
@@ -81,7 +81,7 @@
                         "RTC clock calibration register",
                     ),
                     array: None,
-                    byte_offset: 0x28,
+                    byte_offset: 0x2c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -98,7 +98,7 @@
                         "Control register",
                     ),
                     array: None,
-                    byte_offset: 0x2c,
+                    byte_offset: 0x30,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -115,7 +115,7 @@
                         "Control/status register",
                     ),
                     array: None,
-                    byte_offset: 0x30,
+                    byte_offset: 0x34,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,

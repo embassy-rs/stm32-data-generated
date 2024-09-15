@@ -6800,7 +6800,10 @@
           },
           "rcc": {
             "bus_clock": "HCLK1",
-            "kernel_clock": "USB",
+            "kernel_clock": {
+              "register": "AHBPERCKSELR",
+              "field": "USBPHYCSEL"
+            },
             "enable": {
               "register": "AHB1ENR",
               "field": "USB_OTG_HSEN"

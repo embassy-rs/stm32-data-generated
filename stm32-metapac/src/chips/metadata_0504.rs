@@ -11543,8 +11543,11 @@
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "HCLK1",
-                kernel_clock: Clock(
-                    "USB",
+                kernel_clock: Mux(
+                    PeripheralRccRegister {
+                        register: "AHBPERCKSELR",
+                        field: "USBPHYCSEL",
+                    },
                 ),
                 enable: Some(
                     PeripheralRccRegister {

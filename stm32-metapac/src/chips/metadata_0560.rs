@@ -1891,7 +1891,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "spi",
-                version: "v2",
+                version: "v1",
                 block: "SPI",
                 ir: &spi::REGISTERS,
             },
@@ -2054,7 +2054,7 @@
         registers: Some(
             PeripheralRegisters {
                 kind: "spi",
-                version: "v2",
+                version: "v1",
                 block: "SPI",
                 ir: &spi::REGISTERS,
             },
@@ -4521,7 +4521,7 @@
 #[path="../registers/rcc_l0_v2.rs"] pub mod rcc;
 #[path="../registers/rng_v1.rs"] pub mod rng;
 #[path="../registers/rtc_v2l0.rs"] pub mod rtc;
-#[path="../registers/spi_v2.rs"] pub mod spi;
+#[path="../registers/spi_v1.rs"] pub mod spi;
 #[path="../registers/syscfg_l0.rs"] pub mod syscfg;
 #[path="../registers/timer_l0.rs"] pub mod timer;
 #[path="../registers/tsc_v3.rs"] pub mod tsc;

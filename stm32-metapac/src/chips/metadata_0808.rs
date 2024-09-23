@@ -156,7 +156,14 @@
     Peripheral {
         name: "AES1",
         address: 0x50060000,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "aes",
+                version: "v2",
+                block: "AES",
+                ir: &aes::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "HCLK2",

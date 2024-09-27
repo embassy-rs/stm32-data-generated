@@ -10287,8 +10287,8 @@
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
-              "register": "CCIPR1",
-              "field": "ICLKSEL"
+              "register": "CCIPR2",
+              "field": "OTGHSSEL"
             },
             "enable": {
               "register": "AHB2ENR1",

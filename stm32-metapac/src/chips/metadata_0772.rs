@@ -11097,8 +11097,8 @@
                 bus_clock: "HCLK2",
                 kernel_clock: Mux(
                     PeripheralRccRegister {
-                        register: "CCIPR1",
-                        field: "ICLKSEL",
+                        register: "CCIPR2",
+                        field: "OTGHSSEL",
                     },
                 ),
                 enable: Some(

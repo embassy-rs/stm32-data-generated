@@ -834,6 +834,11 @@
         {
           "name": "FMPI2C1",
           "address": 1073766400,
+          "registers": {
+            "kind": "i2c2",
+            "version": "v2",
+            "block": "FMPI2C"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {

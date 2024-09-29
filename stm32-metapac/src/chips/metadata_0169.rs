@@ -725,7 +725,14 @@
     Peripheral {
         name: "FMPI2C1",
         address: 0x40006000,
-        registers: None,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "i2c2",
+                version: "v2",
+                block: "FMPI2C",
+                ir: &i2c2::REGISTERS,
+            },
+        ),
         rcc: Some(
             PeripheralRcc {
                 bus_clock: "PCLK1",
@@ -5411,6 +5418,7 @@
 #[path="../registers/flash_f4.rs"] pub mod flash;
 #[path="../registers/gpio_v2.rs"] pub mod gpio;
 #[path="../registers/i2c_v1.rs"] pub mod i2c;
+#[path="../registers/i2c2_v2.rs"] pub mod i2c2;
 #[path="../registers/iwdg_v1.rs"] pub mod iwdg;
 #[path="../registers/otg_v1.rs"] pub mod otg;
 #[path="../registers/pwr_f4.rs"] pub mod pwr;

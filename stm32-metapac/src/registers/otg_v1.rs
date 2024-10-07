@@ -6,7 +6,7 @@
             name: "Otg",
             extends: None,
             description: Some(
-                "USB on the go",
+                "USB OTG core by Synopsys (more docs at https://www.intel.com/content/www/us/en/programmable/hps/agilex5/index_frames.html)",
             ),
             items: &[
                 BlockItem {
@@ -316,6 +316,81 @@
                     ),
                 },
                 BlockItem {
+                    name: "snpsid",
+                    description: Some(
+                        "Synopsis ID Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hwcfg1",
+                    description: Some(
+                        "User HW Config 1 Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hwcfg2",
+                    description: Some(
+                        "User HW Config 2 Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x48,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hwcfg3",
+                    description: Some(
+                        "User HW Config 3 Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x4c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hwcfg4",
+                    description: Some(
+                        "User HW Config 4 Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x50,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "glpmcfg",
                     description: Some(
                         "OTG core LPM configuration register",
@@ -328,6 +403,53 @@
                             bit_size: 32,
                             fieldset: Some(
                                 "Glpmcfg",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "gpwrdn",
+                    description: Some(
+                        "Global PowerDn Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x58,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "gdfifocfg",
+                    description: Some(
+                        "Global DFIFO SW Config Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x5c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "adpctl",
+                    description: Some(
+                        "ADP (Attach Detection Protocol) Control Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x60,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Adpctl",
                             ),
                         },
                     ),
@@ -476,6 +598,21 @@
                     ),
                 },
                 BlockItem {
+                    name: "hflbaddr",
+                    description: Some(
+                        "Host Frame Scheduling List Register",
+                    ),
+                    array: None,
+                    byte_offset: 0x41c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "hprt",
                     description: Some(
                         "Host port control and status register",
@@ -607,6 +744,52 @@
                             fieldset: Some(
                                 "Hctsiz",
                             ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hcdma",
+                    description: Some(
+                        "Host channel DMA address register (config for scatter/gather)",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 12,
+                                stride: 32,
+                            },
+                        ),
+                    ),
+                    byte_offset: 0x514,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hcdma",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hcdmab",
+                    description: Some(
+                        "Host channel DMA address register (address for current transfer; debug)",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 12,
+                                stride: 32,
+                            },
+                        ),
+                    ),
+                    byte_offset: 0x51c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: None,
                         },
                     ),
                 },
@@ -949,6 +1132,28 @@
                     ),
                 },
                 BlockItem {
+                    name: "doepdma",
+                    description: Some(
+                        "Device OUT/IN endpoint DMA address register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 16,
+                                stride: 32,
+                            },
+                        ),
+                    ),
+                    byte_offset: 0xb14,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "pcgcctl",
                     description: Some(
                         "Power and clock gating control register",
@@ -993,6 +1198,212 @@
         },
     ],
     fieldsets: &[
+        FieldSet {
+            name: "Adpctl",
+            extends: None,
+            description: Some(
+                "ADP (Attach Detection Protocol) Control Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "prb_dschg",
+                    description: Some(
+                        "Probe Discharge time (times for TADP_DSCHG)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "prb_delta",
+                    description: Some(
+                        "Probe Delta (resolution for RTIM)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "prb_per",
+                    description: Some(
+                        "Probe Period (TADP_PRD)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rtim",
+                    description: Some(
+                        "Probe Period (TADP_PRD)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 11,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "enaprb",
+                    description: Some(
+                        "Enable Probe",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "enasns",
+                    description: Some(
+                        "Enable Sense",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "adpres",
+                    description: Some(
+                        "ADP Reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "adpen",
+                    description: Some(
+                        "ADP Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "adp_prb_int",
+                    description: Some(
+                        "ADP Probe Interrupt Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "adp_sns_int",
+                    description: Some(
+                        "ADP Sense Interrupt Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "adp_tmout_int",
+                    description: Some(
+                        "ADP Timeout Interrupt Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "adp_prb_msk",
+                    description: Some(
+                        "ADP Probe Interrupt Mask",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "adp_tmout_msk",
+                    description: Some(
+                        "ADP Timeout Interrupt Mask",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ar",
+                    description: Some(
+                        "Access Request",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
         FieldSet {
             name: "Cid",
             extends: None,
@@ -3736,6 +4147,20 @@
                     enumm: None,
                 },
                 Field {
+                    name: "resetdet",
+                    description: Some(
+                        "Reset detected",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "hprtint",
                     description: Some(
                         "Host port interrupt",
@@ -5078,7 +5503,7 @@
                 Field {
                     name: "oddfrm",
                     description: Some(
-                        "Odd frame",
+                        "Odd frame (request iso/interrupt transaction to be performed on odd micro-frame)",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -5120,6 +5545,44 @@
             ],
         },
         FieldSet {
+            name: "Hcdma",
+            extends: None,
+            description: Some(
+                "Host channel DMA config register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "qtdaddr",
+                    description: Some(
+                        "QTD list base address",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cqtd",
+                    description: Some(
+                        "Current QTD (transfer descriptor) index",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Hcfg",
             extends: None,
             description: Some(
@@ -5149,6 +5612,50 @@
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "descdma",
+                    description: Some(
+                        "Descriptor DMA-mode enable (qtd)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "frlistlen",
+                    description: Some(
+                        "Frame list length",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Frlistlen",
+                    ),
+                },
+                Field {
+                    name: "perschedena",
+                    description: Some(
+                        "Period scheduling enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
                         },
                     ),
                     bit_size: 1,
@@ -5452,9 +5959,23 @@
             bit_size: 32,
             fields: &[
                 Field {
+                    name: "schedinfo",
+                    description: Some(
+                        "Schedule info for isochronuous & interrupt pipes (xfrsiz[7:0])",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "xfrsiz",
                     description: Some(
-                        "Transfer size",
+                        "Transfer size for non-isochronuous/interrupt pipes",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -5462,6 +5983,20 @@
                         },
                     ),
                     bit_size: 19,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ntdl",
+                    description: Some(
+                        "NTD descriptor list length for isochronuous & interrupt pipes (xfrsiz[15:8], note val+1 is actual length)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
@@ -5493,6 +6028,20 @@
                     array: None,
                     enumm: None,
                 },
+                Field {
+                    name: "doping",
+                    description: Some(
+                        "Do Ping",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
             ],
         },
         FieldSet {
@@ -5514,6 +6063,20 @@
                         },
                     ),
                     bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rldctrl",
+                    description: Some(
+                        "Dynamic Loading Control",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -5648,7 +6211,7 @@
                 Field {
                     name: "pena",
                     description: Some(
-                        "Port enable",
+                        "Port enable (W1C)",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -5985,6 +6548,41 @@
                 EnumVariant {
                     name: "INTERRUPT",
                     description: None,
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Frlistlen",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "LEN8",
+                    description: Some(
+                        "Length = 8",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LEN16",
+                    description: Some(
+                        "Length = 16",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "LEN32",
+                    description: Some(
+                        "Length = 32",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "LEN64",
+                    description: Some(
+                        "Length = 64",
+                    ),
                     value: 3,
                 },
             ],

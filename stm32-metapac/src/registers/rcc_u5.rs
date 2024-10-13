@@ -8968,9 +8968,9 @@
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PCLK3",
+                    name: "MSIK",
                     description: Some(
-                        "PCLK3 selected",
+                        "MSIK selected",
                     ),
                     value: 0,
                 },

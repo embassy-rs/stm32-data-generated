@@ -1,12 +1,12 @@
 
-                    use crate::metadata::ir::*;
-                    pub(crate) static REGISTERS: IR = IR {
+use crate::metadata::ir::*;
+pub(crate) static REGISTERS: IR = IR {
     blocks: &[
         Block {
             name: "Otg",
             extends: None,
             description: Some(
-                "USB OTG core by Synopsys (more docs at https://www.intel.com/content/www/us/en/programmable/hps/agilex5/index_frames.html)",
+                "USB OTG core by Synopsys (more docs at <https://www.intel.com/content/www/us/en/programmable/hps/agilex5/index_frames.html>)",
             ),
             items: &[
                 BlockItem {
@@ -6701,4 +6701,3 @@
         },
     ],
 };
-                

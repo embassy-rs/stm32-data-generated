@@ -1143,7 +1143,7 @@
           "name": "FMPI2C1",
           "address": 1073766400,
           "registers": {
-            "kind": "i2c2",
+            "kind": "fmpi2c",
             "version": "v2",
             "block": "FMPI2C"
           },

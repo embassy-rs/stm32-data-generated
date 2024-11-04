@@ -1,9 +1,9 @@
 
-                    use crate::metadata::ir::*;
-                    pub(crate) static REGISTERS: IR = IR {
+use crate::metadata::ir::*;
+pub(crate) static REGISTERS: IR = IR {
     blocks: &[
         Block {
-            name: "I2c",
+            name: "Fmpi2c",
             extends: None,
             description: Some(
                 "Inter-integrated circuit",
@@ -1669,4 +1669,3 @@
         },
     ],
 };
-                

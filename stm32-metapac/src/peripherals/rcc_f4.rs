@@ -1446,15 +1446,15 @@ pub mod regs {
         pub fn set_spi3en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
-        #[doc = "SPDIF-IN clock enable"]
+        #[doc = "SPDIF-Rx clock enable"]
         #[inline(always)]
-        pub const fn spdifen(&self) -> bool {
+        pub const fn spdifrxen(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
             val != 0
         }
-        #[doc = "SPDIF-IN clock enable"]
+        #[doc = "SPDIF-Rx clock enable"]
         #[inline(always)]
-        pub fn set_spdifen(&mut self, val: bool) {
+        pub fn set_spdifrxen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "USART 2 clock enable"]
@@ -2141,15 +2141,15 @@ pub mod regs {
         pub fn set_spi3rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
-        #[doc = "SPDIF-IN reset"]
+        #[doc = "SPDIF-Rx reset"]
         #[inline(always)]
-        pub const fn spdifrst(&self) -> bool {
+        pub const fn spdifrxrst(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
             val != 0
         }
-        #[doc = "SPDIF-IN reset"]
+        #[doc = "SPDIF-Rx reset"]
         #[inline(always)]
-        pub fn set_spdifrst(&mut self, val: bool) {
+        pub fn set_spdifrxrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "USART 2 reset"]

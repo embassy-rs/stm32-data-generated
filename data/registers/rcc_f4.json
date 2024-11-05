@@ -857,8 +857,8 @@
         "bit_size": 1
       },
       {
-        "name": "SPDIFEN",
-        "description": "SPDIF-IN clock enable",
+        "name": "SPDIFRXEN",
+        "description": "SPDIF-Rx clock enable",
         "bit_offset": 16,
         "bit_size": 1
       },
@@ -1233,8 +1233,8 @@
         "bit_size": 1
       },
       {
-        "name": "SPDIFRST",
-        "description": "SPDIF-IN reset",
+        "name": "SPDIFRXRST",
+        "description": "SPDIF-Rx reset",
         "bit_offset": 16,
         "bit_size": 1
       },

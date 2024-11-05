@@ -2666,6 +2666,21 @@
             "version": "v1",
             "block": "SPDIFRX"
           },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "DCKCFGR2",
+              "field": "SPDIFRXSEL"
+            },
+            "enable": {
+              "register": "APB1ENR",
+              "field": "SPDIFRXEN"
+            },
+            "reset": {
+              "register": "APB1RSTR",
+              "field": "SPDIFRXRST"
+            }
+          },
           "pins": [
             {
               "pin": "PB7",

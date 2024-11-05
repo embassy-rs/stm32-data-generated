@@ -2069,9 +2069,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "spdifen",
+                    name: "spdifrxen",
                     description: Some(
-                        "SPDIF-IN clock enable",
+                        "SPDIF-Rx clock enable",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -2943,9 +2943,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "spdifrst",
+                    name: "spdifrxrst",
                     description: Some(
-                        "SPDIF-IN reset",
+                        "SPDIF-Rx reset",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {

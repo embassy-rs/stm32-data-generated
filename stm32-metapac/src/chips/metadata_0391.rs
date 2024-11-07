@@ -1320,7 +1320,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "FMC",
-        address: 0x60000000,
+        address: 0x47000400,
         registers: Some(PeripheralRegisters {
             kind: "fmc",
             version: "v4",

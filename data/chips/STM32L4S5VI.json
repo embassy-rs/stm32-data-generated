@@ -2088,7 +2088,7 @@
         },
         {
           "name": "FMC",
-          "address": 1610612736,
+          "address": 2684354560,
           "rcc": {
             "bus_clock": "HCLK3",
             "kernel_clock": "HCLK3",

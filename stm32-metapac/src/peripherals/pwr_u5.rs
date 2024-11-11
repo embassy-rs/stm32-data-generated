@@ -1105,6 +1105,17 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Vosr(pub u32);
     impl Vosr {
+        #[doc = "OTG_HS EPOD booster ready This bit is set to one by hardware when the power booster startup time is reached. The OTG_HS clock can be provided only after this bit is set."]
+        #[inline(always)]
+        pub const fn usbboostrdy(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "OTG_HS EPOD booster ready This bit is set to one by hardware when the power booster startup time is reached. The OTG_HS clock can be provided only after this bit is set."]
+        #[inline(always)]
+        pub fn set_usbboostrdy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
         #[doc = "EPOD booster ready This bit is set to 1 by hardware when the power booster startup time is reached. The system clock frequency can be switched higher than 50 MHz only after this bit is set."]
         #[inline(always)]
         pub const fn boostrdy(&self) -> bool {
@@ -1148,6 +1159,39 @@ pub mod regs {
         #[inline(always)]
         pub fn set_boosten(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
+        #[doc = "OTG_HS power enable"]
+        #[inline(always)]
+        pub const fn usbpwren(&self) -> bool {
+            let val = (self.0 >> 19usize) & 0x01;
+            val != 0
+        }
+        #[doc = "OTG_HS power enable"]
+        #[inline(always)]
+        pub fn set_usbpwren(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
+        }
+        #[doc = "OTG_HS EPOD booster enable"]
+        #[inline(always)]
+        pub const fn usbboosten(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "OTG_HS EPOD booster enable"]
+        #[inline(always)]
+        pub fn set_usbboosten(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "OTG_HS VDD11USB disable"]
+        #[inline(always)]
+        pub const fn vdd11usbdis(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "OTG_HS VDD11USB disable"]
+        #[inline(always)]
+        pub fn set_vdd11usbdis(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
     }
     impl Default for Vosr {

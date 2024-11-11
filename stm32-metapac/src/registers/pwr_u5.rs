@@ -1636,6 +1636,20 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
+                    name: "usbboostrdy",
+                    description: Some(
+                        "OTG_HS EPOD booster ready\r This bit is set to one by hardware when the power booster startup time is reached. The OTG_HS clock can be provided only after this bit is set.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "boostrdy",
                     description: Some(
                         "EPOD booster ready\r This bit is set to 1 by hardware when the power booster startup time is reached. The system clock frequency can be switched higher than 50 MHz only after this bit is set.",
@@ -1687,6 +1701,48 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 18,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usbpwren",
+                    description: Some(
+                        "OTG_HS power enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usbboosten",
+                    description: Some(
+                        "OTG_HS EPOD booster enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vdd11usbdis",
+                    description: Some(
+                        "OTG_HS VDD11USB disable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
                         },
                     ),
                     bit_size: 1,

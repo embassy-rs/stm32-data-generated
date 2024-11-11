@@ -79,6 +79,16 @@ impl Syscfg {
     pub const fn ucpdr(self) -> crate::common::Reg<regs::Ucpdr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x70usize) as _) }
     }
+    #[doc = "OTG_HS PHY register"]
+    #[inline(always)]
+    pub const fn otghsphycr(self) -> crate::common::Reg<regs::Otghsphycr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x74usize) as _) }
+    }
+    #[doc = "OTG_HS PHY tune register 2"]
+    #[inline(always)]
+    pub const fn otghsphytuner2(self) -> crate::common::Reg<regs::Otghsphytuner2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x7cusize) as _) }
+    }
 }
 pub mod regs {
     #[doc = "compensation cell code register"]
@@ -539,6 +549,96 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Mesr {
             Mesr(0)
+        }
+    }
+    #[doc = "OTG_HS PHY register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Otghsphycr(pub u32);
+    impl Otghsphycr {
+        #[doc = "PHY Enable"]
+        #[inline(always)]
+        pub const fn en(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PHY Enable"]
+        #[inline(always)]
+        pub fn set_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Common block power-down control"]
+        #[inline(always)]
+        pub const fn pdctrl(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Common block power-down control"]
+        #[inline(always)]
+        pub fn set_pdctrl(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Reference clock frequency selection"]
+        #[inline(always)]
+        pub const fn clksel(&self) -> u8 {
+            let val = (self.0 >> 2usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "Reference clock frequency selection"]
+        #[inline(always)]
+        pub fn set_clksel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 2usize)) | (((val as u32) & 0x0f) << 2usize);
+        }
+    }
+    impl Default for Otghsphycr {
+        #[inline(always)]
+        fn default() -> Otghsphycr {
+            Otghsphycr(0)
+        }
+    }
+    #[doc = "OTG_HS tune register 2"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Otghsphytuner2(pub u32);
+    impl Otghsphytuner2 {
+        #[doc = "Disconnect threshold adjustment"]
+        #[inline(always)]
+        pub const fn compdistune(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "Disconnect threshold adjustment"]
+        #[inline(always)]
+        pub fn set_compdistune(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+        #[doc = "Squelch threshold adjustment"]
+        #[inline(always)]
+        pub const fn sqrxtune(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x07;
+            val as u8
+        }
+        #[doc = "Squelch threshold adjustment"]
+        #[inline(always)]
+        pub fn set_sqrxtune(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
+        }
+        #[doc = "HS transmitter preemphasis current control"]
+        #[inline(always)]
+        pub const fn txpreempamptune(&self) -> u8 {
+            let val = (self.0 >> 13usize) & 0x03;
+            val as u8
+        }
+        #[doc = "HS transmitter preemphasis current control"]
+        #[inline(always)]
+        pub fn set_txpreempamptune(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 13usize)) | (((val as u32) & 0x03) << 13usize);
+        }
+    }
+    impl Default for Otghsphytuner2 {
+        #[inline(always)]
+        fn default() -> Otghsphytuner2 {
+            Otghsphytuner2(0)
         }
     }
     #[doc = "RSS command register"]

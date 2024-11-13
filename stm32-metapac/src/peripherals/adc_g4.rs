@@ -223,17 +223,6 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cfgr(pub u32);
     impl Cfgr {
-        #[doc = "Direct memory access configuration"]
-        #[inline(always)]
-        pub const fn dmacfg(&self) -> super::vals::Dmacfg {
-            let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Dmacfg::from_bits(val as u8)
-        }
-        #[doc = "Direct memory access configuration"]
-        #[inline(always)]
-        pub fn set_dmacfg(&mut self, val: super::vals::Dmacfg) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
-        }
         #[doc = "Direct memory access enable"]
         #[inline(always)]
         pub const fn dmaen(&self) -> super::vals::Dmaen {
@@ -244,6 +233,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_dmaen(&mut self, val: super::vals::Dmaen) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Direct memory access configuration"]
+        #[inline(always)]
+        pub const fn dmacfg(&self) -> super::vals::Dmacfg {
+            let val = (self.0 >> 1usize) & 0x01;
+            super::vals::Dmacfg::from_bits(val as u8)
+        }
+        #[doc = "Direct memory access configuration"]
+        #[inline(always)]
+        pub fn set_dmacfg(&mut self, val: super::vals::Dmacfg) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "data resolution"]
         #[inline(always)]

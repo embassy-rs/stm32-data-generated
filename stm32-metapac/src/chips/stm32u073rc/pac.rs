@@ -206,7 +206,7 @@ pub const SPI1: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_3000usize as _) };
 pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4001_3800usize as _) };
 pub const TIM15: timer::Tim2chCmp = unsafe { timer::Tim2chCmp::from_ptr(0x4001_4000usize as _) };
 pub const TIM16: timer::Tim1chCmp = unsafe { timer::Tim1chCmp::from_ptr(0x4001_4400usize as _) };
-pub const DBGMCU: *mut () = 0x4001_5800usize as _;
+pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0x4001_5800usize as _) };
 pub const DMA1: bdma::Dma = unsafe { bdma::Dma::from_ptr(0x4002_0000usize as _) };
 pub const DMA2: bdma::Dma = unsafe { bdma::Dma::from_ptr(0x4002_0400usize as _) };
 pub const DMAMUX1: dmamux::Dmamux = unsafe { dmamux::Dmamux::from_ptr(0x4002_0800usize as _) };
@@ -246,6 +246,8 @@ pub mod crc;
 pub mod crs;
 #[path = "../../peripherals/dac_v4.rs"]
 pub mod dac;
+#[path = "../../peripherals/dbgmcu_u0.rs"]
+pub mod dbgmcu;
 #[path = "../../peripherals/dmamux_v1.rs"]
 pub mod dmamux;
 #[path = "../../peripherals/exti_u0.rs"]

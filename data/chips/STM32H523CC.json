@@ -644,6 +644,11 @@
         {
           "name": "ADC1",
           "address": 1107460096,
+          "registers": {
+            "kind": "adc",
+            "version": "h5",
+            "block": "ADC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -748,6 +753,11 @@
         {
           "name": "ADC2",
           "address": 1107460352,
+          "registers": {
+            "kind": "adc",
+            "version": "h5",
+            "block": "ADC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {

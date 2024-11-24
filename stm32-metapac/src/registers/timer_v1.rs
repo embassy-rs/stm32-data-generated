@@ -8568,6 +8568,90 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 7,
                 },
+                EnumVariant {
+                    name: "ITR4",
+                    description: Some(
+                        "Internal Trigger 4",
+                    ),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "ITR5",
+                    description: Some(
+                        "Internal Trigger 5",
+                    ),
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "ITR6",
+                    description: Some(
+                        "Internal Trigger 6",
+                    ),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "ITR7",
+                    description: Some(
+                        "Internal Trigger 7",
+                    ),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "ITR8",
+                    description: Some(
+                        "Internal Trigger 8",
+                    ),
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "ITR9",
+                    description: Some(
+                        "Internal Trigger 9",
+                    ),
+                    value: 13,
+                },
+                EnumVariant {
+                    name: "ITR10",
+                    description: Some(
+                        "Internal Trigger 10",
+                    ),
+                    value: 14,
+                },
+                EnumVariant {
+                    name: "ITR11",
+                    description: Some(
+                        "Internal Trigger 11",
+                    ),
+                    value: 15,
+                },
+                EnumVariant {
+                    name: "ITR12",
+                    description: Some(
+                        "Internal Trigger 12",
+                    ),
+                    value: 16,
+                },
+                EnumVariant {
+                    name: "ITR13",
+                    description: Some(
+                        "Internal Trigger 13",
+                    ),
+                    value: 17,
+                },
+                EnumVariant {
+                    name: "ITR14",
+                    description: Some(
+                        "Internal Trigger 14",
+                    ),
+                    value: 18,
+                },
+                EnumVariant {
+                    name: "ITR15",
+                    description: Some(
+                        "Internal Trigger 15",
+                    ),
+                    value: 19,
+                },
             ],
         },
         Enum {

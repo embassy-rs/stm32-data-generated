@@ -414,7 +414,7 @@
         "name": "PNB",
         "description": "Non-secure page number selection\r These bits select the page to erase.\r ...",
         "bit_offset": 3,
-        "bit_size": 7
+        "bit_size": 8
       },
       {
         "name": "BKER",
@@ -4038,7 +4038,7 @@
         "name": "PNB",
         "description": "Secure page number selection\r These bits select the page to erase:\r ...",
         "bit_offset": 3,
-        "bit_size": 7
+        "bit_size": 8
       },
       {
         "name": "BKER",

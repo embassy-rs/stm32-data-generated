@@ -793,7 +793,7 @@
       "address": 134217728,
       "size": 1048576,
       "settings": {
-        "erase_size": 16384,
+        "erase_size": 8192,
         "write_size": 16,
         "erase_value": 255
       }
@@ -804,7 +804,7 @@
       "address": 135266304,
       "size": 1048576,
       "settings": {
-        "erase_size": 16384,
+        "erase_size": 8192,
         "write_size": 16,
         "erase_value": 255
       }

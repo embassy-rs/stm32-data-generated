@@ -506,13 +506,13 @@ pub mod regs {
         #[doc = "Non-secure page number selection These bits select the page to erase. ..."]
         #[inline(always)]
         pub const fn pnb(&self) -> u8 {
-            let val = (self.0 >> 3usize) & 0x7f;
+            let val = (self.0 >> 3usize) & 0xff;
             val as u8
         }
         #[doc = "Non-secure page number selection These bits select the page to erase. ..."]
         #[inline(always)]
         pub fn set_pnb(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 3usize)) | (((val as u32) & 0x7f) << 3usize);
+            self.0 = (self.0 & !(0xff << 3usize)) | (((val as u32) & 0xff) << 3usize);
         }
         #[doc = "Non-secure bank selection for page erase"]
         #[inline(always)]
@@ -7188,13 +7188,13 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
         #[doc = "Secure page number selection These bits select the page to erase: ..."]
         #[inline(always)]
         pub const fn pnb(&self) -> u8 {
-            let val = (self.0 >> 3usize) & 0x7f;
+            let val = (self.0 >> 3usize) & 0xff;
             val as u8
         }
         #[doc = "Secure page number selection These bits select the page to erase: ..."]
         #[inline(always)]
         pub fn set_pnb(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 3usize)) | (((val as u32) & 0x7f) << 3usize);
+            self.0 = (self.0 & !(0xff << 3usize)) | (((val as u32) & 0xff) << 3usize);
         }
         #[doc = "Secure bank selection for page erase"]
         #[inline(always)]

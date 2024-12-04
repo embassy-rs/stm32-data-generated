@@ -3695,7 +3695,7 @@ pub mod regs {
         }
         #[doc = "Output X Fault state"]
         #[inline(always)]
-        pub const fn faultx(&self, n: usize) -> super::vals::Fault {
+        pub const fn fault(&self, n: usize) -> super::vals::Fault {
             assert!(n < 2usize);
             let offs = 4usize + ([0usize, 16usize][n] as usize);
             let val = (self.0 >> offs) & 0x03;
@@ -3703,7 +3703,7 @@ pub mod regs {
         }
         #[doc = "Output X Fault state"]
         #[inline(always)]
-        pub fn set_faultx(&mut self, n: usize, val: super::vals::Fault) {
+        pub fn set_fault(&mut self, n: usize, val: super::vals::Fault) {
             assert!(n < 2usize);
             let offs = 4usize + ([0usize, 16usize][n] as usize);
             self.0 = (self.0 & !(0x03 << offs)) | (((val.to_bits() as u32) & 0x03) << offs);

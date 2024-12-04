@@ -2542,7 +2542,7 @@
         }
       },
       {
-        "name": "FAULTX",
+        "name": "FAULT",
         "description": "Output X Fault state",
         "bit_offset": 4,
         "bit_size": 2,

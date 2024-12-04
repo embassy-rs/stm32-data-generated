@@ -2792,7 +2792,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "faultx",
+                    name: "fault",
                     description: Some("Output X Fault state"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 2,

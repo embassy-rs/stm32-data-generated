@@ -1943,7 +1943,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Captureeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "updcpt",
@@ -1951,7 +1951,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Captureeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "exevcpt",
@@ -1959,7 +1959,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 10, stride: 1 })),
-                    enumm: Some("Captureeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "txset",
@@ -1967,7 +1967,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Captureeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "txrst",
@@ -1975,7 +1975,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Captureeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "txcmp",
@@ -1983,7 +1983,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
-                    enumm: Some("Captureeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "tyset",
@@ -1991,7 +1991,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Captureeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "tyrst",
@@ -1999,7 +1999,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Captureeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "tycmp",
@@ -2007,7 +2007,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
-                    enumm: Some("Captureeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "tzset",
@@ -2015,7 +2015,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Captureeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "tzrst",
@@ -2023,7 +2023,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Captureeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "tzcmp",
@@ -2031,7 +2031,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
-                    enumm: Some("Captureeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "ttset",
@@ -2039,7 +2039,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Captureeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "ttrst",
@@ -2047,7 +2047,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Captureeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "ttcmp",
@@ -2055,7 +2055,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
-                    enumm: Some("Captureeffect"),
+                    enumm: None,
                 },
             ],
         },
@@ -2209,7 +2209,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Syncrst"),
+                    enumm: None,
                 },
                 Field {
                     name: "syncstrt",
@@ -2217,7 +2217,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Syncstrt"),
+                    enumm: None,
                 },
                 Field {
                     name: "delcmp2",
@@ -2577,7 +2577,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 5, stride: 1 })),
-                    enumm: Some("Flten"),
+                    enumm: None,
                 },
                 Field {
                     name: "fltlck",
@@ -2729,7 +2729,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("TimaisrDlyprt"),
+                    enumm: None,
                 },
                 Field {
                     name: "cppstat",
@@ -2753,7 +2753,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
-                    enumm: Some("Outputstate"),
+                    enumm: None,
                 },
                 Field {
                     name: "ocpy",
@@ -2761,7 +2761,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
-                    enumm: Some("Outputstate"),
+                    enumm: None,
                 },
             ],
         },
@@ -2885,7 +2885,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Reseteffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "cmp",
@@ -2893,7 +2893,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
-                    enumm: Some("Reseteffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "mstper",
@@ -2901,7 +2901,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Reseteffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "mstcmp",
@@ -2909,7 +2909,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 4, stride: 1 })),
-                    enumm: Some("Reseteffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "extevnt",
@@ -2917,7 +2917,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 10, stride: 1 })),
-                    enumm: Some("Reseteffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "tcmp1",
@@ -2925,7 +2925,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 3, 6, 9] })),
-                    enumm: Some("Reseteffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "tcmp2",
@@ -2933,7 +2933,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 3, 6, 9] })),
-                    enumm: Some("Reseteffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "tcmp4",
@@ -2941,7 +2941,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 3, 6, 9] })),
-                    enumm: Some("Reseteffect"),
+                    enumm: None,
                 },
             ],
         },
@@ -2957,7 +2957,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Inactiveeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "resync",
@@ -2965,7 +2965,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Inactiveeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "per",
@@ -2973,7 +2973,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Inactiveeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "cmp",
@@ -2981,7 +2981,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 4, stride: 1 })),
-                    enumm: Some("Inactiveeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "mstper",
@@ -2989,7 +2989,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Inactiveeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "mstcmp",
@@ -2997,7 +2997,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 4, stride: 1 })),
-                    enumm: Some("Inactiveeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "timevnt",
@@ -3005,7 +3005,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 9, stride: 1 })),
-                    enumm: Some("Inactiveeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "extevnt",
@@ -3013,7 +3013,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 10, stride: 1 })),
-                    enumm: Some("Inactiveeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "update",
@@ -3021,7 +3021,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Inactiveeffect"),
+                    enumm: None,
                 },
             ],
         },
@@ -3037,7 +3037,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Activeeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "resync",
@@ -3045,7 +3045,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Activeeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "per",
@@ -3053,7 +3053,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Activeeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "cmp",
@@ -3061,7 +3061,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 4, stride: 1 })),
-                    enumm: Some("Activeeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "mstper",
@@ -3069,7 +3069,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Activeeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "mstcmpx",
@@ -3077,7 +3077,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 4, stride: 1 })),
-                    enumm: Some("Activeeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "timevnt",
@@ -3085,7 +3085,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 9, stride: 1 })),
-                    enumm: Some("Activeeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "extevnt",
@@ -3093,7 +3093,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 10, stride: 1 })),
-                    enumm: Some("Activeeffect"),
+                    enumm: None,
                 },
                 Field {
                     name: "update",
@@ -3101,29 +3101,12 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Activeeffect"),
+                    enumm: None,
                 },
             ],
         },
     ],
     enums: &[
-        Enum {
-            name: "Activeeffect",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOEFFECT",
-                    description: Some("Timer event has no effect"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SETACTIVE",
-                    description: Some("Timer event forces the output to its active state"),
-                    value: 1,
-                },
-            ],
-        },
         Enum {
             name: "Brstdma",
             description: None,
@@ -3145,23 +3128,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Update done on master timer roll-over following a DMA burst transfer completion",
                     ),
                     value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Captureeffect",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOEFFECT",
-                    description: Some("Timer event has no effect"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TRIGGERCAPTURE",
-                    description: Some("Timer event triggers capture"),
-                    value: 1,
                 },
             ],
         },
@@ -3402,40 +3368,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Flten",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "IGNORED",
-                    description: Some("Fault input ignored"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACTIVE",
-                    description: Some("Fault input is active and can disable HRTIM outputs"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Inactiveeffect",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOEFFECT",
-                    description: Some("Timer event has no effect"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SETINACTIVE",
-                    description: Some("Timer event forces the output to its inactive state"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Ippstat",
             description: None,
             bit_size: 1,
@@ -3453,23 +3385,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Outputstate",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "INACTIVE",
-                    description: Some("Output is or was inactive"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACTIVE",
-                    description: Some("Output is or was active"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Pol",
             description: None,
             bit_size: 1,
@@ -3482,23 +3397,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "ACTIVELOW",
                     description: Some("Negative polarity (output active low)"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Reseteffect",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOEFFECT",
-                    description: Some("Timer Y compare Z event has no effect"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RESETCOUNTER",
-                    description: Some("Timer X counter is reset upon timer Y compare Z event"),
                     value: 1,
                 },
             ],
@@ -3582,23 +3480,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Syncrst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Synchronization event has no effect on Timer x"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RESET",
-                    description: Some("Synchronization event resets Timer x"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Syncsrc",
             description: None,
             bit_size: 2,
@@ -3622,40 +3503,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "TIMERACOMPARE1",
                     description: Some("Timer A Compare 1 event"),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Syncstrt",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Synchronization event has no effect on Timer x"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "START",
-                    description: Some("Synchronization event starts Timer x"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "TimaisrDlyprt",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "INACTIVE",
-                    description: Some("Not in delayed idle or balanced idle mode"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACTIVE",
-                    description: Some("Delayed idle or balanced idle mode entry"),
-                    value: 1,
                 },
             ],
         },

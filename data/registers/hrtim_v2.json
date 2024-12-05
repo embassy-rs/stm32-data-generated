@@ -1738,15 +1738,13 @@
         "name": "SWCPT",
         "description": "Software Capture",
         "bit_offset": 0,
-        "bit_size": 1,
-        "enum": "CAPTUREEFFECT"
+        "bit_size": 1
       },
       {
         "name": "UPDCPT",
         "description": "Update Capture",
         "bit_offset": 1,
-        "bit_size": 1,
-        "enum": "CAPTUREEFFECT"
+        "bit_size": 1
       },
       {
         "name": "EXEVCPT",
@@ -1756,22 +1754,19 @@
         "array": {
           "len": 10,
           "stride": 1
-        },
-        "enum": "CAPTUREEFFECT"
+        }
       },
       {
         "name": "TXSET",
         "description": "Timer X output Set",
         "bit_offset": 16,
-        "bit_size": 1,
-        "enum": "CAPTUREEFFECT"
+        "bit_size": 1
       },
       {
         "name": "TXRST",
         "description": "Timer X output Reset",
         "bit_offset": 17,
-        "bit_size": 1,
-        "enum": "CAPTUREEFFECT"
+        "bit_size": 1
       },
       {
         "name": "TXCMP",
@@ -1781,22 +1776,19 @@
         "array": {
           "len": 2,
           "stride": 1
-        },
-        "enum": "CAPTUREEFFECT"
+        }
       },
       {
         "name": "TYSET",
         "description": "Timer Y output Set",
         "bit_offset": 20,
-        "bit_size": 1,
-        "enum": "CAPTUREEFFECT"
+        "bit_size": 1
       },
       {
         "name": "TYRST",
         "description": "Timer Y output Reset",
         "bit_offset": 21,
-        "bit_size": 1,
-        "enum": "CAPTUREEFFECT"
+        "bit_size": 1
       },
       {
         "name": "TYCMP",
@@ -1806,22 +1798,19 @@
         "array": {
           "len": 2,
           "stride": 1
-        },
-        "enum": "CAPTUREEFFECT"
+        }
       },
       {
         "name": "TZSET",
         "description": "Timer Z output Set",
         "bit_offset": 24,
-        "bit_size": 1,
-        "enum": "CAPTUREEFFECT"
+        "bit_size": 1
       },
       {
         "name": "TZRST",
         "description": "Timer Z output Reset",
         "bit_offset": 25,
-        "bit_size": 1,
-        "enum": "CAPTUREEFFECT"
+        "bit_size": 1
       },
       {
         "name": "TZCMP",
@@ -1831,22 +1820,19 @@
         "array": {
           "len": 2,
           "stride": 1
-        },
-        "enum": "CAPTUREEFFECT"
+        }
       },
       {
         "name": "TTSET",
         "description": "Timer T output Set",
         "bit_offset": 28,
-        "bit_size": 1,
-        "enum": "CAPTUREEFFECT"
+        "bit_size": 1
       },
       {
         "name": "TTRST",
         "description": "Timer T output Reset",
         "bit_offset": 29,
-        "bit_size": 1,
-        "enum": "CAPTUREEFFECT"
+        "bit_size": 1
       },
       {
         "name": "TTCMP",
@@ -1856,8 +1842,7 @@
         "array": {
           "len": 2,
           "stride": 1
-        },
-        "enum": "CAPTUREEFFECT"
+        }
       }
     ]
   },
@@ -1971,15 +1956,13 @@
         "name": "SYNCRST",
         "description": "Synchronization Resets Timer X",
         "bit_offset": 10,
-        "bit_size": 1,
-        "enum": "SYNCRST"
+        "bit_size": 1
       },
       {
         "name": "SYNCSTRT",
         "description": "Synchronization Starts Timer X",
         "bit_offset": 11,
-        "bit_size": 1,
-        "enum": "SYNCSTRT"
+        "bit_size": 1
       },
       {
         "name": "DELCMP2",
@@ -2304,8 +2287,7 @@
         "array": {
           "len": 5,
           "stride": 1
-        },
-        "enum": "FLTEN"
+        }
       },
       {
         "name": "FLTLCK",
@@ -2457,8 +2439,7 @@
         "name": "DLYPRT",
         "description": "Delayed Protection Flag",
         "bit_offset": 14,
-        "bit_size": 1,
-        "enum": "TIMAISR_DLYPRT"
+        "bit_size": 1
       },
       {
         "name": "CPPSTAT",
@@ -2482,8 +2463,7 @@
         "array": {
           "len": 2,
           "stride": 1
-        },
-        "enum": "OUTPUTSTATE"
+        }
       },
       {
         "name": "OCPY",
@@ -2493,8 +2473,7 @@
         "array": {
           "len": 2,
           "stride": 1
-        },
-        "enum": "OUTPUTSTATE"
+        }
       }
     ]
   },
@@ -2634,15 +2613,13 @@
             28,
             0
           ]
-        },
-        "enum": "RESETEFFECT"
+        }
       },
       {
         "name": "UPDT",
         "description": "Timer X Update reset",
         "bit_offset": 1,
-        "bit_size": 1,
-        "enum": "RESETEFFECT"
+        "bit_size": 1
       },
       {
         "name": "CMP",
@@ -2652,15 +2629,13 @@
         "array": {
           "len": 2,
           "stride": 1
-        },
-        "enum": "RESETEFFECT"
+        }
       },
       {
         "name": "MSTPER",
         "description": "Master timer Period",
         "bit_offset": 4,
-        "bit_size": 1,
-        "enum": "RESETEFFECT"
+        "bit_size": 1
       },
       {
         "name": "MSTCMP",
@@ -2670,8 +2645,7 @@
         "array": {
           "len": 4,
           "stride": 1
-        },
-        "enum": "RESETEFFECT"
+        }
       },
       {
         "name": "EXTEVNT",
@@ -2681,8 +2655,7 @@
         "array": {
           "len": 10,
           "stride": 1
-        },
-        "enum": "RESETEFFECT"
+        }
       },
       {
         "name": "TCMP2",
@@ -2697,8 +2670,7 @@
             9,
             11
           ]
-        },
-        "enum": "RESETEFFECT"
+        }
       },
       {
         "name": "TCMP4",
@@ -2712,8 +2684,7 @@
             6,
             9
           ]
-        },
-        "enum": "RESETEFFECT"
+        }
       }
     ]
   },
@@ -2724,22 +2695,19 @@
         "name": "SRT",
         "description": "Software Reset trigger",
         "bit_offset": 0,
-        "bit_size": 1,
-        "enum": "INACTIVEEFFECT"
+        "bit_size": 1
       },
       {
         "name": "RESYNC",
         "description": "Timer X resynchronizaton",
         "bit_offset": 1,
-        "bit_size": 1,
-        "enum": "INACTIVEEFFECT"
+        "bit_size": 1
       },
       {
         "name": "PER",
         "description": "Timer X Period",
         "bit_offset": 2,
-        "bit_size": 1,
-        "enum": "INACTIVEEFFECT"
+        "bit_size": 1
       },
       {
         "name": "CMP",
@@ -2749,15 +2717,13 @@
         "array": {
           "len": 4,
           "stride": 1
-        },
-        "enum": "INACTIVEEFFECT"
+        }
       },
       {
         "name": "MSTPER",
         "description": "Master Period",
         "bit_offset": 7,
-        "bit_size": 1,
-        "enum": "INACTIVEEFFECT"
+        "bit_size": 1
       },
       {
         "name": "MSTCMP",
@@ -2767,8 +2733,7 @@
         "array": {
           "len": 4,
           "stride": 1
-        },
-        "enum": "INACTIVEEFFECT"
+        }
       },
       {
         "name": "TIMEVNT",
@@ -2778,8 +2743,7 @@
         "array": {
           "len": 9,
           "stride": 1
-        },
-        "enum": "INACTIVEEFFECT"
+        }
       },
       {
         "name": "EXTEVNT",
@@ -2789,15 +2753,13 @@
         "array": {
           "len": 10,
           "stride": 1
-        },
-        "enum": "INACTIVEEFFECT"
+        }
       },
       {
         "name": "UPDATE",
         "description": "Registers update (transfer preload to active)",
         "bit_offset": 31,
-        "bit_size": 1,
-        "enum": "INACTIVEEFFECT"
+        "bit_size": 1
       }
     ]
   },
@@ -2808,22 +2770,19 @@
         "name": "SST",
         "description": "Software Set trigger",
         "bit_offset": 0,
-        "bit_size": 1,
-        "enum": "ACTIVEEFFECT"
+        "bit_size": 1
       },
       {
         "name": "RESYNC",
         "description": "Timer X resynchronizaton",
         "bit_offset": 1,
-        "bit_size": 1,
-        "enum": "ACTIVEEFFECT"
+        "bit_size": 1
       },
       {
         "name": "PER",
         "description": "Timer X Period",
         "bit_offset": 2,
-        "bit_size": 1,
-        "enum": "ACTIVEEFFECT"
+        "bit_size": 1
       },
       {
         "name": "CMP",
@@ -2833,15 +2792,13 @@
         "array": {
           "len": 4,
           "stride": 1
-        },
-        "enum": "ACTIVEEFFECT"
+        }
       },
       {
         "name": "MSTPER",
         "description": "Master Period",
         "bit_offset": 7,
-        "bit_size": 1,
-        "enum": "ACTIVEEFFECT"
+        "bit_size": 1
       },
       {
         "name": "MSTCMPX",
@@ -2851,8 +2808,7 @@
         "array": {
           "len": 4,
           "stride": 1
-        },
-        "enum": "ACTIVEEFFECT"
+        }
       },
       {
         "name": "TIMEVNT",
@@ -2862,8 +2818,7 @@
         "array": {
           "len": 9,
           "stride": 1
-        },
-        "enum": "ACTIVEEFFECT"
+        }
       },
       {
         "name": "EXTEVNT",
@@ -2873,30 +2828,13 @@
         "array": {
           "len": 10,
           "stride": 1
-        },
-        "enum": "ACTIVEEFFECT"
+        }
       },
       {
         "name": "UPDATE",
         "description": "Registers update (transfer preload to active)",
         "bit_offset": 31,
-        "bit_size": 1,
-        "enum": "ACTIVEEFFECT"
-      }
-    ]
-  },
-  "enum/ACTIVEEFFECT": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NoEffect",
-        "description": "Timer event has no effect",
-        "value": 0
-      },
-      {
-        "name": "SetActive",
-        "description": "Timer event forces the output to its active state",
-        "value": 1
+        "bit_size": 1
       }
     ]
   },
@@ -2917,21 +2855,6 @@
         "name": "Rollover",
         "description": "Update done on master timer roll-over following a DMA burst transfer completion",
         "value": 2
-      }
-    ]
-  },
-  "enum/CAPTUREEFFECT": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NoEffect",
-        "description": "Timer event has no effect",
-        "value": 0
-      },
-      {
-        "name": "TriggerCapture",
-        "description": "Timer event triggers capture",
-        "value": 1
       }
     ]
   },
@@ -3155,36 +3078,6 @@
       }
     ]
   },
-  "enum/FLTEN": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Ignored",
-        "description": "Fault input ignored",
-        "value": 0
-      },
-      {
-        "name": "Active",
-        "description": "Fault input is active and can disable HRTIM outputs",
-        "value": 1
-      }
-    ]
-  },
-  "enum/INACTIVEEFFECT": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NoEffect",
-        "description": "Timer event has no effect",
-        "value": 0
-      },
-      {
-        "name": "SetInactive",
-        "description": "Timer event forces the output to its inactive state",
-        "value": 1
-      }
-    ]
-  },
   "enum/IPPSTAT": {
     "bit_size": 1,
     "variants": [
@@ -3200,21 +3093,6 @@
       }
     ]
   },
-  "enum/OUTPUTSTATE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Inactive",
-        "description": "Output is or was inactive",
-        "value": 0
-      },
-      {
-        "name": "Active",
-        "description": "Output is or was active",
-        "value": 1
-      }
-    ]
-  },
   "enum/POL": {
     "bit_size": 1,
     "variants": [
@@ -3226,21 +3104,6 @@
       {
         "name": "ActiveLow",
         "description": "Negative polarity (output active low)",
-        "value": 1
-      }
-    ]
-  },
-  "enum/RESETEFFECT": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NoEffect",
-        "description": "Timer Y compare Z event has no effect",
-        "value": 0
-      },
-      {
-        "name": "ResetCounter",
-        "description": "Timer X counter is reset upon timer Y compare Z event",
         "value": 1
       }
     ]
@@ -3315,21 +3178,6 @@
       }
     ]
   },
-  "enum/SYNCRST": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Synchronization event has no effect on Timer x",
-        "value": 0
-      },
-      {
-        "name": "Reset",
-        "description": "Synchronization event resets Timer x",
-        "value": 1
-      }
-    ]
-  },
   "enum/SYNCSRC": {
     "bit_size": 2,
     "variants": [
@@ -3352,36 +3200,6 @@
         "name": "TimerACompare1",
         "description": "Timer A Compare 1 event",
         "value": 3
-      }
-    ]
-  },
-  "enum/SYNCSTRT": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Synchronization event has no effect on Timer x",
-        "value": 0
-      },
-      {
-        "name": "Start",
-        "description": "Synchronization event starts Timer x",
-        "value": 1
-      }
-    ]
-  },
-  "enum/TIMAISR_DLYPRT": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Inactive",
-        "description": "Not in delayed idle or balanced idle mode",
-        "value": 0
-      },
-      {
-        "name": "Active",
-        "description": "Delayed idle or balanced idle mode entry",
-        "value": 1
       }
     ]
   },

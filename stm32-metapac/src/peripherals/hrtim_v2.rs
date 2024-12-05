@@ -2378,188 +2378,188 @@ pub mod regs {
     impl Timxccr {
         #[doc = "Software Capture"]
         #[inline(always)]
-        pub const fn swcpt(&self) -> super::vals::Captureeffect {
+        pub const fn swcpt(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Captureeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Software Capture"]
         #[inline(always)]
-        pub fn set_swcpt(&mut self, val: super::vals::Captureeffect) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_swcpt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Update Capture"]
         #[inline(always)]
-        pub const fn updcpt(&self) -> super::vals::Captureeffect {
+        pub const fn updcpt(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Captureeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Update Capture"]
         #[inline(always)]
-        pub fn set_updcpt(&mut self, val: super::vals::Captureeffect) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_updcpt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "External Event X Capture"]
         #[inline(always)]
-        pub const fn exevcpt(&self, n: usize) -> super::vals::Captureeffect {
+        pub const fn exevcpt(&self, n: usize) -> bool {
             assert!(n < 10usize);
             let offs = 2usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Captureeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "External Event X Capture"]
         #[inline(always)]
-        pub fn set_exevcpt(&mut self, n: usize, val: super::vals::Captureeffect) {
+        pub fn set_exevcpt(&mut self, n: usize, val: bool) {
             assert!(n < 10usize);
             let offs = 2usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Timer X output Set"]
         #[inline(always)]
-        pub const fn txset(&self) -> super::vals::Captureeffect {
+        pub const fn txset(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
-            super::vals::Captureeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer X output Set"]
         #[inline(always)]
-        pub fn set_txset(&mut self, val: super::vals::Captureeffect) {
-            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+        pub fn set_txset(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Timer X output Reset"]
         #[inline(always)]
-        pub const fn txrst(&self) -> super::vals::Captureeffect {
+        pub const fn txrst(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
-            super::vals::Captureeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer X output Reset"]
         #[inline(always)]
-        pub fn set_txrst(&mut self, val: super::vals::Captureeffect) {
-            self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+        pub fn set_txrst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "Timer X Compare X"]
         #[inline(always)]
-        pub const fn txcmp(&self, n: usize) -> super::vals::Captureeffect {
+        pub const fn txcmp(&self, n: usize) -> bool {
             assert!(n < 2usize);
             let offs = 18usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Captureeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer X Compare X"]
         #[inline(always)]
-        pub fn set_txcmp(&mut self, n: usize, val: super::vals::Captureeffect) {
+        pub fn set_txcmp(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 18usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Timer Y output Set"]
         #[inline(always)]
-        pub const fn tyset(&self) -> super::vals::Captureeffect {
+        pub const fn tyset(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
-            super::vals::Captureeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer Y output Set"]
         #[inline(always)]
-        pub fn set_tyset(&mut self, val: super::vals::Captureeffect) {
-            self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+        pub fn set_tyset(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "Timer Y output Reset"]
         #[inline(always)]
-        pub const fn tyrst(&self) -> super::vals::Captureeffect {
+        pub const fn tyrst(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
-            super::vals::Captureeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer Y output Reset"]
         #[inline(always)]
-        pub fn set_tyrst(&mut self, val: super::vals::Captureeffect) {
-            self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+        pub fn set_tyrst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "Timer Y Compare X"]
         #[inline(always)]
-        pub const fn tycmp(&self, n: usize) -> super::vals::Captureeffect {
+        pub const fn tycmp(&self, n: usize) -> bool {
             assert!(n < 2usize);
             let offs = 22usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Captureeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer Y Compare X"]
         #[inline(always)]
-        pub fn set_tycmp(&mut self, n: usize, val: super::vals::Captureeffect) {
+        pub fn set_tycmp(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 22usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Timer Z output Set"]
         #[inline(always)]
-        pub const fn tzset(&self) -> super::vals::Captureeffect {
+        pub const fn tzset(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
-            super::vals::Captureeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer Z output Set"]
         #[inline(always)]
-        pub fn set_tzset(&mut self, val: super::vals::Captureeffect) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+        pub fn set_tzset(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "Timer Z output Reset"]
         #[inline(always)]
-        pub const fn tzrst(&self) -> super::vals::Captureeffect {
+        pub const fn tzrst(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
-            super::vals::Captureeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer Z output Reset"]
         #[inline(always)]
-        pub fn set_tzrst(&mut self, val: super::vals::Captureeffect) {
-            self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+        pub fn set_tzrst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
         #[doc = "Timer Z Compare X"]
         #[inline(always)]
-        pub const fn tzcmp(&self, n: usize) -> super::vals::Captureeffect {
+        pub const fn tzcmp(&self, n: usize) -> bool {
             assert!(n < 2usize);
             let offs = 26usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Captureeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer Z Compare X"]
         #[inline(always)]
-        pub fn set_tzcmp(&mut self, n: usize, val: super::vals::Captureeffect) {
+        pub fn set_tzcmp(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 26usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Timer T output Set"]
         #[inline(always)]
-        pub const fn ttset(&self) -> super::vals::Captureeffect {
+        pub const fn ttset(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
-            super::vals::Captureeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer T output Set"]
         #[inline(always)]
-        pub fn set_ttset(&mut self, val: super::vals::Captureeffect) {
-            self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+        pub fn set_ttset(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "Timer T output Reset"]
         #[inline(always)]
-        pub const fn ttrst(&self) -> super::vals::Captureeffect {
+        pub const fn ttrst(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
-            super::vals::Captureeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer T output Reset"]
         #[inline(always)]
-        pub fn set_ttrst(&mut self, val: super::vals::Captureeffect) {
-            self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+        pub fn set_ttrst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "Timer T Compare X"]
         #[inline(always)]
-        pub const fn ttcmp(&self, n: usize) -> super::vals::Captureeffect {
+        pub const fn ttcmp(&self, n: usize) -> bool {
             assert!(n < 2usize);
             let offs = 30usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Captureeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer T Compare X"]
         #[inline(always)]
-        pub fn set_ttcmp(&mut self, n: usize, val: super::vals::Captureeffect) {
+        pub fn set_ttcmp(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 30usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
     impl Default for Timxccr {
@@ -2778,25 +2778,25 @@ pub mod regs {
         }
         #[doc = "Synchronization Resets Timer X"]
         #[inline(always)]
-        pub const fn syncrst(&self) -> super::vals::Syncrst {
+        pub const fn syncrst(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
-            super::vals::Syncrst::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Synchronization Resets Timer X"]
         #[inline(always)]
-        pub fn set_syncrst(&mut self, val: super::vals::Syncrst) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+        pub fn set_syncrst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "Synchronization Starts Timer X"]
         #[inline(always)]
-        pub const fn syncstrt(&self) -> super::vals::Syncstrt {
+        pub const fn syncstrt(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
-            super::vals::Syncstrt::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Synchronization Starts Timer X"]
         #[inline(always)]
-        pub fn set_syncstrt(&mut self, val: super::vals::Syncstrt) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+        pub fn set_syncstrt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Delayed CMP2 mode"]
         #[inline(always)]
@@ -3328,18 +3328,18 @@ pub mod regs {
     impl Timxflt {
         #[doc = "Fault X enable"]
         #[inline(always)]
-        pub const fn flten(&self, n: usize) -> super::vals::Flten {
+        pub const fn flten(&self, n: usize) -> bool {
             assert!(n < 5usize);
             let offs = 0usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Flten::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Fault X enable"]
         #[inline(always)]
-        pub fn set_flten(&mut self, n: usize, val: super::vals::Flten) {
+        pub fn set_flten(&mut self, n: usize, val: bool) {
             assert!(n < 5usize);
             let offs = 0usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Fault sources Lock"]
         #[inline(always)]
@@ -3575,14 +3575,14 @@ pub mod regs {
         }
         #[doc = "Delayed Protection Flag"]
         #[inline(always)]
-        pub const fn dlyprt(&self) -> super::vals::TimaisrDlyprt {
+        pub const fn dlyprt(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
-            super::vals::TimaisrDlyprt::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Delayed Protection Flag"]
         #[inline(always)]
-        pub fn set_dlyprt(&mut self, val: super::vals::TimaisrDlyprt) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+        pub fn set_dlyprt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Current Push Pull Status"]
         #[inline(always)]
@@ -3608,33 +3608,33 @@ pub mod regs {
         }
         #[doc = "Output X State"]
         #[inline(always)]
-        pub const fn ostat(&self, n: usize) -> super::vals::Outputstate {
+        pub const fn ostat(&self, n: usize) -> bool {
             assert!(n < 2usize);
             let offs = 18usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Outputstate::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Output X State"]
         #[inline(always)]
-        pub fn set_ostat(&mut self, n: usize, val: super::vals::Outputstate) {
+        pub fn set_ostat(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 18usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Output X Copy"]
         #[inline(always)]
-        pub const fn ocpy(&self, n: usize) -> super::vals::Outputstate {
+        pub const fn ocpy(&self, n: usize) -> bool {
             assert!(n < 2usize);
             let offs = 20usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Outputstate::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Output X Copy"]
         #[inline(always)]
-        pub fn set_ocpy(&mut self, n: usize, val: super::vals::Outputstate) {
+        pub fn set_ocpy(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 20usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
     impl Default for Timxisr {
@@ -3831,115 +3831,115 @@ pub mod regs {
     impl Timxrst {
         #[doc = "Timer X compare 1 event"]
         #[inline(always)]
-        pub const fn tcmp1(&self, n: usize) -> super::vals::Reseteffect {
+        pub const fn tcmp1(&self, n: usize) -> bool {
             assert!(n < 5usize);
             let offs = 0usize + ([19usize, 22usize, 25usize, 28usize, 0usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Reseteffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer X compare 1 event"]
         #[inline(always)]
-        pub fn set_tcmp1(&mut self, n: usize, val: super::vals::Reseteffect) {
+        pub fn set_tcmp1(&mut self, n: usize, val: bool) {
             assert!(n < 5usize);
             let offs = 0usize + ([19usize, 22usize, 25usize, 28usize, 0usize][n] as usize);
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Timer X Update reset"]
         #[inline(always)]
-        pub const fn updt(&self) -> super::vals::Reseteffect {
+        pub const fn updt(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Reseteffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer X Update reset"]
         #[inline(always)]
-        pub fn set_updt(&mut self, val: super::vals::Reseteffect) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_updt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Timer X compare X reset"]
         #[inline(always)]
-        pub const fn cmp(&self, n: usize) -> super::vals::Reseteffect {
+        pub const fn cmp(&self, n: usize) -> bool {
             assert!(n < 2usize);
             let offs = 2usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Reseteffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer X compare X reset"]
         #[inline(always)]
-        pub fn set_cmp(&mut self, n: usize, val: super::vals::Reseteffect) {
+        pub fn set_cmp(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 2usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Master timer Period"]
         #[inline(always)]
-        pub const fn mstper(&self) -> super::vals::Reseteffect {
+        pub const fn mstper(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
-            super::vals::Reseteffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Master timer Period"]
         #[inline(always)]
-        pub fn set_mstper(&mut self, val: super::vals::Reseteffect) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        pub fn set_mstper(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Master compare X"]
         #[inline(always)]
-        pub const fn mstcmp(&self, n: usize) -> super::vals::Reseteffect {
+        pub const fn mstcmp(&self, n: usize) -> bool {
             assert!(n < 4usize);
             let offs = 5usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Reseteffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Master compare X"]
         #[inline(always)]
-        pub fn set_mstcmp(&mut self, n: usize, val: super::vals::Reseteffect) {
+        pub fn set_mstcmp(&mut self, n: usize, val: bool) {
             assert!(n < 4usize);
             let offs = 5usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "External Event X"]
         #[inline(always)]
-        pub const fn extevnt(&self, n: usize) -> super::vals::Reseteffect {
+        pub const fn extevnt(&self, n: usize) -> bool {
             assert!(n < 10usize);
             let offs = 9usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Reseteffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "External Event X"]
         #[inline(always)]
-        pub fn set_extevnt(&mut self, n: usize, val: super::vals::Reseteffect) {
+        pub fn set_extevnt(&mut self, n: usize, val: bool) {
             assert!(n < 10usize);
             let offs = 9usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Timer X compare 2 event"]
         #[inline(always)]
-        pub const fn tcmp2(&self, n: usize) -> super::vals::Reseteffect {
+        pub const fn tcmp2(&self, n: usize) -> bool {
             assert!(n < 5usize);
             let offs = 20usize + ([0usize, 3usize, 6usize, 9usize, 11usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Reseteffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer X compare 2 event"]
         #[inline(always)]
-        pub fn set_tcmp2(&mut self, n: usize, val: super::vals::Reseteffect) {
+        pub fn set_tcmp2(&mut self, n: usize, val: bool) {
             assert!(n < 5usize);
             let offs = 20usize + ([0usize, 3usize, 6usize, 9usize, 11usize][n] as usize);
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Timer X compare 4 event"]
         #[inline(always)]
-        pub const fn tcmp4(&self, n: usize) -> super::vals::Reseteffect {
+        pub const fn tcmp4(&self, n: usize) -> bool {
             assert!(n < 4usize);
             let offs = 21usize + ([0usize, 3usize, 6usize, 9usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Reseteffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer X compare 4 event"]
         #[inline(always)]
-        pub fn set_tcmp4(&mut self, n: usize, val: super::vals::Reseteffect) {
+        pub fn set_tcmp4(&mut self, n: usize, val: bool) {
             assert!(n < 4usize);
             let offs = 21usize + ([0usize, 3usize, 6usize, 9usize][n] as usize);
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
     impl Default for Timxrst {
@@ -3955,118 +3955,118 @@ pub mod regs {
     impl Timxrstr {
         #[doc = "Software Reset trigger"]
         #[inline(always)]
-        pub const fn srt(&self) -> super::vals::Inactiveeffect {
+        pub const fn srt(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Inactiveeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Software Reset trigger"]
         #[inline(always)]
-        pub fn set_srt(&mut self, val: super::vals::Inactiveeffect) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_srt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Timer X resynchronizaton"]
         #[inline(always)]
-        pub const fn resync(&self) -> super::vals::Inactiveeffect {
+        pub const fn resync(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Inactiveeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer X resynchronizaton"]
         #[inline(always)]
-        pub fn set_resync(&mut self, val: super::vals::Inactiveeffect) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_resync(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Timer X Period"]
         #[inline(always)]
-        pub const fn per(&self) -> super::vals::Inactiveeffect {
+        pub const fn per(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Inactiveeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer X Period"]
         #[inline(always)]
-        pub fn set_per(&mut self, val: super::vals::Inactiveeffect) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        pub fn set_per(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Timer X compare X"]
         #[inline(always)]
-        pub const fn cmp(&self, n: usize) -> super::vals::Inactiveeffect {
+        pub const fn cmp(&self, n: usize) -> bool {
             assert!(n < 4usize);
             let offs = 3usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Inactiveeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer X compare X"]
         #[inline(always)]
-        pub fn set_cmp(&mut self, n: usize, val: super::vals::Inactiveeffect) {
+        pub fn set_cmp(&mut self, n: usize, val: bool) {
             assert!(n < 4usize);
             let offs = 3usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Master Period"]
         #[inline(always)]
-        pub const fn mstper(&self) -> super::vals::Inactiveeffect {
+        pub const fn mstper(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Inactiveeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Master Period"]
         #[inline(always)]
-        pub fn set_mstper(&mut self, val: super::vals::Inactiveeffect) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        pub fn set_mstper(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Master Compare X"]
         #[inline(always)]
-        pub const fn mstcmp(&self, n: usize) -> super::vals::Inactiveeffect {
+        pub const fn mstcmp(&self, n: usize) -> bool {
             assert!(n < 4usize);
             let offs = 8usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Inactiveeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Master Compare X"]
         #[inline(always)]
-        pub fn set_mstcmp(&mut self, n: usize, val: super::vals::Inactiveeffect) {
+        pub fn set_mstcmp(&mut self, n: usize, val: bool) {
             assert!(n < 4usize);
             let offs = 8usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Timer Event X"]
         #[inline(always)]
-        pub const fn timevnt(&self, n: usize) -> super::vals::Inactiveeffect {
+        pub const fn timevnt(&self, n: usize) -> bool {
             assert!(n < 9usize);
             let offs = 12usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Inactiveeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer Event X"]
         #[inline(always)]
-        pub fn set_timevnt(&mut self, n: usize, val: super::vals::Inactiveeffect) {
+        pub fn set_timevnt(&mut self, n: usize, val: bool) {
             assert!(n < 9usize);
             let offs = 12usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "External Event X"]
         #[inline(always)]
-        pub const fn extevnt(&self, n: usize) -> super::vals::Inactiveeffect {
+        pub const fn extevnt(&self, n: usize) -> bool {
             assert!(n < 10usize);
             let offs = 21usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Inactiveeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "External Event X"]
         #[inline(always)]
-        pub fn set_extevnt(&mut self, n: usize, val: super::vals::Inactiveeffect) {
+        pub fn set_extevnt(&mut self, n: usize, val: bool) {
             assert!(n < 10usize);
             let offs = 21usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Registers update (transfer preload to active)"]
         #[inline(always)]
-        pub const fn update(&self) -> super::vals::Inactiveeffect {
+        pub const fn update(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::Inactiveeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Registers update (transfer preload to active)"]
         #[inline(always)]
-        pub fn set_update(&mut self, val: super::vals::Inactiveeffect) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+        pub fn set_update(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
     impl Default for Timxrstr {
@@ -4082,118 +4082,118 @@ pub mod regs {
     impl Timxsetr {
         #[doc = "Software Set trigger"]
         #[inline(always)]
-        pub const fn sst(&self) -> super::vals::Activeeffect {
+        pub const fn sst(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Activeeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Software Set trigger"]
         #[inline(always)]
-        pub fn set_sst(&mut self, val: super::vals::Activeeffect) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_sst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Timer X resynchronizaton"]
         #[inline(always)]
-        pub const fn resync(&self) -> super::vals::Activeeffect {
+        pub const fn resync(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Activeeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer X resynchronizaton"]
         #[inline(always)]
-        pub fn set_resync(&mut self, val: super::vals::Activeeffect) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_resync(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Timer X Period"]
         #[inline(always)]
-        pub const fn per(&self) -> super::vals::Activeeffect {
+        pub const fn per(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Activeeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer X Period"]
         #[inline(always)]
-        pub fn set_per(&mut self, val: super::vals::Activeeffect) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        pub fn set_per(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Timer X compare X"]
         #[inline(always)]
-        pub const fn cmp(&self, n: usize) -> super::vals::Activeeffect {
+        pub const fn cmp(&self, n: usize) -> bool {
             assert!(n < 4usize);
             let offs = 3usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Activeeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer X compare X"]
         #[inline(always)]
-        pub fn set_cmp(&mut self, n: usize, val: super::vals::Activeeffect) {
+        pub fn set_cmp(&mut self, n: usize, val: bool) {
             assert!(n < 4usize);
             let offs = 3usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Master Period"]
         #[inline(always)]
-        pub const fn mstper(&self) -> super::vals::Activeeffect {
+        pub const fn mstper(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Activeeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Master Period"]
         #[inline(always)]
-        pub fn set_mstper(&mut self, val: super::vals::Activeeffect) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        pub fn set_mstper(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Master Compare X"]
         #[inline(always)]
-        pub const fn mstcmpx(&self, n: usize) -> super::vals::Activeeffect {
+        pub const fn mstcmpx(&self, n: usize) -> bool {
             assert!(n < 4usize);
             let offs = 8usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Activeeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Master Compare X"]
         #[inline(always)]
-        pub fn set_mstcmpx(&mut self, n: usize, val: super::vals::Activeeffect) {
+        pub fn set_mstcmpx(&mut self, n: usize, val: bool) {
             assert!(n < 4usize);
             let offs = 8usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Timer Event X"]
         #[inline(always)]
-        pub const fn timevnt(&self, n: usize) -> super::vals::Activeeffect {
+        pub const fn timevnt(&self, n: usize) -> bool {
             assert!(n < 9usize);
             let offs = 12usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Activeeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Timer Event X"]
         #[inline(always)]
-        pub fn set_timevnt(&mut self, n: usize, val: super::vals::Activeeffect) {
+        pub fn set_timevnt(&mut self, n: usize, val: bool) {
             assert!(n < 9usize);
             let offs = 12usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "External Event X"]
         #[inline(always)]
-        pub const fn extevnt(&self, n: usize) -> super::vals::Activeeffect {
+        pub const fn extevnt(&self, n: usize) -> bool {
             assert!(n < 10usize);
             let offs = 21usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Activeeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "External Event X"]
         #[inline(always)]
-        pub fn set_extevnt(&mut self, n: usize, val: super::vals::Activeeffect) {
+        pub fn set_extevnt(&mut self, n: usize, val: bool) {
             assert!(n < 10usize);
             let offs = 21usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Registers update (transfer preload to active)"]
         #[inline(always)]
-        pub const fn update(&self) -> super::vals::Activeeffect {
+        pub const fn update(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::Activeeffect::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Registers update (transfer preload to active)"]
         #[inline(always)]
-        pub fn set_update(&mut self, val: super::vals::Activeeffect) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+        pub fn set_update(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
     impl Default for Timxsetr {
@@ -4204,36 +4204,6 @@ pub mod regs {
     }
 }
 pub mod vals {
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Activeeffect {
-        #[doc = "Timer event has no effect"]
-        NOEFFECT = 0x0,
-        #[doc = "Timer event forces the output to its active state"]
-        SETACTIVE = 0x01,
-    }
-    impl Activeeffect {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Activeeffect {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Activeeffect {
-        #[inline(always)]
-        fn from(val: u8) -> Activeeffect {
-            Activeeffect::from_bits(val)
-        }
-    }
-    impl From<Activeeffect> for u8 {
-        #[inline(always)]
-        fn from(val: Activeeffect) -> u8 {
-            Activeeffect::to_bits(val)
-        }
-    }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Brstdma {
@@ -4265,36 +4235,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Brstdma) -> u8 {
             Brstdma::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Captureeffect {
-        #[doc = "Timer event has no effect"]
-        NOEFFECT = 0x0,
-        #[doc = "Timer event triggers capture"]
-        TRIGGERCAPTURE = 0x01,
-    }
-    impl Captureeffect {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Captureeffect {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Captureeffect {
-        #[inline(always)]
-        fn from(val: u8) -> Captureeffect {
-            Captureeffect::from_bits(val)
-        }
-    }
-    impl From<Captureeffect> for u8 {
-        #[inline(always)]
-        fn from(val: Captureeffect) -> u8 {
-            Captureeffect::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -4531,66 +4471,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Flten {
-        #[doc = "Fault input ignored"]
-        IGNORED = 0x0,
-        #[doc = "Fault input is active and can disable HRTIM outputs"]
-        ACTIVE = 0x01,
-    }
-    impl Flten {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Flten {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Flten {
-        #[inline(always)]
-        fn from(val: u8) -> Flten {
-            Flten::from_bits(val)
-        }
-    }
-    impl From<Flten> for u8 {
-        #[inline(always)]
-        fn from(val: Flten) -> u8 {
-            Flten::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Inactiveeffect {
-        #[doc = "Timer event has no effect"]
-        NOEFFECT = 0x0,
-        #[doc = "Timer event forces the output to its inactive state"]
-        SETINACTIVE = 0x01,
-    }
-    impl Inactiveeffect {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Inactiveeffect {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Inactiveeffect {
-        #[inline(always)]
-        fn from(val: u8) -> Inactiveeffect {
-            Inactiveeffect::from_bits(val)
-        }
-    }
-    impl From<Inactiveeffect> for u8 {
-        #[inline(always)]
-        fn from(val: Inactiveeffect) -> u8 {
-            Inactiveeffect::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ippstat {
         #[doc = "Protection occurred when the output 1 was active and output 2 forced inactive"]
         OUTPUT1ACTIVE = 0x0,
@@ -4621,36 +4501,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Outputstate {
-        #[doc = "Output is or was inactive"]
-        INACTIVE = 0x0,
-        #[doc = "Output is or was active"]
-        ACTIVE = 0x01,
-    }
-    impl Outputstate {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Outputstate {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Outputstate {
-        #[inline(always)]
-        fn from(val: u8) -> Outputstate {
-            Outputstate::from_bits(val)
-        }
-    }
-    impl From<Outputstate> for u8 {
-        #[inline(always)]
-        fn from(val: Outputstate) -> u8 {
-            Outputstate::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pol {
         #[doc = "Positive polarity (output active high)"]
         ACTIVEHIGH = 0x0,
@@ -4677,36 +4527,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Pol) -> u8 {
             Pol::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Reseteffect {
-        #[doc = "Timer Y compare Z event has no effect"]
-        NOEFFECT = 0x0,
-        #[doc = "Timer X counter is reset upon timer Y compare Z event"]
-        RESETCOUNTER = 0x01,
-    }
-    impl Reseteffect {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Reseteffect {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Reseteffect {
-        #[inline(always)]
-        fn from(val: u8) -> Reseteffect {
-            Reseteffect::from_bits(val)
-        }
-    }
-    impl From<Reseteffect> for u8 {
-        #[inline(always)]
-        fn from(val: Reseteffect) -> u8 {
-            Reseteffect::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -4837,36 +4657,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Syncrst {
-        #[doc = "Synchronization event has no effect on Timer x"]
-        DISABLED = 0x0,
-        #[doc = "Synchronization event resets Timer x"]
-        RESET = 0x01,
-    }
-    impl Syncrst {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Syncrst {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Syncrst {
-        #[inline(always)]
-        fn from(val: u8) -> Syncrst {
-            Syncrst::from_bits(val)
-        }
-    }
-    impl From<Syncrst> for u8 {
-        #[inline(always)]
-        fn from(val: Syncrst) -> u8 {
-            Syncrst::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Syncsrc {
         #[doc = "Master timer Start"]
         MASTERSTART = 0x0,
@@ -4897,66 +4687,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Syncsrc) -> u8 {
             Syncsrc::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Syncstrt {
-        #[doc = "Synchronization event has no effect on Timer x"]
-        DISABLED = 0x0,
-        #[doc = "Synchronization event starts Timer x"]
-        START = 0x01,
-    }
-    impl Syncstrt {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Syncstrt {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Syncstrt {
-        #[inline(always)]
-        fn from(val: u8) -> Syncstrt {
-            Syncstrt::from_bits(val)
-        }
-    }
-    impl From<Syncstrt> for u8 {
-        #[inline(always)]
-        fn from(val: Syncstrt) -> u8 {
-            Syncstrt::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum TimaisrDlyprt {
-        #[doc = "Not in delayed idle or balanced idle mode"]
-        INACTIVE = 0x0,
-        #[doc = "Delayed idle or balanced idle mode entry"]
-        ACTIVE = 0x01,
-    }
-    impl TimaisrDlyprt {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> TimaisrDlyprt {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for TimaisrDlyprt {
-        #[inline(always)]
-        fn from(val: u8) -> TimaisrDlyprt {
-            TimaisrDlyprt::from_bits(val)
-        }
-    }
-    impl From<TimaisrDlyprt> for u8 {
-        #[inline(always)]
-        fn from(val: TimaisrDlyprt) -> u8 {
-            TimaisrDlyprt::to_bits(val)
         }
     }
     #[repr(u8)]

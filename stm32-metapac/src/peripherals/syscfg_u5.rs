@@ -580,14 +580,14 @@ pub mod regs {
         }
         #[doc = "Reference clock frequency selection"]
         #[inline(always)]
-        pub const fn clksel(&self) -> u8 {
+        pub const fn clksel(&self) -> super::vals::Usbrefcksel {
             let val = (self.0 >> 2usize) & 0x0f;
-            val as u8
+            super::vals::Usbrefcksel::from_bits(val as u8)
         }
         #[doc = "Reference clock frequency selection"]
         #[inline(always)]
-        pub fn set_clksel(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 2usize)) | (((val as u32) & 0x0f) << 2usize);
+        pub fn set_clksel(&mut self, val: super::vals::Usbrefcksel) {
+            self.0 = (self.0 & !(0x0f << 2usize)) | (((val.to_bits() as u32) & 0x0f) << 2usize);
         }
     }
     impl Default for Otghsphycr {
@@ -741,6 +741,56 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ucpdr {
             Ucpdr(0)
+        }
+    }
+}
+pub mod vals {
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Usbrefcksel {
+        _RESERVED_0 = 0x0,
+        _RESERVED_1 = 0x01,
+        _RESERVED_2 = 0x02,
+        #[doc = "The kernel clock frequency provided to the OTG_HS PHY is 16 MHz."]
+        MHZ16 = 0x03,
+        _RESERVED_4 = 0x04,
+        _RESERVED_5 = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+        #[doc = "The kernel clock frequency provided to the OTG_HS PHY is 19.2 MHz."]
+        MHZ19_2 = 0x08,
+        #[doc = "The kernel clock frequency provided to the OTG_HS PHY is 20MHz."]
+        MHZ20 = 0x09,
+        #[doc = "The kernel clock frequency provided to the OTG_HS PHY is 24 MHz (default after reset)."]
+        MHZ24 = 0x0a,
+        #[doc = "The kernel clock frequency provided to the OTG_HS PHY is 32 MHz."]
+        MHZ32 = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        #[doc = "The kernel clock frequency provided to the OTG_HS PHY is 26 MHz."]
+        MHZ26 = 0x0e,
+        _RESERVED_f = 0x0f,
+    }
+    impl Usbrefcksel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Usbrefcksel {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Usbrefcksel {
+        #[inline(always)]
+        fn from(val: u8) -> Usbrefcksel {
+            Usbrefcksel::from_bits(val)
+        }
+    }
+    impl From<Usbrefcksel> for u8 {
+        #[inline(always)]
+        fn from(val: Usbrefcksel) -> u8 {
+            Usbrefcksel::to_bits(val)
         }
     }
 }

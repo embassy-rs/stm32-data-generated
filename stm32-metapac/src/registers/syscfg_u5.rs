@@ -517,7 +517,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 4,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Usbrefcksel"),
                 },
             ],
         },
@@ -624,5 +624,43 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
     ],
-    enums: &[],
+    enums: &[Enum {
+        name: "Usbrefcksel",
+        description: None,
+        bit_size: 4,
+        variants: &[
+            EnumVariant {
+                name: "MHZ16",
+                description: Some("The kernel clock frequency provided to the OTG_HS PHY is 16 MHz."),
+                value: 3,
+            },
+            EnumVariant {
+                name: "MHZ19_2",
+                description: Some("The kernel clock frequency provided to the OTG_HS PHY is 19.2 MHz."),
+                value: 8,
+            },
+            EnumVariant {
+                name: "MHZ20",
+                description: Some("The kernel clock frequency provided to the OTG_HS PHY is 20MHz."),
+                value: 9,
+            },
+            EnumVariant {
+                name: "MHZ24",
+                description: Some(
+                    "The kernel clock frequency provided to the OTG_HS PHY is 24 MHz (default after reset).",
+                ),
+                value: 10,
+            },
+            EnumVariant {
+                name: "MHZ32",
+                description: Some("The kernel clock frequency provided to the OTG_HS PHY is 32 MHz."),
+                value: 11,
+            },
+            EnumVariant {
+                name: "MHZ26",
+                description: Some("The kernel clock frequency provided to the OTG_HS PHY is 26 MHz."),
+                value: 14,
+            },
+        ],
+    }],
 };

@@ -345,7 +345,8 @@
         "name": "CLKSEL",
         "description": "Reference clock frequency selection",
         "bit_offset": 2,
-        "bit_size": 4
+        "bit_size": 4,
+        "enum": "USBREFCKSEL"
       }
     ]
   },
@@ -420,6 +421,41 @@
         "description": "CC2ENRXFILTER",
         "bit_offset": 1,
         "bit_size": 1
+      }
+    ]
+  },
+  "enum/USBREFCKSEL": {
+    "bit_size": 4,
+    "variants": [
+      {
+        "name": "Mhz16",
+        "description": "The kernel clock frequency provided to the OTG_HS PHY is 16 MHz.",
+        "value": 3
+      },
+      {
+        "name": "Mhz19_2",
+        "description": "The kernel clock frequency provided to the OTG_HS PHY is 19.2 MHz.",
+        "value": 8
+      },
+      {
+        "name": "Mhz20",
+        "description": "The kernel clock frequency provided to the OTG_HS PHY is 20MHz.",
+        "value": 9
+      },
+      {
+        "name": "Mhz24",
+        "description": "The kernel clock frequency provided to the OTG_HS PHY is 24 MHz (default after reset).",
+        "value": 10
+      },
+      {
+        "name": "Mhz32",
+        "description": "The kernel clock frequency provided to the OTG_HS PHY is 32 MHz.",
+        "value": 11
+      },
+      {
+        "name": "Mhz26",
+        "description": "The kernel clock frequency provided to the OTG_HS PHY is 26 MHz.",
+        "value": 14
       }
     ]
   }

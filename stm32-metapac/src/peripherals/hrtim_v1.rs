@@ -2842,60 +2842,20 @@ pub mod regs {
         pub fn set_rstu(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
-        #[doc = "Timer A update"]
+        #[doc = "Timer X update"]
         #[inline(always)]
-        pub const fn tau(&self) -> bool {
-            let val = (self.0 >> 19usize) & 0x01;
+        pub const fn tu(&self, n: usize) -> bool {
+            assert!(n < 5usize);
+            let offs = 19usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "Timer A update"]
+        #[doc = "Timer X update"]
         #[inline(always)]
-        pub fn set_tau(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
-        }
-        #[doc = "Timer B update"]
-        #[inline(always)]
-        pub const fn tbu(&self) -> bool {
-            let val = (self.0 >> 20usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Timer B update"]
-        #[inline(always)]
-        pub fn set_tbu(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
-        }
-        #[doc = "Timer C update"]
-        #[inline(always)]
-        pub const fn tcu(&self) -> bool {
-            let val = (self.0 >> 21usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Timer C update"]
-        #[inline(always)]
-        pub fn set_tcu(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
-        }
-        #[doc = "Timer D update"]
-        #[inline(always)]
-        pub const fn tdu(&self) -> bool {
-            let val = (self.0 >> 22usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Timer D update"]
-        #[inline(always)]
-        pub fn set_tdu(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
-        }
-        #[doc = "Timer E update"]
-        #[inline(always)]
-        pub const fn teu(&self) -> bool {
-            let val = (self.0 >> 23usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Timer E update"]
-        #[inline(always)]
-        pub fn set_teu(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        pub fn set_tu(&mut self, n: usize, val: bool) {
+            assert!(n < 5usize);
+            let offs = 19usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Master Timer update"]
         #[inline(always)]
@@ -3186,13 +3146,13 @@ pub mod regs {
         }
         #[doc = "Sign Deadtime Rising value"]
         #[inline(always)]
-        pub const fn sdtr(&self) -> super::vals::Sdtr {
+        pub const fn sdtr(&self) -> super::vals::Sdt {
             let val = (self.0 >> 9usize) & 0x01;
-            super::vals::Sdtr::from_bits(val as u8)
+            super::vals::Sdt::from_bits(val as u8)
         }
         #[doc = "Sign Deadtime Rising value"]
         #[inline(always)]
-        pub fn set_sdtr(&mut self, val: super::vals::Sdtr) {
+        pub fn set_sdtr(&mut self, val: super::vals::Sdt) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
         }
         #[doc = "Deadtime Prescaler"]
@@ -3241,13 +3201,13 @@ pub mod regs {
         }
         #[doc = "Sign Deadtime Falling value"]
         #[inline(always)]
-        pub const fn sdtf(&self) -> super::vals::Sdtf {
+        pub const fn sdtf(&self) -> super::vals::Sdt {
             let val = (self.0 >> 25usize) & 0x01;
-            super::vals::Sdtf::from_bits(val as u8)
+            super::vals::Sdt::from_bits(val as u8)
         }
         #[doc = "Sign Deadtime Falling value"]
         #[inline(always)]
-        pub fn set_sdtf(&mut self, val: super::vals::Sdtf) {
+        pub fn set_sdtf(&mut self, val: super::vals::Sdt) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
         }
         #[doc = "Deadtime Falling Sign Lock"]
@@ -4531,15 +4491,15 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Sdtf {
-        #[doc = "Positive deadtime on falling edge"]
+    pub enum Sdt {
+        #[doc = "Positive deadtime (both outputs inactive during deadtime)"]
         POSITIVE = 0x0,
-        #[doc = "Negative deadtime on falling edge"]
+        #[doc = "Negative deadtime (both outputs active during deadtime)"]
         NEGATIVE = 0x01,
     }
-    impl Sdtf {
+    impl Sdt {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Sdtf {
+        pub const fn from_bits(val: u8) -> Sdt {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -4547,46 +4507,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Sdtf {
+    impl From<u8> for Sdt {
         #[inline(always)]
-        fn from(val: u8) -> Sdtf {
-            Sdtf::from_bits(val)
+        fn from(val: u8) -> Sdt {
+            Sdt::from_bits(val)
         }
     }
-    impl From<Sdtf> for u8 {
+    impl From<Sdt> for u8 {
         #[inline(always)]
-        fn from(val: Sdtf) -> u8 {
-            Sdtf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Sdtr {
-        #[doc = "Positive deadtime on rising edge"]
-        POSITIVE = 0x0,
-        #[doc = "Negative deadtime on rising edge"]
-        NEGATIVE = 0x01,
-    }
-    impl Sdtr {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Sdtr {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Sdtr {
-        #[inline(always)]
-        fn from(val: u8) -> Sdtr {
-            Sdtr::from_bits(val)
-        }
-    }
-    impl From<Sdtr> for u8 {
-        #[inline(always)]
-        fn from(val: Sdtr) -> u8 {
-            Sdtr::to_bits(val)
+        fn from(val: Sdt) -> u8 {
+            Sdt::to_bits(val)
         }
     }
     #[repr(u8)]

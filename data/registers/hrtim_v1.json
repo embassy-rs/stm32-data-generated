@@ -1994,34 +1994,14 @@
         "bit_size": 1
       },
       {
-        "name": "TAU",
-        "description": "Timer A update",
+        "name": "TU",
+        "description": "Timer X update",
         "bit_offset": 19,
-        "bit_size": 1
-      },
-      {
-        "name": "TBU",
-        "description": "Timer B update",
-        "bit_offset": 20,
-        "bit_size": 1
-      },
-      {
-        "name": "TCU",
-        "description": "Timer C update",
-        "bit_offset": 21,
-        "bit_size": 1
-      },
-      {
-        "name": "TDU",
-        "description": "Timer D update",
-        "bit_offset": 22,
-        "bit_size": 1
-      },
-      {
-        "name": "TEU",
-        "description": "Timer E update",
-        "bit_offset": 23,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 5,
+          "stride": 1
+        }
       },
       {
         "name": "MSTU",
@@ -2206,7 +2186,7 @@
         "description": "Sign Deadtime Rising value",
         "bit_offset": 9,
         "bit_size": 1,
-        "enum": "SDTR"
+        "enum": "SDT"
       },
       {
         "name": "DTPRSC",
@@ -2237,7 +2217,7 @@
         "description": "Sign Deadtime Falling value",
         "bit_offset": 25,
         "bit_size": 1,
-        "enum": "SDTF"
+        "enum": "SDT"
       },
       {
         "name": "DTFSLK",
@@ -3109,32 +3089,17 @@
       }
     ]
   },
-  "enum/SDTF": {
+  "enum/SDT": {
     "bit_size": 1,
     "variants": [
       {
         "name": "Positive",
-        "description": "Positive deadtime on falling edge",
+        "description": "Positive deadtime (both outputs inactive during deadtime)",
         "value": 0
       },
       {
         "name": "Negative",
-        "description": "Negative deadtime on falling edge",
-        "value": 1
-      }
-    ]
-  },
-  "enum/SDTR": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Positive",
-        "description": "Positive deadtime on rising edge",
-        "value": 0
-      },
-      {
-        "name": "Negative",
-        "description": "Negative deadtime on rising edge",
+        "description": "Negative deadtime (both outputs active during deadtime)",
         "value": 1
       }
     ]

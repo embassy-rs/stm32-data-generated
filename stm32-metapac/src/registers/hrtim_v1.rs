@@ -2252,43 +2252,11 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tau",
-                    description: Some("Timer A update"),
+                    name: "tu",
+                    description: Some("Timer X update"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tbu",
-                    description: Some("Timer B update"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tcu",
-                    description: Some("Timer C update"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tdu",
-                    description: Some("Timer D update"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "teu",
-                    description: Some("Timer E update"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
-                    bit_size: 1,
-                    array: None,
+                    array: Some(Array::Regular(RegularArray { len: 5, stride: 1 })),
                     enumm: None,
                 },
                 Field {
@@ -2481,7 +2449,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Sdtr"),
+                    enumm: Some("Sdt"),
                 },
                 Field {
                     name: "dtprsc",
@@ -2521,7 +2489,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Sdtf"),
+                    enumm: Some("Sdt"),
                 },
                 Field {
                     name: "dtfslk",
@@ -3402,35 +3370,18 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Sdtf",
+            name: "Sdt",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "POSITIVE",
-                    description: Some("Positive deadtime on falling edge"),
+                    description: Some("Positive deadtime (both outputs inactive during deadtime)"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "NEGATIVE",
-                    description: Some("Negative deadtime on falling edge"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Sdtr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "POSITIVE",
-                    description: Some("Positive deadtime on rising edge"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "NEGATIVE",
-                    description: Some("Negative deadtime on rising edge"),
+                    description: Some("Negative deadtime (both outputs active during deadtime)"),
                     value: 1,
                 },
             ],

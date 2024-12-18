@@ -6678,22 +6678,22 @@
           ],
           "dma_channels": [
             {
-              "signal": "CC1",
+              "signal": "CH1",
               "dma": "GPDMA1",
               "request": 42
             },
             {
-              "signal": "CC2",
+              "signal": "CH2",
               "dma": "GPDMA1",
               "request": 43
             },
             {
-              "signal": "CC3",
+              "signal": "CH3",
               "dma": "GPDMA1",
               "request": 44
             },
             {
-              "signal": "CC4",
+              "signal": "CH4",
               "dma": "GPDMA1",
               "request": 45
             },
@@ -7096,22 +7096,22 @@
           ],
           "dma_channels": [
             {
-              "signal": "CC1",
+              "signal": "CH1",
               "dma": "GPDMA1",
               "request": 56
             },
             {
-              "signal": "CC2",
+              "signal": "CH2",
               "dma": "GPDMA1",
               "request": 57
             },
             {
-              "signal": "CC3",
+              "signal": "CH3",
               "dma": "GPDMA1",
               "request": 58
             },
             {
-              "signal": "CC4",
+              "signal": "CH4",
               "dma": "GPDMA1",
               "request": 59
             },
@@ -7248,22 +7248,22 @@
           ],
           "dma_channels": [
             {
-              "signal": "CC1",
+              "signal": "CH1",
               "dma": "GPDMA1",
               "request": 61
             },
             {
-              "signal": "CC2",
+              "signal": "CH2",
               "dma": "GPDMA1",
               "request": 62
             },
             {
-              "signal": "CC3",
+              "signal": "CH3",
               "dma": "GPDMA1",
               "request": 63
             },
             {
-              "signal": "CC4",
+              "signal": "CH4",
               "dma": "GPDMA1",
               "request": 64
             },
@@ -7370,22 +7370,22 @@
           ],
           "dma_channels": [
             {
-              "signal": "CC1",
+              "signal": "CH1",
               "dma": "GPDMA1",
               "request": 67
             },
             {
-              "signal": "CC2",
+              "signal": "CH2",
               "dma": "GPDMA1",
               "request": 68
             },
             {
-              "signal": "CC3",
+              "signal": "CH3",
               "dma": "GPDMA1",
               "request": 69
             },
             {
-              "signal": "CC4",
+              "signal": "CH4",
               "dma": "GPDMA1",
               "request": 70
             },
@@ -7462,22 +7462,22 @@
           ],
           "dma_channels": [
             {
-              "signal": "CC1",
+              "signal": "CH1",
               "dma": "GPDMA1",
               "request": 72
             },
             {
-              "signal": "CC2",
+              "signal": "CH2",
               "dma": "GPDMA1",
               "request": 73
             },
             {
-              "signal": "CC3",
+              "signal": "CH3",
               "dma": "GPDMA1",
               "request": 74
             },
             {
-              "signal": "CC4",
+              "signal": "CH4",
               "dma": "GPDMA1",
               "request": 75
             },
@@ -7724,22 +7724,22 @@
           ],
           "dma_channels": [
             {
-              "signal": "CC1",
+              "signal": "CH1",
               "dma": "GPDMA1",
               "request": 49
             },
             {
-              "signal": "CC2",
+              "signal": "CH2",
               "dma": "GPDMA1",
               "request": 50
             },
             {
-              "signal": "CC3",
+              "signal": "CH3",
               "dma": "GPDMA1",
               "request": 51
             },
             {
-              "signal": "CC4",
+              "signal": "CH4",
               "dma": "GPDMA1",
               "request": 52
             },

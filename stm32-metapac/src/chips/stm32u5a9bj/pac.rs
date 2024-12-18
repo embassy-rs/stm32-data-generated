@@ -694,6 +694,7 @@ pub const SDMMC2: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x420c_8c00usiz
 pub const FMC: *mut () = 0x420d_0400usize as _;
 pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x420d_1400usize as _) };
 pub const OCTOSPI2: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x420d_2400usize as _) };
+pub const HSPI1: hspi::Hspi = unsafe { hspi::Hspi::from_ptr(0x420d_3400usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4600_0400usize as _) };
 pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4600_2000usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4600_2400usize as _) };
@@ -716,7 +717,6 @@ pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4602_1800usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4602_2000usize as _) };
 pub const ADF1: adf::Adf = unsafe { adf::Adf::from_ptr(0x4602_4000usize as _) };
 pub const LPDMA1: lpdma::Lpdma = unsafe { lpdma::Lpdma::from_ptr(0x4602_5000usize as _) };
-pub const HSPI1: *mut () = 0xa000_0000usize as _;
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_4000usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
@@ -772,6 +772,8 @@ pub mod gpdma;
 pub mod gpio;
 #[path = "../../peripherals/hash_v4.rs"]
 pub mod hash;
+#[path = "../../peripherals/hspi_v1.rs"]
+pub mod hspi;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;
 #[path = "../../peripherals/icache_v1_3crr.rs"]

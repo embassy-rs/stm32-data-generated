@@ -2305,8 +2305,13 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "HSPI1",
-        address: 0xa0000000,
-        registers: None,
+        address: 0x420d3400,
+        registers: Some(PeripheralRegisters {
+            kind: "hspi",
+            version: "v1",
+            block: "HSPI",
+            ir: &hspi::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -2430,7 +2435,13 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: Some(8),
             },
         ],
-        dma_channels: &[],
+        dma_channels: &[PeripheralDmaChannel {
+            signal: "HSPI1",
+            channel: None,
+            dmamux: None,
+            dma: Some("GPDMA1"),
+            request: Some(114),
+        }],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
             interrupt: "HSPI1",
@@ -10105,6 +10116,8 @@ pub mod gpdma;
 pub mod gpio;
 #[path = "../registers/hash_v4.rs"]
 pub mod hash;
+#[path = "../registers/hspi_v1.rs"]
+pub mod hspi;
 #[path = "../registers/i2c_v2.rs"]
 pub mod i2c;
 #[path = "../registers/icache_v1_3crr.rs"]

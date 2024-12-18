@@ -3456,7 +3456,12 @@
         },
         {
           "name": "HSPI1",
-          "address": 2684354560,
+          "address": 1108161536,
+          "registers": {
+            "kind": "hspi",
+            "version": "v1",
+            "block": "HSPI"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -3583,6 +3588,13 @@
             {
               "signal": "GLOBAL",
               "interrupt": "HSPI1"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "HSPI1",
+              "dma": "GPDMA1",
+              "request": 114
             }
           ]
         },

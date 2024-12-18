@@ -56,6 +56,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("hash", &["v1", "v2", "v3", "v4"]),
     ("hrtim", &["v1", "v2"]),
     ("hsem", &["v1", "v2", "v3", "v4"]),
+    ("hspi", &["v1"]),
     ("i2c", &["v1", "v2", "v3"]),
     ("i3c", &["v1"]),
     ("icache", &["v1_0crr", "v1_3crr", "v1_4crr"]),

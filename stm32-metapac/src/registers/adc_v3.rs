@@ -834,7 +834,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "jsq",
-                    description: Some("JSQ1"),
+                    description: Some("JSQ"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 5,
                     array: Some(Array::Regular(RegularArray { len: 4, stride: 6 })),

@@ -1700,7 +1700,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "BF1 = pixel alpha * constant alpha",
                     ),
-                    value: 7,
+                    value: 6,
                 },
             ],
         },

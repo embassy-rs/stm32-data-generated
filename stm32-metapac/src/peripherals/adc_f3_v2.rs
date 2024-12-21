@@ -655,49 +655,20 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Jsqr(pub u32);
     impl Jsqr {
-        #[doc = "1st conversion in injected sequence"]
+        #[doc = "conversion in injected sequence"]
         #[inline(always)]
-        pub const fn jsq1(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x1f;
+        pub const fn jsq(&self, n: usize) -> u8 {
+            assert!(n < 4usize);
+            let offs = 0usize + n * 5usize;
+            let val = (self.0 >> offs) & 0x1f;
             val as u8
         }
-        #[doc = "1st conversion in injected sequence"]
+        #[doc = "conversion in injected sequence"]
         #[inline(always)]
-        pub fn set_jsq1(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
-        }
-        #[doc = "2nd conversion in injected sequence"]
-        #[inline(always)]
-        pub const fn jsq2(&self) -> u8 {
-            let val = (self.0 >> 5usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "2nd conversion in injected sequence"]
-        #[inline(always)]
-        pub fn set_jsq2(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 5usize)) | (((val as u32) & 0x1f) << 5usize);
-        }
-        #[doc = "3rd conversion in injected sequence"]
-        #[inline(always)]
-        pub const fn jsq3(&self) -> u8 {
-            let val = (self.0 >> 10usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "3rd conversion in injected sequence"]
-        #[inline(always)]
-        pub fn set_jsq3(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 10usize)) | (((val as u32) & 0x1f) << 10usize);
-        }
-        #[doc = "4th conversion in injected sequence"]
-        #[inline(always)]
-        pub const fn jsq4(&self) -> u8 {
-            let val = (self.0 >> 15usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "4th conversion in injected sequence"]
-        #[inline(always)]
-        pub fn set_jsq4(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 15usize)) | (((val as u32) & 0x1f) << 15usize);
+        pub fn set_jsq(&mut self, n: usize, val: u8) {
+            assert!(n < 4usize);
+            let offs = 0usize + n * 5usize;
+            self.0 = (self.0 & !(0x1f << offs)) | (((val as u32) & 0x1f) << offs);
         }
         #[doc = "injected sequence length"]
         #[inline(always)]

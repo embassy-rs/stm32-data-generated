@@ -1060,15 +1060,15 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "jexten",
+                    name: "exten",
                     description: Some("group injected external trigger polarity"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Jexten"),
+                    enumm: Some("Exten"),
                 },
                 Field {
-                    name: "jsq1",
+                    name: "jsq",
                     description: Some("group injected sequencer rank 1-4"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 5,
@@ -1364,33 +1364,6 @@ pub(crate) static REGISTERS: IR = IR {
         },
         Enum {
             name: "Exten",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Trigger detection disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RISINGEDGE",
-                    description: Some("Trigger detection on the rising edge"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "FALLINGEDGE",
-                    description: Some("Trigger detection on the falling edge"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "BOTHEDGES",
-                    description: Some("Trigger detection on both the rising and falling edges"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Jexten",
             description: None,
             bit_size: 2,
             variants: &[

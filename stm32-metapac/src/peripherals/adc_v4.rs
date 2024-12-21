@@ -1255,18 +1255,18 @@ pub mod regs {
         }
         #[doc = "group injected external trigger polarity"]
         #[inline(always)]
-        pub const fn jexten(&self) -> super::vals::Jexten {
+        pub const fn exten(&self) -> super::vals::Exten {
             let val = (self.0 >> 7usize) & 0x03;
-            super::vals::Jexten::from_bits(val as u8)
+            super::vals::Exten::from_bits(val as u8)
         }
         #[doc = "group injected external trigger polarity"]
         #[inline(always)]
-        pub fn set_jexten(&mut self, val: super::vals::Jexten) {
+        pub fn set_exten(&mut self, val: super::vals::Exten) {
             self.0 = (self.0 & !(0x03 << 7usize)) | (((val.to_bits() as u32) & 0x03) << 7usize);
         }
         #[doc = "group injected sequencer rank 1-4"]
         #[inline(always)]
-        pub const fn jsq1(&self, n: usize) -> u8 {
+        pub const fn jsq(&self, n: usize) -> u8 {
             assert!(n < 4usize);
             let offs = 9usize + n * 6usize;
             let val = (self.0 >> offs) & 0x1f;
@@ -1274,7 +1274,7 @@ pub mod regs {
         }
         #[doc = "group injected sequencer rank 1-4"]
         #[inline(always)]
-        pub fn set_jsq1(&mut self, n: usize, val: u8) {
+        pub fn set_jsq(&mut self, n: usize, val: u8) {
             assert!(n < 4usize);
             let offs = 9usize + n * 6usize;
             self.0 = (self.0 & !(0x1f << offs)) | (((val as u32) & 0x1f) << offs);
@@ -1794,40 +1794,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Exten) -> u8 {
             Exten::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Jexten {
-        #[doc = "Trigger detection disabled"]
-        DISABLED = 0x0,
-        #[doc = "Trigger detection on the rising edge"]
-        RISINGEDGE = 0x01,
-        #[doc = "Trigger detection on the falling edge"]
-        FALLINGEDGE = 0x02,
-        #[doc = "Trigger detection on both the rising and falling edges"]
-        BOTHEDGES = 0x03,
-    }
-    impl Jexten {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Jexten {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Jexten {
-        #[inline(always)]
-        fn from(val: u8) -> Jexten {
-            Jexten::from_bits(val)
-        }
-    }
-    impl From<Jexten> for u8 {
-        #[inline(always)]
-        fn from(val: Jexten) -> u8 {
-            Jexten::to_bits(val)
         }
     }
     #[repr(u8)]

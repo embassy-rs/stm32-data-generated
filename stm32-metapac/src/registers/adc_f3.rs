@@ -867,7 +867,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Jexten"),
+                    enumm: Some("Exten"),
                 },
                 Field {
                     name: "jsq",
@@ -1173,33 +1173,6 @@ pub(crate) static REGISTERS: IR = IR {
         },
         Enum {
             name: "Exten",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Trigger detection disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RISINGEDGE",
-                    description: Some("Trigger detection on the rising edge"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "FALLINGEDGE",
-                    description: Some("Trigger detection on the falling edge"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "BOTHEDGES",
-                    description: Some("Trigger detection on both the rising and falling edges"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Jexten",
             description: None,
             bit_size: 2,
             variants: &[

@@ -1218,9 +1218,9 @@ pub mod vals {
         #[doc = "BF1 = constant alpha"]
         CONSTANT = 0x04,
         _RESERVED_5 = 0x05,
-        _RESERVED_6 = 0x06,
         #[doc = "BF1 = pixel alpha * constant alpha"]
-        PIXEL = 0x07,
+        PIXEL = 0x06,
+        _RESERVED_7 = 0x07,
     }
     impl Bf1 {
         #[inline(always)]

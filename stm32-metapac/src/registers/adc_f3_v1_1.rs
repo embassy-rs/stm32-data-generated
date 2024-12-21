@@ -786,35 +786,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "jsq1",
-                    description: Some("1st conversion in injected sequence"),
+                    name: "jsq",
+                    description: Some("conversion in injected sequence"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "jsq2",
-                    description: Some("2nd conversion in injected sequence"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "jsq3",
-                    description: Some("3rd conversion in injected sequence"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "jsq4",
-                    description: Some("4th conversion in injected sequence"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
-                    bit_size: 5,
-                    array: None,
+                    array: Some(Array::Regular(RegularArray { len: 4, stride: 5 })),
                     enumm: None,
                 },
                 Field {

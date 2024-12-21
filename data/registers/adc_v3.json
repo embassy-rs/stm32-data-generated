@@ -598,7 +598,7 @@
       },
       {
         "name": "JSQ",
-        "description": "JSQ1",
+        "description": "JSQ",
         "bit_offset": 8,
         "bit_size": 5,
         "array": {

@@ -987,7 +987,7 @@ pub mod regs {
         pub fn set_jexten(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
         }
-        #[doc = "JSQ1"]
+        #[doc = "JSQ"]
         #[inline(always)]
         pub const fn jsq(&self, n: usize) -> u8 {
             assert!(n < 4usize);
@@ -995,7 +995,7 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x1f;
             val as u8
         }
-        #[doc = "JSQ1"]
+        #[doc = "JSQ"]
         #[inline(always)]
         pub fn set_jsq(&mut self, n: usize, val: u8) {
             assert!(n < 4usize);

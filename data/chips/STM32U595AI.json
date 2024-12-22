@@ -2208,7 +2208,12 @@
         },
         {
           "name": "ADC12_COMMON",
-          "address": 1107460864
+          "address": 1107460864,
+          "registers": {
+            "kind": "adccommon",
+            "version": "u5",
+            "block": "ADC_COMMON"
+          }
         },
         {
           "name": "ADC2",
@@ -2316,7 +2321,7 @@
           "registers": {
             "kind": "adc",
             "version": "u5",
-            "block": "ADC"
+            "block": "ADC4"
           },
           "rcc": {
             "bus_clock": "HCLK3",
@@ -2432,7 +2437,12 @@
         },
         {
           "name": "ADC4_COMMON",
-          "address": 1174541056
+          "address": 1174541056,
+          "registers": {
+            "kind": "adccommon",
+            "version": "u5",
+            "block": "ADC_COMMON"
+          }
         },
         {
           "name": "ADF1",

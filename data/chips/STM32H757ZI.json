@@ -984,12 +984,6 @@
       "size": 294912
     },
     {
-      "name": "RAM_D3",
-      "kind": "ram",
-      "address": 402653184,
-      "size": 65536
-    },
-    {
       "name": "DTCM",
       "kind": "ram",
       "address": 536870912,
@@ -1000,6 +994,12 @@
       "kind": "ram",
       "address": 603979776,
       "size": 524288
+    },
+    {
+      "name": "RAM_D3",
+      "kind": "ram",
+      "address": 939524096,
+      "size": 65536
     }
   ],
   "docs": [

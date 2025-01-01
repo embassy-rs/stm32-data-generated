@@ -42,13 +42,6 @@ pub static METADATA: Metadata = Metadata {
             settings: None,
         },
         MemoryRegion {
-            name: "RAM_D3",
-            kind: MemoryRegionKind::Ram,
-            address: 0x18000000,
-            size: 65536,
-            settings: None,
-        },
-        MemoryRegion {
             name: "DTCM",
             kind: MemoryRegionKind::Ram,
             address: 0x20000000,
@@ -60,6 +53,13 @@ pub static METADATA: Metadata = Metadata {
             kind: MemoryRegionKind::Ram,
             address: 0x24000000,
             size: 524288,
+            settings: None,
+        },
+        MemoryRegion {
+            name: "RAM_D3",
+            kind: MemoryRegionKind::Ram,
+            address: 0x38000000,
+            size: 65536,
             settings: None,
         },
     ],

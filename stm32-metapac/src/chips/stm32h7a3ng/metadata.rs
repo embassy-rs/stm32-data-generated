@@ -42,10 +42,17 @@ pub static METADATA: Metadata = Metadata {
             settings: None,
         },
         MemoryRegion {
-            name: "SRAM",
+            name: "AXISRAM",
             kind: MemoryRegionKind::Ram,
             address: 0x24000000,
             size: 1048576,
+            settings: None,
+        },
+        MemoryRegion {
+            name: "AHBSRAM",
+            kind: MemoryRegionKind::Ram,
+            address: 0x30000000,
+            size: 131072,
             settings: None,
         },
     ],

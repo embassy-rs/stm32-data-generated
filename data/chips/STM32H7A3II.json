@@ -4590,10 +4590,16 @@
       "size": 131072
     },
     {
-      "name": "SRAM",
+      "name": "AXISRAM",
       "kind": "ram",
       "address": 603979776,
       "size": 1048576
+    },
+    {
+      "name": "AHBSRAM",
+      "kind": "ram",
+      "address": 805306368,
+      "size": 131072
     }
   ],
   "docs": [

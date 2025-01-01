@@ -1254,25 +1254,25 @@
       "size": 131072
     },
     {
-      "name": "RAM_D1",
+      "name": "AXISRAM",
       "kind": "ram",
       "address": 603979776,
       "size": 393216
     },
     {
-      "name": "RAM_D2",
+      "name": "SRAM1",
       "kind": "ram",
       "address": 805306368,
       "size": 32768
     },
     {
-      "name": "RAM2_D2",
+      "name": "SRAM2",
       "kind": "ram",
       "address": 805437440,
       "size": 16384
     },
     {
-      "name": "RAM_D3",
+      "name": "SRAM4",
       "kind": "ram",
       "address": 939524096,
       "size": 65536

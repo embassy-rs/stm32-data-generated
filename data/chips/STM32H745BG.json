@@ -1271,7 +1271,7 @@
       "name": "BANK_1",
       "kind": "flash",
       "address": 134217728,
-      "size": 1048576,
+      "size": 524288,
       "settings": {
         "erase_size": 131072,
         "write_size": 32,
@@ -1282,18 +1282,12 @@
       "name": "BANK_2",
       "kind": "flash",
       "address": 135266304,
-      "size": 1048576,
+      "size": 524288,
       "settings": {
         "erase_size": 131072,
         "write_size": 32,
         "erase_value": 255
       }
-    },
-    {
-      "name": "RAM_D2",
-      "kind": "ram",
-      "address": 268435456,
-      "size": 294912
     },
     {
       "name": "DTCM",
@@ -1302,13 +1296,31 @@
       "size": 131072
     },
     {
-      "name": "RAM_D1",
+      "name": "AXISRAM",
       "kind": "ram",
       "address": 603979776,
       "size": 524288
     },
     {
-      "name": "RAM_D3",
+      "name": "SRAM1",
+      "kind": "ram",
+      "address": 805306368,
+      "size": 131072
+    },
+    {
+      "name": "SRAM2",
+      "kind": "ram",
+      "address": 805437440,
+      "size": 131072
+    },
+    {
+      "name": "SRAM3",
+      "kind": "ram",
+      "address": 805568512,
+      "size": 32768
+    },
+    {
+      "name": "SRAM4",
       "kind": "ram",
       "address": 939524096,
       "size": 65536

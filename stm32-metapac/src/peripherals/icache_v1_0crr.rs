@@ -140,6 +140,44 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("en", &self.en())
+                .field("cacheinv", &self.cacheinv())
+                .field("waysel", &self.waysel())
+                .field("hitmen", &self.hitmen())
+                .field("missmen", &self.missmen())
+                .field("hitmrst", &self.hitmrst())
+                .field("missmrst", &self.missmrst())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                en: bool,
+                cacheinv: bool,
+                waysel: super::vals::Waysel,
+                hitmen: bool,
+                missmen: bool,
+                hitmrst: bool,
+                missmrst: bool,
+            }
+            let proxy = Cr {
+                en: self.en(),
+                cacheinv: self.cacheinv(),
+                waysel: self.waysel(),
+                hitmen: self.hitmen(),
+                missmen: self.missmen(),
+                hitmrst: self.hitmrst(),
+                missmrst: self.missmrst(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "ICACHE flag clear register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -172,6 +210,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Fcr {
             Fcr(0)
+        }
+    }
+    impl core::fmt::Debug for Fcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fcr")
+                .field("cbsyendf", &self.cbsyendf())
+                .field("cerrf", &self.cerrf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fcr {
+                cbsyendf: bool,
+                cerrf: bool,
+            }
+            let proxy = Fcr {
+                cbsyendf: self.cbsyendf(),
+                cerrf: self.cerrf(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "ICACHE interrupt enable register."]
@@ -208,6 +269,29 @@ pub mod regs {
             Ier(0)
         }
     }
+    impl core::fmt::Debug for Ier {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ier")
+                .field("bsyendie", &self.bsyendie())
+                .field("errie", &self.errie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ier {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ier {
+                bsyendie: bool,
+                errie: bool,
+            }
+            let proxy = Ier {
+                bsyendie: self.bsyendie(),
+                errie: self.errie(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "ICACHE miss monitor register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -229,6 +313,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Mmonr {
             Mmonr(0)
+        }
+    }
+    impl core::fmt::Debug for Mmonr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mmonr").field("missmon", &self.missmon()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Mmonr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Mmonr {
+                missmon: u16,
+            }
+            let proxy = Mmonr {
+                missmon: self.missmon(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "ICACHE status register."]
@@ -276,15 +378,42 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("busyf", &self.busyf())
+                .field("bsyendf", &self.bsyendf())
+                .field("errf", &self.errf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                busyf: bool,
+                bsyendf: bool,
+                errf: bool,
+            }
+            let proxy = Sr {
+                busyf: self.busyf(),
+                bsyendf: self.bsyendf(),
+                errf: self.errf(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Waysel {
         #[doc = "direct mapped cache (1-way cache)"]
-        DIRECTMAPPED = 0x0,
+        DIRECT_MAPPED = 0x0,
         #[doc = "n-way set associative cache (reset value)"]
-        NWAYSETASSOCIATIVE = 0x01,
+        NWAY_SET_ASSOCIATIVE = 0x01,
     }
     impl Waysel {
         #[inline(always)]

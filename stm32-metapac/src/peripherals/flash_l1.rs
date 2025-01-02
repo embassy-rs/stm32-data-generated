@@ -143,6 +143,38 @@ pub mod regs {
             Acr(0)
         }
     }
+    impl core::fmt::Debug for Acr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Acr")
+                .field("latency", &self.latency())
+                .field("prften", &self.prften())
+                .field("acc64", &self.acc64())
+                .field("sleep_pd", &self.sleep_pd())
+                .field("run_pd", &self.run_pd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Acr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Acr {
+                latency: bool,
+                prften: bool,
+                acc64: bool,
+                sleep_pd: bool,
+                run_pd: bool,
+            }
+            let proxy = Acr {
+                latency: self.latency(),
+                prften: self.prften(),
+                acc64: self.acc64(),
+                sleep_pd: self.sleep_pd(),
+                run_pd: self.run_pd(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Option byte register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -219,6 +251,41 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Obr {
             Obr(0)
+        }
+    }
+    impl core::fmt::Debug for Obr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Obr")
+                .field("rdprt", &self.rdprt())
+                .field("bor_lev", &self.bor_lev())
+                .field("iwdg_sw", &self.iwdg_sw())
+                .field("n_rts_stop", &self.n_rts_stop())
+                .field("n_rst_stdby", &self.n_rst_stdby())
+                .field("bfb2", &self.bfb2())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Obr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Obr {
+                rdprt: u8,
+                bor_lev: u8,
+                iwdg_sw: bool,
+                n_rts_stop: bool,
+                n_rst_stdby: bool,
+                bfb2: bool,
+            }
+            let proxy = Obr {
+                rdprt: self.rdprt(),
+                bor_lev: self.bor_lev(),
+                iwdg_sw: self.iwdg_sw(),
+                n_rts_stop: self.n_rts_stop(),
+                n_rst_stdby: self.n_rst_stdby(),
+                bfb2: self.bfb2(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Program/erase control register"]
@@ -365,6 +432,59 @@ pub mod regs {
             Pecr(0)
         }
     }
+    impl core::fmt::Debug for Pecr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pecr")
+                .field("pelock", &self.pelock())
+                .field("prglock", &self.prglock())
+                .field("optlock", &self.optlock())
+                .field("prog", &self.prog())
+                .field("data", &self.data())
+                .field("ftdw", &self.ftdw())
+                .field("erase", &self.erase())
+                .field("fprg", &self.fprg())
+                .field("parallelbank", &self.parallelbank())
+                .field("eopie", &self.eopie())
+                .field("errie", &self.errie())
+                .field("obl_launch", &self.obl_launch())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pecr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pecr {
+                pelock: bool,
+                prglock: bool,
+                optlock: bool,
+                prog: bool,
+                data: bool,
+                ftdw: bool,
+                erase: bool,
+                fprg: bool,
+                parallelbank: bool,
+                eopie: bool,
+                errie: bool,
+                obl_launch: bool,
+            }
+            let proxy = Pecr {
+                pelock: self.pelock(),
+                prglock: self.prglock(),
+                optlock: self.optlock(),
+                prog: self.prog(),
+                data: self.data(),
+                ftdw: self.ftdw(),
+                erase: self.erase(),
+                fprg: self.fprg(),
+                parallelbank: self.parallelbank(),
+                eopie: self.eopie(),
+                errie: self.errie(),
+                obl_launch: self.obl_launch(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -476,6 +596,50 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("bsy", &self.bsy())
+                .field("eop", &self.eop())
+                .field("endhv", &self.endhv())
+                .field("ready", &self.ready())
+                .field("wrperr", &self.wrperr())
+                .field("pgaerr", &self.pgaerr())
+                .field("sizerr", &self.sizerr())
+                .field("optverr", &self.optverr())
+                .field("optverrusr", &self.optverrusr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                bsy: bool,
+                eop: bool,
+                endhv: bool,
+                ready: bool,
+                wrperr: bool,
+                pgaerr: bool,
+                sizerr: bool,
+                optverr: bool,
+                optverrusr: bool,
+            }
+            let proxy = Sr {
+                bsy: self.bsy(),
+                eop: self.eop(),
+                endhv: self.endhv(),
+                ready: self.ready(),
+                wrperr: self.wrperr(),
+                pgaerr: self.pgaerr(),
+                sizerr: self.sizerr(),
+                optverr: self.optverr(),
+                optverrusr: self.optverrusr(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Write protection register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -497,6 +661,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Wrpr1 {
             Wrpr1(0)
+        }
+    }
+    impl core::fmt::Debug for Wrpr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wrpr1").field("wrp1", &self.wrp1()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wrpr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wrpr1 {
+                wrp1: u32,
+            }
+            let proxy = Wrpr1 { wrp1: self.wrp1() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Write protection register"]
@@ -522,6 +702,22 @@ pub mod regs {
             Wrpr2(0)
         }
     }
+    impl core::fmt::Debug for Wrpr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wrpr2").field("wrp2", &self.wrp2()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wrpr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wrpr2 {
+                wrp2: u32,
+            }
+            let proxy = Wrpr2 { wrp2: self.wrp2() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Write protection register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -543,6 +739,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Wrpr3 {
             Wrpr3(0)
+        }
+    }
+    impl core::fmt::Debug for Wrpr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wrpr3").field("wrp3", &self.wrp3()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wrpr3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wrpr3 {
+                wrp3: u32,
+            }
+            let proxy = Wrpr3 { wrp3: self.wrp3() };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

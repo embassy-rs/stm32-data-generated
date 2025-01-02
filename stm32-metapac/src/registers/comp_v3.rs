@@ -128,7 +128,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "NOBLANKING",
+                    name: "NO_BLANKING",
                     description: Some("No blanking."),
                     value: 0,
                 },
@@ -177,7 +177,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOTINVERTED",
+                    name: "NOT_INVERTED",
                     description: Some("Output is not inverted."),
                     value: 0,
                 },
@@ -194,22 +194,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "HIGHSPEED",
+                    name: "HIGH_SPEED",
                     description: Some("High speed / full power."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MEDIUMSPEED",
+                    name: "MEDIUM_SPEED",
                     description: Some("Medium speed / medium power."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "LOWSPEED",
+                    name: "LOW_SPEED",
                     description: Some("Low speed / low power."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "VERYLOWSPEED",
+                    name: "VERY_LOW_SPEED",
                     description: Some("Very-low speed / ultra-low power."),
                     value: 3,
                 },

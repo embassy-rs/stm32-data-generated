@@ -120,6 +120,44 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("lpds", &self.lpds())
+                .field("pdds", &self.pdds())
+                .field("cwuf", &self.cwuf())
+                .field("csbf", &self.csbf())
+                .field("pvde", &self.pvde())
+                .field("pls", &self.pls())
+                .field("dbp", &self.dbp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                lpds: bool,
+                pdds: super::vals::Pdds,
+                cwuf: bool,
+                csbf: bool,
+                pvde: bool,
+                pls: u8,
+                dbp: bool,
+            }
+            let proxy = Cr {
+                lpds: self.lpds(),
+                pdds: self.pdds(),
+                cwuf: self.cwuf(),
+                csbf: self.csbf(),
+                pvde: self.pvde(),
+                pls: self.pls(),
+                dbp: self.dbp(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Power control register (PWR_CR)"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -176,10 +214,40 @@ pub mod regs {
             Csr(0)
         }
     }
+    impl core::fmt::Debug for Csr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Csr")
+                .field("wuf", &self.wuf())
+                .field("sbf", &self.sbf())
+                .field("pvdo", &self.pvdo())
+                .field("ewup", &self.ewup())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Csr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Csr {
+                wuf: bool,
+                sbf: bool,
+                pvdo: bool,
+                ewup: bool,
+            }
+            let proxy = Csr {
+                wuf: self.wuf(),
+                sbf: self.sbf(),
+                pvdo: self.pvdo(),
+                ewup: self.ewup(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pdds {
         #[doc = "Enter Stop mode when the CPU enters deepsleep"]
         STOP_MODE = 0x0,

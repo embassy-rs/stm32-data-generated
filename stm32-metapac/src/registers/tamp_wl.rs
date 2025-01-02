@@ -716,7 +716,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOFILTER",
+                    name: "NO_FILTER",
                     description: Some(
                         "Tamper event is activated on edge of TAMP_INx input transitions to the active level (no internal pull-up on TAMP_INx input)\"",
                     ),
@@ -814,14 +814,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RESETBYSOFTWARE",
+                    name: "RESET_BY_SOFTWARE",
                     description: Some(
                         "Tamper x event generates a trigger event and TAMPxF must be cleared by software to allow next tamper event detection",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RESETBYHARDWARE",
+                    name: "RESET_BY_HARDWARE",
                     description: Some(
                         "Tamper x event generates a trigger event. TAMPxF is masked and internally cleared by hardware. The backup registers are not erased. The tamper x interrupt must not be enabled when TAMP3MSK is set",
                     ),
@@ -870,14 +870,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FILTEREDLOWORUNFILTEREDHIGH",
+                    name: "FILTERED_LOW_OR_UNFILTERED_HIGH",
                     description: Some(
                         "If TAMPFLT != 00 Tamper x input staying low triggers a tamper detection event. If TAMPFLT = 00 Tamper x input rising edge and high level triggers a tamper detection event",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FILTEREDHIGHORUNFILTEREDLOW",
+                    name: "FILTERED_HIGH_OR_UNFILTERED_LOW",
                     description: Some(
                         "If TAMPFLT != 00 Tamper x input staying high triggers a tamper detection event. If TAMPFLT = 00 Tamper x input falling edge and low level triggers a tamper detection event",
                     ),

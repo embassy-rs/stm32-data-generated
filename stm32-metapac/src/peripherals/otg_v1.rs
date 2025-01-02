@@ -524,6 +524,65 @@ pub mod regs {
             Adpctl(0)
         }
     }
+    impl core::fmt::Debug for Adpctl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Adpctl")
+                .field("prb_dschg", &self.prb_dschg())
+                .field("prb_delta", &self.prb_delta())
+                .field("prb_per", &self.prb_per())
+                .field("rtim", &self.rtim())
+                .field("enaprb", &self.enaprb())
+                .field("enasns", &self.enasns())
+                .field("adpres", &self.adpres())
+                .field("adpen", &self.adpen())
+                .field("adp_prb_int", &self.adp_prb_int())
+                .field("adp_sns_int", &self.adp_sns_int())
+                .field("adp_tmout_int", &self.adp_tmout_int())
+                .field("adp_prb_msk", &self.adp_prb_msk())
+                .field("adp_tmout_msk", &self.adp_tmout_msk())
+                .field("ar", &self.ar())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Adpctl {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Adpctl {
+                prb_dschg: u8,
+                prb_delta: u8,
+                prb_per: u8,
+                rtim: u16,
+                enaprb: bool,
+                enasns: bool,
+                adpres: bool,
+                adpen: bool,
+                adp_prb_int: bool,
+                adp_sns_int: bool,
+                adp_tmout_int: bool,
+                adp_prb_msk: bool,
+                adp_tmout_msk: bool,
+                ar: bool,
+            }
+            let proxy = Adpctl {
+                prb_dschg: self.prb_dschg(),
+                prb_delta: self.prb_delta(),
+                prb_per: self.prb_per(),
+                rtim: self.rtim(),
+                enaprb: self.enaprb(),
+                enasns: self.enasns(),
+                adpres: self.adpres(),
+                adpen: self.adpen(),
+                adp_prb_int: self.adp_prb_int(),
+                adp_sns_int: self.adp_sns_int(),
+                adp_tmout_int: self.adp_tmout_int(),
+                adp_prb_msk: self.adp_prb_msk(),
+                adp_tmout_msk: self.adp_tmout_msk(),
+                ar: self.ar(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Core ID register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -545,6 +604,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cid {
             Cid(0)
+        }
+    }
+    impl core::fmt::Debug for Cid {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cid").field("product_id", &self.product_id()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cid {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cid {
+                product_id: u32,
+            }
+            let proxy = Cid {
+                product_id: self.product_id(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Device all endpoints interrupt register"]
@@ -581,6 +658,29 @@ pub mod regs {
             Daint(0)
         }
     }
+    impl core::fmt::Debug for Daint {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Daint")
+                .field("iepint", &self.iepint())
+                .field("oepint", &self.oepint())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Daint {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Daint {
+                iepint: u16,
+                oepint: u16,
+            }
+            let proxy = Daint {
+                iepint: self.iepint(),
+                oepint: self.oepint(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "All endpoints interrupt mask register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -613,6 +713,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Daintmsk {
             Daintmsk(0)
+        }
+    }
+    impl core::fmt::Debug for Daintmsk {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Daintmsk")
+                .field("iepm", &self.iepm())
+                .field("oepm", &self.oepm())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Daintmsk {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Daintmsk {
+                iepm: u16,
+                oepm: u16,
+            }
+            let proxy = Daintmsk {
+                iepm: self.iepm(),
+                oepm: self.oepm(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Device configuration register"]
@@ -680,6 +803,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dcfg {
             Dcfg(0)
+        }
+    }
+    impl core::fmt::Debug for Dcfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dcfg")
+                .field("dspd", &self.dspd())
+                .field("nzlsohsk", &self.nzlsohsk())
+                .field("dad", &self.dad())
+                .field("pfivl", &self.pfivl())
+                .field("xcvrdly", &self.xcvrdly())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dcfg {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dcfg {
+                dspd: super::vals::Dspd,
+                nzlsohsk: bool,
+                dad: u8,
+                pfivl: super::vals::Pfivl,
+                xcvrdly: bool,
+            }
+            let proxy = Dcfg {
+                dspd: self.dspd(),
+                nzlsohsk: self.nzlsohsk(),
+                dad: self.dad(),
+                pfivl: self.pfivl(),
+                xcvrdly: self.xcvrdly(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Device control register"]
@@ -802,6 +957,53 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dctl {
             Dctl(0)
+        }
+    }
+    impl core::fmt::Debug for Dctl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dctl")
+                .field("rwusig", &self.rwusig())
+                .field("sdis", &self.sdis())
+                .field("ginsts", &self.ginsts())
+                .field("gonsts", &self.gonsts())
+                .field("tctl", &self.tctl())
+                .field("sginak", &self.sginak())
+                .field("cginak", &self.cginak())
+                .field("sgonak", &self.sgonak())
+                .field("cgonak", &self.cgonak())
+                .field("poprgdne", &self.poprgdne())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dctl {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dctl {
+                rwusig: bool,
+                sdis: bool,
+                ginsts: bool,
+                gonsts: bool,
+                tctl: u8,
+                sginak: bool,
+                cginak: bool,
+                sgonak: bool,
+                cgonak: bool,
+                poprgdne: bool,
+            }
+            let proxy = Dctl {
+                rwusig: self.rwusig(),
+                sdis: self.sdis(),
+                ginsts: self.ginsts(),
+                gonsts: self.gonsts(),
+                tctl: self.tctl(),
+                sginak: self.sginak(),
+                cginak: self.cginak(),
+                sgonak: self.sgonak(),
+                cgonak: self.cgonak(),
+                poprgdne: self.poprgdne(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Device endpoint control register"]
@@ -970,6 +1172,65 @@ pub mod regs {
             Diepctl(0)
         }
     }
+    impl core::fmt::Debug for Diepctl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Diepctl")
+                .field("mpsiz", &self.mpsiz())
+                .field("usbaep", &self.usbaep())
+                .field("eonum_dpid", &self.eonum_dpid())
+                .field("naksts", &self.naksts())
+                .field("eptyp", &self.eptyp())
+                .field("snpm", &self.snpm())
+                .field("stall", &self.stall())
+                .field("txfnum", &self.txfnum())
+                .field("cnak", &self.cnak())
+                .field("snak", &self.snak())
+                .field("sd0pid_sevnfrm", &self.sd0pid_sevnfrm())
+                .field("soddfrm_sd1pid", &self.soddfrm_sd1pid())
+                .field("epdis", &self.epdis())
+                .field("epena", &self.epena())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Diepctl {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Diepctl {
+                mpsiz: u16,
+                usbaep: bool,
+                eonum_dpid: bool,
+                naksts: bool,
+                eptyp: super::vals::Eptyp,
+                snpm: bool,
+                stall: bool,
+                txfnum: u8,
+                cnak: bool,
+                snak: bool,
+                sd0pid_sevnfrm: bool,
+                soddfrm_sd1pid: bool,
+                epdis: bool,
+                epena: bool,
+            }
+            let proxy = Diepctl {
+                mpsiz: self.mpsiz(),
+                usbaep: self.usbaep(),
+                eonum_dpid: self.eonum_dpid(),
+                naksts: self.naksts(),
+                eptyp: self.eptyp(),
+                snpm: self.snpm(),
+                stall: self.stall(),
+                txfnum: self.txfnum(),
+                cnak: self.cnak(),
+                snak: self.snak(),
+                sd0pid_sevnfrm: self.sd0pid_sevnfrm(),
+                soddfrm_sd1pid: self.soddfrm_sd1pid(),
+                epdis: self.epdis(),
+                epena: self.epena(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Device IN endpoint FIFO empty interrupt mask register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -991,6 +1252,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Diepempmsk {
             Diepempmsk(0)
+        }
+    }
+    impl core::fmt::Debug for Diepempmsk {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Diepempmsk")
+                .field("ineptxfem", &self.ineptxfem())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Diepempmsk {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Diepempmsk {
+                ineptxfem: u16,
+            }
+            let proxy = Diepempmsk {
+                ineptxfem: self.ineptxfem(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Device endpoint interrupt register"]
@@ -1071,6 +1352,41 @@ pub mod regs {
             Diepint(0)
         }
     }
+    impl core::fmt::Debug for Diepint {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Diepint")
+                .field("xfrc", &self.xfrc())
+                .field("epdisd", &self.epdisd())
+                .field("toc", &self.toc())
+                .field("ittxfe", &self.ittxfe())
+                .field("inepne", &self.inepne())
+                .field("txfe", &self.txfe())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Diepint {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Diepint {
+                xfrc: bool,
+                epdisd: bool,
+                toc: bool,
+                ittxfe: bool,
+                inepne: bool,
+                txfe: bool,
+            }
+            let proxy = Diepint {
+                xfrc: self.xfrc(),
+                epdisd: self.epdisd(),
+                toc: self.toc(),
+                ittxfe: self.ittxfe(),
+                inepne: self.inepne(),
+                txfe: self.txfe(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Device IN endpoint common interrupt mask register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1149,6 +1465,41 @@ pub mod regs {
             Diepmsk(0)
         }
     }
+    impl core::fmt::Debug for Diepmsk {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Diepmsk")
+                .field("xfrcm", &self.xfrcm())
+                .field("epdm", &self.epdm())
+                .field("tom", &self.tom())
+                .field("ittxfemsk", &self.ittxfemsk())
+                .field("inepnmm", &self.inepnmm())
+                .field("inepnem", &self.inepnem())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Diepmsk {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Diepmsk {
+                xfrcm: bool,
+                epdm: bool,
+                tom: bool,
+                ittxfemsk: bool,
+                inepnmm: bool,
+                inepnem: bool,
+            }
+            let proxy = Diepmsk {
+                xfrcm: self.xfrcm(),
+                epdm: self.epdm(),
+                tom: self.tom(),
+                ittxfemsk: self.ittxfemsk(),
+                inepnmm: self.inepnmm(),
+                inepnem: self.inepnem(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Device endpoint transfer size register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1192,6 +1543,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dieptsiz {
             Dieptsiz(0)
+        }
+    }
+    impl core::fmt::Debug for Dieptsiz {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dieptsiz")
+                .field("xfrsiz", &self.xfrsiz())
+                .field("pktcnt", &self.pktcnt())
+                .field("mcnt", &self.mcnt())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dieptsiz {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dieptsiz {
+                xfrsiz: u32,
+                pktcnt: u16,
+                mcnt: u8,
+            }
+            let proxy = Dieptsiz {
+                xfrsiz: self.xfrsiz(),
+                pktcnt: self.pktcnt(),
+                mcnt: self.mcnt(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Device endpoint control register"]
@@ -1349,6 +1726,62 @@ pub mod regs {
             Doepctl(0)
         }
     }
+    impl core::fmt::Debug for Doepctl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Doepctl")
+                .field("mpsiz", &self.mpsiz())
+                .field("usbaep", &self.usbaep())
+                .field("eonum_dpid", &self.eonum_dpid())
+                .field("naksts", &self.naksts())
+                .field("eptyp", &self.eptyp())
+                .field("snpm", &self.snpm())
+                .field("stall", &self.stall())
+                .field("cnak", &self.cnak())
+                .field("snak", &self.snak())
+                .field("sd0pid_sevnfrm", &self.sd0pid_sevnfrm())
+                .field("soddfrm", &self.soddfrm())
+                .field("epdis", &self.epdis())
+                .field("epena", &self.epena())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Doepctl {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Doepctl {
+                mpsiz: u16,
+                usbaep: bool,
+                eonum_dpid: bool,
+                naksts: bool,
+                eptyp: super::vals::Eptyp,
+                snpm: bool,
+                stall: bool,
+                cnak: bool,
+                snak: bool,
+                sd0pid_sevnfrm: bool,
+                soddfrm: bool,
+                epdis: bool,
+                epena: bool,
+            }
+            let proxy = Doepctl {
+                mpsiz: self.mpsiz(),
+                usbaep: self.usbaep(),
+                eonum_dpid: self.eonum_dpid(),
+                naksts: self.naksts(),
+                eptyp: self.eptyp(),
+                snpm: self.snpm(),
+                stall: self.stall(),
+                cnak: self.cnak(),
+                snak: self.snak(),
+                sd0pid_sevnfrm: self.sd0pid_sevnfrm(),
+                soddfrm: self.soddfrm(),
+                epdis: self.epdis(),
+                epena: self.epena(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Device endpoint interrupt register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1416,6 +1849,38 @@ pub mod regs {
             Doepint(0)
         }
     }
+    impl core::fmt::Debug for Doepint {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Doepint")
+                .field("xfrc", &self.xfrc())
+                .field("epdisd", &self.epdisd())
+                .field("stup", &self.stup())
+                .field("otepdis", &self.otepdis())
+                .field("b2bstup", &self.b2bstup())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Doepint {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Doepint {
+                xfrc: bool,
+                epdisd: bool,
+                stup: bool,
+                otepdis: bool,
+                b2bstup: bool,
+            }
+            let proxy = Doepint {
+                xfrc: self.xfrc(),
+                epdisd: self.epdisd(),
+                stup: self.stup(),
+                otepdis: self.otepdis(),
+                b2bstup: self.b2bstup(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Device OUT endpoint common interrupt mask register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1472,6 +1937,35 @@ pub mod regs {
             Doepmsk(0)
         }
     }
+    impl core::fmt::Debug for Doepmsk {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Doepmsk")
+                .field("xfrcm", &self.xfrcm())
+                .field("epdm", &self.epdm())
+                .field("stupm", &self.stupm())
+                .field("otepdm", &self.otepdm())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Doepmsk {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Doepmsk {
+                xfrcm: bool,
+                epdm: bool,
+                stupm: bool,
+                otepdm: bool,
+            }
+            let proxy = Doepmsk {
+                xfrcm: self.xfrcm(),
+                epdm: self.epdm(),
+                stupm: self.stupm(),
+                otepdm: self.otepdm(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Device OUT endpoint transfer size register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1515,6 +2009,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Doeptsiz {
             Doeptsiz(0)
+        }
+    }
+    impl core::fmt::Debug for Doeptsiz {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Doeptsiz")
+                .field("xfrsiz", &self.xfrsiz())
+                .field("pktcnt", &self.pktcnt())
+                .field("rxdpid_stupcnt", &self.rxdpid_stupcnt())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Doeptsiz {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Doeptsiz {
+                xfrsiz: u32,
+                pktcnt: u16,
+                rxdpid_stupcnt: u8,
+            }
+            let proxy = Doeptsiz {
+                xfrsiz: self.xfrsiz(),
+                pktcnt: self.pktcnt(),
+                rxdpid_stupcnt: self.rxdpid_stupcnt(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Device status register"]
@@ -1573,6 +2093,35 @@ pub mod regs {
             Dsts(0)
         }
     }
+    impl core::fmt::Debug for Dsts {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dsts")
+                .field("suspsts", &self.suspsts())
+                .field("enumspd", &self.enumspd())
+                .field("eerr", &self.eerr())
+                .field("fnsof", &self.fnsof())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dsts {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dsts {
+                suspsts: bool,
+                enumspd: super::vals::Dspd,
+                eerr: bool,
+                fnsof: u16,
+            }
+            let proxy = Dsts {
+                suspsts: self.suspsts(),
+                enumspd: self.enumspd(),
+                eerr: self.eerr(),
+                fnsof: self.fnsof(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Device IN endpoint transmit FIFO status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1594,6 +2143,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dtxfsts {
             Dtxfsts(0)
+        }
+    }
+    impl core::fmt::Debug for Dtxfsts {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dtxfsts").field("ineptfsav", &self.ineptfsav()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dtxfsts {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dtxfsts {
+                ineptfsav: u16,
+            }
+            let proxy = Dtxfsts {
+                ineptfsav: self.ineptfsav(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Device VBUS discharge time register"]
@@ -1619,6 +2186,22 @@ pub mod regs {
             Dvbusdis(0)
         }
     }
+    impl core::fmt::Debug for Dvbusdis {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dvbusdis").field("vbusdt", &self.vbusdt()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dvbusdis {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dvbusdis {
+                vbusdt: u16,
+            }
+            let proxy = Dvbusdis { vbusdt: self.vbusdt() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Device VBUS pulsing time register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1642,6 +2225,22 @@ pub mod regs {
             Dvbuspulse(0)
         }
     }
+    impl core::fmt::Debug for Dvbuspulse {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dvbuspulse").field("dvbusp", &self.dvbusp()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dvbuspulse {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dvbuspulse {
+                dvbusp: u16,
+            }
+            let proxy = Dvbuspulse { dvbusp: self.dvbusp() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FIFO register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1663,6 +2262,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Fifo {
             Fifo(0)
+        }
+    }
+    impl core::fmt::Debug for Fifo {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fifo").field("data", &self.data()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fifo {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fifo {
+                data: u32,
+            }
+            let proxy = Fifo { data: self.data() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FIFO size register"]
@@ -1697,6 +2312,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Fsiz {
             Fsiz(0)
+        }
+    }
+    impl core::fmt::Debug for Fsiz {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fsiz")
+                .field("sa", &self.sa())
+                .field("fd", &self.fd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fsiz {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fsiz {
+                sa: u16,
+                fd: u16,
+            }
+            let proxy = Fsiz {
+                sa: self.sa(),
+                fd: self.fd(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AHB configuration register"]
@@ -1766,6 +2404,38 @@ pub mod regs {
             Gahbcfg(0)
         }
     }
+    impl core::fmt::Debug for Gahbcfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Gahbcfg")
+                .field("gint", &self.gint())
+                .field("hbstlen", &self.hbstlen())
+                .field("dmaen", &self.dmaen())
+                .field("txfelvl", &self.txfelvl())
+                .field("ptxfelvl", &self.ptxfelvl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Gahbcfg {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Gahbcfg {
+                gint: bool,
+                hbstlen: u8,
+                dmaen: bool,
+                txfelvl: bool,
+                ptxfelvl: bool,
+            }
+            let proxy = Gahbcfg {
+                gint: self.gint(),
+                hbstlen: self.hbstlen(),
+                dmaen: self.dmaen(),
+                txfelvl: self.txfelvl(),
+                ptxfelvl: self.ptxfelvl(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "General core configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1831,6 +2501,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> GccfgV1 {
             GccfgV1(0)
+        }
+    }
+    impl core::fmt::Debug for GccfgV1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GccfgV1")
+                .field("pwrdwn", &self.pwrdwn())
+                .field("vbusasen", &self.vbusasen())
+                .field("vbusbsen", &self.vbusbsen())
+                .field("sofouten", &self.sofouten())
+                .field("novbussens", &self.novbussens())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GccfgV1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GccfgV1 {
+                pwrdwn: bool,
+                vbusasen: bool,
+                vbusbsen: bool,
+                sofouten: bool,
+                novbussens: bool,
+            }
+            let proxy = GccfgV1 {
+                pwrdwn: self.pwrdwn(),
+                vbusasen: self.vbusasen(),
+                vbusbsen: self.vbusbsen(),
+                sofouten: self.sofouten(),
+                novbussens: self.novbussens(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "General core configuration register"]
@@ -1964,6 +2666,56 @@ pub mod regs {
         #[inline(always)]
         fn default() -> GccfgV2 {
             GccfgV2(0)
+        }
+    }
+    impl core::fmt::Debug for GccfgV2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GccfgV2")
+                .field("dcdet", &self.dcdet())
+                .field("pdet", &self.pdet())
+                .field("sdet", &self.sdet())
+                .field("ps2det", &self.ps2det())
+                .field("pwrdwn", &self.pwrdwn())
+                .field("bcden", &self.bcden())
+                .field("dcden", &self.dcden())
+                .field("pden", &self.pden())
+                .field("sden", &self.sden())
+                .field("vbden", &self.vbden())
+                .field("phyhsen", &self.phyhsen())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GccfgV2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GccfgV2 {
+                dcdet: bool,
+                pdet: bool,
+                sdet: bool,
+                ps2det: bool,
+                pwrdwn: bool,
+                bcden: bool,
+                dcden: bool,
+                pden: bool,
+                sden: bool,
+                vbden: bool,
+                phyhsen: bool,
+            }
+            let proxy = GccfgV2 {
+                dcdet: self.dcdet(),
+                pdet: self.pdet(),
+                sdet: self.sdet(),
+                ps2det: self.ps2det(),
+                pwrdwn: self.pwrdwn(),
+                bcden: self.bcden(),
+                dcden: self.dcden(),
+                pden: self.pden(),
+                sden: self.sden(),
+                vbden: self.vbden(),
+                phyhsen: self.phyhsen(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "OTG general core configuration register."]
@@ -2132,6 +2884,65 @@ pub mod regs {
             GccfgV3(0)
         }
     }
+    impl core::fmt::Debug for GccfgV3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GccfgV3")
+                .field("chgdet", &self.chgdet())
+                .field("fsvplus", &self.fsvplus())
+                .field("fsvminus", &self.fsvminus())
+                .field("sessvld", &self.sessvld())
+                .field("hcdpen", &self.hcdpen())
+                .field("hcdpdeten", &self.hcdpdeten())
+                .field("hvdmsrcen", &self.hvdmsrcen())
+                .field("dcden", &self.dcden())
+                .field("pden", &self.pden())
+                .field("vbden", &self.vbden())
+                .field("sden", &self.sden())
+                .field("vbvaloval", &self.vbvaloval())
+                .field("vbvaloven", &self.vbvaloven())
+                .field("forcehostpd", &self.forcehostpd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GccfgV3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GccfgV3 {
+                chgdet: bool,
+                fsvplus: bool,
+                fsvminus: bool,
+                sessvld: bool,
+                hcdpen: bool,
+                hcdpdeten: bool,
+                hvdmsrcen: bool,
+                dcden: bool,
+                pden: bool,
+                vbden: bool,
+                sden: bool,
+                vbvaloval: bool,
+                vbvaloven: bool,
+                forcehostpd: bool,
+            }
+            let proxy = GccfgV3 {
+                chgdet: self.chgdet(),
+                fsvplus: self.fsvplus(),
+                fsvminus: self.fsvminus(),
+                sessvld: self.sessvld(),
+                hcdpen: self.hcdpen(),
+                hcdpdeten: self.hcdpdeten(),
+                hvdmsrcen: self.hvdmsrcen(),
+                dcden: self.dcden(),
+                pden: self.pden(),
+                vbden: self.vbden(),
+                sden: self.sden(),
+                vbvaloval: self.vbvaloval(),
+                vbvaloven: self.vbvaloven(),
+                forcehostpd: self.forcehostpd(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "I2C access register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2241,6 +3052,50 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Gi2cctl {
             Gi2cctl(0)
+        }
+    }
+    impl core::fmt::Debug for Gi2cctl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Gi2cctl")
+                .field("rwdata", &self.rwdata())
+                .field("regaddr", &self.regaddr())
+                .field("addr", &self.addr())
+                .field("i2cen", &self.i2cen())
+                .field("ack", &self.ack())
+                .field("i2cdevadr", &self.i2cdevadr())
+                .field("i2cdatse0", &self.i2cdatse0())
+                .field("rw", &self.rw())
+                .field("bsydne", &self.bsydne())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Gi2cctl {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Gi2cctl {
+                rwdata: u8,
+                regaddr: u8,
+                addr: u8,
+                i2cen: bool,
+                ack: bool,
+                i2cdevadr: u8,
+                i2cdatse0: bool,
+                rw: bool,
+                bsydne: bool,
+            }
+            let proxy = Gi2cctl {
+                rwdata: self.rwdata(),
+                regaddr: self.regaddr(),
+                addr: self.addr(),
+                i2cen: self.i2cen(),
+                ack: self.ack(),
+                i2cdevadr: self.i2cdevadr(),
+                i2cdatse0: self.i2cdatse0(),
+                rw: self.rw(),
+                bsydne: self.bsydne(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt mask register"]
@@ -2563,6 +3418,107 @@ pub mod regs {
             Gintmsk(0)
         }
     }
+    impl core::fmt::Debug for Gintmsk {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Gintmsk")
+                .field("mmism", &self.mmism())
+                .field("otgint", &self.otgint())
+                .field("sofm", &self.sofm())
+                .field("rxflvlm", &self.rxflvlm())
+                .field("nptxfem", &self.nptxfem())
+                .field("ginakeffm", &self.ginakeffm())
+                .field("gonakeffm", &self.gonakeffm())
+                .field("esuspm", &self.esuspm())
+                .field("usbsuspm", &self.usbsuspm())
+                .field("usbrst", &self.usbrst())
+                .field("enumdnem", &self.enumdnem())
+                .field("isoodrpm", &self.isoodrpm())
+                .field("eopfm", &self.eopfm())
+                .field("epmism", &self.epmism())
+                .field("iepint", &self.iepint())
+                .field("oepint", &self.oepint())
+                .field("iisoixfrm", &self.iisoixfrm())
+                .field("ipxfrm_iisooxfrm", &self.ipxfrm_iisooxfrm())
+                .field("fsuspm", &self.fsuspm())
+                .field("rstde", &self.rstde())
+                .field("prtim", &self.prtim())
+                .field("hcim", &self.hcim())
+                .field("ptxfem", &self.ptxfem())
+                .field("lpmintm", &self.lpmintm())
+                .field("cidschgm", &self.cidschgm())
+                .field("discint", &self.discint())
+                .field("srqim", &self.srqim())
+                .field("wuim", &self.wuim())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Gintmsk {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Gintmsk {
+                mmism: bool,
+                otgint: bool,
+                sofm: bool,
+                rxflvlm: bool,
+                nptxfem: bool,
+                ginakeffm: bool,
+                gonakeffm: bool,
+                esuspm: bool,
+                usbsuspm: bool,
+                usbrst: bool,
+                enumdnem: bool,
+                isoodrpm: bool,
+                eopfm: bool,
+                epmism: bool,
+                iepint: bool,
+                oepint: bool,
+                iisoixfrm: bool,
+                ipxfrm_iisooxfrm: bool,
+                fsuspm: bool,
+                rstde: bool,
+                prtim: bool,
+                hcim: bool,
+                ptxfem: bool,
+                lpmintm: bool,
+                cidschgm: bool,
+                discint: bool,
+                srqim: bool,
+                wuim: bool,
+            }
+            let proxy = Gintmsk {
+                mmism: self.mmism(),
+                otgint: self.otgint(),
+                sofm: self.sofm(),
+                rxflvlm: self.rxflvlm(),
+                nptxfem: self.nptxfem(),
+                ginakeffm: self.ginakeffm(),
+                gonakeffm: self.gonakeffm(),
+                esuspm: self.esuspm(),
+                usbsuspm: self.usbsuspm(),
+                usbrst: self.usbrst(),
+                enumdnem: self.enumdnem(),
+                isoodrpm: self.isoodrpm(),
+                eopfm: self.eopfm(),
+                epmism: self.epmism(),
+                iepint: self.iepint(),
+                oepint: self.oepint(),
+                iisoixfrm: self.iisoixfrm(),
+                ipxfrm_iisooxfrm: self.ipxfrm_iisooxfrm(),
+                fsuspm: self.fsuspm(),
+                rstde: self.rstde(),
+                prtim: self.prtim(),
+                hcim: self.hcim(),
+                ptxfem: self.ptxfem(),
+                lpmintm: self.lpmintm(),
+                cidschgm: self.cidschgm(),
+                discint: self.discint(),
+                srqim: self.srqim(),
+                wuim: self.wuim(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Core interrupt register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2872,6 +3828,104 @@ pub mod regs {
             Gintsts(0)
         }
     }
+    impl core::fmt::Debug for Gintsts {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Gintsts")
+                .field("cmod", &self.cmod())
+                .field("mmis", &self.mmis())
+                .field("otgint", &self.otgint())
+                .field("sof", &self.sof())
+                .field("rxflvl", &self.rxflvl())
+                .field("nptxfe", &self.nptxfe())
+                .field("ginakeff", &self.ginakeff())
+                .field("goutnakeff", &self.goutnakeff())
+                .field("esusp", &self.esusp())
+                .field("usbsusp", &self.usbsusp())
+                .field("usbrst", &self.usbrst())
+                .field("enumdne", &self.enumdne())
+                .field("isoodrp", &self.isoodrp())
+                .field("eopf", &self.eopf())
+                .field("iepint", &self.iepint())
+                .field("oepint", &self.oepint())
+                .field("iisoixfr", &self.iisoixfr())
+                .field("ipxfr_incompisoout", &self.ipxfr_incompisoout())
+                .field("datafsusp", &self.datafsusp())
+                .field("resetdet", &self.resetdet())
+                .field("hprtint", &self.hprtint())
+                .field("hcint", &self.hcint())
+                .field("ptxfe", &self.ptxfe())
+                .field("cidschg", &self.cidschg())
+                .field("discint", &self.discint())
+                .field("srqint", &self.srqint())
+                .field("wkupint", &self.wkupint())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Gintsts {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Gintsts {
+                cmod: bool,
+                mmis: bool,
+                otgint: bool,
+                sof: bool,
+                rxflvl: bool,
+                nptxfe: bool,
+                ginakeff: bool,
+                goutnakeff: bool,
+                esusp: bool,
+                usbsusp: bool,
+                usbrst: bool,
+                enumdne: bool,
+                isoodrp: bool,
+                eopf: bool,
+                iepint: bool,
+                oepint: bool,
+                iisoixfr: bool,
+                ipxfr_incompisoout: bool,
+                datafsusp: bool,
+                resetdet: bool,
+                hprtint: bool,
+                hcint: bool,
+                ptxfe: bool,
+                cidschg: bool,
+                discint: bool,
+                srqint: bool,
+                wkupint: bool,
+            }
+            let proxy = Gintsts {
+                cmod: self.cmod(),
+                mmis: self.mmis(),
+                otgint: self.otgint(),
+                sof: self.sof(),
+                rxflvl: self.rxflvl(),
+                nptxfe: self.nptxfe(),
+                ginakeff: self.ginakeff(),
+                goutnakeff: self.goutnakeff(),
+                esusp: self.esusp(),
+                usbsusp: self.usbsusp(),
+                usbrst: self.usbrst(),
+                enumdne: self.enumdne(),
+                isoodrp: self.isoodrp(),
+                eopf: self.eopf(),
+                iepint: self.iepint(),
+                oepint: self.oepint(),
+                iisoixfr: self.iisoixfr(),
+                ipxfr_incompisoout: self.ipxfr_incompisoout(),
+                datafsusp: self.datafsusp(),
+                resetdet: self.resetdet(),
+                hprtint: self.hprtint(),
+                hcint: self.hcint(),
+                ptxfe: self.ptxfe(),
+                cidschg: self.cidschg(),
+                discint: self.discint(),
+                srqint: self.srqint(),
+                wkupint: self.wkupint(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Core LPM configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3047,6 +4101,68 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Glpmcfg {
             Glpmcfg(0)
+        }
+    }
+    impl core::fmt::Debug for Glpmcfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Glpmcfg")
+                .field("lpmen", &self.lpmen())
+                .field("lpmack", &self.lpmack())
+                .field("besl", &self.besl())
+                .field("remwake", &self.remwake())
+                .field("l1ssen", &self.l1ssen())
+                .field("beslthrs", &self.beslthrs())
+                .field("l1dsen", &self.l1dsen())
+                .field("lpmrst", &self.lpmrst())
+                .field("slpsts", &self.slpsts())
+                .field("l1rsmok", &self.l1rsmok())
+                .field("lpmchidx", &self.lpmchidx())
+                .field("lpmrcnt", &self.lpmrcnt())
+                .field("sndlpm", &self.sndlpm())
+                .field("lpmrcntsts", &self.lpmrcntsts())
+                .field("enbesl", &self.enbesl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Glpmcfg {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Glpmcfg {
+                lpmen: bool,
+                lpmack: bool,
+                besl: u8,
+                remwake: bool,
+                l1ssen: bool,
+                beslthrs: u8,
+                l1dsen: bool,
+                lpmrst: u8,
+                slpsts: bool,
+                l1rsmok: bool,
+                lpmchidx: u8,
+                lpmrcnt: u8,
+                sndlpm: bool,
+                lpmrcntsts: u8,
+                enbesl: bool,
+            }
+            let proxy = Glpmcfg {
+                lpmen: self.lpmen(),
+                lpmack: self.lpmack(),
+                besl: self.besl(),
+                remwake: self.remwake(),
+                l1ssen: self.l1ssen(),
+                beslthrs: self.beslthrs(),
+                l1dsen: self.l1dsen(),
+                lpmrst: self.lpmrst(),
+                slpsts: self.slpsts(),
+                l1rsmok: self.l1rsmok(),
+                lpmchidx: self.lpmchidx(),
+                lpmrcnt: self.lpmrcnt(),
+                sndlpm: self.sndlpm(),
+                lpmrcntsts: self.lpmrcntsts(),
+                enbesl: self.enbesl(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Control and status register"]
@@ -3248,6 +4364,74 @@ pub mod regs {
             Gotgctl(0)
         }
     }
+    impl core::fmt::Debug for Gotgctl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Gotgctl")
+                .field("srqscs", &self.srqscs())
+                .field("srq", &self.srq())
+                .field("vbvaloen", &self.vbvaloen())
+                .field("vbvaloval", &self.vbvaloval())
+                .field("avaloen", &self.avaloen())
+                .field("avaloval", &self.avaloval())
+                .field("bvaloen", &self.bvaloen())
+                .field("bvaloval", &self.bvaloval())
+                .field("hngscs", &self.hngscs())
+                .field("hnprq", &self.hnprq())
+                .field("hshnpen", &self.hshnpen())
+                .field("dhnpen", &self.dhnpen())
+                .field("ehen", &self.ehen())
+                .field("cidsts", &self.cidsts())
+                .field("dbct", &self.dbct())
+                .field("asvld", &self.asvld())
+                .field("bsvld", &self.bsvld())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Gotgctl {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Gotgctl {
+                srqscs: bool,
+                srq: bool,
+                vbvaloen: bool,
+                vbvaloval: bool,
+                avaloen: bool,
+                avaloval: bool,
+                bvaloen: bool,
+                bvaloval: bool,
+                hngscs: bool,
+                hnprq: bool,
+                hshnpen: bool,
+                dhnpen: bool,
+                ehen: bool,
+                cidsts: bool,
+                dbct: bool,
+                asvld: bool,
+                bsvld: bool,
+            }
+            let proxy = Gotgctl {
+                srqscs: self.srqscs(),
+                srq: self.srq(),
+                vbvaloen: self.vbvaloen(),
+                vbvaloval: self.vbvaloval(),
+                avaloen: self.avaloen(),
+                avaloval: self.avaloval(),
+                bvaloen: self.bvaloen(),
+                bvaloval: self.bvaloval(),
+                hngscs: self.hngscs(),
+                hnprq: self.hnprq(),
+                hshnpen: self.hshnpen(),
+                dhnpen: self.dhnpen(),
+                ehen: self.ehen(),
+                cidsts: self.cidsts(),
+                dbct: self.dbct(),
+                asvld: self.asvld(),
+                bsvld: self.bsvld(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3335,6 +4519,44 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Gotgint {
             Gotgint(0)
+        }
+    }
+    impl core::fmt::Debug for Gotgint {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Gotgint")
+                .field("sedet", &self.sedet())
+                .field("srsschg", &self.srsschg())
+                .field("hnsschg", &self.hnsschg())
+                .field("hngdet", &self.hngdet())
+                .field("adtochg", &self.adtochg())
+                .field("dbcdne", &self.dbcdne())
+                .field("idchng", &self.idchng())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Gotgint {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Gotgint {
+                sedet: bool,
+                srsschg: bool,
+                hnsschg: bool,
+                hngdet: bool,
+                adtochg: bool,
+                dbcdne: bool,
+                idchng: bool,
+            }
+            let proxy = Gotgint {
+                sedet: self.sedet(),
+                srsschg: self.srsschg(),
+                hnsschg: self.hnsschg(),
+                hngdet: self.hngdet(),
+                adtochg: self.adtochg(),
+                dbcdne: self.dbcdne(),
+                idchng: self.idchng(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Reset register"]
@@ -3437,6 +4659,47 @@ pub mod regs {
             Grstctl(0)
         }
     }
+    impl core::fmt::Debug for Grstctl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Grstctl")
+                .field("csrst", &self.csrst())
+                .field("hsrst", &self.hsrst())
+                .field("fcrst", &self.fcrst())
+                .field("rxfflsh", &self.rxfflsh())
+                .field("txfflsh", &self.txfflsh())
+                .field("txfnum", &self.txfnum())
+                .field("dmareq", &self.dmareq())
+                .field("ahbidl", &self.ahbidl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Grstctl {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Grstctl {
+                csrst: bool,
+                hsrst: bool,
+                fcrst: bool,
+                rxfflsh: bool,
+                txfflsh: bool,
+                txfnum: u8,
+                dmareq: bool,
+                ahbidl: bool,
+            }
+            let proxy = Grstctl {
+                csrst: self.csrst(),
+                hsrst: self.hsrst(),
+                fcrst: self.fcrst(),
+                rxfflsh: self.rxfflsh(),
+                txfflsh: self.txfflsh(),
+                txfnum: self.txfnum(),
+                dmareq: self.dmareq(),
+                ahbidl: self.ahbidl(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Receive FIFO size register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3458,6 +4721,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Grxfsiz {
             Grxfsiz(0)
+        }
+    }
+    impl core::fmt::Debug for Grxfsiz {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Grxfsiz").field("rxfd", &self.rxfd()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Grxfsiz {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Grxfsiz {
+                rxfd: u16,
+            }
+            let proxy = Grxfsiz { rxfd: self.rxfd() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status read and pop register"]
@@ -3536,6 +4815,41 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Grxsts {
             Grxsts(0)
+        }
+    }
+    impl core::fmt::Debug for Grxsts {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Grxsts")
+                .field("epnum", &self.epnum())
+                .field("bcnt", &self.bcnt())
+                .field("dpid", &self.dpid())
+                .field("pktstsd", &self.pktstsd())
+                .field("pktstsh", &self.pktstsh())
+                .field("frmnum", &self.frmnum())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Grxsts {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Grxsts {
+                epnum: u8,
+                bcnt: u16,
+                dpid: super::vals::Dpid,
+                pktstsd: super::vals::Pktstsd,
+                pktstsh: super::vals::Pktstsh,
+                frmnum: u8,
+            }
+            let proxy = Grxsts {
+                epnum: self.epnum(),
+                bcnt: self.bcnt(),
+                dpid: self.dpid(),
+                pktstsd: self.pktstsd(),
+                pktstsh: self.pktstsh(),
+                frmnum: self.frmnum(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "USB configuration register"]
@@ -3748,6 +5062,77 @@ pub mod regs {
             Gusbcfg(0)
         }
     }
+    impl core::fmt::Debug for Gusbcfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Gusbcfg")
+                .field("tocal", &self.tocal())
+                .field("physel", &self.physel())
+                .field("srpcap", &self.srpcap())
+                .field("hnpcap", &self.hnpcap())
+                .field("trdt", &self.trdt())
+                .field("phylpcs", &self.phylpcs())
+                .field("ulpifsls", &self.ulpifsls())
+                .field("ulpiar", &self.ulpiar())
+                .field("ulpicsm", &self.ulpicsm())
+                .field("ulpievbusd", &self.ulpievbusd())
+                .field("ulpievbusi", &self.ulpievbusi())
+                .field("tsdps", &self.tsdps())
+                .field("pcci", &self.pcci())
+                .field("ptci", &self.ptci())
+                .field("ulpiipd", &self.ulpiipd())
+                .field("fhmod", &self.fhmod())
+                .field("fdmod", &self.fdmod())
+                .field("ctxpkt", &self.ctxpkt())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Gusbcfg {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Gusbcfg {
+                tocal: u8,
+                physel: bool,
+                srpcap: bool,
+                hnpcap: bool,
+                trdt: u8,
+                phylpcs: bool,
+                ulpifsls: bool,
+                ulpiar: bool,
+                ulpicsm: bool,
+                ulpievbusd: bool,
+                ulpievbusi: bool,
+                tsdps: bool,
+                pcci: bool,
+                ptci: bool,
+                ulpiipd: bool,
+                fhmod: bool,
+                fdmod: bool,
+                ctxpkt: bool,
+            }
+            let proxy = Gusbcfg {
+                tocal: self.tocal(),
+                physel: self.physel(),
+                srpcap: self.srpcap(),
+                hnpcap: self.hnpcap(),
+                trdt: self.trdt(),
+                phylpcs: self.phylpcs(),
+                ulpifsls: self.ulpifsls(),
+                ulpiar: self.ulpiar(),
+                ulpicsm: self.ulpicsm(),
+                ulpievbusd: self.ulpievbusd(),
+                ulpievbusi: self.ulpievbusi(),
+                tsdps: self.tsdps(),
+                pcci: self.pcci(),
+                ptci: self.ptci(),
+                ulpiipd: self.ulpiipd(),
+                fhmod: self.fhmod(),
+                fdmod: self.fdmod(),
+                ctxpkt: self.ctxpkt(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Host all channels interrupt register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3771,6 +5156,22 @@ pub mod regs {
             Haint(0)
         }
     }
+    impl core::fmt::Debug for Haint {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Haint").field("haint", &self.haint()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Haint {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Haint {
+                haint: u16,
+            }
+            let proxy = Haint { haint: self.haint() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Host all channels interrupt mask register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3792,6 +5193,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Haintmsk {
             Haintmsk(0)
+        }
+    }
+    impl core::fmt::Debug for Haintmsk {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Haintmsk").field("haintm", &self.haintm()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Haintmsk {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Haintmsk {
+                haintm: u16,
+            }
+            let proxy = Haintmsk { haintm: self.haintm() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Host channel characteristics register"]
@@ -3916,6 +5333,53 @@ pub mod regs {
             Hcchar(0)
         }
     }
+    impl core::fmt::Debug for Hcchar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Hcchar")
+                .field("mpsiz", &self.mpsiz())
+                .field("epnum", &self.epnum())
+                .field("epdir", &self.epdir())
+                .field("lsdev", &self.lsdev())
+                .field("eptyp", &self.eptyp())
+                .field("mcnt", &self.mcnt())
+                .field("dad", &self.dad())
+                .field("oddfrm", &self.oddfrm())
+                .field("chdis", &self.chdis())
+                .field("chena", &self.chena())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Hcchar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Hcchar {
+                mpsiz: u16,
+                epnum: u8,
+                epdir: bool,
+                lsdev: bool,
+                eptyp: super::vals::Eptyp,
+                mcnt: u8,
+                dad: u8,
+                oddfrm: bool,
+                chdis: bool,
+                chena: bool,
+            }
+            let proxy = Hcchar {
+                mpsiz: self.mpsiz(),
+                epnum: self.epnum(),
+                epdir: self.epdir(),
+                lsdev: self.lsdev(),
+                eptyp: self.eptyp(),
+                mcnt: self.mcnt(),
+                dad: self.dad(),
+                oddfrm: self.oddfrm(),
+                chdis: self.chdis(),
+                chena: self.chena(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Host channel DMA config register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3948,6 +5412,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Hcdma {
             Hcdma(0)
+        }
+    }
+    impl core::fmt::Debug for Hcdma {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Hcdma")
+                .field("qtdaddr", &self.qtdaddr())
+                .field("cqtd", &self.cqtd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Hcdma {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Hcdma {
+                qtdaddr: u32,
+                cqtd: u8,
+            }
+            let proxy = Hcdma {
+                qtdaddr: self.qtdaddr(),
+                cqtd: self.cqtd(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Host configuration register"]
@@ -4015,6 +5502,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Hcfg {
             Hcfg(0)
+        }
+    }
+    impl core::fmt::Debug for Hcfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Hcfg")
+                .field("fslspcs", &self.fslspcs())
+                .field("fslss", &self.fslss())
+                .field("descdma", &self.descdma())
+                .field("frlistlen", &self.frlistlen())
+                .field("perschedena", &self.perschedena())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Hcfg {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Hcfg {
+                fslspcs: u8,
+                fslss: bool,
+                descdma: bool,
+                frlistlen: super::vals::Frlistlen,
+                perschedena: bool,
+            }
+            let proxy = Hcfg {
+                fslspcs: self.fslspcs(),
+                fslss: self.fslss(),
+                descdma: self.descdma(),
+                frlistlen: self.frlistlen(),
+                perschedena: self.perschedena(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Host channel interrupt register"]
@@ -4126,6 +5645,50 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Hcint {
             Hcint(0)
+        }
+    }
+    impl core::fmt::Debug for Hcint {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Hcint")
+                .field("xfrc", &self.xfrc())
+                .field("chh", &self.chh())
+                .field("stall", &self.stall())
+                .field("nak", &self.nak())
+                .field("ack", &self.ack())
+                .field("txerr", &self.txerr())
+                .field("bberr", &self.bberr())
+                .field("frmor", &self.frmor())
+                .field("dterr", &self.dterr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Hcint {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Hcint {
+                xfrc: bool,
+                chh: bool,
+                stall: bool,
+                nak: bool,
+                ack: bool,
+                txerr: bool,
+                bberr: bool,
+                frmor: bool,
+                dterr: bool,
+            }
+            let proxy = Hcint {
+                xfrc: self.xfrc(),
+                chh: self.chh(),
+                stall: self.stall(),
+                nak: self.nak(),
+                ack: self.ack(),
+                txerr: self.txerr(),
+                bberr: self.bberr(),
+                frmor: self.frmor(),
+                dterr: self.dterr(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Host channel mask register"]
@@ -4250,6 +5813,53 @@ pub mod regs {
             Hcintmsk(0)
         }
     }
+    impl core::fmt::Debug for Hcintmsk {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Hcintmsk")
+                .field("xfrcm", &self.xfrcm())
+                .field("chhm", &self.chhm())
+                .field("stallm", &self.stallm())
+                .field("nakm", &self.nakm())
+                .field("ackm", &self.ackm())
+                .field("nyet", &self.nyet())
+                .field("txerrm", &self.txerrm())
+                .field("bberrm", &self.bberrm())
+                .field("frmorm", &self.frmorm())
+                .field("dterrm", &self.dterrm())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Hcintmsk {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Hcintmsk {
+                xfrcm: bool,
+                chhm: bool,
+                stallm: bool,
+                nakm: bool,
+                ackm: bool,
+                nyet: bool,
+                txerrm: bool,
+                bberrm: bool,
+                frmorm: bool,
+                dterrm: bool,
+            }
+            let proxy = Hcintmsk {
+                xfrcm: self.xfrcm(),
+                chhm: self.chhm(),
+                stallm: self.stallm(),
+                nakm: self.nakm(),
+                ackm: self.ackm(),
+                nyet: self.nyet(),
+                txerrm: self.txerrm(),
+                bberrm: self.bberrm(),
+                frmorm: self.frmorm(),
+                dterrm: self.dterrm(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Host channel transfer size register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4328,6 +5938,41 @@ pub mod regs {
             Hctsiz(0)
         }
     }
+    impl core::fmt::Debug for Hctsiz {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Hctsiz")
+                .field("schedinfo", &self.schedinfo())
+                .field("xfrsiz", &self.xfrsiz())
+                .field("ntdl", &self.ntdl())
+                .field("pktcnt", &self.pktcnt())
+                .field("dpid", &self.dpid())
+                .field("doping", &self.doping())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Hctsiz {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Hctsiz {
+                schedinfo: u8,
+                xfrsiz: u32,
+                ntdl: u8,
+                pktcnt: u16,
+                dpid: u8,
+                doping: bool,
+            }
+            let proxy = Hctsiz {
+                schedinfo: self.schedinfo(),
+                xfrsiz: self.xfrsiz(),
+                ntdl: self.ntdl(),
+                pktcnt: self.pktcnt(),
+                dpid: self.dpid(),
+                doping: self.doping(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Host frame interval register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4362,6 +6007,29 @@ pub mod regs {
             Hfir(0)
         }
     }
+    impl core::fmt::Debug for Hfir {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Hfir")
+                .field("frivl", &self.frivl())
+                .field("rldctrl", &self.rldctrl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Hfir {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Hfir {
+                frivl: u16,
+                rldctrl: bool,
+            }
+            let proxy = Hfir {
+                frivl: self.frivl(),
+                rldctrl: self.rldctrl(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Host frame number/frame time remaining register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4394,6 +6062,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Hfnum {
             Hfnum(0)
+        }
+    }
+    impl core::fmt::Debug for Hfnum {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Hfnum")
+                .field("frnum", &self.frnum())
+                .field("ftrem", &self.ftrem())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Hfnum {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Hfnum {
+                frnum: u16,
+                ftrem: u16,
+            }
+            let proxy = Hfnum {
+                frnum: self.frnum(),
+                ftrem: self.ftrem(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Non-periodic transmit FIFO/queue status register"]
@@ -4439,6 +6130,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Hnptxsts {
             Hnptxsts(0)
+        }
+    }
+    impl core::fmt::Debug for Hnptxsts {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Hnptxsts")
+                .field("nptxfsav", &self.nptxfsav())
+                .field("nptqxsav", &self.nptqxsav())
+                .field("nptxqtop", &self.nptxqtop())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Hnptxsts {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Hnptxsts {
+                nptxfsav: u16,
+                nptqxsav: u8,
+                nptxqtop: u8,
+            }
+            let proxy = Hnptxsts {
+                nptxfsav: self.nptxfsav(),
+                nptqxsav: self.nptqxsav(),
+                nptxqtop: self.nptxqtop(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Host port control and status register"]
@@ -4596,6 +6313,62 @@ pub mod regs {
             Hprt(0)
         }
     }
+    impl core::fmt::Debug for Hprt {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Hprt")
+                .field("pcsts", &self.pcsts())
+                .field("pcdet", &self.pcdet())
+                .field("pena", &self.pena())
+                .field("penchng", &self.penchng())
+                .field("poca", &self.poca())
+                .field("pocchng", &self.pocchng())
+                .field("pres", &self.pres())
+                .field("psusp", &self.psusp())
+                .field("prst", &self.prst())
+                .field("plsts", &self.plsts())
+                .field("ppwr", &self.ppwr())
+                .field("ptctl", &self.ptctl())
+                .field("pspd", &self.pspd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Hprt {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Hprt {
+                pcsts: bool,
+                pcdet: bool,
+                pena: bool,
+                penchng: bool,
+                poca: bool,
+                pocchng: bool,
+                pres: bool,
+                psusp: bool,
+                prst: bool,
+                plsts: u8,
+                ppwr: bool,
+                ptctl: u8,
+                pspd: u8,
+            }
+            let proxy = Hprt {
+                pcsts: self.pcsts(),
+                pcdet: self.pcdet(),
+                pena: self.pena(),
+                penchng: self.penchng(),
+                poca: self.poca(),
+                pocchng: self.pocchng(),
+                pres: self.pres(),
+                psusp: self.psusp(),
+                prst: self.prst(),
+                plsts: self.plsts(),
+                ppwr: self.ppwr(),
+                ptctl: self.ptctl(),
+                pspd: self.pspd(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Periodic transmit FIFO/queue status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4639,6 +6412,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Hptxsts {
             Hptxsts(0)
+        }
+    }
+    impl core::fmt::Debug for Hptxsts {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Hptxsts")
+                .field("ptxfsavl", &self.ptxfsavl())
+                .field("ptxqsav", &self.ptxqsav())
+                .field("ptxqtop", &self.ptxqtop())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Hptxsts {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Hptxsts {
+                ptxfsavl: u16,
+                ptxqsav: u8,
+                ptxqtop: u8,
+            }
+            let proxy = Hptxsts {
+                ptxfsavl: self.ptxfsavl(),
+                ptxqsav: self.ptxqsav(),
+                ptxqtop: self.ptxqtop(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Power and clock gating control register"]
@@ -4686,10 +6485,37 @@ pub mod regs {
             Pcgcctl(0)
         }
     }
+    impl core::fmt::Debug for Pcgcctl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pcgcctl")
+                .field("stppclk", &self.stppclk())
+                .field("gatehclk", &self.gatehclk())
+                .field("physusp", &self.physusp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pcgcctl {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pcgcctl {
+                stppclk: bool,
+                gatehclk: bool,
+                physusp: bool,
+            }
+            let proxy = Pcgcctl {
+                stppclk: self.stppclk(),
+                gatehclk: self.gatehclk(),
+                physusp: self.physusp(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dpid {
         DATA0 = 0x0,
         DATA2 = 0x01,
@@ -4719,7 +6545,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dspd {
         #[doc = "High speed"]
         HIGH_SPEED = 0x0,
@@ -4752,7 +6579,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Eptyp {
         CONTROL = 0x0,
         ISOCHRONOUS = 0x01,
@@ -4782,7 +6610,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Frlistlen {
         #[doc = "Length = 8"]
         LEN8 = 0x0,
@@ -4816,7 +6645,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pfivl {
         #[doc = "80% of the frame interval"]
         FRAME_INTERVAL_80 = 0x0,
@@ -4850,7 +6680,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pktstsd {
         _RESERVED_0 = 0x0,
         #[doc = "Global OUT NAK (triggers an interrupt)"]
@@ -4897,7 +6728,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pktstsh {
         _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,

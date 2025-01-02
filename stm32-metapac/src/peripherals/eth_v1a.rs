@@ -471,6 +471,53 @@ pub mod regs {
             Dmabmr(0)
         }
     }
+    impl core::fmt::Debug for Dmabmr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dmabmr")
+                .field("sr", &self.sr())
+                .field("da", &self.da())
+                .field("dsl", &self.dsl())
+                .field("pbl", &self.pbl())
+                .field("pm", &self.pm())
+                .field("fb", &self.fb())
+                .field("rdp", &self.rdp())
+                .field("usp", &self.usp())
+                .field("fpm", &self.fpm())
+                .field("aab", &self.aab())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dmabmr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dmabmr {
+                sr: bool,
+                da: super::vals::Da,
+                dsl: u8,
+                pbl: super::vals::Pbl,
+                pm: super::vals::PriorityRxOverTx,
+                fb: super::vals::Fb,
+                rdp: super::vals::Rdp,
+                usp: super::vals::Usp,
+                fpm: super::vals::Fpm,
+                aab: bool,
+            }
+            let proxy = Dmabmr {
+                sr: self.sr(),
+                da: self.da(),
+                dsl: self.dsl(),
+                pbl: self.pbl(),
+                pm: self.pm(),
+                fb: self.fb(),
+                rdp: self.rdp(),
+                usp: self.usp(),
+                fpm: self.fpm(),
+                aab: self.aab(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet DMA current host receive buffer address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -492,6 +539,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dmachrbar {
             Dmachrbar(0)
+        }
+    }
+    impl core::fmt::Debug for Dmachrbar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dmachrbar").field("hrbap", &self.hrbap()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dmachrbar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dmachrbar {
+                hrbap: u32,
+            }
+            let proxy = Dmachrbar { hrbap: self.hrbap() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Ethernet DMA current host receive descriptor register"]
@@ -517,6 +580,22 @@ pub mod regs {
             Dmachrdr(0)
         }
     }
+    impl core::fmt::Debug for Dmachrdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dmachrdr").field("hrdap", &self.hrdap()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dmachrdr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dmachrdr {
+                hrdap: u32,
+            }
+            let proxy = Dmachrdr { hrdap: self.hrdap() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet DMA current host transmit buffer address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -540,6 +619,22 @@ pub mod regs {
             Dmachtbar(0)
         }
     }
+    impl core::fmt::Debug for Dmachtbar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dmachtbar").field("htbap", &self.htbap()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dmachtbar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dmachtbar {
+                htbap: u32,
+            }
+            let proxy = Dmachtbar { htbap: self.htbap() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet DMA current host transmit descriptor register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -561,6 +656,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dmachtdr {
             Dmachtdr(0)
+        }
+    }
+    impl core::fmt::Debug for Dmachtdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dmachtdr").field("htdap", &self.htdap()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dmachtdr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dmachtdr {
+                htdap: u32,
+            }
+            let proxy = Dmachtdr { htdap: self.htdap() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Ethernet DMA interrupt enable register"]
@@ -740,6 +851,68 @@ pub mod regs {
             Dmaier(0)
         }
     }
+    impl core::fmt::Debug for Dmaier {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dmaier")
+                .field("tie", &self.tie())
+                .field("tpsie", &self.tpsie())
+                .field("tbuie", &self.tbuie())
+                .field("tjtie", &self.tjtie())
+                .field("roie", &self.roie())
+                .field("tuie", &self.tuie())
+                .field("rie", &self.rie())
+                .field("rbuie", &self.rbuie())
+                .field("rpsie", &self.rpsie())
+                .field("rwtie", &self.rwtie())
+                .field("etie", &self.etie())
+                .field("fbeie", &self.fbeie())
+                .field("erie", &self.erie())
+                .field("aise", &self.aise())
+                .field("nise", &self.nise())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dmaier {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dmaier {
+                tie: bool,
+                tpsie: bool,
+                tbuie: bool,
+                tjtie: bool,
+                roie: bool,
+                tuie: bool,
+                rie: bool,
+                rbuie: bool,
+                rpsie: bool,
+                rwtie: bool,
+                etie: bool,
+                fbeie: bool,
+                erie: bool,
+                aise: bool,
+                nise: bool,
+            }
+            let proxy = Dmaier {
+                tie: self.tie(),
+                tpsie: self.tpsie(),
+                tbuie: self.tbuie(),
+                tjtie: self.tjtie(),
+                roie: self.roie(),
+                tuie: self.tuie(),
+                rie: self.rie(),
+                rbuie: self.rbuie(),
+                rpsie: self.rpsie(),
+                rwtie: self.rwtie(),
+                etie: self.etie(),
+                fbeie: self.fbeie(),
+                erie: self.erie(),
+                aise: self.aise(),
+                nise: self.nise(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet DMA missed frame and buffer overflow counter register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -794,6 +967,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dmamfbocr {
             Dmamfbocr(0)
+        }
+    }
+    impl core::fmt::Debug for Dmamfbocr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dmamfbocr")
+                .field("mfc", &self.mfc())
+                .field("omfc", &self.omfc())
+                .field("mfa", &self.mfa())
+                .field("ofoc", &self.ofoc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dmamfbocr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dmamfbocr {
+                mfc: u16,
+                omfc: bool,
+                mfa: u16,
+                ofoc: bool,
+            }
+            let proxy = Dmamfbocr {
+                mfc: self.mfc(),
+                omfc: self.omfc(),
+                mfa: self.mfa(),
+                ofoc: self.ofoc(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Ethernet DMA operation mode register"]
@@ -940,6 +1142,59 @@ pub mod regs {
             Dmaomr(0)
         }
     }
+    impl core::fmt::Debug for Dmaomr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dmaomr")
+                .field("sr", &self.sr())
+                .field("osf", &self.osf())
+                .field("rtc", &self.rtc())
+                .field("fugf", &self.fugf())
+                .field("fef", &self.fef())
+                .field("st", &self.st())
+                .field("ttc", &self.ttc())
+                .field("ftf", &self.ftf())
+                .field("tsf", &self.tsf())
+                .field("dfrf", &self.dfrf())
+                .field("rsf", &self.rsf())
+                .field("dtcefd", &self.dtcefd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dmaomr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dmaomr {
+                sr: super::vals::DmaomrSr,
+                osf: bool,
+                rtc: super::vals::Rtc,
+                fugf: super::vals::Fugf,
+                fef: super::vals::Fef,
+                st: super::vals::St,
+                ttc: super::vals::Ttc,
+                ftf: super::vals::Ftf,
+                tsf: super::vals::Tsf,
+                dfrf: bool,
+                rsf: super::vals::Rsf,
+                dtcefd: super::vals::Dtcefd,
+            }
+            let proxy = Dmaomr {
+                sr: self.sr(),
+                osf: self.osf(),
+                rtc: self.rtc(),
+                fugf: self.fugf(),
+                fef: self.fef(),
+                st: self.st(),
+                ttc: self.ttc(),
+                ftf: self.ftf(),
+                tsf: self.tsf(),
+                dfrf: self.dfrf(),
+                rsf: self.rsf(),
+                dtcefd: self.dtcefd(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet DMA receive descriptor list address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -963,6 +1218,22 @@ pub mod regs {
             Dmardlar(0)
         }
     }
+    impl core::fmt::Debug for Dmardlar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dmardlar").field("srl", &self.srl()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dmardlar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dmardlar {
+                srl: u32,
+            }
+            let proxy = Dmardlar { srl: self.srl() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "EHERNET DMA receive poll demand register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -984,6 +1255,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dmarpdr {
             Dmarpdr(0)
+        }
+    }
+    impl core::fmt::Debug for Dmarpdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dmarpdr").field("rpd", &self.rpd()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dmarpdr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dmarpdr {
+                rpd: super::vals::Rpd,
+            }
+            let proxy = Dmarpdr { rpd: self.rpd() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Ethernet DMA status register"]
@@ -1229,6 +1516,86 @@ pub mod regs {
             Dmasr(0)
         }
     }
+    impl core::fmt::Debug for Dmasr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dmasr")
+                .field("ts", &self.ts())
+                .field("tpss", &self.tpss())
+                .field("tbus", &self.tbus())
+                .field("tjts", &self.tjts())
+                .field("ros", &self.ros())
+                .field("tus", &self.tus())
+                .field("rs", &self.rs())
+                .field("rbus", &self.rbus())
+                .field("rpss", &self.rpss())
+                .field("pwts", &self.pwts())
+                .field("ets", &self.ets())
+                .field("fbes", &self.fbes())
+                .field("ers", &self.ers())
+                .field("ais", &self.ais())
+                .field("nis", &self.nis())
+                .field("rps", &self.rps())
+                .field("tps", &self.tps())
+                .field("ebs", &self.ebs())
+                .field("mmcs", &self.mmcs())
+                .field("pmts", &self.pmts())
+                .field("tsts", &self.tsts())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dmasr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dmasr {
+                ts: bool,
+                tpss: bool,
+                tbus: bool,
+                tjts: bool,
+                ros: bool,
+                tus: bool,
+                rs: bool,
+                rbus: bool,
+                rpss: bool,
+                pwts: bool,
+                ets: bool,
+                fbes: bool,
+                ers: bool,
+                ais: bool,
+                nis: bool,
+                rps: super::vals::Rps,
+                tps: super::vals::Tps,
+                ebs: u8,
+                mmcs: bool,
+                pmts: bool,
+                tsts: bool,
+            }
+            let proxy = Dmasr {
+                ts: self.ts(),
+                tpss: self.tpss(),
+                tbus: self.tbus(),
+                tjts: self.tjts(),
+                ros: self.ros(),
+                tus: self.tus(),
+                rs: self.rs(),
+                rbus: self.rbus(),
+                rpss: self.rpss(),
+                pwts: self.pwts(),
+                ets: self.ets(),
+                fbes: self.fbes(),
+                ers: self.ers(),
+                ais: self.ais(),
+                nis: self.nis(),
+                rps: self.rps(),
+                tps: self.tps(),
+                ebs: self.ebs(),
+                mmcs: self.mmcs(),
+                pmts: self.pmts(),
+                tsts: self.tsts(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet DMA transmit descriptor list address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1252,6 +1619,22 @@ pub mod regs {
             Dmatdlar(0)
         }
     }
+    impl core::fmt::Debug for Dmatdlar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dmatdlar").field("stl", &self.stl()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dmatdlar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dmatdlar {
+                stl: u32,
+            }
+            let proxy = Dmatdlar { stl: self.stl() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet DMA transmit poll demand register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1273,6 +1656,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dmatpdr {
             Dmatpdr(0)
+        }
+    }
+    impl core::fmt::Debug for Dmatpdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dmatpdr").field("tpd", &self.tpd()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dmatpdr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dmatpdr {
+                tpd: super::vals::Tpd,
+            }
+            let proxy = Dmatpdr { tpd: self.tpd() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Ethernet MAC address 0 high register"]
@@ -1309,6 +1708,29 @@ pub mod regs {
             Maca0hr(0)
         }
     }
+    impl core::fmt::Debug for Maca0hr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Maca0hr")
+                .field("maca0h", &self.maca0h())
+                .field("mo", &self.mo())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Maca0hr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Maca0hr {
+                maca0h: u16,
+                mo: bool,
+            }
+            let proxy = Maca0hr {
+                maca0h: self.maca0h(),
+                mo: self.mo(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet MAC address 0 low register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1330,6 +1752,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Maca0lr {
             Maca0lr(0)
+        }
+    }
+    impl core::fmt::Debug for Maca0lr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Maca0lr").field("maca0l", &self.maca0l()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Maca0lr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Maca0lr {
+                maca0l: u32,
+            }
+            let proxy = Maca0lr { maca0l: self.maca0l() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Ethernet MAC address 1/2/3 high register"]
@@ -1388,6 +1826,35 @@ pub mod regs {
             Macahr(0)
         }
     }
+    impl core::fmt::Debug for Macahr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Macahr")
+                .field("macah", &self.macah())
+                .field("mbc", &self.mbc())
+                .field("sa", &self.sa())
+                .field("ae", &self.ae())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Macahr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Macahr {
+                macah: u16,
+                mbc: u8,
+                sa: super::vals::MacahrSa,
+                ae: bool,
+            }
+            let proxy = Macahr {
+                macah: self.macah(),
+                mbc: self.mbc(),
+                sa: self.sa(),
+                ae: self.ae(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet MAC address 1/2/3 low register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1409,6 +1876,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Macalr {
             Macalr(0)
+        }
+    }
+    impl core::fmt::Debug for Macalr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Macalr").field("macal", &self.macal()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Macalr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Macalr {
+                macal: u32,
+            }
+            let proxy = Macalr { macal: self.macal() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Ethernet MAC configuration register"]
@@ -1588,6 +2071,68 @@ pub mod regs {
             Maccr(0)
         }
     }
+    impl core::fmt::Debug for Maccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Maccr")
+                .field("re", &self.re())
+                .field("te", &self.te())
+                .field("dc", &self.dc())
+                .field("bl", &self.bl())
+                .field("apcs", &self.apcs())
+                .field("rd", &self.rd())
+                .field("ipco", &self.ipco())
+                .field("dm", &self.dm())
+                .field("lm", &self.lm())
+                .field("rod", &self.rod())
+                .field("fes", &self.fes())
+                .field("csd", &self.csd())
+                .field("ifg", &self.ifg())
+                .field("jd", &self.jd())
+                .field("wd", &self.wd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Maccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Maccr {
+                re: bool,
+                te: bool,
+                dc: bool,
+                bl: super::vals::Bl,
+                apcs: super::vals::Apcs,
+                rd: super::vals::Rd,
+                ipco: super::vals::Ipco,
+                dm: super::vals::Dm,
+                lm: super::vals::Lm,
+                rod: super::vals::Rod,
+                fes: super::vals::Fes,
+                csd: super::vals::Csd,
+                ifg: super::vals::Ifg,
+                jd: super::vals::Jd,
+                wd: super::vals::Wd,
+            }
+            let proxy = Maccr {
+                re: self.re(),
+                te: self.te(),
+                dc: self.dc(),
+                bl: self.bl(),
+                apcs: self.apcs(),
+                rd: self.rd(),
+                ipco: self.ipco(),
+                dm: self.dm(),
+                lm: self.lm(),
+                rod: self.rod(),
+                fes: self.fes(),
+                csd: self.csd(),
+                ifg: self.ifg(),
+                jd: self.jd(),
+                wd: self.wd(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet MAC debug register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1732,6 +2277,59 @@ pub mod regs {
             Macdbgr(0)
         }
     }
+    impl core::fmt::Debug for Macdbgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Macdbgr")
+                .field("mmrpea", &self.mmrpea())
+                .field("msfrwcs", &self.msfrwcs())
+                .field("rfwra", &self.rfwra())
+                .field("rfrcs", &self.rfrcs())
+                .field("rffl", &self.rffl())
+                .field("mmtea", &self.mmtea())
+                .field("mtfcs", &self.mtfcs())
+                .field("mtp", &self.mtp())
+                .field("tfrs", &self.tfrs())
+                .field("tfwa", &self.tfwa())
+                .field("tfne", &self.tfne())
+                .field("tff", &self.tff())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Macdbgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Macdbgr {
+                mmrpea: bool,
+                msfrwcs: u8,
+                rfwra: bool,
+                rfrcs: u8,
+                rffl: u8,
+                mmtea: bool,
+                mtfcs: u8,
+                mtp: bool,
+                tfrs: u8,
+                tfwa: bool,
+                tfne: bool,
+                tff: bool,
+            }
+            let proxy = Macdbgr {
+                mmrpea: self.mmrpea(),
+                msfrwcs: self.msfrwcs(),
+                rfwra: self.rfwra(),
+                rfrcs: self.rfrcs(),
+                rffl: self.rffl(),
+                mmtea: self.mmtea(),
+                mtfcs: self.mtfcs(),
+                mtp: self.mtp(),
+                tfrs: self.tfrs(),
+                tfwa: self.tfwa(),
+                tfne: self.tfne(),
+                tff: self.tff(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet MAC flow control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1819,6 +2417,44 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Macfcr {
             Macfcr(0)
+        }
+    }
+    impl core::fmt::Debug for Macfcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Macfcr")
+                .field("fcb", &self.fcb())
+                .field("tfce", &self.tfce())
+                .field("rfce", &self.rfce())
+                .field("upfd", &self.upfd())
+                .field("plt", &self.plt())
+                .field("zqpd", &self.zqpd())
+                .field("pt", &self.pt())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Macfcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Macfcr {
+                fcb: super::vals::Fcb,
+                tfce: bool,
+                rfce: bool,
+                upfd: bool,
+                plt: super::vals::Plt,
+                zqpd: super::vals::Zqpd,
+                pt: u16,
+            }
+            let proxy = Macfcr {
+                fcb: self.fcb(),
+                tfce: self.tfce(),
+                rfce: self.rfce(),
+                upfd: self.upfd(),
+                plt: self.plt(),
+                zqpd: self.zqpd(),
+                pt: self.pt(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Ethernet MAC frame filter register"]
@@ -1954,6 +2590,56 @@ pub mod regs {
             Macffr(0)
         }
     }
+    impl core::fmt::Debug for Macffr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Macffr")
+                .field("pm", &self.pm())
+                .field("hu", &self.hu())
+                .field("hm", &self.hm())
+                .field("daif", &self.daif())
+                .field("pam", &self.pam())
+                .field("bfd", &self.bfd())
+                .field("pcf", &self.pcf())
+                .field("saif", &self.saif())
+                .field("saf", &self.saf())
+                .field("hpf", &self.hpf())
+                .field("ra", &self.ra())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Macffr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Macffr {
+                pm: bool,
+                hu: super::vals::Hu,
+                hm: super::vals::Hm,
+                daif: super::vals::Daif,
+                pam: bool,
+                bfd: super::vals::Bfd,
+                pcf: super::vals::Pcf,
+                saif: super::vals::Saif,
+                saf: bool,
+                hpf: super::vals::Hpf,
+                ra: bool,
+            }
+            let proxy = Macffr {
+                pm: self.pm(),
+                hu: self.hu(),
+                hm: self.hm(),
+                daif: self.daif(),
+                pam: self.pam(),
+                bfd: self.bfd(),
+                pcf: self.pcf(),
+                saif: self.saif(),
+                saf: self.saf(),
+                hpf: self.hpf(),
+                ra: self.ra(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet MAC hash table high register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1977,6 +2663,22 @@ pub mod regs {
             Machthr(0)
         }
     }
+    impl core::fmt::Debug for Machthr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Machthr").field("hth", &self.hth()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Machthr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Machthr {
+                hth: u32,
+            }
+            let proxy = Machthr { hth: self.hth() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet MAC hash table low register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1998,6 +2700,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Machtlr {
             Machtlr(0)
+        }
+    }
+    impl core::fmt::Debug for Machtlr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Machtlr").field("htl", &self.htl()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Machtlr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Machtlr {
+                htl: u32,
+            }
+            let proxy = Machtlr { htl: self.htl() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Ethernet MAC interrupt mask register"]
@@ -2032,6 +2750,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Macimr {
             Macimr(0)
+        }
+    }
+    impl core::fmt::Debug for Macimr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Macimr")
+                .field("pmtim", &self.pmtim())
+                .field("tstim", &self.tstim())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Macimr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Macimr {
+                pmtim: super::vals::Pmtim,
+                tstim: super::vals::Tstim,
+            }
+            let proxy = Macimr {
+                pmtim: self.pmtim(),
+                tstim: self.tstim(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Ethernet MAC MII address register"]
@@ -2101,6 +2842,38 @@ pub mod regs {
             Macmiiar(0)
         }
     }
+    impl core::fmt::Debug for Macmiiar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Macmiiar")
+                .field("mb", &self.mb())
+                .field("mw", &self.mw())
+                .field("cr", &self.cr())
+                .field("mr", &self.mr())
+                .field("pa", &self.pa())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Macmiiar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Macmiiar {
+                mb: super::vals::MbProgress,
+                mw: super::vals::Mw,
+                cr: super::vals::Cr,
+                mr: u8,
+                pa: u8,
+            }
+            let proxy = Macmiiar {
+                mb: self.mb(),
+                mw: self.mw(),
+                cr: self.cr(),
+                mr: self.mr(),
+                pa: self.pa(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet MAC MII data register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2122,6 +2895,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Macmiidr {
             Macmiidr(0)
+        }
+    }
+    impl core::fmt::Debug for Macmiidr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Macmiidr").field("md", &self.md()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Macmiidr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Macmiidr {
+                md: u16,
+            }
+            let proxy = Macmiidr { md: self.md() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Ethernet MAC PMT control and status register"]
@@ -2213,6 +3002,44 @@ pub mod regs {
             Macpmtcsr(0)
         }
     }
+    impl core::fmt::Debug for Macpmtcsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Macpmtcsr")
+                .field("pd", &self.pd())
+                .field("mpe", &self.mpe())
+                .field("wfe", &self.wfe())
+                .field("mpr", &self.mpr())
+                .field("wfr", &self.wfr())
+                .field("gu", &self.gu())
+                .field("wffrpr", &self.wffrpr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Macpmtcsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Macpmtcsr {
+                pd: super::vals::Pd,
+                mpe: bool,
+                wfe: bool,
+                mpr: bool,
+                wfr: bool,
+                gu: bool,
+                wffrpr: super::vals::Wffrpr,
+            }
+            let proxy = Macpmtcsr {
+                pd: self.pd(),
+                mpe: self.mpe(),
+                wfe: self.wfe(),
+                mpr: self.mpr(),
+                wfr: self.wfr(),
+                gu: self.gu(),
+                wffrpr: self.wffrpr(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet MAC interrupt status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2280,6 +3107,38 @@ pub mod regs {
             Macsr(0)
         }
     }
+    impl core::fmt::Debug for Macsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Macsr")
+                .field("pmts", &self.pmts())
+                .field("mmcs", &self.mmcs())
+                .field("mmcrs", &self.mmcrs())
+                .field("mmcts", &self.mmcts())
+                .field("tsts", &self.tsts())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Macsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Macsr {
+                pmts: bool,
+                mmcs: bool,
+                mmcrs: bool,
+                mmcts: bool,
+                tsts: bool,
+            }
+            let proxy = Macsr {
+                pmts: self.pmts(),
+                mmcs: self.mmcs(),
+                mmcrs: self.mmcrs(),
+                mmcts: self.mmcts(),
+                tsts: self.tsts(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet MAC VLAN tag register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2312,6 +3171,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Macvlantr {
             Macvlantr(0)
+        }
+    }
+    impl core::fmt::Debug for Macvlantr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Macvlantr")
+                .field("vlanti", &self.vlanti())
+                .field("vlantc", &self.vlantc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Macvlantr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Macvlantr {
+                vlanti: u16,
+                vlantc: super::vals::Vlantc,
+            }
+            let proxy = Macvlantr {
+                vlanti: self.vlanti(),
+                vlantc: self.vlantc(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Ethernet MMC control register"]
@@ -2370,6 +3252,35 @@ pub mod regs {
             Mmccr(0)
         }
     }
+    impl core::fmt::Debug for Mmccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mmccr")
+                .field("cr", &self.cr())
+                .field("csr", &self.csr())
+                .field("ror", &self.ror())
+                .field("mcf", &self.mcf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Mmccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Mmccr {
+                cr: super::vals::CounterReset,
+                csr: super::vals::Csr,
+                ror: bool,
+                mcf: bool,
+            }
+            let proxy = Mmccr {
+                cr: self.cr(),
+                csr: self.csr(),
+                ror: self.ror(),
+                mcf: self.mcf(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet MMC received frames with alignment error counter register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2391,6 +3302,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Mmcrfaecr {
             Mmcrfaecr(0)
+        }
+    }
+    impl core::fmt::Debug for Mmcrfaecr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mmcrfaecr").field("rfaec", &self.rfaec()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Mmcrfaecr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Mmcrfaecr {
+                rfaec: u32,
+            }
+            let proxy = Mmcrfaecr { rfaec: self.rfaec() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Ethernet MMC received frames with CRC error counter register"]
@@ -2416,6 +3343,22 @@ pub mod regs {
             Mmcrfcecr(0)
         }
     }
+    impl core::fmt::Debug for Mmcrfcecr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mmcrfcecr").field("rfcfc", &self.rfcfc()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Mmcrfcecr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Mmcrfcecr {
+                rfcfc: u32,
+            }
+            let proxy = Mmcrfcecr { rfcfc: self.rfcfc() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "MMC received good unicast frames counter register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2437,6 +3380,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Mmcrgufcr {
             Mmcrgufcr(0)
+        }
+    }
+    impl core::fmt::Debug for Mmcrgufcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mmcrgufcr").field("rgufc", &self.rgufc()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Mmcrgufcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Mmcrgufcr {
+                rgufc: u32,
+            }
+            let proxy = Mmcrgufcr { rgufc: self.rgufc() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Ethernet MMC receive interrupt mask register"]
@@ -2484,6 +3443,32 @@ pub mod regs {
             Mmcrimr(0)
         }
     }
+    impl core::fmt::Debug for Mmcrimr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mmcrimr")
+                .field("rfcem", &self.rfcem())
+                .field("rfaem", &self.rfaem())
+                .field("rgufm", &self.rgufm())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Mmcrimr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Mmcrimr {
+                rfcem: super::vals::Rfcem,
+                rfaem: super::vals::Rfaem,
+                rgufm: super::vals::Rgufm,
+            }
+            let proxy = Mmcrimr {
+                rfcem: self.rfcem(),
+                rfaem: self.rfaem(),
+                rgufm: self.rgufm(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet MMC receive interrupt register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2529,6 +3514,32 @@ pub mod regs {
             Mmcrir(0)
         }
     }
+    impl core::fmt::Debug for Mmcrir {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mmcrir")
+                .field("rfces", &self.rfces())
+                .field("rfaes", &self.rfaes())
+                .field("rgufs", &self.rgufs())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Mmcrir {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Mmcrir {
+                rfces: bool,
+                rfaes: bool,
+                rgufs: bool,
+            }
+            let proxy = Mmcrir {
+                rfces: self.rfces(),
+                rfaes: self.rfaes(),
+                rgufs: self.rgufs(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet MMC transmitted good frames counter register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2550,6 +3561,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Mmctgfcr {
             Mmctgfcr(0)
+        }
+    }
+    impl core::fmt::Debug for Mmctgfcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mmctgfcr").field("tgfc", &self.tgfc()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Mmctgfcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Mmctgfcr {
+                tgfc: u32,
+            }
+            let proxy = Mmctgfcr { tgfc: self.tgfc() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Ethernet MMC transmitted good frames after more than a single collision"]
@@ -2575,6 +3602,24 @@ pub mod regs {
             Mmctgfmsccr(0)
         }
     }
+    impl core::fmt::Debug for Mmctgfmsccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mmctgfmsccr").field("tgfmscc", &self.tgfmscc()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Mmctgfmsccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Mmctgfmsccr {
+                tgfmscc: u32,
+            }
+            let proxy = Mmctgfmsccr {
+                tgfmscc: self.tgfmscc(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet MMC transmitted good frames after a single collision counter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2596,6 +3641,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Mmctgfsccr {
             Mmctgfsccr(0)
+        }
+    }
+    impl core::fmt::Debug for Mmctgfsccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mmctgfsccr").field("tgfscc", &self.tgfscc()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Mmctgfsccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Mmctgfsccr {
+                tgfscc: u32,
+            }
+            let proxy = Mmctgfsccr { tgfscc: self.tgfscc() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Ethernet MMC transmit interrupt mask register"]
@@ -2643,6 +3704,32 @@ pub mod regs {
             Mmctimr(0)
         }
     }
+    impl core::fmt::Debug for Mmctimr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mmctimr")
+                .field("tgfscm", &self.tgfscm())
+                .field("tgfmscm", &self.tgfmscm())
+                .field("tgfm", &self.tgfm())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Mmctimr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Mmctimr {
+                tgfscm: super::vals::Tgfscm,
+                tgfmscm: super::vals::Tgfmscm,
+                tgfm: super::vals::Tgfm,
+            }
+            let proxy = Mmctimr {
+                tgfscm: self.tgfscm(),
+                tgfmscm: self.tgfmscm(),
+                tgfm: self.tgfm(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet MMC transmit interrupt register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2688,6 +3775,32 @@ pub mod regs {
             Mmctir(0)
         }
     }
+    impl core::fmt::Debug for Mmctir {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mmctir")
+                .field("tgfscs", &self.tgfscs())
+                .field("tgfmscs", &self.tgfmscs())
+                .field("tgfs", &self.tgfs())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Mmctir {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Mmctir {
+                tgfscs: bool,
+                tgfmscs: bool,
+                tgfs: bool,
+            }
+            let proxy = Mmctir {
+                tgfscs: self.tgfscs(),
+                tgfmscs: self.tgfmscs(),
+                tgfs: self.tgfs(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet PTP PPS control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2722,6 +3835,29 @@ pub mod regs {
             Ptpppscr(0)
         }
     }
+    impl core::fmt::Debug for Ptpppscr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ptpppscr")
+                .field("tsso", &self.tsso())
+                .field("tsttr", &self.tsttr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ptpppscr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ptpppscr {
+                tsso: bool,
+                tsttr: bool,
+            }
+            let proxy = Ptpppscr {
+                tsso: self.tsso(),
+                tsttr: self.tsttr(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet PTP subsecond increment register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2745,6 +3881,22 @@ pub mod regs {
             Ptpssir(0)
         }
     }
+    impl core::fmt::Debug for Ptpssir {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ptpssir").field("stssi", &self.stssi()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ptpssir {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ptpssir {
+                stssi: u8,
+            }
+            let proxy = Ptpssir { stssi: self.stssi() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet PTP time stamp addend register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2766,6 +3918,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ptptsar {
             Ptptsar(0)
+        }
+    }
+    impl core::fmt::Debug for Ptptsar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ptptsar").field("tsa", &self.tsa()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ptptsar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ptptsar {
+                tsa: u32,
+            }
+            let proxy = Ptptsar { tsa: self.tsa() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Ethernet PTP time stamp control register"]
@@ -2956,6 +4124,71 @@ pub mod regs {
             Ptptscr(0)
         }
     }
+    impl core::fmt::Debug for Ptptscr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ptptscr")
+                .field("tse", &self.tse())
+                .field("tsfcu", &self.tsfcu())
+                .field("tssti", &self.tssti())
+                .field("tsstu", &self.tsstu())
+                .field("tsite", &self.tsite())
+                .field("ttsaru", &self.ttsaru())
+                .field("tssarfe", &self.tssarfe())
+                .field("tsssr", &self.tsssr())
+                .field("tsptppsv2e", &self.tsptppsv2e())
+                .field("tssptpoefe", &self.tssptpoefe())
+                .field("tssipv6fe", &self.tssipv6fe())
+                .field("tssipv4fe", &self.tssipv4fe())
+                .field("tsseme", &self.tsseme())
+                .field("tssmrme", &self.tssmrme())
+                .field("tscnt", &self.tscnt())
+                .field("tspffmae", &self.tspffmae())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ptptscr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ptptscr {
+                tse: bool,
+                tsfcu: bool,
+                tssti: bool,
+                tsstu: bool,
+                tsite: bool,
+                ttsaru: bool,
+                tssarfe: bool,
+                tsssr: bool,
+                tsptppsv2e: bool,
+                tssptpoefe: bool,
+                tssipv6fe: bool,
+                tssipv4fe: bool,
+                tsseme: bool,
+                tssmrme: bool,
+                tscnt: u8,
+                tspffmae: bool,
+            }
+            let proxy = Ptptscr {
+                tse: self.tse(),
+                tsfcu: self.tsfcu(),
+                tssti: self.tssti(),
+                tsstu: self.tsstu(),
+                tsite: self.tsite(),
+                ttsaru: self.ttsaru(),
+                tssarfe: self.tssarfe(),
+                tsssr: self.tsssr(),
+                tsptppsv2e: self.tsptppsv2e(),
+                tssptpoefe: self.tssptpoefe(),
+                tssipv6fe: self.tssipv6fe(),
+                tssipv4fe: self.tssipv4fe(),
+                tsseme: self.tsseme(),
+                tssmrme: self.tssmrme(),
+                tscnt: self.tscnt(),
+                tspffmae: self.tspffmae(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet PTP time stamp high register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2979,6 +4212,22 @@ pub mod regs {
             Ptptshr(0)
         }
     }
+    impl core::fmt::Debug for Ptptshr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ptptshr").field("sts", &self.sts()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ptptshr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ptptshr {
+                sts: u32,
+            }
+            let proxy = Ptptshr { sts: self.sts() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet PTP time stamp high update register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3000,6 +4249,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ptptshur {
             Ptptshur(0)
+        }
+    }
+    impl core::fmt::Debug for Ptptshur {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ptptshur").field("tsus", &self.tsus()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ptptshur {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ptptshur {
+                tsus: u32,
+            }
+            let proxy = Ptptshur { tsus: self.tsus() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Ethernet PTP time stamp low register"]
@@ -3036,6 +4301,29 @@ pub mod regs {
             Ptptslr(0)
         }
     }
+    impl core::fmt::Debug for Ptptslr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ptptslr")
+                .field("stss", &self.stss())
+                .field("stpns", &self.stpns())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ptptslr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ptptslr {
+                stss: u32,
+                stpns: bool,
+            }
+            let proxy = Ptptslr {
+                stss: self.stss(),
+                stpns: self.stpns(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet PTP time stamp low update register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3068,6 +4356,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ptptslur {
             Ptptslur(0)
+        }
+    }
+    impl core::fmt::Debug for Ptptslur {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ptptslur")
+                .field("tsuss", &self.tsuss())
+                .field("tsupns", &self.tsupns())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ptptslur {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ptptslur {
+                tsuss: u32,
+                tsupns: bool,
+            }
+            let proxy = Ptptslur {
+                tsuss: self.tsuss(),
+                tsupns: self.tsupns(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Ethernet PTP time stamp status register"]
@@ -3104,6 +4415,29 @@ pub mod regs {
             Ptptssr(0)
         }
     }
+    impl core::fmt::Debug for Ptptssr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ptptssr")
+                .field("tsso", &self.tsso())
+                .field("tsttr", &self.tsttr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ptptssr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ptptssr {
+                tsso: bool,
+                tsttr: bool,
+            }
+            let proxy = Ptptssr {
+                tsso: self.tsso(),
+                tsttr: self.tsttr(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Ethernet PTP target time high register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3125,6 +4459,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ptptthr {
             Ptptthr(0)
+        }
+    }
+    impl core::fmt::Debug for Ptptthr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ptptthr").field("ttsh", &self.ttsh()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ptptthr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ptptthr {
+                ttsh: u32,
+            }
+            let proxy = Ptptthr { ttsh: self.ttsh() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Ethernet PTP target time low register"]
@@ -3150,10 +4500,27 @@ pub mod regs {
             Ptpttlr(0)
         }
     }
+    impl core::fmt::Debug for Ptpttlr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ptpttlr").field("ttsl", &self.ttsl()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ptpttlr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ptpttlr {
+                ttsl: u32,
+            }
+            let proxy = Ptpttlr { ttsl: self.ttsl() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Apcs {
         #[doc = "MAC passes all incoming frames unmodified"]
         DISABLED = 0x0,
@@ -3183,7 +4550,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bfd {
         #[doc = "Address filters pass all received broadcast frames"]
         ENABLED = 0x0,
@@ -3213,7 +4581,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bl {
         #[doc = "For retransmission n, wait up to 2^min(n, 10) time slots"]
         BL10 = 0x0,
@@ -3247,7 +4616,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CounterReset {
         _RESERVED_0 = 0x0,
         #[doc = "Reset all counters. Cleared automatically"]
@@ -3276,7 +4646,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cr {
         #[doc = "60-100MHz HCLK/42"]
         CR_60_100 = 0x0,
@@ -3315,7 +4686,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Csd {
         #[doc = "Errors generated due to loss of carrier"]
         ENABLED = 0x0,
@@ -3345,12 +4717,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Csr {
         #[doc = "Counters roll over to zero after reaching the maximum value"]
         ROLLOVER = 0x0,
         #[doc = "Counters do not roll over to zero after reaching the maximum value"]
-        NOTROLLOVER = 0x01,
+        NOT_ROLLOVER = 0x01,
     }
     impl Csr {
         #[inline(always)]
@@ -3375,12 +4748,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Da {
         #[doc = "Round-robin with Rx:Tx priority given by PM"]
-        ROUNDROBIN = 0x0,
+        ROUND_ROBIN = 0x0,
         #[doc = "Rx has priority over Tx"]
-        RXPRIORITY = 0x01,
+        RX_PRIORITY = 0x01,
     }
     impl Da {
         #[inline(always)]
@@ -3405,7 +4779,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Daif {
         #[doc = "Normal filtering of frames"]
         NORMAL = 0x0,
@@ -3435,12 +4810,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dm {
         #[doc = "MAC operates in half-duplex mode"]
-        HALFDUPLEX = 0x0,
+        HALF_DUPLEX = 0x0,
         #[doc = "MAC operates in full-duplex mode"]
-        FULLDUPLEX = 0x01,
+        FULL_DUPLEX = 0x01,
     }
     impl Dm {
         #[inline(always)]
@@ -3465,7 +4841,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum DmaomrSr {
         #[doc = "Reception is stopped after transfer of the current frame"]
         STOPPED = 0x0,
@@ -3495,7 +4872,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dtcefd {
         #[doc = "Drop frames with errors only in the receive checksum offload engine"]
         ENABLED = 0x0,
@@ -3525,7 +4903,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fb {
         #[doc = "AHB uses SINGLE and INCR burst transfers"]
         VARIABLE = 0x0,
@@ -3555,12 +4934,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fcb {
         #[doc = "In half duplex only, deasserts back pressure"]
-        DISABLEBACKPRESSURE = 0x0,
+        DISABLE_BACK_PRESSURE = 0x0,
         #[doc = "In full duplex, initiate a Pause control frame. In half duplex, assert back pressure"]
-        PAUSEORBACKPRESSURE = 0x01,
+        PAUSE_OR_BACK_PRESSURE = 0x01,
     }
     impl Fcb {
         #[inline(always)]
@@ -3585,7 +4965,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fef {
         #[doc = "Rx FIFO drops frames with error status"]
         DROP = 0x0,
@@ -3615,7 +4996,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fes {
         #[doc = "10 Mbit/s"]
         FES10 = 0x0,
@@ -3645,7 +5027,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fpm {
         #[doc = "PBL values used as-is"]
         X1 = 0x0,
@@ -3675,7 +5058,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ftf {
         _RESERVED_0 = 0x0,
         #[doc = "Transmit FIFO controller logic is reset to its default values. Cleared automatically"]
@@ -3704,7 +5088,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fugf {
         #[doc = "Rx FIFO drops all frames of less than 64 bytes"]
         DROP = 0x0,
@@ -3734,7 +5119,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hm {
         #[doc = "MAC performs a perfect destination address filtering for multicast frames"]
         PERFECT = 0x0,
@@ -3764,12 +5150,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hpf {
         #[doc = "If HM or HU is set, only frames that match the Hash filter are passed"]
-        HASHONLY = 0x0,
+        HASH_ONLY = 0x0,
         #[doc = "If HM or HU is set, frames that match either the perfect filter or the hash filter are passed"]
-        HASHORPERFECT = 0x01,
+        HASH_OR_PERFECT = 0x01,
     }
     impl Hpf {
         #[inline(always)]
@@ -3794,7 +5181,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hu {
         #[doc = "MAC performs a perfect destination address filtering for unicast frames"]
         PERFECT = 0x0,
@@ -3824,7 +5212,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ifg {
         #[doc = "96 bit times"]
         IFG96 = 0x0,
@@ -3866,7 +5255,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ipco {
         #[doc = "IPv4 checksum offload disabled"]
         DISABLED = 0x0,
@@ -3896,7 +5286,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Jd {
         #[doc = "Jabber enabled, transmit frames up to 2048 bytes"]
         ENABLED = 0x0,
@@ -3926,7 +5317,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lm {
         #[doc = "Normal mode"]
         NORMAL = 0x0,
@@ -3956,7 +5348,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum MacahrSa {
         #[doc = "This address is used for comparison with DA fields of the received frame"]
         DESTINATION = 0x0,
@@ -3986,7 +5379,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum MbProgress {
         _RESERVED_0 = 0x0,
         #[doc = "This bit is set to 1 by the application to indicate that a read or write access is in progress"]
@@ -4015,7 +5409,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mw {
         #[doc = "Read operation"]
         READ = 0x0,
@@ -4045,7 +5440,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pbl {
         _RESERVED_0 = 0x0,
         #[doc = "Maximum of 1 beat per DMA transaction"]
@@ -4141,16 +5537,17 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pcf {
         #[doc = "MAC prevents all control frames from reaching the application"]
-        PREVENTALL = 0x0,
+        PREVENT_ALL = 0x0,
         #[doc = "MAC forwards all control frames to application except Pause"]
-        FORWARDALLEXCEPTPAUSE = 0x01,
+        FORWARD_ALL_EXCEPT_PAUSE = 0x01,
         #[doc = "MAC forwards all control frames to application even if they fail the address filter"]
-        FORWARDALL = 0x02,
+        FORWARD_ALL = 0x02,
         #[doc = "MAC forwards control frames that pass the address filter"]
-        FORWARDALLFILTERED = 0x03,
+        FORWARD_ALL_FILTERED = 0x03,
     }
     impl Pcf {
         #[inline(always)]
@@ -4175,7 +5572,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pd {
         _RESERVED_0 = 0x0,
         #[doc = "All received frames will be dropped. Cleared automatically when a magic packet or wakeup frame is received"]
@@ -4204,7 +5602,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Plt {
         #[doc = "Pause time minus 4 slot times"]
         PLT4 = 0x0,
@@ -4238,7 +5637,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pmtim {
         #[doc = "PMT Status interrupt generation enabled"]
         UNMASKED = 0x0,
@@ -4268,16 +5668,17 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PriorityRxOverTx {
         #[doc = "RxDMA priority over TxDMA is 1:1"]
-        ONETOONE = 0x0,
+        ONE_TO_ONE = 0x0,
         #[doc = "RxDMA priority over TxDMA is 2:1"]
-        TWOTOONE = 0x01,
+        TWO_TO_ONE = 0x01,
         #[doc = "RxDMA priority over TxDMA is 3:1"]
-        THREETOONE = 0x02,
+        THREE_TO_ONE = 0x02,
         #[doc = "RxDMA priority over TxDMA is 4:1"]
-        FOURTOONE = 0x03,
+        FOUR_TO_ONE = 0x03,
     }
     impl PriorityRxOverTx {
         #[inline(always)]
@@ -4302,7 +5703,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rd {
         #[doc = "MAC attempts retries based on the settings of BL"]
         ENABLED = 0x0,
@@ -4332,7 +5734,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rdp {
         _RESERVED_0 = 0x0,
         #[doc = "1 beat per RxDMA transaction"]
@@ -4428,7 +5831,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rfaem {
         #[doc = "Received-alignment-error counter half-full interrupt enabled"]
         UNMASKED = 0x0,
@@ -4458,7 +5862,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rfcem {
         #[doc = "Received-crc-error counter half-full interrupt enabled"]
         UNMASKED = 0x0,
@@ -4488,7 +5893,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rgufm {
         #[doc = "Received-good-unicast counter half-full interrupt enabled"]
         UNMASKED = 0x0,
@@ -4518,7 +5924,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rod {
         #[doc = "MAC receives all packets from PHY while transmitting"]
         ENABLED = 0x0,
@@ -4562,6 +5969,23 @@ pub mod vals {
             self.0
         }
     }
+    impl core::fmt::Debug for Rpd {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            match self.0 {
+                0x0 => f.write_str("POLL"),
+                other => core::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rpd {
+        fn format(&self, f: defmt::Formatter) {
+            match self.0 {
+                0x0 => defmt::write!(f, "POLL"),
+                other => defmt::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
     impl From<u32> for Rpd {
         #[inline(always)]
         fn from(val: u32) -> Rpd {
@@ -4575,21 +5999,22 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rps {
         #[doc = "Stopped, reset or Stop Receive command issued"]
         STOPPED = 0x0,
         #[doc = "Running, fetching receive transfer descriptor"]
-        RUNNINGFETCHING = 0x01,
+        RUNNING_FETCHING = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "Running, waiting for receive packet"]
-        RUNNINGWAITING = 0x03,
+        RUNNING_WAITING = 0x03,
         #[doc = "Suspended, receive descriptor unavailable"]
         SUSPENDED = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         #[doc = "Running, writing data to host memory buffer"]
-        RUNNINGWRITING = 0x07,
+        RUNNING_WRITING = 0x07,
     }
     impl Rps {
         #[inline(always)]
@@ -4614,12 +6039,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rsf {
         #[doc = "Rx FIFO operates in cut-through mode, subject to RTC bits"]
-        CUTTHROUGH = 0x0,
+        CUT_THROUGH = 0x0,
         #[doc = "Frames are read from Rx FIFO after complete frame has been written"]
-        STOREFORWARD = 0x01,
+        STORE_FORWARD = 0x01,
     }
     impl Rsf {
         #[inline(always)]
@@ -4644,7 +6070,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rtc {
         #[doc = "64 bytes"]
         RTC64 = 0x0,
@@ -4678,7 +6105,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Saif {
         #[doc = "Source address filter operates normally"]
         NORMAL = 0x0,
@@ -4708,7 +6136,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum St {
         #[doc = "Transmission is placed in the Stopped state"]
         STOPPED = 0x0,
@@ -4738,7 +6167,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tgfm {
         #[doc = "Transmitted-good counter half-full interrupt enabled"]
         UNMASKED = 0x0,
@@ -4768,7 +6198,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tgfmscm {
         #[doc = "Transmitted-good-multiple-collision half-full interrupt enabled"]
         UNMASKED = 0x0,
@@ -4798,7 +6229,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tgfscm {
         #[doc = "Transmitted-good-single-collision half-full interrupt enabled"]
         UNMASKED = 0x0,
@@ -4842,6 +6274,23 @@ pub mod vals {
             self.0
         }
     }
+    impl core::fmt::Debug for Tpd {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            match self.0 {
+                0x0 => f.write_str("POLL"),
+                other => core::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Tpd {
+        fn format(&self, f: defmt::Formatter) {
+            match self.0 {
+                0x0 => defmt::write!(f, "POLL"),
+                other => defmt::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
     impl From<u32> for Tpd {
         #[inline(always)]
         fn from(val: u32) -> Tpd {
@@ -4855,16 +6304,17 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tps {
         #[doc = "Stopped, Reset or Stop Transmit command issued"]
         STOPPED = 0x0,
         #[doc = "Running, fetching transmit transfer descriptor"]
-        RUNNINGFETCHING = 0x01,
+        RUNNING_FETCHING = 0x01,
         #[doc = "Running, waiting for status"]
-        RUNNINGWAITING = 0x02,
+        RUNNING_WAITING = 0x02,
         #[doc = "Running, reading data from host memory buffer"]
-        RUNNINGREADING = 0x03,
+        RUNNING_READING = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
         #[doc = "Suspended, transmit descriptor unavailable or transmit buffer underflow"]
@@ -4895,12 +6345,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tsf {
         #[doc = "Transmission starts when the frame size in the Tx FIFO exceeds TTC threshold"]
-        CUTTHROUGH = 0x0,
+        CUT_THROUGH = 0x0,
         #[doc = "Transmission starts when a full frame is in the Tx FIFO"]
-        STOREFORWARD = 0x01,
+        STORE_FORWARD = 0x01,
     }
     impl Tsf {
         #[inline(always)]
@@ -4925,7 +6376,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tstim {
         #[doc = "Time stamp interrupt generation enabled"]
         UNMASKED = 0x0,
@@ -4955,7 +6407,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ttc {
         #[doc = "64 bytes"]
         TTC64 = 0x0,
@@ -4997,7 +6450,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Usp {
         #[doc = "PBL value used for both Rx and Tx DMA"]
         COMBINED = 0x0,
@@ -5027,7 +6481,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vlantc {
         #[doc = "Full 16 bit VLAN identifiers are used for comparison and filtering"]
         VLANTC16 = 0x0,
@@ -5057,7 +6512,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wd {
         #[doc = "Watchdog enabled, receive frames limited to 2048 bytes"]
         ENABLED = 0x0,
@@ -5087,7 +6543,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wffrpr {
         _RESERVED_0 = 0x0,
         #[doc = "Reset wakeup frame filter register point to 0b000. Automatically cleared"]
@@ -5116,7 +6573,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Zqpd {
         #[doc = "Normal operation with automatic zero-quanta pause control frame generation"]
         ENABLED = 0x0,

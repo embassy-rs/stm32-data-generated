@@ -148,10 +148,58 @@ pub mod regs {
             Csr(0)
         }
     }
+    impl core::fmt::Debug for Csr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Csr")
+                .field("en", &self.en())
+                .field("inmsel", &self.inmsel())
+                .field("inpsel", &self.inpsel())
+                .field("polarity", &self.polarity())
+                .field("hyst", &self.hyst())
+                .field("blanksel", &self.blanksel())
+                .field("brgen", &self.brgen())
+                .field("scalen", &self.scalen())
+                .field("value_do_not_set", &self.value_do_not_set())
+                .field("lock", &self.lock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Csr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Csr {
+                en: bool,
+                inmsel: u8,
+                inpsel: bool,
+                polarity: super::vals::Polarity,
+                hyst: super::vals::Hyst,
+                blanksel: u8,
+                brgen: bool,
+                scalen: bool,
+                value_do_not_set: bool,
+                lock: bool,
+            }
+            let proxy = Csr {
+                en: self.en(),
+                inmsel: self.inmsel(),
+                inpsel: self.inpsel(),
+                polarity: self.polarity(),
+                hyst: self.hyst(),
+                blanksel: self.blanksel(),
+                brgen: self.brgen(),
+                scalen: self.scalen(),
+                value_do_not_set: self.value_do_not_set(),
+                lock: self.lock(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hyst {
         NONE = 0x0,
         #[doc = "10mV hysteresis"]
@@ -192,10 +240,11 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Polarity {
         #[doc = "Non-inverted polarity"]
-        NONINVERTED = 0x0,
+        NON_INVERTED = 0x0,
         #[doc = "Inverted polarity"]
         INVERTED = 0x01,
     }

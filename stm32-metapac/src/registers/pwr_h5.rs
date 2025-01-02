@@ -1484,7 +1484,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 6,
                 },
                 EnumVariant {
-                    name: "PVDINPIN",
+                    name: "PVDIN_PIN",
                     description: Some(
                         "PVD_IN pin",
                     ),
@@ -1505,7 +1505,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LOWPOWER",
+                    name: "LOW_POWER",
                     description: Some(
                         "Enters low-power mode when the system enters Stop mode (low-power consumption).",
                     ),
@@ -1589,14 +1589,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "R5KOHM",
+                    name: "R5K_OHM",
                     description: Some(
                         "Charge VBAT through a 5 kΩ resistor.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "R1_5KOHM",
+                    name: "R1_5K_OHM",
                     description: Some(
                         "Charge VBAT through a 1.5 kΩ resistor.",
                     ),
@@ -1658,17 +1658,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOPULLUP",
+                    name: "NO_PULL_UP",
                     description: None,
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PULLUP",
+                    name: "PULL_UP",
                     description: None,
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PULLDOWN",
+                    name: "PULL_DOWN",
                     description: None,
                     value: 2,
                 },

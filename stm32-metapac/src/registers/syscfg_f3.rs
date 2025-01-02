@@ -1179,14 +1179,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "MAPDMA1CH2",
+                    name: "MAP_DMA1CH2",
                     description: Some(
                         "ADC2 mapped on DMA1 channel 2",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "MAPDMA1CH4",
+                    name: "MAP_DMA1CH4",
                     description: Some(
                         "ADC2 mapped on DMA1 channel 4",
                     ),
@@ -1333,7 +1333,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HRTIM1",
+                    name: "HR_TIM1",
                     description: Some(
                         "DAC trigger is HRTIM1_DAC1_TRIG1",
                     ),
@@ -1347,21 +1347,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOREDIRECTION",
+                    name: "NO_REDIRECTION",
                     description: Some(
                         "No redirection",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MAPTIM2TIM15",
+                    name: "MAP_TIM2TIM15",
                     description: Some(
                         "TIM2 IC1 and TIM2 IC2 are connected to TIM15 IC1 and TIM15 IC2 respectively",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MAPTIM3TIM15",
+                    name: "MAP_TIM3TIM15",
                     description: Some(
                         "TIM3 IC1 and TIM3 IC2 are connected to TIM15 IC1 and TIM15 IC2 respectively",
                     ),
@@ -1396,21 +1396,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "MAPDMA1CH7",
+                    name: "MAP_DMA1CH7",
                     description: Some(
                         "I2C1_RX mapped on DMA1 CH7",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MAPDMA1CH3",
+                    name: "MAP_DMA1CH3",
                     description: Some(
                         "I2C1_RX mapped on DMA1 CH3",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MAPDMA1CH5",
+                    name: "MAP_DMA1CH5",
                     description: Some(
                         "I2C1_RX mapped on DMA1 CH5",
                     ),
@@ -1424,21 +1424,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "MAPDMA1CH6",
+                    name: "MAP_DMA1CH6",
                     description: Some(
                         "I2C1_TX mapped on DMA1 CH6",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MAPDMA1CH2",
+                    name: "MAP_DMA1CH2",
                     description: Some(
                         "I2C1_TX mapped on DMA1 CH2",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MAPDMA1CH4",
+                    name: "MAP_DMA1CH4",
                     description: Some(
                         "I2C1_TX mapped on DMA1 CH4",
                     ),
@@ -1452,21 +1452,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "MAINFLASH",
+                    name: "MAIN_FLASH",
                     description: Some(
                         "Main Flash memory mapped at 0x0000_0000",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYSTEMFLASH",
+                    name: "SYSTEM_FLASH",
                     description: Some(
                         "System Flash memory mapped at 0x0000_0000",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MAINFLASH2",
+                    name: "MAIN_FLASH2",
                     description: Some(
                         "Main Flash memory mapped at 0x0000_0000",
                     ),
@@ -1487,21 +1487,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "MAPDMA1CH3",
+                    name: "MAP_DMA1CH3",
                     description: Some(
                         "SPI1_RX mapped on DMA1 CH2",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MAPDMA1CH5",
+                    name: "MAP_DMA1CH5",
                     description: Some(
                         "SPI1_RX mapped on DMA1 CH4",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MAPDMA1CH7",
+                    name: "MAP_DMA1CH7",
                     description: Some(
                         "SPI1_RX mapped on DMA1 CH6",
                     ),
@@ -1515,21 +1515,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "MAPDMA1CH3",
+                    name: "MAP_DMA1CH3",
                     description: Some(
                         "SPI1_TX mapped on DMA1 CH3",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MAPDMA1CH5",
+                    name: "MAP_DMA1CH5",
                     description: Some(
                         "SPI1_TX mapped on DMA1 CH5",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MAPDMA1CH7",
+                    name: "MAP_DMA1CH7",
                     description: Some(
                         "SPI1_TX mapped on DMA1 CH7",
                     ),

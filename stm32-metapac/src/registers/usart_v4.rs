@@ -2284,7 +2284,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LOWPOWER",
+                    name: "LOW_POWER",
                     description: Some(
                         "Low-power mode",
                     ),
@@ -2571,14 +2571,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "IDLELINE",
+                    name: "IDLE_LINE",
                     description: Some(
                         "USART wakeup on idle line",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ADDRESSMARK",
+                    name: "ADDRESS_MARK",
                     description: Some(
                         "USART wakeup on address mark",
                     ),

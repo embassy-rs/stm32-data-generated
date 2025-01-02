@@ -281,14 +281,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 4,
                 },
                 EnumVariant {
-                    name: "HYPERBOLICCOSINE",
+                    name: "HYPERBOLIC_COSINE",
                     description: Some(
                         "Hyperbolic Cosine function.",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "HYPERBOLICSINE",
+                    name: "HYPERBOLIC_SINE",
                     description: Some(
                         "Hyperbolic Sine function.",
                     ),
@@ -302,14 +302,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 7,
                 },
                 EnumVariant {
-                    name: "NATURALLOGARITHM",
+                    name: "NATURAL_LOGARITHM",
                     description: Some(
                         "Natural Logarithm function.",
                     ),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "SQUAREROOT",
+                    name: "SQUARE_ROOT",
                     description: Some(
                         "Square Root function.",
                     ),

@@ -942,7 +942,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 1,
             variants: &[EnumVariant {
-                name: "ABORTREQUEST",
+                name: "ABORT_REQUEST",
                 description: Some("Transfer abort requested"),
                 value: 1,
             }],
@@ -953,7 +953,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOMODIFY",
+                    name: "NO_MODIFY",
                     description: Some("No modification of alpha channel"),
                     value: 0,
                 },
@@ -1134,7 +1134,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOMODIFY",
+                    name: "NO_MODIFY",
                     description: Some("No modification of alpha channel"),
                     value: 0,
                 },
@@ -1245,22 +1245,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "MEMORYTOMEMORY",
+                    name: "MEMORY_TO_MEMORY",
                     description: Some("Memory-to-memory (FG fetch only)"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MEMORYTOMEMORYPFC",
+                    name: "MEMORY_TO_MEMORY_PFC",
                     description: Some("Memory-to-memory with PFC (FG fetch only with FG PFC active)"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MEMORYTOMEMORYPFCBLENDING",
+                    name: "MEMORY_TO_MEMORY_PFCBLENDING",
                     description: Some("Memory-to-memory with blending (FG and BG fetch with PFC and blending)"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "REGISTERTOMEMORY",
+                    name: "REGISTER_TO_MEMORY",
                     description: Some("Register-to-memory"),
                     value: 3,
                 },

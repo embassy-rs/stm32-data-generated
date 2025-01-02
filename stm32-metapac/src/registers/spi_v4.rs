@@ -1466,7 +1466,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "FULLDUPLEX",
+                    name: "FULL_DUPLEX",
                     description: Some(
                         "Full duplex",
                     ),
@@ -1487,7 +1487,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "HALFDUPLEX",
+                    name: "HALF_DUPLEX",
                     description: Some(
                         "Half duplex",
                     ),
@@ -1501,14 +1501,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FIRSTEDGE",
+                    name: "FIRST_EDGE",
                     description: Some(
                         "The first clock transition is the first data capture edge",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SECONDEDGE",
+                    name: "SECOND_EDGE",
                     description: Some(
                         "The second clock transition is the first data capture edge",
                     ),
@@ -1522,14 +1522,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "IDLELOW",
+                    name: "IDLE_LOW",
                     description: Some(
                         "CK to 0 when idle",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "IDLEHIGH",
+                    name: "IDLE_HIGH",
                     description: Some(
                         "CK to 1 when idle",
                     ),
@@ -1543,112 +1543,112 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "ONEFRAME",
+                    name: "ONE_FRAME",
                     description: Some(
                         "1 frame",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "TWOFRAMES",
+                    name: "TWO_FRAMES",
                     description: Some(
                         "2 frames",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "THREEFRAMES",
+                    name: "THREE_FRAMES",
                     description: Some(
                         "3 frames",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "FOURFRAMES",
+                    name: "FOUR_FRAMES",
                     description: Some(
                         "4 frames",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "FIVEFRAMES",
+                    name: "FIVE_FRAMES",
                     description: Some(
                         "5 frames",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "SIXFRAMES",
+                    name: "SIX_FRAMES",
                     description: Some(
                         "6 frames",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "SEVENFRAMES",
+                    name: "SEVEN_FRAMES",
                     description: Some(
                         "7 frames",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "EIGHTFRAMES",
+                    name: "EIGHT_FRAMES",
                     description: Some(
                         "8 frames",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "NINEFRAMES",
+                    name: "NINE_FRAMES",
                     description: Some(
                         "9 frames",
                     ),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "TENFRAMES",
+                    name: "TEN_FRAMES",
                     description: Some(
                         "10 frames",
                     ),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "ELEVENFRAMES",
+                    name: "ELEVEN_FRAMES",
                     description: Some(
                         "11 frames",
                     ),
                     value: 10,
                 },
                 EnumVariant {
-                    name: "TWELVEFRAMES",
+                    name: "TWELVE_FRAMES",
                     description: Some(
                         "12 frames",
                     ),
                     value: 11,
                 },
                 EnumVariant {
-                    name: "THIRTEENFRAMES",
+                    name: "THIRTEEN_FRAMES",
                     description: Some(
                         "13 frames",
                     ),
                     value: 12,
                 },
                 EnumVariant {
-                    name: "FOURTEENFRAMES",
+                    name: "FOURTEEN_FRAMES",
                     description: Some(
                         "14 frames",
                     ),
                     value: 13,
                 },
                 EnumVariant {
-                    name: "FIFTEENFRAMES",
+                    name: "FIFTEEN_FRAMES",
                     description: Some(
                         "15 frames",
                     ),
                     value: 14,
                 },
                 EnumVariant {
-                    name: "SIXTEENFRAMES",
+                    name: "SIXTEEN_FRAMES",
                     description: Some(
                         "16 frames",
                     ),
@@ -1788,14 +1788,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ALLZEROS",
+                    name: "ALL_ZEROS",
                     description: Some(
                         "All zeros RX CRC initialization pattern",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ALLONES",
+                    name: "ALL_ONES",
                     description: Some(
                         "All ones RX CRC initialization pattern",
                     ),
@@ -1809,14 +1809,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "PERMANENTLYACTIVE",
+                    name: "PERMANENTLY_ACTIVE",
                     description: Some(
                         "RDY signal is defined internally fixed as permanently active (RDIOP setting has no effect)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FROMINPUT",
+                    name: "FROM_INPUT",
                     description: Some(
                         "RDY signal is overtaken from alternate function input (at master case) or output (at slave case) of the dedicated pin (RDIOP setting takes effect)",
                     ),
@@ -1830,14 +1830,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "READYHIGH",
+                    name: "READY_HIGH",
                     description: Some(
                         "high level of the signal means the slave is ready for communication",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "READYLOW",
+                    name: "READY_LOW",
                     description: Some(
                         "low level of the signal means the slave is ready for communication",
                     ),
@@ -1851,28 +1851,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ZEROFRAMES",
+                    name: "ZERO_FRAMES",
                     description: Some(
                         "Zero frames beyond packing ratio available",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ONEFRAME",
+                    name: "ONE_FRAME",
                     description: Some(
                         "One frame beyond packing ratio available",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "TWOFRAMES",
+                    name: "TWO_FRAMES",
                     description: Some(
                         "Two frame beyond packing ratio available",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "THREEFRAMES",
+                    name: "THREE_FRAMES",
                     description: Some(
                         "Three frame beyond packing ratio available",
                     ),
@@ -1886,14 +1886,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LESSTHAN32",
+                    name: "LESS_THAN32",
                     description: Some(
                         "Less than 32-bit data frame received",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ATLEAST32",
+                    name: "AT_LEAST32",
                     description: Some(
                         "At least 32-bit data frame received",
                     ),
@@ -1928,14 +1928,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVELOW",
+                    name: "ACTIVE_LOW",
                     description: Some(
                         "Low level is active for SS signal",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ACTIVEHIGH",
+                    name: "ACTIVE_HIGH",
                     description: Some(
                         "High level is active for SS signal",
                     ),
@@ -1956,7 +1956,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NOTASSERTED",
+                    name: "NOT_ASSERTED",
                     description: Some(
                         "Data frames interleaved with SS not asserted during MIDI",
                     ),
@@ -1970,14 +1970,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ALLZEROS",
+                    name: "ALL_ZEROS",
                     description: Some(
                         "All zeros TX CRC initialization pattern",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ALLONES",
+                    name: "ALL_ONES",
                     description: Some(
                         "All ones TX CRC initialization pattern",
                     ),
@@ -1998,14 +1998,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "REPEATRECEIVED",
+                    name: "REPEAT_RECEIVED",
                     description: Some(
                         "Slave repeats last received data frame from master",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "REPEATTRANSMITTED",
+                    name: "REPEAT_TRANSMITTED",
                     description: Some(
                         "Slave repeats last transmitted data frame",
                     ),

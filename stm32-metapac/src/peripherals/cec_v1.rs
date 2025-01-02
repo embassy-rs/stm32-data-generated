@@ -112,6 +112,35 @@ pub mod regs {
             Cfgr(0)
         }
     }
+    impl core::fmt::Debug for Cfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr")
+                .field("pe", &self.pe())
+                .field("ie", &self.ie())
+                .field("btem", &self.btem())
+                .field("bpem", &self.bpem())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr {
+                pe: bool,
+                ie: bool,
+                btem: bool,
+                bpem: bool,
+            }
+            let proxy = Cfgr {
+                pe: self.pe(),
+                ie: self.ie(),
+                btem: self.btem(),
+                bpem: self.bpem(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CEC control and status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -212,6 +241,47 @@ pub mod regs {
             Csr(0)
         }
     }
+    impl core::fmt::Debug for Csr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Csr")
+                .field("tsom", &self.tsom())
+                .field("teom", &self.teom())
+                .field("terr", &self.terr())
+                .field("tbtrf", &self.tbtrf())
+                .field("rsom", &self.rsom())
+                .field("reom", &self.reom())
+                .field("rerr", &self.rerr())
+                .field("rbtf", &self.rbtf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Csr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Csr {
+                tsom: bool,
+                teom: bool,
+                terr: bool,
+                tbtrf: bool,
+                rsom: bool,
+                reom: bool,
+                rerr: bool,
+                rbtf: bool,
+            }
+            let proxy = Csr {
+                tsom: self.tsom(),
+                teom: self.teom(),
+                terr: self.terr(),
+                tbtrf: self.tbtrf(),
+                rsom: self.rsom(),
+                reom: self.reom(),
+                rerr: self.rerr(),
+                rbtf: self.rbtf(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CEC error status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -301,6 +371,44 @@ pub mod regs {
             Esr(0)
         }
     }
+    impl core::fmt::Debug for Esr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Esr")
+                .field("bte", &self.bte())
+                .field("bpe", &self.bpe())
+                .field("rbtfe", &self.rbtfe())
+                .field("sbe", &self.sbe())
+                .field("acke", &self.acke())
+                .field("line", &self.line())
+                .field("tbtfe", &self.tbtfe())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Esr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Esr {
+                bte: bool,
+                bpe: bool,
+                rbtfe: bool,
+                sbe: bool,
+                acke: bool,
+                line: bool,
+                tbtfe: bool,
+            }
+            let proxy = Esr {
+                bte: self.bte(),
+                bpe: self.bpe(),
+                rbtfe: self.rbtfe(),
+                sbe: self.sbe(),
+                acke: self.acke(),
+                line: self.line(),
+                tbtfe: self.tbtfe(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CEC own address register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -322,6 +430,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Oar {
             Oar(0)
+        }
+    }
+    impl core::fmt::Debug for Oar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Oar").field("oa", &self.oa()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Oar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Oar {
+                oa: u8,
+            }
+            let proxy = Oar { oa: self.oa() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Rx Data Register."]
@@ -347,6 +471,22 @@ pub mod regs {
             Pres(0)
         }
     }
+    impl core::fmt::Debug for Pres {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pres").field("presc", &self.presc()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pres {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pres {
+                presc: u16,
+            }
+            let proxy = Pres { presc: self.presc() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CEC Rx data register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -370,6 +510,22 @@ pub mod regs {
             Rxd(0)
         }
     }
+    impl core::fmt::Debug for Rxd {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rxd").field("rxd", &self.rxd()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rxd {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rxd {
+                rxd: u8,
+            }
+            let proxy = Rxd { rxd: self.rxd() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CEC Tx data register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -391,6 +547,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Txd {
             Txd(0)
+        }
+    }
+    impl core::fmt::Debug for Txd {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Txd").field("txd", &self.txd()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Txd {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Txd {
+                txd: u8,
+            }
+            let proxy = Txd { txd: self.txd() };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

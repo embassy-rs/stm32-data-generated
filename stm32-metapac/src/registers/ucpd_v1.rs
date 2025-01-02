@@ -1927,35 +1927,35 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SOPPRIME",
+                    name: "SOP_PRIME",
                     description: Some(
                         "SOP' code detected in receiver",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SOPDOUBLEPRIME",
+                    name: "SOP_DOUBLE_PRIME",
                     description: Some(
                         "SOP'' code detected in receiver",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SOPPRIMEDEBUG",
+                    name: "SOP_PRIME_DEBUG",
                     description: Some(
                         "SOP'_Debug detected in receiver",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "SOPDOUBLEPRIMEDEBUG",
+                    name: "SOP_DOUBLE_PRIME_DEBUG",
                     description: Some(
                         "SOP''_Debug detected in receiver",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "CABLERESET",
+                    name: "CABLE_RESET",
                     description: Some(
                         "Cable Reset detected in receiver",
                     ),
@@ -2032,7 +2032,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CABLERESET",
+                    name: "CABLE_RESET",
                     description: Some(
                         "Cable Reset sequence",
                     ),

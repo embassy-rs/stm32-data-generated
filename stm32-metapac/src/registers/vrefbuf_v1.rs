@@ -98,7 +98,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HIGHZ",
+                    name: "HIGH_Z",
                     description: Some("VREF+ pin is high impedance."),
                     value: 1,
                 },

@@ -107,10 +107,40 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("reset", &self.reset())
+                .field("polysize", &self.polysize())
+                .field("rev_in", &self.rev_in())
+                .field("rev_out", &self.rev_out())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                reset: bool,
+                polysize: super::vals::Polysize,
+                rev_in: super::vals::RevIn,
+                rev_out: super::vals::RevOut,
+            }
+            let proxy = Cr {
+                reset: self.reset(),
+                polysize: self.polysize(),
+                rev_in: self.rev_in(),
+                rev_out: self.rev_out(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Polysize {
         #[doc = "32-bit polynomial"]
         POLYSIZE32 = 0x0,
@@ -144,14 +174,15 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RevIn {
         #[doc = "Bit order not affected"]
         NORMAL = 0x0,
         #[doc = "Bit reversal done by byte"]
         BYTE = 0x01,
         #[doc = "Bit reversal done by half-word"]
-        HALFWORD = 0x02,
+        HALF_WORD = 0x02,
         #[doc = "Bit reversal done by word"]
         WORD = 0x03,
     }
@@ -178,7 +209,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RevOut {
         #[doc = "Bit order not affected"]
         NORMAL = 0x0,

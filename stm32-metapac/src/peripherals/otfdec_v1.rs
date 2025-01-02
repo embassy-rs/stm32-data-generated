@@ -117,6 +117,22 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr").field("enc", &self.enc()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                enc: super::vals::Enc,
+            }
+            let proxy = Cr { enc: self.enc() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "OTFDEC interrupt clear register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -160,6 +176,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Icr {
             Icr(0)
+        }
+    }
+    impl core::fmt::Debug for Icr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Icr")
+                .field("seif", &self.seif())
+                .field("xoneif", &self.xoneif())
+                .field("keif", &self.keif())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Icr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Icr {
+                seif: bool,
+                xoneif: bool,
+                keif: bool,
+            }
+            let proxy = Icr {
+                seif: self.seif(),
+                xoneif: self.xoneif(),
+                keif: self.keif(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "OTFDEC interrupt enable register."]
@@ -207,6 +249,32 @@ pub mod regs {
             Ier(0)
         }
     }
+    impl core::fmt::Debug for Ier {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ier")
+                .field("seie", &self.seie())
+                .field("xoneie", &self.xoneie())
+                .field("keie", &self.keie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ier {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ier {
+                seie: bool,
+                xoneie: bool,
+                keie: bool,
+            }
+            let proxy = Ier {
+                seie: self.seie(),
+                xoneie: self.xoneie(),
+                keie: self.keie(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "OTFDEC interrupt status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -252,6 +320,32 @@ pub mod regs {
             Isr(0)
         }
     }
+    impl core::fmt::Debug for Isr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Isr")
+                .field("seif", &self.seif())
+                .field("xoneif", &self.xoneif())
+                .field("keif", &self.keif())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Isr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Isr {
+                seif: bool,
+                xoneif: bool,
+                keif: bool,
+            }
+            let proxy = Isr {
+                seif: self.seif(),
+                xoneif: self.xoneif(),
+                keif: self.keif(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "OTFDEC_PRIVCFGR."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -273,6 +367,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Privcfgr {
             Privcfgr(0)
+        }
+    }
+    impl core::fmt::Debug for Privcfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Privcfgr").field("priv_", &self.priv_()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Privcfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Privcfgr {
+                priv_: bool,
+            }
+            let proxy = Privcfgr { priv_: self.priv_() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "OTFDEC region 3 configuration register."]
@@ -353,10 +463,46 @@ pub mod regs {
             RegionCfgr(0)
         }
     }
+    impl core::fmt::Debug for RegionCfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RegionCfgr")
+                .field("reg_en", &self.reg_en())
+                .field("configlock", &self.configlock())
+                .field("keylock", &self.keylock())
+                .field("mode", &self.mode())
+                .field("keycrc", &self.keycrc())
+                .field("reg_version", &self.reg_version())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RegionCfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RegionCfgr {
+                reg_en: bool,
+                configlock: bool,
+                keylock: bool,
+                mode: super::vals::Mode,
+                keycrc: u8,
+                reg_version: u16,
+            }
+            let proxy = RegionCfgr {
+                reg_en: self.reg_en(),
+                configlock: self.configlock(),
+                keylock: self.keylock(),
+                mode: self.mode(),
+                keycrc: self.keycrc(),
+                reg_version: self.reg_version(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Enc {
         #[doc = "OTFDEC working in decryption mode"]
         DECRYPTION = 0x0,
@@ -386,7 +532,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,

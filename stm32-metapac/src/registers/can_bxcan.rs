@@ -1116,7 +1116,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "NOERROR",
+                    name: "NO_ERROR",
                     description: Some("No Error"),
                     value: 0,
                 },
@@ -1136,12 +1136,12 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 3,
                 },
                 EnumVariant {
-                    name: "BITRECESSIVE",
+                    name: "BIT_RECESSIVE",
                     description: Some("Bit recessive Error"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "BITDOMINANT",
+                    name: "BIT_DOMINANT",
                     description: Some("Bit dominant Error"),
                     value: 5,
                 },

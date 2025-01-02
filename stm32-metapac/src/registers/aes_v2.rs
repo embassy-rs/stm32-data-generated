@@ -331,7 +331,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HALFWORD",
+                    name: "HALF_WORD",
                     description: Some("Half-word (16-bit)"),
                     value: 1,
                 },
@@ -353,22 +353,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "INITPHASE",
+                    name: "INIT_PHASE",
                     description: Some("Init phase"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HEADERPHASE",
+                    name: "HEADER_PHASE",
                     description: Some("Header phase"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PAYLOADPHASE",
+                    name: "PAYLOAD_PHASE",
                     description: Some("Payload phase"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "FINALPHASE",
+                    name: "FINAL_PHASE",
                     description: Some("Final phase"),
                     value: 3,
                 },

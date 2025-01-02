@@ -139,6 +139,26 @@ pub mod regs {
             Ccr(0)
         }
     }
+    impl core::fmt::Debug for Ccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ccr")
+                .field("otrim", &[self.otrim(0usize), self.otrim(1usize)])
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ccr {
+                otrim: [u8; 2usize],
+            }
+            let proxy = Ccr {
+                otrim: [self.otrim(0usize), self.otrim(1usize)],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -271,6 +291,47 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("en", &[self.en(0usize), self.en(1usize)])
+                .field("ten", &[self.ten(0usize), self.ten(1usize)])
+                .field("tsel", &[self.tsel(0usize), self.tsel(1usize)])
+                .field("wave", &[self.wave(0usize), self.wave(1usize)])
+                .field("mamp", &[self.mamp(0usize), self.mamp(1usize)])
+                .field("dmaen", &[self.dmaen(0usize), self.dmaen(1usize)])
+                .field("dmaudrie", &[self.dmaudrie(0usize), self.dmaudrie(1usize)])
+                .field("cen", &[self.cen(0usize), self.cen(1usize)])
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                en: [bool; 2usize],
+                ten: [bool; 2usize],
+                tsel: [u8; 2usize],
+                wave: [super::vals::Wave; 2usize],
+                mamp: [u8; 2usize],
+                dmaen: [bool; 2usize],
+                dmaudrie: [bool; 2usize],
+                cen: [bool; 2usize],
+            }
+            let proxy = Cr {
+                en: [self.en(0usize), self.en(1usize)],
+                ten: [self.ten(0usize), self.ten(1usize)],
+                tsel: [self.tsel(0usize), self.tsel(1usize)],
+                wave: [self.wave(0usize), self.wave(1usize)],
+                mamp: [self.mamp(0usize), self.mamp(1usize)],
+                dmaen: [self.dmaen(0usize), self.dmaen(1usize)],
+                dmaudrie: [self.dmaudrie(0usize), self.dmaudrie(1usize)],
+                cen: [self.cen(0usize), self.cen(1usize)],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "channel 12-bit left-aligned data holding register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -305,6 +366,29 @@ pub mod regs {
             Dhr12l(0)
         }
     }
+    impl core::fmt::Debug for Dhr12l {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dhr12l")
+                .field("dhr", &self.dhr())
+                .field("dhrb", &self.dhrb())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dhr12l {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dhr12l {
+                dhr: u16,
+                dhrb: u16,
+            }
+            let proxy = Dhr12l {
+                dhr: self.dhr(),
+                dhrb: self.dhrb(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "dual 12-bit left aligned data holding register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -330,6 +414,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dhr12ld {
             Dhr12ld(0)
+        }
+    }
+    impl core::fmt::Debug for Dhr12ld {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dhr12ld")
+                .field("dhr", &[self.dhr(0usize), self.dhr(1usize)])
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dhr12ld {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dhr12ld {
+                dhr: [u16; 2usize],
+            }
+            let proxy = Dhr12ld {
+                dhr: [self.dhr(0usize), self.dhr(1usize)],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "channel 12-bit right-aligned data holding register"]
@@ -366,6 +470,29 @@ pub mod regs {
             Dhr12r(0)
         }
     }
+    impl core::fmt::Debug for Dhr12r {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dhr12r")
+                .field("dhr", &self.dhr())
+                .field("dhrb", &self.dhrb())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dhr12r {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dhr12r {
+                dhr: u16,
+                dhrb: u16,
+            }
+            let proxy = Dhr12r {
+                dhr: self.dhr(),
+                dhrb: self.dhrb(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "dual 12-bit right-aligned data holding register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -391,6 +518,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dhr12rd {
             Dhr12rd(0)
+        }
+    }
+    impl core::fmt::Debug for Dhr12rd {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dhr12rd")
+                .field("dhr", &[self.dhr(0usize), self.dhr(1usize)])
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dhr12rd {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dhr12rd {
+                dhr: [u16; 2usize],
+            }
+            let proxy = Dhr12rd {
+                dhr: [self.dhr(0usize), self.dhr(1usize)],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "channel 8-bit right-aligned data holding register"]
@@ -427,6 +574,29 @@ pub mod regs {
             Dhr8r(0)
         }
     }
+    impl core::fmt::Debug for Dhr8r {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dhr8r")
+                .field("dhr", &self.dhr())
+                .field("dhrb", &self.dhrb())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dhr8r {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dhr8r {
+                dhr: u8,
+                dhrb: u8,
+            }
+            let proxy = Dhr8r {
+                dhr: self.dhr(),
+                dhrb: self.dhrb(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "dual 8-bit right aligned data holding register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -452,6 +622,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dhr8rd {
             Dhr8rd(0)
+        }
+    }
+    impl core::fmt::Debug for Dhr8rd {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dhr8rd")
+                .field("dhr", &[self.dhr(0usize), self.dhr(1usize)])
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dhr8rd {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dhr8rd {
+                dhr: [u8; 2usize],
+            }
+            let proxy = Dhr8rd {
+                dhr: [self.dhr(0usize), self.dhr(1usize)],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "channel data output register"]
@@ -486,6 +676,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dor {
             Dor(0)
+        }
+    }
+    impl core::fmt::Debug for Dor {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dor")
+                .field("dor", &self.dor())
+                .field("dorb", &self.dorb())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dor {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dor {
+                dor: u16,
+                dorb: u16,
+            }
+            let proxy = Dor {
+                dor: self.dor(),
+                dorb: self.dorb(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "mode control register"]
@@ -556,6 +769,35 @@ pub mod regs {
             Mcr(0)
         }
     }
+    impl core::fmt::Debug for Mcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mcr")
+                .field("mode", &[self.mode(0usize), self.mode(1usize)])
+                .field("dmadouble", &[self.dmadouble(0usize), self.dmadouble(1usize)])
+                .field("sinformat", &[self.sinformat(0usize), self.sinformat(1usize)])
+                .field("hfsel", &self.hfsel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Mcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Mcr {
+                mode: [super::vals::Mode; 2usize],
+                dmadouble: [bool; 2usize],
+                sinformat: [bool; 2usize],
+                hfsel: u8,
+            }
+            let proxy = Mcr {
+                mode: [self.mode(0usize), self.mode(1usize)],
+                dmadouble: [self.dmadouble(0usize), self.dmadouble(1usize)],
+                sinformat: [self.sinformat(0usize), self.sinformat(1usize)],
+                hfsel: self.hfsel(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "sample and hold hold time register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -581,6 +823,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Shhr {
             Shhr(0)
+        }
+    }
+    impl core::fmt::Debug for Shhr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Shhr")
+                .field("thold", &[self.thold(0usize), self.thold(1usize)])
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Shhr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Shhr {
+                thold: [u16; 2usize],
+            }
+            let proxy = Shhr {
+                thold: [self.thold(0usize), self.thold(1usize)],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "sample and hold refresh time register"]
@@ -610,6 +872,26 @@ pub mod regs {
             Shrr(0)
         }
     }
+    impl core::fmt::Debug for Shrr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Shrr")
+                .field("trefresh", &[self.trefresh(0usize), self.trefresh(1usize)])
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Shrr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Shrr {
+                trefresh: [u8; 2usize],
+            }
+            let proxy = Shrr {
+                trefresh: [self.trefresh(0usize), self.trefresh(1usize)],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "sample and hold sample time register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -631,6 +913,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Shsr {
             Shsr(0)
+        }
+    }
+    impl core::fmt::Debug for Shsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Shsr").field("tsample", &self.tsample()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Shsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Shsr {
+                tsample: u16,
+            }
+            let proxy = Shsr {
+                tsample: self.tsample(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "status register"]
@@ -720,6 +1020,38 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("dacrdy", &[self.dacrdy(0usize), self.dacrdy(1usize)])
+                .field("dorstat", &[self.dorstat(0usize), self.dorstat(1usize)])
+                .field("dmaudr", &[self.dmaudr(0usize), self.dmaudr(1usize)])
+                .field("cal_flag", &[self.cal_flag(0usize), self.cal_flag(1usize)])
+                .field("bwst", &[self.bwst(0usize), self.bwst(1usize)])
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                dacrdy: [bool; 2usize],
+                dorstat: [bool; 2usize],
+                dmaudr: [bool; 2usize],
+                cal_flag: [bool; 2usize],
+                bwst: [bool; 2usize],
+            }
+            let proxy = Sr {
+                dacrdy: [self.dacrdy(0usize), self.dacrdy(1usize)],
+                dorstat: [self.dorstat(0usize), self.dorstat(1usize)],
+                dmaudr: [self.dmaudr(0usize), self.dmaudr(1usize)],
+                cal_flag: [self.cal_flag(0usize), self.cal_flag(1usize)],
+                bwst: [self.bwst(0usize), self.bwst(1usize)],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "sawtooth mode register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -760,6 +1092,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Stmodr {
             Stmodr(0)
+        }
+    }
+    impl core::fmt::Debug for Stmodr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Stmodr")
+                .field("strsttrigsel", &[self.strsttrigsel(0usize), self.strsttrigsel(1usize)])
+                .field("stinctrigsel", &[self.stinctrigsel(0usize), self.stinctrigsel(1usize)])
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Stmodr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Stmodr {
+                strsttrigsel: [u8; 2usize],
+                stinctrigsel: [u8; 2usize],
+            }
+            let proxy = Stmodr {
+                strsttrigsel: [self.strsttrigsel(0usize), self.strsttrigsel(1usize)],
+                stinctrigsel: [self.stinctrigsel(0usize), self.stinctrigsel(1usize)],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "sawtooth register"]
@@ -807,6 +1162,32 @@ pub mod regs {
             Str(0)
         }
     }
+    impl core::fmt::Debug for Str {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Str")
+                .field("rstdata", &self.rstdata())
+                .field("dir", &self.dir())
+                .field("incdata", &self.incdata())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Str {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Str {
+                rstdata: u16,
+                dir: bool,
+                incdata: u16,
+            }
+            let proxy = Str {
+                rstdata: self.rstdata(),
+                dir: self.dir(),
+                incdata: self.incdata(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "software trigger register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -849,10 +1230,34 @@ pub mod regs {
             Swtrigr(0)
         }
     }
+    impl core::fmt::Debug for Swtrigr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Swtrigr")
+                .field("swtrig", &[self.swtrig(0usize), self.swtrig(1usize)])
+                .field("swtrigb", &[self.swtrigb(0usize), self.swtrigb(1usize)])
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Swtrigr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Swtrigr {
+                swtrig: [bool; 2usize],
+                swtrigb: [bool; 2usize],
+            }
+            let proxy = Swtrigr {
+                swtrig: [self.swtrig(0usize), self.swtrig(1usize)],
+                swtrigb: [self.swtrigb(0usize), self.swtrigb(1usize)],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "Normal mode, external pin only, buffer enabled"]
         NORMAL_EXT_BUFEN = 0x0,
@@ -894,7 +1299,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wave {
         #[doc = "Wave generation disabled"]
         DISABLED = 0x0,

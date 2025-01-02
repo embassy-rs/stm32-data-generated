@@ -106,6 +106,32 @@ pub mod regs {
             Acr(0)
         }
     }
+    impl core::fmt::Debug for Acr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Acr")
+                .field("latency", &self.latency())
+                .field("prftbe", &self.prftbe())
+                .field("prftbs", &self.prftbs())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Acr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Acr {
+                latency: super::vals::Latency,
+                prftbe: bool,
+                prftbs: bool,
+            }
+            let proxy = Acr {
+                latency: self.latency(),
+                prftbe: self.prftbe(),
+                prftbs: self.prftbs(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Flash address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -127,6 +153,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ar {
             Ar(0)
+        }
+    }
+    impl core::fmt::Debug for Ar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ar").field("far", &self.far()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ar {
+                far: u32,
+            }
+            let proxy = Ar { far: self.far() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Flash control register"]
@@ -260,6 +302,56 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cr {
             Cr(0)
+        }
+    }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("pg", &self.pg())
+                .field("per", &self.per())
+                .field("mer", &self.mer())
+                .field("optpg", &self.optpg())
+                .field("opter", &self.opter())
+                .field("strt", &self.strt())
+                .field("lock", &self.lock())
+                .field("optwre", &self.optwre())
+                .field("errie", &self.errie())
+                .field("eopie", &self.eopie())
+                .field("force_optload", &self.force_optload())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                pg: bool,
+                per: bool,
+                mer: bool,
+                optpg: bool,
+                opter: bool,
+                strt: bool,
+                lock: bool,
+                optwre: bool,
+                errie: bool,
+                eopie: bool,
+                force_optload: bool,
+            }
+            let proxy = Cr {
+                pg: self.pg(),
+                per: self.per(),
+                mer: self.mer(),
+                optpg: self.optpg(),
+                opter: self.opter(),
+                strt: self.strt(),
+                lock: self.lock(),
+                optwre: self.optwre(),
+                errie: self.errie(),
+                eopie: self.eopie(),
+                force_optload: self.force_optload(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Option byte register"]
@@ -406,6 +498,59 @@ pub mod regs {
             Obr(0)
         }
     }
+    impl core::fmt::Debug for Obr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Obr")
+                .field("opterr", &self.opterr())
+                .field("rdprt", &self.rdprt())
+                .field("wdg_sw", &self.wdg_sw())
+                .field("n_rst_stop", &self.n_rst_stop())
+                .field("n_rst_stdby", &self.n_rst_stdby())
+                .field("n_boot0", &self.n_boot0())
+                .field("n_boot1", &self.n_boot1())
+                .field("vdda_monitor", &self.vdda_monitor())
+                .field("ram_parity_check", &self.ram_parity_check())
+                .field("boot_sel", &self.boot_sel())
+                .field("data0", &self.data0())
+                .field("data1", &self.data1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Obr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Obr {
+                opterr: bool,
+                rdprt: super::vals::Rdprt,
+                wdg_sw: super::vals::WdgSw,
+                n_rst_stop: super::vals::NRstStop,
+                n_rst_stdby: super::vals::NRstStdby,
+                n_boot0: bool,
+                n_boot1: bool,
+                vdda_monitor: bool,
+                ram_parity_check: super::vals::RamParityCheck,
+                boot_sel: super::vals::BootSel,
+                data0: u8,
+                data1: u8,
+            }
+            let proxy = Obr {
+                opterr: self.opterr(),
+                rdprt: self.rdprt(),
+                wdg_sw: self.wdg_sw(),
+                n_rst_stop: self.n_rst_stop(),
+                n_rst_stdby: self.n_rst_stdby(),
+                n_boot0: self.n_boot0(),
+                n_boot1: self.n_boot1(),
+                vdda_monitor: self.vdda_monitor(),
+                ram_parity_check: self.ram_parity_check(),
+                boot_sel: self.boot_sel(),
+                data0: self.data0(),
+                data1: self.data1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Flash status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -462,6 +607,35 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("bsy", &self.bsy())
+                .field("pgerr", &self.pgerr())
+                .field("wrprt", &self.wrprt())
+                .field("eop", &self.eop())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                bsy: bool,
+                pgerr: bool,
+                wrprt: bool,
+                eop: bool,
+            }
+            let proxy = Sr {
+                bsy: self.bsy(),
+                pgerr: self.pgerr(),
+                wrprt: self.wrprt(),
+                eop: self.eop(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Write protection register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -485,13 +659,30 @@ pub mod regs {
             Wrpr(0)
         }
     }
+    impl core::fmt::Debug for Wrpr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wrpr").field("wrp", &self.wrp()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wrpr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wrpr {
+                wrp: u32,
+            }
+            let proxy = Wrpr { wrp: self.wrp() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BootSel {
         #[doc = "BOOT0 signal is defined by nBOOT0 option bit"]
-        NBOOT0 = 0x0,
+        N_BOOT0 = 0x0,
         #[doc = "BOOT0 signal is defined by BOOT0 pin value (legacy mode)"]
         BOOT0 = 0x01,
     }
@@ -518,7 +709,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Latency {
         #[doc = "0 wait states"]
         WS0 = 0x0,
@@ -554,12 +746,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum NRstStdby {
         #[doc = "Reset generated when entering Standby mode"]
         RESET = 0x0,
         #[doc = "No reset generated"]
-        NORESET = 0x01,
+        NO_RESET = 0x01,
     }
     impl NRstStdby {
         #[inline(always)]
@@ -584,12 +777,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum NRstStop {
         #[doc = "Reset generated when entering Stop mode"]
         RESET = 0x0,
         #[doc = "No reset generated"]
-        NORESET = 0x01,
+        NO_RESET = 0x01,
     }
     impl NRstStop {
         #[inline(always)]
@@ -614,7 +808,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RamParityCheck {
         #[doc = "RAM parity check enabled"]
         ENABLED = 0x0,
@@ -644,7 +839,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rdprt {
         #[doc = "Level 0"]
         LEVEL0 = 0x0,
@@ -677,7 +873,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum WdgSw {
         #[doc = "Hardware watchdog"]
         HARDWARE = 0x0,

@@ -873,12 +873,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RUNNINGORSLEEP",
+                    name: "RUNNING_OR_SLEEP",
                     description: Some("CPU is running or in sleep"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DEEPSLEEP",
+                    name: "DEEP_SLEEP",
                     description: Some("CPU is in Deep-Sleep"),
                     value: 1,
                 },
@@ -895,7 +895,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "POWERDOWN",
+                    name: "POWER_DOWN",
                     description: Some("Flash memory in Power-down mode when system is in LPRun mode"),
                     value: 1,
                 },
@@ -912,7 +912,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "POWERDOWN",
+                    name: "POWER_DOWN",
                     description: Some("Flash memory in Power-down mode when system is in LPSleep mode"),
                     value: 1,
                 },
@@ -956,12 +956,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MAINMODE",
+                    name: "MAIN_MODE",
                     description: Some("Voltage regulator in Main mode in Low-power run mode"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LOWPOWERMODE",
+                    name: "LOW_POWER_MODE",
                     description: Some("Voltage regulator in low-power mode in Low-power run mode"),
                     value: 1,
                 },
@@ -1075,12 +1075,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RISINGEDGE",
+                    name: "RISING_EDGE",
                     description: Some("Detection on high level (rising edge)"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FALLINGEDGE",
+                    name: "FALLING_EDGE",
                     description: Some("Detection on low level (falling edge)"),
                     value: 1,
                 },

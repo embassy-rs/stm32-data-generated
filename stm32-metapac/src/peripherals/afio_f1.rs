@@ -87,6 +87,32 @@ pub mod regs {
             Evcr(0)
         }
     }
+    impl core::fmt::Debug for Evcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Evcr")
+                .field("pin", &self.pin())
+                .field("port", &self.port())
+                .field("evoe", &self.evoe())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Evcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Evcr {
+                pin: u8,
+                port: u8,
+                evoe: bool,
+            }
+            let proxy = Evcr {
+                pin: self.pin(),
+                port: self.port(),
+                evoe: self.evoe(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "External interrupt configuration register 3 (AFIO_EXTICR3)"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -112,6 +138,39 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Exticr {
             Exticr(0)
+        }
+    }
+    impl core::fmt::Debug for Exticr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Exticr")
+                .field(
+                    "exti",
+                    &[
+                        self.exti(0usize),
+                        self.exti(1usize),
+                        self.exti(2usize),
+                        self.exti(3usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Exticr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Exticr {
+                exti: [u8; 4usize],
+            }
+            let proxy = Exticr {
+                exti: [
+                    self.exti(0usize),
+                    self.exti(1usize),
+                    self.exti(2usize),
+                    self.exti(3usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AF remap and debug I/O configuration register (AFIO_MAPR)"]
@@ -379,6 +438,92 @@ pub mod regs {
             Mapr(0)
         }
     }
+    impl core::fmt::Debug for Mapr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mapr")
+                .field("spi1_remap", &self.spi1_remap())
+                .field("i2c1_remap", &self.i2c1_remap())
+                .field("usart1_remap", &self.usart1_remap())
+                .field("usart2_remap", &self.usart2_remap())
+                .field("usart3_remap", &self.usart3_remap())
+                .field("tim1_remap", &self.tim1_remap())
+                .field("tim2_remap", &self.tim2_remap())
+                .field("tim3_remap", &self.tim3_remap())
+                .field("tim4_remap", &self.tim4_remap())
+                .field("can1_remap", &self.can1_remap())
+                .field("pd01_remap", &self.pd01_remap())
+                .field("tim5ch4_iremap", &self.tim5ch4_iremap())
+                .field("adc1_etrginj_remap", &self.adc1_etrginj_remap())
+                .field("adc1_etrgreg_remap", &self.adc1_etrgreg_remap())
+                .field("adc2_etrginj_remap", &self.adc2_etrginj_remap())
+                .field("adc2_etrgreg_remap", &self.adc2_etrgreg_remap())
+                .field("eth_remap", &self.eth_remap())
+                .field("can2_remap", &self.can2_remap())
+                .field("mii_rmii_sel", &self.mii_rmii_sel())
+                .field("swj_cfg", &self.swj_cfg())
+                .field("spi3_remap", &self.spi3_remap())
+                .field("tim2itr1_iremap", &self.tim2itr1_iremap())
+                .field("ptp_pps_remap", &self.ptp_pps_remap())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Mapr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Mapr {
+                spi1_remap: bool,
+                i2c1_remap: bool,
+                usart1_remap: bool,
+                usart2_remap: bool,
+                usart3_remap: u8,
+                tim1_remap: u8,
+                tim2_remap: u8,
+                tim3_remap: u8,
+                tim4_remap: bool,
+                can1_remap: u8,
+                pd01_remap: bool,
+                tim5ch4_iremap: bool,
+                adc1_etrginj_remap: bool,
+                adc1_etrgreg_remap: bool,
+                adc2_etrginj_remap: bool,
+                adc2_etrgreg_remap: bool,
+                eth_remap: bool,
+                can2_remap: bool,
+                mii_rmii_sel: bool,
+                swj_cfg: u8,
+                spi3_remap: bool,
+                tim2itr1_iremap: bool,
+                ptp_pps_remap: bool,
+            }
+            let proxy = Mapr {
+                spi1_remap: self.spi1_remap(),
+                i2c1_remap: self.i2c1_remap(),
+                usart1_remap: self.usart1_remap(),
+                usart2_remap: self.usart2_remap(),
+                usart3_remap: self.usart3_remap(),
+                tim1_remap: self.tim1_remap(),
+                tim2_remap: self.tim2_remap(),
+                tim3_remap: self.tim3_remap(),
+                tim4_remap: self.tim4_remap(),
+                can1_remap: self.can1_remap(),
+                pd01_remap: self.pd01_remap(),
+                tim5ch4_iremap: self.tim5ch4_iremap(),
+                adc1_etrginj_remap: self.adc1_etrginj_remap(),
+                adc1_etrgreg_remap: self.adc1_etrgreg_remap(),
+                adc2_etrginj_remap: self.adc2_etrginj_remap(),
+                adc2_etrgreg_remap: self.adc2_etrgreg_remap(),
+                eth_remap: self.eth_remap(),
+                can2_remap: self.can2_remap(),
+                mii_rmii_sel: self.mii_rmii_sel(),
+                swj_cfg: self.swj_cfg(),
+                spi3_remap: self.spi3_remap(),
+                tim2itr1_iremap: self.tim2itr1_iremap(),
+                ptp_pps_remap: self.ptp_pps_remap(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "AF remap and debug I/O configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -543,6 +688,65 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Mapr2 {
             Mapr2(0)
+        }
+    }
+    impl core::fmt::Debug for Mapr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mapr2")
+                .field("tim15_remap", &self.tim15_remap())
+                .field("tim16_remap", &self.tim16_remap())
+                .field("tim17_remap", &self.tim17_remap())
+                .field("cec_remap", &self.cec_remap())
+                .field("tim1_dma_remap", &self.tim1_dma_remap())
+                .field("tim9_remap", &self.tim9_remap())
+                .field("tim10_remap", &self.tim10_remap())
+                .field("tim11_remap", &self.tim11_remap())
+                .field("tim13_remap", &self.tim13_remap())
+                .field("tim14_remap", &self.tim14_remap())
+                .field("fsmc_nadv", &self.fsmc_nadv())
+                .field("tim67_dac_dma_remap", &self.tim67_dac_dma_remap())
+                .field("tim12_remap", &self.tim12_remap())
+                .field("misc_remap", &self.misc_remap())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Mapr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Mapr2 {
+                tim15_remap: bool,
+                tim16_remap: bool,
+                tim17_remap: bool,
+                cec_remap: bool,
+                tim1_dma_remap: bool,
+                tim9_remap: bool,
+                tim10_remap: bool,
+                tim11_remap: bool,
+                tim13_remap: bool,
+                tim14_remap: bool,
+                fsmc_nadv: bool,
+                tim67_dac_dma_remap: bool,
+                tim12_remap: bool,
+                misc_remap: bool,
+            }
+            let proxy = Mapr2 {
+                tim15_remap: self.tim15_remap(),
+                tim16_remap: self.tim16_remap(),
+                tim17_remap: self.tim17_remap(),
+                cec_remap: self.cec_remap(),
+                tim1_dma_remap: self.tim1_dma_remap(),
+                tim9_remap: self.tim9_remap(),
+                tim10_remap: self.tim10_remap(),
+                tim11_remap: self.tim11_remap(),
+                tim13_remap: self.tim13_remap(),
+                tim14_remap: self.tim14_remap(),
+                fsmc_nadv: self.fsmc_nadv(),
+                tim67_dac_dma_remap: self.tim67_dac_dma_remap(),
+                tim12_remap: self.tim12_remap(),
+                misc_remap: self.misc_remap(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

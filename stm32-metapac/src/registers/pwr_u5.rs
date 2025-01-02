@@ -2240,7 +2240,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LOWPOWER",
+                    name: "LOW_POWER",
                     description: Some(
                         "Flash memory enters low-power mode in Stop 0 and Stop 1 modes (lower-power consumption).",
                     ),
@@ -2380,7 +2380,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ABOVEOREQUAL",
+                    name: "ABOVE_OR_EQUAL",
                     description: Some(
                         "VDD is equal or above the PVD threshold selected by PVDLS[2:0].",
                     ),
@@ -2443,14 +2443,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "POWEREDON",
+                    name: "POWERED_ON",
                     description: Some(
                         "SRAM1 powered on",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "POWEREDOFF",
+                    name: "POWERED_OFF",
                     description: Some(
                         "SRAM1 powered off",
                     ),

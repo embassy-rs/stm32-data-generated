@@ -584,28 +584,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "LOWSPEED",
+                    name: "LOW_SPEED",
                     description: Some(
                         "Low speed",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MEDIUMSPEED",
+                    name: "MEDIUM_SPEED",
                     description: Some(
                         "Medium speed",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HIGHSPEED",
+                    name: "HIGH_SPEED",
                     description: Some(
                         "High speed",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "VERYHIGHSPEED",
+                    name: "VERY_HIGH_SPEED",
                     description: Some(
                         "Very high speed",
                     ),
@@ -619,14 +619,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "PUSHPULL",
+                    name: "PUSH_PULL",
                     description: Some(
                         "Output push-pull (reset state)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "OPENDRAIN",
+                    name: "OPEN_DRAIN",
                     description: Some(
                         "Output open-drain",
                     ),
@@ -647,14 +647,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PULLUP",
+                    name: "PULL_UP",
                     description: Some(
                         "Pull-up",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PULLDOWN",
+                    name: "PULL_DOWN",
                     description: Some(
                         "Pull-down",
                     ),

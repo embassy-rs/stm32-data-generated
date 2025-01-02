@@ -405,7 +405,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NBOOT0",
+                    name: "N_BOOT0",
                     description: Some("BOOT0 signal is defined by nBOOT0 option bit"),
                     value: 0,
                 },
@@ -444,7 +444,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NORESET",
+                    name: "NO_RESET",
                     description: Some("No reset generated"),
                     value: 1,
                 },
@@ -461,7 +461,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NORESET",
+                    name: "NO_RESET",
                     description: Some("No reset generated"),
                     value: 1,
                 },

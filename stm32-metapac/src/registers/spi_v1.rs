@@ -655,12 +655,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "IDLELOW",
+                    name: "IDLE_LOW",
                     description: Some("I2S clock inactive state is low level"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "IDLEHIGH",
+                    name: "IDLE_HIGH",
                     description: Some("I2S clock inactive state is high level"),
                     value: 1,
                 },
@@ -672,12 +672,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FIRSTEDGE",
+                    name: "FIRST_EDGE",
                     description: Some("The first clock transition is the first data capture edge"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SECONDEDGE",
+                    name: "SECOND_EDGE",
                     description: Some("The second clock transition is the first data capture edge"),
                     value: 1,
                 },
@@ -689,12 +689,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "IDLELOW",
+                    name: "IDLE_LOW",
                     description: Some("CK to 0 when idle"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "IDLEHIGH",
+                    name: "IDLE_HIGH",
                     description: Some("CK to 1 when idle"),
                     value: 1,
                 },
@@ -706,7 +706,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TXBUFFER",
+                    name: "TX_BUFFER",
                     description: Some("Next transmit value is from Tx buffer"),
                     value: 0,
                 },
@@ -779,22 +779,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "SLAVETX",
+                    name: "SLAVE_TX",
                     description: Some("Slave - transmit"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SLAVERX",
+                    name: "SLAVE_RX",
                     description: Some("Slave - receive"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MASTERTX",
+                    name: "MASTER_TX",
                     description: Some("Master - transmit"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "MASTERRX",
+                    name: "MASTER_RX",
                     description: Some("Master - receive"),
                     value: 3,
                 },
@@ -901,12 +901,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FULLDUPLEX",
+                    name: "FULL_DUPLEX",
                     description: Some("Full duplex (Transmit and receive)"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "OUTPUTDISABLED",
+                    name: "OUTPUT_DISABLED",
                     description: Some("Output disabled (Receive-only mode)"),
                     value: 1,
                 },

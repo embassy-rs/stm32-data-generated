@@ -76,6 +76,29 @@ pub mod regs {
             Cmpcr(0)
         }
     }
+    impl core::fmt::Debug for Cmpcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cmpcr")
+                .field("cmp_pd", &self.cmp_pd())
+                .field("ready", &self.ready())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cmpcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cmpcr {
+                cmp_pd: bool,
+                ready: bool,
+            }
+            let proxy = Cmpcr {
+                cmp_pd: self.cmp_pd(),
+                ready: self.ready(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "external interrupt configuration register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -103,6 +126,39 @@ pub mod regs {
             Exticr(0)
         }
     }
+    impl core::fmt::Debug for Exticr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Exticr")
+                .field(
+                    "exti",
+                    &[
+                        self.exti(0usize),
+                        self.exti(1usize),
+                        self.exti(2usize),
+                        self.exti(3usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Exticr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Exticr {
+                exti: [u8; 4usize],
+            }
+            let proxy = Exticr {
+                exti: [
+                    self.exti(0usize),
+                    self.exti(1usize),
+                    self.exti(2usize),
+                    self.exti(3usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "memory remap register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -124,6 +180,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Memrmp {
             Memrmp(0)
+        }
+    }
+    impl core::fmt::Debug for Memrmp {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Memrmp").field("mem_mode", &self.mem_mode()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Memrmp {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Memrmp {
+                mem_mode: super::vals::MemMode,
+            }
+            let proxy = Memrmp {
+                mem_mode: self.mem_mode(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "peripheral mode configuration register"]
@@ -149,15 +223,36 @@ pub mod regs {
             Pmc(0)
         }
     }
+    impl core::fmt::Debug for Pmc {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pmc")
+                .field("mii_rmii_sel", &self.mii_rmii_sel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pmc {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pmc {
+                mii_rmii_sel: bool,
+            }
+            let proxy = Pmc {
+                mii_rmii_sel: self.mii_rmii_sel(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum MemMode {
         #[doc = "Main Flash memory mapped at 0x0000_0000"]
-        MAINFLASH = 0x0,
+        MAIN_FLASH = 0x0,
         #[doc = "System Flash memory mapped at 0x0000_0000"]
-        SYSTEMFLASH = 0x01,
+        SYSTEM_FLASH = 0x01,
         #[doc = "FSMC Bank1 (NOR/PSRAM 1 and 2) mapped at 0x0000_0000"]
         FSMC = 0x02,
         #[doc = "Embedded SRAM mapped at 0x0000_0000"]

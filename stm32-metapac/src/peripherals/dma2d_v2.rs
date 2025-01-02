@@ -155,6 +155,29 @@ pub mod regs {
             Amtcr(0)
         }
     }
+    impl core::fmt::Debug for Amtcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Amtcr")
+                .field("en", &self.en())
+                .field("dt", &self.dt())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Amtcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Amtcr {
+                en: bool,
+                dt: u8,
+            }
+            let proxy = Amtcr {
+                en: self.en(),
+                dt: self.dt(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA2D background CLUT memory address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -176,6 +199,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Bgcmar {
             Bgcmar(0)
+        }
+    }
+    impl core::fmt::Debug for Bgcmar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bgcmar").field("ma", &self.ma()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bgcmar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Bgcmar {
+                ma: u32,
+            }
+            let proxy = Bgcmar { ma: self.ma() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA2D background color register"]
@@ -223,6 +262,32 @@ pub mod regs {
             Bgcolr(0)
         }
     }
+    impl core::fmt::Debug for Bgcolr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bgcolr")
+                .field("blue", &self.blue())
+                .field("green", &self.green())
+                .field("red", &self.red())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bgcolr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Bgcolr {
+                blue: u8,
+                green: u8,
+                red: u8,
+            }
+            let proxy = Bgcolr {
+                blue: self.blue(),
+                green: self.green(),
+                red: self.red(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA2D background memory address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -246,6 +311,22 @@ pub mod regs {
             Bgmar(0)
         }
     }
+    impl core::fmt::Debug for Bgmar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bgmar").field("ma", &self.ma()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bgmar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Bgmar {
+                ma: u32,
+            }
+            let proxy = Bgmar { ma: self.ma() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA2D background offset register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -267,6 +348,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Bgor {
             Bgor(0)
+        }
+    }
+    impl core::fmt::Debug for Bgor {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bgor").field("lo", &self.lo()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bgor {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Bgor {
+                lo: u16,
+            }
+            let proxy = Bgor { lo: self.lo() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA2D background PFC control register"]
@@ -369,6 +466,47 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Bgpfccr {
             Bgpfccr(0)
+        }
+    }
+    impl core::fmt::Debug for Bgpfccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bgpfccr")
+                .field("cm", &self.cm())
+                .field("ccm", &self.ccm())
+                .field("start", &self.start())
+                .field("cs", &self.cs())
+                .field("am", &self.am())
+                .field("ai", &self.ai())
+                .field("rbs", &self.rbs())
+                .field("alpha", &self.alpha())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bgpfccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Bgpfccr {
+                cm: super::vals::BgpfccrCm,
+                ccm: super::vals::BgpfccrCcm,
+                start: super::vals::BgpfccrStart,
+                cs: u8,
+                am: super::vals::BgpfccrAm,
+                ai: super::vals::BgpfccrAi,
+                rbs: super::vals::BgpfccrRbs,
+                alpha: u8,
+            }
+            let proxy = Bgpfccr {
+                cm: self.cm(),
+                ccm: self.ccm(),
+                start: self.start(),
+                cs: self.cs(),
+                am: self.am(),
+                ai: self.ai(),
+                rbs: self.rbs(),
+                alpha: self.alpha(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA2D control register"]
@@ -493,6 +631,53 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("start", &self.start())
+                .field("susp", &self.susp())
+                .field("abort", &self.abort())
+                .field("teie", &self.teie())
+                .field("tcie", &self.tcie())
+                .field("twie", &self.twie())
+                .field("caeie", &self.caeie())
+                .field("ctcie", &self.ctcie())
+                .field("ceie", &self.ceie())
+                .field("mode", &self.mode())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                start: super::vals::CrStart,
+                susp: bool,
+                abort: super::vals::Abort,
+                teie: bool,
+                tcie: bool,
+                twie: bool,
+                caeie: bool,
+                ctcie: bool,
+                ceie: bool,
+                mode: super::vals::Mode,
+            }
+            let proxy = Cr {
+                start: self.start(),
+                susp: self.susp(),
+                abort: self.abort(),
+                teie: self.teie(),
+                tcie: self.tcie(),
+                twie: self.twie(),
+                caeie: self.caeie(),
+                ctcie: self.ctcie(),
+                ceie: self.ceie(),
+                mode: self.mode(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA2D foreground CLUT memory address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -514,6 +699,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Fgcmar {
             Fgcmar(0)
+        }
+    }
+    impl core::fmt::Debug for Fgcmar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fgcmar").field("ma", &self.ma()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fgcmar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fgcmar {
+                ma: u32,
+            }
+            let proxy = Fgcmar { ma: self.ma() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA2D foreground color register"]
@@ -561,6 +762,32 @@ pub mod regs {
             Fgcolr(0)
         }
     }
+    impl core::fmt::Debug for Fgcolr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fgcolr")
+                .field("blue", &self.blue())
+                .field("green", &self.green())
+                .field("red", &self.red())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fgcolr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fgcolr {
+                blue: u8,
+                green: u8,
+                red: u8,
+            }
+            let proxy = Fgcolr {
+                blue: self.blue(),
+                green: self.green(),
+                red: self.red(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA2D foreground memory address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -584,6 +811,22 @@ pub mod regs {
             Fgmar(0)
         }
     }
+    impl core::fmt::Debug for Fgmar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fgmar").field("ma", &self.ma()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fgmar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fgmar {
+                ma: u32,
+            }
+            let proxy = Fgmar { ma: self.ma() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA2D foreground offset register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -605,6 +848,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Fgor {
             Fgor(0)
+        }
+    }
+    impl core::fmt::Debug for Fgor {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fgor").field("lo", &self.lo()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fgor {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fgor {
+                lo: u16,
+            }
+            let proxy = Fgor { lo: self.lo() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA2D foreground PFC control register"]
@@ -722,6 +981,50 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
             Fgpfccr(0)
         }
     }
+    impl core::fmt::Debug for Fgpfccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fgpfccr")
+                .field("cm", &self.cm())
+                .field("ccm", &self.ccm())
+                .field("start", &self.start())
+                .field("cs", &self.cs())
+                .field("am", &self.am())
+                .field("css", &self.css())
+                .field("ai", &self.ai())
+                .field("rbs", &self.rbs())
+                .field("alpha", &self.alpha())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fgpfccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fgpfccr {
+                cm: super::vals::FgpfccrCm,
+                ccm: super::vals::FgpfccrCcm,
+                start: super::vals::FgpfccrStart,
+                cs: u8,
+                am: super::vals::FgpfccrAm,
+                css: u8,
+                ai: super::vals::FgpfccrAi,
+                rbs: super::vals::FgpfccrRbs,
+                alpha: u8,
+            }
+            let proxy = Fgpfccr {
+                cm: self.cm(),
+                ccm: self.ccm(),
+                start: self.start(),
+                cs: self.cs(),
+                am: self.am(),
+                css: self.css(),
+                ai: self.ai(),
+                rbs: self.rbs(),
+                alpha: self.alpha(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA2D interrupt flag clear register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -798,6 +1101,41 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
         #[inline(always)]
         fn default() -> Ifcr {
             Ifcr(0)
+        }
+    }
+    impl core::fmt::Debug for Ifcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ifcr")
+                .field("cteif", &self.cteif())
+                .field("ctcif", &self.ctcif())
+                .field("ctwif", &self.ctwif())
+                .field("caecif", &self.caecif())
+                .field("cctcif", &self.cctcif())
+                .field("cceif", &self.cceif())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ifcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ifcr {
+                cteif: super::vals::Cteif,
+                ctcif: super::vals::Ctcif,
+                ctwif: super::vals::Ctwif,
+                caecif: super::vals::Caecif,
+                cctcif: super::vals::Cctcif,
+                cceif: super::vals::Cceif,
+            }
+            let proxy = Ifcr {
+                cteif: self.cteif(),
+                ctcif: self.ctcif(),
+                ctwif: self.ctwif(),
+                caecif: self.caecif(),
+                cctcif: self.cctcif(),
+                cceif: self.cceif(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA2D Interrupt Status Register"]
@@ -878,6 +1216,41 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
             Isr(0)
         }
     }
+    impl core::fmt::Debug for Isr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Isr")
+                .field("teif", &self.teif())
+                .field("tcif", &self.tcif())
+                .field("twif", &self.twif())
+                .field("caeif", &self.caeif())
+                .field("ctcif", &self.ctcif())
+                .field("ceif", &self.ceif())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Isr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Isr {
+                teif: bool,
+                tcif: bool,
+                twif: bool,
+                caeif: bool,
+                ctcif: bool,
+                ceif: bool,
+            }
+            let proxy = Isr {
+                teif: self.teif(),
+                tcif: self.tcif(),
+                twif: self.twif(),
+                caeif: self.caeif(),
+                ctcif: self.ctcif(),
+                ceif: self.ceif(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA2D line watermark register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -899,6 +1272,22 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
         #[inline(always)]
         fn default() -> Lwr {
             Lwr(0)
+        }
+    }
+    impl core::fmt::Debug for Lwr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lwr").field("lw", &self.lw()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lwr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Lwr {
+                lw: u16,
+            }
+            let proxy = Lwr { lw: self.lw() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA2D number of line register"]
@@ -933,6 +1322,29 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
         #[inline(always)]
         fn default() -> Nlr {
             Nlr(0)
+        }
+    }
+    impl core::fmt::Debug for Nlr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Nlr")
+                .field("nl", &self.nl())
+                .field("pl", &self.pl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Nlr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Nlr {
+                nl: u16,
+                pl: u16,
+            }
+            let proxy = Nlr {
+                nl: self.nl(),
+                pl: self.pl(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA2D output color register"]
@@ -991,6 +1403,35 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
             Ocolr(0)
         }
     }
+    impl core::fmt::Debug for Ocolr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ocolr")
+                .field("blue", &self.blue())
+                .field("green", &self.green())
+                .field("red", &self.red())
+                .field("alpha", &self.alpha())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ocolr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ocolr {
+                blue: u8,
+                green: u8,
+                red: u8,
+                alpha: u8,
+            }
+            let proxy = Ocolr {
+                blue: self.blue(),
+                green: self.green(),
+                red: self.red(),
+                alpha: self.alpha(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA2D output memory address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1014,6 +1455,22 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
             Omar(0)
         }
     }
+    impl core::fmt::Debug for Omar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Omar").field("ma", &self.ma()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Omar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Omar {
+                ma: u32,
+            }
+            let proxy = Omar { ma: self.ma() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA2D output offset register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1035,6 +1492,22 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
         #[inline(always)]
         fn default() -> Oor {
             Oor(0)
+        }
+    }
+    impl core::fmt::Debug for Oor {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Oor").field("lo", &self.lo()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Oor {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Oor {
+                lo: u16,
+            }
+            let proxy = Oor { lo: self.lo() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA2D output PFC control register"]
@@ -1093,14 +1566,44 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
             Opfccr(0)
         }
     }
+    impl core::fmt::Debug for Opfccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Opfccr")
+                .field("cm", &self.cm())
+                .field("sb", &self.sb())
+                .field("ai", &self.ai())
+                .field("rbs", &self.rbs())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Opfccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Opfccr {
+                cm: super::vals::OpfccrCm,
+                sb: super::vals::Sb,
+                ai: super::vals::OpfccrAi,
+                rbs: super::vals::OpfccrRbs,
+            }
+            let proxy = Opfccr {
+                cm: self.cm(),
+                sb: self.sb(),
+                ai: self.ai(),
+                rbs: self.rbs(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Abort {
         _RESERVED_0 = 0x0,
         #[doc = "Transfer abort requested"]
-        ABORTREQUEST = 0x01,
+        ABORT_REQUEST = 0x01,
     }
     impl Abort {
         #[inline(always)]
@@ -1125,12 +1628,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BgpfccrAi {
         #[doc = "Regular alpha"]
-        REGULARALPHA = 0x0,
+        REGULAR_ALPHA = 0x0,
         #[doc = "Inverted alpha"]
-        INVERTEDALPHA = 0x01,
+        INVERTED_ALPHA = 0x01,
     }
     impl BgpfccrAi {
         #[inline(always)]
@@ -1155,10 +1659,11 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BgpfccrAm {
         #[doc = "No modification of alpha channel"]
-        NOMODIFY = 0x0,
+        NO_MODIFY = 0x0,
         #[doc = "Replace with value in ALPHA\\[7:0\\]"]
         REPLACE = 0x01,
         #[doc = "Multiply with value in ALPHA\\[7:0\\]"]
@@ -1188,7 +1693,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BgpfccrCcm {
         #[doc = "CLUT color format ARGB8888"]
         ARGB8888 = 0x0,
@@ -1218,7 +1724,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BgpfccrCm {
         #[doc = "Color mode ARGB8888"]
         ARGB8888 = 0x0,
@@ -1271,7 +1778,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BgpfccrRbs {
         #[doc = "No Red Blue Swap (RGB or ARGB)"]
         REGULAR = 0x0,
@@ -1301,7 +1809,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BgpfccrStart {
         _RESERVED_0 = 0x0,
         #[doc = "Start the automatic loading of the CLUT"]
@@ -1330,7 +1839,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Caecif {
         _RESERVED_0 = 0x0,
         #[doc = "Clear the CAEIF flag in the ISR register"]
@@ -1359,7 +1869,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cceif {
         _RESERVED_0 = 0x0,
         #[doc = "Clear the CEIF flag in the ISR register"]
@@ -1388,7 +1899,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cctcif {
         _RESERVED_0 = 0x0,
         #[doc = "Clear the CTCIF flag in the ISR register"]
@@ -1417,7 +1929,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CrStart {
         _RESERVED_0 = 0x0,
         #[doc = "Launch the DMA2D"]
@@ -1446,7 +1959,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ctcif {
         _RESERVED_0 = 0x0,
         #[doc = "Clear the TCIF flag in the ISR register"]
@@ -1475,7 +1989,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cteif {
         _RESERVED_0 = 0x0,
         #[doc = "Clear the TEIF flag in the ISR register"]
@@ -1504,7 +2019,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ctwif {
         _RESERVED_0 = 0x0,
         #[doc = "Clear the TWIF flag in the ISR register"]
@@ -1533,12 +2049,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FgpfccrAi {
         #[doc = "Regular alpha"]
-        REGULARALPHA = 0x0,
+        REGULAR_ALPHA = 0x0,
         #[doc = "Inverted alpha"]
-        INVERTEDALPHA = 0x01,
+        INVERTED_ALPHA = 0x01,
     }
     impl FgpfccrAi {
         #[inline(always)]
@@ -1563,10 +2080,11 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FgpfccrAm {
         #[doc = "No modification of alpha channel"]
-        NOMODIFY = 0x0,
+        NO_MODIFY = 0x0,
         #[doc = "Replace with value in ALPHA\\[7:0\\]"]
         REPLACE = 0x01,
         #[doc = "Multiply with value in ALPHA\\[7:0\\]"]
@@ -1596,7 +2114,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FgpfccrCcm {
         #[doc = "CLUT color format ARGB8888"]
         ARGB8888 = 0x0,
@@ -1626,7 +2145,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FgpfccrCm {
         #[doc = "Color mode ARGB8888"]
         ARGB8888 = 0x0,
@@ -1651,7 +2171,7 @@ pub mod vals {
         #[doc = "Color mode A4"]
         A4 = 0x0a,
         #[doc = "Color mode YCbCr"]
-        YCBCR = 0x0b,
+        YCB_CR = 0x0b,
         _RESERVED_c = 0x0c,
         _RESERVED_d = 0x0d,
         _RESERVED_e = 0x0e,
@@ -1680,7 +2200,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FgpfccrRbs {
         #[doc = "No Red Blue Swap (RGB or ARGB)"]
         REGULAR = 0x0,
@@ -1710,7 +2231,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FgpfccrStart {
         _RESERVED_0 = 0x0,
         #[doc = "Start the automatic loading of the CLUT"]
@@ -1739,16 +2261,17 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "Memory-to-memory (FG fetch only)"]
-        MEMORYTOMEMORY = 0x0,
+        MEMORY_TO_MEMORY = 0x0,
         #[doc = "Memory-to-memory with PFC (FG fetch only with FG PFC active)"]
-        MEMORYTOMEMORYPFC = 0x01,
+        MEMORY_TO_MEMORY_PFC = 0x01,
         #[doc = "Memory-to-memory with blending (FG and BG fetch with PFC and blending)"]
-        MEMORYTOMEMORYPFCBLENDING = 0x02,
+        MEMORY_TO_MEMORY_PFCBLENDING = 0x02,
         #[doc = "Register-to-memory"]
-        REGISTERTOMEMORY = 0x03,
+        REGISTER_TO_MEMORY = 0x03,
     }
     impl Mode {
         #[inline(always)]
@@ -1773,12 +2296,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OpfccrAi {
         #[doc = "Regular alpha"]
-        REGULARALPHA = 0x0,
+        REGULAR_ALPHA = 0x0,
         #[doc = "Inverted alpha"]
-        INVERTEDALPHA = 0x01,
+        INVERTED_ALPHA = 0x01,
     }
     impl OpfccrAi {
         #[inline(always)]
@@ -1803,7 +2327,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OpfccrCm {
         #[doc = "ARGB8888"]
         ARGB8888 = 0x0,
@@ -1842,7 +2367,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OpfccrRbs {
         #[doc = "No Red Blue Swap (RGB or ARGB)"]
         REGULAR = 0x0,
@@ -1872,12 +2398,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sb {
         #[doc = "Regular byte order"]
         REGULAR = 0x0,
         #[doc = "Bytes are swapped two by two"]
-        SWAPBYTES = 0x01,
+        SWAP_BYTES = 0x01,
     }
     impl Sb {
         #[inline(always)]

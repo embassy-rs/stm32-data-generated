@@ -383,14 +383,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DIRECTMAPPED",
+                    name: "DIRECT_MAPPED",
                     description: Some(
                         "direct mapped cache (1-way cache)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NWAYSETASSOCIATIVE",
+                    name: "NWAY_SET_ASSOCIATIVE",
                     description: Some(
                         "n-way set associative cache (reset value)",
                     ),

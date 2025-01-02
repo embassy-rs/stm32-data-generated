@@ -175,6 +175,53 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("en", &self.en())
+                .field("datatype", &self.datatype())
+                .field("mode", &self.mode())
+                .field("chmod10", &self.chmod10())
+                .field("ccfc", &self.ccfc())
+                .field("errc", &self.errc())
+                .field("ccfie", &self.ccfie())
+                .field("errie", &self.errie())
+                .field("dmainen", &self.dmainen())
+                .field("dmaouten", &self.dmaouten())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                en: bool,
+                datatype: super::vals::Datatype,
+                mode: super::vals::Mode,
+                chmod10: u8,
+                ccfc: bool,
+                errc: bool,
+                ccfie: bool,
+                errie: bool,
+                dmainen: bool,
+                dmaouten: bool,
+            }
+            let proxy = Cr {
+                en: self.en(),
+                datatype: self.datatype(),
+                mode: self.mode(),
+                chmod10: self.chmod10(),
+                ccfc: self.ccfc(),
+                errc: self.errc(),
+                ccfie: self.ccfie(),
+                errie: self.errie(),
+                dmainen: self.dmainen(),
+                dmaouten: self.dmaouten(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Data input register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -196,6 +243,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dinr {
             Dinr(0)
+        }
+    }
+    impl core::fmt::Debug for Dinr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dinr").field("din", &self.din()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dinr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dinr {
+                din: u32,
+            }
+            let proxy = Dinr { din: self.din() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Data output register"]
@@ -221,6 +284,22 @@ pub mod regs {
             Doutr(0)
         }
     }
+    impl core::fmt::Debug for Doutr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Doutr").field("dout", &self.dout()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Doutr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Doutr {
+                dout: u32,
+            }
+            let proxy = Doutr { dout: self.dout() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Initialization vector register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -244,6 +323,22 @@ pub mod regs {
             Ivr(0)
         }
     }
+    impl core::fmt::Debug for Ivr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ivr").field("ivi", &self.ivi()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ivr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ivr {
+                ivi: u32,
+            }
+            let proxy = Ivr { ivi: self.ivi() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Key register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -265,6 +360,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Keyr {
             Keyr(0)
+        }
+    }
+    impl core::fmt::Debug for Keyr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Keyr").field("key", &self.key()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Keyr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Keyr {
+                key: u32,
+            }
+            let proxy = Keyr { key: self.key() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status register"]
@@ -312,15 +423,42 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("ccf", &self.ccf())
+                .field("rderr", &self.rderr())
+                .field("wrerr", &self.wrerr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                ccf: bool,
+                rderr: bool,
+                wrerr: bool,
+            }
+            let proxy = Sr {
+                ccf: self.ccf(),
+                rderr: self.rderr(),
+                wrerr: self.wrerr(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Datatype {
         #[doc = "Word"]
         NONE = 0x0,
         #[doc = "Half-word (16-bit)"]
-        HALFWORD = 0x01,
+        HALF_WORD = 0x01,
         #[doc = "Byte (8-bit)"]
         BYTE = 0x02,
         #[doc = "Bit"]
@@ -349,7 +487,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "Encryption"]
         MODE1 = 0x0,

@@ -81,6 +81,32 @@ pub mod regs {
             Cfr(0)
         }
     }
+    impl core::fmt::Debug for Cfr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfr")
+                .field("w", &self.w())
+                .field("wdgtb", &self.wdgtb())
+                .field("ewi", &self.ewi())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfr {
+                w: u8,
+                wdgtb: super::vals::Wdgtb,
+                ewi: bool,
+            }
+            let proxy = Cfr {
+                w: self.w(),
+                wdgtb: self.wdgtb(),
+                ewi: self.ewi(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -115,6 +141,29 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("t", &self.t())
+                .field("wdga", &self.wdga())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                t: u8,
+                wdga: bool,
+            }
+            let proxy = Cr {
+                t: self.t(),
+                wdga: self.wdga(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -138,10 +187,27 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr").field("ewif", &self.ewif()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                ewif: bool,
+            }
+            let proxy = Sr { ewif: self.ewif() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wdgtb {
         #[doc = "Counter clock (PCLK1 div 4096) div 1"]
         DIV1 = 0x0,

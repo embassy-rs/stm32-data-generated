@@ -391,28 +391,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOEDGE",
+                    name: "NO_EDGE",
                     description: Some(
                         "No event, i.e. no synchronization nor detection",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RISINGEDGE",
+                    name: "RISING_EDGE",
                     description: Some(
                         "Rising edge",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "FALLINGEDGE",
+                    name: "FALLING_EDGE",
                     description: Some(
                         "Falling edge",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "BOTHEDGES",
+                    name: "BOTH_EDGES",
                     description: Some(
                         "Rising and falling edges",
                     ),

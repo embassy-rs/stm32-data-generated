@@ -400,7 +400,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LOWPOWER",
+                    name: "LOW_POWER",
                     description: Some(
                         "operational amplifier in low-power mode.",
                     ),
@@ -512,7 +512,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NOTCONNECTED",
+                    name: "NOT_CONNECTED",
                     description: Some(
                         "Inverting input not externally connected. These configurations are valid only when OPAMODE = 10 (PGA mode)",
                     ),

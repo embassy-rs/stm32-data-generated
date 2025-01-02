@@ -2140,14 +2140,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B_0XB4",
+                    name: "B_0X_B4",
                     description: Some(
                         "The NSBOOTADD and SWAP_BANK are frozen.",
                     ),
                     value: 180,
                 },
                 EnumVariant {
-                    name: "B_0XC3",
+                    name: "B_0X_C3",
                     description: Some(
                         "The SWAP_BANK and NSBOOTADD can still be modified following their individual rules.",
                     ),

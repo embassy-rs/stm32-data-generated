@@ -4560,7 +4560,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NOTROLLOVER",
+                    name: "NOT_ROLLOVER",
                     description: Some(
                         "Counters do not roll over to zero after reaching the maximum value",
                     ),
@@ -4574,14 +4574,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ROUNDROBIN",
+                    name: "ROUND_ROBIN",
                     description: Some(
                         "Round-robin with Rx:Tx priority given by PM",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RXPRIORITY",
+                    name: "RX_PRIORITY",
                     description: Some(
                         "Rx has priority over Tx",
                     ),
@@ -4616,14 +4616,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HALFDUPLEX",
+                    name: "HALF_DUPLEX",
                     description: Some(
                         "MAC operates in half-duplex mode",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FULLDUPLEX",
+                    name: "FULL_DUPLEX",
                     description: Some(
                         "MAC operates in full-duplex mode",
                     ),
@@ -4700,14 +4700,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DISABLEBACKPRESSURE",
+                    name: "DISABLE_BACK_PRESSURE",
                     description: Some(
                         "In half duplex only, deasserts back pressure",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PAUSEORBACKPRESSURE",
+                    name: "PAUSE_OR_BACK_PRESSURE",
                     description: Some(
                         "In full duplex, initiate a Pause control frame. In half duplex, assert back pressure",
                     ),
@@ -4840,14 +4840,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HASHONLY",
+                    name: "HASH_ONLY",
                     description: Some(
                         "If HM or HU is set, only frames that match the Hash filter are passed",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HASHORPERFECT",
+                    name: "HASH_OR_PERFECT",
                     description: Some(
                         "If HM or HU is set, frames that match either the perfect filter or the hash filter are passed",
                     ),
@@ -5113,28 +5113,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PREVENTALL",
+                    name: "PREVENT_ALL",
                     description: Some(
                         "MAC prevents all control frames from reaching the application",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FORWARDALLEXCEPTPAUSE",
+                    name: "FORWARD_ALL_EXCEPT_PAUSE",
                     description: Some(
                         "MAC forwards all control frames to application except Pause",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "FORWARDALL",
+                    name: "FORWARD_ALL",
                     description: Some(
                         "MAC forwards all control frames to application even if they fail the address filter",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "FORWARDALLFILTERED",
+                    name: "FORWARD_ALL_FILTERED",
                     description: Some(
                         "MAC forwards control frames that pass the address filter",
                     ),
@@ -5218,28 +5218,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ONETOONE",
+                    name: "ONE_TO_ONE",
                     description: Some(
                         "RxDMA priority over TxDMA is 1:1",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "TWOTOONE",
+                    name: "TWO_TO_ONE",
                     description: Some(
                         "RxDMA priority over TxDMA is 2:1",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "THREETOONE",
+                    name: "THREE_TO_ONE",
                     description: Some(
                         "RxDMA priority over TxDMA is 3:1",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "FOURTOONE",
+                    name: "FOUR_TO_ONE",
                     description: Some(
                         "RxDMA priority over TxDMA is 4:1",
                     ),
@@ -5428,14 +5428,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RUNNINGFETCHING",
+                    name: "RUNNING_FETCHING",
                     description: Some(
                         "Running, fetching receive transfer descriptor",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RUNNINGWAITING",
+                    name: "RUNNING_WAITING",
                     description: Some(
                         "Running, waiting for receive packet",
                     ),
@@ -5449,7 +5449,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 4,
                 },
                 EnumVariant {
-                    name: "RUNNINGWRITING",
+                    name: "RUNNING_WRITING",
                     description: Some(
                         "Running, writing data to host memory buffer",
                     ),
@@ -5463,14 +5463,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CUTTHROUGH",
+                    name: "CUT_THROUGH",
                     description: Some(
                         "Rx FIFO operates in cut-through mode, subject to RTC bits",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "STOREFORWARD",
+                    name: "STORE_FORWARD",
                     description: Some(
                         "Frames are read from Rx FIFO after complete frame has been written",
                     ),
@@ -5645,21 +5645,21 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RUNNINGFETCHING",
+                    name: "RUNNING_FETCHING",
                     description: Some(
                         "Running, fetching transmit transfer descriptor",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RUNNINGWAITING",
+                    name: "RUNNING_WAITING",
                     description: Some(
                         "Running, waiting for status",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "RUNNINGREADING",
+                    name: "RUNNING_READING",
                     description: Some(
                         "Running, reading data from host memory buffer",
                     ),
@@ -5687,14 +5687,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CUTTHROUGH",
+                    name: "CUT_THROUGH",
                     description: Some(
                         "Transmission starts when the frame size in the Tx FIFO exceeds TTC threshold",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "STOREFORWARD",
+                    name: "STORE_FORWARD",
                     description: Some(
                         "Transmission starts when a full frame is in the Tx FIFO",
                     ),

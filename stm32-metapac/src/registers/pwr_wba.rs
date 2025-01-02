@@ -1273,7 +1273,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LOWPOWER",
+                    name: "LOW_POWER",
                     description: Some(
                         "Flash memory enters low-power mode in Stop 0 and Stop 1 modes (lower-power consumption).",
                     ),
@@ -1301,7 +1301,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NOTRETAINED",
+                    name: "NOT_RETAINED",
                     description: Some(
                         "ICACHE SRAM content lost in Stop modes",
                     ),
@@ -1336,7 +1336,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DEEPSLEEP",
+                    name: "DEEP_SLEEP",
                     description: Some(
                         "2.4 GHz RADIO deep sleep mode",
                     ),
@@ -1420,7 +1420,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ABOVEOREQUAL",
+                    name: "ABOVE_OR_EQUAL",
                     description: Some(
                         "VDD is equal or above the PVD threshold selected by PVDLS[2:0].",
                     ),
@@ -1441,14 +1441,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "POWEREDON",
+                    name: "POWERED_ON",
                     description: Some(
                         "SRAM1 content retained in Stop modes",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "POWEREDOFF",
+                    name: "POWERED_OFF",
                     description: Some(
                         "SRAM1 content lost in Stop modes",
                     ),

@@ -231,7 +231,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NVMWAKEUP",
+                    name: "NVMWAKE_UP",
                     description: Some("NVM woken up when exiting from Deepsleep mode even if the bit RUN_PD is set"),
                     value: 0,
                 },

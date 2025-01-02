@@ -87,6 +87,29 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("tpe", &self.tpe())
+                .field("tpal", &self.tpal())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                tpe: bool,
+                tpal: super::vals::Tpal,
+            }
+            let proxy = Cr {
+                tpe: self.tpe(),
+                tpal: self.tpal(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Control/status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -154,6 +177,38 @@ pub mod regs {
             Csr(0)
         }
     }
+    impl core::fmt::Debug for Csr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Csr")
+                .field("cte", &self.cte())
+                .field("cti", &self.cti())
+                .field("tpie", &self.tpie())
+                .field("tef", &self.tef())
+                .field("tif", &self.tif())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Csr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Csr {
+                cte: bool,
+                cti: bool,
+                tpie: bool,
+                tef: bool,
+                tif: bool,
+            }
+            let proxy = Csr {
+                cte: self.cte(),
+                cti: self.cti(),
+                tpie: self.tpie(),
+                tef: self.tef(),
+                tif: self.tif(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Data register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -175,6 +230,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dr {
             Dr(0)
+        }
+    }
+    impl core::fmt::Debug for Dr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dr").field("d", &self.d()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dr {
+                d: u16,
+            }
+            let proxy = Dr { d: self.d() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "RTC clock calibration register"]
@@ -233,10 +304,40 @@ pub mod regs {
             Rtccr(0)
         }
     }
+    impl core::fmt::Debug for Rtccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rtccr")
+                .field("cal", &self.cal())
+                .field("cco", &self.cco())
+                .field("asoe", &self.asoe())
+                .field("asos", &self.asos())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rtccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rtccr {
+                cal: u8,
+                cco: bool,
+                asoe: bool,
+                asos: super::vals::Asos,
+            }
+            let proxy = Rtccr {
+                cal: self.cal(),
+                cco: self.cco(),
+                asoe: self.asoe(),
+                asos: self.asos(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Asos {
         #[doc = "RTC Alarm pulse output selected"]
         ALARM = 0x0,
@@ -266,7 +367,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tpal {
         #[doc = "A high level on the TAMPER pin resets all data backup registers (if TPE bit is set)"]
         HIGH = 0x0,

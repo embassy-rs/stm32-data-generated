@@ -108,6 +108,32 @@ pub mod regs {
             Cr1(0)
         }
     }
+    impl core::fmt::Debug for Cr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr1")
+                .field("lpms", &self.lpms())
+                .field("fpd_stop", &self.fpd_stop())
+                .field("fpd_slp", &self.fpd_slp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr1 {
+                lpms: u8,
+                fpd_stop: bool,
+                fpd_slp: bool,
+            }
+            let proxy = Cr1 {
+                lpms: self.lpms(),
+                fpd_stop: self.fpd_stop(),
+                fpd_slp: self.fpd_slp(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PWR control register 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -157,6 +183,49 @@ pub mod regs {
             Cr3(0)
         }
     }
+    impl core::fmt::Debug for Cr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr3")
+                .field(
+                    "ewup",
+                    &[
+                        self.ewup(0usize),
+                        self.ewup(1usize),
+                        self.ewup(2usize),
+                        self.ewup(3usize),
+                        self.ewup(4usize),
+                        self.ewup(5usize),
+                    ],
+                )
+                .field("apc", &self.apc())
+                .field("eiwul", &self.eiwul())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr3 {
+                ewup: [bool; 6usize],
+                apc: bool,
+                eiwul: bool,
+            }
+            let proxy = Cr3 {
+                ewup: [
+                    self.ewup(0usize),
+                    self.ewup(1usize),
+                    self.ewup(2usize),
+                    self.ewup(3usize),
+                    self.ewup(4usize),
+                    self.ewup(5usize),
+                ],
+                apc: self.apc(),
+                eiwul: self.eiwul(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PWR control register 4"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -184,6 +253,43 @@ pub mod regs {
             Cr4(0)
         }
     }
+    impl core::fmt::Debug for Cr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr4")
+                .field(
+                    "wp",
+                    &[
+                        self.wp(0usize),
+                        self.wp(1usize),
+                        self.wp(2usize),
+                        self.wp(3usize),
+                        self.wp(4usize),
+                        self.wp(5usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr4 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr4 {
+                wp: [bool; 6usize],
+            }
+            let proxy = Cr4 {
+                wp: [
+                    self.wp(0usize),
+                    self.wp(1usize),
+                    self.wp(2usize),
+                    self.wp(3usize),
+                    self.wp(4usize),
+                    self.wp(5usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Power Port pull control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -209,6 +315,63 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Pcr {
             Pcr(0)
+        }
+    }
+    impl core::fmt::Debug for Pcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pcr")
+                .field(
+                    "p",
+                    &[
+                        self.p(0usize),
+                        self.p(1usize),
+                        self.p(2usize),
+                        self.p(3usize),
+                        self.p(4usize),
+                        self.p(5usize),
+                        self.p(6usize),
+                        self.p(7usize),
+                        self.p(8usize),
+                        self.p(9usize),
+                        self.p(10usize),
+                        self.p(11usize),
+                        self.p(12usize),
+                        self.p(13usize),
+                        self.p(14usize),
+                        self.p(15usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pcr {
+                p: [bool; 16usize],
+            }
+            let proxy = Pcr {
+                p: [
+                    self.p(0usize),
+                    self.p(1usize),
+                    self.p(2usize),
+                    self.p(3usize),
+                    self.p(4usize),
+                    self.p(5usize),
+                    self.p(6usize),
+                    self.p(7usize),
+                    self.p(8usize),
+                    self.p(9usize),
+                    self.p(10usize),
+                    self.p(11usize),
+                    self.p(12usize),
+                    self.p(13usize),
+                    self.p(14usize),
+                    self.p(15usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PWR status clear register"]
@@ -247,6 +410,46 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Scr {
             Scr(0)
+        }
+    }
+    impl core::fmt::Debug for Scr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Scr")
+                .field(
+                    "cwuf",
+                    &[
+                        self.cwuf(0usize),
+                        self.cwuf(1usize),
+                        self.cwuf(2usize),
+                        self.cwuf(3usize),
+                        self.cwuf(4usize),
+                        self.cwuf(5usize),
+                    ],
+                )
+                .field("csbf", &self.csbf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Scr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Scr {
+                cwuf: [bool; 6usize],
+                csbf: bool,
+            }
+            let proxy = Scr {
+                cwuf: [
+                    self.cwuf(0usize),
+                    self.cwuf(1usize),
+                    self.cwuf(2usize),
+                    self.cwuf(3usize),
+                    self.cwuf(4usize),
+                    self.cwuf(5usize),
+                ],
+                csbf: self.csbf(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PWR status register 1"]
@@ -298,6 +501,49 @@ pub mod regs {
             Sr1(0)
         }
     }
+    impl core::fmt::Debug for Sr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr1")
+                .field(
+                    "wuf",
+                    &[
+                        self.wuf(0usize),
+                        self.wuf(1usize),
+                        self.wuf(2usize),
+                        self.wuf(3usize),
+                        self.wuf(4usize),
+                        self.wuf(5usize),
+                    ],
+                )
+                .field("sbf", &self.sbf())
+                .field("wufi", &self.wufi())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr1 {
+                wuf: [bool; 6usize],
+                sbf: bool,
+                wufi: bool,
+            }
+            let proxy = Sr1 {
+                wuf: [
+                    self.wuf(0usize),
+                    self.wuf(1usize),
+                    self.wuf(2usize),
+                    self.wuf(3usize),
+                    self.wuf(4usize),
+                    self.wuf(5usize),
+                ],
+                sbf: self.sbf(),
+                wufi: self.wufi(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PWR status register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -319,6 +565,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Sr2 {
             Sr2(0)
+        }
+    }
+    impl core::fmt::Debug for Sr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr2").field("flash_rdy", &self.flash_rdy()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr2 {
+                flash_rdy: bool,
+            }
+            let proxy = Sr2 {
+                flash_rdy: self.flash_rdy(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

@@ -203,6 +203,75 @@ pub mod regs {
             Atcr1(0)
         }
     }
+    impl core::fmt::Debug for Atcr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Atcr1")
+                .field(
+                    "tampam",
+                    &[
+                        self.tampam(0usize),
+                        self.tampam(1usize),
+                        self.tampam(2usize),
+                        self.tampam(3usize),
+                        self.tampam(4usize),
+                        self.tampam(5usize),
+                        self.tampam(6usize),
+                        self.tampam(7usize),
+                    ],
+                )
+                .field(
+                    "atosel",
+                    &[
+                        self.atosel(0usize),
+                        self.atosel(1usize),
+                        self.atosel(2usize),
+                        self.atosel(3usize),
+                    ],
+                )
+                .field("atcksel", &self.atcksel())
+                .field("atper", &self.atper())
+                .field("atoshare", &self.atoshare())
+                .field("flten", &self.flten())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Atcr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Atcr1 {
+                tampam: [bool; 8usize],
+                atosel: [u8; 4usize],
+                atcksel: u8,
+                atper: u8,
+                atoshare: bool,
+                flten: bool,
+            }
+            let proxy = Atcr1 {
+                tampam: [
+                    self.tampam(0usize),
+                    self.tampam(1usize),
+                    self.tampam(2usize),
+                    self.tampam(3usize),
+                    self.tampam(4usize),
+                    self.tampam(5usize),
+                    self.tampam(6usize),
+                    self.tampam(7usize),
+                ],
+                atosel: [
+                    self.atosel(0usize),
+                    self.atosel(1usize),
+                    self.atosel(2usize),
+                    self.atosel(3usize),
+                ],
+                atcksel: self.atcksel(),
+                atper: self.atper(),
+                atoshare: self.atoshare(),
+                flten: self.flten(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "TAMP active tamper control register 2."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -230,6 +299,47 @@ in the TAMP_ATCR1, and so can also be read or written through TAMP_ATCR1. (x=1-8
         #[inline(always)]
         fn default() -> Atcr2 {
             Atcr2(0)
+        }
+    }
+    impl core::fmt::Debug for Atcr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Atcr2")
+                .field(
+                    "atosel",
+                    &[
+                        self.atosel(0usize),
+                        self.atosel(1usize),
+                        self.atosel(2usize),
+                        self.atosel(3usize),
+                        self.atosel(4usize),
+                        self.atosel(5usize),
+                        self.atosel(6usize),
+                        self.atosel(7usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Atcr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Atcr2 {
+                atosel: [u8; 8usize],
+            }
+            let proxy = Atcr2 {
+                atosel: [
+                    self.atosel(0usize),
+                    self.atosel(1usize),
+                    self.atosel(2usize),
+                    self.atosel(3usize),
+                    self.atosel(4usize),
+                    self.atosel(5usize),
+                    self.atosel(6usize),
+                    self.atosel(7usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TAMP active tamper output register."]
@@ -275,6 +385,32 @@ in the TAMP_ATCR1, and so can also be read or written through TAMP_ATCR1. (x=1-8
         #[inline(always)]
         fn default() -> Ator {
             Ator(0)
+        }
+    }
+    impl core::fmt::Debug for Ator {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ator")
+                .field("prng", &self.prng())
+                .field("seedf", &self.seedf())
+                .field("inits", &self.inits())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ator {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ator {
+                prng: u8,
+                seedf: bool,
+                inits: bool,
+            }
+            let proxy = Ator {
+                prng: self.prng(),
+                seedf: self.seedf(),
+                inits: self.inits(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TAMP control register 1."]
@@ -447,6 +583,86 @@ in the TAMP_ATCR1, and so can also be read or written through TAMP_ATCR1. (x=1-8
             Cr1(0)
         }
     }
+    impl core::fmt::Debug for Cr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr1")
+                .field(
+                    "tampe",
+                    &[
+                        self.tampe(0usize),
+                        self.tampe(1usize),
+                        self.tampe(2usize),
+                        self.tampe(3usize),
+                        self.tampe(4usize),
+                        self.tampe(5usize),
+                        self.tampe(6usize),
+                        self.tampe(7usize),
+                    ],
+                )
+                .field("itamp1e", &self.itamp1e())
+                .field("itamp2e", &self.itamp2e())
+                .field("itamp3e", &self.itamp3e())
+                .field("itamp4e", &self.itamp4e())
+                .field("itamp5e", &self.itamp5e())
+                .field("itamp6e", &self.itamp6e())
+                .field("itamp7e", &self.itamp7e())
+                .field("itamp8e", &self.itamp8e())
+                .field("itamp9e", &self.itamp9e())
+                .field("itamp11e", &self.itamp11e())
+                .field("itamp12e", &self.itamp12e())
+                .field("itamp13e", &self.itamp13e())
+                .field("itamp15e", &self.itamp15e())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr1 {
+                tampe: [bool; 8usize],
+                itamp1e: bool,
+                itamp2e: bool,
+                itamp3e: bool,
+                itamp4e: bool,
+                itamp5e: bool,
+                itamp6e: bool,
+                itamp7e: bool,
+                itamp8e: bool,
+                itamp9e: bool,
+                itamp11e: bool,
+                itamp12e: bool,
+                itamp13e: bool,
+                itamp15e: bool,
+            }
+            let proxy = Cr1 {
+                tampe: [
+                    self.tampe(0usize),
+                    self.tampe(1usize),
+                    self.tampe(2usize),
+                    self.tampe(3usize),
+                    self.tampe(4usize),
+                    self.tampe(5usize),
+                    self.tampe(6usize),
+                    self.tampe(7usize),
+                ],
+                itamp1e: self.itamp1e(),
+                itamp2e: self.itamp2e(),
+                itamp3e: self.itamp3e(),
+                itamp4e: self.itamp4e(),
+                itamp5e: self.itamp5e(),
+                itamp6e: self.itamp6e(),
+                itamp7e: self.itamp7e(),
+                itamp8e: self.itamp8e(),
+                itamp9e: self.itamp9e(),
+                itamp11e: self.itamp11e(),
+                itamp12e: self.itamp12e(),
+                itamp13e: self.itamp13e(),
+                itamp15e: self.itamp15e(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "TAMP control register 2."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -524,6 +740,83 @@ in the TAMP_ATCR1, and so can also be read or written through TAMP_ATCR1. (x=1-8
         #[inline(always)]
         fn default() -> Cr2 {
             Cr2(0)
+        }
+    }
+    impl core::fmt::Debug for Cr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr2")
+                .field(
+                    "tamppom",
+                    &[
+                        self.tamppom(0usize),
+                        self.tamppom(1usize),
+                        self.tamppom(2usize),
+                        self.tamppom(3usize),
+                        self.tamppom(4usize),
+                        self.tamppom(5usize),
+                        self.tamppom(6usize),
+                        self.tamppom(7usize),
+                    ],
+                )
+                .field(
+                    "tampmsk",
+                    &[self.tampmsk(0usize), self.tampmsk(1usize), self.tampmsk(2usize)],
+                )
+                .field("bkblock", &self.bkblock())
+                .field("bkerase", &self.bkerase())
+                .field(
+                    "tamptrg",
+                    &[
+                        self.tamptrg(0usize),
+                        self.tamptrg(1usize),
+                        self.tamptrg(2usize),
+                        self.tamptrg(3usize),
+                        self.tamptrg(4usize),
+                        self.tamptrg(5usize),
+                        self.tamptrg(6usize),
+                        self.tamptrg(7usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr2 {
+                tamppom: [bool; 8usize],
+                tampmsk: [bool; 3usize],
+                bkblock: bool,
+                bkerase: bool,
+                tamptrg: [bool; 8usize],
+            }
+            let proxy = Cr2 {
+                tamppom: [
+                    self.tamppom(0usize),
+                    self.tamppom(1usize),
+                    self.tamppom(2usize),
+                    self.tamppom(3usize),
+                    self.tamppom(4usize),
+                    self.tamppom(5usize),
+                    self.tamppom(6usize),
+                    self.tamppom(7usize),
+                ],
+                tampmsk: [self.tampmsk(0usize), self.tampmsk(1usize), self.tampmsk(2usize)],
+                bkblock: self.bkblock(),
+                bkerase: self.bkerase(),
+                tamptrg: [
+                    self.tamptrg(0usize),
+                    self.tamptrg(1usize),
+                    self.tamptrg(2usize),
+                    self.tamptrg(3usize),
+                    self.tamptrg(4usize),
+                    self.tamptrg(5usize),
+                    self.tamptrg(6usize),
+                    self.tamptrg(7usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TAMP control register 3."]
@@ -681,6 +974,62 @@ in the TAMP_ATCR1, and so can also be read or written through TAMP_ATCR1. (x=1-8
             Cr3(0)
         }
     }
+    impl core::fmt::Debug for Cr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr3")
+                .field("itamp1pom", &self.itamp1pom())
+                .field("itamp2pom", &self.itamp2pom())
+                .field("itamp3pom", &self.itamp3pom())
+                .field("itamp4pom", &self.itamp4pom())
+                .field("itamp5pom", &self.itamp5pom())
+                .field("itamp6pom", &self.itamp6pom())
+                .field("itamp7pom", &self.itamp7pom())
+                .field("itamp8pom", &self.itamp8pom())
+                .field("itamp9pom", &self.itamp9pom())
+                .field("itamp11pom", &self.itamp11pom())
+                .field("itamp12pom", &self.itamp12pom())
+                .field("itamp13pom", &self.itamp13pom())
+                .field("itamp15pom", &self.itamp15pom())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr3 {
+                itamp1pom: bool,
+                itamp2pom: bool,
+                itamp3pom: bool,
+                itamp4pom: bool,
+                itamp5pom: bool,
+                itamp6pom: bool,
+                itamp7pom: bool,
+                itamp8pom: bool,
+                itamp9pom: bool,
+                itamp11pom: bool,
+                itamp12pom: bool,
+                itamp13pom: bool,
+                itamp15pom: bool,
+            }
+            let proxy = Cr3 {
+                itamp1pom: self.itamp1pom(),
+                itamp2pom: self.itamp2pom(),
+                itamp3pom: self.itamp3pom(),
+                itamp4pom: self.itamp4pom(),
+                itamp5pom: self.itamp5pom(),
+                itamp6pom: self.itamp6pom(),
+                itamp7pom: self.itamp7pom(),
+                itamp8pom: self.itamp8pom(),
+                itamp9pom: self.itamp9pom(),
+                itamp11pom: self.itamp11pom(),
+                itamp12pom: self.itamp12pom(),
+                itamp13pom: self.itamp13pom(),
+                itamp15pom: self.itamp15pom(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "TAMP filter control register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -735,6 +1084,35 @@ in the TAMP_ATCR1, and so can also be read or written through TAMP_ATCR1. (x=1-8
         #[inline(always)]
         fn default() -> Fltcr {
             Fltcr(0)
+        }
+    }
+    impl core::fmt::Debug for Fltcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fltcr")
+                .field("tampfreq", &self.tampfreq())
+                .field("tampflt", &self.tampflt())
+                .field("tampprch", &self.tampprch())
+                .field("tamppudis", &self.tamppudis())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fltcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fltcr {
+                tampfreq: u8,
+                tampflt: u8,
+                tampprch: u8,
+                tamppudis: bool,
+            }
+            let proxy = Fltcr {
+                tampfreq: self.tampfreq(),
+                tampflt: self.tampflt(),
+                tampprch: self.tampprch(),
+                tamppudis: self.tamppudis(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TAMP interrupt enable register."]
@@ -907,6 +1285,86 @@ in the TAMP_ATCR1, and so can also be read or written through TAMP_ATCR1. (x=1-8
             Ier(0)
         }
     }
+    impl core::fmt::Debug for Ier {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ier")
+                .field(
+                    "tampie",
+                    &[
+                        self.tampie(0usize),
+                        self.tampie(1usize),
+                        self.tampie(2usize),
+                        self.tampie(3usize),
+                        self.tampie(4usize),
+                        self.tampie(5usize),
+                        self.tampie(6usize),
+                        self.tampie(7usize),
+                    ],
+                )
+                .field("itamp1ie", &self.itamp1ie())
+                .field("itamp2ie", &self.itamp2ie())
+                .field("itamp3ie", &self.itamp3ie())
+                .field("itamp4ie", &self.itamp4ie())
+                .field("itamp5ie", &self.itamp5ie())
+                .field("itamp6ie", &self.itamp6ie())
+                .field("itamp7ie", &self.itamp7ie())
+                .field("itamp8ie", &self.itamp8ie())
+                .field("itamp9ie", &self.itamp9ie())
+                .field("itamp11ie", &self.itamp11ie())
+                .field("itamp12ie", &self.itamp12ie())
+                .field("itamp13ie", &self.itamp13ie())
+                .field("itamp15ie", &self.itamp15ie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ier {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ier {
+                tampie: [bool; 8usize],
+                itamp1ie: bool,
+                itamp2ie: bool,
+                itamp3ie: bool,
+                itamp4ie: bool,
+                itamp5ie: bool,
+                itamp6ie: bool,
+                itamp7ie: bool,
+                itamp8ie: bool,
+                itamp9ie: bool,
+                itamp11ie: bool,
+                itamp12ie: bool,
+                itamp13ie: bool,
+                itamp15ie: bool,
+            }
+            let proxy = Ier {
+                tampie: [
+                    self.tampie(0usize),
+                    self.tampie(1usize),
+                    self.tampie(2usize),
+                    self.tampie(3usize),
+                    self.tampie(4usize),
+                    self.tampie(5usize),
+                    self.tampie(6usize),
+                    self.tampie(7usize),
+                ],
+                itamp1ie: self.itamp1ie(),
+                itamp2ie: self.itamp2ie(),
+                itamp3ie: self.itamp3ie(),
+                itamp4ie: self.itamp4ie(),
+                itamp5ie: self.itamp5ie(),
+                itamp6ie: self.itamp6ie(),
+                itamp7ie: self.itamp7ie(),
+                itamp8ie: self.itamp8ie(),
+                itamp9ie: self.itamp9ie(),
+                itamp11ie: self.itamp11ie(),
+                itamp12ie: self.itamp12ie(),
+                itamp13ie: self.itamp13ie(),
+                itamp15ie: self.itamp15ie(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "TAMP non-secure masked interrupt status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1077,6 +1535,86 @@ in the TAMP_ATCR1, and so can also be read or written through TAMP_ATCR1. (x=1-8
             Misr(0)
         }
     }
+    impl core::fmt::Debug for Misr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Misr")
+                .field(
+                    "tampmf",
+                    &[
+                        self.tampmf(0usize),
+                        self.tampmf(1usize),
+                        self.tampmf(2usize),
+                        self.tampmf(3usize),
+                        self.tampmf(4usize),
+                        self.tampmf(5usize),
+                        self.tampmf(6usize),
+                        self.tampmf(7usize),
+                    ],
+                )
+                .field("itamp1mf", &self.itamp1mf())
+                .field("itamp2mf", &self.itamp2mf())
+                .field("itamp3mf", &self.itamp3mf())
+                .field("itamp4mf", &self.itamp4mf())
+                .field("itamp5mf", &self.itamp5mf())
+                .field("itamp6mf", &self.itamp6mf())
+                .field("itamp7mf", &self.itamp7mf())
+                .field("itamp8mf", &self.itamp8mf())
+                .field("itamp9mf", &self.itamp9mf())
+                .field("itamp11mf", &self.itamp11mf())
+                .field("itamp12mf", &self.itamp12mf())
+                .field("itamp13mf", &self.itamp13mf())
+                .field("itamp15mf", &self.itamp15mf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Misr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Misr {
+                tampmf: [bool; 8usize],
+                itamp1mf: bool,
+                itamp2mf: bool,
+                itamp3mf: bool,
+                itamp4mf: bool,
+                itamp5mf: bool,
+                itamp6mf: bool,
+                itamp7mf: bool,
+                itamp8mf: bool,
+                itamp9mf: bool,
+                itamp11mf: bool,
+                itamp12mf: bool,
+                itamp13mf: bool,
+                itamp15mf: bool,
+            }
+            let proxy = Misr {
+                tampmf: [
+                    self.tampmf(0usize),
+                    self.tampmf(1usize),
+                    self.tampmf(2usize),
+                    self.tampmf(3usize),
+                    self.tampmf(4usize),
+                    self.tampmf(5usize),
+                    self.tampmf(6usize),
+                    self.tampmf(7usize),
+                ],
+                itamp1mf: self.itamp1mf(),
+                itamp2mf: self.itamp2mf(),
+                itamp3mf: self.itamp3mf(),
+                itamp4mf: self.itamp4mf(),
+                itamp5mf: self.itamp5mf(),
+                itamp6mf: self.itamp6mf(),
+                itamp7mf: self.itamp7mf(),
+                itamp8mf: self.itamp8mf(),
+                itamp9mf: self.itamp9mf(),
+                itamp11mf: self.itamp11mf(),
+                itamp12mf: self.itamp12mf(),
+                itamp13mf: self.itamp13mf(),
+                itamp15mf: self.itamp15mf(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "TAMP option register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1144,6 +1682,38 @@ in the TAMP_ATCR1, and so can also be read or written through TAMP_ATCR1. (x=1-8
             Or(0)
         }
     }
+    impl core::fmt::Debug for Or {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Or")
+                .field("out3_rmp", &self.out3_rmp())
+                .field("out5_rmp", &self.out5_rmp())
+                .field("in2_rmp", &self.in2_rmp())
+                .field("in3_rmp", &self.in3_rmp())
+                .field("in4_rmp", &self.in4_rmp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Or {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Or {
+                out3_rmp: u8,
+                out5_rmp: bool,
+                in2_rmp: bool,
+                in3_rmp: bool,
+                in4_rmp: bool,
+            }
+            let proxy = Or {
+                out3_rmp: self.out3_rmp(),
+                out5_rmp: self.out5_rmp(),
+                in2_rmp: self.in2_rmp(),
+                in3_rmp: self.in3_rmp(),
+                in4_rmp: self.in4_rmp(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "TAMP privilege mode control register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1200,6 +1770,35 @@ in the TAMP_ATCR1, and so can also be read or written through TAMP_ATCR1. (x=1-8
             Privcfgr(0)
         }
     }
+    impl core::fmt::Debug for Privcfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Privcfgr")
+                .field("cnt1priv", &self.cnt1priv())
+                .field("bkprwpriv", &self.bkprwpriv())
+                .field("bkpwpriv", &self.bkpwpriv())
+                .field("tamppriv", &self.tamppriv())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Privcfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Privcfgr {
+                cnt1priv: bool,
+                bkprwpriv: bool,
+                bkpwpriv: bool,
+                tamppriv: bool,
+            }
+            let proxy = Privcfgr {
+                cnt1priv: self.cnt1priv(),
+                bkprwpriv: self.bkprwpriv(),
+                bkpwpriv: self.bkpwpriv(),
+                tamppriv: self.tamppriv(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "TAMP erase configuration register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1221,6 +1820,22 @@ in the TAMP_ATCR1, and so can also be read or written through TAMP_ATCR1. (x=1-8
         #[inline(always)]
         fn default() -> Rpcfgr {
             Rpcfgr(0)
+        }
+    }
+    impl core::fmt::Debug for Rpcfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rpcfgr").field("rpcfg0", &self.rpcfg0()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rpcfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rpcfgr {
+                rpcfg0: bool,
+            }
+            let proxy = Rpcfgr { rpcfg0: self.rpcfg0() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TAMP status clear register."]
@@ -1393,6 +2008,86 @@ in the TAMP_ATCR1, and so can also be read or written through TAMP_ATCR1. (x=1-8
             Scr(0)
         }
     }
+    impl core::fmt::Debug for Scr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Scr")
+                .field(
+                    "ctampf",
+                    &[
+                        self.ctampf(0usize),
+                        self.ctampf(1usize),
+                        self.ctampf(2usize),
+                        self.ctampf(3usize),
+                        self.ctampf(4usize),
+                        self.ctampf(5usize),
+                        self.ctampf(6usize),
+                        self.ctampf(7usize),
+                    ],
+                )
+                .field("citamp1f", &self.citamp1f())
+                .field("citamp2f", &self.citamp2f())
+                .field("citamp3f", &self.citamp3f())
+                .field("citamp4f", &self.citamp4f())
+                .field("citamp5f", &self.citamp5f())
+                .field("citamp6f", &self.citamp6f())
+                .field("citamp7f", &self.citamp7f())
+                .field("citamp8f", &self.citamp8f())
+                .field("citamp9f", &self.citamp9f())
+                .field("citamp11f", &self.citamp11f())
+                .field("citamp12f", &self.citamp12f())
+                .field("citamp13f", &self.citamp13f())
+                .field("citamp15f", &self.citamp15f())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Scr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Scr {
+                ctampf: [bool; 8usize],
+                citamp1f: bool,
+                citamp2f: bool,
+                citamp3f: bool,
+                citamp4f: bool,
+                citamp5f: bool,
+                citamp6f: bool,
+                citamp7f: bool,
+                citamp8f: bool,
+                citamp9f: bool,
+                citamp11f: bool,
+                citamp12f: bool,
+                citamp13f: bool,
+                citamp15f: bool,
+            }
+            let proxy = Scr {
+                ctampf: [
+                    self.ctampf(0usize),
+                    self.ctampf(1usize),
+                    self.ctampf(2usize),
+                    self.ctampf(3usize),
+                    self.ctampf(4usize),
+                    self.ctampf(5usize),
+                    self.ctampf(6usize),
+                    self.ctampf(7usize),
+                ],
+                citamp1f: self.citamp1f(),
+                citamp2f: self.citamp2f(),
+                citamp3f: self.citamp3f(),
+                citamp4f: self.citamp4f(),
+                citamp5f: self.citamp5f(),
+                citamp6f: self.citamp6f(),
+                citamp7f: self.citamp7f(),
+                citamp8f: self.citamp8f(),
+                citamp9f: self.citamp9f(),
+                citamp11f: self.citamp11f(),
+                citamp12f: self.citamp12f(),
+                citamp13f: self.citamp13f(),
+                citamp15f: self.citamp15f(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "TAMP secure mode register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1462,6 +2157,38 @@ can be written only in privileged mode."]
         #[inline(always)]
         fn default() -> Seccfgr {
             Seccfgr(0)
+        }
+    }
+    impl core::fmt::Debug for Seccfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Seccfgr")
+                .field("bkprwsec", &self.bkprwsec())
+                .field("cnt1sec", &self.cnt1sec())
+                .field("bkpwsec", &self.bkpwsec())
+                .field("bhklock", &self.bhklock())
+                .field("tampsec", &self.tampsec())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Seccfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Seccfgr {
+                bkprwsec: u8,
+                cnt1sec: bool,
+                bkpwsec: u8,
+                bhklock: bool,
+                tampsec: bool,
+            }
+            let proxy = Seccfgr {
+                bkprwsec: self.bkprwsec(),
+                cnt1sec: self.cnt1sec(),
+                bkpwsec: self.bkpwsec(),
+                bhklock: self.bhklock(),
+                tampsec: self.tampsec(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TAMP secure masked interrupt status register."]
@@ -1634,6 +2361,86 @@ can be written only in privileged mode."]
             Smisr(0)
         }
     }
+    impl core::fmt::Debug for Smisr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Smisr")
+                .field(
+                    "tampmf",
+                    &[
+                        self.tampmf(0usize),
+                        self.tampmf(1usize),
+                        self.tampmf(2usize),
+                        self.tampmf(3usize),
+                        self.tampmf(4usize),
+                        self.tampmf(5usize),
+                        self.tampmf(6usize),
+                        self.tampmf(7usize),
+                    ],
+                )
+                .field("itamp1mf", &self.itamp1mf())
+                .field("itamp2mf", &self.itamp2mf())
+                .field("itamp3mf", &self.itamp3mf())
+                .field("itamp4mf", &self.itamp4mf())
+                .field("itamp5mf", &self.itamp5mf())
+                .field("itamp6mf", &self.itamp6mf())
+                .field("itamp7mf", &self.itamp7mf())
+                .field("itamp8mf", &self.itamp8mf())
+                .field("itamp9mf", &self.itamp9mf())
+                .field("itamp11mf", &self.itamp11mf())
+                .field("itamp12mf", &self.itamp12mf())
+                .field("itamp13mf", &self.itamp13mf())
+                .field("itamp15mf", &self.itamp15mf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Smisr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Smisr {
+                tampmf: [bool; 8usize],
+                itamp1mf: bool,
+                itamp2mf: bool,
+                itamp3mf: bool,
+                itamp4mf: bool,
+                itamp5mf: bool,
+                itamp6mf: bool,
+                itamp7mf: bool,
+                itamp8mf: bool,
+                itamp9mf: bool,
+                itamp11mf: bool,
+                itamp12mf: bool,
+                itamp13mf: bool,
+                itamp15mf: bool,
+            }
+            let proxy = Smisr {
+                tampmf: [
+                    self.tampmf(0usize),
+                    self.tampmf(1usize),
+                    self.tampmf(2usize),
+                    self.tampmf(3usize),
+                    self.tampmf(4usize),
+                    self.tampmf(5usize),
+                    self.tampmf(6usize),
+                    self.tampmf(7usize),
+                ],
+                itamp1mf: self.itamp1mf(),
+                itamp2mf: self.itamp2mf(),
+                itamp3mf: self.itamp3mf(),
+                itamp4mf: self.itamp4mf(),
+                itamp5mf: self.itamp5mf(),
+                itamp6mf: self.itamp6mf(),
+                itamp7mf: self.itamp7mf(),
+                itamp8mf: self.itamp8mf(),
+                itamp9mf: self.itamp9mf(),
+                itamp11mf: self.itamp11mf(),
+                itamp12mf: self.itamp12mf(),
+                itamp13mf: self.itamp13mf(),
+                itamp15mf: self.itamp15mf(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "TAMP status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1802,6 +2609,86 @@ can be written only in privileged mode."]
         #[inline(always)]
         fn default() -> Sr {
             Sr(0)
+        }
+    }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field(
+                    "tampf",
+                    &[
+                        self.tampf(0usize),
+                        self.tampf(1usize),
+                        self.tampf(2usize),
+                        self.tampf(3usize),
+                        self.tampf(4usize),
+                        self.tampf(5usize),
+                        self.tampf(6usize),
+                        self.tampf(7usize),
+                    ],
+                )
+                .field("itamp1f", &self.itamp1f())
+                .field("itamp2f", &self.itamp2f())
+                .field("itamp3f", &self.itamp3f())
+                .field("itamp4f", &self.itamp4f())
+                .field("itamp5f", &self.itamp5f())
+                .field("itamp6f", &self.itamp6f())
+                .field("itamp7f", &self.itamp7f())
+                .field("itamp8f", &self.itamp8f())
+                .field("itamp9f", &self.itamp9f())
+                .field("itamp11f", &self.itamp11f())
+                .field("itamp12f", &self.itamp12f())
+                .field("itamp13f", &self.itamp13f())
+                .field("itamp15f", &self.itamp15f())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                tampf: [bool; 8usize],
+                itamp1f: bool,
+                itamp2f: bool,
+                itamp3f: bool,
+                itamp4f: bool,
+                itamp5f: bool,
+                itamp6f: bool,
+                itamp7f: bool,
+                itamp8f: bool,
+                itamp9f: bool,
+                itamp11f: bool,
+                itamp12f: bool,
+                itamp13f: bool,
+                itamp15f: bool,
+            }
+            let proxy = Sr {
+                tampf: [
+                    self.tampf(0usize),
+                    self.tampf(1usize),
+                    self.tampf(2usize),
+                    self.tampf(3usize),
+                    self.tampf(4usize),
+                    self.tampf(5usize),
+                    self.tampf(6usize),
+                    self.tampf(7usize),
+                ],
+                itamp1f: self.itamp1f(),
+                itamp2f: self.itamp2f(),
+                itamp3f: self.itamp3f(),
+                itamp4f: self.itamp4f(),
+                itamp5f: self.itamp5f(),
+                itamp6f: self.itamp6f(),
+                itamp7f: self.itamp7f(),
+                itamp8f: self.itamp8f(),
+                itamp9f: self.itamp9f(),
+                itamp11f: self.itamp11f(),
+                itamp12f: self.itamp12f(),
+                itamp13f: self.itamp13f(),
+                itamp15f: self.itamp15f(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

@@ -1227,7 +1227,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B_0XB4",
+                    name: "B_0X_B4",
                     description: Some(
                         "Writes to SBS_DBGCR allowed (default)",
                     ),
@@ -1269,7 +1269,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RESERVEDRGMII",
+                    name: "RESERVED_RGMII",
                     description: Some(
                         "reserved (RGMII)",
                     ),
@@ -1311,7 +1311,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 138,
                 },
                 EnumVariant {
-                    name: "B_0XB4",
+                    name: "B_0X_B4",
                     description: Some(
                         "HDPL0, RSS",
                     ),
@@ -1332,7 +1332,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 106,
                 },
                 EnumVariant {
-                    name: "B_0XB4",
+                    name: "B_0X_B4",
                     description: Some(
                         "no increment",
                     ),

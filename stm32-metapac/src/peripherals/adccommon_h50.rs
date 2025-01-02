@@ -115,6 +115,38 @@ pub mod regs {
             Ccr(0)
         }
     }
+    impl core::fmt::Debug for Ccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ccr")
+                .field("ckmode", &self.ckmode())
+                .field("presc", &self.presc())
+                .field("vrefen", &self.vrefen())
+                .field("tsen", &self.tsen())
+                .field("vbaten", &self.vbaten())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ccr {
+                ckmode: super::vals::Ckmode,
+                presc: super::vals::Presc,
+                vrefen: bool,
+                tsen: bool,
+                vbaten: bool,
+            }
+            let proxy = Ccr {
+                ckmode: self.ckmode(),
+                presc: self.presc(),
+                vrefen: self.vrefen(),
+                tsen: self.tsen(),
+                vbaten: self.vbaten(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "hardware configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -171,6 +203,35 @@ pub mod regs {
             Hwcfgr0(0)
         }
     }
+    impl core::fmt::Debug for Hwcfgr0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Hwcfgr0")
+                .field("adcnum", &self.adcnum())
+                .field("mulpipe", &self.mulpipe())
+                .field("opbits", &self.opbits())
+                .field("idlevalue", &self.idlevalue())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Hwcfgr0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Hwcfgr0 {
+                adcnum: u8,
+                mulpipe: u8,
+                opbits: u8,
+                idlevalue: super::vals::Idlevalue,
+            }
+            let proxy = Hwcfgr0 {
+                adcnum: self.adcnum(),
+                mulpipe: self.mulpipe(),
+                opbits: self.opbits(),
+                idlevalue: self.idlevalue(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "version register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -205,19 +266,43 @@ pub mod regs {
             Verr(0)
         }
     }
+    impl core::fmt::Debug for Verr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Verr")
+                .field("minrev", &self.minrev())
+                .field("majrev", &self.majrev())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Verr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Verr {
+                minrev: u8,
+                majrev: u8,
+            }
+            let proxy = Verr {
+                minrev: self.minrev(),
+                majrev: self.majrev(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ckmode {
         #[doc = "Use Kernel Clock adc_ker_ck_input divided by PRESC. Asynchronous to AHB clock"]
         ASYNCHRONOUS = 0x0,
         #[doc = "Use AHB clock rcc_hclk3. In this case rcc_hclk must equal sys_d1cpre_ck"]
-        SYNCDIV1 = 0x01,
+        SYNC_DIV1 = 0x01,
         #[doc = "Use AHB clock rcc_hclk3 divided by 2"]
-        SYNCDIV2 = 0x02,
+        SYNC_DIV2 = 0x02,
         #[doc = "Use AHB clock rcc_hclk3 divided by 4"]
-        SYNCDIV4 = 0x03,
+        SYNC_DIV4 = 0x03,
     }
     impl Ckmode {
         #[inline(always)]
@@ -242,7 +327,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Idlevalue {
         #[doc = "Dummy channel selection is 0x13"]
         H13 = 0x0,
@@ -286,7 +372,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Presc {
         #[doc = "adc_ker_ck_input not divided"]
         DIV1 = 0x0,

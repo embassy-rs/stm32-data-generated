@@ -169,6 +169,56 @@ pub mod regs {
             Csr(0)
         }
     }
+    impl core::fmt::Debug for Csr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Csr")
+                .field("opampen", &self.opampen())
+                .field("opalpm", &self.opalpm())
+                .field("opamode", &self.opamode())
+                .field("pga_gain", &self.pga_gain())
+                .field("vm_sel", &self.vm_sel())
+                .field("vp_sel", &self.vp_sel())
+                .field("calon", &self.calon())
+                .field("calsel", &self.calsel())
+                .field("usertrim", &self.usertrim())
+                .field("calout", &self.calout())
+                .field("opa_range", &self.opa_range())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Csr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Csr {
+                opampen: bool,
+                opalpm: super::vals::Opalpm,
+                opamode: super::vals::Opamode,
+                pga_gain: super::vals::PgaGain,
+                vm_sel: super::vals::VmSel,
+                vp_sel: super::vals::VpSel,
+                calon: super::vals::Calon,
+                calsel: super::vals::Calsel,
+                usertrim: super::vals::Usertrim,
+                calout: bool,
+                opa_range: super::vals::OpaRange,
+            }
+            let proxy = Csr {
+                opampen: self.opampen(),
+                opalpm: self.opalpm(),
+                opamode: self.opamode(),
+                pga_gain: self.pga_gain(),
+                vm_sel: self.vm_sel(),
+                vp_sel: self.vp_sel(),
+                calon: self.calon(),
+                calsel: self.calsel(),
+                usertrim: self.usertrim(),
+                calout: self.calout(),
+                opa_range: self.opa_range(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "OPAMP offset trimming register in low-power mode."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -201,6 +251,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Lpotr {
             Lpotr(0)
+        }
+    }
+    impl core::fmt::Debug for Lpotr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lpotr")
+                .field("trimlpoffsetn", &self.trimlpoffsetn())
+                .field("trimlpoffsetp", &self.trimlpoffsetp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lpotr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Lpotr {
+                trimlpoffsetn: u8,
+                trimlpoffsetp: u8,
+            }
+            let proxy = Lpotr {
+                trimlpoffsetn: self.trimlpoffsetn(),
+                trimlpoffsetp: self.trimlpoffsetp(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "OPAMP offset trimming register in normal mode."]
@@ -237,10 +310,34 @@ pub mod regs {
             Otr(0)
         }
     }
+    impl core::fmt::Debug for Otr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Otr")
+                .field("trimoffsetn", &self.trimoffsetn())
+                .field("trimoffsetp", &self.trimoffsetp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Otr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Otr {
+                trimoffsetn: u8,
+                trimoffsetp: u8,
+            }
+            let proxy = Otr {
+                trimoffsetn: self.trimoffsetn(),
+                trimoffsetp: self.trimoffsetp(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Calon {
         #[doc = "Normal mode."]
         NORMAL = 0x0,
@@ -270,7 +367,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Calsel {
         #[doc = "NMOS calibration (200mV applied on OPAMP inputs)."]
         NMOS = 0x0,
@@ -300,7 +398,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OpaRange {
         #[doc = "Low range (VDDA < 2.4V)."]
         LOW = 0x0,
@@ -330,12 +429,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Opalpm {
         #[doc = "operational amplifier in normal mode."]
         NORMAL = 0x0,
         #[doc = "operational amplifier in low-power mode."]
-        LOWPOWER = 0x01,
+        LOW_POWER = 0x01,
     }
     impl Opalpm {
         #[inline(always)]
@@ -360,7 +460,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Opamode {
         #[doc = "internal PGA disable."]
         DISABLE = 0x0,
@@ -394,7 +495,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PgaGain {
         #[doc = "internal PGA Gain 2."]
         GAIN2 = 0x0,
@@ -428,7 +530,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Usertrim {
         #[doc = "Factory trim code used."]
         FACTORY = 0x0,
@@ -458,13 +561,14 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VmSel {
         #[doc = "GPIO connected to VINM (valid also in PGA mode for filtering)."]
         VINM = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "Inverting input not externally connected. These configurations are valid only when OPAMODE = 10 (PGA mode)"]
-        NOTCONNECTED = 0x02,
+        NOT_CONNECTED = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl VmSel {
@@ -490,7 +594,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VpSel {
         #[doc = "GPIO connected to VINP."]
         VINP = 0x0,

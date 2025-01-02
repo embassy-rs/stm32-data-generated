@@ -60,6 +60,22 @@ with an arbitrary value. This is permanently disabling the control of the trimmi
             Ccr(0)
         }
     }
+    impl core::fmt::Debug for Ccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ccr").field("trim", &self.trim()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ccr {
+                trim: u8,
+            }
+            let proxy = Ccr { trim: self.trim() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "VREFBUF control and status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -116,15 +132,45 @@ with an arbitrary value. This is permanently disabling the control of the trimmi
             Csr(0)
         }
     }
+    impl core::fmt::Debug for Csr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Csr")
+                .field("envr", &self.envr())
+                .field("hiz", &self.hiz())
+                .field("vrr", &self.vrr())
+                .field("vrs", &self.vrs())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Csr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Csr {
+                envr: bool,
+                hiz: super::vals::Hiz,
+                vrr: bool,
+                vrs: super::vals::Vrs,
+            }
+            let proxy = Csr {
+                envr: self.envr(),
+                hiz: self.hiz(),
+                vrr: self.vrr(),
+                vrs: self.vrs(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hiz {
         #[doc = "VREF+ pin is internally connected to the voltage reference buffer output."]
         CONNECTED = 0x0,
         #[doc = "VREF+ pin is high impedance."]
-        HIGHZ = 0x01,
+        HIGH_Z = 0x01,
     }
     impl Hiz {
         #[inline(always)]
@@ -149,7 +195,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vrs {
         #[doc = "Voltage reference set to VREF_OUT1 (around 2.048 V)."]
         VREF0 = 0x0,

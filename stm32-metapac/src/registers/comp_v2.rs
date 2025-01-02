@@ -159,7 +159,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NONINVERTED",
+                    name: "NON_INVERTED",
                     description: Some("Non-inverted polarity"),
                     value: 0,
                 },

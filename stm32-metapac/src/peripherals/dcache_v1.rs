@@ -94,6 +94,26 @@ pub mod regs {
             Cmdreaddrr(0)
         }
     }
+    impl core::fmt::Debug for Cmdreaddrr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cmdreaddrr")
+                .field("cmdendaddr", &self.cmdendaddr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cmdreaddrr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cmdreaddrr {
+                cmdendaddr: u32,
+            }
+            let proxy = Cmdreaddrr {
+                cmdendaddr: self.cmdendaddr(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DCACHE command range start address register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -115,6 +135,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cmdrsaddrr {
             Cmdrsaddrr(0)
+        }
+    }
+    impl core::fmt::Debug for Cmdrsaddrr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cmdrsaddrr")
+                .field("cmdstartaddr", &self.cmdstartaddr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cmdrsaddrr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cmdrsaddrr {
+                cmdstartaddr: u32,
+            }
+            let proxy = Cmdrsaddrr {
+                cmdstartaddr: self.cmdstartaddr(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DCACHE control register."]
@@ -272,6 +312,62 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("en", &self.en())
+                .field("cacheinv", &self.cacheinv())
+                .field("cachecmd", &self.cachecmd())
+                .field("startcmd", &self.startcmd())
+                .field("rhitmen", &self.rhitmen())
+                .field("rmissmen", &self.rmissmen())
+                .field("rhitmrst", &self.rhitmrst())
+                .field("rmissmrst", &self.rmissmrst())
+                .field("whitmen", &self.whitmen())
+                .field("wmissmen", &self.wmissmen())
+                .field("whitmrst", &self.whitmrst())
+                .field("wmissmrst", &self.wmissmrst())
+                .field("hburst", &self.hburst())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                en: bool,
+                cacheinv: bool,
+                cachecmd: u8,
+                startcmd: bool,
+                rhitmen: bool,
+                rmissmen: bool,
+                rhitmrst: bool,
+                rmissmrst: bool,
+                whitmen: bool,
+                wmissmen: bool,
+                whitmrst: bool,
+                wmissmrst: bool,
+                hburst: bool,
+            }
+            let proxy = Cr {
+                en: self.en(),
+                cacheinv: self.cacheinv(),
+                cachecmd: self.cachecmd(),
+                startcmd: self.startcmd(),
+                rhitmen: self.rhitmen(),
+                rmissmen: self.rmissmen(),
+                rhitmrst: self.rhitmrst(),
+                rmissmrst: self.rmissmrst(),
+                whitmen: self.whitmen(),
+                wmissmen: self.wmissmen(),
+                whitmrst: self.whitmrst(),
+                wmissmrst: self.wmissmrst(),
+                hburst: self.hburst(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DCACHE flag clear register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -315,6 +411,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Fcr {
             Fcr(0)
+        }
+    }
+    impl core::fmt::Debug for Fcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fcr")
+                .field("cbsyendf", &self.cbsyendf())
+                .field("cerrf", &self.cerrf())
+                .field("ccmdendf", &self.ccmdendf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fcr {
+                cbsyendf: bool,
+                cerrf: bool,
+                ccmdendf: bool,
+            }
+            let proxy = Fcr {
+                cbsyendf: self.cbsyendf(),
+                cerrf: self.cerrf(),
+                ccmdendf: self.ccmdendf(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DCACHE interrupt enable register."]
@@ -362,6 +484,32 @@ pub mod regs {
             Ier(0)
         }
     }
+    impl core::fmt::Debug for Ier {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ier")
+                .field("bsyendie", &self.bsyendie())
+                .field("errie", &self.errie())
+                .field("cmdendie", &self.cmdendie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ier {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ier {
+                bsyendie: bool,
+                errie: bool,
+                cmdendie: bool,
+            }
+            let proxy = Ier {
+                bsyendie: self.bsyendie(),
+                errie: self.errie(),
+                cmdendie: self.cmdendie(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DCACHE read-miss monitor register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -383,6 +531,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Rmmonr {
             Rmmonr(0)
+        }
+    }
+    impl core::fmt::Debug for Rmmonr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rmmonr").field("rmissmon", &self.rmissmon()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rmmonr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rmmonr {
+                rmissmon: u16,
+            }
+            let proxy = Rmmonr {
+                rmissmon: self.rmissmon(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DCACHE status register."]
@@ -452,6 +618,38 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("busyf", &self.busyf())
+                .field("bsyendf", &self.bsyendf())
+                .field("errf", &self.errf())
+                .field("busycmdf", &self.busycmdf())
+                .field("cmdendf", &self.cmdendf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                busyf: bool,
+                bsyendf: bool,
+                errf: bool,
+                busycmdf: bool,
+                cmdendf: bool,
+            }
+            let proxy = Sr {
+                busyf: self.busyf(),
+                bsyendf: self.bsyendf(),
+                errf: self.errf(),
+                busycmdf: self.busycmdf(),
+                cmdendf: self.cmdendf(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DCACHE write-miss monitor register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -473,6 +671,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Wmmonr {
             Wmmonr(0)
+        }
+    }
+    impl core::fmt::Debug for Wmmonr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wmmonr").field("wmissmon", &self.wmissmon()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wmmonr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wmmonr {
+                wmissmon: u16,
+            }
+            let proxy = Wmmonr {
+                wmissmon: self.wmissmon(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

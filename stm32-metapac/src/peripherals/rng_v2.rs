@@ -163,6 +163,53 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("rngen", &self.rngen())
+                .field("ie", &self.ie())
+                .field("ced", &self.ced())
+                .field("rng_config3", &self.rng_config3())
+                .field("nistc", &self.nistc())
+                .field("rng_config2", &self.rng_config2())
+                .field("clkdiv", &self.clkdiv())
+                .field("rng_config1", &self.rng_config1())
+                .field("condrst", &self.condrst())
+                .field("configlock", &self.configlock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                rngen: bool,
+                ie: bool,
+                ced: bool,
+                rng_config3: super::vals::RngConfig3,
+                nistc: super::vals::Nistc,
+                rng_config2: super::vals::RngConfig2,
+                clkdiv: super::vals::Clkdiv,
+                rng_config1: super::vals::RngConfig1,
+                condrst: bool,
+                configlock: bool,
+            }
+            let proxy = Cr {
+                rngen: self.rngen(),
+                ie: self.ie(),
+                ced: self.ced(),
+                rng_config3: self.rng_config3(),
+                nistc: self.nistc(),
+                rng_config2: self.rng_config2(),
+                clkdiv: self.clkdiv(),
+                rng_config1: self.rng_config1(),
+                condrst: self.condrst(),
+                configlock: self.configlock(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Health test control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -184,6 +231,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Htcr {
             Htcr(0)
+        }
+    }
+    impl core::fmt::Debug for Htcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Htcr").field("htcfg", &self.htcfg()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Htcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Htcr {
+                htcfg: super::vals::Htcfg,
+            }
+            let proxy = Htcr { htcfg: self.htcfg() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "status register"]
@@ -253,13 +316,46 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("drdy", &self.drdy())
+                .field("cecs", &self.cecs())
+                .field("secs", &self.secs())
+                .field("ceis", &self.ceis())
+                .field("seis", &self.seis())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                drdy: bool,
+                cecs: bool,
+                secs: bool,
+                ceis: bool,
+                seis: bool,
+            }
+            let proxy = Sr {
+                drdy: self.drdy(),
+                cecs: self.cecs(),
+                secs: self.secs(),
+                ceis: self.ceis(),
+                seis: self.seis(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Clkdiv {
         #[doc = "Internal RNG clock after divider is similar to incoming RNG clock"]
-        NODIV = 0x0,
+        NO_DIV = 0x0,
         #[doc = "Divide RNG clock by 2^1"]
         DIV_2_1 = 0x01,
         #[doc = "Divide RNG clock by 2^2"]
@@ -330,6 +426,25 @@ pub mod vals {
             self.0
         }
     }
+    impl core::fmt::Debug for Htcfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            match self.0 {
+                0xaa74 => f.write_str("RECOMMENDED"),
+                0x1759_0abc => f.write_str("MAGIC"),
+                other => core::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Htcfg {
+        fn format(&self, f: defmt::Formatter) {
+            match self.0 {
+                0xaa74 => defmt::write!(f, "RECOMMENDED"),
+                0x1759_0abc => defmt::write!(f, "MAGIC"),
+                other => defmt::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
     impl From<u32> for Htcfg {
         #[inline(always)]
         fn from(val: u32) -> Htcfg {
@@ -343,7 +458,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nistc {
         #[doc = "Hardware default values for NIST compliant RNG. In this configuration per 128-bit output two conditioning loops are performed and 256 bits of noise source are used"]
         DEFAULT = 0x0,
@@ -377,9 +493,9 @@ pub mod vals {
     pub struct RngConfig1(pub u8);
     impl RngConfig1 {
         #[doc = "Recommended value for config A (NIST certifiable)"]
-        pub const CONFIGA: Self = Self(0x0f);
+        pub const CONFIG_A: Self = Self(0x0f);
         #[doc = "Recommended value for config B (not NIST certifiable)"]
-        pub const CONFIGB: Self = Self(0x18);
+        pub const CONFIG_B: Self = Self(0x18);
     }
     impl RngConfig1 {
         pub const fn from_bits(val: u8) -> RngConfig1 {
@@ -387,6 +503,25 @@ pub mod vals {
         }
         pub const fn to_bits(self) -> u8 {
             self.0
+        }
+    }
+    impl core::fmt::Debug for RngConfig1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            match self.0 {
+                0x0f => f.write_str("CONFIG_A"),
+                0x18 => f.write_str("CONFIG_B"),
+                other => core::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RngConfig1 {
+        fn format(&self, f: defmt::Formatter) {
+            match self.0 {
+                0x0f => defmt::write!(f, "CONFIG_A"),
+                0x18 => defmt::write!(f, "CONFIG_B"),
+                other => defmt::write!(f, "0x{:02X}", other),
+            }
         }
     }
     impl From<u8> for RngConfig1 {
@@ -402,10 +537,11 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RngConfig2 {
         #[doc = "Recommended value for config A and B"]
-        CONFIGA_B = 0x0,
+        CONFIG_A_B = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -437,10 +573,11 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RngConfig3 {
         #[doc = "Recommended value for config B (not NIST certifiable)"]
-        CONFIGB = 0x0,
+        CONFIG_B = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -454,7 +591,7 @@ pub mod vals {
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
         #[doc = "Recommended value for config A (NIST certifiable)"]
-        CONFIGA = 0x0d,
+        CONFIG_A = 0x0d,
         _RESERVED_e = 0x0e,
         _RESERVED_f = 0x0f,
     }

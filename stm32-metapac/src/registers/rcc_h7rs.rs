@@ -8199,14 +8199,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CENTERSPREAD",
+                    name: "CENTER_SPREAD",
                     description: Some(
                         "Center-spread modulation selected (default after reset).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DOWNSPREAD",
+                    name: "DOWN_SPREAD",
                     description: Some(
                         "Down-spread modulation selected.",
                     ),
@@ -8713,14 +8713,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MEDIUMLOW",
+                    name: "MEDIUM_LOW",
                     description: Some(
                         "Medium low driving capability",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MEDIUMHIGH",
+                    name: "MEDIUM_HIGH",
                     description: Some(
                         "Medium high driving capability",
                     ),
@@ -12151,14 +12151,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "WIDEVCO",
+                    name: "WIDE_VCO",
                     description: Some(
                         "VCOH selected (default after reset).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MEDIUMVCO",
+                    name: "MEDIUM_VCO",
                     description: Some(
                         "VCOL selected.",
                     ),
@@ -12634,14 +12634,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DEFAULTX2",
+                    name: "DEFAULT_X2",
                     description: Some(
                         "Timer kernel clock equal to 2x pclk by default",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DEFAULTX4",
+                    name: "DEFAULT_X4",
                     description: Some(
                         "Timer kernel clock equal to 4x pclk by default",
                     ),
@@ -12788,14 +12788,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "REMAINPOWERED",
+                    name: "REMAIN_POWERED",
                     description: Some(
                         "In SUSPEND, PHY state machine, bias and USBPHYC PLL remain powered (default after reset).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "POWERDOWN",
+                    name: "POWER_DOWN",
                     description: Some(
                         "In SUSPEND, PHY state machine, bias and USBPHYC PLL are powered down.",
                     ),

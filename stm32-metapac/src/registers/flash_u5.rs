@@ -10823,14 +10823,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 85,
                 },
                 EnumVariant {
-                    name: "B_0XAA",
+                    name: "B_0X_AA",
                     description: Some(
                         "Level 0 (readout protection not active)",
                     ),
                     value: 170,
                 },
                 EnumVariant {
-                    name: "B_0XCC",
+                    name: "B_0X_CC",
                     description: Some(
                         "Level 2 (chip readout protection active)",
                     ),

@@ -93,6 +93,29 @@ pub mod regs {
             Bcr(0)
         }
     }
+    impl core::fmt::Debug for Bcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bcr")
+                .field("pbo", &self.pbo())
+                .field("pbba", &self.pbba())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Bcr {
+                pbo: u32,
+                pbba: u16,
+            }
+            let proxy = Bcr {
+                pbo: self.pbo(),
+                pbba: self.pbba(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "GFXMMU configuration register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -146,6 +169,45 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field(
+                    "boie",
+                    &[
+                        self.boie(0usize),
+                        self.boie(1usize),
+                        self.boie(2usize),
+                        self.boie(3usize),
+                    ],
+                )
+                .field("ameie", &self.ameie())
+                .field("bm", &[self.bm(0usize)])
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                boie: [bool; 4usize],
+                ameie: bool,
+                bm: [super::vals::Bm192; 1usize],
+            }
+            let proxy = Cr {
+                boie: [
+                    self.boie(0usize),
+                    self.boie(1usize),
+                    self.boie(2usize),
+                    self.boie(3usize),
+                ],
+                ameie: self.ameie(),
+                bm: [self.bm(0usize)],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "GFXMMU default value register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -167,6 +229,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dvr {
             Dvr(0)
+        }
+    }
+    impl core::fmt::Debug for Dvr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dvr").field("dv", &self.dv()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dvr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dvr {
+                dv: u32,
+            }
+            let proxy = Dvr { dv: self.dv() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "GFXMMU flag clear register."]
@@ -207,6 +285,42 @@ pub mod regs {
             Fcr(0)
         }
     }
+    impl core::fmt::Debug for Fcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fcr")
+                .field(
+                    "cbof",
+                    &[
+                        self.cbof(0usize),
+                        self.cbof(1usize),
+                        self.cbof(2usize),
+                        self.cbof(3usize),
+                    ],
+                )
+                .field("camef", &self.camef())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fcr {
+                cbof: [bool; 4usize],
+                camef: bool,
+            }
+            let proxy = Fcr {
+                cbof: [
+                    self.cbof(0usize),
+                    self.cbof(1usize),
+                    self.cbof(2usize),
+                    self.cbof(3usize),
+                ],
+                camef: self.camef(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "GFXMMU LUT entry high."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -228,6 +342,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Luth {
             Luth(0)
+        }
+    }
+    impl core::fmt::Debug for Luth {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Luth").field("lo", &self.lo()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Luth {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Luth {
+                lo: u32,
+            }
+            let proxy = Luth { lo: self.lo() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "GFXMMU LUT entry low."]
@@ -275,6 +405,32 @@ pub mod regs {
             Lutl(0)
         }
     }
+    impl core::fmt::Debug for Lutl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lutl")
+                .field("en", &self.en())
+                .field("fvb", &self.fvb())
+                .field("lvb", &self.lvb())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lutl {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Lutl {
+                en: bool,
+                fvb: u8,
+                lvb: u8,
+            }
+            let proxy = Lutl {
+                en: self.en(),
+                fvb: self.fvb(),
+                lvb: self.lvb(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "GFXMMU status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -313,15 +469,42 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field(
+                    "bof",
+                    &[self.bof(0usize), self.bof(1usize), self.bof(2usize), self.bof(3usize)],
+                )
+                .field("amef", &self.amef())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                bof: [bool; 4usize],
+                amef: bool,
+            }
+            let proxy = Sr {
+                bof: [self.bof(0usize), self.bof(1usize), self.bof(2usize), self.bof(3usize)],
+                amef: self.amef(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bm192 {
         #[doc = "256 blocks per line."]
-        _256BLOCKSPERLINE = 0x0,
+        _256BLOCKS_PER_LINE = 0x0,
         #[doc = "192 blocks per line."]
-        _192BLOCKSPERLINE = 0x01,
+        _192BLOCKS_PER_LINE = 0x01,
     }
     impl Bm192 {
         #[inline(always)]

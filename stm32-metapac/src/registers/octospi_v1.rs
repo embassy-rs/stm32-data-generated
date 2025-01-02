@@ -2180,14 +2180,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FLASHONE",
+                    name: "FLASH_ONE",
                     description: Some(
                         "FLASH 1 selected (data exchanged over IO[3:0])",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FLASHTWO",
+                    name: "FLASH_TWO",
                     description: Some(
                         "FLASH 2 selected (data exchanged over IO[7:4])",
                     ),
@@ -2201,28 +2201,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "INDIRECTWRITE",
+                    name: "INDIRECT_WRITE",
                     description: Some(
                         "Indirect-write mode",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "INDIRECTREAD",
+                    name: "INDIRECT_READ",
                     description: Some(
                         "Indirect-read mode",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "AUTOSTATUSPOLLING",
+                    name: "AUTO_STATUS_POLLING",
                     description: Some(
                         "Automatic status-polling mode",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "MEMORYMAPPED",
+                    name: "MEMORY_MAPPED",
                     description: Some(
                         "Memory-mapped mode",
                     ),
@@ -2257,14 +2257,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MATCHAND",
+                    name: "MATCH_AND",
                     description: Some(
                         "AND-match mode, SMF is set if all the unmasked bits received from the device match the corresponding bits in the match register.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MATCHOR",
+                    name: "MATCH_OR",
                     description: Some(
                         "OR-match mode, SMF is set if any of the unmasked bits received from the device matches its corresponding bit in the match register.",
                     ),
@@ -2299,21 +2299,21 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "MACRONIXRAM",
+                    name: "MACRONIX_RAM",
                     description: Some(
                         "Macronix RAM mode, D1/D0 ordering in DTR 8-data-bit mode. Regular-command protocol in Single-, Dual-, Quad- and Octal-SPI modes with dedicated address mapping.",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "HYPERBUSMEMORY",
+                    name: "HYPER_BUS_MEMORY",
                     description: Some(
                         "HyperBus memory mode, the protocol follows the HyperBus specification. 8-data-bit DTR mode must be selected.",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "HYPERBUSREGISTER",
+                    name: "HYPER_BUS_REGISTER",
                     description: Some(
                         "HyperBus register mode, addressing register space. The memory-mapped accesses in. this mode must be non-cacheable, or Indirect read/write modes must be used.",
                     ),
@@ -2334,28 +2334,28 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ONELINE",
+                    name: "ONE_LINE",
                     description: Some(
                         "Alternate bytes on a single line",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "TWOLINES",
+                    name: "TWO_LINES",
                     description: Some(
                         "Alternate bytes on two lines",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "FOURLINES",
+                    name: "FOUR_LINES",
                     description: Some(
                         "Alternate bytes on four lines",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "EIGHTLINES",
+                    name: "EIGHT_LINES",
                     description: Some(
                         "Alternate bytes on eight lines",
                     ),
@@ -2376,7 +2376,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HALFCYCLE",
+                    name: "HALF_CYCLE",
                     description: Some(
                         "1/2 cycle shift",
                     ),
@@ -2425,21 +2425,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 5,
             variants: &[
                 EnumVariant {
-                    name: "NEEDONEBYTE",
+                    name: "NEED_ONE_BYTE",
                     description: Some(
                         "FTF is set if there are one or more free bytes available to be written to in the FIFO in Indirect-write mode, or if there are one or more valid bytes can be read from the FIFO in Indirect-read mode.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NEEDTWOBYTES",
+                    name: "NEED_TWO_BYTES",
                     description: Some(
                         "FTF is set if there are two or more free bytes available to be written to in the FIFO in Indirect‑write mode, or if there are two or more valid bytes can be read from the FIFO in Indirect-read mode.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "NEEDTHIRTYTWOBYTES",
+                    name: "NEED_THIRTY_TWO_BYTES",
                     description: Some(
                         "FTF is set if there are 32 free bytes available to be written to in the FIFO in Indirect-write mode, or if there are 32 valid bytes can be read from the FIFO in Indirect-read mode.",
                     ),

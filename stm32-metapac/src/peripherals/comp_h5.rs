@@ -185,6 +185,59 @@ pub mod regs {
             Cfgr1(0)
         }
     }
+    impl core::fmt::Debug for Cfgr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr1")
+                .field("en", &self.en())
+                .field("brgen", &self.brgen())
+                .field("scalen", &self.scalen())
+                .field("polarity", &self.polarity())
+                .field("iten", &self.iten())
+                .field("hyst", &self.hyst())
+                .field("pwrmode", &self.pwrmode())
+                .field("inmsel", &self.inmsel())
+                .field("inpsel1", &self.inpsel1())
+                .field("inpsel2", &self.inpsel2())
+                .field("blanking", &self.blanking())
+                .field("lock", &self.lock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr1 {
+                en: bool,
+                brgen: bool,
+                scalen: bool,
+                polarity: bool,
+                iten: bool,
+                hyst: super::vals::Hyst,
+                pwrmode: super::vals::Pwrmode,
+                inmsel: super::vals::Inmsel,
+                inpsel1: bool,
+                inpsel2: bool,
+                blanking: super::vals::Blanking,
+                lock: bool,
+            }
+            let proxy = Cfgr1 {
+                en: self.en(),
+                brgen: self.brgen(),
+                scalen: self.scalen(),
+                polarity: self.polarity(),
+                iten: self.iten(),
+                hyst: self.hyst(),
+                pwrmode: self.pwrmode(),
+                inmsel: self.inmsel(),
+                inpsel1: self.inpsel1(),
+                inpsel2: self.inpsel2(),
+                blanking: self.blanking(),
+                lock: self.lock(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Comparator configuration register 2."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -219,6 +272,29 @@ pub mod regs {
             Cfgr2(0)
         }
     }
+    impl core::fmt::Debug for Cfgr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr2")
+                .field("inpsel0", &self.inpsel0())
+                .field("lock", &self.lock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr2 {
+                inpsel0: bool,
+                lock: bool,
+            }
+            let proxy = Cfgr2 {
+                inpsel0: self.inpsel0(),
+                lock: self.lock(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Comparator interrupt clear flag register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -244,6 +320,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Icfr {
             Icfr(0)
+        }
+    }
+    impl core::fmt::Debug for Icfr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Icfr").field("ccif", &[self.ccif(0usize)]).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Icfr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Icfr {
+                ccif: [bool; 1usize],
+            }
+            let proxy = Icfr {
+                ccif: [self.ccif(0usize)],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Comparator status register."]
@@ -288,12 +382,36 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("cval", &[self.cval(0usize)])
+                .field("cif", &[self.cif(0usize)])
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                cval: [bool; 1usize],
+                cif: [bool; 1usize],
+            }
+            let proxy = Sr {
+                cval: [self.cval(0usize)],
+                cif: [self.cif(0usize)],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Blanking {
-        NOBLANKING = 0x0,
+        NO_BLANKING = 0x0,
         TIM1OC5 = 0x01,
         TIM2OC3 = 0x02,
         TIM3OC3 = 0x03,
@@ -333,7 +451,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hyst {
         NONE = 0x0,
         LOW = 0x01,
@@ -363,7 +482,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Inmsel {
         VREF_1OVER4 = 0x0,
         VREF_1OVER2 = 0x01,
@@ -405,14 +525,15 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pwrmode {
         #[doc = "High speed / full power"]
         HIGH = 0x0,
         #[doc = "Medium speed / medium power"]
         MEDIUM = 0x01,
         #[doc = "Medium speed / medium power"]
-        MEDIUMEITHER = 0x02,
+        MEDIUM_EITHER = 0x02,
         #[doc = "Ultra low power / ultra-low-power"]
         LOW = 0x03,
     }

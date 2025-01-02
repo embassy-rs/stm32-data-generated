@@ -328,17 +328,17 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYNCDIV1",
+                    name: "SYNC_DIV1",
                     description: Some("Use AHB clock rcc_hclk3. In this case rcc_hclk must equal sys_d1cpre_ck"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SYNCDIV2",
+                    name: "SYNC_DIV2",
                     description: Some("Use AHB clock rcc_hclk3 divided by 2"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SYNCDIV4",
+                    name: "SYNC_DIV4",
                     description: Some("Use AHB clock rcc_hclk3 divided by 4"),
                     value: 3,
                 },
@@ -350,7 +350,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOPACK",
+                    name: "NO_PACK",
                     description: Some("Without data packing, CDR/CDR2 not used"),
                     value: 0,
                 },
@@ -377,37 +377,37 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DUALRJ",
+                    name: "DUAL_RJ",
                     description: Some("Dual, combined regular simultaneous + injected simultaneous mode"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "DUALRA",
+                    name: "DUAL_RA",
                     description: Some("Dual, combined regular simultaneous + alternate trigger mode"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DUALIJ",
+                    name: "DUAL_IJ",
                     description: Some("Dual, combined interleaved mode + injected simultaneous mode"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "DUALJ",
+                    name: "DUAL_J",
                     description: Some("Dual, injected simultaneous mode only"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "DUALR",
+                    name: "DUAL_R",
                     description: Some("Dual, regular simultaneous mode only"),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "DUALI",
+                    name: "DUAL_I",
                     description: Some("Dual, interleaved mode only"),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "DUALA",
+                    name: "DUAL_A",
                     description: Some("Dual, alternate trigger mode only"),
                     value: 9,
                 },

@@ -605,21 +605,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "MAINFLASH",
+                    name: "MAIN_FLASH",
                     description: Some(
                         "Main Flash memory mapped at 0x0000_0000",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYSTEMFLASH",
+                    name: "SYSTEM_FLASH",
                     description: Some(
                         "System Flash memory mapped at 0x0000_0000",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MAINFLASH2",
+                    name: "MAIN_FLASH2",
                     description: Some(
                         "Main Flash memory mapped at 0x0000_0000",
                     ),

@@ -98,6 +98,29 @@ pub mod regs {
             CxCr(0)
         }
     }
+    impl core::fmt::Debug for CxCr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CxCr")
+                .field("rxoie", &self.rxoie())
+                .field("txfie", &self.txfie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CxCr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CxCr {
+                rxoie: bool,
+                txfie: bool,
+            }
+            let proxy = CxCr {
+                rxoie: self.rxoie(),
+                txfie: self.txfie(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Mask register CPUx"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -138,6 +161,63 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CxMr {
             CxMr(0)
+        }
+    }
+    impl core::fmt::Debug for CxMr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CxMr")
+                .field(
+                    "chom",
+                    &[
+                        self.chom(0usize),
+                        self.chom(1usize),
+                        self.chom(2usize),
+                        self.chom(3usize),
+                        self.chom(4usize),
+                        self.chom(5usize),
+                    ],
+                )
+                .field(
+                    "chfm",
+                    &[
+                        self.chfm(0usize),
+                        self.chfm(1usize),
+                        self.chfm(2usize),
+                        self.chfm(3usize),
+                        self.chfm(4usize),
+                        self.chfm(5usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CxMr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CxMr {
+                chom: [bool; 6usize],
+                chfm: [bool; 6usize],
+            }
+            let proxy = CxMr {
+                chom: [
+                    self.chom(0usize),
+                    self.chom(1usize),
+                    self.chom(2usize),
+                    self.chom(3usize),
+                    self.chom(4usize),
+                    self.chom(5usize),
+                ],
+                chfm: [
+                    self.chfm(0usize),
+                    self.chfm(1usize),
+                    self.chfm(2usize),
+                    self.chfm(3usize),
+                    self.chfm(4usize),
+                    self.chfm(5usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status Set or Clear register CPUx"]
@@ -182,6 +262,63 @@ pub mod regs {
             CxScr(0)
         }
     }
+    impl core::fmt::Debug for CxScr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CxScr")
+                .field(
+                    "chc",
+                    &[
+                        self.chc(0usize),
+                        self.chc(1usize),
+                        self.chc(2usize),
+                        self.chc(3usize),
+                        self.chc(4usize),
+                        self.chc(5usize),
+                    ],
+                )
+                .field(
+                    "chs",
+                    &[
+                        self.chs(0usize),
+                        self.chs(1usize),
+                        self.chs(2usize),
+                        self.chs(3usize),
+                        self.chs(4usize),
+                        self.chs(5usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CxScr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CxScr {
+                chc: [bool; 6usize],
+                chs: [bool; 6usize],
+            }
+            let proxy = CxScr {
+                chc: [
+                    self.chc(0usize),
+                    self.chc(1usize),
+                    self.chc(2usize),
+                    self.chc(3usize),
+                    self.chc(4usize),
+                    self.chc(5usize),
+                ],
+                chs: [
+                    self.chs(0usize),
+                    self.chs(1usize),
+                    self.chs(2usize),
+                    self.chs(3usize),
+                    self.chs(4usize),
+                    self.chs(5usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CPUx to CPUy status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -207,6 +344,43 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CxToySr {
             CxToySr(0)
+        }
+    }
+    impl core::fmt::Debug for CxToySr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CxToySr")
+                .field(
+                    "chf",
+                    &[
+                        self.chf(0usize),
+                        self.chf(1usize),
+                        self.chf(2usize),
+                        self.chf(3usize),
+                        self.chf(4usize),
+                        self.chf(5usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CxToySr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CxToySr {
+                chf: [bool; 6usize],
+            }
+            let proxy = CxToySr {
+                chf: [
+                    self.chf(0usize),
+                    self.chf(1usize),
+                    self.chf(2usize),
+                    self.chf(3usize),
+                    self.chf(4usize),
+                    self.chf(5usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

@@ -3159,14 +3159,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "CAPTUREX_COMPARE1",
+                    name: "CAPTURE_X_COMPARE1",
                     description: Some(
                         "CMP is recomputed and is active following a capture 1 event or a Compare 1 match",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "CAPTUREX_COMPARE3",
+                    name: "CAPTURE_X_COMPARE3",
                     description: Some(
                         "CMP is recomputed and is active following a capture 1 event or a Compare 3 match",
                     ),
@@ -3232,77 +3232,77 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BLANKRESETTOCOMPARE1",
+                    name: "BLANK_RESET_TO_COMPARE1",
                     description: Some("Blanking from counter reset/roll-over to Compare 1"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "BLANKRESETTOCOMPARE2",
+                    name: "BLANK_RESET_TO_COMPARE2",
                     description: Some("Blanking from counter reset/roll-over to Compare 2"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "BLANKRESETTOCOMPARE3",
+                    name: "BLANK_RESET_TO_COMPARE3",
                     description: Some("Blanking from counter reset/roll-over to Compare 3"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "BLANKRESETTOCOMPARE4",
+                    name: "BLANK_RESET_TO_COMPARE4",
                     description: Some("Blanking from counter reset/roll-over to Compare 4"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "BLANKTIMFLTR1",
+                    name: "BLANK_TIMFLTR1",
                     description: Some("Blanking from another timing unit: TIMFLTR1 source"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "BLANKTIMFLTR2",
+                    name: "BLANK_TIMFLTR2",
                     description: Some("Blanking from another timing unit: TIMFLTR2 source"),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "BLANKTIMFLTR3",
+                    name: "BLANK_TIMFLTR3",
                     description: Some("Blanking from another timing unit: TIMFLTR3 source"),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "BLANKTIMFLTR4",
+                    name: "BLANK_TIMFLTR4",
                     description: Some("Blanking from another timing unit: TIMFLTR4 source"),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "BLANKTIMFLTR5",
+                    name: "BLANK_TIMFLTR5",
                     description: Some("Blanking from another timing unit: TIMFLTR5 source"),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "BLANKTIMFLTR6",
+                    name: "BLANK_TIMFLTR6",
                     description: Some("Blanking from another timing unit: TIMFLTR6 source"),
                     value: 10,
                 },
                 EnumVariant {
-                    name: "BLANKTIMFLTR7",
+                    name: "BLANK_TIMFLTR7",
                     description: Some("Blanking from another timing unit: TIMFLTR7 source"),
                     value: 11,
                 },
                 EnumVariant {
-                    name: "BLANKTIMFLTR8",
+                    name: "BLANK_TIMFLTR8",
                     description: Some("Blanking from another timing unit: TIMFLTR8 source"),
                     value: 12,
                 },
                 EnumVariant {
-                    name: "WINDOWRESETTOCOMPARE2",
+                    name: "WINDOW_RESET_TO_COMPARE2",
                     description: Some("Windowing from counter reset/roll-over to compare 2"),
                     value: 13,
                 },
                 EnumVariant {
-                    name: "WINDOWRESETTOCOMPARE3",
+                    name: "WINDOW_RESET_TO_COMPARE3",
                     description: Some("Windowing from counter reset/roll-over to compare 3"),
                     value: 14,
                 },
                 EnumVariant {
-                    name: "WINDOWTIMWIN",
+                    name: "WINDOW_TIMWIN",
                     description: Some("Windowing from another timing unit: TIMWIN source"),
                     value: 15,
                 },
@@ -3319,17 +3319,17 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SETACTIVE",
+                    name: "SET_ACTIVE",
                     description: Some("Output goes to active state after a fault event"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SETINACTIVE",
+                    name: "SET_INACTIVE",
                     description: Some("Output goes to inactive state after a fault event"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SETHIGHZ",
+                    name: "SET_HIGH_Z",
                     description: Some("Output goes to high-z state after a fault event"),
                     value: 3,
                 },
@@ -3358,12 +3358,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVEHIGH",
+                    name: "ACTIVE_HIGH",
                     description: Some("Positive polarity (output active high)"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ACTIVELOW",
+                    name: "ACTIVE_LOW",
                     description: Some("Negative polarity (output active low)"),
                     value: 1,
                 },
@@ -3419,12 +3419,12 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "POSITIVEPULSE",
+                    name: "POSITIVE_PULSE",
                     description: Some("Positive pulse on SCOUT output (16x f_HRTIM clock cycles)"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "NEGATIVEPULSE",
+                    name: "NEGATIVE_PULSE",
                     description: Some("Negative pulse on SCOUT output (16x f_HRTIM clock cycles)"),
                     value: 3,
                 },
@@ -3436,22 +3436,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "MASTERSTART",
+                    name: "MASTER_START",
                     description: Some("Master timer Start"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MASTERCOMPARE1",
+                    name: "MASTER_COMPARE1",
                     description: Some("Master timer Compare 1 event"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "TIMERASTART",
+                    name: "TIMER_ASTART",
                     description: Some("Timer A start/reset"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "TIMERACOMPARE1",
+                    name: "TIMER_ACOMPARE1",
                     description: Some("Timer A Compare 1 event"),
                     value: 3,
                 },

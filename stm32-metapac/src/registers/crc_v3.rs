@@ -169,7 +169,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HALFWORD",
+                    name: "HALF_WORD",
                     description: Some("Bit reversal done by half-word"),
                     value: 2,
                 },

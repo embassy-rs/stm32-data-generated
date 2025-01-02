@@ -193,6 +193,29 @@ pub mod regs {
             Acr(0)
         }
     }
+    impl core::fmt::Debug for Acr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Acr")
+                .field("latency", &self.latency())
+                .field("wrhighfreq", &self.wrhighfreq())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Acr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Acr {
+                latency: u8,
+                wrhighfreq: u8,
+            }
+            let proxy = Acr {
+                latency: self.latency(),
+                wrhighfreq: self.wrhighfreq(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH register with boot address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -227,6 +250,29 @@ pub mod regs {
             BootCurr(0)
         }
     }
+    impl core::fmt::Debug for BootCurr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("BootCurr")
+                .field("boot_add0", &self.boot_add0())
+                .field("boot_add1", &self.boot_add1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BootCurr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct BootCurr {
+                boot_add0: u16,
+                boot_add1: u16,
+            }
+            let proxy = BootCurr {
+                boot_add0: self.boot_add0(),
+                boot_add1: self.boot_add1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH register with boot address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -259,6 +305,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> BootPrgr {
             BootPrgr(0)
+        }
+    }
+    impl core::fmt::Debug for BootPrgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("BootPrgr")
+                .field("boot_add0", &self.boot_add0())
+                .field("boot_add1", &self.boot_add1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BootPrgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct BootPrgr {
+                boot_add0: u16,
+                boot_add1: u16,
+            }
+            let proxy = BootPrgr {
+                boot_add0: self.boot_add0(),
+                boot_add1: self.boot_add1(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH clear control register for bank 1"]
@@ -403,6 +472,59 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ccr {
             Ccr(0)
+        }
+    }
+    impl core::fmt::Debug for Ccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ccr")
+                .field("clr_eop", &self.clr_eop())
+                .field("clr_wrperr", &self.clr_wrperr())
+                .field("clr_pgserr", &self.clr_pgserr())
+                .field("clr_strberr", &self.clr_strberr())
+                .field("clr_incerr", &self.clr_incerr())
+                .field("clr_operr", &self.clr_operr())
+                .field("clr_rdperr", &self.clr_rdperr())
+                .field("clr_rdserr", &self.clr_rdserr())
+                .field("clr_sneccerr", &self.clr_sneccerr())
+                .field("clr_dbeccerr", &self.clr_dbeccerr())
+                .field("clr_crcend", &self.clr_crcend())
+                .field("clr_crcrderr", &self.clr_crcrderr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ccr {
+                clr_eop: bool,
+                clr_wrperr: bool,
+                clr_pgserr: bool,
+                clr_strberr: bool,
+                clr_incerr: bool,
+                clr_operr: bool,
+                clr_rdperr: bool,
+                clr_rdserr: bool,
+                clr_sneccerr: bool,
+                clr_dbeccerr: bool,
+                clr_crcend: bool,
+                clr_crcrderr: bool,
+            }
+            let proxy = Ccr {
+                clr_eop: self.clr_eop(),
+                clr_wrperr: self.clr_wrperr(),
+                clr_pgserr: self.clr_pgserr(),
+                clr_strberr: self.clr_strberr(),
+                clr_incerr: self.clr_incerr(),
+                clr_operr: self.clr_operr(),
+                clr_rdperr: self.clr_rdperr(),
+                clr_rdserr: self.clr_rdserr(),
+                clr_sneccerr: self.clr_sneccerr(),
+                clr_dbeccerr: self.clr_dbeccerr(),
+                clr_crcend: self.clr_crcend(),
+                clr_crcrderr: self.clr_crcrderr(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH control register for bank 1"]
@@ -648,6 +770,86 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("lock", &self.lock())
+                .field("pg", &self.pg())
+                .field("ser", &self.ser())
+                .field("ber", &self.ber())
+                .field("psize", &self.psize())
+                .field("fw", &self.fw())
+                .field("start", &self.start())
+                .field("snb", &self.snb())
+                .field("crc_en", &self.crc_en())
+                .field("eopie", &self.eopie())
+                .field("wrperrie", &self.wrperrie())
+                .field("pgserrie", &self.pgserrie())
+                .field("strberrie", &self.strberrie())
+                .field("incerrie", &self.incerrie())
+                .field("operrie", &self.operrie())
+                .field("rdperrie", &self.rdperrie())
+                .field("rdserrie", &self.rdserrie())
+                .field("sneccerrie", &self.sneccerrie())
+                .field("dbeccerrie", &self.dbeccerrie())
+                .field("crcendie", &self.crcendie())
+                .field("crcrderrie", &self.crcrderrie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                lock: bool,
+                pg: bool,
+                ser: bool,
+                ber: bool,
+                psize: u8,
+                fw: bool,
+                start: bool,
+                snb: u8,
+                crc_en: bool,
+                eopie: bool,
+                wrperrie: bool,
+                pgserrie: bool,
+                strberrie: bool,
+                incerrie: bool,
+                operrie: bool,
+                rdperrie: bool,
+                rdserrie: bool,
+                sneccerrie: bool,
+                dbeccerrie: bool,
+                crcendie: bool,
+                crcrderrie: bool,
+            }
+            let proxy = Cr {
+                lock: self.lock(),
+                pg: self.pg(),
+                ser: self.ser(),
+                ber: self.ber(),
+                psize: self.psize(),
+                fw: self.fw(),
+                start: self.start(),
+                snb: self.snb(),
+                crc_en: self.crc_en(),
+                eopie: self.eopie(),
+                wrperrie: self.wrperrie(),
+                pgserrie: self.pgserrie(),
+                strberrie: self.strberrie(),
+                incerrie: self.incerrie(),
+                operrie: self.operrie(),
+                rdperrie: self.rdperrie(),
+                rdserrie: self.rdserrie(),
+                sneccerrie: self.sneccerrie(),
+                dbeccerrie: self.dbeccerrie(),
+                crcendie: self.crcendie(),
+                crcrderrie: self.crcrderrie(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH CRC control register for bank 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -748,6 +950,47 @@ pub mod regs {
             Crccr(0)
         }
     }
+    impl core::fmt::Debug for Crccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Crccr")
+                .field("crc_sect", &self.crc_sect())
+                .field("all_bank", &self.all_bank())
+                .field("crc_by_sect", &self.crc_by_sect())
+                .field("add_sect", &self.add_sect())
+                .field("clean_sect", &self.clean_sect())
+                .field("start_crc", &self.start_crc())
+                .field("clean_crc", &self.clean_crc())
+                .field("crc_burst", &self.crc_burst())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Crccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Crccr {
+                crc_sect: u8,
+                all_bank: bool,
+                crc_by_sect: bool,
+                add_sect: bool,
+                clean_sect: bool,
+                start_crc: bool,
+                clean_crc: bool,
+                crc_burst: u8,
+            }
+            let proxy = Crccr {
+                crc_sect: self.crc_sect(),
+                all_bank: self.all_bank(),
+                crc_by_sect: self.crc_by_sect(),
+                add_sect: self.add_sect(),
+                clean_sect: self.clean_sect(),
+                start_crc: self.start_crc(),
+                clean_crc: self.clean_crc(),
+                crc_burst: self.crc_burst(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH CRC data register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -769,6 +1012,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Crcdatar {
             Crcdatar(0)
+        }
+    }
+    impl core::fmt::Debug for Crcdatar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Crcdatar").field("crc_data", &self.crc_data()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Crcdatar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Crcdatar {
+                crc_data: u32,
+            }
+            let proxy = Crcdatar {
+                crc_data: self.crc_data(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH CRC end address register for bank 1"]
@@ -794,6 +1055,26 @@ pub mod regs {
             Crceaddr(0)
         }
     }
+    impl core::fmt::Debug for Crceaddr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Crceaddr")
+                .field("crc_end_addr", &self.crc_end_addr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Crceaddr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Crceaddr {
+                crc_end_addr: u32,
+            }
+            let proxy = Crceaddr {
+                crc_end_addr: self.crc_end_addr(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH CRC start address register for bank 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -815,6 +1096,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Crcsaddr {
             Crcsaddr(0)
+        }
+    }
+    impl core::fmt::Debug for Crcsaddr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Crcsaddr")
+                .field("crc_start_addr", &self.crc_start_addr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Crcsaddr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Crcsaddr {
+                crc_start_addr: u32,
+            }
+            let proxy = Crcsaddr {
+                crc_start_addr: self.crc_start_addr(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH ECC fail address for bank 1"]
@@ -840,6 +1141,26 @@ pub mod regs {
             Far(0)
         }
     }
+    impl core::fmt::Debug for Far {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Far")
+                .field("fail_ecc_addr", &self.fail_ecc_addr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Far {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Far {
+                fail_ecc_addr: u16,
+            }
+            let proxy = Far {
+                fail_ecc_addr: self.fail_ecc_addr(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH option clear control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -861,6 +1182,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Optccr {
             Optccr(0)
+        }
+    }
+    impl core::fmt::Debug for Optccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Optccr")
+                .field("clr_optchangeerr", &self.clr_optchangeerr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Optccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Optccr {
+                clr_optchangeerr: bool,
+            }
+            let proxy = Optccr {
+                clr_optchangeerr: self.clr_optchangeerr(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH option control register"]
@@ -928,6 +1269,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Optcr {
             Optcr(0)
+        }
+    }
+    impl core::fmt::Debug for Optcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Optcr")
+                .field("optlock", &self.optlock())
+                .field("optstart", &self.optstart())
+                .field("mer", &self.mer())
+                .field("optchangeerrie", &self.optchangeerrie())
+                .field("swap_bank", &self.swap_bank())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Optcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Optcr {
+                optlock: bool,
+                optstart: bool,
+                mer: bool,
+                optchangeerrie: bool,
+                swap_bank: bool,
+            }
+            let proxy = Optcr {
+                optlock: self.optlock(),
+                optstart: self.optstart(),
+                mer: self.mer(),
+                optchangeerrie: self.optchangeerrie(),
+                swap_bank: self.swap_bank(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH option status register"]
@@ -1107,6 +1480,68 @@ pub mod regs {
             OptsrCur(0)
         }
     }
+    impl core::fmt::Debug for OptsrCur {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("OptsrCur")
+                .field("opt_busy", &self.opt_busy())
+                .field("bor_lev", &self.bor_lev())
+                .field("iwdg1_hw", &self.iwdg1_hw())
+                .field("n_rst_stop_d1", &self.n_rst_stop_d1())
+                .field("n_rst_stby_d1", &self.n_rst_stby_d1())
+                .field("rdp", &self.rdp())
+                .field("fz_iwdg_stop", &self.fz_iwdg_stop())
+                .field("fz_iwdg_sdby", &self.fz_iwdg_sdby())
+                .field("st_ram_size", &self.st_ram_size())
+                .field("security", &self.security())
+                .field("rss1", &self.rss1())
+                .field("perso_ok", &self.perso_ok())
+                .field("io_hslv", &self.io_hslv())
+                .field("optchangeerr", &self.optchangeerr())
+                .field("swap_bank_opt", &self.swap_bank_opt())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OptsrCur {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct OptsrCur {
+                opt_busy: bool,
+                bor_lev: u8,
+                iwdg1_hw: bool,
+                n_rst_stop_d1: bool,
+                n_rst_stby_d1: bool,
+                rdp: u8,
+                fz_iwdg_stop: bool,
+                fz_iwdg_sdby: bool,
+                st_ram_size: u8,
+                security: bool,
+                rss1: bool,
+                perso_ok: bool,
+                io_hslv: bool,
+                optchangeerr: bool,
+                swap_bank_opt: bool,
+            }
+            let proxy = OptsrCur {
+                opt_busy: self.opt_busy(),
+                bor_lev: self.bor_lev(),
+                iwdg1_hw: self.iwdg1_hw(),
+                n_rst_stop_d1: self.n_rst_stop_d1(),
+                n_rst_stby_d1: self.n_rst_stby_d1(),
+                rdp: self.rdp(),
+                fz_iwdg_stop: self.fz_iwdg_stop(),
+                fz_iwdg_sdby: self.fz_iwdg_sdby(),
+                st_ram_size: self.st_ram_size(),
+                security: self.security(),
+                rss1: self.rss1(),
+                perso_ok: self.perso_ok(),
+                io_hslv: self.io_hslv(),
+                optchangeerr: self.optchangeerr(),
+                swap_bank_opt: self.swap_bank_opt(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH option status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1262,6 +1697,62 @@ pub mod regs {
             OptsrPrg(0)
         }
     }
+    impl core::fmt::Debug for OptsrPrg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("OptsrPrg")
+                .field("bor_lev", &self.bor_lev())
+                .field("iwdg1_hw", &self.iwdg1_hw())
+                .field("n_rst_stop_d1", &self.n_rst_stop_d1())
+                .field("n_rst_stby_d1", &self.n_rst_stby_d1())
+                .field("rdp", &self.rdp())
+                .field("fz_iwdg_stop", &self.fz_iwdg_stop())
+                .field("fz_iwdg_sdby", &self.fz_iwdg_sdby())
+                .field("st_ram_size", &self.st_ram_size())
+                .field("security", &self.security())
+                .field("rss1", &self.rss1())
+                .field("rss2", &self.rss2())
+                .field("io_hslv", &self.io_hslv())
+                .field("swap_bank_opt", &self.swap_bank_opt())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OptsrPrg {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct OptsrPrg {
+                bor_lev: u8,
+                iwdg1_hw: bool,
+                n_rst_stop_d1: bool,
+                n_rst_stby_d1: bool,
+                rdp: u8,
+                fz_iwdg_stop: bool,
+                fz_iwdg_sdby: bool,
+                st_ram_size: u8,
+                security: bool,
+                rss1: bool,
+                rss2: bool,
+                io_hslv: bool,
+                swap_bank_opt: bool,
+            }
+            let proxy = OptsrPrg {
+                bor_lev: self.bor_lev(),
+                iwdg1_hw: self.iwdg1_hw(),
+                n_rst_stop_d1: self.n_rst_stop_d1(),
+                n_rst_stby_d1: self.n_rst_stby_d1(),
+                rdp: self.rdp(),
+                fz_iwdg_stop: self.fz_iwdg_stop(),
+                fz_iwdg_sdby: self.fz_iwdg_sdby(),
+                st_ram_size: self.st_ram_size(),
+                security: self.security(),
+                rss1: self.rss1(),
+                rss2: self.rss2(),
+                io_hslv: self.io_hslv(),
+                swap_bank_opt: self.swap_bank_opt(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH protection address for bank 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1305,6 +1796,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PrarCur {
             PrarCur(0)
+        }
+    }
+    impl core::fmt::Debug for PrarCur {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PrarCur")
+                .field("prot_area_start", &self.prot_area_start())
+                .field("prot_area_end", &self.prot_area_end())
+                .field("dmep", &self.dmep())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PrarCur {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PrarCur {
+                prot_area_start: u16,
+                prot_area_end: u16,
+                dmep: bool,
+            }
+            let proxy = PrarCur {
+                prot_area_start: self.prot_area_start(),
+                prot_area_end: self.prot_area_end(),
+                dmep: self.dmep(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH protection address for bank 1"]
@@ -1352,6 +1869,32 @@ pub mod regs {
             PrarPrg(0)
         }
     }
+    impl core::fmt::Debug for PrarPrg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PrarPrg")
+                .field("prot_area_start", &self.prot_area_start())
+                .field("prot_area_end", &self.prot_area_end())
+                .field("dmep", &self.dmep())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PrarPrg {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PrarPrg {
+                prot_area_start: u16,
+                prot_area_end: u16,
+                dmep: bool,
+            }
+            let proxy = PrarPrg {
+                prot_area_start: self.prot_area_start(),
+                prot_area_end: self.prot_area_end(),
+                dmep: self.dmep(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH secure address for bank 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1397,6 +1940,32 @@ pub mod regs {
             ScarCur(0)
         }
     }
+    impl core::fmt::Debug for ScarCur {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ScarCur")
+                .field("sec_area_start", &self.sec_area_start())
+                .field("sec_area_end", &self.sec_area_end())
+                .field("dmes", &self.dmes())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ScarCur {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ScarCur {
+                sec_area_start: u16,
+                sec_area_end: u16,
+                dmes: bool,
+            }
+            let proxy = ScarCur {
+                sec_area_start: self.sec_area_start(),
+                sec_area_end: self.sec_area_end(),
+                dmes: self.dmes(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH secure address for bank 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1440,6 +2009,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> ScarPrg {
             ScarPrg(0)
+        }
+    }
+    impl core::fmt::Debug for ScarPrg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ScarPrg")
+                .field("sec_area_start", &self.sec_area_start())
+                .field("sec_area_end", &self.sec_area_end())
+                .field("dmes", &self.dmes())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ScarPrg {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ScarPrg {
+                sec_area_start: u16,
+                sec_area_end: u16,
+                dmes: bool,
+            }
+            let proxy = ScarPrg {
+                sec_area_start: self.sec_area_start(),
+                sec_area_end: self.sec_area_end(),
+                dmes: self.dmes(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH status register for bank 1"]
@@ -1630,6 +2225,71 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("bsy", &self.bsy())
+                .field("wbne", &self.wbne())
+                .field("qw", &self.qw())
+                .field("crc_busy", &self.crc_busy())
+                .field("eop", &self.eop())
+                .field("wrperr", &self.wrperr())
+                .field("pgserr", &self.pgserr())
+                .field("strberr", &self.strberr())
+                .field("incerr", &self.incerr())
+                .field("operr", &self.operr())
+                .field("rdperr", &self.rdperr())
+                .field("rdserr", &self.rdserr())
+                .field("sneccerr1", &self.sneccerr1())
+                .field("dbeccerr", &self.dbeccerr())
+                .field("crcend", &self.crcend())
+                .field("crcrderr", &self.crcrderr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                bsy: bool,
+                wbne: bool,
+                qw: bool,
+                crc_busy: bool,
+                eop: bool,
+                wrperr: bool,
+                pgserr: bool,
+                strberr: bool,
+                incerr: bool,
+                operr: bool,
+                rdperr: bool,
+                rdserr: bool,
+                sneccerr1: bool,
+                dbeccerr: bool,
+                crcend: bool,
+                crcrderr: bool,
+            }
+            let proxy = Sr {
+                bsy: self.bsy(),
+                wbne: self.wbne(),
+                qw: self.qw(),
+                crc_busy: self.crc_busy(),
+                eop: self.eop(),
+                wrperr: self.wrperr(),
+                pgserr: self.pgserr(),
+                strberr: self.strberr(),
+                incerr: self.incerr(),
+                operr: self.operr(),
+                rdperr: self.rdperr(),
+                rdserr: self.rdserr(),
+                sneccerr1: self.sneccerr1(),
+                dbeccerr: self.dbeccerr(),
+                crcend: self.crcend(),
+                crcrderr: self.crcrderr(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH write sector protection for bank 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1653,6 +2313,22 @@ pub mod regs {
             WpsnCurr(0)
         }
     }
+    impl core::fmt::Debug for WpsnCurr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("WpsnCurr").field("wrpsn", &self.wrpsn()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WpsnCurr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct WpsnCurr {
+                wrpsn: u8,
+            }
+            let proxy = WpsnCurr { wrpsn: self.wrpsn() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH write sector protection for bank 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1674,6 +2350,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> WpsnPrgr {
             WpsnPrgr(0)
+        }
+    }
+    impl core::fmt::Debug for WpsnPrgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("WpsnPrgr").field("wrpsn", &self.wrpsn()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WpsnPrgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct WpsnPrgr {
+                wrpsn: u8,
+            }
+            let proxy = WpsnPrgr { wrpsn: self.wrpsn() };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

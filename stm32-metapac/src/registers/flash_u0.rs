@@ -1228,14 +1228,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ONLYINPUT",
+                    name: "ONLY_INPUT",
                     description: Some(
                         "Reset input only: a low level on the NRST pin generates system reset; internal RESET is not propagated to the NRST pin.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ONLYINTERNAL",
+                    name: "ONLY_INTERNAL",
                     description: Some(
                         "Standard GPIO: only internal RESET is possible",
                     ),

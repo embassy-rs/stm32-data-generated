@@ -1178,7 +1178,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "SINGLEENDED",
+                    name: "SINGLE_ENDED",
                     description: Some("Calibration for single-ended mode"),
                     value: 0,
                 },
@@ -1222,7 +1222,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "SINGLEENDED",
+                    name: "SINGLE_ENDED",
                     description: Some("Input channel is configured in single-ended mode"),
                     value: 0,
                 },
@@ -1239,7 +1239,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ONESHOT",
+                    name: "ONE_SHOT",
                     description: Some("DMA One Shot mode selected"),
                     value: 0,
                 },
@@ -1278,17 +1278,17 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RISINGEDGE",
+                    name: "RISING_EDGE",
                     description: Some("Trigger detection on the rising edge"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "FALLINGEDGE",
+                    name: "FALLING_EDGE",
                     description: Some("Trigger detection on the falling edge"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "BOTHEDGES",
+                    name: "BOTH_EDGES",
                     description: Some("Trigger detection on both the rising and falling edges"),
                     value: 3,
                 },

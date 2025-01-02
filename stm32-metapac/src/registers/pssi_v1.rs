@@ -439,14 +439,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FALLINGEDGE",
+                    name: "FALLING_EDGE",
                     description: Some(
                         "Falling edge active for inputs or rising edge active for outputs.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RISINGEDGE",
+                    name: "RISING_EDGE",
                     description: Some(
                         "Rising edge active for inputs or falling edge active for outputs.",
                     ),
@@ -460,14 +460,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVELOW",
+                    name: "ACTIVE_LOW",
                     description: Some(
                         "PSSI_DE active low (0 indicates that data is valid).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ACTIVEHIGH",
+                    name: "ACTIVE_HIGH",
                     description: Some(
                         "PSSI_DE active high (1 indicates that data is valid).",
                     ),
@@ -502,35 +502,35 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "RDYDEALT",
+                    name: "RDY_DE_ALT",
                     description: Some(
                         "Both PSSI_RDY and PSSI_DE alternate functions enabled.",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "RDYDE",
+                    name: "RDY_DE",
                     description: Some(
                         "Both PSSI_RDY and PSSI_DE features enabled - bidirectional on PSSI_RDY pin.",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "RDYREMAPPED",
+                    name: "RDY_REMAPPED",
                     description: Some(
                         "Only PSSI_RDY function enabled, but mapped to PSSI_DE pin.",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "DEREMAPPED",
+                    name: "DE_REMAPPED",
                     description: Some(
                         "Only PSSI_DE function enabled, but mapped to PSSI_RDY pin.",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "RDYDEBIDI",
+                    name: "RDY_DE_BIDI",
                     description: Some(
                         "Both PSSI_RDY and PSSI_DE features enabled - bidirectional on PSSI_DE pin.",
                     ),
@@ -544,14 +544,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BITWIDTH8",
+                    name: "BIT_WIDTH8",
                     description: Some(
                         "Interface captures 8-bit data on every parallel data clock.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BITWIDTH16",
+                    name: "BIT_WIDTH16",
                     description: Some(
                         "The interface captures 16-bit data on every parallel data clock.",
                     ),
@@ -565,14 +565,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RECEIVEMODE",
+                    name: "RECEIVE_MODE",
                     description: Some(
                         "Data is input synchronously with PSSI_PDCK.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "TRANSMITMODE",
+                    name: "TRANSMIT_MODE",
                     description: Some(
                         "Data is output synchronously with PSSI_PDCK.",
                     ),
@@ -586,14 +586,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVELOW",
+                    name: "ACTIVE_LOW",
                     description: Some(
                         "PSSI_RDY active low (0 indicates that the receiver is ready to receive).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ACTIVEHIGH",
+                    name: "ACTIVE_HIGH",
                     description: Some(
                         "PSSI_RDY active high (1 indicates that the receiver is ready to receive).",
                     ),

@@ -1716,7 +1716,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ABOVEOREQUAL",
+                    name: "ABOVE_OR_EQUAL",
                     description: Some(
                         "VDDA is equal or higher than the AVD threshold selected with the ALS[1:0] bits.",
                     ),
@@ -1821,7 +1821,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ABOVEOREQUAL",
+                    name: "ABOVE_OR_EQUAL",
                     description: Some(
                         "VDD or PVD_IN voltage is equal or higher than the PVD threshold selected through the.",
                     ),
@@ -1842,7 +1842,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LOWPOWER",
+                    name: "LOW_POWER",
                     description: Some(
                         "RAM enters to low power mode when system enters to STOP.",
                     ),
@@ -1901,7 +1901,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FREERUNNING",
+                    name: "FREE_RUNNING",
                     description: Some(
                         "SD_Converter clock free running.",
                     ),
@@ -2006,21 +2006,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOPULL",
+                    name: "NO_PULL",
                     description: Some(
                         "No pull-up.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PULLUP",
+                    name: "PULL_UP",
                     description: Some(
                         "Pull-up.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PULLDOWN",
+                    name: "PULL_DOWN",
                     description: Some(
                         "Pull-down.",
                     ),
@@ -2041,14 +2041,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ONETHIRD",
+                    name: "ONE_THIRD",
                     description: Some(
                         "XSPI Capacitor set to 1/3.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "TWOTHIRDS",
+                    name: "TWO_THIRDS",
                     description: Some(
                         "XSPI Capacitor set to 2/3.",
                     ),

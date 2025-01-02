@@ -108,6 +108,38 @@ pub mod regs {
             Cfgr(0)
         }
     }
+    impl core::fmt::Debug for Cfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr")
+                .field("reload", &self.reload())
+                .field("felim", &self.felim())
+                .field("syncdiv", &self.syncdiv())
+                .field("syncsrc", &self.syncsrc())
+                .field("syncpol", &self.syncpol())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr {
+                reload: u16,
+                felim: u8,
+                syncdiv: u8,
+                syncsrc: super::vals::Syncsrc,
+                syncpol: bool,
+            }
+            let proxy = Cfgr {
+                reload: self.reload(),
+                felim: self.felim(),
+                syncdiv: self.syncdiv(),
+                syncsrc: self.syncsrc(),
+                syncpol: self.syncpol(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -208,6 +240,47 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("syncokie", &self.syncokie())
+                .field("syncwarnie", &self.syncwarnie())
+                .field("errie", &self.errie())
+                .field("esyncie", &self.esyncie())
+                .field("cen", &self.cen())
+                .field("autotrimen", &self.autotrimen())
+                .field("swsync", &self.swsync())
+                .field("trim", &self.trim())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                syncokie: bool,
+                syncwarnie: bool,
+                errie: bool,
+                esyncie: bool,
+                cen: bool,
+                autotrimen: bool,
+                swsync: bool,
+                trim: u8,
+            }
+            let proxy = Cr {
+                syncokie: self.syncokie(),
+                syncwarnie: self.syncwarnie(),
+                errie: self.errie(),
+                esyncie: self.esyncie(),
+                cen: self.cen(),
+                autotrimen: self.autotrimen(),
+                swsync: self.swsync(),
+                trim: self.trim(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "interrupt flag clear register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -262,6 +335,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Icr {
             Icr(0)
+        }
+    }
+    impl core::fmt::Debug for Icr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Icr")
+                .field("syncokc", &self.syncokc())
+                .field("syncwarnc", &self.syncwarnc())
+                .field("errc", &self.errc())
+                .field("esyncc", &self.esyncc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Icr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Icr {
+                syncokc: bool,
+                syncwarnc: bool,
+                errc: bool,
+                esyncc: bool,
+            }
+            let proxy = Icr {
+                syncokc: self.syncokc(),
+                syncwarnc: self.syncwarnc(),
+                errc: self.errc(),
+                esyncc: self.esyncc(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "interrupt and status register"]
@@ -375,10 +477,55 @@ pub mod regs {
             Isr(0)
         }
     }
+    impl core::fmt::Debug for Isr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Isr")
+                .field("syncokf", &self.syncokf())
+                .field("syncwarnf", &self.syncwarnf())
+                .field("errf", &self.errf())
+                .field("esyncf", &self.esyncf())
+                .field("syncerr", &self.syncerr())
+                .field("syncmiss", &self.syncmiss())
+                .field("trimovf", &self.trimovf())
+                .field("fedir", &self.fedir())
+                .field("fecap", &self.fecap())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Isr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Isr {
+                syncokf: bool,
+                syncwarnf: bool,
+                errf: bool,
+                esyncf: bool,
+                syncerr: bool,
+                syncmiss: bool,
+                trimovf: bool,
+                fedir: bool,
+                fecap: u16,
+            }
+            let proxy = Isr {
+                syncokf: self.syncokf(),
+                syncwarnf: self.syncwarnf(),
+                errf: self.errf(),
+                esyncf: self.esyncf(),
+                syncerr: self.syncerr(),
+                syncmiss: self.syncmiss(),
+                trimovf: self.trimovf(),
+                fedir: self.fedir(),
+                fecap: self.fecap(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syncsrc {
         #[doc = "GPIO selected as SYNC signal source"]
         GPIO = 0x0,

@@ -81,6 +81,32 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("rngen", &self.rngen())
+                .field("ie", &self.ie())
+                .field("ced", &self.ced())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                rngen: bool,
+                ie: bool,
+                ced: bool,
+            }
+            let proxy = Cr {
+                rngen: self.rngen(),
+                ie: self.ie(),
+                ced: self.ced(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -146,6 +172,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Sr {
             Sr(0)
+        }
+    }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("drdy", &self.drdy())
+                .field("cecs", &self.cecs())
+                .field("secs", &self.secs())
+                .field("ceis", &self.ceis())
+                .field("seis", &self.seis())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                drdy: bool,
+                cecs: bool,
+                secs: bool,
+                ceis: bool,
+                seis: bool,
+            }
+            let proxy = Sr {
+                drdy: self.drdy(),
+                cecs: self.cecs(),
+                secs: self.secs(),
+                ceis: self.ceis(),
+                seis: self.seis(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

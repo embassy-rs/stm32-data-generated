@@ -1491,7 +1491,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "NOFILTER",
+                    name: "NO_FILTER",
                     description: Some(
                         "Digital filter disabled",
                     ),
@@ -1631,7 +1631,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "NOMASK",
+                    name: "NO_MASK",
                     description: Some(
                         "No mask",
                     ),
@@ -1701,7 +1701,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NOTCOMPLETED",
+                    name: "NOT_COMPLETED",
                     description: Some(
                         "The transfer is not completed after the NBYTES data transfer (NBYTES will be reloaded)",
                     ),

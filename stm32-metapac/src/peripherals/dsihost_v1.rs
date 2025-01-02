@@ -415,6 +415,29 @@ pub mod regs {
             Ccr(0)
         }
     }
+    impl core::fmt::Debug for Ccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ccr")
+                .field("txeckdiv", &self.txeckdiv())
+                .field("tockdiv", &self.tockdiv())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ccr {
+                txeckdiv: u8,
+                tockdiv: u8,
+            }
+            let proxy = Ccr {
+                txeckdiv: self.txeckdiv(),
+                tockdiv: self.tockdiv(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Clock Lane Configuration Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -449,6 +472,29 @@ pub mod regs {
             Clcr(0)
         }
     }
+    impl core::fmt::Debug for Clcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Clcr")
+                .field("dpcc", &self.dpcc())
+                .field("acr", &self.acr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Clcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Clcr {
+                dpcc: bool,
+                acr: bool,
+            }
+            let proxy = Clcr {
+                dpcc: self.dpcc(),
+                acr: self.acr(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Clock Lane Timer Configuration Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -481,6 +527,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cltcr {
             Cltcr(0)
+        }
+    }
+    impl core::fmt::Debug for Cltcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cltcr")
+                .field("lp2hs_time", &self.lp2hs_time())
+                .field("hs2lp_time", &self.hs2lp_time())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cltcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cltcr {
+                lp2hs_time: u16,
+                hs2lp_time: u16,
+            }
+            let proxy = Cltcr {
+                lp2hs_time: self.lp2hs_time(),
+                hs2lp_time: self.hs2lp_time(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Command mode Configuration Register."]
@@ -649,6 +718,65 @@ pub mod regs {
             Cmcr(0)
         }
     }
+    impl core::fmt::Debug for Cmcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cmcr")
+                .field("teare", &self.teare())
+                .field("are", &self.are())
+                .field("gsw0tx", &self.gsw0tx())
+                .field("gsw1tx", &self.gsw1tx())
+                .field("gsw2tx", &self.gsw2tx())
+                .field("gsr0tx", &self.gsr0tx())
+                .field("gsr1tx", &self.gsr1tx())
+                .field("gsr2tx", &self.gsr2tx())
+                .field("glwtx", &self.glwtx())
+                .field("dsw0tx", &self.dsw0tx())
+                .field("dsw1tx", &self.dsw1tx())
+                .field("dsr0tx", &self.dsr0tx())
+                .field("dlwtx", &self.dlwtx())
+                .field("mrdps", &self.mrdps())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cmcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cmcr {
+                teare: bool,
+                are: bool,
+                gsw0tx: bool,
+                gsw1tx: bool,
+                gsw2tx: bool,
+                gsr0tx: bool,
+                gsr1tx: bool,
+                gsr2tx: bool,
+                glwtx: bool,
+                dsw0tx: bool,
+                dsw1tx: bool,
+                dsr0tx: bool,
+                dlwtx: bool,
+                mrdps: bool,
+            }
+            let proxy = Cmcr {
+                teare: self.teare(),
+                are: self.are(),
+                gsw0tx: self.gsw0tx(),
+                gsw1tx: self.gsw1tx(),
+                gsw2tx: self.gsw2tx(),
+                gsr0tx: self.gsr0tx(),
+                gsr1tx: self.gsr1tx(),
+                gsr2tx: self.gsr2tx(),
+                glwtx: self.glwtx(),
+                dsw0tx: self.dsw0tx(),
+                dsw1tx: self.dsw1tx(),
+                dsr0tx: self.dsr0tx(),
+                dlwtx: self.dlwtx(),
+                mrdps: self.mrdps(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Control Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -670,6 +798,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cr {
             Cr(0)
+        }
+    }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr").field("en", &self.en()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                en: bool,
+            }
+            let proxy = Cr { en: self.en() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Data Lane Timer Configuration Register."]
@@ -715,6 +859,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dltcr {
             Dltcr(0)
+        }
+    }
+    impl core::fmt::Debug for Dltcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dltcr")
+                .field("mrd_time", &self.mrd_time())
+                .field("lp2hs_time", &self.lp2hs_time())
+                .field("hs2lp_time", &self.hs2lp_time())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dltcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dltcr {
+                mrd_time: u16,
+                lp2hs_time: u8,
+                hs2lp_time: u8,
+            }
+            let proxy = Dltcr {
+                mrd_time: self.mrd_time(),
+                lp2hs_time: self.lp2hs_time(),
+                hs2lp_time: self.hs2lp_time(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Force Interrupt Register 0."]
@@ -960,6 +1130,86 @@ pub mod regs {
             Fir0(0)
         }
     }
+    impl core::fmt::Debug for Fir0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fir0")
+                .field("fae0", &self.fae0())
+                .field("fae1", &self.fae1())
+                .field("fae2", &self.fae2())
+                .field("fae3", &self.fae3())
+                .field("fae4", &self.fae4())
+                .field("fae5", &self.fae5())
+                .field("fae6", &self.fae6())
+                .field("fae7", &self.fae7())
+                .field("fae8", &self.fae8())
+                .field("fae9", &self.fae9())
+                .field("fae10", &self.fae10())
+                .field("fae11", &self.fae11())
+                .field("fae12", &self.fae12())
+                .field("fae13", &self.fae13())
+                .field("fae14", &self.fae14())
+                .field("fae15", &self.fae15())
+                .field("fpe0", &self.fpe0())
+                .field("fpe1", &self.fpe1())
+                .field("fpe2", &self.fpe2())
+                .field("fpe3", &self.fpe3())
+                .field("fpe4", &self.fpe4())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fir0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fir0 {
+                fae0: bool,
+                fae1: bool,
+                fae2: bool,
+                fae3: bool,
+                fae4: bool,
+                fae5: bool,
+                fae6: bool,
+                fae7: bool,
+                fae8: bool,
+                fae9: bool,
+                fae10: bool,
+                fae11: bool,
+                fae12: bool,
+                fae13: bool,
+                fae14: bool,
+                fae15: bool,
+                fpe0: bool,
+                fpe1: bool,
+                fpe2: bool,
+                fpe3: bool,
+                fpe4: bool,
+            }
+            let proxy = Fir0 {
+                fae0: self.fae0(),
+                fae1: self.fae1(),
+                fae2: self.fae2(),
+                fae3: self.fae3(),
+                fae4: self.fae4(),
+                fae5: self.fae5(),
+                fae6: self.fae6(),
+                fae7: self.fae7(),
+                fae8: self.fae8(),
+                fae9: self.fae9(),
+                fae10: self.fae10(),
+                fae11: self.fae11(),
+                fae12: self.fae12(),
+                fae13: self.fae13(),
+                fae14: self.fae14(),
+                fae15: self.fae15(),
+                fpe0: self.fpe0(),
+                fpe1: self.fpe1(),
+                fpe2: self.fpe2(),
+                fpe3: self.fpe3(),
+                fpe4: self.fpe4(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Force Interrupt Register 1."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1115,6 +1365,62 @@ pub mod regs {
             Fir1(0)
         }
     }
+    impl core::fmt::Debug for Fir1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fir1")
+                .field("ftohstx", &self.ftohstx())
+                .field("ftolprx", &self.ftolprx())
+                .field("feccse", &self.feccse())
+                .field("feccme", &self.feccme())
+                .field("fcrce", &self.fcrce())
+                .field("fpse", &self.fpse())
+                .field("feotpe", &self.feotpe())
+                .field("flpwre", &self.flpwre())
+                .field("fgcwre", &self.fgcwre())
+                .field("fgpwre", &self.fgpwre())
+                .field("fgptxe", &self.fgptxe())
+                .field("fgprde", &self.fgprde())
+                .field("fgprxe", &self.fgprxe())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fir1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fir1 {
+                ftohstx: bool,
+                ftolprx: bool,
+                feccse: bool,
+                feccme: bool,
+                fcrce: bool,
+                fpse: bool,
+                feotpe: bool,
+                flpwre: bool,
+                fgcwre: bool,
+                fgpwre: bool,
+                fgptxe: bool,
+                fgprde: bool,
+                fgprxe: bool,
+            }
+            let proxy = Fir1 {
+                ftohstx: self.ftohstx(),
+                ftolprx: self.ftolprx(),
+                feccse: self.feccse(),
+                feccme: self.feccme(),
+                fcrce: self.fcrce(),
+                fpse: self.fpse(),
+                feotpe: self.feotpe(),
+                flpwre: self.flpwre(),
+                fgcwre: self.fgcwre(),
+                fgpwre: self.fgpwre(),
+                fgptxe: self.fgptxe(),
+                fgprde: self.fgprde(),
+                fgprxe: self.fgprxe(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Generic Header Configuration Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1171,6 +1477,35 @@ pub mod regs {
             Ghcr(0)
         }
     }
+    impl core::fmt::Debug for Ghcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ghcr")
+                .field("dt", &self.dt())
+                .field("vcid", &self.vcid())
+                .field("wclsb", &self.wclsb())
+                .field("wcmsb", &self.wcmsb())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ghcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ghcr {
+                dt: u8,
+                vcid: u8,
+                wclsb: u8,
+                wcmsb: u8,
+            }
+            let proxy = Ghcr {
+                dt: self.dt(),
+                vcid: self.vcid(),
+                wclsb: self.wclsb(),
+                wcmsb: self.wcmsb(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Generic Payload Data Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1225,6 +1560,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Gpdr {
             Gpdr(0)
+        }
+    }
+    impl core::fmt::Debug for Gpdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Gpdr")
+                .field("data1", &self.data1())
+                .field("data2", &self.data2())
+                .field("data3", &self.data3())
+                .field("data4", &self.data4())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Gpdr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Gpdr {
+                data1: u8,
+                data2: u8,
+                data3: u8,
+                data4: u8,
+            }
+            let proxy = Gpdr {
+                data1: self.data1(),
+                data2: self.data2(),
+                data3: self.data3(),
+                data4: self.data4(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Generic Packet Status Register."]
@@ -1316,6 +1680,44 @@ pub mod regs {
             Gpsr(0)
         }
     }
+    impl core::fmt::Debug for Gpsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Gpsr")
+                .field("cmdfe", &self.cmdfe())
+                .field("cmdff", &self.cmdff())
+                .field("pwrfe", &self.pwrfe())
+                .field("pwrff", &self.pwrff())
+                .field("prdfe", &self.prdfe())
+                .field("prdff", &self.prdff())
+                .field("rcb", &self.rcb())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Gpsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Gpsr {
+                cmdfe: bool,
+                cmdff: bool,
+                pwrfe: bool,
+                pwrff: bool,
+                prdfe: bool,
+                prdff: bool,
+                rcb: bool,
+            }
+            let proxy = Gpsr {
+                cmdfe: self.cmdfe(),
+                cmdff: self.cmdff(),
+                pwrfe: self.pwrfe(),
+                pwrff: self.pwrff(),
+                prdfe: self.prdfe(),
+                prdff: self.prdff(),
+                rcb: self.rcb(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Generic VCID Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1337,6 +1739,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Gvcidr {
             Gvcidr(0)
+        }
+    }
+    impl core::fmt::Debug for Gvcidr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Gvcidr").field("vcid", &self.vcid()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Gvcidr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Gvcidr {
+                vcid: u8,
+            }
+            let proxy = Gvcidr { vcid: self.vcid() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Interrupt Enable Register 0."]
@@ -1582,6 +2000,86 @@ pub mod regs {
             Ier0(0)
         }
     }
+    impl core::fmt::Debug for Ier0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ier0")
+                .field("ae0ie", &self.ae0ie())
+                .field("ae1ie", &self.ae1ie())
+                .field("ae2ie", &self.ae2ie())
+                .field("ae3ie", &self.ae3ie())
+                .field("ae4ie", &self.ae4ie())
+                .field("ae5ie", &self.ae5ie())
+                .field("ae6ie", &self.ae6ie())
+                .field("ae7ie", &self.ae7ie())
+                .field("ae8ie", &self.ae8ie())
+                .field("ae9ie", &self.ae9ie())
+                .field("ae10ie", &self.ae10ie())
+                .field("ae11ie", &self.ae11ie())
+                .field("ae12ie", &self.ae12ie())
+                .field("ae13ie", &self.ae13ie())
+                .field("ae14ie", &self.ae14ie())
+                .field("ae15ie", &self.ae15ie())
+                .field("pe0ie", &self.pe0ie())
+                .field("pe1ie", &self.pe1ie())
+                .field("pe2ie", &self.pe2ie())
+                .field("pe3ie", &self.pe3ie())
+                .field("pe4ie", &self.pe4ie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ier0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ier0 {
+                ae0ie: bool,
+                ae1ie: bool,
+                ae2ie: bool,
+                ae3ie: bool,
+                ae4ie: bool,
+                ae5ie: bool,
+                ae6ie: bool,
+                ae7ie: bool,
+                ae8ie: bool,
+                ae9ie: bool,
+                ae10ie: bool,
+                ae11ie: bool,
+                ae12ie: bool,
+                ae13ie: bool,
+                ae14ie: bool,
+                ae15ie: bool,
+                pe0ie: bool,
+                pe1ie: bool,
+                pe2ie: bool,
+                pe3ie: bool,
+                pe4ie: bool,
+            }
+            let proxy = Ier0 {
+                ae0ie: self.ae0ie(),
+                ae1ie: self.ae1ie(),
+                ae2ie: self.ae2ie(),
+                ae3ie: self.ae3ie(),
+                ae4ie: self.ae4ie(),
+                ae5ie: self.ae5ie(),
+                ae6ie: self.ae6ie(),
+                ae7ie: self.ae7ie(),
+                ae8ie: self.ae8ie(),
+                ae9ie: self.ae9ie(),
+                ae10ie: self.ae10ie(),
+                ae11ie: self.ae11ie(),
+                ae12ie: self.ae12ie(),
+                ae13ie: self.ae13ie(),
+                ae14ie: self.ae14ie(),
+                ae15ie: self.ae15ie(),
+                pe0ie: self.pe0ie(),
+                pe1ie: self.pe1ie(),
+                pe2ie: self.pe2ie(),
+                pe3ie: self.pe3ie(),
+                pe4ie: self.pe4ie(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Interrupt Enable Register 1."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1735,6 +2233,62 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ier1 {
             Ier1(0)
+        }
+    }
+    impl core::fmt::Debug for Ier1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ier1")
+                .field("tohstxie", &self.tohstxie())
+                .field("tolprxie", &self.tolprxie())
+                .field("eccseie", &self.eccseie())
+                .field("eccmeie", &self.eccmeie())
+                .field("crceie", &self.crceie())
+                .field("pseie", &self.pseie())
+                .field("eotpeie", &self.eotpeie())
+                .field("lpwreie", &self.lpwreie())
+                .field("gcwreie", &self.gcwreie())
+                .field("gpwreie", &self.gpwreie())
+                .field("gptxeie", &self.gptxeie())
+                .field("gprdeie", &self.gprdeie())
+                .field("gprxeie", &self.gprxeie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ier1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ier1 {
+                tohstxie: bool,
+                tolprxie: bool,
+                eccseie: bool,
+                eccmeie: bool,
+                crceie: bool,
+                pseie: bool,
+                eotpeie: bool,
+                lpwreie: bool,
+                gcwreie: bool,
+                gpwreie: bool,
+                gptxeie: bool,
+                gprdeie: bool,
+                gprxeie: bool,
+            }
+            let proxy = Ier1 {
+                tohstxie: self.tohstxie(),
+                tolprxie: self.tolprxie(),
+                eccseie: self.eccseie(),
+                eccmeie: self.eccmeie(),
+                crceie: self.crceie(),
+                pseie: self.pseie(),
+                eotpeie: self.eotpeie(),
+                lpwreie: self.lpwreie(),
+                gcwreie: self.gcwreie(),
+                gpwreie: self.gpwreie(),
+                gptxeie: self.gptxeie(),
+                gprdeie: self.gprdeie(),
+                gprxeie: self.gprxeie(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Interrupt & Status Register 0."]
@@ -1980,6 +2534,86 @@ pub mod regs {
             Isr0(0)
         }
     }
+    impl core::fmt::Debug for Isr0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Isr0")
+                .field("ae0", &self.ae0())
+                .field("ae1", &self.ae1())
+                .field("ae2", &self.ae2())
+                .field("ae3", &self.ae3())
+                .field("ae4", &self.ae4())
+                .field("ae5", &self.ae5())
+                .field("ae6", &self.ae6())
+                .field("ae7", &self.ae7())
+                .field("ae8", &self.ae8())
+                .field("ae9", &self.ae9())
+                .field("ae10", &self.ae10())
+                .field("ae11", &self.ae11())
+                .field("ae12", &self.ae12())
+                .field("ae13", &self.ae13())
+                .field("ae14", &self.ae14())
+                .field("ae15", &self.ae15())
+                .field("pe0", &self.pe0())
+                .field("pe1", &self.pe1())
+                .field("pe2", &self.pe2())
+                .field("pe3", &self.pe3())
+                .field("pe4", &self.pe4())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Isr0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Isr0 {
+                ae0: bool,
+                ae1: bool,
+                ae2: bool,
+                ae3: bool,
+                ae4: bool,
+                ae5: bool,
+                ae6: bool,
+                ae7: bool,
+                ae8: bool,
+                ae9: bool,
+                ae10: bool,
+                ae11: bool,
+                ae12: bool,
+                ae13: bool,
+                ae14: bool,
+                ae15: bool,
+                pe0: bool,
+                pe1: bool,
+                pe2: bool,
+                pe3: bool,
+                pe4: bool,
+            }
+            let proxy = Isr0 {
+                ae0: self.ae0(),
+                ae1: self.ae1(),
+                ae2: self.ae2(),
+                ae3: self.ae3(),
+                ae4: self.ae4(),
+                ae5: self.ae5(),
+                ae6: self.ae6(),
+                ae7: self.ae7(),
+                ae8: self.ae8(),
+                ae9: self.ae9(),
+                ae10: self.ae10(),
+                ae11: self.ae11(),
+                ae12: self.ae12(),
+                ae13: self.ae13(),
+                ae14: self.ae14(),
+                ae15: self.ae15(),
+                pe0: self.pe0(),
+                pe1: self.pe1(),
+                pe2: self.pe2(),
+                pe3: self.pe3(),
+                pe4: self.pe4(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Interrupt & Status Register 1."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2135,6 +2769,62 @@ pub mod regs {
             Isr1(0)
         }
     }
+    impl core::fmt::Debug for Isr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Isr1")
+                .field("tohstx", &self.tohstx())
+                .field("tolprx", &self.tolprx())
+                .field("eccse", &self.eccse())
+                .field("eccme", &self.eccme())
+                .field("crce", &self.crce())
+                .field("pse", &self.pse())
+                .field("eotpe", &self.eotpe())
+                .field("lpwre", &self.lpwre())
+                .field("gcwre", &self.gcwre())
+                .field("gpwre", &self.gpwre())
+                .field("gptxe", &self.gptxe())
+                .field("gprde", &self.gprde())
+                .field("gprxe", &self.gprxe())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Isr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Isr1 {
+                tohstx: bool,
+                tolprx: bool,
+                eccse: bool,
+                eccme: bool,
+                crce: bool,
+                pse: bool,
+                eotpe: bool,
+                lpwre: bool,
+                gcwre: bool,
+                gpwre: bool,
+                gptxe: bool,
+                gprde: bool,
+                gprxe: bool,
+            }
+            let proxy = Isr1 {
+                tohstx: self.tohstx(),
+                tolprx: self.tolprx(),
+                eccse: self.eccse(),
+                eccme: self.eccme(),
+                crce: self.crce(),
+                pse: self.pse(),
+                eotpe: self.eotpe(),
+                lpwre: self.lpwre(),
+                gcwre: self.gcwre(),
+                gpwre: self.gpwre(),
+                gptxe: self.gptxe(),
+                gprde: self.gprde(),
+                gprxe: self.gprxe(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host LTDC Current Color Coding Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2169,6 +2859,29 @@ pub mod regs {
             Lcccr(0)
         }
     }
+    impl core::fmt::Debug for Lcccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lcccr")
+                .field("colc", &self.colc())
+                .field("lpe", &self.lpe())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lcccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Lcccr {
+                colc: u8,
+                lpe: bool,
+            }
+            let proxy = Lcccr {
+                colc: self.colc(),
+                lpe: self.lpe(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host LTDC Command Configuration Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2190,6 +2903,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Lccr {
             Lccr(0)
+        }
+    }
+    impl core::fmt::Debug for Lccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lccr").field("cmdsize", &self.cmdsize()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Lccr {
+                cmdsize: u16,
+            }
+            let proxy = Lccr {
+                cmdsize: self.cmdsize(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host LTDC Color Coding Register."]
@@ -2226,6 +2957,29 @@ pub mod regs {
             Lcolcr(0)
         }
     }
+    impl core::fmt::Debug for Lcolcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lcolcr")
+                .field("colc", &self.colc())
+                .field("lpe", &self.lpe())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lcolcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Lcolcr {
+                colc: u8,
+                lpe: bool,
+            }
+            let proxy = Lcolcr {
+                colc: self.colc(),
+                lpe: self.lpe(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host LTDC Current VCID Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2247,6 +3001,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Lcvcidr {
             Lcvcidr(0)
+        }
+    }
+    impl core::fmt::Debug for Lcvcidr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lcvcidr").field("vcid", &self.vcid()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lcvcidr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Lcvcidr {
+                vcid: u8,
+            }
+            let proxy = Lcvcidr { vcid: self.vcid() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host LTDC Polarity Configuration Register."]
@@ -2294,6 +3064,32 @@ pub mod regs {
             Lpcr(0)
         }
     }
+    impl core::fmt::Debug for Lpcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lpcr")
+                .field("dep", &self.dep())
+                .field("vsp", &self.vsp())
+                .field("hsp", &self.hsp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lpcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Lpcr {
+                dep: bool,
+                vsp: bool,
+                hsp: bool,
+            }
+            let proxy = Lpcr {
+                dep: self.dep(),
+                vsp: self.vsp(),
+                hsp: self.hsp(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Low-Power mode Current Configuration Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2326,6 +3122,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Lpmccr {
             Lpmccr(0)
+        }
+    }
+    impl core::fmt::Debug for Lpmccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lpmccr")
+                .field("vlpsize", &self.vlpsize())
+                .field("lpsize", &self.lpsize())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lpmccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Lpmccr {
+                vlpsize: u8,
+                lpsize: u8,
+            }
+            let proxy = Lpmccr {
+                vlpsize: self.vlpsize(),
+                lpsize: self.lpsize(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Low-Power mode Configuration Register."]
@@ -2362,6 +3181,29 @@ pub mod regs {
             Lpmcr(0)
         }
     }
+    impl core::fmt::Debug for Lpmcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lpmcr")
+                .field("vlpsize", &self.vlpsize())
+                .field("lpsize", &self.lpsize())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lpmcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Lpmcr {
+                vlpsize: u8,
+                lpsize: u8,
+            }
+            let proxy = Lpmcr {
+                vlpsize: self.vlpsize(),
+                lpsize: self.lpsize(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host LTDC VCID Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2385,6 +3227,22 @@ pub mod regs {
             Lvcidr(0)
         }
     }
+    impl core::fmt::Debug for Lvcidr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lvcidr").field("vcid", &self.vcid()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lvcidr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Lvcidr {
+                vcid: u8,
+            }
+            let proxy = Lvcidr { vcid: self.vcid() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host mode Configuration Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2406,6 +3264,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Mcr {
             Mcr(0)
+        }
+    }
+    impl core::fmt::Debug for Mcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mcr").field("cmdm", &self.cmdm()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Mcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Mcr {
+                cmdm: bool,
+            }
+            let proxy = Mcr { cmdm: self.cmdm() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host PHY Configuration Register."]
@@ -2440,6 +3314,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Pconfr {
             Pconfr(0)
+        }
+    }
+    impl core::fmt::Debug for Pconfr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pconfr")
+                .field("nl", &self.nl())
+                .field("sw_time", &self.sw_time())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pconfr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pconfr {
+                nl: u8,
+                sw_time: u8,
+            }
+            let proxy = Pconfr {
+                nl: self.nl(),
+                sw_time: self.sw_time(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Protocol Configuration Register."]
@@ -2509,6 +3406,38 @@ pub mod regs {
             Pcr(0)
         }
     }
+    impl core::fmt::Debug for Pcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pcr")
+                .field("ettxe", &self.ettxe())
+                .field("etrxe", &self.etrxe())
+                .field("btae", &self.btae())
+                .field("eccrxe", &self.eccrxe())
+                .field("crcrxe", &self.crcrxe())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pcr {
+                ettxe: bool,
+                etrxe: bool,
+                btae: bool,
+                eccrxe: bool,
+                crcrxe: bool,
+            }
+            let proxy = Pcr {
+                ettxe: self.ettxe(),
+                etrxe: self.etrxe(),
+                btae: self.btae(),
+                eccrxe: self.eccrxe(),
+                crcrxe: self.crcrxe(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host PHY Control Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2541,6 +3470,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Pctlr {
             Pctlr(0)
+        }
+    }
+    impl core::fmt::Debug for Pctlr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pctlr")
+                .field("den", &self.den())
+                .field("cke", &self.cke())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pctlr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pctlr {
+                den: bool,
+                cke: bool,
+            }
+            let proxy = Pctlr {
+                den: self.den(),
+                cke: self.cke(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host PHY Status Register."]
@@ -2643,6 +3595,47 @@ pub mod regs {
             Psr(0)
         }
     }
+    impl core::fmt::Debug for Psr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Psr")
+                .field("pd", &self.pd())
+                .field("pssc", &self.pssc())
+                .field("uanc", &self.uanc())
+                .field("pss0", &self.pss0())
+                .field("uan0", &self.uan0())
+                .field("rue0", &self.rue0())
+                .field("pss1", &self.pss1())
+                .field("uan1", &self.uan1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Psr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Psr {
+                pd: bool,
+                pssc: bool,
+                uanc: bool,
+                pss0: bool,
+                uan0: bool,
+                rue0: bool,
+                pss1: bool,
+                uan1: bool,
+            }
+            let proxy = Psr {
+                pd: self.pd(),
+                pssc: self.pssc(),
+                uanc: self.uanc(),
+                pss0: self.pss0(),
+                uan0: self.uan0(),
+                rue0: self.rue0(),
+                pss1: self.pss1(),
+                uan1: self.uan1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host PHY TX Triggers Configuration Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2664,6 +3657,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Pttcr {
             Pttcr(0)
+        }
+    }
+    impl core::fmt::Debug for Pttcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pttcr").field("tx_trig", &self.tx_trig()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pttcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pttcr {
+                tx_trig: u8,
+            }
+            let proxy = Pttcr {
+                tx_trig: self.tx_trig(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host PHY ULPS Control Register."]
@@ -2722,6 +3733,35 @@ pub mod regs {
             Pucr(0)
         }
     }
+    impl core::fmt::Debug for Pucr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pucr")
+                .field("urcl", &self.urcl())
+                .field("uecl", &self.uecl())
+                .field("urdl", &self.urdl())
+                .field("uedl", &self.uedl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pucr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pucr {
+                urcl: bool,
+                uecl: bool,
+                urdl: bool,
+                uedl: bool,
+            }
+            let proxy = Pucr {
+                urcl: self.urcl(),
+                uecl: self.uecl(),
+                urdl: self.urdl(),
+                uedl: self.uedl(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Timeout Counter Configuration Register 0."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2756,6 +3796,29 @@ pub mod regs {
             Tccr0(0)
         }
     }
+    impl core::fmt::Debug for Tccr0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tccr0")
+                .field("lprx_tocnt", &self.lprx_tocnt())
+                .field("hstx_tocnt", &self.hstx_tocnt())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Tccr0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Tccr0 {
+                lprx_tocnt: u16,
+                hstx_tocnt: u16,
+            }
+            let proxy = Tccr0 {
+                lprx_tocnt: self.lprx_tocnt(),
+                hstx_tocnt: self.hstx_tocnt(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Timeout Counter Configuration Register 1."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2779,6 +3842,24 @@ pub mod regs {
             Tccr1(0)
         }
     }
+    impl core::fmt::Debug for Tccr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tccr1").field("hsrd_tocnt", &self.hsrd_tocnt()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Tccr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Tccr1 {
+                hsrd_tocnt: u16,
+            }
+            let proxy = Tccr1 {
+                hsrd_tocnt: self.hsrd_tocnt(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Timeout Counter Configuration Register 2."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2800,6 +3881,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Tccr2 {
             Tccr2(0)
+        }
+    }
+    impl core::fmt::Debug for Tccr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tccr2").field("lprd_tocnt", &self.lprd_tocnt()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Tccr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Tccr2 {
+                lprd_tocnt: u16,
+            }
+            let proxy = Tccr2 {
+                lprd_tocnt: self.lprd_tocnt(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Timeout Counter Configuration Register 3."]
@@ -2836,6 +3935,29 @@ pub mod regs {
             Tccr3(0)
         }
     }
+    impl core::fmt::Debug for Tccr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tccr3")
+                .field("hswr_tocnt", &self.hswr_tocnt())
+                .field("pm", &self.pm())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Tccr3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Tccr3 {
+                hswr_tocnt: u16,
+                pm: bool,
+            }
+            let proxy = Tccr3 {
+                hswr_tocnt: self.hswr_tocnt(),
+                pm: self.pm(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Timeout Counter Configuration Register 4."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2857,6 +3979,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Tccr4 {
             Tccr4(0)
+        }
+    }
+    impl core::fmt::Debug for Tccr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tccr4").field("lswr_tocnt", &self.lswr_tocnt()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Tccr4 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Tccr4 {
+                lswr_tocnt: u16,
+            }
+            let proxy = Tccr4 {
+                lswr_tocnt: self.lswr_tocnt(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Timeout Counter Configuration Register 5."]
@@ -2882,6 +4022,24 @@ pub mod regs {
             Tccr5(0)
         }
     }
+    impl core::fmt::Debug for Tccr5 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tccr5").field("bta_tocnt", &self.bta_tocnt()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Tccr5 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Tccr5 {
+                bta_tocnt: u16,
+            }
+            let proxy = Tccr5 {
+                bta_tocnt: self.bta_tocnt(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Video Chunks Current Configuration Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2903,6 +4061,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Vcccr {
             Vcccr(0)
+        }
+    }
+    impl core::fmt::Debug for Vcccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vcccr").field("numc", &self.numc()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vcccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vcccr {
+                numc: u16,
+            }
+            let proxy = Vcccr { numc: self.numc() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Video Chunks Configuration Register."]
@@ -2928,6 +4102,22 @@ pub mod regs {
             Vccr(0)
         }
     }
+    impl core::fmt::Debug for Vccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vccr").field("numc", &self.numc()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vccr {
+                numc: u16,
+            }
+            let proxy = Vccr { numc: self.numc() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Video HBP Current Configuration Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2949,6 +4139,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Vhbpccr {
             Vhbpccr(0)
+        }
+    }
+    impl core::fmt::Debug for Vhbpccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vhbpccr").field("hbp", &self.hbp()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vhbpccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vhbpccr {
+                hbp: u16,
+            }
+            let proxy = Vhbpccr { hbp: self.hbp() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Video HBP Configuration Register."]
@@ -2974,6 +4180,22 @@ pub mod regs {
             Vhbpcr(0)
         }
     }
+    impl core::fmt::Debug for Vhbpcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vhbpcr").field("hbp", &self.hbp()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vhbpcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vhbpcr {
+                hbp: u16,
+            }
+            let proxy = Vhbpcr { hbp: self.hbp() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Video HSA Current Configuration Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2995,6 +4217,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Vhsaccr {
             Vhsaccr(0)
+        }
+    }
+    impl core::fmt::Debug for Vhsaccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vhsaccr").field("hsa", &self.hsa()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vhsaccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vhsaccr {
+                hsa: u16,
+            }
+            let proxy = Vhsaccr { hsa: self.hsa() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Video HSA Configuration Register."]
@@ -3020,6 +4258,22 @@ pub mod regs {
             Vhsacr(0)
         }
     }
+    impl core::fmt::Debug for Vhsacr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vhsacr").field("hsa", &self.hsa()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vhsacr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vhsacr {
+                hsa: u16,
+            }
+            let proxy = Vhsacr { hsa: self.hsa() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Video Line Current Configuration Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3043,6 +4297,22 @@ pub mod regs {
             Vlccr(0)
         }
     }
+    impl core::fmt::Debug for Vlccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vlccr").field("hline", &self.hline()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vlccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vlccr {
+                hline: u16,
+            }
+            let proxy = Vlccr { hline: self.hline() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Video Line Configuration Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3064,6 +4334,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Vlcr {
             Vlcr(0)
+        }
+    }
+    impl core::fmt::Debug for Vlcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vlcr").field("hline", &self.hline()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vlcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vlcr {
+                hline: u16,
+            }
+            let proxy = Vlcr { hline: self.hline() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Video mode Current Configuration Register."]
@@ -3175,6 +4461,50 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Vmccr {
             Vmccr(0)
+        }
+    }
+    impl core::fmt::Debug for Vmccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vmccr")
+                .field("vmt", &self.vmt())
+                .field("lpvsae", &self.lpvsae())
+                .field("lpvbpe", &self.lpvbpe())
+                .field("lpvfpe", &self.lpvfpe())
+                .field("lpvae", &self.lpvae())
+                .field("lphbpe", &self.lphbpe())
+                .field("lphfe", &self.lphfe())
+                .field("fbtaae", &self.fbtaae())
+                .field("lpce", &self.lpce())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vmccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vmccr {
+                vmt: u8,
+                lpvsae: bool,
+                lpvbpe: bool,
+                lpvfpe: bool,
+                lpvae: bool,
+                lphbpe: bool,
+                lphfe: bool,
+                fbtaae: bool,
+                lpce: bool,
+            }
+            let proxy = Vmccr {
+                vmt: self.vmt(),
+                lpvsae: self.lpvsae(),
+                lpvbpe: self.lpvbpe(),
+                lpvfpe: self.lpvfpe(),
+                lpvae: self.lpvae(),
+                lphbpe: self.lphbpe(),
+                lphfe: self.lphfe(),
+                fbtaae: self.fbtaae(),
+                lpce: self.lpce(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Video mode Configuration Register."]
@@ -3321,6 +4651,59 @@ pub mod regs {
             Vmcr(0)
         }
     }
+    impl core::fmt::Debug for Vmcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vmcr")
+                .field("vmt", &self.vmt())
+                .field("lpvsae", &self.lpvsae())
+                .field("lpvbpe", &self.lpvbpe())
+                .field("lpvfpe", &self.lpvfpe())
+                .field("lpvae", &self.lpvae())
+                .field("lphbpe", &self.lphbpe())
+                .field("lphfpe", &self.lphfpe())
+                .field("fbtaae", &self.fbtaae())
+                .field("lpce", &self.lpce())
+                .field("pge", &self.pge())
+                .field("pgm", &self.pgm())
+                .field("pgo", &self.pgo())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vmcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vmcr {
+                vmt: u8,
+                lpvsae: bool,
+                lpvbpe: bool,
+                lpvfpe: bool,
+                lpvae: bool,
+                lphbpe: bool,
+                lphfpe: bool,
+                fbtaae: bool,
+                lpce: bool,
+                pge: bool,
+                pgm: bool,
+                pgo: bool,
+            }
+            let proxy = Vmcr {
+                vmt: self.vmt(),
+                lpvsae: self.lpvsae(),
+                lpvbpe: self.lpvbpe(),
+                lpvfpe: self.lpvfpe(),
+                lpvae: self.lpvae(),
+                lphbpe: self.lphbpe(),
+                lphfpe: self.lphfpe(),
+                fbtaae: self.fbtaae(),
+                lpce: self.lpce(),
+                pge: self.pge(),
+                pgm: self.pgm(),
+                pgo: self.pgo(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Video Null Packet Current Configuration Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3342,6 +4725,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Vnpccr {
             Vnpccr(0)
+        }
+    }
+    impl core::fmt::Debug for Vnpccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vnpccr").field("npsize", &self.npsize()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vnpccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vnpccr {
+                npsize: u16,
+            }
+            let proxy = Vnpccr { npsize: self.npsize() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Video Null Packet Configuration Register."]
@@ -3367,6 +4766,22 @@ pub mod regs {
             Vnpcr(0)
         }
     }
+    impl core::fmt::Debug for Vnpcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vnpcr").field("npsize", &self.npsize()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vnpcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vnpcr {
+                npsize: u16,
+            }
+            let proxy = Vnpcr { npsize: self.npsize() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Video Packet Current Configuration Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3388,6 +4803,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Vpccr {
             Vpccr(0)
+        }
+    }
+    impl core::fmt::Debug for Vpccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vpccr").field("vpsize", &self.vpsize()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vpccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vpccr {
+                vpsize: u16,
+            }
+            let proxy = Vpccr { vpsize: self.vpsize() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Video Packet Configuration Register."]
@@ -3413,6 +4844,22 @@ pub mod regs {
             Vpcr(0)
         }
     }
+    impl core::fmt::Debug for Vpcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vpcr").field("vpsize", &self.vpsize()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vpcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vpcr {
+                vpsize: u16,
+            }
+            let proxy = Vpcr { vpsize: self.vpsize() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Version Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3434,6 +4881,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Vr {
             Vr(0)
+        }
+    }
+    impl core::fmt::Debug for Vr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vr").field("version", &self.version()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vr {
+                version: u32,
+            }
+            let proxy = Vr {
+                version: self.version(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Video Shadow Control Register."]
@@ -3470,6 +4935,29 @@ pub mod regs {
             Vscr(0)
         }
     }
+    impl core::fmt::Debug for Vscr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vscr")
+                .field("en", &self.en())
+                .field("ur", &self.ur())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vscr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vscr {
+                en: bool,
+                ur: bool,
+            }
+            let proxy = Vscr {
+                en: self.en(),
+                ur: self.ur(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Video VA Current Configuration Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3491,6 +4979,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Vvaccr {
             Vvaccr(0)
+        }
+    }
+    impl core::fmt::Debug for Vvaccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vvaccr").field("va", &self.va()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vvaccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vvaccr {
+                va: u16,
+            }
+            let proxy = Vvaccr { va: self.va() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Video VA Configuration Register."]
@@ -3516,6 +5020,22 @@ pub mod regs {
             Vvacr(0)
         }
     }
+    impl core::fmt::Debug for Vvacr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vvacr").field("va", &self.va()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vvacr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vvacr {
+                va: u16,
+            }
+            let proxy = Vvacr { va: self.va() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Video VBP Current Configuration Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3537,6 +5057,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Vvbpccr {
             Vvbpccr(0)
+        }
+    }
+    impl core::fmt::Debug for Vvbpccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vvbpccr").field("vbp", &self.vbp()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vvbpccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vvbpccr {
+                vbp: u16,
+            }
+            let proxy = Vvbpccr { vbp: self.vbp() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Video VBP Configuration Register."]
@@ -3562,6 +5098,22 @@ pub mod regs {
             Vvbpcr(0)
         }
     }
+    impl core::fmt::Debug for Vvbpcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vvbpcr").field("vbp", &self.vbp()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vvbpcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vvbpcr {
+                vbp: u16,
+            }
+            let proxy = Vvbpcr { vbp: self.vbp() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Video VFP Current Configuration Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3583,6 +5135,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Vvfpccr {
             Vvfpccr(0)
+        }
+    }
+    impl core::fmt::Debug for Vvfpccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vvfpccr").field("vfp", &self.vfp()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vvfpccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vvfpccr {
+                vfp: u16,
+            }
+            let proxy = Vvfpccr { vfp: self.vfp() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Host Video VFP Configuration Register."]
@@ -3608,6 +5176,22 @@ pub mod regs {
             Vvfpcr(0)
         }
     }
+    impl core::fmt::Debug for Vvfpcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vvfpcr").field("vfp", &self.vfp()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vvfpcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vvfpcr {
+                vfp: u16,
+            }
+            let proxy = Vvfpcr { vfp: self.vfp() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Video VSA Current Configuration Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3631,6 +5215,22 @@ pub mod regs {
             Vvsaccr(0)
         }
     }
+    impl core::fmt::Debug for Vvsaccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vvsaccr").field("vsa", &self.vsa()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vvsaccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vvsaccr {
+                vsa: u16,
+            }
+            let proxy = Vvsaccr { vsa: self.vsa() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Host Video VSA Configuration Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3652,6 +5252,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Vvsacr {
             Vvsacr(0)
+        }
+    }
+    impl core::fmt::Debug for Vvsacr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vvsacr").field("vsa", &self.vsa()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vvsacr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vvsacr {
+                vsa: u16,
+            }
+            let proxy = Vvsacr { vsa: self.vsa() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Wrapper Configuration Register."]
@@ -3732,6 +5348,41 @@ pub mod regs {
             Wcfgr(0)
         }
     }
+    impl core::fmt::Debug for Wcfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wcfgr")
+                .field("dsim", &self.dsim())
+                .field("colmux", &self.colmux())
+                .field("tesrc", &self.tesrc())
+                .field("tepol", &self.tepol())
+                .field("ar", &self.ar())
+                .field("vspol", &self.vspol())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wcfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wcfgr {
+                dsim: bool,
+                colmux: u8,
+                tesrc: bool,
+                tepol: bool,
+                ar: bool,
+                vspol: bool,
+            }
+            let proxy = Wcfgr {
+                dsim: self.dsim(),
+                colmux: self.colmux(),
+                tesrc: self.tesrc(),
+                tepol: self.tepol(),
+                ar: self.ar(),
+                vspol: self.vspol(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Wrapper Control Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3786,6 +5437,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Wcr {
             Wcr(0)
+        }
+    }
+    impl core::fmt::Debug for Wcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wcr")
+                .field("colm", &self.colm())
+                .field("shtdn", &self.shtdn())
+                .field("ltdcen", &self.ltdcen())
+                .field("dsien", &self.dsien())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wcr {
+                colm: bool,
+                shtdn: bool,
+                ltdcen: bool,
+                dsien: bool,
+            }
+            let proxy = Wcr {
+                colm: self.colm(),
+                shtdn: self.shtdn(),
+                ltdcen: self.ltdcen(),
+                dsien: self.dsien(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Wrapper Interrupt Enable Register."]
@@ -3855,6 +5535,38 @@ pub mod regs {
             Wier(0)
         }
     }
+    impl core::fmt::Debug for Wier {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wier")
+                .field("teie", &self.teie())
+                .field("erie", &self.erie())
+                .field("plllie", &self.plllie())
+                .field("plluie", &self.plluie())
+                .field("rrie", &self.rrie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wier {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wier {
+                teie: bool,
+                erie: bool,
+                plllie: bool,
+                plluie: bool,
+                rrie: bool,
+            }
+            let proxy = Wier {
+                teie: self.teie(),
+                erie: self.erie(),
+                plllie: self.plllie(),
+                plluie: self.plluie(),
+                rrie: self.rrie(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Wrapper Interrupt Flag Clear Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3920,6 +5632,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Wifcr {
             Wifcr(0)
+        }
+    }
+    impl core::fmt::Debug for Wifcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wifcr")
+                .field("cteif", &self.cteif())
+                .field("cerif", &self.cerif())
+                .field("cplllif", &self.cplllif())
+                .field("cplluif", &self.cplluif())
+                .field("crrif", &self.crrif())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wifcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wifcr {
+                cteif: bool,
+                cerif: bool,
+                cplllif: bool,
+                cplluif: bool,
+                crrif: bool,
+            }
+            let proxy = Wifcr {
+                cteif: self.cteif(),
+                cerif: self.cerif(),
+                cplllif: self.cplllif(),
+                cplluif: self.cplluif(),
+                crrif: self.crrif(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Wrapper Interrupt & Status Register."]
@@ -4020,6 +5764,47 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Wisr {
             Wisr(0)
+        }
+    }
+    impl core::fmt::Debug for Wisr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wisr")
+                .field("teif", &self.teif())
+                .field("erif", &self.erif())
+                .field("busy", &self.busy())
+                .field("pllls", &self.pllls())
+                .field("plllif", &self.plllif())
+                .field("plluif", &self.plluif())
+                .field("rrs", &self.rrs())
+                .field("rrif", &self.rrif())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wisr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wisr {
+                teif: bool,
+                erif: bool,
+                busy: bool,
+                pllls: bool,
+                plllif: bool,
+                plluif: bool,
+                rrs: bool,
+                rrif: bool,
+            }
+            let proxy = Wisr {
+                teif: self.teif(),
+                erif: self.erif(),
+                busy: self.busy(),
+                pllls: self.pllls(),
+                plllif: self.plllif(),
+                plluif: self.plluif(),
+                rrs: self.rrs(),
+                rrif: self.rrif(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Wrapper PHY Configuration Register 0."]
@@ -4265,6 +6050,86 @@ pub mod regs {
             Wpcr0(0)
         }
     }
+    impl core::fmt::Debug for Wpcr0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wpcr0")
+                .field("uix4", &self.uix4())
+                .field("swcl", &self.swcl())
+                .field("swdl0", &self.swdl0())
+                .field("swdl1", &self.swdl1())
+                .field("hsicl", &self.hsicl())
+                .field("hsidl0", &self.hsidl0())
+                .field("hsidl1", &self.hsidl1())
+                .field("ftxsmcl", &self.ftxsmcl())
+                .field("ftxsmdl", &self.ftxsmdl())
+                .field("cdoffdl", &self.cdoffdl())
+                .field("tddl", &self.tddl())
+                .field("pden", &self.pden())
+                .field("tclkprepen", &self.tclkprepen())
+                .field("tclkzeroen", &self.tclkzeroen())
+                .field("thsprepen", &self.thsprepen())
+                .field("thstrailen", &self.thstrailen())
+                .field("thszeroen", &self.thszeroen())
+                .field("tlpxden", &self.tlpxden())
+                .field("thsexiten", &self.thsexiten())
+                .field("tlpxcen", &self.tlpxcen())
+                .field("tclkposten", &self.tclkposten())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wpcr0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wpcr0 {
+                uix4: u8,
+                swcl: bool,
+                swdl0: bool,
+                swdl1: bool,
+                hsicl: bool,
+                hsidl0: bool,
+                hsidl1: bool,
+                ftxsmcl: bool,
+                ftxsmdl: bool,
+                cdoffdl: bool,
+                tddl: bool,
+                pden: bool,
+                tclkprepen: bool,
+                tclkzeroen: bool,
+                thsprepen: bool,
+                thstrailen: bool,
+                thszeroen: bool,
+                tlpxden: bool,
+                thsexiten: bool,
+                tlpxcen: bool,
+                tclkposten: bool,
+            }
+            let proxy = Wpcr0 {
+                uix4: self.uix4(),
+                swcl: self.swcl(),
+                swdl0: self.swdl0(),
+                swdl1: self.swdl1(),
+                hsicl: self.hsicl(),
+                hsidl0: self.hsidl0(),
+                hsidl1: self.hsidl1(),
+                ftxsmcl: self.ftxsmcl(),
+                ftxsmdl: self.ftxsmdl(),
+                cdoffdl: self.cdoffdl(),
+                tddl: self.tddl(),
+                pden: self.pden(),
+                tclkprepen: self.tclkprepen(),
+                tclkzeroen: self.tclkzeroen(),
+                thsprepen: self.thsprepen(),
+                thstrailen: self.thstrailen(),
+                thszeroen: self.thszeroen(),
+                tlpxden: self.tlpxden(),
+                thsexiten: self.thsexiten(),
+                tlpxcen: self.tlpxcen(),
+                tclkposten: self.tclkposten(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Wrapper PHY Configuration Register 1."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4376,6 +6241,50 @@ pub mod regs {
             Wpcr1(0)
         }
     }
+    impl core::fmt::Debug for Wpcr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wpcr1")
+                .field("hstxdcl", &self.hstxdcl())
+                .field("hstxdll", &self.hstxdll())
+                .field("lpsrcl", &self.lpsrcl())
+                .field("lpsrdl", &self.lpsrdl())
+                .field("sdcc", &self.sdcc())
+                .field("hstxsrccl", &self.hstxsrccl())
+                .field("hstxsrcdl", &self.hstxsrcdl())
+                .field("flprxlpm", &self.flprxlpm())
+                .field("lprxft", &self.lprxft())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wpcr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wpcr1 {
+                hstxdcl: u8,
+                hstxdll: u8,
+                lpsrcl: u8,
+                lpsrdl: u8,
+                sdcc: bool,
+                hstxsrccl: u8,
+                hstxsrcdl: u8,
+                flprxlpm: bool,
+                lprxft: u8,
+            }
+            let proxy = Wpcr1 {
+                hstxdcl: self.hstxdcl(),
+                hstxdll: self.hstxdll(),
+                lpsrcl: self.lpsrcl(),
+                lpsrdl: self.lpsrdl(),
+                sdcc: self.sdcc(),
+                hstxsrccl: self.hstxsrccl(),
+                hstxsrcdl: self.hstxsrcdl(),
+                flprxlpm: self.flprxlpm(),
+                lprxft: self.lprxft(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Wrapper PHY Configuration Register 2."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4430,6 +6339,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Wpcr2 {
             Wpcr2(0)
+        }
+    }
+    impl core::fmt::Debug for Wpcr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wpcr2")
+                .field("tclkprep", &self.tclkprep())
+                .field("tclkzeo", &self.tclkzeo())
+                .field("thsprep", &self.thsprep())
+                .field("thstrail", &self.thstrail())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wpcr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wpcr2 {
+                tclkprep: u8,
+                tclkzeo: u8,
+                thsprep: u8,
+                thstrail: u8,
+            }
+            let proxy = Wpcr2 {
+                tclkprep: self.tclkprep(),
+                tclkzeo: self.tclkzeo(),
+                thsprep: self.thsprep(),
+                thstrail: self.thstrail(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Wrapper PHY Configuration Register 3."]
@@ -4488,6 +6426,35 @@ pub mod regs {
             Wpcr3(0)
         }
     }
+    impl core::fmt::Debug for Wpcr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wpcr3")
+                .field("thszero", &self.thszero())
+                .field("tlpxd", &self.tlpxd())
+                .field("thsexit", &self.thsexit())
+                .field("tlpxc", &self.tlpxc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wpcr3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wpcr3 {
+                thszero: u8,
+                tlpxd: u8,
+                thsexit: u8,
+                tlpxc: u8,
+            }
+            let proxy = Wpcr3 {
+                thszero: self.thszero(),
+                tlpxd: self.tlpxd(),
+                thsexit: self.thsexit(),
+                tlpxc: self.tlpxc(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DSI Wrapper PHY Configuration Register 4."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4509,6 +6476,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Wpcr4 {
             Wpcr4(0)
+        }
+    }
+    impl core::fmt::Debug for Wpcr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wpcr4").field("tclkpost", &self.tclkpost()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wpcr4 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wpcr4 {
+                tclkpost: u8,
+            }
+            let proxy = Wpcr4 {
+                tclkpost: self.tclkpost(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DSI Wrapper Regulator and PLL Control Register."]
@@ -4576,6 +6561,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Wrpcr {
             Wrpcr(0)
+        }
+    }
+    impl core::fmt::Debug for Wrpcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wrpcr")
+                .field("pllen", &self.pllen())
+                .field("ndiv", &self.ndiv())
+                .field("idf", &self.idf())
+                .field("odf", &self.odf())
+                .field("regen", &self.regen())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wrpcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wrpcr {
+                pllen: bool,
+                ndiv: u8,
+                idf: u8,
+                odf: u8,
+                regen: bool,
+            }
+            let proxy = Wrpcr {
+                pllen: self.pllen(),
+                ndiv: self.ndiv(),
+                idf: self.idf(),
+                odf: self.odf(),
+                regen: self.regen(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

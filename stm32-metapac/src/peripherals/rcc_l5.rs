@@ -310,6 +310,44 @@ pub mod regs {
             Ahb1enr(0)
         }
     }
+    impl core::fmt::Debug for Ahb1enr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ahb1enr")
+                .field("dma1en", &self.dma1en())
+                .field("dma2en", &self.dma2en())
+                .field("dmamux1en", &self.dmamux1en())
+                .field("flashen", &self.flashen())
+                .field("crcen", &self.crcen())
+                .field("tscen", &self.tscen())
+                .field("gtzcen", &self.gtzcen())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ahb1enr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ahb1enr {
+                dma1en: bool,
+                dma2en: bool,
+                dmamux1en: bool,
+                flashen: bool,
+                crcen: bool,
+                tscen: bool,
+                gtzcen: bool,
+            }
+            let proxy = Ahb1enr {
+                dma1en: self.dma1en(),
+                dma2en: self.dma2en(),
+                dmamux1en: self.dmamux1en(),
+                flashen: self.flashen(),
+                crcen: self.crcen(),
+                tscen: self.tscen(),
+                gtzcen: self.gtzcen(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "AHB1 peripheral reset register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -397,6 +435,44 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ahb1rstr {
             Ahb1rstr(0)
+        }
+    }
+    impl core::fmt::Debug for Ahb1rstr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ahb1rstr")
+                .field("dma1rst", &self.dma1rst())
+                .field("dma2rst", &self.dma2rst())
+                .field("dmamux1rst", &self.dmamux1rst())
+                .field("flashrst", &self.flashrst())
+                .field("crcrst", &self.crcrst())
+                .field("tscrst", &self.tscrst())
+                .field("gtzcrst", &self.gtzcrst())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ahb1rstr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ahb1rstr {
+                dma1rst: bool,
+                dma2rst: bool,
+                dmamux1rst: bool,
+                flashrst: bool,
+                crcrst: bool,
+                tscrst: bool,
+                gtzcrst: bool,
+            }
+            let proxy = Ahb1rstr {
+                dma1rst: self.dma1rst(),
+                dma2rst: self.dma2rst(),
+                dmamux1rst: self.dmamux1rst(),
+                flashrst: self.flashrst(),
+                crcrst: self.crcrst(),
+                tscrst: self.tscrst(),
+                gtzcrst: self.gtzcrst(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "RCC AHB1 security status register"]
@@ -510,6 +586,50 @@ pub mod regs {
             Ahb1secsr(0)
         }
     }
+    impl core::fmt::Debug for Ahb1secsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ahb1secsr")
+                .field("dma1secf", &self.dma1secf())
+                .field("dma2secf", &self.dma2secf())
+                .field("dmamux1secf", &self.dmamux1secf())
+                .field("flashsecf", &self.flashsecf())
+                .field("sram1secf", &self.sram1secf())
+                .field("crcsecf", &self.crcsecf())
+                .field("tscsecf", &self.tscsecf())
+                .field("gtzcsecf", &self.gtzcsecf())
+                .field("icachesecf", &self.icachesecf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ahb1secsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ahb1secsr {
+                dma1secf: bool,
+                dma2secf: bool,
+                dmamux1secf: bool,
+                flashsecf: bool,
+                sram1secf: bool,
+                crcsecf: bool,
+                tscsecf: bool,
+                gtzcsecf: bool,
+                icachesecf: bool,
+            }
+            let proxy = Ahb1secsr {
+                dma1secf: self.dma1secf(),
+                dma2secf: self.dma2secf(),
+                dmamux1secf: self.dmamux1secf(),
+                flashsecf: self.flashsecf(),
+                sram1secf: self.sram1secf(),
+                crcsecf: self.crcsecf(),
+                tscsecf: self.tscsecf(),
+                gtzcsecf: self.gtzcsecf(),
+                icachesecf: self.icachesecf(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "AHB1 peripheral clocks enable in Sleep and Stop modes register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -619,6 +739,50 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ahb1smenr {
             Ahb1smenr(0)
+        }
+    }
+    impl core::fmt::Debug for Ahb1smenr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ahb1smenr")
+                .field("dma1smen", &self.dma1smen())
+                .field("dma2smen", &self.dma2smen())
+                .field("dmamux1smen", &self.dmamux1smen())
+                .field("flashsmen", &self.flashsmen())
+                .field("sram1smen", &self.sram1smen())
+                .field("crcsmen", &self.crcsmen())
+                .field("tscsmen", &self.tscsmen())
+                .field("gtzcsmen", &self.gtzcsmen())
+                .field("icachesmen", &self.icachesmen())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ahb1smenr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ahb1smenr {
+                dma1smen: bool,
+                dma2smen: bool,
+                dmamux1smen: bool,
+                flashsmen: bool,
+                sram1smen: bool,
+                crcsmen: bool,
+                tscsmen: bool,
+                gtzcsmen: bool,
+                icachesmen: bool,
+            }
+            let proxy = Ahb1smenr {
+                dma1smen: self.dma1smen(),
+                dma2smen: self.dma2smen(),
+                dmamux1smen: self.dmamux1smen(),
+                flashsmen: self.flashsmen(),
+                sram1smen: self.sram1smen(),
+                crcsmen: self.crcsmen(),
+                tscsmen: self.tscsmen(),
+                gtzcsmen: self.gtzcsmen(),
+                icachesmen: self.icachesmen(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AHB2 peripheral clock enable register"]
@@ -798,6 +962,68 @@ pub mod regs {
             Ahb2enr(0)
         }
     }
+    impl core::fmt::Debug for Ahb2enr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ahb2enr")
+                .field("gpioaen", &self.gpioaen())
+                .field("gpioben", &self.gpioben())
+                .field("gpiocen", &self.gpiocen())
+                .field("gpioden", &self.gpioden())
+                .field("gpioeen", &self.gpioeen())
+                .field("gpiofen", &self.gpiofen())
+                .field("gpiogen", &self.gpiogen())
+                .field("gpiohen", &self.gpiohen())
+                .field("adcen", &self.adcen())
+                .field("aesen", &self.aesen())
+                .field("hashen", &self.hashen())
+                .field("rngen", &self.rngen())
+                .field("pkaen", &self.pkaen())
+                .field("otfdec1en", &self.otfdec1en())
+                .field("sdmmc1en", &self.sdmmc1en())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ahb2enr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ahb2enr {
+                gpioaen: bool,
+                gpioben: bool,
+                gpiocen: bool,
+                gpioden: bool,
+                gpioeen: bool,
+                gpiofen: bool,
+                gpiogen: bool,
+                gpiohen: bool,
+                adcen: bool,
+                aesen: bool,
+                hashen: bool,
+                rngen: bool,
+                pkaen: bool,
+                otfdec1en: bool,
+                sdmmc1en: bool,
+            }
+            let proxy = Ahb2enr {
+                gpioaen: self.gpioaen(),
+                gpioben: self.gpioben(),
+                gpiocen: self.gpiocen(),
+                gpioden: self.gpioden(),
+                gpioeen: self.gpioeen(),
+                gpiofen: self.gpiofen(),
+                gpiogen: self.gpiogen(),
+                gpiohen: self.gpiohen(),
+                adcen: self.adcen(),
+                aesen: self.aesen(),
+                hashen: self.hashen(),
+                rngen: self.rngen(),
+                pkaen: self.pkaen(),
+                otfdec1en: self.otfdec1en(),
+                sdmmc1en: self.sdmmc1en(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "AHB2 peripheral reset register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -975,6 +1201,68 @@ pub mod regs {
             Ahb2rstr(0)
         }
     }
+    impl core::fmt::Debug for Ahb2rstr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ahb2rstr")
+                .field("gpioarst", &self.gpioarst())
+                .field("gpiobrst", &self.gpiobrst())
+                .field("gpiocrst", &self.gpiocrst())
+                .field("gpiodrst", &self.gpiodrst())
+                .field("gpioerst", &self.gpioerst())
+                .field("gpiofrst", &self.gpiofrst())
+                .field("gpiogrst", &self.gpiogrst())
+                .field("gpiohrst", &self.gpiohrst())
+                .field("adcrst", &self.adcrst())
+                .field("aesrst", &self.aesrst())
+                .field("hashrst", &self.hashrst())
+                .field("rngrst", &self.rngrst())
+                .field("pkarst", &self.pkarst())
+                .field("otfdec1rst", &self.otfdec1rst())
+                .field("sdmmc1rst", &self.sdmmc1rst())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ahb2rstr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ahb2rstr {
+                gpioarst: bool,
+                gpiobrst: bool,
+                gpiocrst: bool,
+                gpiodrst: bool,
+                gpioerst: bool,
+                gpiofrst: bool,
+                gpiogrst: bool,
+                gpiohrst: bool,
+                adcrst: bool,
+                aesrst: bool,
+                hashrst: bool,
+                rngrst: bool,
+                pkarst: bool,
+                otfdec1rst: bool,
+                sdmmc1rst: bool,
+            }
+            let proxy = Ahb2rstr {
+                gpioarst: self.gpioarst(),
+                gpiobrst: self.gpiobrst(),
+                gpiocrst: self.gpiocrst(),
+                gpiodrst: self.gpiodrst(),
+                gpioerst: self.gpioerst(),
+                gpiofrst: self.gpiofrst(),
+                gpiogrst: self.gpiogrst(),
+                gpiohrst: self.gpiohrst(),
+                adcrst: self.adcrst(),
+                aesrst: self.aesrst(),
+                hashrst: self.hashrst(),
+                rngrst: self.rngrst(),
+                pkarst: self.pkarst(),
+                otfdec1rst: self.otfdec1rst(),
+                sdmmc1rst: self.sdmmc1rst(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "RCC AHB2 security status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1106,6 +1394,56 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ahb2secsr {
             Ahb2secsr(0)
+        }
+    }
+    impl core::fmt::Debug for Ahb2secsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ahb2secsr")
+                .field("gpioasecf", &self.gpioasecf())
+                .field("gpiobsecf", &self.gpiobsecf())
+                .field("gpiocsecf", &self.gpiocsecf())
+                .field("gpiodsecf", &self.gpiodsecf())
+                .field("gpioesecf", &self.gpioesecf())
+                .field("gpiofsecf", &self.gpiofsecf())
+                .field("gpiogsecf", &self.gpiogsecf())
+                .field("gpiohsecf", &self.gpiohsecf())
+                .field("sram2secf", &self.sram2secf())
+                .field("otfdec1secf", &self.otfdec1secf())
+                .field("sdmmc1secf", &self.sdmmc1secf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ahb2secsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ahb2secsr {
+                gpioasecf: bool,
+                gpiobsecf: bool,
+                gpiocsecf: bool,
+                gpiodsecf: bool,
+                gpioesecf: bool,
+                gpiofsecf: bool,
+                gpiogsecf: bool,
+                gpiohsecf: bool,
+                sram2secf: bool,
+                otfdec1secf: bool,
+                sdmmc1secf: bool,
+            }
+            let proxy = Ahb2secsr {
+                gpioasecf: self.gpioasecf(),
+                gpiobsecf: self.gpiobsecf(),
+                gpiocsecf: self.gpiocsecf(),
+                gpiodsecf: self.gpiodsecf(),
+                gpioesecf: self.gpioesecf(),
+                gpiofsecf: self.gpiofsecf(),
+                gpiogsecf: self.gpiogsecf(),
+                gpiohsecf: self.gpiohsecf(),
+                sram2secf: self.sram2secf(),
+                otfdec1secf: self.otfdec1secf(),
+                sdmmc1secf: self.sdmmc1secf(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AHB2 peripheral clocks enable in Sleep and Stop modes register"]
@@ -1296,6 +1634,71 @@ pub mod regs {
             Ahb2smenr(0)
         }
     }
+    impl core::fmt::Debug for Ahb2smenr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ahb2smenr")
+                .field("gpioasmen", &self.gpioasmen())
+                .field("gpiobsmen", &self.gpiobsmen())
+                .field("gpiocsmen", &self.gpiocsmen())
+                .field("gpiodsmen", &self.gpiodsmen())
+                .field("gpioesmen", &self.gpioesmen())
+                .field("gpiofsmen", &self.gpiofsmen())
+                .field("gpiogsmen", &self.gpiogsmen())
+                .field("gpiohsmen", &self.gpiohsmen())
+                .field("sram2smen", &self.sram2smen())
+                .field("adcfssmen", &self.adcfssmen())
+                .field("aessmen", &self.aessmen())
+                .field("hashsmen", &self.hashsmen())
+                .field("rngsmen", &self.rngsmen())
+                .field("pkasmen", &self.pkasmen())
+                .field("otfdec1smen", &self.otfdec1smen())
+                .field("sdmmc1smen", &self.sdmmc1smen())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ahb2smenr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ahb2smenr {
+                gpioasmen: bool,
+                gpiobsmen: bool,
+                gpiocsmen: bool,
+                gpiodsmen: bool,
+                gpioesmen: bool,
+                gpiofsmen: bool,
+                gpiogsmen: bool,
+                gpiohsmen: bool,
+                sram2smen: bool,
+                adcfssmen: bool,
+                aessmen: bool,
+                hashsmen: bool,
+                rngsmen: bool,
+                pkasmen: bool,
+                otfdec1smen: bool,
+                sdmmc1smen: bool,
+            }
+            let proxy = Ahb2smenr {
+                gpioasmen: self.gpioasmen(),
+                gpiobsmen: self.gpiobsmen(),
+                gpiocsmen: self.gpiocsmen(),
+                gpiodsmen: self.gpiodsmen(),
+                gpioesmen: self.gpioesmen(),
+                gpiofsmen: self.gpiofsmen(),
+                gpiogsmen: self.gpiogsmen(),
+                gpiohsmen: self.gpiohsmen(),
+                sram2smen: self.sram2smen(),
+                adcfssmen: self.adcfssmen(),
+                aessmen: self.aessmen(),
+                hashsmen: self.hashsmen(),
+                rngsmen: self.rngsmen(),
+                pkasmen: self.pkasmen(),
+                otfdec1smen: self.otfdec1smen(),
+                sdmmc1smen: self.sdmmc1smen(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "AHB3 peripheral clock enable register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1328,6 +1731,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ahb3enr {
             Ahb3enr(0)
+        }
+    }
+    impl core::fmt::Debug for Ahb3enr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ahb3enr")
+                .field("fmcen", &self.fmcen())
+                .field("octospi1en", &self.octospi1en())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ahb3enr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ahb3enr {
+                fmcen: bool,
+                octospi1en: bool,
+            }
+            let proxy = Ahb3enr {
+                fmcen: self.fmcen(),
+                octospi1en: self.octospi1en(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AHB3 peripheral reset register"]
@@ -1364,6 +1790,29 @@ pub mod regs {
             Ahb3rstr(0)
         }
     }
+    impl core::fmt::Debug for Ahb3rstr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ahb3rstr")
+                .field("fmcrst", &self.fmcrst())
+                .field("octospi1rst", &self.octospi1rst())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ahb3rstr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ahb3rstr {
+                fmcrst: bool,
+                octospi1rst: bool,
+            }
+            let proxy = Ahb3rstr {
+                fmcrst: self.fmcrst(),
+                octospi1rst: self.octospi1rst(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "RCC AHB3 security status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1398,6 +1847,29 @@ pub mod regs {
             Ahb3secsr(0)
         }
     }
+    impl core::fmt::Debug for Ahb3secsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ahb3secsr")
+                .field("fsmcsecf", &self.fsmcsecf())
+                .field("octospi1secf", &self.octospi1secf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ahb3secsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ahb3secsr {
+                fsmcsecf: bool,
+                octospi1secf: bool,
+            }
+            let proxy = Ahb3secsr {
+                fsmcsecf: self.fsmcsecf(),
+                octospi1secf: self.octospi1secf(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "AHB3 peripheral clocks enable in Sleep and Stop modes register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1430,6 +1902,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ahb3smenr {
             Ahb3smenr(0)
+        }
+    }
+    impl core::fmt::Debug for Ahb3smenr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ahb3smenr")
+                .field("fmcsmen", &self.fmcsmen())
+                .field("octospi1smen", &self.octospi1smen())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ahb3smenr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ahb3smenr {
+                fmcsmen: bool,
+                octospi1smen: bool,
+            }
+            let proxy = Ahb3smenr {
+                fmcsmen: self.fmcsmen(),
+                octospi1smen: self.octospi1smen(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "APB1ENR1"]
@@ -1686,6 +2181,89 @@ pub mod regs {
             Apb1enr1(0)
         }
     }
+    impl core::fmt::Debug for Apb1enr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Apb1enr1")
+                .field("tim2en", &self.tim2en())
+                .field("tim3en", &self.tim3en())
+                .field("tim4en", &self.tim4en())
+                .field("tim5en", &self.tim5en())
+                .field("tim6en", &self.tim6en())
+                .field("tim7en", &self.tim7en())
+                .field("rtcapben", &self.rtcapben())
+                .field("wwdgen", &self.wwdgen())
+                .field("spi2en", &self.spi2en())
+                .field("spi3en", &self.spi3en())
+                .field("usart2en", &self.usart2en())
+                .field("usart3en", &self.usart3en())
+                .field("uart4en", &self.uart4en())
+                .field("uart5en", &self.uart5en())
+                .field("i2c1en", &self.i2c1en())
+                .field("i2c2en", &self.i2c2en())
+                .field("i2c3en", &self.i2c3en())
+                .field("crsen", &self.crsen())
+                .field("pwren", &self.pwren())
+                .field("dac1en", &self.dac1en())
+                .field("opampen", &self.opampen())
+                .field("lptim1en", &self.lptim1en())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Apb1enr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Apb1enr1 {
+                tim2en: bool,
+                tim3en: bool,
+                tim4en: bool,
+                tim5en: bool,
+                tim6en: bool,
+                tim7en: bool,
+                rtcapben: bool,
+                wwdgen: bool,
+                spi2en: bool,
+                spi3en: bool,
+                usart2en: bool,
+                usart3en: bool,
+                uart4en: bool,
+                uart5en: bool,
+                i2c1en: bool,
+                i2c2en: bool,
+                i2c3en: bool,
+                crsen: bool,
+                pwren: bool,
+                dac1en: bool,
+                opampen: bool,
+                lptim1en: bool,
+            }
+            let proxy = Apb1enr1 {
+                tim2en: self.tim2en(),
+                tim3en: self.tim3en(),
+                tim4en: self.tim4en(),
+                tim5en: self.tim5en(),
+                tim6en: self.tim6en(),
+                tim7en: self.tim7en(),
+                rtcapben: self.rtcapben(),
+                wwdgen: self.wwdgen(),
+                spi2en: self.spi2en(),
+                spi3en: self.spi3en(),
+                usart2en: self.usart2en(),
+                usart3en: self.usart3en(),
+                uart4en: self.uart4en(),
+                uart5en: self.uart5en(),
+                i2c1en: self.i2c1en(),
+                i2c2en: self.i2c2en(),
+                i2c3en: self.i2c3en(),
+                crsen: self.crsen(),
+                pwren: self.pwren(),
+                dac1en: self.dac1en(),
+                opampen: self.opampen(),
+                lptim1en: self.lptim1en(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "APB1 peripheral clock enable register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1773,6 +2351,44 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Apb1enr2 {
             Apb1enr2(0)
+        }
+    }
+    impl core::fmt::Debug for Apb1enr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Apb1enr2")
+                .field("lpuart1en", &self.lpuart1en())
+                .field("i2c4en", &self.i2c4en())
+                .field("lptim2en", &self.lptim2en())
+                .field("lptim3en", &self.lptim3en())
+                .field("fdcan1en", &self.fdcan1en())
+                .field("usben", &self.usben())
+                .field("ucpd1en", &self.ucpd1en())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Apb1enr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Apb1enr2 {
+                lpuart1en: bool,
+                i2c4en: bool,
+                lptim2en: bool,
+                lptim3en: bool,
+                fdcan1en: bool,
+                usben: bool,
+                ucpd1en: bool,
+            }
+            let proxy = Apb1enr2 {
+                lpuart1en: self.lpuart1en(),
+                i2c4en: self.i2c4en(),
+                lptim2en: self.lptim2en(),
+                lptim3en: self.lptim3en(),
+                fdcan1en: self.fdcan1en(),
+                usben: self.usben(),
+                ucpd1en: self.ucpd1en(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "APB1 peripheral reset register 1"]
@@ -2007,6 +2623,83 @@ pub mod regs {
             Apb1rstr1(0)
         }
     }
+    impl core::fmt::Debug for Apb1rstr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Apb1rstr1")
+                .field("tim2rst", &self.tim2rst())
+                .field("tim3rst", &self.tim3rst())
+                .field("tim4rst", &self.tim4rst())
+                .field("tim5rst", &self.tim5rst())
+                .field("tim6rst", &self.tim6rst())
+                .field("tim7rst", &self.tim7rst())
+                .field("spi2rst", &self.spi2rst())
+                .field("spi3rst", &self.spi3rst())
+                .field("usart2rst", &self.usart2rst())
+                .field("usart3rst", &self.usart3rst())
+                .field("uart4rst", &self.uart4rst())
+                .field("uart5rst", &self.uart5rst())
+                .field("i2c1rst", &self.i2c1rst())
+                .field("i2c2rst", &self.i2c2rst())
+                .field("i2c3rst", &self.i2c3rst())
+                .field("crsrst", &self.crsrst())
+                .field("pwrrst", &self.pwrrst())
+                .field("dac1rst", &self.dac1rst())
+                .field("opamprst", &self.opamprst())
+                .field("lptim1rst", &self.lptim1rst())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Apb1rstr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Apb1rstr1 {
+                tim2rst: bool,
+                tim3rst: bool,
+                tim4rst: bool,
+                tim5rst: bool,
+                tim6rst: bool,
+                tim7rst: bool,
+                spi2rst: bool,
+                spi3rst: bool,
+                usart2rst: bool,
+                usart3rst: bool,
+                uart4rst: bool,
+                uart5rst: bool,
+                i2c1rst: bool,
+                i2c2rst: bool,
+                i2c3rst: bool,
+                crsrst: bool,
+                pwrrst: bool,
+                dac1rst: bool,
+                opamprst: bool,
+                lptim1rst: bool,
+            }
+            let proxy = Apb1rstr1 {
+                tim2rst: self.tim2rst(),
+                tim3rst: self.tim3rst(),
+                tim4rst: self.tim4rst(),
+                tim5rst: self.tim5rst(),
+                tim6rst: self.tim6rst(),
+                tim7rst: self.tim7rst(),
+                spi2rst: self.spi2rst(),
+                spi3rst: self.spi3rst(),
+                usart2rst: self.usart2rst(),
+                usart3rst: self.usart3rst(),
+                uart4rst: self.uart4rst(),
+                uart5rst: self.uart5rst(),
+                i2c1rst: self.i2c1rst(),
+                i2c2rst: self.i2c2rst(),
+                i2c3rst: self.i2c3rst(),
+                crsrst: self.crsrst(),
+                pwrrst: self.pwrrst(),
+                dac1rst: self.dac1rst(),
+                opamprst: self.opamprst(),
+                lptim1rst: self.lptim1rst(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "APB1 peripheral reset register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2094,6 +2787,44 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Apb1rstr2 {
             Apb1rstr2(0)
+        }
+    }
+    impl core::fmt::Debug for Apb1rstr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Apb1rstr2")
+                .field("lpuart1rst", &self.lpuart1rst())
+                .field("i2c4rst", &self.i2c4rst())
+                .field("lptim2rst", &self.lptim2rst())
+                .field("lptim3rst", &self.lptim3rst())
+                .field("fdcan1rst", &self.fdcan1rst())
+                .field("usbrst", &self.usbrst())
+                .field("ucpd1rst", &self.ucpd1rst())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Apb1rstr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Apb1rstr2 {
+                lpuart1rst: bool,
+                i2c4rst: bool,
+                lptim2rst: bool,
+                lptim3rst: bool,
+                fdcan1rst: bool,
+                usbrst: bool,
+                ucpd1rst: bool,
+            }
+            let proxy = Apb1rstr2 {
+                lpuart1rst: self.lpuart1rst(),
+                i2c4rst: self.i2c4rst(),
+                lptim2rst: self.lptim2rst(),
+                lptim3rst: self.lptim3rst(),
+                fdcan1rst: self.fdcan1rst(),
+                usbrst: self.usbrst(),
+                ucpd1rst: self.ucpd1rst(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "RCC APB1 security status register 1"]
@@ -2350,6 +3081,89 @@ pub mod regs {
             Apb1secsr1(0)
         }
     }
+    impl core::fmt::Debug for Apb1secsr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Apb1secsr1")
+                .field("tim2secf", &self.tim2secf())
+                .field("tim3secf", &self.tim3secf())
+                .field("tim4secf", &self.tim4secf())
+                .field("tim5secf", &self.tim5secf())
+                .field("tim6secf", &self.tim6secf())
+                .field("tim7secf", &self.tim7secf())
+                .field("rtcapbsecf", &self.rtcapbsecf())
+                .field("wwdgsecf", &self.wwdgsecf())
+                .field("spi2secf", &self.spi2secf())
+                .field("spi3secf", &self.spi3secf())
+                .field("uart2secf", &self.uart2secf())
+                .field("uart3secf", &self.uart3secf())
+                .field("uart4secf", &self.uart4secf())
+                .field("uart5secf", &self.uart5secf())
+                .field("i2c1secf", &self.i2c1secf())
+                .field("i2c2secf", &self.i2c2secf())
+                .field("i2c3secf", &self.i2c3secf())
+                .field("crssecf", &self.crssecf())
+                .field("pwrsecf", &self.pwrsecf())
+                .field("dacsecf", &self.dacsecf())
+                .field("opampsecf", &self.opampsecf())
+                .field("lptim1secf", &self.lptim1secf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Apb1secsr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Apb1secsr1 {
+                tim2secf: bool,
+                tim3secf: bool,
+                tim4secf: bool,
+                tim5secf: bool,
+                tim6secf: bool,
+                tim7secf: bool,
+                rtcapbsecf: bool,
+                wwdgsecf: bool,
+                spi2secf: bool,
+                spi3secf: bool,
+                uart2secf: bool,
+                uart3secf: bool,
+                uart4secf: bool,
+                uart5secf: bool,
+                i2c1secf: bool,
+                i2c2secf: bool,
+                i2c3secf: bool,
+                crssecf: bool,
+                pwrsecf: bool,
+                dacsecf: bool,
+                opampsecf: bool,
+                lptim1secf: bool,
+            }
+            let proxy = Apb1secsr1 {
+                tim2secf: self.tim2secf(),
+                tim3secf: self.tim3secf(),
+                tim4secf: self.tim4secf(),
+                tim5secf: self.tim5secf(),
+                tim6secf: self.tim6secf(),
+                tim7secf: self.tim7secf(),
+                rtcapbsecf: self.rtcapbsecf(),
+                wwdgsecf: self.wwdgsecf(),
+                spi2secf: self.spi2secf(),
+                spi3secf: self.spi3secf(),
+                uart2secf: self.uart2secf(),
+                uart3secf: self.uart3secf(),
+                uart4secf: self.uart4secf(),
+                uart5secf: self.uart5secf(),
+                i2c1secf: self.i2c1secf(),
+                i2c2secf: self.i2c2secf(),
+                i2c3secf: self.i2c3secf(),
+                crssecf: self.crssecf(),
+                pwrsecf: self.pwrsecf(),
+                dacsecf: self.dacsecf(),
+                opampsecf: self.opampsecf(),
+                lptim1secf: self.lptim1secf(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "RCC APB1 security status register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2437,6 +3251,44 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Apb1secsr2 {
             Apb1secsr2(0)
+        }
+    }
+    impl core::fmt::Debug for Apb1secsr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Apb1secsr2")
+                .field("lpuart1secf", &self.lpuart1secf())
+                .field("i2c4secf", &self.i2c4secf())
+                .field("lptim2secf", &self.lptim2secf())
+                .field("lptim3secf", &self.lptim3secf())
+                .field("fdcan1secf", &self.fdcan1secf())
+                .field("usbsecf", &self.usbsecf())
+                .field("ucpd1secf", &self.ucpd1secf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Apb1secsr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Apb1secsr2 {
+                lpuart1secf: bool,
+                i2c4secf: bool,
+                lptim2secf: bool,
+                lptim3secf: bool,
+                fdcan1secf: bool,
+                usbsecf: bool,
+                ucpd1secf: bool,
+            }
+            let proxy = Apb1secsr2 {
+                lpuart1secf: self.lpuart1secf(),
+                i2c4secf: self.i2c4secf(),
+                lptim2secf: self.lptim2secf(),
+                lptim3secf: self.lptim3secf(),
+                fdcan1secf: self.fdcan1secf(),
+                usbsecf: self.usbsecf(),
+                ucpd1secf: self.ucpd1secf(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "APB1SMENR1"]
@@ -2693,6 +3545,89 @@ pub mod regs {
             Apb1smenr1(0)
         }
     }
+    impl core::fmt::Debug for Apb1smenr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Apb1smenr1")
+                .field("tim2smen", &self.tim2smen())
+                .field("tim3smen", &self.tim3smen())
+                .field("tim4smen", &self.tim4smen())
+                .field("tim5smen", &self.tim5smen())
+                .field("tim6smen", &self.tim6smen())
+                .field("tim7smen", &self.tim7smen())
+                .field("rtcapbsmen", &self.rtcapbsmen())
+                .field("wwdgsmen", &self.wwdgsmen())
+                .field("spi2smen", &self.spi2smen())
+                .field("sp3smen", &self.sp3smen())
+                .field("usart2smen", &self.usart2smen())
+                .field("usart3smen", &self.usart3smen())
+                .field("uart4smen", &self.uart4smen())
+                .field("uart5smen", &self.uart5smen())
+                .field("i2c1smen", &self.i2c1smen())
+                .field("i2c2smen", &self.i2c2smen())
+                .field("i2c3smen", &self.i2c3smen())
+                .field("crssmen", &self.crssmen())
+                .field("pwrsmen", &self.pwrsmen())
+                .field("dac1smen", &self.dac1smen())
+                .field("opampsmen", &self.opampsmen())
+                .field("lptim1smen", &self.lptim1smen())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Apb1smenr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Apb1smenr1 {
+                tim2smen: bool,
+                tim3smen: bool,
+                tim4smen: bool,
+                tim5smen: bool,
+                tim6smen: bool,
+                tim7smen: bool,
+                rtcapbsmen: bool,
+                wwdgsmen: bool,
+                spi2smen: bool,
+                sp3smen: bool,
+                usart2smen: bool,
+                usart3smen: bool,
+                uart4smen: bool,
+                uart5smen: bool,
+                i2c1smen: bool,
+                i2c2smen: bool,
+                i2c3smen: bool,
+                crssmen: bool,
+                pwrsmen: bool,
+                dac1smen: bool,
+                opampsmen: bool,
+                lptim1smen: bool,
+            }
+            let proxy = Apb1smenr1 {
+                tim2smen: self.tim2smen(),
+                tim3smen: self.tim3smen(),
+                tim4smen: self.tim4smen(),
+                tim5smen: self.tim5smen(),
+                tim6smen: self.tim6smen(),
+                tim7smen: self.tim7smen(),
+                rtcapbsmen: self.rtcapbsmen(),
+                wwdgsmen: self.wwdgsmen(),
+                spi2smen: self.spi2smen(),
+                sp3smen: self.sp3smen(),
+                usart2smen: self.usart2smen(),
+                usart3smen: self.usart3smen(),
+                uart4smen: self.uart4smen(),
+                uart5smen: self.uart5smen(),
+                i2c1smen: self.i2c1smen(),
+                i2c2smen: self.i2c2smen(),
+                i2c3smen: self.i2c3smen(),
+                crssmen: self.crssmen(),
+                pwrsmen: self.pwrsmen(),
+                dac1smen: self.dac1smen(),
+                opampsmen: self.opampsmen(),
+                lptim1smen: self.lptim1smen(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "APB1 peripheral clocks enable in Sleep and Stop modes register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2780,6 +3715,44 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Apb1smenr2 {
             Apb1smenr2(0)
+        }
+    }
+    impl core::fmt::Debug for Apb1smenr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Apb1smenr2")
+                .field("lpuart1smen", &self.lpuart1smen())
+                .field("i2c4smen", &self.i2c4smen())
+                .field("lptim2smen", &self.lptim2smen())
+                .field("lptim3smen", &self.lptim3smen())
+                .field("fdcan1smen", &self.fdcan1smen())
+                .field("usbsmen", &self.usbsmen())
+                .field("ucpd1smen", &self.ucpd1smen())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Apb1smenr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Apb1smenr2 {
+                lpuart1smen: bool,
+                i2c4smen: bool,
+                lptim2smen: bool,
+                lptim3smen: bool,
+                fdcan1smen: bool,
+                usbsmen: bool,
+                ucpd1smen: bool,
+            }
+            let proxy = Apb1smenr2 {
+                lpuart1smen: self.lpuart1smen(),
+                i2c4smen: self.i2c4smen(),
+                lptim2smen: self.lptim2smen(),
+                lptim3smen: self.lptim3smen(),
+                fdcan1smen: self.fdcan1smen(),
+                usbsmen: self.usbsmen(),
+                ucpd1smen: self.ucpd1smen(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "APB2ENR"]
@@ -2915,6 +3888,56 @@ pub mod regs {
             Apb2enr(0)
         }
     }
+    impl core::fmt::Debug for Apb2enr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Apb2enr")
+                .field("syscfgen", &self.syscfgen())
+                .field("tim1en", &self.tim1en())
+                .field("spi1en", &self.spi1en())
+                .field("tim8en", &self.tim8en())
+                .field("usart1en", &self.usart1en())
+                .field("tim15en", &self.tim15en())
+                .field("tim16en", &self.tim16en())
+                .field("tim17en", &self.tim17en())
+                .field("sai1en", &self.sai1en())
+                .field("sai2en", &self.sai2en())
+                .field("dfsdm1en", &self.dfsdm1en())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Apb2enr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Apb2enr {
+                syscfgen: bool,
+                tim1en: bool,
+                spi1en: bool,
+                tim8en: bool,
+                usart1en: bool,
+                tim15en: bool,
+                tim16en: bool,
+                tim17en: bool,
+                sai1en: bool,
+                sai2en: bool,
+                dfsdm1en: bool,
+            }
+            let proxy = Apb2enr {
+                syscfgen: self.syscfgen(),
+                tim1en: self.tim1en(),
+                spi1en: self.spi1en(),
+                tim8en: self.tim8en(),
+                usart1en: self.usart1en(),
+                tim15en: self.tim15en(),
+                tim16en: self.tim16en(),
+                tim17en: self.tim17en(),
+                sai1en: self.sai1en(),
+                sai2en: self.sai2en(),
+                dfsdm1en: self.dfsdm1en(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "APB2 peripheral reset register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3046,6 +4069,56 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Apb2rstr {
             Apb2rstr(0)
+        }
+    }
+    impl core::fmt::Debug for Apb2rstr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Apb2rstr")
+                .field("syscfgrst", &self.syscfgrst())
+                .field("tim1rst", &self.tim1rst())
+                .field("spi1rst", &self.spi1rst())
+                .field("tim8rst", &self.tim8rst())
+                .field("usart1rst", &self.usart1rst())
+                .field("tim15rst", &self.tim15rst())
+                .field("tim16rst", &self.tim16rst())
+                .field("tim17rst", &self.tim17rst())
+                .field("sai1rst", &self.sai1rst())
+                .field("sai2rst", &self.sai2rst())
+                .field("dfsdm1rst", &self.dfsdm1rst())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Apb2rstr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Apb2rstr {
+                syscfgrst: bool,
+                tim1rst: bool,
+                spi1rst: bool,
+                tim8rst: bool,
+                usart1rst: bool,
+                tim15rst: bool,
+                tim16rst: bool,
+                tim17rst: bool,
+                sai1rst: bool,
+                sai2rst: bool,
+                dfsdm1rst: bool,
+            }
+            let proxy = Apb2rstr {
+                syscfgrst: self.syscfgrst(),
+                tim1rst: self.tim1rst(),
+                spi1rst: self.spi1rst(),
+                tim8rst: self.tim8rst(),
+                usart1rst: self.usart1rst(),
+                tim15rst: self.tim15rst(),
+                tim16rst: self.tim16rst(),
+                tim17rst: self.tim17rst(),
+                sai1rst: self.sai1rst(),
+                sai2rst: self.sai2rst(),
+                dfsdm1rst: self.dfsdm1rst(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "RCC APB2 security status register"]
@@ -3181,6 +4254,56 @@ pub mod regs {
             Apb2secsr(0)
         }
     }
+    impl core::fmt::Debug for Apb2secsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Apb2secsr")
+                .field("syscfgsecf", &self.syscfgsecf())
+                .field("tim1secf", &self.tim1secf())
+                .field("spi1secf", &self.spi1secf())
+                .field("tim8secf", &self.tim8secf())
+                .field("usart1secf", &self.usart1secf())
+                .field("tim15secf", &self.tim15secf())
+                .field("tim16secf", &self.tim16secf())
+                .field("tim17secf", &self.tim17secf())
+                .field("sai1secf", &self.sai1secf())
+                .field("sai2secf", &self.sai2secf())
+                .field("dfsdm1secf", &self.dfsdm1secf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Apb2secsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Apb2secsr {
+                syscfgsecf: bool,
+                tim1secf: bool,
+                spi1secf: bool,
+                tim8secf: bool,
+                usart1secf: bool,
+                tim15secf: bool,
+                tim16secf: bool,
+                tim17secf: bool,
+                sai1secf: bool,
+                sai2secf: bool,
+                dfsdm1secf: bool,
+            }
+            let proxy = Apb2secsr {
+                syscfgsecf: self.syscfgsecf(),
+                tim1secf: self.tim1secf(),
+                spi1secf: self.spi1secf(),
+                tim8secf: self.tim8secf(),
+                usart1secf: self.usart1secf(),
+                tim15secf: self.tim15secf(),
+                tim16secf: self.tim16secf(),
+                tim17secf: self.tim17secf(),
+                sai1secf: self.sai1secf(),
+                sai2secf: self.sai2secf(),
+                dfsdm1secf: self.dfsdm1secf(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "APB2SMENR"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3312,6 +4435,56 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Apb2smenr {
             Apb2smenr(0)
+        }
+    }
+    impl core::fmt::Debug for Apb2smenr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Apb2smenr")
+                .field("syscfgsmen", &self.syscfgsmen())
+                .field("tim1smen", &self.tim1smen())
+                .field("spi1smen", &self.spi1smen())
+                .field("tim8smen", &self.tim8smen())
+                .field("usart1smen", &self.usart1smen())
+                .field("tim15smen", &self.tim15smen())
+                .field("tim16smen", &self.tim16smen())
+                .field("tim17smen", &self.tim17smen())
+                .field("sai1smen", &self.sai1smen())
+                .field("sai2smen", &self.sai2smen())
+                .field("dfsdm1smen", &self.dfsdm1smen())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Apb2smenr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Apb2smenr {
+                syscfgsmen: bool,
+                tim1smen: bool,
+                spi1smen: bool,
+                tim8smen: bool,
+                usart1smen: bool,
+                tim15smen: bool,
+                tim16smen: bool,
+                tim17smen: bool,
+                sai1smen: bool,
+                sai2smen: bool,
+                dfsdm1smen: bool,
+            }
+            let proxy = Apb2smenr {
+                syscfgsmen: self.syscfgsmen(),
+                tim1smen: self.tim1smen(),
+                spi1smen: self.spi1smen(),
+                tim8smen: self.tim8smen(),
+                usart1smen: self.usart1smen(),
+                tim15smen: self.tim15smen(),
+                tim16smen: self.tim16smen(),
+                tim17smen: self.tim17smen(),
+                sai1smen: self.sai1smen(),
+                sai2smen: self.sai2smen(),
+                dfsdm1smen: self.dfsdm1smen(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "BDCR"]
@@ -3467,6 +4640,62 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Bdcr {
             Bdcr(0)
+        }
+    }
+    impl core::fmt::Debug for Bdcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bdcr")
+                .field("lseon", &self.lseon())
+                .field("lserdy", &self.lserdy())
+                .field("lsebyp", &self.lsebyp())
+                .field("lsedrv", &self.lsedrv())
+                .field("lsecsson", &self.lsecsson())
+                .field("lsecssd", &self.lsecssd())
+                .field("lsesysen", &self.lsesysen())
+                .field("rtcsel", &self.rtcsel())
+                .field("lsesysrdy", &self.lsesysrdy())
+                .field("rtcen", &self.rtcen())
+                .field("bdrst", &self.bdrst())
+                .field("lscoen", &self.lscoen())
+                .field("lscosel", &self.lscosel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bdcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Bdcr {
+                lseon: bool,
+                lserdy: bool,
+                lsebyp: bool,
+                lsedrv: super::vals::Lsedrv,
+                lsecsson: bool,
+                lsecssd: bool,
+                lsesysen: bool,
+                rtcsel: super::vals::Rtcsel,
+                lsesysrdy: bool,
+                rtcen: bool,
+                bdrst: bool,
+                lscoen: bool,
+                lscosel: super::vals::Lscosel,
+            }
+            let proxy = Bdcr {
+                lseon: self.lseon(),
+                lserdy: self.lserdy(),
+                lsebyp: self.lsebyp(),
+                lsedrv: self.lsedrv(),
+                lsecsson: self.lsecsson(),
+                lsecssd: self.lsecssd(),
+                lsesysen: self.lsesysen(),
+                rtcsel: self.rtcsel(),
+                lsesysrdy: self.lsesysrdy(),
+                rtcen: self.rtcen(),
+                bdrst: self.bdrst(),
+                lscoen: self.lscoen(),
+                lscosel: self.lscosel(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CCIPR"]
@@ -3646,6 +4875,68 @@ pub mod regs {
             Ccipr(0)
         }
     }
+    impl core::fmt::Debug for Ccipr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ccipr")
+                .field("usart1sel", &self.usart1sel())
+                .field("usart2sel", &self.usart2sel())
+                .field("usart3sel", &self.usart3sel())
+                .field("uart4sel", &self.uart4sel())
+                .field("uart5sel", &self.uart5sel())
+                .field("lpuart1sel", &self.lpuart1sel())
+                .field("i2c1sel", &self.i2c1sel())
+                .field("i2c2sel", &self.i2c2sel())
+                .field("i2c3sel", &self.i2c3sel())
+                .field("lptim1sel", &self.lptim1sel())
+                .field("lptim2sel", &self.lptim2sel())
+                .field("lptim3sel", &self.lptim3sel())
+                .field("fdcansel", &self.fdcansel())
+                .field("clk48sel", &self.clk48sel())
+                .field("adcsel", &self.adcsel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ccipr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ccipr {
+                usart1sel: u8,
+                usart2sel: u8,
+                usart3sel: u8,
+                uart4sel: u8,
+                uart5sel: u8,
+                lpuart1sel: u8,
+                i2c1sel: u8,
+                i2c2sel: u8,
+                i2c3sel: u8,
+                lptim1sel: u8,
+                lptim2sel: u8,
+                lptim3sel: u8,
+                fdcansel: super::vals::Fdcansel,
+                clk48sel: super::vals::Clk48sel,
+                adcsel: super::vals::Adcsel,
+            }
+            let proxy = Ccipr {
+                usart1sel: self.usart1sel(),
+                usart2sel: self.usart2sel(),
+                usart3sel: self.usart3sel(),
+                uart4sel: self.uart4sel(),
+                uart5sel: self.uart5sel(),
+                lpuart1sel: self.lpuart1sel(),
+                i2c1sel: self.i2c1sel(),
+                i2c2sel: self.i2c2sel(),
+                i2c3sel: self.i2c3sel(),
+                lptim1sel: self.lptim1sel(),
+                lptim2sel: self.lptim2sel(),
+                lptim3sel: self.lptim3sel(),
+                fdcansel: self.fdcansel(),
+                clk48sel: self.clk48sel(),
+                adcsel: self.adcsel(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Peripherals independent clock configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3733,6 +5024,44 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ccipr2 {
             Ccipr2(0)
+        }
+    }
+    impl core::fmt::Debug for Ccipr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ccipr2")
+                .field("i2c4sel", &self.i2c4sel())
+                .field("dfsdmsel", &self.dfsdmsel())
+                .field("adfsdmsel", &self.adfsdmsel())
+                .field("sai1sel", &self.sai1sel())
+                .field("sai2sel", &self.sai2sel())
+                .field("sdmmcsel", &self.sdmmcsel())
+                .field("octospisel", &self.octospisel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ccipr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ccipr2 {
+                i2c4sel: u8,
+                dfsdmsel: bool,
+                adfsdmsel: u8,
+                sai1sel: u8,
+                sai2sel: u8,
+                sdmmcsel: bool,
+                octospisel: u8,
+            }
+            let proxy = Ccipr2 {
+                i2c4sel: self.i2c4sel(),
+                dfsdmsel: self.dfsdmsel(),
+                adfsdmsel: self.adfsdmsel(),
+                sai1sel: self.sai1sel(),
+                sai2sel: self.sai2sel(),
+                sdmmcsel: self.sdmmcsel(),
+                octospisel: self.octospisel(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Clock configuration register"]
@@ -3833,6 +5162,47 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cfgr {
             Cfgr(0)
+        }
+    }
+    impl core::fmt::Debug for Cfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr")
+                .field("sw", &self.sw())
+                .field("sws", &self.sws())
+                .field("hpre", &self.hpre())
+                .field("ppre1", &self.ppre1())
+                .field("ppre2", &self.ppre2())
+                .field("stopwuck", &self.stopwuck())
+                .field("mcosel", &self.mcosel())
+                .field("mcopre", &self.mcopre())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr {
+                sw: super::vals::Sw,
+                sws: super::vals::Sw,
+                hpre: super::vals::Hpre,
+                ppre1: super::vals::Ppre,
+                ppre2: super::vals::Ppre,
+                stopwuck: super::vals::Stopwuck,
+                mcosel: super::vals::Mcosel,
+                mcopre: super::vals::Mcopre,
+            }
+            let proxy = Cfgr {
+                sw: self.sw(),
+                sws: self.sws(),
+                hpre: self.hpre(),
+                ppre1: self.ppre1(),
+                ppre2: self.ppre2(),
+                stopwuck: self.stopwuck(),
+                mcosel: self.mcosel(),
+                mcopre: self.mcopre(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Clock interrupt clear register"]
@@ -3968,6 +5338,56 @@ pub mod regs {
             Cicr(0)
         }
     }
+    impl core::fmt::Debug for Cicr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cicr")
+                .field("lsirdyc", &self.lsirdyc())
+                .field("lserdyc", &self.lserdyc())
+                .field("msirdyc", &self.msirdyc())
+                .field("hsirdyc", &self.hsirdyc())
+                .field("hserdyc", &self.hserdyc())
+                .field("pllrdyc", &self.pllrdyc())
+                .field("pllsai1rdyc", &self.pllsai1rdyc())
+                .field("pllsai2rdyc", &self.pllsai2rdyc())
+                .field("cssc", &self.cssc())
+                .field("lsecssc", &self.lsecssc())
+                .field("hsi48rdyc", &self.hsi48rdyc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cicr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cicr {
+                lsirdyc: bool,
+                lserdyc: bool,
+                msirdyc: bool,
+                hsirdyc: bool,
+                hserdyc: bool,
+                pllrdyc: bool,
+                pllsai1rdyc: bool,
+                pllsai2rdyc: bool,
+                cssc: bool,
+                lsecssc: bool,
+                hsi48rdyc: bool,
+            }
+            let proxy = Cicr {
+                lsirdyc: self.lsirdyc(),
+                lserdyc: self.lserdyc(),
+                msirdyc: self.msirdyc(),
+                hsirdyc: self.hsirdyc(),
+                hserdyc: self.hserdyc(),
+                pllrdyc: self.pllrdyc(),
+                pllsai1rdyc: self.pllsai1rdyc(),
+                pllsai2rdyc: self.pllsai2rdyc(),
+                cssc: self.cssc(),
+                lsecssc: self.lsecssc(),
+                hsi48rdyc: self.hsi48rdyc(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Clock interrupt enable register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4088,6 +5508,53 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cier {
             Cier(0)
+        }
+    }
+    impl core::fmt::Debug for Cier {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cier")
+                .field("lsirdyie", &self.lsirdyie())
+                .field("lserdyie", &self.lserdyie())
+                .field("msirdyie", &self.msirdyie())
+                .field("hsirdyie", &self.hsirdyie())
+                .field("hserdyie", &self.hserdyie())
+                .field("pllrdyie", &self.pllrdyie())
+                .field("pllsai1rdyie", &self.pllsai1rdyie())
+                .field("pllsai2rdyie", &self.pllsai2rdyie())
+                .field("lsecssie", &self.lsecssie())
+                .field("hsi48rdyie", &self.hsi48rdyie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cier {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cier {
+                lsirdyie: bool,
+                lserdyie: bool,
+                msirdyie: bool,
+                hsirdyie: bool,
+                hserdyie: bool,
+                pllrdyie: bool,
+                pllsai1rdyie: bool,
+                pllsai2rdyie: bool,
+                lsecssie: bool,
+                hsi48rdyie: bool,
+            }
+            let proxy = Cier {
+                lsirdyie: self.lsirdyie(),
+                lserdyie: self.lserdyie(),
+                msirdyie: self.msirdyie(),
+                hsirdyie: self.hsirdyie(),
+                hserdyie: self.hserdyie(),
+                pllrdyie: self.pllrdyie(),
+                pllsai1rdyie: self.pllsai1rdyie(),
+                pllsai2rdyie: self.pllsai2rdyie(),
+                lsecssie: self.lsecssie(),
+                hsi48rdyie: self.hsi48rdyie(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Clock interrupt flag register"]
@@ -4221,6 +5688,56 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cifr {
             Cifr(0)
+        }
+    }
+    impl core::fmt::Debug for Cifr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cifr")
+                .field("lsirdyf", &self.lsirdyf())
+                .field("lserdyf", &self.lserdyf())
+                .field("msirdyf", &self.msirdyf())
+                .field("hsirdyf", &self.hsirdyf())
+                .field("hserdyf", &self.hserdyf())
+                .field("pllrdyf", &self.pllrdyf())
+                .field("pllsai1rdyf", &self.pllsai1rdyf())
+                .field("pllsai2rdyf", &self.pllsai2rdyf())
+                .field("cssf", &self.cssf())
+                .field("lsecssf", &self.lsecssf())
+                .field("hsi48rdyf", &self.hsi48rdyf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cifr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cifr {
+                lsirdyf: bool,
+                lserdyf: bool,
+                msirdyf: bool,
+                hsirdyf: bool,
+                hserdyf: bool,
+                pllrdyf: bool,
+                pllsai1rdyf: bool,
+                pllsai2rdyf: bool,
+                cssf: bool,
+                lsecssf: bool,
+                hsi48rdyf: bool,
+            }
+            let proxy = Cifr {
+                lsirdyf: self.lsirdyf(),
+                lserdyf: self.lserdyf(),
+                msirdyf: self.msirdyf(),
+                hsirdyf: self.hsirdyf(),
+                hserdyf: self.hserdyf(),
+                pllrdyf: self.pllrdyf(),
+                pllsai1rdyf: self.pllsai1rdyf(),
+                pllsai2rdyf: self.pllsai2rdyf(),
+                cssf: self.cssf(),
+                lsecssf: self.lsecssf(),
+                hsi48rdyf: self.hsi48rdyf(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Clock control register"]
@@ -4455,6 +5972,83 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("msion", &self.msion())
+                .field("msirdy", &self.msirdy())
+                .field("msipllen", &self.msipllen())
+                .field("msirgsel", &self.msirgsel())
+                .field("msirange", &self.msirange())
+                .field("hsion", &self.hsion())
+                .field("hsikeron", &self.hsikeron())
+                .field("hsirdy", &self.hsirdy())
+                .field("hsiasfs", &self.hsiasfs())
+                .field("hseon", &self.hseon())
+                .field("hserdy", &self.hserdy())
+                .field("hsebyp", &self.hsebyp())
+                .field("csson", &self.csson())
+                .field("pllon", &self.pllon())
+                .field("pllrdy", &self.pllrdy())
+                .field("pllsai1on", &self.pllsai1on())
+                .field("pllsai1rdy", &self.pllsai1rdy())
+                .field("pllsai2on", &self.pllsai2on())
+                .field("pllsai2rdy", &self.pllsai2rdy())
+                .field("priv_", &self.priv_())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                msion: bool,
+                msirdy: bool,
+                msipllen: bool,
+                msirgsel: super::vals::Msirgsel,
+                msirange: super::vals::Msirange,
+                hsion: bool,
+                hsikeron: bool,
+                hsirdy: bool,
+                hsiasfs: bool,
+                hseon: bool,
+                hserdy: bool,
+                hsebyp: bool,
+                csson: bool,
+                pllon: bool,
+                pllrdy: bool,
+                pllsai1on: bool,
+                pllsai1rdy: bool,
+                pllsai2on: bool,
+                pllsai2rdy: bool,
+                priv_: bool,
+            }
+            let proxy = Cr {
+                msion: self.msion(),
+                msirdy: self.msirdy(),
+                msipllen: self.msipllen(),
+                msirgsel: self.msirgsel(),
+                msirange: self.msirange(),
+                hsion: self.hsion(),
+                hsikeron: self.hsikeron(),
+                hsirdy: self.hsirdy(),
+                hsiasfs: self.hsiasfs(),
+                hseon: self.hseon(),
+                hserdy: self.hserdy(),
+                hsebyp: self.hsebyp(),
+                csson: self.csson(),
+                pllon: self.pllon(),
+                pllrdy: self.pllrdy(),
+                pllsai1on: self.pllsai1on(),
+                pllsai1rdy: self.pllsai1rdy(),
+                pllsai2on: self.pllsai2on(),
+                pllsai2rdy: self.pllsai2rdy(),
+                priv_: self.priv_(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Clock recovery RC register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4498,6 +6092,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Crrcr {
             Crrcr(0)
+        }
+    }
+    impl core::fmt::Debug for Crrcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Crrcr")
+                .field("hsi48on", &self.hsi48on())
+                .field("hsi48rdy", &self.hsi48rdy())
+                .field("hsi48cal", &self.hsi48cal())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Crrcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Crrcr {
+                hsi48on: bool,
+                hsi48rdy: bool,
+                hsi48cal: u16,
+            }
+            let proxy = Crrcr {
+                hsi48on: self.hsi48on(),
+                hsi48rdy: self.hsi48rdy(),
+                hsi48cal: self.hsi48cal(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CSR"]
@@ -4644,6 +6264,59 @@ pub mod regs {
             Csr(0)
         }
     }
+    impl core::fmt::Debug for Csr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Csr")
+                .field("lsion", &self.lsion())
+                .field("lsirdy", &self.lsirdy())
+                .field("lsiprediv", &self.lsiprediv())
+                .field("msisrange", &self.msisrange())
+                .field("rmvf", &self.rmvf())
+                .field("oblrstf", &self.oblrstf())
+                .field("pinrstf", &self.pinrstf())
+                .field("borrstf", &self.borrstf())
+                .field("sftrstf", &self.sftrstf())
+                .field("iwdgrstf", &self.iwdgrstf())
+                .field("wwdgrstf", &self.wwdgrstf())
+                .field("lpwrrstf", &self.lpwrrstf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Csr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Csr {
+                lsion: bool,
+                lsirdy: bool,
+                lsiprediv: bool,
+                msisrange: u8,
+                rmvf: bool,
+                oblrstf: bool,
+                pinrstf: bool,
+                borrstf: bool,
+                sftrstf: bool,
+                iwdgrstf: bool,
+                wwdgrstf: bool,
+                lpwrrstf: bool,
+            }
+            let proxy = Csr {
+                lsion: self.lsion(),
+                lsirdy: self.lsirdy(),
+                lsiprediv: self.lsiprediv(),
+                msisrange: self.msisrange(),
+                rmvf: self.rmvf(),
+                oblrstf: self.oblrstf(),
+                pinrstf: self.pinrstf(),
+                borrstf: self.borrstf(),
+                sftrstf: self.sftrstf(),
+                iwdgrstf: self.iwdgrstf(),
+                wwdgrstf: self.wwdgrstf(),
+                lpwrrstf: self.lpwrrstf(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Internal clock sources calibration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4698,6 +6371,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Icscr {
             Icscr(0)
+        }
+    }
+    impl core::fmt::Debug for Icscr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Icscr")
+                .field("msical", &self.msical())
+                .field("msitrim", &self.msitrim())
+                .field("hsical", &self.hsical())
+                .field("hsitrim", &self.hsitrim())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Icscr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Icscr {
+                msical: u8,
+                msitrim: u8,
+                hsical: u8,
+                hsitrim: u8,
+            }
+            let proxy = Icscr {
+                msical: self.msical(),
+                msitrim: self.msitrim(),
+                hsical: self.hsical(),
+                hsitrim: self.hsitrim(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PLL configuration register"]
@@ -4820,6 +6522,53 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Pllcfgr {
             Pllcfgr(0)
+        }
+    }
+    impl core::fmt::Debug for Pllcfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pllcfgr")
+                .field("pllsrc", &self.pllsrc())
+                .field("pllm", &self.pllm())
+                .field("plln", &self.plln())
+                .field("pllpen", &self.pllpen())
+                .field("pllpbit", &self.pllpbit())
+                .field("pllqen", &self.pllqen())
+                .field("pllq", &self.pllq())
+                .field("pllren", &self.pllren())
+                .field("pllr", &self.pllr())
+                .field("pllp", &self.pllp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pllcfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pllcfgr {
+                pllsrc: super::vals::Pllsrc,
+                pllm: super::vals::Pllm,
+                plln: super::vals::Plln,
+                pllpen: bool,
+                pllpbit: super::vals::Pllpbit,
+                pllqen: bool,
+                pllq: super::vals::Pllq,
+                pllren: bool,
+                pllr: super::vals::Pllr,
+                pllp: super::vals::Pllp,
+            }
+            let proxy = Pllcfgr {
+                pllsrc: self.pllsrc(),
+                pllm: self.pllm(),
+                plln: self.plln(),
+                pllpen: self.pllpen(),
+                pllpbit: self.pllpbit(),
+                pllqen: self.pllqen(),
+                pllq: self.pllq(),
+                pllren: self.pllren(),
+                pllr: self.pllr(),
+                pllp: self.pllp(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "RCC secure configuration register"]
@@ -4977,6 +6726,62 @@ pub mod regs {
             Seccfgr(0)
         }
     }
+    impl core::fmt::Debug for Seccfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Seccfgr")
+                .field("hsisec", &self.hsisec())
+                .field("hsesec", &self.hsesec())
+                .field("msisec", &self.msisec())
+                .field("lsisec", &self.lsisec())
+                .field("lsesec", &self.lsesec())
+                .field("sysclksec", &self.sysclksec())
+                .field("prescsec", &self.prescsec())
+                .field("pllsec", &self.pllsec())
+                .field("pllsai1sec", &self.pllsai1sec())
+                .field("pllsai2sec", &self.pllsai2sec())
+                .field("clk48sec", &self.clk48sec())
+                .field("hsi48sec", &self.hsi48sec())
+                .field("rmvfsec", &self.rmvfsec())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Seccfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Seccfgr {
+                hsisec: bool,
+                hsesec: bool,
+                msisec: bool,
+                lsisec: bool,
+                lsesec: bool,
+                sysclksec: bool,
+                prescsec: bool,
+                pllsec: bool,
+                pllsai1sec: bool,
+                pllsai2sec: bool,
+                clk48sec: bool,
+                hsi48sec: bool,
+                rmvfsec: bool,
+            }
+            let proxy = Seccfgr {
+                hsisec: self.hsisec(),
+                hsesec: self.hsesec(),
+                msisec: self.msisec(),
+                lsisec: self.lsisec(),
+                lsesec: self.lsesec(),
+                sysclksec: self.sysclksec(),
+                prescsec: self.prescsec(),
+                pllsec: self.pllsec(),
+                pllsai1sec: self.pllsai1sec(),
+                pllsai2sec: self.pllsai2sec(),
+                clk48sec: self.clk48sec(),
+                hsi48sec: self.hsi48sec(),
+                rmvfsec: self.rmvfsec(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "RCC secure status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5132,10 +6937,67 @@ pub mod regs {
             Secsr(0)
         }
     }
+    impl core::fmt::Debug for Secsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Secsr")
+                .field("hsisecf", &self.hsisecf())
+                .field("hsesecf", &self.hsesecf())
+                .field("msisecf", &self.msisecf())
+                .field("lsisecf", &self.lsisecf())
+                .field("lsesecf", &self.lsesecf())
+                .field("sysclksecf", &self.sysclksecf())
+                .field("prescsecf", &self.prescsecf())
+                .field("pllsecf", &self.pllsecf())
+                .field("pllsai1secf", &self.pllsai1secf())
+                .field("pllsai2secf", &self.pllsai2secf())
+                .field("clk48secf", &self.clk48secf())
+                .field("hsi48secf", &self.hsi48secf())
+                .field("rmvfsecf", &self.rmvfsecf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Secsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Secsr {
+                hsisecf: bool,
+                hsesecf: bool,
+                msisecf: bool,
+                lsisecf: bool,
+                lsesecf: bool,
+                sysclksecf: bool,
+                prescsecf: bool,
+                pllsecf: bool,
+                pllsai1secf: bool,
+                pllsai2secf: bool,
+                clk48secf: bool,
+                hsi48secf: bool,
+                rmvfsecf: bool,
+            }
+            let proxy = Secsr {
+                hsisecf: self.hsisecf(),
+                hsesecf: self.hsesecf(),
+                msisecf: self.msisecf(),
+                lsisecf: self.lsisecf(),
+                lsesecf: self.lsesecf(),
+                sysclksecf: self.sysclksecf(),
+                prescsecf: self.prescsecf(),
+                pllsecf: self.pllsecf(),
+                pllsai1secf: self.pllsai1secf(),
+                pllsai2secf: self.pllsai2secf(),
+                clk48secf: self.clk48secf(),
+                hsi48secf: self.hsi48secf(),
+                rmvfsecf: self.rmvfsecf(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adcsel {
         #[doc = "No clock selected"]
         DISABLE = 0x0,
@@ -5168,7 +7030,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Clk48sel {
         #[doc = "HSI48 clock selected"]
         HSI48 = 0x0,
@@ -5202,7 +7065,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fdcansel {
         #[doc = "HSE clock selected"]
         HSE = 0x0,
@@ -5235,7 +7099,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hpre {
         #[doc = "SYSCLK not divided"]
         DIV1 = 0x0,
@@ -5286,7 +7151,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lscosel {
         #[doc = "LSI clock selected\""]
         LSI = 0x0,
@@ -5316,14 +7182,15 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsedrv {
         #[doc = "Low driving capability"]
         LOW = 0x0,
         #[doc = "Medium low driving capability"]
-        MEDIUMLOW = 0x01,
+        MEDIUM_LOW = 0x01,
         #[doc = "Medium high driving capability"]
-        MEDIUMHIGH = 0x02,
+        MEDIUM_HIGH = 0x02,
         #[doc = "High driving capability"]
         HIGH = 0x03,
     }
@@ -5350,7 +7217,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mcopre {
         #[doc = "MCO divided by 1"]
         DIV1 = 0x0,
@@ -5389,7 +7257,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mcosel {
         #[doc = "MCO output disabled, no clock on MCO"]
         DISABLE = 0x0,
@@ -5440,7 +7309,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msirange {
         #[doc = "range 0 around 100 kHz"]
         RANGE100K = 0x0,
@@ -5494,7 +7364,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msirgsel {
         #[doc = "MSI Range is provided by MSISRANGE\\[3:0\\]
 in RCC_CSR register"]
@@ -5526,7 +7397,8 @@ in the RCC_CR register"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllm {
         DIV1 = 0x0,
         DIV2 = 0x01,
@@ -5568,7 +7440,8 @@ in the RCC_CR register"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Plln {
         _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
@@ -5722,7 +7595,8 @@ in the RCC_CR register"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllp {
         _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
@@ -5780,7 +7654,8 @@ in the RCC_CR register"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllpbit {
         DIV7 = 0x0,
         DIV17 = 0x01,
@@ -5808,7 +7683,8 @@ in the RCC_CR register"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllq {
         DIV2 = 0x0,
         DIV4 = 0x01,
@@ -5838,7 +7714,8 @@ in the RCC_CR register"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllr {
         DIV2 = 0x0,
         DIV4 = 0x01,
@@ -5868,7 +7745,8 @@ in the RCC_CR register"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllsrc {
         #[doc = "No clock sent to PLL"]
         DISABLE = 0x0,
@@ -5902,7 +7780,8 @@ in the RCC_CR register"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ppre {
         #[doc = "HCLK not divided"]
         DIV1 = 0x0,
@@ -5941,7 +7820,8 @@ in the RCC_CR register"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rtcsel {
         #[doc = "No clock"]
         DISABLE = 0x0,
@@ -5975,7 +7855,8 @@ in the RCC_CR register"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Stopwuck {
         #[doc = "MSI oscillator selected as wake-up from Stop clock and CSS backup clock"]
         MSI = 0x0,
@@ -6005,7 +7886,8 @@ in the RCC_CR register"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sw {
         #[doc = "MSI selected as system clock"]
         MSI = 0x0,

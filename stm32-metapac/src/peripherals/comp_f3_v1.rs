@@ -148,10 +148,58 @@ pub mod regs {
             Csr(0)
         }
     }
+    impl core::fmt::Debug for Csr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Csr")
+                .field("en", &self.en())
+                .field("inp_dac", &self.inp_dac())
+                .field("mode", &self.mode())
+                .field("insel", &self.insel())
+                .field("wndwen", &self.wndwen())
+                .field("outsel", &self.outsel())
+                .field("pol", &self.pol())
+                .field("hyst", &self.hyst())
+                .field("out", &self.out())
+                .field("lock", &self.lock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Csr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Csr {
+                en: bool,
+                inp_dac: bool,
+                mode: super::vals::Mode,
+                insel: u8,
+                wndwen: bool,
+                outsel: u8,
+                pol: bool,
+                hyst: super::vals::Hyst,
+                out: bool,
+                lock: bool,
+            }
+            let proxy = Csr {
+                en: self.en(),
+                inp_dac: self.inp_dac(),
+                mode: self.mode(),
+                insel: self.insel(),
+                wndwen: self.wndwen(),
+                outsel: self.outsel(),
+                pol: self.pol(),
+                hyst: self.hyst(),
+                out: self.out(),
+                lock: self.lock(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hyst {
         NONE = 0x0,
         #[doc = "Low hysteresis"]
@@ -184,16 +232,17 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "High Speed mode"]
-        HIGHSPEED = 0x0,
+        HIGH_SPEED = 0x0,
         #[doc = "Medium Speed mode"]
-        MEDIUMSPEED = 0x01,
+        MEDIUM_SPEED = 0x01,
         #[doc = "Low Speed mode"]
-        LOWSPEED = 0x02,
+        LOW_SPEED = 0x02,
         #[doc = "Very Low Speed mode"]
-        VERYLOWSPEED = 0x03,
+        VERY_LOW_SPEED = 0x03,
     }
     impl Mode {
         #[inline(always)]

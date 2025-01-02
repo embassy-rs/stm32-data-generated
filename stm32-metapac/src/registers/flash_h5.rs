@@ -3644,14 +3644,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B_0XB4",
+                    name: "B_0X_B4",
                     description: Some(
                         "The BOOT_UBE and SECBOOTADD are frozen. SWAP_BANK can only be modified with TZEN set to 0xC3 (disabled).",
                     ),
                     value: 180,
                 },
                 EnumVariant {
-                    name: "B_0XC3",
+                    name: "B_0X_C3",
                     description: Some(
                         "The BOOT_UBE, SWAP_ BANK and SECBOOTADD can still be modified following their individual rules.",
                     ),
@@ -3728,14 +3728,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B_0XB4",
+                    name: "B_0X_B4",
                     description: Some(
                         "The NSBOOTADD is frozen. SWAP_ BANK can only be modified with TZEN set to 0xB4 (enabled).",
                     ),
                     value: 180,
                 },
                 EnumVariant {
-                    name: "B_0XC3",
+                    name: "B_0X_C3",
                     description: Some(
                         "The SWAP_ BANK and NSBOOTADD can still be modified following their individual rules.",
                     ),
@@ -3833,14 +3833,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B_0XB4",
+                    name: "B_0X_B4",
                     description: Some(
                         "OEM-iRoT (user flash) selected. In Open PRODUCT_STATE this value selects bootloader. Defaut value.",
                     ),
                     value: 180,
                 },
                 EnumVariant {
-                    name: "B_0XC3",
+                    name: "B_0X_C3",
                     description: Some(
                         "ST-iRoT (system flash) selected",
                     ),
@@ -4064,14 +4064,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B_0XB4",
+                    name: "B_0X_B4",
                     description: Some(
                         "TrustZone enabled.",
                     ),
                     value: 180,
                 },
                 EnumVariant {
-                    name: "B_0XC3",
+                    name: "B_0X_C3",
                     description: Some(
                         "TrustZone disabled",
                     ),
@@ -4148,14 +4148,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B_0XB4",
+                    name: "B_0X_B4",
                     description: Some(
                         "The BOOT_UBE and SECBOOTADD are frozen. SWAP_ BANK can only be modified with TZEN set to 0xC3 (disabled).",
                     ),
                     value: 180,
                 },
                 EnumVariant {
-                    name: "B_0XC3",
+                    name: "B_0X_C3",
                     description: Some(
                         "The BOOT_UBE, SWAP_BANK and SECBOOTADD can still be modified following their individual rules.",
                     ),

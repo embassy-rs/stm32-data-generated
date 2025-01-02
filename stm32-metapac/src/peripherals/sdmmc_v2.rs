@@ -150,6 +150,24 @@ pub mod regs {
             Acktimer(0)
         }
     }
+    impl core::fmt::Debug for Acktimer {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Acktimer").field("acktime", &self.acktime()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Acktimer {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Acktimer {
+                acktime: u32,
+            }
+            let proxy = Acktimer {
+                acktime: self.acktime(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "The SDMMC_ARGR register contains a 32-bit command argument, which is sent to a card as part of a command message."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -171,6 +189,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Argr {
             Argr(0)
+        }
+    }
+    impl core::fmt::Debug for Argr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Argr").field("cmdarg", &self.cmdarg()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Argr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Argr {
+                cmdarg: u32,
+            }
+            let proxy = Argr { cmdarg: self.cmdarg() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "The SDMMC_CLKCR register controls the SDMMC_CK output clock, the SDMMC_RX_CLK receive clock, and the bus width."]
@@ -271,6 +305,47 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Clkcr {
             Clkcr(0)
+        }
+    }
+    impl core::fmt::Debug for Clkcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Clkcr")
+                .field("clkdiv", &self.clkdiv())
+                .field("pwrsav", &self.pwrsav())
+                .field("widbus", &self.widbus())
+                .field("negedge", &self.negedge())
+                .field("hwfc_en", &self.hwfc_en())
+                .field("ddr", &self.ddr())
+                .field("busspeed", &self.busspeed())
+                .field("selclkrx", &self.selclkrx())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Clkcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Clkcr {
+                clkdiv: u16,
+                pwrsav: bool,
+                widbus: u8,
+                negedge: bool,
+                hwfc_en: bool,
+                ddr: bool,
+                busspeed: bool,
+                selclkrx: u8,
+            }
+            let proxy = Clkcr {
+                clkdiv: self.clkdiv(),
+                pwrsav: self.pwrsav(),
+                widbus: self.widbus(),
+                negedge: self.negedge(),
+                hwfc_en: self.hwfc_en(),
+                ddr: self.ddr(),
+                busspeed: self.busspeed(),
+                selclkrx: self.selclkrx(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "The SDMMC_CMDR register contains the command index and command type bits. The command index is sent to a card as part of a command message. The command type bits control the command path state machine (CPSM)."]
@@ -406,6 +481,56 @@ pub mod regs {
             Cmdr(0)
         }
     }
+    impl core::fmt::Debug for Cmdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cmdr")
+                .field("cmdindex", &self.cmdindex())
+                .field("cmdtrans", &self.cmdtrans())
+                .field("cmdstop", &self.cmdstop())
+                .field("waitresp", &self.waitresp())
+                .field("waitint", &self.waitint())
+                .field("waitpend", &self.waitpend())
+                .field("cpsmen", &self.cpsmen())
+                .field("dthold", &self.dthold())
+                .field("bootmode", &self.bootmode())
+                .field("booten", &self.booten())
+                .field("cmdsuspend", &self.cmdsuspend())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cmdr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cmdr {
+                cmdindex: u8,
+                cmdtrans: bool,
+                cmdstop: bool,
+                waitresp: u8,
+                waitint: bool,
+                waitpend: bool,
+                cpsmen: bool,
+                dthold: bool,
+                bootmode: bool,
+                booten: bool,
+                cmdsuspend: bool,
+            }
+            let proxy = Cmdr {
+                cmdindex: self.cmdindex(),
+                cmdtrans: self.cmdtrans(),
+                cmdstop: self.cmdstop(),
+                waitresp: self.waitresp(),
+                waitint: self.waitint(),
+                waitpend: self.waitpend(),
+                cpsmen: self.cpsmen(),
+                dthold: self.dthold(),
+                bootmode: self.bootmode(),
+                booten: self.booten(),
+                cmdsuspend: self.cmdsuspend(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "The SDMMC_DCNTR register loads the value from the data length register (see SDMMC_DLENR) when the DPSM moves from the Idle state to the Wait_R or Wait_S state. As data is transferred, the counter decrements the value until it reaches 0. The DPSM then moves to the Idle state and when there has been no error, the data status end flag (DATAEND) is set."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -427,6 +552,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dcntr {
             Dcntr(0)
+        }
+    }
+    impl core::fmt::Debug for Dcntr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dcntr").field("datacount", &self.datacount()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dcntr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dcntr {
+                datacount: u32,
+            }
+            let proxy = Dcntr {
+                datacount: self.datacount(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "The SDMMC_DCTRL register control the data path state machine (DPSM)."]
@@ -551,6 +694,53 @@ pub mod regs {
             Dctrl(0)
         }
     }
+    impl core::fmt::Debug for Dctrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dctrl")
+                .field("dten", &self.dten())
+                .field("dtdir", &self.dtdir())
+                .field("dtmode", &self.dtmode())
+                .field("dblocksize", &self.dblocksize())
+                .field("rwstart", &self.rwstart())
+                .field("rwstop", &self.rwstop())
+                .field("rwmod", &self.rwmod())
+                .field("sdioen", &self.sdioen())
+                .field("bootacken", &self.bootacken())
+                .field("fiforst", &self.fiforst())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dctrl {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dctrl {
+                dten: bool,
+                dtdir: bool,
+                dtmode: u8,
+                dblocksize: u8,
+                rwstart: bool,
+                rwstop: bool,
+                rwmod: bool,
+                sdioen: bool,
+                bootacken: bool,
+                fiforst: bool,
+            }
+            let proxy = Dctrl {
+                dten: self.dten(),
+                dtdir: self.dtdir(),
+                dtmode: self.dtmode(),
+                dblocksize: self.dblocksize(),
+                rwstart: self.rwstart(),
+                rwstop: self.rwstop(),
+                rwmod: self.rwmod(),
+                sdioen: self.sdioen(),
+                bootacken: self.bootacken(),
+                fiforst: self.fiforst(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "The SDMMC_DLENR register contains the number of data bytes to be transferred. The value is loaded into the data counter when data transfer starts."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -572,6 +762,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dlenr {
             Dlenr(0)
+        }
+    }
+    impl core::fmt::Debug for Dlenr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dlenr").field("datalength", &self.datalength()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dlenr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dlenr {
+                datalength: u32,
+            }
+            let proxy = Dlenr {
+                datalength: self.datalength(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "The SDMMC_DTIMER register contains the data timeout period, in card bus clock periods. A counter loads the value from the SDMMC_DTIMER register, and starts decrementing when the data path state machine (DPSM) enters the Wait_R or Busy state. If the timer reaches 0 while the DPSM is in either of these states, the timeout status flag is set."]
@@ -597,6 +805,24 @@ pub mod regs {
             Dtimer(0)
         }
     }
+    impl core::fmt::Debug for Dtimer {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dtimer").field("datatime", &self.datatime()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dtimer {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dtimer {
+                datatime: u32,
+            }
+            let proxy = Dtimer {
+                datatime: self.datatime(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "The receive and transmit FIFOs can be only read or written as word (32-bit) wide registers. The FIFOs contain 16 entries on sequential addresses. This allows the CPU to use its load and store multiple operands to read from/write to the FIFO.When accessing SDMMC_FIFOR with half word or byte access an AHB bus fault is generated."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -618,6 +844,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Fifor {
             Fifor(0)
+        }
+    }
+    impl core::fmt::Debug for Fifor {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fifor").field("fifodata", &self.fifodata()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fifor {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fifor {
+                fifodata: u32,
+            }
+            let proxy = Fifor {
+                fifodata: self.fifodata(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "The SDMMC_ICR register is a write-only register. Writing a bit with 1 clears the corresponding bit in the SDMMC_STAR status register."]
@@ -852,6 +1096,83 @@ pub mod regs {
             Icr(0)
         }
     }
+    impl core::fmt::Debug for Icr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Icr")
+                .field("ccrcfailc", &self.ccrcfailc())
+                .field("dcrcfailc", &self.dcrcfailc())
+                .field("ctimeoutc", &self.ctimeoutc())
+                .field("dtimeoutc", &self.dtimeoutc())
+                .field("txunderrc", &self.txunderrc())
+                .field("rxoverrc", &self.rxoverrc())
+                .field("cmdrendc", &self.cmdrendc())
+                .field("cmdsentc", &self.cmdsentc())
+                .field("dataendc", &self.dataendc())
+                .field("dholdc", &self.dholdc())
+                .field("dbckendc", &self.dbckendc())
+                .field("dabortc", &self.dabortc())
+                .field("busyd0endc", &self.busyd0endc())
+                .field("sdioitc", &self.sdioitc())
+                .field("ackfailc", &self.ackfailc())
+                .field("acktimeoutc", &self.acktimeoutc())
+                .field("vswendc", &self.vswendc())
+                .field("ckstopc", &self.ckstopc())
+                .field("idmatec", &self.idmatec())
+                .field("idmabtcc", &self.idmabtcc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Icr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Icr {
+                ccrcfailc: bool,
+                dcrcfailc: bool,
+                ctimeoutc: bool,
+                dtimeoutc: bool,
+                txunderrc: bool,
+                rxoverrc: bool,
+                cmdrendc: bool,
+                cmdsentc: bool,
+                dataendc: bool,
+                dholdc: bool,
+                dbckendc: bool,
+                dabortc: bool,
+                busyd0endc: bool,
+                sdioitc: bool,
+                ackfailc: bool,
+                acktimeoutc: bool,
+                vswendc: bool,
+                ckstopc: bool,
+                idmatec: bool,
+                idmabtcc: bool,
+            }
+            let proxy = Icr {
+                ccrcfailc: self.ccrcfailc(),
+                dcrcfailc: self.dcrcfailc(),
+                ctimeoutc: self.ctimeoutc(),
+                dtimeoutc: self.dtimeoutc(),
+                txunderrc: self.txunderrc(),
+                rxoverrc: self.rxoverrc(),
+                cmdrendc: self.cmdrendc(),
+                cmdsentc: self.cmdsentc(),
+                dataendc: self.dataendc(),
+                dholdc: self.dholdc(),
+                dbckendc: self.dbckendc(),
+                dabortc: self.dabortc(),
+                busyd0endc: self.busyd0endc(),
+                sdioitc: self.sdioitc(),
+                ackfailc: self.ackfailc(),
+                acktimeoutc: self.acktimeoutc(),
+                vswendc: self.vswendc(),
+                ckstopc: self.ckstopc(),
+                idmatec: self.idmatec(),
+                idmabtcc: self.idmabtcc(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SDMMC IP identification register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -873,6 +1194,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Id {
             Id(0)
+        }
+    }
+    impl core::fmt::Debug for Id {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Id").field("ip_id", &self.ip_id()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Id {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Id {
+                ip_id: u32,
+            }
+            let proxy = Id { ip_id: self.ip_id() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "The SDMMC_IDMABASE0R register contains the memory buffer base address in single buffer configuration and the buffer 0 base address in double buffer configuration."]
@@ -900,6 +1237,26 @@ are always 0 and read only). This register can be written by firmware when DPSM 
             Idmabase0r(0)
         }
     }
+    impl core::fmt::Debug for Idmabase0r {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Idmabase0r")
+                .field("idmabase0", &self.idmabase0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Idmabase0r {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Idmabase0r {
+                idmabase0: u32,
+            }
+            let proxy = Idmabase0r {
+                idmabase0: self.idmabase0(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "The SDMMC_IDMABASE1R register contains the double buffer configuration second buffer memory base address."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -925,6 +1282,26 @@ are always 0 and read only). This register can be written by firmware when DPSM 
             Idmabase1r(0)
         }
     }
+    impl core::fmt::Debug for Idmabase1r {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Idmabase1r")
+                .field("idmabase1", &self.idmabase1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Idmabase1r {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Idmabase1r {
+                idmabase1: u32,
+            }
+            let proxy = Idmabase1r {
+                idmabase1: self.idmabase1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "The SDMMC_IDMABSIZER register contains the buffers size when in double buffer configuration."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -946,6 +1323,26 @@ are always 0 and read only). This register can be written by firmware when DPSM 
         #[inline(always)]
         fn default() -> Idmabsizer {
             Idmabsizer(0)
+        }
+    }
+    impl core::fmt::Debug for Idmabsizer {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Idmabsizer")
+                .field("idmabndt", &self.idmabndt())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Idmabsizer {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Idmabsizer {
+                idmabndt: u8,
+            }
+            let proxy = Idmabsizer {
+                idmabndt: self.idmabndt(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "The receive and transmit FIFOs can be read or written as 32-bit wide registers. The FIFOs contain 32 entries on 32 sequential addresses. This allows the CPU to use its load and store multiple operands to read from/write to the FIFO."]
@@ -991,6 +1388,32 @@ are always 0 and read only). This register can be written by firmware when DPSM 
         #[inline(always)]
         fn default() -> Idmactrlr {
             Idmactrlr(0)
+        }
+    }
+    impl core::fmt::Debug for Idmactrlr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Idmactrlr")
+                .field("idmaen", &self.idmaen())
+                .field("idmabmode", &self.idmabmode())
+                .field("idmabact", &self.idmabact())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Idmactrlr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Idmactrlr {
+                idmaen: bool,
+                idmabmode: bool,
+                idmabact: bool,
+            }
+            let proxy = Idmactrlr {
+                idmaen: self.idmaen(),
+                idmabmode: self.idmabmode(),
+                idmabact: self.idmabact(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "The interrupt mask register determines which status flags generate an interrupt request by setting the corresponding bit to 1."]
@@ -1258,6 +1681,92 @@ are always 0 and read only). This register can be written by firmware when DPSM 
             Maskr(0)
         }
     }
+    impl core::fmt::Debug for Maskr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Maskr")
+                .field("ccrcfailie", &self.ccrcfailie())
+                .field("dcrcfailie", &self.dcrcfailie())
+                .field("ctimeoutie", &self.ctimeoutie())
+                .field("dtimeoutie", &self.dtimeoutie())
+                .field("txunderrie", &self.txunderrie())
+                .field("rxoverrie", &self.rxoverrie())
+                .field("cmdrendie", &self.cmdrendie())
+                .field("cmdsentie", &self.cmdsentie())
+                .field("dataendie", &self.dataendie())
+                .field("dholdie", &self.dholdie())
+                .field("dbckendie", &self.dbckendie())
+                .field("dabortie", &self.dabortie())
+                .field("txfifoheie", &self.txfifoheie())
+                .field("rxfifohfie", &self.rxfifohfie())
+                .field("rxfifofie", &self.rxfifofie())
+                .field("txfifoeie", &self.txfifoeie())
+                .field("busyd0endie", &self.busyd0endie())
+                .field("sdioitie", &self.sdioitie())
+                .field("ackfailie", &self.ackfailie())
+                .field("acktimeoutie", &self.acktimeoutie())
+                .field("vswendie", &self.vswendie())
+                .field("ckstopie", &self.ckstopie())
+                .field("idmabtcie", &self.idmabtcie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Maskr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Maskr {
+                ccrcfailie: bool,
+                dcrcfailie: bool,
+                ctimeoutie: bool,
+                dtimeoutie: bool,
+                txunderrie: bool,
+                rxoverrie: bool,
+                cmdrendie: bool,
+                cmdsentie: bool,
+                dataendie: bool,
+                dholdie: bool,
+                dbckendie: bool,
+                dabortie: bool,
+                txfifoheie: bool,
+                rxfifohfie: bool,
+                rxfifofie: bool,
+                txfifoeie: bool,
+                busyd0endie: bool,
+                sdioitie: bool,
+                ackfailie: bool,
+                acktimeoutie: bool,
+                vswendie: bool,
+                ckstopie: bool,
+                idmabtcie: bool,
+            }
+            let proxy = Maskr {
+                ccrcfailie: self.ccrcfailie(),
+                dcrcfailie: self.dcrcfailie(),
+                ctimeoutie: self.ctimeoutie(),
+                dtimeoutie: self.dtimeoutie(),
+                txunderrie: self.txunderrie(),
+                rxoverrie: self.rxoverrie(),
+                cmdrendie: self.cmdrendie(),
+                cmdsentie: self.cmdsentie(),
+                dataendie: self.dataendie(),
+                dholdie: self.dholdie(),
+                dbckendie: self.dbckendie(),
+                dabortie: self.dabortie(),
+                txfifoheie: self.txfifoheie(),
+                rxfifohfie: self.rxfifohfie(),
+                rxfifofie: self.rxfifofie(),
+                txfifoeie: self.txfifoeie(),
+                busyd0endie: self.busyd0endie(),
+                sdioitie: self.sdioitie(),
+                ackfailie: self.ackfailie(),
+                acktimeoutie: self.acktimeoutie(),
+                vswendie: self.vswendie(),
+                ckstopie: self.ckstopie(),
+                idmabtcie: self.idmabtcie(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SDMMC power control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1314,6 +1823,35 @@ are always 0 and read only). This register can be written by firmware when DPSM 
             Power(0)
         }
     }
+    impl core::fmt::Debug for Power {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Power")
+                .field("pwrctrl", &self.pwrctrl())
+                .field("vswitch", &self.vswitch())
+                .field("vswitchen", &self.vswitchen())
+                .field("dirpol", &self.dirpol())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Power {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Power {
+                pwrctrl: u8,
+                vswitch: bool,
+                vswitchen: bool,
+                dirpol: bool,
+            }
+            let proxy = Power {
+                pwrctrl: self.pwrctrl(),
+                vswitch: self.vswitch(),
+                vswitchen: self.vswitchen(),
+                dirpol: self.dirpol(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SDMMC command response register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1337,6 +1875,24 @@ are always 0 and read only). This register can be written by firmware when DPSM 
             Respcmdr(0)
         }
     }
+    impl core::fmt::Debug for Respcmdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Respcmdr").field("respcmd", &self.respcmd()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Respcmdr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Respcmdr {
+                respcmd: u8,
+            }
+            let proxy = Respcmdr {
+                respcmd: self.respcmd(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1358,6 +1914,26 @@ are always 0 and read only). This register can be written by firmware when DPSM 
         #[inline(always)]
         fn default() -> RespxR {
             RespxR(0)
+        }
+    }
+    impl core::fmt::Debug for RespxR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RespxR")
+                .field("cardstatus", &self.cardstatus())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RespxR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RespxR {
+                cardstatus: u32,
+            }
+            let proxy = RespxR {
+                cardstatus: self.cardstatus(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "The SDMMC_STAR register is a read-only register. It contains two types of flag:Static flags (bits \\[29,21,11:0\\]): these bits remain asserted until they are cleared by writing to the SDMMC interrupt Clear register (see SDMMC_ICR)Dynamic flags (bits \\[20:12\\]): these bits change state depending on the state of the underlying logic (for example, FIFO full and empty flags are asserted and de-asserted as data while written to the FIFO)"]
@@ -1691,6 +2267,110 @@ are always 0 and read only). This register can be written by firmware when DPSM 
             Star(0)
         }
     }
+    impl core::fmt::Debug for Star {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Star")
+                .field("ccrcfail", &self.ccrcfail())
+                .field("dcrcfail", &self.dcrcfail())
+                .field("ctimeout", &self.ctimeout())
+                .field("dtimeout", &self.dtimeout())
+                .field("txunderr", &self.txunderr())
+                .field("rxoverr", &self.rxoverr())
+                .field("cmdrend", &self.cmdrend())
+                .field("cmdsent", &self.cmdsent())
+                .field("dataend", &self.dataend())
+                .field("dhold", &self.dhold())
+                .field("dbckend", &self.dbckend())
+                .field("dabort", &self.dabort())
+                .field("dpsmact", &self.dpsmact())
+                .field("cpsmact", &self.cpsmact())
+                .field("txfifohe", &self.txfifohe())
+                .field("rxfifohf", &self.rxfifohf())
+                .field("txfifof", &self.txfifof())
+                .field("rxfifof", &self.rxfifof())
+                .field("txfifoe", &self.txfifoe())
+                .field("rxfifoe", &self.rxfifoe())
+                .field("busyd0", &self.busyd0())
+                .field("busyd0end", &self.busyd0end())
+                .field("sdioit", &self.sdioit())
+                .field("ackfail", &self.ackfail())
+                .field("acktimeout", &self.acktimeout())
+                .field("vswend", &self.vswend())
+                .field("ckstop", &self.ckstop())
+                .field("idmate", &self.idmate())
+                .field("idmabtc", &self.idmabtc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Star {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Star {
+                ccrcfail: bool,
+                dcrcfail: bool,
+                ctimeout: bool,
+                dtimeout: bool,
+                txunderr: bool,
+                rxoverr: bool,
+                cmdrend: bool,
+                cmdsent: bool,
+                dataend: bool,
+                dhold: bool,
+                dbckend: bool,
+                dabort: bool,
+                dpsmact: bool,
+                cpsmact: bool,
+                txfifohe: bool,
+                rxfifohf: bool,
+                txfifof: bool,
+                rxfifof: bool,
+                txfifoe: bool,
+                rxfifoe: bool,
+                busyd0: bool,
+                busyd0end: bool,
+                sdioit: bool,
+                ackfail: bool,
+                acktimeout: bool,
+                vswend: bool,
+                ckstop: bool,
+                idmate: bool,
+                idmabtc: bool,
+            }
+            let proxy = Star {
+                ccrcfail: self.ccrcfail(),
+                dcrcfail: self.dcrcfail(),
+                ctimeout: self.ctimeout(),
+                dtimeout: self.dtimeout(),
+                txunderr: self.txunderr(),
+                rxoverr: self.rxoverr(),
+                cmdrend: self.cmdrend(),
+                cmdsent: self.cmdsent(),
+                dataend: self.dataend(),
+                dhold: self.dhold(),
+                dbckend: self.dbckend(),
+                dabort: self.dabort(),
+                dpsmact: self.dpsmact(),
+                cpsmact: self.cpsmact(),
+                txfifohe: self.txfifohe(),
+                rxfifohf: self.rxfifohf(),
+                txfifof: self.txfifof(),
+                rxfifof: self.rxfifof(),
+                txfifoe: self.txfifoe(),
+                rxfifoe: self.rxfifoe(),
+                busyd0: self.busyd0(),
+                busyd0end: self.busyd0end(),
+                sdioit: self.sdioit(),
+                ackfail: self.ackfail(),
+                acktimeout: self.acktimeout(),
+                vswend: self.vswend(),
+                ckstop: self.ckstop(),
+                idmate: self.idmate(),
+                idmabtc: self.idmabtc(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SDMMC IP version register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1723,6 +2403,29 @@ are always 0 and read only). This register can be written by firmware when DPSM 
         #[inline(always)]
         fn default() -> Ver {
             Ver(0)
+        }
+    }
+    impl core::fmt::Debug for Ver {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ver")
+                .field("minrev", &self.minrev())
+                .field("majrev", &self.majrev())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ver {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ver {
+                minrev: u8,
+                majrev: u8,
+            }
+            let proxy = Ver {
+                minrev: self.minrev(),
+                majrev: self.majrev(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

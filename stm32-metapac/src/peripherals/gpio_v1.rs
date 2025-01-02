@@ -79,6 +79,63 @@ pub mod regs {
             Brr(0)
         }
     }
+    impl core::fmt::Debug for Brr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Brr")
+                .field(
+                    "br",
+                    &[
+                        self.br(0usize),
+                        self.br(1usize),
+                        self.br(2usize),
+                        self.br(3usize),
+                        self.br(4usize),
+                        self.br(5usize),
+                        self.br(6usize),
+                        self.br(7usize),
+                        self.br(8usize),
+                        self.br(9usize),
+                        self.br(10usize),
+                        self.br(11usize),
+                        self.br(12usize),
+                        self.br(13usize),
+                        self.br(14usize),
+                        self.br(15usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Brr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Brr {
+                br: [bool; 16usize],
+            }
+            let proxy = Brr {
+                br: [
+                    self.br(0usize),
+                    self.br(1usize),
+                    self.br(2usize),
+                    self.br(3usize),
+                    self.br(4usize),
+                    self.br(5usize),
+                    self.br(6usize),
+                    self.br(7usize),
+                    self.br(8usize),
+                    self.br(9usize),
+                    self.br(10usize),
+                    self.br(11usize),
+                    self.br(12usize),
+                    self.br(13usize),
+                    self.br(14usize),
+                    self.br(15usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Port bit set/reset register (GPIOn_BSRR)"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -119,6 +176,103 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Bsrr {
             Bsrr(0)
+        }
+    }
+    impl core::fmt::Debug for Bsrr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bsrr")
+                .field(
+                    "bs",
+                    &[
+                        self.bs(0usize),
+                        self.bs(1usize),
+                        self.bs(2usize),
+                        self.bs(3usize),
+                        self.bs(4usize),
+                        self.bs(5usize),
+                        self.bs(6usize),
+                        self.bs(7usize),
+                        self.bs(8usize),
+                        self.bs(9usize),
+                        self.bs(10usize),
+                        self.bs(11usize),
+                        self.bs(12usize),
+                        self.bs(13usize),
+                        self.bs(14usize),
+                        self.bs(15usize),
+                    ],
+                )
+                .field(
+                    "br",
+                    &[
+                        self.br(0usize),
+                        self.br(1usize),
+                        self.br(2usize),
+                        self.br(3usize),
+                        self.br(4usize),
+                        self.br(5usize),
+                        self.br(6usize),
+                        self.br(7usize),
+                        self.br(8usize),
+                        self.br(9usize),
+                        self.br(10usize),
+                        self.br(11usize),
+                        self.br(12usize),
+                        self.br(13usize),
+                        self.br(14usize),
+                        self.br(15usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bsrr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Bsrr {
+                bs: [bool; 16usize],
+                br: [bool; 16usize],
+            }
+            let proxy = Bsrr {
+                bs: [
+                    self.bs(0usize),
+                    self.bs(1usize),
+                    self.bs(2usize),
+                    self.bs(3usize),
+                    self.bs(4usize),
+                    self.bs(5usize),
+                    self.bs(6usize),
+                    self.bs(7usize),
+                    self.bs(8usize),
+                    self.bs(9usize),
+                    self.bs(10usize),
+                    self.bs(11usize),
+                    self.bs(12usize),
+                    self.bs(13usize),
+                    self.bs(14usize),
+                    self.bs(15usize),
+                ],
+                br: [
+                    self.br(0usize),
+                    self.br(1usize),
+                    self.br(2usize),
+                    self.br(3usize),
+                    self.br(4usize),
+                    self.br(5usize),
+                    self.br(6usize),
+                    self.br(7usize),
+                    self.br(8usize),
+                    self.br(9usize),
+                    self.br(10usize),
+                    self.br(11usize),
+                    self.br(12usize),
+                    self.br(13usize),
+                    self.br(14usize),
+                    self.br(15usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Port configuration register (GPIOn_CRx)"]
@@ -178,6 +332,95 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field(
+                    "mode",
+                    &[
+                        self.mode(0usize),
+                        self.mode(1usize),
+                        self.mode(2usize),
+                        self.mode(3usize),
+                        self.mode(4usize),
+                        self.mode(5usize),
+                        self.mode(6usize),
+                        self.mode(7usize),
+                    ],
+                )
+                .field(
+                    "cnf_in",
+                    &[
+                        self.cnf_in(0usize),
+                        self.cnf_in(1usize),
+                        self.cnf_in(2usize),
+                        self.cnf_in(3usize),
+                        self.cnf_in(4usize),
+                        self.cnf_in(5usize),
+                        self.cnf_in(6usize),
+                        self.cnf_in(7usize),
+                    ],
+                )
+                .field(
+                    "cnf_out",
+                    &[
+                        self.cnf_out(0usize),
+                        self.cnf_out(1usize),
+                        self.cnf_out(2usize),
+                        self.cnf_out(3usize),
+                        self.cnf_out(4usize),
+                        self.cnf_out(5usize),
+                        self.cnf_out(6usize),
+                        self.cnf_out(7usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                mode: [super::vals::Mode; 8usize],
+                cnf_in: [super::vals::CnfIn; 8usize],
+                cnf_out: [super::vals::CnfOut; 8usize],
+            }
+            let proxy = Cr {
+                mode: [
+                    self.mode(0usize),
+                    self.mode(1usize),
+                    self.mode(2usize),
+                    self.mode(3usize),
+                    self.mode(4usize),
+                    self.mode(5usize),
+                    self.mode(6usize),
+                    self.mode(7usize),
+                ],
+                cnf_in: [
+                    self.cnf_in(0usize),
+                    self.cnf_in(1usize),
+                    self.cnf_in(2usize),
+                    self.cnf_in(3usize),
+                    self.cnf_in(4usize),
+                    self.cnf_in(5usize),
+                    self.cnf_in(6usize),
+                    self.cnf_in(7usize),
+                ],
+                cnf_out: [
+                    self.cnf_out(0usize),
+                    self.cnf_out(1usize),
+                    self.cnf_out(2usize),
+                    self.cnf_out(3usize),
+                    self.cnf_out(4usize),
+                    self.cnf_out(5usize),
+                    self.cnf_out(6usize),
+                    self.cnf_out(7usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Port input data register (GPIOn_IDR)"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -203,6 +446,63 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Idr {
             Idr(0)
+        }
+    }
+    impl core::fmt::Debug for Idr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Idr")
+                .field(
+                    "idr",
+                    &[
+                        self.idr(0usize),
+                        self.idr(1usize),
+                        self.idr(2usize),
+                        self.idr(3usize),
+                        self.idr(4usize),
+                        self.idr(5usize),
+                        self.idr(6usize),
+                        self.idr(7usize),
+                        self.idr(8usize),
+                        self.idr(9usize),
+                        self.idr(10usize),
+                        self.idr(11usize),
+                        self.idr(12usize),
+                        self.idr(13usize),
+                        self.idr(14usize),
+                        self.idr(15usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Idr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Idr {
+                idr: [super::vals::Idr; 16usize],
+            }
+            let proxy = Idr {
+                idr: [
+                    self.idr(0usize),
+                    self.idr(1usize),
+                    self.idr(2usize),
+                    self.idr(3usize),
+                    self.idr(4usize),
+                    self.idr(5usize),
+                    self.idr(6usize),
+                    self.idr(7usize),
+                    self.idr(8usize),
+                    self.idr(9usize),
+                    self.idr(10usize),
+                    self.idr(11usize),
+                    self.idr(12usize),
+                    self.idr(13usize),
+                    self.idr(14usize),
+                    self.idr(15usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Port configuration lock register"]
@@ -243,6 +543,66 @@ pub mod regs {
             Lckr(0)
         }
     }
+    impl core::fmt::Debug for Lckr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lckr")
+                .field(
+                    "lck",
+                    &[
+                        self.lck(0usize),
+                        self.lck(1usize),
+                        self.lck(2usize),
+                        self.lck(3usize),
+                        self.lck(4usize),
+                        self.lck(5usize),
+                        self.lck(6usize),
+                        self.lck(7usize),
+                        self.lck(8usize),
+                        self.lck(9usize),
+                        self.lck(10usize),
+                        self.lck(11usize),
+                        self.lck(12usize),
+                        self.lck(13usize),
+                        self.lck(14usize),
+                        self.lck(15usize),
+                    ],
+                )
+                .field("lckk", &self.lckk())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lckr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Lckr {
+                lck: [bool; 16usize],
+                lckk: bool,
+            }
+            let proxy = Lckr {
+                lck: [
+                    self.lck(0usize),
+                    self.lck(1usize),
+                    self.lck(2usize),
+                    self.lck(3usize),
+                    self.lck(4usize),
+                    self.lck(5usize),
+                    self.lck(6usize),
+                    self.lck(7usize),
+                    self.lck(8usize),
+                    self.lck(9usize),
+                    self.lck(10usize),
+                    self.lck(11usize),
+                    self.lck(12usize),
+                    self.lck(13usize),
+                    self.lck(14usize),
+                    self.lck(15usize),
+                ],
+                lckk: self.lckk(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Port output data register (GPIOn_ODR)"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -270,10 +630,68 @@ pub mod regs {
             Odr(0)
         }
     }
+    impl core::fmt::Debug for Odr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Odr")
+                .field(
+                    "odr",
+                    &[
+                        self.odr(0usize),
+                        self.odr(1usize),
+                        self.odr(2usize),
+                        self.odr(3usize),
+                        self.odr(4usize),
+                        self.odr(5usize),
+                        self.odr(6usize),
+                        self.odr(7usize),
+                        self.odr(8usize),
+                        self.odr(9usize),
+                        self.odr(10usize),
+                        self.odr(11usize),
+                        self.odr(12usize),
+                        self.odr(13usize),
+                        self.odr(14usize),
+                        self.odr(15usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Odr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Odr {
+                odr: [super::vals::Odr; 16usize],
+            }
+            let proxy = Odr {
+                odr: [
+                    self.odr(0usize),
+                    self.odr(1usize),
+                    self.odr(2usize),
+                    self.odr(3usize),
+                    self.odr(4usize),
+                    self.odr(5usize),
+                    self.odr(6usize),
+                    self.odr(7usize),
+                    self.odr(8usize),
+                    self.odr(9usize),
+                    self.odr(10usize),
+                    self.odr(11usize),
+                    self.odr(12usize),
+                    self.odr(13usize),
+                    self.odr(14usize),
+                    self.odr(15usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CnfIn {
         #[doc = "Analog mode"]
         ANALOG = 0x0,
@@ -306,16 +724,17 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CnfOut {
         #[doc = "Push-Pull mode"]
-        PUSHPULL = 0x0,
+        PUSH_PULL = 0x0,
         #[doc = "Open Drain-Mode"]
-        OPENDRAIN = 0x01,
+        OPEN_DRAIN = 0x01,
         #[doc = "Alternate Function Push-Pull Mode"]
-        ALTPUSHPULL = 0x02,
+        ALT_PUSH_PULL = 0x02,
         #[doc = "Alternate Function Open-Drain Mode"]
-        ALTOPENDRAIN = 0x03,
+        ALT_OPEN_DRAIN = 0x03,
     }
     impl CnfOut {
         #[inline(always)]
@@ -340,7 +759,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Idr {
         #[doc = "Input is logic low"]
         LOW = 0x0,
@@ -370,7 +790,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "Input mode (reset state)"]
         INPUT = 0x0,
@@ -404,7 +825,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Odr {
         #[doc = "Set output to logic low"]
         LOW = 0x0,

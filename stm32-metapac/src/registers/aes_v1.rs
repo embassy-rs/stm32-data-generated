@@ -264,7 +264,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HALFWORD",
+                    name: "HALF_WORD",
                     description: Some("Half-word (16-bit)"),
                     value: 1,
                 },

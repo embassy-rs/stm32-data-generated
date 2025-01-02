@@ -257,12 +257,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FROMPERIPHERAL",
+                    name: "FROM_PERIPHERAL",
                     description: Some("Read from peripheral"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FROMMEMORY",
+                    name: "FROM_MEMORY",
                     description: Some("Read from memory"),
                     value: 1,
                 },
@@ -289,7 +289,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "VERYHIGH",
+                    name: "VERY_HIGH",
                     description: Some("Very high priority"),
                     value: 3,
                 },

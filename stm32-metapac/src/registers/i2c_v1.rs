@@ -644,7 +644,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "NOFILTER",
+                    name: "NO_FILTER",
                     description: Some("Digital filter disabled"),
                     value: 0,
                 },

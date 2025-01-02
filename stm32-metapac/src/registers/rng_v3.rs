@@ -367,7 +367,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "NODIV",
+                    name: "NO_DIV",
                     description: Some(
                         "Internal RNG clock after divider is similar to incoming RNG clock",
                     ),
@@ -528,14 +528,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 6,
             variants: &[
                 EnumVariant {
-                    name: "CONFIGA",
+                    name: "CONFIG_A",
                     description: Some(
                         "Recommended value for config A (NIST certifiable)",
                     ),
                     value: 15,
                 },
                 EnumVariant {
-                    name: "CONFIGB",
+                    name: "CONFIG_B",
                     description: Some(
                         "Recommended value for config B (not NIST certifiable)",
                     ),
@@ -549,7 +549,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "CONFIGA_B",
+                    name: "CONFIG_A_B",
                     description: Some(
                         "Recommended value for config A and B",
                     ),
@@ -563,14 +563,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "CONFIGB",
+                    name: "CONFIG_B",
                     description: Some(
                         "Recommended value for config B (not NIST certifiable)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CONFIGA",
+                    name: "CONFIG_A",
                     description: Some(
                         "Recommended value for config A (NIST certifiable)",
                     ),

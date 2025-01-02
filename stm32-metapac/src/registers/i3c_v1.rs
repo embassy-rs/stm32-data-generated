@@ -3227,7 +3227,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "REPEATEDSTART",
+                    name: "REPEATED_START",
                     description: Some(
                         "this message from controller is followed by a repeated start (Sr), before another message must be emitted",
                     ),
@@ -3269,26 +3269,26 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NORESET",
+                    name: "NO_RESET",
                     description: None,
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FIRSTLEVEL",
+                    name: "FIRST_LEVEL",
                     description: Some(
                         "first level of reset: the application software must either:\na) partially reset the peripheral, by a write and clear of the enable bit of the I3C\nconfiguration register (write EN = 0). This resets the I3C bus interface and the I3C kernel\nsub-parts, without modifying the content of the I3C APB registers (except the EN bit).\nb) fully reset the peripheral, including all its registers, via a write and set of the I3C reset\ncontrol bit of the RCC (reset and clock controller) register.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SECONDLEVEL",
+                    name: "SECOND_LEVEL",
                     description: Some(
                         "second level of reset: the application software must issue a warm reset, also known as a\nsystem reset. This (see Section 11: Reset and clock control (RCC)) has the same impact as a\npin reset (NRST = 0):\n  – the software writes and sets the SYSRESETREQ control bit of the AITR register, when\n  the device is controlled by a Cortex®-M.\n  – the software writes and sets SYSRST = 1 in the RCC_GRSTCSETR register, when the\n  device is controlled by a Cortex®-A.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "NORESETEITHER",
+                    name: "NO_RESET_EITHER",
                     description: None,
                     value: 3,
                 },

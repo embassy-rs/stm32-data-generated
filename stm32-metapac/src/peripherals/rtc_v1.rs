@@ -94,6 +94,22 @@ pub mod regs {
             Alrh(0)
         }
     }
+    impl core::fmt::Debug for Alrh {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Alrh").field("alrh", &self.alrh()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Alrh {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Alrh {
+                alrh: u16,
+            }
+            let proxy = Alrh { alrh: self.alrh() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Alarm Register Low"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -115,6 +131,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Alrl {
             Alrl(0)
+        }
+    }
+    impl core::fmt::Debug for Alrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Alrl").field("alrl", &self.alrl()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Alrl {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Alrl {
+                alrl: u16,
+            }
+            let proxy = Alrl { alrl: self.alrl() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Counter Register High"]
@@ -140,6 +172,22 @@ pub mod regs {
             Cnth(0)
         }
     }
+    impl core::fmt::Debug for Cnth {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cnth").field("cnth", &self.cnth()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cnth {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cnth {
+                cnth: u16,
+            }
+            let proxy = Cnth { cnth: self.cnth() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Counter Register Low"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -161,6 +209,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cntl {
             Cntl(0)
+        }
+    }
+    impl core::fmt::Debug for Cntl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cntl").field("cntl", &self.cntl()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cntl {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cntl {
+                cntl: u16,
+            }
+            let proxy = Cntl { cntl: self.cntl() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Control Register High"]
@@ -206,6 +270,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Crh {
             Crh(0)
+        }
+    }
+    impl core::fmt::Debug for Crh {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Crh")
+                .field("secie", &self.secie())
+                .field("alrie", &self.alrie())
+                .field("owie", &self.owie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Crh {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Crh {
+                secie: bool,
+                alrie: bool,
+                owie: bool,
+            }
+            let proxy = Crh {
+                secie: self.secie(),
+                alrie: self.alrie(),
+                owie: self.owie(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Control Register Low"]
@@ -286,6 +376,41 @@ pub mod regs {
             Crl(0)
         }
     }
+    impl core::fmt::Debug for Crl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Crl")
+                .field("secf", &self.secf())
+                .field("alrf", &self.alrf())
+                .field("owf", &self.owf())
+                .field("rsf", &self.rsf())
+                .field("cnf", &self.cnf())
+                .field("rtoff", &self.rtoff())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Crl {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Crl {
+                secf: bool,
+                alrf: bool,
+                owf: bool,
+                rsf: bool,
+                cnf: bool,
+                rtoff: super::vals::Rtoff,
+            }
+            let proxy = Crl {
+                secf: self.secf(),
+                alrf: self.alrf(),
+                owf: self.owf(),
+                rsf: self.rsf(),
+                cnf: self.cnf(),
+                rtoff: self.rtoff(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Prescaler Divider Register High"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -307,6 +432,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Divh {
             Divh(0)
+        }
+    }
+    impl core::fmt::Debug for Divh {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Divh").field("divh", &self.divh()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Divh {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Divh {
+                divh: u8,
+            }
+            let proxy = Divh { divh: self.divh() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Prescaler Divider Register Low"]
@@ -332,6 +473,22 @@ pub mod regs {
             Divl(0)
         }
     }
+    impl core::fmt::Debug for Divl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Divl").field("divl", &self.divl()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Divl {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Divl {
+                divl: u16,
+            }
+            let proxy = Divl { divl: self.divl() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Prescaler Load Register High"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -353,6 +510,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Prlh {
             Prlh(0)
+        }
+    }
+    impl core::fmt::Debug for Prlh {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Prlh").field("prlh", &self.prlh()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Prlh {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Prlh {
+                prlh: u8,
+            }
+            let proxy = Prlh { prlh: self.prlh() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Prescaler Load Register Low"]
@@ -378,10 +551,27 @@ pub mod regs {
             Prll(0)
         }
     }
+    impl core::fmt::Debug for Prll {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Prll").field("prll", &self.prll()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Prll {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Prll {
+                prll: u16,
+            }
+            let proxy = Prll { prll: self.prll() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rtoff {
         #[doc = "Last write operation on RTC registers is still ongoing"]
         ONGOING = 0x0,

@@ -541,7 +541,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOPACK",
+                    name: "NO_PACK",
                     description: Some(
                         "Without data packing, CDR/CDR2 not used",
                     ),
@@ -576,49 +576,49 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DUALRJ",
+                    name: "DUAL_RJ",
                     description: Some(
                         "Dual, combined regular simultaneous + injected simultaneous mode",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "DUALRA",
+                    name: "DUAL_RA",
                     description: Some(
                         "Dual, combined regular simultaneous + alternate trigger mode",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DUALIJ",
+                    name: "DUAL_IJ",
                     description: Some(
                         "Dual, combined interleaved mode + injected simultaneous mode",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "DUALJ",
+                    name: "DUAL_J",
                     description: Some(
                         "Dual, injected simultaneous mode only",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "DUALR",
+                    name: "DUAL_R",
                     description: Some(
                         "Dual, regular simultaneous mode only",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "DUALI",
+                    name: "DUAL_I",
                     description: Some(
                         "Dual, interleaved mode only",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "DUALA",
+                    name: "DUAL_A",
                     description: Some(
                         "Dual, alternate trigger mode only",
                     ),

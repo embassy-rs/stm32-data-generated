@@ -437,17 +437,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PERIPHERALTOMEMORY",
+                    name: "PERIPHERAL_TO_MEMORY",
                     description: Some("Peripheral-to-memory"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MEMORYTOPERIPHERAL",
+                    name: "MEMORY_TO_PERIPHERAL",
                     description: Some("Memory-to-peripheral"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MEMORYTOMEMORY",
+                    name: "MEMORY_TO_MEMORY",
                     description: Some("Memory-to-memory"),
                     value: 2,
                 },
@@ -523,7 +523,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "THREEQUARTERS",
+                    name: "THREE_QUARTERS",
                     description: Some("3/4 full FIFO"),
                     value: 2,
                 },
@@ -591,7 +591,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "VERYHIGH",
+                    name: "VERY_HIGH",
                     description: Some("Very high"),
                     value: 3,
                 },

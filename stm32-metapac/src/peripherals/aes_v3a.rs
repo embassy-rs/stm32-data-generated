@@ -216,6 +216,56 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("en", &self.en())
+                .field("datatype", &self.datatype())
+                .field("mode", &self.mode())
+                .field("chmod", &self.chmod())
+                .field("dmainen", &self.dmainen())
+                .field("dmaouten", &self.dmaouten())
+                .field("gcmph", &self.gcmph())
+                .field("keysize", &self.keysize())
+                .field("npblb", &self.npblb())
+                .field("kmod", &self.kmod())
+                .field("iprst", &self.iprst())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                en: bool,
+                datatype: super::vals::Datatype,
+                mode: super::vals::Mode,
+                chmod: super::vals::Chmod,
+                dmainen: bool,
+                dmaouten: bool,
+                gcmph: super::vals::Gcmph,
+                keysize: bool,
+                npblb: u8,
+                kmod: u8,
+                iprst: bool,
+            }
+            let proxy = Cr {
+                en: self.en(),
+                datatype: self.datatype(),
+                mode: self.mode(),
+                chmod: self.chmod(),
+                dmainen: self.dmainen(),
+                dmaouten: self.dmaouten(),
+                gcmph: self.gcmph(),
+                keysize: self.keysize(),
+                npblb: self.npblb(),
+                kmod: self.kmod(),
+                iprst: self.iprst(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt clear register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -259,6 +309,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Icr {
             Icr(0)
+        }
+    }
+    impl core::fmt::Debug for Icr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Icr")
+                .field("ccf", &self.ccf())
+                .field("rweif", &self.rweif())
+                .field("keif", &self.keif())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Icr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Icr {
+                ccf: bool,
+                rweif: bool,
+                keif: bool,
+            }
+            let proxy = Icr {
+                ccf: self.ccf(),
+                rweif: self.rweif(),
+                keif: self.keif(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt enable register"]
@@ -306,6 +382,32 @@ pub mod regs {
             Ier(0)
         }
     }
+    impl core::fmt::Debug for Ier {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ier")
+                .field("ccfie", &self.ccfie())
+                .field("rweie", &self.rweie())
+                .field("keie", &self.keie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ier {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ier {
+                ccfie: bool,
+                rweie: bool,
+                keie: bool,
+            }
+            let proxy = Ier {
+                ccfie: self.ccfie(),
+                rweie: self.rweie(),
+                keie: self.keie(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -349,6 +451,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Isr {
             Isr(0)
+        }
+    }
+    impl core::fmt::Debug for Isr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Isr")
+                .field("ccf", &self.ccf())
+                .field("rweif", &self.rweif())
+                .field("keif", &self.keif())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Isr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Isr {
+                ccf: bool,
+                rweif: bool,
+                keif: bool,
+            }
+            let proxy = Isr {
+                ccf: self.ccf(),
+                rweif: self.rweif(),
+                keif: self.keif(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status register"]
@@ -418,10 +546,43 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("ccf", &self.ccf())
+                .field("rderr", &self.rderr())
+                .field("wrerr", &self.wrerr())
+                .field("busy", &self.busy())
+                .field("keyvalid", &self.keyvalid())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                ccf: bool,
+                rderr: bool,
+                wrerr: bool,
+                busy: bool,
+                keyvalid: bool,
+            }
+            let proxy = Sr {
+                ccf: self.ccf(),
+                rderr: self.rderr(),
+                wrerr: self.wrerr(),
+                busy: self.busy(),
+                keyvalid: self.keyvalid(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Chmod {
         #[doc = "Electronic codebook"]
         ECB = 0x0,
@@ -460,12 +621,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Datatype {
         #[doc = "Word"]
         NONE = 0x0,
         #[doc = "Half-word (16-bit)"]
-        HALFWORD = 0x01,
+        HALF_WORD = 0x01,
         #[doc = "Byte (8-bit)"]
         BYTE = 0x02,
         #[doc = "Bit"]
@@ -494,16 +656,17 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Gcmph {
         #[doc = "Init phase"]
-        INITPHASE = 0x0,
+        INIT_PHASE = 0x0,
         #[doc = "Header phase"]
-        HEADERPHASE = 0x01,
+        HEADER_PHASE = 0x01,
         #[doc = "Payload phase"]
-        PAYLOADPHASE = 0x02,
+        PAYLOAD_PHASE = 0x02,
         #[doc = "Final phase"]
-        FINALPHASE = 0x03,
+        FINAL_PHASE = 0x03,
     }
     impl Gcmph {
         #[inline(always)]
@@ -528,7 +691,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "Encryption"]
         MODE1 = 0x0,

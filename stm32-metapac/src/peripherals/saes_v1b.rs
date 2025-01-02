@@ -245,6 +245,59 @@ is cleared. With the bitfield value other than zero and KEYVALID set, the applic
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("en", &self.en())
+                .field("datatype", &self.datatype())
+                .field("mode", &self.mode())
+                .field("chmod", &self.chmod())
+                .field("dmainen", &self.dmainen())
+                .field("dmaouten", &self.dmaouten())
+                .field("keysize", &self.keysize())
+                .field("keyprot", &self.keyprot())
+                .field("kmod", &self.kmod())
+                .field("kshareid", &self.kshareid())
+                .field("keysel", &self.keysel())
+                .field("iprst", &self.iprst())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                en: bool,
+                datatype: super::vals::Datatype,
+                mode: super::vals::Mode,
+                chmod: super::vals::Chmod,
+                dmainen: bool,
+                dmaouten: bool,
+                keysize: super::vals::Keysize,
+                keyprot: bool,
+                kmod: super::vals::Kmod,
+                kshareid: super::vals::Kshareid,
+                keysel: super::vals::Keysel,
+                iprst: bool,
+            }
+            let proxy = Cr {
+                en: self.en(),
+                datatype: self.datatype(),
+                mode: self.mode(),
+                chmod: self.chmod(),
+                dmainen: self.dmainen(),
+                dmaouten: self.dmaouten(),
+                keysize: self.keysize(),
+                keyprot: self.keyprot(),
+                kmod: self.kmod(),
+                kshareid: self.kshareid(),
+                keysel: self.keysel(),
+                iprst: self.iprst(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SAES interrupt clear register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -299,6 +352,35 @@ is cleared. With the bitfield value other than zero and KEYVALID set, the applic
         #[inline(always)]
         fn default() -> Icr {
             Icr(0)
+        }
+    }
+    impl core::fmt::Debug for Icr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Icr")
+                .field("ccf", &self.ccf())
+                .field("rweif", &self.rweif())
+                .field("keif", &self.keif())
+                .field("rngeif", &self.rngeif())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Icr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Icr {
+                ccf: bool,
+                rweif: bool,
+                keif: bool,
+                rngeif: bool,
+            }
+            let proxy = Icr {
+                ccf: self.ccf(),
+                rweif: self.rweif(),
+                keif: self.keif(),
+                rngeif: self.rngeif(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SAES interrupt enable register."]
@@ -357,6 +439,35 @@ is cleared. With the bitfield value other than zero and KEYVALID set, the applic
             Ier(0)
         }
     }
+    impl core::fmt::Debug for Ier {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ier")
+                .field("ccfie", &self.ccfie())
+                .field("rweie", &self.rweie())
+                .field("keie", &self.keie())
+                .field("rngeie", &self.rngeie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ier {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ier {
+                ccfie: bool,
+                rweie: bool,
+                keie: bool,
+                rngeie: bool,
+            }
+            let proxy = Ier {
+                ccfie: self.ccfie(),
+                rweie: self.rweie(),
+                keie: self.keie(),
+                rngeie: self.rngeie(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SAES interrupt status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -411,6 +522,35 @@ is cleared. With the bitfield value other than zero and KEYVALID set, the applic
         #[inline(always)]
         fn default() -> Isr {
             Isr(0)
+        }
+    }
+    impl core::fmt::Debug for Isr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Isr")
+                .field("ccf", &self.ccf())
+                .field("rweif", &self.rweif())
+                .field("keif", &self.keif())
+                .field("rngeif", &self.rngeif())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Isr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Isr {
+                ccf: bool,
+                rweif: bool,
+                keif: bool,
+                rngeif: bool,
+            }
+            let proxy = Isr {
+                ccf: self.ccf(),
+                rweif: self.rweif(),
+                keif: self.keif(),
+                rngeif: self.rngeif(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SAES status register."]
@@ -480,10 +620,43 @@ is cleared. With the bitfield value other than zero and KEYVALID set, the applic
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("ccf", &self.ccf())
+                .field("rderr", &self.rderr())
+                .field("wrerr", &self.wrerr())
+                .field("busy", &self.busy())
+                .field("keyvalid", &self.keyvalid())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                ccf: bool,
+                rderr: bool,
+                wrerr: bool,
+                busy: bool,
+                keyvalid: bool,
+            }
+            let proxy = Sr {
+                ccf: self.ccf(),
+                rderr: self.rderr(),
+                wrerr: self.wrerr(),
+                busy: self.busy(),
+                keyvalid: self.keyvalid(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Chmod {
         #[doc = "Electronic codebook"]
         ECB = 0x0,
@@ -522,12 +695,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Datatype {
         #[doc = "No swapping (32-bit data)."]
         NONE = 0x0,
         #[doc = "Half-word swapping (16-bit data)"]
-        HALFWORD = 0x01,
+        HALF_WORD = 0x01,
         #[doc = "Byte swapping (8-bit data)"]
         BYTE = 0x02,
         #[doc = "Bit-level swapping"]
@@ -556,10 +730,11 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Keysel {
         #[doc = "Software key, loaded in key registers SAES_KEYx"]
-        SOFTWAREKEY = 0x0,
+        SOFTWARE_KEY = 0x0,
         #[doc = "Derived hardware unique key"]
         DHUK = 0x01,
         #[doc = "Boot hardware key"]
@@ -594,7 +769,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Keysize {
         #[doc = "128-bit"]
         BITS128 = 0x0,
@@ -624,16 +800,17 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Kmod {
         #[doc = "AES peripheral"]
         NORMAL = 0x0,
         #[doc = "Wrapped key for SAES mode. Key loaded in key registers can only be used to encrypt or decrypt AES keys. Hence, when a decryption is selected, read-as-zero SAES_DOUTR register is automatically loaded into SAES key registers after a successful decryption process."]
-        WRAPPEDKEY = 0x01,
+        WRAPPED_KEY = 0x01,
         #[doc = "Shared key mode. After a successful decryption process (unwrapping), SAES key registers are shared with the peripheral described in KSHAREID\\[1:0\\]
 bitfield. This sharing is valid only while KMOD\\[1:0\\]
 at 0x2 and KEYVALID=1. When a decryption is selected, read-as-zero SAES_DOUTR register is automatically loaded into SAES key registers after a successful decryption process."]
-        SHAREDKEY = 0x02,
+        SHARED_KEY = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Kmod {
@@ -659,7 +836,8 @@ at 0x2 and KEYVALID=1. When a decryption is selected, read-as-zero SAES_DOUTR re
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Kshareid {
         #[doc = "AES peripheral"]
         AES = 0x0,
@@ -690,11 +868,12 @@ at 0x2 and KEYVALID=1. When a decryption is selected, read-as-zero SAES_DOUTR re
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         ENCRYPTION = 0x0,
         #[doc = "Key derivation (or key preparation), for ECB/CBC decryption only"]
-        KEYDERIVATION = 0x01,
+        KEY_DERIVATION = 0x01,
         DECRYPTION = 0x02,
         _RESERVED_3 = 0x03,
     }

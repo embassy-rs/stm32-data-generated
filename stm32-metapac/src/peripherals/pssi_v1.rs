@@ -156,6 +156,47 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("ckpol", &self.ckpol())
+                .field("depol", &self.depol())
+                .field("rdypol", &self.rdypol())
+                .field("edm", &self.edm())
+                .field("enable", &self.enable())
+                .field("derdycfg", &self.derdycfg())
+                .field("dmaen", &self.dmaen())
+                .field("outen", &self.outen())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                ckpol: super::vals::Ckpol,
+                depol: super::vals::Depol,
+                rdypol: super::vals::Rdypol,
+                edm: super::vals::Edm,
+                enable: bool,
+                derdycfg: super::vals::Derdycfg,
+                dmaen: bool,
+                outen: super::vals::Outen,
+            }
+            let proxy = Cr {
+                ckpol: self.ckpol(),
+                depol: self.depol(),
+                rdypol: self.rdypol(),
+                edm: self.edm(),
+                enable: self.enable(),
+                derdycfg: self.derdycfg(),
+                dmaen: self.dmaen(),
+                outen: self.outen(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PSSI data register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -183,6 +224,39 @@ pub mod regs {
             Dr(0)
         }
     }
+    impl core::fmt::Debug for Dr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dr")
+                .field(
+                    "byte",
+                    &[
+                        self.byte(0usize),
+                        self.byte(1usize),
+                        self.byte(2usize),
+                        self.byte(3usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dr {
+                byte: [u8; 4usize],
+            }
+            let proxy = Dr {
+                byte: [
+                    self.byte(0usize),
+                    self.byte(1usize),
+                    self.byte(2usize),
+                    self.byte(3usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PSSI interrupt clear register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -204,6 +278,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Icr {
             Icr(0)
+        }
+    }
+    impl core::fmt::Debug for Icr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Icr").field("ovr_isc", &self.ovr_isc()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Icr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Icr {
+                ovr_isc: bool,
+            }
+            let proxy = Icr {
+                ovr_isc: self.ovr_isc(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PSSI interrupt enable register."]
@@ -229,6 +321,22 @@ pub mod regs {
             Ier(0)
         }
     }
+    impl core::fmt::Debug for Ier {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ier").field("ovr_ie", &self.ovr_ie()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ier {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ier {
+                ovr_ie: bool,
+            }
+            let proxy = Ier { ovr_ie: self.ovr_ie() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PSSI masked interrupt status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -252,6 +360,24 @@ pub mod regs {
             Mis(0)
         }
     }
+    impl core::fmt::Debug for Mis {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mis").field("ovr_mis", &self.ovr_mis()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Mis {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Mis {
+                ovr_mis: bool,
+            }
+            let proxy = Mis {
+                ovr_mis: self.ovr_mis(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PSSI raw interrupt status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -273,6 +399,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ris {
             Ris(0)
+        }
+    }
+    impl core::fmt::Debug for Ris {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ris").field("ovr_ris", &self.ovr_ris()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ris {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ris {
+                ovr_ris: bool,
+            }
+            let proxy = Ris {
+                ovr_ris: self.ovr_ris(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PSSI status register."]
@@ -309,15 +453,39 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("rtt4b", &self.rtt4b())
+                .field("rtt1b", &self.rtt1b())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                rtt4b: bool,
+                rtt1b: bool,
+            }
+            let proxy = Sr {
+                rtt4b: self.rtt4b(),
+                rtt1b: self.rtt1b(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ckpol {
         #[doc = "Falling edge active for inputs or rising edge active for outputs."]
-        FALLINGEDGE = 0x0,
+        FALLING_EDGE = 0x0,
         #[doc = "Rising edge active for inputs or falling edge active for outputs."]
-        RISINGEDGE = 0x01,
+        RISING_EDGE = 0x01,
     }
     impl Ckpol {
         #[inline(always)]
@@ -342,12 +510,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Depol {
         #[doc = "PSSI_DE active low (0 indicates that data is valid)."]
-        ACTIVELOW = 0x0,
+        ACTIVE_LOW = 0x0,
         #[doc = "PSSI_DE active high (1 indicates that data is valid)."]
-        ACTIVEHIGH = 0x01,
+        ACTIVE_HIGH = 0x01,
     }
     impl Depol {
         #[inline(always)]
@@ -372,7 +541,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Derdycfg {
         #[doc = "PSSI_DE and PSSI_RDY both disabled."]
         DISABLED = 0x0,
@@ -381,15 +551,15 @@ pub mod vals {
         #[doc = "Only PSSI_DE enabled."]
         DE = 0x02,
         #[doc = "Both PSSI_RDY and PSSI_DE alternate functions enabled."]
-        RDYDEALT = 0x03,
+        RDY_DE_ALT = 0x03,
         #[doc = "Both PSSI_RDY and PSSI_DE features enabled - bidirectional on PSSI_RDY pin."]
-        RDYDE = 0x04,
+        RDY_DE = 0x04,
         #[doc = "Only PSSI_RDY function enabled, but mapped to PSSI_DE pin."]
-        RDYREMAPPED = 0x05,
+        RDY_REMAPPED = 0x05,
         #[doc = "Only PSSI_DE function enabled, but mapped to PSSI_RDY pin."]
-        DEREMAPPED = 0x06,
+        DE_REMAPPED = 0x06,
         #[doc = "Both PSSI_RDY and PSSI_DE features enabled - bidirectional on PSSI_DE pin."]
-        RDYDEBIDI = 0x07,
+        RDY_DE_BIDI = 0x07,
     }
     impl Derdycfg {
         #[inline(always)]
@@ -414,14 +584,15 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Edm {
         #[doc = "Interface captures 8-bit data on every parallel data clock."]
-        BITWIDTH8 = 0x0,
+        BIT_WIDTH8 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "The interface captures 16-bit data on every parallel data clock."]
-        BITWIDTH16 = 0x03,
+        BIT_WIDTH16 = 0x03,
     }
     impl Edm {
         #[inline(always)]
@@ -446,12 +617,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Outen {
         #[doc = "Data is input synchronously with PSSI_PDCK."]
-        RECEIVEMODE = 0x0,
+        RECEIVE_MODE = 0x0,
         #[doc = "Data is output synchronously with PSSI_PDCK."]
-        TRANSMITMODE = 0x01,
+        TRANSMIT_MODE = 0x01,
     }
     impl Outen {
         #[inline(always)]
@@ -476,12 +648,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rdypol {
         #[doc = "PSSI_RDY active low (0 indicates that the receiver is ready to receive)."]
-        ACTIVELOW = 0x0,
+        ACTIVE_LOW = 0x0,
         #[doc = "PSSI_RDY active high (1 indicates that the receiver is ready to receive)."]
-        ACTIVEHIGH = 0x01,
+        ACTIVE_HIGH = 0x01,
     }
     impl Rdypol {
         #[inline(always)]

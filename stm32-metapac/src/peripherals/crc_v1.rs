@@ -59,4 +59,20 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr").field("reset", &self.reset()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                reset: bool,
+            }
+            let proxy = Cr { reset: self.reset() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }

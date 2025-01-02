@@ -214,10 +214,76 @@ pub mod regs {
             Csr(0)
         }
     }
+    impl core::fmt::Debug for Csr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Csr")
+                .field("opampen", &self.opampen())
+                .field("force_vp", &self.force_vp())
+                .field("vp_sel", &self.vp_sel())
+                .field("vm_sel", &self.vm_sel())
+                .field("tcm_en", &self.tcm_en())
+                .field("vms_sel", &self.vms_sel())
+                .field("vps_sel", &self.vps_sel())
+                .field("calon", &self.calon())
+                .field("calsel", &self.calsel())
+                .field("pga_gain", &self.pga_gain())
+                .field("user_trim", &self.user_trim())
+                .field("trimoffsetp", &self.trimoffsetp())
+                .field("trimoffsetn", &self.trimoffsetn())
+                .field("tstref", &self.tstref())
+                .field("outcal", &self.outcal())
+                .field("lock", &self.lock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Csr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Csr {
+                opampen: bool,
+                force_vp: super::vals::ForceVp,
+                vp_sel: super::vals::VpSel,
+                vm_sel: super::vals::VmSel,
+                tcm_en: bool,
+                vms_sel: super::vals::VmsSel,
+                vps_sel: super::vals::VpsSel,
+                calon: bool,
+                calsel: super::vals::Calsel,
+                pga_gain: super::vals::PgaGain,
+                user_trim: bool,
+                trimoffsetp: u8,
+                trimoffsetn: u8,
+                tstref: bool,
+                outcal: super::vals::Outcal,
+                lock: bool,
+            }
+            let proxy = Csr {
+                opampen: self.opampen(),
+                force_vp: self.force_vp(),
+                vp_sel: self.vp_sel(),
+                vm_sel: self.vm_sel(),
+                tcm_en: self.tcm_en(),
+                vms_sel: self.vms_sel(),
+                vps_sel: self.vps_sel(),
+                calon: self.calon(),
+                calsel: self.calsel(),
+                pga_gain: self.pga_gain(),
+                user_trim: self.user_trim(),
+                trimoffsetp: self.trimoffsetp(),
+                trimoffsetn: self.trimoffsetn(),
+                tstref: self.tstref(),
+                outcal: self.outcal(),
+                lock: self.lock(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Calsel {
         #[doc = "VREFOPAMP=3.3% VDDA"]
         PERCENT3_3 = 0x0,
@@ -251,7 +317,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum ForceVp {
         #[doc = "Normal operating mode"]
         NORMAL = 0x0,
@@ -281,7 +348,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Outcal {
         #[doc = "Non-inverting < inverting"]
         LOW = 0x0,
@@ -311,7 +379,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PgaGain {
         #[doc = "Gain 2"]
         GAIN2 = 0x0,
@@ -365,7 +434,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VmSel {
         #[doc = "PC5 (VM0) used as OPAMP2 inverting input"]
         PC5 = 0x0,
@@ -399,7 +469,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VmsSel {
         #[doc = "PC5 (VM0) used as OPAMP2 inverting input when TCM_EN=1"]
         PC5 = 0x0,
@@ -429,7 +500,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VpSel {
         _RESERVED_0 = 0x0,
         #[doc = "PB14 used as OPAMP2 non-inverting input"]
@@ -462,7 +534,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VpsSel {
         _RESERVED_0 = 0x0,
         #[doc = "PB14 used as OPAMP2 non-inverting input when TCM_EN=1"]

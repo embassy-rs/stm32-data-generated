@@ -76,6 +76,29 @@ pub mod regs {
             Cmpcr(0)
         }
     }
+    impl core::fmt::Debug for Cmpcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cmpcr")
+                .field("cmp_pd", &self.cmp_pd())
+                .field("ready", &self.ready())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cmpcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cmpcr {
+                cmp_pd: bool,
+                ready: bool,
+            }
+            let proxy = Cmpcr {
+                cmp_pd: self.cmp_pd(),
+                ready: self.ready(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "external interrupt configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -101,6 +124,39 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Exticr {
             Exticr(0)
+        }
+    }
+    impl core::fmt::Debug for Exticr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Exticr")
+                .field(
+                    "exti",
+                    &[
+                        self.exti(0usize),
+                        self.exti(1usize),
+                        self.exti(2usize),
+                        self.exti(3usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Exticr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Exticr {
+                exti: [u8; 4usize],
+            }
+            let proxy = Exticr {
+                exti: [
+                    self.exti(0usize),
+                    self.exti(1usize),
+                    self.exti(2usize),
+                    self.exti(3usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "memory remap register"]
@@ -146,6 +202,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Memrm {
             Memrm(0)
+        }
+    }
+    impl core::fmt::Debug for Memrm {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Memrm")
+                .field("mem_mode", &self.mem_mode())
+                .field("fb_mode", &self.fb_mode())
+                .field("swp_fmc", &self.swp_fmc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Memrm {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Memrm {
+                mem_mode: u8,
+                fb_mode: bool,
+                swp_fmc: u8,
+            }
+            let proxy = Memrm {
+                mem_mode: self.mem_mode(),
+                fb_mode: self.fb_mode(),
+                swp_fmc: self.swp_fmc(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "peripheral mode configuration register"]
@@ -202,6 +284,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Pmc {
             Pmc(0)
+        }
+    }
+    impl core::fmt::Debug for Pmc {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pmc")
+                .field("adc1dc2", &self.adc1dc2())
+                .field("adc2dc2", &self.adc2dc2())
+                .field("adc3dc2", &self.adc3dc2())
+                .field("mii_rmii_sel", &self.mii_rmii_sel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pmc {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pmc {
+                adc1dc2: bool,
+                adc2dc2: bool,
+                adc3dc2: bool,
+                mii_rmii_sel: bool,
+            }
+            let proxy = Pmc {
+                adc1dc2: self.adc1dc2(),
+                adc2dc2: self.adc2dc2(),
+                adc3dc2: self.adc3dc2(),
+                mii_rmii_sel: self.mii_rmii_sel(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

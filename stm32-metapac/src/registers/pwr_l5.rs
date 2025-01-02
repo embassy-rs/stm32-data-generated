@@ -1193,14 +1193,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MAINMODE",
+                    name: "MAIN_MODE",
                     description: Some(
                         "Voltage regulator in Main mode",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LOWPOWERMODE",
+                    name: "LOW_POWER_MODE",
                     description: Some(
                         "Voltage regulator in low-power mode",
                     ),
@@ -1277,21 +1277,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "POWEROFF",
+                    name: "POWER_OFF",
                     description: Some(
                         "SRAM2 powered off in Standby mode (SRAM2 content lost)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ONLPR",
+                    name: "ON_LPR",
                     description: Some(
                         "SRAM2 powered by the low-power regulator in Standby mode (SRAM2 content kept)",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ONLPRTOP4KB",
+                    name: "ON_LPRTOP4KB",
                     description: Some(
                         "Only the upper 4 Kbytes of SRAM2 are powered by the low-power regulator in Standby mode (upper 4 Kbytes of SRAM2 content 0x2003 F000 - 0x2003 FFFF is kept).",
                     ),

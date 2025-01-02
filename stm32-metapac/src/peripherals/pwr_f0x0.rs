@@ -98,6 +98,38 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("lpds", &self.lpds())
+                .field("pdds", &self.pdds())
+                .field("cwuf", &self.cwuf())
+                .field("csbf", &self.csbf())
+                .field("dbp", &self.dbp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                lpds: bool,
+                pdds: super::vals::Pdds,
+                cwuf: bool,
+                csbf: bool,
+                dbp: bool,
+            }
+            let proxy = Cr {
+                lpds: self.lpds(),
+                pdds: self.pdds(),
+                cwuf: self.cwuf(),
+                csbf: self.csbf(),
+                dbp: self.dbp(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "power control/status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -147,10 +179,58 @@ pub mod regs {
             Csr(0)
         }
     }
+    impl core::fmt::Debug for Csr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Csr")
+                .field("wuf", &self.wuf())
+                .field("sbf", &self.sbf())
+                .field(
+                    "ewup",
+                    &[
+                        self.ewup(0usize),
+                        self.ewup(1usize),
+                        self.ewup(2usize),
+                        self.ewup(3usize),
+                        self.ewup(4usize),
+                        self.ewup(5usize),
+                        self.ewup(6usize),
+                        self.ewup(7usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Csr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Csr {
+                wuf: bool,
+                sbf: bool,
+                ewup: [bool; 8usize],
+            }
+            let proxy = Csr {
+                wuf: self.wuf(),
+                sbf: self.sbf(),
+                ewup: [
+                    self.ewup(0usize),
+                    self.ewup(1usize),
+                    self.ewup(2usize),
+                    self.ewup(3usize),
+                    self.ewup(4usize),
+                    self.ewup(5usize),
+                    self.ewup(6usize),
+                    self.ewup(7usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pdds {
         #[doc = "Enter Stop mode when the CPU enters deepsleep"]
         STOP_MODE = 0x0,

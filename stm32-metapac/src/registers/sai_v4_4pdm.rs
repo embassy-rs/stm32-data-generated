@@ -1248,14 +1248,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FALLINGEDGE",
+                    name: "FALLING_EDGE",
                     description: Some(
                         "Data strobing edge is falling edge of SCK",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RISINGEDGE",
+                    name: "RISING_EDGE",
                     description: Some(
                         "Data strobing edge is rising edge of SCK",
                     ),
@@ -1276,7 +1276,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NOTREADY",
+                    name: "NOT_READY",
                     description: Some(
                         "External AC’97 Codec is not ready",
                     ),
@@ -1290,14 +1290,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOCOMPANDING",
+                    name: "NO_COMPANDING",
                     description: Some(
                         "No companding algorithm",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MULAW",
+                    name: "MU_LAW",
                     description: Some(
                         "μ-Law algorithm",
                     ),
@@ -1318,14 +1318,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ONESCOMPLEMENT",
+                    name: "ONES_COMPLEMENT",
                     description: Some(
                         "1’s complement representation",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "TWOSCOMPLEMENT",
+                    name: "TWOS_COMPLEMENT",
                     description: Some(
                         "2’s complement representation",
                     ),
@@ -1437,14 +1437,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ONFIRST",
+                    name: "ON_FIRST",
                     description: Some(
                         "FS is asserted on the first bit of the slot 0",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BEFOREFIRST",
+                    name: "BEFORE_FIRST",
                     description: Some(
                         "FS is asserted one bit before the first bit of the slot 0",
                     ),
@@ -1458,14 +1458,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FALLINGEDGE",
+                    name: "FALLING_EDGE",
                     description: Some(
                         "FS is active low (falling edge)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RISINGEDGE",
+                    name: "RISING_EDGE",
                     description: Some(
                         "FS is active high (rising edge)",
                     ),
@@ -1521,14 +1521,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MSBFIRST",
+                    name: "MSB_FIRST",
                     description: Some(
                         "Data are transferred with MSB first",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LSBFIRST",
+                    name: "LSB_FIRST",
                     description: Some(
                         "Data are transferred with LSB first",
                     ),
@@ -1542,28 +1542,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "MASTERTX",
+                    name: "MASTER_TX",
                     description: Some(
                         "Master transmitter",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MASTERRX",
+                    name: "MASTER_RX",
                     description: Some(
                         "Master receiver",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SLAVETX",
+                    name: "SLAVE_TX",
                     description: Some(
                         "Slave transmitter",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SLAVERX",
+                    name: "SLAVE_RX",
                     description: Some(
                         "Slave receiver",
                     ),
@@ -1598,14 +1598,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "SENDZERO",
+                    name: "SEND_ZERO",
                     description: Some(
                         "Bit value 0 is sent during the mute mode",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SENDLAST",
+                    name: "SEND_LAST",
                     description: Some(
                         "Last values are sent during the mute mode",
                     ),
@@ -1619,14 +1619,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MASTERCLOCK",
+                    name: "MASTER_CLOCK",
                     description: Some(
                         "MCLK output is enabled. Forces the ratio between FS and MCLK to 256 or 512 according to the OSR value",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NODIV",
+                    name: "NO_DIV",
                     description: Some(
                         "MCLK output enable set by the MCKEN bit (where present, else 0). Ratio between FS and MCLK depends on FRL.",
                     ),
@@ -1640,7 +1640,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ONSTART",
+                    name: "ON_START",
                     description: Some(
                         "Audio block output driven when SAIEN is set",
                     ),
@@ -1710,7 +1710,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DATASIZE",
+                    name: "DATA_SIZE",
                     description: Some(
                         "The slot size is equivalent to the data size (specified in DS[3:0] in the SAI_xCR1 register)",
                     ),

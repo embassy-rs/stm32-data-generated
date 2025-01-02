@@ -186,6 +186,62 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("lpsdsr", &self.lpsdsr())
+                .field("pdds", &self.pdds())
+                .field("cwuf", &self.cwuf())
+                .field("csbf", &self.csbf())
+                .field("pvde", &self.pvde())
+                .field("pls", &self.pls())
+                .field("dbp", &self.dbp())
+                .field("ulp", &self.ulp())
+                .field("fwu", &self.fwu())
+                .field("vos", &self.vos())
+                .field("ds_ee_koff", &self.ds_ee_koff())
+                .field("lprun", &self.lprun())
+                .field("lpds", &self.lpds())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                lpsdsr: super::vals::Mode,
+                pdds: super::vals::Pdds,
+                cwuf: bool,
+                csbf: bool,
+                pvde: bool,
+                pls: super::vals::Pls,
+                dbp: bool,
+                ulp: bool,
+                fwu: bool,
+                vos: super::vals::Vos,
+                ds_ee_koff: super::vals::DsEeKoff,
+                lprun: super::vals::Mode,
+                lpds: super::vals::Mode,
+            }
+            let proxy = Cr {
+                lpsdsr: self.lpsdsr(),
+                pdds: self.pdds(),
+                cwuf: self.cwuf(),
+                csbf: self.csbf(),
+                pvde: self.pvde(),
+                pls: self.pls(),
+                dbp: self.dbp(),
+                ulp: self.ulp(),
+                fwu: self.fwu(),
+                vos: self.vos(),
+                ds_ee_koff: self.ds_ee_koff(),
+                lprun: self.lprun(),
+                lpds: self.lpds(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "power control/status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -297,13 +353,58 @@ pub mod regs {
             Csr(0)
         }
     }
+    impl core::fmt::Debug for Csr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Csr")
+                .field("wuf", &self.wuf())
+                .field("sbf", &self.sbf())
+                .field("pvdo", &self.pvdo())
+                .field("vrefintrdyf", &self.vrefintrdyf())
+                .field("vosf", &self.vosf())
+                .field("reglpf", &self.reglpf())
+                .field("ewup1", &self.ewup1())
+                .field("ewup2", &self.ewup2())
+                .field("ewup3", &self.ewup3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Csr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Csr {
+                wuf: bool,
+                sbf: bool,
+                pvdo: bool,
+                vrefintrdyf: bool,
+                vosf: bool,
+                reglpf: bool,
+                ewup1: bool,
+                ewup2: bool,
+                ewup3: bool,
+            }
+            let proxy = Csr {
+                wuf: self.wuf(),
+                sbf: self.sbf(),
+                pvdo: self.pvdo(),
+                vrefintrdyf: self.vrefintrdyf(),
+                vosf: self.vosf(),
+                reglpf: self.reglpf(),
+                ewup1: self.ewup1(),
+                ewup2: self.ewup2(),
+                ewup3: self.ewup3(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum DsEeKoff {
         #[doc = "NVM woken up when exiting from Deepsleep mode even if the bit RUN_PD is set"]
-        NVMWAKEUP = 0x0,
+        NVMWAKE_UP = 0x0,
         #[doc = "NVM not woken up when exiting from low-power mode (if the bit RUN_PD is set)"]
         NVMSLEEP = 0x01,
     }
@@ -330,7 +431,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "Voltage regulator in Main mode"]
         MAIN_MODE = 0x0,
@@ -360,7 +462,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pdds {
         #[doc = "Enter Stop mode when the CPU enters deepsleep"]
         STOP_MODE = 0x0,
@@ -390,7 +493,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pls {
         #[doc = "1.9 V"]
         V1_9 = 0x0,
@@ -432,7 +536,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vos {
         _RESERVED_0 = 0x0,
         #[doc = "1.8 V (range 1)"]

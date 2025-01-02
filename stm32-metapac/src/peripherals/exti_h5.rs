@@ -113,6 +113,39 @@ pub mod regs {
             Exti(0)
         }
     }
+    impl core::fmt::Debug for Exti {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Exti")
+                .field(
+                    "exti",
+                    &[
+                        self.exti(0usize),
+                        self.exti(1usize),
+                        self.exti(2usize),
+                        self.exti(3usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Exti {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Exti {
+                exti: [u8; 4usize],
+            }
+            let proxy = Exti {
+                exti: [
+                    self.exti(0usize),
+                    self.exti(1usize),
+                    self.exti(2usize),
+                    self.exti(3usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "EXTI lines register, 1 bit per line"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -140,6 +173,95 @@ pub mod regs {
             Lines(0)
         }
     }
+    impl core::fmt::Debug for Lines {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lines")
+                .field(
+                    "line",
+                    &[
+                        self.line(0usize),
+                        self.line(1usize),
+                        self.line(2usize),
+                        self.line(3usize),
+                        self.line(4usize),
+                        self.line(5usize),
+                        self.line(6usize),
+                        self.line(7usize),
+                        self.line(8usize),
+                        self.line(9usize),
+                        self.line(10usize),
+                        self.line(11usize),
+                        self.line(12usize),
+                        self.line(13usize),
+                        self.line(14usize),
+                        self.line(15usize),
+                        self.line(16usize),
+                        self.line(17usize),
+                        self.line(18usize),
+                        self.line(19usize),
+                        self.line(20usize),
+                        self.line(21usize),
+                        self.line(22usize),
+                        self.line(23usize),
+                        self.line(24usize),
+                        self.line(25usize),
+                        self.line(26usize),
+                        self.line(27usize),
+                        self.line(28usize),
+                        self.line(29usize),
+                        self.line(30usize),
+                        self.line(31usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lines {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Lines {
+                line: [bool; 32usize],
+            }
+            let proxy = Lines {
+                line: [
+                    self.line(0usize),
+                    self.line(1usize),
+                    self.line(2usize),
+                    self.line(3usize),
+                    self.line(4usize),
+                    self.line(5usize),
+                    self.line(6usize),
+                    self.line(7usize),
+                    self.line(8usize),
+                    self.line(9usize),
+                    self.line(10usize),
+                    self.line(11usize),
+                    self.line(12usize),
+                    self.line(13usize),
+                    self.line(14usize),
+                    self.line(15usize),
+                    self.line(16usize),
+                    self.line(17usize),
+                    self.line(18usize),
+                    self.line(19usize),
+                    self.line(20usize),
+                    self.line(21usize),
+                    self.line(22usize),
+                    self.line(23usize),
+                    self.line(24usize),
+                    self.line(25usize),
+                    self.line(26usize),
+                    self.line(27usize),
+                    self.line(28usize),
+                    self.line(29usize),
+                    self.line(30usize),
+                    self.line(31usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "lock register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -161,6 +283,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Lockr {
             Lockr(0)
+        }
+    }
+    impl core::fmt::Debug for Lockr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lockr").field("lock", &self.lock()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lockr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Lockr {
+                lock: bool,
+            }
+            let proxy = Lockr { lock: self.lock() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "privilege configuration register"]
@@ -190,6 +328,95 @@ pub mod regs {
             Priv(0)
         }
     }
+    impl core::fmt::Debug for Priv {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Priv")
+                .field(
+                    "priv_",
+                    &[
+                        self.priv_(0usize),
+                        self.priv_(1usize),
+                        self.priv_(2usize),
+                        self.priv_(3usize),
+                        self.priv_(4usize),
+                        self.priv_(5usize),
+                        self.priv_(6usize),
+                        self.priv_(7usize),
+                        self.priv_(8usize),
+                        self.priv_(9usize),
+                        self.priv_(10usize),
+                        self.priv_(11usize),
+                        self.priv_(12usize),
+                        self.priv_(13usize),
+                        self.priv_(14usize),
+                        self.priv_(15usize),
+                        self.priv_(16usize),
+                        self.priv_(17usize),
+                        self.priv_(18usize),
+                        self.priv_(19usize),
+                        self.priv_(20usize),
+                        self.priv_(21usize),
+                        self.priv_(22usize),
+                        self.priv_(23usize),
+                        self.priv_(24usize),
+                        self.priv_(25usize),
+                        self.priv_(26usize),
+                        self.priv_(27usize),
+                        self.priv_(28usize),
+                        self.priv_(29usize),
+                        self.priv_(30usize),
+                        self.priv_(31usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Priv {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Priv {
+                priv_: [bool; 32usize],
+            }
+            let proxy = Priv {
+                priv_: [
+                    self.priv_(0usize),
+                    self.priv_(1usize),
+                    self.priv_(2usize),
+                    self.priv_(3usize),
+                    self.priv_(4usize),
+                    self.priv_(5usize),
+                    self.priv_(6usize),
+                    self.priv_(7usize),
+                    self.priv_(8usize),
+                    self.priv_(9usize),
+                    self.priv_(10usize),
+                    self.priv_(11usize),
+                    self.priv_(12usize),
+                    self.priv_(13usize),
+                    self.priv_(14usize),
+                    self.priv_(15usize),
+                    self.priv_(16usize),
+                    self.priv_(17usize),
+                    self.priv_(18usize),
+                    self.priv_(19usize),
+                    self.priv_(20usize),
+                    self.priv_(21usize),
+                    self.priv_(22usize),
+                    self.priv_(23usize),
+                    self.priv_(24usize),
+                    self.priv_(25usize),
+                    self.priv_(26usize),
+                    self.priv_(27usize),
+                    self.priv_(28usize),
+                    self.priv_(29usize),
+                    self.priv_(30usize),
+                    self.priv_(31usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "security configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -215,6 +442,95 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Sec {
             Sec(0)
+        }
+    }
+    impl core::fmt::Debug for Sec {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sec")
+                .field(
+                    "sec",
+                    &[
+                        self.sec(0usize),
+                        self.sec(1usize),
+                        self.sec(2usize),
+                        self.sec(3usize),
+                        self.sec(4usize),
+                        self.sec(5usize),
+                        self.sec(6usize),
+                        self.sec(7usize),
+                        self.sec(8usize),
+                        self.sec(9usize),
+                        self.sec(10usize),
+                        self.sec(11usize),
+                        self.sec(12usize),
+                        self.sec(13usize),
+                        self.sec(14usize),
+                        self.sec(15usize),
+                        self.sec(16usize),
+                        self.sec(17usize),
+                        self.sec(18usize),
+                        self.sec(19usize),
+                        self.sec(20usize),
+                        self.sec(21usize),
+                        self.sec(22usize),
+                        self.sec(23usize),
+                        self.sec(24usize),
+                        self.sec(25usize),
+                        self.sec(26usize),
+                        self.sec(27usize),
+                        self.sec(28usize),
+                        self.sec(29usize),
+                        self.sec(30usize),
+                        self.sec(31usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sec {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sec {
+                sec: [bool; 32usize],
+            }
+            let proxy = Sec {
+                sec: [
+                    self.sec(0usize),
+                    self.sec(1usize),
+                    self.sec(2usize),
+                    self.sec(3usize),
+                    self.sec(4usize),
+                    self.sec(5usize),
+                    self.sec(6usize),
+                    self.sec(7usize),
+                    self.sec(8usize),
+                    self.sec(9usize),
+                    self.sec(10usize),
+                    self.sec(11usize),
+                    self.sec(12usize),
+                    self.sec(13usize),
+                    self.sec(14usize),
+                    self.sec(15usize),
+                    self.sec(16usize),
+                    self.sec(17usize),
+                    self.sec(18usize),
+                    self.sec(19usize),
+                    self.sec(20usize),
+                    self.sec(21usize),
+                    self.sec(22usize),
+                    self.sec(23usize),
+                    self.sec(24usize),
+                    self.sec(25usize),
+                    self.sec(26usize),
+                    self.sec(27usize),
+                    self.sec(28usize),
+                    self.sec(29usize),
+                    self.sec(30usize),
+                    self.sec(31usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

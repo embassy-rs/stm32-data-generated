@@ -84,4 +84,93 @@ pub mod regs {
             Lines(0)
         }
     }
+    impl core::fmt::Debug for Lines {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lines")
+                .field(
+                    "line",
+                    &[
+                        self.line(0usize),
+                        self.line(1usize),
+                        self.line(2usize),
+                        self.line(3usize),
+                        self.line(4usize),
+                        self.line(5usize),
+                        self.line(6usize),
+                        self.line(7usize),
+                        self.line(8usize),
+                        self.line(9usize),
+                        self.line(10usize),
+                        self.line(11usize),
+                        self.line(12usize),
+                        self.line(13usize),
+                        self.line(14usize),
+                        self.line(15usize),
+                        self.line(16usize),
+                        self.line(17usize),
+                        self.line(18usize),
+                        self.line(19usize),
+                        self.line(20usize),
+                        self.line(21usize),
+                        self.line(22usize),
+                        self.line(23usize),
+                        self.line(24usize),
+                        self.line(25usize),
+                        self.line(26usize),
+                        self.line(27usize),
+                        self.line(28usize),
+                        self.line(29usize),
+                        self.line(30usize),
+                        self.line(31usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lines {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Lines {
+                line: [bool; 32usize],
+            }
+            let proxy = Lines {
+                line: [
+                    self.line(0usize),
+                    self.line(1usize),
+                    self.line(2usize),
+                    self.line(3usize),
+                    self.line(4usize),
+                    self.line(5usize),
+                    self.line(6usize),
+                    self.line(7usize),
+                    self.line(8usize),
+                    self.line(9usize),
+                    self.line(10usize),
+                    self.line(11usize),
+                    self.line(12usize),
+                    self.line(13usize),
+                    self.line(14usize),
+                    self.line(15usize),
+                    self.line(16usize),
+                    self.line(17usize),
+                    self.line(18usize),
+                    self.line(19usize),
+                    self.line(20usize),
+                    self.line(21usize),
+                    self.line(22usize),
+                    self.line(23usize),
+                    self.line(24usize),
+                    self.line(25usize),
+                    self.line(26usize),
+                    self.line(27usize),
+                    self.line(28usize),
+                    self.line(29usize),
+                    self.line(30usize),
+                    self.line(31usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }

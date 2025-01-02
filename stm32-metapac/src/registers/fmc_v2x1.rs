@@ -1082,7 +1082,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "NOBURSTSPLIT",
+                    name: "NO_BURST_SPLIT",
                     description: Some("No burst split when crossing page boundary"),
                     value: 0,
                 },
@@ -1156,7 +1156,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CLOCKCONFIGURATIONENABLE",
+                    name: "CLOCK_CONFIGURATION_ENABLE",
                     description: Some("Clock Configuration Enable"),
                     value: 1,
                 },
@@ -1166,22 +1166,22 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "AUTOREFRESHCOMMAND",
+                    name: "AUTO_REFRESH_COMMAND",
                     description: Some("Auto-refresh command"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "LOADMODEREGISTER",
+                    name: "LOAD_MODE_REGISTER",
                     description: Some("Load Mode Resgier"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "SELFREFRESHCOMMAND",
+                    name: "SELF_REFRESH_COMMAND",
                     description: Some("Self-refresh command"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "POWERDOWNCOMMAND",
+                    name: "POWER_DOWN_COMMAND",
                     description: Some("Power-down command"),
                     value: 6,
                 },
@@ -1198,12 +1198,12 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SELFREFRESH",
+                    name: "SELF_REFRESH",
                     description: Some("Self-refresh mode"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "POWERDOWN",
+                    name: "POWER_DOWN",
                     description: Some("Power-down mode"),
                     value: 2,
                 },
@@ -1352,7 +1352,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NODELAY",
+                    name: "NO_DELAY",
                     description: Some("No clock cycle delay"),
                     value: 0,
                 },
@@ -1396,12 +1396,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BEFOREWAITSTATE",
+                    name: "BEFORE_WAIT_STATE",
                     description: Some("NWAIT signal is active one data cycle before wait state"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DURINGWAITSTATE",
+                    name: "DURING_WAIT_STATE",
                     description: Some("NWAIT signal is active during wait state"),
                     value: 1,
                 },
@@ -1413,12 +1413,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVELOW",
+                    name: "ACTIVE_LOW",
                     description: Some("NWAIT active low"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ACTIVEHIGH",
+                    name: "ACTIVE_HIGH",
                     description: Some("NWAIT active high"),
                     value: 1,
                 },

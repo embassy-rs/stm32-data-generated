@@ -132,6 +132,29 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
             Bsmxcr(0)
         }
     }
+    impl core::fmt::Debug for Bsmxcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bsmxcr")
+                .field("bssel", &self.bssel())
+                .field("bsmxactive", &self.bsmxactive())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bsmxcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Bsmxcr {
+                bssel: super::vals::Bssel,
+                bsmxactive: bool,
+            }
+            let proxy = Bsmxcr {
+                bssel: self.bssel(),
+                bsmxactive: self.bsmxactive(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "ADF clock generator control register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -265,6 +288,56 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
             Ckgcr(0)
         }
     }
+    impl core::fmt::Debug for Ckgcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ckgcr")
+                .field("ckgden", &self.ckgden())
+                .field("cck0en", &self.cck0en())
+                .field("cck1en", &self.cck1en())
+                .field("ckgmod", &self.ckgmod())
+                .field("cck0dir", &self.cck0dir())
+                .field("cck1dir", &self.cck1dir())
+                .field("trgsens", &self.trgsens())
+                .field("trgsrc", &self.trgsrc())
+                .field("cckdiv", &self.cckdiv())
+                .field("procdiv", &self.procdiv())
+                .field("ckgactive", &self.ckgactive())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ckgcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ckgcr {
+                ckgden: bool,
+                cck0en: super::vals::Ccken,
+                cck1en: super::vals::Ccken,
+                ckgmod: super::vals::Ckgmod,
+                cck0dir: super::vals::Cckdir,
+                cck1dir: super::vals::Cckdir,
+                trgsens: super::vals::Trgsens,
+                trgsrc: super::vals::Trgsrc,
+                cckdiv: super::vals::Cckdiv,
+                procdiv: u8,
+                ckgactive: bool,
+            }
+            let proxy = Ckgcr {
+                ckgden: self.ckgden(),
+                cck0en: self.cck0en(),
+                cck1en: self.cck1en(),
+                ckgmod: self.ckgmod(),
+                cck0dir: self.cck0dir(),
+                cck1dir: self.cck1dir(),
+                trgsens: self.trgsens(),
+                trgsrc: self.trgsrc(),
+                cckdiv: self.cckdiv(),
+                procdiv: self.procdiv(),
+                ckgactive: self.ckgactive(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "ADF digital filer configuration register 0."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -319,6 +392,35 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         #[inline(always)]
         fn default() -> Dfltcicr {
             Dfltcicr(0)
+        }
+    }
+    impl core::fmt::Debug for Dfltcicr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dfltcicr")
+                .field("datsrc", &self.datsrc())
+                .field("cicmod", &self.cicmod())
+                .field("mcicd", &self.mcicd())
+                .field("scale", &self.scale())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dfltcicr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dfltcicr {
+                datsrc: super::vals::Datsrc,
+                cicmod: super::vals::Cicmod,
+                mcicd: u16,
+                scale: u8,
+            }
+            let proxy = Dfltcicr {
+                datsrc: self.datsrc(),
+                cicmod: self.cicmod(),
+                mcicd: self.mcicd(),
+                scale: self.scale(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "ADF digital filter control register 0."]
@@ -421,6 +523,47 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
             Dfltcr(0)
         }
     }
+    impl core::fmt::Debug for Dfltcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dfltcr")
+                .field("dflten", &self.dflten())
+                .field("dmaen", &self.dmaen())
+                .field("fth", &self.fth())
+                .field("acqmod", &self.acqmod())
+                .field("trgsrc", &self.trgsrc())
+                .field("nbdis", &self.nbdis())
+                .field("dfltrun", &self.dfltrun())
+                .field("dfltactive", &self.dfltactive())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dfltcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dfltcr {
+                dflten: bool,
+                dmaen: bool,
+                fth: super::vals::Rxfifo,
+                acqmod: super::vals::Acqmod,
+                trgsrc: u8,
+                nbdis: u8,
+                dfltrun: bool,
+                dfltactive: bool,
+            }
+            let proxy = Dfltcr {
+                dflten: self.dflten(),
+                dmaen: self.dmaen(),
+                fth: self.fth(),
+                acqmod: self.acqmod(),
+                trgsrc: self.trgsrc(),
+                nbdis: self.nbdis(),
+                dfltrun: self.dfltrun(),
+                dfltactive: self.dfltactive(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "ADF digital filter data register 0."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -442,6 +585,22 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         #[inline(always)]
         fn default() -> Dfltdr {
             Dfltdr(0)
+        }
+    }
+    impl core::fmt::Debug for Dfltdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dfltdr").field("dr", &self.dr()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dfltdr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dfltdr {
+                dr: u32,
+            }
+            let proxy = Dfltdr { dr: self.dr() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "ADF DFLT interrupt enable register."]
@@ -531,6 +690,44 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         #[inline(always)]
         fn default() -> Dfltier {
             Dfltier(0)
+        }
+    }
+    impl core::fmt::Debug for Dfltier {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dfltier")
+                .field("fthie", &self.fthie())
+                .field("dovrie", &self.dovrie())
+                .field("satie", &self.satie())
+                .field("ckabie", &self.ckabie())
+                .field("rfovrie", &self.rfovrie())
+                .field("sddetie", &self.sddetie())
+                .field("sdlvlie", &self.sdlvlie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dfltier {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dfltier {
+                fthie: bool,
+                dovrie: bool,
+                satie: bool,
+                ckabie: bool,
+                rfovrie: bool,
+                sddetie: bool,
+                sdlvlie: bool,
+            }
+            let proxy = Dfltier {
+                fthie: self.fthie(),
+                dovrie: self.dovrie(),
+                satie: self.satie(),
+                ckabie: self.ckabie(),
+                rfovrie: self.rfovrie(),
+                sddetie: self.sddetie(),
+                sdlvlie: self.sdlvlie(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "ADF DFLT interrupt status register 0."]
@@ -633,6 +830,47 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
             Dfltisr(0)
         }
     }
+    impl core::fmt::Debug for Dfltisr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dfltisr")
+                .field("fthf", &self.fthf())
+                .field("dovrf", &self.dovrf())
+                .field("rxnef", &self.rxnef())
+                .field("satf", &self.satf())
+                .field("ckabf", &self.ckabf())
+                .field("rfovrf", &self.rfovrf())
+                .field("sddetf", &self.sddetf())
+                .field("sdlvlf", &self.sdlvlf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dfltisr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dfltisr {
+                fthf: bool,
+                dovrf: bool,
+                rxnef: bool,
+                satf: bool,
+                ckabf: bool,
+                rfovrf: bool,
+                sddetf: bool,
+                sdlvlf: bool,
+            }
+            let proxy = Dfltisr {
+                fthf: self.fthf(),
+                dovrf: self.dovrf(),
+                rxnef: self.rxnef(),
+                satf: self.satf(),
+                ckabf: self.ckabf(),
+                rfovrf: self.rfovrf(),
+                sddetf: self.sddetf(),
+                sdlvlf: self.sdlvlf(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "ADF reshape filter configuration register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -689,6 +927,35 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
             Dfltrsfr(0)
         }
     }
+    impl core::fmt::Debug for Dfltrsfr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dfltrsfr")
+                .field("rsfltbyp", &self.rsfltbyp())
+                .field("rsfltd", &self.rsfltd())
+                .field("hpfbyp", &self.hpfbyp())
+                .field("hpfc", &self.hpfc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dfltrsfr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dfltrsfr {
+                rsfltbyp: bool,
+                rsfltd: super::vals::Rsfltd,
+                hpfbyp: bool,
+                hpfc: super::vals::Hpfc,
+            }
+            let proxy = Dfltrsfr {
+                rsfltbyp: self.rsfltbyp(),
+                rsfltd: self.rsfltd(),
+                hpfbyp: self.hpfbyp(),
+                hpfc: self.hpfc(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "ADF delay control register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -723,6 +990,29 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
             Dlycr(0)
         }
     }
+    impl core::fmt::Debug for Dlycr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dlycr")
+                .field("skpdly", &self.skpdly())
+                .field("skpbf", &self.skpbf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dlycr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dlycr {
+                skpdly: u8,
+                skpbf: bool,
+            }
+            let proxy = Dlycr {
+                skpdly: self.skpdly(),
+                skpbf: self.skpbf(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "ADF Global Control Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -746,6 +1036,22 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
             Gcr(0)
         }
     }
+    impl core::fmt::Debug for Gcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Gcr").field("trgo", &self.trgo()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Gcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Gcr {
+                trgo: bool,
+            }
+            let proxy = Gcr { trgo: self.trgo() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "ADF SAD ambient noise level register. This bitfield is set by hardware. It contains the latest ambient noise level computed by the SAD. To refresh this bitfield, the SDLVLF flag must be cleared."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -767,6 +1073,22 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         #[inline(always)]
         fn default() -> Sadanlvr {
             Sadanlvr(0)
+        }
+    }
+    impl core::fmt::Debug for Sadanlvr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sadanlvr").field("anlvl", &self.anlvl()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sadanlvr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sadanlvr {
+                anlvl: u16,
+            }
+            let proxy = Sadanlvr { anlvl: self.anlvl() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "ADF SAD configuration register."]
@@ -834,6 +1156,38 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         #[inline(always)]
         fn default() -> Sadcfgr {
             Sadcfgr(0)
+        }
+    }
+    impl core::fmt::Debug for Sadcfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sadcfgr")
+                .field("snthr", &self.snthr())
+                .field("anslp", &self.anslp())
+                .field("lfrnb", &self.lfrnb())
+                .field("hgovr", &self.hgovr())
+                .field("anmin", &self.anmin())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sadcfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sadcfgr {
+                snthr: super::vals::Snthr,
+                anslp: u8,
+                lfrnb: super::vals::Lfrnb,
+                hgovr: super::vals::Hgovr,
+                anmin: u16,
+            }
+            let proxy = Sadcfgr {
+                snthr: self.snthr(),
+                anslp: self.anslp(),
+                lfrnb: self.lfrnb(),
+                hgovr: self.hgovr(),
+                anmin: self.anmin(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "ADF Sound activity detector (SAD) control register."]
@@ -936,6 +1290,47 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
             Sadcr(0)
         }
     }
+    impl core::fmt::Debug for Sadcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sadcr")
+                .field("saden", &self.saden())
+                .field("datcap", &self.datcap())
+                .field("detcfg", &self.detcfg())
+                .field("sadst", &self.sadst())
+                .field("hysten", &self.hysten())
+                .field("frsize", &self.frsize())
+                .field("sadmod", &self.sadmod())
+                .field("sadactive", &self.sadactive())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sadcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sadcr {
+                saden: bool,
+                datcap: super::vals::Datcap,
+                detcfg: super::vals::Detcfg,
+                sadst: super::vals::Sadst,
+                hysten: bool,
+                frsize: super::vals::Frsize,
+                sadmod: super::vals::Sadmod,
+                sadactive: bool,
+            }
+            let proxy = Sadcr {
+                saden: self.saden(),
+                datcap: self.datcap(),
+                detcfg: self.detcfg(),
+                sadst: self.sadst(),
+                hysten: self.hysten(),
+                frsize: self.frsize(),
+                sadmod: self.sadmod(),
+                sadactive: self.sadactive(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "ADF SAD sound level register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -957,6 +1352,22 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         #[inline(always)]
         fn default() -> Sadsdlvr {
             Sadsdlvr(0)
+        }
+    }
+    impl core::fmt::Debug for Sadsdlvr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sadsdlvr").field("sdlvl", &self.sdlvl()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sadsdlvr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sadsdlvr {
+                sdlvl: u16,
+            }
+            let proxy = Sadsdlvr { sdlvl: self.sdlvl() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "ADF serial interface control register 0."]
@@ -1022,22 +1433,55 @@ values lower than four are invalid."]
             Sitfcr(0)
         }
     }
+    impl core::fmt::Debug for Sitfcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sitfcr")
+                .field("sitfen", &self.sitfen())
+                .field("scksrc", &self.scksrc())
+                .field("sitfmod", &self.sitfmod())
+                .field("sth", &self.sth())
+                .field("sitfactive", &self.sitfactive())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sitfcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sitfcr {
+                sitfen: bool,
+                scksrc: super::vals::Scksrc,
+                sitfmod: super::vals::Sitfmod,
+                sth: u8,
+                sitfactive: bool,
+            }
+            let proxy = Sitfcr {
+                sitfen: self.sitfen(),
+                scksrc: self.scksrc(),
+                sitfmod: self.sitfmod(),
+                sth: self.sth(),
+                sitfactive: self.sitfactive(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[doc = "DFLT trigger mode. This bitfield is set and cleared by software. It is used to select the trigger mode of the DFLT0."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Acqmod {
         #[doc = "Asynchronous continuous acquisition mode."]
-        ASYNCHRONOUSCONTINUOUS = 0x0,
+        ASYNCHRONOUS_CONTINUOUS = 0x0,
         #[doc = "Asynchronous single-shot acquisition mode"]
-        ASYNCHRONOUSSINGLESHOT = 0x01,
+        ASYNCHRONOUS_SINGLE_SHOT = 0x01,
         #[doc = "Synchronous continuous acquisition mode."]
-        SYNCRONOUSCONTINUOUS = 0x02,
+        SYNCRONOUS_CONTINUOUS = 0x02,
         #[doc = "Synchronous single-shot acquisition mode."]
-        SYNCRONOUSSINGLESHOT = 0x03,
+        SYNCRONOUS_SINGLE_SHOT = 0x03,
         #[doc = "Window continuous acquisition mode."]
-        WINDOWCONTINUOUS = 0x04,
+        WINDOW_CONTINUOUS = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -1066,7 +1510,8 @@ pub mod vals {
     }
     #[doc = "Bitstream selection. This bitfield is set and cleared by software. It is used to select the bitstream to be used by the DFLT0."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bssel {
         #[doc = "bsx_r provided to DFLTy (and SCDy)."]
         BS0_R = 0x0,
@@ -1157,7 +1602,8 @@ pub mod vals {
     }
     #[doc = "CCK1 direction. This bit is set and reset by software. It is used to control the direction of the ADF_CCK1 pin."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cckdir {
         #[doc = "CCK is an input."]
         INPUT = 0x0,
@@ -1188,7 +1634,8 @@ pub mod vals {
     }
     #[doc = "Divider to control the CCK clock. This bit is set and reset by software. It is used to control the frequency of the bitstream clock on the CCK pin."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cckdiv {
         #[doc = "The ADF_CCK clock is adf_proc_ck."]
         DIV1 = 0x0,
@@ -1247,10 +1694,11 @@ pub mod vals {
     }
     #[doc = "CCK clock enable. This bit is set and reset by software. It is used to control the generation of the bitstream clock on the CCK pin."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ccken {
         #[doc = "Bitstream clock not generated."]
-        NOTGENERATED = 0x0,
+        NOT_GENERATED = 0x0,
         #[doc = "Bitstream clock generated on the CCK pin."]
         GENERATED = 0x01,
     }
@@ -1278,7 +1726,8 @@ pub mod vals {
     }
     #[doc = "Select the CIC order. This bitfield is set and cleared by software. It is used to select the MCIC order."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cicmod {
         _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
@@ -1315,7 +1764,8 @@ pub mod vals {
     }
     #[doc = "Clock generator mode. This bit is set and reset by software. It is used to define the way the clock generator is enabled. This bit must not be changed if the filter is enabled (DFTEN = 1)."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ckgmod {
         #[doc = "The kernel clock is provided to the dividers as soon as CKGDEN is set to 1."]
         IMMEDIATE = 0x0,
@@ -1346,12 +1796,13 @@ pub mod vals {
     }
     #[doc = "Data capture mode. This bitfield is set and cleared by software. It is used to define in which conditions, the samples provided by DLFT0 are stored into the memory."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Datcap {
         #[doc = "Samples from DFLT0 not transfered into the memory."]
         DISABLED = 0x0,
         #[doc = "Samples from DFLT0 transfered into the memory when SAD is in DETECT state."]
-        ONDETECTED = 0x01,
+        ON_DETECTED = 0x01,
         #[doc = "Samples from DFLT0 transfered into memory when SAD and DFLT0 are enabled."]
         ENABLED = 0x02,
         _RESERVED_3 = 0x03,
@@ -1380,7 +1831,8 @@ pub mod vals {
     }
     #[doc = "Source data for the digital filter."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Datsrc {
         #[doc = "Stream coming from the BSMX selected"]
         BSMX = 0x0,
@@ -1414,7 +1866,8 @@ pub mod vals {
     }
     #[doc = "Sound trigger event configuration. This bit is set and cleared by software. It is used to define if the sddet_evt event is generated only when the SAD enters to MONITOR state or when the SAD enters or exits the DETECT state."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Detcfg {
         #[doc = "sddet_evt generated when SAD enters the MONITOR state."]
         MONITOR = 0x0,
@@ -1445,7 +1898,8 @@ pub mod vals {
     }
     #[doc = "Frame size. This bitfield is set and cleared by software. it is used to define the size of one frame and also to define how many samples are taken into account to compute the short-term signal level."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Frsize {
         #[doc = "8 sample."]
         SAMPLES8 = 0x0,
@@ -1487,24 +1941,25 @@ pub mod vals {
     }
     #[doc = "Hangover time window. This bitfield is set and cleared by software. It is used to select the hangover time window."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hgovr {
         #[doc = "SAD back to MONITOR state if sound is below threshold for 4 frames."]
-        FRAMES4 = 0x0,
+        FRAMES_4 = 0x0,
         #[doc = "SAD back to MONITOR state if sound is below threshold for 4 frames."]
-        FRAMES8 = 0x01,
+        FRAMES_8 = 0x01,
         #[doc = "SAD back to MONITOR state if sound is below threshold for 4 frames."]
-        FRAMES16 = 0x02,
+        FRAMES_16 = 0x02,
         #[doc = "SAD back to MONITOR state if sound is below threshold for 4 frames."]
-        FRAMES32 = 0x03,
+        FRAMES_32 = 0x03,
         #[doc = "SAD back to MONITOR state if sound is below threshold for 4 frames."]
-        FRAMES64 = 0x04,
+        FRAMES_64 = 0x04,
         #[doc = "SAD back to MONITOR state if sound is below threshold for 4 frames."]
-        FRAMES128 = 0x05,
+        FRAMES_128 = 0x05,
         #[doc = "SAD back to MONITOR state if sound is below threshold for 4 frames."]
-        FRAMES256 = 0x06,
+        FRAMES_256 = 0x06,
         #[doc = "SAD back to MONITOR state if sound is below threshold for 4 frames."]
-        FRAMES512 = 0x07,
+        FRAMES_512 = 0x07,
     }
     impl Hgovr {
         #[inline(always)]
@@ -1530,7 +1985,8 @@ pub mod vals {
     }
     #[doc = "High-pass filter cut-off frequency. This bitfield is set and cleared by software. it is used to select the cut-off frequency of the high-pass filter. F PCM represents the sampling frequency at HPF input."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hpfc {
         #[doc = "Cut-off frequency = 0.000625 x FPCM."]
         LOW = 0x0,
@@ -1565,18 +2021,19 @@ pub mod vals {
     }
     #[doc = "LFRNB. This bitfield is set and cleared by software. It is used to define the number of learning frames to perform the first estimate of the noise level."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lfrnb {
         #[doc = "2 samples."]
-        FRAMES2 = 0x0,
+        FRAMES_2 = 0x0,
         #[doc = "4 samples."]
-        FRAMES4 = 0x01,
+        FRAMES_4 = 0x01,
         #[doc = "8 samples."]
-        FRAMES8 = 0x02,
+        FRAMES_8 = 0x02,
         #[doc = "16 samples."]
-        FRAMES16 = 0x03,
+        FRAMES_16 = 0x03,
         #[doc = "32 samples."]
-        FRAMES32 = 0x04,
+        FRAMES_32 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -1605,7 +2062,8 @@ pub mod vals {
     }
     #[doc = "Reshaper filter decimation ratio. This bitfield is set and cleared by software. It is used to select the decimation ratio of the reshaper filter."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rsfltd {
         #[doc = "Decimation ratio is 4 (default value)."]
         DECIMATION4 = 0x0,
@@ -1636,12 +2094,13 @@ pub mod vals {
     }
     #[doc = "RXFIFO threshold selection. This bitfield is set and cleared by software. It is used to select the RXFIFO threshold."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rxfifo {
         #[doc = "RXFIFO threshold event generated when the RXFIFO is not empty"]
-        NOTEMPTY = 0x0,
+        NOT_EMPTY = 0x0,
         #[doc = "RXFIFO threshold event generated when the RXFIFO is half-full"]
-        HALFFULL = 0x01,
+        HALF_FULL = 0x01,
     }
     impl Rxfifo {
         #[inline(always)]
@@ -1667,16 +2126,17 @@ pub mod vals {
     }
     #[doc = "SAD working mode. This bitfield is set and cleared by software. It is used to define the way the SAD works"]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sadmod {
         #[doc = "Threshold value computed according to the estimated ambient noise. The SAD triggers when the sound level (SDLVL) is bigger than the defined threshold. In this mode, the SAD works like a voice activity detector."]
-        THRESHOLDESTIMATEDAMBIENTNOISE = 0x0,
+        THRESHOLD_ESTIMATED_AMBIENT_NOISE = 0x0,
         #[doc = "Threshold value equal to ANMIN\\[12:0\\], multiplied by the gain selected by SNTHR\\[3:0\\]
 The SAD triggers when the sound level (SDLVL) is bigger than the defined threshold. In this mode, the SAD works like a sound detector."]
-        THRESHOLDMINIMUMNOISELEVEL = 0x01,
+        THRESHOLD_MINIMUM_NOISELEVEL = 0x01,
         #[doc = "Threshold value given by 4 x ANMIN\\[12:0\\]. The SAD triggers when the estimated ambient noise (ANLVL), multiplied by the gain selected by SNTHR\\[3:0\\]
 is bigger than the defined threshold. In this mode, the SAD is working like an ambient noise estimator. Hysteresis function cannot be used in this mode."]
-        THRESHOLDMINIMUMNOISELEVELX4 = 0x02,
+        THRESHOLD_MINIMUM_NOISELEVELX4 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Sadmod {
@@ -1703,7 +2163,8 @@ is bigger than the defined threshold. In this mode, the SAD is working like an a
     }
     #[doc = "SAD state. This bitfield is set and cleared by hardware. It indicates the SAD state and is meaningful only when SADEN = 1."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sadst {
         #[doc = "SAD in LEARN state."]
         LEARN = 0x0,
@@ -1737,7 +2198,8 @@ is bigger than the defined threshold. In this mode, the SAD is working like an a
     }
     #[doc = "Serial clock source. This bitfield is set and cleared by software. It is used to select the clock source of the serial interface."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Scksrc {
         #[doc = "Serial clock source is CCK0."]
         CCK0 = 0x0,
@@ -1772,16 +2234,17 @@ is bigger than the defined threshold. In this mode, the SAD is working like an a
     }
     #[doc = "Serial interface mode. This bitfield is set and cleared by software. It is used to select the serial interface mode."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sitfmod {
         #[doc = "LF_MASTER SPI mode."]
-        MASTERSPI = 0x0,
+        MASTER_SPI = 0x0,
         #[doc = "Normal SPI mode."]
-        NORMALSPI = 0x01,
+        NORMAL_SPI = 0x01,
         #[doc = "Manchester mode rising edge = logic 0, falling edge = logic 1."]
-        MANCHESTERFALLING = 0x02,
+        MANCHESTER_FALLING = 0x02,
         #[doc = "Manchester mode rising edge = logic 1, falling edge = logic 0."]
-        MANCHESTERRISING = 0x03,
+        MANCHESTER_RISING = 0x03,
     }
     impl Sitfmod {
         #[inline(always)]
@@ -1807,28 +2270,29 @@ is bigger than the defined threshold. In this mode, the SAD is working like an a
     }
     #[doc = "SNTHR. This bitfield is set and cleared by software. It is used to select the gain to be applied at CIC output. If the application attempts to write a new gain value while the previous one is not yet applied, this new gain value is ignored. Reading back this bitfield informs the application on the current gain value."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Snthr {
         #[doc = "Threshold is 3.5 dB higher than ANLVL"]
-        NOISEPLUS3_5 = 0x0,
+        NOISE_PLUS_3_5 = 0x0,
         #[doc = "Threshold is 6.0 dB higher than ANLVL"]
-        NOISEPLUS6_0 = 0x01,
+        NOISE_PLUS_6_0 = 0x01,
         #[doc = "Threshold is 9.5 dB higher than ANLVL"]
-        NOISEPLUS9_5 = 0x02,
+        NOISE_PLUS_9_5 = 0x02,
         #[doc = "Threshold is 12 dB higher than ANLVL"]
-        NOISEPLUS12 = 0x03,
+        NOISE_PLUS_12 = 0x03,
         #[doc = "Threshold is 15.6 dB higher than ANLVL"]
-        NOISEPLUS15_6 = 0x04,
+        NOISE_PLUS_15_6 = 0x04,
         #[doc = "Threshold is 18 dB higher than ANLVL"]
-        NOISEPLUS18 = 0x05,
+        NOISE_PLUS_18 = 0x05,
         #[doc = "Threshold is 21.6 dB higher than ANLVL"]
-        NOISEPLUS21_6 = 0x06,
+        NOISE_PLUS_21_6 = 0x06,
         #[doc = "Threshold is 24.1 dB higher than ANLVL"]
-        NOISEPLUS24_1 = 0x07,
+        NOISE_PLUS_24_1 = 0x07,
         #[doc = "Threshold is 27.6 dB higher than ANLVL"]
-        NOISEPLUS27_6 = 0x08,
+        NOISE_PLUS_27_6 = 0x08,
         #[doc = "Threshold is 30.1 dB higher than ANLVL"]
-        NOISEPLUS30_1 = 0x09,
+        NOISE_PLUS_30_1 = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
@@ -1860,12 +2324,13 @@ is bigger than the defined threshold. In this mode, the SAD is working like an a
     }
     #[doc = "CKGEN trigger sensitivity selection. This bit is set and cleared by software. It is used to select the trigger sensitivity of the trigger signals. This bit is not significant if the CKGMOD = 0."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Trgsens {
         #[doc = "A rising edge event triggers the activation of CKGEN dividers."]
-        RISINGEDGE = 0x0,
+        RISING_EDGE = 0x0,
         #[doc = "A falling edge even triggers the activation of CKGEN dividers."]
-        FALLINGEDGE = 0x01,
+        FALLING_EDGE = 0x01,
     }
     impl Trgsens {
         #[inline(always)]
@@ -1891,7 +2356,8 @@ is bigger than the defined threshold. In this mode, the SAD is working like an a
     }
     #[doc = "Digital filter trigger signal selection."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Trgsrc {
         #[doc = "TRGO Selected."]
         TRGO = 0x0,

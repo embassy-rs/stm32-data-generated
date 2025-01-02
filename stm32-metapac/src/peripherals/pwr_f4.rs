@@ -236,6 +236,74 @@ ONLY)"]
             Cr1(0)
         }
     }
+    impl core::fmt::Debug for Cr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr1")
+                .field("lpds", &self.lpds())
+                .field("pdds", &self.pdds())
+                .field("cwuf", &self.cwuf())
+                .field("csbf", &self.csbf())
+                .field("pvde", &self.pvde())
+                .field("pls", &self.pls())
+                .field("dbp", &self.dbp())
+                .field("fpds", &self.fpds())
+                .field("lplvds", &self.lplvds())
+                .field("mrlvds", &self.mrlvds())
+                .field("adcdc1", &self.adcdc1())
+                .field("vos", &self.vos())
+                .field("oden", &self.oden())
+                .field("odswen", &self.odswen())
+                .field("uden", &self.uden())
+                .field("fmssr", &self.fmssr())
+                .field("fissr", &self.fissr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr1 {
+                lpds: bool,
+                pdds: super::vals::Pdds,
+                cwuf: bool,
+                csbf: bool,
+                pvde: bool,
+                pls: u8,
+                dbp: bool,
+                fpds: bool,
+                lplvds: bool,
+                mrlvds: bool,
+                adcdc1: bool,
+                vos: super::vals::Vos,
+                oden: bool,
+                odswen: bool,
+                uden: u8,
+                fmssr: bool,
+                fissr: bool,
+            }
+            let proxy = Cr1 {
+                lpds: self.lpds(),
+                pdds: self.pdds(),
+                cwuf: self.cwuf(),
+                csbf: self.csbf(),
+                pvde: self.pvde(),
+                pls: self.pls(),
+                dbp: self.dbp(),
+                fpds: self.fpds(),
+                lplvds: self.lplvds(),
+                mrlvds: self.mrlvds(),
+                adcdc1: self.adcdc1(),
+                vos: self.vos(),
+                oden: self.oden(),
+                odswen: self.odswen(),
+                uden: self.uden(),
+                fmssr: self.fmssr(),
+                fissr: self.fissr(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "power control/status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -375,10 +443,61 @@ ONLY)"]
             Csr1(0)
         }
     }
+    impl core::fmt::Debug for Csr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Csr1")
+                .field("wuf", &self.wuf())
+                .field("sbf", &self.sbf())
+                .field("pvdo", &self.pvdo())
+                .field("brr", &self.brr())
+                .field("ewup2", &self.ewup2())
+                .field("ewup", &self.ewup())
+                .field("bre", &self.bre())
+                .field("vosrdy", &self.vosrdy())
+                .field("odrdy", &self.odrdy())
+                .field("odswrdy", &self.odswrdy())
+                .field("udrdy", &self.udrdy())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Csr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Csr1 {
+                wuf: bool,
+                sbf: bool,
+                pvdo: bool,
+                brr: bool,
+                ewup2: bool,
+                ewup: bool,
+                bre: bool,
+                vosrdy: bool,
+                odrdy: bool,
+                odswrdy: bool,
+                udrdy: u8,
+            }
+            let proxy = Csr1 {
+                wuf: self.wuf(),
+                sbf: self.sbf(),
+                pvdo: self.pvdo(),
+                brr: self.brr(),
+                ewup2: self.ewup2(),
+                ewup: self.ewup(),
+                bre: self.bre(),
+                vosrdy: self.vosrdy(),
+                odrdy: self.odrdy(),
+                odswrdy: self.odswrdy(),
+                udrdy: self.udrdy(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pdds {
         #[doc = "Enter Stop mode when the CPU enters deepsleep"]
         STOP_MODE = 0x0,
@@ -408,7 +527,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vos {
         _RESERVED_0 = 0x0,
         #[doc = "Scale 3 mode (STM32F4\\[23\\]

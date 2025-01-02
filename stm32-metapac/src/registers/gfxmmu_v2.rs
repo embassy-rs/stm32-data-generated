@@ -612,14 +612,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "_256BLOCKSPERLINE",
+                    name: "_256BLOCKS_PER_LINE",
                     description: Some(
                         "256 blocks per line.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "_192BLOCKSPERLINE",
+                    name: "_192BLOCKS_PER_LINE",
                     description: Some(
                         "192 blocks per line.",
                     ),
@@ -633,28 +633,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "LOCKEDONBUFFER0",
+                    name: "LOCKED_ON_BUFFER0",
                     description: Some(
                         "Cache locked on buffer 0.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LOCKEDONBUFFER1",
+                    name: "LOCKED_ON_BUFFER1",
                     description: Some(
                         "Cache locked on buffer 1.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "LOCKEDONBUFFER2",
+                    name: "LOCKED_ON_BUFFER2",
                     description: Some(
                         "Cache locked on buffer 2.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "LOCKEDONBUFFER3",
+                    name: "LOCKED_ON_BUFFER3",
                     description: Some(
                         "Cache locked on buffer 3.",
                     ),

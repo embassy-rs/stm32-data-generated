@@ -221,6 +221,32 @@ pub mod regs {
             Bcr(0)
         }
     }
+    impl core::fmt::Debug for Bcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bcr")
+                .field("bcr0", &self.bcr0())
+                .field("bcr2", &self.bcr2())
+                .field("bcr6", &self.bcr6())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Bcr {
+                bcr0: bool,
+                bcr2: bool,
+                bcr6: bool,
+            }
+            let proxy = Bcr {
+                bcr0: self.bcr0(),
+                bcr2: self.bcr2(),
+                bcr6: self.bcr6(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "I3C clear event register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -440,6 +466,80 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cevr {
             Cevr(0)
+        }
+    }
+    impl core::fmt::Debug for Cevr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cevr")
+                .field("cfcf", &self.cfcf())
+                .field("crxtgtendf", &self.crxtgtendf())
+                .field("cerrf", &self.cerrf())
+                .field("cibif", &self.cibif())
+                .field("cibiendf", &self.cibiendf())
+                .field("ccrf", &self.ccrf())
+                .field("ccrupdf", &self.ccrupdf())
+                .field("chjf", &self.chjf())
+                .field("cwkpf", &self.cwkpf())
+                .field("cgetf", &self.cgetf())
+                .field("cstaf", &self.cstaf())
+                .field("cdaupdf", &self.cdaupdf())
+                .field("cmwlupdf", &self.cmwlupdf())
+                .field("cmrlupdf", &self.cmrlupdf())
+                .field("crstf", &self.crstf())
+                .field("casupdf", &self.casupdf())
+                .field("cintupdf", &self.cintupdf())
+                .field("cdeff", &self.cdeff())
+                .field("cgrpf", &self.cgrpf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cevr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cevr {
+                cfcf: bool,
+                crxtgtendf: bool,
+                cerrf: bool,
+                cibif: bool,
+                cibiendf: bool,
+                ccrf: bool,
+                ccrupdf: bool,
+                chjf: bool,
+                cwkpf: bool,
+                cgetf: bool,
+                cstaf: bool,
+                cdaupdf: bool,
+                cmwlupdf: bool,
+                cmrlupdf: bool,
+                crstf: bool,
+                casupdf: bool,
+                cintupdf: bool,
+                cdeff: bool,
+                cgrpf: bool,
+            }
+            let proxy = Cevr {
+                cfcf: self.cfcf(),
+                crxtgtendf: self.crxtgtendf(),
+                cerrf: self.cerrf(),
+                cibif: self.cibif(),
+                cibiendf: self.cibiendf(),
+                ccrf: self.ccrf(),
+                ccrupdf: self.ccrupdf(),
+                chjf: self.chjf(),
+                cwkpf: self.cwkpf(),
+                cgetf: self.cgetf(),
+                cstaf: self.cstaf(),
+                cdaupdf: self.cdaupdf(),
+                cmwlupdf: self.cmwlupdf(),
+                cmrlupdf: self.cmrlupdf(),
+                crstf: self.crstf(),
+                casupdf: self.casupdf(),
+                cintupdf: self.cintupdf(),
+                cdeff: self.cdeff(),
+                cgrpf: self.cgrpf(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "I3C configuration register."]
@@ -676,6 +776,83 @@ pub mod regs {
             Cfgr(0)
         }
     }
+    impl core::fmt::Debug for Cfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr")
+                .field("en", &self.en())
+                .field("crinit", &self.crinit())
+                .field("noarbh", &self.noarbh())
+                .field("rstptrn", &self.rstptrn())
+                .field("exitptrn", &self.exitptrn())
+                .field("hksdaen", &self.hksdaen())
+                .field("hjack", &self.hjack())
+                .field("rxdmaen", &self.rxdmaen())
+                .field("rxflush", &self.rxflush())
+                .field("rxthres", &self.rxthres())
+                .field("txdmaen", &self.txdmaen())
+                .field("txflush", &self.txflush())
+                .field("txthres", &self.txthres())
+                .field("sdmaen", &self.sdmaen())
+                .field("sflush", &self.sflush())
+                .field("rmode", &self.rmode())
+                .field("tmode", &self.tmode())
+                .field("cdmaen", &self.cdmaen())
+                .field("cflush", &self.cflush())
+                .field("tsfset", &self.tsfset())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr {
+                en: bool,
+                crinit: super::vals::Crinit,
+                noarbh: bool,
+                rstptrn: bool,
+                exitptrn: bool,
+                hksdaen: bool,
+                hjack: bool,
+                rxdmaen: bool,
+                rxflush: bool,
+                rxthres: super::vals::Thres,
+                txdmaen: bool,
+                txflush: bool,
+                txthres: super::vals::Thres,
+                sdmaen: bool,
+                sflush: bool,
+                rmode: bool,
+                tmode: bool,
+                cdmaen: bool,
+                cflush: bool,
+                tsfset: bool,
+            }
+            let proxy = Cfgr {
+                en: self.en(),
+                crinit: self.crinit(),
+                noarbh: self.noarbh(),
+                rstptrn: self.rstptrn(),
+                exitptrn: self.exitptrn(),
+                hksdaen: self.hksdaen(),
+                hjack: self.hjack(),
+                rxdmaen: self.rxdmaen(),
+                rxflush: self.rxflush(),
+                rxthres: self.rxthres(),
+                txdmaen: self.txdmaen(),
+                txflush: self.txflush(),
+                txthres: self.txthres(),
+                sdmaen: self.sdmaen(),
+                sflush: self.sflush(),
+                rmode: self.rmode(),
+                tmode: self.tmode(),
+                cdmaen: self.cdmaen(),
+                cflush: self.cflush(),
+                tsfset: self.tsfset(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "I3C message control register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -765,6 +942,38 @@ and must be consistently programmed vs the maximum IBI payload data size which i
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("dcnt", &self.dcnt())
+                .field("rnw", &self.rnw())
+                .field("add", &self.add())
+                .field("mtype", &self.mtype())
+                .field("mend", &self.mend())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                dcnt: u16,
+                rnw: super::vals::Rnw,
+                add: u8,
+                mtype: u8,
+                mend: super::vals::Mend,
+            }
+            let proxy = Cr {
+                dcnt: self.dcnt(),
+                rnw: self.rnw(),
+                add: self.add(),
+                mtype: self.mtype(),
+                mend: self.mend(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "I3C message control register alternate."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -823,6 +1032,35 @@ and must be consistently programmed vs the maximum IBI payload data size which i
             CrAlternate(0)
         }
     }
+    impl core::fmt::Debug for CrAlternate {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CrAlternate")
+                .field("dcnt", &self.dcnt())
+                .field("ccc", &self.ccc())
+                .field("mtype", &self.mtype())
+                .field("mend", &self.mend())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CrAlternate {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CrAlternate {
+                dcnt: u16,
+                ccc: u8,
+                mtype: u8,
+                mend: super::vals::Mend,
+            }
+            let proxy = CrAlternate {
+                dcnt: self.dcnt(),
+                ccc: self.ccc(),
+                mtype: self.mtype(),
+                mend: self.mend(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "I3C controller-role capability register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -857,6 +1095,29 @@ and must be consistently programmed vs the maximum IBI payload data size which i
             Crcapr(0)
         }
     }
+    impl core::fmt::Debug for Crcapr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Crcapr")
+                .field("capdhoff", &self.capdhoff())
+                .field("capgrp", &self.capgrp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Crcapr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Crcapr {
+                capdhoff: bool,
+                capgrp: bool,
+            }
+            let proxy = Crcapr {
+                capdhoff: self.capdhoff(),
+                capgrp: self.capgrp(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "I3C device characteristics register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -878,6 +1139,22 @@ and must be consistently programmed vs the maximum IBI payload data size which i
         #[inline(always)]
         fn default() -> Dcr {
             Dcr(0)
+        }
+    }
+    impl core::fmt::Debug for Dcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dcr").field("dcr", &self.dcr()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dcr {
+                dcr: u8,
+            }
+            let proxy = Dcr { dcr: self.dcr() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "I3C device 4 characteristics register."]
@@ -974,6 +1251,41 @@ or IBIDEN."]
         #[inline(always)]
         fn default() -> Devr {
             Devr(0)
+        }
+    }
+    impl core::fmt::Debug for Devr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Devr")
+                .field("da", &self.da())
+                .field("ibiack", &self.ibiack())
+                .field("crack", &self.crack())
+                .field("ibiden", &self.ibiden())
+                .field("susp", &self.susp())
+                .field("dis", &self.dis())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Devr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Devr {
+                da: u8,
+                ibiack: super::vals::Ack,
+                crack: super::vals::Ack,
+                ibiden: bool,
+                susp: bool,
+                dis: super::vals::Dis,
+            }
+            let proxy = Devr {
+                da: self.da(),
+                ibiack: self.ibiack(),
+                crack: self.crack(),
+                ibiden: self.ibiden(),
+                susp: self.susp(),
+                dis: self.dis(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "I3C own device characteristics register."]
@@ -1082,6 +1394,47 @@ dictates the reset action to be performed by the software if any. If RSTVAL=0: w
             Devr0(0)
         }
     }
+    impl core::fmt::Debug for Devr0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Devr0")
+                .field("daval", &self.daval())
+                .field("da", &self.da())
+                .field("ibien", &self.ibien())
+                .field("cren", &self.cren())
+                .field("hjen", &self.hjen())
+                .field("as_", &self.as_())
+                .field("rstact", &self.rstact())
+                .field("rstval", &self.rstval())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Devr0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Devr0 {
+                daval: bool,
+                da: u8,
+                ibien: bool,
+                cren: bool,
+                hjen: bool,
+                as_: u8,
+                rstact: super::vals::Rstact,
+                rstval: bool,
+            }
+            let proxy = Devr0 {
+                daval: self.daval(),
+                da: self.da(),
+                ibien: self.ibien(),
+                cren: self.cren(),
+                hjen: self.hjen(),
+                as_: self.as_(),
+                rstact: self.rstact(),
+                rstval: self.rstval(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "I3C receive data byte register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1103,6 +1456,22 @@ dictates the reset action to be performed by the software if any. If RSTVAL=0: w
         #[inline(always)]
         fn default() -> Dr {
             Dr(0)
+        }
+    }
+    impl core::fmt::Debug for Dr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dr").field("db", &self.db()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dr {
+                db: u8,
+            }
+            let proxy = Dr { db: self.db() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "I3C receive data word register."]
@@ -1130,6 +1499,29 @@ dictates the reset action to be performed by the software if any. If RSTVAL=0: w
         #[inline(always)]
         fn default() -> Dwr {
             Dwr(0)
+        }
+    }
+    impl core::fmt::Debug for Dwr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dwr")
+                .field(
+                    "db",
+                    &[self.db(0usize), self.db(1usize), self.db(2usize), self.db(3usize)],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dwr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dwr {
+                db: [u8; 4usize],
+            }
+            let proxy = Dwr {
+                db: [self.db(0usize), self.db(1usize), self.db(2usize), self.db(3usize)],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "I3C extended provisioned ID register."]
@@ -1185,6 +1577,32 @@ of the 48-bit provisioned ID."]
         #[inline(always)]
         fn default() -> Epidr {
             Epidr(0)
+        }
+    }
+    impl core::fmt::Debug for Epidr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Epidr")
+                .field("mipiid", &self.mipiid())
+                .field("idtsel", &self.idtsel())
+                .field("mipimid", &self.mipimid())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Epidr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Epidr {
+                mipiid: u8,
+                idtsel: bool,
+                mipimid: u16,
+            }
+            let proxy = Epidr {
+                mipiid: self.mipiid(),
+                idtsel: self.idtsel(),
+                mipimid: self.mipimid(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "I3C event register."]
@@ -1506,6 +1924,104 @@ dictates the reset action to be performed by the software if any. If RSTVAL=0: w
             Evr(0)
         }
     }
+    impl core::fmt::Debug for Evr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Evr")
+                .field("cfef", &self.cfef())
+                .field("txfef", &self.txfef())
+                .field("cfnff", &self.cfnff())
+                .field("sfnef", &self.sfnef())
+                .field("txfnff", &self.txfnff())
+                .field("rxfnef", &self.rxfnef())
+                .field("txlastf", &self.txlastf())
+                .field("rxlastf", &self.rxlastf())
+                .field("fcf", &self.fcf())
+                .field("rxtgtendf", &self.rxtgtendf())
+                .field("errf", &self.errf())
+                .field("ibif", &self.ibif())
+                .field("ibiendf", &self.ibiendf())
+                .field("crf", &self.crf())
+                .field("crupdf", &self.crupdf())
+                .field("hjf", &self.hjf())
+                .field("wkpf", &self.wkpf())
+                .field("getf", &self.getf())
+                .field("staf", &self.staf())
+                .field("daupdf", &self.daupdf())
+                .field("mwlupdf", &self.mwlupdf())
+                .field("mrlupdf", &self.mrlupdf())
+                .field("rstf", &self.rstf())
+                .field("asupdf", &self.asupdf())
+                .field("intupdf", &self.intupdf())
+                .field("deff", &self.deff())
+                .field("grpf", &self.grpf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Evr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Evr {
+                cfef: bool,
+                txfef: bool,
+                cfnff: bool,
+                sfnef: bool,
+                txfnff: bool,
+                rxfnef: bool,
+                txlastf: bool,
+                rxlastf: bool,
+                fcf: bool,
+                rxtgtendf: bool,
+                errf: bool,
+                ibif: bool,
+                ibiendf: bool,
+                crf: bool,
+                crupdf: bool,
+                hjf: bool,
+                wkpf: bool,
+                getf: bool,
+                staf: bool,
+                daupdf: bool,
+                mwlupdf: bool,
+                mrlupdf: bool,
+                rstf: bool,
+                asupdf: bool,
+                intupdf: bool,
+                deff: bool,
+                grpf: bool,
+            }
+            let proxy = Evr {
+                cfef: self.cfef(),
+                txfef: self.txfef(),
+                cfnff: self.cfnff(),
+                sfnef: self.sfnef(),
+                txfnff: self.txfnff(),
+                rxfnef: self.rxfnef(),
+                txlastf: self.txlastf(),
+                rxlastf: self.rxlastf(),
+                fcf: self.fcf(),
+                rxtgtendf: self.rxtgtendf(),
+                errf: self.errf(),
+                ibif: self.ibif(),
+                ibiendf: self.ibiendf(),
+                crf: self.crf(),
+                crupdf: self.crupdf(),
+                hjf: self.hjf(),
+                wkpf: self.wkpf(),
+                getf: self.getf(),
+                staf: self.staf(),
+                daupdf: self.daupdf(),
+                mwlupdf: self.mwlupdf(),
+                mrlupdf: self.mrlupdf(),
+                rstf: self.rstf(),
+                asupdf: self.asupdf(),
+                intupdf: self.intupdf(),
+                deff: self.deff(),
+                grpf: self.grpf(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "I3C get capability register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1529,6 +2045,24 @@ value. This bit is used to return the GETCAP3 byte in response to the GETCAPS CC
         #[inline(always)]
         fn default() -> Getcapr {
             Getcapr(0)
+        }
+    }
+    impl core::fmt::Debug for Getcapr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Getcapr").field("cappend", &self.cappend()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Getcapr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Getcapr {
+                cappend: bool,
+            }
+            let proxy = Getcapr {
+                cappend: self.cappend(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "I3C get capability register."]
@@ -1591,6 +2125,35 @@ bits."]
             Getmxdsr(0)
         }
     }
+    impl core::fmt::Debug for Getmxdsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Getmxdsr")
+                .field("hoffas", &self.hoffas())
+                .field("fmt", &self.fmt())
+                .field("rdturn", &self.rdturn())
+                .field("tsco", &self.tsco())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Getmxdsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Getmxdsr {
+                hoffas: u8,
+                fmt: u8,
+                rdturn: u8,
+                tsco: bool,
+            }
+            let proxy = Getmxdsr {
+                hoffas: self.hoffas(),
+                fmt: self.fmt(),
+                rdturn: self.rdturn(),
+                tsco: self.tsco(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "I3C IBI payload data register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1618,6 +2181,39 @@ mandatory data byte)."]
         #[inline(always)]
         fn default() -> Ibidr {
             Ibidr(0)
+        }
+    }
+    impl core::fmt::Debug for Ibidr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ibidr")
+                .field(
+                    "ibidb",
+                    &[
+                        self.ibidb(0usize),
+                        self.ibidb(1usize),
+                        self.ibidb(2usize),
+                        self.ibidb(3usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ibidr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ibidr {
+                ibidb: [u8; 4usize],
+            }
+            let proxy = Ibidr {
+                ibidb: [
+                    self.ibidb(0usize),
+                    self.ibidb(1usize),
+                    self.ibidb(2usize),
+                    self.ibidb(3usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "I3C interrupt enable register."]
@@ -1885,6 +2481,92 @@ mandatory data byte)."]
             Ier(0)
         }
     }
+    impl core::fmt::Debug for Ier {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ier")
+                .field("cfnfie", &self.cfnfie())
+                .field("sfneie", &self.sfneie())
+                .field("txfnfie", &self.txfnfie())
+                .field("rxfneie", &self.rxfneie())
+                .field("fcie", &self.fcie())
+                .field("rxtgtendie", &self.rxtgtendie())
+                .field("errie", &self.errie())
+                .field("ibiie", &self.ibiie())
+                .field("ibiendie", &self.ibiendie())
+                .field("crie", &self.crie())
+                .field("crupdie", &self.crupdie())
+                .field("hjie", &self.hjie())
+                .field("wkpie", &self.wkpie())
+                .field("getie", &self.getie())
+                .field("staie", &self.staie())
+                .field("daupdie", &self.daupdie())
+                .field("mwlupdie", &self.mwlupdie())
+                .field("mrlupdie", &self.mrlupdie())
+                .field("rstie", &self.rstie())
+                .field("asupdie", &self.asupdie())
+                .field("intupdie", &self.intupdie())
+                .field("defie", &self.defie())
+                .field("grpie", &self.grpie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ier {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ier {
+                cfnfie: bool,
+                sfneie: bool,
+                txfnfie: bool,
+                rxfneie: bool,
+                fcie: bool,
+                rxtgtendie: bool,
+                errie: bool,
+                ibiie: bool,
+                ibiendie: bool,
+                crie: bool,
+                crupdie: bool,
+                hjie: bool,
+                wkpie: bool,
+                getie: bool,
+                staie: bool,
+                daupdie: bool,
+                mwlupdie: bool,
+                mrlupdie: bool,
+                rstie: bool,
+                asupdie: bool,
+                intupdie: bool,
+                defie: bool,
+                grpie: bool,
+            }
+            let proxy = Ier {
+                cfnfie: self.cfnfie(),
+                sfneie: self.sfneie(),
+                txfnfie: self.txfnfie(),
+                rxfneie: self.rxfneie(),
+                fcie: self.fcie(),
+                rxtgtendie: self.rxtgtendie(),
+                errie: self.errie(),
+                ibiie: self.ibiie(),
+                ibiendie: self.ibiendie(),
+                crie: self.crie(),
+                crupdie: self.crupdie(),
+                hjie: self.hjie(),
+                wkpie: self.wkpie(),
+                getie: self.getie(),
+                staie: self.staie(),
+                daupdie: self.daupdie(),
+                mwlupdie: self.mwlupdie(),
+                mrlupdie: self.mrlupdie(),
+                rstie: self.rstie(),
+                asupdie: self.asupdie(),
+                intupdie: self.intupdie(),
+                defie: self.defie(),
+                grpie: self.grpie(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "I3C maximum read length register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1919,6 +2601,29 @@ mandatory data byte)."]
             Maxrlr(0)
         }
     }
+    impl core::fmt::Debug for Maxrlr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Maxrlr")
+                .field("ml", &self.ml())
+                .field("ibip", &self.ibip())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Maxrlr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Maxrlr {
+                ml: u16,
+                ibip: u8,
+            }
+            let proxy = Maxrlr {
+                ml: self.ml(),
+                ibip: self.ibip(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "I3C maximum write length register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1940,6 +2645,22 @@ mandatory data byte)."]
         #[inline(always)]
         fn default() -> Maxwlr {
             Maxwlr(0)
+        }
+    }
+    impl core::fmt::Debug for Maxwlr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Maxwlr").field("ml", &self.ml()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Maxwlr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Maxwlr {
+                ml: u16,
+            }
+            let proxy = Maxwlr { ml: self.ml() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "I3C received message register."]
@@ -1985,6 +2706,32 @@ mandatory data byte)."]
         #[inline(always)]
         fn default() -> Rmr {
             Rmr(0)
+        }
+    }
+    impl core::fmt::Debug for Rmr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rmr")
+                .field("ibirdcnt", &self.ibirdcnt())
+                .field("rcode", &self.rcode())
+                .field("radd", &self.radd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rmr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rmr {
+                ibirdcnt: u8,
+                rcode: u8,
+                radd: u8,
+            }
+            let proxy = Rmr {
+                ibirdcnt: self.ibirdcnt(),
+                rcode: self.rcode(),
+                radd: self.radd(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "I3C status error register."]
@@ -2087,6 +2834,47 @@ mandatory data byte)."]
             Ser(0)
         }
     }
+    impl core::fmt::Debug for Ser {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ser")
+                .field("coderr", &self.coderr())
+                .field("perr", &self.perr())
+                .field("stall", &self.stall())
+                .field("dovr", &self.dovr())
+                .field("covr", &self.covr())
+                .field("anack", &self.anack())
+                .field("dnack", &self.dnack())
+                .field("derr", &self.derr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ser {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ser {
+                coderr: super::vals::Coderr,
+                perr: bool,
+                stall: bool,
+                dovr: bool,
+                covr: bool,
+                anack: bool,
+                dnack: bool,
+                derr: bool,
+            }
+            let proxy = Ser {
+                coderr: self.coderr(),
+                perr: self.perr(),
+                stall: self.stall(),
+                dovr: self.dovr(),
+                covr: self.covr(),
+                anack: self.anack(),
+                dnack: self.dnack(),
+                derr: self.derr(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "I3C status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2145,6 +2933,35 @@ message."]
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("xdcnt", &self.xdcnt())
+                .field("abt", &self.abt())
+                .field("dir", &self.dir())
+                .field("mid", &self.mid())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                xdcnt: u16,
+                abt: bool,
+                dir: super::vals::Dir,
+                mid: u8,
+            }
+            let proxy = Sr {
+                xdcnt: self.xdcnt(),
+                abt: self.abt(),
+                dir: self.dir(),
+                mid: self.mid(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "I3C target transmit configuration register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2177,6 +2994,29 @@ message."]
         #[inline(always)]
         fn default() -> Tgttdr {
             Tgttdr(0)
+        }
+    }
+    impl core::fmt::Debug for Tgttdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tgttdr")
+                .field("tgttdcnt", &self.tgttdcnt())
+                .field("preload", &self.preload())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Tgttdr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Tgttdr {
+                tgttdcnt: u16,
+                preload: bool,
+            }
+            let proxy = Tgttdr {
+                tgttdcnt: self.tgttdcnt(),
+                preload: self.preload(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "I3C timing register 0."]
@@ -2233,6 +3073,35 @@ message."]
         #[inline(always)]
         fn default() -> Timingr0 {
             Timingr0(0)
+        }
+    }
+    impl core::fmt::Debug for Timingr0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Timingr0")
+                .field("scll_pp", &self.scll_pp())
+                .field("sclh_i3c", &self.sclh_i3c())
+                .field("scll_od", &self.scll_od())
+                .field("sclh_i2c", &self.sclh_i2c())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Timingr0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Timingr0 {
+                scll_pp: u8,
+                sclh_i3c: u8,
+                scll_od: u8,
+                sclh_i2c: u8,
+            }
+            let proxy = Timingr0 {
+                scll_pp: self.scll_pp(),
+                sclh_i3c: self.sclh_i3c(),
+                scll_od: self.scll_od(),
+                sclh_i2c: self.sclh_i2c(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "I3C timing register 1."]
@@ -2319,6 +3188,35 @@ x tI3CCLK for I3C stop timing: it must wait for time to be elapsed after that th
             Timingr1(0)
         }
     }
+    impl core::fmt::Debug for Timingr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Timingr1")
+                .field("aval", &self.aval())
+                .field("asncr", &self.asncr())
+                .field("free", &self.free())
+                .field("sda_hd", &self.sda_hd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Timingr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Timingr1 {
+                aval: u8,
+                asncr: u8,
+                free: u8,
+                sda_hd: bool,
+            }
+            let proxy = Timingr1 {
+                aval: self.aval(),
+                asncr: self.asncr(),
+                free: self.free(),
+                sda_hd: self.sda_hd(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "I3C timing register 2."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2386,10 +3284,43 @@ x tI3CCLK for I3C stop timing: it must wait for time to be elapsed after that th
             Timingr2(0)
         }
     }
+    impl core::fmt::Debug for Timingr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Timingr2")
+                .field("stallt", &self.stallt())
+                .field("stalld", &self.stalld())
+                .field("stallc", &self.stallc())
+                .field("stalla", &self.stalla())
+                .field("stall", &self.stall())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Timingr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Timingr2 {
+                stallt: bool,
+                stalld: bool,
+                stallc: bool,
+                stalla: bool,
+                stall: u8,
+            }
+            let proxy = Timingr2 {
+                stallt: self.stallt(),
+                stalld: self.stalld(),
+                stallc: self.stallc(),
+                stalla: self.stalla(),
+                stall: self.stall(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ack {
         MUST_NACKED = 0x0,
         MUST_ACKED = 0x01,
@@ -2417,7 +3348,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Coderr {
         #[doc = "Transaction after sending CCC. Controller detected an illegally formatted CCC"]
         CE0 = 0x0,
@@ -2470,7 +3402,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Crinit {
         #[doc = "Once enabled by setting EN = 1, the peripheral initially acts as a target. I3C does not drive SCL line and does not enable SDA pull-up, until it eventually acquires the controller role."]
         TARGET = 0x0,
@@ -2500,7 +3433,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dir {
         WRITE = 0x0,
         READ = 0x01,
@@ -2528,7 +3462,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dis {
         #[doc = "write to DA\\[7:0\\]
 and to IBIDEN in the I3C_DEVRx register is allowed"]
@@ -2560,10 +3495,11 @@ and to IBIDEN is disabled/locked"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mend {
         #[doc = "this message from controller is followed by a repeated start (Sr), before another message must be emitted"]
-        REPEATEDSTART = 0x0,
+        REPEATED_START = 0x0,
         #[doc = "this message from controller ends with a stop (P), being the last message of a frame"]
         STOP = 0x01,
     }
@@ -2590,7 +3526,8 @@ and to IBIDEN is disabled/locked"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rnw {
         #[doc = "write message"]
         WRITE = 0x0,
@@ -2620,14 +3557,15 @@ and to IBIDEN is disabled/locked"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rstact {
-        NORESET = 0x0,
+        NO_RESET = 0x0,
         #[doc = "first level of reset: the application software must either: a) partially reset the peripheral, by a write and clear of the enable bit of the I3C configuration register (write EN = 0). This resets the I3C bus interface and the I3C kernel sub-parts, without modifying the content of the I3C APB registers (except the EN bit). b) fully reset the peripheral, including all its registers, via a write and set of the I3C reset control bit of the RCC (reset and clock controller) register."]
-        FIRSTLEVEL = 0x01,
+        FIRST_LEVEL = 0x01,
         #[doc = "second level of reset: the application software must issue a warm reset, also known as a system reset. This (see Section 11: Reset and clock control (RCC)) has the same impact as a pin reset (NRST = 0): – the software writes and sets the SYSRESETREQ control bit of the AITR register, when the device is controlled by a Cortex®-M. – the software writes and sets SYSRST = 1 in the RCC_GRSTCSETR register, when the device is controlled by a Cortex®-A."]
-        SECONDLEVEL = 0x02,
-        NORESETEITHER = 0x03,
+        SECOND_LEVEL = 0x02,
+        NO_RESET_EITHER = 0x03,
     }
     impl Rstact {
         #[inline(always)]
@@ -2652,7 +3590,8 @@ and to IBIDEN is disabled/locked"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Thres {
         #[doc = "TXFNFF is set when 1 byte must be written in TX-FIFO (in I3C_TDR)."]
         BYTE = 0x0,

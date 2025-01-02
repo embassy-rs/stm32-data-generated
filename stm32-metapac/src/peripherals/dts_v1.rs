@@ -155,6 +155,44 @@ pub mod regs {
             Cfgr1(0)
         }
     }
+    impl core::fmt::Debug for Cfgr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr1")
+                .field("en", &self.en())
+                .field("start", &self.start())
+                .field("intrig_sel", &self.intrig_sel())
+                .field("smp_time", &self.smp_time())
+                .field("refclk_sel", &self.refclk_sel())
+                .field("q_meas_opt", &self.q_meas_opt())
+                .field("hsref_clk_div", &self.hsref_clk_div())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr1 {
+                en: bool,
+                start: bool,
+                intrig_sel: u8,
+                smp_time: u8,
+                refclk_sel: bool,
+                q_meas_opt: bool,
+                hsref_clk_div: u8,
+            }
+            let proxy = Cfgr1 {
+                en: self.en(),
+                start: self.start(),
+                intrig_sel: self.intrig_sel(),
+                smp_time: self.smp_time(),
+                refclk_sel: self.refclk_sel(),
+                q_meas_opt: self.q_meas_opt(),
+                hsref_clk_div: self.hsref_clk_div(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Temperature sensor data register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -176,6 +214,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dr {
             Dr(0)
+        }
+    }
+    impl core::fmt::Debug for Dr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dr").field("mfreq", &self.mfreq()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dr {
+                mfreq: u16,
+            }
+            let proxy = Dr { mfreq: self.mfreq() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Temperature sensor clear interrupt flag register."]
@@ -256,6 +310,41 @@ pub mod regs {
             Icifr(0)
         }
     }
+    impl core::fmt::Debug for Icifr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Icifr")
+                .field("citef", &self.citef())
+                .field("citlf", &self.citlf())
+                .field("cithf", &self.cithf())
+                .field("caitef", &self.caitef())
+                .field("caitlf", &self.caitlf())
+                .field("caithf", &self.caithf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Icifr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Icifr {
+                citef: bool,
+                citlf: bool,
+                cithf: bool,
+                caitef: bool,
+                caitlf: bool,
+                caithf: bool,
+            }
+            let proxy = Icifr {
+                citef: self.citef(),
+                citlf: self.citlf(),
+                cithf: self.cithf(),
+                caitef: self.caitef(),
+                caitlf: self.caitlf(),
+                caithf: self.caithf(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Temperature sensor interrupt enable register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -334,6 +423,41 @@ pub mod regs {
             Itenr(0)
         }
     }
+    impl core::fmt::Debug for Itenr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itenr")
+                .field("iteen", &self.iteen())
+                .field("itlen", &self.itlen())
+                .field("ithen", &self.ithen())
+                .field("aiteen", &self.aiteen())
+                .field("aitlen", &self.aitlen())
+                .field("aithen", &self.aithen())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itenr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itenr {
+                iteen: bool,
+                itlen: bool,
+                ithen: bool,
+                aiteen: bool,
+                aitlen: bool,
+                aithen: bool,
+            }
+            let proxy = Itenr {
+                iteen: self.iteen(),
+                itlen: self.itlen(),
+                ithen: self.ithen(),
+                aiteen: self.aiteen(),
+                aitlen: self.aitlen(),
+                aithen: self.aithen(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Temperature sensor interrupt threshold register 1."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -368,6 +492,29 @@ pub mod regs {
             Itr1(0)
         }
     }
+    impl core::fmt::Debug for Itr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itr1")
+                .field("litthd", &self.litthd())
+                .field("hitthd", &self.hitthd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itr1 {
+                litthd: u16,
+                hitthd: u16,
+            }
+            let proxy = Itr1 {
+                litthd: self.litthd(),
+                hitthd: self.hitthd(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Temperature sensor option register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -395,6 +542,95 @@ pub mod regs {
             Or(0)
         }
     }
+    impl core::fmt::Debug for Or {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Or")
+                .field(
+                    "op",
+                    &[
+                        self.op(0usize),
+                        self.op(1usize),
+                        self.op(2usize),
+                        self.op(3usize),
+                        self.op(4usize),
+                        self.op(5usize),
+                        self.op(6usize),
+                        self.op(7usize),
+                        self.op(8usize),
+                        self.op(9usize),
+                        self.op(10usize),
+                        self.op(11usize),
+                        self.op(12usize),
+                        self.op(13usize),
+                        self.op(14usize),
+                        self.op(15usize),
+                        self.op(16usize),
+                        self.op(17usize),
+                        self.op(18usize),
+                        self.op(19usize),
+                        self.op(20usize),
+                        self.op(21usize),
+                        self.op(22usize),
+                        self.op(23usize),
+                        self.op(24usize),
+                        self.op(25usize),
+                        self.op(26usize),
+                        self.op(27usize),
+                        self.op(28usize),
+                        self.op(29usize),
+                        self.op(30usize),
+                        self.op(31usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Or {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Or {
+                op: [bool; 32usize],
+            }
+            let proxy = Or {
+                op: [
+                    self.op(0usize),
+                    self.op(1usize),
+                    self.op(2usize),
+                    self.op(3usize),
+                    self.op(4usize),
+                    self.op(5usize),
+                    self.op(6usize),
+                    self.op(7usize),
+                    self.op(8usize),
+                    self.op(9usize),
+                    self.op(10usize),
+                    self.op(11usize),
+                    self.op(12usize),
+                    self.op(13usize),
+                    self.op(14usize),
+                    self.op(15usize),
+                    self.op(16usize),
+                    self.op(17usize),
+                    self.op(18usize),
+                    self.op(19usize),
+                    self.op(20usize),
+                    self.op(21usize),
+                    self.op(22usize),
+                    self.op(23usize),
+                    self.op(24usize),
+                    self.op(25usize),
+                    self.op(26usize),
+                    self.op(27usize),
+                    self.op(28usize),
+                    self.op(29usize),
+                    self.op(30usize),
+                    self.op(31usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Temperature sensor ramp value register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -416,6 +652,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Rampvalr {
             Rampvalr(0)
+        }
+    }
+    impl core::fmt::Debug for Rampvalr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rampvalr")
+                .field("ramp_coeff", &self.ramp_coeff())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rampvalr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rampvalr {
+                ramp_coeff: u16,
+            }
+            let proxy = Rampvalr {
+                ramp_coeff: self.ramp_coeff(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Temperature sensor status register."]
@@ -507,6 +763,44 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("itef", &self.itef())
+                .field("itlf", &self.itlf())
+                .field("ithf", &self.ithf())
+                .field("aitef", &self.aitef())
+                .field("aitlf", &self.aitlf())
+                .field("aithf", &self.aithf())
+                .field("rdy", &self.rdy())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                itef: bool,
+                itlf: bool,
+                ithf: bool,
+                aitef: bool,
+                aitlf: bool,
+                aithf: bool,
+                rdy: bool,
+            }
+            let proxy = Sr {
+                itef: self.itef(),
+                itlf: self.itlf(),
+                ithf: self.ithf(),
+                aitef: self.aitef(),
+                aitlf: self.aitlf(),
+                aithf: self.aithf(),
+                rdy: self.rdy(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Temperature sensor T0 value register 1."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -539,6 +833,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> T0valr1 {
             T0valr1(0)
+        }
+    }
+    impl core::fmt::Debug for T0valr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("T0valr1")
+                .field("fmt0", &self.fmt0())
+                .field("t0", &self.t0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for T0valr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct T0valr1 {
+                fmt0: u16,
+                t0: u8,
+            }
+            let proxy = T0valr1 {
+                fmt0: self.fmt0(),
+                t0: self.t0(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

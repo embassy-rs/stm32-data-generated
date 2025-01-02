@@ -101,6 +101,29 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("coreid", &self.coreid())
+                .field("key", &self.key())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                coreid: u8,
+                key: u16,
+            }
+            let proxy = Cr {
+                coreid: self.coreid(),
+                key: self.key(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "HSEM Interrupt clear register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -126,6 +149,95 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Icr {
             Icr(0)
+        }
+    }
+    impl core::fmt::Debug for Icr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Icr")
+                .field(
+                    "isc",
+                    &[
+                        self.isc(0usize),
+                        self.isc(1usize),
+                        self.isc(2usize),
+                        self.isc(3usize),
+                        self.isc(4usize),
+                        self.isc(5usize),
+                        self.isc(6usize),
+                        self.isc(7usize),
+                        self.isc(8usize),
+                        self.isc(9usize),
+                        self.isc(10usize),
+                        self.isc(11usize),
+                        self.isc(12usize),
+                        self.isc(13usize),
+                        self.isc(14usize),
+                        self.isc(15usize),
+                        self.isc(16usize),
+                        self.isc(17usize),
+                        self.isc(18usize),
+                        self.isc(19usize),
+                        self.isc(20usize),
+                        self.isc(21usize),
+                        self.isc(22usize),
+                        self.isc(23usize),
+                        self.isc(24usize),
+                        self.isc(25usize),
+                        self.isc(26usize),
+                        self.isc(27usize),
+                        self.isc(28usize),
+                        self.isc(29usize),
+                        self.isc(30usize),
+                        self.isc(31usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Icr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Icr {
+                isc: [bool; 32usize],
+            }
+            let proxy = Icr {
+                isc: [
+                    self.isc(0usize),
+                    self.isc(1usize),
+                    self.isc(2usize),
+                    self.isc(3usize),
+                    self.isc(4usize),
+                    self.isc(5usize),
+                    self.isc(6usize),
+                    self.isc(7usize),
+                    self.isc(8usize),
+                    self.isc(9usize),
+                    self.isc(10usize),
+                    self.isc(11usize),
+                    self.isc(12usize),
+                    self.isc(13usize),
+                    self.isc(14usize),
+                    self.isc(15usize),
+                    self.isc(16usize),
+                    self.isc(17usize),
+                    self.isc(18usize),
+                    self.isc(19usize),
+                    self.isc(20usize),
+                    self.isc(21usize),
+                    self.isc(22usize),
+                    self.isc(23usize),
+                    self.isc(24usize),
+                    self.isc(25usize),
+                    self.isc(26usize),
+                    self.isc(27usize),
+                    self.isc(28usize),
+                    self.isc(29usize),
+                    self.isc(30usize),
+                    self.isc(31usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "HSEM Interrupt enable register."]
@@ -155,6 +267,95 @@ pub mod regs {
             Ier(0)
         }
     }
+    impl core::fmt::Debug for Ier {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ier")
+                .field(
+                    "ise",
+                    &[
+                        self.ise(0usize),
+                        self.ise(1usize),
+                        self.ise(2usize),
+                        self.ise(3usize),
+                        self.ise(4usize),
+                        self.ise(5usize),
+                        self.ise(6usize),
+                        self.ise(7usize),
+                        self.ise(8usize),
+                        self.ise(9usize),
+                        self.ise(10usize),
+                        self.ise(11usize),
+                        self.ise(12usize),
+                        self.ise(13usize),
+                        self.ise(14usize),
+                        self.ise(15usize),
+                        self.ise(16usize),
+                        self.ise(17usize),
+                        self.ise(18usize),
+                        self.ise(19usize),
+                        self.ise(20usize),
+                        self.ise(21usize),
+                        self.ise(22usize),
+                        self.ise(23usize),
+                        self.ise(24usize),
+                        self.ise(25usize),
+                        self.ise(26usize),
+                        self.ise(27usize),
+                        self.ise(28usize),
+                        self.ise(29usize),
+                        self.ise(30usize),
+                        self.ise(31usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ier {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ier {
+                ise: [bool; 32usize],
+            }
+            let proxy = Ier {
+                ise: [
+                    self.ise(0usize),
+                    self.ise(1usize),
+                    self.ise(2usize),
+                    self.ise(3usize),
+                    self.ise(4usize),
+                    self.ise(5usize),
+                    self.ise(6usize),
+                    self.ise(7usize),
+                    self.ise(8usize),
+                    self.ise(9usize),
+                    self.ise(10usize),
+                    self.ise(11usize),
+                    self.ise(12usize),
+                    self.ise(13usize),
+                    self.ise(14usize),
+                    self.ise(15usize),
+                    self.ise(16usize),
+                    self.ise(17usize),
+                    self.ise(18usize),
+                    self.ise(19usize),
+                    self.ise(20usize),
+                    self.ise(21usize),
+                    self.ise(22usize),
+                    self.ise(23usize),
+                    self.ise(24usize),
+                    self.ise(25usize),
+                    self.ise(26usize),
+                    self.ise(27usize),
+                    self.ise(28usize),
+                    self.ise(29usize),
+                    self.ise(30usize),
+                    self.ise(31usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "HSEM Interrupt status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -182,6 +383,95 @@ pub mod regs {
             Isr(0)
         }
     }
+    impl core::fmt::Debug for Isr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Isr")
+                .field(
+                    "isf",
+                    &[
+                        self.isf(0usize),
+                        self.isf(1usize),
+                        self.isf(2usize),
+                        self.isf(3usize),
+                        self.isf(4usize),
+                        self.isf(5usize),
+                        self.isf(6usize),
+                        self.isf(7usize),
+                        self.isf(8usize),
+                        self.isf(9usize),
+                        self.isf(10usize),
+                        self.isf(11usize),
+                        self.isf(12usize),
+                        self.isf(13usize),
+                        self.isf(14usize),
+                        self.isf(15usize),
+                        self.isf(16usize),
+                        self.isf(17usize),
+                        self.isf(18usize),
+                        self.isf(19usize),
+                        self.isf(20usize),
+                        self.isf(21usize),
+                        self.isf(22usize),
+                        self.isf(23usize),
+                        self.isf(24usize),
+                        self.isf(25usize),
+                        self.isf(26usize),
+                        self.isf(27usize),
+                        self.isf(28usize),
+                        self.isf(29usize),
+                        self.isf(30usize),
+                        self.isf(31usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Isr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Isr {
+                isf: [bool; 32usize],
+            }
+            let proxy = Isr {
+                isf: [
+                    self.isf(0usize),
+                    self.isf(1usize),
+                    self.isf(2usize),
+                    self.isf(3usize),
+                    self.isf(4usize),
+                    self.isf(5usize),
+                    self.isf(6usize),
+                    self.isf(7usize),
+                    self.isf(8usize),
+                    self.isf(9usize),
+                    self.isf(10usize),
+                    self.isf(11usize),
+                    self.isf(12usize),
+                    self.isf(13usize),
+                    self.isf(14usize),
+                    self.isf(15usize),
+                    self.isf(16usize),
+                    self.isf(17usize),
+                    self.isf(18usize),
+                    self.isf(19usize),
+                    self.isf(20usize),
+                    self.isf(21usize),
+                    self.isf(22usize),
+                    self.isf(23usize),
+                    self.isf(24usize),
+                    self.isf(25usize),
+                    self.isf(26usize),
+                    self.isf(27usize),
+                    self.isf(28usize),
+                    self.isf(29usize),
+                    self.isf(30usize),
+                    self.isf(31usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "HSEM Interrupt clear register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -203,6 +493,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Keyr {
             Keyr(0)
+        }
+    }
+    impl core::fmt::Debug for Keyr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Keyr").field("key", &self.key()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Keyr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Keyr {
+                key: u16,
+            }
+            let proxy = Keyr { key: self.key() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "HSEM Masked interrupt status register."]
@@ -230,6 +536,95 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Misr {
             Misr(0)
+        }
+    }
+    impl core::fmt::Debug for Misr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Misr")
+                .field(
+                    "misf",
+                    &[
+                        self.misf(0usize),
+                        self.misf(1usize),
+                        self.misf(2usize),
+                        self.misf(3usize),
+                        self.misf(4usize),
+                        self.misf(5usize),
+                        self.misf(6usize),
+                        self.misf(7usize),
+                        self.misf(8usize),
+                        self.misf(9usize),
+                        self.misf(10usize),
+                        self.misf(11usize),
+                        self.misf(12usize),
+                        self.misf(13usize),
+                        self.misf(14usize),
+                        self.misf(15usize),
+                        self.misf(16usize),
+                        self.misf(17usize),
+                        self.misf(18usize),
+                        self.misf(19usize),
+                        self.misf(20usize),
+                        self.misf(21usize),
+                        self.misf(22usize),
+                        self.misf(23usize),
+                        self.misf(24usize),
+                        self.misf(25usize),
+                        self.misf(26usize),
+                        self.misf(27usize),
+                        self.misf(28usize),
+                        self.misf(29usize),
+                        self.misf(30usize),
+                        self.misf(31usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Misr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Misr {
+                misf: [bool; 32usize],
+            }
+            let proxy = Misr {
+                misf: [
+                    self.misf(0usize),
+                    self.misf(1usize),
+                    self.misf(2usize),
+                    self.misf(3usize),
+                    self.misf(4usize),
+                    self.misf(5usize),
+                    self.misf(6usize),
+                    self.misf(7usize),
+                    self.misf(8usize),
+                    self.misf(9usize),
+                    self.misf(10usize),
+                    self.misf(11usize),
+                    self.misf(12usize),
+                    self.misf(13usize),
+                    self.misf(14usize),
+                    self.misf(15usize),
+                    self.misf(16usize),
+                    self.misf(17usize),
+                    self.misf(18usize),
+                    self.misf(19usize),
+                    self.misf(20usize),
+                    self.misf(21usize),
+                    self.misf(22usize),
+                    self.misf(23usize),
+                    self.misf(24usize),
+                    self.misf(25usize),
+                    self.misf(26usize),
+                    self.misf(27usize),
+                    self.misf(28usize),
+                    self.misf(29usize),
+                    self.misf(30usize),
+                    self.misf(31usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "HSEM register HSEM_R%s HSEM_R31."]
@@ -277,6 +672,32 @@ pub mod regs {
             R(0)
         }
     }
+    impl core::fmt::Debug for R {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("R")
+                .field("procid", &self.procid())
+                .field("coreid", &self.coreid())
+                .field("lock", &self.lock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct R {
+                procid: u8,
+                coreid: u8,
+                lock: bool,
+            }
+            let proxy = R {
+                procid: self.procid(),
+                coreid: self.coreid(),
+                lock: self.lock(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "HSEM Read lock register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -320,6 +741,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Rlr {
             Rlr(0)
+        }
+    }
+    impl core::fmt::Debug for Rlr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rlr")
+                .field("procid", &self.procid())
+                .field("coreid", &self.coreid())
+                .field("lock", &self.lock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rlr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rlr {
+                procid: u8,
+                coreid: u8,
+                lock: bool,
+            }
+            let proxy = Rlr {
+                procid: self.procid(),
+                coreid: self.coreid(),
+                lock: self.lock(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

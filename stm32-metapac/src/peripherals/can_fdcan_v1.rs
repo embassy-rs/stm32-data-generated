@@ -364,6 +364,65 @@ pub mod regs {
             Cccr(0)
         }
     }
+    impl core::fmt::Debug for Cccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cccr")
+                .field("init", &self.init())
+                .field("cce", &self.cce())
+                .field("asm", &self.asm())
+                .field("csa", &self.csa())
+                .field("csr", &self.csr())
+                .field("mon", &self.mon())
+                .field("dar", &self.dar())
+                .field("test", &self.test())
+                .field("fdoe", &self.fdoe())
+                .field("brse", &self.brse())
+                .field("pxhd", &self.pxhd())
+                .field("efbi", &self.efbi())
+                .field("txp", &self.txp())
+                .field("niso", &self.niso())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cccr {
+                init: bool,
+                cce: bool,
+                asm: bool,
+                csa: bool,
+                csr: bool,
+                mon: bool,
+                dar: bool,
+                test: bool,
+                fdoe: bool,
+                brse: bool,
+                pxhd: bool,
+                efbi: bool,
+                txp: bool,
+                niso: bool,
+            }
+            let proxy = Cccr {
+                init: self.init(),
+                cce: self.cce(),
+                asm: self.asm(),
+                csa: self.csa(),
+                csr: self.csr(),
+                mon: self.mon(),
+                dar: self.dar(),
+                test: self.test(),
+                fdoe: self.fdoe(),
+                brse: self.brse(),
+                pxhd: self.pxhd(),
+                efbi: self.efbi(),
+                txp: self.txp(),
+                niso: self.niso(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FDCAN CFG clock divider register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -389,6 +448,22 @@ of CCCR register are set to 1"]
         #[inline(always)]
         fn default() -> Ckdiv {
             Ckdiv(0)
+        }
+    }
+    impl core::fmt::Debug for Ckdiv {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ckdiv").field("pdiv", &self.pdiv()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ckdiv {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ckdiv {
+                pdiv: super::vals::Pdiv,
+            }
+            let proxy = Ckdiv { pdiv: self.pdiv() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FDCAN core release register"]
@@ -469,6 +544,41 @@ of CCCR register are set to 1"]
             Crel(0)
         }
     }
+    impl core::fmt::Debug for Crel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Crel")
+                .field("day", &self.day())
+                .field("mon", &self.mon())
+                .field("year", &self.year())
+                .field("substep", &self.substep())
+                .field("step", &self.step())
+                .field("rel", &self.rel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Crel {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Crel {
+                day: u8,
+                mon: u8,
+                year: u8,
+                substep: u8,
+                step: u8,
+                rel: u8,
+            }
+            let proxy = Crel {
+                day: self.day(),
+                mon: self.mon(),
+                year: self.year(),
+                substep: self.substep(),
+                step: self.step(),
+                rel: self.rel(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FDCAN data bit timing and prescaler register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -536,6 +646,38 @@ of CCCR register are set to 1"]
             Dbtp(0)
         }
     }
+    impl core::fmt::Debug for Dbtp {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dbtp")
+                .field("dsjw", &self.dsjw())
+                .field("dtseg2", &self.dtseg2())
+                .field("dtseg1", &self.dtseg1())
+                .field("dbrp", &self.dbrp())
+                .field("tdc", &self.tdc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dbtp {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dbtp {
+                dsjw: u8,
+                dtseg2: u8,
+                dtseg1: u8,
+                dbrp: u8,
+                tdc: bool,
+            }
+            let proxy = Dbtp {
+                dsjw: self.dsjw(),
+                dtseg2: self.dtseg2(),
+                dtseg1: self.dtseg1(),
+                dbrp: self.dbrp(),
+                tdc: self.tdc(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FDCAN error counter register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -592,6 +734,35 @@ of CCCR register are set to 1"]
             Ecr(0)
         }
     }
+    impl core::fmt::Debug for Ecr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ecr")
+                .field("tec", &self.tec())
+                .field("rec", &self.rec())
+                .field("rp", &self.rp())
+                .field("cel", &self.cel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ecr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ecr {
+                tec: u8,
+                rec: u8,
+                rp: bool,
+                cel: u8,
+            }
+            let proxy = Ecr {
+                tec: self.tec(),
+                rec: self.rec(),
+                rp: self.rp(),
+                cel: self.cel(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FDCAN endian register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -613,6 +784,22 @@ of CCCR register are set to 1"]
         #[inline(always)]
         fn default() -> Endn {
             Endn(0)
+        }
+    }
+    impl core::fmt::Debug for Endn {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Endn").field("etv", &self.etv()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Endn {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Endn {
+                etv: u32,
+            }
+            let proxy = Endn { etv: self.etv() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FDCAN high-priority message status register"]
@@ -675,6 +862,35 @@ of CCCR register are set to 1"]
         #[inline(always)]
         fn default() -> Hpms {
             Hpms(0)
+        }
+    }
+    impl core::fmt::Debug for Hpms {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Hpms")
+                .field("bidx", &self.bidx())
+                .field("msi", &self.msi())
+                .field("fidx", &self.fidx())
+                .field("flst", &self.flst())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Hpms {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Hpms {
+                bidx: u8,
+                msi: super::vals::Msi,
+                fidx: u8,
+                flst: bool,
+            }
+            let proxy = Hpms {
+                bidx: self.bidx(),
+                msi: self.msi(),
+                fidx: self.fidx(),
+                flst: self.flst(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FDCAN interrupt enable register"]
@@ -932,6 +1148,86 @@ of CCCR register are set to 1"]
             Ie(0)
         }
     }
+    impl core::fmt::Debug for Ie {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ie")
+                .field("rfne", &[self.rfne(0usize), self.rfne(1usize)])
+                .field("rffe", &[self.rffe(0usize), self.rffe(1usize)])
+                .field("rfle", &[self.rfle(0usize), self.rfle(1usize)])
+                .field("hpme", &self.hpme())
+                .field("tce", &self.tce())
+                .field("tcfe", &self.tcfe())
+                .field("tfee", &self.tfee())
+                .field("tefne", &self.tefne())
+                .field("teffe", &self.teffe())
+                .field("tefle", &self.tefle())
+                .field("tswe", &self.tswe())
+                .field("mrafe", &self.mrafe())
+                .field("tooe", &self.tooe())
+                .field("eloe", &self.eloe())
+                .field("epe", &self.epe())
+                .field("ewe", &self.ewe())
+                .field("boe", &self.boe())
+                .field("wdie", &self.wdie())
+                .field("peae", &self.peae())
+                .field("pede", &self.pede())
+                .field("arae", &self.arae())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ie {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ie {
+                rfne: [bool; 2usize],
+                rffe: [bool; 2usize],
+                rfle: [bool; 2usize],
+                hpme: bool,
+                tce: bool,
+                tcfe: bool,
+                tfee: bool,
+                tefne: bool,
+                teffe: bool,
+                tefle: bool,
+                tswe: bool,
+                mrafe: bool,
+                tooe: bool,
+                eloe: bool,
+                epe: bool,
+                ewe: bool,
+                boe: bool,
+                wdie: bool,
+                peae: bool,
+                pede: bool,
+                arae: bool,
+            }
+            let proxy = Ie {
+                rfne: [self.rfne(0usize), self.rfne(1usize)],
+                rffe: [self.rffe(0usize), self.rffe(1usize)],
+                rfle: [self.rfle(0usize), self.rfle(1usize)],
+                hpme: self.hpme(),
+                tce: self.tce(),
+                tcfe: self.tcfe(),
+                tfee: self.tfee(),
+                tefne: self.tefne(),
+                teffe: self.teffe(),
+                tefle: self.tefle(),
+                tswe: self.tswe(),
+                mrafe: self.mrafe(),
+                tooe: self.tooe(),
+                eloe: self.eloe(),
+                epe: self.epe(),
+                ewe: self.ewe(),
+                boe: self.boe(),
+                wdie: self.wdie(),
+                peae: self.peae(),
+                pede: self.pede(),
+                arae: self.arae(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FDCAN interrupt line enable register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -964,6 +1260,29 @@ of CCCR register are set to 1"]
         #[inline(always)]
         fn default() -> Ile {
             Ile(0)
+        }
+    }
+    impl core::fmt::Debug for Ile {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ile")
+                .field("eint0", &self.eint0())
+                .field("eint1", &self.eint1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ile {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ile {
+                eint0: bool,
+                eint1: bool,
+            }
+            let proxy = Ile {
+                eint0: self.eint0(),
+                eint1: self.eint1(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FDCAN interrupt line select register"]
@@ -1046,6 +1365,41 @@ of CCCR register are set to 1"]
         #[inline(always)]
         fn default() -> Ils {
             Ils(0)
+        }
+    }
+    impl core::fmt::Debug for Ils {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ils")
+                .field("rxfifo", &[self.rxfifo(0usize), self.rxfifo(1usize)])
+                .field("smsg", &self.smsg())
+                .field("tferr", &self.tferr())
+                .field("misc", &self.misc())
+                .field("berr", &self.berr())
+                .field("perr", &self.perr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ils {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ils {
+                rxfifo: [bool; 2usize],
+                smsg: bool,
+                tferr: bool,
+                misc: bool,
+                berr: bool,
+                perr: bool,
+            }
+            let proxy = Ils {
+                rxfifo: [self.rxfifo(0usize), self.rxfifo(1usize)],
+                smsg: self.smsg(),
+                tferr: self.tferr(),
+                misc: self.misc(),
+                berr: self.berr(),
+                perr: self.perr(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FDCAN interrupt register"]
@@ -1303,6 +1657,86 @@ of CCCR register are set to 1"]
             Ir(0)
         }
     }
+    impl core::fmt::Debug for Ir {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ir")
+                .field("rfn", &[self.rfn(0usize), self.rfn(1usize)])
+                .field("rff", &[self.rff(0usize), self.rff(1usize)])
+                .field("rfl", &[self.rfl(0usize), self.rfl(1usize)])
+                .field("hpm", &self.hpm())
+                .field("tc", &self.tc())
+                .field("tcf", &self.tcf())
+                .field("tfe", &self.tfe())
+                .field("tefn", &self.tefn())
+                .field("teff", &self.teff())
+                .field("tefl", &self.tefl())
+                .field("tsw", &self.tsw())
+                .field("mraf", &self.mraf())
+                .field("too", &self.too())
+                .field("elo", &self.elo())
+                .field("ep", &self.ep())
+                .field("ew", &self.ew())
+                .field("bo", &self.bo())
+                .field("wdi", &self.wdi())
+                .field("pea", &self.pea())
+                .field("ped", &self.ped())
+                .field("ara", &self.ara())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ir {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ir {
+                rfn: [bool; 2usize],
+                rff: [bool; 2usize],
+                rfl: [bool; 2usize],
+                hpm: bool,
+                tc: bool,
+                tcf: bool,
+                tfe: bool,
+                tefn: bool,
+                teff: bool,
+                tefl: bool,
+                tsw: bool,
+                mraf: bool,
+                too: bool,
+                elo: bool,
+                ep: bool,
+                ew: bool,
+                bo: bool,
+                wdi: bool,
+                pea: bool,
+                ped: bool,
+                ara: bool,
+            }
+            let proxy = Ir {
+                rfn: [self.rfn(0usize), self.rfn(1usize)],
+                rff: [self.rff(0usize), self.rff(1usize)],
+                rfl: [self.rfl(0usize), self.rfl(1usize)],
+                hpm: self.hpm(),
+                tc: self.tc(),
+                tcf: self.tcf(),
+                tfe: self.tfe(),
+                tefn: self.tefn(),
+                teff: self.teff(),
+                tefl: self.tefl(),
+                tsw: self.tsw(),
+                mraf: self.mraf(),
+                too: self.too(),
+                elo: self.elo(),
+                ep: self.ep(),
+                ew: self.ew(),
+                bo: self.bo(),
+                wdi: self.wdi(),
+                pea: self.pea(),
+                ped: self.ped(),
+                ara: self.ara(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FDCAN nominal bit timing and prescaler register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1369,6 +1803,35 @@ of CCCR register are set to 1"]
         #[inline(always)]
         fn default() -> Nbtp {
             Nbtp(0)
+        }
+    }
+    impl core::fmt::Debug for Nbtp {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Nbtp")
+                .field("ntseg2", &self.ntseg2())
+                .field("ntseg1", &self.ntseg1())
+                .field("nbrp", &self.nbrp())
+                .field("nsjw", &self.nsjw())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Nbtp {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Nbtp {
+                ntseg2: u8,
+                ntseg1: u8,
+                nbrp: u16,
+                nsjw: u8,
+            }
+            let proxy = Nbtp {
+                ntseg2: self.ntseg2(),
+                ntseg1: self.ntseg1(),
+                nbrp: self.nbrp(),
+                nsjw: self.nsjw(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FDCAN protocol status register"]
@@ -1504,6 +1967,56 @@ of CCCR register are set to 1"]
             Psr(0)
         }
     }
+    impl core::fmt::Debug for Psr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Psr")
+                .field("lec", &self.lec())
+                .field("act", &self.act())
+                .field("ep", &self.ep())
+                .field("ew", &self.ew())
+                .field("bo", &self.bo())
+                .field("dlec", &self.dlec())
+                .field("resi", &self.resi())
+                .field("rbrs", &self.rbrs())
+                .field("redl", &self.redl())
+                .field("pxe", &self.pxe())
+                .field("tdcv", &self.tdcv())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Psr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Psr {
+                lec: super::vals::Lec,
+                act: super::vals::Act,
+                ep: bool,
+                ew: bool,
+                bo: bool,
+                dlec: u8,
+                resi: bool,
+                rbrs: bool,
+                redl: bool,
+                pxe: bool,
+                tdcv: u8,
+            }
+            let proxy = Psr {
+                lec: self.lec(),
+                act: self.act(),
+                ep: self.ep(),
+                ew: self.ew(),
+                bo: self.bo(),
+                dlec: self.dlec(),
+                resi: self.resi(),
+                rbrs: self.rbrs(),
+                redl: self.redl(),
+                pxe: self.pxe(),
+                tdcv: self.tdcv(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FDCAN RAM watchdog register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1542,6 +2055,29 @@ of FDCAN_CCCR register are set to 1"]
             Rwd(0)
         }
     }
+    impl core::fmt::Debug for Rwd {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rwd")
+                .field("wdc", &self.wdc())
+                .field("wdv", &self.wdv())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rwd {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rwd {
+                wdc: u8,
+                wdv: u8,
+            }
+            let proxy = Rwd {
+                wdc: self.wdc(),
+                wdv: self.wdv(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CAN Rx FIFO X acknowledge register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1565,6 +2101,22 @@ to FAI + 1 and update the FIFO X fill level RXFS\\[FFL\\]"]
         #[inline(always)]
         fn default() -> Rxfa {
             Rxfa(0)
+        }
+    }
+    impl core::fmt::Debug for Rxfa {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rxfa").field("fai", &self.fai()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rxfa {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rxfa {
+                fai: u8,
+            }
+            let proxy = Rxfa { fai: self.fai() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FDCAN Rx FIFO X status register"]
@@ -1634,6 +2186,38 @@ is reset, this bit is also reset"]
         #[inline(always)]
         fn default() -> Rxfs {
             Rxfs(0)
+        }
+    }
+    impl core::fmt::Debug for Rxfs {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rxfs")
+                .field("ffl", &self.ffl())
+                .field("fgi", &self.fgi())
+                .field("fpi", &self.fpi())
+                .field("ff", &self.ff())
+                .field("rfl", &self.rfl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rxfs {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rxfs {
+                ffl: u8,
+                fgi: u8,
+                fpi: u8,
+                ff: bool,
+                rfl: bool,
+            }
+            let proxy = Rxfs {
+                ffl: self.ffl(),
+                fgi: self.fgi(),
+                fpi: self.fpi(),
+                ff: self.ff(),
+                rfl: self.rfl(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FDCAN global filter configuration register"]
@@ -1768,6 +2352,47 @@ of CCCR register are set to 1."]
             Rxgfc(0)
         }
     }
+    impl core::fmt::Debug for Rxgfc {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rxgfc")
+                .field("rrfe", &self.rrfe())
+                .field("rrfs", &self.rrfs())
+                .field("anfe", &self.anfe())
+                .field("anfs", &self.anfs())
+                .field("f1om", &self.f1om())
+                .field("f0om", &self.f0om())
+                .field("lss", &self.lss())
+                .field("lse", &self.lse())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rxgfc {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rxgfc {
+                rrfe: bool,
+                rrfs: bool,
+                anfe: super::vals::Anfe,
+                anfs: super::vals::Anfs,
+                f1om: bool,
+                f0om: bool,
+                lss: u8,
+                lse: u8,
+            }
+            let proxy = Rxgfc {
+                rrfe: self.rrfe(),
+                rrfs: self.rrfs(),
+                anfe: self.anfe(),
+                anfs: self.anfs(),
+                f1om: self.f1om(),
+                f0om: self.f0om(),
+                lss: self.lss(),
+                lse: self.lse(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FDCAN transmitter delay compensation register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1808,6 +2433,29 @@ of CCCR register are set to 1"]
         #[inline(always)]
         fn default() -> Tdcr {
             Tdcr(0)
+        }
+    }
+    impl core::fmt::Debug for Tdcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tdcr")
+                .field("tdcf", &self.tdcf())
+                .field("tdco", &self.tdco())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Tdcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Tdcr {
+                tdcf: u8,
+                tdco: u8,
+            }
+            let proxy = Tdcr {
+                tdcf: self.tdcf(),
+                tdco: self.tdco(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FDCAN test register"]
@@ -1853,6 +2501,32 @@ of CCCR register are set to 1"]
         #[inline(always)]
         fn default() -> Test {
             Test(0)
+        }
+    }
+    impl core::fmt::Debug for Test {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Test")
+                .field("lbck", &self.lbck())
+                .field("tx", &self.tx())
+                .field("rx", &self.rx())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Test {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Test {
+                lbck: bool,
+                tx: super::vals::Tx,
+                rx: bool,
+            }
+            let proxy = Test {
+                lbck: self.lbck(),
+                tx: self.tx(),
+                rx: self.rx(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FDCAN timeout counter configuration register"]
@@ -1910,6 +2584,32 @@ of CCCR register are set to 1"]
             Tocc(0)
         }
     }
+    impl core::fmt::Debug for Tocc {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tocc")
+                .field("etoc", &self.etoc())
+                .field("tos", &self.tos())
+                .field("top", &self.top())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Tocc {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Tocc {
+                etoc: bool,
+                tos: super::vals::Tos,
+                top: u16,
+            }
+            let proxy = Tocc {
+                etoc: self.etoc(),
+                tos: self.tos(),
+                top: self.top(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FDCAN timeout counter value register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1933,6 +2633,22 @@ depending on the configuration of TSCC.TCP. When decremented to 0, interrupt fla
         #[inline(always)]
         fn default() -> Tocv {
             Tocv(0)
+        }
+    }
+    impl core::fmt::Debug for Tocv {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tocv").field("toc", &self.toc()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Tocv {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Tocv {
+                toc: u16,
+            }
+            let proxy = Tocv { toc: self.toc() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FDCAN timestamp counter configuration register"]
@@ -1977,6 +2693,29 @@ of CCCR register are set to 1"]
             Tscc(0)
         }
     }
+    impl core::fmt::Debug for Tscc {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tscc")
+                .field("tss", &self.tss())
+                .field("tcp", &self.tcp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Tscc {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Tscc {
+                tss: super::vals::Tss,
+                tcp: u8,
+            }
+            let proxy = Tscc {
+                tss: self.tss(),
+                tcp: self.tcp(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FDCAN timestamp counter value register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2002,6 +2741,22 @@ depending on the configuration of TSCC\\[TCP\\]. A wrap around sets interrupt fl
         #[inline(always)]
         fn default() -> Tscv {
             Tscv(0)
+        }
+    }
+    impl core::fmt::Debug for Tscv {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tscv").field("tsc", &self.tsc()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Tscv {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Tscv {
+                tsc: u16,
+            }
+            let proxy = Tscv { tsc: self.tsc() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FDCAN Tx buffer add request register"]
@@ -2031,6 +2786,26 @@ depending on the configuration of TSCC\\[TCP\\]. A wrap around sets interrupt fl
             Txbar(0)
         }
     }
+    impl core::fmt::Debug for Txbar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Txbar")
+                .field("ar", &[self.ar(0usize), self.ar(1usize), self.ar(2usize)])
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Txbar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Txbar {
+                ar: [bool; 3usize],
+            }
+            let proxy = Txbar {
+                ar: [self.ar(0usize), self.ar(1usize), self.ar(2usize)],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FDCAN Tx buffer configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2056,6 +2831,22 @@ of CCCR register are set to 1"]
         #[inline(always)]
         fn default() -> Txbc {
             Txbc(0)
+        }
+    }
+    impl core::fmt::Debug for Txbc {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Txbc").field("tfqm", &self.tfqm()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Txbc {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Txbc {
+                tfqm: super::vals::Tfqm,
+            }
+            let proxy = Txbc { tfqm: self.tfqm() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FDCAN Tx buffer cancellation finished register"]
@@ -2085,6 +2876,26 @@ of CCCR register are set to 1"]
             Txbcf(0)
         }
     }
+    impl core::fmt::Debug for Txbcf {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Txbcf")
+                .field("cf", &[self.cf(0usize), self.cf(1usize), self.cf(2usize)])
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Txbcf {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Txbcf {
+                cf: [bool; 3usize],
+            }
+            let proxy = Txbcf {
+                cf: [self.cf(0usize), self.cf(1usize), self.cf(2usize)],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FDCAN Tx buffer cancellation finished interrupt enable register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2110,6 +2921,26 @@ of CCCR register are set to 1"]
         #[inline(always)]
         fn default() -> Txbcie {
             Txbcie(0)
+        }
+    }
+    impl core::fmt::Debug for Txbcie {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Txbcie")
+                .field("cfie", &[self.cfie(0usize), self.cfie(1usize), self.cfie(2usize)])
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Txbcie {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Txbcie {
+                cfie: [bool; 3usize],
+            }
+            let proxy = Txbcie {
+                cfie: [self.cfie(0usize), self.cfie(1usize), self.cfie(2usize)],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FDCAN Tx buffer cancellation request register"]
@@ -2139,6 +2970,26 @@ of CCCR register are set to 1"]
             Txbcr(0)
         }
     }
+    impl core::fmt::Debug for Txbcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Txbcr")
+                .field("cr", &[self.cr(0usize), self.cr(1usize), self.cr(2usize)])
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Txbcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Txbcr {
+                cr: [bool; 3usize],
+            }
+            let proxy = Txbcr {
+                cr: [self.cr(0usize), self.cr(1usize), self.cr(2usize)],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FDCAN Tx buffer request pending register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2164,6 +3015,26 @@ of CCCR register are set to 1"]
         #[inline(always)]
         fn default() -> Txbrp {
             Txbrp(0)
+        }
+    }
+    impl core::fmt::Debug for Txbrp {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Txbrp")
+                .field("trp", &[self.trp(0usize), self.trp(1usize), self.trp(2usize)])
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Txbrp {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Txbrp {
+                trp: [bool; 3usize],
+            }
+            let proxy = Txbrp {
+                trp: [self.trp(0usize), self.trp(1usize), self.trp(2usize)],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FDCAN Tx buffer transmission interrupt enable register"]
@@ -2193,6 +3064,26 @@ of CCCR register are set to 1"]
             Txbtie(0)
         }
     }
+    impl core::fmt::Debug for Txbtie {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Txbtie")
+                .field("tie", &[self.tie(0usize), self.tie(1usize), self.tie(2usize)])
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Txbtie {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Txbtie {
+                tie: [bool; 3usize],
+            }
+            let proxy = Txbtie {
+                tie: [self.tie(0usize), self.tie(1usize), self.tie(2usize)],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FDCAN Tx buffer transmission occurred register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2220,6 +3111,26 @@ of CCCR register are set to 1"]
             Txbto(0)
         }
     }
+    impl core::fmt::Debug for Txbto {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Txbto")
+                .field("to", &[self.to(0usize), self.to(1usize), self.to(2usize)])
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Txbto {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Txbto {
+                to: [bool; 3usize],
+            }
+            let proxy = Txbto {
+                to: [self.to(0usize), self.to(1usize), self.to(2usize)],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FDCAN Tx event FIFO acknowledge register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2243,6 +3154,22 @@ to EFAI + 1 and updates the FIFO 0 fill level TXEFS\\[EFFL\\]"]
         #[inline(always)]
         fn default() -> Txefa {
             Txefa(0)
+        }
+    }
+    impl core::fmt::Debug for Txefa {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Txefa").field("efai", &self.efai()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Txefa {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Txefa {
+                efai: u8,
+            }
+            let proxy = Txefa { efai: self.efai() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FDCAN Tx event FIFO status register"]
@@ -2314,6 +3241,38 @@ is reset, this bit is also reset. 0 No Tx event FIFO element lost 1 Tx event FIF
             Txefs(0)
         }
     }
+    impl core::fmt::Debug for Txefs {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Txefs")
+                .field("effl", &self.effl())
+                .field("efgi", &self.efgi())
+                .field("efpi", &self.efpi())
+                .field("eff", &self.eff())
+                .field("tefl", &self.tefl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Txefs {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Txefs {
+                effl: u8,
+                efgi: u8,
+                efpi: u8,
+                eff: bool,
+                tefl: bool,
+            }
+            let proxy = Txefs {
+                effl: self.effl(),
+                efgi: self.efgi(),
+                efpi: self.efpi(),
+                eff: self.eff(),
+                tefl: self.tefl(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FDCAN Tx FIFO/queue status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2372,6 +3331,35 @@ is reset, this bit is also reset. 0 No Tx event FIFO element lost 1 Tx event FIF
             Txfqs(0)
         }
     }
+    impl core::fmt::Debug for Txfqs {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Txfqs")
+                .field("tffl", &self.tffl())
+                .field("tfgi", &self.tfgi())
+                .field("tfqpi", &self.tfqpi())
+                .field("tfqf", &self.tfqf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Txfqs {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Txfqs {
+                tffl: u8,
+                tfgi: u8,
+                tfqpi: u8,
+                tfqf: bool,
+            }
+            let proxy = Txfqs {
+                tffl: self.tffl(),
+                tfgi: self.tfgi(),
+                tfqpi: self.tfqpi(),
+                tfqf: self.tfqf(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FDCAN extended ID and mask register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2399,10 +3387,27 @@ of CCCR register are set to 1"]
             Xidam(0)
         }
     }
+    impl core::fmt::Debug for Xidam {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Xidam").field("eidm", &self.eidm()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Xidam {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Xidam {
+                eidm: u32,
+            }
+            let proxy = Xidam { eidm: self.eidm() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Act {
         #[doc = "Synchronizing: node is synchronizing on CAN communication."]
         SYNC = 0x0,
@@ -2436,7 +3441,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Anfe {
         #[doc = "Accept in Rx FIFO 0"]
         ACCEPT_FIFO_0 = 0x0,
@@ -2469,7 +3475,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Anfs {
         #[doc = "Accept in Rx FIFO 0"]
         ACCEPT_FIFO_0 = 0x0,
@@ -2502,7 +3509,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lec {
         #[doc = "No Error: No error occurred since LEC has been reset by successful reception or transmission."]
         NO_ERROR = 0x0,
@@ -2544,7 +3552,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msi {
         #[doc = "No FIFO selected"]
         NO_FIFO = 0x0,
@@ -2578,7 +3587,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pdiv {
         #[doc = "Divide by 1"]
         DIV_1 = 0x0,
@@ -2636,7 +3646,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tfqm {
         #[doc = "Tx FIFO operation"]
         FIFO = 0x0,
@@ -2666,7 +3677,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tos {
         #[doc = "Continuous operation"]
         CONTINUOUS = 0x0,
@@ -2700,7 +3712,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tss {
         #[doc = "Timestamp counter value always 0x0000"]
         ZERO = 0x0,
@@ -2733,7 +3746,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tx {
         #[doc = "Reset value, FDCANx_TX TX is controlled by the CAN core, updated at the end of the CAN bit time"]
         RESET = 0x0,

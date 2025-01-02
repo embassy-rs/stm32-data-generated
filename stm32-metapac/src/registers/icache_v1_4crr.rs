@@ -541,37 +541,37 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "MEGABYTES2",
+                    name: "MEGA_BYTES2",
                     description: None,
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MEGABYTES4",
+                    name: "MEGA_BYTES4",
                     description: None,
                     value: 2,
                 },
                 EnumVariant {
-                    name: "MEGABYTES8",
+                    name: "MEGA_BYTES8",
                     description: None,
                     value: 3,
                 },
                 EnumVariant {
-                    name: "MEGABYTES16",
+                    name: "MEGA_BYTES16",
                     description: None,
                     value: 4,
                 },
                 EnumVariant {
-                    name: "MEGABYTES32",
+                    name: "MEGA_BYTES32",
                     description: None,
                     value: 5,
                 },
                 EnumVariant {
-                    name: "MEGABYTES64",
+                    name: "MEGA_BYTES64",
                     description: None,
                     value: 6,
                 },
                 EnumVariant {
-                    name: "MEGABYTES128",
+                    name: "MEGA_BYTES128",
                     description: None,
                     value: 7,
                 },
@@ -583,14 +583,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DIRECTMAPPED",
+                    name: "DIRECT_MAPPED",
                     description: Some(
                         "direct mapped cache (1-way cache)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NWAYSETASSOCIATIVE",
+                    name: "NWAY_SET_ASSOCIATIVE",
                     description: Some(
                         "n-way set associative cache (reset value)",
                     ),

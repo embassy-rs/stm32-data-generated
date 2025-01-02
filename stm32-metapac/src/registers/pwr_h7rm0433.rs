@@ -920,21 +920,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOPULL",
+                    name: "NO_PULL",
                     description: Some(
                         "No pull-up.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PULLUP",
+                    name: "PULL_UP",
                     description: Some(
                         "Pull-up.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PULLDOWN",
+                    name: "PULL_DOWN",
                     description: Some(
                         "Pull-down.",
                     ),

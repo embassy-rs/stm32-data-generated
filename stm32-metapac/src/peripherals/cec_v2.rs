@@ -162,6 +162,50 @@ pub mod regs {
             Cfgr(0)
         }
     }
+    impl core::fmt::Debug for Cfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr")
+                .field("sft", &self.sft())
+                .field("rxtol", &self.rxtol())
+                .field("brestp", &self.brestp())
+                .field("bregen", &self.bregen())
+                .field("lbpegen", &self.lbpegen())
+                .field("brdnogen", &self.brdnogen())
+                .field("sftopt", &self.sftopt())
+                .field("oar", &self.oar())
+                .field("lstn", &self.lstn())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr {
+                sft: u8,
+                rxtol: bool,
+                brestp: bool,
+                bregen: bool,
+                lbpegen: bool,
+                brdnogen: bool,
+                sftopt: bool,
+                oar: u16,
+                lstn: bool,
+            }
+            let proxy = Cfgr {
+                sft: self.sft(),
+                rxtol: self.rxtol(),
+                brestp: self.brestp(),
+                bregen: self.bregen(),
+                lbpegen: self.lbpegen(),
+                brdnogen: self.brdnogen(),
+                sftopt: self.sftopt(),
+                oar: self.oar(),
+                lstn: self.lstn(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CEC control register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -205,6 +249,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cr {
             Cr(0)
+        }
+    }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("cecen", &self.cecen())
+                .field("txsom", &self.txsom())
+                .field("txeom", &self.txeom())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                cecen: bool,
+                txsom: bool,
+                txeom: bool,
+            }
+            let proxy = Cr {
+                cecen: self.cecen(),
+                txsom: self.txsom(),
+                txeom: self.txeom(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CEC interrupt enable register."]
@@ -362,6 +432,62 @@ pub mod regs {
             Ier(0)
         }
     }
+    impl core::fmt::Debug for Ier {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ier")
+                .field("rxbrie", &self.rxbrie())
+                .field("rxendie", &self.rxendie())
+                .field("rxovrie", &self.rxovrie())
+                .field("breie", &self.breie())
+                .field("sbpeie", &self.sbpeie())
+                .field("lbpeie", &self.lbpeie())
+                .field("rxackie", &self.rxackie())
+                .field("arblstie", &self.arblstie())
+                .field("txbrie", &self.txbrie())
+                .field("txendie", &self.txendie())
+                .field("txudrie", &self.txudrie())
+                .field("txerrie", &self.txerrie())
+                .field("txackie", &self.txackie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ier {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ier {
+                rxbrie: bool,
+                rxendie: bool,
+                rxovrie: bool,
+                breie: bool,
+                sbpeie: bool,
+                lbpeie: bool,
+                rxackie: bool,
+                arblstie: bool,
+                txbrie: bool,
+                txendie: bool,
+                txudrie: bool,
+                txerrie: bool,
+                txackie: bool,
+            }
+            let proxy = Ier {
+                rxbrie: self.rxbrie(),
+                rxendie: self.rxendie(),
+                rxovrie: self.rxovrie(),
+                breie: self.breie(),
+                sbpeie: self.sbpeie(),
+                lbpeie: self.lbpeie(),
+                rxackie: self.rxackie(),
+                arblstie: self.arblstie(),
+                txbrie: self.txbrie(),
+                txendie: self.txendie(),
+                txudrie: self.txudrie(),
+                txerrie: self.txerrie(),
+                txackie: self.txackie(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CEC Interrupt and Status Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -517,6 +643,62 @@ pub mod regs {
             Isr(0)
         }
     }
+    impl core::fmt::Debug for Isr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Isr")
+                .field("rxbr", &self.rxbr())
+                .field("rxend", &self.rxend())
+                .field("rxovr", &self.rxovr())
+                .field("bre", &self.bre())
+                .field("sbpe", &self.sbpe())
+                .field("lbpe", &self.lbpe())
+                .field("rxacke", &self.rxacke())
+                .field("arblst", &self.arblst())
+                .field("txbr", &self.txbr())
+                .field("txend", &self.txend())
+                .field("txudr", &self.txudr())
+                .field("txerr", &self.txerr())
+                .field("txacke", &self.txacke())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Isr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Isr {
+                rxbr: bool,
+                rxend: bool,
+                rxovr: bool,
+                bre: bool,
+                sbpe: bool,
+                lbpe: bool,
+                rxacke: bool,
+                arblst: bool,
+                txbr: bool,
+                txend: bool,
+                txudr: bool,
+                txerr: bool,
+                txacke: bool,
+            }
+            let proxy = Isr {
+                rxbr: self.rxbr(),
+                rxend: self.rxend(),
+                rxovr: self.rxovr(),
+                bre: self.bre(),
+                sbpe: self.sbpe(),
+                lbpe: self.lbpe(),
+                rxacke: self.rxacke(),
+                arblst: self.arblst(),
+                txbr: self.txbr(),
+                txend: self.txend(),
+                txudr: self.txudr(),
+                txerr: self.txerr(),
+                txacke: self.txacke(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CEC Rx Data Register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -540,6 +722,22 @@ pub mod regs {
             Rxdr(0)
         }
     }
+    impl core::fmt::Debug for Rxdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rxdr").field("rxd", &self.rxd()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rxdr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rxdr {
+                rxd: u8,
+            }
+            let proxy = Rxdr { rxd: self.rxd() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CEC Tx data register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -561,6 +759,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Txdr {
             Txdr(0)
+        }
+    }
+    impl core::fmt::Debug for Txdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Txdr").field("txd", &self.txd()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Txdr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Txdr {
+                txd: u8,
+            }
+            let proxy = Txdr { txd: self.txd() };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

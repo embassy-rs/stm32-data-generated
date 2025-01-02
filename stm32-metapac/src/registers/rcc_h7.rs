@@ -12879,14 +12879,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MEDIUMLOW",
+                    name: "MEDIUM_LOW",
                     description: Some(
                         "Medium low driving capability",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MEDIUMHIGH",
+                    name: "MEDIUM_HIGH",
                     description: Some(
                         "Medium high driving capability",
                     ),
@@ -16724,14 +16724,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "WIDEVCO",
+                    name: "WIDE_VCO",
                     description: Some(
                         "VCO frequency range 192 to 836 MHz",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MEDIUMVCO",
+                    name: "MEDIUM_VCO",
                     description: Some(
                         "VCO frequency range 150 to 420 MHz",
                     ),
@@ -17172,14 +17172,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DEFAULTX2",
+                    name: "DEFAULT_X2",
                     description: Some(
                         "Timer kernel clock equal to 2x pclk by default",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DEFAULTX4",
+                    name: "DEFAULT_X4",
                     description: Some(
                         "Timer kernel clock equal to 4x pclk by default",
                     ),

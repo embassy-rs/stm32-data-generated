@@ -2036,14 +2036,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TOMATCH",
+                    name: "TO_MATCH",
                     description: Some(
                         "Alarm set if the date/day match",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NOTMATCH",
+                    name: "NOT_MATCH",
                     description: Some(
                         "Date/day don’t care in Alarm comparison",
                     ),
@@ -2078,14 +2078,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DATEUNITS",
+                    name: "DATE_UNITS",
                     description: Some(
                         "DU[3:0] represents the date units",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "WEEKDAY",
+                    name: "WEEK_DAY",
                     description: Some(
                         "DU[3:0] represents the week day. DT[1:0] is don’t care",
                     ),
@@ -2120,14 +2120,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOCHANGE",
+                    name: "NO_CHANGE",
                     description: Some(
                         "No RTCCLK pulses are added",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "INCREASEFREQ",
+                    name: "INCREASE_FREQ",
                     description: Some(
                         "One RTCCLK pulse is effectively inserted every 2^11 pulses (frequency increased by 488.5 ppm)",
                     ),
@@ -2169,14 +2169,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CALFREQ_512HZ",
+                    name: "CAL_FREQ_512HZ",
                     description: Some(
                         "Calibration output is 512 Hz (with default prescaler setting)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CALFREQ_1HZ",
+                    name: "CAL_FREQ_1HZ",
                     description: Some(
                         "Calibration output is 1 Hz (with default prescaler setting)",
                     ),
@@ -2218,14 +2218,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ALARMA",
+                    name: "ALARM_A",
                     description: Some(
                         "Alarm A output enabled",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ALARMB",
+                    name: "ALARM_B",
                     description: Some(
                         "Alarm B output enabled",
                     ),
@@ -2435,14 +2435,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RISINGEDGE",
+                    name: "RISING_EDGE",
                     description: Some(
                         "If TAMPFLT = 00: RTC_TAMPx input rising edge triggers a tamper detection event. If TAMPFLT =\u{338} 00: RTC_TAMPx input staying low triggers a tamper detection event.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FALLINGEDGE",
+                    name: "FALLING_EDGE",
                     description: Some(
                         "If TAMPFLT = 00: RTC_TAMPx input staying high triggers a tamper detection event. If TAMPFLT =\u{338} 00: RTC_TAMPx input falling edge triggers a tamper detection event",
                     ),
@@ -2456,14 +2456,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RISINGEDGE",
+                    name: "RISING_EDGE",
                     description: Some(
                         "RTC_TS input rising edge generates a time-stamp event",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FALLINGEDGE",
+                    name: "FALLING_EDGE",
                     description: Some(
                         "RTC_TS input falling edge generates a time-stamp event",
                     ),
@@ -2505,14 +2505,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 3,
                 },
                 EnumVariant {
-                    name: "CLOCKSPARE",
+                    name: "CLOCK_SPARE",
                     description: Some(
                         "ck_spre (usually 1 Hz) clock is selected",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "CLOCKSPAREWITHOFFSET",
+                    name: "CLOCK_SPARE_WITH_OFFSET",
                     description: Some(
                         "ck_spre (usually 1 Hz) clock is selected and 2^16 is added to the WUT counter value",
                     ),

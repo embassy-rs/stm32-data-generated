@@ -201,6 +201,62 @@ pub mod regs {
             Apb1fzr1(0)
         }
     }
+    impl core::fmt::Debug for Apb1fzr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Apb1fzr1")
+                .field("tim2", &self.tim2())
+                .field("tim3", &self.tim3())
+                .field("tim4", &self.tim4())
+                .field("tim5", &self.tim5())
+                .field("tim6", &self.tim6())
+                .field("tim7", &self.tim7())
+                .field("rtc", &self.rtc())
+                .field("wwdg", &self.wwdg())
+                .field("iwdg", &self.iwdg())
+                .field("i2c1", &self.i2c1())
+                .field("i2c2", &self.i2c2())
+                .field("i2c3", &self.i2c3())
+                .field("lptim1", &self.lptim1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Apb1fzr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Apb1fzr1 {
+                tim2: bool,
+                tim3: bool,
+                tim4: bool,
+                tim5: bool,
+                tim6: bool,
+                tim7: bool,
+                rtc: bool,
+                wwdg: bool,
+                iwdg: bool,
+                i2c1: bool,
+                i2c2: bool,
+                i2c3: bool,
+                lptim1: bool,
+            }
+            let proxy = Apb1fzr1 {
+                tim2: self.tim2(),
+                tim3: self.tim3(),
+                tim4: self.tim4(),
+                tim5: self.tim5(),
+                tim6: self.tim6(),
+                tim7: self.tim7(),
+                rtc: self.rtc(),
+                wwdg: self.wwdg(),
+                iwdg: self.iwdg(),
+                i2c1: self.i2c1(),
+                i2c2: self.i2c2(),
+                i2c3: self.i2c3(),
+                lptim1: self.lptim1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Debug MCU APB1 freeze register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -244,6 +300,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Apb1fzr2 {
             Apb1fzr2(0)
+        }
+    }
+    impl core::fmt::Debug for Apb1fzr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Apb1fzr2")
+                .field("i2c4", &self.i2c4())
+                .field("lptim2", &self.lptim2())
+                .field("lptim3", &self.lptim3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Apb1fzr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Apb1fzr2 {
+                i2c4: bool,
+                lptim2: bool,
+                lptim3: bool,
+            }
+            let proxy = Apb1fzr2 {
+                i2c4: self.i2c4(),
+                lptim2: self.lptim2(),
+                lptim3: self.lptim3(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Debug MCU APB2 freeze register"]
@@ -313,6 +395,38 @@ pub mod regs {
             Apb2fzr(0)
         }
     }
+    impl core::fmt::Debug for Apb2fzr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Apb2fzr")
+                .field("tim1", &self.tim1())
+                .field("tim8", &self.tim8())
+                .field("tim15", &self.tim15())
+                .field("tim16", &self.tim16())
+                .field("tim17", &self.tim17())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Apb2fzr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Apb2fzr {
+                tim1: bool,
+                tim8: bool,
+                tim15: bool,
+                tim16: bool,
+                tim17: bool,
+            }
+            let proxy = Apb2fzr {
+                tim1: self.tim1(),
+                tim8: self.tim8(),
+                tim15: self.tim15(),
+                tim16: self.tim16(),
+                tim17: self.tim17(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Debug MCU configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -380,6 +494,38 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("dbg_stop", &self.dbg_stop())
+                .field("dbg_standby", &self.dbg_standby())
+                .field("trace_ioen", &self.trace_ioen())
+                .field("trace_en", &self.trace_en())
+                .field("trace_mode", &self.trace_mode())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                dbg_stop: bool,
+                dbg_standby: bool,
+                trace_ioen: bool,
+                trace_en: bool,
+                trace_mode: u8,
+            }
+            let proxy = Cr {
+                dbg_stop: self.dbg_stop(),
+                dbg_standby: self.dbg_standby(),
+                trace_ioen: self.trace_ioen(),
+                trace_en: self.trace_en(),
+                trace_mode: self.trace_mode(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DBGMCU_IDCODE"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -412,6 +558,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Idcode {
             Idcode(0)
+        }
+    }
+    impl core::fmt::Debug for Idcode {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Idcode")
+                .field("dev_id", &self.dev_id())
+                .field("rev_id", &self.rev_id())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Idcode {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Idcode {
+                dev_id: u16,
+                rev_id: u16,
+            }
+            let proxy = Idcode {
+                dev_id: self.dev_id(),
+                rev_id: self.rev_id(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

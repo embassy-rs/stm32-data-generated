@@ -438,7 +438,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HIGHSPEED",
+                    name: "HIGH_SPEED",
                     description: Some(
                         "OpAmp in high speed mode",
                     ),
@@ -452,7 +452,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "OUTPUTPIN",
+                    name: "OUTPUT_PIN",
                     description: Some(
                         "Output is connected to the output Pin",
                     ),
@@ -536,126 +536,126 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 5,
                 },
                 EnumVariant {
-                    name: "GAIN2_INPUTVINM0",
+                    name: "GAIN2_INPUT_VINM0",
                     description: Some(
                         "Gain 2, input/bias connected to VINM0 or inverting gain",
                     ),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "GAIN4_INPUTVINM0",
+                    name: "GAIN4_INPUT_VINM0",
                     description: Some(
                         "Gain 4, input/bias connected to VINM0 or inverting gain",
                     ),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "GAIN8_INPUTVINM0",
+                    name: "GAIN8_INPUT_VINM0",
                     description: Some(
                         "Gain 8, input/bias connected to VINM0 or inverting gain",
                     ),
                     value: 10,
                 },
                 EnumVariant {
-                    name: "GAIN16_INPUTVINM0",
+                    name: "GAIN16_INPUT_VINM0",
                     description: Some(
                         "Gain 16, input/bias connected to VINM0 or inverting gain",
                     ),
                     value: 11,
                 },
                 EnumVariant {
-                    name: "GAIN32_INPUTVINM0",
+                    name: "GAIN32_INPUT_VINM0",
                     description: Some(
                         "Gain 32, input/bias connected to VINM0 or inverting gain",
                     ),
                     value: 12,
                 },
                 EnumVariant {
-                    name: "GAIN64_INPUTVINM0",
+                    name: "GAIN64_INPUT_VINM0",
                     description: Some(
                         "Gain 64, input/bias connected to VINM0 or inverting gain",
                     ),
                     value: 13,
                 },
                 EnumVariant {
-                    name: "GAIN2_FILTERINGVINM0",
+                    name: "GAIN2_FILTERING_VINM0",
                     description: Some(
                         "Gain 2, with filtering on VINM0",
                     ),
                     value: 16,
                 },
                 EnumVariant {
-                    name: "GAIN4_FILTERINGVINM0",
+                    name: "GAIN4_FILTERING_VINM0",
                     description: Some(
                         "Gain 4, with filtering on VINM0",
                     ),
                     value: 17,
                 },
                 EnumVariant {
-                    name: "GAIN8_FILTERINGVINM0",
+                    name: "GAIN8_FILTERING_VINM0",
                     description: Some(
                         "Gain 8, with filtering on VINM0",
                     ),
                     value: 18,
                 },
                 EnumVariant {
-                    name: "GAIN16_FILTERINGVINM0",
+                    name: "GAIN16_FILTERING_VINM0",
                     description: Some(
                         "Gain 16, with filtering on VINM0",
                     ),
                     value: 19,
                 },
                 EnumVariant {
-                    name: "GAIN32_FILTERINGVINM0",
+                    name: "GAIN32_FILTERING_VINM0",
                     description: Some(
                         "Gain 32, with filtering on VINM0",
                     ),
                     value: 20,
                 },
                 EnumVariant {
-                    name: "GAIN64_FILTERINGVINM0",
+                    name: "GAIN64_FILTERING_VINM0",
                     description: Some(
                         "Gain 64, with filtering on VINM0",
                     ),
                     value: 21,
                 },
                 EnumVariant {
-                    name: "GAIN2_INPUTVINM0FILTERINGVINM1",
+                    name: "GAIN2_INPUT_VINM0FILTERING_VINM1",
                     description: Some(
                         "Gain 2, input/bias connected to VINM0 with filtering on VINM1 or inverting gain",
                     ),
                     value: 24,
                 },
                 EnumVariant {
-                    name: "GAIN4_INPUTVINM0FILTERINGVINM1",
+                    name: "GAIN4_INPUT_VINM0FILTERING_VINM1",
                     description: Some(
                         "Gain 4, input/bias connected to VINM0 with filtering on VINM1 or inverting gain",
                     ),
                     value: 25,
                 },
                 EnumVariant {
-                    name: "GAIN8_INPUTVINM0FILTERINGVINM1",
+                    name: "GAIN8_INPUT_VINM0FILTERING_VINM1",
                     description: Some(
                         "Gain 8, input/bias connected to VINM0 with filtering on VINM1 or inverting gain",
                     ),
                     value: 26,
                 },
                 EnumVariant {
-                    name: "GAIN16_INPUTVINM0FILTERINGVINM1",
+                    name: "GAIN16_INPUT_VINM0FILTERING_VINM1",
                     description: Some(
                         "Gain 16, input/bias connected to VINM0 with filtering on VINM1 or inverting gain",
                     ),
                     value: 27,
                 },
                 EnumVariant {
-                    name: "GAIN32_INPUTVINM0FILTERINGVINM1",
+                    name: "GAIN32_INPUT_VINM0FILTERING_VINM1",
                     description: Some(
                         "Gain 32, input/bias connected to VINM0 with filtering on VINM1 or inverting gain",
                     ),
                     value: 28,
                 },
                 EnumVariant {
-                    name: "GAIN64_INPUTVINM0FILTERINGVINM1",
+                    name: "GAIN64_INPUT_VINM0FILTERING_VINM1",
                     description: Some(
                         "Gain 64, input/bias connected to VINM0 with filtering on VINM1 or inverting gain",
                     ),

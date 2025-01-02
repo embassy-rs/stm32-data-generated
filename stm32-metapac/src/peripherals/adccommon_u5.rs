@@ -130,6 +130,44 @@ pub mod regs {
             Ccr(0)
         }
     }
+    impl core::fmt::Debug for Ccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ccr")
+                .field("dual", &self.dual())
+                .field("delay", &self.delay())
+                .field("damdf", &self.damdf())
+                .field("presc", &self.presc())
+                .field("vrefen", &self.vrefen())
+                .field("vsenseen", &self.vsenseen())
+                .field("vbaten", &self.vbaten())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ccr {
+                dual: super::vals::Dual,
+                delay: u8,
+                damdf: super::vals::Damdf,
+                presc: super::vals::Presc,
+                vrefen: bool,
+                vsenseen: bool,
+                vbaten: bool,
+            }
+            let proxy = Ccr {
+                dual: self.dual(),
+                delay: self.delay(),
+                damdf: self.damdf(),
+                presc: self.presc(),
+                vrefen: self.vrefen(),
+                vsenseen: self.vsenseen(),
+                vbaten: self.vbaten(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "ADC common regular data register for dual mode."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -166,6 +204,29 @@ pub mod regs {
             Cdr(0)
         }
     }
+    impl core::fmt::Debug for Cdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cdr")
+                .field("rdata_mst", &self.rdata_mst())
+                .field("rdata_slv", &self.rdata_slv())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cdr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cdr {
+                rdata_mst: u16,
+                rdata_slv: u16,
+            }
+            let proxy = Cdr {
+                rdata_mst: self.rdata_mst(),
+                rdata_slv: self.rdata_slv(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "ADC common regular data register for 32-bit dual mode."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -187,6 +248,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cdr2 {
             Cdr2(0)
+        }
+    }
+    impl core::fmt::Debug for Cdr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cdr2").field("rdata_alt", &self.rdata_alt()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cdr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cdr2 {
+                rdata_alt: u32,
+            }
+            let proxy = Cdr2 {
+                rdata_alt: self.rdata_alt(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "ADC common status register."]
@@ -407,13 +486,91 @@ pub mod regs {
             Csr(0)
         }
     }
+    impl core::fmt::Debug for Csr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Csr")
+                .field("adrdy_mst", &self.adrdy_mst())
+                .field("eosmp_mst", &self.eosmp_mst())
+                .field("eoc_mst", &self.eoc_mst())
+                .field("eos_mst", &self.eos_mst())
+                .field("ovr_mst", &self.ovr_mst())
+                .field("jeoc_mst", &self.jeoc_mst())
+                .field("jeos_mst", &self.jeos_mst())
+                .field(
+                    "awd_mst",
+                    &[self.awd_mst(0usize), self.awd_mst(1usize), self.awd_mst(2usize)],
+                )
+                .field("ldordy_mst", &self.ldordy_mst())
+                .field("adrdy_slv", &self.adrdy_slv())
+                .field("eosmp_slv", &self.eosmp_slv())
+                .field("eoc_slv", &self.eoc_slv())
+                .field("eos_slv", &self.eos_slv())
+                .field("ovr_slv", &self.ovr_slv())
+                .field("jeoc_slv", &self.jeoc_slv())
+                .field("jeos_slv", &self.jeos_slv())
+                .field(
+                    "awd1_slv",
+                    &[self.awd1_slv(0usize), self.awd1_slv(1usize), self.awd1_slv(2usize)],
+                )
+                .field("ldordy_slv", &self.ldordy_slv())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Csr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Csr {
+                adrdy_mst: bool,
+                eosmp_mst: bool,
+                eoc_mst: bool,
+                eos_mst: bool,
+                ovr_mst: bool,
+                jeoc_mst: bool,
+                jeos_mst: bool,
+                awd_mst: [bool; 3usize],
+                ldordy_mst: bool,
+                adrdy_slv: bool,
+                eosmp_slv: bool,
+                eoc_slv: bool,
+                eos_slv: bool,
+                ovr_slv: bool,
+                jeoc_slv: bool,
+                jeos_slv: bool,
+                awd1_slv: [bool; 3usize],
+                ldordy_slv: bool,
+            }
+            let proxy = Csr {
+                adrdy_mst: self.adrdy_mst(),
+                eosmp_mst: self.eosmp_mst(),
+                eoc_mst: self.eoc_mst(),
+                eos_mst: self.eos_mst(),
+                ovr_mst: self.ovr_mst(),
+                jeoc_mst: self.jeoc_mst(),
+                jeos_mst: self.jeos_mst(),
+                awd_mst: [self.awd_mst(0usize), self.awd_mst(1usize), self.awd_mst(2usize)],
+                ldordy_mst: self.ldordy_mst(),
+                adrdy_slv: self.adrdy_slv(),
+                eosmp_slv: self.eosmp_slv(),
+                eoc_slv: self.eoc_slv(),
+                eos_slv: self.eos_slv(),
+                ovr_slv: self.ovr_slv(),
+                jeoc_slv: self.jeoc_slv(),
+                jeos_slv: self.jeos_slv(),
+                awd1_slv: [self.awd1_slv(0usize), self.awd1_slv(1usize), self.awd1_slv(2usize)],
+                ldordy_slv: self.ldordy_slv(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Damdf {
         #[doc = "Without data packing, CDR/CDR2 not used"]
-        NOPACK = 0x0,
+        NO_PACK = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "CDR formatted for 32-bit down to 10-bit resolution"]
         FORMAT32TO10 = 0x02,
@@ -443,26 +600,27 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dual {
         #[doc = "Independent mode"]
         INDEPENDENT = 0x0,
         #[doc = "Dual, combined regular simultaneous + injected simultaneous mode"]
-        DUALRJ = 0x01,
+        DUAL_RJ = 0x01,
         #[doc = "Dual, combined regular simultaneous + alternate trigger mode"]
-        DUALRA = 0x02,
+        DUAL_RA = 0x02,
         #[doc = "Dual, combined interleaved mode + injected simultaneous mode"]
-        DUALIJ = 0x03,
+        DUAL_IJ = 0x03,
         _RESERVED_4 = 0x04,
         #[doc = "Dual, injected simultaneous mode only"]
-        DUALJ = 0x05,
+        DUAL_J = 0x05,
         #[doc = "Dual, regular simultaneous mode only"]
-        DUALR = 0x06,
+        DUAL_R = 0x06,
         #[doc = "Dual, interleaved mode only"]
-        DUALI = 0x07,
+        DUAL_I = 0x07,
         _RESERVED_8 = 0x08,
         #[doc = "Dual, alternate trigger mode only"]
-        DUALA = 0x09,
+        DUAL_A = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
@@ -509,7 +667,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Presc {
         #[doc = "adc_ker_ck_input not divided"]
         DIV1 = 0x0,

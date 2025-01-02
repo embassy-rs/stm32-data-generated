@@ -168,6 +168,50 @@ pub mod regs {
             Bcdr(0)
         }
     }
+    impl core::fmt::Debug for Bcdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bcdr")
+                .field("bcden", &self.bcden())
+                .field("dcden", &self.dcden())
+                .field("pden", &self.pden())
+                .field("sden", &self.sden())
+                .field("dcdet", &self.dcdet())
+                .field("pdet", &self.pdet())
+                .field("sdet", &self.sdet())
+                .field("ps2det", &self.ps2det())
+                .field("dppu", &self.dppu())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bcdr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Bcdr {
+                bcden: bool,
+                dcden: bool,
+                pden: bool,
+                sden: bool,
+                dcdet: bool,
+                pdet: bool,
+                sdet: super::vals::Sdet,
+                ps2det: bool,
+                dppu: bool,
+            }
+            let proxy = Bcdr {
+                bcden: self.bcden(),
+                dcden: self.dcden(),
+                pden: self.pden(),
+                sden: self.sden(),
+                dcdet: self.dcdet(),
+                pdet: self.pdet(),
+                sdet: self.sdet(),
+                ps2det: self.ps2det(),
+                dppu: self.dppu(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -367,6 +411,74 @@ pub mod regs {
             Cntr(0)
         }
     }
+    impl core::fmt::Debug for Cntr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cntr")
+                .field("fres", &self.fres())
+                .field("pdwn", &self.pdwn())
+                .field("lpmode", &self.lpmode())
+                .field("fsusp", &self.fsusp())
+                .field("resume", &self.resume())
+                .field("l1resume", &self.l1resume())
+                .field("l1reqm", &self.l1reqm())
+                .field("esofm", &self.esofm())
+                .field("sofm", &self.sofm())
+                .field("resetm", &self.resetm())
+                .field("suspm", &self.suspm())
+                .field("wkupm", &self.wkupm())
+                .field("errm", &self.errm())
+                .field("pmaovrm", &self.pmaovrm())
+                .field("ctrm", &self.ctrm())
+                .field("thr512m", &self.thr512m())
+                .field("host", &self.host())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cntr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cntr {
+                fres: bool,
+                pdwn: bool,
+                lpmode: bool,
+                fsusp: bool,
+                resume: bool,
+                l1resume: bool,
+                l1reqm: bool,
+                esofm: bool,
+                sofm: bool,
+                resetm: bool,
+                suspm: bool,
+                wkupm: bool,
+                errm: bool,
+                pmaovrm: bool,
+                ctrm: bool,
+                thr512m: bool,
+                host: bool,
+            }
+            let proxy = Cntr {
+                fres: self.fres(),
+                pdwn: self.pdwn(),
+                lpmode: self.lpmode(),
+                fsusp: self.fsusp(),
+                resume: self.resume(),
+                l1resume: self.l1resume(),
+                l1reqm: self.l1reqm(),
+                esofm: self.esofm(),
+                sofm: self.sofm(),
+                resetm: self.resetm(),
+                suspm: self.suspm(),
+                wkupm: self.wkupm(),
+                errm: self.errm(),
+                pmaovrm: self.pmaovrm(),
+                ctrm: self.ctrm(),
+                thr512m: self.thr512m(),
+                host: self.host(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "device address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -401,6 +513,29 @@ bits. If this bit is at '0 no transactions are handled, irrespective of the sett
         #[inline(always)]
         fn default() -> Daddr {
             Daddr(0)
+        }
+    }
+    impl core::fmt::Debug for Daddr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Daddr")
+                .field("add", &self.add())
+                .field("ef", &self.ef())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Daddr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Daddr {
+                add: u8,
+                ef: bool,
+            }
+            let proxy = Daddr {
+                add: self.add(),
+                ef: self.ef(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "endpoint/channel 0 register"]
@@ -580,6 +715,68 @@ bits. If this bit is at '0 no transactions are handled, irrespective of the sett
             Epr(0)
         }
     }
+    impl core::fmt::Debug for Epr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Epr")
+                .field("ea", &self.ea())
+                .field("stat_tx", &self.stat_tx())
+                .field("dtog_tx", &self.dtog_tx())
+                .field("ctr_tx", &self.ctr_tx())
+                .field("ep_kind", &self.ep_kind())
+                .field("ep_type", &self.ep_type())
+                .field("setup", &self.setup())
+                .field("stat_rx", &self.stat_rx())
+                .field("dtog_rx", &self.dtog_rx())
+                .field("ctr_rx", &self.ctr_rx())
+                .field("devaddr", &self.devaddr())
+                .field("nak", &self.nak())
+                .field("ls_ep", &self.ls_ep())
+                .field("err_tx", &self.err_tx())
+                .field("err_rx", &self.err_rx())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Epr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Epr {
+                ea: u8,
+                stat_tx: super::vals::Stat,
+                dtog_tx: bool,
+                ctr_tx: bool,
+                ep_kind: bool,
+                ep_type: super::vals::EpType,
+                setup: bool,
+                stat_rx: super::vals::Stat,
+                dtog_rx: bool,
+                ctr_rx: bool,
+                devaddr: u8,
+                nak: bool,
+                ls_ep: bool,
+                err_tx: bool,
+                err_rx: bool,
+            }
+            let proxy = Epr {
+                ea: self.ea(),
+                stat_tx: self.stat_tx(),
+                dtog_tx: self.dtog_tx(),
+                ctr_tx: self.ctr_tx(),
+                ep_kind: self.ep_kind(),
+                ep_type: self.ep_type(),
+                setup: self.setup(),
+                stat_rx: self.stat_rx(),
+                dtog_rx: self.dtog_rx(),
+                ctr_rx: self.ctr_rx(),
+                devaddr: self.devaddr(),
+                nak: self.nak(),
+                ls_ep: self.ls_ep(),
+                err_tx: self.err_tx(),
+                err_rx: self.err_rx(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "frame number register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -645,6 +842,38 @@ bits. If this bit is at '0 no transactions are handled, irrespective of the sett
         #[inline(always)]
         fn default() -> Fnr {
             Fnr(0)
+        }
+    }
+    impl core::fmt::Debug for Fnr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fnr")
+                .field("fn_", &self.fn_())
+                .field("lsof", &self.lsof())
+                .field("lck", &self.lck())
+                .field("rxdm", &self.rxdm())
+                .field("rxdp", &self.rxdp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fnr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fnr {
+                fn_: u16,
+                lsof: u8,
+                lck: bool,
+                rxdm: bool,
+                rxdp: bool,
+            }
+            let proxy = Fnr {
+                fn_: self.fn_(),
+                lsof: self.lsof(),
+                lck: self.lck(),
+                rxdm: self.rxdm(),
+                rxdp: self.rxdp(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "interrupt status register"]
@@ -813,6 +1042,65 @@ bits. If this bit is at '0 no transactions are handled, irrespective of the sett
             Istr(0)
         }
     }
+    impl core::fmt::Debug for Istr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Istr")
+                .field("ep_id", &self.ep_id())
+                .field("dir", &self.dir())
+                .field("l1req", &self.l1req())
+                .field("esof", &self.esof())
+                .field("sof", &self.sof())
+                .field("reset", &self.reset())
+                .field("susp", &self.susp())
+                .field("wkup", &self.wkup())
+                .field("err", &self.err())
+                .field("pmaovr", &self.pmaovr())
+                .field("ctr", &self.ctr())
+                .field("thr512", &self.thr512())
+                .field("dcon_stat", &self.dcon_stat())
+                .field("ls_dcon", &self.ls_dcon())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Istr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Istr {
+                ep_id: u8,
+                dir: super::vals::Dir,
+                l1req: bool,
+                esof: bool,
+                sof: bool,
+                reset: bool,
+                susp: bool,
+                wkup: bool,
+                err: bool,
+                pmaovr: bool,
+                ctr: bool,
+                thr512: bool,
+                dcon_stat: bool,
+                ls_dcon: bool,
+            }
+            let proxy = Istr {
+                ep_id: self.ep_id(),
+                dir: self.dir(),
+                l1req: self.l1req(),
+                esof: self.esof(),
+                sof: self.sof(),
+                reset: self.reset(),
+                susp: self.susp(),
+                wkup: self.wkup(),
+                err: self.err(),
+                pmaovr: self.pmaovr(),
+                ctr: self.ctr(),
+                thr512: self.thr512(),
+                dcon_stat: self.dcon_stat(),
+                ls_dcon: self.ls_dcon(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LPM control and status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -869,10 +1157,40 @@ bits. If this bit is at '0 no transactions are handled, irrespective of the sett
             Lpmcsr(0)
         }
     }
+    impl core::fmt::Debug for Lpmcsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lpmcsr")
+                .field("lpmen", &self.lpmen())
+                .field("lpmack", &self.lpmack())
+                .field("remwake", &self.remwake())
+                .field("besl", &self.besl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lpmcsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Lpmcsr {
+                lpmen: bool,
+                lpmack: super::vals::Lpmack,
+                remwake: bool,
+                besl: u8,
+            }
+            let proxy = Lpmcsr {
+                lpmen: self.lpmen(),
+                lpmack: self.lpmack(),
+                remwake: self.remwake(),
+                besl: self.besl(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dir {
         #[doc = "data transmitted by the USB peripheral to the host PC"]
         TO = 0x0,
@@ -902,7 +1220,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum EpType {
         #[doc = "Bulk endpoint"]
         BULK = 0x0,
@@ -936,7 +1255,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpmack {
         #[doc = "The valid LPM Token will be NYET / NYET answer"]
         NYET = 0x0,
@@ -966,7 +1286,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sdet {
         #[doc = "CDP detected"]
         CDP = 0x0,
@@ -996,7 +1317,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Stat {
         #[doc = "all requests addressed to this endpoint are ignored"]
         DISABLED = 0x0,

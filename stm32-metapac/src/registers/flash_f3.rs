@@ -432,7 +432,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NORESET",
+                    name: "NO_RESET",
                     description: Some("No reset generated"),
                     value: 1,
                 },
@@ -449,7 +449,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NORESET",
+                    name: "NO_RESET",
                     description: Some("No reset generated"),
                     value: 1,
                 },

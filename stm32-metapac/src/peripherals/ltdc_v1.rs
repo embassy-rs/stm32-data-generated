@@ -203,6 +203,29 @@ pub mod regs {
             Awcr(0)
         }
     }
+    impl core::fmt::Debug for Awcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Awcr")
+                .field("aah", &self.aah())
+                .field("aaw", &self.aaw())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Awcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Awcr {
+                aah: u16,
+                aaw: u16,
+            }
+            let proxy = Awcr {
+                aah: self.aah(),
+                aaw: self.aaw(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Background Color Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -248,6 +271,32 @@ pub mod regs {
             Bccr(0)
         }
     }
+    impl core::fmt::Debug for Bccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bccr")
+                .field("bcblue", &self.bcblue())
+                .field("bcgreen", &self.bcgreen())
+                .field("bcred", &self.bcred())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Bccr {
+                bcblue: u8,
+                bcgreen: u8,
+                bcred: u8,
+            }
+            let proxy = Bccr {
+                bcblue: self.bcblue(),
+                bcgreen: self.bcgreen(),
+                bcred: self.bcred(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Layerx Blending Factors Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -280,6 +329,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Bfcr {
             Bfcr(0)
+        }
+    }
+    impl core::fmt::Debug for Bfcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bfcr")
+                .field("bf2", &self.bf2())
+                .field("bf1", &self.bf1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bfcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Bfcr {
+                bf2: super::vals::Bf2,
+                bf1: super::vals::Bf1,
+            }
+            let proxy = Bfcr {
+                bf2: self.bf2(),
+                bf1: self.bf1(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Back Porch Configuration Register"]
@@ -316,6 +388,29 @@ pub mod regs {
             Bpcr(0)
         }
     }
+    impl core::fmt::Debug for Bpcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bpcr")
+                .field("avbp", &self.avbp())
+                .field("ahbp", &self.ahbp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bpcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Bpcr {
+                avbp: u16,
+                ahbp: u16,
+            }
+            let proxy = Bpcr {
+                avbp: self.avbp(),
+                ahbp: self.ahbp(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Layerx Constant Alpha Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -337,6 +432,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cacr {
             Cacr(0)
+        }
+    }
+    impl core::fmt::Debug for Cacr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cacr").field("consta", &self.consta()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cacr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cacr {
+                consta: u8,
+            }
+            let proxy = Cacr { consta: self.consta() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Current Display Status Register"]
@@ -395,6 +506,35 @@ pub mod regs {
             Cdsr(0)
         }
     }
+    impl core::fmt::Debug for Cdsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cdsr")
+                .field("vdes", &self.vdes())
+                .field("hdes", &self.hdes())
+                .field("vsyncs", &self.vsyncs())
+                .field("hsyncs", &self.hsyncs())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cdsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cdsr {
+                vdes: bool,
+                hdes: bool,
+                vsyncs: bool,
+                hsyncs: bool,
+            }
+            let proxy = Cdsr {
+                vdes: self.vdes(),
+                hdes: self.hdes(),
+                vsyncs: self.vsyncs(),
+                hsyncs: self.hsyncs(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Layerx Color Frame Buffer Address Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -418,6 +558,22 @@ pub mod regs {
             Cfbar(0)
         }
     }
+    impl core::fmt::Debug for Cfbar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfbar").field("cfbadd", &self.cfbadd()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfbar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfbar {
+                cfbadd: u32,
+            }
+            let proxy = Cfbar { cfbadd: self.cfbadd() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Layerx ColorFrame Buffer Line Number Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -439,6 +595,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cfblnr {
             Cfblnr(0)
+        }
+    }
+    impl core::fmt::Debug for Cfblnr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfblnr").field("cfblnbr", &self.cfblnbr()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfblnr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfblnr {
+                cfblnbr: u16,
+            }
+            let proxy = Cfblnr {
+                cfblnbr: self.cfblnbr(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Layerx Color Frame Buffer Length Register"]
@@ -473,6 +647,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cfblr {
             Cfblr(0)
+        }
+    }
+    impl core::fmt::Debug for Cfblr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfblr")
+                .field("cfbll", &self.cfbll())
+                .field("cfbp", &self.cfbp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfblr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfblr {
+                cfbll: u16,
+                cfbp: u16,
+            }
+            let proxy = Cfblr {
+                cfbll: self.cfbll(),
+                cfbp: self.cfbp(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Layerx Color Keying Configuration Register"]
@@ -518,6 +715,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ckcr {
             Ckcr(0)
+        }
+    }
+    impl core::fmt::Debug for Ckcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ckcr")
+                .field("ckblue", &self.ckblue())
+                .field("ckgreen", &self.ckgreen())
+                .field("ckred", &self.ckred())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ckcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ckcr {
+                ckblue: u8,
+                ckgreen: u8,
+                ckred: u8,
+            }
+            let proxy = Ckcr {
+                ckblue: self.ckblue(),
+                ckgreen: self.ckgreen(),
+                ckred: self.ckred(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Layerx CLUT Write Register"]
@@ -576,6 +799,35 @@ pub mod regs {
             Clutwr(0)
         }
     }
+    impl core::fmt::Debug for Clutwr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Clutwr")
+                .field("blue", &self.blue())
+                .field("green", &self.green())
+                .field("red", &self.red())
+                .field("clutadd", &self.clutadd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Clutwr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Clutwr {
+                blue: u8,
+                green: u8,
+                red: u8,
+                clutadd: u8,
+            }
+            let proxy = Clutwr {
+                blue: self.blue(),
+                green: self.green(),
+                red: self.red(),
+                clutadd: self.clutadd(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Current Position Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -608,6 +860,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cpsr {
             Cpsr(0)
+        }
+    }
+    impl core::fmt::Debug for Cpsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cpsr")
+                .field("cypos", &self.cypos())
+                .field("cxpos", &self.cxpos())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cpsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cpsr {
+                cypos: u16,
+                cxpos: u16,
+            }
+            let proxy = Cpsr {
+                cypos: self.cypos(),
+                cxpos: self.cxpos(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Layerx Control Register"]
@@ -653,6 +928,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cr {
             Cr(0)
+        }
+    }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("len", &self.len())
+                .field("colken", &self.colken())
+                .field("cluten", &self.cluten())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                len: bool,
+                colken: bool,
+                cluten: bool,
+            }
+            let proxy = Cr {
+                len: self.len(),
+                colken: self.colken(),
+                cluten: self.cluten(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Layerx Default Color Configuration Register"]
@@ -709,6 +1010,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dccr {
             Dccr(0)
+        }
+    }
+    impl core::fmt::Debug for Dccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dccr")
+                .field("dcblue", &self.dcblue())
+                .field("dcgreen", &self.dcgreen())
+                .field("dcred", &self.dcred())
+                .field("dcalpha", &self.dcalpha())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dccr {
+                dcblue: u8,
+                dcgreen: u8,
+                dcred: u8,
+                dcalpha: u8,
+            }
+            let proxy = Dccr {
+                dcblue: self.dcblue(),
+                dcgreen: self.dcgreen(),
+                dcred: self.dcred(),
+                dcalpha: self.dcalpha(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Global Control Register"]
@@ -822,6 +1152,50 @@ pub mod regs {
             Gcr(0)
         }
     }
+    impl core::fmt::Debug for Gcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Gcr")
+                .field("ltdcen", &self.ltdcen())
+                .field("dbw", &self.dbw())
+                .field("dgw", &self.dgw())
+                .field("drw", &self.drw())
+                .field("den", &self.den())
+                .field("pcpol", &self.pcpol())
+                .field("depol", &self.depol())
+                .field("vspol", &self.vspol())
+                .field("hspol", &self.hspol())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Gcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Gcr {
+                ltdcen: bool,
+                dbw: u8,
+                dgw: u8,
+                drw: u8,
+                den: bool,
+                pcpol: super::vals::Pcpol,
+                depol: super::vals::Depol,
+                vspol: super::vals::Vspol,
+                hspol: super::vals::Hspol,
+            }
+            let proxy = Gcr {
+                ltdcen: self.ltdcen(),
+                dbw: self.dbw(),
+                dgw: self.dgw(),
+                drw: self.drw(),
+                den: self.den(),
+                pcpol: self.pcpol(),
+                depol: self.depol(),
+                vspol: self.vspol(),
+                hspol: self.hspol(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt Clear Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -876,6 +1250,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Icr {
             Icr(0)
+        }
+    }
+    impl core::fmt::Debug for Icr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Icr")
+                .field("clif", &self.clif())
+                .field("cfuif", &self.cfuif())
+                .field("cterrif", &self.cterrif())
+                .field("crrif", &self.crrif())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Icr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Icr {
+                clif: super::vals::Clif,
+                cfuif: super::vals::Cfuif,
+                cterrif: super::vals::Cterrif,
+                crrif: super::vals::Crrif,
+            }
+            let proxy = Icr {
+                clif: self.clif(),
+                cfuif: self.cfuif(),
+                cterrif: self.cterrif(),
+                crrif: self.crrif(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Enable Register"]
@@ -934,6 +1337,35 @@ pub mod regs {
             Ier(0)
         }
     }
+    impl core::fmt::Debug for Ier {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ier")
+                .field("lie", &self.lie())
+                .field("fuie", &self.fuie())
+                .field("terrie", &self.terrie())
+                .field("rrie", &self.rrie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ier {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ier {
+                lie: bool,
+                fuie: bool,
+                terrie: bool,
+                rrie: bool,
+            }
+            let proxy = Ier {
+                lie: self.lie(),
+                fuie: self.fuie(),
+                terrie: self.terrie(),
+                rrie: self.rrie(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -990,6 +1422,35 @@ pub mod regs {
             Isr(0)
         }
     }
+    impl core::fmt::Debug for Isr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Isr")
+                .field("lif", &self.lif())
+                .field("fuif", &self.fuif())
+                .field("terrif", &self.terrif())
+                .field("rrif", &self.rrif())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Isr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Isr {
+                lif: bool,
+                fuif: bool,
+                terrif: bool,
+                rrif: bool,
+            }
+            let proxy = Isr {
+                lif: self.lif(),
+                fuif: self.fuif(),
+                terrif: self.terrif(),
+                rrif: self.rrif(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Line Interrupt Position Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1013,6 +1474,22 @@ pub mod regs {
             Lipcr(0)
         }
     }
+    impl core::fmt::Debug for Lipcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lipcr").field("lipos", &self.lipos()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lipcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Lipcr {
+                lipos: u16,
+            }
+            let proxy = Lipcr { lipos: self.lipos() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Layerx Pixel Format Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1034,6 +1511,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Pfcr {
             Pfcr(0)
+        }
+    }
+    impl core::fmt::Debug for Pfcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pfcr").field("pf", &self.pf()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pfcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pfcr {
+                pf: super::vals::Pf,
+            }
+            let proxy = Pfcr { pf: self.pf() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Shadow Reload Configuration Register"]
@@ -1070,6 +1563,29 @@ pub mod regs {
             Srcr(0)
         }
     }
+    impl core::fmt::Debug for Srcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Srcr")
+                .field("imr", &self.imr())
+                .field("vbr", &self.vbr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Srcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Srcr {
+                imr: super::vals::Imr,
+                vbr: super::vals::Vbr,
+            }
+            let proxy = Srcr {
+                imr: self.imr(),
+                vbr: self.vbr(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Synchronization Size Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1102,6 +1618,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Sscr {
             Sscr(0)
+        }
+    }
+    impl core::fmt::Debug for Sscr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sscr")
+                .field("vsh", &self.vsh())
+                .field("hsw", &self.hsw())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sscr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sscr {
+                vsh: u16,
+                hsw: u16,
+            }
+            let proxy = Sscr {
+                vsh: self.vsh(),
+                hsw: self.hsw(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Total Width Configuration Register"]
@@ -1138,6 +1677,29 @@ pub mod regs {
             Twcr(0)
         }
     }
+    impl core::fmt::Debug for Twcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Twcr")
+                .field("totalh", &self.totalh())
+                .field("totalw", &self.totalw())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Twcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Twcr {
+                totalh: u16,
+                totalw: u16,
+            }
+            let proxy = Twcr {
+                totalh: self.totalh(),
+                totalw: self.totalw(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Layerx Window Horizontal Position Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1170,6 +1732,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Whpcr {
             Whpcr(0)
+        }
+    }
+    impl core::fmt::Debug for Whpcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Whpcr")
+                .field("whstpos", &self.whstpos())
+                .field("whsppos", &self.whsppos())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Whpcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Whpcr {
+                whstpos: u16,
+                whsppos: u16,
+            }
+            let proxy = Whpcr {
+                whstpos: self.whstpos(),
+                whsppos: self.whsppos(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Layerx Window Vertical Position Configuration Register"]
@@ -1206,10 +1791,34 @@ pub mod regs {
             Wvpcr(0)
         }
     }
+    impl core::fmt::Debug for Wvpcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wvpcr")
+                .field("wvstpos", &self.wvstpos())
+                .field("wvsppos", &self.wvsppos())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wvpcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wvpcr {
+                wvstpos: u16,
+                wvsppos: u16,
+            }
+            let proxy = Wvpcr {
+                wvstpos: self.wvstpos(),
+                wvsppos: self.wvsppos(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bf1 {
         _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
@@ -1245,7 +1854,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bf2 {
         _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
@@ -1281,7 +1891,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cfuif {
         _RESERVED_0 = 0x0,
         #[doc = "Clears the FUIF flag in the ISR register"]
@@ -1310,7 +1921,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Clif {
         _RESERVED_0 = 0x0,
         #[doc = "Clears the LIF flag in the ISR register"]
@@ -1339,7 +1951,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Crrif {
         _RESERVED_0 = 0x0,
         #[doc = "Clears the RRIF flag in the ISR register"]
@@ -1368,7 +1981,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cterrif {
         _RESERVED_0 = 0x0,
         #[doc = "Clears the TERRIF flag in the ISR register"]
@@ -1397,12 +2011,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Depol {
         #[doc = "Data enable polarity is active low"]
-        ACTIVELOW = 0x0,
+        ACTIVE_LOW = 0x0,
         #[doc = "Data enable polarity is active high"]
-        ACTIVEHIGH = 0x01,
+        ACTIVE_HIGH = 0x01,
     }
     impl Depol {
         #[inline(always)]
@@ -1427,12 +2042,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hspol {
         #[doc = "Horizontal synchronization polarity is active low"]
-        ACTIVELOW = 0x0,
+        ACTIVE_LOW = 0x0,
         #[doc = "Horizontal synchronization polarity is active high"]
-        ACTIVEHIGH = 0x01,
+        ACTIVE_HIGH = 0x01,
     }
     impl Hspol {
         #[inline(always)]
@@ -1457,10 +2073,11 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Imr {
         #[doc = "This bit is set by software and cleared only by hardware after reload (it cannot be cleared through register write once it is set)"]
-        NOEFFECT = 0x0,
+        NO_EFFECT = 0x0,
         #[doc = "The shadow registers are reloaded immediately. This bit is set by software and cleared only by hardware after reload"]
         RELOAD = 0x01,
     }
@@ -1487,12 +2104,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pcpol {
         #[doc = "Pixel clock on rising edge"]
-        RISINGEDGE = 0x0,
+        RISING_EDGE = 0x0,
         #[doc = "Pixel clock on falling edge"]
-        FALLINGEDGE = 0x01,
+        FALLING_EDGE = 0x01,
     }
     impl Pcpol {
         #[inline(always)]
@@ -1517,7 +2135,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pf {
         #[doc = "ARGB8888"]
         ARGB8888 = 0x0,
@@ -1559,10 +2178,11 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vbr {
         #[doc = "This bit is set by software and cleared only by hardware after reload (it cannot be cleared through register write once it is set)"]
-        NOEFFECT = 0x0,
+        NO_EFFECT = 0x0,
         #[doc = "The shadow registers are reloaded during the vertical blanking period (at the beginning of the first line after the active display area)."]
         RELOAD = 0x01,
     }
@@ -1589,12 +2209,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vspol {
         #[doc = "Vertical synchronization polarity is active low"]
-        ACTIVELOW = 0x0,
+        ACTIVE_LOW = 0x0,
         #[doc = "Vertical synchronization polarity is active high"]
-        ACTIVEHIGH = 0x01,
+        ACTIVE_HIGH = 0x01,
     }
     impl Vspol {
         #[inline(always)]

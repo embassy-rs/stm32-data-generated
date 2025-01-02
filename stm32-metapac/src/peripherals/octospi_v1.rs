@@ -179,6 +179,24 @@ pub mod regs {
             Abr(0)
         }
     }
+    impl core::fmt::Debug for Abr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Abr").field("alternate", &self.alternate()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Abr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Abr {
+                alternate: u32,
+            }
+            let proxy = Abr {
+                alternate: self.alternate(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -202,6 +220,24 @@ is forced to 1. Writes to. this field are ignored when BUSY = 1 or when FMODE = 
         #[inline(always)]
         fn default() -> Ar {
             Ar(0)
+        }
+    }
+    impl core::fmt::Debug for Ar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ar").field("address", &self.address()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ar {
+                address: u32,
+            }
+            let proxy = Ar {
+                address: self.address(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "communication configuration register"]
@@ -357,6 +393,62 @@ is forced to 1. Writes to. this field are ignored when BUSY = 1 or when FMODE = 
         #[inline(always)]
         fn default() -> Ccr {
             Ccr(0)
+        }
+    }
+    impl core::fmt::Debug for Ccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ccr")
+                .field("imode", &self.imode())
+                .field("idtr", &self.idtr())
+                .field("isize", &self.isize())
+                .field("admode", &self.admode())
+                .field("addtr", &self.addtr())
+                .field("adsize", &self.adsize())
+                .field("abmode", &self.abmode())
+                .field("abdtr", &self.abdtr())
+                .field("absize", &self.absize())
+                .field("dmode", &self.dmode())
+                .field("ddtr", &self.ddtr())
+                .field("dqse", &self.dqse())
+                .field("sioo", &self.sioo())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ccr {
+                imode: super::vals::PhaseMode,
+                idtr: bool,
+                isize: super::vals::SizeInBits,
+                admode: super::vals::PhaseMode,
+                addtr: bool,
+                adsize: super::vals::SizeInBits,
+                abmode: super::vals::PhaseMode,
+                abdtr: bool,
+                absize: super::vals::SizeInBits,
+                dmode: super::vals::PhaseMode,
+                ddtr: bool,
+                dqse: bool,
+                sioo: bool,
+            }
+            let proxy = Ccr {
+                imode: self.imode(),
+                idtr: self.idtr(),
+                isize: self.isize(),
+                admode: self.admode(),
+                addtr: self.addtr(),
+                adsize: self.adsize(),
+                abmode: self.abmode(),
+                abdtr: self.abdtr(),
+                absize: self.absize(),
+                dmode: self.dmode(),
+                ddtr: self.ddtr(),
+                dqse: self.dqse(),
+                sioo: self.sioo(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "control register"]
@@ -546,6 +638,68 @@ are wrongly updated while DMAEN = 1, the DMA request signal automatically goes t
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("en", &self.en())
+                .field("abort", &self.abort())
+                .field("dmaen", &self.dmaen())
+                .field("tcen", &self.tcen())
+                .field("dmm", &self.dmm())
+                .field("fsel", &self.fsel())
+                .field("fthres", &self.fthres())
+                .field("teie", &self.teie())
+                .field("tcie", &self.tcie())
+                .field("ftie", &self.ftie())
+                .field("smie", &self.smie())
+                .field("toie", &self.toie())
+                .field("apms", &self.apms())
+                .field("pmm", &self.pmm())
+                .field("fmode", &self.fmode())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                en: bool,
+                abort: bool,
+                dmaen: bool,
+                tcen: bool,
+                dmm: bool,
+                fsel: super::vals::FlashSelect,
+                fthres: super::vals::Threshold,
+                teie: bool,
+                tcie: bool,
+                ftie: bool,
+                smie: bool,
+                toie: bool,
+                apms: bool,
+                pmm: super::vals::MatchMode,
+                fmode: super::vals::FunctionalMode,
+            }
+            let proxy = Cr {
+                en: self.en(),
+                abort: self.abort(),
+                dmaen: self.dmaen(),
+                tcen: self.tcen(),
+                dmm: self.dmm(),
+                fsel: self.fsel(),
+                fthres: self.fthres(),
+                teie: self.teie(),
+                tcie: self.tcie(),
+                ftie: self.ftie(),
+                smie: self.smie(),
+                toie: self.toie(),
+                apms: self.apms(),
+                pmm: self.pmm(),
+                fmode: self.fmode(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "device configuration register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -628,6 +782,41 @@ for memories different from Micron. Others: Reserved"]
             Dcr1(0)
         }
     }
+    impl core::fmt::Debug for Dcr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dcr1")
+                .field("ckmode", &self.ckmode())
+                .field("frck", &self.frck())
+                .field("dlybyp", &self.dlybyp())
+                .field("csht", &self.csht())
+                .field("devsize", &self.devsize())
+                .field("mtyp", &self.mtyp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dcr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dcr1 {
+                ckmode: bool,
+                frck: bool,
+                dlybyp: bool,
+                csht: u8,
+                devsize: u8,
+                mtyp: super::vals::MemType,
+            }
+            let proxy = Dcr1 {
+                ckmode: self.ckmode(),
+                frck: self.frck(),
+                dlybyp: self.dlybyp(),
+                csht: self.csht(),
+                devsize: self.devsize(),
+                mtyp: self.mtyp(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "device configuration register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -660,6 +849,29 @@ for memories different from Micron. Others: Reserved"]
         #[inline(always)]
         fn default() -> Dcr2 {
             Dcr2(0)
+        }
+    }
+    impl core::fmt::Debug for Dcr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dcr2")
+                .field("prescaler", &self.prescaler())
+                .field("wrapsize", &self.wrapsize())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dcr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dcr2 {
+                prescaler: u8,
+                wrapsize: u8,
+            }
+            let proxy = Dcr2 {
+                prescaler: self.prescaler(),
+                wrapsize: self.wrapsize(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "device configuration register 3"]
@@ -696,6 +908,29 @@ for memories different from Micron. Others: Reserved"]
             Dcr3(0)
         }
     }
+    impl core::fmt::Debug for Dcr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dcr3")
+                .field("maxtran", &self.maxtran())
+                .field("csbound", &self.csbound())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dcr3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dcr3 {
+                maxtran: u8,
+                csbound: u8,
+            }
+            let proxy = Dcr3 {
+                maxtran: self.maxtran(),
+                csbound: self.csbound(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "device configuration register 4"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -717,6 +952,24 @@ for memories different from Micron. Others: Reserved"]
         #[inline(always)]
         fn default() -> Dcr4 {
             Dcr4(0)
+        }
+    }
+    impl core::fmt::Debug for Dcr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dcr4").field("refresh", &self.refresh()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dcr4 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dcr4 {
+                refresh: u32,
+            }
+            let proxy = Dcr4 {
+                refresh: self.refresh(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "data length register"]
@@ -744,6 +997,22 @@ is stuck at 1 in dual-memory configuration (DMM = 1) even when 0 is written to. 
             Dlr(0)
         }
     }
+    impl core::fmt::Debug for Dlr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dlr").field("dl", &self.dl()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dlr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dlr {
+                dl: u32,
+            }
+            let proxy = Dlr { dl: self.dl() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "data register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -767,6 +1036,22 @@ and a half-word read must read DATA\\[15:0\\]."]
         #[inline(always)]
         fn default() -> Dr {
             Dr(0)
+        }
+    }
+    impl core::fmt::Debug for Dr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dr").field("data", &self.data()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dr {
+                data: u32,
+            }
+            let proxy = Dr { data: self.data() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "flag clear register"]
@@ -825,6 +1110,35 @@ and a half-word read must read DATA\\[15:0\\]."]
             Fcr(0)
         }
     }
+    impl core::fmt::Debug for Fcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fcr")
+                .field("ctef", &self.ctef())
+                .field("ctcf", &self.ctcf())
+                .field("csmf", &self.csmf())
+                .field("ctof", &self.ctof())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fcr {
+                ctef: bool,
+                ctcf: bool,
+                csmf: bool,
+                ctof: bool,
+            }
+            let proxy = Fcr {
+                ctef: self.ctef(),
+                ctcf: self.ctcf(),
+                csmf: self.csmf(),
+                ctof: self.ctof(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "OCTOSPI HyperBus latency configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -881,6 +1195,35 @@ and a half-word read must read DATA\\[15:0\\]."]
             Hlcr(0)
         }
     }
+    impl core::fmt::Debug for Hlcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Hlcr")
+                .field("lm", &self.lm())
+                .field("wzl", &self.wzl())
+                .field("tacc", &self.tacc())
+                .field("trwr", &self.trwr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Hlcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Hlcr {
+                lm: super::vals::LatencyMode,
+                wzl: bool,
+                tacc: u8,
+                trwr: u8,
+            }
+            let proxy = Hlcr {
+                lm: self.lm(),
+                wzl: self.wzl(),
+                tacc: self.tacc(),
+                trwr: self.trwr(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "instruction register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -902,6 +1245,24 @@ and a half-word read must read DATA\\[15:0\\]."]
         #[inline(always)]
         fn default() -> Ir {
             Ir(0)
+        }
+    }
+    impl core::fmt::Debug for Ir {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ir").field("instruction", &self.instruction()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ir {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ir {
+                instruction: u32,
+            }
+            let proxy = Ir {
+                instruction: self.instruction(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "low-power timeout register"]
@@ -927,6 +1288,24 @@ and a half-word read must read DATA\\[15:0\\]."]
             Lptr(0)
         }
     }
+    impl core::fmt::Debug for Lptr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lptr").field("timeout", &self.timeout()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lptr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Lptr {
+                timeout: u16,
+            }
+            let proxy = Lptr {
+                timeout: self.timeout(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "polling interval register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -948,6 +1327,24 @@ and a half-word read must read DATA\\[15:0\\]."]
         #[inline(always)]
         fn default() -> Pir {
             Pir(0)
+        }
+    }
+    impl core::fmt::Debug for Pir {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pir").field("interval", &self.interval()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pir {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pir {
+                interval: u16,
+            }
+            let proxy = Pir {
+                interval: self.interval(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "polling status match register"]
@@ -973,6 +1370,22 @@ and a half-word read must read DATA\\[15:0\\]."]
             Psmar(0)
         }
     }
+    impl core::fmt::Debug for Psmar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Psmar").field("match_", &self.match_()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Psmar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Psmar {
+                match_: u32,
+            }
+            let proxy = Psmar { match_: self.match_() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "polling status mask register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -994,6 +1407,22 @@ and a half-word read must read DATA\\[15:0\\]."]
         #[inline(always)]
         fn default() -> Psmkr {
             Psmkr(0)
+        }
+    }
+    impl core::fmt::Debug for Psmkr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Psmkr").field("mask", &self.mask()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Psmkr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Psmkr {
+                mask: u32,
+            }
+            let proxy = Psmkr { mask: self.mask() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "status register"]
@@ -1085,6 +1514,44 @@ and a half-word read must read DATA\\[15:0\\]."]
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("tef", &self.tef())
+                .field("tcf", &self.tcf())
+                .field("ftf", &self.ftf())
+                .field("smf", &self.smf())
+                .field("tof", &self.tof())
+                .field("busy", &self.busy())
+                .field("flevel", &self.flevel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                tef: bool,
+                tcf: bool,
+                ftf: bool,
+                smf: bool,
+                tof: bool,
+                busy: bool,
+                flevel: u8,
+            }
+            let proxy = Sr {
+                tef: self.tef(),
+                tcf: self.tcf(),
+                ftf: self.ftf(),
+                smf: self.smf(),
+                tof: self.tof(),
+                busy: self.busy(),
+                flevel: self.flevel(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "timing configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1130,6 +1597,32 @@ and a half-word read must read DATA\\[15:0\\]."]
             Tcr(0)
         }
     }
+    impl core::fmt::Debug for Tcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tcr")
+                .field("dcyc", &self.dcyc())
+                .field("dhqc", &self.dhqc())
+                .field("sshift", &self.sshift())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Tcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Tcr {
+                dcyc: u8,
+                dhqc: bool,
+                sshift: super::vals::SampleShift,
+            }
+            let proxy = Tcr {
+                dcyc: self.dcyc(),
+                dhqc: self.dhqc(),
+                sshift: self.sshift(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "write alternate bytes register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1151,6 +1644,24 @@ and a half-word read must read DATA\\[15:0\\]."]
         #[inline(always)]
         fn default() -> Wabr {
             Wabr(0)
+        }
+    }
+    impl core::fmt::Debug for Wabr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wabr").field("alternate", &self.alternate()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wabr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wabr {
+                alternate: u32,
+            }
+            let proxy = Wabr {
+                alternate: self.alternate(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "OCTOSPI write communication configuration register"]
@@ -1297,6 +1808,59 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wccr(0)
         }
     }
+    impl core::fmt::Debug for Wccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wccr")
+                .field("imode", &self.imode())
+                .field("idtr", &self.idtr())
+                .field("isize", &self.isize())
+                .field("admode", &self.admode())
+                .field("addtr", &self.addtr())
+                .field("adsize", &self.adsize())
+                .field("abmode", &self.abmode())
+                .field("abdtr", &self.abdtr())
+                .field("absize", &self.absize())
+                .field("dmode", &self.dmode())
+                .field("ddtr", &self.ddtr())
+                .field("dqse", &self.dqse())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wccr {
+                imode: super::vals::PhaseMode,
+                idtr: bool,
+                isize: super::vals::SizeInBits,
+                admode: super::vals::PhaseMode,
+                addtr: bool,
+                adsize: super::vals::SizeInBits,
+                abmode: super::vals::PhaseMode,
+                abdtr: bool,
+                absize: super::vals::SizeInBits,
+                dmode: super::vals::PhaseMode,
+                ddtr: bool,
+                dqse: bool,
+            }
+            let proxy = Wccr {
+                imode: self.imode(),
+                idtr: self.idtr(),
+                isize: self.isize(),
+                admode: self.admode(),
+                addtr: self.addtr(),
+                adsize: self.adsize(),
+                abmode: self.abmode(),
+                abdtr: self.abdtr(),
+                absize: self.absize(),
+                dmode: self.dmode(),
+                ddtr: self.ddtr(),
+                dqse: self.dqse(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "write instruction register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1320,6 +1884,24 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wir(0)
         }
     }
+    impl core::fmt::Debug for Wir {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wir").field("instruction", &self.instruction()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wir {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wir {
+                instruction: u32,
+            }
+            let proxy = Wir {
+                instruction: self.instruction(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "wrap alternate bytes register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1341,6 +1923,24 @@ and a half-word read must read DATA\\[15:0\\]."]
         #[inline(always)]
         fn default() -> Wpabr {
             Wpabr(0)
+        }
+    }
+    impl core::fmt::Debug for Wpabr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wpabr").field("alternate", &self.alternate()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wpabr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wpabr {
+                alternate: u32,
+            }
+            let proxy = Wpabr {
+                alternate: self.alternate(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "OCTOSPI wrap communication configuration register"]
@@ -1487,6 +2087,59 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wpccr(0)
         }
     }
+    impl core::fmt::Debug for Wpccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wpccr")
+                .field("imode", &self.imode())
+                .field("idtr", &self.idtr())
+                .field("isize", &self.isize())
+                .field("admode", &self.admode())
+                .field("addtr", &self.addtr())
+                .field("adsize", &self.adsize())
+                .field("abmode", &self.abmode())
+                .field("abdtr", &self.abdtr())
+                .field("absize", &self.absize())
+                .field("dmode", &self.dmode())
+                .field("ddtr", &self.ddtr())
+                .field("dqse", &self.dqse())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wpccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wpccr {
+                imode: super::vals::PhaseMode,
+                idtr: bool,
+                isize: super::vals::SizeInBits,
+                admode: super::vals::PhaseMode,
+                addtr: bool,
+                adsize: super::vals::SizeInBits,
+                abmode: super::vals::PhaseMode,
+                abdtr: bool,
+                absize: super::vals::SizeInBits,
+                dmode: super::vals::PhaseMode,
+                ddtr: bool,
+                dqse: bool,
+            }
+            let proxy = Wpccr {
+                imode: self.imode(),
+                idtr: self.idtr(),
+                isize: self.isize(),
+                admode: self.admode(),
+                addtr: self.addtr(),
+                adsize: self.adsize(),
+                abmode: self.abmode(),
+                abdtr: self.abdtr(),
+                absize: self.absize(),
+                dmode: self.dmode(),
+                ddtr: self.ddtr(),
+                dqse: self.dqse(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "wrap instruction register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1508,6 +2161,26 @@ and a half-word read must read DATA\\[15:0\\]."]
         #[inline(always)]
         fn default() -> Wpir {
             Wpir(0)
+        }
+    }
+    impl core::fmt::Debug for Wpir {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wpir")
+                .field("instruction", &self.instruction())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wpir {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wpir {
+                instruction: u32,
+            }
+            let proxy = Wpir {
+                instruction: self.instruction(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "wrap timing configuration register"]
@@ -1555,6 +2228,32 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wptcr(0)
         }
     }
+    impl core::fmt::Debug for Wptcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wptcr")
+                .field("dcyc", &self.dcyc())
+                .field("dhqc", &self.dhqc())
+                .field("sshift", &self.sshift())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wptcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wptcr {
+                dcyc: u8,
+                dhqc: bool,
+                sshift: super::vals::SampleShift,
+            }
+            let proxy = Wptcr {
+                dcyc: self.dcyc(),
+                dhqc: self.dhqc(),
+                sshift: self.sshift(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "write timing configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1578,15 +2277,32 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wtcr(0)
         }
     }
+    impl core::fmt::Debug for Wtcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wtcr").field("dcyc", &self.dcyc()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wtcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wtcr {
+                dcyc: u8,
+            }
+            let proxy = Wtcr { dcyc: self.dcyc() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FlashSelect {
         #[doc = "FLASH 1 selected (data exchanged over IO\\[3:0\\])"]
-        FLASHONE = 0x0,
+        FLASH_ONE = 0x0,
         #[doc = "FLASH 2 selected (data exchanged over IO\\[7:4\\])"]
-        FLASHTWO = 0x01,
+        FLASH_TWO = 0x01,
     }
     impl FlashSelect {
         #[inline(always)]
@@ -1611,16 +2327,17 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FunctionalMode {
         #[doc = "Indirect-write mode"]
-        INDIRECTWRITE = 0x0,
+        INDIRECT_WRITE = 0x0,
         #[doc = "Indirect-read mode"]
-        INDIRECTREAD = 0x01,
+        INDIRECT_READ = 0x01,
         #[doc = "Automatic status-polling mode"]
-        AUTOSTATUSPOLLING = 0x02,
+        AUTO_STATUS_POLLING = 0x02,
         #[doc = "Memory-mapped mode"]
-        MEMORYMAPPED = 0x03,
+        MEMORY_MAPPED = 0x03,
     }
     impl FunctionalMode {
         #[inline(always)]
@@ -1645,7 +2362,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum LatencyMode {
         #[doc = "Variable initial latency"]
         VARIABLE = 0x0,
@@ -1675,12 +2393,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum MatchMode {
         #[doc = "AND-match mode, SMF is set if all the unmasked bits received from the device match the corresponding bits in the match register."]
-        MATCHAND = 0x0,
+        MATCH_AND = 0x0,
         #[doc = "OR-match mode, SMF is set if any of the unmasked bits received from the device matches its corresponding bit in the match register."]
-        MATCHOR = 0x01,
+        MATCH_OR = 0x01,
     }
     impl MatchMode {
         #[inline(always)]
@@ -1705,7 +2424,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum MemType {
         #[doc = "Micron mode, D0/D1 ordering in DTR 8-data-bit mode. Regular-command protocol in Single-, Dual-, Quad- and Octal-SPI modes."]
         MICRON = 0x0,
@@ -1714,11 +2434,11 @@ pub mod vals {
         #[doc = "Standard mode"]
         B_STANDARD = 0x02,
         #[doc = "Macronix RAM mode, D1/D0 ordering in DTR 8-data-bit mode. Regular-command protocol in Single-, Dual-, Quad- and Octal-SPI modes with dedicated address mapping."]
-        MACRONIXRAM = 0x03,
+        MACRONIX_RAM = 0x03,
         #[doc = "HyperBus memory mode, the protocol follows the HyperBus specification. 8-data-bit DTR mode must be selected."]
-        HYPERBUSMEMORY = 0x04,
+        HYPER_BUS_MEMORY = 0x04,
         #[doc = "HyperBus register mode, addressing register space. The memory-mapped accesses in. this mode must be non-cacheable, or Indirect read/write modes must be used."]
-        HYPERBUSREGISTER = 0x05,
+        HYPER_BUS_REGISTER = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -1745,18 +2465,19 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PhaseMode {
         #[doc = "No alternate bytes"]
         NONE = 0x0,
         #[doc = "Alternate bytes on a single line"]
-        ONELINE = 0x01,
+        ONE_LINE = 0x01,
         #[doc = "Alternate bytes on two lines"]
-        TWOLINES = 0x02,
+        TWO_LINES = 0x02,
         #[doc = "Alternate bytes on four lines"]
-        FOURLINES = 0x03,
+        FOUR_LINES = 0x03,
         #[doc = "Alternate bytes on eight lines"]
-        EIGHTLINES = 0x04,
+        EIGHT_LINES = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -1784,12 +2505,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleShift {
         #[doc = "No shift"]
         NONE = 0x0,
         #[doc = "1/2 cycle shift"]
-        HALFCYCLE = 0x01,
+        HALF_CYCLE = 0x01,
     }
     impl SampleShift {
         #[inline(always)]
@@ -1814,7 +2536,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SizeInBits {
         #[doc = "8-bit alternate bytes"]
         _8BIT = 0x0,
@@ -1852,11 +2575,11 @@ pub mod vals {
     pub struct Threshold(pub u8);
     impl Threshold {
         #[doc = "FTF is set if there are one or more free bytes available to be written to in the FIFO in Indirect-write mode, or if there are one or more valid bytes can be read from the FIFO in Indirect-read mode."]
-        pub const NEEDONEBYTE: Self = Self(0x0);
+        pub const NEED_ONE_BYTE: Self = Self(0x0);
         #[doc = "FTF is set if there are two or more free bytes available to be written to in the FIFO in Indirect‑write mode, or if there are two or more valid bytes can be read from the FIFO in Indirect-read mode."]
-        pub const NEEDTWOBYTES: Self = Self(0x01);
+        pub const NEED_TWO_BYTES: Self = Self(0x01);
         #[doc = "FTF is set if there are 32 free bytes available to be written to in the FIFO in Indirect-write mode, or if there are 32 valid bytes can be read from the FIFO in Indirect-read mode."]
-        pub const NEEDTHIRTYTWOBYTES: Self = Self(0x1f);
+        pub const NEED_THIRTY_TWO_BYTES: Self = Self(0x1f);
     }
     impl Threshold {
         pub const fn from_bits(val: u8) -> Threshold {
@@ -1864,6 +2587,27 @@ pub mod vals {
         }
         pub const fn to_bits(self) -> u8 {
             self.0
+        }
+    }
+    impl core::fmt::Debug for Threshold {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            match self.0 {
+                0x0 => f.write_str("NEED_ONE_BYTE"),
+                0x01 => f.write_str("NEED_TWO_BYTES"),
+                0x1f => f.write_str("NEED_THIRTY_TWO_BYTES"),
+                other => core::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Threshold {
+        fn format(&self, f: defmt::Formatter) {
+            match self.0 {
+                0x0 => defmt::write!(f, "NEED_ONE_BYTE"),
+                0x01 => defmt::write!(f, "NEED_TWO_BYTES"),
+                0x1f => defmt::write!(f, "NEED_THIRTY_TWO_BYTES"),
+                other => defmt::write!(f, "0x{:02X}", other),
+            }
         }
     }
     impl From<u8> for Threshold {

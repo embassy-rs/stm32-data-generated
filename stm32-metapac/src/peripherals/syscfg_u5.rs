@@ -147,6 +147,35 @@ pub mod regs {
             Cccr(0)
         }
     }
+    impl core::fmt::Debug for Cccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cccr")
+                .field("ncc1", &self.ncc1())
+                .field("pcc1", &self.pcc1())
+                .field("ncc2", &self.ncc2())
+                .field("pcc2", &self.pcc2())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cccr {
+                ncc1: u8,
+                pcc1: u8,
+                ncc2: u8,
+                pcc2: u8,
+            }
+            let proxy = Cccr {
+                ncc1: self.ncc1(),
+                pcc1: self.pcc1(),
+                ncc2: self.ncc2(),
+                pcc2: self.pcc2(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "compensation cell control/status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -225,6 +254,41 @@ pub mod regs {
             Cccsr(0)
         }
     }
+    impl core::fmt::Debug for Cccsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cccsr")
+                .field("en1", &self.en1())
+                .field("cs1", &self.cs1())
+                .field("en2", &self.en2())
+                .field("cs2", &self.cs2())
+                .field("rdy1", &self.rdy1())
+                .field("rdy2", &self.rdy2())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cccsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cccsr {
+                en1: bool,
+                cs1: bool,
+                en2: bool,
+                cs2: bool,
+                rdy1: bool,
+                rdy2: bool,
+            }
+            let proxy = Cccsr {
+                en1: self.en1(),
+                cs1: self.cs1(),
+                en2: self.en2(),
+                cs2: self.cs2(),
+                rdy1: self.rdy1(),
+                rdy2: self.rdy2(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "compensation cell value register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -279,6 +343,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ccvr {
             Ccvr(0)
+        }
+    }
+    impl core::fmt::Debug for Ccvr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ccvr")
+                .field("ncv1", &self.ncv1())
+                .field("pcv1", &self.pcv1())
+                .field("ncv2", &self.ncv2())
+                .field("pcv2", &self.pcv2())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ccvr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ccvr {
+                ncv1: u8,
+                pcv1: u8,
+                ncv2: u8,
+                pcv2: u8,
+            }
+            let proxy = Ccvr {
+                ncv1: self.ncv1(),
+                pcv1: self.pcv1(),
+                ncv2: self.ncv2(),
+                pcv2: self.pcv2(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "configuration register 1"]
@@ -359,6 +452,41 @@ pub mod regs {
             Cfgr1(0)
         }
     }
+    impl core::fmt::Debug for Cfgr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr1")
+                .field("boosten", &self.boosten())
+                .field("anaswvdd", &self.anaswvdd())
+                .field("pb6_fmp", &self.pb6_fmp())
+                .field("pb7_fmp", &self.pb7_fmp())
+                .field("pb8_fmp", &self.pb8_fmp())
+                .field("pb9_fmp", &self.pb9_fmp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr1 {
+                boosten: bool,
+                anaswvdd: bool,
+                pb6_fmp: bool,
+                pb7_fmp: bool,
+                pb8_fmp: bool,
+                pb9_fmp: bool,
+            }
+            let proxy = Cfgr1 {
+                boosten: self.boosten(),
+                anaswvdd: self.anaswvdd(),
+                pb6_fmp: self.pb6_fmp(),
+                pb7_fmp: self.pb7_fmp(),
+                pb8_fmp: self.pb8_fmp(),
+                pb9_fmp: self.pb9_fmp(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "configuration register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -415,6 +543,35 @@ pub mod regs {
             Cfgr2(0)
         }
     }
+    impl core::fmt::Debug for Cfgr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr2")
+                .field("cll", &self.cll())
+                .field("spl", &self.spl())
+                .field("pvdl", &self.pvdl())
+                .field("eccl", &self.eccl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr2 {
+                cll: bool,
+                spl: bool,
+                pvdl: bool,
+                eccl: bool,
+            }
+            let proxy = Cfgr2 {
+                cll: self.cll(),
+                spl: self.spl(),
+                pvdl: self.pvdl(),
+                eccl: self.eccl(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG CPU non-secure lock register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -447,6 +604,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cnslckr {
             Cnslckr(0)
+        }
+    }
+    impl core::fmt::Debug for Cnslckr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cnslckr")
+                .field("locknsvtor", &self.locknsvtor())
+                .field("locknsmpu", &self.locknsmpu())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cnslckr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cnslckr {
+                locknsvtor: bool,
+                locknsmpu: bool,
+            }
+            let proxy = Cnslckr {
+                locknsvtor: self.locknsvtor(),
+                locknsmpu: self.locknsmpu(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SYSCFG CPU secure lock register"]
@@ -494,6 +674,32 @@ pub mod regs {
             Cslockr(0)
         }
     }
+    impl core::fmt::Debug for Cslockr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cslockr")
+                .field("locksvtaircr", &self.locksvtaircr())
+                .field("locksmpu", &self.locksmpu())
+                .field("locksau", &self.locksau())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cslockr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cslockr {
+                locksvtaircr: bool,
+                locksmpu: bool,
+                locksau: bool,
+            }
+            let proxy = Cslockr {
+                locksvtaircr: self.locksvtaircr(),
+                locksmpu: self.locksmpu(),
+                locksau: self.locksau(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FPU interrupt mask register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -515,6 +721,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Fpuimr {
             Fpuimr(0)
+        }
+    }
+    impl core::fmt::Debug for Fpuimr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fpuimr").field("fpu_ie", &self.fpu_ie()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fpuimr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fpuimr {
+                fpu_ie: u8,
+            }
+            let proxy = Fpuimr { fpu_ie: self.fpu_ie() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "memory erase status register"]
@@ -549,6 +771,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Mesr {
             Mesr(0)
+        }
+    }
+    impl core::fmt::Debug for Mesr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mesr")
+                .field("mclr", &self.mclr())
+                .field("ipmee", &self.ipmee())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Mesr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Mesr {
+                mclr: bool,
+                ipmee: bool,
+            }
+            let proxy = Mesr {
+                mclr: self.mclr(),
+                ipmee: self.ipmee(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "OTG_HS PHY register"]
@@ -596,6 +841,32 @@ pub mod regs {
             Otghsphycr(0)
         }
     }
+    impl core::fmt::Debug for Otghsphycr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Otghsphycr")
+                .field("en", &self.en())
+                .field("pdctrl", &self.pdctrl())
+                .field("clksel", &self.clksel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Otghsphycr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Otghsphycr {
+                en: bool,
+                pdctrl: bool,
+                clksel: super::vals::Usbrefcksel,
+            }
+            let proxy = Otghsphycr {
+                en: self.en(),
+                pdctrl: self.pdctrl(),
+                clksel: self.clksel(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "OTG_HS tune register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -641,6 +912,32 @@ pub mod regs {
             Otghsphytuner2(0)
         }
     }
+    impl core::fmt::Debug for Otghsphytuner2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Otghsphytuner2")
+                .field("compdistune", &self.compdistune())
+                .field("sqrxtune", &self.sqrxtune())
+                .field("txpreempamptune", &self.txpreempamptune())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Otghsphytuner2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Otghsphytuner2 {
+                compdistune: u8,
+                sqrxtune: u8,
+                txpreempamptune: u8,
+            }
+            let proxy = Otghsphytuner2 {
+                compdistune: self.compdistune(),
+                sqrxtune: self.sqrxtune(),
+                txpreempamptune: self.txpreempamptune(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "RSS command register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -662,6 +959,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Rsscmdr {
             Rsscmdr(0)
+        }
+    }
+    impl core::fmt::Debug for Rsscmdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rsscmdr").field("rsscmd", &self.rsscmd()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rsscmdr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rsscmdr {
+                rsscmd: u16,
+            }
+            let proxy = Rsscmdr { rsscmd: self.rsscmd() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SYSCFG secure configuration register"]
@@ -709,6 +1022,32 @@ pub mod regs {
             Seccfgr(0)
         }
     }
+    impl core::fmt::Debug for Seccfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Seccfgr")
+                .field("syscfgsec", &self.syscfgsec())
+                .field("classbsec", &self.classbsec())
+                .field("fpusec", &self.fpusec())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Seccfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Seccfgr {
+                syscfgsec: bool,
+                classbsec: bool,
+                fpusec: bool,
+            }
+            let proxy = Seccfgr {
+                syscfgsec: self.syscfgsec(),
+                classbsec: self.classbsec(),
+                fpusec: self.fpusec(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "USB Type C and Power Delivery register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -743,10 +1082,34 @@ pub mod regs {
             Ucpdr(0)
         }
     }
+    impl core::fmt::Debug for Ucpdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ucpdr")
+                .field("cc1enrxfilter", &self.cc1enrxfilter())
+                .field("cc2enrxfilter", &self.cc2enrxfilter())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ucpdr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ucpdr {
+                cc1enrxfilter: bool,
+                cc2enrxfilter: bool,
+            }
+            let proxy = Ucpdr {
+                cc1enrxfilter: self.cc1enrxfilter(),
+                cc2enrxfilter: self.cc2enrxfilter(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Usbrefcksel {
         _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,

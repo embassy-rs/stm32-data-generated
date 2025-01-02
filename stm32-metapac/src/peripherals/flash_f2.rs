@@ -129,6 +129,41 @@ pub mod regs {
             Acr(0)
         }
     }
+    impl core::fmt::Debug for Acr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Acr")
+                .field("latency", &self.latency())
+                .field("prften", &self.prften())
+                .field("icen", &self.icen())
+                .field("dcen", &self.dcen())
+                .field("icrst", &self.icrst())
+                .field("dcrst", &self.dcrst())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Acr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Acr {
+                latency: super::vals::Latency,
+                prften: bool,
+                icen: bool,
+                dcen: bool,
+                icrst: bool,
+                dcrst: bool,
+            }
+            let proxy = Acr {
+                latency: self.latency(),
+                prften: self.prften(),
+                icen: self.icen(),
+                dcen: self.dcen(),
+                icrst: self.icrst(),
+                dcrst: self.dcrst(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -240,6 +275,50 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("pg", &self.pg())
+                .field("ser", &self.ser())
+                .field("mer", &self.mer())
+                .field("snb", &self.snb())
+                .field("psize", &self.psize())
+                .field("strt", &self.strt())
+                .field("eopie", &self.eopie())
+                .field("errie", &self.errie())
+                .field("lock", &self.lock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                pg: bool,
+                ser: bool,
+                mer: bool,
+                snb: u8,
+                psize: super::vals::Psize,
+                strt: bool,
+                eopie: bool,
+                errie: bool,
+                lock: bool,
+            }
+            let proxy = Cr {
+                pg: self.pg(),
+                ser: self.ser(),
+                mer: self.mer(),
+                snb: self.snb(),
+                psize: self.psize(),
+                strt: self.strt(),
+                eopie: self.eopie(),
+                errie: self.errie(),
+                lock: self.lock(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Flash option control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -340,6 +419,47 @@ pub mod regs {
             Optcr(0)
         }
     }
+    impl core::fmt::Debug for Optcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Optcr")
+                .field("optlock", &self.optlock())
+                .field("optstrt", &self.optstrt())
+                .field("bor_lev", &self.bor_lev())
+                .field("wdg_sw", &self.wdg_sw())
+                .field("n_rst_stop", &self.n_rst_stop())
+                .field("n_rst_stdby", &self.n_rst_stdby())
+                .field("rdp", &self.rdp())
+                .field("n_wrp", &self.n_wrp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Optcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Optcr {
+                optlock: bool,
+                optstrt: bool,
+                bor_lev: u8,
+                wdg_sw: bool,
+                n_rst_stop: bool,
+                n_rst_stdby: bool,
+                rdp: u8,
+                n_wrp: u16,
+            }
+            let proxy = Optcr {
+                optlock: self.optlock(),
+                optstrt: self.optstrt(),
+                bor_lev: self.bor_lev(),
+                wdg_sw: self.wdg_sw(),
+                n_rst_stop: self.n_rst_stop(),
+                n_rst_stdby: self.n_rst_stdby(),
+                rdp: self.rdp(),
+                n_wrp: self.n_wrp(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -429,10 +549,49 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("eop", &self.eop())
+                .field("operr", &self.operr())
+                .field("wrperr", &self.wrperr())
+                .field("pgaerr", &self.pgaerr())
+                .field("pgperr", &self.pgperr())
+                .field("pgserr", &self.pgserr())
+                .field("bsy", &self.bsy())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                eop: bool,
+                operr: bool,
+                wrperr: bool,
+                pgaerr: bool,
+                pgperr: bool,
+                pgserr: bool,
+                bsy: bool,
+            }
+            let proxy = Sr {
+                eop: self.eop(),
+                operr: self.operr(),
+                wrperr: self.wrperr(),
+                pgaerr: self.pgaerr(),
+                pgperr: self.pgperr(),
+                pgserr: self.pgserr(),
+                bsy: self.bsy(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Latency {
         #[doc = "0 wait states"]
         WS0 = 0x0,
@@ -474,7 +633,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Psize {
         #[doc = "Program x8"]
         PSIZE8 = 0x0,

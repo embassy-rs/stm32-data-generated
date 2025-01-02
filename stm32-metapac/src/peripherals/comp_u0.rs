@@ -159,13 +159,64 @@ pub mod regs {
             Csr(0)
         }
     }
+    impl core::fmt::Debug for Csr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Csr")
+                .field("en", &self.en())
+                .field("inmsel", &self.inmsel())
+                .field("inpsel", &self.inpsel())
+                .field("winmode", &self.winmode())
+                .field("winout", &self.winout())
+                .field("polarity", &self.polarity())
+                .field("hyst", &self.hyst())
+                .field("pwrmode", &self.pwrmode())
+                .field("blanksel", &self.blanksel())
+                .field("value", &self.value())
+                .field("lock", &self.lock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Csr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Csr {
+                en: bool,
+                inmsel: u8,
+                inpsel: u8,
+                winmode: super::vals::WindowMode,
+                winout: super::vals::WindowOut,
+                polarity: super::vals::Polarity,
+                hyst: super::vals::Hyst,
+                pwrmode: super::vals::Pwrmode,
+                blanksel: super::vals::Blanking,
+                value: bool,
+                lock: bool,
+            }
+            let proxy = Csr {
+                en: self.en(),
+                inmsel: self.inmsel(),
+                inpsel: self.inpsel(),
+                winmode: self.winmode(),
+                winout: self.winout(),
+                polarity: self.polarity(),
+                hyst: self.hyst(),
+                pwrmode: self.pwrmode(),
+                blanksel: self.blanksel(),
+                value: self.value(),
+                lock: self.lock(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Blanking {
         #[doc = "No blanking."]
-        NOBLANKING = 0x0,
+        NO_BLANKING = 0x0,
         #[doc = "TIM1 OC4 enabled as blanking source"]
         TIM1OC4 = 0x01,
         #[doc = "TIM1 OC5 enabled as blanking source"]
@@ -226,7 +277,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hyst {
         NONE = 0x0,
         LOW = 0x01,
@@ -256,10 +308,11 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Polarity {
         #[doc = "Output is not inverted."]
-        NOTINVERTED = 0x0,
+        NOT_INVERTED = 0x0,
         #[doc = "Output is inverted."]
         INVERTED = 0x01,
     }
@@ -286,15 +339,16 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pwrmode {
         #[doc = "High speed / full power."]
-        HIGHSPEED = 0x0,
+        HIGH_SPEED = 0x0,
         #[doc = "Medium speed / medium power."]
-        MEDIUMSPEED = 0x01,
+        MEDIUM_SPEED = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "Very-low speed / ultra-low power."]
-        LOWSPEED = 0x03,
+        LOW_SPEED = 0x03,
     }
     impl Pwrmode {
         #[inline(always)]
@@ -319,14 +373,15 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum WindowMode {
         #[doc = "Signal selected with INPSEL\\[2:0\\]
 bitfield of this register."]
-        THISINPSEL = 0x0,
+        THIS_INPSEL = 0x0,
         #[doc = "Signal selected with INPSEL\\[2:0\\]
 bitfield of the other register (required for window mode)."]
-        OTHERINPSEL = 0x01,
+        OTHER_INPSEL = 0x01,
     }
     impl WindowMode {
         #[inline(always)]
@@ -351,12 +406,13 @@ bitfield of the other register (required for window mode)."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum WindowOut {
         #[doc = "Comparator 1 value."]
         COMP1_VALUE = 0x0,
         #[doc = "Comparator 1 value XOR comparator 2 value (required for window mode)."]
-        COMP1_VALUEXORCOMP2_VALUE = 0x01,
+        COMP1_VALUE_XOR_COMP2_VALUE = 0x01,
     }
     impl WindowOut {
         #[inline(always)]

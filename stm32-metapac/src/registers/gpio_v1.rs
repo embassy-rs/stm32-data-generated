@@ -227,22 +227,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PUSHPULL",
+                    name: "PUSH_PULL",
                     description: Some("Push-Pull mode"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "OPENDRAIN",
+                    name: "OPEN_DRAIN",
                     description: Some("Open Drain-Mode"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ALTPUSHPULL",
+                    name: "ALT_PUSH_PULL",
                     description: Some("Alternate Function Push-Pull Mode"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "ALTOPENDRAIN",
+                    name: "ALT_OPEN_DRAIN",
                     description: Some("Alternate Function Open-Drain Mode"),
                     value: 3,
                 },

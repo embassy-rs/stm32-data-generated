@@ -169,10 +169,61 @@ pub mod regs {
             Csr(0)
         }
     }
+    impl core::fmt::Debug for Csr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Csr")
+                .field("func", &self.func())
+                .field("precision", &self.precision())
+                .field("scale", &self.scale())
+                .field("ien", &self.ien())
+                .field("dmaren", &self.dmaren())
+                .field("dmawen", &self.dmawen())
+                .field("nres", &self.nres())
+                .field("nargs", &self.nargs())
+                .field("ressize", &self.ressize())
+                .field("argsize", &self.argsize())
+                .field("rrdy", &self.rrdy())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Csr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Csr {
+                func: super::vals::Func,
+                precision: super::vals::Precision,
+                scale: super::vals::Scale,
+                ien: bool,
+                dmaren: bool,
+                dmawen: bool,
+                nres: super::vals::Num,
+                nargs: super::vals::Num,
+                ressize: super::vals::Size,
+                argsize: super::vals::Size,
+                rrdy: bool,
+            }
+            let proxy = Csr {
+                func: self.func(),
+                precision: self.precision(),
+                scale: self.scale(),
+                ien: self.ien(),
+                dmaren: self.dmaren(),
+                dmawen: self.dmawen(),
+                nres: self.nres(),
+                nargs: self.nargs(),
+                ressize: self.ressize(),
+                argsize: self.argsize(),
+                rrdy: self.rrdy(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Func {
         #[doc = "Cosine function."]
         COSINE = 0x0,
@@ -185,15 +236,15 @@ pub mod vals {
         #[doc = "Arctangent function."]
         ARCTANGENT = 0x04,
         #[doc = "Hyperbolic Cosine function."]
-        HYPERBOLICCOSINE = 0x05,
+        HYPERBOLIC_COSINE = 0x05,
         #[doc = "Hyperbolic Sine function."]
-        HYPERBOLICSINE = 0x06,
+        HYPERBOLIC_SINE = 0x06,
         #[doc = "Arctanh function."]
         ARCTANH = 0x07,
         #[doc = "Natural Logarithm function."]
-        NATURALLOGARITHM = 0x08,
+        NATURAL_LOGARITHM = 0x08,
         #[doc = "Square Root function."]
-        SQUAREROOT = 0x09,
+        SQUARE_ROOT = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
@@ -224,7 +275,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Num {
         #[doc = "1 input/output"]
         NUM1 = 0x0,
@@ -254,7 +306,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Precision {
         _RESERVED_0 = 0x0,
         #[doc = "4 iterations."]
@@ -311,7 +364,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Scale {
         #[doc = "Argument multiplied by 1, result multiplied by 1"]
         A1_R1 = 0x0,
@@ -353,7 +407,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Size {
         #[doc = "Use 32 bit input/output values."]
         BITS32 = 0x0,

@@ -108,6 +108,29 @@ pub mod regs {
             Clr(0)
         }
     }
+    impl core::fmt::Debug for Clr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Clr")
+                .field("sofc", &self.sofc())
+                .field("uddc", &self.uddc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Clr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Clr {
+                sofc: bool,
+                uddc: bool,
+            }
+            let proxy = Clr {
+                sofc: self.sofc(),
+                uddc: self.uddc(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -173,6 +196,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cr {
             Cr(0)
+        }
+    }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("lcden", &self.lcden())
+                .field("vsel", &self.vsel())
+                .field("duty", &self.duty())
+                .field("bias", &self.bias())
+                .field("mux_seg", &self.mux_seg())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                lcden: bool,
+                vsel: bool,
+                duty: u8,
+                bias: u8,
+                mux_seg: bool,
+            }
+            let proxy = Cr {
+                lcden: self.lcden(),
+                vsel: self.vsel(),
+                duty: self.duty(),
+                bias: self.bias(),
+                mux_seg: self.mux_seg(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "frame control register"]
@@ -297,6 +352,53 @@ pub mod regs {
             Fcr(0)
         }
     }
+    impl core::fmt::Debug for Fcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fcr")
+                .field("hd", &self.hd())
+                .field("sofie", &self.sofie())
+                .field("uddie", &self.uddie())
+                .field("pon", &self.pon())
+                .field("dead", &self.dead())
+                .field("cc", &self.cc())
+                .field("blinkf", &self.blinkf())
+                .field("blink", &self.blink())
+                .field("div", &self.div())
+                .field("ps", &self.ps())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fcr {
+                hd: bool,
+                sofie: bool,
+                uddie: bool,
+                pon: u8,
+                dead: u8,
+                cc: u8,
+                blinkf: u8,
+                blink: u8,
+                div: u8,
+                ps: u8,
+            }
+            let proxy = Fcr {
+                hd: self.hd(),
+                sofie: self.sofie(),
+                uddie: self.uddie(),
+                pon: self.pon(),
+                dead: self.dead(),
+                cc: self.cc(),
+                blinkf: self.blinkf(),
+                blink: self.blink(),
+                div: self.div(),
+                ps: self.ps(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -373,6 +475,41 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Sr {
             Sr(0)
+        }
+    }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("ens", &self.ens())
+                .field("sof", &self.sof())
+                .field("udr", &self.udr())
+                .field("udd", &self.udd())
+                .field("rdy", &self.rdy())
+                .field("fcrsf", &self.fcrsf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                ens: bool,
+                sof: bool,
+                udr: bool,
+                udd: bool,
+                rdy: bool,
+                fcrsf: bool,
+            }
+            let proxy = Sr {
+                ens: self.ens(),
+                sof: self.sof(),
+                udr: self.udr(),
+                udd: self.udd(),
+                rdy: self.rdy(),
+                fcrsf: self.fcrsf(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

@@ -632,22 +632,22 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "REGULARINJECTED",
+                    name: "REGULAR_INJECTED",
                     description: Some("Combined regular simultaneous + injected simultaneous mode"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "REGULARALTERNATETRIGGER",
+                    name: "REGULAR_ALTERNATE_TRIGGER",
                     description: Some("Combined regular simultaneous + alternate trigger mode"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "INJECTEDFASTINTERLEAVED",
+                    name: "INJECTED_FAST_INTERLEAVED",
                     description: Some("Combined injected simultaneous + fast interleaved mode"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "INJECTEDSLOWINTERLEAVED",
+                    name: "INJECTED_SLOW_INTERLEAVED",
                     description: Some("Combined injected simultaneous + slow Interleaved mode"),
                     value: 4,
                 },
@@ -662,17 +662,17 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 6,
                 },
                 EnumVariant {
-                    name: "FASTINTERLEAVED",
+                    name: "FAST_INTERLEAVED",
                     description: Some("Fast interleaved mode only"),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "SLOWINTERLEAVED",
+                    name: "SLOW_INTERLEAVED",
                     description: Some("Slow interleaved mode only"),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "ALTERNATETRIGGER",
+                    name: "ALTERNATE_TRIGGER",
                     description: Some("Alternate trigger mode only"),
                     value: 9,
                 },

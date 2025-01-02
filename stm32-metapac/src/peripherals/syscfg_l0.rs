@@ -87,6 +87,32 @@ pub mod regs {
             Cfgr1(0)
         }
     }
+    impl core::fmt::Debug for Cfgr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr1")
+                .field("mem_mode", &self.mem_mode())
+                .field("ufb", &self.ufb())
+                .field("boot_mode", &self.boot_mode())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr1 {
+                mem_mode: u8,
+                ufb: bool,
+                boot_mode: u8,
+            }
+            let proxy = Cfgr1 {
+                mem_mode: self.mem_mode(),
+                ufb: self.ufb(),
+                boot_mode: self.boot_mode(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CFGR2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -185,6 +211,47 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cfgr2 {
             Cfgr2(0)
+        }
+    }
+    impl core::fmt::Debug for Cfgr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr2")
+                .field("fwdis", &self.fwdis())
+                .field("i2c_pb6_fmp", &self.i2c_pb6_fmp())
+                .field("i2c_pb7_fmp", &self.i2c_pb7_fmp())
+                .field("i2c_pb8_fmp", &self.i2c_pb8_fmp())
+                .field("i2c_pb9_fmp", &self.i2c_pb9_fmp())
+                .field("i2c1_fmp", &self.i2c1_fmp())
+                .field("i2c2_fmp", &self.i2c2_fmp())
+                .field("i2c3_fmp", &self.i2c3_fmp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr2 {
+                fwdis: bool,
+                i2c_pb6_fmp: bool,
+                i2c_pb7_fmp: bool,
+                i2c_pb8_fmp: bool,
+                i2c_pb9_fmp: bool,
+                i2c1_fmp: bool,
+                i2c2_fmp: bool,
+                i2c3_fmp: bool,
+            }
+            let proxy = Cfgr2 {
+                fwdis: self.fwdis(),
+                i2c_pb6_fmp: self.i2c_pb6_fmp(),
+                i2c_pb7_fmp: self.i2c_pb7_fmp(),
+                i2c_pb8_fmp: self.i2c_pb8_fmp(),
+                i2c_pb9_fmp: self.i2c_pb9_fmp(),
+                i2c1_fmp: self.i2c1_fmp(),
+                i2c2_fmp: self.i2c2_fmp(),
+                i2c3_fmp: self.i2c3_fmp(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CFGR3"]
@@ -287,6 +354,47 @@ pub mod regs {
             Cfgr3(0)
         }
     }
+    impl core::fmt::Debug for Cfgr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr3")
+                .field("en_vrefint", &self.en_vrefint())
+                .field("sel_vref_out", &self.sel_vref_out())
+                .field("enbuf_vrefint_adc", &self.enbuf_vrefint_adc())
+                .field("enbuf_sensor_adc", &self.enbuf_sensor_adc())
+                .field("enbuf_vrefint_comp2", &self.enbuf_vrefint_comp2())
+                .field("enref_hsi48", &self.enref_hsi48())
+                .field("vrefint_rdyf", &self.vrefint_rdyf())
+                .field("ref_lock", &self.ref_lock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr3 {
+                en_vrefint: bool,
+                sel_vref_out: u8,
+                enbuf_vrefint_adc: bool,
+                enbuf_sensor_adc: bool,
+                enbuf_vrefint_comp2: bool,
+                enref_hsi48: bool,
+                vrefint_rdyf: bool,
+                ref_lock: bool,
+            }
+            let proxy = Cfgr3 {
+                en_vrefint: self.en_vrefint(),
+                sel_vref_out: self.sel_vref_out(),
+                enbuf_vrefint_adc: self.enbuf_vrefint_adc(),
+                enbuf_sensor_adc: self.enbuf_sensor_adc(),
+                enbuf_vrefint_comp2: self.enbuf_vrefint_comp2(),
+                enref_hsi48: self.enref_hsi48(),
+                vrefint_rdyf: self.vrefint_rdyf(),
+                ref_lock: self.ref_lock(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "external interrupt configuration register 1-4"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -312,6 +420,39 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Exticr {
             Exticr(0)
+        }
+    }
+    impl core::fmt::Debug for Exticr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Exticr")
+                .field(
+                    "exti",
+                    &[
+                        self.exti(0usize),
+                        self.exti(1usize),
+                        self.exti(2usize),
+                        self.exti(3usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Exticr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Exticr {
+                exti: [u8; 4usize],
+            }
+            let proxy = Exticr {
+                exti: [
+                    self.exti(0usize),
+                    self.exti(1usize),
+                    self.exti(2usize),
+                    self.exti(3usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

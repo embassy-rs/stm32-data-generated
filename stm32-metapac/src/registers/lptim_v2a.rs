@@ -2060,12 +2060,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVEHIGH",
+                    name: "ACTIVE_HIGH",
                     description: None,
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ACTIVELOW",
+                    name: "ACTIVE_LOW",
                     description: None,
                     value: 1,
                 },
@@ -2077,14 +2077,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "OUTPUTCOMPARE",
+                    name: "OUTPUT_COMPARE",
                     description: Some(
                         "channel is configured in output PWM mode",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "INPUTCAPTURE",
+                    name: "INPUT_CAPTURE",
                     description: Some(
                         "channel is configured in input capture mode",
                     ),
@@ -2228,21 +2228,21 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RISINGEDGE",
+                    name: "RISING_EDGE",
                     description: Some(
                         "rising edge is the active edge",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "FALLINGEDGE",
+                    name: "FALLING_EDGE",
                     description: Some(
                         "falling edge is the active edge",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "BOTHEDGE",
+                    name: "BOTH_EDGE",
                     description: Some(
                         "both edges are active edges",
                     ),

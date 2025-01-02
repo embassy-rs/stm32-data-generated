@@ -299,21 +299,21 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYNCDIV1",
+                    name: "SYNC_DIV1",
                     description: Some(
                         "Use AHB clock rcc_hclk3. In this case rcc_hclk must equal sys_d1cpre_ck",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SYNCDIV2",
+                    name: "SYNC_DIV2",
                     description: Some(
                         "Use AHB clock rcc_hclk3 divided by 2",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SYNCDIV4",
+                    name: "SYNC_DIV4",
                     description: Some(
                         "Use AHB clock rcc_hclk3 divided by 4",
                     ),

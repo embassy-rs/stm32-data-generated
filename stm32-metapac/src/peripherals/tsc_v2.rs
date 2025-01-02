@@ -216,6 +216,59 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("tsce", &self.tsce())
+                .field("start", &self.start())
+                .field("am", &self.am())
+                .field("syncpol", &self.syncpol())
+                .field("iodef", &self.iodef())
+                .field("mcv", &self.mcv())
+                .field("pgpsc", &self.pgpsc())
+                .field("sspsc", &self.sspsc())
+                .field("sse", &self.sse())
+                .field("ssd", &self.ssd())
+                .field("ctpl", &self.ctpl())
+                .field("ctph", &self.ctph())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                tsce: bool,
+                start: bool,
+                am: bool,
+                syncpol: bool,
+                iodef: bool,
+                mcv: u8,
+                pgpsc: u8,
+                sspsc: bool,
+                sse: bool,
+                ssd: u8,
+                ctpl: u8,
+                ctph: u8,
+            }
+            let proxy = Cr {
+                tsce: self.tsce(),
+                start: self.start(),
+                am: self.am(),
+                syncpol: self.syncpol(),
+                iodef: self.iodef(),
+                mcv: self.mcv(),
+                pgpsc: self.pgpsc(),
+                sspsc: self.sspsc(),
+                sse: self.sse(),
+                ssd: self.ssd(),
+                ctpl: self.ctpl(),
+                ctph: self.ctph(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "interrupt clear register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -250,6 +303,29 @@ pub mod regs {
             Icr(0)
         }
     }
+    impl core::fmt::Debug for Icr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Icr")
+                .field("eoaic", &self.eoaic())
+                .field("mceic", &self.mceic())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Icr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Icr {
+                eoaic: bool,
+                mceic: bool,
+            }
+            let proxy = Icr {
+                eoaic: self.eoaic(),
+                mceic: self.mceic(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "interrupt enable register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -282,6 +358,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ier {
             Ier(0)
+        }
+    }
+    impl core::fmt::Debug for Ier {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ier")
+                .field("eoaie", &self.eoaie())
+                .field("mceie", &self.mceie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ier {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ier {
+                eoaie: bool,
+                mceie: bool,
+            }
+            let proxy = Ier {
+                eoaie: self.eoaie(),
+                mceie: self.mceie(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "I/O analog switch control register."]
@@ -604,6 +703,107 @@ pub mod regs {
             Ioascr(0)
         }
     }
+    impl core::fmt::Debug for Ioascr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ioascr")
+                .field("g1_io1", &self.g1_io1())
+                .field("g1_io2", &self.g1_io2())
+                .field("g1_io3", &self.g1_io3())
+                .field("g1_io4", &self.g1_io4())
+                .field("g2_io1", &self.g2_io1())
+                .field("g2_io2", &self.g2_io2())
+                .field("g2_io3", &self.g2_io3())
+                .field("g2_io4", &self.g2_io4())
+                .field("g3_io1", &self.g3_io1())
+                .field("g3_io2", &self.g3_io2())
+                .field("g3_io3", &self.g3_io3())
+                .field("g3_io4", &self.g3_io4())
+                .field("g4_io1", &self.g4_io1())
+                .field("g4_io2", &self.g4_io2())
+                .field("g4_io3", &self.g4_io3())
+                .field("g4_io4", &self.g4_io4())
+                .field("g5_io1", &self.g5_io1())
+                .field("g5_io2", &self.g5_io2())
+                .field("g5_io3", &self.g5_io3())
+                .field("g5_io4", &self.g5_io4())
+                .field("g6_io1", &self.g6_io1())
+                .field("g6_io2", &self.g6_io2())
+                .field("g6_io3", &self.g6_io3())
+                .field("g6_io4", &self.g6_io4())
+                .field("g7_io1", &self.g7_io1())
+                .field("g7_io2", &self.g7_io2())
+                .field("g7_io3", &self.g7_io3())
+                .field("g7_io4", &self.g7_io4())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ioascr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ioascr {
+                g1_io1: bool,
+                g1_io2: bool,
+                g1_io3: bool,
+                g1_io4: bool,
+                g2_io1: bool,
+                g2_io2: bool,
+                g2_io3: bool,
+                g2_io4: bool,
+                g3_io1: bool,
+                g3_io2: bool,
+                g3_io3: bool,
+                g3_io4: bool,
+                g4_io1: bool,
+                g4_io2: bool,
+                g4_io3: bool,
+                g4_io4: bool,
+                g5_io1: bool,
+                g5_io2: bool,
+                g5_io3: bool,
+                g5_io4: bool,
+                g6_io1: bool,
+                g6_io2: bool,
+                g6_io3: bool,
+                g6_io4: bool,
+                g7_io1: bool,
+                g7_io2: bool,
+                g7_io3: bool,
+                g7_io4: bool,
+            }
+            let proxy = Ioascr {
+                g1_io1: self.g1_io1(),
+                g1_io2: self.g1_io2(),
+                g1_io3: self.g1_io3(),
+                g1_io4: self.g1_io4(),
+                g2_io1: self.g2_io1(),
+                g2_io2: self.g2_io2(),
+                g2_io3: self.g2_io3(),
+                g2_io4: self.g2_io4(),
+                g3_io1: self.g3_io1(),
+                g3_io2: self.g3_io2(),
+                g3_io3: self.g3_io3(),
+                g3_io4: self.g3_io4(),
+                g4_io1: self.g4_io1(),
+                g4_io2: self.g4_io2(),
+                g4_io3: self.g4_io3(),
+                g4_io4: self.g4_io4(),
+                g5_io1: self.g5_io1(),
+                g5_io2: self.g5_io2(),
+                g5_io3: self.g5_io3(),
+                g5_io4: self.g5_io4(),
+                g6_io1: self.g6_io1(),
+                g6_io2: self.g6_io2(),
+                g6_io3: self.g6_io3(),
+                g6_io4: self.g6_io4(),
+                g7_io1: self.g7_io1(),
+                g7_io2: self.g7_io2(),
+                g7_io3: self.g7_io3(),
+                g7_io4: self.g7_io4(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "I/O channel control register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -924,6 +1124,107 @@ pub mod regs {
             Ioccr(0)
         }
     }
+    impl core::fmt::Debug for Ioccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ioccr")
+                .field("g1_io1", &self.g1_io1())
+                .field("g1_io2", &self.g1_io2())
+                .field("g1_io3", &self.g1_io3())
+                .field("g1_io4", &self.g1_io4())
+                .field("g2_io1", &self.g2_io1())
+                .field("g2_io2", &self.g2_io2())
+                .field("g2_io3", &self.g2_io3())
+                .field("g2_io4", &self.g2_io4())
+                .field("g3_io1", &self.g3_io1())
+                .field("g3_io2", &self.g3_io2())
+                .field("g3_io3", &self.g3_io3())
+                .field("g3_io4", &self.g3_io4())
+                .field("g4_io1", &self.g4_io1())
+                .field("g4_io2", &self.g4_io2())
+                .field("g4_io3", &self.g4_io3())
+                .field("g4_io4", &self.g4_io4())
+                .field("g5_io1", &self.g5_io1())
+                .field("g5_io2", &self.g5_io2())
+                .field("g5_io3", &self.g5_io3())
+                .field("g5_io4", &self.g5_io4())
+                .field("g6_io1", &self.g6_io1())
+                .field("g6_io2", &self.g6_io2())
+                .field("g6_io3", &self.g6_io3())
+                .field("g6_io4", &self.g6_io4())
+                .field("g7_io1", &self.g7_io1())
+                .field("g7_io2", &self.g7_io2())
+                .field("g7_io3", &self.g7_io3())
+                .field("g7_io4", &self.g7_io4())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ioccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ioccr {
+                g1_io1: bool,
+                g1_io2: bool,
+                g1_io3: bool,
+                g1_io4: bool,
+                g2_io1: bool,
+                g2_io2: bool,
+                g2_io3: bool,
+                g2_io4: bool,
+                g3_io1: bool,
+                g3_io2: bool,
+                g3_io3: bool,
+                g3_io4: bool,
+                g4_io1: bool,
+                g4_io2: bool,
+                g4_io3: bool,
+                g4_io4: bool,
+                g5_io1: bool,
+                g5_io2: bool,
+                g5_io3: bool,
+                g5_io4: bool,
+                g6_io1: bool,
+                g6_io2: bool,
+                g6_io3: bool,
+                g6_io4: bool,
+                g7_io1: bool,
+                g7_io2: bool,
+                g7_io3: bool,
+                g7_io4: bool,
+            }
+            let proxy = Ioccr {
+                g1_io1: self.g1_io1(),
+                g1_io2: self.g1_io2(),
+                g1_io3: self.g1_io3(),
+                g1_io4: self.g1_io4(),
+                g2_io1: self.g2_io1(),
+                g2_io2: self.g2_io2(),
+                g2_io3: self.g2_io3(),
+                g2_io4: self.g2_io4(),
+                g3_io1: self.g3_io1(),
+                g3_io2: self.g3_io2(),
+                g3_io3: self.g3_io3(),
+                g3_io4: self.g3_io4(),
+                g4_io1: self.g4_io1(),
+                g4_io2: self.g4_io2(),
+                g4_io3: self.g4_io3(),
+                g4_io4: self.g4_io4(),
+                g5_io1: self.g5_io1(),
+                g5_io2: self.g5_io2(),
+                g5_io3: self.g5_io3(),
+                g5_io4: self.g5_io4(),
+                g6_io1: self.g6_io1(),
+                g6_io2: self.g6_io2(),
+                g6_io3: self.g6_io3(),
+                g6_io4: self.g6_io4(),
+                g7_io1: self.g7_io1(),
+                g7_io2: self.g7_io2(),
+                g7_io3: self.g7_io3(),
+                g7_io4: self.g7_io4(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "I/O group x counter register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -945,6 +1246,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Iogcr {
             Iogcr(0)
+        }
+    }
+    impl core::fmt::Debug for Iogcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Iogcr").field("cnt", &self.cnt()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Iogcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Iogcr {
+                cnt: u16,
+            }
+            let proxy = Iogcr { cnt: self.cnt() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "I/O group control status register."]
@@ -1111,6 +1428,65 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Iogcsr {
             Iogcsr(0)
+        }
+    }
+    impl core::fmt::Debug for Iogcsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Iogcsr")
+                .field("g1e", &self.g1e())
+                .field("g2e", &self.g2e())
+                .field("g3e", &self.g3e())
+                .field("g4e", &self.g4e())
+                .field("g5e", &self.g5e())
+                .field("g6e", &self.g6e())
+                .field("g7e", &self.g7e())
+                .field("g1s", &self.g1s())
+                .field("g2s", &self.g2s())
+                .field("g3s", &self.g3s())
+                .field("g4s", &self.g4s())
+                .field("g5s", &self.g5s())
+                .field("g6s", &self.g6s())
+                .field("g7s", &self.g7s())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Iogcsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Iogcsr {
+                g1e: bool,
+                g2e: bool,
+                g3e: bool,
+                g4e: bool,
+                g5e: bool,
+                g6e: bool,
+                g7e: bool,
+                g1s: bool,
+                g2s: bool,
+                g3s: bool,
+                g4s: bool,
+                g5s: bool,
+                g6s: bool,
+                g7s: bool,
+            }
+            let proxy = Iogcsr {
+                g1e: self.g1e(),
+                g2e: self.g2e(),
+                g3e: self.g3e(),
+                g4e: self.g4e(),
+                g5e: self.g5e(),
+                g6e: self.g6e(),
+                g7e: self.g7e(),
+                g1s: self.g1s(),
+                g2s: self.g2s(),
+                g3s: self.g3s(),
+                g4s: self.g4s(),
+                g5s: self.g5s(),
+                g6s: self.g6s(),
+                g7s: self.g7s(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "I/O hysteresis control register."]
@@ -1433,6 +1809,107 @@ pub mod regs {
             Iohcr(0)
         }
     }
+    impl core::fmt::Debug for Iohcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Iohcr")
+                .field("g1_io1", &self.g1_io1())
+                .field("g1_io2", &self.g1_io2())
+                .field("g1_io3", &self.g1_io3())
+                .field("g1_io4", &self.g1_io4())
+                .field("g2_io1", &self.g2_io1())
+                .field("g2_io2", &self.g2_io2())
+                .field("g2_io3", &self.g2_io3())
+                .field("g2_io4", &self.g2_io4())
+                .field("g3_io1", &self.g3_io1())
+                .field("g3_io2", &self.g3_io2())
+                .field("g3_io3", &self.g3_io3())
+                .field("g3_io4", &self.g3_io4())
+                .field("g4_io1", &self.g4_io1())
+                .field("g4_io2", &self.g4_io2())
+                .field("g4_io3", &self.g4_io3())
+                .field("g4_io4", &self.g4_io4())
+                .field("g5_io1", &self.g5_io1())
+                .field("g5_io2", &self.g5_io2())
+                .field("g5_io3", &self.g5_io3())
+                .field("g5_io4", &self.g5_io4())
+                .field("g6_io1", &self.g6_io1())
+                .field("g6_io2", &self.g6_io2())
+                .field("g6_io3", &self.g6_io3())
+                .field("g6_io4", &self.g6_io4())
+                .field("g7_io1", &self.g7_io1())
+                .field("g7_io2", &self.g7_io2())
+                .field("g7_io3", &self.g7_io3())
+                .field("g7_io4", &self.g7_io4())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Iohcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Iohcr {
+                g1_io1: bool,
+                g1_io2: bool,
+                g1_io3: bool,
+                g1_io4: bool,
+                g2_io1: bool,
+                g2_io2: bool,
+                g2_io3: bool,
+                g2_io4: bool,
+                g3_io1: bool,
+                g3_io2: bool,
+                g3_io3: bool,
+                g3_io4: bool,
+                g4_io1: bool,
+                g4_io2: bool,
+                g4_io3: bool,
+                g4_io4: bool,
+                g5_io1: bool,
+                g5_io2: bool,
+                g5_io3: bool,
+                g5_io4: bool,
+                g6_io1: bool,
+                g6_io2: bool,
+                g6_io3: bool,
+                g6_io4: bool,
+                g7_io1: bool,
+                g7_io2: bool,
+                g7_io3: bool,
+                g7_io4: bool,
+            }
+            let proxy = Iohcr {
+                g1_io1: self.g1_io1(),
+                g1_io2: self.g1_io2(),
+                g1_io3: self.g1_io3(),
+                g1_io4: self.g1_io4(),
+                g2_io1: self.g2_io1(),
+                g2_io2: self.g2_io2(),
+                g2_io3: self.g2_io3(),
+                g2_io4: self.g2_io4(),
+                g3_io1: self.g3_io1(),
+                g3_io2: self.g3_io2(),
+                g3_io3: self.g3_io3(),
+                g3_io4: self.g3_io4(),
+                g4_io1: self.g4_io1(),
+                g4_io2: self.g4_io2(),
+                g4_io3: self.g4_io3(),
+                g4_io4: self.g4_io4(),
+                g5_io1: self.g5_io1(),
+                g5_io2: self.g5_io2(),
+                g5_io3: self.g5_io3(),
+                g5_io4: self.g5_io4(),
+                g6_io1: self.g6_io1(),
+                g6_io2: self.g6_io2(),
+                g6_io3: self.g6_io3(),
+                g6_io4: self.g6_io4(),
+                g7_io1: self.g7_io1(),
+                g7_io2: self.g7_io2(),
+                g7_io3: self.g7_io3(),
+                g7_io4: self.g7_io4(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "I/O sampling control register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1753,6 +2230,107 @@ pub mod regs {
             Ioscr(0)
         }
     }
+    impl core::fmt::Debug for Ioscr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ioscr")
+                .field("g1_io1", &self.g1_io1())
+                .field("g1_io2", &self.g1_io2())
+                .field("g1_io3", &self.g1_io3())
+                .field("g1_io4", &self.g1_io4())
+                .field("g2_io1", &self.g2_io1())
+                .field("g2_io2", &self.g2_io2())
+                .field("g2_io3", &self.g2_io3())
+                .field("g2_io4", &self.g2_io4())
+                .field("g3_io1", &self.g3_io1())
+                .field("g3_io2", &self.g3_io2())
+                .field("g3_io3", &self.g3_io3())
+                .field("g3_io4", &self.g3_io4())
+                .field("g4_io1", &self.g4_io1())
+                .field("g4_io2", &self.g4_io2())
+                .field("g4_io3", &self.g4_io3())
+                .field("g4_io4", &self.g4_io4())
+                .field("g5_io1", &self.g5_io1())
+                .field("g5_io2", &self.g5_io2())
+                .field("g5_io3", &self.g5_io3())
+                .field("g5_io4", &self.g5_io4())
+                .field("g6_io1", &self.g6_io1())
+                .field("g6_io2", &self.g6_io2())
+                .field("g6_io3", &self.g6_io3())
+                .field("g6_io4", &self.g6_io4())
+                .field("g7_io1", &self.g7_io1())
+                .field("g7_io2", &self.g7_io2())
+                .field("g7_io3", &self.g7_io3())
+                .field("g7_io4", &self.g7_io4())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ioscr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ioscr {
+                g1_io1: bool,
+                g1_io2: bool,
+                g1_io3: bool,
+                g1_io4: bool,
+                g2_io1: bool,
+                g2_io2: bool,
+                g2_io3: bool,
+                g2_io4: bool,
+                g3_io1: bool,
+                g3_io2: bool,
+                g3_io3: bool,
+                g3_io4: bool,
+                g4_io1: bool,
+                g4_io2: bool,
+                g4_io3: bool,
+                g4_io4: bool,
+                g5_io1: bool,
+                g5_io2: bool,
+                g5_io3: bool,
+                g5_io4: bool,
+                g6_io1: bool,
+                g6_io2: bool,
+                g6_io3: bool,
+                g6_io4: bool,
+                g7_io1: bool,
+                g7_io2: bool,
+                g7_io3: bool,
+                g7_io4: bool,
+            }
+            let proxy = Ioscr {
+                g1_io1: self.g1_io1(),
+                g1_io2: self.g1_io2(),
+                g1_io3: self.g1_io3(),
+                g1_io4: self.g1_io4(),
+                g2_io1: self.g2_io1(),
+                g2_io2: self.g2_io2(),
+                g2_io3: self.g2_io3(),
+                g2_io4: self.g2_io4(),
+                g3_io1: self.g3_io1(),
+                g3_io2: self.g3_io2(),
+                g3_io3: self.g3_io3(),
+                g3_io4: self.g3_io4(),
+                g4_io1: self.g4_io1(),
+                g4_io2: self.g4_io2(),
+                g4_io3: self.g4_io3(),
+                g4_io4: self.g4_io4(),
+                g5_io1: self.g5_io1(),
+                g5_io2: self.g5_io2(),
+                g5_io3: self.g5_io3(),
+                g5_io4: self.g5_io4(),
+                g6_io1: self.g6_io1(),
+                g6_io2: self.g6_io2(),
+                g6_io3: self.g6_io3(),
+                g6_io4: self.g6_io4(),
+                g7_io1: self.g7_io1(),
+                g7_io2: self.g7_io2(),
+                g7_io3: self.g7_io3(),
+                g7_io4: self.g7_io4(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "interrupt status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1785,6 +2363,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Isr {
             Isr(0)
+        }
+    }
+    impl core::fmt::Debug for Isr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Isr")
+                .field("eoaf", &self.eoaf())
+                .field("mcef", &self.mcef())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Isr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Isr {
+                eoaf: bool,
+                mcef: bool,
+            }
+            let proxy = Isr {
+                eoaf: self.eoaf(),
+                mcef: self.mcef(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

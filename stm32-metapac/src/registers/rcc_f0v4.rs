@@ -2782,14 +2782,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MEDIUMHIGH",
+                    name: "MEDIUM_HIGH",
                     description: Some(
                         "Medium high driving capability",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MEDIUMLOW",
+                    name: "MEDIUM_LOW",
                     description: Some(
                         "Medium low driving capability",
                     ),

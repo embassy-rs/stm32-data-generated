@@ -149,6 +149,41 @@ pub mod regs {
             Acr(0)
         }
     }
+    impl core::fmt::Debug for Acr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Acr")
+                .field("latency", &self.latency())
+                .field("prften", &self.prften())
+                .field("sleep_pd", &self.sleep_pd())
+                .field("run_pd", &self.run_pd())
+                .field("disab_buf", &self.disab_buf())
+                .field("pre_read", &self.pre_read())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Acr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Acr {
+                latency: bool,
+                prften: bool,
+                sleep_pd: bool,
+                run_pd: bool,
+                disab_buf: bool,
+                pre_read: bool,
+            }
+            let proxy = Acr {
+                latency: self.latency(),
+                prften: self.prften(),
+                sleep_pd: self.sleep_pd(),
+                run_pd: self.run_pd(),
+                disab_buf: self.disab_buf(),
+                pre_read: self.pre_read(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Option byte register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -192,6 +227,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Optr {
             Optr(0)
+        }
+    }
+    impl core::fmt::Debug for Optr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Optr")
+                .field("rdprot", &self.rdprot())
+                .field("wprmod", &self.wprmod())
+                .field("bor_lev", &self.bor_lev())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Optr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Optr {
+                rdprot: u8,
+                wprmod: bool,
+                bor_lev: u8,
+            }
+            let proxy = Optr {
+                rdprot: self.rdprot(),
+                wprmod: self.wprmod(),
+                bor_lev: self.bor_lev(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Program/erase control register"]
@@ -338,6 +399,59 @@ pub mod regs {
             Pecr(0)
         }
     }
+    impl core::fmt::Debug for Pecr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pecr")
+                .field("pelock", &self.pelock())
+                .field("prglock", &self.prglock())
+                .field("optlock", &self.optlock())
+                .field("prog", &self.prog())
+                .field("data", &self.data())
+                .field("fix", &self.fix())
+                .field("erase", &self.erase())
+                .field("fprg", &self.fprg())
+                .field("parallelbank", &self.parallelbank())
+                .field("eopie", &self.eopie())
+                .field("errie", &self.errie())
+                .field("obl_launch", &self.obl_launch())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pecr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pecr {
+                pelock: bool,
+                prglock: bool,
+                optlock: bool,
+                prog: bool,
+                data: bool,
+                fix: bool,
+                erase: bool,
+                fprg: bool,
+                parallelbank: bool,
+                eopie: bool,
+                errie: bool,
+                obl_launch: bool,
+            }
+            let proxy = Pecr {
+                pelock: self.pelock(),
+                prglock: self.prglock(),
+                optlock: self.optlock(),
+                prog: self.prog(),
+                data: self.data(),
+                fix: self.fix(),
+                erase: self.erase(),
+                fprg: self.fprg(),
+                parallelbank: self.parallelbank(),
+                eopie: self.eopie(),
+                errie: self.errie(),
+                obl_launch: self.obl_launch(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -471,6 +585,56 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("bsy", &self.bsy())
+                .field("eop", &self.eop())
+                .field("endhv", &self.endhv())
+                .field("ready", &self.ready())
+                .field("wrperr", &self.wrperr())
+                .field("pgaerr", &self.pgaerr())
+                .field("sizerr", &self.sizerr())
+                .field("optverr", &self.optverr())
+                .field("rderr", &self.rderr())
+                .field("notzeroerr", &self.notzeroerr())
+                .field("fwwerr", &self.fwwerr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                bsy: bool,
+                eop: bool,
+                endhv: bool,
+                ready: bool,
+                wrperr: bool,
+                pgaerr: bool,
+                sizerr: bool,
+                optverr: bool,
+                rderr: bool,
+                notzeroerr: bool,
+                fwwerr: bool,
+            }
+            let proxy = Sr {
+                bsy: self.bsy(),
+                eop: self.eop(),
+                endhv: self.endhv(),
+                ready: self.ready(),
+                wrperr: self.wrperr(),
+                pgaerr: self.pgaerr(),
+                sizerr: self.sizerr(),
+                optverr: self.optverr(),
+                rderr: self.rderr(),
+                notzeroerr: self.notzeroerr(),
+                fwwerr: self.fwwerr(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Write Protection Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -496,6 +660,95 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Wrprot {
             Wrprot(0)
+        }
+    }
+    impl core::fmt::Debug for Wrprot {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wrprot")
+                .field(
+                    "wrprot",
+                    &[
+                        self.wrprot(0usize),
+                        self.wrprot(1usize),
+                        self.wrprot(2usize),
+                        self.wrprot(3usize),
+                        self.wrprot(4usize),
+                        self.wrprot(5usize),
+                        self.wrprot(6usize),
+                        self.wrprot(7usize),
+                        self.wrprot(8usize),
+                        self.wrprot(9usize),
+                        self.wrprot(10usize),
+                        self.wrprot(11usize),
+                        self.wrprot(12usize),
+                        self.wrprot(13usize),
+                        self.wrprot(14usize),
+                        self.wrprot(15usize),
+                        self.wrprot(16usize),
+                        self.wrprot(17usize),
+                        self.wrprot(18usize),
+                        self.wrprot(19usize),
+                        self.wrprot(20usize),
+                        self.wrprot(21usize),
+                        self.wrprot(22usize),
+                        self.wrprot(23usize),
+                        self.wrprot(24usize),
+                        self.wrprot(25usize),
+                        self.wrprot(26usize),
+                        self.wrprot(27usize),
+                        self.wrprot(28usize),
+                        self.wrprot(29usize),
+                        self.wrprot(30usize),
+                        self.wrprot(31usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wrprot {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wrprot {
+                wrprot: [bool; 32usize],
+            }
+            let proxy = Wrprot {
+                wrprot: [
+                    self.wrprot(0usize),
+                    self.wrprot(1usize),
+                    self.wrprot(2usize),
+                    self.wrprot(3usize),
+                    self.wrprot(4usize),
+                    self.wrprot(5usize),
+                    self.wrprot(6usize),
+                    self.wrprot(7usize),
+                    self.wrprot(8usize),
+                    self.wrprot(9usize),
+                    self.wrprot(10usize),
+                    self.wrprot(11usize),
+                    self.wrprot(12usize),
+                    self.wrprot(13usize),
+                    self.wrprot(14usize),
+                    self.wrprot(15usize),
+                    self.wrprot(16usize),
+                    self.wrprot(17usize),
+                    self.wrprot(18usize),
+                    self.wrprot(19usize),
+                    self.wrprot(20usize),
+                    self.wrprot(21usize),
+                    self.wrprot(22usize),
+                    self.wrprot(23usize),
+                    self.wrprot(24usize),
+                    self.wrprot(25usize),
+                    self.wrprot(26usize),
+                    self.wrprot(27usize),
+                    self.wrprot(28usize),
+                    self.wrprot(29usize),
+                    self.wrprot(30usize),
+                    self.wrprot(31usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

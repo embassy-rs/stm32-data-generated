@@ -1,4 +1,5 @@
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Interrupt {
     #[doc = "0 - WWDG"]
     WWDG = 0,

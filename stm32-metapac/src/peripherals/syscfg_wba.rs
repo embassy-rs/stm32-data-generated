@@ -110,6 +110,29 @@ pub mod regs {
             Cccr(0)
         }
     }
+    impl core::fmt::Debug for Cccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cccr")
+                .field("ncc1", &self.ncc1())
+                .field("pcc1", &self.pcc1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cccr {
+                ncc1: u8,
+                pcc1: u8,
+            }
+            let proxy = Cccr {
+                ncc1: self.ncc1(),
+                pcc1: self.pcc1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "compensation cell control/status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -155,6 +178,32 @@ pub mod regs {
             Cccsr(0)
         }
     }
+    impl core::fmt::Debug for Cccsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cccsr")
+                .field("en1", &self.en1())
+                .field("cs1", &self.cs1())
+                .field("rdy1", &self.rdy1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cccsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cccsr {
+                en1: bool,
+                cs1: bool,
+                rdy1: bool,
+            }
+            let proxy = Cccsr {
+                en1: self.en1(),
+                cs1: self.cs1(),
+                rdy1: self.rdy1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "compensation cell value register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -187,6 +236,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ccvr {
             Ccvr(0)
+        }
+    }
+    impl core::fmt::Debug for Ccvr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ccvr")
+                .field("ncv1", &self.ncv1())
+                .field("pcv1", &self.pcv1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ccvr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ccvr {
+                ncv1: u8,
+                pcv1: u8,
+            }
+            let proxy = Ccvr {
+                ncv1: self.ncv1(),
+                pcv1: self.pcv1(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "configuration register 1"]
@@ -267,6 +339,41 @@ pub mod regs {
             Cfgr1(0)
         }
     }
+    impl core::fmt::Debug for Cfgr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr1")
+                .field("boosten", &self.boosten())
+                .field("anaswvdd", &self.anaswvdd())
+                .field("pa6_fmp", &self.pa6_fmp())
+                .field("pa7_fmp", &self.pa7_fmp())
+                .field("pa15_fmp", &self.pa15_fmp())
+                .field("pb3_fmp", &self.pb3_fmp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr1 {
+                boosten: bool,
+                anaswvdd: bool,
+                pa6_fmp: bool,
+                pa7_fmp: bool,
+                pa15_fmp: bool,
+                pb3_fmp: bool,
+            }
+            let proxy = Cfgr1 {
+                boosten: self.boosten(),
+                anaswvdd: self.anaswvdd(),
+                pa6_fmp: self.pa6_fmp(),
+                pa7_fmp: self.pa7_fmp(),
+                pa15_fmp: self.pa15_fmp(),
+                pb3_fmp: self.pb3_fmp(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "configuration register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -325,6 +432,35 @@ in the PWR register."]
             Cfgr2(0)
         }
     }
+    impl core::fmt::Debug for Cfgr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr2")
+                .field("cll", &self.cll())
+                .field("spl", &self.spl())
+                .field("pvdl", &self.pvdl())
+                .field("eccl", &self.eccl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr2 {
+                cll: bool,
+                spl: bool,
+                pvdl: bool,
+                eccl: bool,
+            }
+            let proxy = Cfgr2 {
+                cll: self.cll(),
+                spl: self.spl(),
+                pvdl: self.pvdl(),
+                eccl: self.eccl(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CPU non-secure lock register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -357,6 +493,29 @@ in the PWR register."]
         #[inline(always)]
         fn default() -> Cnslckr {
             Cnslckr(0)
+        }
+    }
+    impl core::fmt::Debug for Cnslckr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cnslckr")
+                .field("locknsvtor", &self.locknsvtor())
+                .field("locknsmpu", &self.locknsmpu())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cnslckr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cnslckr {
+                locknsvtor: bool,
+                locknsmpu: bool,
+            }
+            let proxy = Cnslckr {
+                locknsvtor: self.locknsvtor(),
+                locknsmpu: self.locknsmpu(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CPU secure lock register"]
@@ -404,6 +563,32 @@ in the PWR register."]
             Cslockr(0)
         }
     }
+    impl core::fmt::Debug for Cslockr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cslockr")
+                .field("locksvtaircr", &self.locksvtaircr())
+                .field("locksmpu", &self.locksmpu())
+                .field("locksau", &self.locksau())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cslockr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cslockr {
+                locksvtaircr: bool,
+                locksmpu: bool,
+                locksau: bool,
+            }
+            let proxy = Cslockr {
+                locksvtaircr: self.locksvtaircr(),
+                locksmpu: self.locksmpu(),
+                locksau: self.locksau(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FPU interrupt mask register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -425,6 +610,22 @@ in the PWR register."]
         #[inline(always)]
         fn default() -> Fpuimr {
             Fpuimr(0)
+        }
+    }
+    impl core::fmt::Debug for Fpuimr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fpuimr").field("fpu_ie", &self.fpu_ie()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fpuimr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fpuimr {
+                fpu_ie: u8,
+            }
+            let proxy = Fpuimr { fpu_ie: self.fpu_ie() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "memory erase status register"]
@@ -461,6 +662,29 @@ in the PWR register."]
             Mesr(0)
         }
     }
+    impl core::fmt::Debug for Mesr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mesr")
+                .field("mclr", &self.mclr())
+                .field("ipmee", &self.ipmee())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Mesr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Mesr {
+                mclr: bool,
+                ipmee: bool,
+            }
+            let proxy = Mesr {
+                mclr: self.mclr(),
+                ipmee: self.ipmee(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "RSS command register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -482,6 +706,22 @@ in the PWR register."]
         #[inline(always)]
         fn default() -> Rsscmdr {
             Rsscmdr(0)
+        }
+    }
+    impl core::fmt::Debug for Rsscmdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rsscmdr").field("rsscmd", &self.rsscmd()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rsscmdr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rsscmdr {
+                rsscmd: u16,
+            }
+            let proxy = Rsscmdr { rsscmd: self.rsscmd() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "secure configuration register"]
@@ -527,6 +767,32 @@ in the PWR register."]
         #[inline(always)]
         fn default() -> Seccfgr {
             Seccfgr(0)
+        }
+    }
+    impl core::fmt::Debug for Seccfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Seccfgr")
+                .field("syscfgsec", &self.syscfgsec())
+                .field("classbsec", &self.classbsec())
+                .field("fpusec", &self.fpusec())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Seccfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Seccfgr {
+                syscfgsec: bool,
+                classbsec: bool,
+                fpusec: bool,
+            }
+            let proxy = Seccfgr {
+                syscfgsec: self.syscfgsec(),
+                classbsec: self.classbsec(),
+                fpusec: self.fpusec(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

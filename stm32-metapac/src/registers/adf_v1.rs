@@ -1424,35 +1424,35 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "ASYNCHRONOUSCONTINUOUS",
+                    name: "ASYNCHRONOUS_CONTINUOUS",
                     description: Some(
                         "Asynchronous continuous acquisition mode.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ASYNCHRONOUSSINGLESHOT",
+                    name: "ASYNCHRONOUS_SINGLE_SHOT",
                     description: Some(
                         "Asynchronous single-shot acquisition mode",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SYNCRONOUSCONTINUOUS",
+                    name: "SYNCRONOUS_CONTINUOUS",
                     description: Some(
                         "Synchronous continuous acquisition mode.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SYNCRONOUSSINGLESHOT",
+                    name: "SYNCRONOUS_SINGLE_SHOT",
                     description: Some(
                         "Synchronous single-shot acquisition mode.",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "WINDOWCONTINUOUS",
+                    name: "WINDOW_CONTINUOUS",
                     description: Some(
                         "Window continuous acquisition mode.",
                     ),
@@ -1845,7 +1845,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOTGENERATED",
+                    name: "NOT_GENERATED",
                     description: Some(
                         "Bitstream clock not generated.",
                     ),
@@ -1921,7 +1921,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ONDETECTED",
+                    name: "ON_DETECTED",
                     description: Some(
                         "Samples from DFLT0 transfered into the memory when SAD is in DETECT state.",
                     ),
@@ -2055,56 +2055,56 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "FRAMES4",
+                    name: "FRAMES_4",
                     description: Some(
                         "SAD back to MONITOR state if sound is below threshold for 4 frames.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FRAMES8",
+                    name: "FRAMES_8",
                     description: Some(
                         "SAD back to MONITOR state if sound is below threshold for 4 frames.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "FRAMES16",
+                    name: "FRAMES_16",
                     description: Some(
                         "SAD back to MONITOR state if sound is below threshold for 4 frames.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "FRAMES32",
+                    name: "FRAMES_32",
                     description: Some(
                         "SAD back to MONITOR state if sound is below threshold for 4 frames.",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "FRAMES64",
+                    name: "FRAMES_64",
                     description: Some(
                         "SAD back to MONITOR state if sound is below threshold for 4 frames.",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "FRAMES128",
+                    name: "FRAMES_128",
                     description: Some(
                         "SAD back to MONITOR state if sound is below threshold for 4 frames.",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "FRAMES256",
+                    name: "FRAMES_256",
                     description: Some(
                         "SAD back to MONITOR state if sound is below threshold for 4 frames.",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "FRAMES512",
+                    name: "FRAMES_512",
                     description: Some(
                         "SAD back to MONITOR state if sound is below threshold for 4 frames.",
                     ),
@@ -2157,35 +2157,35 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "FRAMES2",
+                    name: "FRAMES_2",
                     description: Some(
                         "2 samples.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FRAMES4",
+                    name: "FRAMES_4",
                     description: Some(
                         "4 samples.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "FRAMES8",
+                    name: "FRAMES_8",
                     description: Some(
                         "8 samples.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "FRAMES16",
+                    name: "FRAMES_16",
                     description: Some(
                         "16 samples.",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "FRAMES32",
+                    name: "FRAMES_32",
                     description: Some(
                         "32 samples.",
                     ),
@@ -2224,14 +2224,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOTEMPTY",
+                    name: "NOT_EMPTY",
                     description: Some(
                         "RXFIFO threshold event generated when the RXFIFO is not empty",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HALFFULL",
+                    name: "HALF_FULL",
                     description: Some(
                         "RXFIFO threshold event generated when the RXFIFO is half-full",
                     ),
@@ -2247,21 +2247,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "THRESHOLDESTIMATEDAMBIENTNOISE",
+                    name: "THRESHOLD_ESTIMATED_AMBIENT_NOISE",
                     description: Some(
                         "Threshold value computed according to the estimated ambient noise. The SAD triggers when the sound level (SDLVL) is bigger than the defined threshold. In this mode, the SAD works like a voice activity detector.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "THRESHOLDMINIMUMNOISELEVEL",
+                    name: "THRESHOLD_MINIMUM_NOISELEVEL",
                     description: Some(
                         "Threshold value equal to ANMIN[12:0], multiplied by the gain selected by SNTHR[3:0] The SAD triggers when the sound level (SDLVL) is bigger than the defined threshold. In this mode, the SAD works like a sound detector.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "THRESHOLDMINIMUMNOISELEVELX4",
+                    name: "THRESHOLD_MINIMUM_NOISELEVELX4",
                     description: Some(
                         "Threshold value given by 4 x ANMIN[12:0]. The SAD triggers when the estimated ambient noise (ANLVL), multiplied by the gain selected by SNTHR[3:0] is bigger than the defined threshold. In this mode, the SAD is working like an ambient noise estimator. Hysteresis function cannot be used in this mode.",
                     ),
@@ -2344,28 +2344,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "MASTERSPI",
+                    name: "MASTER_SPI",
                     description: Some(
                         "LF_MASTER SPI mode.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NORMALSPI",
+                    name: "NORMAL_SPI",
                     description: Some(
                         "Normal SPI mode.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MANCHESTERFALLING",
+                    name: "MANCHESTER_FALLING",
                     description: Some(
                         "Manchester mode rising edge = logic 0, falling edge = logic 1.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "MANCHESTERRISING",
+                    name: "MANCHESTER_RISING",
                     description: Some(
                         "Manchester mode rising edge = logic 1, falling edge = logic 0.",
                     ),
@@ -2381,70 +2381,70 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "NOISEPLUS3_5",
+                    name: "NOISE_PLUS_3_5",
                     description: Some(
                         "Threshold is 3.5 dB higher than ANLVL",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NOISEPLUS6_0",
+                    name: "NOISE_PLUS_6_0",
                     description: Some(
                         "Threshold is 6.0 dB higher than ANLVL",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "NOISEPLUS9_5",
+                    name: "NOISE_PLUS_9_5",
                     description: Some(
                         "Threshold is 9.5 dB higher than ANLVL",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "NOISEPLUS12",
+                    name: "NOISE_PLUS_12",
                     description: Some(
                         "Threshold is 12 dB higher than ANLVL",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "NOISEPLUS15_6",
+                    name: "NOISE_PLUS_15_6",
                     description: Some(
                         "Threshold is 15.6 dB higher than ANLVL",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "NOISEPLUS18",
+                    name: "NOISE_PLUS_18",
                     description: Some(
                         "Threshold is 18 dB higher than ANLVL",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "NOISEPLUS21_6",
+                    name: "NOISE_PLUS_21_6",
                     description: Some(
                         "Threshold is 21.6 dB higher than ANLVL",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "NOISEPLUS24_1",
+                    name: "NOISE_PLUS_24_1",
                     description: Some(
                         "Threshold is 24.1 dB higher than ANLVL",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "NOISEPLUS27_6",
+                    name: "NOISE_PLUS_27_6",
                     description: Some(
                         "Threshold is 27.6 dB higher than ANLVL",
                     ),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "NOISEPLUS30_1",
+                    name: "NOISE_PLUS_30_1",
                     description: Some(
                         "Threshold is 30.1 dB higher than ANLVL",
                     ),
@@ -2460,14 +2460,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RISINGEDGE",
+                    name: "RISING_EDGE",
                     description: Some(
                         "A rising edge event triggers the activation of CKGEN dividers.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FALLINGEDGE",
+                    name: "FALLING_EDGE",
                     description: Some(
                         "A falling edge even triggers the activation of CKGEN dividers.",
                     ),

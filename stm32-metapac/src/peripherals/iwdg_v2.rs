@@ -69,6 +69,22 @@ pub mod regs {
             Kr(0)
         }
     }
+    impl core::fmt::Debug for Kr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Kr").field("key", &self.key()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Kr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Kr {
+                key: super::vals::Key,
+            }
+            let proxy = Kr { key: self.key() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Prescaler register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -92,6 +108,22 @@ pub mod regs {
             Pr(0)
         }
     }
+    impl core::fmt::Debug for Pr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pr").field("pr", &self.pr()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pr {
+                pr: super::vals::Pr,
+            }
+            let proxy = Pr { pr: self.pr() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Reload register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -113,6 +145,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Rlr {
             Rlr(0)
+        }
+    }
+    impl core::fmt::Debug for Rlr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rlr").field("rl", &self.rl()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rlr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rlr {
+                rl: u16,
+            }
+            let proxy = Rlr { rl: self.rl() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status register"]
@@ -160,6 +208,32 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("pvu", &self.pvu())
+                .field("rvu", &self.rvu())
+                .field("wvu", &self.wvu())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                pvu: bool,
+                rvu: bool,
+                wvu: bool,
+            }
+            let proxy = Sr {
+                pvu: self.pvu(),
+                rvu: self.rvu(),
+                wvu: self.wvu(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Window register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -183,6 +257,22 @@ pub mod regs {
             Winr(0)
         }
     }
+    impl core::fmt::Debug for Winr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Winr").field("win", &self.win()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Winr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Winr {
+                win: u16,
+            }
+            let proxy = Winr { win: self.win() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(transparent)]
@@ -204,6 +294,27 @@ pub mod vals {
             self.0
         }
     }
+    impl core::fmt::Debug for Key {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            match self.0 {
+                0x5555 => f.write_str("ENABLE"),
+                0xaaaa => f.write_str("RESET"),
+                0xcccc => f.write_str("START"),
+                other => core::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Key {
+        fn format(&self, f: defmt::Formatter) {
+            match self.0 {
+                0x5555 => defmt::write!(f, "ENABLE"),
+                0xaaaa => defmt::write!(f, "RESET"),
+                0xcccc => defmt::write!(f, "START"),
+                other => defmt::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
     impl From<u16> for Key {
         #[inline(always)]
         fn from(val: u16) -> Key {
@@ -217,24 +328,25 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pr {
         #[doc = "Divider /4"]
-        DIVIDEBY4 = 0x0,
+        DIVIDE_BY4 = 0x0,
         #[doc = "Divider /8"]
-        DIVIDEBY8 = 0x01,
+        DIVIDE_BY8 = 0x01,
         #[doc = "Divider /16"]
-        DIVIDEBY16 = 0x02,
+        DIVIDE_BY16 = 0x02,
         #[doc = "Divider /32"]
-        DIVIDEBY32 = 0x03,
+        DIVIDE_BY32 = 0x03,
         #[doc = "Divider /64"]
-        DIVIDEBY64 = 0x04,
+        DIVIDE_BY64 = 0x04,
         #[doc = "Divider /128"]
-        DIVIDEBY128 = 0x05,
+        DIVIDE_BY128 = 0x05,
         #[doc = "Divider /256"]
-        DIVIDEBY256 = 0x06,
+        DIVIDE_BY256 = 0x06,
         #[doc = "Divider /256"]
-        DIVIDEBY256BIS = 0x07,
+        DIVIDE_BY256BIS = 0x07,
     }
     impl Pr {
         #[inline(always)]

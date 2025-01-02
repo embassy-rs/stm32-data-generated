@@ -158,6 +158,47 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("init", &self.init())
+                .field("dmae", &self.dmae())
+                .field("datatype", &self.datatype())
+                .field("mode", &self.mode())
+                .field("algo", &self.algo())
+                .field("nbw", &self.nbw())
+                .field("dinne", &self.dinne())
+                .field("lkey", &self.lkey())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                init: bool,
+                dmae: bool,
+                datatype: u8,
+                mode: bool,
+                algo: bool,
+                nbw: u8,
+                dinne: bool,
+                lkey: bool,
+            }
+            let proxy = Cr {
+                init: self.init(),
+                dmae: self.dmae(),
+                datatype: self.datatype(),
+                mode: self.mode(),
+                algo: self.algo(),
+                nbw: self.nbw(),
+                dinne: self.dinne(),
+                lkey: self.lkey(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "interrupt enable register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -190,6 +231,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Imr {
             Imr(0)
+        }
+    }
+    impl core::fmt::Debug for Imr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Imr")
+                .field("dinie", &self.dinie())
+                .field("dcie", &self.dcie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Imr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Imr {
+                dinie: bool,
+                dcie: bool,
+            }
+            let proxy = Imr {
+                dinie: self.dinie(),
+                dcie: self.dcie(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "status register."]
@@ -248,6 +312,35 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("dinis", &self.dinis())
+                .field("dcis", &self.dcis())
+                .field("dmas", &self.dmas())
+                .field("busy", &self.busy())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                dinis: bool,
+                dcis: bool,
+                dmas: bool,
+                busy: bool,
+            }
+            let proxy = Sr {
+                dinis: self.dinis(),
+                dcis: self.dcis(),
+                dmas: self.dmas(),
+                busy: self.busy(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "start register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -280,6 +373,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Str {
             Str(0)
+        }
+    }
+    impl core::fmt::Debug for Str {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Str")
+                .field("nblw", &self.nblw())
+                .field("dcal", &self.dcal())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Str {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Str {
+                nblw: u8,
+                dcal: bool,
+            }
+            let proxy = Str {
+                nblw: self.nblw(),
+                dcal: self.dcal(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

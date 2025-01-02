@@ -307,6 +307,80 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("en", &self.en())
+                .field("dmeie", &self.dmeie())
+                .field("teie", &self.teie())
+                .field("htie", &self.htie())
+                .field("tcie", &self.tcie())
+                .field("pfctrl", &self.pfctrl())
+                .field("dir", &self.dir())
+                .field("circ", &self.circ())
+                .field("pinc", &self.pinc())
+                .field("minc", &self.minc())
+                .field("psize", &self.psize())
+                .field("msize", &self.msize())
+                .field("pincos", &self.pincos())
+                .field("pl", &self.pl())
+                .field("dbm", &self.dbm())
+                .field("ct", &self.ct())
+                .field("trbuff", &self.trbuff())
+                .field("pburst", &self.pburst())
+                .field("mburst", &self.mburst())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                en: bool,
+                dmeie: bool,
+                teie: bool,
+                htie: bool,
+                tcie: bool,
+                pfctrl: super::vals::Pfctrl,
+                dir: super::vals::Dir,
+                circ: bool,
+                pinc: bool,
+                minc: bool,
+                psize: super::vals::Size,
+                msize: super::vals::Size,
+                pincos: super::vals::Pincos,
+                pl: super::vals::Pl,
+                dbm: bool,
+                ct: super::vals::Ct,
+                trbuff: bool,
+                pburst: super::vals::Burst,
+                mburst: super::vals::Burst,
+            }
+            let proxy = Cr {
+                en: self.en(),
+                dmeie: self.dmeie(),
+                teie: self.teie(),
+                htie: self.htie(),
+                tcie: self.tcie(),
+                pfctrl: self.pfctrl(),
+                dir: self.dir(),
+                circ: self.circ(),
+                pinc: self.pinc(),
+                minc: self.minc(),
+                psize: self.psize(),
+                msize: self.msize(),
+                pincos: self.pincos(),
+                pl: self.pl(),
+                dbm: self.dbm(),
+                ct: self.ct(),
+                trbuff: self.trbuff(),
+                pburst: self.pburst(),
+                mburst: self.mburst(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "stream x FIFO control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -361,6 +435,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Fcr {
             Fcr(0)
+        }
+    }
+    impl core::fmt::Debug for Fcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fcr")
+                .field("fth", &self.fth())
+                .field("dmdis", &self.dmdis())
+                .field("fs", &self.fs())
+                .field("feie", &self.feie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fcr {
+                fth: super::vals::Fth,
+                dmdis: super::vals::Dmdis,
+                fs: super::vals::Fs,
+                feie: bool,
+            }
+            let proxy = Fcr {
+                fth: self.fth(),
+                dmdis: self.dmdis(),
+                fs: self.fs(),
+                feie: self.feie(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "interrupt register"]
@@ -450,6 +553,103 @@ pub mod regs {
             Ixr(0)
         }
     }
+    impl core::fmt::Debug for Ixr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ixr")
+                .field(
+                    "feif",
+                    &[
+                        self.feif(0usize),
+                        self.feif(1usize),
+                        self.feif(2usize),
+                        self.feif(3usize),
+                    ],
+                )
+                .field(
+                    "dmeif",
+                    &[
+                        self.dmeif(0usize),
+                        self.dmeif(1usize),
+                        self.dmeif(2usize),
+                        self.dmeif(3usize),
+                    ],
+                )
+                .field(
+                    "teif",
+                    &[
+                        self.teif(0usize),
+                        self.teif(1usize),
+                        self.teif(2usize),
+                        self.teif(3usize),
+                    ],
+                )
+                .field(
+                    "htif",
+                    &[
+                        self.htif(0usize),
+                        self.htif(1usize),
+                        self.htif(2usize),
+                        self.htif(3usize),
+                    ],
+                )
+                .field(
+                    "tcif",
+                    &[
+                        self.tcif(0usize),
+                        self.tcif(1usize),
+                        self.tcif(2usize),
+                        self.tcif(3usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ixr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ixr {
+                feif: [bool; 4usize],
+                dmeif: [bool; 4usize],
+                teif: [bool; 4usize],
+                htif: [bool; 4usize],
+                tcif: [bool; 4usize],
+            }
+            let proxy = Ixr {
+                feif: [
+                    self.feif(0usize),
+                    self.feif(1usize),
+                    self.feif(2usize),
+                    self.feif(3usize),
+                ],
+                dmeif: [
+                    self.dmeif(0usize),
+                    self.dmeif(1usize),
+                    self.dmeif(2usize),
+                    self.dmeif(3usize),
+                ],
+                teif: [
+                    self.teif(0usize),
+                    self.teif(1usize),
+                    self.teif(2usize),
+                    self.teif(3usize),
+                ],
+                htif: [
+                    self.htif(0usize),
+                    self.htif(1usize),
+                    self.htif(2usize),
+                    self.htif(3usize),
+                ],
+                tcif: [
+                    self.tcif(0usize),
+                    self.tcif(1usize),
+                    self.tcif(2usize),
+                    self.tcif(3usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "stream x number of data register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -473,10 +673,27 @@ pub mod regs {
             Ndtr(0)
         }
     }
+    impl core::fmt::Debug for Ndtr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ndtr").field("ndt", &self.ndt()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ndtr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ndtr {
+                ndt: u16,
+            }
+            let proxy = Ndtr { ndt: self.ndt() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Burst {
         #[doc = "Single transfer"]
         SINGLE = 0x0,
@@ -510,7 +727,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ct {
         #[doc = "The current target memory is Memory 0"]
         MEMORY0 = 0x0,
@@ -540,14 +758,15 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dir {
         #[doc = "Peripheral-to-memory"]
-        PERIPHERALTOMEMORY = 0x0,
+        PERIPHERAL_TO_MEMORY = 0x0,
         #[doc = "Memory-to-peripheral"]
-        MEMORYTOPERIPHERAL = 0x01,
+        MEMORY_TO_PERIPHERAL = 0x01,
         #[doc = "Memory-to-memory"]
-        MEMORYTOMEMORY = 0x02,
+        MEMORY_TO_MEMORY = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Dir {
@@ -573,7 +792,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dmdis {
         #[doc = "Direct mode is enabled"]
         ENABLED = 0x0,
@@ -603,7 +823,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fs {
         #[doc = "0 < fifo_level < 1/4"]
         QUARTER1 = 0x0,
@@ -643,14 +864,15 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fth {
         #[doc = "1/4 full FIFO"]
         QUARTER = 0x0,
         #[doc = "1/2 full FIFO"]
         HALF = 0x01,
         #[doc = "3/4 full FIFO"]
-        THREEQUARTERS = 0x02,
+        THREE_QUARTERS = 0x02,
         #[doc = "Full FIFO"]
         FULL = 0x03,
     }
@@ -677,7 +899,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pfctrl {
         #[doc = "The DMA is the flow controller"]
         DMA = 0x0,
@@ -707,7 +930,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pincos {
         #[doc = "The offset size for the peripheral address calculation is linked to the PSIZE"]
         PSIZE = 0x0,
@@ -737,7 +961,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pl {
         #[doc = "Low"]
         LOW = 0x0,
@@ -746,7 +971,7 @@ pub mod vals {
         #[doc = "High"]
         HIGH = 0x02,
         #[doc = "Very high"]
-        VERYHIGH = 0x03,
+        VERY_HIGH = 0x03,
     }
     impl Pl {
         #[inline(always)]
@@ -771,7 +996,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Size {
         #[doc = "Byte (8-bit)"]
         BITS8 = 0x0,

@@ -329,6 +329,41 @@ pub mod regs {
             Acr(0)
         }
     }
+    impl core::fmt::Debug for Acr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Acr")
+                .field("latency", &self.latency())
+                .field("prften", &self.prften())
+                .field("lpm", &self.lpm())
+                .field("pdreq1", &self.pdreq1())
+                .field("pdreq2", &self.pdreq2())
+                .field("sleep_pd", &self.sleep_pd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Acr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Acr {
+                latency: u8,
+                prften: bool,
+                lpm: super::vals::Lpm,
+                pdreq1: super::vals::Pdreq,
+                pdreq2: super::vals::Pdreq,
+                sleep_pd: super::vals::SleepPd,
+            }
+            let proxy = Acr {
+                latency: self.latency(),
+                prften: self.prften(),
+                lpm: self.lpm(),
+                pdreq1: self.pdreq1(),
+                pdreq2: self.pdreq2(),
+                sleep_pd: self.sleep_pd(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH ECC register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -407,6 +442,41 @@ pub mod regs {
             Eccr(0)
         }
     }
+    impl core::fmt::Debug for Eccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Eccr")
+                .field("addr_ecc", &self.addr_ecc())
+                .field("bk_ecc", &self.bk_ecc())
+                .field("sysf_ecc", &self.sysf_ecc())
+                .field("eccie", &self.eccie())
+                .field("eccc", &self.eccc())
+                .field("eccd", &self.eccd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Eccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Eccr {
+                addr_ecc: u32,
+                bk_ecc: super::vals::BkEcc,
+                sysf_ecc: bool,
+                eccie: super::vals::Eccie,
+                eccc: bool,
+                eccd: bool,
+            }
+            let proxy = Eccr {
+                addr_ecc: self.addr_ecc(),
+                bk_ecc: self.bk_ecc(),
+                sysf_ecc: self.sysf_ecc(),
+                eccie: self.eccie(),
+                eccc: self.eccc(),
+                eccd: self.eccd(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH non-secure boot address 0 register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -436,6 +506,26 @@ pub mod regs {
             Nsbootadd0r(0)
         }
     }
+    impl core::fmt::Debug for Nsbootadd0r {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Nsbootadd0r")
+                .field("nsbootadd0", &self.nsbootadd0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Nsbootadd0r {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Nsbootadd0r {
+                nsbootadd0: u32,
+            }
+            let proxy = Nsbootadd0r {
+                nsbootadd0: self.nsbootadd0(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH non-secure boot address 1 register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -463,6 +553,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Nsbootadd1r {
             Nsbootadd1r(0)
+        }
+    }
+    impl core::fmt::Debug for Nsbootadd1r {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Nsbootadd1r")
+                .field("nsbootadd1", &self.nsbootadd1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Nsbootadd1r {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Nsbootadd1r {
+                nsbootadd1: u32,
+            }
+            let proxy = Nsbootadd1r {
+                nsbootadd1: self.nsbootadd1(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH non-secure control register"]
@@ -631,6 +741,65 @@ pub mod regs {
             Nscr(0)
         }
     }
+    impl core::fmt::Debug for Nscr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Nscr")
+                .field("pg", &self.pg())
+                .field("per", &self.per())
+                .field("mer1", &self.mer1())
+                .field("pnb", &self.pnb())
+                .field("bker", &self.bker())
+                .field("bwr", &self.bwr())
+                .field("mer2", &self.mer2())
+                .field("strt", &self.strt())
+                .field("optstrt", &self.optstrt())
+                .field("eopie", &self.eopie())
+                .field("errie", &self.errie())
+                .field("obl_launch", &self.obl_launch())
+                .field("optlock", &self.optlock())
+                .field("lock", &self.lock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Nscr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Nscr {
+                pg: super::vals::NscrPg,
+                per: super::vals::NscrPer,
+                mer1: bool,
+                pnb: u8,
+                bker: super::vals::NscrBker,
+                bwr: bool,
+                mer2: bool,
+                strt: bool,
+                optstrt: bool,
+                eopie: super::vals::NscrEopie,
+                errie: super::vals::NscrErrie,
+                obl_launch: super::vals::OblLaunch,
+                optlock: bool,
+                lock: bool,
+            }
+            let proxy = Nscr {
+                pg: self.pg(),
+                per: self.per(),
+                mer1: self.mer1(),
+                pnb: self.pnb(),
+                bker: self.bker(),
+                bwr: self.bwr(),
+                mer2: self.mer2(),
+                strt: self.strt(),
+                optstrt: self.optstrt(),
+                eopie: self.eopie(),
+                errie: self.errie(),
+                obl_launch: self.obl_launch(),
+                optlock: self.optlock(),
+                lock: self.lock(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH non-secure status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -797,6 +966,65 @@ pub mod regs {
             Nssr(0)
         }
     }
+    impl core::fmt::Debug for Nssr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Nssr")
+                .field("eop", &self.eop())
+                .field("operr", &self.operr())
+                .field("progerr", &self.progerr())
+                .field("wrperr", &self.wrperr())
+                .field("pgaerr", &self.pgaerr())
+                .field("sizerr", &self.sizerr())
+                .field("pgserr", &self.pgserr())
+                .field("optwerr", &self.optwerr())
+                .field("bsy", &self.bsy())
+                .field("wdw", &self.wdw())
+                .field("oem1lock", &self.oem1lock())
+                .field("oem2lock", &self.oem2lock())
+                .field("pd1", &self.pd1())
+                .field("pd2", &self.pd2())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Nssr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Nssr {
+                eop: bool,
+                operr: bool,
+                progerr: bool,
+                wrperr: bool,
+                pgaerr: bool,
+                sizerr: bool,
+                pgserr: bool,
+                optwerr: bool,
+                bsy: bool,
+                wdw: bool,
+                oem1lock: bool,
+                oem2lock: bool,
+                pd1: bool,
+                pd2: bool,
+            }
+            let proxy = Nssr {
+                eop: self.eop(),
+                operr: self.operr(),
+                progerr: self.progerr(),
+                wrperr: self.wrperr(),
+                pgaerr: self.pgaerr(),
+                sizerr: self.sizerr(),
+                pgserr: self.pgserr(),
+                optwerr: self.optwerr(),
+                bsy: self.bsy(),
+                wdw: self.wdw(),
+                oem1lock: self.oem1lock(),
+                oem2lock: self.oem2lock(),
+                pd1: self.pd1(),
+                pd2: self.pd2(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH OEM1 key register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -818,6 +1046,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Oem1keyr1 {
             Oem1keyr1(0)
+        }
+    }
+    impl core::fmt::Debug for Oem1keyr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Oem1keyr1").field("oem1key", &self.oem1key()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Oem1keyr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Oem1keyr1 {
+                oem1key: u32,
+            }
+            let proxy = Oem1keyr1 {
+                oem1key: self.oem1key(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH OEM1 key register 2"]
@@ -843,6 +1089,24 @@ pub mod regs {
             Oem1keyr2(0)
         }
     }
+    impl core::fmt::Debug for Oem1keyr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Oem1keyr2").field("oem1key", &self.oem1key()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Oem1keyr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Oem1keyr2 {
+                oem1key: u32,
+            }
+            let proxy = Oem1keyr2 {
+                oem1key: self.oem1key(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH OEM2 key register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -866,6 +1130,24 @@ pub mod regs {
             Oem2keyr1(0)
         }
     }
+    impl core::fmt::Debug for Oem2keyr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Oem2keyr1").field("oem2key", &self.oem2key()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Oem2keyr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Oem2keyr1 {
+                oem2key: u32,
+            }
+            let proxy = Oem2keyr1 {
+                oem2key: self.oem2key(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH OEM2 key register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -887,6 +1169,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Oem2keyr2 {
             Oem2keyr2(0)
+        }
+    }
+    impl core::fmt::Debug for Oem2keyr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Oem2keyr2").field("oem2key", &self.oem2key()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Oem2keyr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Oem2keyr2 {
+                oem2key: u32,
+            }
+            let proxy = Oem2keyr2 {
+                oem2key: self.oem2key(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH operation status register"]
@@ -943,6 +1243,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Opsr {
             Opsr(0)
+        }
+    }
+    impl core::fmt::Debug for Opsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Opsr")
+                .field("addr_op", &self.addr_op())
+                .field("bk_op", &self.bk_op())
+                .field("sysf_op", &self.sysf_op())
+                .field("code_op", &self.code_op())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Opsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Opsr {
+                addr_op: u32,
+                bk_op: super::vals::BkOp,
+                sysf_op: bool,
+                code_op: super::vals::CodeOp,
+            }
+            let proxy = Opsr {
+                addr_op: self.addr_op(),
+                bk_op: self.bk_op(),
+                sysf_op: self.sysf_op(),
+                code_op: self.code_op(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH option register"]
@@ -1199,6 +1528,89 @@ pub mod regs {
             Optr(0)
         }
     }
+    impl core::fmt::Debug for Optr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Optr")
+                .field("rdp", &self.rdp())
+                .field("bor_lev", &self.bor_lev())
+                .field("n_rst_stop", &self.n_rst_stop())
+                .field("n_rst_stdby", &self.n_rst_stdby())
+                .field("n_rst_shdw", &self.n_rst_shdw())
+                .field("sram1345_rst", &self.sram1345_rst())
+                .field("iwdg_sw", &self.iwdg_sw())
+                .field("iwdg_stop", &self.iwdg_stop())
+                .field("iwdg_stdby", &self.iwdg_stdby())
+                .field("wwdg_sw", &self.wwdg_sw())
+                .field("swap_bank", &self.swap_bank())
+                .field("dualbank", &self.dualbank())
+                .field("bkpsram_ecc", &self.bkpsram_ecc())
+                .field("sram3_ecc", &self.sram3_ecc())
+                .field("sram2_ecc", &self.sram2_ecc())
+                .field("sram2_rst", &self.sram2_rst())
+                .field("n_swboot0", &self.n_swboot0())
+                .field("n_boot0", &self.n_boot0())
+                .field("pa15_pupen", &self.pa15_pupen())
+                .field("io_vdd_hslv", &self.io_vdd_hslv())
+                .field("io_vddio2_hslv", &self.io_vddio2_hslv())
+                .field("tzen", &self.tzen())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Optr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Optr {
+                rdp: super::vals::Rdp,
+                bor_lev: super::vals::BorLev,
+                n_rst_stop: super::vals::NRstStop,
+                n_rst_stdby: super::vals::NRstStdby,
+                n_rst_shdw: super::vals::NRstShdw,
+                sram1345_rst: bool,
+                iwdg_sw: super::vals::IwdgSw,
+                iwdg_stop: super::vals::IwdgStop,
+                iwdg_stdby: super::vals::IwdgStdby,
+                wwdg_sw: super::vals::WwdgSw,
+                swap_bank: super::vals::SwapBank,
+                dualbank: super::vals::Dualbank,
+                bkpsram_ecc: super::vals::BkpsramEcc,
+                sram3_ecc: super::vals::SramEcc,
+                sram2_ecc: super::vals::SramEcc,
+                sram2_rst: bool,
+                n_swboot0: super::vals::NSwboot,
+                n_boot0: super::vals::NBoot,
+                pa15_pupen: bool,
+                io_vdd_hslv: super::vals::IoVddHslv,
+                io_vddio2_hslv: super::vals::IoVddioHslv,
+                tzen: bool,
+            }
+            let proxy = Optr {
+                rdp: self.rdp(),
+                bor_lev: self.bor_lev(),
+                n_rst_stop: self.n_rst_stop(),
+                n_rst_stdby: self.n_rst_stdby(),
+                n_rst_shdw: self.n_rst_shdw(),
+                sram1345_rst: self.sram1345_rst(),
+                iwdg_sw: self.iwdg_sw(),
+                iwdg_stop: self.iwdg_stop(),
+                iwdg_stdby: self.iwdg_stdby(),
+                wwdg_sw: self.wwdg_sw(),
+                swap_bank: self.swap_bank(),
+                dualbank: self.dualbank(),
+                bkpsram_ecc: self.bkpsram_ecc(),
+                sram3_ecc: self.sram3_ecc(),
+                sram2_ecc: self.sram2_ecc(),
+                sram2_rst: self.sram2_rst(),
+                n_swboot0: self.n_swboot0(),
+                n_boot0: self.n_boot0(),
+                pa15_pupen: self.pa15_pupen(),
+                io_vdd_hslv: self.io_vdd_hslv(),
+                io_vddio2_hslv: self.io_vddio2_hslv(),
+                tzen: self.tzen(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH bank 1 power-down key register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1222,6 +1634,22 @@ pub mod regs {
             Pdkey1r(0)
         }
     }
+    impl core::fmt::Debug for Pdkey1r {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pdkey1r").field("pdkey1", &self.pdkey1()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pdkey1r {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pdkey1r {
+                pdkey1: u32,
+            }
+            let proxy = Pdkey1r { pdkey1: self.pdkey1() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH bank 2 power-down key register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1243,6 +1671,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Pdkey2r {
             Pdkey2r(0)
+        }
+    }
+    impl core::fmt::Debug for Pdkey2r {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pdkey2r").field("pdkey2", &self.pdkey2()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pdkey2r {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pdkey2r {
+                pdkey2: u32,
+            }
+            let proxy = Pdkey2r { pdkey2: self.pdkey2() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH privilege block based bank 1 register 1"]
@@ -1609,6 +2053,119 @@ pub mod regs {
             Priv1bbr1(0)
         }
     }
+    impl core::fmt::Debug for Priv1bbr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Priv1bbr1")
+                .field("priv1bb0", &self.priv1bb0())
+                .field("priv1bb1", &self.priv1bb1())
+                .field("priv1bb2", &self.priv1bb2())
+                .field("priv1bb3", &self.priv1bb3())
+                .field("priv1bb4", &self.priv1bb4())
+                .field("priv1bb5", &self.priv1bb5())
+                .field("priv1bb6", &self.priv1bb6())
+                .field("priv1bb7", &self.priv1bb7())
+                .field("priv1bb8", &self.priv1bb8())
+                .field("priv1bb9", &self.priv1bb9())
+                .field("priv1bb10", &self.priv1bb10())
+                .field("priv1bb11", &self.priv1bb11())
+                .field("priv1bb12", &self.priv1bb12())
+                .field("priv1bb13", &self.priv1bb13())
+                .field("priv1bb14", &self.priv1bb14())
+                .field("priv1bb15", &self.priv1bb15())
+                .field("priv1bb16", &self.priv1bb16())
+                .field("priv1bb17", &self.priv1bb17())
+                .field("priv1bb18", &self.priv1bb18())
+                .field("priv1bb19", &self.priv1bb19())
+                .field("priv1bb20", &self.priv1bb20())
+                .field("priv1bb21", &self.priv1bb21())
+                .field("priv1bb22", &self.priv1bb22())
+                .field("priv1bb23", &self.priv1bb23())
+                .field("priv1bb24", &self.priv1bb24())
+                .field("priv1bb25", &self.priv1bb25())
+                .field("priv1bb26", &self.priv1bb26())
+                .field("priv1bb27", &self.priv1bb27())
+                .field("priv1bb28", &self.priv1bb28())
+                .field("priv1bb29", &self.priv1bb29())
+                .field("priv1bb30", &self.priv1bb30())
+                .field("priv1bb31", &self.priv1bb31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Priv1bbr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Priv1bbr1 {
+                priv1bb0: bool,
+                priv1bb1: bool,
+                priv1bb2: bool,
+                priv1bb3: bool,
+                priv1bb4: bool,
+                priv1bb5: bool,
+                priv1bb6: bool,
+                priv1bb7: bool,
+                priv1bb8: bool,
+                priv1bb9: bool,
+                priv1bb10: bool,
+                priv1bb11: bool,
+                priv1bb12: bool,
+                priv1bb13: bool,
+                priv1bb14: bool,
+                priv1bb15: bool,
+                priv1bb16: bool,
+                priv1bb17: bool,
+                priv1bb18: bool,
+                priv1bb19: bool,
+                priv1bb20: bool,
+                priv1bb21: bool,
+                priv1bb22: bool,
+                priv1bb23: bool,
+                priv1bb24: bool,
+                priv1bb25: bool,
+                priv1bb26: bool,
+                priv1bb27: bool,
+                priv1bb28: bool,
+                priv1bb29: bool,
+                priv1bb30: bool,
+                priv1bb31: bool,
+            }
+            let proxy = Priv1bbr1 {
+                priv1bb0: self.priv1bb0(),
+                priv1bb1: self.priv1bb1(),
+                priv1bb2: self.priv1bb2(),
+                priv1bb3: self.priv1bb3(),
+                priv1bb4: self.priv1bb4(),
+                priv1bb5: self.priv1bb5(),
+                priv1bb6: self.priv1bb6(),
+                priv1bb7: self.priv1bb7(),
+                priv1bb8: self.priv1bb8(),
+                priv1bb9: self.priv1bb9(),
+                priv1bb10: self.priv1bb10(),
+                priv1bb11: self.priv1bb11(),
+                priv1bb12: self.priv1bb12(),
+                priv1bb13: self.priv1bb13(),
+                priv1bb14: self.priv1bb14(),
+                priv1bb15: self.priv1bb15(),
+                priv1bb16: self.priv1bb16(),
+                priv1bb17: self.priv1bb17(),
+                priv1bb18: self.priv1bb18(),
+                priv1bb19: self.priv1bb19(),
+                priv1bb20: self.priv1bb20(),
+                priv1bb21: self.priv1bb21(),
+                priv1bb22: self.priv1bb22(),
+                priv1bb23: self.priv1bb23(),
+                priv1bb24: self.priv1bb24(),
+                priv1bb25: self.priv1bb25(),
+                priv1bb26: self.priv1bb26(),
+                priv1bb27: self.priv1bb27(),
+                priv1bb28: self.priv1bb28(),
+                priv1bb29: self.priv1bb29(),
+                priv1bb30: self.priv1bb30(),
+                priv1bb31: self.priv1bb31(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH privilege block based bank 1 register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1971,6 +2528,119 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Priv1bbr2 {
             Priv1bbr2(0)
+        }
+    }
+    impl core::fmt::Debug for Priv1bbr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Priv1bbr2")
+                .field("priv1bb0", &self.priv1bb0())
+                .field("priv1bb1", &self.priv1bb1())
+                .field("priv1bb2", &self.priv1bb2())
+                .field("priv1bb3", &self.priv1bb3())
+                .field("priv1bb4", &self.priv1bb4())
+                .field("priv1bb5", &self.priv1bb5())
+                .field("priv1bb6", &self.priv1bb6())
+                .field("priv1bb7", &self.priv1bb7())
+                .field("priv1bb8", &self.priv1bb8())
+                .field("priv1bb9", &self.priv1bb9())
+                .field("priv1bb10", &self.priv1bb10())
+                .field("priv1bb11", &self.priv1bb11())
+                .field("priv1bb12", &self.priv1bb12())
+                .field("priv1bb13", &self.priv1bb13())
+                .field("priv1bb14", &self.priv1bb14())
+                .field("priv1bb15", &self.priv1bb15())
+                .field("priv1bb16", &self.priv1bb16())
+                .field("priv1bb17", &self.priv1bb17())
+                .field("priv1bb18", &self.priv1bb18())
+                .field("priv1bb19", &self.priv1bb19())
+                .field("priv1bb20", &self.priv1bb20())
+                .field("priv1bb21", &self.priv1bb21())
+                .field("priv1bb22", &self.priv1bb22())
+                .field("priv1bb23", &self.priv1bb23())
+                .field("priv1bb24", &self.priv1bb24())
+                .field("priv1bb25", &self.priv1bb25())
+                .field("priv1bb26", &self.priv1bb26())
+                .field("priv1bb27", &self.priv1bb27())
+                .field("priv1bb28", &self.priv1bb28())
+                .field("priv1bb29", &self.priv1bb29())
+                .field("priv1bb30", &self.priv1bb30())
+                .field("priv1bb31", &self.priv1bb31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Priv1bbr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Priv1bbr2 {
+                priv1bb0: bool,
+                priv1bb1: bool,
+                priv1bb2: bool,
+                priv1bb3: bool,
+                priv1bb4: bool,
+                priv1bb5: bool,
+                priv1bb6: bool,
+                priv1bb7: bool,
+                priv1bb8: bool,
+                priv1bb9: bool,
+                priv1bb10: bool,
+                priv1bb11: bool,
+                priv1bb12: bool,
+                priv1bb13: bool,
+                priv1bb14: bool,
+                priv1bb15: bool,
+                priv1bb16: bool,
+                priv1bb17: bool,
+                priv1bb18: bool,
+                priv1bb19: bool,
+                priv1bb20: bool,
+                priv1bb21: bool,
+                priv1bb22: bool,
+                priv1bb23: bool,
+                priv1bb24: bool,
+                priv1bb25: bool,
+                priv1bb26: bool,
+                priv1bb27: bool,
+                priv1bb28: bool,
+                priv1bb29: bool,
+                priv1bb30: bool,
+                priv1bb31: bool,
+            }
+            let proxy = Priv1bbr2 {
+                priv1bb0: self.priv1bb0(),
+                priv1bb1: self.priv1bb1(),
+                priv1bb2: self.priv1bb2(),
+                priv1bb3: self.priv1bb3(),
+                priv1bb4: self.priv1bb4(),
+                priv1bb5: self.priv1bb5(),
+                priv1bb6: self.priv1bb6(),
+                priv1bb7: self.priv1bb7(),
+                priv1bb8: self.priv1bb8(),
+                priv1bb9: self.priv1bb9(),
+                priv1bb10: self.priv1bb10(),
+                priv1bb11: self.priv1bb11(),
+                priv1bb12: self.priv1bb12(),
+                priv1bb13: self.priv1bb13(),
+                priv1bb14: self.priv1bb14(),
+                priv1bb15: self.priv1bb15(),
+                priv1bb16: self.priv1bb16(),
+                priv1bb17: self.priv1bb17(),
+                priv1bb18: self.priv1bb18(),
+                priv1bb19: self.priv1bb19(),
+                priv1bb20: self.priv1bb20(),
+                priv1bb21: self.priv1bb21(),
+                priv1bb22: self.priv1bb22(),
+                priv1bb23: self.priv1bb23(),
+                priv1bb24: self.priv1bb24(),
+                priv1bb25: self.priv1bb25(),
+                priv1bb26: self.priv1bb26(),
+                priv1bb27: self.priv1bb27(),
+                priv1bb28: self.priv1bb28(),
+                priv1bb29: self.priv1bb29(),
+                priv1bb30: self.priv1bb30(),
+                priv1bb31: self.priv1bb31(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH privilege block based bank 1 register 3"]
@@ -2337,6 +3007,119 @@ pub mod regs {
             Priv1bbr3(0)
         }
     }
+    impl core::fmt::Debug for Priv1bbr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Priv1bbr3")
+                .field("priv1bb0", &self.priv1bb0())
+                .field("priv1bb1", &self.priv1bb1())
+                .field("priv1bb2", &self.priv1bb2())
+                .field("priv1bb3", &self.priv1bb3())
+                .field("priv1bb4", &self.priv1bb4())
+                .field("priv1bb5", &self.priv1bb5())
+                .field("priv1bb6", &self.priv1bb6())
+                .field("priv1bb7", &self.priv1bb7())
+                .field("priv1bb8", &self.priv1bb8())
+                .field("priv1bb9", &self.priv1bb9())
+                .field("priv1bb10", &self.priv1bb10())
+                .field("priv1bb11", &self.priv1bb11())
+                .field("priv1bb12", &self.priv1bb12())
+                .field("priv1bb13", &self.priv1bb13())
+                .field("priv1bb14", &self.priv1bb14())
+                .field("priv1bb15", &self.priv1bb15())
+                .field("priv1bb16", &self.priv1bb16())
+                .field("priv1bb17", &self.priv1bb17())
+                .field("priv1bb18", &self.priv1bb18())
+                .field("priv1bb19", &self.priv1bb19())
+                .field("priv1bb20", &self.priv1bb20())
+                .field("priv1bb21", &self.priv1bb21())
+                .field("priv1bb22", &self.priv1bb22())
+                .field("priv1bb23", &self.priv1bb23())
+                .field("priv1bb24", &self.priv1bb24())
+                .field("priv1bb25", &self.priv1bb25())
+                .field("priv1bb26", &self.priv1bb26())
+                .field("priv1bb27", &self.priv1bb27())
+                .field("priv1bb28", &self.priv1bb28())
+                .field("priv1bb29", &self.priv1bb29())
+                .field("priv1bb30", &self.priv1bb30())
+                .field("priv1bb31", &self.priv1bb31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Priv1bbr3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Priv1bbr3 {
+                priv1bb0: bool,
+                priv1bb1: bool,
+                priv1bb2: bool,
+                priv1bb3: bool,
+                priv1bb4: bool,
+                priv1bb5: bool,
+                priv1bb6: bool,
+                priv1bb7: bool,
+                priv1bb8: bool,
+                priv1bb9: bool,
+                priv1bb10: bool,
+                priv1bb11: bool,
+                priv1bb12: bool,
+                priv1bb13: bool,
+                priv1bb14: bool,
+                priv1bb15: bool,
+                priv1bb16: bool,
+                priv1bb17: bool,
+                priv1bb18: bool,
+                priv1bb19: bool,
+                priv1bb20: bool,
+                priv1bb21: bool,
+                priv1bb22: bool,
+                priv1bb23: bool,
+                priv1bb24: bool,
+                priv1bb25: bool,
+                priv1bb26: bool,
+                priv1bb27: bool,
+                priv1bb28: bool,
+                priv1bb29: bool,
+                priv1bb30: bool,
+                priv1bb31: bool,
+            }
+            let proxy = Priv1bbr3 {
+                priv1bb0: self.priv1bb0(),
+                priv1bb1: self.priv1bb1(),
+                priv1bb2: self.priv1bb2(),
+                priv1bb3: self.priv1bb3(),
+                priv1bb4: self.priv1bb4(),
+                priv1bb5: self.priv1bb5(),
+                priv1bb6: self.priv1bb6(),
+                priv1bb7: self.priv1bb7(),
+                priv1bb8: self.priv1bb8(),
+                priv1bb9: self.priv1bb9(),
+                priv1bb10: self.priv1bb10(),
+                priv1bb11: self.priv1bb11(),
+                priv1bb12: self.priv1bb12(),
+                priv1bb13: self.priv1bb13(),
+                priv1bb14: self.priv1bb14(),
+                priv1bb15: self.priv1bb15(),
+                priv1bb16: self.priv1bb16(),
+                priv1bb17: self.priv1bb17(),
+                priv1bb18: self.priv1bb18(),
+                priv1bb19: self.priv1bb19(),
+                priv1bb20: self.priv1bb20(),
+                priv1bb21: self.priv1bb21(),
+                priv1bb22: self.priv1bb22(),
+                priv1bb23: self.priv1bb23(),
+                priv1bb24: self.priv1bb24(),
+                priv1bb25: self.priv1bb25(),
+                priv1bb26: self.priv1bb26(),
+                priv1bb27: self.priv1bb27(),
+                priv1bb28: self.priv1bb28(),
+                priv1bb29: self.priv1bb29(),
+                priv1bb30: self.priv1bb30(),
+                priv1bb31: self.priv1bb31(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH privilege block based bank 1 register 4"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2699,6 +3482,119 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Priv1bbr4 {
             Priv1bbr4(0)
+        }
+    }
+    impl core::fmt::Debug for Priv1bbr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Priv1bbr4")
+                .field("priv1bb0", &self.priv1bb0())
+                .field("priv1bb1", &self.priv1bb1())
+                .field("priv1bb2", &self.priv1bb2())
+                .field("priv1bb3", &self.priv1bb3())
+                .field("priv1bb4", &self.priv1bb4())
+                .field("priv1bb5", &self.priv1bb5())
+                .field("priv1bb6", &self.priv1bb6())
+                .field("priv1bb7", &self.priv1bb7())
+                .field("priv1bb8", &self.priv1bb8())
+                .field("priv1bb9", &self.priv1bb9())
+                .field("priv1bb10", &self.priv1bb10())
+                .field("priv1bb11", &self.priv1bb11())
+                .field("priv1bb12", &self.priv1bb12())
+                .field("priv1bb13", &self.priv1bb13())
+                .field("priv1bb14", &self.priv1bb14())
+                .field("priv1bb15", &self.priv1bb15())
+                .field("priv1bb16", &self.priv1bb16())
+                .field("priv1bb17", &self.priv1bb17())
+                .field("priv1bb18", &self.priv1bb18())
+                .field("priv1bb19", &self.priv1bb19())
+                .field("priv1bb20", &self.priv1bb20())
+                .field("priv1bb21", &self.priv1bb21())
+                .field("priv1bb22", &self.priv1bb22())
+                .field("priv1bb23", &self.priv1bb23())
+                .field("priv1bb24", &self.priv1bb24())
+                .field("priv1bb25", &self.priv1bb25())
+                .field("priv1bb26", &self.priv1bb26())
+                .field("priv1bb27", &self.priv1bb27())
+                .field("priv1bb28", &self.priv1bb28())
+                .field("priv1bb29", &self.priv1bb29())
+                .field("priv1bb30", &self.priv1bb30())
+                .field("priv1bb31", &self.priv1bb31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Priv1bbr4 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Priv1bbr4 {
+                priv1bb0: bool,
+                priv1bb1: bool,
+                priv1bb2: bool,
+                priv1bb3: bool,
+                priv1bb4: bool,
+                priv1bb5: bool,
+                priv1bb6: bool,
+                priv1bb7: bool,
+                priv1bb8: bool,
+                priv1bb9: bool,
+                priv1bb10: bool,
+                priv1bb11: bool,
+                priv1bb12: bool,
+                priv1bb13: bool,
+                priv1bb14: bool,
+                priv1bb15: bool,
+                priv1bb16: bool,
+                priv1bb17: bool,
+                priv1bb18: bool,
+                priv1bb19: bool,
+                priv1bb20: bool,
+                priv1bb21: bool,
+                priv1bb22: bool,
+                priv1bb23: bool,
+                priv1bb24: bool,
+                priv1bb25: bool,
+                priv1bb26: bool,
+                priv1bb27: bool,
+                priv1bb28: bool,
+                priv1bb29: bool,
+                priv1bb30: bool,
+                priv1bb31: bool,
+            }
+            let proxy = Priv1bbr4 {
+                priv1bb0: self.priv1bb0(),
+                priv1bb1: self.priv1bb1(),
+                priv1bb2: self.priv1bb2(),
+                priv1bb3: self.priv1bb3(),
+                priv1bb4: self.priv1bb4(),
+                priv1bb5: self.priv1bb5(),
+                priv1bb6: self.priv1bb6(),
+                priv1bb7: self.priv1bb7(),
+                priv1bb8: self.priv1bb8(),
+                priv1bb9: self.priv1bb9(),
+                priv1bb10: self.priv1bb10(),
+                priv1bb11: self.priv1bb11(),
+                priv1bb12: self.priv1bb12(),
+                priv1bb13: self.priv1bb13(),
+                priv1bb14: self.priv1bb14(),
+                priv1bb15: self.priv1bb15(),
+                priv1bb16: self.priv1bb16(),
+                priv1bb17: self.priv1bb17(),
+                priv1bb18: self.priv1bb18(),
+                priv1bb19: self.priv1bb19(),
+                priv1bb20: self.priv1bb20(),
+                priv1bb21: self.priv1bb21(),
+                priv1bb22: self.priv1bb22(),
+                priv1bb23: self.priv1bb23(),
+                priv1bb24: self.priv1bb24(),
+                priv1bb25: self.priv1bb25(),
+                priv1bb26: self.priv1bb26(),
+                priv1bb27: self.priv1bb27(),
+                priv1bb28: self.priv1bb28(),
+                priv1bb29: self.priv1bb29(),
+                priv1bb30: self.priv1bb30(),
+                priv1bb31: self.priv1bb31(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH privilege block based bank 2 register 1"]
@@ -3065,6 +3961,119 @@ pub mod regs {
             Priv2bbr1(0)
         }
     }
+    impl core::fmt::Debug for Priv2bbr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Priv2bbr1")
+                .field("priv2bb0", &self.priv2bb0())
+                .field("priv2bb1", &self.priv2bb1())
+                .field("priv2bb2", &self.priv2bb2())
+                .field("priv2bb3", &self.priv2bb3())
+                .field("priv2bb4", &self.priv2bb4())
+                .field("priv2bb5", &self.priv2bb5())
+                .field("priv2bb6", &self.priv2bb6())
+                .field("priv2bb7", &self.priv2bb7())
+                .field("priv2bb8", &self.priv2bb8())
+                .field("priv2bb9", &self.priv2bb9())
+                .field("priv2bb10", &self.priv2bb10())
+                .field("priv2bb11", &self.priv2bb11())
+                .field("priv2bb12", &self.priv2bb12())
+                .field("priv2bb13", &self.priv2bb13())
+                .field("priv2bb14", &self.priv2bb14())
+                .field("priv2bb15", &self.priv2bb15())
+                .field("priv2bb16", &self.priv2bb16())
+                .field("priv2bb17", &self.priv2bb17())
+                .field("priv2bb18", &self.priv2bb18())
+                .field("priv2bb19", &self.priv2bb19())
+                .field("priv2bb20", &self.priv2bb20())
+                .field("priv2bb21", &self.priv2bb21())
+                .field("priv2bb22", &self.priv2bb22())
+                .field("priv2bb23", &self.priv2bb23())
+                .field("priv2bb24", &self.priv2bb24())
+                .field("priv2bb25", &self.priv2bb25())
+                .field("priv2bb26", &self.priv2bb26())
+                .field("priv2bb27", &self.priv2bb27())
+                .field("priv2bb28", &self.priv2bb28())
+                .field("priv2bb29", &self.priv2bb29())
+                .field("priv2bb30", &self.priv2bb30())
+                .field("priv2bb31", &self.priv2bb31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Priv2bbr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Priv2bbr1 {
+                priv2bb0: bool,
+                priv2bb1: bool,
+                priv2bb2: bool,
+                priv2bb3: bool,
+                priv2bb4: bool,
+                priv2bb5: bool,
+                priv2bb6: bool,
+                priv2bb7: bool,
+                priv2bb8: bool,
+                priv2bb9: bool,
+                priv2bb10: bool,
+                priv2bb11: bool,
+                priv2bb12: bool,
+                priv2bb13: bool,
+                priv2bb14: bool,
+                priv2bb15: bool,
+                priv2bb16: bool,
+                priv2bb17: bool,
+                priv2bb18: bool,
+                priv2bb19: bool,
+                priv2bb20: bool,
+                priv2bb21: bool,
+                priv2bb22: bool,
+                priv2bb23: bool,
+                priv2bb24: bool,
+                priv2bb25: bool,
+                priv2bb26: bool,
+                priv2bb27: bool,
+                priv2bb28: bool,
+                priv2bb29: bool,
+                priv2bb30: bool,
+                priv2bb31: bool,
+            }
+            let proxy = Priv2bbr1 {
+                priv2bb0: self.priv2bb0(),
+                priv2bb1: self.priv2bb1(),
+                priv2bb2: self.priv2bb2(),
+                priv2bb3: self.priv2bb3(),
+                priv2bb4: self.priv2bb4(),
+                priv2bb5: self.priv2bb5(),
+                priv2bb6: self.priv2bb6(),
+                priv2bb7: self.priv2bb7(),
+                priv2bb8: self.priv2bb8(),
+                priv2bb9: self.priv2bb9(),
+                priv2bb10: self.priv2bb10(),
+                priv2bb11: self.priv2bb11(),
+                priv2bb12: self.priv2bb12(),
+                priv2bb13: self.priv2bb13(),
+                priv2bb14: self.priv2bb14(),
+                priv2bb15: self.priv2bb15(),
+                priv2bb16: self.priv2bb16(),
+                priv2bb17: self.priv2bb17(),
+                priv2bb18: self.priv2bb18(),
+                priv2bb19: self.priv2bb19(),
+                priv2bb20: self.priv2bb20(),
+                priv2bb21: self.priv2bb21(),
+                priv2bb22: self.priv2bb22(),
+                priv2bb23: self.priv2bb23(),
+                priv2bb24: self.priv2bb24(),
+                priv2bb25: self.priv2bb25(),
+                priv2bb26: self.priv2bb26(),
+                priv2bb27: self.priv2bb27(),
+                priv2bb28: self.priv2bb28(),
+                priv2bb29: self.priv2bb29(),
+                priv2bb30: self.priv2bb30(),
+                priv2bb31: self.priv2bb31(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH privilege block based bank 2 register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3427,6 +4436,119 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Priv2bbr2 {
             Priv2bbr2(0)
+        }
+    }
+    impl core::fmt::Debug for Priv2bbr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Priv2bbr2")
+                .field("priv2bb0", &self.priv2bb0())
+                .field("priv2bb1", &self.priv2bb1())
+                .field("priv2bb2", &self.priv2bb2())
+                .field("priv2bb3", &self.priv2bb3())
+                .field("priv2bb4", &self.priv2bb4())
+                .field("priv2bb5", &self.priv2bb5())
+                .field("priv2bb6", &self.priv2bb6())
+                .field("priv2bb7", &self.priv2bb7())
+                .field("priv2bb8", &self.priv2bb8())
+                .field("priv2bb9", &self.priv2bb9())
+                .field("priv2bb10", &self.priv2bb10())
+                .field("priv2bb11", &self.priv2bb11())
+                .field("priv2bb12", &self.priv2bb12())
+                .field("priv2bb13", &self.priv2bb13())
+                .field("priv2bb14", &self.priv2bb14())
+                .field("priv2bb15", &self.priv2bb15())
+                .field("priv2bb16", &self.priv2bb16())
+                .field("priv2bb17", &self.priv2bb17())
+                .field("priv2bb18", &self.priv2bb18())
+                .field("priv2bb19", &self.priv2bb19())
+                .field("priv2bb20", &self.priv2bb20())
+                .field("priv2bb21", &self.priv2bb21())
+                .field("priv2bb22", &self.priv2bb22())
+                .field("priv2bb23", &self.priv2bb23())
+                .field("priv2bb24", &self.priv2bb24())
+                .field("priv2bb25", &self.priv2bb25())
+                .field("priv2bb26", &self.priv2bb26())
+                .field("priv2bb27", &self.priv2bb27())
+                .field("priv2bb28", &self.priv2bb28())
+                .field("priv2bb29", &self.priv2bb29())
+                .field("priv2bb30", &self.priv2bb30())
+                .field("priv2bb31", &self.priv2bb31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Priv2bbr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Priv2bbr2 {
+                priv2bb0: bool,
+                priv2bb1: bool,
+                priv2bb2: bool,
+                priv2bb3: bool,
+                priv2bb4: bool,
+                priv2bb5: bool,
+                priv2bb6: bool,
+                priv2bb7: bool,
+                priv2bb8: bool,
+                priv2bb9: bool,
+                priv2bb10: bool,
+                priv2bb11: bool,
+                priv2bb12: bool,
+                priv2bb13: bool,
+                priv2bb14: bool,
+                priv2bb15: bool,
+                priv2bb16: bool,
+                priv2bb17: bool,
+                priv2bb18: bool,
+                priv2bb19: bool,
+                priv2bb20: bool,
+                priv2bb21: bool,
+                priv2bb22: bool,
+                priv2bb23: bool,
+                priv2bb24: bool,
+                priv2bb25: bool,
+                priv2bb26: bool,
+                priv2bb27: bool,
+                priv2bb28: bool,
+                priv2bb29: bool,
+                priv2bb30: bool,
+                priv2bb31: bool,
+            }
+            let proxy = Priv2bbr2 {
+                priv2bb0: self.priv2bb0(),
+                priv2bb1: self.priv2bb1(),
+                priv2bb2: self.priv2bb2(),
+                priv2bb3: self.priv2bb3(),
+                priv2bb4: self.priv2bb4(),
+                priv2bb5: self.priv2bb5(),
+                priv2bb6: self.priv2bb6(),
+                priv2bb7: self.priv2bb7(),
+                priv2bb8: self.priv2bb8(),
+                priv2bb9: self.priv2bb9(),
+                priv2bb10: self.priv2bb10(),
+                priv2bb11: self.priv2bb11(),
+                priv2bb12: self.priv2bb12(),
+                priv2bb13: self.priv2bb13(),
+                priv2bb14: self.priv2bb14(),
+                priv2bb15: self.priv2bb15(),
+                priv2bb16: self.priv2bb16(),
+                priv2bb17: self.priv2bb17(),
+                priv2bb18: self.priv2bb18(),
+                priv2bb19: self.priv2bb19(),
+                priv2bb20: self.priv2bb20(),
+                priv2bb21: self.priv2bb21(),
+                priv2bb22: self.priv2bb22(),
+                priv2bb23: self.priv2bb23(),
+                priv2bb24: self.priv2bb24(),
+                priv2bb25: self.priv2bb25(),
+                priv2bb26: self.priv2bb26(),
+                priv2bb27: self.priv2bb27(),
+                priv2bb28: self.priv2bb28(),
+                priv2bb29: self.priv2bb29(),
+                priv2bb30: self.priv2bb30(),
+                priv2bb31: self.priv2bb31(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH privilege block based bank 2 register 3"]
@@ -3793,6 +4915,119 @@ pub mod regs {
             Priv2bbr3(0)
         }
     }
+    impl core::fmt::Debug for Priv2bbr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Priv2bbr3")
+                .field("priv2bb0", &self.priv2bb0())
+                .field("priv2bb1", &self.priv2bb1())
+                .field("priv2bb2", &self.priv2bb2())
+                .field("priv2bb3", &self.priv2bb3())
+                .field("priv2bb4", &self.priv2bb4())
+                .field("priv2bb5", &self.priv2bb5())
+                .field("priv2bb6", &self.priv2bb6())
+                .field("priv2bb7", &self.priv2bb7())
+                .field("priv2bb8", &self.priv2bb8())
+                .field("priv2bb9", &self.priv2bb9())
+                .field("priv2bb10", &self.priv2bb10())
+                .field("priv2bb11", &self.priv2bb11())
+                .field("priv2bb12", &self.priv2bb12())
+                .field("priv2bb13", &self.priv2bb13())
+                .field("priv2bb14", &self.priv2bb14())
+                .field("priv2bb15", &self.priv2bb15())
+                .field("priv2bb16", &self.priv2bb16())
+                .field("priv2bb17", &self.priv2bb17())
+                .field("priv2bb18", &self.priv2bb18())
+                .field("priv2bb19", &self.priv2bb19())
+                .field("priv2bb20", &self.priv2bb20())
+                .field("priv2bb21", &self.priv2bb21())
+                .field("priv2bb22", &self.priv2bb22())
+                .field("priv2bb23", &self.priv2bb23())
+                .field("priv2bb24", &self.priv2bb24())
+                .field("priv2bb25", &self.priv2bb25())
+                .field("priv2bb26", &self.priv2bb26())
+                .field("priv2bb27", &self.priv2bb27())
+                .field("priv2bb28", &self.priv2bb28())
+                .field("priv2bb29", &self.priv2bb29())
+                .field("priv2bb30", &self.priv2bb30())
+                .field("priv2bb31", &self.priv2bb31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Priv2bbr3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Priv2bbr3 {
+                priv2bb0: bool,
+                priv2bb1: bool,
+                priv2bb2: bool,
+                priv2bb3: bool,
+                priv2bb4: bool,
+                priv2bb5: bool,
+                priv2bb6: bool,
+                priv2bb7: bool,
+                priv2bb8: bool,
+                priv2bb9: bool,
+                priv2bb10: bool,
+                priv2bb11: bool,
+                priv2bb12: bool,
+                priv2bb13: bool,
+                priv2bb14: bool,
+                priv2bb15: bool,
+                priv2bb16: bool,
+                priv2bb17: bool,
+                priv2bb18: bool,
+                priv2bb19: bool,
+                priv2bb20: bool,
+                priv2bb21: bool,
+                priv2bb22: bool,
+                priv2bb23: bool,
+                priv2bb24: bool,
+                priv2bb25: bool,
+                priv2bb26: bool,
+                priv2bb27: bool,
+                priv2bb28: bool,
+                priv2bb29: bool,
+                priv2bb30: bool,
+                priv2bb31: bool,
+            }
+            let proxy = Priv2bbr3 {
+                priv2bb0: self.priv2bb0(),
+                priv2bb1: self.priv2bb1(),
+                priv2bb2: self.priv2bb2(),
+                priv2bb3: self.priv2bb3(),
+                priv2bb4: self.priv2bb4(),
+                priv2bb5: self.priv2bb5(),
+                priv2bb6: self.priv2bb6(),
+                priv2bb7: self.priv2bb7(),
+                priv2bb8: self.priv2bb8(),
+                priv2bb9: self.priv2bb9(),
+                priv2bb10: self.priv2bb10(),
+                priv2bb11: self.priv2bb11(),
+                priv2bb12: self.priv2bb12(),
+                priv2bb13: self.priv2bb13(),
+                priv2bb14: self.priv2bb14(),
+                priv2bb15: self.priv2bb15(),
+                priv2bb16: self.priv2bb16(),
+                priv2bb17: self.priv2bb17(),
+                priv2bb18: self.priv2bb18(),
+                priv2bb19: self.priv2bb19(),
+                priv2bb20: self.priv2bb20(),
+                priv2bb21: self.priv2bb21(),
+                priv2bb22: self.priv2bb22(),
+                priv2bb23: self.priv2bb23(),
+                priv2bb24: self.priv2bb24(),
+                priv2bb25: self.priv2bb25(),
+                priv2bb26: self.priv2bb26(),
+                priv2bb27: self.priv2bb27(),
+                priv2bb28: self.priv2bb28(),
+                priv2bb29: self.priv2bb29(),
+                priv2bb30: self.priv2bb30(),
+                priv2bb31: self.priv2bb31(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH privilege block based bank 2 register 4"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4157,6 +5392,119 @@ pub mod regs {
             Priv2bbr4(0)
         }
     }
+    impl core::fmt::Debug for Priv2bbr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Priv2bbr4")
+                .field("priv2bb0", &self.priv2bb0())
+                .field("priv2bb1", &self.priv2bb1())
+                .field("priv2bb2", &self.priv2bb2())
+                .field("priv2bb3", &self.priv2bb3())
+                .field("priv2bb4", &self.priv2bb4())
+                .field("priv2bb5", &self.priv2bb5())
+                .field("priv2bb6", &self.priv2bb6())
+                .field("priv2bb7", &self.priv2bb7())
+                .field("priv2bb8", &self.priv2bb8())
+                .field("priv2bb9", &self.priv2bb9())
+                .field("priv2bb10", &self.priv2bb10())
+                .field("priv2bb11", &self.priv2bb11())
+                .field("priv2bb12", &self.priv2bb12())
+                .field("priv2bb13", &self.priv2bb13())
+                .field("priv2bb14", &self.priv2bb14())
+                .field("priv2bb15", &self.priv2bb15())
+                .field("priv2bb16", &self.priv2bb16())
+                .field("priv2bb17", &self.priv2bb17())
+                .field("priv2bb18", &self.priv2bb18())
+                .field("priv2bb19", &self.priv2bb19())
+                .field("priv2bb20", &self.priv2bb20())
+                .field("priv2bb21", &self.priv2bb21())
+                .field("priv2bb22", &self.priv2bb22())
+                .field("priv2bb23", &self.priv2bb23())
+                .field("priv2bb24", &self.priv2bb24())
+                .field("priv2bb25", &self.priv2bb25())
+                .field("priv2bb26", &self.priv2bb26())
+                .field("priv2bb27", &self.priv2bb27())
+                .field("priv2bb28", &self.priv2bb28())
+                .field("priv2bb29", &self.priv2bb29())
+                .field("priv2bb30", &self.priv2bb30())
+                .field("priv2bb31", &self.priv2bb31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Priv2bbr4 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Priv2bbr4 {
+                priv2bb0: bool,
+                priv2bb1: bool,
+                priv2bb2: bool,
+                priv2bb3: bool,
+                priv2bb4: bool,
+                priv2bb5: bool,
+                priv2bb6: bool,
+                priv2bb7: bool,
+                priv2bb8: bool,
+                priv2bb9: bool,
+                priv2bb10: bool,
+                priv2bb11: bool,
+                priv2bb12: bool,
+                priv2bb13: bool,
+                priv2bb14: bool,
+                priv2bb15: bool,
+                priv2bb16: bool,
+                priv2bb17: bool,
+                priv2bb18: bool,
+                priv2bb19: bool,
+                priv2bb20: bool,
+                priv2bb21: bool,
+                priv2bb22: bool,
+                priv2bb23: bool,
+                priv2bb24: bool,
+                priv2bb25: bool,
+                priv2bb26: bool,
+                priv2bb27: bool,
+                priv2bb28: bool,
+                priv2bb29: bool,
+                priv2bb30: bool,
+                priv2bb31: bool,
+            }
+            let proxy = Priv2bbr4 {
+                priv2bb0: self.priv2bb0(),
+                priv2bb1: self.priv2bb1(),
+                priv2bb2: self.priv2bb2(),
+                priv2bb3: self.priv2bb3(),
+                priv2bb4: self.priv2bb4(),
+                priv2bb5: self.priv2bb5(),
+                priv2bb6: self.priv2bb6(),
+                priv2bb7: self.priv2bb7(),
+                priv2bb8: self.priv2bb8(),
+                priv2bb9: self.priv2bb9(),
+                priv2bb10: self.priv2bb10(),
+                priv2bb11: self.priv2bb11(),
+                priv2bb12: self.priv2bb12(),
+                priv2bb13: self.priv2bb13(),
+                priv2bb14: self.priv2bb14(),
+                priv2bb15: self.priv2bb15(),
+                priv2bb16: self.priv2bb16(),
+                priv2bb17: self.priv2bb17(),
+                priv2bb18: self.priv2bb18(),
+                priv2bb19: self.priv2bb19(),
+                priv2bb20: self.priv2bb20(),
+                priv2bb21: self.priv2bb21(),
+                priv2bb22: self.priv2bb22(),
+                priv2bb23: self.priv2bb23(),
+                priv2bb24: self.priv2bb24(),
+                priv2bb25: self.priv2bb25(),
+                priv2bb26: self.priv2bb26(),
+                priv2bb27: self.priv2bb27(),
+                priv2bb28: self.priv2bb28(),
+                priv2bb29: self.priv2bb29(),
+                priv2bb30: self.priv2bb30(),
+                priv2bb31: self.priv2bb31(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH privilege configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4189,6 +5537,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Privcfgr {
             Privcfgr(0)
+        }
+    }
+    impl core::fmt::Debug for Privcfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Privcfgr")
+                .field("spriv", &self.spriv())
+                .field("nspriv", &self.nspriv())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Privcfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Privcfgr {
+                spriv: super::vals::Spriv,
+                nspriv: super::vals::Nspriv,
+            }
+            let proxy = Privcfgr {
+                spriv: self.spriv(),
+                nspriv: self.nspriv(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH secure block based bank 1 register 1"]
@@ -4555,6 +5926,119 @@ pub mod regs {
             Sec1bbr1(0)
         }
     }
+    impl core::fmt::Debug for Sec1bbr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sec1bbr1")
+                .field("sec1bb0", &self.sec1bb0())
+                .field("sec1bb1", &self.sec1bb1())
+                .field("sec1bb2", &self.sec1bb2())
+                .field("sec1bb3", &self.sec1bb3())
+                .field("sec1bb4", &self.sec1bb4())
+                .field("sec1bb5", &self.sec1bb5())
+                .field("sec1bb6", &self.sec1bb6())
+                .field("sec1bb7", &self.sec1bb7())
+                .field("sec1bb8", &self.sec1bb8())
+                .field("sec1bb9", &self.sec1bb9())
+                .field("sec1bb10", &self.sec1bb10())
+                .field("sec1bb11", &self.sec1bb11())
+                .field("sec1bb12", &self.sec1bb12())
+                .field("sec1bb13", &self.sec1bb13())
+                .field("sec1bb14", &self.sec1bb14())
+                .field("sec1bb15", &self.sec1bb15())
+                .field("sec1bb16", &self.sec1bb16())
+                .field("sec1bb17", &self.sec1bb17())
+                .field("sec1bb18", &self.sec1bb18())
+                .field("sec1bb19", &self.sec1bb19())
+                .field("sec1bb20", &self.sec1bb20())
+                .field("sec1bb21", &self.sec1bb21())
+                .field("sec1bb22", &self.sec1bb22())
+                .field("sec1bb23", &self.sec1bb23())
+                .field("sec1bb24", &self.sec1bb24())
+                .field("sec1bb25", &self.sec1bb25())
+                .field("sec1bb26", &self.sec1bb26())
+                .field("sec1bb27", &self.sec1bb27())
+                .field("sec1bb28", &self.sec1bb28())
+                .field("sec1bb29", &self.sec1bb29())
+                .field("sec1bb30", &self.sec1bb30())
+                .field("sec1bb31", &self.sec1bb31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sec1bbr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sec1bbr1 {
+                sec1bb0: bool,
+                sec1bb1: bool,
+                sec1bb2: bool,
+                sec1bb3: bool,
+                sec1bb4: bool,
+                sec1bb5: bool,
+                sec1bb6: bool,
+                sec1bb7: bool,
+                sec1bb8: bool,
+                sec1bb9: bool,
+                sec1bb10: bool,
+                sec1bb11: bool,
+                sec1bb12: bool,
+                sec1bb13: bool,
+                sec1bb14: bool,
+                sec1bb15: bool,
+                sec1bb16: bool,
+                sec1bb17: bool,
+                sec1bb18: bool,
+                sec1bb19: bool,
+                sec1bb20: bool,
+                sec1bb21: bool,
+                sec1bb22: bool,
+                sec1bb23: bool,
+                sec1bb24: bool,
+                sec1bb25: bool,
+                sec1bb26: bool,
+                sec1bb27: bool,
+                sec1bb28: bool,
+                sec1bb29: bool,
+                sec1bb30: bool,
+                sec1bb31: bool,
+            }
+            let proxy = Sec1bbr1 {
+                sec1bb0: self.sec1bb0(),
+                sec1bb1: self.sec1bb1(),
+                sec1bb2: self.sec1bb2(),
+                sec1bb3: self.sec1bb3(),
+                sec1bb4: self.sec1bb4(),
+                sec1bb5: self.sec1bb5(),
+                sec1bb6: self.sec1bb6(),
+                sec1bb7: self.sec1bb7(),
+                sec1bb8: self.sec1bb8(),
+                sec1bb9: self.sec1bb9(),
+                sec1bb10: self.sec1bb10(),
+                sec1bb11: self.sec1bb11(),
+                sec1bb12: self.sec1bb12(),
+                sec1bb13: self.sec1bb13(),
+                sec1bb14: self.sec1bb14(),
+                sec1bb15: self.sec1bb15(),
+                sec1bb16: self.sec1bb16(),
+                sec1bb17: self.sec1bb17(),
+                sec1bb18: self.sec1bb18(),
+                sec1bb19: self.sec1bb19(),
+                sec1bb20: self.sec1bb20(),
+                sec1bb21: self.sec1bb21(),
+                sec1bb22: self.sec1bb22(),
+                sec1bb23: self.sec1bb23(),
+                sec1bb24: self.sec1bb24(),
+                sec1bb25: self.sec1bb25(),
+                sec1bb26: self.sec1bb26(),
+                sec1bb27: self.sec1bb27(),
+                sec1bb28: self.sec1bb28(),
+                sec1bb29: self.sec1bb29(),
+                sec1bb30: self.sec1bb30(),
+                sec1bb31: self.sec1bb31(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH secure block based bank 1 register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4917,6 +6401,119 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Sec1bbr2 {
             Sec1bbr2(0)
+        }
+    }
+    impl core::fmt::Debug for Sec1bbr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sec1bbr2")
+                .field("sec1bb0", &self.sec1bb0())
+                .field("sec1bb1", &self.sec1bb1())
+                .field("sec1bb2", &self.sec1bb2())
+                .field("sec1bb3", &self.sec1bb3())
+                .field("sec1bb4", &self.sec1bb4())
+                .field("sec1bb5", &self.sec1bb5())
+                .field("sec1bb6", &self.sec1bb6())
+                .field("sec1bb7", &self.sec1bb7())
+                .field("sec1bb8", &self.sec1bb8())
+                .field("sec1bb9", &self.sec1bb9())
+                .field("sec1bb10", &self.sec1bb10())
+                .field("sec1bb11", &self.sec1bb11())
+                .field("sec1bb12", &self.sec1bb12())
+                .field("sec1bb13", &self.sec1bb13())
+                .field("sec1bb14", &self.sec1bb14())
+                .field("sec1bb15", &self.sec1bb15())
+                .field("sec1bb16", &self.sec1bb16())
+                .field("sec1bb17", &self.sec1bb17())
+                .field("sec1bb18", &self.sec1bb18())
+                .field("sec1bb19", &self.sec1bb19())
+                .field("sec1bb20", &self.sec1bb20())
+                .field("sec1bb21", &self.sec1bb21())
+                .field("sec1bb22", &self.sec1bb22())
+                .field("sec1bb23", &self.sec1bb23())
+                .field("sec1bb24", &self.sec1bb24())
+                .field("sec1bb25", &self.sec1bb25())
+                .field("sec1bb26", &self.sec1bb26())
+                .field("sec1bb27", &self.sec1bb27())
+                .field("sec1bb28", &self.sec1bb28())
+                .field("sec1bb29", &self.sec1bb29())
+                .field("sec1bb30", &self.sec1bb30())
+                .field("sec1bb31", &self.sec1bb31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sec1bbr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sec1bbr2 {
+                sec1bb0: bool,
+                sec1bb1: bool,
+                sec1bb2: bool,
+                sec1bb3: bool,
+                sec1bb4: bool,
+                sec1bb5: bool,
+                sec1bb6: bool,
+                sec1bb7: bool,
+                sec1bb8: bool,
+                sec1bb9: bool,
+                sec1bb10: bool,
+                sec1bb11: bool,
+                sec1bb12: bool,
+                sec1bb13: bool,
+                sec1bb14: bool,
+                sec1bb15: bool,
+                sec1bb16: bool,
+                sec1bb17: bool,
+                sec1bb18: bool,
+                sec1bb19: bool,
+                sec1bb20: bool,
+                sec1bb21: bool,
+                sec1bb22: bool,
+                sec1bb23: bool,
+                sec1bb24: bool,
+                sec1bb25: bool,
+                sec1bb26: bool,
+                sec1bb27: bool,
+                sec1bb28: bool,
+                sec1bb29: bool,
+                sec1bb30: bool,
+                sec1bb31: bool,
+            }
+            let proxy = Sec1bbr2 {
+                sec1bb0: self.sec1bb0(),
+                sec1bb1: self.sec1bb1(),
+                sec1bb2: self.sec1bb2(),
+                sec1bb3: self.sec1bb3(),
+                sec1bb4: self.sec1bb4(),
+                sec1bb5: self.sec1bb5(),
+                sec1bb6: self.sec1bb6(),
+                sec1bb7: self.sec1bb7(),
+                sec1bb8: self.sec1bb8(),
+                sec1bb9: self.sec1bb9(),
+                sec1bb10: self.sec1bb10(),
+                sec1bb11: self.sec1bb11(),
+                sec1bb12: self.sec1bb12(),
+                sec1bb13: self.sec1bb13(),
+                sec1bb14: self.sec1bb14(),
+                sec1bb15: self.sec1bb15(),
+                sec1bb16: self.sec1bb16(),
+                sec1bb17: self.sec1bb17(),
+                sec1bb18: self.sec1bb18(),
+                sec1bb19: self.sec1bb19(),
+                sec1bb20: self.sec1bb20(),
+                sec1bb21: self.sec1bb21(),
+                sec1bb22: self.sec1bb22(),
+                sec1bb23: self.sec1bb23(),
+                sec1bb24: self.sec1bb24(),
+                sec1bb25: self.sec1bb25(),
+                sec1bb26: self.sec1bb26(),
+                sec1bb27: self.sec1bb27(),
+                sec1bb28: self.sec1bb28(),
+                sec1bb29: self.sec1bb29(),
+                sec1bb30: self.sec1bb30(),
+                sec1bb31: self.sec1bb31(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH secure block based bank 1 register 3"]
@@ -5283,6 +6880,119 @@ pub mod regs {
             Sec1bbr3(0)
         }
     }
+    impl core::fmt::Debug for Sec1bbr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sec1bbr3")
+                .field("sec1bb0", &self.sec1bb0())
+                .field("sec1bb1", &self.sec1bb1())
+                .field("sec1bb2", &self.sec1bb2())
+                .field("sec1bb3", &self.sec1bb3())
+                .field("sec1bb4", &self.sec1bb4())
+                .field("sec1bb5", &self.sec1bb5())
+                .field("sec1bb6", &self.sec1bb6())
+                .field("sec1bb7", &self.sec1bb7())
+                .field("sec1bb8", &self.sec1bb8())
+                .field("sec1bb9", &self.sec1bb9())
+                .field("sec1bb10", &self.sec1bb10())
+                .field("sec1bb11", &self.sec1bb11())
+                .field("sec1bb12", &self.sec1bb12())
+                .field("sec1bb13", &self.sec1bb13())
+                .field("sec1bb14", &self.sec1bb14())
+                .field("sec1bb15", &self.sec1bb15())
+                .field("sec1bb16", &self.sec1bb16())
+                .field("sec1bb17", &self.sec1bb17())
+                .field("sec1bb18", &self.sec1bb18())
+                .field("sec1bb19", &self.sec1bb19())
+                .field("sec1bb20", &self.sec1bb20())
+                .field("sec1bb21", &self.sec1bb21())
+                .field("sec1bb22", &self.sec1bb22())
+                .field("sec1bb23", &self.sec1bb23())
+                .field("sec1bb24", &self.sec1bb24())
+                .field("sec1bb25", &self.sec1bb25())
+                .field("sec1bb26", &self.sec1bb26())
+                .field("sec1bb27", &self.sec1bb27())
+                .field("sec1bb28", &self.sec1bb28())
+                .field("sec1bb29", &self.sec1bb29())
+                .field("sec1bb30", &self.sec1bb30())
+                .field("sec1bb31", &self.sec1bb31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sec1bbr3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sec1bbr3 {
+                sec1bb0: bool,
+                sec1bb1: bool,
+                sec1bb2: bool,
+                sec1bb3: bool,
+                sec1bb4: bool,
+                sec1bb5: bool,
+                sec1bb6: bool,
+                sec1bb7: bool,
+                sec1bb8: bool,
+                sec1bb9: bool,
+                sec1bb10: bool,
+                sec1bb11: bool,
+                sec1bb12: bool,
+                sec1bb13: bool,
+                sec1bb14: bool,
+                sec1bb15: bool,
+                sec1bb16: bool,
+                sec1bb17: bool,
+                sec1bb18: bool,
+                sec1bb19: bool,
+                sec1bb20: bool,
+                sec1bb21: bool,
+                sec1bb22: bool,
+                sec1bb23: bool,
+                sec1bb24: bool,
+                sec1bb25: bool,
+                sec1bb26: bool,
+                sec1bb27: bool,
+                sec1bb28: bool,
+                sec1bb29: bool,
+                sec1bb30: bool,
+                sec1bb31: bool,
+            }
+            let proxy = Sec1bbr3 {
+                sec1bb0: self.sec1bb0(),
+                sec1bb1: self.sec1bb1(),
+                sec1bb2: self.sec1bb2(),
+                sec1bb3: self.sec1bb3(),
+                sec1bb4: self.sec1bb4(),
+                sec1bb5: self.sec1bb5(),
+                sec1bb6: self.sec1bb6(),
+                sec1bb7: self.sec1bb7(),
+                sec1bb8: self.sec1bb8(),
+                sec1bb9: self.sec1bb9(),
+                sec1bb10: self.sec1bb10(),
+                sec1bb11: self.sec1bb11(),
+                sec1bb12: self.sec1bb12(),
+                sec1bb13: self.sec1bb13(),
+                sec1bb14: self.sec1bb14(),
+                sec1bb15: self.sec1bb15(),
+                sec1bb16: self.sec1bb16(),
+                sec1bb17: self.sec1bb17(),
+                sec1bb18: self.sec1bb18(),
+                sec1bb19: self.sec1bb19(),
+                sec1bb20: self.sec1bb20(),
+                sec1bb21: self.sec1bb21(),
+                sec1bb22: self.sec1bb22(),
+                sec1bb23: self.sec1bb23(),
+                sec1bb24: self.sec1bb24(),
+                sec1bb25: self.sec1bb25(),
+                sec1bb26: self.sec1bb26(),
+                sec1bb27: self.sec1bb27(),
+                sec1bb28: self.sec1bb28(),
+                sec1bb29: self.sec1bb29(),
+                sec1bb30: self.sec1bb30(),
+                sec1bb31: self.sec1bb31(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH secure block based bank 1 register 4"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5645,6 +7355,119 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Sec1bbr4 {
             Sec1bbr4(0)
+        }
+    }
+    impl core::fmt::Debug for Sec1bbr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sec1bbr4")
+                .field("sec1bb0", &self.sec1bb0())
+                .field("sec1bb1", &self.sec1bb1())
+                .field("sec1bb2", &self.sec1bb2())
+                .field("sec1bb3", &self.sec1bb3())
+                .field("sec1bb4", &self.sec1bb4())
+                .field("sec1bb5", &self.sec1bb5())
+                .field("sec1bb6", &self.sec1bb6())
+                .field("sec1bb7", &self.sec1bb7())
+                .field("sec1bb8", &self.sec1bb8())
+                .field("sec1bb9", &self.sec1bb9())
+                .field("sec1bb10", &self.sec1bb10())
+                .field("sec1bb11", &self.sec1bb11())
+                .field("sec1bb12", &self.sec1bb12())
+                .field("sec1bb13", &self.sec1bb13())
+                .field("sec1bb14", &self.sec1bb14())
+                .field("sec1bb15", &self.sec1bb15())
+                .field("sec1bb16", &self.sec1bb16())
+                .field("sec1bb17", &self.sec1bb17())
+                .field("sec1bb18", &self.sec1bb18())
+                .field("sec1bb19", &self.sec1bb19())
+                .field("sec1bb20", &self.sec1bb20())
+                .field("sec1bb21", &self.sec1bb21())
+                .field("sec1bb22", &self.sec1bb22())
+                .field("sec1bb23", &self.sec1bb23())
+                .field("sec1bb24", &self.sec1bb24())
+                .field("sec1bb25", &self.sec1bb25())
+                .field("sec1bb26", &self.sec1bb26())
+                .field("sec1bb27", &self.sec1bb27())
+                .field("sec1bb28", &self.sec1bb28())
+                .field("sec1bb29", &self.sec1bb29())
+                .field("sec1bb30", &self.sec1bb30())
+                .field("sec1bb31", &self.sec1bb31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sec1bbr4 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sec1bbr4 {
+                sec1bb0: bool,
+                sec1bb1: bool,
+                sec1bb2: bool,
+                sec1bb3: bool,
+                sec1bb4: bool,
+                sec1bb5: bool,
+                sec1bb6: bool,
+                sec1bb7: bool,
+                sec1bb8: bool,
+                sec1bb9: bool,
+                sec1bb10: bool,
+                sec1bb11: bool,
+                sec1bb12: bool,
+                sec1bb13: bool,
+                sec1bb14: bool,
+                sec1bb15: bool,
+                sec1bb16: bool,
+                sec1bb17: bool,
+                sec1bb18: bool,
+                sec1bb19: bool,
+                sec1bb20: bool,
+                sec1bb21: bool,
+                sec1bb22: bool,
+                sec1bb23: bool,
+                sec1bb24: bool,
+                sec1bb25: bool,
+                sec1bb26: bool,
+                sec1bb27: bool,
+                sec1bb28: bool,
+                sec1bb29: bool,
+                sec1bb30: bool,
+                sec1bb31: bool,
+            }
+            let proxy = Sec1bbr4 {
+                sec1bb0: self.sec1bb0(),
+                sec1bb1: self.sec1bb1(),
+                sec1bb2: self.sec1bb2(),
+                sec1bb3: self.sec1bb3(),
+                sec1bb4: self.sec1bb4(),
+                sec1bb5: self.sec1bb5(),
+                sec1bb6: self.sec1bb6(),
+                sec1bb7: self.sec1bb7(),
+                sec1bb8: self.sec1bb8(),
+                sec1bb9: self.sec1bb9(),
+                sec1bb10: self.sec1bb10(),
+                sec1bb11: self.sec1bb11(),
+                sec1bb12: self.sec1bb12(),
+                sec1bb13: self.sec1bb13(),
+                sec1bb14: self.sec1bb14(),
+                sec1bb15: self.sec1bb15(),
+                sec1bb16: self.sec1bb16(),
+                sec1bb17: self.sec1bb17(),
+                sec1bb18: self.sec1bb18(),
+                sec1bb19: self.sec1bb19(),
+                sec1bb20: self.sec1bb20(),
+                sec1bb21: self.sec1bb21(),
+                sec1bb22: self.sec1bb22(),
+                sec1bb23: self.sec1bb23(),
+                sec1bb24: self.sec1bb24(),
+                sec1bb25: self.sec1bb25(),
+                sec1bb26: self.sec1bb26(),
+                sec1bb27: self.sec1bb27(),
+                sec1bb28: self.sec1bb28(),
+                sec1bb29: self.sec1bb29(),
+                sec1bb30: self.sec1bb30(),
+                sec1bb31: self.sec1bb31(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH secure block based bank 2 register 1"]
@@ -6011,6 +7834,119 @@ pub mod regs {
             Sec2bbr1(0)
         }
     }
+    impl core::fmt::Debug for Sec2bbr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sec2bbr1")
+                .field("sec2bb0", &self.sec2bb0())
+                .field("sec2bb1", &self.sec2bb1())
+                .field("sec2bb2", &self.sec2bb2())
+                .field("sec2bb3", &self.sec2bb3())
+                .field("sec2bb4", &self.sec2bb4())
+                .field("sec2bb5", &self.sec2bb5())
+                .field("sec2bb6", &self.sec2bb6())
+                .field("sec2bb7", &self.sec2bb7())
+                .field("sec2bb8", &self.sec2bb8())
+                .field("sec2bb9", &self.sec2bb9())
+                .field("sec2bb10", &self.sec2bb10())
+                .field("sec2bb11", &self.sec2bb11())
+                .field("sec2bb12", &self.sec2bb12())
+                .field("sec2bb13", &self.sec2bb13())
+                .field("sec2bb14", &self.sec2bb14())
+                .field("sec2bb15", &self.sec2bb15())
+                .field("sec2bb16", &self.sec2bb16())
+                .field("sec2bb17", &self.sec2bb17())
+                .field("sec2bb18", &self.sec2bb18())
+                .field("sec2bb19", &self.sec2bb19())
+                .field("sec2bb20", &self.sec2bb20())
+                .field("sec2bb21", &self.sec2bb21())
+                .field("sec2bb22", &self.sec2bb22())
+                .field("sec2bb23", &self.sec2bb23())
+                .field("sec2bb24", &self.sec2bb24())
+                .field("sec2bb25", &self.sec2bb25())
+                .field("sec2bb26", &self.sec2bb26())
+                .field("sec2bb27", &self.sec2bb27())
+                .field("sec2bb28", &self.sec2bb28())
+                .field("sec2bb29", &self.sec2bb29())
+                .field("sec2bb30", &self.sec2bb30())
+                .field("sec2bb31", &self.sec2bb31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sec2bbr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sec2bbr1 {
+                sec2bb0: bool,
+                sec2bb1: bool,
+                sec2bb2: bool,
+                sec2bb3: bool,
+                sec2bb4: bool,
+                sec2bb5: bool,
+                sec2bb6: bool,
+                sec2bb7: bool,
+                sec2bb8: bool,
+                sec2bb9: bool,
+                sec2bb10: bool,
+                sec2bb11: bool,
+                sec2bb12: bool,
+                sec2bb13: bool,
+                sec2bb14: bool,
+                sec2bb15: bool,
+                sec2bb16: bool,
+                sec2bb17: bool,
+                sec2bb18: bool,
+                sec2bb19: bool,
+                sec2bb20: bool,
+                sec2bb21: bool,
+                sec2bb22: bool,
+                sec2bb23: bool,
+                sec2bb24: bool,
+                sec2bb25: bool,
+                sec2bb26: bool,
+                sec2bb27: bool,
+                sec2bb28: bool,
+                sec2bb29: bool,
+                sec2bb30: bool,
+                sec2bb31: bool,
+            }
+            let proxy = Sec2bbr1 {
+                sec2bb0: self.sec2bb0(),
+                sec2bb1: self.sec2bb1(),
+                sec2bb2: self.sec2bb2(),
+                sec2bb3: self.sec2bb3(),
+                sec2bb4: self.sec2bb4(),
+                sec2bb5: self.sec2bb5(),
+                sec2bb6: self.sec2bb6(),
+                sec2bb7: self.sec2bb7(),
+                sec2bb8: self.sec2bb8(),
+                sec2bb9: self.sec2bb9(),
+                sec2bb10: self.sec2bb10(),
+                sec2bb11: self.sec2bb11(),
+                sec2bb12: self.sec2bb12(),
+                sec2bb13: self.sec2bb13(),
+                sec2bb14: self.sec2bb14(),
+                sec2bb15: self.sec2bb15(),
+                sec2bb16: self.sec2bb16(),
+                sec2bb17: self.sec2bb17(),
+                sec2bb18: self.sec2bb18(),
+                sec2bb19: self.sec2bb19(),
+                sec2bb20: self.sec2bb20(),
+                sec2bb21: self.sec2bb21(),
+                sec2bb22: self.sec2bb22(),
+                sec2bb23: self.sec2bb23(),
+                sec2bb24: self.sec2bb24(),
+                sec2bb25: self.sec2bb25(),
+                sec2bb26: self.sec2bb26(),
+                sec2bb27: self.sec2bb27(),
+                sec2bb28: self.sec2bb28(),
+                sec2bb29: self.sec2bb29(),
+                sec2bb30: self.sec2bb30(),
+                sec2bb31: self.sec2bb31(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH secure block based bank 2 register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6373,6 +8309,119 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Sec2bbr2 {
             Sec2bbr2(0)
+        }
+    }
+    impl core::fmt::Debug for Sec2bbr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sec2bbr2")
+                .field("sec2bb0", &self.sec2bb0())
+                .field("sec2bb1", &self.sec2bb1())
+                .field("sec2bb2", &self.sec2bb2())
+                .field("sec2bb3", &self.sec2bb3())
+                .field("sec2bb4", &self.sec2bb4())
+                .field("sec2bb5", &self.sec2bb5())
+                .field("sec2bb6", &self.sec2bb6())
+                .field("sec2bb7", &self.sec2bb7())
+                .field("sec2bb8", &self.sec2bb8())
+                .field("sec2bb9", &self.sec2bb9())
+                .field("sec2bb10", &self.sec2bb10())
+                .field("sec2bb11", &self.sec2bb11())
+                .field("sec2bb12", &self.sec2bb12())
+                .field("sec2bb13", &self.sec2bb13())
+                .field("sec2bb14", &self.sec2bb14())
+                .field("sec2bb15", &self.sec2bb15())
+                .field("sec2bb16", &self.sec2bb16())
+                .field("sec2bb17", &self.sec2bb17())
+                .field("sec2bb18", &self.sec2bb18())
+                .field("sec2bb19", &self.sec2bb19())
+                .field("sec2bb20", &self.sec2bb20())
+                .field("sec2bb21", &self.sec2bb21())
+                .field("sec2bb22", &self.sec2bb22())
+                .field("sec2bb23", &self.sec2bb23())
+                .field("sec2bb24", &self.sec2bb24())
+                .field("sec2bb25", &self.sec2bb25())
+                .field("sec2bb26", &self.sec2bb26())
+                .field("sec2bb27", &self.sec2bb27())
+                .field("sec2bb28", &self.sec2bb28())
+                .field("sec2bb29", &self.sec2bb29())
+                .field("sec2bb30", &self.sec2bb30())
+                .field("sec2bb31", &self.sec2bb31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sec2bbr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sec2bbr2 {
+                sec2bb0: bool,
+                sec2bb1: bool,
+                sec2bb2: bool,
+                sec2bb3: bool,
+                sec2bb4: bool,
+                sec2bb5: bool,
+                sec2bb6: bool,
+                sec2bb7: bool,
+                sec2bb8: bool,
+                sec2bb9: bool,
+                sec2bb10: bool,
+                sec2bb11: bool,
+                sec2bb12: bool,
+                sec2bb13: bool,
+                sec2bb14: bool,
+                sec2bb15: bool,
+                sec2bb16: bool,
+                sec2bb17: bool,
+                sec2bb18: bool,
+                sec2bb19: bool,
+                sec2bb20: bool,
+                sec2bb21: bool,
+                sec2bb22: bool,
+                sec2bb23: bool,
+                sec2bb24: bool,
+                sec2bb25: bool,
+                sec2bb26: bool,
+                sec2bb27: bool,
+                sec2bb28: bool,
+                sec2bb29: bool,
+                sec2bb30: bool,
+                sec2bb31: bool,
+            }
+            let proxy = Sec2bbr2 {
+                sec2bb0: self.sec2bb0(),
+                sec2bb1: self.sec2bb1(),
+                sec2bb2: self.sec2bb2(),
+                sec2bb3: self.sec2bb3(),
+                sec2bb4: self.sec2bb4(),
+                sec2bb5: self.sec2bb5(),
+                sec2bb6: self.sec2bb6(),
+                sec2bb7: self.sec2bb7(),
+                sec2bb8: self.sec2bb8(),
+                sec2bb9: self.sec2bb9(),
+                sec2bb10: self.sec2bb10(),
+                sec2bb11: self.sec2bb11(),
+                sec2bb12: self.sec2bb12(),
+                sec2bb13: self.sec2bb13(),
+                sec2bb14: self.sec2bb14(),
+                sec2bb15: self.sec2bb15(),
+                sec2bb16: self.sec2bb16(),
+                sec2bb17: self.sec2bb17(),
+                sec2bb18: self.sec2bb18(),
+                sec2bb19: self.sec2bb19(),
+                sec2bb20: self.sec2bb20(),
+                sec2bb21: self.sec2bb21(),
+                sec2bb22: self.sec2bb22(),
+                sec2bb23: self.sec2bb23(),
+                sec2bb24: self.sec2bb24(),
+                sec2bb25: self.sec2bb25(),
+                sec2bb26: self.sec2bb26(),
+                sec2bb27: self.sec2bb27(),
+                sec2bb28: self.sec2bb28(),
+                sec2bb29: self.sec2bb29(),
+                sec2bb30: self.sec2bb30(),
+                sec2bb31: self.sec2bb31(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH secure block based bank 2 register 3"]
@@ -6739,6 +8788,119 @@ pub mod regs {
             Sec2bbr3(0)
         }
     }
+    impl core::fmt::Debug for Sec2bbr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sec2bbr3")
+                .field("sec2bb0", &self.sec2bb0())
+                .field("sec2bb1", &self.sec2bb1())
+                .field("sec2bb2", &self.sec2bb2())
+                .field("sec2bb3", &self.sec2bb3())
+                .field("sec2bb4", &self.sec2bb4())
+                .field("sec2bb5", &self.sec2bb5())
+                .field("sec2bb6", &self.sec2bb6())
+                .field("sec2bb7", &self.sec2bb7())
+                .field("sec2bb8", &self.sec2bb8())
+                .field("sec2bb9", &self.sec2bb9())
+                .field("sec2bb10", &self.sec2bb10())
+                .field("sec2bb11", &self.sec2bb11())
+                .field("sec2bb12", &self.sec2bb12())
+                .field("sec2bb13", &self.sec2bb13())
+                .field("sec2bb14", &self.sec2bb14())
+                .field("sec2bb15", &self.sec2bb15())
+                .field("sec2bb16", &self.sec2bb16())
+                .field("sec2bb17", &self.sec2bb17())
+                .field("sec2bb18", &self.sec2bb18())
+                .field("sec2bb19", &self.sec2bb19())
+                .field("sec2bb20", &self.sec2bb20())
+                .field("sec2bb21", &self.sec2bb21())
+                .field("sec2bb22", &self.sec2bb22())
+                .field("sec2bb23", &self.sec2bb23())
+                .field("sec2bb24", &self.sec2bb24())
+                .field("sec2bb25", &self.sec2bb25())
+                .field("sec2bb26", &self.sec2bb26())
+                .field("sec2bb27", &self.sec2bb27())
+                .field("sec2bb28", &self.sec2bb28())
+                .field("sec2bb29", &self.sec2bb29())
+                .field("sec2bb30", &self.sec2bb30())
+                .field("sec2bb31", &self.sec2bb31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sec2bbr3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sec2bbr3 {
+                sec2bb0: bool,
+                sec2bb1: bool,
+                sec2bb2: bool,
+                sec2bb3: bool,
+                sec2bb4: bool,
+                sec2bb5: bool,
+                sec2bb6: bool,
+                sec2bb7: bool,
+                sec2bb8: bool,
+                sec2bb9: bool,
+                sec2bb10: bool,
+                sec2bb11: bool,
+                sec2bb12: bool,
+                sec2bb13: bool,
+                sec2bb14: bool,
+                sec2bb15: bool,
+                sec2bb16: bool,
+                sec2bb17: bool,
+                sec2bb18: bool,
+                sec2bb19: bool,
+                sec2bb20: bool,
+                sec2bb21: bool,
+                sec2bb22: bool,
+                sec2bb23: bool,
+                sec2bb24: bool,
+                sec2bb25: bool,
+                sec2bb26: bool,
+                sec2bb27: bool,
+                sec2bb28: bool,
+                sec2bb29: bool,
+                sec2bb30: bool,
+                sec2bb31: bool,
+            }
+            let proxy = Sec2bbr3 {
+                sec2bb0: self.sec2bb0(),
+                sec2bb1: self.sec2bb1(),
+                sec2bb2: self.sec2bb2(),
+                sec2bb3: self.sec2bb3(),
+                sec2bb4: self.sec2bb4(),
+                sec2bb5: self.sec2bb5(),
+                sec2bb6: self.sec2bb6(),
+                sec2bb7: self.sec2bb7(),
+                sec2bb8: self.sec2bb8(),
+                sec2bb9: self.sec2bb9(),
+                sec2bb10: self.sec2bb10(),
+                sec2bb11: self.sec2bb11(),
+                sec2bb12: self.sec2bb12(),
+                sec2bb13: self.sec2bb13(),
+                sec2bb14: self.sec2bb14(),
+                sec2bb15: self.sec2bb15(),
+                sec2bb16: self.sec2bb16(),
+                sec2bb17: self.sec2bb17(),
+                sec2bb18: self.sec2bb18(),
+                sec2bb19: self.sec2bb19(),
+                sec2bb20: self.sec2bb20(),
+                sec2bb21: self.sec2bb21(),
+                sec2bb22: self.sec2bb22(),
+                sec2bb23: self.sec2bb23(),
+                sec2bb24: self.sec2bb24(),
+                sec2bb25: self.sec2bb25(),
+                sec2bb26: self.sec2bb26(),
+                sec2bb27: self.sec2bb27(),
+                sec2bb28: self.sec2bb28(),
+                sec2bb29: self.sec2bb29(),
+                sec2bb30: self.sec2bb30(),
+                sec2bb31: self.sec2bb31(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH secure block based bank 2 register 4"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7103,6 +9265,119 @@ pub mod regs {
             Sec2bbr4(0)
         }
     }
+    impl core::fmt::Debug for Sec2bbr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sec2bbr4")
+                .field("sec2bb0", &self.sec2bb0())
+                .field("sec2bb1", &self.sec2bb1())
+                .field("sec2bb2", &self.sec2bb2())
+                .field("sec2bb3", &self.sec2bb3())
+                .field("sec2bb4", &self.sec2bb4())
+                .field("sec2bb5", &self.sec2bb5())
+                .field("sec2bb6", &self.sec2bb6())
+                .field("sec2bb7", &self.sec2bb7())
+                .field("sec2bb8", &self.sec2bb8())
+                .field("sec2bb9", &self.sec2bb9())
+                .field("sec2bb10", &self.sec2bb10())
+                .field("sec2bb11", &self.sec2bb11())
+                .field("sec2bb12", &self.sec2bb12())
+                .field("sec2bb13", &self.sec2bb13())
+                .field("sec2bb14", &self.sec2bb14())
+                .field("sec2bb15", &self.sec2bb15())
+                .field("sec2bb16", &self.sec2bb16())
+                .field("sec2bb17", &self.sec2bb17())
+                .field("sec2bb18", &self.sec2bb18())
+                .field("sec2bb19", &self.sec2bb19())
+                .field("sec2bb20", &self.sec2bb20())
+                .field("sec2bb21", &self.sec2bb21())
+                .field("sec2bb22", &self.sec2bb22())
+                .field("sec2bb23", &self.sec2bb23())
+                .field("sec2bb24", &self.sec2bb24())
+                .field("sec2bb25", &self.sec2bb25())
+                .field("sec2bb26", &self.sec2bb26())
+                .field("sec2bb27", &self.sec2bb27())
+                .field("sec2bb28", &self.sec2bb28())
+                .field("sec2bb29", &self.sec2bb29())
+                .field("sec2bb30", &self.sec2bb30())
+                .field("sec2bb31", &self.sec2bb31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sec2bbr4 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sec2bbr4 {
+                sec2bb0: bool,
+                sec2bb1: bool,
+                sec2bb2: bool,
+                sec2bb3: bool,
+                sec2bb4: bool,
+                sec2bb5: bool,
+                sec2bb6: bool,
+                sec2bb7: bool,
+                sec2bb8: bool,
+                sec2bb9: bool,
+                sec2bb10: bool,
+                sec2bb11: bool,
+                sec2bb12: bool,
+                sec2bb13: bool,
+                sec2bb14: bool,
+                sec2bb15: bool,
+                sec2bb16: bool,
+                sec2bb17: bool,
+                sec2bb18: bool,
+                sec2bb19: bool,
+                sec2bb20: bool,
+                sec2bb21: bool,
+                sec2bb22: bool,
+                sec2bb23: bool,
+                sec2bb24: bool,
+                sec2bb25: bool,
+                sec2bb26: bool,
+                sec2bb27: bool,
+                sec2bb28: bool,
+                sec2bb29: bool,
+                sec2bb30: bool,
+                sec2bb31: bool,
+            }
+            let proxy = Sec2bbr4 {
+                sec2bb0: self.sec2bb0(),
+                sec2bb1: self.sec2bb1(),
+                sec2bb2: self.sec2bb2(),
+                sec2bb3: self.sec2bb3(),
+                sec2bb4: self.sec2bb4(),
+                sec2bb5: self.sec2bb5(),
+                sec2bb6: self.sec2bb6(),
+                sec2bb7: self.sec2bb7(),
+                sec2bb8: self.sec2bb8(),
+                sec2bb9: self.sec2bb9(),
+                sec2bb10: self.sec2bb10(),
+                sec2bb11: self.sec2bb11(),
+                sec2bb12: self.sec2bb12(),
+                sec2bb13: self.sec2bb13(),
+                sec2bb14: self.sec2bb14(),
+                sec2bb15: self.sec2bb15(),
+                sec2bb16: self.sec2bb16(),
+                sec2bb17: self.sec2bb17(),
+                sec2bb18: self.sec2bb18(),
+                sec2bb19: self.sec2bb19(),
+                sec2bb20: self.sec2bb20(),
+                sec2bb21: self.sec2bb21(),
+                sec2bb22: self.sec2bb22(),
+                sec2bb23: self.sec2bb23(),
+                sec2bb24: self.sec2bb24(),
+                sec2bb25: self.sec2bb25(),
+                sec2bb26: self.sec2bb26(),
+                sec2bb27: self.sec2bb27(),
+                sec2bb28: self.sec2bb28(),
+                sec2bb29: self.sec2bb29(),
+                sec2bb30: self.sec2bb30(),
+                sec2bb31: self.sec2bb31(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH secure boot address 0 register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7145,6 +9420,29 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
         #[inline(always)]
         fn default() -> Secbootadd0r {
             Secbootadd0r(0)
+        }
+    }
+    impl core::fmt::Debug for Secbootadd0r {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Secbootadd0r")
+                .field("boot_lock", &self.boot_lock())
+                .field("secbootadd0", &self.secbootadd0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Secbootadd0r {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Secbootadd0r {
+                boot_lock: bool,
+                secbootadd0: u32,
+            }
+            let proxy = Secbootadd0r {
+                boot_lock: self.boot_lock(),
+                secbootadd0: self.secbootadd0(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH secure control register"]
@@ -7302,6 +9600,62 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
             Seccr(0)
         }
     }
+    impl core::fmt::Debug for Seccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Seccr")
+                .field("pg", &self.pg())
+                .field("per", &self.per())
+                .field("mer1", &self.mer1())
+                .field("pnb", &self.pnb())
+                .field("bker", &self.bker())
+                .field("bwr", &self.bwr())
+                .field("mer2", &self.mer2())
+                .field("strt", &self.strt())
+                .field("eopie", &self.eopie())
+                .field("errie", &self.errie())
+                .field("rderrie", &self.rderrie())
+                .field("inv", &self.inv())
+                .field("lock", &self.lock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Seccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Seccr {
+                pg: super::vals::SeccrPg,
+                per: super::vals::SeccrPer,
+                mer1: bool,
+                pnb: u8,
+                bker: super::vals::SeccrBker,
+                bwr: bool,
+                mer2: bool,
+                strt: bool,
+                eopie: super::vals::SeccrEopie,
+                errie: super::vals::SeccrErrie,
+                rderrie: bool,
+                inv: bool,
+                lock: bool,
+            }
+            let proxy = Seccr {
+                pg: self.pg(),
+                per: self.per(),
+                mer1: self.mer1(),
+                pnb: self.pnb(),
+                bker: self.bker(),
+                bwr: self.bwr(),
+                mer2: self.mer2(),
+                strt: self.strt(),
+                eopie: self.eopie(),
+                errie: self.errie(),
+                rderrie: self.rderrie(),
+                inv: self.inv(),
+                lock: self.lock(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH secure HDP control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7334,6 +9688,29 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
         #[inline(always)]
         fn default() -> Sechdpcr {
             Sechdpcr(0)
+        }
+    }
+    impl core::fmt::Debug for Sechdpcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sechdpcr")
+                .field("hdp1_accdis", &self.hdp1_accdis())
+                .field("hdp2_accdis", &self.hdp2_accdis())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sechdpcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sechdpcr {
+                hdp1_accdis: super::vals::HdpAccdis,
+                hdp2_accdis: super::vals::HdpAccdis,
+            }
+            let proxy = Sechdpcr {
+                hdp1_accdis: self.hdp1_accdis(),
+                hdp2_accdis: self.hdp2_accdis(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH secure status register"]
@@ -7447,6 +9824,50 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
             Secsr(0)
         }
     }
+    impl core::fmt::Debug for Secsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Secsr")
+                .field("eop", &self.eop())
+                .field("operr", &self.operr())
+                .field("progerr", &self.progerr())
+                .field("wrperr", &self.wrperr())
+                .field("pgaerr", &self.pgaerr())
+                .field("sizerr", &self.sizerr())
+                .field("pgserr", &self.pgserr())
+                .field("bsy", &self.bsy())
+                .field("wdw", &self.wdw())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Secsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Secsr {
+                eop: bool,
+                operr: bool,
+                progerr: bool,
+                wrperr: bool,
+                pgaerr: bool,
+                sizerr: bool,
+                pgserr: bool,
+                bsy: bool,
+                wdw: bool,
+            }
+            let proxy = Secsr {
+                eop: self.eop(),
+                operr: self.operr(),
+                progerr: self.progerr(),
+                wrperr: self.wrperr(),
+                pgaerr: self.pgaerr(),
+                sizerr: self.sizerr(),
+                pgserr: self.pgserr(),
+                bsy: self.bsy(),
+                wdw: self.wdw(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH secure watermark1 register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7479,6 +9900,29 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
         #[inline(always)]
         fn default() -> Secwm1r1 {
             Secwm1r1(0)
+        }
+    }
+    impl core::fmt::Debug for Secwm1r1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Secwm1r1")
+                .field("secwm1_pstrt", &self.secwm1_pstrt())
+                .field("secwm1_pend", &self.secwm1_pend())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Secwm1r1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Secwm1r1 {
+                secwm1_pstrt: u8,
+                secwm1_pend: u8,
+            }
+            let proxy = Secwm1r1 {
+                secwm1_pstrt: self.secwm1_pstrt(),
+                secwm1_pend: self.secwm1_pend(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH secure watermark1 register 2"]
@@ -7515,6 +9959,29 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
             Secwm1r2(0)
         }
     }
+    impl core::fmt::Debug for Secwm1r2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Secwm1r2")
+                .field("hdp1_pend", &self.hdp1_pend())
+                .field("hdp1en", &self.hdp1en())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Secwm1r2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Secwm1r2 {
+                hdp1_pend: u8,
+                hdp1en: bool,
+            }
+            let proxy = Secwm1r2 {
+                hdp1_pend: self.hdp1_pend(),
+                hdp1en: self.hdp1en(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH secure watermark2 register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7549,6 +10016,29 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
             Secwm2r1(0)
         }
     }
+    impl core::fmt::Debug for Secwm2r1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Secwm2r1")
+                .field("secwm2_pstrt", &self.secwm2_pstrt())
+                .field("secwm2_pend", &self.secwm2_pend())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Secwm2r1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Secwm2r1 {
+                secwm2_pstrt: u8,
+                secwm2_pend: u8,
+            }
+            let proxy = Secwm2r1 {
+                secwm2_pstrt: self.secwm2_pstrt(),
+                secwm2_pend: self.secwm2_pend(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH secure watermark2 register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7581,6 +10071,29 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
         #[inline(always)]
         fn default() -> Secwm2r2 {
             Secwm2r2(0)
+        }
+    }
+    impl core::fmt::Debug for Secwm2r2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Secwm2r2")
+                .field("hdp2_pend", &self.hdp2_pend())
+                .field("hdp2en", &self.hdp2en())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Secwm2r2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Secwm2r2 {
+                hdp2_pend: u8,
+                hdp2en: bool,
+            }
+            let proxy = Secwm2r2 {
+                hdp2_pend: self.hdp2_pend(),
+                hdp2en: self.hdp2en(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH WRP1 area A address register"]
@@ -7628,6 +10141,32 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
             Wrp1ar(0)
         }
     }
+    impl core::fmt::Debug for Wrp1ar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wrp1ar")
+                .field("wrp1a_pstrt", &self.wrp1a_pstrt())
+                .field("wrp1a_pend", &self.wrp1a_pend())
+                .field("unlock", &self.unlock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wrp1ar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wrp1ar {
+                wrp1a_pstrt: u8,
+                wrp1a_pend: u8,
+                unlock: super::vals::WrparUnlock,
+            }
+            let proxy = Wrp1ar {
+                wrp1a_pstrt: self.wrp1a_pstrt(),
+                wrp1a_pend: self.wrp1a_pend(),
+                unlock: self.unlock(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH WRP1 area B address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7671,6 +10210,32 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
         #[inline(always)]
         fn default() -> Wrp1br {
             Wrp1br(0)
+        }
+    }
+    impl core::fmt::Debug for Wrp1br {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wrp1br")
+                .field("wrp1b_pstrt", &self.wrp1b_pstrt())
+                .field("wrp1b_pend", &self.wrp1b_pend())
+                .field("unlock", &self.unlock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wrp1br {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wrp1br {
+                wrp1b_pstrt: u8,
+                wrp1b_pend: u8,
+                unlock: super::vals::WrpbrUnlock,
+            }
+            let proxy = Wrp1br {
+                wrp1b_pstrt: self.wrp1b_pstrt(),
+                wrp1b_pend: self.wrp1b_pend(),
+                unlock: self.unlock(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH WPR2 area A address register"]
@@ -7718,6 +10283,32 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
             Wrp2ar(0)
         }
     }
+    impl core::fmt::Debug for Wrp2ar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wrp2ar")
+                .field("wrp2a_pstrt", &self.wrp2a_pstrt())
+                .field("wrp2a_pend", &self.wrp2a_pend())
+                .field("unlock", &self.unlock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wrp2ar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wrp2ar {
+                wrp2a_pstrt: u8,
+                wrp2a_pend: u8,
+                unlock: super::vals::WrparUnlock,
+            }
+            let proxy = Wrp2ar {
+                wrp2a_pstrt: self.wrp2a_pstrt(),
+                wrp2a_pend: self.wrp2a_pend(),
+                unlock: self.unlock(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH WPR2 area B address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7763,10 +10354,37 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
             Wrp2br(0)
         }
     }
+    impl core::fmt::Debug for Wrp2br {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wrp2br")
+                .field("wrp2b_pstrt", &self.wrp2b_pstrt())
+                .field("wrp2b_pend", &self.wrp2b_pend())
+                .field("unlock", &self.unlock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wrp2br {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wrp2br {
+                wrp2b_pstrt: u8,
+                wrp2b_pend: u8,
+                unlock: super::vals::WrpbrUnlock,
+            }
+            let proxy = Wrp2br {
+                wrp2b_pstrt: self.wrp2b_pstrt(),
+                wrp2b_pend: self.wrp2b_pend(),
+                unlock: self.unlock(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BkEcc {
         #[doc = "Bank 1"]
         B_0X0 = 0x0,
@@ -7796,7 +10414,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BkOp {
         #[doc = "Bank 1"]
         B_0X0 = 0x0,
@@ -7826,7 +10445,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BkpsramEcc {
         #[doc = "Backup RAM ECC check enabled"]
         B_0X0 = 0x0,
@@ -7856,7 +10476,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BorLev {
         #[doc = "BOR level 0 (reset level threshold around 1.7 V)"]
         B_0X0 = 0x0,
@@ -7895,7 +10516,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CodeOp {
         #[doc = "No Flash operation interrupted by previous reset"]
         B_0X0 = 0x0,
@@ -7936,7 +10558,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dualbank {
         #[doc = "Single bank Flash with contiguous address in bank 1"]
         B_0X0 = 0x0,
@@ -7966,7 +10589,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Eccie {
         #[doc = "ECCC interrupt disabled"]
         B_0X0 = 0x0,
@@ -7996,7 +10620,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum HdpAccdis {
         #[doc = "Access to HDP2 area granted"]
         B_0X0 = 0x0,
@@ -8026,7 +10651,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum IoVddHslv {
         #[doc = "High-speed IO at low VDD voltage feature disabled (VDD can exceed 2.5 V)"]
         B_0X0 = 0x0,
@@ -8056,7 +10682,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum IoVddioHslv {
         #[doc = "High-speed IO at low VDDIO2 voltage feature disabled (VDDIO2 can exceed 2.5 V)"]
         B_0X0 = 0x0,
@@ -8086,7 +10713,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum IwdgStdby {
         #[doc = "Independent watchdog counter frozen in Standby mode"]
         B_0X0 = 0x0,
@@ -8116,7 +10744,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum IwdgStop {
         #[doc = "Independent watchdog counter frozen in Stop mode"]
         B_0X0 = 0x0,
@@ -8146,7 +10775,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum IwdgSw {
         #[doc = "Hardware independent watchdog selected"]
         B_0X0 = 0x0,
@@ -8176,7 +10806,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpm {
         #[doc = "Flash not in low-power read mode"]
         B_0X0 = 0x0,
@@ -8206,7 +10837,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum NBoot {
         #[doc = "nBOOT0 = 0"]
         B_0X0 = 0x0,
@@ -8236,7 +10868,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum NRstShdw {
         #[doc = "Reset generated when entering the Shutdown mode"]
         B_0X0 = 0x0,
@@ -8266,7 +10899,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum NRstStdby {
         #[doc = "Reset generated when entering the Standby mode"]
         B_0X0 = 0x0,
@@ -8296,7 +10930,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum NRstStop {
         #[doc = "Reset generated when entering the Stop mode"]
         B_0X0 = 0x0,
@@ -8326,7 +10961,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum NSwboot {
         #[doc = "BOOT0 taken from the option bit nBOOT0"]
         B_0X0 = 0x0,
@@ -8356,7 +10992,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum NscrBker {
         #[doc = "Bank 1 selected for non-secure page erase"]
         B_0X0 = 0x0,
@@ -8386,7 +11023,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum NscrEopie {
         #[doc = "Non-secure EOP Interrupt disabled"]
         B_0X0 = 0x0,
@@ -8416,7 +11054,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum NscrErrie {
         #[doc = "Non-secure OPERR error interrupt disabled"]
         B_0X0 = 0x0,
@@ -8446,7 +11085,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum NscrPer {
         #[doc = "Non-secure page erase disabled"]
         B_0X0 = 0x0,
@@ -8476,7 +11116,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum NscrPg {
         #[doc = "Non-secure Flash programming disabled"]
         B_0X0 = 0x0,
@@ -8506,7 +11147,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nspriv {
         #[doc = "Non-secure Flash registers can be read and written by privileged or unprivileged access."]
         B_0X0 = 0x0,
@@ -8536,7 +11178,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OblLaunch {
         #[doc = "Option byte loading complete"]
         B_0X0 = 0x0,
@@ -8566,7 +11209,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pdreq {
         #[doc = "No request for bank 2 to enter power-down mode"]
         B_0X0 = 0x0,
@@ -8602,9 +11246,9 @@ pub mod vals {
         #[doc = "Level 0.5 (readout protection not active, only non-secure debug access is possible). Only available when TrustZone is active (TZEN=1)"]
         pub const B_0X55: Self = Self(0x55);
         #[doc = "Level 0 (readout protection not active)"]
-        pub const B_0XAA: Self = Self(0xaa);
+        pub const B_0X_AA: Self = Self(0xaa);
         #[doc = "Level 2 (chip readout protection active)"]
-        pub const B_0XCC: Self = Self(0xcc);
+        pub const B_0X_CC: Self = Self(0xcc);
     }
     impl Rdp {
         pub const fn from_bits(val: u8) -> Rdp {
@@ -8612,6 +11256,27 @@ pub mod vals {
         }
         pub const fn to_bits(self) -> u8 {
             self.0
+        }
+    }
+    impl core::fmt::Debug for Rdp {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            match self.0 {
+                0x55 => f.write_str("B_0X55"),
+                0xaa => f.write_str("B_0X_AA"),
+                0xcc => f.write_str("B_0X_CC"),
+                other => core::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rdp {
+        fn format(&self, f: defmt::Formatter) {
+            match self.0 {
+                0x55 => defmt::write!(f, "B_0X55"),
+                0xaa => defmt::write!(f, "B_0X_AA"),
+                0xcc => defmt::write!(f, "B_0X_CC"),
+                other => defmt::write!(f, "0x{:02X}", other),
+            }
         }
     }
     impl From<u8> for Rdp {
@@ -8627,7 +11292,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SeccrBker {
         #[doc = "Bank 1 selected for secure page erase"]
         B_0X0 = 0x0,
@@ -8657,7 +11323,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SeccrEopie {
         #[doc = "Secure EOP Interrupt disabled"]
         B_0X0 = 0x0,
@@ -8687,7 +11354,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SeccrErrie {
         #[doc = "Secure OPERR error interrupt disabled"]
         B_0X0 = 0x0,
@@ -8717,7 +11385,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SeccrPer {
         #[doc = "Secure page erase disabled"]
         B_0X0 = 0x0,
@@ -8747,7 +11416,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SeccrPg {
         #[doc = "Secure Flash programming disabled"]
         B_0X0 = 0x0,
@@ -8777,7 +11447,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SleepPd {
         #[doc = "Flash in Idle mode during Sleep mode"]
         B_0X0 = 0x0,
@@ -8807,7 +11478,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spriv {
         #[doc = "Secure Flash registers can be read and written by privileged or unprivileged access."]
         B_0X0 = 0x0,
@@ -8837,7 +11509,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SramEcc {
         #[doc = "SRAM3 ECC check enabled"]
         B_0X0 = 0x0,
@@ -8867,7 +11540,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SwapBank {
         #[doc = "Bank 1 and bank 2 addresses not swapped"]
         B_0X0 = 0x0,
@@ -8897,7 +11571,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum WrparUnlock {
         #[doc = "WRP2A start and end pages locked"]
         B_0X0 = 0x0,
@@ -8927,7 +11602,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum WrpbrUnlock {
         #[doc = "WRP2B start and end pages locked"]
         B_0X0 = 0x0,
@@ -8957,7 +11633,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum WwdgSw {
         #[doc = "Hardware window watchdog selected"]
         B_0X0 = 0x0,

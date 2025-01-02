@@ -221,6 +221,47 @@ pub mod regs {
             Ahb1fzr(0)
         }
     }
+    impl core::fmt::Debug for Ahb1fzr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ahb1fzr")
+                .field("dbg_gpdma1_ch0_stop", &self.dbg_gpdma1_ch0_stop())
+                .field("dbg_gpdma1_ch1_stop", &self.dbg_gpdma1_ch1_stop())
+                .field("dbg_gpdma1_ch2_stop", &self.dbg_gpdma1_ch2_stop())
+                .field("dbg_gpdma1_ch3_stop", &self.dbg_gpdma1_ch3_stop())
+                .field("dbg_gpdma1_ch4_stop", &self.dbg_gpdma1_ch4_stop())
+                .field("dbg_gpdma1_ch5_stop", &self.dbg_gpdma1_ch5_stop())
+                .field("dbg_gpdma1_ch6_stop", &self.dbg_gpdma1_ch6_stop())
+                .field("dbg_gpdma1_ch7_stop", &self.dbg_gpdma1_ch7_stop())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ahb1fzr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ahb1fzr {
+                dbg_gpdma1_ch0_stop: bool,
+                dbg_gpdma1_ch1_stop: bool,
+                dbg_gpdma1_ch2_stop: bool,
+                dbg_gpdma1_ch3_stop: bool,
+                dbg_gpdma1_ch4_stop: bool,
+                dbg_gpdma1_ch5_stop: bool,
+                dbg_gpdma1_ch6_stop: bool,
+                dbg_gpdma1_ch7_stop: bool,
+            }
+            let proxy = Ahb1fzr {
+                dbg_gpdma1_ch0_stop: self.dbg_gpdma1_ch0_stop(),
+                dbg_gpdma1_ch1_stop: self.dbg_gpdma1_ch1_stop(),
+                dbg_gpdma1_ch2_stop: self.dbg_gpdma1_ch2_stop(),
+                dbg_gpdma1_ch3_stop: self.dbg_gpdma1_ch3_stop(),
+                dbg_gpdma1_ch4_stop: self.dbg_gpdma1_ch4_stop(),
+                dbg_gpdma1_ch5_stop: self.dbg_gpdma1_ch5_stop(),
+                dbg_gpdma1_ch6_stop: self.dbg_gpdma1_ch6_stop(),
+                dbg_gpdma1_ch7_stop: self.dbg_gpdma1_ch7_stop(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "APB1H peripheral freeze register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -242,6 +283,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Apb1hfzr {
             Apb1hfzr(0)
+        }
+    }
+    impl core::fmt::Debug for Apb1hfzr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Apb1hfzr")
+                .field("dbg_lptim2_stop", &self.dbg_lptim2_stop())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Apb1hfzr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Apb1hfzr {
+                dbg_lptim2_stop: bool,
+            }
+            let proxy = Apb1hfzr {
+                dbg_lptim2_stop: self.dbg_lptim2_stop(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "APB1L peripheral freeze register"]
@@ -311,6 +372,38 @@ pub mod regs {
             Apb1lfzr(0)
         }
     }
+    impl core::fmt::Debug for Apb1lfzr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Apb1lfzr")
+                .field("dbg_tim2_stop", &self.dbg_tim2_stop())
+                .field("dbg_tim3_stop", &self.dbg_tim3_stop())
+                .field("dbg_wwdg_stop", &self.dbg_wwdg_stop())
+                .field("dbg_iwdg_stop", &self.dbg_iwdg_stop())
+                .field("dbg_i2c1_stop", &self.dbg_i2c1_stop())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Apb1lfzr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Apb1lfzr {
+                dbg_tim2_stop: bool,
+                dbg_tim3_stop: bool,
+                dbg_wwdg_stop: bool,
+                dbg_iwdg_stop: bool,
+                dbg_i2c1_stop: bool,
+            }
+            let proxy = Apb1lfzr {
+                dbg_tim2_stop: self.dbg_tim2_stop(),
+                dbg_tim3_stop: self.dbg_tim3_stop(),
+                dbg_wwdg_stop: self.dbg_wwdg_stop(),
+                dbg_iwdg_stop: self.dbg_iwdg_stop(),
+                dbg_i2c1_stop: self.dbg_i2c1_stop(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "APB2 peripheral freeze register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -354,6 +447,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Apb2fzr {
             Apb2fzr(0)
+        }
+    }
+    impl core::fmt::Debug for Apb2fzr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Apb2fzr")
+                .field("dbg_tim1_stop", &self.dbg_tim1_stop())
+                .field("dbg_tim16_stop", &self.dbg_tim16_stop())
+                .field("dbg_tim17_stop", &self.dbg_tim17_stop())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Apb2fzr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Apb2fzr {
+                dbg_tim1_stop: bool,
+                dbg_tim16_stop: bool,
+                dbg_tim17_stop: bool,
+            }
+            let proxy = Apb2fzr {
+                dbg_tim1_stop: self.dbg_tim1_stop(),
+                dbg_tim16_stop: self.dbg_tim16_stop(),
+                dbg_tim17_stop: self.dbg_tim17_stop(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "APB7 peripheral freeze register"]
@@ -401,6 +520,32 @@ pub mod regs {
             Apb7fzr(0)
         }
     }
+    impl core::fmt::Debug for Apb7fzr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Apb7fzr")
+                .field("dbg_i2c3_stop", &self.dbg_i2c3_stop())
+                .field("dbg_lptim1_stop", &self.dbg_lptim1_stop())
+                .field("dbg_rtc_stop", &self.dbg_rtc_stop())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Apb7fzr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Apb7fzr {
+                dbg_i2c3_stop: bool,
+                dbg_lptim1_stop: bool,
+                dbg_rtc_stop: bool,
+            }
+            let proxy = Apb7fzr {
+                dbg_i2c3_stop: self.dbg_i2c3_stop(),
+                dbg_lptim1_stop: self.dbg_lptim1_stop(),
+                dbg_rtc_stop: self.dbg_rtc_stop(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CoreSight component identity register 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -422,6 +567,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cidr0 {
             Cidr0(0)
+        }
+    }
+    impl core::fmt::Debug for Cidr0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cidr0").field("preamble", &self.preamble()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cidr0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cidr0 {
+                preamble: u8,
+            }
+            let proxy = Cidr0 {
+                preamble: self.preamble(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CoreSight peripheral identity register 1"]
@@ -460,6 +623,29 @@ pub mod regs {
             Cidr1(0)
         }
     }
+    impl core::fmt::Debug for Cidr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cidr1")
+                .field("preamble", &self.preamble())
+                .field("class", &self.class())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cidr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cidr1 {
+                preamble: u8,
+                class: u8,
+            }
+            let proxy = Cidr1 {
+                preamble: self.preamble(),
+                class: self.class(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CoreSight component identity register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -483,6 +669,24 @@ pub mod regs {
             Cidr2(0)
         }
     }
+    impl core::fmt::Debug for Cidr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cidr2").field("preamble", &self.preamble()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cidr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cidr2 {
+                preamble: u8,
+            }
+            let proxy = Cidr2 {
+                preamble: self.preamble(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CoreSight component identity register 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -504,6 +708,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cidr3 {
             Cidr3(0)
+        }
+    }
+    impl core::fmt::Debug for Cidr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cidr3").field("preamble", &self.preamble()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cidr3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cidr3 {
+                preamble: u8,
+            }
+            let proxy = Cidr3 {
+                preamble: self.preamble(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "status and configuration register"]
@@ -595,6 +817,44 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("dbg_stop", &self.dbg_stop())
+                .field("dbg_standby", &self.dbg_standby())
+                .field("lpms", &self.lpms())
+                .field("stopf", &self.stopf())
+                .field("sbf", &self.sbf())
+                .field("cs", &self.cs())
+                .field("cds", &self.cds())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                dbg_stop: bool,
+                dbg_standby: bool,
+                lpms: u8,
+                stopf: bool,
+                sbf: bool,
+                cs: bool,
+                cds: bool,
+            }
+            let proxy = Cr {
+                dbg_stop: self.dbg_stop(),
+                dbg_standby: self.dbg_standby(),
+                lpms: self.lpms(),
+                stopf: self.stopf(),
+                sbf: self.sbf(),
+                cs: self.cs(),
+                cds: self.cds(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "debug device authentication register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -618,6 +878,26 @@ pub mod regs {
             DbgAuthDevice(0)
         }
     }
+    impl core::fmt::Debug for DbgAuthDevice {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DbgAuthDevice")
+                .field("auth_id", &self.auth_id())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DbgAuthDevice {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DbgAuthDevice {
+                auth_id: u32,
+            }
+            let proxy = DbgAuthDevice {
+                auth_id: self.auth_id(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "debug host authentication register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -639,6 +919,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DbgAuthHost {
             DbgAuthHost(0)
+        }
+    }
+    impl core::fmt::Debug for DbgAuthHost {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DbgAuthHost")
+                .field("auth_key", &self.auth_key())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DbgAuthHost {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DbgAuthHost {
+                auth_key: u32,
+            }
+            let proxy = DbgAuthHost {
+                auth_key: self.auth_key(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "identity code register"]
@@ -675,6 +975,29 @@ pub mod regs {
             Idcode(0)
         }
     }
+    impl core::fmt::Debug for Idcode {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Idcode")
+                .field("dev_id", &self.dev_id())
+                .field("rev_id", &self.rev_id())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Idcode {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Idcode {
+                dev_id: u16,
+                rev_id: u16,
+            }
+            let proxy = Idcode {
+                dev_id: self.dev_id(),
+                rev_id: self.rev_id(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CoreSight peripheral identity register 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -696,6 +1019,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Pidr0 {
             Pidr0(0)
+        }
+    }
+    impl core::fmt::Debug for Pidr0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pidr0").field("partnum", &self.partnum()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pidr0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pidr0 {
+                partnum: u8,
+            }
+            let proxy = Pidr0 {
+                partnum: self.partnum(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CoreSight peripheral identity register 1"]
@@ -730,6 +1071,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Pidr1 {
             Pidr1(0)
+        }
+    }
+    impl core::fmt::Debug for Pidr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pidr1")
+                .field("partnum", &self.partnum())
+                .field("jep106id", &self.jep106id())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pidr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pidr1 {
+                partnum: u8,
+                jep106id: u8,
+            }
+            let proxy = Pidr1 {
+                partnum: self.partnum(),
+                jep106id: self.jep106id(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CoreSight peripheral identity register 2"]
@@ -777,6 +1141,32 @@ pub mod regs {
             Pidr2(0)
         }
     }
+    impl core::fmt::Debug for Pidr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pidr2")
+                .field("jep106id", &self.jep106id())
+                .field("jedec", &self.jedec())
+                .field("revision", &self.revision())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pidr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pidr2 {
+                jep106id: u8,
+                jedec: bool,
+                revision: u8,
+            }
+            let proxy = Pidr2 {
+                jep106id: self.jep106id(),
+                jedec: self.jedec(),
+                revision: self.revision(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CoreSight peripheral identity register 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -809,6 +1199,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Pidr3 {
             Pidr3(0)
+        }
+    }
+    impl core::fmt::Debug for Pidr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pidr3")
+                .field("cmod", &self.cmod())
+                .field("revand", &self.revand())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pidr3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pidr3 {
+                cmod: u8,
+                revand: u8,
+            }
+            let proxy = Pidr3 {
+                cmod: self.cmod(),
+                revand: self.revand(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CoreSight peripheral identity register 4"]
@@ -845,6 +1258,29 @@ pub mod regs {
             Pidr4(0)
         }
     }
+    impl core::fmt::Debug for Pidr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pidr4")
+                .field("jep106con", &self.jep106con())
+                .field("f4kcount", &self.f4kcount())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pidr4 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pidr4 {
+                jep106con: u8,
+                f4kcount: u8,
+            }
+            let proxy = Pidr4 {
+                jep106con: self.jep106con(),
+                f4kcount: self.f4kcount(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "part number codification register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -866,6 +1302,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Pncr {
             Pncr(0)
+        }
+    }
+    impl core::fmt::Debug for Pncr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pncr")
+                .field("codification", &self.codification())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pncr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pncr {
+                codification: u32,
+            }
+            let proxy = Pncr {
+                codification: self.codification(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "status register"]
@@ -900,6 +1356,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Sr {
             Sr(0)
+        }
+    }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("ap_present", &self.ap_present())
+                .field("ap_enabled", &self.ap_enabled())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                ap_present: u16,
+                ap_enabled: u16,
+            }
+            let proxy = Sr {
+                ap_present: self.ap_present(),
+                ap_enabled: self.ap_enabled(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

@@ -1787,14 +1787,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVELOW",
+                    name: "ACTIVE_LOW",
                     description: Some(
                         "Data enable polarity is active low",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ACTIVEHIGH",
+                    name: "ACTIVE_HIGH",
                     description: Some(
                         "Data enable polarity is active high",
                     ),
@@ -1808,14 +1808,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVELOW",
+                    name: "ACTIVE_LOW",
                     description: Some(
                         "Horizontal synchronization polarity is active low",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ACTIVEHIGH",
+                    name: "ACTIVE_HIGH",
                     description: Some(
                         "Horizontal synchronization polarity is active high",
                     ),
@@ -1829,7 +1829,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOEFFECT",
+                    name: "NO_EFFECT",
                     description: Some(
                         "This bit is set by software and cleared only by hardware after reload (it cannot be cleared through register write once it is set)",
                     ),
@@ -1850,14 +1850,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RISINGEDGE",
+                    name: "RISING_EDGE",
                     description: Some(
                         "Pixel clock on rising edge",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FALLINGEDGE",
+                    name: "FALLING_EDGE",
                     description: Some(
                         "Pixel clock on falling edge",
                     ),
@@ -1934,7 +1934,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOEFFECT",
+                    name: "NO_EFFECT",
                     description: Some(
                         "This bit is set by software and cleared only by hardware after reload (it cannot be cleared through register write once it is set)",
                     ),
@@ -1955,14 +1955,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVELOW",
+                    name: "ACTIVE_LOW",
                     description: Some(
                         "Vertical synchronization polarity is active low",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ACTIVEHIGH",
+                    name: "ACTIVE_HIGH",
                     description: Some(
                         "Vertical synchronization polarity is active high",
                     ),

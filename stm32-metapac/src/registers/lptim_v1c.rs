@@ -1153,21 +1153,21 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RISINGEDGE",
+                    name: "RISING_EDGE",
                     description: Some(
                         "rising edge is the active edge",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "FALLINGEDGE",
+                    name: "FALLING_EDGE",
                     description: Some(
                         "falling edge is the active edge",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "BOTHEDGE",
+                    name: "BOTH_EDGE",
                     description: Some(
                         "both edges are active edges",
                     ),

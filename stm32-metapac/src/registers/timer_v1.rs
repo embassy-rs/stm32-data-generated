@@ -7694,7 +7694,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOTINVERTED",
+                    name: "NOT_INVERTED",
                     description: Some(
                         "input polarity is not inverted (active low if BKxP = 0, active high if BKxP = 1)",
                     ),
@@ -7715,14 +7715,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVELOW",
+                    name: "ACTIVE_LOW",
                     description: Some(
                         "Break input tim_brk is active low",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ACTIVEHIGH",
+                    name: "ACTIVE_HIGH",
                     description: Some(
                         "Break input tim_brk is active high",
                     ),
@@ -7736,14 +7736,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ONCOMPARE",
+                    name: "ON_COMPARE",
                     description: Some(
                         "CCx DMA request sent when CCx event occurs",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ONUPDATE",
+                    name: "ON_UPDATE",
                     description: Some(
                         "CCx DMA request sent when update event occurs",
                     ),
@@ -7827,28 +7827,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "EDGEALIGNED",
+                    name: "EDGE_ALIGNED",
                     description: Some(
                         "The counter counts up or down depending on the direction bit",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CENTERALIGNED1",
+                    name: "CENTER_ALIGNED1",
                     description: Some(
                         "The counter counts up and down alternatively. Output compare interrupt flags are set only when the counter is counting down.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "CENTERALIGNED2",
+                    name: "CENTER_ALIGNED2",
                     description: Some(
                         "The counter counts up and down alternatively. Output compare interrupt flags are set only when the counter is counting up.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "CENTERALIGNED3",
+                    name: "CENTER_ALIGNED3",
                     description: Some(
                         "The counter counts up and down alternatively. Output compare interrupt flags are set both when the counter is counting up or down.",
                     ),
@@ -7883,7 +7883,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOTINVERTED",
+                    name: "NOT_INVERTED",
                     description: Some(
                         "ETR is noninverted, active at high level or rising edge",
                     ),
@@ -7939,7 +7939,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "NOFILTER",
+                    name: "NO_FILTER",
                     description: Some(
                         "No filter, sampling is done at fDTS",
                     ),
@@ -8058,14 +8058,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOEFFECT",
+                    name: "NO_EFFECT",
                     description: Some(
                         "No effect of TIM_OC5REF on TIM_OCxREFC (x=1-3)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LOGICALAND",
+                    name: "LOGICAL_AND",
                     description: Some(
                         "TIM_OCxREFC is the logical AND of TIM_OCxREF and TIM_OC5REF",
                     ),
@@ -8135,35 +8135,35 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "COMPAREPULSE",
+                    name: "COMPARE_PULSE",
                     description: Some(
                         "The trigger output send a positive pulse when the CC1IF flag it to be set, as soon as a capture or a compare match occurred",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "COMPAREOC1",
+                    name: "COMPARE_OC1",
                     description: Some(
                         "OC1REF signal is used as trigger output",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "COMPAREOC2",
+                    name: "COMPARE_OC2",
                     description: Some(
                         "OC2REF signal is used as trigger output",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "COMPAREOC3",
+                    name: "COMPARE_OC3",
                     description: Some(
                         "OC3REF signal is used as trigger output",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "COMPAREOC4",
+                    name: "COMPARE_OC4",
                     description: Some(
                         "OC4REF signal is used as trigger output",
                     ),
@@ -8198,91 +8198,91 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "COMPAREPULSE",
+                    name: "COMPARE_PULSE",
                     description: Some(
                         "TRGO2 send a positive pulse when the CC1IF flag it to be set, as soon as a capture or a compare match occurred",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "COMPAREOC1",
+                    name: "COMPARE_OC1",
                     description: Some(
                         "OC1REF signal is used as TRGO2",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "COMPAREOC2",
+                    name: "COMPARE_OC2",
                     description: Some(
                         "OC2REF signal is used as TRGO2",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "COMPAREOC3",
+                    name: "COMPARE_OC3",
                     description: Some(
                         "OC3REF signal is used as TRGO2",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "COMPAREOC4",
+                    name: "COMPARE_OC4",
                     description: Some(
                         "OC4REF signal is used as TRGO2",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "COMPAREOC5",
+                    name: "COMPARE_OC5",
                     description: Some(
                         "OC5REF signal is used as TRGO2",
                     ),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "COMPAREOC6",
+                    name: "COMPARE_OC6",
                     description: Some(
                         "OC6REF signal is used as TRGO2",
                     ),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "COMPAREPULSE_OC4",
+                    name: "COMPARE_PULSE_OC4",
                     description: Some(
                         "OC4REF rising or falling edges generate pulses on TRGO2",
                     ),
                     value: 10,
                 },
                 EnumVariant {
-                    name: "COMPAREPULSE_OC6",
+                    name: "COMPARE_PULSE_OC6",
                     description: Some(
                         "OC6REF rising or falling edges generate pulses on TRGO2",
                     ),
                     value: 11,
                 },
                 EnumVariant {
-                    name: "COMPAREPULSE_OC4_OR_OC6_RISING",
+                    name: "COMPARE_PULSE_OC4_OR_OC6_RISING",
                     description: Some(
                         "OC4REF or OC6REF rising edges generate pulses on TRGO2",
                     ),
                     value: 12,
                 },
                 EnumVariant {
-                    name: "COMPAREPULSE_OC4_RISING_OR_OC6_FALLING",
+                    name: "COMPARE_PULSE_OC4_RISING_OR_OC6_FALLING",
                     description: Some(
                         "OC4REF rising or OC6REF falling edges generate pulses on TRGO2",
                     ),
                     value: 13,
                 },
                 EnumVariant {
-                    name: "COMPAREPULSE_OC5_OR_OC6_RISING",
+                    name: "COMPARE_PULSE_OC5_OR_OC6_RISING",
                     description: Some(
                         "OC5REF or OC6REF rising edges generate pulses on TRGO2",
                     ),
                     value: 14,
                 },
                 EnumVariant {
-                    name: "COMPAREPULSE_OC5_RISING_OR_OC6_FALLING",
+                    name: "COMPARE_PULSE_OC5_RISING_OR_OC6_FALLING",
                     description: Some(
                         "OC5REF rising or OC6REF falling edges generate pulses on TRGO2",
                     ),
@@ -8296,7 +8296,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOSYNC",
+                    name: "NO_SYNC",
                     description: Some(
                         "No action",
                     ),
@@ -8324,14 +8324,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ACTIVEONMATCH",
+                    name: "ACTIVE_ON_MATCH",
                     description: Some(
                         "Set channel to active level on match. OCyREF signal is forced high when the counter matches the capture/compare register",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "INACTIVEONMATCH",
+                    name: "INACTIVE_ON_MATCH",
                     description: Some(
                         "Set channel to inactive level on match. OCyREF signal is forced low when the counter matches the capture/compare register",
                     ),
@@ -8345,28 +8345,28 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 3,
                 },
                 EnumVariant {
-                    name: "FORCEINACTIVE",
+                    name: "FORCE_INACTIVE",
                     description: Some(
                         "OCyREF is forced low",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "FORCEACTIVE",
+                    name: "FORCE_ACTIVE",
                     description: Some(
                         "OCyREF is forced high",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "PWMMODE1",
+                    name: "PWM_MODE1",
                     description: Some(
                         "In upcounting, channel is active as long as TIMx_CNT<TIMx_CCRy else inactive. In downcounting, channel is inactive as long as TIMx_CNT>TIMx_CCRy else active",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "PWMMODE2",
+                    name: "PWM_MODE2",
                     description: Some(
                         "Inversely to PwmMode1",
                     ),
@@ -8387,7 +8387,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "IDLELEVEL",
+                    name: "IDLE_LEVEL",
                     description: Some(
                         "When inactive, OC/OCN outputs are forced to idle level",
                     ),
@@ -8408,7 +8408,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "IDLELEVEL",
+                    name: "IDLE_LEVEL",
                     description: Some(
                         "When inactive, OC/OCN outputs are enabled with their inactive level",
                     ),
@@ -8660,14 +8660,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ANYEVENT",
+                    name: "ANY_EVENT",
                     description: Some(
                         "Any of counter overflow/underflow, setting UG, or update through slave mode, generates an update interrupt or DMA request",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "COUNTERONLY",
+                    name: "COUNTER_ONLY",
                     description: Some(
                         "Only counter overflow/underflow generates an update interrupt or DMA request",
                     ),

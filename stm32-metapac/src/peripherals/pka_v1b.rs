@@ -98,6 +98,35 @@ pub mod regs {
             Clrfr(0)
         }
     }
+    impl core::fmt::Debug for Clrfr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Clrfr")
+                .field("procendfc", &self.procendfc())
+                .field("ramerrfc", &self.ramerrfc())
+                .field("addrerrfc", &self.addrerrfc())
+                .field("operrfc", &self.operrfc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Clrfr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Clrfr {
+                procendfc: bool,
+                ramerrfc: bool,
+                addrerrfc: bool,
+                operrfc: bool,
+            }
+            let proxy = Clrfr {
+                procendfc: self.procendfc(),
+                ramerrfc: self.ramerrfc(),
+                addrerrfc: self.addrerrfc(),
+                operrfc: self.operrfc(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PKA control register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -187,6 +216,44 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("en", &self.en())
+                .field("start", &self.start())
+                .field("mode", &self.mode())
+                .field("procendie", &self.procendie())
+                .field("ramerrie", &self.ramerrie())
+                .field("addrerrie", &self.addrerrie())
+                .field("operrie", &self.operrie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                en: bool,
+                start: bool,
+                mode: u8,
+                procendie: bool,
+                ramerrie: bool,
+                addrerrie: bool,
+                operrie: bool,
+            }
+            let proxy = Cr {
+                en: self.en(),
+                start: self.start(),
+                mode: self.mode(),
+                procendie: self.procendie(),
+                ramerrie: self.ramerrie(),
+                addrerrie: self.addrerrie(),
+                operrie: self.operrie(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PKA status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -263,6 +330,41 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Sr {
             Sr(0)
+        }
+    }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("initok", &self.initok())
+                .field("busy", &self.busy())
+                .field("procendf", &self.procendf())
+                .field("ramerrf", &self.ramerrf())
+                .field("addrerrf", &self.addrerrf())
+                .field("operrf", &self.operrf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                initok: bool,
+                busy: bool,
+                procendf: bool,
+                ramerrf: bool,
+                addrerrf: bool,
+                operrf: bool,
+            }
+            let proxy = Sr {
+                initok: self.initok(),
+                busy: self.busy(),
+                procendf: self.procendf(),
+                ramerrf: self.ramerrf(),
+                addrerrf: self.addrerrf(),
+                operrf: self.operrf(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

@@ -149,6 +149,41 @@ pub mod regs {
             Acr(0)
         }
     }
+    impl core::fmt::Debug for Acr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Acr")
+                .field("latency", &self.latency())
+                .field("prften", &self.prften())
+                .field("icen", &self.icen())
+                .field("icrst", &self.icrst())
+                .field("empty", &self.empty())
+                .field("dbg_swen", &self.dbg_swen())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Acr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Acr {
+                latency: u8,
+                prften: bool,
+                icen: bool,
+                icrst: bool,
+                empty: bool,
+                dbg_swen: bool,
+            }
+            let proxy = Acr {
+                latency: self.latency(),
+                prften: self.prften(),
+                icen: self.icen(),
+                icrst: self.icrst(),
+                empty: self.empty(),
+                dbg_swen: self.dbg_swen(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -315,6 +350,65 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("pg", &self.pg())
+                .field("per", &self.per())
+                .field("mer1", &self.mer1())
+                .field("pnb", &self.pnb())
+                .field("strt", &self.strt())
+                .field("optstrt", &self.optstrt())
+                .field("fstpg", &self.fstpg())
+                .field("eopie", &self.eopie())
+                .field("errie", &self.errie())
+                .field("rderrie", &self.rderrie())
+                .field("obl_launch", &self.obl_launch())
+                .field("sec_prot", &self.sec_prot())
+                .field("optlock", &self.optlock())
+                .field("lock", &self.lock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                pg: bool,
+                per: bool,
+                mer1: bool,
+                pnb: u8,
+                strt: bool,
+                optstrt: bool,
+                fstpg: bool,
+                eopie: bool,
+                errie: bool,
+                rderrie: bool,
+                obl_launch: bool,
+                sec_prot: bool,
+                optlock: bool,
+                lock: bool,
+            }
+            let proxy = Cr {
+                pg: self.pg(),
+                per: self.per(),
+                mer1: self.mer1(),
+                pnb: self.pnb(),
+                strt: self.strt(),
+                optstrt: self.optstrt(),
+                fstpg: self.fstpg(),
+                eopie: self.eopie(),
+                errie: self.errie(),
+                rderrie: self.rderrie(),
+                obl_launch: self.obl_launch(),
+                sec_prot: self.sec_prot(),
+                optlock: self.optlock(),
+                lock: self.lock(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH ECC register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -382,6 +476,38 @@ pub mod regs {
             Eccr(0)
         }
     }
+    impl core::fmt::Debug for Eccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Eccr")
+                .field("addr_ecc", &self.addr_ecc())
+                .field("sysf_ecc", &self.sysf_ecc())
+                .field("ecccie", &self.ecccie())
+                .field("eccc", &self.eccc())
+                .field("eccd", &self.eccd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Eccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Eccr {
+                addr_ecc: u16,
+                sysf_ecc: bool,
+                ecccie: bool,
+                eccc: bool,
+                eccd: bool,
+            }
+            let proxy = Eccr {
+                addr_ecc: self.addr_ecc(),
+                sysf_ecc: self.sysf_ecc(),
+                ecccie: self.ecccie(),
+                eccc: self.eccc(),
+                eccd: self.eccd(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH key register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -405,6 +531,22 @@ pub mod regs {
             Keyr(0)
         }
     }
+    impl core::fmt::Debug for Keyr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Keyr").field("key", &self.key()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Keyr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Keyr {
+                key: u32,
+            }
+            let proxy = Keyr { key: self.key() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH option key register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -426,6 +568,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Optkeyr {
             Optkeyr(0)
+        }
+    }
+    impl core::fmt::Debug for Optkeyr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Optkeyr").field("optkey", &self.optkey()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Optkeyr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Optkeyr {
+                optkey: u32,
+            }
+            let proxy = Optkeyr { optkey: self.optkey() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH option register"]
@@ -627,6 +785,74 @@ pub mod regs {
             Optr(0)
         }
     }
+    impl core::fmt::Debug for Optr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Optr")
+                .field("rdp", &self.rdp())
+                .field("borr_lev", &self.borr_lev())
+                .field("nrst_stop", &self.nrst_stop())
+                .field("nrst_stdby", &self.nrst_stdby())
+                .field("nrst_shdw", &self.nrst_shdw())
+                .field("iwdg_sw", &self.iwdg_sw())
+                .field("iwdg_stop", &self.iwdg_stop())
+                .field("iwdg_stdby", &self.iwdg_stdby())
+                .field("wwdg_sw", &self.wwdg_sw())
+                .field("bdrst", &self.bdrst())
+                .field("ram_parity_check", &self.ram_parity_check())
+                .field("bkpsram_hw_erase_disable", &self.bkpsram_hw_erase_disable())
+                .field("nboot_sel", &self.nboot_sel())
+                .field("nboot1", &self.nboot1())
+                .field("nboot0", &self.nboot0())
+                .field("nrst_mode", &self.nrst_mode())
+                .field("irhen", &self.irhen())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Optr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Optr {
+                rdp: super::vals::Rdp,
+                borr_lev: super::vals::BorrLev,
+                nrst_stop: bool,
+                nrst_stdby: bool,
+                nrst_shdw: bool,
+                iwdg_sw: bool,
+                iwdg_stop: bool,
+                iwdg_stdby: bool,
+                wwdg_sw: bool,
+                bdrst: bool,
+                ram_parity_check: bool,
+                bkpsram_hw_erase_disable: bool,
+                nboot_sel: bool,
+                nboot1: bool,
+                nboot0: bool,
+                nrst_mode: super::vals::NrstMode,
+                irhen: bool,
+            }
+            let proxy = Optr {
+                rdp: self.rdp(),
+                borr_lev: self.borr_lev(),
+                nrst_stop: self.nrst_stop(),
+                nrst_stdby: self.nrst_stdby(),
+                nrst_shdw: self.nrst_shdw(),
+                iwdg_sw: self.iwdg_sw(),
+                iwdg_stop: self.iwdg_stop(),
+                iwdg_stdby: self.iwdg_stdby(),
+                wwdg_sw: self.wwdg_sw(),
+                bdrst: self.bdrst(),
+                ram_parity_check: self.ram_parity_check(),
+                bkpsram_hw_erase_disable: self.bkpsram_hw_erase_disable(),
+                nboot_sel: self.nboot_sel(),
+                nboot1: self.nboot1(),
+                nboot0: self.nboot0(),
+                nrst_mode: self.nrst_mode(),
+                irhen: self.irhen(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH security register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -670,6 +896,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Secr {
             Secr(0)
+        }
+    }
+    impl core::fmt::Debug for Secr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Secr")
+                .field("hdp1_pend", &self.hdp1_pend())
+                .field("boot_lock", &self.boot_lock())
+                .field("hdp1en", &self.hdp1en())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Secr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Secr {
+                hdp1_pend: u8,
+                boot_lock: bool,
+                hdp1en: u8,
+            }
+            let proxy = Secr {
+                hdp1_pend: self.hdp1_pend(),
+                boot_lock: self.boot_lock(),
+                hdp1en: self.hdp1en(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH status register"]
@@ -827,6 +1079,62 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("eop", &self.eop())
+                .field("operr", &self.operr())
+                .field("progerr", &self.progerr())
+                .field("wrperr", &self.wrperr())
+                .field("pgaerr", &self.pgaerr())
+                .field("sizerr", &self.sizerr())
+                .field("pgserr", &self.pgserr())
+                .field("misserr", &self.misserr())
+                .field("fasterr", &self.fasterr())
+                .field("rderr", &self.rderr())
+                .field("optverr", &self.optverr())
+                .field("bsy1", &self.bsy1())
+                .field("cfgbsy", &self.cfgbsy())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                eop: bool,
+                operr: bool,
+                progerr: bool,
+                wrperr: bool,
+                pgaerr: bool,
+                sizerr: bool,
+                pgserr: bool,
+                misserr: bool,
+                fasterr: bool,
+                rderr: bool,
+                optverr: bool,
+                bsy1: bool,
+                cfgbsy: bool,
+            }
+            let proxy = Sr {
+                eop: self.eop(),
+                operr: self.operr(),
+                progerr: self.progerr(),
+                wrperr: self.wrperr(),
+                pgaerr: self.pgaerr(),
+                sizerr: self.sizerr(),
+                pgserr: self.pgserr(),
+                misserr: self.misserr(),
+                fasterr: self.fasterr(),
+                rderr: self.rderr(),
+                optverr: self.optverr(),
+                bsy1: self.bsy1(),
+                cfgbsy: self.cfgbsy(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FLASH WRP area A address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -859,6 +1167,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Wrp1ar {
             Wrp1ar(0)
+        }
+    }
+    impl core::fmt::Debug for Wrp1ar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wrp1ar")
+                .field("wrp1a_strt", &self.wrp1a_strt())
+                .field("wrp1a_end", &self.wrp1a_end())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wrp1ar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wrp1ar {
+                wrp1a_strt: u8,
+                wrp1a_end: u8,
+            }
+            let proxy = Wrp1ar {
+                wrp1a_strt: self.wrp1a_strt(),
+                wrp1a_end: self.wrp1a_end(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLASH WRP area B address register"]
@@ -895,10 +1226,34 @@ pub mod regs {
             Wrp1br(0)
         }
     }
+    impl core::fmt::Debug for Wrp1br {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wrp1br")
+                .field("wrp1b_strt", &self.wrp1b_strt())
+                .field("wrp1b_end", &self.wrp1b_end())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wrp1br {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wrp1br {
+                wrp1b_strt: u8,
+                wrp1b_end: u8,
+            }
+            let proxy = Wrp1br {
+                wrp1b_strt: self.wrp1b_strt(),
+                wrp1b_end: self.wrp1b_end(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BorrLev {
         #[doc = "BOR rising level 1 with threshold around 2.1 V"]
         LEVEL1 = 0x0,
@@ -936,13 +1291,14 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum NrstMode {
         _RESERVED_0 = 0x0,
         #[doc = "Reset input only: a low level on the NRST pin generates system reset; internal RESET is not propagated to the NRST pin."]
-        ONLYINPUT = 0x01,
+        ONLY_INPUT = 0x01,
         #[doc = "Standard GPIO: only internal RESET is possible"]
-        ONLYINTERNAL = 0x02,
+        ONLY_INTERNAL = 0x02,
         #[doc = "Bidirectional reset: the NRST pin is configured in reset input/output (legacy) mode"]
         BIDIRECTIONAL = 0x03,
     }
@@ -983,6 +1339,25 @@ pub mod vals {
         }
         pub const fn to_bits(self) -> u8 {
             self.0
+        }
+    }
+    impl core::fmt::Debug for Rdp {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            match self.0 {
+                0xaa => f.write_str("LEVEL0"),
+                0xcc => f.write_str("LEVEL2"),
+                other => core::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rdp {
+        fn format(&self, f: defmt::Formatter) {
+            match self.0 {
+                0xaa => defmt::write!(f, "LEVEL0"),
+                0xcc => defmt::write!(f, "LEVEL2"),
+                other => defmt::write!(f, "0x{:02X}", other),
+            }
         }
     }
     impl From<u8> for Rdp {

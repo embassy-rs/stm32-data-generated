@@ -172,6 +172,50 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("rien", &self.rien())
+                .field("wien", &self.wien())
+                .field("ovflien", &self.ovflien())
+                .field("unflien", &self.unflien())
+                .field("satien", &self.satien())
+                .field("dmaren", &self.dmaren())
+                .field("dmawen", &self.dmawen())
+                .field("clipen", &self.clipen())
+                .field("reset", &self.reset())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                rien: bool,
+                wien: bool,
+                ovflien: bool,
+                unflien: bool,
+                satien: bool,
+                dmaren: bool,
+                dmawen: bool,
+                clipen: bool,
+                reset: bool,
+            }
+            let proxy = Cr {
+                rien: self.rien(),
+                wien: self.wien(),
+                ovflien: self.ovflien(),
+                unflien: self.unflien(),
+                satien: self.satien(),
+                dmaren: self.dmaren(),
+                dmawen: self.dmawen(),
+                clipen: self.clipen(),
+                reset: self.reset(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Parameter register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -239,6 +283,38 @@ pub mod regs {
             Param(0)
         }
     }
+    impl core::fmt::Debug for Param {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Param")
+                .field("p", &self.p())
+                .field("q", &self.q())
+                .field("r", &self.r())
+                .field("func", &self.func())
+                .field("start", &self.start())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Param {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Param {
+                p: u8,
+                q: u8,
+                r: u8,
+                func: u8,
+                start: bool,
+            }
+            let proxy = Param {
+                p: self.p(),
+                q: self.q(),
+                r: self.r(),
+                func: self.func(),
+                start: self.start(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Read data register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -260,6 +336,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Rdata {
             Rdata(0)
+        }
+    }
+    impl core::fmt::Debug for Rdata {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rdata").field("res", &self.res()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rdata {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rdata {
+                res: u16,
+            }
+            let proxy = Rdata { res: self.res() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status register"]
@@ -329,6 +421,38 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("yempty", &self.yempty())
+                .field("x1full", &self.x1full())
+                .field("ovfl", &self.ovfl())
+                .field("unfl", &self.unfl())
+                .field("sat", &self.sat())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                yempty: bool,
+                x1full: bool,
+                ovfl: bool,
+                unfl: bool,
+                sat: bool,
+            }
+            let proxy = Sr {
+                yempty: self.yempty(),
+                x1full: self.x1full(),
+                ovfl: self.ovfl(),
+                unfl: self.unfl(),
+                sat: self.sat(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Write data register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -350,6 +474,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Wdata {
             Wdata(0)
+        }
+    }
+    impl core::fmt::Debug for Wdata {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wdata").field("wdata", &self.wdata()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wdata {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wdata {
+                wdata: u16,
+            }
+            let proxy = Wdata { wdata: self.wdata() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "X1 buffer configuration register"]
@@ -397,6 +537,32 @@ pub mod regs {
             X1bufcfg(0)
         }
     }
+    impl core::fmt::Debug for X1bufcfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("X1bufcfg")
+                .field("x1_base", &self.x1_base())
+                .field("x1_buf_size", &self.x1_buf_size())
+                .field("full_wm", &self.full_wm())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for X1bufcfg {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct X1bufcfg {
+                x1_base: u8,
+                x1_buf_size: u8,
+                full_wm: u8,
+            }
+            let proxy = X1bufcfg {
+                x1_base: self.x1_base(),
+                x1_buf_size: self.x1_buf_size(),
+                full_wm: self.full_wm(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "X2 buffer configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -429,6 +595,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> X2bufcfg {
             X2bufcfg(0)
+        }
+    }
+    impl core::fmt::Debug for X2bufcfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("X2bufcfg")
+                .field("x2_base", &self.x2_base())
+                .field("x2_buf_size", &self.x2_buf_size())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for X2bufcfg {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct X2bufcfg {
+                x2_base: u8,
+                x2_buf_size: u8,
+            }
+            let proxy = X2bufcfg {
+                x2_base: self.x2_base(),
+                x2_buf_size: self.x2_buf_size(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Y buffer configuration register"]
@@ -474,6 +663,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ybufcfg {
             Ybufcfg(0)
+        }
+    }
+    impl core::fmt::Debug for Ybufcfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ybufcfg")
+                .field("y_base", &self.y_base())
+                .field("y_buf_size", &self.y_buf_size())
+                .field("empty_wm", &self.empty_wm())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ybufcfg {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ybufcfg {
+                y_base: u8,
+                y_buf_size: u8,
+                empty_wm: u8,
+            }
+            let proxy = Ybufcfg {
+                y_base: self.y_base(),
+                y_buf_size: self.y_buf_size(),
+                empty_wm: self.empty_wm(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

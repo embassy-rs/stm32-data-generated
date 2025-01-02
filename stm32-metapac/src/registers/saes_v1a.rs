@@ -748,7 +748,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HALFWORD",
+                    name: "HALF_WORD",
                     description: Some(
                         "Half-word swapping (16-bit data)",
                     ),
@@ -776,28 +776,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "INITPHASE",
+                    name: "INIT_PHASE",
                     description: Some(
                         "Initialization phase",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HEADERPHASE",
+                    name: "HEADER_PHASE",
                     description: Some(
                         "Header phase",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PAYLOADPHASE",
+                    name: "PAYLOAD_PHASE",
                     description: Some(
                         "Payload phase",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "FINALPHASE",
+                    name: "FINAL_PHASE",
                     description: Some(
                         "Final phase",
                     ),
@@ -811,7 +811,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "SOFTWAREKEY",
+                    name: "SOFTWARE_KEY",
                     description: Some(
                         "Software key, loaded in key registers SAES_KEYx",
                     ),
@@ -874,14 +874,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "WRAPPEDKEY",
+                    name: "WRAPPED_KEY",
                     description: Some(
                         "Wrapped key for SAES mode. Key loaded in key registers can only be used to encrypt or\ndecrypt AES keys. Hence, when a decryption is selected, read-as-zero SAES_DOUTR register is\nautomatically loaded into SAES key registers after a successful decryption process.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SHAREDKEY",
+                    name: "SHARED_KEY",
                     description: Some(
                         "Shared key mode. After a successful decryption process (unwrapping), SAES key registers are\nshared with the peripheral described in KSHAREID[1:0] bitfield. This sharing is valid only while\nKMOD[1:0] at 0x2 and KEYVALID=1. When a decryption is selected, read-as-zero SAES_DOUTR\nregister is automatically loaded into SAES key registers after a successful decryption process.",
                     ),
@@ -914,7 +914,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "KEYDERIVATION",
+                    name: "KEY_DERIVATION",
                     description: Some(
                         "Key derivation (or key preparation), for ECB/CBC decryption only",
                     ),

@@ -222,6 +222,50 @@ pub mod regs {
             Cfg1(0)
         }
     }
+    impl core::fmt::Debug for Cfg1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfg1")
+                .field("dsize", &self.dsize())
+                .field("fthlv", &self.fthlv())
+                .field("udrcfg", &self.udrcfg())
+                .field("udrdet", &self.udrdet())
+                .field("rxdmaen", &self.rxdmaen())
+                .field("txdmaen", &self.txdmaen())
+                .field("crcsize", &self.crcsize())
+                .field("crcen", &self.crcen())
+                .field("mbr", &self.mbr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfg1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfg1 {
+                dsize: u8,
+                fthlv: super::vals::Fthlv,
+                udrcfg: super::vals::Udrcfg,
+                udrdet: super::vals::Udrdet,
+                rxdmaen: bool,
+                txdmaen: bool,
+                crcsize: u8,
+                crcen: bool,
+                mbr: super::vals::Mbr,
+            }
+            let proxy = Cfg1 {
+                dsize: self.dsize(),
+                fthlv: self.fthlv(),
+                udrcfg: self.udrcfg(),
+                udrdet: self.udrdet(),
+                rxdmaen: self.rxdmaen(),
+                txdmaen: self.txdmaen(),
+                crcsize: self.crcsize(),
+                crcen: self.crcen(),
+                mbr: self.mbr(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "configuration register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -388,6 +432,65 @@ pub mod regs {
             Cfg2(0)
         }
     }
+    impl core::fmt::Debug for Cfg2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfg2")
+                .field("mssi", &self.mssi())
+                .field("midi", &self.midi())
+                .field("ioswp", &self.ioswp())
+                .field("comm", &self.comm())
+                .field("sp", &self.sp())
+                .field("master", &self.master())
+                .field("lsbfirst", &self.lsbfirst())
+                .field("cpha", &self.cpha())
+                .field("cpol", &self.cpol())
+                .field("ssm", &self.ssm())
+                .field("ssiop", &self.ssiop())
+                .field("ssoe", &self.ssoe())
+                .field("ssom", &self.ssom())
+                .field("afcntr", &self.afcntr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfg2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfg2 {
+                mssi: u8,
+                midi: u8,
+                ioswp: bool,
+                comm: super::vals::Comm,
+                sp: super::vals::Sp,
+                master: super::vals::Master,
+                lsbfirst: super::vals::Lsbfirst,
+                cpha: super::vals::Cpha,
+                cpol: super::vals::Cpol,
+                ssm: bool,
+                ssiop: super::vals::Ssiop,
+                ssoe: bool,
+                ssom: super::vals::Ssom,
+                afcntr: bool,
+            }
+            let proxy = Cfg2 {
+                mssi: self.mssi(),
+                midi: self.midi(),
+                ioswp: self.ioswp(),
+                comm: self.comm(),
+                sp: self.sp(),
+                master: self.master(),
+                lsbfirst: self.lsbfirst(),
+                cpha: self.cpha(),
+                cpol: self.cpol(),
+                ssm: self.ssm(),
+                ssiop: self.ssiop(),
+                ssoe: self.ssoe(),
+                ssom: self.ssom(),
+                afcntr: self.afcntr(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "control register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -510,6 +613,53 @@ pub mod regs {
             Cr1(0)
         }
     }
+    impl core::fmt::Debug for Cr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr1")
+                .field("spe", &self.spe())
+                .field("masrx", &self.masrx())
+                .field("cstart", &self.cstart())
+                .field("csusp", &self.csusp())
+                .field("hddir", &self.hddir())
+                .field("ssi", &self.ssi())
+                .field("crc33_17", &self.crc33_17())
+                .field("rcrcini", &self.rcrcini())
+                .field("tcrcini", &self.tcrcini())
+                .field("iolock", &self.iolock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr1 {
+                spe: bool,
+                masrx: bool,
+                cstart: bool,
+                csusp: bool,
+                hddir: super::vals::Hddir,
+                ssi: bool,
+                crc33_17: bool,
+                rcrcini: super::vals::Rcrcini,
+                tcrcini: super::vals::Tcrcini,
+                iolock: bool,
+            }
+            let proxy = Cr1 {
+                spe: self.spe(),
+                masrx: self.masrx(),
+                cstart: self.cstart(),
+                csusp: self.csusp(),
+                hddir: self.hddir(),
+                ssi: self.ssi(),
+                crc33_17: self.crc33_17(),
+                rcrcini: self.rcrcini(),
+                tcrcini: self.tcrcini(),
+                iolock: self.iolock(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "control register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -544,6 +694,29 @@ pub mod regs {
             Cr2(0)
         }
     }
+    impl core::fmt::Debug for Cr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr2")
+                .field("tsize", &self.tsize())
+                .field("tser", &self.tser())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr2 {
+                tsize: u16,
+                tser: u16,
+            }
+            let proxy = Cr2 {
+                tsize: self.tsize(),
+                tser: self.tser(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Polynomial Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -565,6 +738,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Crcpoly {
             Crcpoly(0)
+        }
+    }
+    impl core::fmt::Debug for Crcpoly {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Crcpoly").field("crcpoly", &self.crcpoly()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Crcpoly {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Crcpoly {
+                crcpoly: u32,
+            }
+            let proxy = Crcpoly {
+                crcpoly: self.crcpoly(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "I2S Configuration Register"]
@@ -722,6 +913,62 @@ pub mod regs {
             I2scfgr(0)
         }
     }
+    impl core::fmt::Debug for I2scfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("I2scfgr")
+                .field("i2smod", &self.i2smod())
+                .field("i2scfg", &self.i2scfg())
+                .field("i2sstd", &self.i2sstd())
+                .field("pcmsync", &self.pcmsync())
+                .field("datlen", &self.datlen())
+                .field("chlen", &self.chlen())
+                .field("ckpol", &self.ckpol())
+                .field("fixch", &self.fixch())
+                .field("wsinv", &self.wsinv())
+                .field("datfmt", &self.datfmt())
+                .field("i2sdiv", &self.i2sdiv())
+                .field("odd", &self.odd())
+                .field("mckoe", &self.mckoe())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for I2scfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct I2scfgr {
+                i2smod: bool,
+                i2scfg: super::vals::I2scfg,
+                i2sstd: super::vals::I2sstd,
+                pcmsync: super::vals::Pcmsync,
+                datlen: super::vals::Datlen,
+                chlen: super::vals::Chlen,
+                ckpol: super::vals::Ckpol,
+                fixch: super::vals::Fixch,
+                wsinv: bool,
+                datfmt: super::vals::Datfmt,
+                i2sdiv: u8,
+                odd: super::vals::Odd,
+                mckoe: bool,
+            }
+            let proxy = I2scfgr {
+                i2smod: self.i2smod(),
+                i2scfg: self.i2scfg(),
+                i2sstd: self.i2sstd(),
+                pcmsync: self.pcmsync(),
+                datlen: self.datlen(),
+                chlen: self.chlen(),
+                ckpol: self.ckpol(),
+                fixch: self.fixch(),
+                wsinv: self.wsinv(),
+                datfmt: self.datfmt(),
+                i2sdiv: self.i2sdiv(),
+                odd: self.odd(),
+                mckoe: self.mckoe(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt Enable Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -855,6 +1102,56 @@ pub mod regs {
             Ier(0)
         }
     }
+    impl core::fmt::Debug for Ier {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ier")
+                .field("rxpie", &self.rxpie())
+                .field("txpie", &self.txpie())
+                .field("dxpie", &self.dxpie())
+                .field("eotie", &self.eotie())
+                .field("txtfie", &self.txtfie())
+                .field("udrie", &self.udrie())
+                .field("ovrie", &self.ovrie())
+                .field("crceie", &self.crceie())
+                .field("tifreie", &self.tifreie())
+                .field("modfie", &self.modfie())
+                .field("tserfie", &self.tserfie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ier {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ier {
+                rxpie: bool,
+                txpie: bool,
+                dxpie: bool,
+                eotie: bool,
+                txtfie: bool,
+                udrie: bool,
+                ovrie: bool,
+                crceie: bool,
+                tifreie: bool,
+                modfie: bool,
+                tserfie: bool,
+            }
+            let proxy = Ier {
+                rxpie: self.rxpie(),
+                txpie: self.txpie(),
+                dxpie: self.dxpie(),
+                eotie: self.eotie(),
+                txtfie: self.txtfie(),
+                udrie: self.udrie(),
+                ovrie: self.ovrie(),
+                crceie: self.crceie(),
+                tifreie: self.tifreie(),
+                modfie: self.modfie(),
+                tserfie: self.tserfie(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt/Status Flags Clear Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -966,6 +1263,50 @@ pub mod regs {
             Ifcr(0)
         }
     }
+    impl core::fmt::Debug for Ifcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ifcr")
+                .field("eotc", &self.eotc())
+                .field("txtfc", &self.txtfc())
+                .field("udrc", &self.udrc())
+                .field("ovrc", &self.ovrc())
+                .field("crcec", &self.crcec())
+                .field("tifrec", &self.tifrec())
+                .field("modfc", &self.modfc())
+                .field("tserfc", &self.tserfc())
+                .field("suspc", &self.suspc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ifcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ifcr {
+                eotc: bool,
+                txtfc: bool,
+                udrc: bool,
+                ovrc: bool,
+                crcec: bool,
+                tifrec: bool,
+                modfc: bool,
+                tserfc: bool,
+                suspc: bool,
+            }
+            let proxy = Ifcr {
+                eotc: self.eotc(),
+                txtfc: self.txtfc(),
+                udrc: self.udrc(),
+                ovrc: self.ovrc(),
+                crcec: self.crcec(),
+                tifrec: self.tifrec(),
+                modfc: self.modfc(),
+                tserfc: self.tserfc(),
+                suspc: self.suspc(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Receiver CRC Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -987,6 +1328,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Rxcrc {
             Rxcrc(0)
+        }
+    }
+    impl core::fmt::Debug for Rxcrc {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rxcrc").field("rxcrc", &self.rxcrc()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rxcrc {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rxcrc {
+                rxcrc: u32,
+            }
+            let proxy = Rxcrc { rxcrc: self.rxcrc() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status Register"]
@@ -1177,6 +1534,71 @@ pub mod regs {
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("rxp", &self.rxp())
+                .field("txp", &self.txp())
+                .field("dxp", &self.dxp())
+                .field("eot", &self.eot())
+                .field("txtf", &self.txtf())
+                .field("udr", &self.udr())
+                .field("ovr", &self.ovr())
+                .field("crce", &self.crce())
+                .field("tifre", &self.tifre())
+                .field("modf", &self.modf())
+                .field("tserf", &self.tserf())
+                .field("susp", &self.susp())
+                .field("txc", &self.txc())
+                .field("rxplvl", &self.rxplvl())
+                .field("rxwne", &self.rxwne())
+                .field("ctsize", &self.ctsize())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                rxp: bool,
+                txp: bool,
+                dxp: bool,
+                eot: bool,
+                txtf: bool,
+                udr: bool,
+                ovr: bool,
+                crce: bool,
+                tifre: bool,
+                modf: bool,
+                tserf: bool,
+                susp: bool,
+                txc: bool,
+                rxplvl: super::vals::Rxplvl,
+                rxwne: super::vals::Rxwne,
+                ctsize: u16,
+            }
+            let proxy = Sr {
+                rxp: self.rxp(),
+                txp: self.txp(),
+                dxp: self.dxp(),
+                eot: self.eot(),
+                txtf: self.txtf(),
+                udr: self.udr(),
+                ovr: self.ovr(),
+                crce: self.crce(),
+                tifre: self.tifre(),
+                modf: self.modf(),
+                tserf: self.tserf(),
+                susp: self.susp(),
+                txc: self.txc(),
+                rxplvl: self.rxplvl(),
+                rxwne: self.rxwne(),
+                ctsize: self.ctsize(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Transmitter CRC Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1198,6 +1620,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Txcrc {
             Txcrc(0)
+        }
+    }
+    impl core::fmt::Debug for Txcrc {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Txcrc").field("txcrc", &self.txcrc()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Txcrc {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Txcrc {
+                txcrc: u32,
+            }
+            let proxy = Txcrc { txcrc: self.txcrc() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Underrun Data Register"]
@@ -1223,10 +1661,27 @@ pub mod regs {
             Udrdr(0)
         }
     }
+    impl core::fmt::Debug for Udrdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Udrdr").field("udrdr", &self.udrdr()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Udrdr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Udrdr {
+                udrdr: u32,
+            }
+            let proxy = Udrdr { udrdr: self.udrdr() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Chlen {
         #[doc = "16 bits per channel"]
         BITS16 = 0x0,
@@ -1256,12 +1711,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ckpol {
         #[doc = "CK idle Level is Low. Signals are sampled on rising and changed on falling clock edges"]
-        IDLELOW = 0x0,
+        IDLE_LOW = 0x0,
         #[doc = "CK idle level is High. Signals are sampled on falling and changed on rising clock edges"]
-        IDLEHIGH = 0x01,
+        IDLE_HIGH = 0x01,
     }
     impl Ckpol {
         #[inline(always)]
@@ -1286,16 +1742,17 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Comm {
         #[doc = "Full duplex"]
-        FULLDUPLEX = 0x0,
+        FULL_DUPLEX = 0x0,
         #[doc = "Simplex transmitter only"]
         TRANSMITTER = 0x01,
         #[doc = "Simplex receiver only"]
         RECEIVER = 0x02,
         #[doc = "Half duplex"]
-        HALFDUPLEX = 0x03,
+        HALF_DUPLEX = 0x03,
     }
     impl Comm {
         #[inline(always)]
@@ -1320,12 +1777,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpha {
         #[doc = "The first clock transition is the first data capture edge"]
-        FIRSTEDGE = 0x0,
+        FIRST_EDGE = 0x0,
         #[doc = "The second clock transition is the first data capture edge"]
-        SECONDEDGE = 0x01,
+        SECOND_EDGE = 0x01,
     }
     impl Cpha {
         #[inline(always)]
@@ -1350,12 +1808,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpol {
         #[doc = "SCK to 0 when idle"]
-        IDLELOW = 0x0,
+        IDLE_LOW = 0x0,
         #[doc = "SCK to 1 when idle"]
-        IDLEHIGH = 0x01,
+        IDLE_HIGH = 0x01,
     }
     impl Cpol {
         #[inline(always)]
@@ -1380,12 +1839,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Datfmt {
         #[doc = "The data inside RXDR and TXDR are right aligned"]
-        RIGHTALIGNED = 0x0,
+        RIGHT_ALIGNED = 0x0,
         #[doc = "The data inside RXDR and TXDR are left aligned"]
-        LEFTALIGNED = 0x01,
+        LEFT_ALIGNED = 0x01,
     }
     impl Datfmt {
         #[inline(always)]
@@ -1410,7 +1870,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Datlen {
         #[doc = "16-bit data length"]
         BITS16 = 0x0,
@@ -1443,10 +1904,11 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fixch {
         #[doc = "The channel length in slave mode is different from 16 or 32 bits (CHLEN not taken into account)"]
-        NOTFIXED = 0x0,
+        NOT_FIXED = 0x0,
         #[doc = "The channel length in slave mode is supposed to be 16 or 32 bits (according to CHLEN)"]
         FIXED = 0x01,
     }
@@ -1473,40 +1935,41 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fthlv {
         #[doc = "1 frame"]
-        ONEFRAME = 0x0,
+        ONE_FRAME = 0x0,
         #[doc = "2 frames"]
-        TWOFRAMES = 0x01,
+        TWO_FRAMES = 0x01,
         #[doc = "3 frames"]
-        THREEFRAMES = 0x02,
+        THREE_FRAMES = 0x02,
         #[doc = "4 frames"]
-        FOURFRAMES = 0x03,
+        FOUR_FRAMES = 0x03,
         #[doc = "5 frames"]
-        FIVEFRAMES = 0x04,
+        FIVE_FRAMES = 0x04,
         #[doc = "6 frames"]
-        SIXFRAMES = 0x05,
+        SIX_FRAMES = 0x05,
         #[doc = "7 frames"]
-        SEVENFRAMES = 0x06,
+        SEVEN_FRAMES = 0x06,
         #[doc = "8 frames"]
-        EIGHTFRAMES = 0x07,
+        EIGHT_FRAMES = 0x07,
         #[doc = "9 frames"]
-        NINEFRAMES = 0x08,
+        NINE_FRAMES = 0x08,
         #[doc = "10 frames"]
-        TENFRAMES = 0x09,
+        TEN_FRAMES = 0x09,
         #[doc = "11 frames"]
-        ELEVENFRAMES = 0x0a,
+        ELEVEN_FRAMES = 0x0a,
         #[doc = "12 frames"]
-        TWELVEFRAMES = 0x0b,
+        TWELVE_FRAMES = 0x0b,
         #[doc = "13 frames"]
-        THIRTEENFRAMES = 0x0c,
+        THIRTEEN_FRAMES = 0x0c,
         #[doc = "14 frames"]
-        FOURTEENFRAMES = 0x0d,
+        FOURTEEN_FRAMES = 0x0d,
         #[doc = "15 frames"]
-        FIFTEENFRAMES = 0x0e,
+        FIFTEEN_FRAMES = 0x0e,
         #[doc = "16 frames"]
-        SIXTEENFRAMES = 0x0f,
+        SIXTEEN_FRAMES = 0x0f,
     }
     impl Fthlv {
         #[inline(always)]
@@ -1531,7 +1994,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hddir {
         #[doc = "Receiver in half duplex mode"]
         RECEIVER = 0x0,
@@ -1561,20 +2025,21 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I2scfg {
         #[doc = "Slave, transmit"]
-        SLAVETX = 0x0,
+        SLAVE_TX = 0x0,
         #[doc = "Slave, receive"]
-        SLAVERX = 0x01,
+        SLAVE_RX = 0x01,
         #[doc = "Master, transmit"]
-        MASTERTX = 0x02,
+        MASTER_TX = 0x02,
         #[doc = "Master, receive"]
-        MASTERRX = 0x03,
+        MASTER_RX = 0x03,
         #[doc = "Slave, full duplex"]
-        SLAVEFULLDUPLEX = 0x04,
+        SLAVE_FULL_DUPLEX = 0x04,
         #[doc = "Master, full duplex"]
-        MASTERFULLDUPLEX = 0x05,
+        MASTER_FULL_DUPLEX = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -1601,7 +2066,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I2sstd {
         #[doc = "I2S Philips standard"]
         PHILIPS = 0x0,
@@ -1635,7 +2101,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsbfirst {
         #[doc = "Data is transmitted/received with the MSB first"]
         MSBFIRST = 0x0,
@@ -1665,7 +2132,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Master {
         #[doc = "Slave configuration"]
         SLAVE = 0x0,
@@ -1695,7 +2163,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mbr {
         #[doc = "f_spi_ker_ck / 2"]
         DIV2 = 0x0,
@@ -1737,7 +2206,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Odd {
         #[doc = "Real divider value is I2SDIV*2"]
         EVEN = 0x0,
@@ -1767,7 +2237,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pcmsync {
         #[doc = "Short PCM frame synchronization"]
         SHORT = 0x0,
@@ -1797,12 +2268,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rcrcini {
         #[doc = "All zeros RX CRC initialization pattern"]
-        ALLZEROS = 0x0,
+        ALL_ZEROS = 0x0,
         #[doc = "All ones RX CRC initialization pattern"]
-        ALLONES = 0x01,
+        ALL_ONES = 0x01,
     }
     impl Rcrcini {
         #[inline(always)]
@@ -1827,16 +2299,17 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rxplvl {
         #[doc = "Zero frames beyond packing ratio available"]
-        ZEROFRAMES = 0x0,
+        ZERO_FRAMES = 0x0,
         #[doc = "One frame beyond packing ratio available"]
-        ONEFRAME = 0x01,
+        ONE_FRAME = 0x01,
         #[doc = "Two frame beyond packing ratio available"]
-        TWOFRAMES = 0x02,
+        TWO_FRAMES = 0x02,
         #[doc = "Three frame beyond packing ratio available"]
-        THREEFRAMES = 0x03,
+        THREE_FRAMES = 0x03,
     }
     impl Rxplvl {
         #[inline(always)]
@@ -1861,12 +2334,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rxwne {
         #[doc = "Less than 32-bit data frame received"]
-        LESSTHAN32 = 0x0,
+        LESS_THAN32 = 0x0,
         #[doc = "At least 32-bit data frame received"]
-        ATLEAST32 = 0x01,
+        AT_LEAST32 = 0x01,
     }
     impl Rxwne {
         #[inline(always)]
@@ -1891,7 +2365,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sp {
         #[doc = "Motorola SPI protocol"]
         MOTOROLA = 0x0,
@@ -1927,12 +2402,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ssiop {
         #[doc = "Low level is active for SS signal"]
-        ACTIVELOW = 0x0,
+        ACTIVE_LOW = 0x0,
         #[doc = "High level is active for SS signal"]
-        ACTIVEHIGH = 0x01,
+        ACTIVE_HIGH = 0x01,
     }
     impl Ssiop {
         #[inline(always)]
@@ -1957,12 +2433,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ssom {
         #[doc = "SS is asserted until data transfer complete"]
         ASSERTED = 0x0,
         #[doc = "Data frames interleaved with SS not asserted during MIDI"]
-        NOTASSERTED = 0x01,
+        NOT_ASSERTED = 0x01,
     }
     impl Ssom {
         #[inline(always)]
@@ -1987,12 +2464,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tcrcini {
         #[doc = "All zeros TX CRC initialization pattern"]
-        ALLZEROS = 0x0,
+        ALL_ZEROS = 0x0,
         #[doc = "All ones TX CRC initialization pattern"]
-        ALLONES = 0x01,
+        ALL_ONES = 0x01,
     }
     impl Tcrcini {
         #[inline(always)]
@@ -2017,14 +2495,15 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Udrcfg {
         #[doc = "Slave sends a constant underrun pattern"]
         CONSTANT = 0x0,
         #[doc = "Slave repeats last received data frame from master"]
-        REPEATRECEIVED = 0x01,
+        REPEAT_RECEIVED = 0x01,
         #[doc = "Slave repeats last transmitted data frame"]
-        REPEATTRANSMITTED = 0x02,
+        REPEAT_TRANSMITTED = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Udrcfg {
@@ -2050,14 +2529,15 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Udrdet {
         #[doc = "Underrun is detected at begin of data frame"]
-        STARTOFFRAME = 0x0,
+        START_OF_FRAME = 0x0,
         #[doc = "Underrun is detected at end of last data frame"]
-        ENDOFFRAME = 0x01,
+        END_OF_FRAME = 0x01,
         #[doc = "Underrun is detected at begin of active SS signal"]
-        STARTOFSLAVESELECT = 0x02,
+        START_OF_SLAVE_SELECT = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Udrdet {

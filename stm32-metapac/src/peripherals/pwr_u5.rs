@@ -155,6 +155,22 @@ pub mod regs {
             Apcr(0)
         }
     }
+    impl core::fmt::Debug for Apcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Apcr").field("apc", &self.apc()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Apcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Apcr {
+                apc: bool,
+            }
+            let proxy = Apcr { apc: self.apc() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Backup domain control register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -189,6 +205,29 @@ pub mod regs {
             Bdcr1(0)
         }
     }
+    impl core::fmt::Debug for Bdcr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bdcr1")
+                .field("bren", &self.bren())
+                .field("monen", &self.monen())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bdcr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Bdcr1 {
+                bren: bool,
+                monen: bool,
+            }
+            let proxy = Bdcr1 {
+                bren: self.bren(),
+                monen: self.monen(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Backup domain control register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -221,6 +260,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Bdcr2 {
             Bdcr2(0)
+        }
+    }
+    impl core::fmt::Debug for Bdcr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bdcr2")
+                .field("vbe", &self.vbe())
+                .field("vbrs", &self.vbrs())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bdcr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Bdcr2 {
+                vbe: super::vals::Vbe,
+                vbrs: super::vals::Vbrs,
+            }
+            let proxy = Bdcr2 {
+                vbe: self.vbe(),
+                vbrs: self.vbrs(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Backup domain status register"]
@@ -266,6 +328,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Bdsr {
             Bdsr(0)
+        }
+    }
+    impl core::fmt::Debug for Bdsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bdsr")
+                .field("vbath", &self.vbath())
+                .field("templ", &self.templ())
+                .field("temph", &self.temph())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bdsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Bdsr {
+                vbath: super::vals::Vbath,
+                templ: super::vals::Templ,
+                temph: super::vals::Temph,
+            }
+            let proxy = Bdsr {
+                vbath: self.vbath(),
+                templ: self.templ(),
+                temph: self.temph(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "control register 1"]
@@ -366,6 +454,47 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cr1 {
             Cr1(0)
+        }
+    }
+    impl core::fmt::Debug for Cr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr1")
+                .field("lpms", &self.lpms())
+                .field("rrsb1", &self.rrsb1())
+                .field("rrsb2", &self.rrsb2())
+                .field("ulpmen", &self.ulpmen())
+                .field("sram1pd", &self.sram1pd())
+                .field("sram2pd", &self.sram2pd())
+                .field("sram3pd", &self.sram3pd())
+                .field("sram4pd", &self.sram4pd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr1 {
+                lpms: super::vals::Lpms,
+                rrsb1: bool,
+                rrsb2: bool,
+                ulpmen: bool,
+                sram1pd: super::vals::Srampd,
+                sram2pd: super::vals::Srampd,
+                sram3pd: super::vals::Srampd,
+                sram4pd: super::vals::Srampd,
+            }
+            let proxy = Cr1 {
+                lpms: self.lpms(),
+                rrsb1: self.rrsb1(),
+                rrsb2: self.rrsb2(),
+                ulpmen: self.ulpmen(),
+                sram1pd: self.sram1pd(),
+                sram2pd: self.sram2pd(),
+                sram3pd: self.sram3pd(),
+                sram4pd: self.sram4pd(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "control register 2"]
@@ -622,6 +751,89 @@ pub mod regs {
             Cr2(0)
         }
     }
+    impl core::fmt::Debug for Cr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr2")
+                .field("sram1pds1", &self.sram1pds1())
+                .field("sram1pds2", &self.sram1pds2())
+                .field("sram1pds3", &self.sram1pds3())
+                .field("sram2pds1", &self.sram2pds1())
+                .field("sram2pds2", &self.sram2pds2())
+                .field("sram4pds", &self.sram4pds())
+                .field("icrampds", &self.icrampds())
+                .field("dc1rampds", &self.dc1rampds())
+                .field("dma2drampds", &self.dma2drampds())
+                .field("prampds", &self.prampds())
+                .field("pkarampds", &self.pkarampds())
+                .field("sram4fwu", &self.sram4fwu())
+                .field("flashfwu", &self.flashfwu())
+                .field("sram3pds1", &self.sram3pds1())
+                .field("sram3pds2", &self.sram3pds2())
+                .field("sram3pds3", &self.sram3pds3())
+                .field("sram3pds4", &self.sram3pds4())
+                .field("sram3pds5", &self.sram3pds5())
+                .field("sram3pds6", &self.sram3pds6())
+                .field("sram3pds7", &self.sram3pds7())
+                .field("sram3pds8", &self.sram3pds8())
+                .field("srdrun", &self.srdrun())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr2 {
+                sram1pds1: super::vals::Pds,
+                sram1pds2: super::vals::Pds,
+                sram1pds3: super::vals::Pds,
+                sram2pds1: super::vals::Pds,
+                sram2pds2: super::vals::Pds,
+                sram4pds: super::vals::Pds,
+                icrampds: super::vals::Pds,
+                dc1rampds: super::vals::Pds,
+                dma2drampds: super::vals::Pds,
+                prampds: super::vals::Pds,
+                pkarampds: super::vals::Pds,
+                sram4fwu: super::vals::Sramfwu,
+                flashfwu: super::vals::Flashfwu,
+                sram3pds1: super::vals::Pds,
+                sram3pds2: super::vals::Pds,
+                sram3pds3: super::vals::Pds,
+                sram3pds4: super::vals::Pds,
+                sram3pds5: super::vals::Pds,
+                sram3pds6: super::vals::Pds,
+                sram3pds7: super::vals::Pds,
+                sram3pds8: super::vals::Pds,
+                srdrun: bool,
+            }
+            let proxy = Cr2 {
+                sram1pds1: self.sram1pds1(),
+                sram1pds2: self.sram1pds2(),
+                sram1pds3: self.sram1pds3(),
+                sram2pds1: self.sram2pds1(),
+                sram2pds2: self.sram2pds2(),
+                sram4pds: self.sram4pds(),
+                icrampds: self.icrampds(),
+                dc1rampds: self.dc1rampds(),
+                dma2drampds: self.dma2drampds(),
+                prampds: self.prampds(),
+                pkarampds: self.pkarampds(),
+                sram4fwu: self.sram4fwu(),
+                flashfwu: self.flashfwu(),
+                sram3pds1: self.sram3pds1(),
+                sram3pds2: self.sram3pds2(),
+                sram3pds3: self.sram3pds3(),
+                sram3pds4: self.sram3pds4(),
+                sram3pds5: self.sram3pds5(),
+                sram3pds6: self.sram3pds6(),
+                sram3pds7: self.sram3pds7(),
+                sram3pds8: self.sram3pds8(),
+                srdrun: self.srdrun(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "control register 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -656,6 +868,29 @@ pub mod regs {
             Cr3(0)
         }
     }
+    impl core::fmt::Debug for Cr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr3")
+                .field("regsel", &self.regsel())
+                .field("fsten", &self.fsten())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr3 {
+                regsel: super::vals::Regsel,
+                fsten: bool,
+            }
+            let proxy = Cr3 {
+                regsel: self.regsel(),
+                fsten: self.fsten(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "disable Backup domain register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -677,6 +912,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dbpcr {
             Dbpcr(0)
+        }
+    }
+    impl core::fmt::Debug for Dbpcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dbpcr").field("dbp", &self.dbp()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dbpcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dbpcr {
+                dbp: bool,
+            }
+            let proxy = Dbpcr { dbp: self.dbp() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Power Port pull control register"]
@@ -704,6 +955,63 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Pcr {
             Pcr(0)
+        }
+    }
+    impl core::fmt::Debug for Pcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pcr")
+                .field(
+                    "p",
+                    &[
+                        self.p(0usize),
+                        self.p(1usize),
+                        self.p(2usize),
+                        self.p(3usize),
+                        self.p(4usize),
+                        self.p(5usize),
+                        self.p(6usize),
+                        self.p(7usize),
+                        self.p(8usize),
+                        self.p(9usize),
+                        self.p(10usize),
+                        self.p(11usize),
+                        self.p(12usize),
+                        self.p(13usize),
+                        self.p(14usize),
+                        self.p(15usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pcr {
+                p: [bool; 16usize],
+            }
+            let proxy = Pcr {
+                p: [
+                    self.p(0usize),
+                    self.p(1usize),
+                    self.p(2usize),
+                    self.p(3usize),
+                    self.p(4usize),
+                    self.p(5usize),
+                    self.p(6usize),
+                    self.p(7usize),
+                    self.p(8usize),
+                    self.p(9usize),
+                    self.p(10usize),
+                    self.p(11usize),
+                    self.p(12usize),
+                    self.p(13usize),
+                    self.p(14usize),
+                    self.p(15usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "privilege control register"]
@@ -738,6 +1046,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Privcfgr {
             Privcfgr(0)
+        }
+    }
+    impl core::fmt::Debug for Privcfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Privcfgr")
+                .field("spriv", &self.spriv())
+                .field("nspriv", &self.nspriv())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Privcfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Privcfgr {
+                spriv: bool,
+                nspriv: bool,
+            }
+            let proxy = Privcfgr {
+                spriv: self.spriv(),
+                nspriv: self.nspriv(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "security configuration register"]
@@ -811,6 +1142,59 @@ pub mod regs {
             Seccfgr(0)
         }
     }
+    impl core::fmt::Debug for Seccfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Seccfgr")
+                .field(
+                    "wup1sec",
+                    &[
+                        self.wup1sec(0usize),
+                        self.wup1sec(1usize),
+                        self.wup1sec(2usize),
+                        self.wup1sec(3usize),
+                        self.wup1sec(4usize),
+                        self.wup1sec(5usize),
+                        self.wup1sec(6usize),
+                        self.wup1sec(7usize),
+                    ],
+                )
+                .field("lpmsec", &self.lpmsec())
+                .field("vdmsec", &self.vdmsec())
+                .field("vbsec", &self.vbsec())
+                .field("apcsec", &self.apcsec())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Seccfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Seccfgr {
+                wup1sec: [bool; 8usize],
+                lpmsec: bool,
+                vdmsec: bool,
+                vbsec: bool,
+                apcsec: bool,
+            }
+            let proxy = Seccfgr {
+                wup1sec: [
+                    self.wup1sec(0usize),
+                    self.wup1sec(1usize),
+                    self.wup1sec(2usize),
+                    self.wup1sec(3usize),
+                    self.wup1sec(4usize),
+                    self.wup1sec(5usize),
+                    self.wup1sec(6usize),
+                    self.wup1sec(7usize),
+                ],
+                lpmsec: self.lpmsec(),
+                vdmsec: self.vdmsec(),
+                vbsec: self.vbsec(),
+                apcsec: self.apcsec(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -854,6 +1238,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Sr {
             Sr(0)
+        }
+    }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("cssf", &self.cssf())
+                .field("stopf", &self.stopf())
+                .field("sbf", &self.sbf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                cssf: bool,
+                stopf: bool,
+                sbf: bool,
+            }
+            let proxy = Sr {
+                cssf: self.cssf(),
+                stopf: self.stopf(),
+                sbf: self.sbf(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "supply voltage monitoring control register"]
@@ -967,6 +1377,50 @@ pub mod regs {
             Svmcr(0)
         }
     }
+    impl core::fmt::Debug for Svmcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Svmcr")
+                .field("pvde", &self.pvde())
+                .field("pvdls", &self.pvdls())
+                .field("uvmen", &self.uvmen())
+                .field("io2vmen", &self.io2vmen())
+                .field("avm1en", &self.avm1en())
+                .field("avm2en", &self.avm2en())
+                .field("usv", &self.usv())
+                .field("io2sv", &self.io2sv())
+                .field("asv", &self.asv())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Svmcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Svmcr {
+                pvde: bool,
+                pvdls: super::vals::Pvdls,
+                uvmen: bool,
+                io2vmen: bool,
+                avm1en: bool,
+                avm2en: bool,
+                usv: bool,
+                io2sv: bool,
+                asv: bool,
+            }
+            let proxy = Svmcr {
+                pvde: self.pvde(),
+                pvdls: self.pvdls(),
+                uvmen: self.uvmen(),
+                io2vmen: self.io2vmen(),
+                avm1en: self.avm1en(),
+                avm2en: self.avm2en(),
+                usv: self.usv(),
+                io2sv: self.io2sv(),
+                asv: self.asv(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Svmsr(pub u32);
@@ -1066,6 +1520,47 @@ pub mod regs {
             Svmsr(0)
         }
     }
+    impl core::fmt::Debug for Svmsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Svmsr")
+                .field("regs", &self.regs())
+                .field("pvdo", &self.pvdo())
+                .field("actvosrdy", &self.actvosrdy())
+                .field("actvos", &self.actvos())
+                .field("vddusbrdy", &self.vddusbrdy())
+                .field("vddio2rdy", &self.vddio2rdy())
+                .field("vdda1rdy", &self.vdda1rdy())
+                .field("vdda2rdy", &self.vdda2rdy())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Svmsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Svmsr {
+                regs: super::vals::Regsel,
+                pvdo: super::vals::Pvdo,
+                actvosrdy: bool,
+                actvos: super::vals::Actvos,
+                vddusbrdy: bool,
+                vddio2rdy: bool,
+                vdda1rdy: bool,
+                vdda2rdy: bool,
+            }
+            let proxy = Svmsr {
+                regs: self.regs(),
+                pvdo: self.pvdo(),
+                actvosrdy: self.actvosrdy(),
+                actvos: self.actvos(),
+                vddusbrdy: self.vddusbrdy(),
+                vddio2rdy: self.vddio2rdy(),
+                vdda1rdy: self.vdda1rdy(),
+                vdda2rdy: self.vdda2rdy(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "USB Type-C™ and Power Delivery register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1098,6 +1593,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ucpdr {
             Ucpdr(0)
+        }
+    }
+    impl core::fmt::Debug for Ucpdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ucpdr")
+                .field("ucpd_dbdis", &self.ucpd_dbdis())
+                .field("ucpd_stby", &self.ucpd_stby())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ucpdr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ucpdr {
+                ucpd_dbdis: bool,
+                ucpd_stby: bool,
+            }
+            let proxy = Ucpdr {
+                ucpd_dbdis: self.ucpd_dbdis(),
+                ucpd_stby: self.ucpd_stby(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "voltage scaling register"]
@@ -1200,6 +1718,47 @@ pub mod regs {
             Vosr(0)
         }
     }
+    impl core::fmt::Debug for Vosr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vosr")
+                .field("usbboostrdy", &self.usbboostrdy())
+                .field("boostrdy", &self.boostrdy())
+                .field("vosrdy", &self.vosrdy())
+                .field("vos", &self.vos())
+                .field("boosten", &self.boosten())
+                .field("usbpwren", &self.usbpwren())
+                .field("usbboosten", &self.usbboosten())
+                .field("vdd11usbdis", &self.vdd11usbdis())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Vosr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Vosr {
+                usbboostrdy: bool,
+                boostrdy: bool,
+                vosrdy: bool,
+                vos: super::vals::Vos,
+                boosten: bool,
+                usbpwren: bool,
+                usbboosten: bool,
+                vdd11usbdis: bool,
+            }
+            let proxy = Vosr {
+                usbboostrdy: self.usbboostrdy(),
+                boostrdy: self.boostrdy(),
+                vosrdy: self.vosrdy(),
+                vos: self.vos(),
+                boosten: self.boosten(),
+                usbpwren: self.usbpwren(),
+                usbboosten: self.usbboosten(),
+                vdd11usbdis: self.vdd11usbdis(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "wakeup control register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1227,6 +1786,47 @@ pub mod regs {
             Wucr1(0)
         }
     }
+    impl core::fmt::Debug for Wucr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wucr1")
+                .field(
+                    "wupen",
+                    &[
+                        self.wupen(0usize),
+                        self.wupen(1usize),
+                        self.wupen(2usize),
+                        self.wupen(3usize),
+                        self.wupen(4usize),
+                        self.wupen(5usize),
+                        self.wupen(6usize),
+                        self.wupen(7usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wucr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wucr1 {
+                wupen: [bool; 8usize],
+            }
+            let proxy = Wucr1 {
+                wupen: [
+                    self.wupen(0usize),
+                    self.wupen(1usize),
+                    self.wupen(2usize),
+                    self.wupen(3usize),
+                    self.wupen(4usize),
+                    self.wupen(5usize),
+                    self.wupen(6usize),
+                    self.wupen(7usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "wakeup control register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1252,6 +1852,47 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Wucr2 {
             Wucr2(0)
+        }
+    }
+    impl core::fmt::Debug for Wucr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wucr2")
+                .field(
+                    "wupp",
+                    &[
+                        self.wupp(0usize),
+                        self.wupp(1usize),
+                        self.wupp(2usize),
+                        self.wupp(3usize),
+                        self.wupp(4usize),
+                        self.wupp(5usize),
+                        self.wupp(6usize),
+                        self.wupp(7usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wucr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wucr2 {
+                wupp: [super::vals::Wupp; 8usize],
+            }
+            let proxy = Wucr2 {
+                wupp: [
+                    self.wupp(0usize),
+                    self.wupp(1usize),
+                    self.wupp(2usize),
+                    self.wupp(3usize),
+                    self.wupp(4usize),
+                    self.wupp(5usize),
+                    self.wupp(6usize),
+                    self.wupp(7usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "wakeup control register 3"]
@@ -1354,6 +1995,47 @@ pub mod regs {
             Wucr3(0)
         }
     }
+    impl core::fmt::Debug for Wucr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wucr3")
+                .field("wusel1", &self.wusel1())
+                .field("wusel2", &self.wusel2())
+                .field("wusel3", &self.wusel3())
+                .field("wusel4", &self.wusel4())
+                .field("wusel5", &self.wusel5())
+                .field("wusel6", &self.wusel6())
+                .field("wusel7", &self.wusel7())
+                .field("wusel8", &self.wusel8())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wucr3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wucr3 {
+                wusel1: super::vals::Wusel,
+                wusel2: super::vals::Wusel,
+                wusel3: super::vals::Wusel,
+                wusel4: super::vals::Wusel,
+                wusel5: super::vals::Wusel,
+                wusel6: super::vals::Wusel,
+                wusel7: super::vals::Wusel,
+                wusel8: super::vals::Wusel,
+            }
+            let proxy = Wucr3 {
+                wusel1: self.wusel1(),
+                wusel2: self.wusel2(),
+                wusel3: self.wusel3(),
+                wusel4: self.wusel4(),
+                wusel5: self.wusel5(),
+                wusel6: self.wusel6(),
+                wusel7: self.wusel7(),
+                wusel8: self.wusel8(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "wakeup status clear register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1452,6 +2134,47 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Wuscr {
             Wuscr(0)
+        }
+    }
+    impl core::fmt::Debug for Wuscr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wuscr")
+                .field("cwuf1", &self.cwuf1())
+                .field("cwuf2", &self.cwuf2())
+                .field("cwuf3", &self.cwuf3())
+                .field("cwuf4", &self.cwuf4())
+                .field("cwuf5", &self.cwuf5())
+                .field("cwuf6", &self.cwuf6())
+                .field("cwuf7", &self.cwuf7())
+                .field("cwuf8", &self.cwuf8())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wuscr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wuscr {
+                cwuf1: bool,
+                cwuf2: bool,
+                cwuf3: bool,
+                cwuf4: bool,
+                cwuf5: bool,
+                cwuf6: bool,
+                cwuf7: bool,
+                cwuf8: bool,
+            }
+            let proxy = Wuscr {
+                cwuf1: self.cwuf1(),
+                cwuf2: self.cwuf2(),
+                cwuf3: self.cwuf3(),
+                cwuf4: self.cwuf4(),
+                cwuf5: self.cwuf5(),
+                cwuf6: self.cwuf6(),
+                cwuf7: self.cwuf7(),
+                cwuf8: self.cwuf8(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "wakeup status register"]
@@ -1554,10 +2277,52 @@ pub mod regs {
             Wusr(0)
         }
     }
+    impl core::fmt::Debug for Wusr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wusr")
+                .field("wuf1", &self.wuf1())
+                .field("wuf2", &self.wuf2())
+                .field("wuf3", &self.wuf3())
+                .field("wuf4", &self.wuf4())
+                .field("wuf5", &self.wuf5())
+                .field("wuf6", &self.wuf6())
+                .field("wuf7", &self.wuf7())
+                .field("wuf8", &self.wuf8())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wusr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Wusr {
+                wuf1: bool,
+                wuf2: bool,
+                wuf3: bool,
+                wuf4: bool,
+                wuf5: bool,
+                wuf6: bool,
+                wuf7: bool,
+                wuf8: bool,
+            }
+            let proxy = Wusr {
+                wuf1: self.wuf1(),
+                wuf2: self.wuf2(),
+                wuf3: self.wuf3(),
+                wuf4: self.wuf4(),
+                wuf5: self.wuf5(),
+                wuf6: self.wuf6(),
+                wuf7: self.wuf7(),
+                wuf8: self.wuf8(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Actvos {
         #[doc = "Range 4 (lowest power)"]
         RANGE4 = 0x0,
@@ -1591,10 +2356,11 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Flashfwu {
         #[doc = "Flash memory enters low-power mode in Stop 0 and Stop 1 modes (lower-power consumption)."]
-        LOWPOWER = 0x0,
+        LOW_POWER = 0x0,
         #[doc = "Flash memory remains in normal mode in Stop 0 and Stop 1 modes (faster wakeup time)."]
         NORMAL = 0x01,
     }
@@ -1621,7 +2387,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpms {
         #[doc = "Stop 0 mode"]
         STOP0 = 0x0,
@@ -1659,7 +2426,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pds {
         #[doc = "Content retained in Stop modes"]
         RETAINED = 0x0,
@@ -1689,7 +2457,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pvdls {
         #[doc = "VPVD0 around 2.0 V"]
         V20 = 0x0,
@@ -1731,10 +2500,11 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pvdo {
         #[doc = "VDD is equal or above the PVD threshold selected by PVDLS\\[2:0\\]."]
-        ABOVEOREQUAL = 0x0,
+        ABOVE_OR_EQUAL = 0x0,
         #[doc = "VDD is below the PVD threshold selected by PVDLS\\[2:0\\]."]
         BELOW = 0x01,
     }
@@ -1761,7 +2531,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Regsel {
         #[doc = "LDO selected"]
         LDO = 0x0,
@@ -1791,7 +2562,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sramfwu {
         #[doc = "SRAM4 enters low-power mode in Stop 0, 1 and 2 modes (source biasing for lower-power consumption)."]
         B_0X0 = 0x0,
@@ -1821,12 +2593,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Srampd {
         #[doc = "SRAM1 powered on"]
-        POWEREDON = 0x0,
+        POWERED_ON = 0x0,
         #[doc = "SRAM1 powered off"]
-        POWEREDOFF = 0x01,
+        POWERED_OFF = 0x01,
     }
     impl Srampd {
         #[inline(always)]
@@ -1851,7 +2624,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Temph {
         #[doc = "Temperature < high threshold"]
         B_0X0 = 0x0,
@@ -1881,7 +2655,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Templ {
         #[doc = "Temperature > low threshold"]
         B_0X0 = 0x0,
@@ -1911,7 +2686,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vbath {
         #[doc = "Backup domain voltage level < high threshold"]
         B_0X0 = 0x0,
@@ -1941,7 +2717,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vbe {
         #[doc = "VBAT battery charging disabled"]
         B_0X0 = 0x0,
@@ -1971,7 +2748,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vbrs {
         #[doc = "Charge VBAT through a 5 kΩ resistor"]
         B_0X0 = 0x0,
@@ -2001,7 +2779,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vos {
         #[doc = "Range 4 (lowest power)"]
         RANGE4 = 0x0,
@@ -2035,7 +2814,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wupp {
         #[doc = "Detection on high level (rising edge)"]
         HIGH = 0x0,
@@ -2065,7 +2845,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wusel {
         #[doc = "WKUP7_0"]
         B_0X0 = 0x0,

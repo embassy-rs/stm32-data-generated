@@ -317,7 +317,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "NOBURSTSPLIT",
+                    name: "NO_BURST_SPLIT",
                     description: Some("No burst split when crossing page boundary"),
                     value: 0,
                 },
@@ -393,12 +393,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BEFOREWAITSTATE",
+                    name: "BEFORE_WAIT_STATE",
                     description: Some("NWAIT signal is active one data cycle before wait state"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DURINGWAITSTATE",
+                    name: "DURING_WAIT_STATE",
                     description: Some("NWAIT signal is active during wait state"),
                     value: 1,
                 },
@@ -410,12 +410,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVELOW",
+                    name: "ACTIVE_LOW",
                     description: Some("NWAIT active low"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ACTIVEHIGH",
+                    name: "ACTIVE_HIGH",
                     description: Some("NWAIT active high"),
                     value: 1,
                 },

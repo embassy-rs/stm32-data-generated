@@ -142,6 +142,44 @@ pub mod regs {
             Ccr(0)
         }
     }
+    impl core::fmt::Debug for Ccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ccr")
+                .field("dmareq_id", &self.dmareq_id())
+                .field("soie", &self.soie())
+                .field("ege", &self.ege())
+                .field("se", &self.se())
+                .field("spol", &self.spol())
+                .field("nbreq", &self.nbreq())
+                .field("sync_id", &self.sync_id())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ccr {
+                dmareq_id: u8,
+                soie: bool,
+                ege: bool,
+                se: bool,
+                spol: super::vals::Pol,
+                nbreq: u8,
+                sync_id: u8,
+            }
+            let proxy = Ccr {
+                dmareq_id: self.dmareq_id(),
+                soie: self.soie(),
+                ege: self.ege(),
+                se: self.se(),
+                spol: self.spol(),
+                nbreq: self.nbreq(),
+                sync_id: self.sync_id(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMAMUX request line multiplexer interrupt channel status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -167,6 +205,63 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Csr {
             Csr(0)
+        }
+    }
+    impl core::fmt::Debug for Csr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Csr")
+                .field(
+                    "sof",
+                    &[
+                        self.sof(0usize),
+                        self.sof(1usize),
+                        self.sof(2usize),
+                        self.sof(3usize),
+                        self.sof(4usize),
+                        self.sof(5usize),
+                        self.sof(6usize),
+                        self.sof(7usize),
+                        self.sof(8usize),
+                        self.sof(9usize),
+                        self.sof(10usize),
+                        self.sof(11usize),
+                        self.sof(12usize),
+                        self.sof(13usize),
+                        self.sof(14usize),
+                        self.sof(15usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Csr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Csr {
+                sof: [bool; 16usize],
+            }
+            let proxy = Csr {
+                sof: [
+                    self.sof(0usize),
+                    self.sof(1usize),
+                    self.sof(2usize),
+                    self.sof(3usize),
+                    self.sof(4usize),
+                    self.sof(5usize),
+                    self.sof(6usize),
+                    self.sof(7usize),
+                    self.sof(8usize),
+                    self.sof(9usize),
+                    self.sof(10usize),
+                    self.sof(11usize),
+                    self.sof(12usize),
+                    self.sof(13usize),
+                    self.sof(14usize),
+                    self.sof(15usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMAMux - DMA request generator channel x control register"]
@@ -236,6 +331,38 @@ pub mod regs {
             Rgcr(0)
         }
     }
+    impl core::fmt::Debug for Rgcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgcr")
+                .field("sig_id", &self.sig_id())
+                .field("oie", &self.oie())
+                .field("ge", &self.ge())
+                .field("gpol", &self.gpol())
+                .field("gnbreq", &self.gnbreq())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rgcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rgcr {
+                sig_id: u8,
+                oie: bool,
+                ge: bool,
+                gpol: super::vals::Pol,
+                gnbreq: u8,
+            }
+            let proxy = Rgcr {
+                sig_id: self.sig_id(),
+                oie: self.oie(),
+                ge: self.ge(),
+                gpol: self.gpol(),
+                gnbreq: self.gnbreq(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMAMux - DMA request generator status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -263,19 +390,61 @@ pub mod regs {
             Rgsr(0)
         }
     }
+    impl core::fmt::Debug for Rgsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgsr")
+                .field(
+                    "of",
+                    &[
+                        self.of(0usize),
+                        self.of(1usize),
+                        self.of(2usize),
+                        self.of(3usize),
+                        self.of(4usize),
+                        self.of(5usize),
+                        self.of(6usize),
+                        self.of(7usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rgsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rgsr {
+                of: [bool; 8usize],
+            }
+            let proxy = Rgsr {
+                of: [
+                    self.of(0usize),
+                    self.of(1usize),
+                    self.of(2usize),
+                    self.of(3usize),
+                    self.of(4usize),
+                    self.of(5usize),
+                    self.of(6usize),
+                    self.of(7usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pol {
         #[doc = "No event, i.e. no synchronization nor detection"]
-        NOEDGE = 0x0,
+        NO_EDGE = 0x0,
         #[doc = "Rising edge"]
-        RISINGEDGE = 0x01,
+        RISING_EDGE = 0x01,
         #[doc = "Falling edge"]
-        FALLINGEDGE = 0x02,
+        FALLING_EDGE = 0x02,
         #[doc = "Rising and falling edges"]
-        BOTHEDGES = 0x03,
+        BOTH_EDGES = 0x03,
     }
     impl Pol {
         #[inline(always)]

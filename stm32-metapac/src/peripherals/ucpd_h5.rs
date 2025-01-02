@@ -195,6 +195,47 @@ bitfield setting."]
             Cfgr1(0)
         }
     }
+    impl core::fmt::Debug for Cfgr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr1")
+                .field("hbitclkdiv", &self.hbitclkdiv())
+                .field("ifrgap", &self.ifrgap())
+                .field("transwin", &self.transwin())
+                .field("psc_usbpdclk", &self.psc_usbpdclk())
+                .field("rxordseten", &self.rxordseten())
+                .field("txdmaen", &self.txdmaen())
+                .field("rxdmaen", &self.rxdmaen())
+                .field("ucpden", &self.ucpden())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr1 {
+                hbitclkdiv: u8,
+                ifrgap: u8,
+                transwin: u8,
+                psc_usbpdclk: super::vals::PscUsbpdclk,
+                rxordseten: u16,
+                txdmaen: bool,
+                rxdmaen: bool,
+                ucpden: bool,
+            }
+            let proxy = Cfgr1 {
+                hbitclkdiv: self.hbitclkdiv(),
+                ifrgap: self.ifrgap(),
+                transwin: self.transwin(),
+                psc_usbpdclk: self.psc_usbpdclk(),
+                rxordseten: self.rxordseten(),
+                txdmaen: self.txdmaen(),
+                rxdmaen: self.rxdmaen(),
+                ucpden: self.ucpden(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "configuration register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -262,6 +303,38 @@ bitfield setting."]
             Cfgr2(0)
         }
     }
+    impl core::fmt::Debug for Cfgr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr2")
+                .field("rxfiltdis", &self.rxfiltdis())
+                .field("rxfilt2n3", &self.rxfilt2n3())
+                .field("forceclk", &self.forceclk())
+                .field("wupen", &self.wupen())
+                .field("rxafilten", &self.rxafilten())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr2 {
+                rxfiltdis: bool,
+                rxfilt2n3: bool,
+                forceclk: bool,
+                wupen: bool,
+                rxafilten: bool,
+            }
+            let proxy = Cfgr2 {
+                rxfiltdis: self.rxfiltdis(),
+                rxfilt2n3: self.rxfilt2n3(),
+                forceclk: self.forceclk(),
+                wupen: self.wupen(),
+                rxafilten: self.rxafilten(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "configuration register 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -316,6 +389,35 @@ bitfield setting."]
         #[inline(always)]
         fn default() -> Cfgr3 {
             Cfgr3(0)
+        }
+    }
+    impl core::fmt::Debug for Cfgr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr3")
+                .field("trim_cc1_rd", &self.trim_cc1_rd())
+                .field("trim_cc1_rp", &self.trim_cc1_rp())
+                .field("trim_cc2_rd", &self.trim_cc2_rd())
+                .field("trim_cc2_rp", &self.trim_cc2_rp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr3 {
+                trim_cc1_rd: u8,
+                trim_cc1_rp: u8,
+                trim_cc2_rd: u8,
+                trim_cc2_rp: u8,
+            }
+            let proxy = Cfgr3 {
+                trim_cc1_rd: self.trim_cc1_rd(),
+                trim_cc1_rp: self.trim_cc1_rp(),
+                trim_cc2_rd: self.trim_cc2_rd(),
+                trim_cc2_rp: self.trim_cc2_rp(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "control register"]
@@ -488,6 +590,65 @@ bitfield must be set accordingly, too."]
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("txmode", &self.txmode())
+                .field("txsend", &self.txsend())
+                .field("txhrst", &self.txhrst())
+                .field("rxmode", &self.rxmode())
+                .field("phyrxen", &self.phyrxen())
+                .field("phyccsel", &self.phyccsel())
+                .field("anasubmode", &self.anasubmode())
+                .field("anamode", &self.anamode())
+                .field("ccenable", &self.ccenable())
+                .field("frsrxen", &self.frsrxen())
+                .field("frstx", &self.frstx())
+                .field("rdch", &self.rdch())
+                .field("cc1tcdis", &self.cc1tcdis())
+                .field("cc2tcdis", &self.cc2tcdis())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                txmode: super::vals::Txmode,
+                txsend: bool,
+                txhrst: bool,
+                rxmode: bool,
+                phyrxen: bool,
+                phyccsel: super::vals::Phyccsel,
+                anasubmode: u8,
+                anamode: super::vals::Anamode,
+                ccenable: super::vals::Ccenable,
+                frsrxen: bool,
+                frstx: bool,
+                rdch: bool,
+                cc1tcdis: bool,
+                cc2tcdis: bool,
+            }
+            let proxy = Cr {
+                txmode: self.txmode(),
+                txsend: self.txsend(),
+                txhrst: self.txhrst(),
+                rxmode: self.rxmode(),
+                phyrxen: self.phyrxen(),
+                phyccsel: self.phyccsel(),
+                anasubmode: self.anasubmode(),
+                anamode: self.anamode(),
+                ccenable: self.ccenable(),
+                frsrxen: self.frsrxen(),
+                frstx: self.frstx(),
+                rdch: self.rdch(),
+                cc1tcdis: self.cc1tcdis(),
+                cc2tcdis: self.cc2tcdis(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "interrupt clear register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -641,6 +802,62 @@ bitfield must be set accordingly, too."]
         #[inline(always)]
         fn default() -> Icr {
             Icr(0)
+        }
+    }
+    impl core::fmt::Debug for Icr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Icr")
+                .field("txmsgdisccf", &self.txmsgdisccf())
+                .field("txmsgsentcf", &self.txmsgsentcf())
+                .field("txmsgabtcf", &self.txmsgabtcf())
+                .field("hrstdisccf", &self.hrstdisccf())
+                .field("hrstsentcf", &self.hrstsentcf())
+                .field("txundcf", &self.txundcf())
+                .field("rxorddetcf", &self.rxorddetcf())
+                .field("rxhrstdetcf", &self.rxhrstdetcf())
+                .field("rxovrcf", &self.rxovrcf())
+                .field("rxmsgendcf", &self.rxmsgendcf())
+                .field("typecevt1cf", &self.typecevt1cf())
+                .field("typecevt2cf", &self.typecevt2cf())
+                .field("frsevtcf", &self.frsevtcf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Icr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Icr {
+                txmsgdisccf: bool,
+                txmsgsentcf: bool,
+                txmsgabtcf: bool,
+                hrstdisccf: bool,
+                hrstsentcf: bool,
+                txundcf: bool,
+                rxorddetcf: bool,
+                rxhrstdetcf: bool,
+                rxovrcf: bool,
+                rxmsgendcf: bool,
+                typecevt1cf: bool,
+                typecevt2cf: bool,
+                frsevtcf: bool,
+            }
+            let proxy = Icr {
+                txmsgdisccf: self.txmsgdisccf(),
+                txmsgsentcf: self.txmsgsentcf(),
+                txmsgabtcf: self.txmsgabtcf(),
+                hrstdisccf: self.hrstdisccf(),
+                hrstsentcf: self.hrstsentcf(),
+                txundcf: self.txundcf(),
+                rxorddetcf: self.rxorddetcf(),
+                rxhrstdetcf: self.rxhrstdetcf(),
+                rxovrcf: self.rxovrcf(),
+                rxmsgendcf: self.rxmsgendcf(),
+                typecevt1cf: self.typecevt1cf(),
+                typecevt2cf: self.typecevt2cf(),
+                frsevtcf: self.frsevtcf(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "interrupt mask register"]
@@ -820,6 +1037,68 @@ bitfield must be set accordingly, too."]
             Imr(0)
         }
     }
+    impl core::fmt::Debug for Imr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Imr")
+                .field("txisie", &self.txisie())
+                .field("txmsgdiscie", &self.txmsgdiscie())
+                .field("txmsgsentie", &self.txmsgsentie())
+                .field("txmsgabtie", &self.txmsgabtie())
+                .field("hrstdiscie", &self.hrstdiscie())
+                .field("hrstsentie", &self.hrstsentie())
+                .field("txundie", &self.txundie())
+                .field("rxneie", &self.rxneie())
+                .field("rxorddetie", &self.rxorddetie())
+                .field("rxhrstdetie", &self.rxhrstdetie())
+                .field("rxovrie", &self.rxovrie())
+                .field("rxmsgendie", &self.rxmsgendie())
+                .field("typecevt1ie", &self.typecevt1ie())
+                .field("typecevt2ie", &self.typecevt2ie())
+                .field("frsevtie", &self.frsevtie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Imr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Imr {
+                txisie: bool,
+                txmsgdiscie: bool,
+                txmsgsentie: bool,
+                txmsgabtie: bool,
+                hrstdiscie: bool,
+                hrstsentie: bool,
+                txundie: bool,
+                rxneie: bool,
+                rxorddetie: bool,
+                rxhrstdetie: bool,
+                rxovrie: bool,
+                rxmsgendie: bool,
+                typecevt1ie: bool,
+                typecevt2ie: bool,
+                frsevtie: bool,
+            }
+            let proxy = Imr {
+                txisie: self.txisie(),
+                txmsgdiscie: self.txmsgdiscie(),
+                txmsgsentie: self.txmsgsentie(),
+                txmsgabtie: self.txmsgabtie(),
+                hrstdiscie: self.hrstdiscie(),
+                hrstsentie: self.hrstsentie(),
+                txundie: self.txundie(),
+                rxneie: self.rxneie(),
+                rxorddetie: self.rxorddetie(),
+                rxhrstdetie: self.rxhrstdetie(),
+                rxovrie: self.rxovrie(),
+                rxmsgendie: self.rxmsgendie(),
+                typecevt1ie: self.typecevt1ie(),
+                typecevt2ie: self.typecevt2ie(),
+                frsevtie: self.frsevtie(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Rx ordered set extension register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -843,6 +1122,24 @@ bitfield must be set accordingly, too."]
             RxOrdextr1(0)
         }
     }
+    impl core::fmt::Debug for RxOrdextr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RxOrdextr1").field("rxsopx1", &self.rxsopx1()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RxOrdextr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RxOrdextr1 {
+                rxsopx1: u32,
+            }
+            let proxy = RxOrdextr1 {
+                rxsopx1: self.rxsopx1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Rx ordered set extension register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -864,6 +1161,24 @@ bitfield must be set accordingly, too."]
         #[inline(always)]
         fn default() -> RxOrdextr2 {
             RxOrdextr2(0)
+        }
+    }
+    impl core::fmt::Debug for RxOrdextr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RxOrdextr2").field("rxsopx2", &self.rxsopx2()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RxOrdextr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RxOrdextr2 {
+                rxsopx2: u32,
+            }
+            let proxy = RxOrdextr2 {
+                rxsopx2: self.rxsopx2(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[repr(transparent)]
@@ -910,6 +1225,32 @@ bitfield must be set accordingly, too."]
             RxOrdsetr(0)
         }
     }
+    impl core::fmt::Debug for RxOrdsetr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RxOrdsetr")
+                .field("rxordset", &self.rxordset())
+                .field("rxsop3of4", &self.rxsop3of4())
+                .field("rxsopkinvalid", &self.rxsopkinvalid())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RxOrdsetr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RxOrdsetr {
+                rxordset: super::vals::Rxordset,
+                rxsop3of4: bool,
+                rxsopkinvalid: super::vals::Rxsopkinvalid,
+            }
+            let proxy = RxOrdsetr {
+                rxordset: self.rxordset(),
+                rxsop3of4: self.rxsop3of4(),
+                rxsopkinvalid: self.rxsopkinvalid(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct RxPayszr(pub u32);
@@ -932,6 +1273,24 @@ bitfield must be set accordingly, too."]
             RxPayszr(0)
         }
     }
+    impl core::fmt::Debug for RxPayszr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RxPayszr").field("rxpaysz", &self.rxpaysz()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RxPayszr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RxPayszr {
+                rxpaysz: u16,
+            }
+            let proxy = RxPayszr {
+                rxpaysz: self.rxpaysz(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Rxdr(pub u32);
@@ -952,6 +1311,22 @@ bitfield must be set accordingly, too."]
         #[inline(always)]
         fn default() -> Rxdr {
             Rxdr(0)
+        }
+    }
+    impl core::fmt::Debug for Rxdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rxdr").field("rxdata", &self.rxdata()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rxdr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rxdr {
+                rxdata: u8,
+            }
+            let proxy = Rxdr { rxdata: self.rxdata() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "status register"]
@@ -1170,6 +1545,77 @@ bitfield value, which corresponds to a new Type-C event. It is cleared by settin
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("txis", &self.txis())
+                .field("txmsgdisc", &self.txmsgdisc())
+                .field("txmsgsent", &self.txmsgsent())
+                .field("txmsgabt", &self.txmsgabt())
+                .field("hrstdisc", &self.hrstdisc())
+                .field("hrstsent", &self.hrstsent())
+                .field("txund", &self.txund())
+                .field("rxne", &self.rxne())
+                .field("rxorddet", &self.rxorddet())
+                .field("rxhrstdet", &self.rxhrstdet())
+                .field("rxovr", &self.rxovr())
+                .field("rxmsgend", &self.rxmsgend())
+                .field("rxerr", &self.rxerr())
+                .field("typecevt1", &self.typecevt1())
+                .field("typecevt2", &self.typecevt2())
+                .field("typec_vstate_cc1", &self.typec_vstate_cc1())
+                .field("typec_vstate_cc2", &self.typec_vstate_cc2())
+                .field("frsevt", &self.frsevt())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                txis: bool,
+                txmsgdisc: bool,
+                txmsgsent: bool,
+                txmsgabt: bool,
+                hrstdisc: bool,
+                hrstsent: bool,
+                txund: bool,
+                rxne: bool,
+                rxorddet: bool,
+                rxhrstdet: bool,
+                rxovr: bool,
+                rxmsgend: bool,
+                rxerr: bool,
+                typecevt1: bool,
+                typecevt2: bool,
+                typec_vstate_cc1: super::vals::TypecVstateCc,
+                typec_vstate_cc2: super::vals::TypecVstateCc,
+                frsevt: bool,
+            }
+            let proxy = Sr {
+                txis: self.txis(),
+                txmsgdisc: self.txmsgdisc(),
+                txmsgsent: self.txmsgsent(),
+                txmsgabt: self.txmsgabt(),
+                hrstdisc: self.hrstdisc(),
+                hrstsent: self.hrstsent(),
+                txund: self.txund(),
+                rxne: self.rxne(),
+                rxorddet: self.rxorddet(),
+                rxhrstdet: self.rxhrstdet(),
+                rxovr: self.rxovr(),
+                rxmsgend: self.rxmsgend(),
+                rxerr: self.rxerr(),
+                typecevt1: self.typecevt1(),
+                typecevt2: self.typecevt2(),
+                typec_vstate_cc1: self.typec_vstate_cc1(),
+                typec_vstate_cc2: self.typec_vstate_cc2(),
+                frsevt: self.frsevt(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Tx ordered set type register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1191,6 +1637,24 @@ bitfield value, which corresponds to a new Type-C event. It is cleared by settin
         #[inline(always)]
         fn default() -> TxOrdsetr {
             TxOrdsetr(0)
+        }
+    }
+    impl core::fmt::Debug for TxOrdsetr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TxOrdsetr").field("txordset", &self.txordset()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TxOrdsetr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TxOrdsetr {
+                txordset: u32,
+            }
+            let proxy = TxOrdsetr {
+                txordset: self.txordset(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Tx payload size register"]
@@ -1216,6 +1680,24 @@ bitfield value, which corresponds to a new Type-C event. It is cleared by settin
             TxPayszr(0)
         }
     }
+    impl core::fmt::Debug for TxPayszr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TxPayszr").field("txpaysz", &self.txpaysz()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TxPayszr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TxPayszr {
+                txpaysz: u16,
+            }
+            let proxy = TxPayszr {
+                txpaysz: self.txpaysz(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Tx data register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1239,10 +1721,27 @@ bitfield value, which corresponds to a new Type-C event. It is cleared by settin
             Txdr(0)
         }
     }
+    impl core::fmt::Debug for Txdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Txdr").field("txdata", &self.txdata()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Txdr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Txdr {
+                txdata: u8,
+            }
+            let proxy = Txdr { txdata: self.txdata() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Anamode {
         #[doc = "Source"]
         SOURCE = 0x0,
@@ -1272,7 +1771,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ccenable {
         #[doc = "Disable both PHYs"]
         DISABLED = 0x0,
@@ -1306,7 +1806,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Phyccsel {
         #[doc = "Use CC1 IO for Power Delivery communication"]
         CC1 = 0x0,
@@ -1336,7 +1837,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PscUsbpdclk {
         #[doc = "1 (bypass)"]
         DIV1 = 0x0,
@@ -1375,20 +1877,21 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rxordset {
         #[doc = "SOP code detected in receiver"]
         SOP = 0x0,
         #[doc = "SOP' code detected in receiver"]
-        SOPPRIME = 0x01,
+        SOP_PRIME = 0x01,
         #[doc = "SOP'' code detected in receiver"]
-        SOPDOUBLEPRIME = 0x02,
+        SOP_DOUBLE_PRIME = 0x02,
         #[doc = "SOP'_Debug detected in receiver"]
-        SOPPRIMEDEBUG = 0x03,
+        SOP_PRIME_DEBUG = 0x03,
         #[doc = "SOP''_Debug detected in receiver"]
-        SOPDOUBLEPRIMEDEBUG = 0x04,
+        SOP_DOUBLE_PRIME_DEBUG = 0x04,
         #[doc = "Cable Reset detected in receiver"]
-        CABLERESET = 0x05,
+        CABLE_RESET = 0x05,
         #[doc = "SOP extension#1 detected in receiver"]
         EXT1 = 0x06,
         #[doc = "SOP extension#2 detected in receiver"]
@@ -1417,7 +1920,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rxsopkinvalid {
         #[doc = "No K‑code corrupted"]
         NONE = 0x0,
@@ -1456,12 +1960,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Txmode {
         #[doc = "Transmission of Tx packet previously defined in other registers"]
         PACKET = 0x0,
         #[doc = "Cable Reset sequence"]
-        CABLERESET = 0x01,
+        CABLE_RESET = 0x01,
         #[doc = "BIST test sequence (BIST Carrier Mode 2)"]
         BIST = 0x02,
         _RESERVED_3 = 0x03,
@@ -1489,7 +1994,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum TypecVstateCc {
         #[doc = "Lowest"]
         LOWEST = 0x0,

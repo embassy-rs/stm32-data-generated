@@ -324,7 +324,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "NOBLANKING",
+                    name: "NO_BLANKING",
                     description: None,
                     value: 0,
                 },
@@ -477,7 +477,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MEDIUMEITHER",
+                    name: "MEDIUM_EITHER",
                     description: Some("Medium speed / medium power"),
                     value: 2,
                 },

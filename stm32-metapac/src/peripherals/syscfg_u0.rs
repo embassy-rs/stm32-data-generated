@@ -361,6 +361,62 @@ pub mod regs {
             Cfgr1(0)
         }
     }
+    impl core::fmt::Debug for Cfgr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr1")
+                .field("mem_mode", &self.mem_mode())
+                .field("pa11_rmp", &self.pa11_rmp())
+                .field("pa12_rmp", &self.pa12_rmp())
+                .field("ir_pol", &self.ir_pol())
+                .field("ir_mod", &self.ir_mod())
+                .field("boosten", &self.boosten())
+                .field("i2c_pb6_fmp", &self.i2c_pb6_fmp())
+                .field("i2c_pb7_fmp", &self.i2c_pb7_fmp())
+                .field("i2c_pb8_fmp", &self.i2c_pb8_fmp())
+                .field("i2c_pb9_fmp", &self.i2c_pb9_fmp())
+                .field("i2c_pa9_fmp", &self.i2c_pa9_fmp())
+                .field("i2c_pa10_fmp", &self.i2c_pa10_fmp())
+                .field("i2c3_fmp", &self.i2c3_fmp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr1 {
+                mem_mode: super::vals::MemMode,
+                pa11_rmp: bool,
+                pa12_rmp: bool,
+                ir_pol: bool,
+                ir_mod: super::vals::IrMod,
+                boosten: bool,
+                i2c_pb6_fmp: bool,
+                i2c_pb7_fmp: bool,
+                i2c_pb8_fmp: bool,
+                i2c_pb9_fmp: bool,
+                i2c_pa9_fmp: bool,
+                i2c_pa10_fmp: bool,
+                i2c3_fmp: bool,
+            }
+            let proxy = Cfgr1 {
+                mem_mode: self.mem_mode(),
+                pa11_rmp: self.pa11_rmp(),
+                pa12_rmp: self.pa12_rmp(),
+                ir_pol: self.ir_pol(),
+                ir_mod: self.ir_mod(),
+                boosten: self.boosten(),
+                i2c_pb6_fmp: self.i2c_pb6_fmp(),
+                i2c_pb7_fmp: self.i2c_pb7_fmp(),
+                i2c_pb8_fmp: self.i2c_pb8_fmp(),
+                i2c_pb9_fmp: self.i2c_pb9_fmp(),
+                i2c_pa9_fmp: self.i2c_pa9_fmp(),
+                i2c_pa10_fmp: self.i2c_pa10_fmp(),
+                i2c3_fmp: self.i2c3_fmp(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG configuration register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -452,6 +508,44 @@ in the PWR_CR register."]
             Cfgr2(0)
         }
     }
+    impl core::fmt::Debug for Cfgr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr2")
+                .field("ccl", &self.ccl())
+                .field("spl", &self.spl())
+                .field("pvdl", &self.pvdl())
+                .field("eccl", &self.eccl())
+                .field("bkpl", &self.bkpl())
+                .field("bkpf", &self.bkpf())
+                .field("spf", &self.spf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr2 {
+                ccl: bool,
+                spl: bool,
+                pvdl: bool,
+                eccl: bool,
+                bkpl: bool,
+                bkpf: bool,
+                spf: bool,
+            }
+            let proxy = Cfgr2 {
+                ccl: self.ccl(),
+                spl: self.spl(),
+                pvdl: self.pvdl(),
+                eccl: self.eccl(),
+                bkpl: self.bkpl(),
+                bkpf: self.bkpf(),
+                spf: self.spf(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG interrupt line 0 status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -473,6 +567,22 @@ in the PWR_CR register."]
         #[inline(always)]
         fn default() -> Itline0 {
             Itline0(0)
+        }
+    }
+    impl core::fmt::Debug for Itline0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline0").field("wwdg", &self.wwdg()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline0 {
+                wwdg: bool,
+            }
+            let proxy = Itline0 { wwdg: self.wwdg() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SYSCFG interrupt line 1 status register"]
@@ -531,6 +641,35 @@ in the PWR_CR register."]
             Itline1(0)
         }
     }
+    impl core::fmt::Debug for Itline1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline1")
+                .field("pvdout", &self.pvdout())
+                .field("pvmout1", &self.pvmout1())
+                .field("pvmout3", &self.pvmout3())
+                .field("pvmout4", &self.pvmout4())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline1 {
+                pvdout: bool,
+                pvmout1: bool,
+                pvmout3: bool,
+                pvmout4: bool,
+            }
+            let proxy = Itline1 {
+                pvdout: self.pvdout(),
+                pvmout1: self.pvmout1(),
+                pvmout3: self.pvmout3(),
+                pvmout4: self.pvmout4(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG interrupt line 10 status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -563,6 +702,29 @@ in the PWR_CR register."]
         #[inline(always)]
         fn default() -> Itline10 {
             Itline10(0)
+        }
+    }
+    impl core::fmt::Debug for Itline10 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline10")
+                .field("dma1_ch2", &self.dma1_ch2())
+                .field("dma1_ch3", &self.dma1_ch3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline10 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline10 {
+                dma1_ch2: bool,
+                dma1_ch3: bool,
+            }
+            let proxy = Itline10 {
+                dma1_ch2: self.dma1_ch2(),
+                dma1_ch3: self.dma1_ch3(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SYSCFG interrupt line 11 status register"]
@@ -687,6 +849,53 @@ in the PWR_CR register."]
             Itline11(0)
         }
     }
+    impl core::fmt::Debug for Itline11 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline11")
+                .field("dmamux", &self.dmamux())
+                .field("dma1_ch4", &self.dma1_ch4())
+                .field("dma1_ch5", &self.dma1_ch5())
+                .field("dma1_ch6", &self.dma1_ch6())
+                .field("dma1_ch7", &self.dma1_ch7())
+                .field("dma2_ch1", &self.dma2_ch1())
+                .field("dma2_ch2", &self.dma2_ch2())
+                .field("dma2_ch3", &self.dma2_ch3())
+                .field("dma2_ch4", &self.dma2_ch4())
+                .field("dma2_ch5", &self.dma2_ch5())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline11 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline11 {
+                dmamux: bool,
+                dma1_ch4: bool,
+                dma1_ch5: bool,
+                dma1_ch6: bool,
+                dma1_ch7: bool,
+                dma2_ch1: bool,
+                dma2_ch2: bool,
+                dma2_ch3: bool,
+                dma2_ch4: bool,
+                dma2_ch5: bool,
+            }
+            let proxy = Itline11 {
+                dmamux: self.dmamux(),
+                dma1_ch4: self.dma1_ch4(),
+                dma1_ch5: self.dma1_ch5(),
+                dma1_ch6: self.dma1_ch6(),
+                dma1_ch7: self.dma1_ch7(),
+                dma2_ch1: self.dma2_ch1(),
+                dma2_ch2: self.dma2_ch2(),
+                dma2_ch3: self.dma2_ch3(),
+                dma2_ch4: self.dma2_ch4(),
+                dma2_ch5: self.dma2_ch5(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG interrupt line 12 status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -730,6 +939,32 @@ in the PWR_CR register."]
         #[inline(always)]
         fn default() -> Itline12 {
             Itline12(0)
+        }
+    }
+    impl core::fmt::Debug for Itline12 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline12")
+                .field("adc", &self.adc())
+                .field("comp1", &self.comp1())
+                .field("comp2", &self.comp2())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline12 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline12 {
+                adc: bool,
+                comp1: bool,
+                comp2: bool,
+            }
+            let proxy = Itline12 {
+                adc: self.adc(),
+                comp1: self.comp1(),
+                comp2: self.comp2(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SYSCFG interrupt line 13 status register"]
@@ -788,6 +1023,35 @@ in the PWR_CR register."]
             Itline13(0)
         }
     }
+    impl core::fmt::Debug for Itline13 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline13")
+                .field("tim1_ccu", &self.tim1_ccu())
+                .field("tim1_trg", &self.tim1_trg())
+                .field("tim1_upd", &self.tim1_upd())
+                .field("tim1_brk", &self.tim1_brk())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline13 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline13 {
+                tim1_ccu: bool,
+                tim1_trg: bool,
+                tim1_upd: bool,
+                tim1_brk: bool,
+            }
+            let proxy = Itline13 {
+                tim1_ccu: self.tim1_ccu(),
+                tim1_trg: self.tim1_trg(),
+                tim1_upd: self.tim1_upd(),
+                tim1_brk: self.tim1_brk(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG interrupt line 14 status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -844,6 +1108,35 @@ in the PWR_CR register."]
             Itline14(0)
         }
     }
+    impl core::fmt::Debug for Itline14 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline14")
+                .field("tim1_cc1", &self.tim1_cc1())
+                .field("tim1_cc2", &self.tim1_cc2())
+                .field("tim1_cc3", &self.tim1_cc3())
+                .field("tim1_cc4", &self.tim1_cc4())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline14 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline14 {
+                tim1_cc1: bool,
+                tim1_cc2: bool,
+                tim1_cc3: bool,
+                tim1_cc4: bool,
+            }
+            let proxy = Itline14 {
+                tim1_cc1: self.tim1_cc1(),
+                tim1_cc2: self.tim1_cc2(),
+                tim1_cc3: self.tim1_cc3(),
+                tim1_cc4: self.tim1_cc4(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG interrupt line 15 status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -867,6 +1160,22 @@ in the PWR_CR register."]
             Itline15(0)
         }
     }
+    impl core::fmt::Debug for Itline15 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline15").field("tim2", &self.tim2()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline15 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline15 {
+                tim2: bool,
+            }
+            let proxy = Itline15 { tim2: self.tim2() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG interrupt line 16 status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -888,6 +1197,22 @@ in the PWR_CR register."]
         #[inline(always)]
         fn default() -> Itline16 {
             Itline16(0)
+        }
+    }
+    impl core::fmt::Debug for Itline16 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline16").field("tim3", &self.tim3()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline16 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline16 {
+                tim3: bool,
+            }
+            let proxy = Itline16 { tim3: self.tim3() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SYSCFG interrupt line 17 status register"]
@@ -935,6 +1260,32 @@ in the PWR_CR register."]
             Itline17(0)
         }
     }
+    impl core::fmt::Debug for Itline17 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline17")
+                .field("tim6", &self.tim6())
+                .field("dac", &self.dac())
+                .field("lptim1", &self.lptim1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline17 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline17 {
+                tim6: bool,
+                dac: bool,
+                lptim1: bool,
+            }
+            let proxy = Itline17 {
+                tim6: self.tim6(),
+                dac: self.dac(),
+                lptim1: self.lptim1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG interrupt line 18 status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -967,6 +1318,29 @@ in the PWR_CR register."]
         #[inline(always)]
         fn default() -> Itline18 {
             Itline18(0)
+        }
+    }
+    impl core::fmt::Debug for Itline18 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline18")
+                .field("tim7", &self.tim7())
+                .field("lptim2", &self.lptim2())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline18 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline18 {
+                tim7: bool,
+                lptim2: bool,
+            }
+            let proxy = Itline18 {
+                tim7: self.tim7(),
+                lptim2: self.lptim2(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SYSCFG interrupt line 19 status register"]
@@ -1003,6 +1377,29 @@ in the PWR_CR register."]
             Itline19(0)
         }
     }
+    impl core::fmt::Debug for Itline19 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline19")
+                .field("tim15", &self.tim15())
+                .field("lptim3", &self.lptim3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline19 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline19 {
+                tim15: bool,
+                lptim3: bool,
+            }
+            let proxy = Itline19 {
+                tim15: self.tim15(),
+                lptim3: self.lptim3(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG interrupt line 2 status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1037,6 +1434,29 @@ in the PWR_CR register."]
             Itline2(0)
         }
     }
+    impl core::fmt::Debug for Itline2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline2")
+                .field("tamp", &self.tamp())
+                .field("rtc", &self.rtc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline2 {
+                tamp: bool,
+                rtc: bool,
+            }
+            let proxy = Itline2 {
+                tamp: self.tamp(),
+                rtc: self.rtc(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG interrupt line 20 status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1058,6 +1478,22 @@ in the PWR_CR register."]
         #[inline(always)]
         fn default() -> Itline20 {
             Itline20(0)
+        }
+    }
+    impl core::fmt::Debug for Itline20 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline20").field("tim16", &self.tim16()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline20 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline20 {
+                tim16: bool,
+            }
+            let proxy = Itline20 { tim16: self.tim16() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SYSCFG interrupt line 21 status register"]
@@ -1094,6 +1530,29 @@ in the PWR_CR register."]
             Itline21(0)
         }
     }
+    impl core::fmt::Debug for Itline21 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline21")
+                .field("tsc_mce", &self.tsc_mce())
+                .field("tsc_eoa", &self.tsc_eoa())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline21 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline21 {
+                tsc_mce: bool,
+                tsc_eoa: bool,
+            }
+            let proxy = Itline21 {
+                tsc_mce: self.tsc_mce(),
+                tsc_eoa: self.tsc_eoa(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG interrupt line 22 status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1117,6 +1576,22 @@ in the PWR_CR register."]
             Itline22(0)
         }
     }
+    impl core::fmt::Debug for Itline22 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline22").field("lcd", &self.lcd()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline22 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline22 {
+                lcd: bool,
+            }
+            let proxy = Itline22 { lcd: self.lcd() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG interrupt line 23 status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1138,6 +1613,22 @@ in the PWR_CR register."]
         #[inline(always)]
         fn default() -> Itline23 {
             Itline23(0)
+        }
+    }
+    impl core::fmt::Debug for Itline23 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline23").field("i2c1", &self.i2c1()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline23 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline23 {
+                i2c1: bool,
+            }
+            let proxy = Itline23 { i2c1: self.i2c1() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SYSCFG interrupt line 24 status register"]
@@ -1185,6 +1676,32 @@ in the PWR_CR register."]
             Itline24(0)
         }
     }
+    impl core::fmt::Debug for Itline24 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline24")
+                .field("i2c2", &self.i2c2())
+                .field("i2c4", &self.i2c4())
+                .field("i2c3", &self.i2c3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline24 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline24 {
+                i2c2: bool,
+                i2c4: bool,
+                i2c3: bool,
+            }
+            let proxy = Itline24 {
+                i2c2: self.i2c2(),
+                i2c4: self.i2c4(),
+                i2c3: self.i2c3(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG interrupt line 25 status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1206,6 +1723,22 @@ in the PWR_CR register."]
         #[inline(always)]
         fn default() -> Itline25 {
             Itline25(0)
+        }
+    }
+    impl core::fmt::Debug for Itline25 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline25").field("spi1", &self.spi1()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline25 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline25 {
+                spi1: bool,
+            }
+            let proxy = Itline25 { spi1: self.spi1() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SYSCFG interrupt line 26 status register"]
@@ -1242,6 +1775,29 @@ in the PWR_CR register."]
             Itline26(0)
         }
     }
+    impl core::fmt::Debug for Itline26 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline26")
+                .field("spi2", &self.spi2())
+                .field("spi3", &self.spi3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline26 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline26 {
+                spi2: bool,
+                spi3: bool,
+            }
+            let proxy = Itline26 {
+                spi2: self.spi2(),
+                spi3: self.spi3(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG interrupt line 27 status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1263,6 +1819,22 @@ in the PWR_CR register."]
         #[inline(always)]
         fn default() -> Itline27 {
             Itline27(0)
+        }
+    }
+    impl core::fmt::Debug for Itline27 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline27").field("usart1", &self.usart1()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline27 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline27 {
+                usart1: bool,
+            }
+            let proxy = Itline27 { usart1: self.usart1() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SYSCFG interrupt line 28 status register"]
@@ -1299,6 +1871,29 @@ in the PWR_CR register."]
             Itline28(0)
         }
     }
+    impl core::fmt::Debug for Itline28 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline28")
+                .field("usart2", &self.usart2())
+                .field("lpuart2", &self.lpuart2())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline28 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline28 {
+                usart2: bool,
+                lpuart2: bool,
+            }
+            let proxy = Itline28 {
+                usart2: self.usart2(),
+                lpuart2: self.lpuart2(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG interrupt line 29 status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1331,6 +1926,29 @@ in the PWR_CR register."]
         #[inline(always)]
         fn default() -> Itline29 {
             Itline29(0)
+        }
+    }
+    impl core::fmt::Debug for Itline29 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline29")
+                .field("usart3", &self.usart3())
+                .field("lpuart1", &self.lpuart1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline29 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline29 {
+                usart3: bool,
+                lpuart1: bool,
+            }
+            let proxy = Itline29 {
+                usart3: self.usart3(),
+                lpuart1: self.lpuart1(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SYSCFG interrupt line 3 status register"]
@@ -1367,6 +1985,29 @@ in the PWR_CR register."]
             Itline3(0)
         }
     }
+    impl core::fmt::Debug for Itline3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline3")
+                .field("flash_itf", &self.flash_itf())
+                .field("flash_ecc", &self.flash_ecc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline3 {
+                flash_itf: bool,
+                flash_ecc: bool,
+            }
+            let proxy = Itline3 {
+                flash_itf: self.flash_itf(),
+                flash_ecc: self.flash_ecc(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG interrupt line 30 status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1399,6 +2040,29 @@ in the PWR_CR register."]
         #[inline(always)]
         fn default() -> Itline30 {
             Itline30(0)
+        }
+    }
+    impl core::fmt::Debug for Itline30 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline30")
+                .field("usart4", &self.usart4())
+                .field("lpuart3", &self.lpuart3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline30 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline30 {
+                usart4: bool,
+                lpuart3: bool,
+            }
+            let proxy = Itline30 {
+                usart4: self.usart4(),
+                lpuart3: self.lpuart3(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SYSCFG interrupt line 31 status register"]
@@ -1435,6 +2099,29 @@ in the PWR_CR register."]
             Itline31(0)
         }
     }
+    impl core::fmt::Debug for Itline31 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline31")
+                .field("rng", &self.rng())
+                .field("aes", &self.aes())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline31 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline31 {
+                rng: bool,
+                aes: bool,
+            }
+            let proxy = Itline31 {
+                rng: self.rng(),
+                aes: self.aes(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG interrupt line 4 status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1467,6 +2154,29 @@ in the PWR_CR register."]
         #[inline(always)]
         fn default() -> Itline4 {
             Itline4(0)
+        }
+    }
+    impl core::fmt::Debug for Itline4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline4")
+                .field("rcc", &self.rcc())
+                .field("crs", &self.crs())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline4 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline4 {
+                rcc: bool,
+                crs: bool,
+            }
+            let proxy = Itline4 {
+                rcc: self.rcc(),
+                crs: self.crs(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SYSCFG interrupt line 5 status register"]
@@ -1503,6 +2213,29 @@ in the PWR_CR register."]
             Itline5(0)
         }
     }
+    impl core::fmt::Debug for Itline5 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline5")
+                .field("exti0", &self.exti0())
+                .field("exti1", &self.exti1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline5 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline5 {
+                exti0: bool,
+                exti1: bool,
+            }
+            let proxy = Itline5 {
+                exti0: self.exti0(),
+                exti1: self.exti1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG interrupt line 6 status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1535,6 +2268,29 @@ in the PWR_CR register."]
         #[inline(always)]
         fn default() -> Itline6 {
             Itline6(0)
+        }
+    }
+    impl core::fmt::Debug for Itline6 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline6")
+                .field("exti2", &self.exti2())
+                .field("exti3", &self.exti3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline6 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline6 {
+                exti2: bool,
+                exti3: bool,
+            }
+            let proxy = Itline6 {
+                exti2: self.exti2(),
+                exti3: self.exti3(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SYSCFG interrupt line 7 status register"]
@@ -1681,6 +2437,59 @@ in the PWR_CR register."]
             Itline7(0)
         }
     }
+    impl core::fmt::Debug for Itline7 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline7")
+                .field("exti4", &self.exti4())
+                .field("exti5", &self.exti5())
+                .field("exti6", &self.exti6())
+                .field("exti7", &self.exti7())
+                .field("exti8", &self.exti8())
+                .field("exti9", &self.exti9())
+                .field("exti10", &self.exti10())
+                .field("exti11", &self.exti11())
+                .field("exti12", &self.exti12())
+                .field("exti13", &self.exti13())
+                .field("exti14", &self.exti14())
+                .field("exti15", &self.exti15())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline7 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline7 {
+                exti4: bool,
+                exti5: bool,
+                exti6: bool,
+                exti7: bool,
+                exti8: bool,
+                exti9: bool,
+                exti10: bool,
+                exti11: bool,
+                exti12: bool,
+                exti13: bool,
+                exti14: bool,
+                exti15: bool,
+            }
+            let proxy = Itline7 {
+                exti4: self.exti4(),
+                exti5: self.exti5(),
+                exti6: self.exti6(),
+                exti7: self.exti7(),
+                exti8: self.exti8(),
+                exti9: self.exti9(),
+                exti10: self.exti10(),
+                exti11: self.exti11(),
+                exti12: self.exti12(),
+                exti13: self.exti13(),
+                exti14: self.exti14(),
+                exti15: self.exti15(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG interrupt line 8 status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1704,6 +2513,22 @@ in the PWR_CR register."]
             Itline8(0)
         }
     }
+    impl core::fmt::Debug for Itline8 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline8").field("usb", &self.usb()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline8 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline8 {
+                usb: bool,
+            }
+            let proxy = Itline8 { usb: self.usb() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG interrupt line 9 status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1725,6 +2550,24 @@ in the PWR_CR register."]
         #[inline(always)]
         fn default() -> Itline9 {
             Itline9(0)
+        }
+    }
+    impl core::fmt::Debug for Itline9 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Itline9").field("dma1_ch1", &self.dma1_ch1()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Itline9 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Itline9 {
+                dma1_ch1: bool,
+            }
+            let proxy = Itline9 {
+                dma1_ch1: self.dma1_ch1(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SYSCFG SRAM2 control and status register"]
@@ -1761,6 +2604,29 @@ in the PWR_CR register."]
             Scsr(0)
         }
     }
+    impl core::fmt::Debug for Scsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Scsr")
+                .field("sram2er", &self.sram2er())
+                .field("sram2bsy", &self.sram2bsy())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Scsr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Scsr {
+                sram2er: bool,
+                sram2bsy: bool,
+            }
+            let proxy = Scsr {
+                sram2er: self.sram2er(),
+                sram2bsy: self.sram2bsy(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SYSCFG SRAM2 key register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1786,6 +2652,22 @@ Writing a wrong key reactivates the write protection."]
         #[inline(always)]
         fn default() -> Skr {
             Skr(0)
+        }
+    }
+    impl core::fmt::Debug for Skr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Skr").field("key", &self.key()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Skr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Skr {
+                key: u8,
+            }
+            let proxy = Skr { key: self.key() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SYSCFG TSC comparator register"]
@@ -1866,10 +2748,46 @@ Writing a wrong key reactivates the write protection."]
             Tsccr(0)
         }
     }
+    impl core::fmt::Debug for Tsccr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tsccr")
+                .field("g2_io1", &self.g2_io1())
+                .field("g2_io3", &self.g2_io3())
+                .field("g4_io3", &self.g4_io3())
+                .field("g6_io1", &self.g6_io1())
+                .field("g7_io1", &self.g7_io1())
+                .field("tsc_ioctrl", &self.tsc_ioctrl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Tsccr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Tsccr {
+                g2_io1: bool,
+                g2_io3: bool,
+                g4_io3: bool,
+                g6_io1: bool,
+                g7_io1: bool,
+                tsc_ioctrl: bool,
+            }
+            let proxy = Tsccr {
+                g2_io1: self.g2_io1(),
+                g2_io3: self.g2_io3(),
+                g4_io3: self.g4_io3(),
+                g6_io1: self.g6_io1(),
+                g7_io1: self.g7_io1(),
+                tsc_ioctrl: self.tsc_ioctrl(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum IrMod {
         #[doc = "TIM16"]
         TIM16 = 0x0,
@@ -1902,7 +2820,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum MemMode {
         _RESERVED_0 = 0x0,
         #[doc = "System flash memory mapped at 0x000010000"]

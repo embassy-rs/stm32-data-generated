@@ -221,6 +221,41 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else a user setting error is reported and no
             ChBr1(0)
         }
     }
+    impl core::fmt::Debug for ChBr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ChBr1")
+                .field("bndt", &self.bndt())
+                .field("brc", &self.brc())
+                .field("sdec", &self.sdec())
+                .field("ddec", &self.ddec())
+                .field("brsdec", &self.brsdec())
+                .field("brddec", &self.brddec())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ChBr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ChBr1 {
+                bndt: u16,
+                brc: u16,
+                sdec: super::vals::Dec,
+                ddec: super::vals::Dec,
+                brsdec: super::vals::Dec,
+                brddec: super::vals::Dec,
+            }
+            let proxy = ChBr1 {
+                bndt: self.bndt(),
+                brc: self.brc(),
+                sdec: self.sdec(),
+                ddec: self.ddec(),
+                brsdec: self.brsdec(),
+                brddec: self.brddec(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LPDMA channel 12 block register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -257,6 +292,29 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else a user setting error is reported and no
         #[inline(always)]
         fn default() -> ChBr2 {
             ChBr2(0)
+        }
+    }
+    impl core::fmt::Debug for ChBr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ChBr2")
+                .field("brsao", &self.brsao())
+                .field("brdao", &self.brdao())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ChBr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ChBr2 {
+                brsao: u16,
+                brdao: u16,
+            }
+            let proxy = ChBr2 {
+                brsao: self.brsao(),
+                brdao: self.brdao(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPDMA channel 11 control register"]
@@ -407,6 +465,59 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else a user setting error is reported and no
             ChCr(0)
         }
     }
+    impl core::fmt::Debug for ChCr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ChCr")
+                .field("en", &self.en())
+                .field("reset", &self.reset())
+                .field("susp", &self.susp())
+                .field("tcie", &self.tcie())
+                .field("htie", &self.htie())
+                .field("dteie", &self.dteie())
+                .field("uleie", &self.uleie())
+                .field("useie", &self.useie())
+                .field("suspie", &self.suspie())
+                .field("toie", &self.toie())
+                .field("lsm", &self.lsm())
+                .field("prio", &self.prio())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ChCr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ChCr {
+                en: bool,
+                reset: bool,
+                susp: bool,
+                tcie: bool,
+                htie: bool,
+                dteie: bool,
+                uleie: bool,
+                useie: bool,
+                suspie: bool,
+                toie: bool,
+                lsm: super::vals::Lsm,
+                prio: super::vals::Prio,
+            }
+            let proxy = ChCr {
+                en: self.en(),
+                reset: self.reset(),
+                susp: self.susp(),
+                tcie: self.tcie(),
+                htie: self.htie(),
+                dteie: self.dteie(),
+                uleie: self.uleie(),
+                useie: self.useie(),
+                suspie: self.suspie(),
+                toie: self.toie(),
+                lsm: self.lsm(),
+                prio: self.prio(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LPDMA channel 7 flag clear register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -496,6 +607,44 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else a user setting error is reported and no
             ChFcr(0)
         }
     }
+    impl core::fmt::Debug for ChFcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ChFcr")
+                .field("tcf", &self.tcf())
+                .field("htf", &self.htf())
+                .field("dtef", &self.dtef())
+                .field("ulef", &self.ulef())
+                .field("usef", &self.usef())
+                .field("suspf", &self.suspf())
+                .field("tof", &self.tof())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ChFcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ChFcr {
+                tcf: bool,
+                htf: bool,
+                dtef: bool,
+                ulef: bool,
+                usef: bool,
+                suspf: bool,
+                tof: bool,
+            }
+            let proxy = ChFcr {
+                tcf: self.tcf(),
+                htf: self.htf(),
+                dtef: self.dtef(),
+                ulef: self.ulef(),
+                usef: self.usef(),
+                suspf: self.suspf(),
+                tof: self.tof(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LPDMA channel 14 linked-list base address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -517,6 +666,22 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else a user setting error is reported and no
         #[inline(always)]
         fn default() -> ChLbar {
             ChLbar(0)
+        }
+    }
+    impl core::fmt::Debug for ChLbar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ChLbar").field("lba", &self.lba()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ChLbar {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ChLbar {
+                lba: u16,
+            }
+            let proxy = ChLbar { lba: self.lba() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPDMA channel 15 alternate linked-list address register"]
@@ -634,6 +799,50 @@ is then restored to the programmed value after data transfer is completed and be
             ChLlr(0)
         }
     }
+    impl core::fmt::Debug for ChLlr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ChLlr")
+                .field("la", &self.la())
+                .field("ull", &self.ull())
+                .field("ub2", &self.ub2())
+                .field("ut3", &self.ut3())
+                .field("uda", &self.uda())
+                .field("usa", &self.usa())
+                .field("ub1", &self.ub1())
+                .field("ut2", &self.ut2())
+                .field("ut1", &self.ut1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ChLlr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ChLlr {
+                la: u16,
+                ull: bool,
+                ub2: bool,
+                ut3: bool,
+                uda: bool,
+                usa: bool,
+                ub1: bool,
+                ut2: bool,
+                ut1: bool,
+            }
+            let proxy = ChLlr {
+                la: self.la(),
+                ull: self.ull(),
+                ub2: self.ub2(),
+                ut3: self.ut3(),
+                uda: self.uda(),
+                usa: self.usa(),
+                ub1: self.ub1(),
+                ut2: self.ut2(),
+                ut1: self.ut1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LPDMA channel 15 status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -734,6 +943,47 @@ is then restored to the programmed value after data transfer is completed and be
             ChSr(0)
         }
     }
+    impl core::fmt::Debug for ChSr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ChSr")
+                .field("idlef", &self.idlef())
+                .field("tcf", &self.tcf())
+                .field("htf", &self.htf())
+                .field("dtef", &self.dtef())
+                .field("ulef", &self.ulef())
+                .field("usef", &self.usef())
+                .field("suspf", &self.suspf())
+                .field("tof", &self.tof())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ChSr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ChSr {
+                idlef: bool,
+                tcf: bool,
+                htf: bool,
+                dtef: bool,
+                ulef: bool,
+                usef: bool,
+                suspf: bool,
+                tof: bool,
+            }
+            let proxy = ChSr {
+                idlef: self.idlef(),
+                tcf: self.tcf(),
+                htf: self.htf(),
+                dtef: self.dtef(),
+                ulef: self.ulef(),
+                usef: self.usef(),
+                suspf: self.suspf(),
+                tof: self.tof(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LPDMA channel 8 transfer register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -829,6 +1079,44 @@ and address offset CH\\[x\\].TR3.DAO\\[2:0\\], versus DDW\\[1:0\\]). Otherwise a
         #[inline(always)]
         fn default() -> ChTr1 {
             ChTr1(0)
+        }
+    }
+    impl core::fmt::Debug for ChTr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ChTr1")
+                .field("sdw", &self.sdw())
+                .field("sinc", &self.sinc())
+                .field("pam", &self.pam())
+                .field("ssec", &self.ssec())
+                .field("ddw", &self.ddw())
+                .field("dinc", &self.dinc())
+                .field("dsec", &self.dsec())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ChTr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ChTr1 {
+                sdw: super::vals::Dw,
+                sinc: bool,
+                pam: super::vals::Pam,
+                ssec: bool,
+                ddw: super::vals::Dw,
+                dinc: bool,
+                dsec: bool,
+            }
+            let proxy = ChTr1 {
+                sdw: self.sdw(),
+                sinc: self.sinc(),
+                pam: self.pam(),
+                ssec: self.ssec(),
+                ddw: self.ddw(),
+                dinc: self.dinc(),
+                dsec: self.dsec(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPDMA channel 10 transfer register 2"]
@@ -957,6 +1245,47 @@ or TRIGPOL\\[1:0\\], resets the monitoring, trashing the memorized hit of the fo
             ChTr2(0)
         }
     }
+    impl core::fmt::Debug for ChTr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ChTr2")
+                .field("reqsel", &self.reqsel())
+                .field("swreq", &self.swreq())
+                .field("dreq", &self.dreq())
+                .field("breq", &self.breq())
+                .field("trigm", &self.trigm())
+                .field("trigsel", &self.trigsel())
+                .field("trigpol", &self.trigpol())
+                .field("tcem", &self.tcem())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ChTr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ChTr2 {
+                reqsel: u8,
+                swreq: super::vals::Swreq,
+                dreq: super::vals::Dreq,
+                breq: super::vals::Breq,
+                trigm: super::vals::Trigm,
+                trigsel: u8,
+                trigpol: super::vals::Trigpol,
+                tcem: super::vals::Tcem,
+            }
+            let proxy = ChTr2 {
+                reqsel: self.reqsel(),
+                swreq: self.swreq(),
+                dreq: self.dreq(),
+                breq: self.breq(),
+                trigm: self.trigm(),
+                trigsel: self.trigsel(),
+                trigpol: self.trigpol(),
+                tcem: self.tcem(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LPDMA channel 14 transfer register 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1001,6 +1330,29 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else, a user setting error is reported and n
             ChTr3(0)
         }
     }
+    impl core::fmt::Debug for ChTr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ChTr3")
+                .field("sao", &self.sao())
+                .field("dao", &self.dao())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ChTr3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ChTr3 {
+                sao: u16,
+                dao: u16,
+            }
+            let proxy = ChTr3 {
+                sao: self.sao(),
+                dao: self.dao(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LPDMA secure masked interrupt status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1026,6 +1378,63 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else, a user setting error is reported and n
         #[inline(always)]
         fn default() -> Misr {
             Misr(0)
+        }
+    }
+    impl core::fmt::Debug for Misr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Misr")
+                .field(
+                    "mis",
+                    &[
+                        self.mis(0usize),
+                        self.mis(1usize),
+                        self.mis(2usize),
+                        self.mis(3usize),
+                        self.mis(4usize),
+                        self.mis(5usize),
+                        self.mis(6usize),
+                        self.mis(7usize),
+                        self.mis(8usize),
+                        self.mis(9usize),
+                        self.mis(10usize),
+                        self.mis(11usize),
+                        self.mis(12usize),
+                        self.mis(13usize),
+                        self.mis(14usize),
+                        self.mis(15usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Misr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Misr {
+                mis: [bool; 16usize],
+            }
+            let proxy = Misr {
+                mis: [
+                    self.mis(0usize),
+                    self.mis(1usize),
+                    self.mis(2usize),
+                    self.mis(3usize),
+                    self.mis(4usize),
+                    self.mis(5usize),
+                    self.mis(6usize),
+                    self.mis(7usize),
+                    self.mis(8usize),
+                    self.mis(9usize),
+                    self.mis(10usize),
+                    self.mis(11usize),
+                    self.mis(12usize),
+                    self.mis(13usize),
+                    self.mis(14usize),
+                    self.mis(15usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPDMA privileged configuration register"]
@@ -1055,6 +1464,63 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else, a user setting error is reported and n
             Privcfgr(0)
         }
     }
+    impl core::fmt::Debug for Privcfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Privcfgr")
+                .field(
+                    "priv_",
+                    &[
+                        self.priv_(0usize),
+                        self.priv_(1usize),
+                        self.priv_(2usize),
+                        self.priv_(3usize),
+                        self.priv_(4usize),
+                        self.priv_(5usize),
+                        self.priv_(6usize),
+                        self.priv_(7usize),
+                        self.priv_(8usize),
+                        self.priv_(9usize),
+                        self.priv_(10usize),
+                        self.priv_(11usize),
+                        self.priv_(12usize),
+                        self.priv_(13usize),
+                        self.priv_(14usize),
+                        self.priv_(15usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Privcfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Privcfgr {
+                priv_: [bool; 16usize],
+            }
+            let proxy = Privcfgr {
+                priv_: [
+                    self.priv_(0usize),
+                    self.priv_(1usize),
+                    self.priv_(2usize),
+                    self.priv_(3usize),
+                    self.priv_(4usize),
+                    self.priv_(5usize),
+                    self.priv_(6usize),
+                    self.priv_(7usize),
+                    self.priv_(8usize),
+                    self.priv_(9usize),
+                    self.priv_(10usize),
+                    self.priv_(11usize),
+                    self.priv_(12usize),
+                    self.priv_(13usize),
+                    self.priv_(14usize),
+                    self.priv_(15usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LPDMA configuration lock register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1080,6 +1546,63 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else, a user setting error is reported and n
         #[inline(always)]
         fn default() -> Rcfglockr {
             Rcfglockr(0)
+        }
+    }
+    impl core::fmt::Debug for Rcfglockr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rcfglockr")
+                .field(
+                    "lock",
+                    &[
+                        self.lock(0usize),
+                        self.lock(1usize),
+                        self.lock(2usize),
+                        self.lock(3usize),
+                        self.lock(4usize),
+                        self.lock(5usize),
+                        self.lock(6usize),
+                        self.lock(7usize),
+                        self.lock(8usize),
+                        self.lock(9usize),
+                        self.lock(10usize),
+                        self.lock(11usize),
+                        self.lock(12usize),
+                        self.lock(13usize),
+                        self.lock(14usize),
+                        self.lock(15usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rcfglockr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rcfglockr {
+                lock: [bool; 16usize],
+            }
+            let proxy = Rcfglockr {
+                lock: [
+                    self.lock(0usize),
+                    self.lock(1usize),
+                    self.lock(2usize),
+                    self.lock(3usize),
+                    self.lock(4usize),
+                    self.lock(5usize),
+                    self.lock(6usize),
+                    self.lock(7usize),
+                    self.lock(8usize),
+                    self.lock(9usize),
+                    self.lock(10usize),
+                    self.lock(11usize),
+                    self.lock(12usize),
+                    self.lock(13usize),
+                    self.lock(14usize),
+                    self.lock(15usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPDMA secure configuration register"]
@@ -1109,10 +1632,68 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else, a user setting error is reported and n
             Seccfgr(0)
         }
     }
+    impl core::fmt::Debug for Seccfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Seccfgr")
+                .field(
+                    "sec",
+                    &[
+                        self.sec(0usize),
+                        self.sec(1usize),
+                        self.sec(2usize),
+                        self.sec(3usize),
+                        self.sec(4usize),
+                        self.sec(5usize),
+                        self.sec(6usize),
+                        self.sec(7usize),
+                        self.sec(8usize),
+                        self.sec(9usize),
+                        self.sec(10usize),
+                        self.sec(11usize),
+                        self.sec(12usize),
+                        self.sec(13usize),
+                        self.sec(14usize),
+                        self.sec(15usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Seccfgr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Seccfgr {
+                sec: [bool; 16usize],
+            }
+            let proxy = Seccfgr {
+                sec: [
+                    self.sec(0usize),
+                    self.sec(1usize),
+                    self.sec(2usize),
+                    self.sec(3usize),
+                    self.sec(4usize),
+                    self.sec(5usize),
+                    self.sec(6usize),
+                    self.sec(7usize),
+                    self.sec(8usize),
+                    self.sec(9usize),
+                    self.sec(10usize),
+                    self.sec(11usize),
+                    self.sec(12usize),
+                    self.sec(13usize),
+                    self.sec(14usize),
+                    self.sec(15usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Breq {
         #[doc = "the selected hardware request is driven by a peripheral with a hardware request/acknowledge protocol at a burst level."]
         BURST = 0x0,
@@ -1142,7 +1723,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dec {
         #[doc = "The address is incremented by the programmed offset."]
         ADD = 0x0,
@@ -1172,12 +1754,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dreq {
         #[doc = "selected hardware request driven by a source peripheral (request signal taken into account by the LPDMA transfer scheduler over the source/read port)"]
-        SOURCEPERIPHERAL = 0x0,
+        SOURCE_PERIPHERAL = 0x0,
         #[doc = "selected hardware request driven by a destination peripheral (request signal taken into account by the LPDMA transfer scheduler over the destination/write port)"]
-        DESTINATIONPERIPHERAL = 0x01,
+        DESTINATION_PERIPHERAL = 0x01,
     }
     impl Dreq {
         #[inline(always)]
@@ -1202,12 +1785,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dw {
         #[doc = "byte"]
         BYTE = 0x0,
         #[doc = "half-word (2 bytes)"]
-        HALFWORD = 0x01,
+        HALF_WORD = 0x01,
         #[doc = "word (4 bytes)"]
         WORD = 0x02,
         _RESERVED_3 = 0x03,
@@ -1235,15 +1819,16 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsm {
         #[doc = "channel executed for the full linked-list and completed at the end of the last LLI (CH\\[x\\].LLR = 0). The 16 low-significant bits of the link address are null (LA\\[15:0\\]
 = 0) and all the update bits are null (UT1 =UB1 = UT2 = USA = UDA = ULL = 0 and UT3 = UB2 = 0 if present). Then CH\\[x\\].BR1.BNDT\\[15:0\\]
 = 0 and CH\\[x\\].BR1.BRC\\[10:0\\]
 = 0 if present."]
-        RUNTOCOMPLETION = 0x0,
+        RUN_TO_COMPLETION = 0x0,
         #[doc = "channel executed once for the current LLI"]
-        LINKSTEP = 0x01,
+        LINK_STEP = 0x01,
     }
     impl Lsm {
         #[inline(always)]
@@ -1268,12 +1853,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pam {
         #[doc = "If destination is wider: source data is transferred as right aligned, padded with 0s up to the destination data width If source is wider: source data is transferred as right aligned, left-truncated down to the destination data width"]
-        ZEROEXTENDORLEFTTRUNCATE = 0x0,
+        ZERO_EXTEND_OR_LEFT_TRUNCATE = 0x0,
         #[doc = "If destination is wider: source data is transferred as right aligned, sign extended up to the destination data width If source is wider: source data is transferred as left-aligned, right-truncated down to the destination data width"]
-        SIGNEXTENDORRIGHTTRUNCATE = 0x01,
+        SIGN_EXTEND_OR_RIGHT_TRUNCATE = 0x01,
         #[doc = "source data is FIFO queued and packed/unpacked at the destination data width, to be transferred in a left (LSB) to right (MSB) order (named little endian) to the destination"]
         PACK = 0x02,
         _RESERVED_3 = 0x03,
@@ -1301,14 +1887,15 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Prio {
         #[doc = "low priority, low weight"]
-        LOWWITHLOWHWEIGHT = 0x0,
+        LOW_WITH_LOWH_WEIGHT = 0x0,
         #[doc = "low priority, mid weight"]
-        LOWWITHMIDWEIGHT = 0x01,
+        LOW_WITH_MID_WEIGHT = 0x01,
         #[doc = "low priority, high weight"]
-        LOWWITHHIGHWEIGHT = 0x02,
+        LOW_WITH_HIGH_WEIGHT = 0x02,
         #[doc = "high priority"]
         HIGH = 0x03,
     }
@@ -1335,7 +1922,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Swreq {
         #[doc = "no software request. The selected hardware request REQSEL\\[6:0\\]
 is taken into account."]
@@ -1367,20 +1955,21 @@ is ignored."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tcem {
         #[doc = "at block level (when CH\\[x\\].BR1.BNDT\\[15:0\\]
 = 0): the complete (and the half) transfer event is generated at the (respectively half of the) end of a block."]
-        EACHBLOCK = 0x0,
+        EACH_BLOCK = 0x0,
         #[doc = "channel x = 0 to 11, same as 00; channel x=12 to 15, at 2D/repeated block level (when CH\\[x\\].BR1.BRC\\[10:0\\]
 = 0 and CH\\[x\\].BR1.BNDT\\[15:0\\]
 = 0), the complete (and the half) transfer event is generated at the end (respectively half of the end) of the 2D/repeated block."]
         EACH2DBLOCK = 0x01,
         #[doc = "at LLI level: the complete transfer event is generated at the end of the LLI transfer, including the update of the LLI if any. The half transfer event is generated at the half of the LLI data transfer (the LLI data transfer being a block transfer or a 2D/repeated block transfer for channel x = 12 to 15), if any data transfer."]
-        EACHLINKEDLISTITEM = 0x02,
+        EACH_LINKED_LIST_ITEM = 0x02,
         #[doc = "at channel level: the complete transfer event is generated at the end of the last LLI transfer. The half transfer event is generated at the half of the data transfer of the last LLI. The last LLI updates the link address CH\\[x\\].LLR.LA\\[15:2\\]
 to zero and clears all the CH\\[x\\].LLR update bits (UT1, UT2, UB1, USA, UDA and ULL, plus UT3 and UB2 if present). If the channel transfer is continuous/infinite, no event is generated."]
-        LASTLINKEDLISTITEM = 0x03,
+        LAST_LINKED_LIST_ITEM = 0x03,
     }
     impl Tcem {
         #[inline(always)]
@@ -1405,7 +1994,8 @@ to zero and clears all the CH\\[x\\].LLR update bits (UT1, UT2, UB1, USA, UDA an
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Trigm {
         #[doc = "at block level: the first burst read of each block transfer is conditioned by one hit trigger (channel x = 12 to 15, for each block if a 2D/repeated block is configured with CH\\[x\\].BR1.BRC\\[10:0\\]
 ≠ 0)."]
@@ -1413,7 +2003,7 @@ to zero and clears all the CH\\[x\\].LLR update bits (UT1, UT2, UB1, USA, UDA an
         #[doc = "channel x = 0 to 11, same as 00; channel x=12 to 15, at 2D/repeated block level, the"]
         _2DBLOCK = 0x01,
         #[doc = "at link level: a LLI link transfer is conditioned by one hit trigger. The LLI data transfer (if any) is not conditioned."]
-        LINKEDLISTITEM = 0x02,
+        LINKED_LIST_ITEM = 0x02,
         #[doc = "at programmed burst level: If SWREQ = 1, each programmed burst read is conditioned by one hit trigger. If SWREQ = 0, each programmed burst that is requested by the selected peripheral, is conditioned by one hit trigger."]
         BURST = 0x03,
     }
@@ -1440,16 +2030,17 @@ to zero and clears all the CH\\[x\\].LLR update bits (UT1, UT2, UB1, USA, UDA an
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Trigpol {
         #[doc = "no trigger (masked trigger event)"]
         NONE = 0x0,
         #[doc = "trigger on the rising edge"]
-        RISINGEDGE = 0x01,
+        RISING_EDGE = 0x01,
         #[doc = "trigger on the falling edge"]
-        FALLINGEDGE = 0x02,
+        FALLING_EDGE = 0x02,
         #[doc = "same as 00"]
-        NONEALT = 0x03,
+        NONE_ALT = 0x03,
     }
     impl Trigpol {
         #[inline(always)]

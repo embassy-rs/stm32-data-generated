@@ -184,7 +184,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NONINVERTED",
+                    name: "NON_INVERTED",
                     description: None,
                     value: 0,
                 },
@@ -201,12 +201,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "HIGHSPEED",
+                    name: "HIGH_SPEED",
                     description: None,
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MEDIUMSPEED",
+                    name: "MEDIUM_SPEED",
                     description: None,
                     value: 1,
                 },

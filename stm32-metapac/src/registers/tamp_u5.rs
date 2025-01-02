@@ -1322,7 +1322,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOFILTER",
+                    name: "NO_FILTER",
                     description: Some(
                         "Tamper event is activated on edge of INx input transitions to the active level (no internal pull-up on INx input).",
                     ),
@@ -1455,14 +1455,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FILTEREDLOWORUNFILTEREDHIGH",
+                    name: "FILTERED_LOW_OR_UNFILTERED_HIGH",
                     description: Some(
                         "If TAMPFLT 00 Tamper 2 input staying low triggers a tamper detection event.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FILTEREDHIGHORUNFILTEREDLOW",
+                    name: "FILTERED_HIGH_OR_UNFILTERED_LOW",
                     description: Some(
                         "If TAMPFLT 00 Tamper 2 input staying high triggers a tamper detection event.",
                     ),

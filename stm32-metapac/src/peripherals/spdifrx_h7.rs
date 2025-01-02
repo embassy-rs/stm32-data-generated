@@ -243,6 +243,68 @@ pub mod regs {
             Cr(0)
         }
     }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("spdifen", &self.spdifen())
+                .field("rxdmaen", &self.rxdmaen())
+                .field("rxsteo", &self.rxsteo())
+                .field("drfmt", &self.drfmt())
+                .field("pmsk", &self.pmsk())
+                .field("vmsk", &self.vmsk())
+                .field("cumsk", &self.cumsk())
+                .field("ptmsk", &self.ptmsk())
+                .field("cbdmaen", &self.cbdmaen())
+                .field("chsel", &self.chsel())
+                .field("nbtr", &self.nbtr())
+                .field("wfa", &self.wfa())
+                .field("insel", &self.insel())
+                .field("cksen", &self.cksen())
+                .field("cksbkpen", &self.cksbkpen())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr {
+                spdifen: u8,
+                rxdmaen: bool,
+                rxsteo: bool,
+                drfmt: u8,
+                pmsk: bool,
+                vmsk: bool,
+                cumsk: bool,
+                ptmsk: bool,
+                cbdmaen: bool,
+                chsel: bool,
+                nbtr: u8,
+                wfa: bool,
+                insel: u8,
+                cksen: bool,
+                cksbkpen: bool,
+            }
+            let proxy = Cr {
+                spdifen: self.spdifen(),
+                rxdmaen: self.rxdmaen(),
+                rxsteo: self.rxsteo(),
+                drfmt: self.drfmt(),
+                pmsk: self.pmsk(),
+                vmsk: self.vmsk(),
+                cumsk: self.cumsk(),
+                ptmsk: self.ptmsk(),
+                cbdmaen: self.cbdmaen(),
+                chsel: self.chsel(),
+                nbtr: self.nbtr(),
+                wfa: self.wfa(),
+                insel: self.insel(),
+                cksen: self.cksen(),
+                cksbkpen: self.cksbkpen(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Channel Status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -288,6 +350,32 @@ pub mod regs {
             Csr(0)
         }
     }
+    impl core::fmt::Debug for Csr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Csr")
+                .field("usr", &self.usr())
+                .field("cs", &self.cs())
+                .field("sob", &self.sob())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Csr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Csr {
+                usr: u16,
+                cs: u8,
+                sob: bool,
+            }
+            let proxy = Csr {
+                usr: self.usr(),
+                cs: self.cs(),
+                sob: self.sob(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Debug Information register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -320,6 +408,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Dir {
             Dir(0)
+        }
+    }
+    impl core::fmt::Debug for Dir {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dir")
+                .field("thi", &self.thi())
+                .field("tlo", &self.tlo())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dir {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dir {
+                thi: u16,
+                tlo: u16,
+            }
+            let proxy = Dir {
+                thi: self.thi(),
+                tlo: self.tlo(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FMT0 data input register"]
@@ -400,6 +511,41 @@ pub mod regs {
             Fmt0Dr(0)
         }
     }
+    impl core::fmt::Debug for Fmt0Dr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fmt0Dr")
+                .field("dr", &self.dr())
+                .field("pe", &self.pe())
+                .field("v", &self.v())
+                .field("u", &self.u())
+                .field("c", &self.c())
+                .field("pt", &self.pt())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fmt0Dr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fmt0Dr {
+                dr: u32,
+                pe: bool,
+                v: bool,
+                u: bool,
+                c: bool,
+                pt: u8,
+            }
+            let proxy = Fmt0Dr {
+                dr: self.dr(),
+                pe: self.pe(),
+                v: self.v(),
+                u: self.u(),
+                c: self.c(),
+                pt: self.pt(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FMT1 data input register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -478,6 +624,41 @@ pub mod regs {
             Fmt1Dr(0)
         }
     }
+    impl core::fmt::Debug for Fmt1Dr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fmt1Dr")
+                .field("pe", &self.pe())
+                .field("v", &self.v())
+                .field("u", &self.u())
+                .field("c", &self.c())
+                .field("pt", &self.pt())
+                .field("dr", &self.dr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fmt1Dr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fmt1Dr {
+                pe: bool,
+                v: bool,
+                u: bool,
+                c: bool,
+                pt: u8,
+                dr: u32,
+            }
+            let proxy = Fmt1Dr {
+                pe: self.pe(),
+                v: self.v(),
+                u: self.u(),
+                c: self.c(),
+                pt: self.pt(),
+                dr: self.dr(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FMT2 data input register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -510,6 +691,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Fmt2Dr {
             Fmt2Dr(0)
+        }
+    }
+    impl core::fmt::Debug for Fmt2Dr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fmt2Dr")
+                .field("drnl1", &self.drnl1())
+                .field("drnl2", &self.drnl2())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fmt2Dr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Fmt2Dr {
+                drnl1: u16,
+                drnl2: u16,
+            }
+            let proxy = Fmt2Dr {
+                drnl1: self.drnl1(),
+                drnl2: self.drnl2(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Flag Clear register"]
@@ -566,6 +770,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ifcr {
             Ifcr(0)
+        }
+    }
+    impl core::fmt::Debug for Ifcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ifcr")
+                .field("perrcf", &self.perrcf())
+                .field("ovrcf", &self.ovrcf())
+                .field("sbdcf", &self.sbdcf())
+                .field("syncdcf", &self.syncdcf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ifcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Ifcr {
+                perrcf: bool,
+                ovrcf: bool,
+                sbdcf: bool,
+                syncdcf: bool,
+            }
+            let proxy = Ifcr {
+                perrcf: self.perrcf(),
+                ovrcf: self.ovrcf(),
+                sbdcf: self.sbdcf(),
+                syncdcf: self.syncdcf(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt mask register"]
@@ -655,6 +888,44 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Imr {
             Imr(0)
+        }
+    }
+    impl core::fmt::Debug for Imr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Imr")
+                .field("rxneie", &self.rxneie())
+                .field("csrneie", &self.csrneie())
+                .field("perrie", &self.perrie())
+                .field("ovrie", &self.ovrie())
+                .field("sblkie", &self.sblkie())
+                .field("syncdie", &self.syncdie())
+                .field("ifeie", &self.ifeie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Imr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Imr {
+                rxneie: bool,
+                csrneie: bool,
+                perrie: bool,
+                ovrie: bool,
+                sblkie: bool,
+                syncdie: bool,
+                ifeie: bool,
+            }
+            let proxy = Imr {
+                rxneie: self.rxneie(),
+                csrneie: self.csrneie(),
+                perrie: self.perrie(),
+                ovrie: self.ovrie(),
+                sblkie: self.sblkie(),
+                syncdie: self.syncdie(),
+                ifeie: self.ifeie(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status register"]
@@ -777,6 +1048,53 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Sr {
             Sr(0)
+        }
+    }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("rxne", &self.rxne())
+                .field("csrne", &self.csrne())
+                .field("perr", &self.perr())
+                .field("ovr", &self.ovr())
+                .field("sbd", &self.sbd())
+                .field("syncd", &self.syncd())
+                .field("ferr", &self.ferr())
+                .field("serr", &self.serr())
+                .field("terr", &self.terr())
+                .field("width", &self.width())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                rxne: bool,
+                csrne: bool,
+                perr: bool,
+                ovr: bool,
+                sbd: bool,
+                syncd: bool,
+                ferr: bool,
+                serr: bool,
+                terr: bool,
+                width: u16,
+            }
+            let proxy = Sr {
+                rxne: self.rxne(),
+                csrne: self.csrne(),
+                perr: self.perr(),
+                ovr: self.ovr(),
+                sbd: self.sbd(),
+                syncd: self.syncd(),
+                ferr: self.ferr(),
+                serr: self.serr(),
+                terr: self.terr(),
+                width: self.width(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

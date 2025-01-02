@@ -179,6 +179,41 @@ pub mod regs {
             Clrfr(0)
         }
     }
+    impl core::fmt::Debug for Clrfr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Clrfr")
+                .field("covrudr", &self.covrudr())
+                .field("cmutedet", &self.cmutedet())
+                .field("cwckcfg", &self.cwckcfg())
+                .field("ccnrdy", &self.ccnrdy())
+                .field("cafsdet", &self.cafsdet())
+                .field("clfsdet", &self.clfsdet())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Clrfr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Clrfr {
+                covrudr: bool,
+                cmutedet: bool,
+                cwckcfg: bool,
+                ccnrdy: bool,
+                cafsdet: bool,
+                clfsdet: bool,
+            }
+            let proxy = Clrfr {
+                covrudr: self.covrudr(),
+                cmutedet: self.cmutedet(),
+                cwckcfg: self.cwckcfg(),
+                ccnrdy: self.ccnrdy(),
+                cafsdet: self.cafsdet(),
+                clfsdet: self.clfsdet(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Configuration register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -340,6 +375,62 @@ bits must be configured before setting DMAEN to avoid a DMA request in receiver 
             Cr1(0)
         }
     }
+    impl core::fmt::Debug for Cr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr1")
+                .field("mode", &self.mode())
+                .field("prtcfg", &self.prtcfg())
+                .field("ds", &self.ds())
+                .field("lsbfirst", &self.lsbfirst())
+                .field("ckstr", &self.ckstr())
+                .field("syncen", &self.syncen())
+                .field("mono", &self.mono())
+                .field("outdriv", &self.outdriv())
+                .field("saien", &self.saien())
+                .field("dmaen", &self.dmaen())
+                .field("nodiv", &self.nodiv())
+                .field("mckdiv", &self.mckdiv())
+                .field("osr", &self.osr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr1 {
+                mode: super::vals::Mode,
+                prtcfg: super::vals::Prtcfg,
+                ds: super::vals::Ds,
+                lsbfirst: super::vals::Lsbfirst,
+                ckstr: super::vals::Ckstr,
+                syncen: super::vals::Syncen,
+                mono: super::vals::Mono,
+                outdriv: super::vals::Outdriv,
+                saien: bool,
+                dmaen: bool,
+                nodiv: super::vals::Nodiv,
+                mckdiv: u8,
+                osr: bool,
+            }
+            let proxy = Cr1 {
+                mode: self.mode(),
+                prtcfg: self.prtcfg(),
+                ds: self.ds(),
+                lsbfirst: self.lsbfirst(),
+                ckstr: self.ckstr(),
+                syncen: self.syncen(),
+                mono: self.mono(),
+                outdriv: self.outdriv(),
+                saien: self.saien(),
+                dmaen: self.dmaen(),
+                nodiv: self.nodiv(),
+                mckdiv: self.mckdiv(),
+                osr: self.osr(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Configuration register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -440,6 +531,47 @@ bits must be configured before setting DMAEN to avoid a DMA request in receiver 
             Cr2(0)
         }
     }
+    impl core::fmt::Debug for Cr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr2")
+                .field("fth", &self.fth())
+                .field("fflush", &self.fflush())
+                .field("tris", &self.tris())
+                .field("mute", &self.mute())
+                .field("muteval", &self.muteval())
+                .field("mutecnt", &self.mutecnt())
+                .field("cpl", &self.cpl())
+                .field("comp", &self.comp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cr2 {
+                fth: super::vals::Fth,
+                fflush: bool,
+                tris: bool,
+                mute: bool,
+                muteval: super::vals::Muteval,
+                mutecnt: u8,
+                cpl: super::vals::Cpl,
+                comp: super::vals::Comp,
+            }
+            let proxy = Cr2 {
+                fth: self.fth(),
+                fflush: self.fflush(),
+                tris: self.tris(),
+                mute: self.mute(),
+                muteval: self.muteval(),
+                mutecnt: self.mutecnt(),
+                cpl: self.cpl(),
+                comp: self.comp(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Data register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -461,6 +593,22 @@ bits must be configured before setting DMAEN to avoid a DMA request in receiver 
         #[inline(always)]
         fn default() -> Dr {
             Dr(0)
+        }
+    }
+    impl core::fmt::Debug for Dr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dr").field("data", &self.data()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Dr {
+                data: u32,
+            }
+            let proxy = Dr { data: self.data() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "This register has no meaning in AC97 and SPDIF audio protocol"]
@@ -538,6 +686,38 @@ of SAI_xSLOTR register (NBSLOT\\[3:0\\]
             Frcr(0)
         }
     }
+    impl core::fmt::Debug for Frcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Frcr")
+                .field("frl", &self.frl())
+                .field("fsall", &self.fsall())
+                .field("fsdef", &self.fsdef())
+                .field("fspol", &self.fspol())
+                .field("fsoff", &self.fsoff())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Frcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Frcr {
+                frl: u8,
+                fsall: u8,
+                fsdef: bool,
+                fspol: super::vals::Fspol,
+                fsoff: super::vals::Fsoff,
+            }
+            let proxy = Frcr {
+                frl: self.frl(),
+                fsall: self.fsall(),
+                fsdef: self.fsdef(),
+                fspol: self.fspol(),
+                fsoff: self.fsoff(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Global configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -570,6 +750,29 @@ of SAI_xSLOTR register (NBSLOT\\[3:0\\]
         #[inline(always)]
         fn default() -> Gcr {
             Gcr(0)
+        }
+    }
+    impl core::fmt::Debug for Gcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Gcr")
+                .field("syncin", &self.syncin())
+                .field("syncout", &self.syncout())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Gcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Gcr {
+                syncin: u8,
+                syncout: u8,
+            }
+            let proxy = Gcr {
+                syncin: self.syncin(),
+                syncout: self.syncout(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt mask register 2"]
@@ -665,6 +868,44 @@ bits and the audio block is operates as a receiver."]
             Im(0)
         }
     }
+    impl core::fmt::Debug for Im {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Im")
+                .field("ovrudrie", &self.ovrudrie())
+                .field("mutedetie", &self.mutedetie())
+                .field("wckcfgie", &self.wckcfgie())
+                .field("freqie", &self.freqie())
+                .field("cnrdyie", &self.cnrdyie())
+                .field("afsdetie", &self.afsdetie())
+                .field("lfsdetie", &self.lfsdetie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Im {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Im {
+                ovrudrie: bool,
+                mutedetie: bool,
+                wckcfgie: bool,
+                freqie: bool,
+                cnrdyie: bool,
+                afsdetie: bool,
+                lfsdetie: bool,
+            }
+            let proxy = Im {
+                ovrudrie: self.ovrudrie(),
+                mutedetie: self.mutedetie(),
+                wckcfgie: self.wckcfgie(),
+                freqie: self.freqie(),
+                cnrdyie: self.cnrdyie(),
+                afsdetie: self.afsdetie(),
+                lfsdetie: self.lfsdetie(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PDM control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -714,6 +955,45 @@ bits and the audio block is operates as a receiver."]
             Pdmcr(0)
         }
     }
+    impl core::fmt::Debug for Pdmcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pdmcr")
+                .field("pdmen", &self.pdmen())
+                .field("micnbr", &self.micnbr())
+                .field(
+                    "cken",
+                    &[
+                        self.cken(0usize),
+                        self.cken(1usize),
+                        self.cken(2usize),
+                        self.cken(3usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pdmcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pdmcr {
+                pdmen: bool,
+                micnbr: u8,
+                cken: [bool; 4usize],
+            }
+            let proxy = Pdmcr {
+                pdmen: self.pdmen(),
+                micnbr: self.micnbr(),
+                cken: [
+                    self.cken(0usize),
+                    self.cken(1usize),
+                    self.cken(2usize),
+                    self.cken(3usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PDM delay register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -754,6 +1034,55 @@ bits and the audio block is operates as a receiver."]
         #[inline(always)]
         fn default() -> Pdmdly {
             Pdmdly(0)
+        }
+    }
+    impl core::fmt::Debug for Pdmdly {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pdmdly")
+                .field(
+                    "dlyml",
+                    &[
+                        self.dlyml(0usize),
+                        self.dlyml(1usize),
+                        self.dlyml(2usize),
+                        self.dlyml(3usize),
+                    ],
+                )
+                .field(
+                    "dlymr",
+                    &[
+                        self.dlymr(0usize),
+                        self.dlymr(1usize),
+                        self.dlymr(2usize),
+                        self.dlymr(3usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pdmdly {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Pdmdly {
+                dlyml: [u8; 4usize],
+                dlymr: [u8; 4usize],
+            }
+            let proxy = Pdmdly {
+                dlyml: [
+                    self.dlyml(0usize),
+                    self.dlyml(1usize),
+                    self.dlyml(2usize),
+                    self.dlyml(3usize),
+                ],
+                dlymr: [
+                    self.dlymr(0usize),
+                    self.dlymr(1usize),
+                    self.dlymr(2usize),
+                    self.dlymr(3usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "This register has no meaning in AC97 and SPDIF audio protocol"]
@@ -810,6 +1139,35 @@ bits and the audio block is operates as a receiver."]
         #[inline(always)]
         fn default() -> Slotr {
             Slotr(0)
+        }
+    }
+    impl core::fmt::Debug for Slotr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Slotr")
+                .field("fboff", &self.fboff())
+                .field("slotsz", &self.slotsz())
+                .field("nbslot", &self.nbslot())
+                .field("sloten", &self.sloten())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Slotr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Slotr {
+                fboff: u8,
+                slotsz: super::vals::Slotsz,
+                nbslot: u8,
+                sloten: super::vals::Sloten,
+            }
+            let proxy = Slotr {
+                fboff: self.fboff(),
+                slotsz: self.slotsz(),
+                nbslot: self.nbslot(),
+                sloten: self.sloten(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status register"]
@@ -914,15 +1272,57 @@ bits and the audio block is operates as a receiver."]
             Sr(0)
         }
     }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("ovrudr", &self.ovrudr())
+                .field("mutedet", &self.mutedet())
+                .field("wckcfg", &self.wckcfg())
+                .field("freq", &self.freq())
+                .field("cnrdy", &self.cnrdy())
+                .field("afsdet", &self.afsdet())
+                .field("lfsdet", &self.lfsdet())
+                .field("flvl", &self.flvl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Sr {
+                ovrudr: bool,
+                mutedet: bool,
+                wckcfg: super::vals::Wckcfg,
+                freq: bool,
+                cnrdy: super::vals::Cnrdy,
+                afsdet: bool,
+                lfsdet: bool,
+                flvl: super::vals::Flvl,
+            }
+            let proxy = Sr {
+                ovrudr: self.ovrudr(),
+                mutedet: self.mutedet(),
+                wckcfg: self.wckcfg(),
+                freq: self.freq(),
+                cnrdy: self.cnrdy(),
+                afsdet: self.afsdet(),
+                lfsdet: self.lfsdet(),
+                flvl: self.flvl(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ckstr {
         #[doc = "Data strobing edge is falling edge of SCK"]
-        FALLINGEDGE = 0x0,
+        FALLING_EDGE = 0x0,
         #[doc = "Data strobing edge is rising edge of SCK"]
-        RISINGEDGE = 0x01,
+        RISING_EDGE = 0x01,
     }
     impl Ckstr {
         #[inline(always)]
@@ -947,12 +1347,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cnrdy {
         #[doc = "External AC’97 Codec is ready"]
         READY = 0x0,
         #[doc = "External AC’97 Codec is not ready"]
-        NOTREADY = 0x01,
+        NOT_READY = 0x01,
     }
     impl Cnrdy {
         #[inline(always)]
@@ -977,13 +1378,14 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Comp {
         #[doc = "No companding algorithm"]
-        NOCOMPANDING = 0x0,
+        NO_COMPANDING = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "μ-Law algorithm"]
-        MULAW = 0x02,
+        MU_LAW = 0x02,
         #[doc = "A-Law algorithm"]
         ALAW = 0x03,
     }
@@ -1010,12 +1412,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpl {
         #[doc = "1’s complement representation"]
-        ONESCOMPLEMENT = 0x0,
+        ONES_COMPLEMENT = 0x0,
         #[doc = "2’s complement representation"]
-        TWOSCOMPLEMENT = 0x01,
+        TWOS_COMPLEMENT = 0x01,
     }
     impl Cpl {
         #[inline(always)]
@@ -1040,7 +1443,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ds {
         _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
@@ -1080,7 +1484,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Flvl {
         #[doc = "FIFO empty"]
         EMPTY = 0x0,
@@ -1120,12 +1525,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fsoff {
         #[doc = "FS is asserted on the first bit of the slot 0"]
-        ONFIRST = 0x0,
+        ON_FIRST = 0x0,
         #[doc = "FS is asserted one bit before the first bit of the slot 0"]
-        BEFOREFIRST = 0x01,
+        BEFORE_FIRST = 0x01,
     }
     impl Fsoff {
         #[inline(always)]
@@ -1150,12 +1556,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fspol {
         #[doc = "FS is active low (falling edge)"]
-        FALLINGEDGE = 0x0,
+        FALLING_EDGE = 0x0,
         #[doc = "FS is active high (rising edge)"]
-        RISINGEDGE = 0x01,
+        RISING_EDGE = 0x01,
     }
     impl Fspol {
         #[inline(always)]
@@ -1180,7 +1587,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fth {
         #[doc = "FIFO empty"]
         EMPTY = 0x0,
@@ -1219,12 +1627,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsbfirst {
         #[doc = "Data are transferred with MSB first"]
-        MSBFIRST = 0x0,
+        MSB_FIRST = 0x0,
         #[doc = "Data are transferred with LSB first"]
-        LSBFIRST = 0x01,
+        LSB_FIRST = 0x01,
     }
     impl Lsbfirst {
         #[inline(always)]
@@ -1249,16 +1658,17 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "Master transmitter"]
-        MASTERTX = 0x0,
+        MASTER_TX = 0x0,
         #[doc = "Master receiver"]
-        MASTERRX = 0x01,
+        MASTER_RX = 0x01,
         #[doc = "Slave transmitter"]
-        SLAVETX = 0x02,
+        SLAVE_TX = 0x02,
         #[doc = "Slave receiver"]
-        SLAVERX = 0x03,
+        SLAVE_RX = 0x03,
     }
     impl Mode {
         #[inline(always)]
@@ -1283,7 +1693,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mono {
         #[doc = "Stereo mode"]
         STEREO = 0x0,
@@ -1313,12 +1724,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Muteval {
         #[doc = "Bit value 0 is sent during the mute mode"]
-        SENDZERO = 0x0,
+        SEND_ZERO = 0x0,
         #[doc = "Last values are sent during the mute mode"]
-        SENDLAST = 0x01,
+        SEND_LAST = 0x01,
     }
     impl Muteval {
         #[inline(always)]
@@ -1343,12 +1755,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nodiv {
         #[doc = "MCLK output is enabled. Forces the ratio between FS and MCLK to 256 or 512 according to the OSR value"]
-        MASTERCLOCK = 0x0,
+        MASTER_CLOCK = 0x0,
         #[doc = "MCLK output enable set by the MCKEN bit (where present, else 0). Ratio between FS and MCLK depends on FRL."]
-        NODIV = 0x01,
+        NO_DIV = 0x01,
     }
     impl Nodiv {
         #[inline(always)]
@@ -1373,10 +1786,11 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Outdriv {
         #[doc = "Audio block output driven when SAIEN is set"]
-        ONSTART = 0x0,
+        ON_START = 0x0,
         #[doc = "Audio block output driven immediately after the setting of this bit"]
         IMMEDIATELY = 0x01,
     }
@@ -1403,7 +1817,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Prtcfg {
         #[doc = "Free protocol. Free protocol allows to use the powerful configuration of the audio block to address a specific audio protocol"]
         FREE = 0x0,
@@ -1452,6 +1867,25 @@ pub mod vals {
             self.0
         }
     }
+    impl core::fmt::Debug for Sloten {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            match self.0 {
+                0x0 => f.write_str("INACTIVE"),
+                0x01 => f.write_str("ACTIVE"),
+                other => core::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sloten {
+        fn format(&self, f: defmt::Formatter) {
+            match self.0 {
+                0x0 => defmt::write!(f, "INACTIVE"),
+                0x01 => defmt::write!(f, "ACTIVE"),
+                other => defmt::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
     impl From<u16> for Sloten {
         #[inline(always)]
         fn from(val: u16) -> Sloten {
@@ -1465,11 +1899,12 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Slotsz {
         #[doc = "The slot size is equivalent to the data size (specified in DS\\[3:0\\]
 in the SAI_xCR1 register)"]
-        DATASIZE = 0x0,
+        DATA_SIZE = 0x0,
         #[doc = "16-bit"]
         BIT16 = 0x01,
         #[doc = "32-bit"]
@@ -1499,7 +1934,8 @@ in the SAI_xCR1 register)"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syncen {
         #[doc = "audio sub-block in asynchronous mode"]
         ASYNCHRONOUS = 0x0,
@@ -1532,7 +1968,8 @@ in the SAI_xCR1 register)"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wckcfg {
         #[doc = "Clock configuration is correct"]
         CORRECT = 0x0,

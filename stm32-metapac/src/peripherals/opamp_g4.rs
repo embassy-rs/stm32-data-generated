@@ -197,6 +197,65 @@ pub mod regs {
             Csr(0)
         }
     }
+    impl core::fmt::Debug for Csr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Csr")
+                .field("opampen", &self.opampen())
+                .field("force_vp", &self.force_vp())
+                .field("vp_sel", &self.vp_sel())
+                .field("usertrim", &self.usertrim())
+                .field("vm_sel", &self.vm_sel())
+                .field("opahsm", &self.opahsm())
+                .field("opaintoen", &self.opaintoen())
+                .field("calon", &self.calon())
+                .field("calsel", &self.calsel())
+                .field("pga_gain", &self.pga_gain())
+                .field("trimoffsetp", &self.trimoffsetp())
+                .field("trimoffsetn", &self.trimoffsetn())
+                .field("outcal", &self.outcal())
+                .field("lock", &self.lock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Csr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Csr {
+                opampen: bool,
+                force_vp: super::vals::ForceVp,
+                vp_sel: super::vals::VpSel,
+                usertrim: super::vals::Usertrim,
+                vm_sel: super::vals::VmSel,
+                opahsm: super::vals::Opahsm,
+                opaintoen: super::vals::Opaintoen,
+                calon: bool,
+                calsel: super::vals::Calsel,
+                pga_gain: super::vals::PgaGain,
+                trimoffsetp: u8,
+                trimoffsetn: u8,
+                outcal: super::vals::Outcal,
+                lock: bool,
+            }
+            let proxy = Csr {
+                opampen: self.opampen(),
+                force_vp: self.force_vp(),
+                vp_sel: self.vp_sel(),
+                usertrim: self.usertrim(),
+                vm_sel: self.vm_sel(),
+                opahsm: self.opahsm(),
+                opaintoen: self.opaintoen(),
+                calon: self.calon(),
+                calsel: self.calsel(),
+                pga_gain: self.pga_gain(),
+                trimoffsetp: self.trimoffsetp(),
+                trimoffsetn: self.trimoffsetn(),
+                outcal: self.outcal(),
+                lock: self.lock(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "OPAMP timer controlled mode register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -275,10 +334,46 @@ pub mod regs {
             Tcmr(0)
         }
     }
+    impl core::fmt::Debug for Tcmr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tcmr")
+                .field("vms_sel", &self.vms_sel())
+                .field("vps_sel", &self.vps_sel())
+                .field("t1cm_en", &self.t1cm_en())
+                .field("t8cm_en", &self.t8cm_en())
+                .field("t20cm_en", &self.t20cm_en())
+                .field("lock", &self.lock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Tcmr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Tcmr {
+                vms_sel: bool,
+                vps_sel: super::vals::VpsSel,
+                t1cm_en: bool,
+                t8cm_en: bool,
+                t20cm_en: bool,
+                lock: bool,
+            }
+            let proxy = Tcmr {
+                vms_sel: self.vms_sel(),
+                vps_sel: self.vps_sel(),
+                t1cm_en: self.t1cm_en(),
+                t8cm_en: self.t8cm_en(),
+                t20cm_en: self.t20cm_en(),
+                lock: self.lock(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Calsel {
         #[doc = "VREFOPAMP=3.3% VDDA"]
         PERCENT3_3 = 0x0,
@@ -312,7 +407,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum ForceVp {
         #[doc = "Normal operating mode"]
         NORMAL = 0x0,
@@ -342,12 +438,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Opahsm {
         #[doc = "OpAmp in normal mode"]
         NORMAL = 0x0,
         #[doc = "OpAmp in high speed mode"]
-        HIGHSPEED = 0x01,
+        HIGH_SPEED = 0x01,
     }
     impl Opahsm {
         #[inline(always)]
@@ -372,10 +469,11 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Opaintoen {
         #[doc = "Output is connected to the output Pin"]
-        OUTPUTPIN = 0x0,
+        OUTPUT_PIN = 0x0,
         #[doc = "Output is connected internally to ADC channel"]
         ADCCHANNEL = 0x01,
     }
@@ -402,7 +500,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Outcal {
         #[doc = "Non-inverting < inverting"]
         LOW = 0x0,
@@ -432,7 +531,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PgaGain {
         #[doc = "Gain 2"]
         GAIN2 = 0x0,
@@ -449,45 +549,45 @@ pub mod vals {
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
         #[doc = "Gain 2, input/bias connected to VINM0 or inverting gain"]
-        GAIN2_INPUTVINM0 = 0x08,
+        GAIN2_INPUT_VINM0 = 0x08,
         #[doc = "Gain 4, input/bias connected to VINM0 or inverting gain"]
-        GAIN4_INPUTVINM0 = 0x09,
+        GAIN4_INPUT_VINM0 = 0x09,
         #[doc = "Gain 8, input/bias connected to VINM0 or inverting gain"]
-        GAIN8_INPUTVINM0 = 0x0a,
+        GAIN8_INPUT_VINM0 = 0x0a,
         #[doc = "Gain 16, input/bias connected to VINM0 or inverting gain"]
-        GAIN16_INPUTVINM0 = 0x0b,
+        GAIN16_INPUT_VINM0 = 0x0b,
         #[doc = "Gain 32, input/bias connected to VINM0 or inverting gain"]
-        GAIN32_INPUTVINM0 = 0x0c,
+        GAIN32_INPUT_VINM0 = 0x0c,
         #[doc = "Gain 64, input/bias connected to VINM0 or inverting gain"]
-        GAIN64_INPUTVINM0 = 0x0d,
+        GAIN64_INPUT_VINM0 = 0x0d,
         _RESERVED_e = 0x0e,
         _RESERVED_f = 0x0f,
         #[doc = "Gain 2, with filtering on VINM0"]
-        GAIN2_FILTERINGVINM0 = 0x10,
+        GAIN2_FILTERING_VINM0 = 0x10,
         #[doc = "Gain 4, with filtering on VINM0"]
-        GAIN4_FILTERINGVINM0 = 0x11,
+        GAIN4_FILTERING_VINM0 = 0x11,
         #[doc = "Gain 8, with filtering on VINM0"]
-        GAIN8_FILTERINGVINM0 = 0x12,
+        GAIN8_FILTERING_VINM0 = 0x12,
         #[doc = "Gain 16, with filtering on VINM0"]
-        GAIN16_FILTERINGVINM0 = 0x13,
+        GAIN16_FILTERING_VINM0 = 0x13,
         #[doc = "Gain 32, with filtering on VINM0"]
-        GAIN32_FILTERINGVINM0 = 0x14,
+        GAIN32_FILTERING_VINM0 = 0x14,
         #[doc = "Gain 64, with filtering on VINM0"]
-        GAIN64_FILTERINGVINM0 = 0x15,
+        GAIN64_FILTERING_VINM0 = 0x15,
         _RESERVED_16 = 0x16,
         _RESERVED_17 = 0x17,
         #[doc = "Gain 2, input/bias connected to VINM0 with filtering on VINM1 or inverting gain"]
-        GAIN2_INPUTVINM0FILTERINGVINM1 = 0x18,
+        GAIN2_INPUT_VINM0FILTERING_VINM1 = 0x18,
         #[doc = "Gain 4, input/bias connected to VINM0 with filtering on VINM1 or inverting gain"]
-        GAIN4_INPUTVINM0FILTERINGVINM1 = 0x19,
+        GAIN4_INPUT_VINM0FILTERING_VINM1 = 0x19,
         #[doc = "Gain 8, input/bias connected to VINM0 with filtering on VINM1 or inverting gain"]
-        GAIN8_INPUTVINM0FILTERINGVINM1 = 0x1a,
+        GAIN8_INPUT_VINM0FILTERING_VINM1 = 0x1a,
         #[doc = "Gain 16, input/bias connected to VINM0 with filtering on VINM1 or inverting gain"]
-        GAIN16_INPUTVINM0FILTERINGVINM1 = 0x1b,
+        GAIN16_INPUT_VINM0FILTERING_VINM1 = 0x1b,
         #[doc = "Gain 32, input/bias connected to VINM0 with filtering on VINM1 or inverting gain"]
-        GAIN32_INPUTVINM0FILTERINGVINM1 = 0x1c,
+        GAIN32_INPUT_VINM0FILTERING_VINM1 = 0x1c,
         #[doc = "Gain 64, input/bias connected to VINM0 with filtering on VINM1 or inverting gain"]
-        GAIN64_INPUTVINM0FILTERINGVINM1 = 0x1d,
+        GAIN64_INPUT_VINM0FILTERING_VINM1 = 0x1d,
         _RESERVED_1e = 0x1e,
         _RESERVED_1f = 0x1f,
     }
@@ -514,7 +614,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Usertrim {
         #[doc = "Factory trim used"]
         FACTORY = 0x0,
@@ -544,7 +645,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VmSel {
         #[doc = "VINM0 connected to VINM input"]
         VINM0 = 0x0,
@@ -578,7 +680,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VpSel {
         #[doc = "VINP0 connected to VINP input"]
         VINP0 = 0x0,
@@ -612,7 +715,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VpsSel {
         #[doc = "VINP0 connected to VINP input"]
         VINP0 = 0x0,

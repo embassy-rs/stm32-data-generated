@@ -343,6 +343,115 @@ pub mod regs {
             Cfgr1(0)
         }
     }
+    impl core::fmt::Debug for Cfgr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr1")
+                .field("mem_mode", &self.mem_mode())
+                .field("usb_it_rmp", &self.usb_it_rmp())
+                .field("tim1_itr3_rmp", &self.tim1_itr3_rmp())
+                .field("dac1_trig_rmp", &self.dac1_trig_rmp())
+                .field("dac_trig_rmp", &self.dac_trig_rmp())
+                .field("adc2_dma_rmp", &self.adc2_dma_rmp())
+                .field("tim16_dma_rmp", &self.tim16_dma_rmp())
+                .field("tim17_dma_rmp", &self.tim17_dma_rmp())
+                .field("tim6_dac1_ch1_dma_rmp", &self.tim6_dac1_ch1_dma_rmp())
+                .field("tim6_dac1_dma_rmp", &self.tim6_dac1_dma_rmp())
+                .field("tim6_dac1_out1_dma_rmp", &self.tim6_dac1_out1_dma_rmp())
+                .field("tim7_dac1_ch2_dma_rmp", &self.tim7_dac1_ch2_dma_rmp())
+                .field("tim7_dac1_out2_dma_rmp", &self.tim7_dac1_out2_dma_rmp())
+                .field("dac2_ch1_dma_rmp", &self.dac2_ch1_dma_rmp())
+                .field("tim18_dac2_out1_dma_rmp", &self.tim18_dac2_out1_dma_rmp())
+                .field("i2c_pb6_fmp", &self.i2c_pb6_fmp())
+                .field("i2c_pb7_fmp", &self.i2c_pb7_fmp())
+                .field("i2c_pb8_fmp", &self.i2c_pb8_fmp())
+                .field("i2c_pb9_fmp", &self.i2c_pb9_fmp())
+                .field("i2c1_fmp", &self.i2c1_fmp())
+                .field("i2c2_fmp", &self.i2c2_fmp())
+                .field("encoder_mode", &self.encoder_mode())
+                .field("i2c3_fmp", &self.i2c3_fmp())
+                .field("vbat_mon", &self.vbat_mon())
+                .field(
+                    "fpu_ie",
+                    &[
+                        self.fpu_ie(0usize),
+                        self.fpu_ie(1usize),
+                        self.fpu_ie(2usize),
+                        self.fpu_ie(3usize),
+                        self.fpu_ie(4usize),
+                        self.fpu_ie(5usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr1 {
+                mem_mode: super::vals::MemMode,
+                usb_it_rmp: bool,
+                tim1_itr3_rmp: bool,
+                dac1_trig_rmp: bool,
+                dac_trig_rmp: bool,
+                adc2_dma_rmp: bool,
+                tim16_dma_rmp: bool,
+                tim17_dma_rmp: bool,
+                tim6_dac1_ch1_dma_rmp: bool,
+                tim6_dac1_dma_rmp: bool,
+                tim6_dac1_out1_dma_rmp: bool,
+                tim7_dac1_ch2_dma_rmp: bool,
+                tim7_dac1_out2_dma_rmp: bool,
+                dac2_ch1_dma_rmp: bool,
+                tim18_dac2_out1_dma_rmp: bool,
+                i2c_pb6_fmp: super::vals::Fmp,
+                i2c_pb7_fmp: super::vals::Fmp,
+                i2c_pb8_fmp: super::vals::Fmp,
+                i2c_pb9_fmp: super::vals::Fmp,
+                i2c1_fmp: super::vals::Fmp,
+                i2c2_fmp: super::vals::Fmp,
+                encoder_mode: super::vals::EncoderMode,
+                i2c3_fmp: super::vals::Fmp,
+                vbat_mon: bool,
+                fpu_ie: [bool; 6usize],
+            }
+            let proxy = Cfgr1 {
+                mem_mode: self.mem_mode(),
+                usb_it_rmp: self.usb_it_rmp(),
+                tim1_itr3_rmp: self.tim1_itr3_rmp(),
+                dac1_trig_rmp: self.dac1_trig_rmp(),
+                dac_trig_rmp: self.dac_trig_rmp(),
+                adc2_dma_rmp: self.adc2_dma_rmp(),
+                tim16_dma_rmp: self.tim16_dma_rmp(),
+                tim17_dma_rmp: self.tim17_dma_rmp(),
+                tim6_dac1_ch1_dma_rmp: self.tim6_dac1_ch1_dma_rmp(),
+                tim6_dac1_dma_rmp: self.tim6_dac1_dma_rmp(),
+                tim6_dac1_out1_dma_rmp: self.tim6_dac1_out1_dma_rmp(),
+                tim7_dac1_ch2_dma_rmp: self.tim7_dac1_ch2_dma_rmp(),
+                tim7_dac1_out2_dma_rmp: self.tim7_dac1_out2_dma_rmp(),
+                dac2_ch1_dma_rmp: self.dac2_ch1_dma_rmp(),
+                tim18_dac2_out1_dma_rmp: self.tim18_dac2_out1_dma_rmp(),
+                i2c_pb6_fmp: self.i2c_pb6_fmp(),
+                i2c_pb7_fmp: self.i2c_pb7_fmp(),
+                i2c_pb8_fmp: self.i2c_pb8_fmp(),
+                i2c_pb9_fmp: self.i2c_pb9_fmp(),
+                i2c1_fmp: self.i2c1_fmp(),
+                i2c2_fmp: self.i2c2_fmp(),
+                encoder_mode: self.encoder_mode(),
+                i2c3_fmp: self.i2c3_fmp(),
+                vbat_mon: self.vbat_mon(),
+                fpu_ie: [
+                    self.fpu_ie(0usize),
+                    self.fpu_ie(1usize),
+                    self.fpu_ie(2usize),
+                    self.fpu_ie(3usize),
+                    self.fpu_ie(4usize),
+                    self.fpu_ie(5usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "configuration register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -408,6 +517,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cfgr2 {
             Cfgr2(0)
+        }
+    }
+    impl core::fmt::Debug for Cfgr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr2")
+                .field("lockup_lock", &self.lockup_lock())
+                .field("sram_parity_lock", &self.sram_parity_lock())
+                .field("pvd_lock", &self.pvd_lock())
+                .field("byp_addr_par", &self.byp_addr_par())
+                .field("sram_pef", &self.sram_pef())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr2 {
+                lockup_lock: bool,
+                sram_parity_lock: bool,
+                pvd_lock: bool,
+                byp_addr_par: bool,
+                sram_pef: bool,
+            }
+            let proxy = Cfgr2 {
+                lockup_lock: self.lockup_lock(),
+                sram_parity_lock: self.sram_parity_lock(),
+                pvd_lock: self.pvd_lock(),
+                byp_addr_par: self.byp_addr_par(),
+                sram_pef: self.sram_pef(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "configuration register 3"]
@@ -497,6 +638,44 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cfgr3 {
             Cfgr3(0)
+        }
+    }
+    impl core::fmt::Debug for Cfgr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr3")
+                .field("spi1_rx_dma_rmp", &self.spi1_rx_dma_rmp())
+                .field("spi1_tx_dma_rmp", &self.spi1_tx_dma_rmp())
+                .field("i2c1_rx_dma_rmp", &self.i2c1_rx_dma_rmp())
+                .field("i2c1_tx_dma_rmp", &self.i2c1_tx_dma_rmp())
+                .field("adc2_dma_rmp", &self.adc2_dma_rmp())
+                .field("dac1_trig3_rmp", &self.dac1_trig3_rmp())
+                .field("dac1_trig5_rmp", &self.dac1_trig5_rmp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr3 {
+                spi1_rx_dma_rmp: super::vals::Spi1RxDmaRmp,
+                spi1_tx_dma_rmp: super::vals::Spi1TxDmaRmp,
+                i2c1_rx_dma_rmp: super::vals::I2c1RxDmaRmp,
+                i2c1_tx_dma_rmp: super::vals::I2c1TxDmaRmp,
+                adc2_dma_rmp: super::vals::Adc2DmaRmpCfgr3,
+                dac1_trig3_rmp: super::vals::Dac1Trig3Rmp,
+                dac1_trig5_rmp: bool,
+            }
+            let proxy = Cfgr3 {
+                spi1_rx_dma_rmp: self.spi1_rx_dma_rmp(),
+                spi1_tx_dma_rmp: self.spi1_tx_dma_rmp(),
+                i2c1_rx_dma_rmp: self.i2c1_rx_dma_rmp(),
+                i2c1_tx_dma_rmp: self.i2c1_tx_dma_rmp(),
+                adc2_dma_rmp: self.adc2_dma_rmp(),
+                dac1_trig3_rmp: self.dac1_trig3_rmp(),
+                dac1_trig5_rmp: self.dac1_trig5_rmp(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "configuration register 4"]
@@ -665,6 +844,65 @@ pub mod regs {
             Cfgr4(0)
         }
     }
+    impl core::fmt::Debug for Cfgr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgr4")
+                .field("adc12_ext2_rmp", &self.adc12_ext2_rmp())
+                .field("adc12_ext3_rmp", &self.adc12_ext3_rmp())
+                .field("adc12_ext5_rmp", &self.adc12_ext5_rmp())
+                .field("adc12_ext13_rmp", &self.adc12_ext13_rmp())
+                .field("adc12_ext15_rmp", &self.adc12_ext15_rmp())
+                .field("adc12_jext3_rmp", &self.adc12_jext3_rmp())
+                .field("adc12_jext6_rmp", &self.adc12_jext6_rmp())
+                .field("adc12_jext13_rmp", &self.adc12_jext13_rmp())
+                .field("adc34_ext5_rmp", &self.adc34_ext5_rmp())
+                .field("adc34_ext6_rmp", &self.adc34_ext6_rmp())
+                .field("adc34_ext15_rmp", &self.adc34_ext15_rmp())
+                .field("adc34_jext5_rmp", &self.adc34_jext5_rmp())
+                .field("adc34_jext11_rmp", &self.adc34_jext11_rmp())
+                .field("adc34_jext14_rmp", &self.adc34_jext14_rmp())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgr4 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Cfgr4 {
+                adc12_ext2_rmp: super::vals::Adc12Ext2Rmp,
+                adc12_ext3_rmp: super::vals::Adc12Ext3Rmp,
+                adc12_ext5_rmp: super::vals::Adc12Ext5Rmp,
+                adc12_ext13_rmp: super::vals::Adc12Ext13Rmp,
+                adc12_ext15_rmp: super::vals::Adc12Ext15Rmp,
+                adc12_jext3_rmp: super::vals::Adc12Jext3Rmp,
+                adc12_jext6_rmp: super::vals::Adc12Jext6Rmp,
+                adc12_jext13_rmp: super::vals::Adc12Jext13Rmp,
+                adc34_ext5_rmp: super::vals::Adc34Ext5Rmp,
+                adc34_ext6_rmp: super::vals::Adc34Ext6Rmp,
+                adc34_ext15_rmp: super::vals::Adc34Ext15Rmp,
+                adc34_jext5_rmp: super::vals::Adc34Jext5Rmp,
+                adc34_jext11_rmp: super::vals::Adc34Jext11Rmp,
+                adc34_jext14_rmp: super::vals::Adc34Jext14Rmp,
+            }
+            let proxy = Cfgr4 {
+                adc12_ext2_rmp: self.adc12_ext2_rmp(),
+                adc12_ext3_rmp: self.adc12_ext3_rmp(),
+                adc12_ext5_rmp: self.adc12_ext5_rmp(),
+                adc12_ext13_rmp: self.adc12_ext13_rmp(),
+                adc12_ext15_rmp: self.adc12_ext15_rmp(),
+                adc12_jext3_rmp: self.adc12_jext3_rmp(),
+                adc12_jext6_rmp: self.adc12_jext6_rmp(),
+                adc12_jext13_rmp: self.adc12_jext13_rmp(),
+                adc34_ext5_rmp: self.adc34_ext5_rmp(),
+                adc34_ext6_rmp: self.adc34_ext6_rmp(),
+                adc34_ext15_rmp: self.adc34_ext15_rmp(),
+                adc34_jext5_rmp: self.adc34_jext5_rmp(),
+                adc34_jext11_rmp: self.adc34_jext11_rmp(),
+                adc34_jext14_rmp: self.adc34_jext14_rmp(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "external interrupt configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -690,6 +928,39 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Exticr {
             Exticr(0)
+        }
+    }
+    impl core::fmt::Debug for Exticr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Exticr")
+                .field(
+                    "exti",
+                    &[
+                        self.exti(0usize),
+                        self.exti(1usize),
+                        self.exti(2usize),
+                        self.exti(3usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Exticr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Exticr {
+                exti: [u8; 4usize],
+            }
+            let proxy = Exticr {
+                exti: [
+                    self.exti(0usize),
+                    self.exti(1usize),
+                    self.exti(2usize),
+                    self.exti(3usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CCM SRAM protection register"]
@@ -719,10 +990,68 @@ pub mod regs {
             Rcr(0)
         }
     }
+    impl core::fmt::Debug for Rcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rcr")
+                .field(
+                    "page_wp",
+                    &[
+                        self.page_wp(0usize),
+                        self.page_wp(1usize),
+                        self.page_wp(2usize),
+                        self.page_wp(3usize),
+                        self.page_wp(4usize),
+                        self.page_wp(5usize),
+                        self.page_wp(6usize),
+                        self.page_wp(7usize),
+                        self.page_wp(8usize),
+                        self.page_wp(9usize),
+                        self.page_wp(10usize),
+                        self.page_wp(11usize),
+                        self.page_wp(12usize),
+                        self.page_wp(13usize),
+                        self.page_wp(14usize),
+                        self.page_wp(15usize),
+                    ],
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rcr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Rcr {
+                page_wp: [bool; 16usize],
+            }
+            let proxy = Rcr {
+                page_wp: [
+                    self.page_wp(0usize),
+                    self.page_wp(1usize),
+                    self.page_wp(2usize),
+                    self.page_wp(3usize),
+                    self.page_wp(4usize),
+                    self.page_wp(5usize),
+                    self.page_wp(6usize),
+                    self.page_wp(7usize),
+                    self.page_wp(8usize),
+                    self.page_wp(9usize),
+                    self.page_wp(10usize),
+                    self.page_wp(11usize),
+                    self.page_wp(12usize),
+                    self.page_wp(13usize),
+                    self.page_wp(14usize),
+                    self.page_wp(15usize),
+                ],
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc12Ext13Rmp {
         #[doc = "Trigger source is TIM6_TRGO"]
         TIM6 = 0x0,
@@ -752,7 +1081,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc12Ext15Rmp {
         #[doc = "Trigger source is TIM3_CC4"]
         TIM3 = 0x0,
@@ -782,7 +1112,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc12Ext2Rmp {
         #[doc = "Trigger source is TIM3_CC3"]
         TIM1 = 0x0,
@@ -812,7 +1143,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc12Ext3Rmp {
         #[doc = "Trigger source is TIM2_CC2"]
         TIM2 = 0x0,
@@ -842,7 +1174,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc12Ext5Rmp {
         #[doc = "Trigger source is TIM4_CC4"]
         TIM4 = 0x0,
@@ -872,7 +1205,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc12Jext13Rmp {
         #[doc = "Trigger source is TIM3_CC1"]
         TIM3 = 0x0,
@@ -902,7 +1236,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc12Jext3Rmp {
         #[doc = "Trigger source is TIM2_CC1"]
         TIM2 = 0x0,
@@ -932,7 +1267,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc12Jext6Rmp {
         #[doc = "Trigger source is EXTI line 15"]
         EXTI15 = 0x0,
@@ -962,14 +1298,15 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc2DmaRmpCfgr3 {
         _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "ADC2 mapped on DMA1 channel 2"]
-        MAPDMA1CH2 = 0x02,
+        MAP_DMA1CH2 = 0x02,
         #[doc = "ADC2 mapped on DMA1 channel 4"]
-        MAPDMA1CH4 = 0x03,
+        MAP_DMA1CH4 = 0x03,
     }
     impl Adc2DmaRmpCfgr3 {
         #[inline(always)]
@@ -994,7 +1331,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc34Ext15Rmp {
         #[doc = "Trigger source is TIM2_CC1"]
         TIM2 = 0x0,
@@ -1024,7 +1362,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc34Ext5Rmp {
         #[doc = "Trigger source is EXTI line 2 when reset at 0"]
         EXTI2 = 0x0,
@@ -1054,7 +1393,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc34Ext6Rmp {
         #[doc = "Trigger source is TIM4_CC1"]
         TIM4 = 0x0,
@@ -1084,7 +1424,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc34Jext11Rmp {
         #[doc = "Trigger source is TIM1_CC3"]
         TIM1 = 0x0,
@@ -1114,7 +1455,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc34Jext14Rmp {
         #[doc = "Trigger source is TIM7_TRGO"]
         TIM7 = 0x0,
@@ -1144,7 +1486,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc34Jext5Rmp {
         #[doc = "Trigger source is TIM4_CC3"]
         TIM4 = 0x0,
@@ -1174,12 +1517,13 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dac1Trig3Rmp {
         #[doc = "DAC trigger is TIM15_TRGO"]
         TIM15 = 0x0,
         #[doc = "DAC trigger is HRTIM1_DAC1_TRIG1"]
-        HRTIM1 = 0x01,
+        HR_TIM1 = 0x01,
     }
     impl Dac1Trig3Rmp {
         #[inline(always)]
@@ -1204,14 +1548,15 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum EncoderMode {
         #[doc = "No redirection"]
-        NOREDIRECTION = 0x0,
+        NO_REDIRECTION = 0x0,
         #[doc = "TIM2 IC1 and TIM2 IC2 are connected to TIM15 IC1 and TIM15 IC2 respectively"]
-        MAPTIM2TIM15 = 0x01,
+        MAP_TIM2TIM15 = 0x01,
         #[doc = "TIM3 IC1 and TIM3 IC2 are connected to TIM15 IC1 and TIM15 IC2 respectively"]
-        MAPTIM3TIM15 = 0x02,
+        MAP_TIM3TIM15 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl EncoderMode {
@@ -1237,7 +1582,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fmp {
         #[doc = "Standard"]
         STANDARD = 0x0,
@@ -1267,14 +1613,15 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I2c1RxDmaRmp {
         #[doc = "I2C1_RX mapped on DMA1 CH7"]
-        MAPDMA1CH7 = 0x0,
+        MAP_DMA1CH7 = 0x0,
         #[doc = "I2C1_RX mapped on DMA1 CH3"]
-        MAPDMA1CH3 = 0x01,
+        MAP_DMA1CH3 = 0x01,
         #[doc = "I2C1_RX mapped on DMA1 CH5"]
-        MAPDMA1CH5 = 0x02,
+        MAP_DMA1CH5 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl I2c1RxDmaRmp {
@@ -1300,14 +1647,15 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I2c1TxDmaRmp {
         #[doc = "I2C1_TX mapped on DMA1 CH6"]
-        MAPDMA1CH6 = 0x0,
+        MAP_DMA1CH6 = 0x0,
         #[doc = "I2C1_TX mapped on DMA1 CH2"]
-        MAPDMA1CH2 = 0x01,
+        MAP_DMA1CH2 = 0x01,
         #[doc = "I2C1_TX mapped on DMA1 CH4"]
-        MAPDMA1CH4 = 0x02,
+        MAP_DMA1CH4 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl I2c1TxDmaRmp {
@@ -1333,14 +1681,15 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum MemMode {
         #[doc = "Main Flash memory mapped at 0x0000_0000"]
-        MAINFLASH = 0x0,
+        MAIN_FLASH = 0x0,
         #[doc = "System Flash memory mapped at 0x0000_0000"]
-        SYSTEMFLASH = 0x01,
+        SYSTEM_FLASH = 0x01,
         #[doc = "Main Flash memory mapped at 0x0000_0000"]
-        MAINFLASH2 = 0x02,
+        MAIN_FLASH2 = 0x02,
         #[doc = "Embedded SRAM mapped at 0x0000_0000"]
         SRAM = 0x03,
     }
@@ -1367,14 +1716,15 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spi1RxDmaRmp {
         #[doc = "SPI1_RX mapped on DMA1 CH2"]
-        MAPDMA1CH3 = 0x0,
+        MAP_DMA1CH3 = 0x0,
         #[doc = "SPI1_RX mapped on DMA1 CH4"]
-        MAPDMA1CH5 = 0x01,
+        MAP_DMA1CH5 = 0x01,
         #[doc = "SPI1_RX mapped on DMA1 CH6"]
-        MAPDMA1CH7 = 0x02,
+        MAP_DMA1CH7 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Spi1RxDmaRmp {
@@ -1400,14 +1750,15 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spi1TxDmaRmp {
         #[doc = "SPI1_TX mapped on DMA1 CH3"]
-        MAPDMA1CH3 = 0x0,
+        MAP_DMA1CH3 = 0x0,
         #[doc = "SPI1_TX mapped on DMA1 CH5"]
-        MAPDMA1CH5 = 0x01,
+        MAP_DMA1CH5 = 0x01,
         #[doc = "SPI1_TX mapped on DMA1 CH7"]
-        MAPDMA1CH7 = 0x02,
+        MAP_DMA1CH7 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Spi1TxDmaRmp {

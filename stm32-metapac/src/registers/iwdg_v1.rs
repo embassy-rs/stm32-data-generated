@@ -149,42 +149,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "DIVIDEBY4",
+                    name: "DIVIDE_BY4",
                     description: Some("Divider /4"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIVIDEBY8",
+                    name: "DIVIDE_BY8",
                     description: Some("Divider /8"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "DIVIDEBY16",
+                    name: "DIVIDE_BY16",
                     description: Some("Divider /16"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DIVIDEBY32",
+                    name: "DIVIDE_BY32",
                     description: Some("Divider /32"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "DIVIDEBY64",
+                    name: "DIVIDE_BY64",
                     description: Some("Divider /64"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "DIVIDEBY128",
+                    name: "DIVIDE_BY128",
                     description: Some("Divider /128"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "DIVIDEBY256",
+                    name: "DIVIDE_BY256",
                     description: Some("Divider /256"),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "DIVIDEBY256BIS",
+                    name: "DIVIDE_BY256BIS",
                     description: Some("Divider /256"),
                     value: 7,
                 },

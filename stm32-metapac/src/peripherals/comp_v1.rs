@@ -159,10 +159,61 @@ pub mod regs {
             Csr(0)
         }
     }
+    impl core::fmt::Debug for Csr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Csr")
+                .field("en", &self.en())
+                .field("inmsel", &self.inmsel())
+                .field("inpsel", &self.inpsel())
+                .field("winmode", &self.winmode())
+                .field("winout", &self.winout())
+                .field("polarity", &self.polarity())
+                .field("hyst", &self.hyst())
+                .field("pwrmode", &self.pwrmode())
+                .field("blanksel", &self.blanksel())
+                .field("value_do_not_set", &self.value_do_not_set())
+                .field("lock", &self.lock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Csr {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct Csr {
+                en: bool,
+                inmsel: u8,
+                inpsel: u8,
+                winmode: bool,
+                winout: bool,
+                polarity: super::vals::Polarity,
+                hyst: super::vals::Hyst,
+                pwrmode: super::vals::Pwrmode,
+                blanksel: super::vals::Blanksel,
+                value_do_not_set: bool,
+                lock: bool,
+            }
+            let proxy = Csr {
+                en: self.en(),
+                inmsel: self.inmsel(),
+                inpsel: self.inpsel(),
+                winmode: self.winmode(),
+                winout: self.winout(),
+                polarity: self.polarity(),
+                hyst: self.hyst(),
+                pwrmode: self.pwrmode(),
+                blanksel: self.blanksel(),
+                value_do_not_set: self.value_do_not_set(),
+                lock: self.lock(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Blanksel {
         NONE = 0x0,
         #[doc = "TIM1 OC4"]
@@ -225,7 +276,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hyst {
         NONE = 0x0,
         LOW = 0x01,
@@ -255,9 +307,10 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Polarity {
-        NONINVERTED = 0x0,
+        NON_INVERTED = 0x0,
         INVERTED = 0x01,
     }
     impl Polarity {
@@ -283,10 +336,11 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pwrmode {
-        HIGHSPEED = 0x0,
-        MEDIUMSPEED = 0x01,
+        HIGH_SPEED = 0x0,
+        MEDIUM_SPEED = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
     }

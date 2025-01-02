@@ -49,6 +49,11 @@ impl Flash {
     pub const fn eccr(self) -> crate::common::Reg<regs::Eccr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
+    #[doc = "Flash ECC register 2"]
+    #[inline(always)]
+    pub const fn eccr2(self) -> crate::common::Reg<regs::Eccr2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
+    }
     #[doc = "Flash option register"]
     #[inline(always)]
     pub const fn optr(self) -> crate::common::Reg<regs::Optr, crate::common::RW> {
@@ -83,6 +88,36 @@ impl Flash {
     #[inline(always)]
     pub const fn pcrop1ber(self) -> crate::common::Reg<regs::Pcrop1ber, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
+    }
+    #[doc = "Flash PCROP zone A Start address register bank 2"]
+    #[inline(always)]
+    pub const fn pcrop2asr(self) -> crate::common::Reg<regs::Pcrop2asr, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
+    }
+    #[doc = "Flash PCROP zone A End address register bank 2"]
+    #[inline(always)]
+    pub const fn pcrop2aer(self) -> crate::common::Reg<regs::Pcrop2aer, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
+    }
+    #[doc = "Flash WRP area A address register bank 2"]
+    #[inline(always)]
+    pub const fn wrp2ar(self) -> crate::common::Reg<regs::Wrp2ar, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
+    }
+    #[doc = "Flash WRP area B address register bank 2"]
+    #[inline(always)]
+    pub const fn wrp2br(self) -> crate::common::Reg<regs::Wrp2br, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
+    }
+    #[doc = "Flash PCROP zone B Start address register bank 2"]
+    #[inline(always)]
+    pub const fn pcrop2bsr(self) -> crate::common::Reg<regs::Pcrop2bsr, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
+    }
+    #[doc = "Flash PCROP zone B End address register bank 2"]
+    #[inline(always)]
+    pub const fn pcrop2ber(self) -> crate::common::Reg<regs::Pcrop2ber, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize) as _) }
     }
     #[doc = "Flash Security register"]
     #[inline(always)]
@@ -210,13 +245,35 @@ pub mod regs {
         #[doc = "Page number"]
         #[inline(always)]
         pub const fn pnb(&self) -> u8 {
-            let val = (self.0 >> 3usize) & 0x3f;
+            let val = (self.0 >> 3usize) & 0x7f;
             val as u8
         }
         #[doc = "Page number"]
         #[inline(always)]
         pub fn set_pnb(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 3usize)) | (((val as u32) & 0x3f) << 3usize);
+            self.0 = (self.0 & !(0x7f << 3usize)) | (((val as u32) & 0x7f) << 3usize);
+        }
+        #[doc = "Bank number"]
+        #[inline(always)]
+        pub const fn bker(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Bank number"]
+        #[inline(always)]
+        pub fn set_bker(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+        #[doc = "Mass erase bank 2"]
+        #[inline(always)]
+        pub const fn mer2(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Mass erase bank 2"]
+        #[inline(always)]
+        pub fn set_mer2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "Start"]
         #[inline(always)]
@@ -343,13 +400,13 @@ pub mod regs {
         #[doc = "ECC fail address"]
         #[inline(always)]
         pub const fn addr_ecc(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0x3fff;
+            let val = (self.0 >> 0usize) & 0xffff;
             val as u16
         }
         #[doc = "ECC fail address"]
         #[inline(always)]
         pub fn set_addr_ecc(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x3fff << 0usize)) | (((val as u32) & 0x3fff) << 0usize);
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
         #[doc = "ECC fail for Corrected ECC Error or Double ECC Error in info block"]
         #[inline(always)]
@@ -400,6 +457,73 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Eccr {
             Eccr(0)
+        }
+    }
+    #[doc = "Flash ECC register 2"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Eccr2(pub u32);
+    impl Eccr2 {
+        #[doc = "ECC fail address"]
+        #[inline(always)]
+        pub const fn addr_ecc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "ECC fail address"]
+        #[inline(always)]
+        pub fn set_addr_ecc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+        #[doc = "ECC fail for Corrected ECC Error or Double ECC Error in info block"]
+        #[inline(always)]
+        pub const fn sysf_ecc(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "ECC fail for Corrected ECC Error or Double ECC Error in info block"]
+        #[inline(always)]
+        pub fn set_sysf_ecc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "ECC correction interrupt enable"]
+        #[inline(always)]
+        pub const fn eccie(&self) -> bool {
+            let val = (self.0 >> 24usize) & 0x01;
+            val != 0
+        }
+        #[doc = "ECC correction interrupt enable"]
+        #[inline(always)]
+        pub fn set_eccie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
+        }
+        #[doc = "ECC correction"]
+        #[inline(always)]
+        pub const fn eccc(&self) -> bool {
+            let val = (self.0 >> 30usize) & 0x01;
+            val != 0
+        }
+        #[doc = "ECC correction"]
+        #[inline(always)]
+        pub fn set_eccc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
+        }
+        #[doc = "ECC detection"]
+        #[inline(always)]
+        pub const fn eccd(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "ECC detection"]
+        #[inline(always)]
+        pub fn set_eccd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Eccr2 {
+        #[inline(always)]
+        fn default() -> Eccr2 {
+            Eccr2(0)
         }
     }
     #[doc = "Flash option register"]
@@ -528,6 +652,28 @@ pub mod regs {
         pub fn set_wwdg_sw(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
+        #[doc = "Bank swap configuration"]
+        #[inline(always)]
+        pub const fn n_swap_bank(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Bank swap configuration"]
+        #[inline(always)]
+        pub fn set_n_swap_bank(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "Dual bank operation"]
+        #[inline(always)]
+        pub const fn dual_bank(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Dual bank operation"]
+        #[inline(always)]
+        pub fn set_dual_bank(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
         #[doc = "SRAM parity check control"]
         #[inline(always)]
         pub const fn ram_parity_check(&self) -> bool {
@@ -608,14 +754,14 @@ pub mod regs {
     impl Pcrop1aer {
         #[doc = "PCROP1A area end offset"]
         #[inline(always)]
-        pub const fn pcrop1a_end(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
+        pub const fn pcrop1a_end(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x01ff;
+            val as u16
         }
         #[doc = "PCROP1A area end offset"]
         #[inline(always)]
-        pub fn set_pcrop1a_end(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        pub fn set_pcrop1a_end(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
         }
         #[doc = "PCROP area preserved when RDP level decreased"]
         #[inline(always)]
@@ -642,14 +788,14 @@ pub mod regs {
     impl Pcrop1asr {
         #[doc = "PCROP1A area start offset"]
         #[inline(always)]
-        pub const fn pcrop1a_strt(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
+        pub const fn pcrop1a_strt(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x01ff;
+            val as u16
         }
         #[doc = "PCROP1A area start offset"]
         #[inline(always)]
-        pub fn set_pcrop1a_strt(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        pub fn set_pcrop1a_strt(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
         }
     }
     impl Default for Pcrop1asr {
@@ -665,14 +811,14 @@ pub mod regs {
     impl Pcrop1ber {
         #[doc = "PCROP1B area end offset"]
         #[inline(always)]
-        pub const fn pcrop1b_end(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
+        pub const fn pcrop1b_end(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x01ff;
+            val as u16
         }
         #[doc = "PCROP1B area end offset"]
         #[inline(always)]
-        pub fn set_pcrop1b_end(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        pub fn set_pcrop1b_end(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
         }
     }
     impl Default for Pcrop1ber {
@@ -688,20 +834,112 @@ pub mod regs {
     impl Pcrop1bsr {
         #[doc = "PCROP1B area start offset"]
         #[inline(always)]
-        pub const fn pcrop1b_strt(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
+        pub const fn pcrop1b_strt(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x01ff;
+            val as u16
         }
         #[doc = "PCROP1B area start offset"]
         #[inline(always)]
-        pub fn set_pcrop1b_strt(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        pub fn set_pcrop1b_strt(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
         }
     }
     impl Default for Pcrop1bsr {
         #[inline(always)]
         fn default() -> Pcrop1bsr {
             Pcrop1bsr(0)
+        }
+    }
+    #[doc = "Flash PCROP zone A End address register bank 2"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pcrop2aer(pub u32);
+    impl Pcrop2aer {
+        #[doc = "PCROP1A area end offset"]
+        #[inline(always)]
+        pub const fn pcrop2a_end(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x01ff;
+            val as u16
+        }
+        #[doc = "PCROP1A area end offset"]
+        #[inline(always)]
+        pub fn set_pcrop2a_end(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
+        }
+    }
+    impl Default for Pcrop2aer {
+        #[inline(always)]
+        fn default() -> Pcrop2aer {
+            Pcrop2aer(0)
+        }
+    }
+    #[doc = "Flash PCROP zone A Start address register bank 2"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pcrop2asr(pub u32);
+    impl Pcrop2asr {
+        #[doc = "PCROP1A area start offset"]
+        #[inline(always)]
+        pub const fn pcrop2a_strt(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x01ff;
+            val as u16
+        }
+        #[doc = "PCROP1A area start offset"]
+        #[inline(always)]
+        pub fn set_pcrop2a_strt(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
+        }
+    }
+    impl Default for Pcrop2asr {
+        #[inline(always)]
+        fn default() -> Pcrop2asr {
+            Pcrop2asr(0)
+        }
+    }
+    #[doc = "Flash PCROP zone B End address register bank 2"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pcrop2ber(pub u32);
+    impl Pcrop2ber {
+        #[doc = "PCROP1B area end offset"]
+        #[inline(always)]
+        pub const fn pcrop2b_end(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x01ff;
+            val as u16
+        }
+        #[doc = "PCROP1B area end offset"]
+        #[inline(always)]
+        pub fn set_pcrop2b_end(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
+        }
+    }
+    impl Default for Pcrop2ber {
+        #[inline(always)]
+        fn default() -> Pcrop2ber {
+            Pcrop2ber(0)
+        }
+    }
+    #[doc = "Flash PCROP zone B Start address register bank 2"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pcrop2bsr(pub u32);
+    impl Pcrop2bsr {
+        #[doc = "PCROP1B area start offset"]
+        #[inline(always)]
+        pub const fn pcrop2b_strt(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x01ff;
+            val as u16
+        }
+        #[doc = "PCROP1B area start offset"]
+        #[inline(always)]
+        pub fn set_pcrop2b_strt(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
+        }
+    }
+    impl Default for Pcrop2bsr {
+        #[inline(always)]
+        fn default() -> Pcrop2bsr {
+            Pcrop2bsr(0)
         }
     }
     #[doc = "Flash Security register"]
@@ -712,13 +950,13 @@ pub mod regs {
         #[doc = "Securable memory area size"]
         #[inline(always)]
         pub const fn sec_size(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x7f;
+            let val = (self.0 >> 0usize) & 0xff;
             val as u8
         }
         #[doc = "Securable memory area size"]
         #[inline(always)]
         pub fn set_sec_size(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "used to force boot from user area"]
         #[inline(always)]
@@ -730,6 +968,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_boot_lock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "Securable memory area size, bank 2"]
+        #[inline(always)]
+        pub const fn sec_size_2(&self) -> u8 {
+            let val = (self.0 >> 20usize) & 0xff;
+            val as u8
+        }
+        #[doc = "Securable memory area size, bank 2"]
+        #[inline(always)]
+        pub fn set_sec_size_2(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 20usize)) | (((val as u32) & 0xff) << 20usize);
         }
     }
     impl Default for Secr {
@@ -875,6 +1124,17 @@ pub mod regs {
         pub fn set_bsy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
+        #[doc = "Busy bank 2"]
+        #[inline(always)]
+        pub const fn bsy2(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Busy bank 2"]
+        #[inline(always)]
+        pub fn set_bsy2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
         #[doc = "Programming or erase configuration busy."]
         #[inline(always)]
         pub const fn cfgbsy(&self) -> bool {
@@ -901,24 +1161,24 @@ pub mod regs {
         #[doc = "WRP area A start offset"]
         #[inline(always)]
         pub const fn wrp1a_strt(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x3f;
+            let val = (self.0 >> 0usize) & 0x7f;
             val as u8
         }
         #[doc = "WRP area A start offset"]
         #[inline(always)]
         pub fn set_wrp1a_strt(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
         #[doc = "WRP area A end offset"]
         #[inline(always)]
         pub const fn wrp1a_end(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x3f;
+            let val = (self.0 >> 16usize) & 0x7f;
             val as u8
         }
         #[doc = "WRP area A end offset"]
         #[inline(always)]
         pub fn set_wrp1a_end(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 16usize)) | (((val as u32) & 0x3f) << 16usize);
+            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
         }
     }
     impl Default for Wrp1ar {
@@ -935,30 +1195,98 @@ pub mod regs {
         #[doc = "WRP area B start offset"]
         #[inline(always)]
         pub const fn wrp1b_strt(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x3f;
+            let val = (self.0 >> 0usize) & 0x7f;
             val as u8
         }
         #[doc = "WRP area B start offset"]
         #[inline(always)]
         pub fn set_wrp1b_strt(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
         #[doc = "WRP area B end offset"]
         #[inline(always)]
         pub const fn wrp1b_end(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x3f;
+            let val = (self.0 >> 16usize) & 0x7f;
             val as u8
         }
         #[doc = "WRP area B end offset"]
         #[inline(always)]
         pub fn set_wrp1b_end(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 16usize)) | (((val as u32) & 0x3f) << 16usize);
+            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
         }
     }
     impl Default for Wrp1br {
         #[inline(always)]
         fn default() -> Wrp1br {
             Wrp1br(0)
+        }
+    }
+    #[doc = "Flash WRP area A address register bank 2"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Wrp2ar(pub u32);
+    impl Wrp2ar {
+        #[doc = "WRP area A start offset bank 2"]
+        #[inline(always)]
+        pub const fn wrp2a_strt(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "WRP area A start offset bank 2"]
+        #[inline(always)]
+        pub fn set_wrp2a_strt(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "WRP area A end offset bank 2"]
+        #[inline(always)]
+        pub const fn wrp2a_end(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "WRP area A end offset bank 2"]
+        #[inline(always)]
+        pub fn set_wrp2a_end(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
+        }
+    }
+    impl Default for Wrp2ar {
+        #[inline(always)]
+        fn default() -> Wrp2ar {
+            Wrp2ar(0)
+        }
+    }
+    #[doc = "Flash WRP area B address register bank 2"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Wrp2br(pub u32);
+    impl Wrp2br {
+        #[doc = "WRP area B start offset bank 2"]
+        #[inline(always)]
+        pub const fn wrp2b_strt(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "WRP area B start offset bank 2"]
+        #[inline(always)]
+        pub fn set_wrp2b_strt(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "WRP area B end offset bank 2"]
+        #[inline(always)]
+        pub const fn wrp2b_end(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "WRP area B end offset bank 2"]
+        #[inline(always)]
+        pub fn set_wrp2b_end(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
+        }
+    }
+    impl Default for Wrp2br {
+        #[inline(always)]
+        fn default() -> Wrp2br {
+            Wrp2br(0)
         }
     }
 }

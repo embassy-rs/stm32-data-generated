@@ -971,7 +971,7 @@
           "address": 1073881088,
           "registers": {
             "kind": "flash",
-            "version": "g0",
+            "version": "g0x0",
             "block": "FLASH"
           },
           "rcc": {

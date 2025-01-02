@@ -42,8 +42,8 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     (
         "flash",
         &[
-            "c0", "f0", "f1", "f2", "f3", "f4", "f7", "g0", "g4c2", "g4c3", "g4c4", "h5", "h50", "h7", "h7ab", "h7rs",
-            "l0", "l1", "l4", "l5", "u0", "u5", "wb", "wba", "wl",
+            "c0", "f0", "f1", "f2", "f3", "f4", "f7", "g0x0", "g0x1", "g4c2", "g4c3", "g4c4", "h5", "h50", "h7",
+            "h7ab", "h7rs", "l0", "l1", "l4", "l5", "u0", "u5", "wb", "wba", "wl",
         ],
     ),
     ("fmac", &["v1"]),

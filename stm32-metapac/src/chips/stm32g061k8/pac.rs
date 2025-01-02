@@ -226,7 +226,7 @@ pub mod dbgmcu;
 pub mod dmamux;
 #[path = "../../peripherals/exti_g0.rs"]
 pub mod exti;
-#[path = "../../peripherals/flash_g0.rs"]
+#[path = "../../peripherals/flash_g0x1.rs"]
 pub mod flash;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;

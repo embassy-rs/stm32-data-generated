@@ -448,6 +448,7 @@ pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4000_8000u
 pub const I2C4: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_8400usize as _) };
 pub const LPTIM2: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_9400usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000usize as _) };
+pub const VREFBUF: vrefbuf::Vrefbuf = unsafe { vrefbuf::Vrefbuf::from_ptr(0x4001_0030usize as _) };
 pub const COMP1: *mut () = 0x4001_0200usize as _;
 pub const COMP2: *mut () = 0x4001_0204usize as _;
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4001_0400usize as _) };
@@ -570,6 +571,8 @@ pub mod tsc;
 pub mod uid;
 #[path = "../../peripherals/usart_v4.rs"]
 pub mod usart;
+#[path = "../../peripherals/vrefbuf_v1.rs"]
+pub mod vrefbuf;
 #[path = "../../peripherals/vrefintcal_v1.rs"]
 pub mod vrefintcal;
 #[path = "../../peripherals/wwdg_v1.rs"]

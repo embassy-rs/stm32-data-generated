@@ -182,6 +182,7 @@ pub const UCPD1: ucpd::Ucpd = unsafe { ucpd::Ucpd::from_ptr(0x4000_a000usize as 
 pub const UCPD2: ucpd::Ucpd = unsafe { ucpd::Ucpd::from_ptr(0x4000_a400usize as _) };
 pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4000_b000usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000usize as _) };
+pub const VREFBUF: vrefbuf::Vrefbuf = unsafe { vrefbuf::Vrefbuf::from_ptr(0x4001_0030usize as _) };
 pub const COMP1: comp::Comp = unsafe { comp::Comp::from_ptr(0x4001_0200usize as _) };
 pub const COMP2: comp::Comp = unsafe { comp::Comp::from_ptr(0x4001_0204usize as _) };
 pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x4001_2400usize as _) };
@@ -264,6 +265,8 @@ pub mod ucpd;
 pub mod uid;
 #[path = "../../peripherals/usart_v4.rs"]
 pub mod usart;
+#[path = "../../peripherals/vrefbuf_v1.rs"]
+pub mod vrefbuf;
 #[path = "../../peripherals/wwdg_v2.rs"]
 pub mod wwdg;
 pub const CORE_INDEX: usize = 0;

@@ -2692,6 +2692,20 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }],
     },
     Peripheral {
+        name: "VREFBUF",
+        address: 0x40010030,
+        registers: Some(PeripheralRegisters {
+            kind: "vrefbuf",
+            version: "v1",
+            block: "VREFBUF",
+            ir: &vrefbuf::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+    },
+    Peripheral {
         name: "VREFINTCAL",
         address: 0x1fff75aa,
         registers: Some(PeripheralRegisters {
@@ -3145,6 +3159,8 @@ pub mod tsc;
 pub mod uid;
 #[path = "../registers/usart_v3.rs"]
 pub mod usart;
+#[path = "../registers/vrefbuf_v1.rs"]
+pub mod vrefbuf;
 #[path = "../registers/vrefintcal_v1.rs"]
 pub mod vrefintcal;
 #[path = "../registers/wwdg_v1.rs"]

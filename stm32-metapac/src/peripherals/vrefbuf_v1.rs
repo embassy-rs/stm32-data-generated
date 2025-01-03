@@ -192,9 +192,9 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vrs {
-        #[doc = "Voltage reference set to VREF_OUT1 (around 2.048 V)."]
+        #[doc = "Voltage reference set to around 2.048 V."]
         VREF0 = 0x0,
-        #[doc = "Voltage reference set to VREF_OUT2 (around 2.5 V)."]
+        #[doc = "Voltage reference set to around 2.5 V."]
         VREF1 = 0x01,
     }
     impl Vrs {

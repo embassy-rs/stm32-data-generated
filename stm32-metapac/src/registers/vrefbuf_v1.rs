@@ -111,12 +111,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "VREF0",
-                    description: Some("Voltage reference set to VREF_OUT1 (around 2.048 V)."),
+                    description: Some("Voltage reference set to around 2.048 V."),
                     value: 0,
                 },
                 EnumVariant {
                     name: "VREF1",
-                    description: Some("Voltage reference set to VREF_OUT2 (around 2.5 V)."),
+                    description: Some("Voltage reference set to around 2.5 V."),
                     value: 1,
                 },
             ],

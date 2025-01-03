@@ -172,28 +172,28 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "VREF0",
                     description: Some(
-                        "Voltage reference set to VREF_OUT1 (around 2.048 V).",
+                        "Voltage reference set to around 2.5 V.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "VREF1",
                     description: Some(
-                        "Voltage reference set to VREF_OUT2 (around 2.5 V).",
+                        "Voltage reference set to around 2.048 V.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "VREF2",
                     description: Some(
-                        "Voltage reference set to VREF_OUT2 (around 2.5 V).",
+                        "Voltage reference set to around 1.8 V.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "VREF3",
                     description: Some(
-                        "Voltage reference set to VREF_OUT2 (around 2.5 V).",
+                        "Voltage reference set to around 1.5 V (ADC, DAC are not compatible with this setting).",
                     ),
                     value: 3,
                 },

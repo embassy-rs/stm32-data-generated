@@ -200,6 +200,7 @@ pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4000_b000usize as _
 pub const FDCANRAM1: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_b400usize as _) };
 pub const FDCANRAM2: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_b750usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000usize as _) };
+pub const VREFBUF: vrefbuf::Vrefbuf = unsafe { vrefbuf::Vrefbuf::from_ptr(0x4001_0030usize as _) };
 pub const COMP1: comp::Comp = unsafe { comp::Comp::from_ptr(0x4001_0200usize as _) };
 pub const COMP2: comp::Comp = unsafe { comp::Comp::from_ptr(0x4001_0204usize as _) };
 pub const COMP3: comp::Comp = unsafe { comp::Comp::from_ptr(0x4001_0208usize as _) };
@@ -296,6 +297,8 @@ pub mod usart;
 pub mod usb;
 #[path = "../../peripherals/usbram_32_2048.rs"]
 pub mod usbram;
+#[path = "../../peripherals/vrefbuf_v1.rs"]
+pub mod vrefbuf;
 #[path = "../../peripherals/wwdg_v2.rs"]
 pub mod wwdg;
 pub const CORE_INDEX: usize = 0;

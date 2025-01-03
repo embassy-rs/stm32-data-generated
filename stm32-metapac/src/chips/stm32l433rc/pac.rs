@@ -362,6 +362,7 @@ pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4000_8000u
 pub const SWPMI1: *mut () = 0x4000_8800usize as _;
 pub const LPTIM2: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_9400usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000usize as _) };
+pub const VREFBUF: vrefbuf::Vrefbuf = unsafe { vrefbuf::Vrefbuf::from_ptr(0x4001_0030usize as _) };
 pub const COMP1: *mut () = 0x4001_0200usize as _;
 pub const COMP2: *mut () = 0x4001_0204usize as _;
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4001_0400usize as _) };
@@ -459,6 +460,8 @@ pub mod usart;
 pub mod usb;
 #[path = "../../peripherals/usbram_16x2_1024.rs"]
 pub mod usbram;
+#[path = "../../peripherals/vrefbuf_v1.rs"]
+pub mod vrefbuf;
 #[path = "../../peripherals/vrefintcal_v1.rs"]
 pub mod vrefintcal;
 #[path = "../../peripherals/wwdg_v1.rs"]

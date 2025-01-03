@@ -8256,6 +8256,15 @@
           ]
         },
         {
+          "name": "VREFBUF",
+          "address": 1073807408,
+          "registers": {
+            "kind": "vrefbuf",
+            "version": "v1",
+            "block": "VREFBUF"
+          }
+        },
+        {
           "name": "VREFINTCAL",
           "address": 536835498,
           "registers": {

@@ -198,13 +198,13 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vrs {
-        #[doc = "Voltage reference set to VREF_OUT1 (around 2.048 V)."]
+        #[doc = "Voltage reference set to around 2.5 V."]
         VREF0 = 0x0,
-        #[doc = "Voltage reference set to VREF_OUT2 (around 2.5 V)."]
+        #[doc = "Voltage reference set to around 2.048 V."]
         VREF1 = 0x01,
-        #[doc = "Voltage reference set to VREF_OUT2 (around 2.5 V)."]
+        #[doc = "Voltage reference set to around 1.8 V."]
         VREF2 = 0x02,
-        #[doc = "Voltage reference set to VREF_OUT2 (around 2.5 V)."]
+        #[doc = "Voltage reference set to around 1.5 V (ADC, DAC are not compatible with this setting)."]
         VREF3 = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,

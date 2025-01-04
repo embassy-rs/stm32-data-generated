@@ -1630,6 +1630,18 @@
             "version": "v1",
             "block": "DTS"
           },
+          "rcc": {
+            "bus_clock": "PCLK4",
+            "kernel_clock": "PCLK4",
+            "enable": {
+              "register": "APB4ENR",
+              "field": "TMPSENSEN"
+            },
+            "reset": {
+              "register": "APB4RSTR",
+              "field": "TMPSENSRST"
+            }
+          },
           "interrupts": [
             {
               "signal": "GLOBAL",

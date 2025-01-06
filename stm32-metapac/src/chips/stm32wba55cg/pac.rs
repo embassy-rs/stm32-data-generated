@@ -378,9 +378,6 @@ pub const NVIC_PRIO_BITS: u8 = 4;
 pub use cortex_m_rt::interrupt;
 #[cfg(feature = "rt")]
 pub use Interrupt as interrupt;
-pub fn GPIO(n: usize) -> gpio::Gpio {
-    unsafe { gpio::Gpio::from_ptr((1107427328 + 1024 * n) as _) }
-}
 #[path = "../../peripherals/adccommon_v3.rs"]
 pub mod adccommon;
 #[path = "../../peripherals/aes_v3b.rs"]
@@ -433,7 +430,3 @@ pub mod uid;
 pub mod usart;
 #[path = "../../peripherals/wwdg_v2.rs"]
 pub mod wwdg;
-pub const CORE_INDEX: usize = 0;
-pub const FLASH_BASE: usize = 134217728;
-pub const FLASH_SIZE: usize = 1048576;
-pub const WRITE_SIZE: usize = 16;

@@ -2306,6 +2306,77 @@
           "dma": "DMA2",
           "channel": 7
         }
+      ],
+      "pins": [
+        {
+          "name": "PA0"
+        },
+        {
+          "name": "PA2"
+        },
+        {
+          "name": "PA3"
+        },
+        {
+          "name": "PA5"
+        },
+        {
+          "name": "PA8"
+        },
+        {
+          "name": "PA12"
+        },
+        {
+          "name": "PA13"
+        },
+        {
+          "name": "PA14"
+        },
+        {
+          "name": "PA15"
+        },
+        {
+          "name": "PB2"
+        },
+        {
+          "name": "PB3"
+        },
+        {
+          "name": "PB4"
+        },
+        {
+          "name": "PB5"
+        },
+        {
+          "name": "PB6"
+        },
+        {
+          "name": "PB7"
+        },
+        {
+          "name": "PB8"
+        },
+        {
+          "name": "PB10"
+        },
+        {
+          "name": "PB12"
+        },
+        {
+          "name": "PC13"
+        },
+        {
+          "name": "PC14"
+        },
+        {
+          "name": "PC15"
+        },
+        {
+          "name": "PH0"
+        },
+        {
+          "name": "PH1"
+        }
       ]
     }
   ]

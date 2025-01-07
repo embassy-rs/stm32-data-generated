@@ -2020,6 +2020,31 @@ pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
         dmamux_channel: None,
     },
 ];
+pub(crate) static PINS: &[Pin] = &[
+    Pin { name: "PA0" },
+    Pin { name: "PA2" },
+    Pin { name: "PA3" },
+    Pin { name: "PA5" },
+    Pin { name: "PA8" },
+    Pin { name: "PA12" },
+    Pin { name: "PA13" },
+    Pin { name: "PA14" },
+    Pin { name: "PA15" },
+    Pin { name: "PB2" },
+    Pin { name: "PB3" },
+    Pin { name: "PB4" },
+    Pin { name: "PB5" },
+    Pin { name: "PB6" },
+    Pin { name: "PB7" },
+    Pin { name: "PB8" },
+    Pin { name: "PB10" },
+    Pin { name: "PB12" },
+    Pin { name: "PC13" },
+    Pin { name: "PC14" },
+    Pin { name: "PC15" },
+    Pin { name: "PH0" },
+    Pin { name: "PH1" },
+];
 #[path = "../registers/adc_v2.rs"]
 pub mod adc;
 #[path = "../registers/adccommon_v2.rs"]

@@ -3177,10 +3177,6 @@
             {
               "pin": "PB0",
               "signal": "VP2"
-            },
-            {
-              "pin": "PD14",
-              "signal": "VP3"
             }
           ]
         },
@@ -3305,10 +3301,6 @@
               "signal": "VP0"
             },
             {
-              "pin": "PD11",
-              "signal": "VP1"
-            },
-            {
               "pin": "PB11",
               "signal": "VP2"
             }
@@ -3362,14 +3354,6 @@
             {
               "pin": "PB14",
               "signal": "VP0"
-            },
-            {
-              "pin": "PD12",
-              "signal": "VP1"
-            },
-            {
-              "pin": "PC3",
-              "signal": "VP2"
             }
           ]
         },
@@ -3429,10 +3413,6 @@
             {
               "pin": "PB12",
               "signal": "VP0"
-            },
-            {
-              "pin": "PD9",
-              "signal": "VP1"
             },
             {
               "pin": "PB13",
@@ -6612,6 +6592,134 @@
           "channel": 7,
           "dmamux": "DMAMUX1",
           "dmamux_channel": 15
+        }
+      ],
+      "pins": [
+        {
+          "name": "PA0"
+        },
+        {
+          "name": "PA1"
+        },
+        {
+          "name": "PA2"
+        },
+        {
+          "name": "PA3"
+        },
+        {
+          "name": "PA4"
+        },
+        {
+          "name": "PA5"
+        },
+        {
+          "name": "PA6"
+        },
+        {
+          "name": "PA7"
+        },
+        {
+          "name": "PA8"
+        },
+        {
+          "name": "PA9"
+        },
+        {
+          "name": "PA10"
+        },
+        {
+          "name": "PA11"
+        },
+        {
+          "name": "PA12"
+        },
+        {
+          "name": "PA13"
+        },
+        {
+          "name": "PA14"
+        },
+        {
+          "name": "PA15"
+        },
+        {
+          "name": "PB0"
+        },
+        {
+          "name": "PB1"
+        },
+        {
+          "name": "PB2"
+        },
+        {
+          "name": "PB3"
+        },
+        {
+          "name": "PB4"
+        },
+        {
+          "name": "PB5"
+        },
+        {
+          "name": "PB6"
+        },
+        {
+          "name": "PB7"
+        },
+        {
+          "name": "PB8"
+        },
+        {
+          "name": "PB9"
+        },
+        {
+          "name": "PB10"
+        },
+        {
+          "name": "PB11"
+        },
+        {
+          "name": "PB12"
+        },
+        {
+          "name": "PB13"
+        },
+        {
+          "name": "PB14"
+        },
+        {
+          "name": "PB15"
+        },
+        {
+          "name": "PC4"
+        },
+        {
+          "name": "PC6"
+        },
+        {
+          "name": "PC10"
+        },
+        {
+          "name": "PC11"
+        },
+        {
+          "name": "PC13"
+        },
+        {
+          "name": "PC14"
+        },
+        {
+          "name": "PC15"
+        },
+        {
+          "name": "PF0"
+        },
+        {
+          "name": "PF1"
+        },
+        {
+          "name": "PG10"
         }
       ]
     }

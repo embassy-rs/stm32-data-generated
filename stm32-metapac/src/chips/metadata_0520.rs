@@ -64,6 +64,11 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
+                pin: "PB0",
+                signal: "IN8",
+                af: None,
+            },
+            PeripheralPin {
                 pin: "PB1",
                 signal: "IN9",
                 af: None,
@@ -214,6 +219,11 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 pin: "PA7",
                 signal: "OUT",
                 af: Some(7),
+            },
+            PeripheralPin {
+                pin: "PB3",
+                signal: "INM",
+                af: None,
             },
             PeripheralPin {
                 pin: "PB6",
@@ -687,6 +697,11 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: Some(1),
             },
             PeripheralPin {
+                pin: "PA8",
+                signal: "IN1",
+                af: Some(2),
+            },
+            PeripheralPin {
                 pin: "PA9",
                 signal: "OUT",
                 af: Some(2),
@@ -878,6 +893,11 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
+                pin: "PA8",
+                signal: "MCO",
+                af: Some(0),
+            },
+            PeripheralPin {
                 pin: "PA9",
                 signal: "MCO",
                 af: Some(0),
@@ -1019,9 +1039,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: Some(0),
             },
             PeripheralPin {
+                pin: "PB0",
+                signal: "MISO",
+                af: Some(1),
+            },
+            PeripheralPin {
                 pin: "PB1",
                 signal: "MOSI",
                 af: Some(1),
+            },
+            PeripheralPin {
+                pin: "PB3",
+                signal: "SCK",
+                af: Some(0),
             },
         ],
         dma_channels: &[
@@ -1154,9 +1184,29 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: Some(2),
             },
             PeripheralPin {
+                pin: "PA8",
+                signal: "CH1",
+                af: Some(5),
+            },
+            PeripheralPin {
+                pin: "PB0",
+                signal: "CH2",
+                af: Some(2),
+            },
+            PeripheralPin {
+                pin: "PB0",
+                signal: "CH3",
+                af: Some(5),
+            },
+            PeripheralPin {
                 pin: "PB1",
                 signal: "CH4",
                 af: Some(5),
+            },
+            PeripheralPin {
+                pin: "PB3",
+                signal: "CH2",
+                af: Some(2),
             },
             PeripheralPin {
                 pin: "PB6",
@@ -1398,8 +1448,23 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: Some(4),
             },
             PeripheralPin {
+                pin: "PA8",
+                signal: "CK",
+                af: Some(4),
+            },
+            PeripheralPin {
                 pin: "PA9",
                 signal: "TX",
+                af: Some(4),
+            },
+            PeripheralPin {
+                pin: "PB0",
+                signal: "DE",
+                af: Some(4),
+            },
+            PeripheralPin {
+                pin: "PB0",
+                signal: "RTS",
                 af: Some(4),
             },
             PeripheralPin {
@@ -1594,6 +1659,29 @@ pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
         dmamux: None,
         dmamux_channel: None,
     },
+];
+pub(crate) static PINS: &[Pin] = &[
+    Pin { name: "PA0" },
+    Pin { name: "PA1" },
+    Pin { name: "PA2" },
+    Pin { name: "PA3" },
+    Pin { name: "PA4" },
+    Pin { name: "PA5" },
+    Pin { name: "PA6" },
+    Pin { name: "PA7" },
+    Pin { name: "PA8" },
+    Pin { name: "PA9" },
+    Pin { name: "PA10" },
+    Pin { name: "PA13" },
+    Pin { name: "PA14" },
+    Pin { name: "PB0" },
+    Pin { name: "PB1" },
+    Pin { name: "PB3" },
+    Pin { name: "PB6" },
+    Pin { name: "PB7" },
+    Pin { name: "PB9" },
+    Pin { name: "PC14" },
+    Pin { name: "PC15" },
 ];
 #[path = "../registers/adc_l0.rs"]
 pub mod adc;

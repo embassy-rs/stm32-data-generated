@@ -11778,6 +11778,512 @@
           "dmamux": "DMAMUX2",
           "dmamux_channel": 7
         }
+      ],
+      "pins": [
+        {
+          "name": "PA0"
+        },
+        {
+          "name": "PA1"
+        },
+        {
+          "name": "PA2"
+        },
+        {
+          "name": "PA3"
+        },
+        {
+          "name": "PA4"
+        },
+        {
+          "name": "PA5"
+        },
+        {
+          "name": "PA6"
+        },
+        {
+          "name": "PA7"
+        },
+        {
+          "name": "PA8"
+        },
+        {
+          "name": "PA9"
+        },
+        {
+          "name": "PA10"
+        },
+        {
+          "name": "PA11"
+        },
+        {
+          "name": "PA12"
+        },
+        {
+          "name": "PA13"
+        },
+        {
+          "name": "PA14"
+        },
+        {
+          "name": "PA15"
+        },
+        {
+          "name": "PB0"
+        },
+        {
+          "name": "PB1"
+        },
+        {
+          "name": "PB2"
+        },
+        {
+          "name": "PB3"
+        },
+        {
+          "name": "PB4"
+        },
+        {
+          "name": "PB5"
+        },
+        {
+          "name": "PB6"
+        },
+        {
+          "name": "PB7"
+        },
+        {
+          "name": "PB8"
+        },
+        {
+          "name": "PB9"
+        },
+        {
+          "name": "PB10"
+        },
+        {
+          "name": "PB11"
+        },
+        {
+          "name": "PB12"
+        },
+        {
+          "name": "PB13"
+        },
+        {
+          "name": "PB14"
+        },
+        {
+          "name": "PB15"
+        },
+        {
+          "name": "PC0"
+        },
+        {
+          "name": "PC1"
+        },
+        {
+          "name": "PC2"
+        },
+        {
+          "name": "PC3"
+        },
+        {
+          "name": "PC4"
+        },
+        {
+          "name": "PC5"
+        },
+        {
+          "name": "PC6"
+        },
+        {
+          "name": "PC7"
+        },
+        {
+          "name": "PC8"
+        },
+        {
+          "name": "PC9"
+        },
+        {
+          "name": "PC10"
+        },
+        {
+          "name": "PC11"
+        },
+        {
+          "name": "PC12"
+        },
+        {
+          "name": "PC13"
+        },
+        {
+          "name": "PC14"
+        },
+        {
+          "name": "PC15"
+        },
+        {
+          "name": "PD0"
+        },
+        {
+          "name": "PD1"
+        },
+        {
+          "name": "PD2"
+        },
+        {
+          "name": "PD3"
+        },
+        {
+          "name": "PD4"
+        },
+        {
+          "name": "PD5"
+        },
+        {
+          "name": "PD6"
+        },
+        {
+          "name": "PD7"
+        },
+        {
+          "name": "PD8"
+        },
+        {
+          "name": "PD9"
+        },
+        {
+          "name": "PD10"
+        },
+        {
+          "name": "PD11"
+        },
+        {
+          "name": "PD12"
+        },
+        {
+          "name": "PD13"
+        },
+        {
+          "name": "PD14"
+        },
+        {
+          "name": "PD15"
+        },
+        {
+          "name": "PE0"
+        },
+        {
+          "name": "PE1"
+        },
+        {
+          "name": "PE2"
+        },
+        {
+          "name": "PE3"
+        },
+        {
+          "name": "PE4"
+        },
+        {
+          "name": "PE5"
+        },
+        {
+          "name": "PE6"
+        },
+        {
+          "name": "PE7"
+        },
+        {
+          "name": "PE8"
+        },
+        {
+          "name": "PE9"
+        },
+        {
+          "name": "PE10"
+        },
+        {
+          "name": "PE11"
+        },
+        {
+          "name": "PE12"
+        },
+        {
+          "name": "PE13"
+        },
+        {
+          "name": "PE14"
+        },
+        {
+          "name": "PE15"
+        },
+        {
+          "name": "PF0"
+        },
+        {
+          "name": "PF1"
+        },
+        {
+          "name": "PF2"
+        },
+        {
+          "name": "PF3"
+        },
+        {
+          "name": "PF4"
+        },
+        {
+          "name": "PF5"
+        },
+        {
+          "name": "PF6"
+        },
+        {
+          "name": "PF7"
+        },
+        {
+          "name": "PF8"
+        },
+        {
+          "name": "PF9"
+        },
+        {
+          "name": "PF10"
+        },
+        {
+          "name": "PF11"
+        },
+        {
+          "name": "PF12"
+        },
+        {
+          "name": "PF13"
+        },
+        {
+          "name": "PF14"
+        },
+        {
+          "name": "PF15"
+        },
+        {
+          "name": "PG0"
+        },
+        {
+          "name": "PG1"
+        },
+        {
+          "name": "PG2"
+        },
+        {
+          "name": "PG3"
+        },
+        {
+          "name": "PG4"
+        },
+        {
+          "name": "PG5"
+        },
+        {
+          "name": "PG6"
+        },
+        {
+          "name": "PG7"
+        },
+        {
+          "name": "PG8"
+        },
+        {
+          "name": "PG9"
+        },
+        {
+          "name": "PG10"
+        },
+        {
+          "name": "PG11"
+        },
+        {
+          "name": "PG12"
+        },
+        {
+          "name": "PG13"
+        },
+        {
+          "name": "PG14"
+        },
+        {
+          "name": "PG15"
+        },
+        {
+          "name": "PH0"
+        },
+        {
+          "name": "PH1"
+        },
+        {
+          "name": "PH2"
+        },
+        {
+          "name": "PH3"
+        },
+        {
+          "name": "PH4"
+        },
+        {
+          "name": "PH5"
+        },
+        {
+          "name": "PH6"
+        },
+        {
+          "name": "PH7"
+        },
+        {
+          "name": "PH8"
+        },
+        {
+          "name": "PH9"
+        },
+        {
+          "name": "PH10"
+        },
+        {
+          "name": "PH11"
+        },
+        {
+          "name": "PH12"
+        },
+        {
+          "name": "PH13"
+        },
+        {
+          "name": "PH14"
+        },
+        {
+          "name": "PH15"
+        },
+        {
+          "name": "PI0"
+        },
+        {
+          "name": "PI1"
+        },
+        {
+          "name": "PI2"
+        },
+        {
+          "name": "PI3"
+        },
+        {
+          "name": "PI4"
+        },
+        {
+          "name": "PI5"
+        },
+        {
+          "name": "PI6"
+        },
+        {
+          "name": "PI7"
+        },
+        {
+          "name": "PI8"
+        },
+        {
+          "name": "PI9"
+        },
+        {
+          "name": "PI10"
+        },
+        {
+          "name": "PI11"
+        },
+        {
+          "name": "PI12"
+        },
+        {
+          "name": "PI13"
+        },
+        {
+          "name": "PI14"
+        },
+        {
+          "name": "PI15"
+        },
+        {
+          "name": "PJ0"
+        },
+        {
+          "name": "PJ1"
+        },
+        {
+          "name": "PJ2"
+        },
+        {
+          "name": "PJ3"
+        },
+        {
+          "name": "PJ4"
+        },
+        {
+          "name": "PJ5"
+        },
+        {
+          "name": "PJ6"
+        },
+        {
+          "name": "PJ7"
+        },
+        {
+          "name": "PJ8"
+        },
+        {
+          "name": "PJ9"
+        },
+        {
+          "name": "PJ10"
+        },
+        {
+          "name": "PJ11"
+        },
+        {
+          "name": "PJ12"
+        },
+        {
+          "name": "PJ13"
+        },
+        {
+          "name": "PJ14"
+        },
+        {
+          "name": "PJ15"
+        },
+        {
+          "name": "PK0"
+        },
+        {
+          "name": "PK1"
+        },
+        {
+          "name": "PK2"
+        },
+        {
+          "name": "PK3"
+        },
+        {
+          "name": "PK4"
+        },
+        {
+          "name": "PK5"
+        },
+        {
+          "name": "PK6"
+        },
+        {
+          "name": "PK7"
+        }
       ]
     }
   ]

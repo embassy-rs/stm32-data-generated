@@ -1865,13 +1865,13 @@ pub mod regs {
         }
         #[doc = "group injected external trigger polarity"]
         #[inline(always)]
-        pub const fn exten(&self) -> super::vals::Exten {
+        pub const fn jexten(&self) -> super::vals::Exten {
             let val = (self.0 >> 7usize) & 0x03;
             super::vals::Exten::from_bits(val as u8)
         }
         #[doc = "group injected external trigger polarity"]
         #[inline(always)]
-        pub fn set_exten(&mut self, val: super::vals::Exten) {
+        pub fn set_jexten(&mut self, val: super::vals::Exten) {
             self.0 = (self.0 & !(0x03 << 7usize)) | (((val.to_bits() as u32) & 0x03) << 7usize);
         }
         #[doc = "group injected sequencer rank 1-4"]
@@ -1901,7 +1901,7 @@ pub mod regs {
             f.debug_struct("Jsqr")
                 .field("jl", &self.jl())
                 .field("jextsel", &self.jextsel())
-                .field("exten", &self.exten())
+                .field("jexten", &self.jexten())
                 .field(
                     "jsq",
                     &[self.jsq(0usize), self.jsq(1usize), self.jsq(2usize), self.jsq(3usize)],
@@ -1916,13 +1916,13 @@ pub mod regs {
             struct Jsqr {
                 jl: u8,
                 jextsel: u8,
-                exten: super::vals::Exten,
+                jexten: super::vals::Exten,
                 jsq: [u8; 4usize],
             }
             let proxy = Jsqr {
                 jl: self.jl(),
                 jextsel: self.jextsel(),
-                exten: self.exten(),
+                jexten: self.jexten(),
                 jsq: [self.jsq(0usize), self.jsq(1usize), self.jsq(2usize), self.jsq(3usize)],
             };
             defmt::write!(f, "{}", proxy)

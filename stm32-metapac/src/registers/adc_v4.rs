@@ -1060,7 +1060,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "exten",
+                    name: "jexten",
                     description: Some("group injected external trigger polarity"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 2,

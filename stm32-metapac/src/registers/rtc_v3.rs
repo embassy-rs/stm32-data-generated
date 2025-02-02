@@ -889,7 +889,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "alraie",
+                    name: "alrie",
                     description: Some(
                         "Alarm interrupt enable",
                     ),

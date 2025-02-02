@@ -373,7 +373,7 @@
         "bit_size": 1
       },
       {
-        "name": "ALRAIE",
+        "name": "ALRIE",
         "description": "Alarm interrupt enable",
         "bit_offset": 12,
         "bit_size": 1,

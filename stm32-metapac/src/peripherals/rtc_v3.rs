@@ -663,7 +663,7 @@ pub mod regs {
         }
         #[doc = "Alarm interrupt enable"]
         #[inline(always)]
-        pub const fn alraie(&self, n: usize) -> bool {
+        pub const fn alrie(&self, n: usize) -> bool {
             assert!(n < 2usize);
             let offs = 12usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
@@ -671,7 +671,7 @@ pub mod regs {
         }
         #[doc = "Alarm interrupt enable"]
         #[inline(always)]
-        pub fn set_alraie(&mut self, n: usize, val: bool) {
+        pub fn set_alrie(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 12usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -860,7 +860,7 @@ pub mod regs {
                 .field("alre", &[self.alre(0usize), self.alre(1usize)])
                 .field("wute", &self.wute())
                 .field("tse", &self.tse())
-                .field("alraie", &[self.alraie(0usize), self.alraie(1usize)])
+                .field("alrie", &[self.alrie(0usize), self.alrie(1usize)])
                 .field("wutie", &self.wutie())
                 .field("tsie", &self.tsie())
                 .field("add1h", &self.add1h())
@@ -893,7 +893,7 @@ pub mod regs {
                 alre: [bool; 2usize],
                 wute: bool,
                 tse: bool,
-                alraie: [bool; 2usize],
+                alrie: [bool; 2usize],
                 wutie: bool,
                 tsie: bool,
                 add1h: bool,
@@ -920,7 +920,7 @@ pub mod regs {
                 alre: [self.alre(0usize), self.alre(1usize)],
                 wute: self.wute(),
                 tse: self.tse(),
-                alraie: [self.alraie(0usize), self.alraie(1usize)],
+                alrie: [self.alrie(0usize), self.alrie(1usize)],
                 wutie: self.wutie(),
                 tsie: self.tsie(),
                 add1h: self.add1h(),

@@ -1072,6 +1072,21 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Icsr(pub u32);
     impl Icsr {
+        #[doc = "Alarm write enabled"]
+        #[inline(always)]
+        pub const fn alrwf(&self, n: usize) -> bool {
+            assert!(n < 2usize);
+            let offs = 0usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
+            val != 0
+        }
+        #[doc = "Alarm write enabled"]
+        #[inline(always)]
+        pub fn set_alrwf(&mut self, n: usize, val: bool) {
+            assert!(n < 2usize);
+            let offs = 0usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
+        }
         #[doc = "Wakeup timer write enabled"]
         #[inline(always)]
         pub const fn wutwf(&self) -> bool {
@@ -1181,6 +1196,7 @@ pub mod regs {
     impl core::fmt::Debug for Icsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Icsr")
+                .field("alrwf", &[self.alrwf(0usize), self.alrwf(1usize)])
                 .field("wutwf", &self.wutwf())
                 .field("shpf", &self.shpf())
                 .field("inits", &self.inits())
@@ -1198,6 +1214,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             #[derive(defmt :: Format)]
             struct Icsr {
+                alrwf: [bool; 2usize],
                 wutwf: bool,
                 shpf: bool,
                 inits: bool,
@@ -1209,6 +1226,7 @@ pub mod regs {
                 recalpf: super::vals::Recalpf,
             }
             let proxy = Icsr {
+                alrwf: [self.alrwf(0usize), self.alrwf(1usize)],
                 wutwf: self.wutwf(),
                 shpf: self.shpf(),
                 inits: self.inits(),

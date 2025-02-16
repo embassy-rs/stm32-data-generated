@@ -17,6 +17,17 @@ pub static METADATA: Metadata = Metadata {
             }),
         },
         MemoryRegion {
+            name: "OTP",
+            kind: MemoryRegionKind::Flash,
+            address: 0x1ff0f000,
+            size: 1024,
+            settings: Some(FlashSettings {
+                erase_size: 0,
+                write_size: 16,
+                erase_value: 255,
+            }),
+        },
+        MemoryRegion {
             name: "DTCM",
             kind: MemoryRegionKind::Ram,
             address: 0x20000000,

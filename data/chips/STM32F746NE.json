@@ -1343,6 +1343,17 @@
       }
     },
     {
+      "name": "OTP",
+      "kind": "flash",
+      "address": 150990848,
+      "size": 2048,
+      "settings": {
+        "erase_size": 0,
+        "write_size": 16,
+        "erase_value": 255
+      }
+    },
+    {
       "name": "DTCM",
       "kind": "ram",
       "address": 536870912,

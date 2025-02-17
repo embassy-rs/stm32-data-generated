@@ -67,12 +67,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                reset: bool,
-            }
-            let proxy = Cr { reset: self.reset() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cr {{ reset: {=bool:?} }}", self.reset())
         }
     }
 }

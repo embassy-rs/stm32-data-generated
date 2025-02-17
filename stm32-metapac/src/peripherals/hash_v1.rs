@@ -175,28 +175,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                init: bool,
-                dmae: bool,
-                datatype: u8,
-                mode: bool,
-                algo: bool,
-                nbw: u8,
-                dinne: bool,
-                lkey: bool,
-            }
-            let proxy = Cr {
-                init: self.init(),
-                dmae: self.dmae(),
-                datatype: self.datatype(),
-                mode: self.mode(),
-                algo: self.algo(),
-                nbw: self.nbw(),
-                dinne: self.dinne(),
-                lkey: self.lkey(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ init: {=bool:?}, dmae: {=bool:?}, datatype: {=u8:?}, mode: {=bool:?}, algo: {=bool:?}, nbw: {=u8:?}, dinne: {=bool:?}, lkey: {=bool:?} }}" , self . init () , self . dmae () , self . datatype () , self . mode () , self . algo () , self . nbw () , self . dinne () , self . lkey ())
         }
     }
     #[doc = "interrupt enable register."]
@@ -244,16 +223,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Imr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Imr {
-                dinie: bool,
-                dcie: bool,
-            }
-            let proxy = Imr {
-                dinie: self.dinie(),
-                dcie: self.dcie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Imr {{ dinie: {=bool:?}, dcie: {=bool:?} }}",
+                self.dinie(),
+                self.dcie()
+            )
         }
     }
     #[doc = "status register."]
@@ -325,20 +300,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                dinis: bool,
-                dcis: bool,
-                dmas: bool,
-                busy: bool,
-            }
-            let proxy = Sr {
-                dinis: self.dinis(),
-                dcis: self.dcis(),
-                dmas: self.dmas(),
-                busy: self.busy(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sr {{ dinis: {=bool:?}, dcis: {=bool:?}, dmas: {=bool:?}, busy: {=bool:?} }}",
+                self.dinis(),
+                self.dcis(),
+                self.dmas(),
+                self.busy()
+            )
         }
     }
     #[doc = "start register."]
@@ -386,16 +355,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Str {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Str {
-                nblw: u8,
-                dcal: bool,
-            }
-            let proxy = Str {
-                nblw: self.nblw(),
-                dcal: self.dcal(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Str {{ nblw: {=u8:?}, dcal: {=bool:?} }}", self.nblw(), self.dcal())
         }
     }
 }

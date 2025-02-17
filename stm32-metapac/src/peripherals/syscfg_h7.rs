@@ -187,16 +187,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cccr {
-                ncc: u8,
-                pcc: u8,
-            }
-            let proxy = Cccr {
-                ncc: self.ncc(),
-                pcc: self.pcc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cccr {{ ncc: {=u8:?}, pcc: {=u8:?} }}", self.ncc(), self.pcc())
         }
     }
     #[doc = "compensation cell control/status register"]
@@ -268,20 +259,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cccsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cccsr {
-                en: bool,
-                cs: bool,
-                rdy: bool,
-                hslv: bool,
-            }
-            let proxy = Cccsr {
-                en: self.en(),
-                cs: self.cs(),
-                rdy: self.rdy(),
-                hslv: self.hslv(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cccsr {{ en: {=bool:?}, cs: {=bool:?}, rdy: {=bool:?}, hslv: {=bool:?} }}",
+                self.en(),
+                self.cs(),
+                self.rdy(),
+                self.hslv()
+            )
         }
     }
     #[doc = "SYSCFG compensation cell value register"]
@@ -329,16 +314,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccvr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccvr {
-                ncv: u8,
-                pcv: u8,
-            }
-            let proxy = Ccvr {
-                ncv: self.ncv(),
-                pcv: self.pcv(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ccvr {{ ncv: {=u8:?}, pcv: {=u8:?} }}", self.ncv(), self.pcv())
         }
     }
     #[doc = "external interrupt configuration register 2"]
@@ -371,34 +347,24 @@ pub mod regs {
     impl core::fmt::Debug for Exticr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Exticr")
-                .field(
-                    "exti",
-                    &[
-                        self.exti(0usize),
-                        self.exti(1usize),
-                        self.exti(2usize),
-                        self.exti(3usize),
-                    ],
-                )
+                .field("exti[0]", &self.exti(0usize))
+                .field("exti[1]", &self.exti(1usize))
+                .field("exti[2]", &self.exti(2usize))
+                .field("exti[3]", &self.exti(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Exticr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Exticr {
-                exti: [u8; 4usize],
-            }
-            let proxy = Exticr {
-                exti: [
-                    self.exti(0usize),
-                    self.exti(1usize),
-                    self.exti(2usize),
-                    self.exti(3usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Exticr {{ exti[0]: {=u8:?}, exti[1]: {=u8:?}, exti[2]: {=u8:?}, exti[3]: {=u8:?} }}",
+                self.exti(0usize),
+                self.exti(1usize),
+                self.exti(2usize),
+                self.exti(3usize)
+            )
         }
     }
     #[doc = "SYSCFG package register"]
@@ -432,12 +398,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pkgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pkgr {
-                pkg: u8,
-            }
-            let proxy = Pkgr { pkg: self.pkg() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Pkgr {{ pkg: {=u8:?} }}", self.pkg())
         }
     }
     #[doc = "peripheral mode configuration register"]
@@ -641,42 +602,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pmcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pmcr {
-                i2c1fmp: bool,
-                i2c2fmp: bool,
-                i2c3fmp: bool,
-                i2c4fmp: bool,
-                pb6fmp: bool,
-                pb7fmp: bool,
-                pb8fmp: bool,
-                pb9fmp: bool,
-                booste: bool,
-                boostvddsel: bool,
-                eth_sel_phy: super::vals::EthSelPhy,
-                pa0so: bool,
-                pa1so: bool,
-                pc2so: bool,
-                pc3so: bool,
-            }
-            let proxy = Pmcr {
-                i2c1fmp: self.i2c1fmp(),
-                i2c2fmp: self.i2c2fmp(),
-                i2c3fmp: self.i2c3fmp(),
-                i2c4fmp: self.i2c4fmp(),
-                pb6fmp: self.pb6fmp(),
-                pb7fmp: self.pb7fmp(),
-                pb8fmp: self.pb8fmp(),
-                pb9fmp: self.pb9fmp(),
-                booste: self.booste(),
-                boostvddsel: self.boostvddsel(),
-                eth_sel_phy: self.eth_sel_phy(),
-                pa0so: self.pa0so(),
-                pa1so: self.pa1so(),
-                pc2so: self.pc2so(),
-                pc3so: self.pc3so(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Pmcr {{ i2c1fmp: {=bool:?}, i2c2fmp: {=bool:?}, i2c3fmp: {=bool:?}, i2c4fmp: {=bool:?}, pb6fmp: {=bool:?}, pb7fmp: {=bool:?}, pb8fmp: {=bool:?}, pb9fmp: {=bool:?}, booste: {=bool:?}, boostvddsel: {=bool:?}, eth_sel_phy: {:?}, pa0so: {=bool:?}, pa1so: {=bool:?}, pc2so: {=bool:?}, pc3so: {=bool:?} }}" , self . i2c1fmp () , self . i2c2fmp () , self . i2c3fmp () , self . i2c4fmp () , self . pb6fmp () , self . pb7fmp () , self . pb8fmp () , self . pb9fmp () , self . booste () , self . boostvddsel () , self . eth_sel_phy () , self . pa0so () , self . pa1so () , self . pc2so () , self . pc3so ())
         }
     }
     #[doc = "SYSCFG user register 0"]
@@ -724,16 +650,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ur0 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ur0 {
-                bks: bool,
-                rdp: u8,
-            }
-            let proxy = Ur0 {
-                bks: self.bks(),
-                rdp: self.rdp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ur0 {{ bks: {=bool:?}, rdp: {=u8:?} }}", self.bks(), self.rdp())
         }
     }
     #[doc = "SYSCFG user register 10"]
@@ -781,16 +698,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ur10 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ur10 {
-                pa_end_2: u16,
-                sa_beg_2: u16,
-            }
-            let proxy = Ur10 {
-                pa_end_2: self.pa_end_2(),
-                sa_beg_2: self.sa_beg_2(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ur10 {{ pa_end_2: {=u16:?}, sa_beg_2: {=u16:?} }}",
+                self.pa_end_2(),
+                self.sa_beg_2()
+            )
         }
     }
     #[doc = "SYSCFG user register 11"]
@@ -838,16 +751,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ur11 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ur11 {
-                sa_end_2: u16,
-                iwdg1m: bool,
-            }
-            let proxy = Ur11 {
-                sa_end_2: self.sa_end_2(),
-                iwdg1m: self.iwdg1m(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ur11 {{ sa_end_2: {=u16:?}, iwdg1m: {=bool:?} }}",
+                self.sa_end_2(),
+                self.iwdg1m()
+            )
         }
     }
     #[doc = "SYSCFG user register 12"]
@@ -881,12 +790,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ur12 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ur12 {
-                secure: bool,
-            }
-            let proxy = Ur12 { secure: self.secure() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ur12 {{ secure: {=bool:?} }}", self.secure())
         }
     }
     #[doc = "SYSCFG user register 13"]
@@ -934,16 +838,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ur13 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ur13 {
-                sdrs: u8,
-                d1sbrst: bool,
-            }
-            let proxy = Ur13 {
-                sdrs: self.sdrs(),
-                d1sbrst: self.d1sbrst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ur13 {{ sdrs: {=u8:?}, d1sbrst: {=bool:?} }}",
+                self.sdrs(),
+                self.d1sbrst()
+            )
         }
     }
     #[doc = "SYSCFG user register 14"]
@@ -977,14 +877,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ur14 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ur14 {
-                d1stprst: bool,
-            }
-            let proxy = Ur14 {
-                d1stprst: self.d1stprst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ur14 {{ d1stprst: {=bool:?} }}", self.d1stprst())
         }
     }
     #[doc = "SYSCFG user register 15"]
@@ -1018,14 +911,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ur15 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ur15 {
-                fziwdgstb: bool,
-            }
-            let proxy = Ur15 {
-                fziwdgstb: self.fziwdgstb(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ur15 {{ fziwdgstb: {=bool:?} }}", self.fziwdgstb())
         }
     }
     #[doc = "SYSCFG user register 16"]
@@ -1073,16 +959,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ur16 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ur16 {
-                fziwdgstp: bool,
-                pkp: bool,
-            }
-            let proxy = Ur16 {
-                fziwdgstp: self.fziwdgstp(),
-                pkp: self.pkp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ur16 {{ fziwdgstp: {=bool:?}, pkp: {=bool:?} }}",
+                self.fziwdgstp(),
+                self.pkp()
+            )
         }
     }
     #[doc = "SYSCFG user register 17"]
@@ -1130,16 +1012,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ur17 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ur17 {
-                io_hslv: bool,
-                tcm_axi_shared_cfg: super::vals::ItcmAxiRamSize,
-            }
-            let proxy = Ur17 {
-                io_hslv: self.io_hslv(),
-                tcm_axi_shared_cfg: self.tcm_axi_shared_cfg(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ur17 {{ io_hslv: {=bool:?}, tcm_axi_shared_cfg: {:?} }}",
+                self.io_hslv(),
+                self.tcm_axi_shared_cfg()
+            )
         }
     }
     #[doc = "SYSCFG user register 18"]
@@ -1175,14 +1053,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ur18 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ur18 {
-                cpu_freq_boost: bool,
-            }
-            let proxy = Ur18 {
-                cpu_freq_boost: self.cpu_freq_boost(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ur18 {{ cpu_freq_boost: {=bool:?} }}", self.cpu_freq_boost())
         }
     }
     #[doc = "SYSCFG user register 2"]
@@ -1230,16 +1101,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ur2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ur2 {
-                borh: u8,
-                boot_add0: u16,
-            }
-            let proxy = Ur2 {
-                borh: self.borh(),
-                boot_add0: self.boot_add0(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ur2 {{ borh: {=u8:?}, boot_add0: {=u16:?} }}",
+                self.borh(),
+                self.boot_add0()
+            )
         }
     }
     #[doc = "SYSCFG user register 3"]
@@ -1273,14 +1140,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ur3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ur3 {
-                boot_add1: u16,
-            }
-            let proxy = Ur3 {
-                boot_add1: self.boot_add1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ur3 {{ boot_add1: {=u16:?} }}", self.boot_add1())
         }
     }
     #[doc = "SYSCFG user register 4"]
@@ -1314,14 +1174,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ur4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ur4 {
-                mepad_1: bool,
-            }
-            let proxy = Ur4 {
-                mepad_1: self.mepad_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ur4 {{ mepad_1: {=bool:?} }}", self.mepad_1())
         }
     }
     #[doc = "SYSCFG user register 5"]
@@ -1369,16 +1222,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ur5 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ur5 {
-                mesad_1: bool,
-                wrpn_1: u8,
-            }
-            let proxy = Ur5 {
-                mesad_1: self.mesad_1(),
-                wrpn_1: self.wrpn_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ur5 {{ mesad_1: {=bool:?}, wrpn_1: {=u8:?} }}",
+                self.mesad_1(),
+                self.wrpn_1()
+            )
         }
     }
     #[doc = "SYSCFG user register 6"]
@@ -1426,16 +1275,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ur6 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ur6 {
-                pa_beg_1: u16,
-                pa_end_1: u16,
-            }
-            let proxy = Ur6 {
-                pa_beg_1: self.pa_beg_1(),
-                pa_end_1: self.pa_end_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ur6 {{ pa_beg_1: {=u16:?}, pa_end_1: {=u16:?} }}",
+                self.pa_beg_1(),
+                self.pa_end_1()
+            )
         }
     }
     #[doc = "SYSCFG user register 7"]
@@ -1483,16 +1328,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ur7 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ur7 {
-                sa_beg_1: u16,
-                sa_end_1: u16,
-            }
-            let proxy = Ur7 {
-                sa_beg_1: self.sa_beg_1(),
-                sa_end_1: self.sa_end_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ur7 {{ sa_beg_1: {=u16:?}, sa_end_1: {=u16:?} }}",
+                self.sa_beg_1(),
+                self.sa_end_1()
+            )
         }
     }
     #[doc = "SYSCFG user register 8"]
@@ -1540,16 +1381,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ur8 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ur8 {
-                mepad_2: bool,
-                mesad_2: bool,
-            }
-            let proxy = Ur8 {
-                mepad_2: self.mepad_2(),
-                mesad_2: self.mesad_2(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ur8 {{ mepad_2: {=bool:?}, mesad_2: {=bool:?} }}",
+                self.mepad_2(),
+                self.mesad_2()
+            )
         }
     }
     #[doc = "SYSCFG user register 9"]
@@ -1597,16 +1434,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ur9 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ur9 {
-                wrpn_2: u8,
-                pa_beg_2: u16,
-            }
-            let proxy = Ur9 {
-                wrpn_2: self.wrpn_2(),
-                pa_beg_2: self.pa_beg_2(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ur9 {{ wrpn_2: {=u8:?}, pa_beg_2: {=u16:?} }}",
+                self.wrpn_2(),
+                self.pa_beg_2()
+            )
         }
     }
 }

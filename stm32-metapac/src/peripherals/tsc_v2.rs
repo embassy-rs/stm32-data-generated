@@ -237,36 +237,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                tsce: bool,
-                start: bool,
-                am: bool,
-                syncpol: bool,
-                iodef: bool,
-                mcv: u8,
-                pgpsc: u8,
-                sspsc: bool,
-                sse: bool,
-                ssd: u8,
-                ctpl: u8,
-                ctph: u8,
-            }
-            let proxy = Cr {
-                tsce: self.tsce(),
-                start: self.start(),
-                am: self.am(),
-                syncpol: self.syncpol(),
-                iodef: self.iodef(),
-                mcv: self.mcv(),
-                pgpsc: self.pgpsc(),
-                sspsc: self.sspsc(),
-                sse: self.sse(),
-                ssd: self.ssd(),
-                ctpl: self.ctpl(),
-                ctph: self.ctph(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ tsce: {=bool:?}, start: {=bool:?}, am: {=bool:?}, syncpol: {=bool:?}, iodef: {=bool:?}, mcv: {=u8:?}, pgpsc: {=u8:?}, sspsc: {=bool:?}, sse: {=bool:?}, ssd: {=u8:?}, ctpl: {=u8:?}, ctph: {=u8:?} }}" , self . tsce () , self . start () , self . am () , self . syncpol () , self . iodef () , self . mcv () , self . pgpsc () , self . sspsc () , self . sse () , self . ssd () , self . ctpl () , self . ctph ())
         }
     }
     #[doc = "interrupt clear register."]
@@ -314,16 +285,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Icr {
-                eoaic: bool,
-                mceic: bool,
-            }
-            let proxy = Icr {
-                eoaic: self.eoaic(),
-                mceic: self.mceic(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Icr {{ eoaic: {=bool:?}, mceic: {=bool:?} }}",
+                self.eoaic(),
+                self.mceic()
+            )
         }
     }
     #[doc = "interrupt enable register."]
@@ -371,16 +338,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ier {
-                eoaie: bool,
-                mceie: bool,
-            }
-            let proxy = Ier {
-                eoaie: self.eoaie(),
-                mceie: self.mceie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ier {{ eoaie: {=bool:?}, mceie: {=bool:?} }}",
+                self.eoaie(),
+                self.mceie()
+            )
         }
     }
     #[doc = "I/O analog switch control register."]
@@ -740,68 +703,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ioascr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ioascr {
-                g1_io1: bool,
-                g1_io2: bool,
-                g1_io3: bool,
-                g1_io4: bool,
-                g2_io1: bool,
-                g2_io2: bool,
-                g2_io3: bool,
-                g2_io4: bool,
-                g3_io1: bool,
-                g3_io2: bool,
-                g3_io3: bool,
-                g3_io4: bool,
-                g4_io1: bool,
-                g4_io2: bool,
-                g4_io3: bool,
-                g4_io4: bool,
-                g5_io1: bool,
-                g5_io2: bool,
-                g5_io3: bool,
-                g5_io4: bool,
-                g6_io1: bool,
-                g6_io2: bool,
-                g6_io3: bool,
-                g6_io4: bool,
-                g7_io1: bool,
-                g7_io2: bool,
-                g7_io3: bool,
-                g7_io4: bool,
-            }
-            let proxy = Ioascr {
-                g1_io1: self.g1_io1(),
-                g1_io2: self.g1_io2(),
-                g1_io3: self.g1_io3(),
-                g1_io4: self.g1_io4(),
-                g2_io1: self.g2_io1(),
-                g2_io2: self.g2_io2(),
-                g2_io3: self.g2_io3(),
-                g2_io4: self.g2_io4(),
-                g3_io1: self.g3_io1(),
-                g3_io2: self.g3_io2(),
-                g3_io3: self.g3_io3(),
-                g3_io4: self.g3_io4(),
-                g4_io1: self.g4_io1(),
-                g4_io2: self.g4_io2(),
-                g4_io3: self.g4_io3(),
-                g4_io4: self.g4_io4(),
-                g5_io1: self.g5_io1(),
-                g5_io2: self.g5_io2(),
-                g5_io3: self.g5_io3(),
-                g5_io4: self.g5_io4(),
-                g6_io1: self.g6_io1(),
-                g6_io2: self.g6_io2(),
-                g6_io3: self.g6_io3(),
-                g6_io4: self.g6_io4(),
-                g7_io1: self.g7_io1(),
-                g7_io2: self.g7_io2(),
-                g7_io3: self.g7_io3(),
-                g7_io4: self.g7_io4(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ioascr {{ g1_io1: {=bool:?}, g1_io2: {=bool:?}, g1_io3: {=bool:?}, g1_io4: {=bool:?}, g2_io1: {=bool:?}, g2_io2: {=bool:?}, g2_io3: {=bool:?}, g2_io4: {=bool:?}, g3_io1: {=bool:?}, g3_io2: {=bool:?}, g3_io3: {=bool:?}, g3_io4: {=bool:?}, g4_io1: {=bool:?}, g4_io2: {=bool:?}, g4_io3: {=bool:?}, g4_io4: {=bool:?}, g5_io1: {=bool:?}, g5_io2: {=bool:?}, g5_io3: {=bool:?}, g5_io4: {=bool:?}, g6_io1: {=bool:?}, g6_io2: {=bool:?}, g6_io3: {=bool:?}, g6_io4: {=bool:?}, g7_io1: {=bool:?}, g7_io2: {=bool:?}, g7_io3: {=bool:?}, g7_io4: {=bool:?} }}" , self . g1_io1 () , self . g1_io2 () , self . g1_io3 () , self . g1_io4 () , self . g2_io1 () , self . g2_io2 () , self . g2_io3 () , self . g2_io4 () , self . g3_io1 () , self . g3_io2 () , self . g3_io3 () , self . g3_io4 () , self . g4_io1 () , self . g4_io2 () , self . g4_io3 () , self . g4_io4 () , self . g5_io1 () , self . g5_io2 () , self . g5_io3 () , self . g5_io4 () , self . g6_io1 () , self . g6_io2 () , self . g6_io3 () , self . g6_io4 () , self . g7_io1 () , self . g7_io2 () , self . g7_io3 () , self . g7_io4 ())
         }
     }
     #[doc = "I/O channel control register."]
@@ -1161,68 +1063,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ioccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ioccr {
-                g1_io1: bool,
-                g1_io2: bool,
-                g1_io3: bool,
-                g1_io4: bool,
-                g2_io1: bool,
-                g2_io2: bool,
-                g2_io3: bool,
-                g2_io4: bool,
-                g3_io1: bool,
-                g3_io2: bool,
-                g3_io3: bool,
-                g3_io4: bool,
-                g4_io1: bool,
-                g4_io2: bool,
-                g4_io3: bool,
-                g4_io4: bool,
-                g5_io1: bool,
-                g5_io2: bool,
-                g5_io3: bool,
-                g5_io4: bool,
-                g6_io1: bool,
-                g6_io2: bool,
-                g6_io3: bool,
-                g6_io4: bool,
-                g7_io1: bool,
-                g7_io2: bool,
-                g7_io3: bool,
-                g7_io4: bool,
-            }
-            let proxy = Ioccr {
-                g1_io1: self.g1_io1(),
-                g1_io2: self.g1_io2(),
-                g1_io3: self.g1_io3(),
-                g1_io4: self.g1_io4(),
-                g2_io1: self.g2_io1(),
-                g2_io2: self.g2_io2(),
-                g2_io3: self.g2_io3(),
-                g2_io4: self.g2_io4(),
-                g3_io1: self.g3_io1(),
-                g3_io2: self.g3_io2(),
-                g3_io3: self.g3_io3(),
-                g3_io4: self.g3_io4(),
-                g4_io1: self.g4_io1(),
-                g4_io2: self.g4_io2(),
-                g4_io3: self.g4_io3(),
-                g4_io4: self.g4_io4(),
-                g5_io1: self.g5_io1(),
-                g5_io2: self.g5_io2(),
-                g5_io3: self.g5_io3(),
-                g5_io4: self.g5_io4(),
-                g6_io1: self.g6_io1(),
-                g6_io2: self.g6_io2(),
-                g6_io3: self.g6_io3(),
-                g6_io4: self.g6_io4(),
-                g7_io1: self.g7_io1(),
-                g7_io2: self.g7_io2(),
-                g7_io3: self.g7_io3(),
-                g7_io4: self.g7_io4(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ioccr {{ g1_io1: {=bool:?}, g1_io2: {=bool:?}, g1_io3: {=bool:?}, g1_io4: {=bool:?}, g2_io1: {=bool:?}, g2_io2: {=bool:?}, g2_io3: {=bool:?}, g2_io4: {=bool:?}, g3_io1: {=bool:?}, g3_io2: {=bool:?}, g3_io3: {=bool:?}, g3_io4: {=bool:?}, g4_io1: {=bool:?}, g4_io2: {=bool:?}, g4_io3: {=bool:?}, g4_io4: {=bool:?}, g5_io1: {=bool:?}, g5_io2: {=bool:?}, g5_io3: {=bool:?}, g5_io4: {=bool:?}, g6_io1: {=bool:?}, g6_io2: {=bool:?}, g6_io3: {=bool:?}, g6_io4: {=bool:?}, g7_io1: {=bool:?}, g7_io2: {=bool:?}, g7_io3: {=bool:?}, g7_io4: {=bool:?} }}" , self . g1_io1 () , self . g1_io2 () , self . g1_io3 () , self . g1_io4 () , self . g2_io1 () , self . g2_io2 () , self . g2_io3 () , self . g2_io4 () , self . g3_io1 () , self . g3_io2 () , self . g3_io3 () , self . g3_io4 () , self . g4_io1 () , self . g4_io2 () , self . g4_io3 () , self . g4_io4 () , self . g5_io1 () , self . g5_io2 () , self . g5_io3 () , self . g5_io4 () , self . g6_io1 () , self . g6_io2 () , self . g6_io3 () , self . g6_io4 () , self . g7_io1 () , self . g7_io2 () , self . g7_io3 () , self . g7_io4 ())
         }
     }
     #[doc = "I/O group x counter register."]
@@ -1256,12 +1097,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Iogcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Iogcr {
-                cnt: u16,
-            }
-            let proxy = Iogcr { cnt: self.cnt() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Iogcr {{ cnt: {=u16:?} }}", self.cnt())
         }
     }
     #[doc = "I/O group control status register."]
@@ -1453,40 +1289,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Iogcsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Iogcsr {
-                g1e: bool,
-                g2e: bool,
-                g3e: bool,
-                g4e: bool,
-                g5e: bool,
-                g6e: bool,
-                g7e: bool,
-                g1s: bool,
-                g2s: bool,
-                g3s: bool,
-                g4s: bool,
-                g5s: bool,
-                g6s: bool,
-                g7s: bool,
-            }
-            let proxy = Iogcsr {
-                g1e: self.g1e(),
-                g2e: self.g2e(),
-                g3e: self.g3e(),
-                g4e: self.g4e(),
-                g5e: self.g5e(),
-                g6e: self.g6e(),
-                g7e: self.g7e(),
-                g1s: self.g1s(),
-                g2s: self.g2s(),
-                g3s: self.g3s(),
-                g4s: self.g4s(),
-                g5s: self.g5s(),
-                g6s: self.g6s(),
-                g7s: self.g7s(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Iogcsr {{ g1e: {=bool:?}, g2e: {=bool:?}, g3e: {=bool:?}, g4e: {=bool:?}, g5e: {=bool:?}, g6e: {=bool:?}, g7e: {=bool:?}, g1s: {=bool:?}, g2s: {=bool:?}, g3s: {=bool:?}, g4s: {=bool:?}, g5s: {=bool:?}, g6s: {=bool:?}, g7s: {=bool:?} }}" , self . g1e () , self . g2e () , self . g3e () , self . g4e () , self . g5e () , self . g6e () , self . g7e () , self . g1s () , self . g2s () , self . g3s () , self . g4s () , self . g5s () , self . g6s () , self . g7s ())
         }
     }
     #[doc = "I/O hysteresis control register."]
@@ -1846,68 +1649,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Iohcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Iohcr {
-                g1_io1: bool,
-                g1_io2: bool,
-                g1_io3: bool,
-                g1_io4: bool,
-                g2_io1: bool,
-                g2_io2: bool,
-                g2_io3: bool,
-                g2_io4: bool,
-                g3_io1: bool,
-                g3_io2: bool,
-                g3_io3: bool,
-                g3_io4: bool,
-                g4_io1: bool,
-                g4_io2: bool,
-                g4_io3: bool,
-                g4_io4: bool,
-                g5_io1: bool,
-                g5_io2: bool,
-                g5_io3: bool,
-                g5_io4: bool,
-                g6_io1: bool,
-                g6_io2: bool,
-                g6_io3: bool,
-                g6_io4: bool,
-                g7_io1: bool,
-                g7_io2: bool,
-                g7_io3: bool,
-                g7_io4: bool,
-            }
-            let proxy = Iohcr {
-                g1_io1: self.g1_io1(),
-                g1_io2: self.g1_io2(),
-                g1_io3: self.g1_io3(),
-                g1_io4: self.g1_io4(),
-                g2_io1: self.g2_io1(),
-                g2_io2: self.g2_io2(),
-                g2_io3: self.g2_io3(),
-                g2_io4: self.g2_io4(),
-                g3_io1: self.g3_io1(),
-                g3_io2: self.g3_io2(),
-                g3_io3: self.g3_io3(),
-                g3_io4: self.g3_io4(),
-                g4_io1: self.g4_io1(),
-                g4_io2: self.g4_io2(),
-                g4_io3: self.g4_io3(),
-                g4_io4: self.g4_io4(),
-                g5_io1: self.g5_io1(),
-                g5_io2: self.g5_io2(),
-                g5_io3: self.g5_io3(),
-                g5_io4: self.g5_io4(),
-                g6_io1: self.g6_io1(),
-                g6_io2: self.g6_io2(),
-                g6_io3: self.g6_io3(),
-                g6_io4: self.g6_io4(),
-                g7_io1: self.g7_io1(),
-                g7_io2: self.g7_io2(),
-                g7_io3: self.g7_io3(),
-                g7_io4: self.g7_io4(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Iohcr {{ g1_io1: {=bool:?}, g1_io2: {=bool:?}, g1_io3: {=bool:?}, g1_io4: {=bool:?}, g2_io1: {=bool:?}, g2_io2: {=bool:?}, g2_io3: {=bool:?}, g2_io4: {=bool:?}, g3_io1: {=bool:?}, g3_io2: {=bool:?}, g3_io3: {=bool:?}, g3_io4: {=bool:?}, g4_io1: {=bool:?}, g4_io2: {=bool:?}, g4_io3: {=bool:?}, g4_io4: {=bool:?}, g5_io1: {=bool:?}, g5_io2: {=bool:?}, g5_io3: {=bool:?}, g5_io4: {=bool:?}, g6_io1: {=bool:?}, g6_io2: {=bool:?}, g6_io3: {=bool:?}, g6_io4: {=bool:?}, g7_io1: {=bool:?}, g7_io2: {=bool:?}, g7_io3: {=bool:?}, g7_io4: {=bool:?} }}" , self . g1_io1 () , self . g1_io2 () , self . g1_io3 () , self . g1_io4 () , self . g2_io1 () , self . g2_io2 () , self . g2_io3 () , self . g2_io4 () , self . g3_io1 () , self . g3_io2 () , self . g3_io3 () , self . g3_io4 () , self . g4_io1 () , self . g4_io2 () , self . g4_io3 () , self . g4_io4 () , self . g5_io1 () , self . g5_io2 () , self . g5_io3 () , self . g5_io4 () , self . g6_io1 () , self . g6_io2 () , self . g6_io3 () , self . g6_io4 () , self . g7_io1 () , self . g7_io2 () , self . g7_io3 () , self . g7_io4 ())
         }
     }
     #[doc = "I/O sampling control register."]
@@ -2267,68 +2009,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ioscr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ioscr {
-                g1_io1: bool,
-                g1_io2: bool,
-                g1_io3: bool,
-                g1_io4: bool,
-                g2_io1: bool,
-                g2_io2: bool,
-                g2_io3: bool,
-                g2_io4: bool,
-                g3_io1: bool,
-                g3_io2: bool,
-                g3_io3: bool,
-                g3_io4: bool,
-                g4_io1: bool,
-                g4_io2: bool,
-                g4_io3: bool,
-                g4_io4: bool,
-                g5_io1: bool,
-                g5_io2: bool,
-                g5_io3: bool,
-                g5_io4: bool,
-                g6_io1: bool,
-                g6_io2: bool,
-                g6_io3: bool,
-                g6_io4: bool,
-                g7_io1: bool,
-                g7_io2: bool,
-                g7_io3: bool,
-                g7_io4: bool,
-            }
-            let proxy = Ioscr {
-                g1_io1: self.g1_io1(),
-                g1_io2: self.g1_io2(),
-                g1_io3: self.g1_io3(),
-                g1_io4: self.g1_io4(),
-                g2_io1: self.g2_io1(),
-                g2_io2: self.g2_io2(),
-                g2_io3: self.g2_io3(),
-                g2_io4: self.g2_io4(),
-                g3_io1: self.g3_io1(),
-                g3_io2: self.g3_io2(),
-                g3_io3: self.g3_io3(),
-                g3_io4: self.g3_io4(),
-                g4_io1: self.g4_io1(),
-                g4_io2: self.g4_io2(),
-                g4_io3: self.g4_io3(),
-                g4_io4: self.g4_io4(),
-                g5_io1: self.g5_io1(),
-                g5_io2: self.g5_io2(),
-                g5_io3: self.g5_io3(),
-                g5_io4: self.g5_io4(),
-                g6_io1: self.g6_io1(),
-                g6_io2: self.g6_io2(),
-                g6_io3: self.g6_io3(),
-                g6_io4: self.g6_io4(),
-                g7_io1: self.g7_io1(),
-                g7_io2: self.g7_io2(),
-                g7_io3: self.g7_io3(),
-                g7_io4: self.g7_io4(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ioscr {{ g1_io1: {=bool:?}, g1_io2: {=bool:?}, g1_io3: {=bool:?}, g1_io4: {=bool:?}, g2_io1: {=bool:?}, g2_io2: {=bool:?}, g2_io3: {=bool:?}, g2_io4: {=bool:?}, g3_io1: {=bool:?}, g3_io2: {=bool:?}, g3_io3: {=bool:?}, g3_io4: {=bool:?}, g4_io1: {=bool:?}, g4_io2: {=bool:?}, g4_io3: {=bool:?}, g4_io4: {=bool:?}, g5_io1: {=bool:?}, g5_io2: {=bool:?}, g5_io3: {=bool:?}, g5_io4: {=bool:?}, g6_io1: {=bool:?}, g6_io2: {=bool:?}, g6_io3: {=bool:?}, g6_io4: {=bool:?}, g7_io1: {=bool:?}, g7_io2: {=bool:?}, g7_io3: {=bool:?}, g7_io4: {=bool:?} }}" , self . g1_io1 () , self . g1_io2 () , self . g1_io3 () , self . g1_io4 () , self . g2_io1 () , self . g2_io2 () , self . g2_io3 () , self . g2_io4 () , self . g3_io1 () , self . g3_io2 () , self . g3_io3 () , self . g3_io4 () , self . g4_io1 () , self . g4_io2 () , self . g4_io3 () , self . g4_io4 () , self . g5_io1 () , self . g5_io2 () , self . g5_io3 () , self . g5_io4 () , self . g6_io1 () , self . g6_io2 () , self . g6_io3 () , self . g6_io4 () , self . g7_io1 () , self . g7_io2 () , self . g7_io3 () , self . g7_io4 ())
         }
     }
     #[doc = "interrupt status register."]
@@ -2376,16 +2057,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Isr {
-                eoaf: bool,
-                mcef: bool,
-            }
-            let proxy = Isr {
-                eoaf: self.eoaf(),
-                mcef: self.mcef(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Isr {{ eoaf: {=bool:?}, mcef: {=bool:?} }}",
+                self.eoaf(),
+                self.mcef()
+            )
         }
     }
 }

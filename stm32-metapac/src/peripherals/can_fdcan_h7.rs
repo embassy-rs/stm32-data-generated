@@ -518,40 +518,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cccr {
-                init: bool,
-                cce: bool,
-                asm: bool,
-                csa: bool,
-                csr: bool,
-                mon: bool,
-                dar: bool,
-                test: bool,
-                fdoe: bool,
-                bse: bool,
-                pxhd: bool,
-                efbi: bool,
-                txp: bool,
-                niso: bool,
-            }
-            let proxy = Cccr {
-                init: self.init(),
-                cce: self.cce(),
-                asm: self.asm(),
-                csa: self.csa(),
-                csr: self.csr(),
-                mon: self.mon(),
-                dar: self.dar(),
-                test: self.test(),
-                fdoe: self.fdoe(),
-                bse: self.bse(),
-                pxhd: self.pxhd(),
-                efbi: self.efbi(),
-                txp: self.txp(),
-                niso: self.niso(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cccr {{ init: {=bool:?}, cce: {=bool:?}, asm: {=bool:?}, csa: {=bool:?}, csr: {=bool:?}, mon: {=bool:?}, dar: {=bool:?}, test: {=bool:?}, fdoe: {=bool:?}, bse: {=bool:?}, pxhd: {=bool:?}, efbi: {=bool:?}, txp: {=bool:?}, niso: {=bool:?} }}" , self . init () , self . cce () , self . asm () , self . csa () , self . csr () , self . mon () , self . dar () , self . test () , self . fdoe () , self . bse () , self . pxhd () , self . efbi () , self . txp () , self . niso ())
         }
     }
     #[doc = "FDCAN Core Release Register"]
@@ -647,24 +614,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Crel {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Crel {
-                day: u8,
-                mon: u8,
-                year: u8,
-                substep: u8,
-                step: u8,
-                rel: u8,
-            }
-            let proxy = Crel {
-                day: self.day(),
-                mon: self.mon(),
-                year: self.year(),
-                substep: self.substep(),
-                step: self.step(),
-                rel: self.rel(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Crel {{ day: {=u8:?}, mon: {=u8:?}, year: {=u8:?}, substep: {=u8:?}, step: {=u8:?}, rel: {=u8:?} }}",
+                self.day(),
+                self.mon(),
+                self.year(),
+                self.substep(),
+                self.step(),
+                self.rel()
+            )
         }
     }
     #[doc = "FDCAN Data Bit Timing and Prescaler Register"]
@@ -748,22 +707,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dbtp {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dbtp {
-                dsjw: u8,
-                dtseg2: u8,
-                dtseg1: u8,
-                dbrp: u8,
-                tdc: bool,
-            }
-            let proxy = Dbtp {
-                dsjw: self.dsjw(),
-                dtseg2: self.dtseg2(),
-                dtseg1: self.dtseg1(),
-                dbrp: self.dbrp(),
-                tdc: self.tdc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dbtp {{ dsjw: {=u8:?}, dtseg2: {=u8:?}, dtseg1: {=u8:?}, dbrp: {=u8:?}, tdc: {=bool:?} }}",
+                self.dsjw(),
+                self.dtseg2(),
+                self.dtseg1(),
+                self.dbrp(),
+                self.tdc()
+            )
         }
     }
     #[doc = "FDCAN Error Counter Register"]
@@ -835,20 +787,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ecr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ecr {
-                tec: u8,
-                rec: u8,
-                rp: bool,
-                cel: u8,
-            }
-            let proxy = Ecr {
-                tec: self.tec(),
-                rec: self.rec(),
-                rp: self.rp(),
-                cel: self.cel(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ecr {{ tec: {=u8:?}, rec: {=u8:?}, rp: {=bool:?}, cel: {=u8:?} }}",
+                self.tec(),
+                self.rec(),
+                self.rp(),
+                self.cel()
+            )
         }
     }
     #[doc = "FDCAN Core Release Register"]
@@ -882,12 +828,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Endn {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Endn {
-                etv: u32,
-            }
-            let proxy = Endn { etv: self.etv() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Endn {{ etv: {=u32:?} }}", self.etv())
         }
     }
     #[doc = "FDCAN Global Filter Configuration Register"]
@@ -959,20 +900,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gfc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Gfc {
-                rrfe: bool,
-                rrfs: bool,
-                anfe: u8,
-                anfs: u8,
-            }
-            let proxy = Gfc {
-                rrfe: self.rrfe(),
-                rrfs: self.rrfs(),
-                anfe: self.anfe(),
-                anfs: self.anfs(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Gfc {{ rrfe: {=bool:?}, rrfs: {=bool:?}, anfe: {=u8:?}, anfs: {=u8:?} }}",
+                self.rrfe(),
+                self.rrfs(),
+                self.anfe(),
+                self.anfs()
+            )
         }
     }
     #[doc = "FDCAN High Priority Message Status Register"]
@@ -1044,20 +979,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hpms {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hpms {
-                bidx: u8,
-                msi: u8,
-                fidx: u8,
-                flst: bool,
-            }
-            let proxy = Hpms {
-                bidx: self.bidx(),
-                msi: self.msi(),
-                fidx: self.fidx(),
-                flst: self.flst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Hpms {{ bidx: {=u8:?}, msi: {=u8:?}, fidx: {=u8:?}, flst: {=bool:?} }}",
+                self.bidx(),
+                self.msi(),
+                self.fidx(),
+                self.flst()
+            )
         }
     }
     #[doc = "FDCAN Interrupt Enable Register"]
@@ -1377,10 +1306,14 @@ pub mod regs {
     impl core::fmt::Debug for Ie {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ie")
-                .field("rfne", &[self.rfne(0usize), self.rfne(1usize)])
-                .field("rfwe", &[self.rfwe(0usize), self.rfwe(1usize)])
-                .field("rffe", &[self.rffe(0usize), self.rffe(1usize)])
-                .field("rfle", &[self.rfle(0usize), self.rfle(1usize)])
+                .field("rfne[0]", &self.rfne(0usize))
+                .field("rfne[1]", &self.rfne(1usize))
+                .field("rfwe[0]", &self.rfwe(0usize))
+                .field("rfwe[1]", &self.rfwe(1usize))
+                .field("rffe[0]", &self.rffe(0usize))
+                .field("rffe[1]", &self.rffe(1usize))
+                .field("rfle[0]", &self.rfle(0usize))
+                .field("rfle[1]", &self.rfle(1usize))
                 .field("hpme", &self.hpme())
                 .field("tce", &self.tce())
                 .field("tcfe", &self.tcfe())
@@ -1409,64 +1342,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ie {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ie {
-                rfne: [bool; 2usize],
-                rfwe: [bool; 2usize],
-                rffe: [bool; 2usize],
-                rfle: [bool; 2usize],
-                hpme: bool,
-                tce: bool,
-                tcfe: bool,
-                tefe: bool,
-                tefne: bool,
-                tefwe: bool,
-                teffe: bool,
-                tefle: bool,
-                tswe: bool,
-                mrafe: bool,
-                tooe: bool,
-                drxe: bool,
-                bece: bool,
-                beue: bool,
-                eloe: bool,
-                epe: bool,
-                ewe: bool,
-                boe: bool,
-                wdie: bool,
-                peae: bool,
-                pede: bool,
-                arae: bool,
-            }
-            let proxy = Ie {
-                rfne: [self.rfne(0usize), self.rfne(1usize)],
-                rfwe: [self.rfwe(0usize), self.rfwe(1usize)],
-                rffe: [self.rffe(0usize), self.rffe(1usize)],
-                rfle: [self.rfle(0usize), self.rfle(1usize)],
-                hpme: self.hpme(),
-                tce: self.tce(),
-                tcfe: self.tcfe(),
-                tefe: self.tefe(),
-                tefne: self.tefne(),
-                tefwe: self.tefwe(),
-                teffe: self.teffe(),
-                tefle: self.tefle(),
-                tswe: self.tswe(),
-                mrafe: self.mrafe(),
-                tooe: self.tooe(),
-                drxe: self.drxe(),
-                bece: self.bece(),
-                beue: self.beue(),
-                eloe: self.eloe(),
-                epe: self.epe(),
-                ewe: self.ewe(),
-                boe: self.boe(),
-                wdie: self.wdie(),
-                peae: self.peae(),
-                pede: self.pede(),
-                arae: self.arae(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ie {{ rfne[0]: {=bool:?}, rfne[1]: {=bool:?}, rfwe[0]: {=bool:?}, rfwe[1]: {=bool:?}, rffe[0]: {=bool:?}, rffe[1]: {=bool:?}, rfle[0]: {=bool:?}, rfle[1]: {=bool:?}, hpme: {=bool:?}, tce: {=bool:?}, tcfe: {=bool:?}, tefe: {=bool:?}, tefne: {=bool:?}, tefwe: {=bool:?}, teffe: {=bool:?}, tefle: {=bool:?}, tswe: {=bool:?}, mrafe: {=bool:?}, tooe: {=bool:?}, drxe: {=bool:?}, bece: {=bool:?}, beue: {=bool:?}, eloe: {=bool:?}, epe: {=bool:?}, ewe: {=bool:?}, boe: {=bool:?}, wdie: {=bool:?}, peae: {=bool:?}, pede: {=bool:?}, arae: {=bool:?} }}" , self . rfne (0usize) , self . rfne (1usize) , self . rfwe (0usize) , self . rfwe (1usize) , self . rffe (0usize) , self . rffe (1usize) , self . rfle (0usize) , self . rfle (1usize) , self . hpme () , self . tce () , self . tcfe () , self . tefe () , self . tefne () , self . tefwe () , self . teffe () , self . tefle () , self . tswe () , self . mrafe () , self . tooe () , self . drxe () , self . bece () , self . beue () , self . eloe () , self . epe () , self . ewe () , self . boe () , self . wdie () , self . peae () , self . pede () , self . arae ())
         }
     }
     #[doc = "FDCAN Interrupt Line Enable Register"]
@@ -1514,16 +1390,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ile {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ile {
-                eint0: bool,
-                eint1: bool,
-            }
-            let proxy = Ile {
-                eint0: self.eint0(),
-                eint1: self.eint1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ile {{ eint0: {=bool:?}, eint1: {=bool:?} }}",
+                self.eint0(),
+                self.eint1()
+            )
         }
     }
     #[doc = "FDCAN Interrupt Line Select Register"]
@@ -1843,10 +1715,14 @@ pub mod regs {
     impl core::fmt::Debug for Ils {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ils")
-                .field("rfnl", &[self.rfnl(0usize), self.rfnl(1usize)])
-                .field("rfwl", &[self.rfwl(0usize), self.rfwl(1usize)])
-                .field("rffl", &[self.rffl(0usize), self.rffl(1usize)])
-                .field("rfll", &[self.rfll(0usize), self.rfll(1usize)])
+                .field("rfnl[0]", &self.rfnl(0usize))
+                .field("rfnl[1]", &self.rfnl(1usize))
+                .field("rfwl[0]", &self.rfwl(0usize))
+                .field("rfwl[1]", &self.rfwl(1usize))
+                .field("rffl[0]", &self.rffl(0usize))
+                .field("rffl[1]", &self.rffl(1usize))
+                .field("rfll[0]", &self.rfll(0usize))
+                .field("rfll[1]", &self.rfll(1usize))
                 .field("hpml", &self.hpml())
                 .field("tcl", &self.tcl())
                 .field("tcfl", &self.tcfl())
@@ -1875,64 +1751,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ils {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ils {
-                rfnl: [bool; 2usize],
-                rfwl: [bool; 2usize],
-                rffl: [bool; 2usize],
-                rfll: [bool; 2usize],
-                hpml: bool,
-                tcl: bool,
-                tcfl: bool,
-                tefl: bool,
-                tefnl: bool,
-                tefwl: bool,
-                teffl: bool,
-                tefll: bool,
-                tswl: bool,
-                mrafl: bool,
-                tool: bool,
-                drxl: bool,
-                becl: bool,
-                beul: bool,
-                elol: bool,
-                epl: bool,
-                ewl: bool,
-                bol: bool,
-                wdil: bool,
-                peal: bool,
-                pedl: bool,
-                aral: bool,
-            }
-            let proxy = Ils {
-                rfnl: [self.rfnl(0usize), self.rfnl(1usize)],
-                rfwl: [self.rfwl(0usize), self.rfwl(1usize)],
-                rffl: [self.rffl(0usize), self.rffl(1usize)],
-                rfll: [self.rfll(0usize), self.rfll(1usize)],
-                hpml: self.hpml(),
-                tcl: self.tcl(),
-                tcfl: self.tcfl(),
-                tefl: self.tefl(),
-                tefnl: self.tefnl(),
-                tefwl: self.tefwl(),
-                teffl: self.teffl(),
-                tefll: self.tefll(),
-                tswl: self.tswl(),
-                mrafl: self.mrafl(),
-                tool: self.tool(),
-                drxl: self.drxl(),
-                becl: self.becl(),
-                beul: self.beul(),
-                elol: self.elol(),
-                epl: self.epl(),
-                ewl: self.ewl(),
-                bol: self.bol(),
-                wdil: self.wdil(),
-                peal: self.peal(),
-                pedl: self.pedl(),
-                aral: self.aral(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ils {{ rfnl[0]: {=bool:?}, rfnl[1]: {=bool:?}, rfwl[0]: {=bool:?}, rfwl[1]: {=bool:?}, rffl[0]: {=bool:?}, rffl[1]: {=bool:?}, rfll[0]: {=bool:?}, rfll[1]: {=bool:?}, hpml: {=bool:?}, tcl: {=bool:?}, tcfl: {=bool:?}, tefl: {=bool:?}, tefnl: {=bool:?}, tefwl: {=bool:?}, teffl: {=bool:?}, tefll: {=bool:?}, tswl: {=bool:?}, mrafl: {=bool:?}, tool: {=bool:?}, drxl: {=bool:?}, becl: {=bool:?}, beul: {=bool:?}, elol: {=bool:?}, epl: {=bool:?}, ewl: {=bool:?}, bol: {=bool:?}, wdil: {=bool:?}, peal: {=bool:?}, pedl: {=bool:?}, aral: {=bool:?} }}" , self . rfnl (0usize) , self . rfnl (1usize) , self . rfwl (0usize) , self . rfwl (1usize) , self . rffl (0usize) , self . rffl (1usize) , self . rfll (0usize) , self . rfll (1usize) , self . hpml () , self . tcl () , self . tcfl () , self . tefl () , self . tefnl () , self . tefwl () , self . teffl () , self . tefll () , self . tswl () , self . mrafl () , self . tool () , self . drxl () , self . becl () , self . beul () , self . elol () , self . epl () , self . ewl () , self . bol () , self . wdil () , self . peal () , self . pedl () , self . aral ())
         }
     }
     #[doc = "FDCAN Interrupt Register"]
@@ -2230,10 +2049,14 @@ pub mod regs {
     impl core::fmt::Debug for Ir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ir")
-                .field("rfn", &[self.rfn(0usize), self.rfn(1usize)])
-                .field("rfw", &[self.rfw(0usize), self.rfw(1usize)])
-                .field("rff", &[self.rff(0usize), self.rff(1usize)])
-                .field("rfl", &[self.rfl(0usize), self.rfl(1usize)])
+                .field("rfn[0]", &self.rfn(0usize))
+                .field("rfn[1]", &self.rfn(1usize))
+                .field("rfw[0]", &self.rfw(0usize))
+                .field("rfw[1]", &self.rfw(1usize))
+                .field("rff[0]", &self.rff(0usize))
+                .field("rff[1]", &self.rff(1usize))
+                .field("rfl[0]", &self.rfl(0usize))
+                .field("rfl[1]", &self.rfl(1usize))
                 .field("hpm", &self.hpm())
                 .field("tc", &self.tc())
                 .field("tcf", &self.tcf())
@@ -2260,60 +2083,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ir {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ir {
-                rfn: [bool; 2usize],
-                rfw: [bool; 2usize],
-                rff: [bool; 2usize],
-                rfl: [bool; 2usize],
-                hpm: bool,
-                tc: bool,
-                tcf: bool,
-                tef: bool,
-                tefn: bool,
-                tefw: bool,
-                teff: bool,
-                tefl: bool,
-                tsw: bool,
-                mraf: bool,
-                too: bool,
-                drx: bool,
-                elo: bool,
-                ep: bool,
-                ew: bool,
-                bo: bool,
-                wdi: bool,
-                pea: bool,
-                ped: bool,
-                ara: bool,
-            }
-            let proxy = Ir {
-                rfn: [self.rfn(0usize), self.rfn(1usize)],
-                rfw: [self.rfw(0usize), self.rfw(1usize)],
-                rff: [self.rff(0usize), self.rff(1usize)],
-                rfl: [self.rfl(0usize), self.rfl(1usize)],
-                hpm: self.hpm(),
-                tc: self.tc(),
-                tcf: self.tcf(),
-                tef: self.tef(),
-                tefn: self.tefn(),
-                tefw: self.tefw(),
-                teff: self.teff(),
-                tefl: self.tefl(),
-                tsw: self.tsw(),
-                mraf: self.mraf(),
-                too: self.too(),
-                drx: self.drx(),
-                elo: self.elo(),
-                ep: self.ep(),
-                ew: self.ew(),
-                bo: self.bo(),
-                wdi: self.wdi(),
-                pea: self.pea(),
-                ped: self.ped(),
-                ara: self.ara(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ir {{ rfn[0]: {=bool:?}, rfn[1]: {=bool:?}, rfw[0]: {=bool:?}, rfw[1]: {=bool:?}, rff[0]: {=bool:?}, rff[1]: {=bool:?}, rfl[0]: {=bool:?}, rfl[1]: {=bool:?}, hpm: {=bool:?}, tc: {=bool:?}, tcf: {=bool:?}, tef: {=bool:?}, tefn: {=bool:?}, tefw: {=bool:?}, teff: {=bool:?}, tefl: {=bool:?}, tsw: {=bool:?}, mraf: {=bool:?}, too: {=bool:?}, drx: {=bool:?}, elo: {=bool:?}, ep: {=bool:?}, ew: {=bool:?}, bo: {=bool:?}, wdi: {=bool:?}, pea: {=bool:?}, ped: {=bool:?}, ara: {=bool:?} }}" , self . rfn (0usize) , self . rfn (1usize) , self . rfw (0usize) , self . rfw (1usize) , self . rff (0usize) , self . rff (1usize) , self . rfl (0usize) , self . rfl (1usize) , self . hpm () , self . tc () , self . tcf () , self . tef () , self . tefn () , self . tefw () , self . teff () , self . tefl () , self . tsw () , self . mraf () , self . too () , self . drx () , self . elo () , self . ep () , self . ew () , self . bo () , self . wdi () , self . pea () , self . ped () , self . ara ())
         }
     }
     #[doc = "FDCAN Nominal Bit Timing and Prescaler Register"]
@@ -2385,20 +2155,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nbtp {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Nbtp {
-                ntseg2: u8,
-                ntseg1: u8,
-                nbrp: u16,
-                nsjw: u8,
-            }
-            let proxy = Nbtp {
-                ntseg2: self.ntseg2(),
-                ntseg1: self.ntseg1(),
-                nbrp: self.nbrp(),
-                nsjw: self.nsjw(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Nbtp {{ ntseg2: {=u8:?}, ntseg1: {=u8:?}, nbrp: {=u16:?}, nsjw: {=u8:?} }}",
+                self.ntseg2(),
+                self.ntseg1(),
+                self.nbrp(),
+                self.nsjw()
+            )
         }
     }
     #[doc = "FDCAN New Data 1 Register"]
@@ -2432,12 +2196,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ndat1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ndat1 {
-                nd: u32,
-            }
-            let proxy = Ndat1 { nd: self.nd() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ndat1 {{ nd: {=u32:?} }}", self.nd())
         }
     }
     #[doc = "FDCAN New Data 2 Register"]
@@ -2471,12 +2230,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ndat2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ndat2 {
-                nd: u32,
-            }
-            let proxy = Ndat2 { nd: self.nd() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ndat2 {{ nd: {=u32:?} }}", self.nd())
         }
     }
     #[doc = "FDCAN Protocol Status Register"]
@@ -2632,34 +2386,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Psr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Psr {
-                lec: u8,
-                act: u8,
-                ep: bool,
-                ew: bool,
-                bo: bool,
-                dlec: u8,
-                resi: bool,
-                rbrs: bool,
-                redl: bool,
-                pxe: bool,
-                tdcv: u8,
-            }
-            let proxy = Psr {
-                lec: self.lec(),
-                act: self.act(),
-                ep: self.ep(),
-                ew: self.ew(),
-                bo: self.bo(),
-                dlec: self.dlec(),
-                resi: self.resi(),
-                rbrs: self.rbrs(),
-                redl: self.redl(),
-                pxe: self.pxe(),
-                tdcv: self.tdcv(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Psr {{ lec: {=u8:?}, act: {=u8:?}, ep: {=bool:?}, ew: {=bool:?}, bo: {=bool:?}, dlec: {=u8:?}, resi: {=bool:?}, rbrs: {=bool:?}, redl: {=bool:?}, pxe: {=bool:?}, tdcv: {=u8:?} }}" , self . lec () , self . act () , self . ep () , self . ew () , self . bo () , self . dlec () , self . resi () , self . rbrs () , self . redl () , self . pxe () , self . tdcv ())
         }
     }
     #[doc = "FDCAN RAM Watchdog Register"]
@@ -2707,16 +2434,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rwd {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rwd {
-                wdc: u8,
-                wdv: u8,
-            }
-            let proxy = Rwd {
-                wdc: self.wdc(),
-                wdv: self.wdv(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Rwd {{ wdc: {=u8:?}, wdv: {=u8:?} }}", self.wdc(), self.wdv())
         }
     }
     #[doc = "FDCAN Rx Buffer Configuration Register"]
@@ -2750,12 +2468,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rxbc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rxbc {
-                rbsa: u16,
-            }
-            let proxy = Rxbc { rbsa: self.rbsa() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Rxbc {{ rbsa: {=u16:?} }}", self.rbsa())
         }
     }
     #[doc = "FDCAN Rx Buffer Element Size Configuration Register"]
@@ -2799,7 +2512,8 @@ pub mod regs {
     impl core::fmt::Debug for Rxesc {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rxesc")
-                .field("fds", &[self.fds(0usize), self.fds(1usize)])
+                .field("fds[0]", &self.fds(0usize))
+                .field("fds[1]", &self.fds(1usize))
                 .field("rbds", &self.rbds())
                 .finish()
         }
@@ -2807,16 +2521,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rxesc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rxesc {
-                fds: [u8; 2usize],
-                rbds: u8,
-            }
-            let proxy = Rxesc {
-                fds: [self.fds(0usize), self.fds(1usize)],
-                rbds: self.rbds(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Rxesc {{ fds[0]: {=u8:?}, fds[1]: {=u8:?}, rbds: {=u8:?} }}",
+                self.fds(0usize),
+                self.fds(1usize),
+                self.rbds()
+            )
         }
     }
     #[doc = "CAN Rx FIFO X Acknowledge Register"]
@@ -2850,12 +2561,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rxfa {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rxfa {
-                fai: u8,
-            }
-            let proxy = Rxfa { fai: self.fai() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Rxfa {{ fai: {=u8:?} }}", self.fai())
         }
     }
     #[doc = "FDCAN Rx FIFO X Configuration Register"]
@@ -2927,20 +2633,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rxfc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rxfc {
-                fsa: u16,
-                fs: u8,
-                fwm: u8,
-                fom: bool,
-            }
-            let proxy = Rxfc {
-                fsa: self.fsa(),
-                fs: self.fs(),
-                fwm: self.fwm(),
-                fom: self.fom(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Rxfc {{ fsa: {=u16:?}, fs: {=u8:?}, fwm: {=u8:?}, fom: {=bool:?} }}",
+                self.fsa(),
+                self.fs(),
+                self.fwm(),
+                self.fom()
+            )
         }
     }
     #[doc = "FDCAN Rx FIFO X Status Register"]
@@ -3024,22 +2724,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rxfs {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rxfs {
-                ffl: u8,
-                fgi: u8,
-                fpi: u8,
-                ff: bool,
-                rfl: bool,
-            }
-            let proxy = Rxfs {
-                ffl: self.ffl(),
-                fgi: self.fgi(),
-                fpi: self.fpi(),
-                ff: self.ff(),
-                rfl: self.rfl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Rxfs {{ ffl: {=u8:?}, fgi: {=u8:?}, fpi: {=u8:?}, ff: {=bool:?}, rfl: {=bool:?} }}",
+                self.ffl(),
+                self.fgi(),
+                self.fpi(),
+                self.ff(),
+                self.rfl()
+            )
         }
     }
     #[doc = "FDCAN Standard ID Filter Configuration Register"]
@@ -3087,16 +2780,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sidfc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sidfc {
-                flssa: u16,
-                lss: u8,
-            }
-            let proxy = Sidfc {
-                flssa: self.flssa(),
-                lss: self.lss(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Sidfc {{ flssa: {=u16:?}, lss: {=u8:?} }}", self.flssa(), self.lss())
         }
     }
     #[doc = "FDCAN Transmitter Delay Compensation Register"]
@@ -3144,16 +2828,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tdcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tdcr {
-                tdcf: u8,
-                tdco: u8,
-            }
-            let proxy = Tdcr {
-                tdcf: self.tdcf(),
-                tdco: self.tdco(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Tdcr {{ tdcf: {=u8:?}, tdco: {=u8:?} }}", self.tdcf(), self.tdco())
         }
     }
     #[doc = "FDCAN Test Register"]
@@ -3213,18 +2888,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Test {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Test {
-                lbck: bool,
-                tx: u8,
-                rx: bool,
-            }
-            let proxy = Test {
-                lbck: self.lbck(),
-                tx: self.tx(),
-                rx: self.rx(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Test {{ lbck: {=bool:?}, tx: {=u8:?}, rx: {=bool:?} }}",
+                self.lbck(),
+                self.tx(),
+                self.rx()
+            )
         }
     }
     #[doc = "FDCAN Timeout Counter Configuration Register"]
@@ -3284,18 +2954,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tocc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tocc {
-                etoc: bool,
-                tos: u8,
-                top: u16,
-            }
-            let proxy = Tocc {
-                etoc: self.etoc(),
-                tos: self.tos(),
-                top: self.top(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Tocc {{ etoc: {=bool:?}, tos: {=u8:?}, top: {=u16:?} }}",
+                self.etoc(),
+                self.tos(),
+                self.top()
+            )
         }
     }
     #[doc = "FDCAN Timeout Counter Value Register"]
@@ -3329,12 +2994,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tocv {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tocv {
-                toc: u16,
-            }
-            let proxy = Tocv { toc: self.toc() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Tocv {{ toc: {=u16:?} }}", self.toc())
         }
     }
     #[doc = "FDCAN Timestamp Counter Configuration Register"]
@@ -3382,16 +3042,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tscc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tscc {
-                tss: u8,
-                tcp: u8,
-            }
-            let proxy = Tscc {
-                tss: self.tss(),
-                tcp: self.tcp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Tscc {{ tss: {=u8:?}, tcp: {=u8:?} }}", self.tss(), self.tcp())
         }
     }
     #[doc = "FDCAN Timestamp Counter Value Register"]
@@ -3425,12 +3076,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tscv {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tscv {
-                tsc: u16,
-            }
-            let proxy = Tscv { tsc: self.tsc() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Tscv {{ tsc: {=u16:?} }}", self.tsc())
         }
     }
     #[doc = "FDCAN TT Capture Time Register"]
@@ -3478,16 +3124,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ttcpt {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ttcpt {
-                ccv: u8,
-                swv: u16,
-            }
-            let proxy = Ttcpt {
-                ccv: self.ccv(),
-                swv: self.swv(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ttcpt {{ ccv: {=u8:?}, swv: {=u16:?} }}", self.ccv(), self.swv())
         }
     }
     #[doc = "FDCAN TT Cycle Sync Mark Register"]
@@ -3521,12 +3158,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ttcsm {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ttcsm {
-                csm: u16,
-            }
-            let proxy = Ttcsm { csm: self.csm() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ttcsm {{ csm: {=u16:?} }}", self.csm())
         }
     }
     #[doc = "FDCAN TT Cycle Time and Count Register"]
@@ -3574,16 +3206,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ttctc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ttctc {
-                ct: u16,
-                cc: u8,
-            }
-            let proxy = Ttctc {
-                ct: self.ct(),
-                cc: self.cc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ttctc {{ ct: {=u16:?}, cc: {=u8:?} }}", self.ct(), self.cc())
         }
     }
     #[doc = "FDCAN TT Global Time Preset Register"]
@@ -3631,16 +3254,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ttgtp {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ttgtp {
-                ncl: u16,
-                ctp: u16,
-            }
-            let proxy = Ttgtp {
-                ncl: self.ncl(),
-                ctp: self.ctp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ttgtp {{ ncl: {=u16:?}, ctp: {=u16:?} }}", self.ncl(), self.ctp())
         }
     }
     #[doc = "FDCAN TT Interrupt Enable Register"]
@@ -3892,50 +3506,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ttie {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ttie {
-                sbce: bool,
-                smce: bool,
-                csme: bool,
-                soge: bool,
-                rtmie: bool,
-                ttmie: bool,
-                swee: bool,
-                gtwe: bool,
-                gtde: bool,
-                gtee: bool,
-                txue: bool,
-                txoe: bool,
-                se1e: bool,
-                se2e: bool,
-                elce: bool,
-                iwtge: bool,
-                wte: bool,
-                awe: bool,
-                cere: bool,
-            }
-            let proxy = Ttie {
-                sbce: self.sbce(),
-                smce: self.smce(),
-                csme: self.csme(),
-                soge: self.soge(),
-                rtmie: self.rtmie(),
-                ttmie: self.ttmie(),
-                swee: self.swee(),
-                gtwe: self.gtwe(),
-                gtde: self.gtde(),
-                gtee: self.gtee(),
-                txue: self.txue(),
-                txoe: self.txoe(),
-                se1e: self.se1e(),
-                se2e: self.se2e(),
-                elce: self.elce(),
-                iwtge: self.iwtge(),
-                wte: self.wte(),
-                awe: self.awe(),
-                cere: self.cere(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ttie {{ sbce: {=bool:?}, smce: {=bool:?}, csme: {=bool:?}, soge: {=bool:?}, rtmie: {=bool:?}, ttmie: {=bool:?}, swee: {=bool:?}, gtwe: {=bool:?}, gtde: {=bool:?}, gtee: {=bool:?}, txue: {=bool:?}, txoe: {=bool:?}, se1e: {=bool:?}, se2e: {=bool:?}, elce: {=bool:?}, iwtge: {=bool:?}, wte: {=bool:?}, awe: {=bool:?}, cere: {=bool:?} }}" , self . sbce () , self . smce () , self . csme () , self . soge () , self . rtmie () , self . ttmie () , self . swee () , self . gtwe () , self . gtde () , self . gtee () , self . txue () , self . txoe () , self . se1e () , self . se2e () , self . elce () , self . iwtge () , self . wte () , self . awe () , self . cere ())
         }
     }
     #[doc = "FDCAN TT Interrupt Line Select Register"]
@@ -4187,50 +3758,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ttils {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ttils {
-                sbcl: bool,
-                smcl: bool,
-                csml: bool,
-                sogl: bool,
-                rtmil: bool,
-                ttmil: bool,
-                swel: bool,
-                gtwl: bool,
-                gtdl: bool,
-                gtel: bool,
-                txul: bool,
-                txol: bool,
-                se1l: bool,
-                se2l: bool,
-                elcl: bool,
-                iwtgl: bool,
-                wtl: bool,
-                awl: bool,
-                cerl: bool,
-            }
-            let proxy = Ttils {
-                sbcl: self.sbcl(),
-                smcl: self.smcl(),
-                csml: self.csml(),
-                sogl: self.sogl(),
-                rtmil: self.rtmil(),
-                ttmil: self.ttmil(),
-                swel: self.swel(),
-                gtwl: self.gtwl(),
-                gtdl: self.gtdl(),
-                gtel: self.gtel(),
-                txul: self.txul(),
-                txol: self.txol(),
-                se1l: self.se1l(),
-                se2l: self.se2l(),
-                elcl: self.elcl(),
-                iwtgl: self.iwtgl(),
-                wtl: self.wtl(),
-                awl: self.awl(),
-                cerl: self.cerl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ttils {{ sbcl: {=bool:?}, smcl: {=bool:?}, csml: {=bool:?}, sogl: {=bool:?}, rtmil: {=bool:?}, ttmil: {=bool:?}, swel: {=bool:?}, gtwl: {=bool:?}, gtdl: {=bool:?}, gtel: {=bool:?}, txul: {=bool:?}, txol: {=bool:?}, se1l: {=bool:?}, se2l: {=bool:?}, elcl: {=bool:?}, iwtgl: {=bool:?}, wtl: {=bool:?}, awl: {=bool:?}, cerl: {=bool:?} }}" , self . sbcl () , self . smcl () , self . csml () , self . sogl () , self . rtmil () , self . ttmil () , self . swel () , self . gtwl () , self . gtdl () , self . gtel () , self . txul () , self . txol () , self . se1l () , self . se2l () , self . elcl () , self . iwtgl () , self . wtl () , self . awl () , self . cerl ())
         }
     }
     #[doc = "FDCAN TT Interrupt Register"]
@@ -4482,50 +4010,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ttir {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ttir {
-                sbc: bool,
-                smc: bool,
-                csm: bool,
-                sog: bool,
-                rtmi: bool,
-                ttmi: bool,
-                swe: bool,
-                gtw: bool,
-                gtd: bool,
-                gte: bool,
-                txu: bool,
-                txo: bool,
-                se1: bool,
-                se2: bool,
-                elc: bool,
-                iwtg: bool,
-                wt: bool,
-                aw: bool,
-                cer: bool,
-            }
-            let proxy = Ttir {
-                sbc: self.sbc(),
-                smc: self.smc(),
-                csm: self.csm(),
-                sog: self.sog(),
-                rtmi: self.rtmi(),
-                ttmi: self.ttmi(),
-                swe: self.swe(),
-                gtw: self.gtw(),
-                gtd: self.gtd(),
-                gte: self.gte(),
-                txu: self.txu(),
-                txo: self.txo(),
-                se1: self.se1(),
-                se2: self.se2(),
-                elc: self.elc(),
-                iwtg: self.iwtg(),
-                wt: self.wt(),
-                aw: self.aw(),
-                cer: self.cer(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ttir {{ sbc: {=bool:?}, smc: {=bool:?}, csm: {=bool:?}, sog: {=bool:?}, rtmi: {=bool:?}, ttmi: {=bool:?}, swe: {=bool:?}, gtw: {=bool:?}, gtd: {=bool:?}, gte: {=bool:?}, txu: {=bool:?}, txo: {=bool:?}, se1: {=bool:?}, se2: {=bool:?}, elc: {=bool:?}, iwtg: {=bool:?}, wt: {=bool:?}, aw: {=bool:?}, cer: {=bool:?} }}" , self . sbc () , self . smc () , self . csm () , self . sog () , self . rtmi () , self . ttmi () , self . swe () , self . gtw () , self . gtd () , self . gte () , self . txu () , self . txo () , self . se1 () , self . se2 () , self . elc () , self . iwtg () , self . wt () , self . aw () , self . cer ())
         }
     }
     #[doc = "FDCAN TT Local and Global Time Register"]
@@ -4573,16 +4058,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ttlgt {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ttlgt {
-                lt: u16,
-                gt: u16,
-            }
-            let proxy = Ttlgt {
-                lt: self.lt(),
-                gt: self.gt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ttlgt {{ lt: {=u16:?}, gt: {=u16:?} }}", self.lt(), self.gt())
         }
     }
     #[doc = "FDCAN TT Matrix Limits Register"]
@@ -4654,20 +4130,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ttmlm {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ttmlm {
-                ccm: u8,
-                css: u8,
-                txew: u8,
-                entt: u16,
-            }
-            let proxy = Ttmlm {
-                ccm: self.ccm(),
-                css: self.css(),
-                txew: self.txew(),
-                entt: self.entt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ttmlm {{ ccm: {=u8:?}, css: {=u8:?}, txew: {=u8:?}, entt: {=u16:?} }}",
+                self.ccm(),
+                self.css(),
+                self.txew(),
+                self.entt()
+            )
         }
     }
     #[doc = "FDCAN TT Operation Configuration Register"]
@@ -4811,32 +4281,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ttocf {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ttocf {
-                om: u8,
-                gen: bool,
-                tm: bool,
-                ldsdl: u8,
-                irto: u8,
-                eecs: bool,
-                awl: u8,
-                egtf: bool,
-                ecc: bool,
-                evtp: bool,
-            }
-            let proxy = Ttocf {
-                om: self.om(),
-                gen: self.gen(),
-                tm: self.tm(),
-                ldsdl: self.ldsdl(),
-                irto: self.irto(),
-                eecs: self.eecs(),
-                awl: self.awl(),
-                egtf: self.egtf(),
-                ecc: self.ecc(),
-                evtp: self.evtp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ttocf {{ om: {=u8:?}, gen: {=bool:?}, tm: {=bool:?}, ldsdl: {=u8:?}, irto: {=u8:?}, eecs: {=bool:?}, awl: {=u8:?}, egtf: {=bool:?}, ecc: {=bool:?}, evtp: {=bool:?} }}" , self . om () , self . gen () , self . tm () , self . ldsdl () , self . irto () , self . eecs () , self . awl () , self . egtf () , self . ecc () , self . evtp ())
         }
     }
     #[doc = "FDCAN TT Operation Control Register"]
@@ -5016,38 +4461,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ttocn {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ttocn {
-                sgt: bool,
-                ecs: bool,
-                swp: bool,
-                sws: u8,
-                rtie: bool,
-                tmc: u8,
-                ttie: bool,
-                gcs: bool,
-                fgp: bool,
-                tmg: bool,
-                nig: bool,
-                escn: bool,
-                lckc: bool,
-            }
-            let proxy = Ttocn {
-                sgt: self.sgt(),
-                ecs: self.ecs(),
-                swp: self.swp(),
-                sws: self.sws(),
-                rtie: self.rtie(),
-                tmc: self.tmc(),
-                ttie: self.ttie(),
-                gcs: self.gcs(),
-                fgp: self.fgp(),
-                tmg: self.tmg(),
-                nig: self.nig(),
-                escn: self.escn(),
-                lckc: self.lckc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ttocn {{ sgt: {=bool:?}, ecs: {=bool:?}, swp: {=bool:?}, sws: {=u8:?}, rtie: {=bool:?}, tmc: {=u8:?}, ttie: {=bool:?}, gcs: {=bool:?}, fgp: {=bool:?}, tmg: {=bool:?}, nig: {=bool:?}, escn: {=bool:?}, lckc: {=bool:?} }}" , self . sgt () , self . ecs () , self . swp () , self . sws () , self . rtie () , self . tmc () , self . ttie () , self . gcs () , self . fgp () , self . tmg () , self . nig () , self . escn () , self . lckc ())
         }
     }
     #[doc = "FDCAN TT Operation Status Register"]
@@ -5239,40 +4653,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ttost {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ttost {
-                el: u8,
-                ms: u8,
-                sys: u8,
-                qgtp: bool,
-                qcs: bool,
-                rto: u8,
-                wgtd: bool,
-                gfi: bool,
-                tmp: u8,
-                gsi: bool,
-                wfe: bool,
-                awe: bool,
-                wecs: bool,
-                spl: bool,
-            }
-            let proxy = Ttost {
-                el: self.el(),
-                ms: self.ms(),
-                sys: self.sys(),
-                qgtp: self.qgtp(),
-                qcs: self.qcs(),
-                rto: self.rto(),
-                wgtd: self.wgtd(),
-                gfi: self.gfi(),
-                tmp: self.tmp(),
-                gsi: self.gsi(),
-                wfe: self.wfe(),
-                awe: self.awe(),
-                wecs: self.wecs(),
-                spl: self.spl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ttost {{ el: {=u8:?}, ms: {=u8:?}, sys: {=u8:?}, qgtp: {=bool:?}, qcs: {=bool:?}, rto: {=u8:?}, wgtd: {=bool:?}, gfi: {=bool:?}, tmp: {=u8:?}, gsi: {=bool:?}, wfe: {=bool:?}, awe: {=bool:?}, wecs: {=bool:?}, spl: {=bool:?} }}" , self . el () , self . ms () , self . sys () , self . qgtp () , self . qcs () , self . rto () , self . wgtd () , self . gfi () , self . tmp () , self . gsi () , self . wfe () , self . awe () , self . wecs () , self . spl ())
         }
     }
     #[doc = "FDCAN TT Reference Message Configuration Register"]
@@ -5332,18 +4713,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ttrmc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ttrmc {
-                rid: u32,
-                xtd: bool,
-                rmps: bool,
-            }
-            let proxy = Ttrmc {
-                rid: self.rid(),
-                xtd: self.xtd(),
-                rmps: self.rmps(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ttrmc {{ rid: {=u32:?}, xtd: {=bool:?}, rmps: {=bool:?} }}",
+                self.rid(),
+                self.xtd(),
+                self.rmps()
+            )
         }
     }
     #[doc = "FDCAN TT Trigger Memory Configuration Register"]
@@ -5391,16 +4767,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tttmc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tttmc {
-                tmsa: u16,
-                tme: u8,
-            }
-            let proxy = Tttmc {
-                tmsa: self.tmsa(),
-                tme: self.tme(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Tttmc {{ tmsa: {=u16:?}, tme: {=u8:?} }}", self.tmsa(), self.tme())
         }
     }
     #[doc = "FDCAN TT Time Mark Register"]
@@ -5460,18 +4827,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tttmk {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tttmk {
-                tm: u16,
-                ticc: u8,
-                lckm: bool,
-            }
-            let proxy = Tttmk {
-                tm: self.tm(),
-                ticc: self.ticc(),
-                lckm: self.lckm(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Tttmk {{ tm: {=u16:?}, ticc: {=u8:?}, lckm: {=bool:?} }}",
+                self.tm(),
+                self.ticc(),
+                self.lckm()
+            )
         }
     }
     #[doc = "FDCAN TT Trigger Select Register"]
@@ -5519,16 +4881,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ttts {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ttts {
-                swtdel: u8,
-                evtsel: u8,
-            }
-            let proxy = Ttts {
-                swtdel: self.swtdel(),
-                evtsel: self.evtsel(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ttts {{ swtdel: {=u8:?}, evtsel: {=u8:?} }}",
+                self.swtdel(),
+                self.evtsel()
+            )
         }
     }
     #[doc = "FDCAN TUR Configuration Register"]
@@ -5588,18 +4946,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Turcf {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Turcf {
-                ncl: u16,
-                dc: u16,
-                elt: bool,
-            }
-            let proxy = Turcf {
-                ncl: self.ncl(),
-                dc: self.dc(),
-                elt: self.elt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Turcf {{ ncl: {=u16:?}, dc: {=u16:?}, elt: {=bool:?} }}",
+                self.ncl(),
+                self.dc(),
+                self.elt()
+            )
         }
     }
     #[doc = "FDCAN TUR Numerator Actual Register"]
@@ -5633,12 +4986,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Turna {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Turna {
-                nav: u32,
-            }
-            let proxy = Turna { nav: self.nav() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Turna {{ nav: {=u32:?} }}", self.nav())
         }
     }
     #[doc = "FDCAN Tx Buffer Add Request Register"]
@@ -5671,90 +5019,45 @@ pub mod regs {
     impl core::fmt::Debug for Txbar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Txbar")
-                .field(
-                    "ar",
-                    &[
-                        self.ar(0usize),
-                        self.ar(1usize),
-                        self.ar(2usize),
-                        self.ar(3usize),
-                        self.ar(4usize),
-                        self.ar(5usize),
-                        self.ar(6usize),
-                        self.ar(7usize),
-                        self.ar(8usize),
-                        self.ar(9usize),
-                        self.ar(10usize),
-                        self.ar(11usize),
-                        self.ar(12usize),
-                        self.ar(13usize),
-                        self.ar(14usize),
-                        self.ar(15usize),
-                        self.ar(16usize),
-                        self.ar(17usize),
-                        self.ar(18usize),
-                        self.ar(19usize),
-                        self.ar(20usize),
-                        self.ar(21usize),
-                        self.ar(22usize),
-                        self.ar(23usize),
-                        self.ar(24usize),
-                        self.ar(25usize),
-                        self.ar(26usize),
-                        self.ar(27usize),
-                        self.ar(28usize),
-                        self.ar(29usize),
-                        self.ar(30usize),
-                        self.ar(31usize),
-                    ],
-                )
+                .field("ar[0]", &self.ar(0usize))
+                .field("ar[1]", &self.ar(1usize))
+                .field("ar[2]", &self.ar(2usize))
+                .field("ar[3]", &self.ar(3usize))
+                .field("ar[4]", &self.ar(4usize))
+                .field("ar[5]", &self.ar(5usize))
+                .field("ar[6]", &self.ar(6usize))
+                .field("ar[7]", &self.ar(7usize))
+                .field("ar[8]", &self.ar(8usize))
+                .field("ar[9]", &self.ar(9usize))
+                .field("ar[10]", &self.ar(10usize))
+                .field("ar[11]", &self.ar(11usize))
+                .field("ar[12]", &self.ar(12usize))
+                .field("ar[13]", &self.ar(13usize))
+                .field("ar[14]", &self.ar(14usize))
+                .field("ar[15]", &self.ar(15usize))
+                .field("ar[16]", &self.ar(16usize))
+                .field("ar[17]", &self.ar(17usize))
+                .field("ar[18]", &self.ar(18usize))
+                .field("ar[19]", &self.ar(19usize))
+                .field("ar[20]", &self.ar(20usize))
+                .field("ar[21]", &self.ar(21usize))
+                .field("ar[22]", &self.ar(22usize))
+                .field("ar[23]", &self.ar(23usize))
+                .field("ar[24]", &self.ar(24usize))
+                .field("ar[25]", &self.ar(25usize))
+                .field("ar[26]", &self.ar(26usize))
+                .field("ar[27]", &self.ar(27usize))
+                .field("ar[28]", &self.ar(28usize))
+                .field("ar[29]", &self.ar(29usize))
+                .field("ar[30]", &self.ar(30usize))
+                .field("ar[31]", &self.ar(31usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Txbar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Txbar {
-                ar: [bool; 32usize],
-            }
-            let proxy = Txbar {
-                ar: [
-                    self.ar(0usize),
-                    self.ar(1usize),
-                    self.ar(2usize),
-                    self.ar(3usize),
-                    self.ar(4usize),
-                    self.ar(5usize),
-                    self.ar(6usize),
-                    self.ar(7usize),
-                    self.ar(8usize),
-                    self.ar(9usize),
-                    self.ar(10usize),
-                    self.ar(11usize),
-                    self.ar(12usize),
-                    self.ar(13usize),
-                    self.ar(14usize),
-                    self.ar(15usize),
-                    self.ar(16usize),
-                    self.ar(17usize),
-                    self.ar(18usize),
-                    self.ar(19usize),
-                    self.ar(20usize),
-                    self.ar(21usize),
-                    self.ar(22usize),
-                    self.ar(23usize),
-                    self.ar(24usize),
-                    self.ar(25usize),
-                    self.ar(26usize),
-                    self.ar(27usize),
-                    self.ar(28usize),
-                    self.ar(29usize),
-                    self.ar(30usize),
-                    self.ar(31usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Txbar {{ ar[0]: {=bool:?}, ar[1]: {=bool:?}, ar[2]: {=bool:?}, ar[3]: {=bool:?}, ar[4]: {=bool:?}, ar[5]: {=bool:?}, ar[6]: {=bool:?}, ar[7]: {=bool:?}, ar[8]: {=bool:?}, ar[9]: {=bool:?}, ar[10]: {=bool:?}, ar[11]: {=bool:?}, ar[12]: {=bool:?}, ar[13]: {=bool:?}, ar[14]: {=bool:?}, ar[15]: {=bool:?}, ar[16]: {=bool:?}, ar[17]: {=bool:?}, ar[18]: {=bool:?}, ar[19]: {=bool:?}, ar[20]: {=bool:?}, ar[21]: {=bool:?}, ar[22]: {=bool:?}, ar[23]: {=bool:?}, ar[24]: {=bool:?}, ar[25]: {=bool:?}, ar[26]: {=bool:?}, ar[27]: {=bool:?}, ar[28]: {=bool:?}, ar[29]: {=bool:?}, ar[30]: {=bool:?}, ar[31]: {=bool:?} }}" , self . ar (0usize) , self . ar (1usize) , self . ar (2usize) , self . ar (3usize) , self . ar (4usize) , self . ar (5usize) , self . ar (6usize) , self . ar (7usize) , self . ar (8usize) , self . ar (9usize) , self . ar (10usize) , self . ar (11usize) , self . ar (12usize) , self . ar (13usize) , self . ar (14usize) , self . ar (15usize) , self . ar (16usize) , self . ar (17usize) , self . ar (18usize) , self . ar (19usize) , self . ar (20usize) , self . ar (21usize) , self . ar (22usize) , self . ar (23usize) , self . ar (24usize) , self . ar (25usize) , self . ar (26usize) , self . ar (27usize) , self . ar (28usize) , self . ar (29usize) , self . ar (30usize) , self . ar (31usize))
         }
     }
     #[doc = "FDCAN Tx Buffer Configuration Register"]
@@ -5826,20 +5129,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Txbc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Txbc {
-                tbsa: u16,
-                ndtb: u8,
-                tfqs: u8,
-                tfqm: super::vals::Tfqm,
-            }
-            let proxy = Txbc {
-                tbsa: self.tbsa(),
-                ndtb: self.ndtb(),
-                tfqs: self.tfqs(),
-                tfqm: self.tfqm(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Txbc {{ tbsa: {=u16:?}, ndtb: {=u8:?}, tfqs: {=u8:?}, tfqm: {:?} }}",
+                self.tbsa(),
+                self.ndtb(),
+                self.tfqs(),
+                self.tfqm()
+            )
         }
     }
     #[doc = "FDCAN Tx Buffer Cancellation Finished Register"]
@@ -5872,90 +5169,45 @@ pub mod regs {
     impl core::fmt::Debug for Txbcf {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Txbcf")
-                .field(
-                    "cf",
-                    &[
-                        self.cf(0usize),
-                        self.cf(1usize),
-                        self.cf(2usize),
-                        self.cf(3usize),
-                        self.cf(4usize),
-                        self.cf(5usize),
-                        self.cf(6usize),
-                        self.cf(7usize),
-                        self.cf(8usize),
-                        self.cf(9usize),
-                        self.cf(10usize),
-                        self.cf(11usize),
-                        self.cf(12usize),
-                        self.cf(13usize),
-                        self.cf(14usize),
-                        self.cf(15usize),
-                        self.cf(16usize),
-                        self.cf(17usize),
-                        self.cf(18usize),
-                        self.cf(19usize),
-                        self.cf(20usize),
-                        self.cf(21usize),
-                        self.cf(22usize),
-                        self.cf(23usize),
-                        self.cf(24usize),
-                        self.cf(25usize),
-                        self.cf(26usize),
-                        self.cf(27usize),
-                        self.cf(28usize),
-                        self.cf(29usize),
-                        self.cf(30usize),
-                        self.cf(31usize),
-                    ],
-                )
+                .field("cf[0]", &self.cf(0usize))
+                .field("cf[1]", &self.cf(1usize))
+                .field("cf[2]", &self.cf(2usize))
+                .field("cf[3]", &self.cf(3usize))
+                .field("cf[4]", &self.cf(4usize))
+                .field("cf[5]", &self.cf(5usize))
+                .field("cf[6]", &self.cf(6usize))
+                .field("cf[7]", &self.cf(7usize))
+                .field("cf[8]", &self.cf(8usize))
+                .field("cf[9]", &self.cf(9usize))
+                .field("cf[10]", &self.cf(10usize))
+                .field("cf[11]", &self.cf(11usize))
+                .field("cf[12]", &self.cf(12usize))
+                .field("cf[13]", &self.cf(13usize))
+                .field("cf[14]", &self.cf(14usize))
+                .field("cf[15]", &self.cf(15usize))
+                .field("cf[16]", &self.cf(16usize))
+                .field("cf[17]", &self.cf(17usize))
+                .field("cf[18]", &self.cf(18usize))
+                .field("cf[19]", &self.cf(19usize))
+                .field("cf[20]", &self.cf(20usize))
+                .field("cf[21]", &self.cf(21usize))
+                .field("cf[22]", &self.cf(22usize))
+                .field("cf[23]", &self.cf(23usize))
+                .field("cf[24]", &self.cf(24usize))
+                .field("cf[25]", &self.cf(25usize))
+                .field("cf[26]", &self.cf(26usize))
+                .field("cf[27]", &self.cf(27usize))
+                .field("cf[28]", &self.cf(28usize))
+                .field("cf[29]", &self.cf(29usize))
+                .field("cf[30]", &self.cf(30usize))
+                .field("cf[31]", &self.cf(31usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Txbcf {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Txbcf {
-                cf: [bool; 32usize],
-            }
-            let proxy = Txbcf {
-                cf: [
-                    self.cf(0usize),
-                    self.cf(1usize),
-                    self.cf(2usize),
-                    self.cf(3usize),
-                    self.cf(4usize),
-                    self.cf(5usize),
-                    self.cf(6usize),
-                    self.cf(7usize),
-                    self.cf(8usize),
-                    self.cf(9usize),
-                    self.cf(10usize),
-                    self.cf(11usize),
-                    self.cf(12usize),
-                    self.cf(13usize),
-                    self.cf(14usize),
-                    self.cf(15usize),
-                    self.cf(16usize),
-                    self.cf(17usize),
-                    self.cf(18usize),
-                    self.cf(19usize),
-                    self.cf(20usize),
-                    self.cf(21usize),
-                    self.cf(22usize),
-                    self.cf(23usize),
-                    self.cf(24usize),
-                    self.cf(25usize),
-                    self.cf(26usize),
-                    self.cf(27usize),
-                    self.cf(28usize),
-                    self.cf(29usize),
-                    self.cf(30usize),
-                    self.cf(31usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Txbcf {{ cf[0]: {=bool:?}, cf[1]: {=bool:?}, cf[2]: {=bool:?}, cf[3]: {=bool:?}, cf[4]: {=bool:?}, cf[5]: {=bool:?}, cf[6]: {=bool:?}, cf[7]: {=bool:?}, cf[8]: {=bool:?}, cf[9]: {=bool:?}, cf[10]: {=bool:?}, cf[11]: {=bool:?}, cf[12]: {=bool:?}, cf[13]: {=bool:?}, cf[14]: {=bool:?}, cf[15]: {=bool:?}, cf[16]: {=bool:?}, cf[17]: {=bool:?}, cf[18]: {=bool:?}, cf[19]: {=bool:?}, cf[20]: {=bool:?}, cf[21]: {=bool:?}, cf[22]: {=bool:?}, cf[23]: {=bool:?}, cf[24]: {=bool:?}, cf[25]: {=bool:?}, cf[26]: {=bool:?}, cf[27]: {=bool:?}, cf[28]: {=bool:?}, cf[29]: {=bool:?}, cf[30]: {=bool:?}, cf[31]: {=bool:?} }}" , self . cf (0usize) , self . cf (1usize) , self . cf (2usize) , self . cf (3usize) , self . cf (4usize) , self . cf (5usize) , self . cf (6usize) , self . cf (7usize) , self . cf (8usize) , self . cf (9usize) , self . cf (10usize) , self . cf (11usize) , self . cf (12usize) , self . cf (13usize) , self . cf (14usize) , self . cf (15usize) , self . cf (16usize) , self . cf (17usize) , self . cf (18usize) , self . cf (19usize) , self . cf (20usize) , self . cf (21usize) , self . cf (22usize) , self . cf (23usize) , self . cf (24usize) , self . cf (25usize) , self . cf (26usize) , self . cf (27usize) , self . cf (28usize) , self . cf (29usize) , self . cf (30usize) , self . cf (31usize))
         }
     }
     #[doc = "FDCAN Tx Buffer Cancellation Finished Interrupt Enable Register"]
@@ -5988,90 +5240,45 @@ pub mod regs {
     impl core::fmt::Debug for Txbcie {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Txbcie")
-                .field(
-                    "cf",
-                    &[
-                        self.cf(0usize),
-                        self.cf(1usize),
-                        self.cf(2usize),
-                        self.cf(3usize),
-                        self.cf(4usize),
-                        self.cf(5usize),
-                        self.cf(6usize),
-                        self.cf(7usize),
-                        self.cf(8usize),
-                        self.cf(9usize),
-                        self.cf(10usize),
-                        self.cf(11usize),
-                        self.cf(12usize),
-                        self.cf(13usize),
-                        self.cf(14usize),
-                        self.cf(15usize),
-                        self.cf(16usize),
-                        self.cf(17usize),
-                        self.cf(18usize),
-                        self.cf(19usize),
-                        self.cf(20usize),
-                        self.cf(21usize),
-                        self.cf(22usize),
-                        self.cf(23usize),
-                        self.cf(24usize),
-                        self.cf(25usize),
-                        self.cf(26usize),
-                        self.cf(27usize),
-                        self.cf(28usize),
-                        self.cf(29usize),
-                        self.cf(30usize),
-                        self.cf(31usize),
-                    ],
-                )
+                .field("cf[0]", &self.cf(0usize))
+                .field("cf[1]", &self.cf(1usize))
+                .field("cf[2]", &self.cf(2usize))
+                .field("cf[3]", &self.cf(3usize))
+                .field("cf[4]", &self.cf(4usize))
+                .field("cf[5]", &self.cf(5usize))
+                .field("cf[6]", &self.cf(6usize))
+                .field("cf[7]", &self.cf(7usize))
+                .field("cf[8]", &self.cf(8usize))
+                .field("cf[9]", &self.cf(9usize))
+                .field("cf[10]", &self.cf(10usize))
+                .field("cf[11]", &self.cf(11usize))
+                .field("cf[12]", &self.cf(12usize))
+                .field("cf[13]", &self.cf(13usize))
+                .field("cf[14]", &self.cf(14usize))
+                .field("cf[15]", &self.cf(15usize))
+                .field("cf[16]", &self.cf(16usize))
+                .field("cf[17]", &self.cf(17usize))
+                .field("cf[18]", &self.cf(18usize))
+                .field("cf[19]", &self.cf(19usize))
+                .field("cf[20]", &self.cf(20usize))
+                .field("cf[21]", &self.cf(21usize))
+                .field("cf[22]", &self.cf(22usize))
+                .field("cf[23]", &self.cf(23usize))
+                .field("cf[24]", &self.cf(24usize))
+                .field("cf[25]", &self.cf(25usize))
+                .field("cf[26]", &self.cf(26usize))
+                .field("cf[27]", &self.cf(27usize))
+                .field("cf[28]", &self.cf(28usize))
+                .field("cf[29]", &self.cf(29usize))
+                .field("cf[30]", &self.cf(30usize))
+                .field("cf[31]", &self.cf(31usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Txbcie {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Txbcie {
-                cf: [bool; 32usize],
-            }
-            let proxy = Txbcie {
-                cf: [
-                    self.cf(0usize),
-                    self.cf(1usize),
-                    self.cf(2usize),
-                    self.cf(3usize),
-                    self.cf(4usize),
-                    self.cf(5usize),
-                    self.cf(6usize),
-                    self.cf(7usize),
-                    self.cf(8usize),
-                    self.cf(9usize),
-                    self.cf(10usize),
-                    self.cf(11usize),
-                    self.cf(12usize),
-                    self.cf(13usize),
-                    self.cf(14usize),
-                    self.cf(15usize),
-                    self.cf(16usize),
-                    self.cf(17usize),
-                    self.cf(18usize),
-                    self.cf(19usize),
-                    self.cf(20usize),
-                    self.cf(21usize),
-                    self.cf(22usize),
-                    self.cf(23usize),
-                    self.cf(24usize),
-                    self.cf(25usize),
-                    self.cf(26usize),
-                    self.cf(27usize),
-                    self.cf(28usize),
-                    self.cf(29usize),
-                    self.cf(30usize),
-                    self.cf(31usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Txbcie {{ cf[0]: {=bool:?}, cf[1]: {=bool:?}, cf[2]: {=bool:?}, cf[3]: {=bool:?}, cf[4]: {=bool:?}, cf[5]: {=bool:?}, cf[6]: {=bool:?}, cf[7]: {=bool:?}, cf[8]: {=bool:?}, cf[9]: {=bool:?}, cf[10]: {=bool:?}, cf[11]: {=bool:?}, cf[12]: {=bool:?}, cf[13]: {=bool:?}, cf[14]: {=bool:?}, cf[15]: {=bool:?}, cf[16]: {=bool:?}, cf[17]: {=bool:?}, cf[18]: {=bool:?}, cf[19]: {=bool:?}, cf[20]: {=bool:?}, cf[21]: {=bool:?}, cf[22]: {=bool:?}, cf[23]: {=bool:?}, cf[24]: {=bool:?}, cf[25]: {=bool:?}, cf[26]: {=bool:?}, cf[27]: {=bool:?}, cf[28]: {=bool:?}, cf[29]: {=bool:?}, cf[30]: {=bool:?}, cf[31]: {=bool:?} }}" , self . cf (0usize) , self . cf (1usize) , self . cf (2usize) , self . cf (3usize) , self . cf (4usize) , self . cf (5usize) , self . cf (6usize) , self . cf (7usize) , self . cf (8usize) , self . cf (9usize) , self . cf (10usize) , self . cf (11usize) , self . cf (12usize) , self . cf (13usize) , self . cf (14usize) , self . cf (15usize) , self . cf (16usize) , self . cf (17usize) , self . cf (18usize) , self . cf (19usize) , self . cf (20usize) , self . cf (21usize) , self . cf (22usize) , self . cf (23usize) , self . cf (24usize) , self . cf (25usize) , self . cf (26usize) , self . cf (27usize) , self . cf (28usize) , self . cf (29usize) , self . cf (30usize) , self . cf (31usize))
         }
     }
     #[doc = "FDCAN Tx Buffer Cancellation Request Register"]
@@ -6104,90 +5311,45 @@ pub mod regs {
     impl core::fmt::Debug for Txbcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Txbcr")
-                .field(
-                    "cr",
-                    &[
-                        self.cr(0usize),
-                        self.cr(1usize),
-                        self.cr(2usize),
-                        self.cr(3usize),
-                        self.cr(4usize),
-                        self.cr(5usize),
-                        self.cr(6usize),
-                        self.cr(7usize),
-                        self.cr(8usize),
-                        self.cr(9usize),
-                        self.cr(10usize),
-                        self.cr(11usize),
-                        self.cr(12usize),
-                        self.cr(13usize),
-                        self.cr(14usize),
-                        self.cr(15usize),
-                        self.cr(16usize),
-                        self.cr(17usize),
-                        self.cr(18usize),
-                        self.cr(19usize),
-                        self.cr(20usize),
-                        self.cr(21usize),
-                        self.cr(22usize),
-                        self.cr(23usize),
-                        self.cr(24usize),
-                        self.cr(25usize),
-                        self.cr(26usize),
-                        self.cr(27usize),
-                        self.cr(28usize),
-                        self.cr(29usize),
-                        self.cr(30usize),
-                        self.cr(31usize),
-                    ],
-                )
+                .field("cr[0]", &self.cr(0usize))
+                .field("cr[1]", &self.cr(1usize))
+                .field("cr[2]", &self.cr(2usize))
+                .field("cr[3]", &self.cr(3usize))
+                .field("cr[4]", &self.cr(4usize))
+                .field("cr[5]", &self.cr(5usize))
+                .field("cr[6]", &self.cr(6usize))
+                .field("cr[7]", &self.cr(7usize))
+                .field("cr[8]", &self.cr(8usize))
+                .field("cr[9]", &self.cr(9usize))
+                .field("cr[10]", &self.cr(10usize))
+                .field("cr[11]", &self.cr(11usize))
+                .field("cr[12]", &self.cr(12usize))
+                .field("cr[13]", &self.cr(13usize))
+                .field("cr[14]", &self.cr(14usize))
+                .field("cr[15]", &self.cr(15usize))
+                .field("cr[16]", &self.cr(16usize))
+                .field("cr[17]", &self.cr(17usize))
+                .field("cr[18]", &self.cr(18usize))
+                .field("cr[19]", &self.cr(19usize))
+                .field("cr[20]", &self.cr(20usize))
+                .field("cr[21]", &self.cr(21usize))
+                .field("cr[22]", &self.cr(22usize))
+                .field("cr[23]", &self.cr(23usize))
+                .field("cr[24]", &self.cr(24usize))
+                .field("cr[25]", &self.cr(25usize))
+                .field("cr[26]", &self.cr(26usize))
+                .field("cr[27]", &self.cr(27usize))
+                .field("cr[28]", &self.cr(28usize))
+                .field("cr[29]", &self.cr(29usize))
+                .field("cr[30]", &self.cr(30usize))
+                .field("cr[31]", &self.cr(31usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Txbcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Txbcr {
-                cr: [bool; 32usize],
-            }
-            let proxy = Txbcr {
-                cr: [
-                    self.cr(0usize),
-                    self.cr(1usize),
-                    self.cr(2usize),
-                    self.cr(3usize),
-                    self.cr(4usize),
-                    self.cr(5usize),
-                    self.cr(6usize),
-                    self.cr(7usize),
-                    self.cr(8usize),
-                    self.cr(9usize),
-                    self.cr(10usize),
-                    self.cr(11usize),
-                    self.cr(12usize),
-                    self.cr(13usize),
-                    self.cr(14usize),
-                    self.cr(15usize),
-                    self.cr(16usize),
-                    self.cr(17usize),
-                    self.cr(18usize),
-                    self.cr(19usize),
-                    self.cr(20usize),
-                    self.cr(21usize),
-                    self.cr(22usize),
-                    self.cr(23usize),
-                    self.cr(24usize),
-                    self.cr(25usize),
-                    self.cr(26usize),
-                    self.cr(27usize),
-                    self.cr(28usize),
-                    self.cr(29usize),
-                    self.cr(30usize),
-                    self.cr(31usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Txbcr {{ cr[0]: {=bool:?}, cr[1]: {=bool:?}, cr[2]: {=bool:?}, cr[3]: {=bool:?}, cr[4]: {=bool:?}, cr[5]: {=bool:?}, cr[6]: {=bool:?}, cr[7]: {=bool:?}, cr[8]: {=bool:?}, cr[9]: {=bool:?}, cr[10]: {=bool:?}, cr[11]: {=bool:?}, cr[12]: {=bool:?}, cr[13]: {=bool:?}, cr[14]: {=bool:?}, cr[15]: {=bool:?}, cr[16]: {=bool:?}, cr[17]: {=bool:?}, cr[18]: {=bool:?}, cr[19]: {=bool:?}, cr[20]: {=bool:?}, cr[21]: {=bool:?}, cr[22]: {=bool:?}, cr[23]: {=bool:?}, cr[24]: {=bool:?}, cr[25]: {=bool:?}, cr[26]: {=bool:?}, cr[27]: {=bool:?}, cr[28]: {=bool:?}, cr[29]: {=bool:?}, cr[30]: {=bool:?}, cr[31]: {=bool:?} }}" , self . cr (0usize) , self . cr (1usize) , self . cr (2usize) , self . cr (3usize) , self . cr (4usize) , self . cr (5usize) , self . cr (6usize) , self . cr (7usize) , self . cr (8usize) , self . cr (9usize) , self . cr (10usize) , self . cr (11usize) , self . cr (12usize) , self . cr (13usize) , self . cr (14usize) , self . cr (15usize) , self . cr (16usize) , self . cr (17usize) , self . cr (18usize) , self . cr (19usize) , self . cr (20usize) , self . cr (21usize) , self . cr (22usize) , self . cr (23usize) , self . cr (24usize) , self . cr (25usize) , self . cr (26usize) , self . cr (27usize) , self . cr (28usize) , self . cr (29usize) , self . cr (30usize) , self . cr (31usize))
         }
     }
     #[doc = "FDCAN Tx Buffer Request Pending Register"]
@@ -6220,90 +5382,45 @@ pub mod regs {
     impl core::fmt::Debug for Txbrp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Txbrp")
-                .field(
-                    "trp",
-                    &[
-                        self.trp(0usize),
-                        self.trp(1usize),
-                        self.trp(2usize),
-                        self.trp(3usize),
-                        self.trp(4usize),
-                        self.trp(5usize),
-                        self.trp(6usize),
-                        self.trp(7usize),
-                        self.trp(8usize),
-                        self.trp(9usize),
-                        self.trp(10usize),
-                        self.trp(11usize),
-                        self.trp(12usize),
-                        self.trp(13usize),
-                        self.trp(14usize),
-                        self.trp(15usize),
-                        self.trp(16usize),
-                        self.trp(17usize),
-                        self.trp(18usize),
-                        self.trp(19usize),
-                        self.trp(20usize),
-                        self.trp(21usize),
-                        self.trp(22usize),
-                        self.trp(23usize),
-                        self.trp(24usize),
-                        self.trp(25usize),
-                        self.trp(26usize),
-                        self.trp(27usize),
-                        self.trp(28usize),
-                        self.trp(29usize),
-                        self.trp(30usize),
-                        self.trp(31usize),
-                    ],
-                )
+                .field("trp[0]", &self.trp(0usize))
+                .field("trp[1]", &self.trp(1usize))
+                .field("trp[2]", &self.trp(2usize))
+                .field("trp[3]", &self.trp(3usize))
+                .field("trp[4]", &self.trp(4usize))
+                .field("trp[5]", &self.trp(5usize))
+                .field("trp[6]", &self.trp(6usize))
+                .field("trp[7]", &self.trp(7usize))
+                .field("trp[8]", &self.trp(8usize))
+                .field("trp[9]", &self.trp(9usize))
+                .field("trp[10]", &self.trp(10usize))
+                .field("trp[11]", &self.trp(11usize))
+                .field("trp[12]", &self.trp(12usize))
+                .field("trp[13]", &self.trp(13usize))
+                .field("trp[14]", &self.trp(14usize))
+                .field("trp[15]", &self.trp(15usize))
+                .field("trp[16]", &self.trp(16usize))
+                .field("trp[17]", &self.trp(17usize))
+                .field("trp[18]", &self.trp(18usize))
+                .field("trp[19]", &self.trp(19usize))
+                .field("trp[20]", &self.trp(20usize))
+                .field("trp[21]", &self.trp(21usize))
+                .field("trp[22]", &self.trp(22usize))
+                .field("trp[23]", &self.trp(23usize))
+                .field("trp[24]", &self.trp(24usize))
+                .field("trp[25]", &self.trp(25usize))
+                .field("trp[26]", &self.trp(26usize))
+                .field("trp[27]", &self.trp(27usize))
+                .field("trp[28]", &self.trp(28usize))
+                .field("trp[29]", &self.trp(29usize))
+                .field("trp[30]", &self.trp(30usize))
+                .field("trp[31]", &self.trp(31usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Txbrp {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Txbrp {
-                trp: [bool; 32usize],
-            }
-            let proxy = Txbrp {
-                trp: [
-                    self.trp(0usize),
-                    self.trp(1usize),
-                    self.trp(2usize),
-                    self.trp(3usize),
-                    self.trp(4usize),
-                    self.trp(5usize),
-                    self.trp(6usize),
-                    self.trp(7usize),
-                    self.trp(8usize),
-                    self.trp(9usize),
-                    self.trp(10usize),
-                    self.trp(11usize),
-                    self.trp(12usize),
-                    self.trp(13usize),
-                    self.trp(14usize),
-                    self.trp(15usize),
-                    self.trp(16usize),
-                    self.trp(17usize),
-                    self.trp(18usize),
-                    self.trp(19usize),
-                    self.trp(20usize),
-                    self.trp(21usize),
-                    self.trp(22usize),
-                    self.trp(23usize),
-                    self.trp(24usize),
-                    self.trp(25usize),
-                    self.trp(26usize),
-                    self.trp(27usize),
-                    self.trp(28usize),
-                    self.trp(29usize),
-                    self.trp(30usize),
-                    self.trp(31usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Txbrp {{ trp[0]: {=bool:?}, trp[1]: {=bool:?}, trp[2]: {=bool:?}, trp[3]: {=bool:?}, trp[4]: {=bool:?}, trp[5]: {=bool:?}, trp[6]: {=bool:?}, trp[7]: {=bool:?}, trp[8]: {=bool:?}, trp[9]: {=bool:?}, trp[10]: {=bool:?}, trp[11]: {=bool:?}, trp[12]: {=bool:?}, trp[13]: {=bool:?}, trp[14]: {=bool:?}, trp[15]: {=bool:?}, trp[16]: {=bool:?}, trp[17]: {=bool:?}, trp[18]: {=bool:?}, trp[19]: {=bool:?}, trp[20]: {=bool:?}, trp[21]: {=bool:?}, trp[22]: {=bool:?}, trp[23]: {=bool:?}, trp[24]: {=bool:?}, trp[25]: {=bool:?}, trp[26]: {=bool:?}, trp[27]: {=bool:?}, trp[28]: {=bool:?}, trp[29]: {=bool:?}, trp[30]: {=bool:?}, trp[31]: {=bool:?} }}" , self . trp (0usize) , self . trp (1usize) , self . trp (2usize) , self . trp (3usize) , self . trp (4usize) , self . trp (5usize) , self . trp (6usize) , self . trp (7usize) , self . trp (8usize) , self . trp (9usize) , self . trp (10usize) , self . trp (11usize) , self . trp (12usize) , self . trp (13usize) , self . trp (14usize) , self . trp (15usize) , self . trp (16usize) , self . trp (17usize) , self . trp (18usize) , self . trp (19usize) , self . trp (20usize) , self . trp (21usize) , self . trp (22usize) , self . trp (23usize) , self . trp (24usize) , self . trp (25usize) , self . trp (26usize) , self . trp (27usize) , self . trp (28usize) , self . trp (29usize) , self . trp (30usize) , self . trp (31usize))
         }
     }
     #[doc = "FDCAN Tx Buffer Transmission Interrupt Enable Register"]
@@ -6336,90 +5453,45 @@ pub mod regs {
     impl core::fmt::Debug for Txbtie {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Txbtie")
-                .field(
-                    "tie",
-                    &[
-                        self.tie(0usize),
-                        self.tie(1usize),
-                        self.tie(2usize),
-                        self.tie(3usize),
-                        self.tie(4usize),
-                        self.tie(5usize),
-                        self.tie(6usize),
-                        self.tie(7usize),
-                        self.tie(8usize),
-                        self.tie(9usize),
-                        self.tie(10usize),
-                        self.tie(11usize),
-                        self.tie(12usize),
-                        self.tie(13usize),
-                        self.tie(14usize),
-                        self.tie(15usize),
-                        self.tie(16usize),
-                        self.tie(17usize),
-                        self.tie(18usize),
-                        self.tie(19usize),
-                        self.tie(20usize),
-                        self.tie(21usize),
-                        self.tie(22usize),
-                        self.tie(23usize),
-                        self.tie(24usize),
-                        self.tie(25usize),
-                        self.tie(26usize),
-                        self.tie(27usize),
-                        self.tie(28usize),
-                        self.tie(29usize),
-                        self.tie(30usize),
-                        self.tie(31usize),
-                    ],
-                )
+                .field("tie[0]", &self.tie(0usize))
+                .field("tie[1]", &self.tie(1usize))
+                .field("tie[2]", &self.tie(2usize))
+                .field("tie[3]", &self.tie(3usize))
+                .field("tie[4]", &self.tie(4usize))
+                .field("tie[5]", &self.tie(5usize))
+                .field("tie[6]", &self.tie(6usize))
+                .field("tie[7]", &self.tie(7usize))
+                .field("tie[8]", &self.tie(8usize))
+                .field("tie[9]", &self.tie(9usize))
+                .field("tie[10]", &self.tie(10usize))
+                .field("tie[11]", &self.tie(11usize))
+                .field("tie[12]", &self.tie(12usize))
+                .field("tie[13]", &self.tie(13usize))
+                .field("tie[14]", &self.tie(14usize))
+                .field("tie[15]", &self.tie(15usize))
+                .field("tie[16]", &self.tie(16usize))
+                .field("tie[17]", &self.tie(17usize))
+                .field("tie[18]", &self.tie(18usize))
+                .field("tie[19]", &self.tie(19usize))
+                .field("tie[20]", &self.tie(20usize))
+                .field("tie[21]", &self.tie(21usize))
+                .field("tie[22]", &self.tie(22usize))
+                .field("tie[23]", &self.tie(23usize))
+                .field("tie[24]", &self.tie(24usize))
+                .field("tie[25]", &self.tie(25usize))
+                .field("tie[26]", &self.tie(26usize))
+                .field("tie[27]", &self.tie(27usize))
+                .field("tie[28]", &self.tie(28usize))
+                .field("tie[29]", &self.tie(29usize))
+                .field("tie[30]", &self.tie(30usize))
+                .field("tie[31]", &self.tie(31usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Txbtie {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Txbtie {
-                tie: [bool; 32usize],
-            }
-            let proxy = Txbtie {
-                tie: [
-                    self.tie(0usize),
-                    self.tie(1usize),
-                    self.tie(2usize),
-                    self.tie(3usize),
-                    self.tie(4usize),
-                    self.tie(5usize),
-                    self.tie(6usize),
-                    self.tie(7usize),
-                    self.tie(8usize),
-                    self.tie(9usize),
-                    self.tie(10usize),
-                    self.tie(11usize),
-                    self.tie(12usize),
-                    self.tie(13usize),
-                    self.tie(14usize),
-                    self.tie(15usize),
-                    self.tie(16usize),
-                    self.tie(17usize),
-                    self.tie(18usize),
-                    self.tie(19usize),
-                    self.tie(20usize),
-                    self.tie(21usize),
-                    self.tie(22usize),
-                    self.tie(23usize),
-                    self.tie(24usize),
-                    self.tie(25usize),
-                    self.tie(26usize),
-                    self.tie(27usize),
-                    self.tie(28usize),
-                    self.tie(29usize),
-                    self.tie(30usize),
-                    self.tie(31usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Txbtie {{ tie[0]: {=bool:?}, tie[1]: {=bool:?}, tie[2]: {=bool:?}, tie[3]: {=bool:?}, tie[4]: {=bool:?}, tie[5]: {=bool:?}, tie[6]: {=bool:?}, tie[7]: {=bool:?}, tie[8]: {=bool:?}, tie[9]: {=bool:?}, tie[10]: {=bool:?}, tie[11]: {=bool:?}, tie[12]: {=bool:?}, tie[13]: {=bool:?}, tie[14]: {=bool:?}, tie[15]: {=bool:?}, tie[16]: {=bool:?}, tie[17]: {=bool:?}, tie[18]: {=bool:?}, tie[19]: {=bool:?}, tie[20]: {=bool:?}, tie[21]: {=bool:?}, tie[22]: {=bool:?}, tie[23]: {=bool:?}, tie[24]: {=bool:?}, tie[25]: {=bool:?}, tie[26]: {=bool:?}, tie[27]: {=bool:?}, tie[28]: {=bool:?}, tie[29]: {=bool:?}, tie[30]: {=bool:?}, tie[31]: {=bool:?} }}" , self . tie (0usize) , self . tie (1usize) , self . tie (2usize) , self . tie (3usize) , self . tie (4usize) , self . tie (5usize) , self . tie (6usize) , self . tie (7usize) , self . tie (8usize) , self . tie (9usize) , self . tie (10usize) , self . tie (11usize) , self . tie (12usize) , self . tie (13usize) , self . tie (14usize) , self . tie (15usize) , self . tie (16usize) , self . tie (17usize) , self . tie (18usize) , self . tie (19usize) , self . tie (20usize) , self . tie (21usize) , self . tie (22usize) , self . tie (23usize) , self . tie (24usize) , self . tie (25usize) , self . tie (26usize) , self . tie (27usize) , self . tie (28usize) , self . tie (29usize) , self . tie (30usize) , self . tie (31usize))
         }
     }
     #[doc = "FDCAN Tx Buffer Transmission Occurred Register"]
@@ -6452,90 +5524,45 @@ pub mod regs {
     impl core::fmt::Debug for Txbto {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Txbto")
-                .field(
-                    "to",
-                    &[
-                        self.to(0usize),
-                        self.to(1usize),
-                        self.to(2usize),
-                        self.to(3usize),
-                        self.to(4usize),
-                        self.to(5usize),
-                        self.to(6usize),
-                        self.to(7usize),
-                        self.to(8usize),
-                        self.to(9usize),
-                        self.to(10usize),
-                        self.to(11usize),
-                        self.to(12usize),
-                        self.to(13usize),
-                        self.to(14usize),
-                        self.to(15usize),
-                        self.to(16usize),
-                        self.to(17usize),
-                        self.to(18usize),
-                        self.to(19usize),
-                        self.to(20usize),
-                        self.to(21usize),
-                        self.to(22usize),
-                        self.to(23usize),
-                        self.to(24usize),
-                        self.to(25usize),
-                        self.to(26usize),
-                        self.to(27usize),
-                        self.to(28usize),
-                        self.to(29usize),
-                        self.to(30usize),
-                        self.to(31usize),
-                    ],
-                )
+                .field("to[0]", &self.to(0usize))
+                .field("to[1]", &self.to(1usize))
+                .field("to[2]", &self.to(2usize))
+                .field("to[3]", &self.to(3usize))
+                .field("to[4]", &self.to(4usize))
+                .field("to[5]", &self.to(5usize))
+                .field("to[6]", &self.to(6usize))
+                .field("to[7]", &self.to(7usize))
+                .field("to[8]", &self.to(8usize))
+                .field("to[9]", &self.to(9usize))
+                .field("to[10]", &self.to(10usize))
+                .field("to[11]", &self.to(11usize))
+                .field("to[12]", &self.to(12usize))
+                .field("to[13]", &self.to(13usize))
+                .field("to[14]", &self.to(14usize))
+                .field("to[15]", &self.to(15usize))
+                .field("to[16]", &self.to(16usize))
+                .field("to[17]", &self.to(17usize))
+                .field("to[18]", &self.to(18usize))
+                .field("to[19]", &self.to(19usize))
+                .field("to[20]", &self.to(20usize))
+                .field("to[21]", &self.to(21usize))
+                .field("to[22]", &self.to(22usize))
+                .field("to[23]", &self.to(23usize))
+                .field("to[24]", &self.to(24usize))
+                .field("to[25]", &self.to(25usize))
+                .field("to[26]", &self.to(26usize))
+                .field("to[27]", &self.to(27usize))
+                .field("to[28]", &self.to(28usize))
+                .field("to[29]", &self.to(29usize))
+                .field("to[30]", &self.to(30usize))
+                .field("to[31]", &self.to(31usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Txbto {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Txbto {
-                to: [bool; 32usize],
-            }
-            let proxy = Txbto {
-                to: [
-                    self.to(0usize),
-                    self.to(1usize),
-                    self.to(2usize),
-                    self.to(3usize),
-                    self.to(4usize),
-                    self.to(5usize),
-                    self.to(6usize),
-                    self.to(7usize),
-                    self.to(8usize),
-                    self.to(9usize),
-                    self.to(10usize),
-                    self.to(11usize),
-                    self.to(12usize),
-                    self.to(13usize),
-                    self.to(14usize),
-                    self.to(15usize),
-                    self.to(16usize),
-                    self.to(17usize),
-                    self.to(18usize),
-                    self.to(19usize),
-                    self.to(20usize),
-                    self.to(21usize),
-                    self.to(22usize),
-                    self.to(23usize),
-                    self.to(24usize),
-                    self.to(25usize),
-                    self.to(26usize),
-                    self.to(27usize),
-                    self.to(28usize),
-                    self.to(29usize),
-                    self.to(30usize),
-                    self.to(31usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Txbto {{ to[0]: {=bool:?}, to[1]: {=bool:?}, to[2]: {=bool:?}, to[3]: {=bool:?}, to[4]: {=bool:?}, to[5]: {=bool:?}, to[6]: {=bool:?}, to[7]: {=bool:?}, to[8]: {=bool:?}, to[9]: {=bool:?}, to[10]: {=bool:?}, to[11]: {=bool:?}, to[12]: {=bool:?}, to[13]: {=bool:?}, to[14]: {=bool:?}, to[15]: {=bool:?}, to[16]: {=bool:?}, to[17]: {=bool:?}, to[18]: {=bool:?}, to[19]: {=bool:?}, to[20]: {=bool:?}, to[21]: {=bool:?}, to[22]: {=bool:?}, to[23]: {=bool:?}, to[24]: {=bool:?}, to[25]: {=bool:?}, to[26]: {=bool:?}, to[27]: {=bool:?}, to[28]: {=bool:?}, to[29]: {=bool:?}, to[30]: {=bool:?}, to[31]: {=bool:?} }}" , self . to (0usize) , self . to (1usize) , self . to (2usize) , self . to (3usize) , self . to (4usize) , self . to (5usize) , self . to (6usize) , self . to (7usize) , self . to (8usize) , self . to (9usize) , self . to (10usize) , self . to (11usize) , self . to (12usize) , self . to (13usize) , self . to (14usize) , self . to (15usize) , self . to (16usize) , self . to (17usize) , self . to (18usize) , self . to (19usize) , self . to (20usize) , self . to (21usize) , self . to (22usize) , self . to (23usize) , self . to (24usize) , self . to (25usize) , self . to (26usize) , self . to (27usize) , self . to (28usize) , self . to (29usize) , self . to (30usize) , self . to (31usize))
         }
     }
     #[doc = "FDCAN Tx Event FIFO Acknowledge Register"]
@@ -6569,12 +5596,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Txefa {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Txefa {
-                efai: u8,
-            }
-            let proxy = Txefa { efai: self.efai() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Txefa {{ efai: {=u8:?} }}", self.efai())
         }
     }
     #[doc = "FDCAN Tx Event FIFO Configuration Register"]
@@ -6634,18 +5656,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Txefc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Txefc {
-                efsa: u16,
-                efs: u8,
-                efwm: u8,
-            }
-            let proxy = Txefc {
-                efsa: self.efsa(),
-                efs: self.efs(),
-                efwm: self.efwm(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Txefc {{ efsa: {=u16:?}, efs: {=u8:?}, efwm: {=u8:?} }}",
+                self.efsa(),
+                self.efs(),
+                self.efwm()
+            )
         }
     }
     #[doc = "FDCAN Tx Event FIFO Status Register"]
@@ -6729,22 +5746,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Txefs {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Txefs {
-                effl: u8,
-                efgi: u8,
-                efpi: u8,
-                eff: bool,
-                tefl: bool,
-            }
-            let proxy = Txefs {
-                effl: self.effl(),
-                efgi: self.efgi(),
-                efpi: self.efpi(),
-                eff: self.eff(),
-                tefl: self.tefl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Txefs {{ effl: {=u8:?}, efgi: {=u8:?}, efpi: {=u8:?}, eff: {=bool:?}, tefl: {=bool:?} }}",
+                self.effl(),
+                self.efgi(),
+                self.efpi(),
+                self.eff(),
+                self.tefl()
+            )
         }
     }
     #[doc = "FDCAN Tx Buffer Element Size Configuration Register"]
@@ -6778,12 +5788,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Txesc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Txesc {
-                tbds: u8,
-            }
-            let proxy = Txesc { tbds: self.tbds() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Txesc {{ tbds: {=u8:?} }}", self.tbds())
         }
     }
     #[doc = "FDCAN Tx FIFO/Queue Status Register"]
@@ -6855,20 +5860,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Txfqs {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Txfqs {
-                tffl: u8,
-                tfgi: u8,
-                tfqpi: u8,
-                tfqf: bool,
-            }
-            let proxy = Txfqs {
-                tffl: self.tffl(),
-                tfgi: self.tfgi(),
-                tfqpi: self.tfqpi(),
-                tfqf: self.tfqf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Txfqs {{ tffl: {=u8:?}, tfgi: {=u8:?}, tfqpi: {=u8:?}, tfqf: {=bool:?} }}",
+                self.tffl(),
+                self.tfgi(),
+                self.tfqpi(),
+                self.tfqf()
+            )
         }
     }
     #[doc = "FDCAN Extended ID and Mask Register"]
@@ -6902,12 +5901,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Xidam {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Xidam {
-                eidm: u32,
-            }
-            let proxy = Xidam { eidm: self.eidm() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Xidam {{ eidm: {=u32:?} }}", self.eidm())
         }
     }
     #[doc = "FDCAN Extended ID Filter Configuration Register"]
@@ -6955,16 +5949,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Xidfc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Xidfc {
-                flesa: u16,
-                lse: u8,
-            }
-            let proxy = Xidfc {
-                flesa: self.flesa(),
-                lse: self.lse(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Xidfc {{ flesa: {=u16:?}, lse: {=u8:?} }}", self.flesa(), self.lse())
         }
     }
 }

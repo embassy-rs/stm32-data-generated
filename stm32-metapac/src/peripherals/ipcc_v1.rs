@@ -109,16 +109,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for CxCr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CxCr {
-                rxoie: bool,
-                txfie: bool,
-            }
-            let proxy = CxCr {
-                rxoie: self.rxoie(),
-                txfie: self.txfie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "CxCr {{ rxoie: {=bool:?}, txfie: {=bool:?} }}",
+                self.rxoie(),
+                self.txfie()
+            )
         }
     }
     #[doc = "Mask register CPUx"]
@@ -166,58 +162,25 @@ pub mod regs {
     impl core::fmt::Debug for CxMr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("CxMr")
-                .field(
-                    "chom",
-                    &[
-                        self.chom(0usize),
-                        self.chom(1usize),
-                        self.chom(2usize),
-                        self.chom(3usize),
-                        self.chom(4usize),
-                        self.chom(5usize),
-                    ],
-                )
-                .field(
-                    "chfm",
-                    &[
-                        self.chfm(0usize),
-                        self.chfm(1usize),
-                        self.chfm(2usize),
-                        self.chfm(3usize),
-                        self.chfm(4usize),
-                        self.chfm(5usize),
-                    ],
-                )
+                .field("chom[0]", &self.chom(0usize))
+                .field("chom[1]", &self.chom(1usize))
+                .field("chom[2]", &self.chom(2usize))
+                .field("chom[3]", &self.chom(3usize))
+                .field("chom[4]", &self.chom(4usize))
+                .field("chom[5]", &self.chom(5usize))
+                .field("chfm[0]", &self.chfm(0usize))
+                .field("chfm[1]", &self.chfm(1usize))
+                .field("chfm[2]", &self.chfm(2usize))
+                .field("chfm[3]", &self.chfm(3usize))
+                .field("chfm[4]", &self.chfm(4usize))
+                .field("chfm[5]", &self.chfm(5usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for CxMr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CxMr {
-                chom: [bool; 6usize],
-                chfm: [bool; 6usize],
-            }
-            let proxy = CxMr {
-                chom: [
-                    self.chom(0usize),
-                    self.chom(1usize),
-                    self.chom(2usize),
-                    self.chom(3usize),
-                    self.chom(4usize),
-                    self.chom(5usize),
-                ],
-                chfm: [
-                    self.chfm(0usize),
-                    self.chfm(1usize),
-                    self.chfm(2usize),
-                    self.chfm(3usize),
-                    self.chfm(4usize),
-                    self.chfm(5usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "CxMr {{ chom[0]: {=bool:?}, chom[1]: {=bool:?}, chom[2]: {=bool:?}, chom[3]: {=bool:?}, chom[4]: {=bool:?}, chom[5]: {=bool:?}, chfm[0]: {=bool:?}, chfm[1]: {=bool:?}, chfm[2]: {=bool:?}, chfm[3]: {=bool:?}, chfm[4]: {=bool:?}, chfm[5]: {=bool:?} }}" , self . chom (0usize) , self . chom (1usize) , self . chom (2usize) , self . chom (3usize) , self . chom (4usize) , self . chom (5usize) , self . chfm (0usize) , self . chfm (1usize) , self . chfm (2usize) , self . chfm (3usize) , self . chfm (4usize) , self . chfm (5usize))
         }
     }
     #[doc = "Status Set or Clear register CPUx"]
@@ -265,58 +228,25 @@ pub mod regs {
     impl core::fmt::Debug for CxScr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("CxScr")
-                .field(
-                    "chc",
-                    &[
-                        self.chc(0usize),
-                        self.chc(1usize),
-                        self.chc(2usize),
-                        self.chc(3usize),
-                        self.chc(4usize),
-                        self.chc(5usize),
-                    ],
-                )
-                .field(
-                    "chs",
-                    &[
-                        self.chs(0usize),
-                        self.chs(1usize),
-                        self.chs(2usize),
-                        self.chs(3usize),
-                        self.chs(4usize),
-                        self.chs(5usize),
-                    ],
-                )
+                .field("chc[0]", &self.chc(0usize))
+                .field("chc[1]", &self.chc(1usize))
+                .field("chc[2]", &self.chc(2usize))
+                .field("chc[3]", &self.chc(3usize))
+                .field("chc[4]", &self.chc(4usize))
+                .field("chc[5]", &self.chc(5usize))
+                .field("chs[0]", &self.chs(0usize))
+                .field("chs[1]", &self.chs(1usize))
+                .field("chs[2]", &self.chs(2usize))
+                .field("chs[3]", &self.chs(3usize))
+                .field("chs[4]", &self.chs(4usize))
+                .field("chs[5]", &self.chs(5usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for CxScr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CxScr {
-                chc: [bool; 6usize],
-                chs: [bool; 6usize],
-            }
-            let proxy = CxScr {
-                chc: [
-                    self.chc(0usize),
-                    self.chc(1usize),
-                    self.chc(2usize),
-                    self.chc(3usize),
-                    self.chc(4usize),
-                    self.chc(5usize),
-                ],
-                chs: [
-                    self.chs(0usize),
-                    self.chs(1usize),
-                    self.chs(2usize),
-                    self.chs(3usize),
-                    self.chs(4usize),
-                    self.chs(5usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "CxScr {{ chc[0]: {=bool:?}, chc[1]: {=bool:?}, chc[2]: {=bool:?}, chc[3]: {=bool:?}, chc[4]: {=bool:?}, chc[5]: {=bool:?}, chs[0]: {=bool:?}, chs[1]: {=bool:?}, chs[2]: {=bool:?}, chs[3]: {=bool:?}, chs[4]: {=bool:?}, chs[5]: {=bool:?} }}" , self . chc (0usize) , self . chc (1usize) , self . chc (2usize) , self . chc (3usize) , self . chc (4usize) , self . chc (5usize) , self . chs (0usize) , self . chs (1usize) , self . chs (2usize) , self . chs (3usize) , self . chs (4usize) , self . chs (5usize))
         }
     }
     #[doc = "CPUx to CPUy status register"]
@@ -349,38 +279,19 @@ pub mod regs {
     impl core::fmt::Debug for CxToySr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("CxToySr")
-                .field(
-                    "chf",
-                    &[
-                        self.chf(0usize),
-                        self.chf(1usize),
-                        self.chf(2usize),
-                        self.chf(3usize),
-                        self.chf(4usize),
-                        self.chf(5usize),
-                    ],
-                )
+                .field("chf[0]", &self.chf(0usize))
+                .field("chf[1]", &self.chf(1usize))
+                .field("chf[2]", &self.chf(2usize))
+                .field("chf[3]", &self.chf(3usize))
+                .field("chf[4]", &self.chf(4usize))
+                .field("chf[5]", &self.chf(5usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for CxToySr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CxToySr {
-                chf: [bool; 6usize],
-            }
-            let proxy = CxToySr {
-                chf: [
-                    self.chf(0usize),
-                    self.chf(1usize),
-                    self.chf(2usize),
-                    self.chf(3usize),
-                    self.chf(4usize),
-                    self.chf(5usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "CxToySr {{ chf[0]: {=bool:?}, chf[1]: {=bool:?}, chf[2]: {=bool:?}, chf[3]: {=bool:?}, chf[4]: {=bool:?}, chf[5]: {=bool:?} }}" , self . chf (0usize) , self . chf (1usize) , self . chf (2usize) , self . chf (3usize) , self . chf (4usize) , self . chf (5usize))
         }
     }
 }

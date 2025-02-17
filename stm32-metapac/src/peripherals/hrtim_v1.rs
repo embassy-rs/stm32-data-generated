@@ -448,130 +448,45 @@ pub mod regs {
     impl core::fmt::Debug for HrtimAdc1r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimAdc1r")
-                .field(
-                    "adcmc",
-                    &[
-                        self.adcmc(0usize),
-                        self.adcmc(1usize),
-                        self.adcmc(2usize),
-                        self.adcmc(3usize),
-                    ],
-                )
+                .field("adcmc[0]", &self.adcmc(0usize))
+                .field("adcmc[1]", &self.adcmc(1usize))
+                .field("adcmc[2]", &self.adcmc(2usize))
+                .field("adcmc[3]", &self.adcmc(3usize))
                 .field("adcmper", &self.adcmper())
-                .field(
-                    "adceev",
-                    &[
-                        self.adceev(0usize),
-                        self.adceev(1usize),
-                        self.adceev(2usize),
-                        self.adceev(3usize),
-                        self.adceev(4usize),
-                    ],
-                )
-                .field(
-                    "adctc2",
-                    &[
-                        self.adctc2(0usize),
-                        self.adctc2(1usize),
-                        self.adctc2(2usize),
-                        self.adctc2(3usize),
-                        self.adctc2(4usize),
-                    ],
-                )
-                .field(
-                    "adctc3",
-                    &[
-                        self.adctc3(0usize),
-                        self.adctc3(1usize),
-                        self.adctc3(2usize),
-                        self.adctc3(3usize),
-                        self.adctc3(4usize),
-                    ],
-                )
-                .field(
-                    "adctc4",
-                    &[
-                        self.adctc4(0usize),
-                        self.adctc4(1usize),
-                        self.adctc4(2usize),
-                        self.adctc4(3usize),
-                        self.adctc4(4usize),
-                    ],
-                )
-                .field(
-                    "adctper",
-                    &[
-                        self.adctper(0usize),
-                        self.adctper(1usize),
-                        self.adctper(2usize),
-                        self.adctper(3usize),
-                        self.adctper(4usize),
-                    ],
-                )
-                .field("adctrst", &[self.adctrst(0usize), self.adctrst(1usize)])
+                .field("adceev[0]", &self.adceev(0usize))
+                .field("adceev[1]", &self.adceev(1usize))
+                .field("adceev[2]", &self.adceev(2usize))
+                .field("adceev[3]", &self.adceev(3usize))
+                .field("adceev[4]", &self.adceev(4usize))
+                .field("adctc2[0]", &self.adctc2(0usize))
+                .field("adctc2[1]", &self.adctc2(1usize))
+                .field("adctc2[2]", &self.adctc2(2usize))
+                .field("adctc2[3]", &self.adctc2(3usize))
+                .field("adctc2[4]", &self.adctc2(4usize))
+                .field("adctc3[0]", &self.adctc3(0usize))
+                .field("adctc3[1]", &self.adctc3(1usize))
+                .field("adctc3[2]", &self.adctc3(2usize))
+                .field("adctc3[3]", &self.adctc3(3usize))
+                .field("adctc3[4]", &self.adctc3(4usize))
+                .field("adctc4[0]", &self.adctc4(0usize))
+                .field("adctc4[1]", &self.adctc4(1usize))
+                .field("adctc4[2]", &self.adctc4(2usize))
+                .field("adctc4[3]", &self.adctc4(3usize))
+                .field("adctc4[4]", &self.adctc4(4usize))
+                .field("adctper[0]", &self.adctper(0usize))
+                .field("adctper[1]", &self.adctper(1usize))
+                .field("adctper[2]", &self.adctper(2usize))
+                .field("adctper[3]", &self.adctper(3usize))
+                .field("adctper[4]", &self.adctper(4usize))
+                .field("adctrst[0]", &self.adctrst(0usize))
+                .field("adctrst[1]", &self.adctrst(1usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimAdc1r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimAdc1r {
-                adcmc: [bool; 4usize],
-                adcmper: bool,
-                adceev: [bool; 5usize],
-                adctc2: [bool; 5usize],
-                adctc3: [bool; 5usize],
-                adctc4: [bool; 5usize],
-                adctper: [bool; 5usize],
-                adctrst: [bool; 2usize],
-            }
-            let proxy = HrtimAdc1r {
-                adcmc: [
-                    self.adcmc(0usize),
-                    self.adcmc(1usize),
-                    self.adcmc(2usize),
-                    self.adcmc(3usize),
-                ],
-                adcmper: self.adcmper(),
-                adceev: [
-                    self.adceev(0usize),
-                    self.adceev(1usize),
-                    self.adceev(2usize),
-                    self.adceev(3usize),
-                    self.adceev(4usize),
-                ],
-                adctc2: [
-                    self.adctc2(0usize),
-                    self.adctc2(1usize),
-                    self.adctc2(2usize),
-                    self.adctc2(3usize),
-                    self.adctc2(4usize),
-                ],
-                adctc3: [
-                    self.adctc3(0usize),
-                    self.adctc3(1usize),
-                    self.adctc3(2usize),
-                    self.adctc3(3usize),
-                    self.adctc3(4usize),
-                ],
-                adctc4: [
-                    self.adctc4(0usize),
-                    self.adctc4(1usize),
-                    self.adctc4(2usize),
-                    self.adctc4(3usize),
-                    self.adctc4(4usize),
-                ],
-                adctper: [
-                    self.adctper(0usize),
-                    self.adctper(1usize),
-                    self.adctper(2usize),
-                    self.adctper(3usize),
-                    self.adctper(4usize),
-                ],
-                adctrst: [self.adctrst(0usize), self.adctrst(1usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "HrtimAdc1r {{ adcmc[0]: {=bool:?}, adcmc[1]: {=bool:?}, adcmc[2]: {=bool:?}, adcmc[3]: {=bool:?}, adcmper: {=bool:?}, adceev[0]: {=bool:?}, adceev[1]: {=bool:?}, adceev[2]: {=bool:?}, adceev[3]: {=bool:?}, adceev[4]: {=bool:?}, adctc2[0]: {=bool:?}, adctc2[1]: {=bool:?}, adctc2[2]: {=bool:?}, adctc2[3]: {=bool:?}, adctc2[4]: {=bool:?}, adctc3[0]: {=bool:?}, adctc3[1]: {=bool:?}, adctc3[2]: {=bool:?}, adctc3[3]: {=bool:?}, adctc3[4]: {=bool:?}, adctc4[0]: {=bool:?}, adctc4[1]: {=bool:?}, adctc4[2]: {=bool:?}, adctc4[3]: {=bool:?}, adctc4[4]: {=bool:?}, adctper[0]: {=bool:?}, adctper[1]: {=bool:?}, adctper[2]: {=bool:?}, adctper[3]: {=bool:?}, adctper[4]: {=bool:?}, adctrst[0]: {=bool:?}, adctrst[1]: {=bool:?} }}" , self . adcmc (0usize) , self . adcmc (1usize) , self . adcmc (2usize) , self . adcmc (3usize) , self . adcmper () , self . adceev (0usize) , self . adceev (1usize) , self . adceev (2usize) , self . adceev (3usize) , self . adceev (4usize) , self . adctc2 (0usize) , self . adctc2 (1usize) , self . adctc2 (2usize) , self . adctc2 (3usize) , self . adctc2 (4usize) , self . adctc3 (0usize) , self . adctc3 (1usize) , self . adctc3 (2usize) , self . adctc3 (3usize) , self . adctc3 (4usize) , self . adctc4 (0usize) , self . adctc4 (1usize) , self . adctc4 (2usize) , self . adctc4 (3usize) , self . adctc4 (4usize) , self . adctper (0usize) , self . adctper (1usize) , self . adctper (2usize) , self . adctper (3usize) , self . adctper (4usize) , self . adctrst (0usize) , self . adctrst (1usize))
         }
     }
     #[doc = "High Resolution Timer: ADC Trigger 2 Register"]
@@ -705,131 +620,45 @@ pub mod regs {
     impl core::fmt::Debug for HrtimAdc2r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimAdc2r")
-                .field(
-                    "adcmc",
-                    &[
-                        self.adcmc(0usize),
-                        self.adcmc(1usize),
-                        self.adcmc(2usize),
-                        self.adcmc(3usize),
-                    ],
-                )
+                .field("adcmc[0]", &self.adcmc(0usize))
+                .field("adcmc[1]", &self.adcmc(1usize))
+                .field("adcmc[2]", &self.adcmc(2usize))
+                .field("adcmc[3]", &self.adcmc(3usize))
                 .field("adcmper", &self.adcmper())
-                .field(
-                    "adceev",
-                    &[
-                        self.adceev(0usize),
-                        self.adceev(1usize),
-                        self.adceev(2usize),
-                        self.adceev(3usize),
-                        self.adceev(4usize),
-                    ],
-                )
-                .field(
-                    "adctc2",
-                    &[
-                        self.adctc2(0usize),
-                        self.adctc2(1usize),
-                        self.adctc2(2usize),
-                        self.adctc2(3usize),
-                        self.adctc2(4usize),
-                    ],
-                )
-                .field(
-                    "adctc3",
-                    &[
-                        self.adctc3(0usize),
-                        self.adctc3(1usize),
-                        self.adctc3(2usize),
-                        self.adctc3(3usize),
-                        self.adctc3(4usize),
-                    ],
-                )
-                .field(
-                    "adctc4",
-                    &[
-                        self.adctc4(0usize),
-                        self.adctc4(1usize),
-                        self.adctc4(2usize),
-                        self.adctc4(3usize),
-                        self.adctc4(4usize),
-                    ],
-                )
-                .field(
-                    "adctper",
-                    &[
-                        self.adctper(0usize),
-                        self.adctper(1usize),
-                        self.adctper(2usize),
-                        self.adctper(3usize),
-                    ],
-                )
-                .field(
-                    "adctrst",
-                    &[self.adctrst(0usize), self.adctrst(1usize), self.adctrst(2usize)],
-                )
+                .field("adceev[0]", &self.adceev(0usize))
+                .field("adceev[1]", &self.adceev(1usize))
+                .field("adceev[2]", &self.adceev(2usize))
+                .field("adceev[3]", &self.adceev(3usize))
+                .field("adceev[4]", &self.adceev(4usize))
+                .field("adctc2[0]", &self.adctc2(0usize))
+                .field("adctc2[1]", &self.adctc2(1usize))
+                .field("adctc2[2]", &self.adctc2(2usize))
+                .field("adctc2[3]", &self.adctc2(3usize))
+                .field("adctc2[4]", &self.adctc2(4usize))
+                .field("adctc3[0]", &self.adctc3(0usize))
+                .field("adctc3[1]", &self.adctc3(1usize))
+                .field("adctc3[2]", &self.adctc3(2usize))
+                .field("adctc3[3]", &self.adctc3(3usize))
+                .field("adctc3[4]", &self.adctc3(4usize))
+                .field("adctc4[0]", &self.adctc4(0usize))
+                .field("adctc4[1]", &self.adctc4(1usize))
+                .field("adctc4[2]", &self.adctc4(2usize))
+                .field("adctc4[3]", &self.adctc4(3usize))
+                .field("adctc4[4]", &self.adctc4(4usize))
+                .field("adctper[0]", &self.adctper(0usize))
+                .field("adctper[1]", &self.adctper(1usize))
+                .field("adctper[2]", &self.adctper(2usize))
+                .field("adctper[3]", &self.adctper(3usize))
+                .field("adctrst[0]", &self.adctrst(0usize))
+                .field("adctrst[1]", &self.adctrst(1usize))
+                .field("adctrst[2]", &self.adctrst(2usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimAdc2r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimAdc2r {
-                adcmc: [bool; 4usize],
-                adcmper: bool,
-                adceev: [bool; 5usize],
-                adctc2: [bool; 5usize],
-                adctc3: [bool; 5usize],
-                adctc4: [bool; 5usize],
-                adctper: [bool; 4usize],
-                adctrst: [bool; 3usize],
-            }
-            let proxy = HrtimAdc2r {
-                adcmc: [
-                    self.adcmc(0usize),
-                    self.adcmc(1usize),
-                    self.adcmc(2usize),
-                    self.adcmc(3usize),
-                ],
-                adcmper: self.adcmper(),
-                adceev: [
-                    self.adceev(0usize),
-                    self.adceev(1usize),
-                    self.adceev(2usize),
-                    self.adceev(3usize),
-                    self.adceev(4usize),
-                ],
-                adctc2: [
-                    self.adctc2(0usize),
-                    self.adctc2(1usize),
-                    self.adctc2(2usize),
-                    self.adctc2(3usize),
-                    self.adctc2(4usize),
-                ],
-                adctc3: [
-                    self.adctc3(0usize),
-                    self.adctc3(1usize),
-                    self.adctc3(2usize),
-                    self.adctc3(3usize),
-                    self.adctc3(4usize),
-                ],
-                adctc4: [
-                    self.adctc4(0usize),
-                    self.adctc4(1usize),
-                    self.adctc4(2usize),
-                    self.adctc4(3usize),
-                    self.adctc4(4usize),
-                ],
-                adctper: [
-                    self.adctper(0usize),
-                    self.adctper(1usize),
-                    self.adctper(2usize),
-                    self.adctper(3usize),
-                ],
-                adctrst: [self.adctrst(0usize), self.adctrst(1usize), self.adctrst(2usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "HrtimAdc2r {{ adcmc[0]: {=bool:?}, adcmc[1]: {=bool:?}, adcmc[2]: {=bool:?}, adcmc[3]: {=bool:?}, adcmper: {=bool:?}, adceev[0]: {=bool:?}, adceev[1]: {=bool:?}, adceev[2]: {=bool:?}, adceev[3]: {=bool:?}, adceev[4]: {=bool:?}, adctc2[0]: {=bool:?}, adctc2[1]: {=bool:?}, adctc2[2]: {=bool:?}, adctc2[3]: {=bool:?}, adctc2[4]: {=bool:?}, adctc3[0]: {=bool:?}, adctc3[1]: {=bool:?}, adctc3[2]: {=bool:?}, adctc3[3]: {=bool:?}, adctc3[4]: {=bool:?}, adctc4[0]: {=bool:?}, adctc4[1]: {=bool:?}, adctc4[2]: {=bool:?}, adctc4[3]: {=bool:?}, adctc4[4]: {=bool:?}, adctper[0]: {=bool:?}, adctper[1]: {=bool:?}, adctper[2]: {=bool:?}, adctper[3]: {=bool:?}, adctrst[0]: {=bool:?}, adctrst[1]: {=bool:?}, adctrst[2]: {=bool:?} }}" , self . adcmc (0usize) , self . adcmc (1usize) , self . adcmc (2usize) , self . adcmc (3usize) , self . adcmper () , self . adceev (0usize) , self . adceev (1usize) , self . adceev (2usize) , self . adceev (3usize) , self . adceev (4usize) , self . adctc2 (0usize) , self . adctc2 (1usize) , self . adctc2 (2usize) , self . adctc2 (3usize) , self . adctc2 (4usize) , self . adctc3 (0usize) , self . adctc3 (1usize) , self . adctc3 (2usize) , self . adctc3 (3usize) , self . adctc3 (4usize) , self . adctc4 (0usize) , self . adctc4 (1usize) , self . adctc4 (2usize) , self . adctc4 (3usize) , self . adctc4 (4usize) , self . adctper (0usize) , self . adctper (1usize) , self . adctper (2usize) , self . adctper (3usize) , self . adctrst (0usize) , self . adctrst (1usize) , self . adctrst (2usize))
         }
     }
     #[doc = "High Resolution Timer: Burst DMA Data Register"]
@@ -863,12 +692,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimBdmadr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimBdmadr {
-                bdmadr: u32,
-            }
-            let proxy = HrtimBdmadr { bdmadr: self.bdmadr() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HrtimBdmadr {{ bdmadr: {=u32:?} }}", self.bdmadr())
         }
     }
     #[doc = "High Resolution Timer: Burst DMA Master timer update Register"]
@@ -973,46 +797,17 @@ pub mod regs {
                 .field("mcnt", &self.mcnt())
                 .field("mper", &self.mper())
                 .field("mrep", &self.mrep())
-                .field(
-                    "mcmp",
-                    &[
-                        self.mcmp(0usize),
-                        self.mcmp(1usize),
-                        self.mcmp(2usize),
-                        self.mcmp(3usize),
-                    ],
-                )
+                .field("mcmp[0]", &self.mcmp(0usize))
+                .field("mcmp[1]", &self.mcmp(1usize))
+                .field("mcmp[2]", &self.mcmp(2usize))
+                .field("mcmp[3]", &self.mcmp(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimBdmupr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimBdmupr {
-                mcr: bool,
-                micr: bool,
-                mdier: bool,
-                mcnt: bool,
-                mper: bool,
-                mrep: bool,
-                mcmp: [bool; 4usize],
-            }
-            let proxy = HrtimBdmupr {
-                mcr: self.mcr(),
-                micr: self.micr(),
-                mdier: self.mdier(),
-                mcnt: self.mcnt(),
-                mper: self.mper(),
-                mrep: self.mrep(),
-                mcmp: [
-                    self.mcmp(0usize),
-                    self.mcmp(1usize),
-                    self.mcmp(2usize),
-                    self.mcmp(3usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "HrtimBdmupr {{ mcr: {=bool:?}, micr: {=bool:?}, mdier: {=bool:?}, mcnt: {=bool:?}, mper: {=bool:?}, mrep: {=bool:?}, mcmp[0]: {=bool:?}, mcmp[1]: {=bool:?}, mcmp[2]: {=bool:?}, mcmp[3]: {=bool:?} }}" , self . mcr () , self . micr () , self . mdier () , self . mcnt () , self . mper () , self . mrep () , self . mcmp (0usize) , self . mcmp (1usize) , self . mcmp (2usize) , self . mcmp (3usize))
         }
     }
     #[doc = "High Resolution Timer: Burst DMA Master timer update Register"]
@@ -1117,36 +912,17 @@ pub mod regs {
                 .field("cnt", &self.cnt())
                 .field("per", &self.per())
                 .field("rep", &self.rep())
-                .field(
-                    "cmp",
-                    &[self.cmp(0usize), self.cmp(1usize), self.cmp(2usize), self.cmp(3usize)],
-                )
+                .field("cmp[0]", &self.cmp(0usize))
+                .field("cmp[1]", &self.cmp(1usize))
+                .field("cmp[2]", &self.cmp(2usize))
+                .field("cmp[3]", &self.cmp(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimBdtupr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimBdtupr {
-                cr: bool,
-                icr: bool,
-                dier: bool,
-                cnt: bool,
-                per: bool,
-                rep: bool,
-                cmp: [bool; 4usize],
-            }
-            let proxy = HrtimBdtupr {
-                cr: self.cr(),
-                icr: self.icr(),
-                dier: self.dier(),
-                cnt: self.cnt(),
-                per: self.per(),
-                rep: self.rep(),
-                cmp: [self.cmp(0usize), self.cmp(1usize), self.cmp(2usize), self.cmp(3usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "HrtimBdtupr {{ cr: {=bool:?}, icr: {=bool:?}, dier: {=bool:?}, cnt: {=bool:?}, per: {=bool:?}, rep: {=bool:?}, cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, cmp[2]: {=bool:?}, cmp[3]: {=bool:?} }}" , self . cr () , self . icr () , self . dier () , self . cnt () , self . per () , self . rep () , self . cmp (0usize) , self . cmp (1usize) , self . cmp (2usize) , self . cmp (3usize))
         }
     }
     #[doc = "High Resolution Timer: Burst Mode Compare Register"]
@@ -1180,12 +956,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimBmcmpr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimBmcmpr {
-                bmcmp: u16,
-            }
-            let proxy = HrtimBmcmpr { bmcmp: self.bmcmp() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HrtimBmcmpr {{ bmcmp: {=u16:?} }}", self.bmcmp())
         }
     }
     #[doc = "High Resolution Timer: Burst Mode Control Register"]
@@ -1299,16 +1070,11 @@ pub mod regs {
                 .field("bmprsc", &self.bmprsc())
                 .field("bmpren", &self.bmpren())
                 .field("mtbm", &self.mtbm())
-                .field(
-                    "tbm",
-                    &[
-                        self.tbm(0usize),
-                        self.tbm(1usize),
-                        self.tbm(2usize),
-                        self.tbm(3usize),
-                        self.tbm(4usize),
-                    ],
-                )
+                .field("tbm[0]", &self.tbm(0usize))
+                .field("tbm[1]", &self.tbm(1usize))
+                .field("tbm[2]", &self.tbm(2usize))
+                .field("tbm[3]", &self.tbm(3usize))
+                .field("tbm[4]", &self.tbm(4usize))
                 .field("bmstat", &self.bmstat())
                 .finish()
         }
@@ -1316,34 +1082,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimBmcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimBmcr {
-                bme: bool,
-                bmom: bool,
-                bmclk: u8,
-                bmprsc: u8,
-                bmpren: bool,
-                mtbm: bool,
-                tbm: [bool; 5usize],
-                bmstat: bool,
-            }
-            let proxy = HrtimBmcr {
-                bme: self.bme(),
-                bmom: self.bmom(),
-                bmclk: self.bmclk(),
-                bmprsc: self.bmprsc(),
-                bmpren: self.bmpren(),
-                mtbm: self.mtbm(),
-                tbm: [
-                    self.tbm(0usize),
-                    self.tbm(1usize),
-                    self.tbm(2usize),
-                    self.tbm(3usize),
-                    self.tbm(4usize),
-                ],
-                bmstat: self.bmstat(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "HrtimBmcr {{ bme: {=bool:?}, bmom: {=bool:?}, bmclk: {=u8:?}, bmprsc: {=u8:?}, bmpren: {=bool:?}, mtbm: {=bool:?}, tbm[0]: {=bool:?}, tbm[1]: {=bool:?}, tbm[2]: {=bool:?}, tbm[3]: {=bool:?}, tbm[4]: {=bool:?}, bmstat: {=bool:?} }}" , self . bme () , self . bmom () , self . bmclk () , self . bmprsc () , self . bmpren () , self . mtbm () , self . tbm (0usize) , self . tbm (1usize) , self . tbm (2usize) , self . tbm (3usize) , self . tbm (4usize) , self . bmstat ())
         }
     }
     #[doc = "High Resolution Timer: Burst Mode Period Register"]
@@ -1377,12 +1116,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimBmper {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimBmper {
-                bmper: u16,
-            }
-            let proxy = HrtimBmper { bmper: self.bmper() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HrtimBmper {{ bmper: {=u16:?} }}", self.bmper())
         }
     }
     #[doc = "High Resolution Timer: Burst Mode Trigger Register"]
@@ -1511,112 +1245,37 @@ pub mod regs {
                 .field("sw", &self.sw())
                 .field("mstrst", &self.mstrst())
                 .field("mstrep", &self.mstrep())
-                .field(
-                    "mstcmp",
-                    &[
-                        self.mstcmp(0usize),
-                        self.mstcmp(1usize),
-                        self.mstcmp(2usize),
-                        self.mstcmp(3usize),
-                    ],
-                )
-                .field(
-                    "trst",
-                    &[
-                        self.trst(0usize),
-                        self.trst(1usize),
-                        self.trst(2usize),
-                        self.trst(3usize),
-                        self.trst(4usize),
-                    ],
-                )
-                .field(
-                    "trep",
-                    &[
-                        self.trep(0usize),
-                        self.trep(1usize),
-                        self.trep(2usize),
-                        self.trep(3usize),
-                        self.trep(4usize),
-                    ],
-                )
-                .field(
-                    "tcmp1",
-                    &[
-                        self.tcmp1(0usize),
-                        self.tcmp1(1usize),
-                        self.tcmp1(2usize),
-                        self.tcmp1(3usize),
-                        self.tcmp1(4usize),
-                    ],
-                )
-                .field(
-                    "tcmp2",
-                    &[
-                        self.tcmp2(0usize),
-                        self.tcmp2(1usize),
-                        self.tcmp2(2usize),
-                        self.tcmp2(3usize),
-                        self.tcmp2(4usize),
-                    ],
-                )
+                .field("mstcmp[0]", &self.mstcmp(0usize))
+                .field("mstcmp[1]", &self.mstcmp(1usize))
+                .field("mstcmp[2]", &self.mstcmp(2usize))
+                .field("mstcmp[3]", &self.mstcmp(3usize))
+                .field("trst[0]", &self.trst(0usize))
+                .field("trst[1]", &self.trst(1usize))
+                .field("trst[2]", &self.trst(2usize))
+                .field("trst[3]", &self.trst(3usize))
+                .field("trst[4]", &self.trst(4usize))
+                .field("trep[0]", &self.trep(0usize))
+                .field("trep[1]", &self.trep(1usize))
+                .field("trep[2]", &self.trep(2usize))
+                .field("trep[3]", &self.trep(3usize))
+                .field("trep[4]", &self.trep(4usize))
+                .field("tcmp1[0]", &self.tcmp1(0usize))
+                .field("tcmp1[1]", &self.tcmp1(1usize))
+                .field("tcmp1[2]", &self.tcmp1(2usize))
+                .field("tcmp1[3]", &self.tcmp1(3usize))
+                .field("tcmp1[4]", &self.tcmp1(4usize))
+                .field("tcmp2[0]", &self.tcmp2(0usize))
+                .field("tcmp2[1]", &self.tcmp2(1usize))
+                .field("tcmp2[2]", &self.tcmp2(2usize))
+                .field("tcmp2[3]", &self.tcmp2(3usize))
+                .field("tcmp2[4]", &self.tcmp2(4usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimBmtrgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimBmtrgr {
-                sw: bool,
-                mstrst: bool,
-                mstrep: bool,
-                mstcmp: [bool; 4usize],
-                trst: [bool; 5usize],
-                trep: [bool; 5usize],
-                tcmp1: [bool; 5usize],
-                tcmp2: [bool; 5usize],
-            }
-            let proxy = HrtimBmtrgr {
-                sw: self.sw(),
-                mstrst: self.mstrst(),
-                mstrep: self.mstrep(),
-                mstcmp: [
-                    self.mstcmp(0usize),
-                    self.mstcmp(1usize),
-                    self.mstcmp(2usize),
-                    self.mstcmp(3usize),
-                ],
-                trst: [
-                    self.trst(0usize),
-                    self.trst(1usize),
-                    self.trst(2usize),
-                    self.trst(3usize),
-                    self.trst(4usize),
-                ],
-                trep: [
-                    self.trep(0usize),
-                    self.trep(1usize),
-                    self.trep(2usize),
-                    self.trep(3usize),
-                    self.trep(4usize),
-                ],
-                tcmp1: [
-                    self.tcmp1(0usize),
-                    self.tcmp1(1usize),
-                    self.tcmp1(2usize),
-                    self.tcmp1(3usize),
-                    self.tcmp1(4usize),
-                ],
-                tcmp2: [
-                    self.tcmp2(0usize),
-                    self.tcmp2(1usize),
-                    self.tcmp2(2usize),
-                    self.tcmp2(3usize),
-                    self.tcmp2(4usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "HrtimBmtrgr {{ sw: {=bool:?}, mstrst: {=bool:?}, mstrep: {=bool:?}, mstcmp[0]: {=bool:?}, mstcmp[1]: {=bool:?}, mstcmp[2]: {=bool:?}, mstcmp[3]: {=bool:?}, trst[0]: {=bool:?}, trst[1]: {=bool:?}, trst[2]: {=bool:?}, trst[3]: {=bool:?}, trst[4]: {=bool:?}, trep[0]: {=bool:?}, trep[1]: {=bool:?}, trep[2]: {=bool:?}, trep[3]: {=bool:?}, trep[4]: {=bool:?}, tcmp1[0]: {=bool:?}, tcmp1[1]: {=bool:?}, tcmp1[2]: {=bool:?}, tcmp1[3]: {=bool:?}, tcmp1[4]: {=bool:?}, tcmp2[0]: {=bool:?}, tcmp2[1]: {=bool:?}, tcmp2[2]: {=bool:?}, tcmp2[3]: {=bool:?}, tcmp2[4]: {=bool:?} }}" , self . sw () , self . mstrst () , self . mstrep () , self . mstcmp (0usize) , self . mstcmp (1usize) , self . mstcmp (2usize) , self . mstcmp (3usize) , self . trst (0usize) , self . trst (1usize) , self . trst (2usize) , self . trst (3usize) , self . trst (4usize) , self . trep (0usize) , self . trep (1usize) , self . trep (2usize) , self . trep (3usize) , self . trep (4usize) , self . tcmp1 (0usize) , self . tcmp1 (1usize) , self . tcmp1 (2usize) , self . tcmp1 (3usize) , self . tcmp1 (4usize) , self . tcmp2 (0usize) , self . tcmp2 (1usize) , self . tcmp2 (2usize) , self . tcmp2 (3usize) , self . tcmp2 (4usize))
         }
     }
     #[doc = "High Resolution Timer: Control Register 1"]
@@ -1676,54 +1335,22 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimCr1")
                 .field("mudis", &self.mudis())
-                .field(
-                    "tudis",
-                    &[
-                        self.tudis(0usize),
-                        self.tudis(1usize),
-                        self.tudis(2usize),
-                        self.tudis(3usize),
-                        self.tudis(4usize),
-                    ],
-                )
-                .field(
-                    "adusrc",
-                    &[
-                        self.adusrc(0usize),
-                        self.adusrc(1usize),
-                        self.adusrc(2usize),
-                        self.adusrc(3usize),
-                    ],
-                )
+                .field("tudis[0]", &self.tudis(0usize))
+                .field("tudis[1]", &self.tudis(1usize))
+                .field("tudis[2]", &self.tudis(2usize))
+                .field("tudis[3]", &self.tudis(3usize))
+                .field("tudis[4]", &self.tudis(4usize))
+                .field("adusrc[0]", &self.adusrc(0usize))
+                .field("adusrc[1]", &self.adusrc(1usize))
+                .field("adusrc[2]", &self.adusrc(2usize))
+                .field("adusrc[3]", &self.adusrc(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimCr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimCr1 {
-                mudis: bool,
-                tudis: [bool; 5usize],
-                adusrc: [u8; 4usize],
-            }
-            let proxy = HrtimCr1 {
-                mudis: self.mudis(),
-                tudis: [
-                    self.tudis(0usize),
-                    self.tudis(1usize),
-                    self.tudis(2usize),
-                    self.tudis(3usize),
-                    self.tudis(4usize),
-                ],
-                adusrc: [
-                    self.adusrc(0usize),
-                    self.adusrc(1usize),
-                    self.adusrc(2usize),
-                    self.adusrc(3usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "HrtimCr1 {{ mudis: {=bool:?}, tudis[0]: {=bool:?}, tudis[1]: {=bool:?}, tudis[2]: {=bool:?}, tudis[3]: {=bool:?}, tudis[4]: {=bool:?}, adusrc[0]: {=u8:?}, adusrc[1]: {=u8:?}, adusrc[2]: {=u8:?}, adusrc[3]: {=u8:?} }}" , self . mudis () , self . tudis (0usize) , self . tudis (1usize) , self . tudis (2usize) , self . tudis (3usize) , self . tudis (4usize) , self . adusrc (0usize) , self . adusrc (1usize) , self . adusrc (2usize) , self . adusrc (3usize))
         }
     }
     #[doc = "High Resolution Timer: Control Register 2"]
@@ -1794,59 +1421,24 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimCr2")
                 .field("mswu", &self.mswu())
-                .field(
-                    "tswu",
-                    &[
-                        self.tswu(0usize),
-                        self.tswu(1usize),
-                        self.tswu(2usize),
-                        self.tswu(3usize),
-                        self.tswu(4usize),
-                    ],
-                )
+                .field("tswu[0]", &self.tswu(0usize))
+                .field("tswu[1]", &self.tswu(1usize))
+                .field("tswu[2]", &self.tswu(2usize))
+                .field("tswu[3]", &self.tswu(3usize))
+                .field("tswu[4]", &self.tswu(4usize))
                 .field("mrst", &self.mrst())
-                .field(
-                    "trst",
-                    &[
-                        self.trst(0usize),
-                        self.trst(1usize),
-                        self.trst(2usize),
-                        self.trst(3usize),
-                        self.trst(4usize),
-                    ],
-                )
+                .field("trst[0]", &self.trst(0usize))
+                .field("trst[1]", &self.trst(1usize))
+                .field("trst[2]", &self.trst(2usize))
+                .field("trst[3]", &self.trst(3usize))
+                .field("trst[4]", &self.trst(4usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimCr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimCr2 {
-                mswu: bool,
-                tswu: [bool; 5usize],
-                mrst: bool,
-                trst: [bool; 5usize],
-            }
-            let proxy = HrtimCr2 {
-                mswu: self.mswu(),
-                tswu: [
-                    self.tswu(0usize),
-                    self.tswu(1usize),
-                    self.tswu(2usize),
-                    self.tswu(3usize),
-                    self.tswu(4usize),
-                ],
-                mrst: self.mrst(),
-                trst: [
-                    self.trst(0usize),
-                    self.trst(1usize),
-                    self.trst(2usize),
-                    self.trst(3usize),
-                    self.trst(4usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "HrtimCr2 {{ mswu: {=bool:?}, tswu[0]: {=bool:?}, tswu[1]: {=bool:?}, tswu[2]: {=bool:?}, tswu[3]: {=bool:?}, tswu[4]: {=bool:?}, mrst: {=bool:?}, trst[0]: {=bool:?}, trst[1]: {=bool:?}, trst[2]: {=bool:?}, trst[3]: {=bool:?}, trst[4]: {=bool:?} }}" , self . mswu () , self . tswu (0usize) , self . tswu (1usize) , self . tswu (2usize) , self . tswu (3usize) , self . tswu (4usize) , self . mrst () , self . trst (0usize) , self . trst (1usize) , self . trst (2usize) , self . trst (3usize) , self . trst (4usize))
         }
     }
     #[doc = "High Resolution Timer: DLL Control Register"]
@@ -1906,18 +1498,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimDllcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimDllcr {
-                cal: bool,
-                calen: bool,
-                calrte: u8,
-            }
-            let proxy = HrtimDllcr {
-                cal: self.cal(),
-                calen: self.calen(),
-                calrte: self.calrte(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "HrtimDllcr {{ cal: {=bool:?}, calen: {=bool:?}, calrte: {=u8:?} }}",
+                self.cal(),
+                self.calen(),
+                self.calrte()
+            )
         }
     }
     #[doc = "High Resolution Timer: External Events Control Register 1"]
@@ -1995,90 +1582,33 @@ pub mod regs {
     impl core::fmt::Debug for HrtimEecr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimEecr1")
-                .field(
-                    "eesrc",
-                    &[
-                        self.eesrc(0usize),
-                        self.eesrc(1usize),
-                        self.eesrc(2usize),
-                        self.eesrc(3usize),
-                        self.eesrc(4usize),
-                    ],
-                )
-                .field(
-                    "eepol",
-                    &[
-                        self.eepol(0usize),
-                        self.eepol(1usize),
-                        self.eepol(2usize),
-                        self.eepol(3usize),
-                        self.eepol(4usize),
-                    ],
-                )
-                .field(
-                    "eesns",
-                    &[
-                        self.eesns(0usize),
-                        self.eesns(1usize),
-                        self.eesns(2usize),
-                        self.eesns(3usize),
-                        self.eesns(4usize),
-                    ],
-                )
-                .field(
-                    "eefast",
-                    &[
-                        self.eefast(0usize),
-                        self.eefast(1usize),
-                        self.eefast(2usize),
-                        self.eefast(3usize),
-                        self.eefast(4usize),
-                    ],
-                )
+                .field("eesrc[0]", &self.eesrc(0usize))
+                .field("eesrc[1]", &self.eesrc(1usize))
+                .field("eesrc[2]", &self.eesrc(2usize))
+                .field("eesrc[3]", &self.eesrc(3usize))
+                .field("eesrc[4]", &self.eesrc(4usize))
+                .field("eepol[0]", &self.eepol(0usize))
+                .field("eepol[1]", &self.eepol(1usize))
+                .field("eepol[2]", &self.eepol(2usize))
+                .field("eepol[3]", &self.eepol(3usize))
+                .field("eepol[4]", &self.eepol(4usize))
+                .field("eesns[0]", &self.eesns(0usize))
+                .field("eesns[1]", &self.eesns(1usize))
+                .field("eesns[2]", &self.eesns(2usize))
+                .field("eesns[3]", &self.eesns(3usize))
+                .field("eesns[4]", &self.eesns(4usize))
+                .field("eefast[0]", &self.eefast(0usize))
+                .field("eefast[1]", &self.eefast(1usize))
+                .field("eefast[2]", &self.eefast(2usize))
+                .field("eefast[3]", &self.eefast(3usize))
+                .field("eefast[4]", &self.eefast(4usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimEecr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimEecr1 {
-                eesrc: [u8; 5usize],
-                eepol: [bool; 5usize],
-                eesns: [u8; 5usize],
-                eefast: [u8; 5usize],
-            }
-            let proxy = HrtimEecr1 {
-                eesrc: [
-                    self.eesrc(0usize),
-                    self.eesrc(1usize),
-                    self.eesrc(2usize),
-                    self.eesrc(3usize),
-                    self.eesrc(4usize),
-                ],
-                eepol: [
-                    self.eepol(0usize),
-                    self.eepol(1usize),
-                    self.eepol(2usize),
-                    self.eepol(3usize),
-                    self.eepol(4usize),
-                ],
-                eesns: [
-                    self.eesns(0usize),
-                    self.eesns(1usize),
-                    self.eesns(2usize),
-                    self.eesns(3usize),
-                    self.eesns(4usize),
-                ],
-                eefast: [
-                    self.eefast(0usize),
-                    self.eefast(1usize),
-                    self.eefast(2usize),
-                    self.eefast(3usize),
-                    self.eefast(4usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "HrtimEecr1 {{ eesrc[0]: {=u8:?}, eesrc[1]: {=u8:?}, eesrc[2]: {=u8:?}, eesrc[3]: {=u8:?}, eesrc[4]: {=u8:?}, eepol[0]: {=bool:?}, eepol[1]: {=bool:?}, eepol[2]: {=bool:?}, eepol[3]: {=bool:?}, eepol[4]: {=bool:?}, eesns[0]: {=u8:?}, eesns[1]: {=u8:?}, eesns[2]: {=u8:?}, eesns[3]: {=u8:?}, eesns[4]: {=u8:?}, eefast[0]: {=u8:?}, eefast[1]: {=u8:?}, eefast[2]: {=u8:?}, eefast[3]: {=u8:?}, eefast[4]: {=u8:?} }}" , self . eesrc (0usize) , self . eesrc (1usize) , self . eesrc (2usize) , self . eesrc (3usize) , self . eesrc (4usize) , self . eepol (0usize) , self . eepol (1usize) , self . eepol (2usize) , self . eepol (3usize) , self . eepol (4usize) , self . eesns (0usize) , self . eesns (1usize) , self . eesns (2usize) , self . eesns (3usize) , self . eesns (4usize) , self . eefast (0usize) , self . eefast (1usize) , self . eefast (2usize) , self . eefast (3usize) , self . eefast (4usize))
         }
     }
     #[doc = "High Resolution Timer: External Events Control Register 2"]
@@ -2141,72 +1671,28 @@ pub mod regs {
     impl core::fmt::Debug for HrtimEecr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimEecr2")
-                .field(
-                    "eesrc",
-                    &[
-                        self.eesrc(0usize),
-                        self.eesrc(1usize),
-                        self.eesrc(2usize),
-                        self.eesrc(3usize),
-                        self.eesrc(4usize),
-                    ],
-                )
-                .field(
-                    "eepol",
-                    &[
-                        self.eepol(0usize),
-                        self.eepol(1usize),
-                        self.eepol(2usize),
-                        self.eepol(3usize),
-                        self.eepol(4usize),
-                    ],
-                )
-                .field(
-                    "eesns",
-                    &[
-                        self.eesns(0usize),
-                        self.eesns(1usize),
-                        self.eesns(2usize),
-                        self.eesns(3usize),
-                        self.eesns(4usize),
-                    ],
-                )
+                .field("eesrc[0]", &self.eesrc(0usize))
+                .field("eesrc[1]", &self.eesrc(1usize))
+                .field("eesrc[2]", &self.eesrc(2usize))
+                .field("eesrc[3]", &self.eesrc(3usize))
+                .field("eesrc[4]", &self.eesrc(4usize))
+                .field("eepol[0]", &self.eepol(0usize))
+                .field("eepol[1]", &self.eepol(1usize))
+                .field("eepol[2]", &self.eepol(2usize))
+                .field("eepol[3]", &self.eepol(3usize))
+                .field("eepol[4]", &self.eepol(4usize))
+                .field("eesns[0]", &self.eesns(0usize))
+                .field("eesns[1]", &self.eesns(1usize))
+                .field("eesns[2]", &self.eesns(2usize))
+                .field("eesns[3]", &self.eesns(3usize))
+                .field("eesns[4]", &self.eesns(4usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimEecr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimEecr2 {
-                eesrc: [u8; 5usize],
-                eepol: [bool; 5usize],
-                eesns: [u8; 5usize],
-            }
-            let proxy = HrtimEecr2 {
-                eesrc: [
-                    self.eesrc(0usize),
-                    self.eesrc(1usize),
-                    self.eesrc(2usize),
-                    self.eesrc(3usize),
-                    self.eesrc(4usize),
-                ],
-                eepol: [
-                    self.eepol(0usize),
-                    self.eepol(1usize),
-                    self.eepol(2usize),
-                    self.eepol(3usize),
-                    self.eepol(4usize),
-                ],
-                eesns: [
-                    self.eesns(0usize),
-                    self.eesns(1usize),
-                    self.eesns(2usize),
-                    self.eesns(3usize),
-                    self.eesns(4usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "HrtimEecr2 {{ eesrc[0]: {=u8:?}, eesrc[1]: {=u8:?}, eesrc[2]: {=u8:?}, eesrc[3]: {=u8:?}, eesrc[4]: {=u8:?}, eepol[0]: {=bool:?}, eepol[1]: {=bool:?}, eepol[2]: {=bool:?}, eepol[3]: {=bool:?}, eepol[4]: {=bool:?}, eesns[0]: {=u8:?}, eesns[1]: {=u8:?}, eesns[2]: {=u8:?}, eesns[3]: {=u8:?}, eesns[4]: {=u8:?} }}" , self . eesrc (0usize) , self . eesrc (1usize) , self . eesrc (2usize) , self . eesrc (3usize) , self . eesrc (4usize) , self . eepol (0usize) , self . eepol (1usize) , self . eepol (2usize) , self . eepol (3usize) , self . eepol (4usize) , self . eesns (0usize) , self . eesns (1usize) , self . eesns (2usize) , self . eesns (3usize) , self . eesns (4usize))
         }
     }
     #[doc = "High Resolution Timer: External Events Control Register 2"]
@@ -2250,16 +1736,11 @@ pub mod regs {
     impl core::fmt::Debug for HrtimEecr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimEecr3")
-                .field(
-                    "eef",
-                    &[
-                        self.eef(0usize),
-                        self.eef(1usize),
-                        self.eef(2usize),
-                        self.eef(3usize),
-                        self.eef(4usize),
-                    ],
-                )
+                .field("eef[0]", &self.eef(0usize))
+                .field("eef[1]", &self.eef(1usize))
+                .field("eef[2]", &self.eef(2usize))
+                .field("eef[3]", &self.eef(3usize))
+                .field("eef[4]", &self.eef(4usize))
                 .field("eevsd", &self.eevsd())
                 .finish()
         }
@@ -2267,22 +1748,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimEecr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimEecr3 {
-                eef: [u8; 5usize],
-                eevsd: u8,
-            }
-            let proxy = HrtimEecr3 {
-                eef: [
-                    self.eef(0usize),
-                    self.eef(1usize),
-                    self.eef(2usize),
-                    self.eef(3usize),
-                    self.eef(4usize),
-                ],
-                eevsd: self.eevsd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "HrtimEecr3 {{ eef[0]: {=u8:?}, eef[1]: {=u8:?}, eef[2]: {=u8:?}, eef[3]: {=u8:?}, eef[4]: {=u8:?}, eevsd: {=u8:?} }}" , self . eef (0usize) , self . eef (1usize) , self . eef (2usize) , self . eef (3usize) , self . eef (4usize) , self . eevsd ())
         }
     }
     #[doc = "High Resolution Timer: Fault Input Register 1"]
@@ -2375,98 +1841,33 @@ pub mod regs {
     impl core::fmt::Debug for HrtimFltinr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimFltinr1")
-                .field(
-                    "flte",
-                    &[
-                        self.flte(0usize),
-                        self.flte(1usize),
-                        self.flte(2usize),
-                        self.flte(3usize),
-                    ],
-                )
-                .field(
-                    "fltp",
-                    &[
-                        self.fltp(0usize),
-                        self.fltp(1usize),
-                        self.fltp(2usize),
-                        self.fltp(3usize),
-                    ],
-                )
-                .field(
-                    "fltsrc",
-                    &[
-                        self.fltsrc(0usize),
-                        self.fltsrc(1usize),
-                        self.fltsrc(2usize),
-                        self.fltsrc(3usize),
-                    ],
-                )
-                .field(
-                    "fltf",
-                    &[
-                        self.fltf(0usize),
-                        self.fltf(1usize),
-                        self.fltf(2usize),
-                        self.fltf(3usize),
-                    ],
-                )
-                .field(
-                    "fltlck",
-                    &[
-                        self.fltlck(0usize),
-                        self.fltlck(1usize),
-                        self.fltlck(2usize),
-                        self.fltlck(3usize),
-                    ],
-                )
+                .field("flte[0]", &self.flte(0usize))
+                .field("flte[1]", &self.flte(1usize))
+                .field("flte[2]", &self.flte(2usize))
+                .field("flte[3]", &self.flte(3usize))
+                .field("fltp[0]", &self.fltp(0usize))
+                .field("fltp[1]", &self.fltp(1usize))
+                .field("fltp[2]", &self.fltp(2usize))
+                .field("fltp[3]", &self.fltp(3usize))
+                .field("fltsrc[0]", &self.fltsrc(0usize))
+                .field("fltsrc[1]", &self.fltsrc(1usize))
+                .field("fltsrc[2]", &self.fltsrc(2usize))
+                .field("fltsrc[3]", &self.fltsrc(3usize))
+                .field("fltf[0]", &self.fltf(0usize))
+                .field("fltf[1]", &self.fltf(1usize))
+                .field("fltf[2]", &self.fltf(2usize))
+                .field("fltf[3]", &self.fltf(3usize))
+                .field("fltlck[0]", &self.fltlck(0usize))
+                .field("fltlck[1]", &self.fltlck(1usize))
+                .field("fltlck[2]", &self.fltlck(2usize))
+                .field("fltlck[3]", &self.fltlck(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimFltinr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimFltinr1 {
-                flte: [bool; 4usize],
-                fltp: [bool; 4usize],
-                fltsrc: [bool; 4usize],
-                fltf: [u8; 4usize],
-                fltlck: [bool; 4usize],
-            }
-            let proxy = HrtimFltinr1 {
-                flte: [
-                    self.flte(0usize),
-                    self.flte(1usize),
-                    self.flte(2usize),
-                    self.flte(3usize),
-                ],
-                fltp: [
-                    self.fltp(0usize),
-                    self.fltp(1usize),
-                    self.fltp(2usize),
-                    self.fltp(3usize),
-                ],
-                fltsrc: [
-                    self.fltsrc(0usize),
-                    self.fltsrc(1usize),
-                    self.fltsrc(2usize),
-                    self.fltsrc(3usize),
-                ],
-                fltf: [
-                    self.fltf(0usize),
-                    self.fltf(1usize),
-                    self.fltf(2usize),
-                    self.fltf(3usize),
-                ],
-                fltlck: [
-                    self.fltlck(0usize),
-                    self.fltlck(1usize),
-                    self.fltlck(2usize),
-                    self.fltlck(3usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "HrtimFltinr1 {{ flte[0]: {=bool:?}, flte[1]: {=bool:?}, flte[2]: {=bool:?}, flte[3]: {=bool:?}, fltp[0]: {=bool:?}, fltp[1]: {=bool:?}, fltp[2]: {=bool:?}, fltp[3]: {=bool:?}, fltsrc[0]: {=bool:?}, fltsrc[1]: {=bool:?}, fltsrc[2]: {=bool:?}, fltsrc[3]: {=bool:?}, fltf[0]: {=u8:?}, fltf[1]: {=u8:?}, fltf[2]: {=u8:?}, fltf[3]: {=u8:?}, fltlck[0]: {=bool:?}, fltlck[1]: {=bool:?}, fltlck[2]: {=bool:?}, fltlck[3]: {=bool:?} }}" , self . flte (0usize) , self . flte (1usize) , self . flte (2usize) , self . flte (3usize) , self . fltp (0usize) , self . fltp (1usize) , self . fltp (2usize) , self . fltp (3usize) , self . fltsrc (0usize) , self . fltsrc (1usize) , self . fltsrc (2usize) , self . fltsrc (3usize) , self . fltf (0usize) , self . fltf (1usize) , self . fltf (2usize) , self . fltf (3usize) , self . fltlck (0usize) , self . fltlck (1usize) , self . fltlck (2usize) , self . fltlck (3usize))
         }
     }
     #[doc = "High Resolution Timer: Fault Input Register 2"]
@@ -2570,11 +1971,11 @@ pub mod regs {
     impl core::fmt::Debug for HrtimFltinr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimFltinr2")
-                .field("flte", &[self.flte(0usize)])
-                .field("fltp", &[self.fltp(0usize)])
-                .field("fltsrc", &[self.fltsrc(0usize)])
-                .field("fltf", &[self.fltf(0usize)])
-                .field("fltlck", &[self.fltlck(0usize)])
+                .field("flte[0]", &self.flte(0usize))
+                .field("fltp[0]", &self.fltp(0usize))
+                .field("fltsrc[0]", &self.fltsrc(0usize))
+                .field("fltf[0]", &self.fltf(0usize))
+                .field("fltlck[0]", &self.fltlck(0usize))
                 .field("fltsd", &self.fltsd())
                 .finish()
         }
@@ -2582,24 +1983,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimFltinr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimFltinr2 {
-                flte: [bool; 1usize],
-                fltp: [bool; 1usize],
-                fltsrc: [bool; 1usize],
-                fltf: [u8; 1usize],
-                fltlck: [bool; 1usize],
-                fltsd: u8,
-            }
-            let proxy = HrtimFltinr2 {
-                flte: [self.flte(0usize)],
-                fltp: [self.fltp(0usize)],
-                fltsrc: [self.fltsrc(0usize)],
-                fltf: [self.fltf(0usize)],
-                fltlck: [self.fltlck(0usize)],
-                fltsd: self.fltsd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "HrtimFltinr2 {{ flte[0]: {=bool:?}, fltp[0]: {=bool:?}, fltsrc[0]: {=bool:?}, fltf[0]: {=u8:?}, fltlck[0]: {=bool:?}, fltsd: {=u8:?} }}" , self . flte (0usize) , self . fltp (0usize) , self . fltsrc (0usize) , self . fltf (0usize) , self . fltlck (0usize) , self . fltsd ())
         }
     }
     #[doc = "High Resolution Timer: Interrupt Clear Register"]
@@ -2665,16 +2049,11 @@ pub mod regs {
     impl core::fmt::Debug for HrtimIcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimIcr")
-                .field(
-                    "flt",
-                    &[
-                        self.flt(0usize),
-                        self.flt(1usize),
-                        self.flt(2usize),
-                        self.flt(3usize),
-                        self.flt(4usize),
-                    ],
-                )
+                .field("flt[0]", &self.flt(0usize))
+                .field("flt[1]", &self.flt(1usize))
+                .field("flt[2]", &self.flt(2usize))
+                .field("flt[3]", &self.flt(3usize))
+                .field("flt[4]", &self.flt(4usize))
                 .field("sysflt", &self.sysflt())
                 .field("dllrdy", &self.dllrdy())
                 .field("bmper", &self.bmper())
@@ -2684,26 +2063,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimIcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimIcr {
-                flt: [bool; 5usize],
-                sysflt: bool,
-                dllrdy: bool,
-                bmper: bool,
-            }
-            let proxy = HrtimIcr {
-                flt: [
-                    self.flt(0usize),
-                    self.flt(1usize),
-                    self.flt(2usize),
-                    self.flt(3usize),
-                    self.flt(4usize),
-                ],
-                sysflt: self.sysflt(),
-                dllrdy: self.dllrdy(),
-                bmper: self.bmper(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "HrtimIcr {{ flt[0]: {=bool:?}, flt[1]: {=bool:?}, flt[2]: {=bool:?}, flt[3]: {=bool:?}, flt[4]: {=bool:?}, sysflt: {=bool:?}, dllrdy: {=bool:?}, bmper: {=bool:?} }}" , self . flt (0usize) , self . flt (1usize) , self . flt (2usize) , self . flt (3usize) , self . flt (4usize) , self . sysflt () , self . dllrdy () , self . bmper ())
         }
     }
     #[doc = "High Resolution Timer: Interrupt Enable Register"]
@@ -2769,16 +2129,11 @@ pub mod regs {
     impl core::fmt::Debug for HrtimIer {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimIer")
-                .field(
-                    "flt",
-                    &[
-                        self.flt(0usize),
-                        self.flt(1usize),
-                        self.flt(2usize),
-                        self.flt(3usize),
-                        self.flt(4usize),
-                    ],
-                )
+                .field("flt[0]", &self.flt(0usize))
+                .field("flt[1]", &self.flt(1usize))
+                .field("flt[2]", &self.flt(2usize))
+                .field("flt[3]", &self.flt(3usize))
+                .field("flt[4]", &self.flt(4usize))
                 .field("sysflt", &self.sysflt())
                 .field("dllrdy", &self.dllrdy())
                 .field("bmper", &self.bmper())
@@ -2788,26 +2143,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimIer {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimIer {
-                flt: [bool; 5usize],
-                sysflt: bool,
-                dllrdy: bool,
-                bmper: bool,
-            }
-            let proxy = HrtimIer {
-                flt: [
-                    self.flt(0usize),
-                    self.flt(1usize),
-                    self.flt(2usize),
-                    self.flt(3usize),
-                    self.flt(4usize),
-                ],
-                sysflt: self.sysflt(),
-                dllrdy: self.dllrdy(),
-                bmper: self.bmper(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "HrtimIer {{ flt[0]: {=bool:?}, flt[1]: {=bool:?}, flt[2]: {=bool:?}, flt[3]: {=bool:?}, flt[4]: {=bool:?}, sysflt: {=bool:?}, dllrdy: {=bool:?}, bmper: {=bool:?} }}" , self . flt (0usize) , self . flt (1usize) , self . flt (2usize) , self . flt (3usize) , self . flt (4usize) , self . sysflt () , self . dllrdy () , self . bmper ())
         }
     }
     #[doc = "High Resolution Timer: Interrupt Status Register"]
@@ -2873,16 +2209,11 @@ pub mod regs {
     impl core::fmt::Debug for HrtimIsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimIsr")
-                .field(
-                    "flt",
-                    &[
-                        self.flt(0usize),
-                        self.flt(1usize),
-                        self.flt(2usize),
-                        self.flt(3usize),
-                        self.flt(4usize),
-                    ],
-                )
+                .field("flt[0]", &self.flt(0usize))
+                .field("flt[1]", &self.flt(1usize))
+                .field("flt[2]", &self.flt(2usize))
+                .field("flt[3]", &self.flt(3usize))
+                .field("flt[4]", &self.flt(4usize))
                 .field("sysflt", &self.sysflt())
                 .field("dllrdy", &self.dllrdy())
                 .field("bmper", &self.bmper())
@@ -2892,26 +2223,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimIsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimIsr {
-                flt: [bool; 5usize],
-                sysflt: bool,
-                dllrdy: bool,
-                bmper: bool,
-            }
-            let proxy = HrtimIsr {
-                flt: [
-                    self.flt(0usize),
-                    self.flt(1usize),
-                    self.flt(2usize),
-                    self.flt(3usize),
-                    self.flt(4usize),
-                ],
-                sysflt: self.sysflt(),
-                dllrdy: self.dllrdy(),
-                bmper: self.bmper(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "HrtimIsr {{ flt[0]: {=bool:?}, flt[1]: {=bool:?}, flt[2]: {=bool:?}, flt[3]: {=bool:?}, flt[4]: {=bool:?}, sysflt: {=bool:?}, dllrdy: {=bool:?}, bmper: {=bool:?} }}" , self . flt (0usize) , self . flt (1usize) , self . flt (2usize) , self . flt (3usize) , self . flt (4usize) , self . sysflt () , self . dllrdy () , self . bmper ())
         }
     }
     #[doc = "High Resolution Timer: Output Disable Register"]
@@ -2959,54 +2271,23 @@ pub mod regs {
     impl core::fmt::Debug for HrtimOdisr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimOdisr")
-                .field(
-                    "t1odis",
-                    &[
-                        self.t1odis(0usize),
-                        self.t1odis(1usize),
-                        self.t1odis(2usize),
-                        self.t1odis(3usize),
-                        self.t1odis(4usize),
-                    ],
-                )
-                .field(
-                    "t2odis",
-                    &[
-                        self.t2odis(0usize),
-                        self.t2odis(1usize),
-                        self.t2odis(2usize),
-                        self.t2odis(3usize),
-                        self.t2odis(4usize),
-                    ],
-                )
+                .field("t1odis[0]", &self.t1odis(0usize))
+                .field("t1odis[1]", &self.t1odis(1usize))
+                .field("t1odis[2]", &self.t1odis(2usize))
+                .field("t1odis[3]", &self.t1odis(3usize))
+                .field("t1odis[4]", &self.t1odis(4usize))
+                .field("t2odis[0]", &self.t2odis(0usize))
+                .field("t2odis[1]", &self.t2odis(1usize))
+                .field("t2odis[2]", &self.t2odis(2usize))
+                .field("t2odis[3]", &self.t2odis(3usize))
+                .field("t2odis[4]", &self.t2odis(4usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimOdisr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimOdisr {
-                t1odis: [bool; 5usize],
-                t2odis: [bool; 5usize],
-            }
-            let proxy = HrtimOdisr {
-                t1odis: [
-                    self.t1odis(0usize),
-                    self.t1odis(1usize),
-                    self.t1odis(2usize),
-                    self.t1odis(3usize),
-                    self.t1odis(4usize),
-                ],
-                t2odis: [
-                    self.t2odis(0usize),
-                    self.t2odis(1usize),
-                    self.t2odis(2usize),
-                    self.t2odis(3usize),
-                    self.t2odis(4usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "HrtimOdisr {{ t1odis[0]: {=bool:?}, t1odis[1]: {=bool:?}, t1odis[2]: {=bool:?}, t1odis[3]: {=bool:?}, t1odis[4]: {=bool:?}, t2odis[0]: {=bool:?}, t2odis[1]: {=bool:?}, t2odis[2]: {=bool:?}, t2odis[3]: {=bool:?}, t2odis[4]: {=bool:?} }}" , self . t1odis (0usize) , self . t1odis (1usize) , self . t1odis (2usize) , self . t1odis (3usize) , self . t1odis (4usize) , self . t2odis (0usize) , self . t2odis (1usize) , self . t2odis (2usize) , self . t2odis (3usize) , self . t2odis (4usize))
         }
     }
     #[doc = "High Resolution Timer: Output Disable Status Register"]
@@ -3054,54 +2335,23 @@ pub mod regs {
     impl core::fmt::Debug for HrtimOdsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimOdsr")
-                .field(
-                    "t1odis",
-                    &[
-                        self.t1odis(0usize),
-                        self.t1odis(1usize),
-                        self.t1odis(2usize),
-                        self.t1odis(3usize),
-                        self.t1odis(4usize),
-                    ],
-                )
-                .field(
-                    "t2odis",
-                    &[
-                        self.t2odis(0usize),
-                        self.t2odis(1usize),
-                        self.t2odis(2usize),
-                        self.t2odis(3usize),
-                        self.t2odis(4usize),
-                    ],
-                )
+                .field("t1odis[0]", &self.t1odis(0usize))
+                .field("t1odis[1]", &self.t1odis(1usize))
+                .field("t1odis[2]", &self.t1odis(2usize))
+                .field("t1odis[3]", &self.t1odis(3usize))
+                .field("t1odis[4]", &self.t1odis(4usize))
+                .field("t2odis[0]", &self.t2odis(0usize))
+                .field("t2odis[1]", &self.t2odis(1usize))
+                .field("t2odis[2]", &self.t2odis(2usize))
+                .field("t2odis[3]", &self.t2odis(3usize))
+                .field("t2odis[4]", &self.t2odis(4usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimOdsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimOdsr {
-                t1odis: [bool; 5usize],
-                t2odis: [bool; 5usize],
-            }
-            let proxy = HrtimOdsr {
-                t1odis: [
-                    self.t1odis(0usize),
-                    self.t1odis(1usize),
-                    self.t1odis(2usize),
-                    self.t1odis(3usize),
-                    self.t1odis(4usize),
-                ],
-                t2odis: [
-                    self.t2odis(0usize),
-                    self.t2odis(1usize),
-                    self.t2odis(2usize),
-                    self.t2odis(3usize),
-                    self.t2odis(4usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "HrtimOdsr {{ t1odis[0]: {=bool:?}, t1odis[1]: {=bool:?}, t1odis[2]: {=bool:?}, t1odis[3]: {=bool:?}, t1odis[4]: {=bool:?}, t2odis[0]: {=bool:?}, t2odis[1]: {=bool:?}, t2odis[2]: {=bool:?}, t2odis[3]: {=bool:?}, t2odis[4]: {=bool:?} }}" , self . t1odis (0usize) , self . t1odis (1usize) , self . t1odis (2usize) , self . t1odis (3usize) , self . t1odis (4usize) , self . t2odis (0usize) , self . t2odis (1usize) , self . t2odis (2usize) , self . t2odis (3usize) , self . t2odis (4usize))
         }
     }
     #[doc = "High Resolution Timer: Output Enable Register"]
@@ -3149,54 +2399,23 @@ pub mod regs {
     impl core::fmt::Debug for HrtimOenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimOenr")
-                .field(
-                    "t1oen",
-                    &[
-                        self.t1oen(0usize),
-                        self.t1oen(1usize),
-                        self.t1oen(2usize),
-                        self.t1oen(3usize),
-                        self.t1oen(4usize),
-                    ],
-                )
-                .field(
-                    "t2oen",
-                    &[
-                        self.t2oen(0usize),
-                        self.t2oen(1usize),
-                        self.t2oen(2usize),
-                        self.t2oen(3usize),
-                        self.t2oen(4usize),
-                    ],
-                )
+                .field("t1oen[0]", &self.t1oen(0usize))
+                .field("t1oen[1]", &self.t1oen(1usize))
+                .field("t1oen[2]", &self.t1oen(2usize))
+                .field("t1oen[3]", &self.t1oen(3usize))
+                .field("t1oen[4]", &self.t1oen(4usize))
+                .field("t2oen[0]", &self.t2oen(0usize))
+                .field("t2oen[1]", &self.t2oen(1usize))
+                .field("t2oen[2]", &self.t2oen(2usize))
+                .field("t2oen[3]", &self.t2oen(3usize))
+                .field("t2oen[4]", &self.t2oen(4usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimOenr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HrtimOenr {
-                t1oen: [bool; 5usize],
-                t2oen: [bool; 5usize],
-            }
-            let proxy = HrtimOenr {
-                t1oen: [
-                    self.t1oen(0usize),
-                    self.t1oen(1usize),
-                    self.t1oen(2usize),
-                    self.t1oen(3usize),
-                    self.t1oen(4usize),
-                ],
-                t2oen: [
-                    self.t2oen(0usize),
-                    self.t2oen(1usize),
-                    self.t2oen(2usize),
-                    self.t2oen(3usize),
-                    self.t2oen(4usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "HrtimOenr {{ t1oen[0]: {=bool:?}, t1oen[1]: {=bool:?}, t1oen[2]: {=bool:?}, t1oen[3]: {=bool:?}, t1oen[4]: {=bool:?}, t2oen[0]: {=bool:?}, t2oen[1]: {=bool:?}, t2oen[2]: {=bool:?}, t2oen[3]: {=bool:?}, t2oen[4]: {=bool:?} }}" , self . t1oen (0usize) , self . t1oen (1usize) , self . t1oen (2usize) , self . t1oen (3usize) , self . t1oen (4usize) , self . t2oen (0usize) , self . t2oen (1usize) , self . t2oen (2usize) , self . t2oen (3usize) , self . t2oen (4usize))
         }
     }
     #[doc = "Master Timer Compare X Register"]
@@ -3230,12 +2449,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mcmpx {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mcmpx {
-                mcmp: u16,
-            }
-            let proxy = Mcmpx { mcmp: self.mcmp() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Mcmpx {{ mcmp: {=u16:?} }}", self.mcmp())
         }
     }
     #[doc = "Master Timer Counter Register"]
@@ -3269,12 +2483,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mcntr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mcntr {
-                mcnt: u16,
-            }
-            let proxy = Mcntr { mcnt: self.mcnt() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Mcntr {{ mcnt: {=u16:?} }}", self.mcnt())
         }
     }
     #[doc = "Master Timer Control Register"]
@@ -3471,16 +2680,11 @@ pub mod regs {
                 .field("syncout", &self.syncout())
                 .field("syncsrc", &self.syncsrc())
                 .field("mcen", &self.mcen())
-                .field(
-                    "tcen",
-                    &[
-                        self.tcen(0usize),
-                        self.tcen(1usize),
-                        self.tcen(2usize),
-                        self.tcen(3usize),
-                        self.tcen(4usize),
-                    ],
-                )
+                .field("tcen[0]", &self.tcen(0usize))
+                .field("tcen[1]", &self.tcen(1usize))
+                .field("tcen[2]", &self.tcen(2usize))
+                .field("tcen[3]", &self.tcen(3usize))
+                .field("tcen[4]", &self.tcen(4usize))
                 .field("dacsync", &self.dacsync())
                 .field("preen", &self.preen())
                 .field("mrepu", &self.mrepu())
@@ -3491,48 +2695,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mcr {
-                ckpsc: u8,
-                cont: bool,
-                retrig: bool,
-                half: bool,
-                syncin: super::vals::Syncin,
-                syncrstm: bool,
-                syncstrtm: bool,
-                syncout: super::vals::Syncout,
-                syncsrc: super::vals::Syncsrc,
-                mcen: bool,
-                tcen: [bool; 5usize],
-                dacsync: super::vals::Dacsync,
-                preen: bool,
-                mrepu: bool,
-                brstdma: super::vals::Brstdma,
-            }
-            let proxy = Mcr {
-                ckpsc: self.ckpsc(),
-                cont: self.cont(),
-                retrig: self.retrig(),
-                half: self.half(),
-                syncin: self.syncin(),
-                syncrstm: self.syncrstm(),
-                syncstrtm: self.syncstrtm(),
-                syncout: self.syncout(),
-                syncsrc: self.syncsrc(),
-                mcen: self.mcen(),
-                tcen: [
-                    self.tcen(0usize),
-                    self.tcen(1usize),
-                    self.tcen(2usize),
-                    self.tcen(3usize),
-                    self.tcen(4usize),
-                ],
-                dacsync: self.dacsync(),
-                preen: self.preen(),
-                mrepu: self.mrepu(),
-                brstdma: self.brstdma(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Mcr {{ ckpsc: {=u8:?}, cont: {=bool:?}, retrig: {=bool:?}, half: {=bool:?}, syncin: {:?}, syncrstm: {=bool:?}, syncstrtm: {=bool:?}, syncout: {:?}, syncsrc: {:?}, mcen: {=bool:?}, tcen[0]: {=bool:?}, tcen[1]: {=bool:?}, tcen[2]: {=bool:?}, tcen[3]: {=bool:?}, tcen[4]: {=bool:?}, dacsync: {:?}, preen: {=bool:?}, mrepu: {=bool:?}, brstdma: {:?} }}" , self . ckpsc () , self . cont () , self . retrig () , self . half () , self . syncin () , self . syncrstm () , self . syncstrtm () , self . syncout () , self . syncsrc () , self . mcen () , self . tcen (0usize) , self . tcen (1usize) , self . tcen (2usize) , self . tcen (3usize) , self . tcen (4usize) , self . dacsync () , self . preen () , self . mrepu () , self . brstdma ())
         }
     }
     #[doc = "Master Timer DMA / Interrupt Enable Register"]
@@ -3646,27 +2809,17 @@ pub mod regs {
     impl core::fmt::Debug for Mdier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mdier")
-                .field(
-                    "mcmpie",
-                    &[
-                        self.mcmpie(0usize),
-                        self.mcmpie(1usize),
-                        self.mcmpie(2usize),
-                        self.mcmpie(3usize),
-                    ],
-                )
+                .field("mcmpie[0]", &self.mcmpie(0usize))
+                .field("mcmpie[1]", &self.mcmpie(1usize))
+                .field("mcmpie[2]", &self.mcmpie(2usize))
+                .field("mcmpie[3]", &self.mcmpie(3usize))
                 .field("mrepie", &self.mrepie())
                 .field("syncie", &self.syncie())
                 .field("mupdie", &self.mupdie())
-                .field(
-                    "mcmpde",
-                    &[
-                        self.mcmpde(0usize),
-                        self.mcmpde(1usize),
-                        self.mcmpde(2usize),
-                        self.mcmpde(3usize),
-                    ],
-                )
+                .field("mcmpde[0]", &self.mcmpde(0usize))
+                .field("mcmpde[1]", &self.mcmpde(1usize))
+                .field("mcmpde[2]", &self.mcmpde(2usize))
+                .field("mcmpde[3]", &self.mcmpde(3usize))
                 .field("mrepde", &self.mrepde())
                 .field("syncde", &self.syncde())
                 .field("mupdde", &self.mupdde())
@@ -3676,38 +2829,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mdier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mdier {
-                mcmpie: [bool; 4usize],
-                mrepie: bool,
-                syncie: bool,
-                mupdie: bool,
-                mcmpde: [bool; 4usize],
-                mrepde: bool,
-                syncde: bool,
-                mupdde: bool,
-            }
-            let proxy = Mdier {
-                mcmpie: [
-                    self.mcmpie(0usize),
-                    self.mcmpie(1usize),
-                    self.mcmpie(2usize),
-                    self.mcmpie(3usize),
-                ],
-                mrepie: self.mrepie(),
-                syncie: self.syncie(),
-                mupdie: self.mupdie(),
-                mcmpde: [
-                    self.mcmpde(0usize),
-                    self.mcmpde(1usize),
-                    self.mcmpde(2usize),
-                    self.mcmpde(3usize),
-                ],
-                mrepde: self.mrepde(),
-                syncde: self.syncde(),
-                mupdde: self.mupdde(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Mdier {{ mcmpie[0]: {=bool:?}, mcmpie[1]: {=bool:?}, mcmpie[2]: {=bool:?}, mcmpie[3]: {=bool:?}, mrepie: {=bool:?}, syncie: {=bool:?}, mupdie: {=bool:?}, mcmpde[0]: {=bool:?}, mcmpde[1]: {=bool:?}, mcmpde[2]: {=bool:?}, mcmpde[3]: {=bool:?}, mrepde: {=bool:?}, syncde: {=bool:?}, mupdde: {=bool:?} }}" , self . mcmpie (0usize) , self . mcmpie (1usize) , self . mcmpie (2usize) , self . mcmpie (3usize) , self . mrepie () , self . syncie () , self . mupdie () , self . mcmpde (0usize) , self . mcmpde (1usize) , self . mcmpde (2usize) , self . mcmpde (3usize) , self . mrepde () , self . syncde () , self . mupdde ())
         }
     }
     #[doc = "Master Timer Interrupt Clear Register"]
@@ -3773,15 +2895,10 @@ pub mod regs {
     impl core::fmt::Debug for Micr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Micr")
-                .field(
-                    "mcmpc",
-                    &[
-                        self.mcmpc(0usize),
-                        self.mcmpc(1usize),
-                        self.mcmpc(2usize),
-                        self.mcmpc(3usize),
-                    ],
-                )
+                .field("mcmpc[0]", &self.mcmpc(0usize))
+                .field("mcmpc[1]", &self.mcmpc(1usize))
+                .field("mcmpc[2]", &self.mcmpc(2usize))
+                .field("mcmpc[3]", &self.mcmpc(3usize))
                 .field("mrepc", &self.mrepc())
                 .field("syncc", &self.syncc())
                 .field("mupdc", &self.mupdc())
@@ -3791,25 +2908,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Micr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Micr {
-                mcmpc: [bool; 4usize],
-                mrepc: bool,
-                syncc: bool,
-                mupdc: bool,
-            }
-            let proxy = Micr {
-                mcmpc: [
-                    self.mcmpc(0usize),
-                    self.mcmpc(1usize),
-                    self.mcmpc(2usize),
-                    self.mcmpc(3usize),
-                ],
-                mrepc: self.mrepc(),
-                syncc: self.syncc(),
-                mupdc: self.mupdc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Micr {{ mcmpc[0]: {=bool:?}, mcmpc[1]: {=bool:?}, mcmpc[2]: {=bool:?}, mcmpc[3]: {=bool:?}, mrepc: {=bool:?}, syncc: {=bool:?}, mupdc: {=bool:?} }}" , self . mcmpc (0usize) , self . mcmpc (1usize) , self . mcmpc (2usize) , self . mcmpc (3usize) , self . mrepc () , self . syncc () , self . mupdc ())
         }
     }
     #[doc = "Master Timer Interrupt Status Register"]
@@ -3875,15 +2974,10 @@ pub mod regs {
     impl core::fmt::Debug for Misr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Misr")
-                .field(
-                    "mcmp",
-                    &[
-                        self.mcmp(0usize),
-                        self.mcmp(1usize),
-                        self.mcmp(2usize),
-                        self.mcmp(3usize),
-                    ],
-                )
+                .field("mcmp[0]", &self.mcmp(0usize))
+                .field("mcmp[1]", &self.mcmp(1usize))
+                .field("mcmp[2]", &self.mcmp(2usize))
+                .field("mcmp[3]", &self.mcmp(3usize))
                 .field("mrep", &self.mrep())
                 .field("sync", &self.sync())
                 .field("mupd", &self.mupd())
@@ -3893,25 +2987,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Misr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Misr {
-                mcmp: [bool; 4usize],
-                mrep: bool,
-                sync: bool,
-                mupd: bool,
-            }
-            let proxy = Misr {
-                mcmp: [
-                    self.mcmp(0usize),
-                    self.mcmp(1usize),
-                    self.mcmp(2usize),
-                    self.mcmp(3usize),
-                ],
-                mrep: self.mrep(),
-                sync: self.sync(),
-                mupd: self.mupd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Misr {{ mcmp[0]: {=bool:?}, mcmp[1]: {=bool:?}, mcmp[2]: {=bool:?}, mcmp[3]: {=bool:?}, mrep: {=bool:?}, sync: {=bool:?}, mupd: {=bool:?} }}" , self . mcmp (0usize) , self . mcmp (1usize) , self . mcmp (2usize) , self . mcmp (3usize) , self . mrep () , self . sync () , self . mupd ())
         }
     }
     #[doc = "Master Timer Period Register"]
@@ -3945,12 +3021,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mper {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mper {
-                mper: u16,
-            }
-            let proxy = Mper { mper: self.mper() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Mper {{ mper: {=u16:?} }}", self.mper())
         }
     }
     #[doc = "Master Timer Repetition Register"]
@@ -3984,12 +3055,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mrep {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mrep {
-                mrep: u8,
-            }
-            let proxy = Mrep { mrep: self.mrep() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Mrep {{ mrep: {=u8:?} }}", self.mrep())
         }
     }
     #[doc = "Timerx Capture 2 Control Register"]
@@ -4194,86 +3260,39 @@ pub mod regs {
             f.debug_struct("Timxccr")
                 .field("swcpt", &self.swcpt())
                 .field("updcpt", &self.updcpt())
-                .field(
-                    "exevcpt",
-                    &[
-                        self.exevcpt(0usize),
-                        self.exevcpt(1usize),
-                        self.exevcpt(2usize),
-                        self.exevcpt(3usize),
-                        self.exevcpt(4usize),
-                        self.exevcpt(5usize),
-                        self.exevcpt(6usize),
-                        self.exevcpt(7usize),
-                        self.exevcpt(8usize),
-                        self.exevcpt(9usize),
-                    ],
-                )
+                .field("exevcpt[0]", &self.exevcpt(0usize))
+                .field("exevcpt[1]", &self.exevcpt(1usize))
+                .field("exevcpt[2]", &self.exevcpt(2usize))
+                .field("exevcpt[3]", &self.exevcpt(3usize))
+                .field("exevcpt[4]", &self.exevcpt(4usize))
+                .field("exevcpt[5]", &self.exevcpt(5usize))
+                .field("exevcpt[6]", &self.exevcpt(6usize))
+                .field("exevcpt[7]", &self.exevcpt(7usize))
+                .field("exevcpt[8]", &self.exevcpt(8usize))
+                .field("exevcpt[9]", &self.exevcpt(9usize))
                 .field("txset", &self.txset())
                 .field("txrst", &self.txrst())
-                .field("txcmp", &[self.txcmp(0usize), self.txcmp(1usize)])
+                .field("txcmp[0]", &self.txcmp(0usize))
+                .field("txcmp[1]", &self.txcmp(1usize))
                 .field("tyset", &self.tyset())
                 .field("tyrst", &self.tyrst())
-                .field("tycmp", &[self.tycmp(0usize), self.tycmp(1usize)])
+                .field("tycmp[0]", &self.tycmp(0usize))
+                .field("tycmp[1]", &self.tycmp(1usize))
                 .field("tzset", &self.tzset())
                 .field("tzrst", &self.tzrst())
-                .field("tzcmp", &[self.tzcmp(0usize), self.tzcmp(1usize)])
+                .field("tzcmp[0]", &self.tzcmp(0usize))
+                .field("tzcmp[1]", &self.tzcmp(1usize))
                 .field("ttset", &self.ttset())
                 .field("ttrst", &self.ttrst())
-                .field("ttcmp", &[self.ttcmp(0usize), self.ttcmp(1usize)])
+                .field("ttcmp[0]", &self.ttcmp(0usize))
+                .field("ttcmp[1]", &self.ttcmp(1usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Timxccr {
-                swcpt: bool,
-                updcpt: bool,
-                exevcpt: [bool; 10usize],
-                txset: bool,
-                txrst: bool,
-                txcmp: [bool; 2usize],
-                tyset: bool,
-                tyrst: bool,
-                tycmp: [bool; 2usize],
-                tzset: bool,
-                tzrst: bool,
-                tzcmp: [bool; 2usize],
-                ttset: bool,
-                ttrst: bool,
-                ttcmp: [bool; 2usize],
-            }
-            let proxy = Timxccr {
-                swcpt: self.swcpt(),
-                updcpt: self.updcpt(),
-                exevcpt: [
-                    self.exevcpt(0usize),
-                    self.exevcpt(1usize),
-                    self.exevcpt(2usize),
-                    self.exevcpt(3usize),
-                    self.exevcpt(4usize),
-                    self.exevcpt(5usize),
-                    self.exevcpt(6usize),
-                    self.exevcpt(7usize),
-                    self.exevcpt(8usize),
-                    self.exevcpt(9usize),
-                ],
-                txset: self.txset(),
-                txrst: self.txrst(),
-                txcmp: [self.txcmp(0usize), self.txcmp(1usize)],
-                tyset: self.tyset(),
-                tyrst: self.tyrst(),
-                tycmp: [self.tycmp(0usize), self.tycmp(1usize)],
-                tzset: self.tzset(),
-                tzrst: self.tzrst(),
-                tzcmp: [self.tzcmp(0usize), self.tzcmp(1usize)],
-                ttset: self.ttset(),
-                ttrst: self.ttrst(),
-                ttcmp: [self.ttcmp(0usize), self.ttcmp(1usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Timxccr {{ swcpt: {=bool:?}, updcpt: {=bool:?}, exevcpt[0]: {=bool:?}, exevcpt[1]: {=bool:?}, exevcpt[2]: {=bool:?}, exevcpt[3]: {=bool:?}, exevcpt[4]: {=bool:?}, exevcpt[5]: {=bool:?}, exevcpt[6]: {=bool:?}, exevcpt[7]: {=bool:?}, exevcpt[8]: {=bool:?}, exevcpt[9]: {=bool:?}, txset: {=bool:?}, txrst: {=bool:?}, txcmp[0]: {=bool:?}, txcmp[1]: {=bool:?}, tyset: {=bool:?}, tyrst: {=bool:?}, tycmp[0]: {=bool:?}, tycmp[1]: {=bool:?}, tzset: {=bool:?}, tzrst: {=bool:?}, tzcmp[0]: {=bool:?}, tzcmp[1]: {=bool:?}, ttset: {=bool:?}, ttrst: {=bool:?}, ttcmp[0]: {=bool:?}, ttcmp[1]: {=bool:?} }}" , self . swcpt () , self . updcpt () , self . exevcpt (0usize) , self . exevcpt (1usize) , self . exevcpt (2usize) , self . exevcpt (3usize) , self . exevcpt (4usize) , self . exevcpt (5usize) , self . exevcpt (6usize) , self . exevcpt (7usize) , self . exevcpt (8usize) , self . exevcpt (9usize) , self . txset () , self . txrst () , self . txcmp (0usize) , self . txcmp (1usize) , self . tyset () , self . tyrst () , self . tycmp (0usize) , self . tycmp (1usize) , self . tzset () , self . tzrst () , self . tzcmp (0usize) , self . tzcmp (1usize) , self . ttset () , self . ttrst () , self . ttcmp (0usize) , self . ttcmp (1usize))
         }
     }
     #[doc = "Timerx Chopper Register"]
@@ -4333,18 +3352,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxchp {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Timxchp {
-                carfrq: u8,
-                cardty: u8,
-                strtpw: u8,
-            }
-            let proxy = Timxchp {
-                carfrq: self.carfrq(),
-                cardty: self.cardty(),
-                strtpw: self.strtpw(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Timxchp {{ carfrq: {=u8:?}, cardty: {=u8:?}, strtpw: {=u8:?} }}",
+                self.carfrq(),
+                self.cardty(),
+                self.strtpw()
+            )
         }
     }
     #[doc = "Timerx Compare X Register"]
@@ -4378,12 +3392,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxcmp {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Timxcmp {
-                cmp: u16,
-            }
-            let proxy = Timxcmp { cmp: self.cmp() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Timxcmp {{ cmp: {=u16:?} }}", self.cmp())
         }
     }
     #[doc = "Timerx Compare X Compound Register"]
@@ -4431,16 +3440,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxcmpc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Timxcmpc {
-                cmp: u16,
-                rep: u8,
-            }
-            let proxy = Timxcmpc {
-                cmp: self.cmp(),
-                rep: self.rep(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Timxcmpc {{ cmp: {=u16:?}, rep: {=u8:?} }}", self.cmp(), self.rep())
         }
     }
     #[doc = "Timerx Counter Register"]
@@ -4474,12 +3474,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxcnt {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Timxcnt {
-                cnt: u16,
-            }
-            let proxy = Timxcnt { cnt: self.cnt() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Timxcnt {{ cnt: {=u16:?} }}", self.cnt())
         }
     }
     #[doc = "Timerx Capture X Register"]
@@ -4513,12 +3508,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxcpt {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Timxcpt {
-                cpt: u16,
-            }
-            let proxy = Timxcpt { cpt: self.cpt() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Timxcpt {{ cpt: {=u16:?} }}", self.cpt())
         }
     }
     #[doc = "Timerx Control Register"]
@@ -4727,16 +3717,11 @@ pub mod regs {
                 .field("delcmp4", &self.delcmp4())
                 .field("repu", &self.repu())
                 .field("rstu", &self.rstu())
-                .field(
-                    "tu",
-                    &[
-                        self.tu(0usize),
-                        self.tu(1usize),
-                        self.tu(2usize),
-                        self.tu(3usize),
-                        self.tu(4usize),
-                    ],
-                )
+                .field("tu[0]", &self.tu(0usize))
+                .field("tu[1]", &self.tu(1usize))
+                .field("tu[2]", &self.tu(2usize))
+                .field("tu[3]", &self.tu(3usize))
+                .field("tu[4]", &self.tu(4usize))
                 .field("mstu", &self.mstu())
                 .field("dacsync", &self.dacsync())
                 .field("preen", &self.preen())
@@ -4747,50 +3732,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Timxcr {
-                ckpsc: u8,
-                cont: bool,
-                retrig: bool,
-                half: bool,
-                pshpll: bool,
-                syncrst: bool,
-                syncstrt: bool,
-                delcmp2: super::vals::Delcmp,
-                delcmp4: super::vals::Delcmp,
-                repu: bool,
-                rstu: bool,
-                tu: [bool; 5usize],
-                mstu: bool,
-                dacsync: super::vals::Dacsync,
-                preen: bool,
-                updgat: super::vals::Updgat,
-            }
-            let proxy = Timxcr {
-                ckpsc: self.ckpsc(),
-                cont: self.cont(),
-                retrig: self.retrig(),
-                half: self.half(),
-                pshpll: self.pshpll(),
-                syncrst: self.syncrst(),
-                syncstrt: self.syncstrt(),
-                delcmp2: self.delcmp2(),
-                delcmp4: self.delcmp4(),
-                repu: self.repu(),
-                rstu: self.rstu(),
-                tu: [
-                    self.tu(0usize),
-                    self.tu(1usize),
-                    self.tu(2usize),
-                    self.tu(3usize),
-                    self.tu(4usize),
-                ],
-                mstu: self.mstu(),
-                dacsync: self.dacsync(),
-                preen: self.preen(),
-                updgat: self.updgat(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Timxcr {{ ckpsc: {=u8:?}, cont: {=bool:?}, retrig: {=bool:?}, half: {=bool:?}, pshpll: {=bool:?}, syncrst: {=bool:?}, syncstrt: {=bool:?}, delcmp2: {:?}, delcmp4: {:?}, repu: {=bool:?}, rstu: {=bool:?}, tu[0]: {=bool:?}, tu[1]: {=bool:?}, tu[2]: {=bool:?}, tu[3]: {=bool:?}, tu[4]: {=bool:?}, mstu: {=bool:?}, dacsync: {:?}, preen: {=bool:?}, updgat: {:?} }}" , self . ckpsc () , self . cont () , self . retrig () , self . half () , self . pshpll () , self . syncrst () , self . syncstrt () , self . delcmp2 () , self . delcmp4 () , self . repu () , self . rstu () , self . tu (0usize) , self . tu (1usize) , self . tu (2usize) , self . tu (3usize) , self . tu (4usize) , self . mstu () , self . dacsync () , self . preen () , self . updgat ())
         }
     }
     #[doc = "Timerx DMA / Interrupt Enable Register"]
@@ -5016,36 +3958,32 @@ pub mod regs {
     impl core::fmt::Debug for Timxdier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxdier")
-                .field(
-                    "cmpie",
-                    &[
-                        self.cmpie(0usize),
-                        self.cmpie(1usize),
-                        self.cmpie(2usize),
-                        self.cmpie(3usize),
-                    ],
-                )
+                .field("cmpie[0]", &self.cmpie(0usize))
+                .field("cmpie[1]", &self.cmpie(1usize))
+                .field("cmpie[2]", &self.cmpie(2usize))
+                .field("cmpie[3]", &self.cmpie(3usize))
                 .field("repie", &self.repie())
                 .field("updie", &self.updie())
-                .field("cptie", &[self.cptie(0usize), self.cptie(1usize)])
-                .field("setrie", &[self.setrie(0usize), self.setrie(1usize)])
-                .field("rstrie", &[self.rstrie(0usize), self.rstrie(1usize)])
+                .field("cptie[0]", &self.cptie(0usize))
+                .field("cptie[1]", &self.cptie(1usize))
+                .field("setrie[0]", &self.setrie(0usize))
+                .field("setrie[1]", &self.setrie(1usize))
+                .field("rstrie[0]", &self.rstrie(0usize))
+                .field("rstrie[1]", &self.rstrie(1usize))
                 .field("rstie", &self.rstie())
                 .field("dlyprtie", &self.dlyprtie())
-                .field(
-                    "cmpde",
-                    &[
-                        self.cmpde(0usize),
-                        self.cmpde(1usize),
-                        self.cmpde(2usize),
-                        self.cmpde(3usize),
-                    ],
-                )
+                .field("cmpde[0]", &self.cmpde(0usize))
+                .field("cmpde[1]", &self.cmpde(1usize))
+                .field("cmpde[2]", &self.cmpde(2usize))
+                .field("cmpde[3]", &self.cmpde(3usize))
                 .field("repde", &self.repde())
                 .field("updde", &self.updde())
-                .field("cptde", &[self.cptde(0usize), self.cptde(1usize)])
-                .field("setrde", &[self.setrde(0usize), self.setrde(1usize)])
-                .field("rstrde", &[self.rstrde(0usize), self.rstrde(1usize)])
+                .field("cptde[0]", &self.cptde(0usize))
+                .field("cptde[1]", &self.cptde(1usize))
+                .field("setrde[0]", &self.setrde(0usize))
+                .field("setrde[1]", &self.setrde(1usize))
+                .field("rstrde[0]", &self.rstrde(0usize))
+                .field("rstrde[1]", &self.rstrde(1usize))
                 .field("rstde", &self.rstde())
                 .field("dlyprtde", &self.dlyprtde())
                 .finish()
@@ -5054,54 +3992,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxdier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Timxdier {
-                cmpie: [bool; 4usize],
-                repie: bool,
-                updie: bool,
-                cptie: [bool; 2usize],
-                setrie: [bool; 2usize],
-                rstrie: [bool; 2usize],
-                rstie: bool,
-                dlyprtie: bool,
-                cmpde: [bool; 4usize],
-                repde: bool,
-                updde: bool,
-                cptde: [bool; 2usize],
-                setrde: [bool; 2usize],
-                rstrde: [bool; 2usize],
-                rstde: bool,
-                dlyprtde: bool,
-            }
-            let proxy = Timxdier {
-                cmpie: [
-                    self.cmpie(0usize),
-                    self.cmpie(1usize),
-                    self.cmpie(2usize),
-                    self.cmpie(3usize),
-                ],
-                repie: self.repie(),
-                updie: self.updie(),
-                cptie: [self.cptie(0usize), self.cptie(1usize)],
-                setrie: [self.setrie(0usize), self.setrie(1usize)],
-                rstrie: [self.rstrie(0usize), self.rstrie(1usize)],
-                rstie: self.rstie(),
-                dlyprtie: self.dlyprtie(),
-                cmpde: [
-                    self.cmpde(0usize),
-                    self.cmpde(1usize),
-                    self.cmpde(2usize),
-                    self.cmpde(3usize),
-                ],
-                repde: self.repde(),
-                updde: self.updde(),
-                cptde: [self.cptde(0usize), self.cptde(1usize)],
-                setrde: [self.setrde(0usize), self.setrde(1usize)],
-                rstrde: [self.rstrde(0usize), self.rstrde(1usize)],
-                rstde: self.rstde(),
-                dlyprtde: self.dlyprtde(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Timxdier {{ cmpie[0]: {=bool:?}, cmpie[1]: {=bool:?}, cmpie[2]: {=bool:?}, cmpie[3]: {=bool:?}, repie: {=bool:?}, updie: {=bool:?}, cptie[0]: {=bool:?}, cptie[1]: {=bool:?}, setrie[0]: {=bool:?}, setrie[1]: {=bool:?}, rstrie[0]: {=bool:?}, rstrie[1]: {=bool:?}, rstie: {=bool:?}, dlyprtie: {=bool:?}, cmpde[0]: {=bool:?}, cmpde[1]: {=bool:?}, cmpde[2]: {=bool:?}, cmpde[3]: {=bool:?}, repde: {=bool:?}, updde: {=bool:?}, cptde[0]: {=bool:?}, cptde[1]: {=bool:?}, setrde[0]: {=bool:?}, setrde[1]: {=bool:?}, rstrde[0]: {=bool:?}, rstrde[1]: {=bool:?}, rstde: {=bool:?}, dlyprtde: {=bool:?} }}" , self . cmpie (0usize) , self . cmpie (1usize) , self . cmpie (2usize) , self . cmpie (3usize) , self . repie () , self . updie () , self . cptie (0usize) , self . cptie (1usize) , self . setrie (0usize) , self . setrie (1usize) , self . rstrie (0usize) , self . rstrie (1usize) , self . rstie () , self . dlyprtie () , self . cmpde (0usize) , self . cmpde (1usize) , self . cmpde (2usize) , self . cmpde (3usize) , self . repde () , self . updde () , self . cptde (0usize) , self . cptde (1usize) , self . setrde (0usize) , self . setrde (1usize) , self . rstrde (0usize) , self . rstrde (1usize) , self . rstde () , self . dlyprtde ())
         }
     }
     #[doc = "Timerx Deadtime Register"]
@@ -5233,30 +4124,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxdt {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Timxdt {
-                dtr: u16,
-                sdtr: super::vals::Sdt,
-                dtprsc: u8,
-                dtrslk: bool,
-                dtrlk: bool,
-                dtf: u16,
-                sdtf: super::vals::Sdt,
-                dtfslk: bool,
-                dtflk: bool,
-            }
-            let proxy = Timxdt {
-                dtr: self.dtr(),
-                sdtr: self.sdtr(),
-                dtprsc: self.dtprsc(),
-                dtrslk: self.dtrslk(),
-                dtrlk: self.dtrlk(),
-                dtf: self.dtf(),
-                sdtf: self.sdtf(),
-                dtfslk: self.dtfslk(),
-                dtflk: self.dtflk(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Timxdt {{ dtr: {=u16:?}, sdtr: {:?}, dtprsc: {=u8:?}, dtrslk: {=bool:?}, dtrlk: {=bool:?}, dtf: {=u16:?}, sdtf: {:?}, dtfslk: {=bool:?}, dtflk: {=bool:?} }}" , self . dtr () , self . sdtr () , self . dtprsc () , self . dtrslk () , self . dtrlk () , self . dtf () , self . sdtf () , self . dtfslk () , self . dtflk ())
         }
     }
     #[doc = "Timer X External Event Filtering Register"]
@@ -5304,54 +4172,23 @@ pub mod regs {
     impl core::fmt::Debug for Timxeef {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxeef")
-                .field(
-                    "ltch",
-                    &[
-                        self.ltch(0usize),
-                        self.ltch(1usize),
-                        self.ltch(2usize),
-                        self.ltch(3usize),
-                        self.ltch(4usize),
-                    ],
-                )
-                .field(
-                    "fltr",
-                    &[
-                        self.fltr(0usize),
-                        self.fltr(1usize),
-                        self.fltr(2usize),
-                        self.fltr(3usize),
-                        self.fltr(4usize),
-                    ],
-                )
+                .field("ltch[0]", &self.ltch(0usize))
+                .field("ltch[1]", &self.ltch(1usize))
+                .field("ltch[2]", &self.ltch(2usize))
+                .field("ltch[3]", &self.ltch(3usize))
+                .field("ltch[4]", &self.ltch(4usize))
+                .field("fltr[0]", &self.fltr(0usize))
+                .field("fltr[1]", &self.fltr(1usize))
+                .field("fltr[2]", &self.fltr(2usize))
+                .field("fltr[3]", &self.fltr(3usize))
+                .field("fltr[4]", &self.fltr(4usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxeef {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Timxeef {
-                ltch: [bool; 5usize],
-                fltr: [super::vals::Eefltr; 5usize],
-            }
-            let proxy = Timxeef {
-                ltch: [
-                    self.ltch(0usize),
-                    self.ltch(1usize),
-                    self.ltch(2usize),
-                    self.ltch(3usize),
-                    self.ltch(4usize),
-                ],
-                fltr: [
-                    self.fltr(0usize),
-                    self.fltr(1usize),
-                    self.fltr(2usize),
-                    self.fltr(3usize),
-                    self.fltr(4usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Timxeef {{ ltch[0]: {=bool:?}, ltch[1]: {=bool:?}, ltch[2]: {=bool:?}, ltch[3]: {=bool:?}, ltch[4]: {=bool:?}, fltr[0]: {:?}, fltr[1]: {:?}, fltr[2]: {:?}, fltr[3]: {:?}, fltr[4]: {:?} }}" , self . ltch (0usize) , self . ltch (1usize) , self . ltch (2usize) , self . ltch (3usize) , self . ltch (4usize) , self . fltr (0usize) , self . fltr (1usize) , self . fltr (2usize) , self . fltr (3usize) , self . fltr (4usize))
         }
     }
     #[doc = "Timerx Fault Register"]
@@ -5395,16 +4232,11 @@ pub mod regs {
     impl core::fmt::Debug for Timxflt {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxflt")
-                .field(
-                    "flten",
-                    &[
-                        self.flten(0usize),
-                        self.flten(1usize),
-                        self.flten(2usize),
-                        self.flten(3usize),
-                        self.flten(4usize),
-                    ],
-                )
+                .field("flten[0]", &self.flten(0usize))
+                .field("flten[1]", &self.flten(1usize))
+                .field("flten[2]", &self.flten(2usize))
+                .field("flten[3]", &self.flten(3usize))
+                .field("flten[4]", &self.flten(4usize))
                 .field("fltlck", &self.fltlck())
                 .finish()
         }
@@ -5412,22 +4244,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxflt {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Timxflt {
-                flten: [bool; 5usize],
-                fltlck: bool,
-            }
-            let proxy = Timxflt {
-                flten: [
-                    self.flten(0usize),
-                    self.flten(1usize),
-                    self.flten(2usize),
-                    self.flten(3usize),
-                    self.flten(4usize),
-                ],
-                fltlck: self.fltlck(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Timxflt {{ flten[0]: {=bool:?}, flten[1]: {=bool:?}, flten[2]: {=bool:?}, flten[3]: {=bool:?}, flten[4]: {=bool:?}, fltlck: {=bool:?} }}" , self . flten (0usize) , self . flten (1usize) , self . flten (2usize) , self . flten (3usize) , self . flten (4usize) , self . fltlck ())
         }
     }
     #[doc = "Timerx Interrupt Clear Register"]
@@ -5549,20 +4366,18 @@ pub mod regs {
     impl core::fmt::Debug for Timxicr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxicr")
-                .field(
-                    "cmpc",
-                    &[
-                        self.cmpc(0usize),
-                        self.cmpc(1usize),
-                        self.cmpc(2usize),
-                        self.cmpc(3usize),
-                    ],
-                )
+                .field("cmpc[0]", &self.cmpc(0usize))
+                .field("cmpc[1]", &self.cmpc(1usize))
+                .field("cmpc[2]", &self.cmpc(2usize))
+                .field("cmpc[3]", &self.cmpc(3usize))
                 .field("repc", &self.repc())
                 .field("updc", &self.updc())
-                .field("cptc", &[self.cptc(0usize), self.cptc(1usize)])
-                .field("setrc", &[self.setrc(0usize), self.setrc(1usize)])
-                .field("rstrc", &[self.rstrc(0usize), self.rstrc(1usize)])
+                .field("cptc[0]", &self.cptc(0usize))
+                .field("cptc[1]", &self.cptc(1usize))
+                .field("setrc[0]", &self.setrc(0usize))
+                .field("setrc[1]", &self.setrc(1usize))
+                .field("rstrc[0]", &self.rstrc(0usize))
+                .field("rstrc[1]", &self.rstrc(1usize))
                 .field("rstc", &self.rstc())
                 .field("dlyprtc", &self.dlyprtc())
                 .finish()
@@ -5571,33 +4386,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxicr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Timxicr {
-                cmpc: [bool; 4usize],
-                repc: bool,
-                updc: bool,
-                cptc: [bool; 2usize],
-                setrc: [bool; 2usize],
-                rstrc: [bool; 2usize],
-                rstc: bool,
-                dlyprtc: bool,
-            }
-            let proxy = Timxicr {
-                cmpc: [
-                    self.cmpc(0usize),
-                    self.cmpc(1usize),
-                    self.cmpc(2usize),
-                    self.cmpc(3usize),
-                ],
-                repc: self.repc(),
-                updc: self.updc(),
-                cptc: [self.cptc(0usize), self.cptc(1usize)],
-                setrc: [self.setrc(0usize), self.setrc(1usize)],
-                rstrc: [self.rstrc(0usize), self.rstrc(1usize)],
-                rstc: self.rstc(),
-                dlyprtc: self.dlyprtc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Timxicr {{ cmpc[0]: {=bool:?}, cmpc[1]: {=bool:?}, cmpc[2]: {=bool:?}, cmpc[3]: {=bool:?}, repc: {=bool:?}, updc: {=bool:?}, cptc[0]: {=bool:?}, cptc[1]: {=bool:?}, setrc[0]: {=bool:?}, setrc[1]: {=bool:?}, rstrc[0]: {=bool:?}, rstrc[1]: {=bool:?}, rstc: {=bool:?}, dlyprtc: {=bool:?} }}" , self . cmpc (0usize) , self . cmpc (1usize) , self . cmpc (2usize) , self . cmpc (3usize) , self . repc () , self . updc () , self . cptc (0usize) , self . cptc (1usize) , self . setrc (0usize) , self . setrc (1usize) , self . rstrc (0usize) , self . rstrc (1usize) , self . rstc () , self . dlyprtc ())
         }
     }
     #[doc = "Timerx Interrupt Status Register"]
@@ -5771,57 +4560,33 @@ pub mod regs {
     impl core::fmt::Debug for Timxisr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxisr")
-                .field(
-                    "cmp",
-                    &[self.cmp(0usize), self.cmp(1usize), self.cmp(2usize), self.cmp(3usize)],
-                )
+                .field("cmp[0]", &self.cmp(0usize))
+                .field("cmp[1]", &self.cmp(1usize))
+                .field("cmp[2]", &self.cmp(2usize))
+                .field("cmp[3]", &self.cmp(3usize))
                 .field("rep", &self.rep())
                 .field("upd", &self.upd())
-                .field("cpt", &[self.cpt(0usize), self.cpt(1usize)])
-                .field("setr", &[self.setr(0usize), self.setr(1usize)])
-                .field("rstr", &[self.rstr(0usize), self.rstr(1usize)])
+                .field("cpt[0]", &self.cpt(0usize))
+                .field("cpt[1]", &self.cpt(1usize))
+                .field("setr[0]", &self.setr(0usize))
+                .field("setr[1]", &self.setr(1usize))
+                .field("rstr[0]", &self.rstr(0usize))
+                .field("rstr[1]", &self.rstr(1usize))
                 .field("rst", &self.rst())
                 .field("dlyprt", &self.dlyprt())
                 .field("cppstat", &self.cppstat())
                 .field("ippstat", &self.ippstat())
-                .field("ostat", &[self.ostat(0usize), self.ostat(1usize)])
-                .field("ocpy", &[self.ocpy(0usize), self.ocpy(1usize)])
+                .field("ostat[0]", &self.ostat(0usize))
+                .field("ostat[1]", &self.ostat(1usize))
+                .field("ocpy[0]", &self.ocpy(0usize))
+                .field("ocpy[1]", &self.ocpy(1usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxisr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Timxisr {
-                cmp: [bool; 4usize],
-                rep: bool,
-                upd: bool,
-                cpt: [bool; 2usize],
-                setr: [bool; 2usize],
-                rstr: [bool; 2usize],
-                rst: bool,
-                dlyprt: bool,
-                cppstat: super::vals::Cppstat,
-                ippstat: super::vals::Ippstat,
-                ostat: [bool; 2usize],
-                ocpy: [bool; 2usize],
-            }
-            let proxy = Timxisr {
-                cmp: [self.cmp(0usize), self.cmp(1usize), self.cmp(2usize), self.cmp(3usize)],
-                rep: self.rep(),
-                upd: self.upd(),
-                cpt: [self.cpt(0usize), self.cpt(1usize)],
-                setr: [self.setr(0usize), self.setr(1usize)],
-                rstr: [self.rstr(0usize), self.rstr(1usize)],
-                rst: self.rst(),
-                dlyprt: self.dlyprt(),
-                cppstat: self.cppstat(),
-                ippstat: self.ippstat(),
-                ostat: [self.ostat(0usize), self.ostat(1usize)],
-                ocpy: [self.ocpy(0usize), self.ocpy(1usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Timxisr {{ cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, cmp[2]: {=bool:?}, cmp[3]: {=bool:?}, rep: {=bool:?}, upd: {=bool:?}, cpt[0]: {=bool:?}, cpt[1]: {=bool:?}, setr[0]: {=bool:?}, setr[1]: {=bool:?}, rstr[0]: {=bool:?}, rstr[1]: {=bool:?}, rst: {=bool:?}, dlyprt: {=bool:?}, cppstat: {:?}, ippstat: {:?}, ostat[0]: {=bool:?}, ostat[1]: {=bool:?}, ocpy[0]: {=bool:?}, ocpy[1]: {=bool:?} }}" , self . cmp (0usize) , self . cmp (1usize) , self . cmp (2usize) , self . cmp (3usize) , self . rep () , self . upd () , self . cpt (0usize) , self . cpt (1usize) , self . setr (0usize) , self . setr (1usize) , self . rstr (0usize) , self . rstr (1usize) , self . rst () , self . dlyprt () , self . cppstat () , self . ippstat () , self . ostat (0usize) , self . ostat (1usize) , self . ocpy (0usize) , self . ocpy (1usize))
         }
     }
     #[doc = "Timerx Output Register"]
@@ -5962,12 +4727,18 @@ pub mod regs {
     impl core::fmt::Debug for Timxoutr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxoutr")
-                .field("pol", &[self.pol(0usize), self.pol(1usize)])
-                .field("idlem", &[self.idlem(0usize), self.idlem(1usize)])
-                .field("idles", &[self.idles(0usize), self.idles(1usize)])
-                .field("fault", &[self.fault(0usize), self.fault(1usize)])
-                .field("chp", &[self.chp(0usize), self.chp(1usize)])
-                .field("didl", &[self.didl(0usize), self.didl(1usize)])
+                .field("pol[0]", &self.pol(0usize))
+                .field("pol[1]", &self.pol(1usize))
+                .field("idlem[0]", &self.idlem(0usize))
+                .field("idlem[1]", &self.idlem(1usize))
+                .field("idles[0]", &self.idles(0usize))
+                .field("idles[1]", &self.idles(1usize))
+                .field("fault[0]", &self.fault(0usize))
+                .field("fault[1]", &self.fault(1usize))
+                .field("chp[0]", &self.chp(0usize))
+                .field("chp[1]", &self.chp(1usize))
+                .field("didl[0]", &self.didl(0usize))
+                .field("didl[1]", &self.didl(1usize))
                 .field("dten", &self.dten())
                 .field("dlyprten", &self.dlyprten())
                 .field("dlyprt", &self.dlyprt())
@@ -5977,30 +4748,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxoutr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Timxoutr {
-                pol: [super::vals::Pol; 2usize],
-                idlem: [bool; 2usize],
-                idles: [bool; 2usize],
-                fault: [super::vals::Fault; 2usize],
-                chp: [bool; 2usize],
-                didl: [bool; 2usize],
-                dten: bool,
-                dlyprten: bool,
-                dlyprt: super::vals::Dlyprt,
-            }
-            let proxy = Timxoutr {
-                pol: [self.pol(0usize), self.pol(1usize)],
-                idlem: [self.idlem(0usize), self.idlem(1usize)],
-                idles: [self.idles(0usize), self.idles(1usize)],
-                fault: [self.fault(0usize), self.fault(1usize)],
-                chp: [self.chp(0usize), self.chp(1usize)],
-                didl: [self.didl(0usize), self.didl(1usize)],
-                dten: self.dten(),
-                dlyprten: self.dlyprten(),
-                dlyprt: self.dlyprt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Timxoutr {{ pol[0]: {:?}, pol[1]: {:?}, idlem[0]: {=bool:?}, idlem[1]: {=bool:?}, idles[0]: {=bool:?}, idles[1]: {=bool:?}, fault[0]: {:?}, fault[1]: {:?}, chp[0]: {=bool:?}, chp[1]: {=bool:?}, didl[0]: {=bool:?}, didl[1]: {=bool:?}, dten: {=bool:?}, dlyprten: {=bool:?}, dlyprt: {:?} }}" , self . pol (0usize) , self . pol (1usize) , self . idlem (0usize) , self . idlem (1usize) , self . idles (0usize) , self . idles (1usize) , self . fault (0usize) , self . fault (1usize) , self . chp (0usize) , self . chp (1usize) , self . didl (0usize) , self . didl (1usize) , self . dten () , self . dlyprten () , self . dlyprt ())
         }
     }
     #[doc = "Timerx Period Register"]
@@ -6034,12 +4782,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxper {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Timxper {
-                per: u16,
-            }
-            let proxy = Timxper { per: self.per() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Timxper {{ per: {=u16:?} }}", self.per())
         }
     }
     #[doc = "Timerx Repetition Register"]
@@ -6073,12 +4816,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxrep {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Timxrep {
-                rep: u8,
-            }
-            let proxy = Timxrep { rep: self.rep() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Timxrep {{ rep: {=u8:?} }}", self.rep())
         }
     }
     #[doc = "Timerx Reset Register"]
@@ -6209,118 +4947,42 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxrst")
                 .field("updt", &self.updt())
-                .field("cmp", &[self.cmp(0usize), self.cmp(1usize)])
+                .field("cmp[0]", &self.cmp(0usize))
+                .field("cmp[1]", &self.cmp(1usize))
                 .field("mstper", &self.mstper())
-                .field(
-                    "mstcmp",
-                    &[
-                        self.mstcmp(0usize),
-                        self.mstcmp(1usize),
-                        self.mstcmp(2usize),
-                        self.mstcmp(3usize),
-                    ],
-                )
-                .field(
-                    "extevnt",
-                    &[
-                        self.extevnt(0usize),
-                        self.extevnt(1usize),
-                        self.extevnt(2usize),
-                        self.extevnt(3usize),
-                        self.extevnt(4usize),
-                        self.extevnt(5usize),
-                        self.extevnt(6usize),
-                        self.extevnt(7usize),
-                        self.extevnt(8usize),
-                        self.extevnt(9usize),
-                    ],
-                )
-                .field(
-                    "tcmp1",
-                    &[
-                        self.tcmp1(0usize),
-                        self.tcmp1(1usize),
-                        self.tcmp1(2usize),
-                        self.tcmp1(3usize),
-                    ],
-                )
-                .field(
-                    "tcmp2",
-                    &[
-                        self.tcmp2(0usize),
-                        self.tcmp2(1usize),
-                        self.tcmp2(2usize),
-                        self.tcmp2(3usize),
-                    ],
-                )
-                .field(
-                    "tcmp4",
-                    &[
-                        self.tcmp4(0usize),
-                        self.tcmp4(1usize),
-                        self.tcmp4(2usize),
-                        self.tcmp4(3usize),
-                    ],
-                )
+                .field("mstcmp[0]", &self.mstcmp(0usize))
+                .field("mstcmp[1]", &self.mstcmp(1usize))
+                .field("mstcmp[2]", &self.mstcmp(2usize))
+                .field("mstcmp[3]", &self.mstcmp(3usize))
+                .field("extevnt[0]", &self.extevnt(0usize))
+                .field("extevnt[1]", &self.extevnt(1usize))
+                .field("extevnt[2]", &self.extevnt(2usize))
+                .field("extevnt[3]", &self.extevnt(3usize))
+                .field("extevnt[4]", &self.extevnt(4usize))
+                .field("extevnt[5]", &self.extevnt(5usize))
+                .field("extevnt[6]", &self.extevnt(6usize))
+                .field("extevnt[7]", &self.extevnt(7usize))
+                .field("extevnt[8]", &self.extevnt(8usize))
+                .field("extevnt[9]", &self.extevnt(9usize))
+                .field("tcmp1[0]", &self.tcmp1(0usize))
+                .field("tcmp1[1]", &self.tcmp1(1usize))
+                .field("tcmp1[2]", &self.tcmp1(2usize))
+                .field("tcmp1[3]", &self.tcmp1(3usize))
+                .field("tcmp2[0]", &self.tcmp2(0usize))
+                .field("tcmp2[1]", &self.tcmp2(1usize))
+                .field("tcmp2[2]", &self.tcmp2(2usize))
+                .field("tcmp2[3]", &self.tcmp2(3usize))
+                .field("tcmp4[0]", &self.tcmp4(0usize))
+                .field("tcmp4[1]", &self.tcmp4(1usize))
+                .field("tcmp4[2]", &self.tcmp4(2usize))
+                .field("tcmp4[3]", &self.tcmp4(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxrst {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Timxrst {
-                updt: bool,
-                cmp: [bool; 2usize],
-                mstper: bool,
-                mstcmp: [bool; 4usize],
-                extevnt: [bool; 10usize],
-                tcmp1: [bool; 4usize],
-                tcmp2: [bool; 4usize],
-                tcmp4: [bool; 4usize],
-            }
-            let proxy = Timxrst {
-                updt: self.updt(),
-                cmp: [self.cmp(0usize), self.cmp(1usize)],
-                mstper: self.mstper(),
-                mstcmp: [
-                    self.mstcmp(0usize),
-                    self.mstcmp(1usize),
-                    self.mstcmp(2usize),
-                    self.mstcmp(3usize),
-                ],
-                extevnt: [
-                    self.extevnt(0usize),
-                    self.extevnt(1usize),
-                    self.extevnt(2usize),
-                    self.extevnt(3usize),
-                    self.extevnt(4usize),
-                    self.extevnt(5usize),
-                    self.extevnt(6usize),
-                    self.extevnt(7usize),
-                    self.extevnt(8usize),
-                    self.extevnt(9usize),
-                ],
-                tcmp1: [
-                    self.tcmp1(0usize),
-                    self.tcmp1(1usize),
-                    self.tcmp1(2usize),
-                    self.tcmp1(3usize),
-                ],
-                tcmp2: [
-                    self.tcmp2(0usize),
-                    self.tcmp2(1usize),
-                    self.tcmp2(2usize),
-                    self.tcmp2(3usize),
-                ],
-                tcmp4: [
-                    self.tcmp4(0usize),
-                    self.tcmp4(1usize),
-                    self.tcmp4(2usize),
-                    self.tcmp4(3usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Timxrst {{ updt: {=bool:?}, cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, mstper: {=bool:?}, mstcmp[0]: {=bool:?}, mstcmp[1]: {=bool:?}, mstcmp[2]: {=bool:?}, mstcmp[3]: {=bool:?}, extevnt[0]: {=bool:?}, extevnt[1]: {=bool:?}, extevnt[2]: {=bool:?}, extevnt[3]: {=bool:?}, extevnt[4]: {=bool:?}, extevnt[5]: {=bool:?}, extevnt[6]: {=bool:?}, extevnt[7]: {=bool:?}, extevnt[8]: {=bool:?}, extevnt[9]: {=bool:?}, tcmp1[0]: {=bool:?}, tcmp1[1]: {=bool:?}, tcmp1[2]: {=bool:?}, tcmp1[3]: {=bool:?}, tcmp2[0]: {=bool:?}, tcmp2[1]: {=bool:?}, tcmp2[2]: {=bool:?}, tcmp2[3]: {=bool:?}, tcmp4[0]: {=bool:?}, tcmp4[1]: {=bool:?}, tcmp4[2]: {=bool:?}, tcmp4[3]: {=bool:?} }}" , self . updt () , self . cmp (0usize) , self . cmp (1usize) , self . mstper () , self . mstcmp (0usize) , self . mstcmp (1usize) , self . mstcmp (2usize) , self . mstcmp (3usize) , self . extevnt (0usize) , self . extevnt (1usize) , self . extevnt (2usize) , self . extevnt (3usize) , self . extevnt (4usize) , self . extevnt (5usize) , self . extevnt (6usize) , self . extevnt (7usize) , self . extevnt (8usize) , self . extevnt (9usize) , self . tcmp1 (0usize) , self . tcmp1 (1usize) , self . tcmp1 (2usize) , self . tcmp1 (3usize) , self . tcmp2 (0usize) , self . tcmp2 (1usize) , self . tcmp2 (2usize) , self . tcmp2 (3usize) , self . tcmp4 (0usize) , self . tcmp4 (1usize) , self . tcmp4 (2usize) , self . tcmp4 (3usize))
         }
     }
     #[doc = "Timerx OutputX Reset Register"]
@@ -6456,49 +5118,34 @@ pub mod regs {
                 .field("srt", &self.srt())
                 .field("resync", &self.resync())
                 .field("per", &self.per())
-                .field(
-                    "cmp",
-                    &[self.cmp(0usize), self.cmp(1usize), self.cmp(2usize), self.cmp(3usize)],
-                )
+                .field("cmp[0]", &self.cmp(0usize))
+                .field("cmp[1]", &self.cmp(1usize))
+                .field("cmp[2]", &self.cmp(2usize))
+                .field("cmp[3]", &self.cmp(3usize))
                 .field("mstper", &self.mstper())
-                .field(
-                    "mstcmp",
-                    &[
-                        self.mstcmp(0usize),
-                        self.mstcmp(1usize),
-                        self.mstcmp(2usize),
-                        self.mstcmp(3usize),
-                    ],
-                )
-                .field(
-                    "timevnt",
-                    &[
-                        self.timevnt(0usize),
-                        self.timevnt(1usize),
-                        self.timevnt(2usize),
-                        self.timevnt(3usize),
-                        self.timevnt(4usize),
-                        self.timevnt(5usize),
-                        self.timevnt(6usize),
-                        self.timevnt(7usize),
-                        self.timevnt(8usize),
-                    ],
-                )
-                .field(
-                    "extevnt",
-                    &[
-                        self.extevnt(0usize),
-                        self.extevnt(1usize),
-                        self.extevnt(2usize),
-                        self.extevnt(3usize),
-                        self.extevnt(4usize),
-                        self.extevnt(5usize),
-                        self.extevnt(6usize),
-                        self.extevnt(7usize),
-                        self.extevnt(8usize),
-                        self.extevnt(9usize),
-                    ],
-                )
+                .field("mstcmp[0]", &self.mstcmp(0usize))
+                .field("mstcmp[1]", &self.mstcmp(1usize))
+                .field("mstcmp[2]", &self.mstcmp(2usize))
+                .field("mstcmp[3]", &self.mstcmp(3usize))
+                .field("timevnt[0]", &self.timevnt(0usize))
+                .field("timevnt[1]", &self.timevnt(1usize))
+                .field("timevnt[2]", &self.timevnt(2usize))
+                .field("timevnt[3]", &self.timevnt(3usize))
+                .field("timevnt[4]", &self.timevnt(4usize))
+                .field("timevnt[5]", &self.timevnt(5usize))
+                .field("timevnt[6]", &self.timevnt(6usize))
+                .field("timevnt[7]", &self.timevnt(7usize))
+                .field("timevnt[8]", &self.timevnt(8usize))
+                .field("extevnt[0]", &self.extevnt(0usize))
+                .field("extevnt[1]", &self.extevnt(1usize))
+                .field("extevnt[2]", &self.extevnt(2usize))
+                .field("extevnt[3]", &self.extevnt(3usize))
+                .field("extevnt[4]", &self.extevnt(4usize))
+                .field("extevnt[5]", &self.extevnt(5usize))
+                .field("extevnt[6]", &self.extevnt(6usize))
+                .field("extevnt[7]", &self.extevnt(7usize))
+                .field("extevnt[8]", &self.extevnt(8usize))
+                .field("extevnt[9]", &self.extevnt(9usize))
                 .field("update", &self.update())
                 .finish()
         }
@@ -6506,56 +5153,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxrstr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Timxrstr {
-                srt: bool,
-                resync: bool,
-                per: bool,
-                cmp: [bool; 4usize],
-                mstper: bool,
-                mstcmp: [bool; 4usize],
-                timevnt: [bool; 9usize],
-                extevnt: [bool; 10usize],
-                update: bool,
-            }
-            let proxy = Timxrstr {
-                srt: self.srt(),
-                resync: self.resync(),
-                per: self.per(),
-                cmp: [self.cmp(0usize), self.cmp(1usize), self.cmp(2usize), self.cmp(3usize)],
-                mstper: self.mstper(),
-                mstcmp: [
-                    self.mstcmp(0usize),
-                    self.mstcmp(1usize),
-                    self.mstcmp(2usize),
-                    self.mstcmp(3usize),
-                ],
-                timevnt: [
-                    self.timevnt(0usize),
-                    self.timevnt(1usize),
-                    self.timevnt(2usize),
-                    self.timevnt(3usize),
-                    self.timevnt(4usize),
-                    self.timevnt(5usize),
-                    self.timevnt(6usize),
-                    self.timevnt(7usize),
-                    self.timevnt(8usize),
-                ],
-                extevnt: [
-                    self.extevnt(0usize),
-                    self.extevnt(1usize),
-                    self.extevnt(2usize),
-                    self.extevnt(3usize),
-                    self.extevnt(4usize),
-                    self.extevnt(5usize),
-                    self.extevnt(6usize),
-                    self.extevnt(7usize),
-                    self.extevnt(8usize),
-                    self.extevnt(9usize),
-                ],
-                update: self.update(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Timxrstr {{ srt: {=bool:?}, resync: {=bool:?}, per: {=bool:?}, cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, cmp[2]: {=bool:?}, cmp[3]: {=bool:?}, mstper: {=bool:?}, mstcmp[0]: {=bool:?}, mstcmp[1]: {=bool:?}, mstcmp[2]: {=bool:?}, mstcmp[3]: {=bool:?}, timevnt[0]: {=bool:?}, timevnt[1]: {=bool:?}, timevnt[2]: {=bool:?}, timevnt[3]: {=bool:?}, timevnt[4]: {=bool:?}, timevnt[5]: {=bool:?}, timevnt[6]: {=bool:?}, timevnt[7]: {=bool:?}, timevnt[8]: {=bool:?}, extevnt[0]: {=bool:?}, extevnt[1]: {=bool:?}, extevnt[2]: {=bool:?}, extevnt[3]: {=bool:?}, extevnt[4]: {=bool:?}, extevnt[5]: {=bool:?}, extevnt[6]: {=bool:?}, extevnt[7]: {=bool:?}, extevnt[8]: {=bool:?}, extevnt[9]: {=bool:?}, update: {=bool:?} }}" , self . srt () , self . resync () , self . per () , self . cmp (0usize) , self . cmp (1usize) , self . cmp (2usize) , self . cmp (3usize) , self . mstper () , self . mstcmp (0usize) , self . mstcmp (1usize) , self . mstcmp (2usize) , self . mstcmp (3usize) , self . timevnt (0usize) , self . timevnt (1usize) , self . timevnt (2usize) , self . timevnt (3usize) , self . timevnt (4usize) , self . timevnt (5usize) , self . timevnt (6usize) , self . timevnt (7usize) , self . timevnt (8usize) , self . extevnt (0usize) , self . extevnt (1usize) , self . extevnt (2usize) , self . extevnt (3usize) , self . extevnt (4usize) , self . extevnt (5usize) , self . extevnt (6usize) , self . extevnt (7usize) , self . extevnt (8usize) , self . extevnt (9usize) , self . update ())
         }
     }
     #[doc = "Timerx OutputX Set Register"]
@@ -6691,49 +5289,34 @@ pub mod regs {
                 .field("sst", &self.sst())
                 .field("resync", &self.resync())
                 .field("per", &self.per())
-                .field(
-                    "cmp",
-                    &[self.cmp(0usize), self.cmp(1usize), self.cmp(2usize), self.cmp(3usize)],
-                )
+                .field("cmp[0]", &self.cmp(0usize))
+                .field("cmp[1]", &self.cmp(1usize))
+                .field("cmp[2]", &self.cmp(2usize))
+                .field("cmp[3]", &self.cmp(3usize))
                 .field("mstper", &self.mstper())
-                .field(
-                    "mstcmpx",
-                    &[
-                        self.mstcmpx(0usize),
-                        self.mstcmpx(1usize),
-                        self.mstcmpx(2usize),
-                        self.mstcmpx(3usize),
-                    ],
-                )
-                .field(
-                    "timevnt",
-                    &[
-                        self.timevnt(0usize),
-                        self.timevnt(1usize),
-                        self.timevnt(2usize),
-                        self.timevnt(3usize),
-                        self.timevnt(4usize),
-                        self.timevnt(5usize),
-                        self.timevnt(6usize),
-                        self.timevnt(7usize),
-                        self.timevnt(8usize),
-                    ],
-                )
-                .field(
-                    "extevnt",
-                    &[
-                        self.extevnt(0usize),
-                        self.extevnt(1usize),
-                        self.extevnt(2usize),
-                        self.extevnt(3usize),
-                        self.extevnt(4usize),
-                        self.extevnt(5usize),
-                        self.extevnt(6usize),
-                        self.extevnt(7usize),
-                        self.extevnt(8usize),
-                        self.extevnt(9usize),
-                    ],
-                )
+                .field("mstcmpx[0]", &self.mstcmpx(0usize))
+                .field("mstcmpx[1]", &self.mstcmpx(1usize))
+                .field("mstcmpx[2]", &self.mstcmpx(2usize))
+                .field("mstcmpx[3]", &self.mstcmpx(3usize))
+                .field("timevnt[0]", &self.timevnt(0usize))
+                .field("timevnt[1]", &self.timevnt(1usize))
+                .field("timevnt[2]", &self.timevnt(2usize))
+                .field("timevnt[3]", &self.timevnt(3usize))
+                .field("timevnt[4]", &self.timevnt(4usize))
+                .field("timevnt[5]", &self.timevnt(5usize))
+                .field("timevnt[6]", &self.timevnt(6usize))
+                .field("timevnt[7]", &self.timevnt(7usize))
+                .field("timevnt[8]", &self.timevnt(8usize))
+                .field("extevnt[0]", &self.extevnt(0usize))
+                .field("extevnt[1]", &self.extevnt(1usize))
+                .field("extevnt[2]", &self.extevnt(2usize))
+                .field("extevnt[3]", &self.extevnt(3usize))
+                .field("extevnt[4]", &self.extevnt(4usize))
+                .field("extevnt[5]", &self.extevnt(5usize))
+                .field("extevnt[6]", &self.extevnt(6usize))
+                .field("extevnt[7]", &self.extevnt(7usize))
+                .field("extevnt[8]", &self.extevnt(8usize))
+                .field("extevnt[9]", &self.extevnt(9usize))
                 .field("update", &self.update())
                 .finish()
         }
@@ -6741,56 +5324,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxsetr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Timxsetr {
-                sst: bool,
-                resync: bool,
-                per: bool,
-                cmp: [bool; 4usize],
-                mstper: bool,
-                mstcmpx: [bool; 4usize],
-                timevnt: [bool; 9usize],
-                extevnt: [bool; 10usize],
-                update: bool,
-            }
-            let proxy = Timxsetr {
-                sst: self.sst(),
-                resync: self.resync(),
-                per: self.per(),
-                cmp: [self.cmp(0usize), self.cmp(1usize), self.cmp(2usize), self.cmp(3usize)],
-                mstper: self.mstper(),
-                mstcmpx: [
-                    self.mstcmpx(0usize),
-                    self.mstcmpx(1usize),
-                    self.mstcmpx(2usize),
-                    self.mstcmpx(3usize),
-                ],
-                timevnt: [
-                    self.timevnt(0usize),
-                    self.timevnt(1usize),
-                    self.timevnt(2usize),
-                    self.timevnt(3usize),
-                    self.timevnt(4usize),
-                    self.timevnt(5usize),
-                    self.timevnt(6usize),
-                    self.timevnt(7usize),
-                    self.timevnt(8usize),
-                ],
-                extevnt: [
-                    self.extevnt(0usize),
-                    self.extevnt(1usize),
-                    self.extevnt(2usize),
-                    self.extevnt(3usize),
-                    self.extevnt(4usize),
-                    self.extevnt(5usize),
-                    self.extevnt(6usize),
-                    self.extevnt(7usize),
-                    self.extevnt(8usize),
-                    self.extevnt(9usize),
-                ],
-                update: self.update(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Timxsetr {{ sst: {=bool:?}, resync: {=bool:?}, per: {=bool:?}, cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, cmp[2]: {=bool:?}, cmp[3]: {=bool:?}, mstper: {=bool:?}, mstcmpx[0]: {=bool:?}, mstcmpx[1]: {=bool:?}, mstcmpx[2]: {=bool:?}, mstcmpx[3]: {=bool:?}, timevnt[0]: {=bool:?}, timevnt[1]: {=bool:?}, timevnt[2]: {=bool:?}, timevnt[3]: {=bool:?}, timevnt[4]: {=bool:?}, timevnt[5]: {=bool:?}, timevnt[6]: {=bool:?}, timevnt[7]: {=bool:?}, timevnt[8]: {=bool:?}, extevnt[0]: {=bool:?}, extevnt[1]: {=bool:?}, extevnt[2]: {=bool:?}, extevnt[3]: {=bool:?}, extevnt[4]: {=bool:?}, extevnt[5]: {=bool:?}, extevnt[6]: {=bool:?}, extevnt[7]: {=bool:?}, extevnt[8]: {=bool:?}, extevnt[9]: {=bool:?}, update: {=bool:?} }}" , self . sst () , self . resync () , self . per () , self . cmp (0usize) , self . cmp (1usize) , self . cmp (2usize) , self . cmp (3usize) , self . mstper () , self . mstcmpx (0usize) , self . mstcmpx (1usize) , self . mstcmpx (2usize) , self . mstcmpx (3usize) , self . timevnt (0usize) , self . timevnt (1usize) , self . timevnt (2usize) , self . timevnt (3usize) , self . timevnt (4usize) , self . timevnt (5usize) , self . timevnt (6usize) , self . timevnt (7usize) , self . timevnt (8usize) , self . extevnt (0usize) , self . extevnt (1usize) , self . extevnt (2usize) , self . extevnt (3usize) , self . extevnt (4usize) , self . extevnt (5usize) , self . extevnt (6usize) , self . extevnt (7usize) , self . extevnt (8usize) , self . extevnt (9usize) , self . update ())
         }
     }
 }

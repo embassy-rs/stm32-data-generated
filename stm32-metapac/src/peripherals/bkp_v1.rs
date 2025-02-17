@@ -98,16 +98,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                tpe: bool,
-                tpal: super::vals::Tpal,
-            }
-            let proxy = Cr {
-                tpe: self.tpe(),
-                tpal: self.tpal(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cr {{ tpe: {=bool:?}, tpal: {:?} }}", self.tpe(), self.tpal())
         }
     }
     #[doc = "Control/status register"]
@@ -191,22 +182,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                cte: bool,
-                cti: bool,
-                tpie: bool,
-                tef: bool,
-                tif: bool,
-            }
-            let proxy = Csr {
-                cte: self.cte(),
-                cti: self.cti(),
-                tpie: self.tpie(),
-                tef: self.tef(),
-                tif: self.tif(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Csr {{ cte: {=bool:?}, cti: {=bool:?}, tpie: {=bool:?}, tef: {=bool:?}, tif: {=bool:?} }}",
+                self.cte(),
+                self.cti(),
+                self.tpie(),
+                self.tef(),
+                self.tif()
+            )
         }
     }
     #[doc = "Data register"]
@@ -240,12 +224,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dr {
-                d: u16,
-            }
-            let proxy = Dr { d: self.d() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dr {{ d: {=u16:?} }}", self.d())
         }
     }
     #[doc = "RTC clock calibration register"]
@@ -317,20 +296,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rtccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rtccr {
-                cal: u8,
-                cco: bool,
-                asoe: bool,
-                asos: super::vals::Asos,
-            }
-            let proxy = Rtccr {
-                cal: self.cal(),
-                cco: self.cco(),
-                asoe: self.asoe(),
-                asos: self.asos(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Rtccr {{ cal: {=u8:?}, cco: {=bool:?}, asoe: {=bool:?}, asos: {:?} }}",
+                self.cal(),
+                self.cco(),
+                self.asoe(),
+                self.asos()
+            )
         }
     }
 }

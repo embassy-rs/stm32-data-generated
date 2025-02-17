@@ -260,40 +260,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr1 {
-                cpha: super::vals::Cpha,
-                cpol: super::vals::Cpol,
-                mstr: super::vals::Mstr,
-                br: super::vals::Br,
-                spe: bool,
-                lsbfirst: super::vals::Lsbfirst,
-                ssi: bool,
-                ssm: bool,
-                rxonly: super::vals::Rxonly,
-                crcl: super::vals::Crcl,
-                crcnext: super::vals::Crcnext,
-                crcen: bool,
-                bidioe: super::vals::Bidioe,
-                bidimode: super::vals::Bidimode,
-            }
-            let proxy = Cr1 {
-                cpha: self.cpha(),
-                cpol: self.cpol(),
-                mstr: self.mstr(),
-                br: self.br(),
-                spe: self.spe(),
-                lsbfirst: self.lsbfirst(),
-                ssi: self.ssi(),
-                ssm: self.ssm(),
-                rxonly: self.rxonly(),
-                crcl: self.crcl(),
-                crcnext: self.crcnext(),
-                crcen: self.crcen(),
-                bidioe: self.bidioe(),
-                bidimode: self.bidimode(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr1 {{ cpha: {:?}, cpol: {:?}, mstr: {:?}, br: {:?}, spe: {=bool:?}, lsbfirst: {:?}, ssi: {=bool:?}, ssm: {=bool:?}, rxonly: {:?}, crcl: {:?}, crcnext: {:?}, crcen: {=bool:?}, bidioe: {:?}, bidimode: {:?} }}" , self . cpha () , self . cpol () , self . mstr () , self . br () , self . spe () , self . lsbfirst () , self . ssi () , self . ssm () , self . rxonly () , self . crcl () , self . crcnext () , self . crcen () , self . bidioe () , self . bidimode ())
         }
     }
     #[doc = "control register 2"]
@@ -461,36 +428,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr2 {
-                rxdmaen: bool,
-                txdmaen: bool,
-                ssoe: bool,
-                nssp: bool,
-                frf: super::vals::Frf,
-                errie: bool,
-                rxneie: bool,
-                txeie: bool,
-                ds: super::vals::Ds,
-                frxth: super::vals::Frxth,
-                ldma_rx: super::vals::LdmaRx,
-                ldma_tx: super::vals::LdmaTx,
-            }
-            let proxy = Cr2 {
-                rxdmaen: self.rxdmaen(),
-                txdmaen: self.txdmaen(),
-                ssoe: self.ssoe(),
-                nssp: self.nssp(),
-                frf: self.frf(),
-                errie: self.errie(),
-                rxneie: self.rxneie(),
-                txeie: self.txeie(),
-                ds: self.ds(),
-                frxth: self.frxth(),
-                ldma_rx: self.ldma_rx(),
-                ldma_tx: self.ldma_tx(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr2 {{ rxdmaen: {=bool:?}, txdmaen: {=bool:?}, ssoe: {=bool:?}, nssp: {=bool:?}, frf: {:?}, errie: {=bool:?}, rxneie: {=bool:?}, txeie: {=bool:?}, ds: {:?}, frxth: {:?}, ldma_rx: {:?}, ldma_tx: {:?} }}" , self . rxdmaen () , self . txdmaen () , self . ssoe () , self . nssp () , self . frf () , self . errie () , self . rxneie () , self . txeie () , self . ds () , self . frxth () , self . ldma_rx () , self . ldma_tx ())
         }
     }
     #[doc = "CRC polynomial register"]
@@ -524,14 +462,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Crcpr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Crcpr {
-                crcpoly: u16,
-            }
-            let proxy = Crcpr {
-                crcpoly: self.crcpoly(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Crcpr {{ crcpoly: {=u16:?} }}", self.crcpoly())
         }
     }
     #[doc = "I2S configuration register"]
@@ -663,30 +594,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for I2scfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct I2scfgr {
-                chlen: super::vals::Chlen,
-                datlen: super::vals::Datlen,
-                ckpol: super::vals::Ckpol,
-                i2sstd: super::vals::Isstd,
-                pcmsync: super::vals::Pcmsync,
-                i2scfg: super::vals::Iscfg,
-                i2se: bool,
-                i2smod: super::vals::Ismod,
-                astrten: bool,
-            }
-            let proxy = I2scfgr {
-                chlen: self.chlen(),
-                datlen: self.datlen(),
-                ckpol: self.ckpol(),
-                i2sstd: self.i2sstd(),
-                pcmsync: self.pcmsync(),
-                i2scfg: self.i2scfg(),
-                i2se: self.i2se(),
-                i2smod: self.i2smod(),
-                astrten: self.astrten(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "I2scfgr {{ chlen: {:?}, datlen: {:?}, ckpol: {:?}, i2sstd: {:?}, pcmsync: {:?}, i2scfg: {:?}, i2se: {=bool:?}, i2smod: {:?}, astrten: {=bool:?} }}" , self . chlen () , self . datlen () , self . ckpol () , self . i2sstd () , self . pcmsync () , self . i2scfg () , self . i2se () , self . i2smod () , self . astrten ())
         }
     }
     #[doc = "I2S prescaler register"]
@@ -746,18 +654,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for I2spr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct I2spr {
-                i2sdiv: u8,
-                odd: super::vals::Odd,
-                mckoe: bool,
-            }
-            let proxy = I2spr {
-                i2sdiv: self.i2sdiv(),
-                odd: self.odd(),
-                mckoe: self.mckoe(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "I2spr {{ i2sdiv: {=u8:?}, odd: {:?}, mckoe: {=bool:?} }}",
+                self.i2sdiv(),
+                self.odd(),
+                self.mckoe()
+            )
         }
     }
     #[doc = "RX CRC register"]
@@ -791,12 +694,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rxcrcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rxcrcr {
-                rx_crc: u16,
-            }
-            let proxy = Rxcrcr { rx_crc: self.rx_crc() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Rxcrcr {{ rx_crc: {=u16:?} }}", self.rx_crc())
         }
     }
     #[doc = "status register"]
@@ -952,34 +850,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                rxne: bool,
-                txe: bool,
-                chside: super::vals::Chside,
-                udr: bool,
-                crcerr: bool,
-                modf: bool,
-                ovr: bool,
-                bsy: bool,
-                fre: bool,
-                frlvl: super::vals::Frlvl,
-                ftlvl: super::vals::Ftlvl,
-            }
-            let proxy = Sr {
-                rxne: self.rxne(),
-                txe: self.txe(),
-                chside: self.chside(),
-                udr: self.udr(),
-                crcerr: self.crcerr(),
-                modf: self.modf(),
-                ovr: self.ovr(),
-                bsy: self.bsy(),
-                fre: self.fre(),
-                frlvl: self.frlvl(),
-                ftlvl: self.ftlvl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr {{ rxne: {=bool:?}, txe: {=bool:?}, chside: {:?}, udr: {=bool:?}, crcerr: {=bool:?}, modf: {=bool:?}, ovr: {=bool:?}, bsy: {=bool:?}, fre: {=bool:?}, frlvl: {:?}, ftlvl: {:?} }}" , self . rxne () , self . txe () , self . chside () , self . udr () , self . crcerr () , self . modf () , self . ovr () , self . bsy () , self . fre () , self . frlvl () , self . ftlvl ())
         }
     }
     #[doc = "TX CRC register"]
@@ -1013,12 +884,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Txcrcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Txcrcr {
-                tx_crc: u16,
-            }
-            let proxy = Txcrcr { tx_crc: self.tx_crc() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Txcrcr {{ tx_crc: {=u16:?} }}", self.tx_crc())
         }
     }
 }

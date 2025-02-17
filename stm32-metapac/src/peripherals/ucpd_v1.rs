@@ -227,28 +227,7 @@ bitfield setting."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr1 {
-                hbitclkdiv: u8,
-                ifrgap: u8,
-                transwin: u8,
-                psc_usbpdclk: super::vals::PscUsbpdclk,
-                rxordseten: u16,
-                txdmaen: bool,
-                rxdmaen: bool,
-                ucpden: bool,
-            }
-            let proxy = Cfgr1 {
-                hbitclkdiv: self.hbitclkdiv(),
-                ifrgap: self.ifrgap(),
-                transwin: self.transwin(),
-                psc_usbpdclk: self.psc_usbpdclk(),
-                rxordseten: self.rxordseten(),
-                txdmaen: self.txdmaen(),
-                rxdmaen: self.rxdmaen(),
-                ucpden: self.ucpden(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr1 {{ hbitclkdiv: {=u8:?}, ifrgap: {=u8:?}, transwin: {=u8:?}, psc_usbpdclk: {:?}, rxordseten: {=u16:?}, txdmaen: {=bool:?}, rxdmaen: {=bool:?}, ucpden: {=bool:?} }}" , self . hbitclkdiv () , self . ifrgap () , self . transwin () , self . psc_usbpdclk () , self . rxordseten () , self . txdmaen () , self . rxdmaen () , self . ucpden ())
         }
     }
     #[doc = "configuration register 2"]
@@ -320,20 +299,14 @@ bitfield setting."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr2 {
-                rxfiltdis: bool,
-                rxfilt2n3: bool,
-                forceclk: bool,
-                wupen: bool,
-            }
-            let proxy = Cfgr2 {
-                rxfiltdis: self.rxfiltdis(),
-                rxfilt2n3: self.rxfilt2n3(),
-                forceclk: self.forceclk(),
-                wupen: self.wupen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cfgr2 {{ rxfiltdis: {=bool:?}, rxfilt2n3: {=bool:?}, forceclk: {=bool:?}, wupen: {=bool:?} }}",
+                self.rxfiltdis(),
+                self.rxfilt2n3(),
+                self.forceclk(),
+                self.wupen()
+            )
         }
     }
     #[doc = "configuration register 3"]
@@ -405,20 +378,14 @@ bitfield setting."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr3 {
-                trim_cc1_rd: u8,
-                trim_cc1_rp: u8,
-                trim_cc2_rd: u8,
-                trim_cc2_rp: u8,
-            }
-            let proxy = Cfgr3 {
-                trim_cc1_rd: self.trim_cc1_rd(),
-                trim_cc1_rp: self.trim_cc1_rp(),
-                trim_cc2_rd: self.trim_cc2_rd(),
-                trim_cc2_rp: self.trim_cc2_rp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cfgr3 {{ trim_cc1_rd: {=u8:?}, trim_cc1_rp: {=u8:?}, trim_cc2_rd: {=u8:?}, trim_cc2_rp: {=u8:?} }}",
+                self.trim_cc1_rd(),
+                self.trim_cc1_rp(),
+                self.trim_cc2_rd(),
+                self.trim_cc2_rp()
+            )
         }
     }
     #[doc = "control register"]
@@ -650,46 +617,7 @@ bitfield must be set accordingly, too."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                txmode: super::vals::Txmode,
-                txsend: bool,
-                txhrst: bool,
-                rxmode: bool,
-                phyrxen: bool,
-                phyccsel: super::vals::Phyccsel,
-                anasubmode: u8,
-                anamode: super::vals::Anamode,
-                ccenable: super::vals::Ccenable,
-                cc1vconnen: bool,
-                cc2vconnen: bool,
-                dbatten: bool,
-                frsrxen: bool,
-                frstx: bool,
-                rdch: bool,
-                cc1tcdis: bool,
-                cc2tcdis: bool,
-            }
-            let proxy = Cr {
-                txmode: self.txmode(),
-                txsend: self.txsend(),
-                txhrst: self.txhrst(),
-                rxmode: self.rxmode(),
-                phyrxen: self.phyrxen(),
-                phyccsel: self.phyccsel(),
-                anasubmode: self.anasubmode(),
-                anamode: self.anamode(),
-                ccenable: self.ccenable(),
-                cc1vconnen: self.cc1vconnen(),
-                cc2vconnen: self.cc2vconnen(),
-                dbatten: self.dbatten(),
-                frsrxen: self.frsrxen(),
-                frstx: self.frstx(),
-                rdch: self.rdch(),
-                cc1tcdis: self.cc1tcdis(),
-                cc2tcdis: self.cc2tcdis(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ txmode: {:?}, txsend: {=bool:?}, txhrst: {=bool:?}, rxmode: {=bool:?}, phyrxen: {=bool:?}, phyccsel: {:?}, anasubmode: {=u8:?}, anamode: {:?}, ccenable: {:?}, cc1vconnen: {=bool:?}, cc2vconnen: {=bool:?}, dbatten: {=bool:?}, frsrxen: {=bool:?}, frstx: {=bool:?}, rdch: {=bool:?}, cc1tcdis: {=bool:?}, cc2tcdis: {=bool:?} }}" , self . txmode () , self . txsend () , self . txhrst () , self . rxmode () , self . phyrxen () , self . phyccsel () , self . anasubmode () , self . anamode () , self . ccenable () , self . cc1vconnen () , self . cc2vconnen () , self . dbatten () , self . frsrxen () , self . frstx () , self . rdch () , self . cc1tcdis () , self . cc2tcdis ())
         }
     }
     #[doc = "interrupt clear register"]
@@ -869,38 +797,7 @@ bitfield must be set accordingly, too."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Icr {
-                txmsgdisccf: bool,
-                txmsgsentcf: bool,
-                txmsgabtcf: bool,
-                hrstdisccf: bool,
-                hrstsentcf: bool,
-                txundcf: bool,
-                rxorddetcf: bool,
-                rxhrstdetcf: bool,
-                rxovrcf: bool,
-                rxmsgendcf: bool,
-                typecevt1cf: bool,
-                typecevt2cf: bool,
-                frsevtcf: bool,
-            }
-            let proxy = Icr {
-                txmsgdisccf: self.txmsgdisccf(),
-                txmsgsentcf: self.txmsgsentcf(),
-                txmsgabtcf: self.txmsgabtcf(),
-                hrstdisccf: self.hrstdisccf(),
-                hrstsentcf: self.hrstsentcf(),
-                txundcf: self.txundcf(),
-                rxorddetcf: self.rxorddetcf(),
-                rxhrstdetcf: self.rxhrstdetcf(),
-                rxovrcf: self.rxovrcf(),
-                rxmsgendcf: self.rxmsgendcf(),
-                typecevt1cf: self.typecevt1cf(),
-                typecevt2cf: self.typecevt2cf(),
-                frsevtcf: self.frsevtcf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Icr {{ txmsgdisccf: {=bool:?}, txmsgsentcf: {=bool:?}, txmsgabtcf: {=bool:?}, hrstdisccf: {=bool:?}, hrstsentcf: {=bool:?}, txundcf: {=bool:?}, rxorddetcf: {=bool:?}, rxhrstdetcf: {=bool:?}, rxovrcf: {=bool:?}, rxmsgendcf: {=bool:?}, typecevt1cf: {=bool:?}, typecevt2cf: {=bool:?}, frsevtcf: {=bool:?} }}" , self . txmsgdisccf () , self . txmsgsentcf () , self . txmsgabtcf () , self . hrstdisccf () , self . hrstsentcf () , self . txundcf () , self . rxorddetcf () , self . rxhrstdetcf () , self . rxovrcf () , self . rxmsgendcf () , self . typecevt1cf () , self . typecevt2cf () , self . frsevtcf ())
         }
     }
     #[doc = "interrupt mask register"]
@@ -1104,42 +1001,7 @@ bitfield must be set accordingly, too."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Imr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Imr {
-                txisie: bool,
-                txmsgdiscie: bool,
-                txmsgsentie: bool,
-                txmsgabtie: bool,
-                hrstdiscie: bool,
-                hrstsentie: bool,
-                txundie: bool,
-                rxneie: bool,
-                rxorddetie: bool,
-                rxhrstdetie: bool,
-                rxovrie: bool,
-                rxmsgendie: bool,
-                typecevt1ie: bool,
-                typecevt2ie: bool,
-                frsevtie: bool,
-            }
-            let proxy = Imr {
-                txisie: self.txisie(),
-                txmsgdiscie: self.txmsgdiscie(),
-                txmsgsentie: self.txmsgsentie(),
-                txmsgabtie: self.txmsgabtie(),
-                hrstdiscie: self.hrstdiscie(),
-                hrstsentie: self.hrstsentie(),
-                txundie: self.txundie(),
-                rxneie: self.rxneie(),
-                rxorddetie: self.rxorddetie(),
-                rxhrstdetie: self.rxhrstdetie(),
-                rxovrie: self.rxovrie(),
-                rxmsgendie: self.rxmsgendie(),
-                typecevt1ie: self.typecevt1ie(),
-                typecevt2ie: self.typecevt2ie(),
-                frsevtie: self.frsevtie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Imr {{ txisie: {=bool:?}, txmsgdiscie: {=bool:?}, txmsgsentie: {=bool:?}, txmsgabtie: {=bool:?}, hrstdiscie: {=bool:?}, hrstsentie: {=bool:?}, txundie: {=bool:?}, rxneie: {=bool:?}, rxorddetie: {=bool:?}, rxhrstdetie: {=bool:?}, rxovrie: {=bool:?}, rxmsgendie: {=bool:?}, typecevt1ie: {=bool:?}, typecevt2ie: {=bool:?}, frsevtie: {=bool:?} }}" , self . txisie () , self . txmsgdiscie () , self . txmsgsentie () , self . txmsgabtie () , self . hrstdiscie () , self . hrstsentie () , self . txundie () , self . rxneie () , self . rxorddetie () , self . rxhrstdetie () , self . rxovrie () , self . rxmsgendie () , self . typecevt1ie () , self . typecevt2ie () , self . frsevtie ())
         }
     }
     #[doc = "UCPD IP ID register"]
@@ -1173,12 +1035,7 @@ bitfield must be set accordingly, too."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ipid {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ipid {
-                ipid: u32,
-            }
-            let proxy = Ipid { ipid: self.ipid() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ipid {{ ipid: {=u32:?} }}", self.ipid())
         }
     }
     #[doc = "UCPD IP ID register"]
@@ -1212,12 +1069,7 @@ bitfield must be set accordingly, too."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ipver {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ipver {
-                ipver: u32,
-            }
-            let proxy = Ipver { ipver: self.ipver() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ipver {{ ipver: {=u32:?} }}", self.ipver())
         }
     }
     #[doc = "UCPD IP ID register"]
@@ -1251,12 +1103,7 @@ bitfield must be set accordingly, too."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mid {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mid {
-                ipid: u32,
-            }
-            let proxy = Mid { ipid: self.ipid() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Mid {{ ipid: {=u32:?} }}", self.ipid())
         }
     }
     #[doc = "Rx ordered set extension register 1"]
@@ -1290,14 +1137,7 @@ bitfield must be set accordingly, too."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for RxOrdextr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RxOrdextr1 {
-                rxsopx1: u32,
-            }
-            let proxy = RxOrdextr1 {
-                rxsopx1: self.rxsopx1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "RxOrdextr1 {{ rxsopx1: {=u32:?} }}", self.rxsopx1())
         }
     }
     #[doc = "Rx ordered set extension register 2"]
@@ -1331,14 +1171,7 @@ bitfield must be set accordingly, too."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for RxOrdextr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RxOrdextr2 {
-                rxsopx2: u32,
-            }
-            let proxy = RxOrdextr2 {
-                rxsopx2: self.rxsopx2(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "RxOrdextr2 {{ rxsopx2: {=u32:?} }}", self.rxsopx2())
         }
     }
     #[repr(transparent)]
@@ -1397,18 +1230,13 @@ bitfield must be set accordingly, too."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for RxOrdsetr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RxOrdsetr {
-                rxordset: super::vals::Rxordset,
-                rxsop3of4: bool,
-                rxsopkinvalid: super::vals::Rxsopkinvalid,
-            }
-            let proxy = RxOrdsetr {
-                rxordset: self.rxordset(),
-                rxsop3of4: self.rxsop3of4(),
-                rxsopkinvalid: self.rxsopkinvalid(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "RxOrdsetr {{ rxordset: {:?}, rxsop3of4: {=bool:?}, rxsopkinvalid: {:?} }}",
+                self.rxordset(),
+                self.rxsop3of4(),
+                self.rxsopkinvalid()
+            )
         }
     }
     #[repr(transparent)]
@@ -1441,14 +1269,7 @@ bitfield must be set accordingly, too."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for RxPayszr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RxPayszr {
-                rxpaysz: u16,
-            }
-            let proxy = RxPayszr {
-                rxpaysz: self.rxpaysz(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "RxPayszr {{ rxpaysz: {=u16:?} }}", self.rxpaysz())
         }
     }
     #[repr(transparent)]
@@ -1481,12 +1302,7 @@ bitfield must be set accordingly, too."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rxdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rxdr {
-                rxdata: u8,
-            }
-            let proxy = Rxdr { rxdata: self.rxdata() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Rxdr {{ rxdata: {=u8:?} }}", self.rxdata())
         }
     }
     #[doc = "status register"]
@@ -1732,48 +1548,7 @@ bitfield value, which corresponds to a new Type-C event. It is cleared by settin
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                txis: bool,
-                txmsgdisc: bool,
-                txmsgsent: bool,
-                txmsgabt: bool,
-                hrstdisc: bool,
-                hrstsent: bool,
-                txund: bool,
-                rxne: bool,
-                rxorddet: bool,
-                rxhrstdet: bool,
-                rxovr: bool,
-                rxmsgend: bool,
-                rxerr: bool,
-                typecevt1: bool,
-                typecevt2: bool,
-                typec_vstate_cc1: super::vals::TypecVstateCc,
-                typec_vstate_cc2: super::vals::TypecVstateCc,
-                frsevt: bool,
-            }
-            let proxy = Sr {
-                txis: self.txis(),
-                txmsgdisc: self.txmsgdisc(),
-                txmsgsent: self.txmsgsent(),
-                txmsgabt: self.txmsgabt(),
-                hrstdisc: self.hrstdisc(),
-                hrstsent: self.hrstsent(),
-                txund: self.txund(),
-                rxne: self.rxne(),
-                rxorddet: self.rxorddet(),
-                rxhrstdet: self.rxhrstdet(),
-                rxovr: self.rxovr(),
-                rxmsgend: self.rxmsgend(),
-                rxerr: self.rxerr(),
-                typecevt1: self.typecevt1(),
-                typecevt2: self.typecevt2(),
-                typec_vstate_cc1: self.typec_vstate_cc1(),
-                typec_vstate_cc2: self.typec_vstate_cc2(),
-                frsevt: self.frsevt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr {{ txis: {=bool:?}, txmsgdisc: {=bool:?}, txmsgsent: {=bool:?}, txmsgabt: {=bool:?}, hrstdisc: {=bool:?}, hrstsent: {=bool:?}, txund: {=bool:?}, rxne: {=bool:?}, rxorddet: {=bool:?}, rxhrstdet: {=bool:?}, rxovr: {=bool:?}, rxmsgend: {=bool:?}, rxerr: {=bool:?}, typecevt1: {=bool:?}, typecevt2: {=bool:?}, typec_vstate_cc1: {:?}, typec_vstate_cc2: {:?}, frsevt: {=bool:?} }}" , self . txis () , self . txmsgdisc () , self . txmsgsent () , self . txmsgabt () , self . hrstdisc () , self . hrstsent () , self . txund () , self . rxne () , self . rxorddet () , self . rxhrstdet () , self . rxovr () , self . rxmsgend () , self . rxerr () , self . typecevt1 () , self . typecevt2 () , self . typec_vstate_cc1 () , self . typec_vstate_cc2 () , self . frsevt ())
         }
     }
     #[doc = "Tx ordered set type register"]
@@ -1807,14 +1582,7 @@ bitfield value, which corresponds to a new Type-C event. It is cleared by settin
     #[cfg(feature = "defmt")]
     impl defmt::Format for TxOrdsetr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TxOrdsetr {
-                txordset: u32,
-            }
-            let proxy = TxOrdsetr {
-                txordset: self.txordset(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "TxOrdsetr {{ txordset: {=u32:?} }}", self.txordset())
         }
     }
     #[doc = "Tx payload size register"]
@@ -1848,14 +1616,7 @@ bitfield value, which corresponds to a new Type-C event. It is cleared by settin
     #[cfg(feature = "defmt")]
     impl defmt::Format for TxPayszr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TxPayszr {
-                txpaysz: u16,
-            }
-            let proxy = TxPayszr {
-                txpaysz: self.txpaysz(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "TxPayszr {{ txpaysz: {=u16:?} }}", self.txpaysz())
         }
     }
     #[doc = "Tx data register"]
@@ -1889,12 +1650,7 @@ bitfield value, which corresponds to a new Type-C event. It is cleared by settin
     #[cfg(feature = "defmt")]
     impl defmt::Format for Txdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Txdr {
-                txdata: u8,
-            }
-            let proxy = Txdr { txdata: self.txdata() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Txdr {{ txdata: {=u8:?} }}", self.txdata())
         }
     }
 }

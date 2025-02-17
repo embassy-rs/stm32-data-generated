@@ -236,34 +236,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                en: bool,
-                datatype: super::vals::Datatype,
-                mode: super::vals::Mode,
-                chmod: super::vals::Chmod,
-                dmainen: bool,
-                dmaouten: bool,
-                gcmph: super::vals::Gcmph,
-                keysize: bool,
-                npblb: u8,
-                kmod: u8,
-                iprst: bool,
-            }
-            let proxy = Cr {
-                en: self.en(),
-                datatype: self.datatype(),
-                mode: self.mode(),
-                chmod: self.chmod(),
-                dmainen: self.dmainen(),
-                dmaouten: self.dmaouten(),
-                gcmph: self.gcmph(),
-                keysize: self.keysize(),
-                npblb: self.npblb(),
-                kmod: self.kmod(),
-                iprst: self.iprst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ en: {=bool:?}, datatype: {:?}, mode: {:?}, chmod: {:?}, dmainen: {=bool:?}, dmaouten: {=bool:?}, gcmph: {:?}, keysize: {=bool:?}, npblb: {=u8:?}, kmod: {=u8:?}, iprst: {=bool:?} }}" , self . en () , self . datatype () , self . mode () , self . chmod () , self . dmainen () , self . dmaouten () , self . gcmph () , self . keysize () , self . npblb () , self . kmod () , self . iprst ())
         }
     }
     #[doc = "Interrupt clear register"]
@@ -311,16 +284,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Icr {
-                rweif: bool,
-                keif: bool,
-            }
-            let proxy = Icr {
-                rweif: self.rweif(),
-                keif: self.keif(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Icr {{ rweif: {=bool:?}, keif: {=bool:?} }}",
+                self.rweif(),
+                self.keif()
+            )
         }
     }
     #[doc = "Interrupt enable register"]
@@ -380,18 +349,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ier {
-                ccfie: bool,
-                rweie: bool,
-                keie: bool,
-            }
-            let proxy = Ier {
-                ccfie: self.ccfie(),
-                rweie: self.rweie(),
-                keie: self.keie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ier {{ ccfie: {=bool:?}, rweie: {=bool:?}, keie: {=bool:?} }}",
+                self.ccfie(),
+                self.rweie(),
+                self.keie()
+            )
         }
     }
     #[doc = "Interrupt status register"]
@@ -451,18 +415,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Isr {
-                ccf: bool,
-                rweif: bool,
-                keif: bool,
-            }
-            let proxy = Isr {
-                ccf: self.ccf(),
-                rweif: self.rweif(),
-                keif: self.keif(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Isr {{ ccf: {=bool:?}, rweif: {=bool:?}, keif: {=bool:?} }}",
+                self.ccf(),
+                self.rweif(),
+                self.keif()
+            )
         }
     }
     #[doc = "Status register"]
@@ -546,22 +505,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                ccf: bool,
-                rderr: bool,
-                wrerr: bool,
-                busy: bool,
-                keyvalid: bool,
-            }
-            let proxy = Sr {
-                ccf: self.ccf(),
-                rderr: self.rderr(),
-                wrerr: self.wrerr(),
-                busy: self.busy(),
-                keyvalid: self.keyvalid(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sr {{ ccf: {=bool:?}, rderr: {=bool:?}, wrerr: {=bool:?}, busy: {=bool:?}, keyvalid: {=bool:?} }}",
+                self.ccf(),
+                self.rderr(),
+                self.wrerr(),
+                self.busy(),
+                self.keyvalid()
+            )
         }
     }
 }

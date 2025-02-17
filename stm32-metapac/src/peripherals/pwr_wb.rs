@@ -217,22 +217,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for C2cr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct C2cr1 {
-                lpms: u8,
-                fpdr: bool,
-                fpds: bool,
-                bleewkup: bool,
-                _802ewkup: bool,
-            }
-            let proxy = C2cr1 {
-                lpms: self.lpms(),
-                fpdr: self.fpdr(),
-                fpds: self.fpds(),
-                bleewkup: self.bleewkup(),
-                _802ewkup: self._802ewkup(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "C2cr1 {{ lpms: {=u8:?}, fpdr: {=bool:?}, fpds: {=bool:?}, bleewkup: {=bool:?}, _802ewkup: {=bool:?} }}" , self . lpms () , self . fpdr () , self . fpds () , self . bleewkup () , self . _802ewkup ())
         }
     }
     #[doc = "CPU2 Power control register 3"]
@@ -309,16 +294,11 @@ pub mod regs {
     impl core::fmt::Debug for C2cr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("C2cr3")
-                .field(
-                    "ewup",
-                    &[
-                        self.ewup(0usize),
-                        self.ewup(1usize),
-                        self.ewup(2usize),
-                        self.ewup(3usize),
-                        self.ewup(4usize),
-                    ],
-                )
+                .field("ewup[0]", &self.ewup(0usize))
+                .field("ewup[1]", &self.ewup(1usize))
+                .field("ewup[2]", &self.ewup(2usize))
+                .field("ewup[3]", &self.ewup(3usize))
+                .field("ewup[4]", &self.ewup(4usize))
                 .field("eblewup", &self.eblewup())
                 .field("e802wup", &self.e802wup())
                 .field("apc", &self.apc())
@@ -329,28 +309,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for C2cr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct C2cr3 {
-                ewup: [bool; 5usize],
-                eblewup: bool,
-                e802wup: bool,
-                apc: bool,
-                eiwul: bool,
-            }
-            let proxy = C2cr3 {
-                ewup: [
-                    self.ewup(0usize),
-                    self.ewup(1usize),
-                    self.ewup(2usize),
-                    self.ewup(3usize),
-                    self.ewup(4usize),
-                ],
-                eblewup: self.eblewup(),
-                e802wup: self.e802wup(),
-                apc: self.apc(),
-                eiwul: self.eiwul(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "C2cr3 {{ ewup[0]: {=bool:?}, ewup[1]: {=bool:?}, ewup[2]: {=bool:?}, ewup[3]: {=bool:?}, ewup[4]: {=bool:?}, eblewup: {=bool:?}, e802wup: {=bool:?}, apc: {=bool:?}, eiwul: {=bool:?} }}" , self . ewup (0usize) , self . ewup (1usize) , self . ewup (2usize) , self . ewup (3usize) , self . ewup (4usize) , self . eblewup () , self . e802wup () , self . apc () , self . eiwul ())
         }
     }
     #[doc = "Power control register 1"]
@@ -434,22 +393,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr1 {
-                lpms: u8,
-                fpdr: bool,
-                fpds: bool,
-                dbp: bool,
-                lpr: bool,
-            }
-            let proxy = Cr1 {
-                lpms: self.lpms(),
-                fpdr: self.fpdr(),
-                fpds: self.fpds(),
-                dbp: self.dbp(),
-                lpr: self.lpr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cr1 {{ lpms: {=u8:?}, fpdr: {=bool:?}, fpds: {=bool:?}, dbp: {=bool:?}, lpr: {=bool:?} }}",
+                self.lpms(),
+                self.fpdr(),
+                self.fpds(),
+                self.dbp(),
+                self.lpr()
+            )
         }
     }
     #[doc = "Power control register 2"]
@@ -497,16 +449,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr2 {
-                pvde: bool,
-                pls: u8,
-            }
-            let proxy = Cr2 {
-                pvde: self.pvde(),
-                pls: self.pls(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cr2 {{ pvde: {=bool:?}, pls: {=u8:?} }}", self.pvde(), self.pls())
         }
     }
     #[doc = "Power control register 3"]
@@ -627,16 +570,11 @@ pub mod regs {
     impl core::fmt::Debug for Cr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr3")
-                .field(
-                    "ewup",
-                    &[
-                        self.ewup(0usize),
-                        self.ewup(1usize),
-                        self.ewup(2usize),
-                        self.ewup(3usize),
-                        self.ewup(4usize),
-                    ],
-                )
+                .field("ewup[0]", &self.ewup(0usize))
+                .field("ewup[1]", &self.ewup(1usize))
+                .field("ewup[2]", &self.ewup(2usize))
+                .field("ewup[3]", &self.ewup(3usize))
+                .field("ewup[4]", &self.ewup(4usize))
                 .field("eborhsdfb", &self.eborhsdfb())
                 .field("rrs", &self.rrs())
                 .field("apc", &self.apc())
@@ -651,36 +589,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr3 {
-                ewup: [bool; 5usize],
-                eborhsdfb: bool,
-                rrs: bool,
-                apc: bool,
-                eblea: bool,
-                ecrpe: bool,
-                e802a: bool,
-                ec2h: bool,
-                eiwul: bool,
-            }
-            let proxy = Cr3 {
-                ewup: [
-                    self.ewup(0usize),
-                    self.ewup(1usize),
-                    self.ewup(2usize),
-                    self.ewup(3usize),
-                    self.ewup(4usize),
-                ],
-                eborhsdfb: self.eborhsdfb(),
-                rrs: self.rrs(),
-                apc: self.apc(),
-                eblea: self.eblea(),
-                ecrpe: self.ecrpe(),
-                e802a: self.e802a(),
-                ec2h: self.ec2h(),
-                eiwul: self.eiwul(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr3 {{ ewup[0]: {=bool:?}, ewup[1]: {=bool:?}, ewup[2]: {=bool:?}, ewup[3]: {=bool:?}, ewup[4]: {=bool:?}, eborhsdfb: {=bool:?}, rrs: {=bool:?}, apc: {=bool:?}, eblea: {=bool:?}, ecrpe: {=bool:?}, e802a: {=bool:?}, ec2h: {=bool:?}, eiwul: {=bool:?} }}" , self . ewup (0usize) , self . ewup (1usize) , self . ewup (2usize) , self . ewup (3usize) , self . ewup (4usize) , self . eborhsdfb () , self . rrs () , self . apc () , self . eblea () , self . ecrpe () , self . e802a () , self . ec2h () , self . eiwul ())
         }
     }
     #[doc = "Power control register 4"]
@@ -746,16 +655,11 @@ pub mod regs {
     impl core::fmt::Debug for Cr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr4")
-                .field(
-                    "wp1",
-                    &[
-                        self.wp1(0usize),
-                        self.wp1(1usize),
-                        self.wp1(2usize),
-                        self.wp1(3usize),
-                        self.wp1(4usize),
-                    ],
-                )
+                .field("wp1[0]", &self.wp1(0usize))
+                .field("wp1[1]", &self.wp1(1usize))
+                .field("wp1[2]", &self.wp1(2usize))
+                .field("wp1[3]", &self.wp1(3usize))
+                .field("wp1[4]", &self.wp1(4usize))
                 .field("vbe", &self.vbe())
                 .field("vbrs", &self.vbrs())
                 .field("c2boot", &self.c2boot())
@@ -765,26 +669,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr4 {
-                wp1: [bool; 5usize],
-                vbe: bool,
-                vbrs: bool,
-                c2boot: bool,
-            }
-            let proxy = Cr4 {
-                wp1: [
-                    self.wp1(0usize),
-                    self.wp1(1usize),
-                    self.wp1(2usize),
-                    self.wp1(3usize),
-                    self.wp1(4usize),
-                ],
-                vbe: self.vbe(),
-                vbrs: self.vbrs(),
-                c2boot: self.c2boot(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr4 {{ wp1[0]: {=bool:?}, wp1[1]: {=bool:?}, wp1[2]: {=bool:?}, wp1[3]: {=bool:?}, wp1[4]: {=bool:?}, vbe: {=bool:?}, vbrs: {=bool:?}, c2boot: {=bool:?} }}" , self . wp1 (0usize) , self . wp1 (1usize) , self . wp1 (2usize) , self . wp1 (3usize) , self . wp1 (4usize) , self . vbe () , self . vbrs () , self . c2boot ())
         }
     }
     #[doc = "Power control register 5"]
@@ -880,24 +765,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr5 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr5 {
-                sdvos: u8,
-                sdsc: u8,
-                borhc: bool,
-                smpscfg: bool,
-                sdben: bool,
-                sdeb: bool,
-            }
-            let proxy = Cr5 {
-                sdvos: self.sdvos(),
-                sdsc: self.sdsc(),
-                borhc: self.borhc(),
-                smpscfg: self.smpscfg(),
-                sdben: self.sdben(),
-                sdeb: self.sdeb(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr5 {{ sdvos: {=u8:?}, sdsc: {=u8:?}, borhc: {=bool:?}, smpscfg: {=bool:?}, sdben: {=bool:?}, sdeb: {=bool:?} }}" , self . sdvos () , self . sdsc () , self . borhc () , self . smpscfg () , self . sdben () , self . sdeb ())
         }
     }
     #[doc = "Power status clear register"]
@@ -1041,32 +909,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Extscr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Extscr {
-                c1cssf: bool,
-                c2cssf: bool,
-                ccrpf: bool,
-                c1sbf: bool,
-                c1stopf: bool,
-                c2sbf: bool,
-                c2stopf: bool,
-                crpf: bool,
-                c1ds: bool,
-                c2ds: bool,
-            }
-            let proxy = Extscr {
-                c1cssf: self.c1cssf(),
-                c2cssf: self.c2cssf(),
-                ccrpf: self.ccrpf(),
-                c1sbf: self.c1sbf(),
-                c1stopf: self.c1stopf(),
-                c2sbf: self.c2sbf(),
-                c2stopf: self.c2stopf(),
-                crpf: self.crpf(),
-                c1ds: self.c1ds(),
-                c2ds: self.c2ds(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Extscr {{ c1cssf: {=bool:?}, c2cssf: {=bool:?}, ccrpf: {=bool:?}, c1sbf: {=bool:?}, c1stopf: {=bool:?}, c2sbf: {=bool:?}, c2stopf: {=bool:?}, crpf: {=bool:?}, c1ds: {=bool:?}, c2ds: {=bool:?} }}" , self . c1cssf () , self . c2cssf () , self . ccrpf () , self . c1sbf () , self . c1stopf () , self . c2sbf () , self . c2stopf () , self . crpf () , self . c1ds () , self . c2ds ())
         }
     }
     #[doc = "Power Port pull-up/down control register"]
@@ -1099,58 +942,29 @@ pub mod regs {
     impl core::fmt::Debug for Pxcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pxcr")
-                .field(
-                    "pd",
-                    &[
-                        self.pd(0usize),
-                        self.pd(1usize),
-                        self.pd(2usize),
-                        self.pd(3usize),
-                        self.pd(4usize),
-                        self.pd(5usize),
-                        self.pd(6usize),
-                        self.pd(7usize),
-                        self.pd(8usize),
-                        self.pd(9usize),
-                        self.pd(10usize),
-                        self.pd(11usize),
-                        self.pd(12usize),
-                        self.pd(13usize),
-                        self.pd(14usize),
-                        self.pd(15usize),
-                    ],
-                )
+                .field("pd[0]", &self.pd(0usize))
+                .field("pd[1]", &self.pd(1usize))
+                .field("pd[2]", &self.pd(2usize))
+                .field("pd[3]", &self.pd(3usize))
+                .field("pd[4]", &self.pd(4usize))
+                .field("pd[5]", &self.pd(5usize))
+                .field("pd[6]", &self.pd(6usize))
+                .field("pd[7]", &self.pd(7usize))
+                .field("pd[8]", &self.pd(8usize))
+                .field("pd[9]", &self.pd(9usize))
+                .field("pd[10]", &self.pd(10usize))
+                .field("pd[11]", &self.pd(11usize))
+                .field("pd[12]", &self.pd(12usize))
+                .field("pd[13]", &self.pd(13usize))
+                .field("pd[14]", &self.pd(14usize))
+                .field("pd[15]", &self.pd(15usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pxcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pxcr {
-                pd: [bool; 16usize],
-            }
-            let proxy = Pxcr {
-                pd: [
-                    self.pd(0usize),
-                    self.pd(1usize),
-                    self.pd(2usize),
-                    self.pd(3usize),
-                    self.pd(4usize),
-                    self.pd(5usize),
-                    self.pd(6usize),
-                    self.pd(7usize),
-                    self.pd(8usize),
-                    self.pd(9usize),
-                    self.pd(10usize),
-                    self.pd(11usize),
-                    self.pd(12usize),
-                    self.pd(13usize),
-                    self.pd(14usize),
-                    self.pd(15usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Pxcr {{ pd[0]: {=bool:?}, pd[1]: {=bool:?}, pd[2]: {=bool:?}, pd[3]: {=bool:?}, pd[4]: {=bool:?}, pd[5]: {=bool:?}, pd[6]: {=bool:?}, pd[7]: {=bool:?}, pd[8]: {=bool:?}, pd[9]: {=bool:?}, pd[10]: {=bool:?}, pd[11]: {=bool:?}, pd[12]: {=bool:?}, pd[13]: {=bool:?}, pd[14]: {=bool:?}, pd[15]: {=bool:?} }}" , self . pd (0usize) , self . pd (1usize) , self . pd (2usize) , self . pd (3usize) , self . pd (4usize) , self . pd (5usize) , self . pd (6usize) , self . pd (7usize) , self . pd (8usize) , self . pd (9usize) , self . pd (10usize) , self . pd (11usize) , self . pd (12usize) , self . pd (13usize) , self . pd (14usize) , self . pd (15usize))
         }
     }
     #[doc = "Power status clear register"]
@@ -1271,16 +1085,11 @@ pub mod regs {
     impl core::fmt::Debug for Scr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Scr")
-                .field(
-                    "cwuf",
-                    &[
-                        self.cwuf(0usize),
-                        self.cwuf(1usize),
-                        self.cwuf(2usize),
-                        self.cwuf(3usize),
-                        self.cwuf(4usize),
-                    ],
-                )
+                .field("cwuf[0]", &self.cwuf(0usize))
+                .field("cwuf[1]", &self.cwuf(1usize))
+                .field("cwuf[2]", &self.cwuf(2usize))
+                .field("cwuf[3]", &self.cwuf(3usize))
+                .field("cwuf[4]", &self.cwuf(4usize))
                 .field("csmpsfbf", &self.csmpsfbf())
                 .field("cborhf", &self.cborhf())
                 .field("cblewuf", &self.cblewuf())
@@ -1295,36 +1104,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Scr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Scr {
-                cwuf: [bool; 5usize],
-                csmpsfbf: bool,
-                cborhf: bool,
-                cblewuf: bool,
-                c802wuf: bool,
-                ccrpef: bool,
-                cbleaf: bool,
-                c802af: bool,
-                cc2hf: bool,
-            }
-            let proxy = Scr {
-                cwuf: [
-                    self.cwuf(0usize),
-                    self.cwuf(1usize),
-                    self.cwuf(2usize),
-                    self.cwuf(3usize),
-                    self.cwuf(4usize),
-                ],
-                csmpsfbf: self.csmpsfbf(),
-                cborhf: self.cborhf(),
-                cblewuf: self.cblewuf(),
-                c802wuf: self.c802wuf(),
-                ccrpef: self.ccrpef(),
-                cbleaf: self.cbleaf(),
-                c802af: self.c802af(),
-                cc2hf: self.cc2hf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Scr {{ cwuf[0]: {=bool:?}, cwuf[1]: {=bool:?}, cwuf[2]: {=bool:?}, cwuf[3]: {=bool:?}, cwuf[4]: {=bool:?}, csmpsfbf: {=bool:?}, cborhf: {=bool:?}, cblewuf: {=bool:?}, c802wuf: {=bool:?}, ccrpef: {=bool:?}, cbleaf: {=bool:?}, c802af: {=bool:?}, cc2hf: {=bool:?} }}" , self . cwuf (0usize) , self . cwuf (1usize) , self . cwuf (2usize) , self . cwuf (3usize) , self . cwuf (4usize) , self . csmpsfbf () , self . cborhf () , self . cblewuf () , self . c802wuf () , self . ccrpef () , self . cbleaf () , self . c802af () , self . cc2hf ())
         }
     }
     #[doc = "Power status register 1"]
@@ -1456,16 +1236,11 @@ pub mod regs {
     impl core::fmt::Debug for Sr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr1")
-                .field(
-                    "cwuf",
-                    &[
-                        self.cwuf(0usize),
-                        self.cwuf(1usize),
-                        self.cwuf(2usize),
-                        self.cwuf(3usize),
-                        self.cwuf(4usize),
-                    ],
-                )
+                .field("cwuf[0]", &self.cwuf(0usize))
+                .field("cwuf[1]", &self.cwuf(1usize))
+                .field("cwuf[2]", &self.cwuf(2usize))
+                .field("cwuf[3]", &self.cwuf(3usize))
+                .field("cwuf[4]", &self.cwuf(4usize))
                 .field("sdfbf", &self.sdfbf())
                 .field("borhf", &self.borhf())
                 .field("blewuf", &self.blewuf())
@@ -1481,38 +1256,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr1 {
-                cwuf: [bool; 5usize],
-                sdfbf: bool,
-                borhf: bool,
-                blewuf: bool,
-                _802wuf: bool,
-                crpef: bool,
-                bleaf: bool,
-                af802: bool,
-                c2hf: bool,
-                wufi: bool,
-            }
-            let proxy = Sr1 {
-                cwuf: [
-                    self.cwuf(0usize),
-                    self.cwuf(1usize),
-                    self.cwuf(2usize),
-                    self.cwuf(3usize),
-                    self.cwuf(4usize),
-                ],
-                sdfbf: self.sdfbf(),
-                borhf: self.borhf(),
-                blewuf: self.blewuf(),
-                _802wuf: self._802wuf(),
-                crpef: self.crpef(),
-                bleaf: self.bleaf(),
-                af802: self.af802(),
-                c2hf: self.c2hf(),
-                wufi: self.wufi(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr1 {{ cwuf[0]: {=bool:?}, cwuf[1]: {=bool:?}, cwuf[2]: {=bool:?}, cwuf[3]: {=bool:?}, cwuf[4]: {=bool:?}, sdfbf: {=bool:?}, borhf: {=bool:?}, blewuf: {=bool:?}, _802wuf: {=bool:?}, crpef: {=bool:?}, bleaf: {=bool:?}, af802: {=bool:?}, c2hf: {=bool:?}, wufi: {=bool:?} }}" , self . cwuf (0usize) , self . cwuf (1usize) , self . cwuf (2usize) , self . cwuf (3usize) , self . cwuf (4usize) , self . sdfbf () , self . borhf () , self . blewuf () , self . _802wuf () , self . crpef () , self . bleaf () , self . af802 () , self . c2hf () , self . wufi ())
         }
     }
     #[doc = "Power status register 2"]
@@ -1632,28 +1376,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr2 {
-                sdbf: bool,
-                sdsmpsf: bool,
-                reglps: bool,
-                reglpf: bool,
-                vosf: bool,
-                pvdo: bool,
-                pvmo1: bool,
-                pvmo3: bool,
-            }
-            let proxy = Sr2 {
-                sdbf: self.sdbf(),
-                sdsmpsf: self.sdsmpsf(),
-                reglps: self.reglps(),
-                reglpf: self.reglpf(),
-                vosf: self.vosf(),
-                pvdo: self.pvdo(),
-                pvmo1: self.pvmo1(),
-                pvmo3: self.pvmo3(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr2 {{ sdbf: {=bool:?}, sdsmpsf: {=bool:?}, reglps: {=bool:?}, reglpf: {=bool:?}, vosf: {=bool:?}, pvdo: {=bool:?}, pvmo1: {=bool:?}, pvmo3: {=bool:?} }}" , self . sdbf () , self . sdsmpsf () , self . reglps () , self . reglpf () , self . vosf () , self . pvdo () , self . pvmo1 () , self . pvmo3 ())
         }
     }
 }

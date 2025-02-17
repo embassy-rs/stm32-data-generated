@@ -93,18 +93,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                rngen: bool,
-                ie: bool,
-                ced: bool,
-            }
-            let proxy = Cr {
-                rngen: self.rngen(),
-                ie: self.ie(),
-                ced: self.ced(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cr {{ rngen: {=bool:?}, ie: {=bool:?}, ced: {=bool:?} }}",
+                self.rngen(),
+                self.ie(),
+                self.ced()
+            )
         }
     }
     #[doc = "status register"]
@@ -188,22 +183,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                drdy: bool,
-                cecs: bool,
-                secs: bool,
-                ceis: bool,
-                seis: bool,
-            }
-            let proxy = Sr {
-                drdy: self.drdy(),
-                cecs: self.cecs(),
-                secs: self.secs(),
-                ceis: self.ceis(),
-                seis: self.seis(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sr {{ drdy: {=bool:?}, cecs: {=bool:?}, secs: {=bool:?}, ceis: {=bool:?}, seis: {=bool:?} }}",
+                self.drdy(),
+                self.cecs(),
+                self.secs(),
+                self.ceis(),
+                self.seis()
+            )
         }
     }
 }

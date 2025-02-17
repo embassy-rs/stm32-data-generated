@@ -358,62 +358,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr1 {
-                mem_mode: super::vals::MemMode,
-                pa11_pa12_rmp: bool,
-                ir_mod: super::vals::IrMod,
-                adc_dma_rmp: bool,
-                usart1_tx_dma_rmp: bool,
-                usart1_rx_dma_rmp: bool,
-                tim16_dma_rmp: bool,
-                tim17_dma_rmp: bool,
-                tim16_dma_rmp2: bool,
-                tim17_dma_rmp2: bool,
-                i2c_pb6_fmp: super::vals::Fmp,
-                i2c_pb7_fmp: super::vals::Fmp,
-                i2c_pb8_fmp: super::vals::Fmp,
-                i2c_pb9_fmp: super::vals::Fmp,
-                i2c1_fmp: super::vals::Fmp,
-                i2c2_fmp: super::vals::Fmp,
-                i2c_pa9_fmp: super::vals::Fmp,
-                i2c_pa10_fmp: super::vals::Fmp,
-                spi2_dma_rmp: bool,
-                usart2_dma_rmp: bool,
-                usart3_dma_rmp: bool,
-                i2c1_dma_rmp: bool,
-                tim1_dma_rmp: bool,
-                tim2_dma_rmp: bool,
-                tim3_dma_rmp: bool,
-            }
-            let proxy = Cfgr1 {
-                mem_mode: self.mem_mode(),
-                pa11_pa12_rmp: self.pa11_pa12_rmp(),
-                ir_mod: self.ir_mod(),
-                adc_dma_rmp: self.adc_dma_rmp(),
-                usart1_tx_dma_rmp: self.usart1_tx_dma_rmp(),
-                usart1_rx_dma_rmp: self.usart1_rx_dma_rmp(),
-                tim16_dma_rmp: self.tim16_dma_rmp(),
-                tim17_dma_rmp: self.tim17_dma_rmp(),
-                tim16_dma_rmp2: self.tim16_dma_rmp2(),
-                tim17_dma_rmp2: self.tim17_dma_rmp2(),
-                i2c_pb6_fmp: self.i2c_pb6_fmp(),
-                i2c_pb7_fmp: self.i2c_pb7_fmp(),
-                i2c_pb8_fmp: self.i2c_pb8_fmp(),
-                i2c_pb9_fmp: self.i2c_pb9_fmp(),
-                i2c1_fmp: self.i2c1_fmp(),
-                i2c2_fmp: self.i2c2_fmp(),
-                i2c_pa9_fmp: self.i2c_pa9_fmp(),
-                i2c_pa10_fmp: self.i2c_pa10_fmp(),
-                spi2_dma_rmp: self.spi2_dma_rmp(),
-                usart2_dma_rmp: self.usart2_dma_rmp(),
-                usart3_dma_rmp: self.usart3_dma_rmp(),
-                i2c1_dma_rmp: self.i2c1_dma_rmp(),
-                tim1_dma_rmp: self.tim1_dma_rmp(),
-                tim2_dma_rmp: self.tim2_dma_rmp(),
-                tim3_dma_rmp: self.tim3_dma_rmp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr1 {{ mem_mode: {:?}, pa11_pa12_rmp: {=bool:?}, ir_mod: {:?}, adc_dma_rmp: {=bool:?}, usart1_tx_dma_rmp: {=bool:?}, usart1_rx_dma_rmp: {=bool:?}, tim16_dma_rmp: {=bool:?}, tim17_dma_rmp: {=bool:?}, tim16_dma_rmp2: {=bool:?}, tim17_dma_rmp2: {=bool:?}, i2c_pb6_fmp: {:?}, i2c_pb7_fmp: {:?}, i2c_pb8_fmp: {:?}, i2c_pb9_fmp: {:?}, i2c1_fmp: {:?}, i2c2_fmp: {:?}, i2c_pa9_fmp: {:?}, i2c_pa10_fmp: {:?}, spi2_dma_rmp: {=bool:?}, usart2_dma_rmp: {=bool:?}, usart3_dma_rmp: {=bool:?}, i2c1_dma_rmp: {=bool:?}, tim1_dma_rmp: {=bool:?}, tim2_dma_rmp: {=bool:?}, tim3_dma_rmp: {=bool:?} }}" , self . mem_mode () , self . pa11_pa12_rmp () , self . ir_mod () , self . adc_dma_rmp () , self . usart1_tx_dma_rmp () , self . usart1_rx_dma_rmp () , self . tim16_dma_rmp () , self . tim17_dma_rmp () , self . tim16_dma_rmp2 () , self . tim17_dma_rmp2 () , self . i2c_pb6_fmp () , self . i2c_pb7_fmp () , self . i2c_pb8_fmp () , self . i2c_pb9_fmp () , self . i2c1_fmp () , self . i2c2_fmp () , self . i2c_pa9_fmp () , self . i2c_pa10_fmp () , self . spi2_dma_rmp () , self . usart2_dma_rmp () , self . usart3_dma_rmp () , self . i2c1_dma_rmp () , self . tim1_dma_rmp () , self . tim2_dma_rmp () , self . tim3_dma_rmp ())
         }
     }
     #[doc = "configuration register 2"]
@@ -485,20 +430,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr2 {
-                lockup_lock: bool,
-                sram_parity_lock: bool,
-                pvd_lock: bool,
-                sram_pef: bool,
-            }
-            let proxy = Cfgr2 {
-                lockup_lock: self.lockup_lock(),
-                sram_parity_lock: self.sram_parity_lock(),
-                pvd_lock: self.pvd_lock(),
-                sram_pef: self.sram_pef(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr2 {{ lockup_lock: {=bool:?}, sram_parity_lock: {=bool:?}, pvd_lock: {=bool:?}, sram_pef: {=bool:?} }}" , self . lockup_lock () , self . sram_parity_lock () , self . pvd_lock () , self . sram_pef ())
         }
     }
     #[doc = "external interrupt configuration register 1"]
@@ -531,34 +463,24 @@ pub mod regs {
     impl core::fmt::Debug for Exticr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Exticr")
-                .field(
-                    "exti",
-                    &[
-                        self.exti(0usize),
-                        self.exti(1usize),
-                        self.exti(2usize),
-                        self.exti(3usize),
-                    ],
-                )
+                .field("exti[0]", &self.exti(0usize))
+                .field("exti[1]", &self.exti(1usize))
+                .field("exti[2]", &self.exti(2usize))
+                .field("exti[3]", &self.exti(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Exticr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Exticr {
-                exti: [u8; 4usize],
-            }
-            let proxy = Exticr {
-                exti: [
-                    self.exti(0usize),
-                    self.exti(1usize),
-                    self.exti(2usize),
-                    self.exti(3usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Exticr {{ exti[0]: {=u8:?}, exti[1]: {=u8:?}, exti[2]: {=u8:?}, exti[3]: {=u8:?} }}",
+                self.exti(0usize),
+                self.exti(1usize),
+                self.exti(2usize),
+                self.exti(3usize)
+            )
         }
     }
 }

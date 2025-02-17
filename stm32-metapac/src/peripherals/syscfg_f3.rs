@@ -370,86 +370,19 @@ pub mod regs {
                 .field("encoder_mode", &self.encoder_mode())
                 .field("i2c3_fmp", &self.i2c3_fmp())
                 .field("vbat_mon", &self.vbat_mon())
-                .field(
-                    "fpu_ie",
-                    &[
-                        self.fpu_ie(0usize),
-                        self.fpu_ie(1usize),
-                        self.fpu_ie(2usize),
-                        self.fpu_ie(3usize),
-                        self.fpu_ie(4usize),
-                        self.fpu_ie(5usize),
-                    ],
-                )
+                .field("fpu_ie[0]", &self.fpu_ie(0usize))
+                .field("fpu_ie[1]", &self.fpu_ie(1usize))
+                .field("fpu_ie[2]", &self.fpu_ie(2usize))
+                .field("fpu_ie[3]", &self.fpu_ie(3usize))
+                .field("fpu_ie[4]", &self.fpu_ie(4usize))
+                .field("fpu_ie[5]", &self.fpu_ie(5usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr1 {
-                mem_mode: super::vals::MemMode,
-                usb_it_rmp: bool,
-                tim1_itr3_rmp: bool,
-                dac1_trig_rmp: bool,
-                dac_trig_rmp: bool,
-                adc2_dma_rmp: bool,
-                tim16_dma_rmp: bool,
-                tim17_dma_rmp: bool,
-                tim6_dac1_ch1_dma_rmp: bool,
-                tim6_dac1_dma_rmp: bool,
-                tim6_dac1_out1_dma_rmp: bool,
-                tim7_dac1_ch2_dma_rmp: bool,
-                tim7_dac1_out2_dma_rmp: bool,
-                dac2_ch1_dma_rmp: bool,
-                tim18_dac2_out1_dma_rmp: bool,
-                i2c_pb6_fmp: super::vals::Fmp,
-                i2c_pb7_fmp: super::vals::Fmp,
-                i2c_pb8_fmp: super::vals::Fmp,
-                i2c_pb9_fmp: super::vals::Fmp,
-                i2c1_fmp: super::vals::Fmp,
-                i2c2_fmp: super::vals::Fmp,
-                encoder_mode: super::vals::EncoderMode,
-                i2c3_fmp: super::vals::Fmp,
-                vbat_mon: bool,
-                fpu_ie: [bool; 6usize],
-            }
-            let proxy = Cfgr1 {
-                mem_mode: self.mem_mode(),
-                usb_it_rmp: self.usb_it_rmp(),
-                tim1_itr3_rmp: self.tim1_itr3_rmp(),
-                dac1_trig_rmp: self.dac1_trig_rmp(),
-                dac_trig_rmp: self.dac_trig_rmp(),
-                adc2_dma_rmp: self.adc2_dma_rmp(),
-                tim16_dma_rmp: self.tim16_dma_rmp(),
-                tim17_dma_rmp: self.tim17_dma_rmp(),
-                tim6_dac1_ch1_dma_rmp: self.tim6_dac1_ch1_dma_rmp(),
-                tim6_dac1_dma_rmp: self.tim6_dac1_dma_rmp(),
-                tim6_dac1_out1_dma_rmp: self.tim6_dac1_out1_dma_rmp(),
-                tim7_dac1_ch2_dma_rmp: self.tim7_dac1_ch2_dma_rmp(),
-                tim7_dac1_out2_dma_rmp: self.tim7_dac1_out2_dma_rmp(),
-                dac2_ch1_dma_rmp: self.dac2_ch1_dma_rmp(),
-                tim18_dac2_out1_dma_rmp: self.tim18_dac2_out1_dma_rmp(),
-                i2c_pb6_fmp: self.i2c_pb6_fmp(),
-                i2c_pb7_fmp: self.i2c_pb7_fmp(),
-                i2c_pb8_fmp: self.i2c_pb8_fmp(),
-                i2c_pb9_fmp: self.i2c_pb9_fmp(),
-                i2c1_fmp: self.i2c1_fmp(),
-                i2c2_fmp: self.i2c2_fmp(),
-                encoder_mode: self.encoder_mode(),
-                i2c3_fmp: self.i2c3_fmp(),
-                vbat_mon: self.vbat_mon(),
-                fpu_ie: [
-                    self.fpu_ie(0usize),
-                    self.fpu_ie(1usize),
-                    self.fpu_ie(2usize),
-                    self.fpu_ie(3usize),
-                    self.fpu_ie(4usize),
-                    self.fpu_ie(5usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr1 {{ mem_mode: {:?}, usb_it_rmp: {=bool:?}, tim1_itr3_rmp: {=bool:?}, dac1_trig_rmp: {=bool:?}, dac_trig_rmp: {=bool:?}, adc2_dma_rmp: {=bool:?}, tim16_dma_rmp: {=bool:?}, tim17_dma_rmp: {=bool:?}, tim6_dac1_ch1_dma_rmp: {=bool:?}, tim6_dac1_dma_rmp: {=bool:?}, tim6_dac1_out1_dma_rmp: {=bool:?}, tim7_dac1_ch2_dma_rmp: {=bool:?}, tim7_dac1_out2_dma_rmp: {=bool:?}, dac2_ch1_dma_rmp: {=bool:?}, tim18_dac2_out1_dma_rmp: {=bool:?}, i2c_pb6_fmp: {:?}, i2c_pb7_fmp: {:?}, i2c_pb8_fmp: {:?}, i2c_pb9_fmp: {:?}, i2c1_fmp: {:?}, i2c2_fmp: {:?}, encoder_mode: {:?}, i2c3_fmp: {:?}, vbat_mon: {=bool:?}, fpu_ie[0]: {=bool:?}, fpu_ie[1]: {=bool:?}, fpu_ie[2]: {=bool:?}, fpu_ie[3]: {=bool:?}, fpu_ie[4]: {=bool:?}, fpu_ie[5]: {=bool:?} }}" , self . mem_mode () , self . usb_it_rmp () , self . tim1_itr3_rmp () , self . dac1_trig_rmp () , self . dac_trig_rmp () , self . adc2_dma_rmp () , self . tim16_dma_rmp () , self . tim17_dma_rmp () , self . tim6_dac1_ch1_dma_rmp () , self . tim6_dac1_dma_rmp () , self . tim6_dac1_out1_dma_rmp () , self . tim7_dac1_ch2_dma_rmp () , self . tim7_dac1_out2_dma_rmp () , self . dac2_ch1_dma_rmp () , self . tim18_dac2_out1_dma_rmp () , self . i2c_pb6_fmp () , self . i2c_pb7_fmp () , self . i2c_pb8_fmp () , self . i2c_pb9_fmp () , self . i2c1_fmp () , self . i2c2_fmp () , self . encoder_mode () , self . i2c3_fmp () , self . vbat_mon () , self . fpu_ie (0usize) , self . fpu_ie (1usize) , self . fpu_ie (2usize) , self . fpu_ie (3usize) , self . fpu_ie (4usize) , self . fpu_ie (5usize))
         }
     }
     #[doc = "configuration register 2"]
@@ -533,22 +466,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr2 {
-                lockup_lock: bool,
-                sram_parity_lock: bool,
-                pvd_lock: bool,
-                byp_addr_par: bool,
-                sram_pef: bool,
-            }
-            let proxy = Cfgr2 {
-                lockup_lock: self.lockup_lock(),
-                sram_parity_lock: self.sram_parity_lock(),
-                pvd_lock: self.pvd_lock(),
-                byp_addr_par: self.byp_addr_par(),
-                sram_pef: self.sram_pef(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr2 {{ lockup_lock: {=bool:?}, sram_parity_lock: {=bool:?}, pvd_lock: {=bool:?}, byp_addr_par: {=bool:?}, sram_pef: {=bool:?} }}" , self . lockup_lock () , self . sram_parity_lock () , self . pvd_lock () , self . byp_addr_par () , self . sram_pef ())
         }
     }
     #[doc = "configuration register 3"]
@@ -656,26 +574,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr3 {
-                spi1_rx_dma_rmp: super::vals::Spi1RxDmaRmp,
-                spi1_tx_dma_rmp: super::vals::Spi1TxDmaRmp,
-                i2c1_rx_dma_rmp: super::vals::I2c1RxDmaRmp,
-                i2c1_tx_dma_rmp: super::vals::I2c1TxDmaRmp,
-                adc2_dma_rmp: super::vals::Adc2DmaRmpCfgr3,
-                dac1_trig3_rmp: super::vals::Dac1Trig3Rmp,
-                dac1_trig5_rmp: bool,
-            }
-            let proxy = Cfgr3 {
-                spi1_rx_dma_rmp: self.spi1_rx_dma_rmp(),
-                spi1_tx_dma_rmp: self.spi1_tx_dma_rmp(),
-                i2c1_rx_dma_rmp: self.i2c1_rx_dma_rmp(),
-                i2c1_tx_dma_rmp: self.i2c1_tx_dma_rmp(),
-                adc2_dma_rmp: self.adc2_dma_rmp(),
-                dac1_trig3_rmp: self.dac1_trig3_rmp(),
-                dac1_trig5_rmp: self.dac1_trig5_rmp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr3 {{ spi1_rx_dma_rmp: {:?}, spi1_tx_dma_rmp: {:?}, i2c1_rx_dma_rmp: {:?}, i2c1_tx_dma_rmp: {:?}, adc2_dma_rmp: {:?}, dac1_trig3_rmp: {:?}, dac1_trig5_rmp: {=bool:?} }}" , self . spi1_rx_dma_rmp () , self . spi1_tx_dma_rmp () , self . i2c1_rx_dma_rmp () , self . i2c1_tx_dma_rmp () , self . adc2_dma_rmp () , self . dac1_trig3_rmp () , self . dac1_trig5_rmp ())
         }
     }
     #[doc = "configuration register 4"]
@@ -867,40 +766,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr4 {
-                adc12_ext2_rmp: super::vals::Adc12Ext2Rmp,
-                adc12_ext3_rmp: super::vals::Adc12Ext3Rmp,
-                adc12_ext5_rmp: super::vals::Adc12Ext5Rmp,
-                adc12_ext13_rmp: super::vals::Adc12Ext13Rmp,
-                adc12_ext15_rmp: super::vals::Adc12Ext15Rmp,
-                adc12_jext3_rmp: super::vals::Adc12Jext3Rmp,
-                adc12_jext6_rmp: super::vals::Adc12Jext6Rmp,
-                adc12_jext13_rmp: super::vals::Adc12Jext13Rmp,
-                adc34_ext5_rmp: super::vals::Adc34Ext5Rmp,
-                adc34_ext6_rmp: super::vals::Adc34Ext6Rmp,
-                adc34_ext15_rmp: super::vals::Adc34Ext15Rmp,
-                adc34_jext5_rmp: super::vals::Adc34Jext5Rmp,
-                adc34_jext11_rmp: super::vals::Adc34Jext11Rmp,
-                adc34_jext14_rmp: super::vals::Adc34Jext14Rmp,
-            }
-            let proxy = Cfgr4 {
-                adc12_ext2_rmp: self.adc12_ext2_rmp(),
-                adc12_ext3_rmp: self.adc12_ext3_rmp(),
-                adc12_ext5_rmp: self.adc12_ext5_rmp(),
-                adc12_ext13_rmp: self.adc12_ext13_rmp(),
-                adc12_ext15_rmp: self.adc12_ext15_rmp(),
-                adc12_jext3_rmp: self.adc12_jext3_rmp(),
-                adc12_jext6_rmp: self.adc12_jext6_rmp(),
-                adc12_jext13_rmp: self.adc12_jext13_rmp(),
-                adc34_ext5_rmp: self.adc34_ext5_rmp(),
-                adc34_ext6_rmp: self.adc34_ext6_rmp(),
-                adc34_ext15_rmp: self.adc34_ext15_rmp(),
-                adc34_jext5_rmp: self.adc34_jext5_rmp(),
-                adc34_jext11_rmp: self.adc34_jext11_rmp(),
-                adc34_jext14_rmp: self.adc34_jext14_rmp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr4 {{ adc12_ext2_rmp: {:?}, adc12_ext3_rmp: {:?}, adc12_ext5_rmp: {:?}, adc12_ext13_rmp: {:?}, adc12_ext15_rmp: {:?}, adc12_jext3_rmp: {:?}, adc12_jext6_rmp: {:?}, adc12_jext13_rmp: {:?}, adc34_ext5_rmp: {:?}, adc34_ext6_rmp: {:?}, adc34_ext15_rmp: {:?}, adc34_jext5_rmp: {:?}, adc34_jext11_rmp: {:?}, adc34_jext14_rmp: {:?} }}" , self . adc12_ext2_rmp () , self . adc12_ext3_rmp () , self . adc12_ext5_rmp () , self . adc12_ext13_rmp () , self . adc12_ext15_rmp () , self . adc12_jext3_rmp () , self . adc12_jext6_rmp () , self . adc12_jext13_rmp () , self . adc34_ext5_rmp () , self . adc34_ext6_rmp () , self . adc34_ext15_rmp () , self . adc34_jext5_rmp () , self . adc34_jext11_rmp () , self . adc34_jext14_rmp ())
         }
     }
     #[doc = "external interrupt configuration register"]
@@ -933,34 +799,24 @@ pub mod regs {
     impl core::fmt::Debug for Exticr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Exticr")
-                .field(
-                    "exti",
-                    &[
-                        self.exti(0usize),
-                        self.exti(1usize),
-                        self.exti(2usize),
-                        self.exti(3usize),
-                    ],
-                )
+                .field("exti[0]", &self.exti(0usize))
+                .field("exti[1]", &self.exti(1usize))
+                .field("exti[2]", &self.exti(2usize))
+                .field("exti[3]", &self.exti(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Exticr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Exticr {
-                exti: [u8; 4usize],
-            }
-            let proxy = Exticr {
-                exti: [
-                    self.exti(0usize),
-                    self.exti(1usize),
-                    self.exti(2usize),
-                    self.exti(3usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Exticr {{ exti[0]: {=u8:?}, exti[1]: {=u8:?}, exti[2]: {=u8:?}, exti[3]: {=u8:?} }}",
+                self.exti(0usize),
+                self.exti(1usize),
+                self.exti(2usize),
+                self.exti(3usize)
+            )
         }
     }
     #[doc = "CCM SRAM protection register"]
@@ -993,58 +849,29 @@ pub mod regs {
     impl core::fmt::Debug for Rcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rcr")
-                .field(
-                    "page_wp",
-                    &[
-                        self.page_wp(0usize),
-                        self.page_wp(1usize),
-                        self.page_wp(2usize),
-                        self.page_wp(3usize),
-                        self.page_wp(4usize),
-                        self.page_wp(5usize),
-                        self.page_wp(6usize),
-                        self.page_wp(7usize),
-                        self.page_wp(8usize),
-                        self.page_wp(9usize),
-                        self.page_wp(10usize),
-                        self.page_wp(11usize),
-                        self.page_wp(12usize),
-                        self.page_wp(13usize),
-                        self.page_wp(14usize),
-                        self.page_wp(15usize),
-                    ],
-                )
+                .field("page_wp[0]", &self.page_wp(0usize))
+                .field("page_wp[1]", &self.page_wp(1usize))
+                .field("page_wp[2]", &self.page_wp(2usize))
+                .field("page_wp[3]", &self.page_wp(3usize))
+                .field("page_wp[4]", &self.page_wp(4usize))
+                .field("page_wp[5]", &self.page_wp(5usize))
+                .field("page_wp[6]", &self.page_wp(6usize))
+                .field("page_wp[7]", &self.page_wp(7usize))
+                .field("page_wp[8]", &self.page_wp(8usize))
+                .field("page_wp[9]", &self.page_wp(9usize))
+                .field("page_wp[10]", &self.page_wp(10usize))
+                .field("page_wp[11]", &self.page_wp(11usize))
+                .field("page_wp[12]", &self.page_wp(12usize))
+                .field("page_wp[13]", &self.page_wp(13usize))
+                .field("page_wp[14]", &self.page_wp(14usize))
+                .field("page_wp[15]", &self.page_wp(15usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rcr {
-                page_wp: [bool; 16usize],
-            }
-            let proxy = Rcr {
-                page_wp: [
-                    self.page_wp(0usize),
-                    self.page_wp(1usize),
-                    self.page_wp(2usize),
-                    self.page_wp(3usize),
-                    self.page_wp(4usize),
-                    self.page_wp(5usize),
-                    self.page_wp(6usize),
-                    self.page_wp(7usize),
-                    self.page_wp(8usize),
-                    self.page_wp(9usize),
-                    self.page_wp(10usize),
-                    self.page_wp(11usize),
-                    self.page_wp(12usize),
-                    self.page_wp(13usize),
-                    self.page_wp(14usize),
-                    self.page_wp(15usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Rcr {{ page_wp[0]: {=bool:?}, page_wp[1]: {=bool:?}, page_wp[2]: {=bool:?}, page_wp[3]: {=bool:?}, page_wp[4]: {=bool:?}, page_wp[5]: {=bool:?}, page_wp[6]: {=bool:?}, page_wp[7]: {=bool:?}, page_wp[8]: {=bool:?}, page_wp[9]: {=bool:?}, page_wp[10]: {=bool:?}, page_wp[11]: {=bool:?}, page_wp[12]: {=bool:?}, page_wp[13]: {=bool:?}, page_wp[14]: {=bool:?}, page_wp[15]: {=bool:?} }}" , self . page_wp (0usize) , self . page_wp (1usize) , self . page_wp (2usize) , self . page_wp (3usize) , self . page_wp (4usize) , self . page_wp (5usize) , self . page_wp (6usize) , self . page_wp (7usize) , self . page_wp (8usize) , self . page_wp (9usize) , self . page_wp (10usize) , self . page_wp (11usize) , self . page_wp (12usize) , self . page_wp (13usize) , self . page_wp (14usize) , self . page_wp (15usize))
         }
     }
 }

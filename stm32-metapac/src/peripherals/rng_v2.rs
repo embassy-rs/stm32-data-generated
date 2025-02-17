@@ -182,32 +182,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                rngen: bool,
-                ie: bool,
-                ced: bool,
-                rng_config3: super::vals::RngConfig3,
-                nistc: super::vals::Nistc,
-                rng_config2: super::vals::RngConfig2,
-                clkdiv: super::vals::Clkdiv,
-                rng_config1: super::vals::RngConfig1,
-                condrst: bool,
-                configlock: bool,
-            }
-            let proxy = Cr {
-                rngen: self.rngen(),
-                ie: self.ie(),
-                ced: self.ced(),
-                rng_config3: self.rng_config3(),
-                nistc: self.nistc(),
-                rng_config2: self.rng_config2(),
-                clkdiv: self.clkdiv(),
-                rng_config1: self.rng_config1(),
-                condrst: self.condrst(),
-                configlock: self.configlock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ rngen: {=bool:?}, ie: {=bool:?}, ced: {=bool:?}, rng_config3: {:?}, nistc: {:?}, rng_config2: {:?}, clkdiv: {:?}, rng_config1: {:?}, condrst: {=bool:?}, configlock: {=bool:?} }}" , self . rngen () , self . ie () , self . ced () , self . rng_config3 () , self . nistc () , self . rng_config2 () , self . clkdiv () , self . rng_config1 () , self . condrst () , self . configlock ())
         }
     }
     #[doc = "Health test control register"]
@@ -241,12 +216,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Htcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Htcr {
-                htcfg: super::vals::Htcfg,
-            }
-            let proxy = Htcr { htcfg: self.htcfg() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Htcr {{ htcfg: {:?} }}", self.htcfg())
         }
     }
     #[doc = "status register"]
@@ -330,22 +300,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                drdy: bool,
-                cecs: bool,
-                secs: bool,
-                ceis: bool,
-                seis: bool,
-            }
-            let proxy = Sr {
-                drdy: self.drdy(),
-                cecs: self.cecs(),
-                secs: self.secs(),
-                ceis: self.ceis(),
-                seis: self.seis(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sr {{ drdy: {=bool:?}, cecs: {=bool:?}, secs: {=bool:?}, ceis: {=bool:?}, seis: {=bool:?} }}",
+                self.drdy(),
+                self.cecs(),
+                self.secs(),
+                self.ceis(),
+                self.seis()
+            )
         }
     }
 }
@@ -411,7 +374,7 @@ pub mod vals {
     }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Htcfg(pub u32);
+    pub struct Htcfg(u32);
     impl Htcfg {
         #[doc = "Recommended value for RNG certification (0x0000_AA74)"]
         pub const RECOMMENDED: Self = Self(0xaa74);
@@ -488,40 +451,85 @@ pub mod vals {
             Nistc::to_bits(val)
         }
     }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct RngConfig1(pub u8);
-    impl RngConfig1 {
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum RngConfig1 {
+        _RESERVED_0 = 0x0,
+        _RESERVED_1 = 0x01,
+        _RESERVED_2 = 0x02,
+        _RESERVED_3 = 0x03,
+        _RESERVED_4 = 0x04,
+        _RESERVED_5 = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+        _RESERVED_8 = 0x08,
+        _RESERVED_9 = 0x09,
+        _RESERVED_a = 0x0a,
+        _RESERVED_b = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
         #[doc = "Recommended value for config A (NIST certifiable)"]
-        pub const CONFIG_A: Self = Self(0x0f);
+        CONFIG_A = 0x0f,
+        _RESERVED_10 = 0x10,
+        _RESERVED_11 = 0x11,
+        _RESERVED_12 = 0x12,
+        _RESERVED_13 = 0x13,
+        _RESERVED_14 = 0x14,
+        _RESERVED_15 = 0x15,
+        _RESERVED_16 = 0x16,
+        _RESERVED_17 = 0x17,
         #[doc = "Recommended value for config B (not NIST certifiable)"]
-        pub const CONFIG_B: Self = Self(0x18);
+        CONFIG_B = 0x18,
+        _RESERVED_19 = 0x19,
+        _RESERVED_1a = 0x1a,
+        _RESERVED_1b = 0x1b,
+        _RESERVED_1c = 0x1c,
+        _RESERVED_1d = 0x1d,
+        _RESERVED_1e = 0x1e,
+        _RESERVED_1f = 0x1f,
+        _RESERVED_20 = 0x20,
+        _RESERVED_21 = 0x21,
+        _RESERVED_22 = 0x22,
+        _RESERVED_23 = 0x23,
+        _RESERVED_24 = 0x24,
+        _RESERVED_25 = 0x25,
+        _RESERVED_26 = 0x26,
+        _RESERVED_27 = 0x27,
+        _RESERVED_28 = 0x28,
+        _RESERVED_29 = 0x29,
+        _RESERVED_2a = 0x2a,
+        _RESERVED_2b = 0x2b,
+        _RESERVED_2c = 0x2c,
+        _RESERVED_2d = 0x2d,
+        _RESERVED_2e = 0x2e,
+        _RESERVED_2f = 0x2f,
+        _RESERVED_30 = 0x30,
+        _RESERVED_31 = 0x31,
+        _RESERVED_32 = 0x32,
+        _RESERVED_33 = 0x33,
+        _RESERVED_34 = 0x34,
+        _RESERVED_35 = 0x35,
+        _RESERVED_36 = 0x36,
+        _RESERVED_37 = 0x37,
+        _RESERVED_38 = 0x38,
+        _RESERVED_39 = 0x39,
+        _RESERVED_3a = 0x3a,
+        _RESERVED_3b = 0x3b,
+        _RESERVED_3c = 0x3c,
+        _RESERVED_3d = 0x3d,
+        _RESERVED_3e = 0x3e,
+        _RESERVED_3f = 0x3f,
     }
     impl RngConfig1 {
+        #[inline(always)]
         pub const fn from_bits(val: u8) -> RngConfig1 {
-            Self(val & 0x3f)
+            unsafe { core::mem::transmute(val & 0x3f) }
         }
+        #[inline(always)]
         pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for RngConfig1 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0f => f.write_str("CONFIG_A"),
-                0x18 => f.write_str("CONFIG_B"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for RngConfig1 {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0f => defmt::write!(f, "CONFIG_A"),
-                0x18 => defmt::write!(f, "CONFIG_B"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
+            unsafe { core::mem::transmute(self) }
         }
     }
     impl From<u8> for RngConfig1 {

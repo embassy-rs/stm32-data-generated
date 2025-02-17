@@ -201,28 +201,18 @@ pub mod regs {
     impl core::fmt::Debug for Atcr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Atcr1")
-                .field(
-                    "tampam",
-                    &[
-                        self.tampam(0usize),
-                        self.tampam(1usize),
-                        self.tampam(2usize),
-                        self.tampam(3usize),
-                        self.tampam(4usize),
-                        self.tampam(5usize),
-                        self.tampam(6usize),
-                        self.tampam(7usize),
-                    ],
-                )
-                .field(
-                    "atosel",
-                    &[
-                        self.atosel(0usize),
-                        self.atosel(1usize),
-                        self.atosel(2usize),
-                        self.atosel(3usize),
-                    ],
-                )
+                .field("tampam[0]", &self.tampam(0usize))
+                .field("tampam[1]", &self.tampam(1usize))
+                .field("tampam[2]", &self.tampam(2usize))
+                .field("tampam[3]", &self.tampam(3usize))
+                .field("tampam[4]", &self.tampam(4usize))
+                .field("tampam[5]", &self.tampam(5usize))
+                .field("tampam[6]", &self.tampam(6usize))
+                .field("tampam[7]", &self.tampam(7usize))
+                .field("atosel[0]", &self.atosel(0usize))
+                .field("atosel[1]", &self.atosel(1usize))
+                .field("atosel[2]", &self.atosel(2usize))
+                .field("atosel[3]", &self.atosel(3usize))
                 .field("atcksel", &self.atcksel())
                 .field("atper", &self.atper())
                 .field("atoshare", &self.atoshare())
@@ -233,38 +223,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Atcr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Atcr1 {
-                tampam: [bool; 8usize],
-                atosel: [u8; 4usize],
-                atcksel: super::vals::Atcksel,
-                atper: u8,
-                atoshare: bool,
-                flten: bool,
-            }
-            let proxy = Atcr1 {
-                tampam: [
-                    self.tampam(0usize),
-                    self.tampam(1usize),
-                    self.tampam(2usize),
-                    self.tampam(3usize),
-                    self.tampam(4usize),
-                    self.tampam(5usize),
-                    self.tampam(6usize),
-                    self.tampam(7usize),
-                ],
-                atosel: [
-                    self.atosel(0usize),
-                    self.atosel(1usize),
-                    self.atosel(2usize),
-                    self.atosel(3usize),
-                ],
-                atcksel: self.atcksel(),
-                atper: self.atper(),
-                atoshare: self.atoshare(),
-                flten: self.flten(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Atcr1 {{ tampam[0]: {=bool:?}, tampam[1]: {=bool:?}, tampam[2]: {=bool:?}, tampam[3]: {=bool:?}, tampam[4]: {=bool:?}, tampam[5]: {=bool:?}, tampam[6]: {=bool:?}, tampam[7]: {=bool:?}, atosel[0]: {=u8:?}, atosel[1]: {=u8:?}, atosel[2]: {=u8:?}, atosel[3]: {=u8:?}, atcksel: {:?}, atper: {=u8:?}, atoshare: {=bool:?}, flten: {=bool:?} }}" , self . tampam (0usize) , self . tampam (1usize) , self . tampam (2usize) , self . tampam (3usize) , self . tampam (4usize) , self . tampam (5usize) , self . tampam (6usize) , self . tampam (7usize) , self . atosel (0usize) , self . atosel (1usize) , self . atosel (2usize) , self . atosel (3usize) , self . atcksel () , self . atper () , self . atoshare () , self . flten ())
         }
     }
     #[doc = "TAMP active tamper control register 2"]
@@ -299,42 +258,21 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
     impl core::fmt::Debug for Atcr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Atcr2")
-                .field(
-                    "atosel",
-                    &[
-                        self.atosel(0usize),
-                        self.atosel(1usize),
-                        self.atosel(2usize),
-                        self.atosel(3usize),
-                        self.atosel(4usize),
-                        self.atosel(5usize),
-                        self.atosel(6usize),
-                        self.atosel(7usize),
-                    ],
-                )
+                .field("atosel[0]", &self.atosel(0usize))
+                .field("atosel[1]", &self.atosel(1usize))
+                .field("atosel[2]", &self.atosel(2usize))
+                .field("atosel[3]", &self.atosel(3usize))
+                .field("atosel[4]", &self.atosel(4usize))
+                .field("atosel[5]", &self.atosel(5usize))
+                .field("atosel[6]", &self.atosel(6usize))
+                .field("atosel[7]", &self.atosel(7usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Atcr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Atcr2 {
-                atosel: [u8; 8usize],
-            }
-            let proxy = Atcr2 {
-                atosel: [
-                    self.atosel(0usize),
-                    self.atosel(1usize),
-                    self.atosel(2usize),
-                    self.atosel(3usize),
-                    self.atosel(4usize),
-                    self.atosel(5usize),
-                    self.atosel(6usize),
-                    self.atosel(7usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Atcr2 {{ atosel[0]: {=u8:?}, atosel[1]: {=u8:?}, atosel[2]: {=u8:?}, atosel[3]: {=u8:?}, atosel[4]: {=u8:?}, atosel[5]: {=u8:?}, atosel[6]: {=u8:?}, atosel[7]: {=u8:?} }}" , self . atosel (0usize) , self . atosel (1usize) , self . atosel (2usize) , self . atosel (3usize) , self . atosel (4usize) , self . atosel (5usize) , self . atosel (6usize) , self . atosel (7usize))
         }
     }
     #[doc = "TAMP active tamper output register"]
@@ -394,18 +332,13 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ator {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ator {
-                prng: u8,
-                seedf: bool,
-                inits: bool,
-            }
-            let proxy = Ator {
-                prng: self.prng(),
-                seedf: self.seedf(),
-                inits: self.inits(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ator {{ prng: {=u8:?}, seedf: {=bool:?}, inits: {=bool:?} }}",
+                self.prng(),
+                self.seedf(),
+                self.inits()
+            )
         }
     }
     #[doc = "TAMP active tamper seed register"]
@@ -439,12 +372,7 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Atseedr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Atseedr {
-                seed: u32,
-            }
-            let proxy = Atseedr { seed: self.seed() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Atseedr {{ seed: {=u32:?} }}", self.seed())
         }
     }
     #[doc = "TAMP backup register"]
@@ -478,12 +406,7 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bkpr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bkpr {
-                bkp: u32,
-            }
-            let proxy = Bkpr { bkp: self.bkp() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Bkpr {{ bkp: {=u32:?} }}", self.bkp())
         }
     }
     #[doc = "TAMP monotonic counter 1 register"]
@@ -517,12 +440,7 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Countr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Countr {
-                count: u32,
-            }
-            let proxy = Countr { count: self.count() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Countr {{ count: {=u32:?} }}", self.count())
         }
     }
     #[doc = "TAMP control register 1"]
@@ -570,76 +488,34 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
     impl core::fmt::Debug for Cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr1")
-                .field(
-                    "tampe",
-                    &[
-                        self.tampe(0usize),
-                        self.tampe(1usize),
-                        self.tampe(2usize),
-                        self.tampe(3usize),
-                        self.tampe(4usize),
-                        self.tampe(5usize),
-                        self.tampe(6usize),
-                        self.tampe(7usize),
-                    ],
-                )
-                .field(
-                    "itampe",
-                    &[
-                        self.itampe(0usize),
-                        self.itampe(1usize),
-                        self.itampe(2usize),
-                        self.itampe(3usize),
-                        self.itampe(4usize),
-                        self.itampe(5usize),
-                        self.itampe(6usize),
-                        self.itampe(7usize),
-                        self.itampe(8usize),
-                        self.itampe(9usize),
-                        self.itampe(10usize),
-                        self.itampe(11usize),
-                        self.itampe(12usize),
-                    ],
-                )
+                .field("tampe[0]", &self.tampe(0usize))
+                .field("tampe[1]", &self.tampe(1usize))
+                .field("tampe[2]", &self.tampe(2usize))
+                .field("tampe[3]", &self.tampe(3usize))
+                .field("tampe[4]", &self.tampe(4usize))
+                .field("tampe[5]", &self.tampe(5usize))
+                .field("tampe[6]", &self.tampe(6usize))
+                .field("tampe[7]", &self.tampe(7usize))
+                .field("itampe[0]", &self.itampe(0usize))
+                .field("itampe[1]", &self.itampe(1usize))
+                .field("itampe[2]", &self.itampe(2usize))
+                .field("itampe[3]", &self.itampe(3usize))
+                .field("itampe[4]", &self.itampe(4usize))
+                .field("itampe[5]", &self.itampe(5usize))
+                .field("itampe[6]", &self.itampe(6usize))
+                .field("itampe[7]", &self.itampe(7usize))
+                .field("itampe[8]", &self.itampe(8usize))
+                .field("itampe[9]", &self.itampe(9usize))
+                .field("itampe[10]", &self.itampe(10usize))
+                .field("itampe[11]", &self.itampe(11usize))
+                .field("itampe[12]", &self.itampe(12usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr1 {
-                tampe: [bool; 8usize],
-                itampe: [bool; 13usize],
-            }
-            let proxy = Cr1 {
-                tampe: [
-                    self.tampe(0usize),
-                    self.tampe(1usize),
-                    self.tampe(2usize),
-                    self.tampe(3usize),
-                    self.tampe(4usize),
-                    self.tampe(5usize),
-                    self.tampe(6usize),
-                    self.tampe(7usize),
-                ],
-                itampe: [
-                    self.itampe(0usize),
-                    self.itampe(1usize),
-                    self.itampe(2usize),
-                    self.itampe(3usize),
-                    self.itampe(4usize),
-                    self.itampe(5usize),
-                    self.itampe(6usize),
-                    self.itampe(7usize),
-                    self.itampe(8usize),
-                    self.itampe(9usize),
-                    self.itampe(10usize),
-                    self.itampe(11usize),
-                    self.itampe(12usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr1 {{ tampe[0]: {=bool:?}, tampe[1]: {=bool:?}, tampe[2]: {=bool:?}, tampe[3]: {=bool:?}, tampe[4]: {=bool:?}, tampe[5]: {=bool:?}, tampe[6]: {=bool:?}, tampe[7]: {=bool:?}, itampe[0]: {=bool:?}, itampe[1]: {=bool:?}, itampe[2]: {=bool:?}, itampe[3]: {=bool:?}, itampe[4]: {=bool:?}, itampe[5]: {=bool:?}, itampe[6]: {=bool:?}, itampe[7]: {=bool:?}, itampe[8]: {=bool:?}, itampe[9]: {=bool:?}, itampe[10]: {=bool:?}, itampe[11]: {=bool:?}, itampe[12]: {=bool:?} }}" , self . tampe (0usize) , self . tampe (1usize) , self . tampe (2usize) , self . tampe (3usize) , self . tampe (4usize) , self . tampe (5usize) , self . tampe (6usize) , self . tampe (7usize) , self . itampe (0usize) , self . itampe (1usize) , self . itampe (2usize) , self . itampe (3usize) , self . itampe (4usize) , self . itampe (5usize) , self . itampe (6usize) , self . itampe (7usize) , self . itampe (8usize) , self . itampe (9usize) , self . itampe (10usize) , self . itampe (11usize) , self . itampe (12usize))
         }
     }
     #[doc = "TAMP control register 2"]
@@ -724,78 +600,34 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
     impl core::fmt::Debug for Cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr2")
-                .field(
-                    "tampnoer",
-                    &[
-                        self.tampnoer(0usize),
-                        self.tampnoer(1usize),
-                        self.tampnoer(2usize),
-                        self.tampnoer(3usize),
-                        self.tampnoer(4usize),
-                        self.tampnoer(5usize),
-                        self.tampnoer(6usize),
-                        self.tampnoer(7usize),
-                    ],
-                )
-                .field(
-                    "tampmsk",
-                    &[self.tampmsk(0usize), self.tampmsk(1usize), self.tampmsk(2usize)],
-                )
+                .field("tampnoer[0]", &self.tampnoer(0usize))
+                .field("tampnoer[1]", &self.tampnoer(1usize))
+                .field("tampnoer[2]", &self.tampnoer(2usize))
+                .field("tampnoer[3]", &self.tampnoer(3usize))
+                .field("tampnoer[4]", &self.tampnoer(4usize))
+                .field("tampnoer[5]", &self.tampnoer(5usize))
+                .field("tampnoer[6]", &self.tampnoer(6usize))
+                .field("tampnoer[7]", &self.tampnoer(7usize))
+                .field("tampmsk[0]", &self.tampmsk(0usize))
+                .field("tampmsk[1]", &self.tampmsk(1usize))
+                .field("tampmsk[2]", &self.tampmsk(2usize))
                 .field("bkblock", &self.bkblock())
                 .field("bkerase", &self.bkerase())
-                .field(
-                    "tamptrg",
-                    &[
-                        self.tamptrg(0usize),
-                        self.tamptrg(1usize),
-                        self.tamptrg(2usize),
-                        self.tamptrg(3usize),
-                        self.tamptrg(4usize),
-                        self.tamptrg(5usize),
-                        self.tamptrg(6usize),
-                        self.tamptrg(7usize),
-                    ],
-                )
+                .field("tamptrg[0]", &self.tamptrg(0usize))
+                .field("tamptrg[1]", &self.tamptrg(1usize))
+                .field("tamptrg[2]", &self.tamptrg(2usize))
+                .field("tamptrg[3]", &self.tamptrg(3usize))
+                .field("tamptrg[4]", &self.tamptrg(4usize))
+                .field("tamptrg[5]", &self.tamptrg(5usize))
+                .field("tamptrg[6]", &self.tamptrg(6usize))
+                .field("tamptrg[7]", &self.tamptrg(7usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr2 {
-                tampnoer: [bool; 8usize],
-                tampmsk: [bool; 3usize],
-                bkblock: bool,
-                bkerase: bool,
-                tamptrg: [super::vals::Tamptrg; 8usize],
-            }
-            let proxy = Cr2 {
-                tampnoer: [
-                    self.tampnoer(0usize),
-                    self.tampnoer(1usize),
-                    self.tampnoer(2usize),
-                    self.tampnoer(3usize),
-                    self.tampnoer(4usize),
-                    self.tampnoer(5usize),
-                    self.tampnoer(6usize),
-                    self.tampnoer(7usize),
-                ],
-                tampmsk: [self.tampmsk(0usize), self.tampmsk(1usize), self.tampmsk(2usize)],
-                bkblock: self.bkblock(),
-                bkerase: self.bkerase(),
-                tamptrg: [
-                    self.tamptrg(0usize),
-                    self.tamptrg(1usize),
-                    self.tamptrg(2usize),
-                    self.tamptrg(3usize),
-                    self.tamptrg(4usize),
-                    self.tamptrg(5usize),
-                    self.tamptrg(6usize),
-                    self.tamptrg(7usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr2 {{ tampnoer[0]: {=bool:?}, tampnoer[1]: {=bool:?}, tampnoer[2]: {=bool:?}, tampnoer[3]: {=bool:?}, tampnoer[4]: {=bool:?}, tampnoer[5]: {=bool:?}, tampnoer[6]: {=bool:?}, tampnoer[7]: {=bool:?}, tampmsk[0]: {=bool:?}, tampmsk[1]: {=bool:?}, tampmsk[2]: {=bool:?}, bkblock: {=bool:?}, bkerase: {=bool:?}, tamptrg[0]: {:?}, tamptrg[1]: {:?}, tamptrg[2]: {:?}, tamptrg[3]: {:?}, tamptrg[4]: {:?}, tamptrg[5]: {:?}, tamptrg[6]: {:?}, tamptrg[7]: {:?} }}" , self . tampnoer (0usize) , self . tampnoer (1usize) , self . tampnoer (2usize) , self . tampnoer (3usize) , self . tampnoer (4usize) , self . tampnoer (5usize) , self . tampnoer (6usize) , self . tampnoer (7usize) , self . tampmsk (0usize) , self . tampmsk (1usize) , self . tampmsk (2usize) , self . bkblock () , self . bkerase () , self . tamptrg (0usize) , self . tamptrg (1usize) , self . tamptrg (2usize) , self . tamptrg (3usize) , self . tamptrg (4usize) , self . tamptrg (5usize) , self . tamptrg (6usize) , self . tamptrg (7usize))
         }
     }
     #[doc = "TAMP control register 3"]
@@ -828,52 +660,26 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
     impl core::fmt::Debug for Cr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr3")
-                .field(
-                    "itampnoer",
-                    &[
-                        self.itampnoer(0usize),
-                        self.itampnoer(1usize),
-                        self.itampnoer(2usize),
-                        self.itampnoer(3usize),
-                        self.itampnoer(4usize),
-                        self.itampnoer(5usize),
-                        self.itampnoer(6usize),
-                        self.itampnoer(7usize),
-                        self.itampnoer(8usize),
-                        self.itampnoer(9usize),
-                        self.itampnoer(10usize),
-                        self.itampnoer(11usize),
-                        self.itampnoer(12usize),
-                    ],
-                )
+                .field("itampnoer[0]", &self.itampnoer(0usize))
+                .field("itampnoer[1]", &self.itampnoer(1usize))
+                .field("itampnoer[2]", &self.itampnoer(2usize))
+                .field("itampnoer[3]", &self.itampnoer(3usize))
+                .field("itampnoer[4]", &self.itampnoer(4usize))
+                .field("itampnoer[5]", &self.itampnoer(5usize))
+                .field("itampnoer[6]", &self.itampnoer(6usize))
+                .field("itampnoer[7]", &self.itampnoer(7usize))
+                .field("itampnoer[8]", &self.itampnoer(8usize))
+                .field("itampnoer[9]", &self.itampnoer(9usize))
+                .field("itampnoer[10]", &self.itampnoer(10usize))
+                .field("itampnoer[11]", &self.itampnoer(11usize))
+                .field("itampnoer[12]", &self.itampnoer(12usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr3 {
-                itampnoer: [bool; 13usize],
-            }
-            let proxy = Cr3 {
-                itampnoer: [
-                    self.itampnoer(0usize),
-                    self.itampnoer(1usize),
-                    self.itampnoer(2usize),
-                    self.itampnoer(3usize),
-                    self.itampnoer(4usize),
-                    self.itampnoer(5usize),
-                    self.itampnoer(6usize),
-                    self.itampnoer(7usize),
-                    self.itampnoer(8usize),
-                    self.itampnoer(9usize),
-                    self.itampnoer(10usize),
-                    self.itampnoer(11usize),
-                    self.itampnoer(12usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr3 {{ itampnoer[0]: {=bool:?}, itampnoer[1]: {=bool:?}, itampnoer[2]: {=bool:?}, itampnoer[3]: {=bool:?}, itampnoer[4]: {=bool:?}, itampnoer[5]: {=bool:?}, itampnoer[6]: {=bool:?}, itampnoer[7]: {=bool:?}, itampnoer[8]: {=bool:?}, itampnoer[9]: {=bool:?}, itampnoer[10]: {=bool:?}, itampnoer[11]: {=bool:?}, itampnoer[12]: {=bool:?} }}" , self . itampnoer (0usize) , self . itampnoer (1usize) , self . itampnoer (2usize) , self . itampnoer (3usize) , self . itampnoer (4usize) , self . itampnoer (5usize) , self . itampnoer (6usize) , self . itampnoer (7usize) , self . itampnoer (8usize) , self . itampnoer (9usize) , self . itampnoer (10usize) , self . itampnoer (11usize) , self . itampnoer (12usize))
         }
     }
     #[doc = "TAMP erase configuration register"]
@@ -907,12 +713,7 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ercfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ercfgr {
-                ercfg0: bool,
-            }
-            let proxy = Ercfgr { ercfg0: self.ercfg0() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ercfgr {{ ercfg0: {=bool:?} }}", self.ercfg0())
         }
     }
     #[doc = "TAMP filter control register"]
@@ -984,20 +785,14 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fltcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fltcr {
-                tampfreq: super::vals::Tampfreq,
-                tampflt: super::vals::Tampflt,
-                tampprch: super::vals::Tampprch,
-                tamppudis: bool,
-            }
-            let proxy = Fltcr {
-                tampfreq: self.tampfreq(),
-                tampflt: self.tampflt(),
-                tampprch: self.tampprch(),
-                tamppudis: self.tamppudis(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Fltcr {{ tampfreq: {:?}, tampflt: {:?}, tampprch: {:?}, tamppudis: {=bool:?} }}",
+                self.tampfreq(),
+                self.tampflt(),
+                self.tampprch(),
+                self.tamppudis()
+            )
         }
     }
     #[doc = "TAMP interrupt enable register"]
@@ -1045,76 +840,34 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
     impl core::fmt::Debug for Ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ier")
-                .field(
-                    "tampie",
-                    &[
-                        self.tampie(0usize),
-                        self.tampie(1usize),
-                        self.tampie(2usize),
-                        self.tampie(3usize),
-                        self.tampie(4usize),
-                        self.tampie(5usize),
-                        self.tampie(6usize),
-                        self.tampie(7usize),
-                    ],
-                )
-                .field(
-                    "itampie",
-                    &[
-                        self.itampie(0usize),
-                        self.itampie(1usize),
-                        self.itampie(2usize),
-                        self.itampie(3usize),
-                        self.itampie(4usize),
-                        self.itampie(5usize),
-                        self.itampie(6usize),
-                        self.itampie(7usize),
-                        self.itampie(8usize),
-                        self.itampie(9usize),
-                        self.itampie(10usize),
-                        self.itampie(11usize),
-                        self.itampie(12usize),
-                    ],
-                )
+                .field("tampie[0]", &self.tampie(0usize))
+                .field("tampie[1]", &self.tampie(1usize))
+                .field("tampie[2]", &self.tampie(2usize))
+                .field("tampie[3]", &self.tampie(3usize))
+                .field("tampie[4]", &self.tampie(4usize))
+                .field("tampie[5]", &self.tampie(5usize))
+                .field("tampie[6]", &self.tampie(6usize))
+                .field("tampie[7]", &self.tampie(7usize))
+                .field("itampie[0]", &self.itampie(0usize))
+                .field("itampie[1]", &self.itampie(1usize))
+                .field("itampie[2]", &self.itampie(2usize))
+                .field("itampie[3]", &self.itampie(3usize))
+                .field("itampie[4]", &self.itampie(4usize))
+                .field("itampie[5]", &self.itampie(5usize))
+                .field("itampie[6]", &self.itampie(6usize))
+                .field("itampie[7]", &self.itampie(7usize))
+                .field("itampie[8]", &self.itampie(8usize))
+                .field("itampie[9]", &self.itampie(9usize))
+                .field("itampie[10]", &self.itampie(10usize))
+                .field("itampie[11]", &self.itampie(11usize))
+                .field("itampie[12]", &self.itampie(12usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ier {
-                tampie: [bool; 8usize],
-                itampie: [bool; 13usize],
-            }
-            let proxy = Ier {
-                tampie: [
-                    self.tampie(0usize),
-                    self.tampie(1usize),
-                    self.tampie(2usize),
-                    self.tampie(3usize),
-                    self.tampie(4usize),
-                    self.tampie(5usize),
-                    self.tampie(6usize),
-                    self.tampie(7usize),
-                ],
-                itampie: [
-                    self.itampie(0usize),
-                    self.itampie(1usize),
-                    self.itampie(2usize),
-                    self.itampie(3usize),
-                    self.itampie(4usize),
-                    self.itampie(5usize),
-                    self.itampie(6usize),
-                    self.itampie(7usize),
-                    self.itampie(8usize),
-                    self.itampie(9usize),
-                    self.itampie(10usize),
-                    self.itampie(11usize),
-                    self.itampie(12usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ier {{ tampie[0]: {=bool:?}, tampie[1]: {=bool:?}, tampie[2]: {=bool:?}, tampie[3]: {=bool:?}, tampie[4]: {=bool:?}, tampie[5]: {=bool:?}, tampie[6]: {=bool:?}, tampie[7]: {=bool:?}, itampie[0]: {=bool:?}, itampie[1]: {=bool:?}, itampie[2]: {=bool:?}, itampie[3]: {=bool:?}, itampie[4]: {=bool:?}, itampie[5]: {=bool:?}, itampie[6]: {=bool:?}, itampie[7]: {=bool:?}, itampie[8]: {=bool:?}, itampie[9]: {=bool:?}, itampie[10]: {=bool:?}, itampie[11]: {=bool:?}, itampie[12]: {=bool:?} }}" , self . tampie (0usize) , self . tampie (1usize) , self . tampie (2usize) , self . tampie (3usize) , self . tampie (4usize) , self . tampie (5usize) , self . tampie (6usize) , self . tampie (7usize) , self . itampie (0usize) , self . itampie (1usize) , self . itampie (2usize) , self . itampie (3usize) , self . itampie (4usize) , self . itampie (5usize) , self . itampie (6usize) , self . itampie (7usize) , self . itampie (8usize) , self . itampie (9usize) , self . itampie (10usize) , self . itampie (11usize) , self . itampie (12usize))
         }
     }
     #[doc = "TAMP non-secure masked interrupt status register"]
@@ -1162,76 +915,34 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
     impl core::fmt::Debug for Misr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Misr")
-                .field(
-                    "tampmf",
-                    &[
-                        self.tampmf(0usize),
-                        self.tampmf(1usize),
-                        self.tampmf(2usize),
-                        self.tampmf(3usize),
-                        self.tampmf(4usize),
-                        self.tampmf(5usize),
-                        self.tampmf(6usize),
-                        self.tampmf(7usize),
-                    ],
-                )
-                .field(
-                    "itampmf",
-                    &[
-                        self.itampmf(0usize),
-                        self.itampmf(1usize),
-                        self.itampmf(2usize),
-                        self.itampmf(3usize),
-                        self.itampmf(4usize),
-                        self.itampmf(5usize),
-                        self.itampmf(6usize),
-                        self.itampmf(7usize),
-                        self.itampmf(8usize),
-                        self.itampmf(9usize),
-                        self.itampmf(10usize),
-                        self.itampmf(11usize),
-                        self.itampmf(12usize),
-                    ],
-                )
+                .field("tampmf[0]", &self.tampmf(0usize))
+                .field("tampmf[1]", &self.tampmf(1usize))
+                .field("tampmf[2]", &self.tampmf(2usize))
+                .field("tampmf[3]", &self.tampmf(3usize))
+                .field("tampmf[4]", &self.tampmf(4usize))
+                .field("tampmf[5]", &self.tampmf(5usize))
+                .field("tampmf[6]", &self.tampmf(6usize))
+                .field("tampmf[7]", &self.tampmf(7usize))
+                .field("itampmf[0]", &self.itampmf(0usize))
+                .field("itampmf[1]", &self.itampmf(1usize))
+                .field("itampmf[2]", &self.itampmf(2usize))
+                .field("itampmf[3]", &self.itampmf(3usize))
+                .field("itampmf[4]", &self.itampmf(4usize))
+                .field("itampmf[5]", &self.itampmf(5usize))
+                .field("itampmf[6]", &self.itampmf(6usize))
+                .field("itampmf[7]", &self.itampmf(7usize))
+                .field("itampmf[8]", &self.itampmf(8usize))
+                .field("itampmf[9]", &self.itampmf(9usize))
+                .field("itampmf[10]", &self.itampmf(10usize))
+                .field("itampmf[11]", &self.itampmf(11usize))
+                .field("itampmf[12]", &self.itampmf(12usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Misr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Misr {
-                tampmf: [bool; 8usize],
-                itampmf: [bool; 13usize],
-            }
-            let proxy = Misr {
-                tampmf: [
-                    self.tampmf(0usize),
-                    self.tampmf(1usize),
-                    self.tampmf(2usize),
-                    self.tampmf(3usize),
-                    self.tampmf(4usize),
-                    self.tampmf(5usize),
-                    self.tampmf(6usize),
-                    self.tampmf(7usize),
-                ],
-                itampmf: [
-                    self.itampmf(0usize),
-                    self.itampmf(1usize),
-                    self.itampmf(2usize),
-                    self.itampmf(3usize),
-                    self.itampmf(4usize),
-                    self.itampmf(5usize),
-                    self.itampmf(6usize),
-                    self.itampmf(7usize),
-                    self.itampmf(8usize),
-                    self.itampmf(9usize),
-                    self.itampmf(10usize),
-                    self.itampmf(11usize),
-                    self.itampmf(12usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Misr {{ tampmf[0]: {=bool:?}, tampmf[1]: {=bool:?}, tampmf[2]: {=bool:?}, tampmf[3]: {=bool:?}, tampmf[4]: {=bool:?}, tampmf[5]: {=bool:?}, tampmf[6]: {=bool:?}, tampmf[7]: {=bool:?}, itampmf[0]: {=bool:?}, itampmf[1]: {=bool:?}, itampmf[2]: {=bool:?}, itampmf[3]: {=bool:?}, itampmf[4]: {=bool:?}, itampmf[5]: {=bool:?}, itampmf[6]: {=bool:?}, itampmf[7]: {=bool:?}, itampmf[8]: {=bool:?}, itampmf[9]: {=bool:?}, itampmf[10]: {=bool:?}, itampmf[11]: {=bool:?}, itampmf[12]: {=bool:?} }}" , self . tampmf (0usize) , self . tampmf (1usize) , self . tampmf (2usize) , self . tampmf (3usize) , self . tampmf (4usize) , self . tampmf (5usize) , self . tampmf (6usize) , self . tampmf (7usize) , self . itampmf (0usize) , self . itampmf (1usize) , self . itampmf (2usize) , self . itampmf (3usize) , self . itampmf (4usize) , self . itampmf (5usize) , self . itampmf (6usize) , self . itampmf (7usize) , self . itampmf (8usize) , self . itampmf (9usize) , self . itampmf (10usize) , self . itampmf (11usize) , self . itampmf (12usize))
         }
     }
     #[doc = "TAMP privilege mode control register"]
@@ -1303,20 +1014,14 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Privcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Privcr {
-                cnt1priv: bool,
-                bkprwpriv: bool,
-                bkpwpriv: bool,
-                tamppriv: bool,
-            }
-            let proxy = Privcr {
-                cnt1priv: self.cnt1priv(),
-                bkprwpriv: self.bkprwpriv(),
-                bkpwpriv: self.bkpwpriv(),
-                tamppriv: self.tamppriv(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Privcr {{ cnt1priv: {=bool:?}, bkprwpriv: {=bool:?}, bkpwpriv: {=bool:?}, tamppriv: {=bool:?} }}",
+                self.cnt1priv(),
+                self.bkprwpriv(),
+                self.bkpwpriv(),
+                self.tamppriv()
+            )
         }
     }
     #[doc = "TAMP status clear register"]
@@ -1364,76 +1069,34 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
     impl core::fmt::Debug for Scr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Scr")
-                .field(
-                    "ctampf",
-                    &[
-                        self.ctampf(0usize),
-                        self.ctampf(1usize),
-                        self.ctampf(2usize),
-                        self.ctampf(3usize),
-                        self.ctampf(4usize),
-                        self.ctampf(5usize),
-                        self.ctampf(6usize),
-                        self.ctampf(7usize),
-                    ],
-                )
-                .field(
-                    "citampf",
-                    &[
-                        self.citampf(0usize),
-                        self.citampf(1usize),
-                        self.citampf(2usize),
-                        self.citampf(3usize),
-                        self.citampf(4usize),
-                        self.citampf(5usize),
-                        self.citampf(6usize),
-                        self.citampf(7usize),
-                        self.citampf(8usize),
-                        self.citampf(9usize),
-                        self.citampf(10usize),
-                        self.citampf(11usize),
-                        self.citampf(12usize),
-                    ],
-                )
+                .field("ctampf[0]", &self.ctampf(0usize))
+                .field("ctampf[1]", &self.ctampf(1usize))
+                .field("ctampf[2]", &self.ctampf(2usize))
+                .field("ctampf[3]", &self.ctampf(3usize))
+                .field("ctampf[4]", &self.ctampf(4usize))
+                .field("ctampf[5]", &self.ctampf(5usize))
+                .field("ctampf[6]", &self.ctampf(6usize))
+                .field("ctampf[7]", &self.ctampf(7usize))
+                .field("citampf[0]", &self.citampf(0usize))
+                .field("citampf[1]", &self.citampf(1usize))
+                .field("citampf[2]", &self.citampf(2usize))
+                .field("citampf[3]", &self.citampf(3usize))
+                .field("citampf[4]", &self.citampf(4usize))
+                .field("citampf[5]", &self.citampf(5usize))
+                .field("citampf[6]", &self.citampf(6usize))
+                .field("citampf[7]", &self.citampf(7usize))
+                .field("citampf[8]", &self.citampf(8usize))
+                .field("citampf[9]", &self.citampf(9usize))
+                .field("citampf[10]", &self.citampf(10usize))
+                .field("citampf[11]", &self.citampf(11usize))
+                .field("citampf[12]", &self.citampf(12usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Scr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Scr {
-                ctampf: [bool; 8usize],
-                citampf: [bool; 13usize],
-            }
-            let proxy = Scr {
-                ctampf: [
-                    self.ctampf(0usize),
-                    self.ctampf(1usize),
-                    self.ctampf(2usize),
-                    self.ctampf(3usize),
-                    self.ctampf(4usize),
-                    self.ctampf(5usize),
-                    self.ctampf(6usize),
-                    self.ctampf(7usize),
-                ],
-                citampf: [
-                    self.citampf(0usize),
-                    self.citampf(1usize),
-                    self.citampf(2usize),
-                    self.citampf(3usize),
-                    self.citampf(4usize),
-                    self.citampf(5usize),
-                    self.citampf(6usize),
-                    self.citampf(7usize),
-                    self.citampf(8usize),
-                    self.citampf(9usize),
-                    self.citampf(10usize),
-                    self.citampf(11usize),
-                    self.citampf(12usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Scr {{ ctampf[0]: {=bool:?}, ctampf[1]: {=bool:?}, ctampf[2]: {=bool:?}, ctampf[3]: {=bool:?}, ctampf[4]: {=bool:?}, ctampf[5]: {=bool:?}, ctampf[6]: {=bool:?}, ctampf[7]: {=bool:?}, citampf[0]: {=bool:?}, citampf[1]: {=bool:?}, citampf[2]: {=bool:?}, citampf[3]: {=bool:?}, citampf[4]: {=bool:?}, citampf[5]: {=bool:?}, citampf[6]: {=bool:?}, citampf[7]: {=bool:?}, citampf[8]: {=bool:?}, citampf[9]: {=bool:?}, citampf[10]: {=bool:?}, citampf[11]: {=bool:?}, citampf[12]: {=bool:?} }}" , self . ctampf (0usize) , self . ctampf (1usize) , self . ctampf (2usize) , self . ctampf (3usize) , self . ctampf (4usize) , self . ctampf (5usize) , self . ctampf (6usize) , self . ctampf (7usize) , self . citampf (0usize) , self . citampf (1usize) , self . citampf (2usize) , self . citampf (3usize) , self . citampf (4usize) , self . citampf (5usize) , self . citampf (6usize) , self . citampf (7usize) , self . citampf (8usize) , self . citampf (9usize) , self . citampf (10usize) , self . citampf (11usize) , self . citampf (12usize))
         }
     }
     #[doc = "TAMP secure mode register"]
@@ -1521,22 +1184,7 @@ can be written only in privileged mode."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Seccfgr {
-                bkprwsec: u8,
-                cnt1sec: bool,
-                bkpwsec: u8,
-                bhklock: bool,
-                tampsec: bool,
-            }
-            let proxy = Seccfgr {
-                bkprwsec: self.bkprwsec(),
-                cnt1sec: self.cnt1sec(),
-                bkpwsec: self.bkpwsec(),
-                bhklock: self.bhklock(),
-                tampsec: self.tampsec(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Seccfgr {{ bkprwsec: {=u8:?}, cnt1sec: {=bool:?}, bkpwsec: {=u8:?}, bhklock: {=bool:?}, tampsec: {=bool:?} }}" , self . bkprwsec () , self . cnt1sec () , self . bkpwsec () , self . bhklock () , self . tampsec ())
         }
     }
     #[doc = "TAMP secure masked interrupt status register"]
@@ -1584,76 +1232,34 @@ can be written only in privileged mode."]
     impl core::fmt::Debug for Smisr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Smisr")
-                .field(
-                    "tampmf",
-                    &[
-                        self.tampmf(0usize),
-                        self.tampmf(1usize),
-                        self.tampmf(2usize),
-                        self.tampmf(3usize),
-                        self.tampmf(4usize),
-                        self.tampmf(5usize),
-                        self.tampmf(6usize),
-                        self.tampmf(7usize),
-                    ],
-                )
-                .field(
-                    "itampmf",
-                    &[
-                        self.itampmf(0usize),
-                        self.itampmf(1usize),
-                        self.itampmf(2usize),
-                        self.itampmf(3usize),
-                        self.itampmf(4usize),
-                        self.itampmf(5usize),
-                        self.itampmf(6usize),
-                        self.itampmf(7usize),
-                        self.itampmf(8usize),
-                        self.itampmf(9usize),
-                        self.itampmf(10usize),
-                        self.itampmf(11usize),
-                        self.itampmf(12usize),
-                    ],
-                )
+                .field("tampmf[0]", &self.tampmf(0usize))
+                .field("tampmf[1]", &self.tampmf(1usize))
+                .field("tampmf[2]", &self.tampmf(2usize))
+                .field("tampmf[3]", &self.tampmf(3usize))
+                .field("tampmf[4]", &self.tampmf(4usize))
+                .field("tampmf[5]", &self.tampmf(5usize))
+                .field("tampmf[6]", &self.tampmf(6usize))
+                .field("tampmf[7]", &self.tampmf(7usize))
+                .field("itampmf[0]", &self.itampmf(0usize))
+                .field("itampmf[1]", &self.itampmf(1usize))
+                .field("itampmf[2]", &self.itampmf(2usize))
+                .field("itampmf[3]", &self.itampmf(3usize))
+                .field("itampmf[4]", &self.itampmf(4usize))
+                .field("itampmf[5]", &self.itampmf(5usize))
+                .field("itampmf[6]", &self.itampmf(6usize))
+                .field("itampmf[7]", &self.itampmf(7usize))
+                .field("itampmf[8]", &self.itampmf(8usize))
+                .field("itampmf[9]", &self.itampmf(9usize))
+                .field("itampmf[10]", &self.itampmf(10usize))
+                .field("itampmf[11]", &self.itampmf(11usize))
+                .field("itampmf[12]", &self.itampmf(12usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Smisr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Smisr {
-                tampmf: [bool; 8usize],
-                itampmf: [bool; 13usize],
-            }
-            let proxy = Smisr {
-                tampmf: [
-                    self.tampmf(0usize),
-                    self.tampmf(1usize),
-                    self.tampmf(2usize),
-                    self.tampmf(3usize),
-                    self.tampmf(4usize),
-                    self.tampmf(5usize),
-                    self.tampmf(6usize),
-                    self.tampmf(7usize),
-                ],
-                itampmf: [
-                    self.itampmf(0usize),
-                    self.itampmf(1usize),
-                    self.itampmf(2usize),
-                    self.itampmf(3usize),
-                    self.itampmf(4usize),
-                    self.itampmf(5usize),
-                    self.itampmf(6usize),
-                    self.itampmf(7usize),
-                    self.itampmf(8usize),
-                    self.itampmf(9usize),
-                    self.itampmf(10usize),
-                    self.itampmf(11usize),
-                    self.itampmf(12usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Smisr {{ tampmf[0]: {=bool:?}, tampmf[1]: {=bool:?}, tampmf[2]: {=bool:?}, tampmf[3]: {=bool:?}, tampmf[4]: {=bool:?}, tampmf[5]: {=bool:?}, tampmf[6]: {=bool:?}, tampmf[7]: {=bool:?}, itampmf[0]: {=bool:?}, itampmf[1]: {=bool:?}, itampmf[2]: {=bool:?}, itampmf[3]: {=bool:?}, itampmf[4]: {=bool:?}, itampmf[5]: {=bool:?}, itampmf[6]: {=bool:?}, itampmf[7]: {=bool:?}, itampmf[8]: {=bool:?}, itampmf[9]: {=bool:?}, itampmf[10]: {=bool:?}, itampmf[11]: {=bool:?}, itampmf[12]: {=bool:?} }}" , self . tampmf (0usize) , self . tampmf (1usize) , self . tampmf (2usize) , self . tampmf (3usize) , self . tampmf (4usize) , self . tampmf (5usize) , self . tampmf (6usize) , self . tampmf (7usize) , self . itampmf (0usize) , self . itampmf (1usize) , self . itampmf (2usize) , self . itampmf (3usize) , self . itampmf (4usize) , self . itampmf (5usize) , self . itampmf (6usize) , self . itampmf (7usize) , self . itampmf (8usize) , self . itampmf (9usize) , self . itampmf (10usize) , self . itampmf (11usize) , self . itampmf (12usize))
         }
     }
     #[doc = "TAMP status register"]
@@ -1701,76 +1307,34 @@ can be written only in privileged mode."]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
-                .field(
-                    "tampf",
-                    &[
-                        self.tampf(0usize),
-                        self.tampf(1usize),
-                        self.tampf(2usize),
-                        self.tampf(3usize),
-                        self.tampf(4usize),
-                        self.tampf(5usize),
-                        self.tampf(6usize),
-                        self.tampf(7usize),
-                    ],
-                )
-                .field(
-                    "itampf",
-                    &[
-                        self.itampf(0usize),
-                        self.itampf(1usize),
-                        self.itampf(2usize),
-                        self.itampf(3usize),
-                        self.itampf(4usize),
-                        self.itampf(5usize),
-                        self.itampf(6usize),
-                        self.itampf(7usize),
-                        self.itampf(8usize),
-                        self.itampf(9usize),
-                        self.itampf(10usize),
-                        self.itampf(11usize),
-                        self.itampf(12usize),
-                    ],
-                )
+                .field("tampf[0]", &self.tampf(0usize))
+                .field("tampf[1]", &self.tampf(1usize))
+                .field("tampf[2]", &self.tampf(2usize))
+                .field("tampf[3]", &self.tampf(3usize))
+                .field("tampf[4]", &self.tampf(4usize))
+                .field("tampf[5]", &self.tampf(5usize))
+                .field("tampf[6]", &self.tampf(6usize))
+                .field("tampf[7]", &self.tampf(7usize))
+                .field("itampf[0]", &self.itampf(0usize))
+                .field("itampf[1]", &self.itampf(1usize))
+                .field("itampf[2]", &self.itampf(2usize))
+                .field("itampf[3]", &self.itampf(3usize))
+                .field("itampf[4]", &self.itampf(4usize))
+                .field("itampf[5]", &self.itampf(5usize))
+                .field("itampf[6]", &self.itampf(6usize))
+                .field("itampf[7]", &self.itampf(7usize))
+                .field("itampf[8]", &self.itampf(8usize))
+                .field("itampf[9]", &self.itampf(9usize))
+                .field("itampf[10]", &self.itampf(10usize))
+                .field("itampf[11]", &self.itampf(11usize))
+                .field("itampf[12]", &self.itampf(12usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                tampf: [bool; 8usize],
-                itampf: [bool; 13usize],
-            }
-            let proxy = Sr {
-                tampf: [
-                    self.tampf(0usize),
-                    self.tampf(1usize),
-                    self.tampf(2usize),
-                    self.tampf(3usize),
-                    self.tampf(4usize),
-                    self.tampf(5usize),
-                    self.tampf(6usize),
-                    self.tampf(7usize),
-                ],
-                itampf: [
-                    self.itampf(0usize),
-                    self.itampf(1usize),
-                    self.itampf(2usize),
-                    self.itampf(3usize),
-                    self.itampf(4usize),
-                    self.itampf(5usize),
-                    self.itampf(6usize),
-                    self.itampf(7usize),
-                    self.itampf(8usize),
-                    self.itampf(9usize),
-                    self.itampf(10usize),
-                    self.itampf(11usize),
-                    self.itampf(12usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr {{ tampf[0]: {=bool:?}, tampf[1]: {=bool:?}, tampf[2]: {=bool:?}, tampf[3]: {=bool:?}, tampf[4]: {=bool:?}, tampf[5]: {=bool:?}, tampf[6]: {=bool:?}, tampf[7]: {=bool:?}, itampf[0]: {=bool:?}, itampf[1]: {=bool:?}, itampf[2]: {=bool:?}, itampf[3]: {=bool:?}, itampf[4]: {=bool:?}, itampf[5]: {=bool:?}, itampf[6]: {=bool:?}, itampf[7]: {=bool:?}, itampf[8]: {=bool:?}, itampf[9]: {=bool:?}, itampf[10]: {=bool:?}, itampf[11]: {=bool:?}, itampf[12]: {=bool:?} }}" , self . tampf (0usize) , self . tampf (1usize) , self . tampf (2usize) , self . tampf (3usize) , self . tampf (4usize) , self . tampf (5usize) , self . tampf (6usize) , self . tampf (7usize) , self . itampf (0usize) , self . itampf (1usize) , self . itampf (2usize) , self . itampf (3usize) , self . itampf (4usize) , self . itampf (5usize) , self . itampf (6usize) , self . itampf (7usize) , self . itampf (8usize) , self . itampf (9usize) , self . itampf (10usize) , self . itampf (11usize) , self . itampf (12usize))
         }
     }
 }

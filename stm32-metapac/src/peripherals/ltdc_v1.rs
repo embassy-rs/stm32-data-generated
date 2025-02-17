@@ -214,16 +214,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Awcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Awcr {
-                aah: u16,
-                aaw: u16,
-            }
-            let proxy = Awcr {
-                aah: self.aah(),
-                aaw: self.aaw(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Awcr {{ aah: {=u16:?}, aaw: {=u16:?} }}", self.aah(), self.aaw())
         }
     }
     #[doc = "Background Color Configuration Register"]
@@ -283,18 +274,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bccr {
-                bcblue: u8,
-                bcgreen: u8,
-                bcred: u8,
-            }
-            let proxy = Bccr {
-                bcblue: self.bcblue(),
-                bcgreen: self.bcgreen(),
-                bcred: self.bcred(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Bccr {{ bcblue: {=u8:?}, bcgreen: {=u8:?}, bcred: {=u8:?} }}",
+                self.bcblue(),
+                self.bcgreen(),
+                self.bcred()
+            )
         }
     }
     #[doc = "Layerx Blending Factors Configuration Register"]
@@ -342,16 +328,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bfcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bfcr {
-                bf2: super::vals::Bf2,
-                bf1: super::vals::Bf1,
-            }
-            let proxy = Bfcr {
-                bf2: self.bf2(),
-                bf1: self.bf1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Bfcr {{ bf2: {:?}, bf1: {:?} }}", self.bf2(), self.bf1())
         }
     }
     #[doc = "Back Porch Configuration Register"]
@@ -399,16 +376,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bpcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bpcr {
-                avbp: u16,
-                ahbp: u16,
-            }
-            let proxy = Bpcr {
-                avbp: self.avbp(),
-                ahbp: self.ahbp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Bpcr {{ avbp: {=u16:?}, ahbp: {=u16:?} }}", self.avbp(), self.ahbp())
         }
     }
     #[doc = "Layerx Constant Alpha Configuration Register"]
@@ -442,12 +410,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cacr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cacr {
-                consta: u8,
-            }
-            let proxy = Cacr { consta: self.consta() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cacr {{ consta: {=u8:?} }}", self.consta())
         }
     }
     #[doc = "Current Display Status Register"]
@@ -519,20 +482,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cdsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cdsr {
-                vdes: bool,
-                hdes: bool,
-                vsyncs: bool,
-                hsyncs: bool,
-            }
-            let proxy = Cdsr {
-                vdes: self.vdes(),
-                hdes: self.hdes(),
-                vsyncs: self.vsyncs(),
-                hsyncs: self.hsyncs(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cdsr {{ vdes: {=bool:?}, hdes: {=bool:?}, vsyncs: {=bool:?}, hsyncs: {=bool:?} }}",
+                self.vdes(),
+                self.hdes(),
+                self.vsyncs(),
+                self.hsyncs()
+            )
         }
     }
     #[doc = "Layerx Color Frame Buffer Address Register"]
@@ -566,12 +523,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfbar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfbar {
-                cfbadd: u32,
-            }
-            let proxy = Cfbar { cfbadd: self.cfbadd() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cfbar {{ cfbadd: {=u32:?} }}", self.cfbadd())
         }
     }
     #[doc = "Layerx ColorFrame Buffer Line Number Register"]
@@ -605,14 +557,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfblnr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfblnr {
-                cfblnbr: u16,
-            }
-            let proxy = Cfblnr {
-                cfblnbr: self.cfblnbr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cfblnr {{ cfblnbr: {=u16:?} }}", self.cfblnbr())
         }
     }
     #[doc = "Layerx Color Frame Buffer Length Register"]
@@ -660,16 +605,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfblr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfblr {
-                cfbll: u16,
-                cfbp: u16,
-            }
-            let proxy = Cfblr {
-                cfbll: self.cfbll(),
-                cfbp: self.cfbp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cfblr {{ cfbll: {=u16:?}, cfbp: {=u16:?} }}",
+                self.cfbll(),
+                self.cfbp()
+            )
         }
     }
     #[doc = "Layerx Color Keying Configuration Register"]
@@ -729,18 +670,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ckcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ckcr {
-                ckblue: u8,
-                ckgreen: u8,
-                ckred: u8,
-            }
-            let proxy = Ckcr {
-                ckblue: self.ckblue(),
-                ckgreen: self.ckgreen(),
-                ckred: self.ckred(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ckcr {{ ckblue: {=u8:?}, ckgreen: {=u8:?}, ckred: {=u8:?} }}",
+                self.ckblue(),
+                self.ckgreen(),
+                self.ckred()
+            )
         }
     }
     #[doc = "Layerx CLUT Write Register"]
@@ -812,20 +748,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Clutwr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Clutwr {
-                blue: u8,
-                green: u8,
-                red: u8,
-                clutadd: u8,
-            }
-            let proxy = Clutwr {
-                blue: self.blue(),
-                green: self.green(),
-                red: self.red(),
-                clutadd: self.clutadd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Clutwr {{ blue: {=u8:?}, green: {=u8:?}, red: {=u8:?}, clutadd: {=u8:?} }}",
+                self.blue(),
+                self.green(),
+                self.red(),
+                self.clutadd()
+            )
         }
     }
     #[doc = "Current Position Status Register"]
@@ -873,16 +803,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cpsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cpsr {
-                cypos: u16,
-                cxpos: u16,
-            }
-            let proxy = Cpsr {
-                cypos: self.cypos(),
-                cxpos: self.cxpos(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cpsr {{ cypos: {=u16:?}, cxpos: {=u16:?} }}",
+                self.cypos(),
+                self.cxpos()
+            )
         }
     }
     #[doc = "Layerx Control Register"]
@@ -942,18 +868,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                len: bool,
-                colken: bool,
-                cluten: bool,
-            }
-            let proxy = Cr {
-                len: self.len(),
-                colken: self.colken(),
-                cluten: self.cluten(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cr {{ len: {=bool:?}, colken: {=bool:?}, cluten: {=bool:?} }}",
+                self.len(),
+                self.colken(),
+                self.cluten()
+            )
         }
     }
     #[doc = "Layerx Default Color Configuration Register"]
@@ -1025,20 +946,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dccr {
-                dcblue: u8,
-                dcgreen: u8,
-                dcred: u8,
-                dcalpha: u8,
-            }
-            let proxy = Dccr {
-                dcblue: self.dcblue(),
-                dcgreen: self.dcgreen(),
-                dcred: self.dcred(),
-                dcalpha: self.dcalpha(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dccr {{ dcblue: {=u8:?}, dcgreen: {=u8:?}, dcred: {=u8:?}, dcalpha: {=u8:?} }}",
+                self.dcblue(),
+                self.dcgreen(),
+                self.dcred(),
+                self.dcalpha()
+            )
         }
     }
     #[doc = "Global Control Register"]
@@ -1170,30 +1085,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Gcr {
-                ltdcen: bool,
-                dbw: u8,
-                dgw: u8,
-                drw: u8,
-                den: bool,
-                pcpol: super::vals::Pcpol,
-                depol: super::vals::Depol,
-                vspol: super::vals::Vspol,
-                hspol: super::vals::Hspol,
-            }
-            let proxy = Gcr {
-                ltdcen: self.ltdcen(),
-                dbw: self.dbw(),
-                dgw: self.dgw(),
-                drw: self.drw(),
-                den: self.den(),
-                pcpol: self.pcpol(),
-                depol: self.depol(),
-                vspol: self.vspol(),
-                hspol: self.hspol(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Gcr {{ ltdcen: {=bool:?}, dbw: {=u8:?}, dgw: {=u8:?}, drw: {=u8:?}, den: {=bool:?}, pcpol: {:?}, depol: {:?}, vspol: {:?}, hspol: {:?} }}" , self . ltdcen () , self . dbw () , self . dgw () , self . drw () , self . den () , self . pcpol () , self . depol () , self . vspol () , self . hspol ())
         }
     }
     #[doc = "Interrupt Clear Register"]
@@ -1265,20 +1157,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Icr {
-                clif: super::vals::Clif,
-                cfuif: super::vals::Cfuif,
-                cterrif: super::vals::Cterrif,
-                crrif: super::vals::Crrif,
-            }
-            let proxy = Icr {
-                clif: self.clif(),
-                cfuif: self.cfuif(),
-                cterrif: self.cterrif(),
-                crrif: self.crrif(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Icr {{ clif: {:?}, cfuif: {:?}, cterrif: {:?}, crrif: {:?} }}",
+                self.clif(),
+                self.cfuif(),
+                self.cterrif(),
+                self.crrif()
+            )
         }
     }
     #[doc = "Interrupt Enable Register"]
@@ -1350,20 +1236,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ier {
-                lie: bool,
-                fuie: bool,
-                terrie: bool,
-                rrie: bool,
-            }
-            let proxy = Ier {
-                lie: self.lie(),
-                fuie: self.fuie(),
-                terrie: self.terrie(),
-                rrie: self.rrie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ier {{ lie: {=bool:?}, fuie: {=bool:?}, terrie: {=bool:?}, rrie: {=bool:?} }}",
+                self.lie(),
+                self.fuie(),
+                self.terrie(),
+                self.rrie()
+            )
         }
     }
     #[doc = "Interrupt Status Register"]
@@ -1435,20 +1315,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Isr {
-                lif: bool,
-                fuif: bool,
-                terrif: bool,
-                rrif: bool,
-            }
-            let proxy = Isr {
-                lif: self.lif(),
-                fuif: self.fuif(),
-                terrif: self.terrif(),
-                rrif: self.rrif(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Isr {{ lif: {=bool:?}, fuif: {=bool:?}, terrif: {=bool:?}, rrif: {=bool:?} }}",
+                self.lif(),
+                self.fuif(),
+                self.terrif(),
+                self.rrif()
+            )
         }
     }
     #[doc = "Line Interrupt Position Configuration Register"]
@@ -1482,12 +1356,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Lipcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Lipcr {
-                lipos: u16,
-            }
-            let proxy = Lipcr { lipos: self.lipos() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Lipcr {{ lipos: {=u16:?} }}", self.lipos())
         }
     }
     #[doc = "Layerx Pixel Format Configuration Register"]
@@ -1521,12 +1390,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pfcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pfcr {
-                pf: super::vals::Pf,
-            }
-            let proxy = Pfcr { pf: self.pf() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Pfcr {{ pf: {:?} }}", self.pf())
         }
     }
     #[doc = "Shadow Reload Configuration Register"]
@@ -1574,16 +1438,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Srcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Srcr {
-                imr: super::vals::Imr,
-                vbr: super::vals::Vbr,
-            }
-            let proxy = Srcr {
-                imr: self.imr(),
-                vbr: self.vbr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Srcr {{ imr: {:?}, vbr: {:?} }}", self.imr(), self.vbr())
         }
     }
     #[doc = "Synchronization Size Configuration Register"]
@@ -1631,16 +1486,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sscr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sscr {
-                vsh: u16,
-                hsw: u16,
-            }
-            let proxy = Sscr {
-                vsh: self.vsh(),
-                hsw: self.hsw(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Sscr {{ vsh: {=u16:?}, hsw: {=u16:?} }}", self.vsh(), self.hsw())
         }
     }
     #[doc = "Total Width Configuration Register"]
@@ -1688,16 +1534,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Twcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Twcr {
-                totalh: u16,
-                totalw: u16,
-            }
-            let proxy = Twcr {
-                totalh: self.totalh(),
-                totalw: self.totalw(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Twcr {{ totalh: {=u16:?}, totalw: {=u16:?} }}",
+                self.totalh(),
+                self.totalw()
+            )
         }
     }
     #[doc = "Layerx Window Horizontal Position Configuration Register"]
@@ -1745,16 +1587,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Whpcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Whpcr {
-                whstpos: u16,
-                whsppos: u16,
-            }
-            let proxy = Whpcr {
-                whstpos: self.whstpos(),
-                whsppos: self.whsppos(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Whpcr {{ whstpos: {=u16:?}, whsppos: {=u16:?} }}",
+                self.whstpos(),
+                self.whsppos()
+            )
         }
     }
     #[doc = "Layerx Window Vertical Position Configuration Register"]
@@ -1802,16 +1640,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wvpcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wvpcr {
-                wvstpos: u16,
-                wvsppos: u16,
-            }
-            let proxy = Wvpcr {
-                wvstpos: self.wvstpos(),
-                wvsppos: self.wvsppos(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Wvpcr {{ wvstpos: {=u16:?}, wvsppos: {=u16:?} }}",
+                self.wvstpos(),
+                self.wvsppos()
+            )
         }
     }
 }

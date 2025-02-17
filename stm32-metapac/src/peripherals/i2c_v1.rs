@@ -128,18 +128,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccr {
-                ccr: u16,
-                duty: super::vals::Duty,
-                f_s: super::vals::FS,
-            }
-            let proxy = Ccr {
-                ccr: self.ccr(),
-                duty: self.duty(),
-                f_s: self.f_s(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ccr {{ ccr: {=u16:?}, duty: {:?}, f_s: {:?} }}",
+                self.ccr(),
+                self.duty(),
+                self.f_s()
+            )
         }
     }
     #[doc = "Control register 1"]
@@ -331,40 +326,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr1 {
-                pe: bool,
-                smbus: super::vals::Smbus,
-                smbtype: super::vals::Smbtype,
-                enarp: bool,
-                enpec: bool,
-                engc: bool,
-                nostretch: bool,
-                start: bool,
-                stop: bool,
-                ack: bool,
-                pos: super::vals::Pos,
-                pec: bool,
-                alert: bool,
-                swrst: bool,
-            }
-            let proxy = Cr1 {
-                pe: self.pe(),
-                smbus: self.smbus(),
-                smbtype: self.smbtype(),
-                enarp: self.enarp(),
-                enpec: self.enpec(),
-                engc: self.engc(),
-                nostretch: self.nostretch(),
-                start: self.start(),
-                stop: self.stop(),
-                ack: self.ack(),
-                pos: self.pos(),
-                pec: self.pec(),
-                alert: self.alert(),
-                swrst: self.swrst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr1 {{ pe: {=bool:?}, smbus: {:?}, smbtype: {:?}, enarp: {=bool:?}, enpec: {=bool:?}, engc: {=bool:?}, nostretch: {=bool:?}, start: {=bool:?}, stop: {=bool:?}, ack: {=bool:?}, pos: {:?}, pec: {=bool:?}, alert: {=bool:?}, swrst: {=bool:?} }}" , self . pe () , self . smbus () , self . smbtype () , self . enarp () , self . enpec () , self . engc () , self . nostretch () , self . start () , self . stop () , self . ack () , self . pos () , self . pec () , self . alert () , self . swrst ())
         }
     }
     #[doc = "Control register 2"]
@@ -460,24 +422,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr2 {
-                freq: u8,
-                iterren: bool,
-                itevten: bool,
-                itbufen: bool,
-                dmaen: bool,
-                last: bool,
-            }
-            let proxy = Cr2 {
-                freq: self.freq(),
-                iterren: self.iterren(),
-                itevten: self.itevten(),
-                itbufen: self.itbufen(),
-                dmaen: self.dmaen(),
-                last: self.last(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr2 {{ freq: {=u8:?}, iterren: {=bool:?}, itevten: {=bool:?}, itbufen: {=bool:?}, dmaen: {=bool:?}, last: {=bool:?} }}" , self . freq () , self . iterren () , self . itevten () , self . itbufen () , self . dmaen () , self . last ())
         }
     }
     #[doc = "Data register"]
@@ -511,12 +456,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dr {
-                dr: u8,
-            }
-            let proxy = Dr { dr: self.dr() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dr {{ dr: {=u8:?} }}", self.dr())
         }
     }
     #[doc = "FLTR register"]
@@ -564,16 +504,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fltr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fltr {
-                dnf: super::vals::Dnf,
-                anoff: bool,
-            }
-            let proxy = Fltr {
-                dnf: self.dnf(),
-                anoff: self.anoff(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Fltr {{ dnf: {:?}, anoff: {=bool:?} }}", self.dnf(), self.anoff())
         }
     }
     #[doc = "Own address register 1"]
@@ -621,16 +552,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Oar1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Oar1 {
-                add: u16,
-                addmode: super::vals::Addmode,
-            }
-            let proxy = Oar1 {
-                add: self.add(),
-                addmode: self.addmode(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Oar1 {{ add: {=u16:?}, addmode: {:?} }}", self.add(), self.addmode())
         }
     }
     #[doc = "Own address register 2"]
@@ -678,16 +600,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Oar2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Oar2 {
-                endual: super::vals::Endual,
-                add2: u8,
-            }
-            let proxy = Oar2 {
-                endual: self.endual(),
-                add2: self.add2(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Oar2 {{ endual: {:?}, add2: {=u8:?} }}", self.endual(), self.add2())
         }
     }
     #[doc = "Status register 1"]
@@ -879,40 +792,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr1 {
-                start: bool,
-                addr: bool,
-                btf: bool,
-                add10: bool,
-                stopf: bool,
-                rxne: bool,
-                txe: bool,
-                berr: bool,
-                arlo: bool,
-                af: bool,
-                ovr: bool,
-                pecerr: bool,
-                timeout: bool,
-                alert: bool,
-            }
-            let proxy = Sr1 {
-                start: self.start(),
-                addr: self.addr(),
-                btf: self.btf(),
-                add10: self.add10(),
-                stopf: self.stopf(),
-                rxne: self.rxne(),
-                txe: self.txe(),
-                berr: self.berr(),
-                arlo: self.arlo(),
-                af: self.af(),
-                ovr: self.ovr(),
-                pecerr: self.pecerr(),
-                timeout: self.timeout(),
-                alert: self.alert(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr1 {{ start: {=bool:?}, addr: {=bool:?}, btf: {=bool:?}, add10: {=bool:?}, stopf: {=bool:?}, rxne: {=bool:?}, txe: {=bool:?}, berr: {=bool:?}, arlo: {=bool:?}, af: {=bool:?}, ovr: {=bool:?}, pecerr: {=bool:?}, timeout: {=bool:?}, alert: {=bool:?} }}" , self . start () , self . addr () , self . btf () , self . add10 () , self . stopf () , self . rxne () , self . txe () , self . berr () , self . arlo () , self . af () , self . ovr () , self . pecerr () , self . timeout () , self . alert ())
         }
     }
     #[doc = "Status register 2"]
@@ -1032,28 +912,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr2 {
-                msl: bool,
-                busy: bool,
-                tra: bool,
-                gencall: bool,
-                smbdefault: bool,
-                smbhost: bool,
-                dualf: bool,
-                pec: u8,
-            }
-            let proxy = Sr2 {
-                msl: self.msl(),
-                busy: self.busy(),
-                tra: self.tra(),
-                gencall: self.gencall(),
-                smbdefault: self.smbdefault(),
-                smbhost: self.smbhost(),
-                dualf: self.dualf(),
-                pec: self.pec(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr2 {{ msl: {=bool:?}, busy: {=bool:?}, tra: {=bool:?}, gencall: {=bool:?}, smbdefault: {=bool:?}, smbhost: {=bool:?}, dualf: {=bool:?}, pec: {=u8:?} }}" , self . msl () , self . busy () , self . tra () , self . gencall () , self . smbdefault () , self . smbhost () , self . dualf () , self . pec ())
         }
     }
     #[doc = "TRISE register"]
@@ -1087,12 +946,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Trise {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Trise {
-                trise: u8,
-            }
-            let proxy = Trise { trise: self.trise() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Trise {{ trise: {=u8:?} }}", self.trise())
         }
     }
 }

@@ -176,16 +176,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Amtcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Amtcr {
-                en: bool,
-                dt: u8,
-            }
-            let proxy = Amtcr {
-                en: self.en(),
-                dt: self.dt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Amtcr {{ en: {=bool:?}, dt: {=u8:?} }}", self.en(), self.dt())
         }
     }
     #[doc = "BGCLUT"]
@@ -257,20 +248,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bgclut {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bgclut {
-                blue: u8,
-                green: u8,
-                red: u8,
-                aplha: u8,
-            }
-            let proxy = Bgclut {
-                blue: self.blue(),
-                green: self.green(),
-                red: self.red(),
-                aplha: self.aplha(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Bgclut {{ blue: {=u8:?}, green: {=u8:?}, red: {=u8:?}, aplha: {=u8:?} }}",
+                self.blue(),
+                self.green(),
+                self.red(),
+                self.aplha()
+            )
         }
     }
     #[doc = "background CLUT memory address register"]
@@ -304,12 +289,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bgcmar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bgcmar {
-                ma: u32,
-            }
-            let proxy = Bgcmar { ma: self.ma() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Bgcmar {{ ma: {=u32:?} }}", self.ma())
         }
     }
     #[doc = "background color register"]
@@ -369,18 +349,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bgcolr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bgcolr {
-                blue: u8,
-                green: u8,
-                red: u8,
-            }
-            let proxy = Bgcolr {
-                blue: self.blue(),
-                green: self.green(),
-                red: self.red(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Bgcolr {{ blue: {=u8:?}, green: {=u8:?}, red: {=u8:?} }}",
+                self.blue(),
+                self.green(),
+                self.red()
+            )
         }
     }
     #[doc = "background memory address register"]
@@ -414,12 +389,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bgmar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bgmar {
-                ma: u32,
-            }
-            let proxy = Bgmar { ma: self.ma() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Bgmar {{ ma: {=u32:?} }}", self.ma())
         }
     }
     #[doc = "background offset register"]
@@ -453,12 +423,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bgor {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bgor {
-                lo: u16,
-            }
-            let proxy = Bgor { lo: self.lo() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Bgor {{ lo: {=u16:?} }}", self.lo())
         }
     }
     #[doc = "background PFC control register"]
@@ -554,24 +519,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bgpfccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bgpfccr {
-                cm: super::vals::BgpfccrCm,
-                ccm: super::vals::BgpfccrCcm,
-                start: super::vals::BgpfccrStart,
-                cs: u8,
-                am: super::vals::BgpfccrAm,
-                alpha: u8,
-            }
-            let proxy = Bgpfccr {
-                cm: self.cm(),
-                ccm: self.ccm(),
-                start: self.start(),
-                cs: self.cs(),
-                am: self.am(),
-                alpha: self.alpha(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Bgpfccr {{ cm: {:?}, ccm: {:?}, start: {:?}, cs: {=u8:?}, am: {:?}, alpha: {=u8:?} }}",
+                self.cm(),
+                self.ccm(),
+                self.start(),
+                self.cs(),
+                self.am(),
+                self.alpha()
+            )
         }
     }
     #[doc = "control register"]
@@ -715,32 +672,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                start: super::vals::CrStart,
-                susp: bool,
-                abort: super::vals::Abort,
-                teie: bool,
-                tcie: bool,
-                twie: bool,
-                caeie: bool,
-                ctcie: bool,
-                ceie: bool,
-                mode: super::vals::Mode,
-            }
-            let proxy = Cr {
-                start: self.start(),
-                susp: self.susp(),
-                abort: self.abort(),
-                teie: self.teie(),
-                tcie: self.tcie(),
-                twie: self.twie(),
-                caeie: self.caeie(),
-                ctcie: self.ctcie(),
-                ceie: self.ceie(),
-                mode: self.mode(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ start: {:?}, susp: {=bool:?}, abort: {:?}, teie: {=bool:?}, tcie: {=bool:?}, twie: {=bool:?}, caeie: {=bool:?}, ctcie: {=bool:?}, ceie: {=bool:?}, mode: {:?} }}" , self . start () , self . susp () , self . abort () , self . teie () , self . tcie () , self . twie () , self . caeie () , self . ctcie () , self . ceie () , self . mode ())
         }
     }
     #[doc = "FGCLUT"]
@@ -812,20 +744,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fgclut {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fgclut {
-                blue: u8,
-                green: u8,
-                red: u8,
-                aplha: u8,
-            }
-            let proxy = Fgclut {
-                blue: self.blue(),
-                green: self.green(),
-                red: self.red(),
-                aplha: self.aplha(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Fgclut {{ blue: {=u8:?}, green: {=u8:?}, red: {=u8:?}, aplha: {=u8:?} }}",
+                self.blue(),
+                self.green(),
+                self.red(),
+                self.aplha()
+            )
         }
     }
     #[doc = "foreground CLUT memory address register"]
@@ -859,12 +785,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fgcmar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fgcmar {
-                ma: u32,
-            }
-            let proxy = Fgcmar { ma: self.ma() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Fgcmar {{ ma: {=u32:?} }}", self.ma())
         }
     }
     #[doc = "foreground color register"]
@@ -924,18 +845,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fgcolr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fgcolr {
-                blue: u8,
-                green: u8,
-                red: u8,
-            }
-            let proxy = Fgcolr {
-                blue: self.blue(),
-                green: self.green(),
-                red: self.red(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Fgcolr {{ blue: {=u8:?}, green: {=u8:?}, red: {=u8:?} }}",
+                self.blue(),
+                self.green(),
+                self.red()
+            )
         }
     }
     #[doc = "foreground memory address register"]
@@ -969,12 +885,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fgmar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fgmar {
-                ma: u32,
-            }
-            let proxy = Fgmar { ma: self.ma() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Fgmar {{ ma: {=u32:?} }}", self.ma())
         }
     }
     #[doc = "foreground offset register"]
@@ -1008,12 +919,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fgor {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fgor {
-                lo: u16,
-            }
-            let proxy = Fgor { lo: self.lo() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Fgor {{ lo: {=u16:?} }}", self.lo())
         }
     }
     #[doc = "foreground PFC control register"]
@@ -1109,24 +1015,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fgpfccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fgpfccr {
-                cm: super::vals::FgpfccrCm,
-                ccm: super::vals::FgpfccrCcm,
-                start: super::vals::FgpfccrStart,
-                cs: u8,
-                am: super::vals::FgpfccrAm,
-                alpha: u8,
-            }
-            let proxy = Fgpfccr {
-                cm: self.cm(),
-                ccm: self.ccm(),
-                start: self.start(),
-                cs: self.cs(),
-                am: self.am(),
-                alpha: self.alpha(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Fgpfccr {{ cm: {:?}, ccm: {:?}, start: {:?}, cs: {=u8:?}, am: {:?}, alpha: {=u8:?} }}",
+                self.cm(),
+                self.ccm(),
+                self.start(),
+                self.cs(),
+                self.am(),
+                self.alpha()
+            )
         }
     }
     #[doc = "interrupt flag clear register"]
@@ -1222,24 +1120,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ifcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ifcr {
-                cteif: super::vals::Cteif,
-                ctcif: super::vals::Ctcif,
-                ctwif: super::vals::Ctwif,
-                caecif: super::vals::Caecif,
-                cctcif: super::vals::Cctcif,
-                cceif: super::vals::Cceif,
-            }
-            let proxy = Ifcr {
-                cteif: self.cteif(),
-                ctcif: self.ctcif(),
-                ctwif: self.ctwif(),
-                caecif: self.caecif(),
-                cctcif: self.cctcif(),
-                cceif: self.cceif(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ifcr {{ cteif: {:?}, ctcif: {:?}, ctwif: {:?}, caecif: {:?}, cctcif: {:?}, cceif: {:?} }}",
+                self.cteif(),
+                self.ctcif(),
+                self.ctwif(),
+                self.caecif(),
+                self.cctcif(),
+                self.cceif()
+            )
         }
     }
     #[doc = "Interrupt Status Register"]
@@ -1335,24 +1225,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Isr {
-                teif: bool,
-                tcif: bool,
-                twif: bool,
-                caeif: bool,
-                ctcif: bool,
-                ceif: bool,
-            }
-            let proxy = Isr {
-                teif: self.teif(),
-                tcif: self.tcif(),
-                twif: self.twif(),
-                caeif: self.caeif(),
-                ctcif: self.ctcif(),
-                ceif: self.ceif(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Isr {{ teif: {=bool:?}, tcif: {=bool:?}, twif: {=bool:?}, caeif: {=bool:?}, ctcif: {=bool:?}, ceif: {=bool:?} }}" , self . teif () , self . tcif () , self . twif () , self . caeif () , self . ctcif () , self . ceif ())
         }
     }
     #[doc = "line watermark register"]
@@ -1386,12 +1259,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Lwr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Lwr {
-                lw: u16,
-            }
-            let proxy = Lwr { lw: self.lw() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Lwr {{ lw: {=u16:?} }}", self.lw())
         }
     }
     #[doc = "number of line register"]
@@ -1439,16 +1307,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nlr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Nlr {
-                nl: u16,
-                pl: u16,
-            }
-            let proxy = Nlr {
-                nl: self.nl(),
-                pl: self.pl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Nlr {{ nl: {=u16:?}, pl: {=u16:?} }}", self.nl(), self.pl())
         }
     }
     #[doc = "output color register"]
@@ -1520,20 +1379,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ocolr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ocolr {
-                blue: u8,
-                green: u8,
-                red: u8,
-                aplha: u8,
-            }
-            let proxy = Ocolr {
-                blue: self.blue(),
-                green: self.green(),
-                red: self.red(),
-                aplha: self.aplha(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ocolr {{ blue: {=u8:?}, green: {=u8:?}, red: {=u8:?}, aplha: {=u8:?} }}",
+                self.blue(),
+                self.green(),
+                self.red(),
+                self.aplha()
+            )
         }
     }
     #[doc = "output memory address register"]
@@ -1567,12 +1420,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Omar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Omar {
-                ma: u32,
-            }
-            let proxy = Omar { ma: self.ma() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Omar {{ ma: {=u32:?} }}", self.ma())
         }
     }
     #[doc = "output offset register"]
@@ -1606,12 +1454,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Oor {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Oor {
-                lo: u16,
-            }
-            let proxy = Oor { lo: self.lo() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Oor {{ lo: {=u16:?} }}", self.lo())
         }
     }
     #[doc = "output PFC control register"]
@@ -1645,12 +1488,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Opfccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Opfccr {
-                cm: super::vals::OpfccrCm,
-            }
-            let proxy = Opfccr { cm: self.cm() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Opfccr {{ cm: {:?} }}", self.cm())
         }
     }
 }

@@ -72,12 +72,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Kr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Kr {
-                key: super::vals::Key,
-            }
-            let proxy = Kr { key: self.key() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Kr {{ key: {:?} }}", self.key())
         }
     }
     #[doc = "Prescaler register"]
@@ -111,12 +106,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pr {
-                pr: super::vals::Pr,
-            }
-            let proxy = Pr { pr: self.pr() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Pr {{ pr: {:?} }}", self.pr())
         }
     }
     #[doc = "Reload register"]
@@ -150,12 +140,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rlr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rlr {
-                rl: u16,
-            }
-            let proxy = Rlr { rl: self.rl() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Rlr {{ rl: {=u16:?} }}", self.rl())
         }
     }
     #[doc = "Status register"]
@@ -203,23 +188,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                pvu: bool,
-                rvu: bool,
-            }
-            let proxy = Sr {
-                pvu: self.pvu(),
-                rvu: self.rvu(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Sr {{ pvu: {=bool:?}, rvu: {=bool:?} }}", self.pvu(), self.rvu())
         }
     }
 }
 pub mod vals {
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Key(pub u16);
+    pub struct Key(u16);
     impl Key {
         #[doc = "Enable access to PR, RLR and WINR registers (0x5555)"]
         pub const ENABLE: Self = Self(0x5555);

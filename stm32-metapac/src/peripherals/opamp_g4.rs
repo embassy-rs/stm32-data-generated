@@ -220,40 +220,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                opampen: bool,
-                force_vp: super::vals::ForceVp,
-                vp_sel: super::vals::VpSel,
-                usertrim: super::vals::Usertrim,
-                vm_sel: super::vals::VmSel,
-                opahsm: super::vals::Opahsm,
-                opaintoen: super::vals::Opaintoen,
-                calon: bool,
-                calsel: super::vals::Calsel,
-                pga_gain: super::vals::PgaGain,
-                trimoffsetp: u8,
-                trimoffsetn: u8,
-                outcal: super::vals::Outcal,
-                lock: bool,
-            }
-            let proxy = Csr {
-                opampen: self.opampen(),
-                force_vp: self.force_vp(),
-                vp_sel: self.vp_sel(),
-                usertrim: self.usertrim(),
-                vm_sel: self.vm_sel(),
-                opahsm: self.opahsm(),
-                opaintoen: self.opaintoen(),
-                calon: self.calon(),
-                calsel: self.calsel(),
-                pga_gain: self.pga_gain(),
-                trimoffsetp: self.trimoffsetp(),
-                trimoffsetn: self.trimoffsetn(),
-                outcal: self.outcal(),
-                lock: self.lock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Csr {{ opampen: {=bool:?}, force_vp: {:?}, vp_sel: {:?}, usertrim: {:?}, vm_sel: {:?}, opahsm: {:?}, opaintoen: {:?}, calon: {=bool:?}, calsel: {:?}, pga_gain: {:?}, trimoffsetp: {=u8:?}, trimoffsetn: {=u8:?}, outcal: {:?}, lock: {=bool:?} }}" , self . opampen () , self . force_vp () , self . vp_sel () , self . usertrim () , self . vm_sel () , self . opahsm () , self . opaintoen () , self . calon () , self . calsel () , self . pga_gain () , self . trimoffsetp () , self . trimoffsetn () , self . outcal () , self . lock ())
         }
     }
     #[doc = "OPAMP timer controlled mode register"]
@@ -349,24 +316,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tcmr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tcmr {
-                vms_sel: bool,
-                vps_sel: super::vals::VpsSel,
-                t1cm_en: bool,
-                t8cm_en: bool,
-                t20cm_en: bool,
-                lock: bool,
-            }
-            let proxy = Tcmr {
-                vms_sel: self.vms_sel(),
-                vps_sel: self.vps_sel(),
-                t1cm_en: self.t1cm_en(),
-                t8cm_en: self.t8cm_en(),
-                t20cm_en: self.t20cm_en(),
-                lock: self.lock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Tcmr {{ vms_sel: {=bool:?}, vps_sel: {:?}, t1cm_en: {=bool:?}, t8cm_en: {=bool:?}, t20cm_en: {=bool:?}, lock: {=bool:?} }}" , self . vms_sel () , self . vps_sel () , self . t1cm_en () , self . t8cm_en () , self . t20cm_en () , self . lock ())
         }
     }
 }

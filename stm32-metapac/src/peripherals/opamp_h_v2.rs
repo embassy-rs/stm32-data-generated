@@ -189,34 +189,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                opampen: bool,
-                force_vp: super::vals::ForceVp,
-                vp_sel: super::vals::VpSel,
-                vm_sel: super::vals::VmSel,
-                opahsm: super::vals::Opahsm,
-                calon: super::vals::Calon,
-                calsel: super::vals::Calsel,
-                pga_gain: super::vals::PgaGain,
-                usertrim: super::vals::Usertrim,
-                tstref: bool,
-                calout: super::vals::Calout,
-            }
-            let proxy = Csr {
-                opampen: self.opampen(),
-                force_vp: self.force_vp(),
-                vp_sel: self.vp_sel(),
-                vm_sel: self.vm_sel(),
-                opahsm: self.opahsm(),
-                calon: self.calon(),
-                calsel: self.calsel(),
-                pga_gain: self.pga_gain(),
-                usertrim: self.usertrim(),
-                tstref: self.tstref(),
-                calout: self.calout(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Csr {{ opampen: {=bool:?}, force_vp: {:?}, vp_sel: {:?}, vm_sel: {:?}, opahsm: {:?}, calon: {:?}, calsel: {:?}, pga_gain: {:?}, usertrim: {:?}, tstref: {=bool:?}, calout: {:?} }}" , self . opampen () , self . force_vp () , self . vp_sel () , self . vm_sel () , self . opahsm () , self . calon () , self . calsel () , self . pga_gain () , self . usertrim () , self . tstref () , self . calout ())
         }
     }
     #[doc = "OPAMP1 offset trimming register in low-power mode."]
@@ -264,16 +237,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hsotr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hsotr {
-                trimlpoffsetn: u8,
-                trimlpoffsetp: u8,
-            }
-            let proxy = Hsotr {
-                trimlpoffsetn: self.trimlpoffsetn(),
-                trimlpoffsetp: self.trimlpoffsetp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Hsotr {{ trimlpoffsetn: {=u8:?}, trimlpoffsetp: {=u8:?} }}",
+                self.trimlpoffsetn(),
+                self.trimlpoffsetp()
+            )
         }
     }
     #[doc = "OPAMP1 offset trimming register in normal mode."]
@@ -321,16 +290,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Otr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Otr {
-                trimoffsetn: u8,
-                trimoffsetp: u8,
-            }
-            let proxy = Otr {
-                trimoffsetn: self.trimoffsetn(),
-                trimoffsetp: self.trimoffsetp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Otr {{ trimoffsetn: {=u8:?}, trimoffsetp: {=u8:?} }}",
+                self.trimoffsetn(),
+                self.trimoffsetp()
+            )
         }
     }
 }

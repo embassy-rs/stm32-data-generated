@@ -129,22 +129,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccr {
-                ckmode: super::vals::Ckmode,
-                presc: super::vals::Presc,
-                vrefen: bool,
-                tsen: bool,
-                vbaten: bool,
-            }
-            let proxy = Ccr {
-                ckmode: self.ckmode(),
-                presc: self.presc(),
-                vrefen: self.vrefen(),
-                tsen: self.tsen(),
-                vbaten: self.vbaten(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ccr {{ ckmode: {:?}, presc: {:?}, vrefen: {=bool:?}, tsen: {=bool:?}, vbaten: {=bool:?} }}",
+                self.ckmode(),
+                self.presc(),
+                self.vrefen(),
+                self.tsen(),
+                self.vbaten()
+            )
         }
     }
     #[doc = "hardware configuration register"]
@@ -216,20 +209,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hwcfgr0 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hwcfgr0 {
-                adcnum: u8,
-                mulpipe: u8,
-                opbits: u8,
-                idlevalue: super::vals::Idlevalue,
-            }
-            let proxy = Hwcfgr0 {
-                adcnum: self.adcnum(),
-                mulpipe: self.mulpipe(),
-                opbits: self.opbits(),
-                idlevalue: self.idlevalue(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Hwcfgr0 {{ adcnum: {=u8:?}, mulpipe: {=u8:?}, opbits: {=u8:?}, idlevalue: {:?} }}",
+                self.adcnum(),
+                self.mulpipe(),
+                self.opbits(),
+                self.idlevalue()
+            )
         }
     }
     #[doc = "version register"]
@@ -277,16 +264,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Verr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Verr {
-                minrev: u8,
-                majrev: u8,
-            }
-            let proxy = Verr {
-                minrev: self.minrev(),
-                majrev: self.majrev(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Verr {{ minrev: {=u8:?}, majrev: {=u8:?} }}",
+                self.minrev(),
+                self.majrev()
+            )
         }
     }
 }

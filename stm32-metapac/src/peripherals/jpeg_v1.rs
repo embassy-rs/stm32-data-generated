@@ -2574,14 +2574,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem0 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem0 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem0 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem0 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2617,14 +2610,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem10 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem10 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem10 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem10 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2660,14 +2646,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem100 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem100 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem100 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem100 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2703,14 +2682,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem101 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem101 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem101 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem101 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2746,14 +2718,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem102 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem102 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem102 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem102 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2789,14 +2754,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem103 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem103 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem103 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem103 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2832,14 +2790,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem11 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem11 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem11 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem11 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2875,14 +2826,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem12 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem12 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem12 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem12 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2918,14 +2862,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem13 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem13 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem13 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem13 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2961,14 +2898,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem14 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem14 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem14 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem14 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3004,14 +2934,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem15 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem15 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem15 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem15 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3047,14 +2970,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem16 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem16 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem16 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem16 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3090,14 +3006,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem17 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem17 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem17 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem17 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3133,14 +3042,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem18 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem18 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem18 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem18 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3176,14 +3078,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem19 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem19 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem19 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem19 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3219,14 +3114,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem2 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem2 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem2 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3262,14 +3150,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem20 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem20 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem20 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem20 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3305,14 +3186,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem21 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem21 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem21 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem21 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3348,14 +3222,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem22 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem22 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem22 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem22 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3391,14 +3258,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem23 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem23 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem23 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem23 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3434,14 +3294,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem24 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem24 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem24 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem24 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3477,14 +3330,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem25 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem25 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem25 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem25 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3520,14 +3366,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem26 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem26 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem26 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem26 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3563,14 +3402,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem27 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem27 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem27 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem27 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3606,14 +3438,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem28 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem28 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem28 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem28 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3649,14 +3474,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem29 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem29 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem29 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem29 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3692,14 +3510,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem3 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem3 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem3 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3735,14 +3546,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem30 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem30 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem30 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem30 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3778,14 +3582,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem31 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem31 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem31 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem31 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3821,14 +3618,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem32 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem32 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem32 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem32 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3864,14 +3654,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem33 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem33 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem33 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem33 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3907,14 +3690,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem34 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem34 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem34 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem34 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3950,14 +3726,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem35 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem35 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem35 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem35 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3993,14 +3762,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem36 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem36 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem36 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem36 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4036,14 +3798,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem37 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem37 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem37 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem37 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4079,14 +3834,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem38 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem38 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem38 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem38 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4122,14 +3870,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem39 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem39 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem39 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem39 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4165,14 +3906,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem4 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem4 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem4 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4208,14 +3942,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem40 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem40 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem40 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem40 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4251,14 +3978,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem41 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem41 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem41 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem41 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4294,14 +4014,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem42 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem42 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem42 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem42 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4337,14 +4050,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem43 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem43 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem43 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem43 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4380,14 +4086,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem44 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem44 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem44 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem44 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4423,14 +4122,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem45 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem45 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem45 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem45 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4466,14 +4158,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem46 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem46 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem46 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem46 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4509,14 +4194,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem47 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem47 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem47 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem47 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4552,14 +4230,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem48 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem48 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem48 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem48 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4595,14 +4266,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem49 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem49 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem49 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem49 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4638,14 +4302,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem5 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem5 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem5 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem5 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4681,14 +4338,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem50 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem50 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem50 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem50 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4724,14 +4374,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem51 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem51 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem51 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem51 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4767,14 +4410,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem52 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem52 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem52 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem52 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4810,14 +4446,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem53 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem53 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem53 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem53 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4853,14 +4482,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem54 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem54 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem54 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem54 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4896,14 +4518,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem55 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem55 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem55 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem55 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4939,14 +4554,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem56 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem56 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem56 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem56 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4982,14 +4590,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem57 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem57 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem57 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem57 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5025,14 +4626,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem58 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem58 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem58 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem58 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5068,14 +4662,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem59 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem59 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem59 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem59 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5111,14 +4698,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem6 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem6 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem6 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem6 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5154,14 +4734,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem60 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem60 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem60 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem60 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5197,14 +4770,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem61 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem61 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem61 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem61 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5240,14 +4806,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem62 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem62 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem62 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem62 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5283,14 +4842,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem63 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem63 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem63 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem63 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5326,14 +4878,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem64 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem64 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem64 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem64 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5369,14 +4914,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem65 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem65 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem65 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem65 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5412,14 +4950,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem66 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem66 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem66 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem66 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5455,14 +4986,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem67 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem67 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem67 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem67 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5498,14 +5022,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem68 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem68 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem68 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem68 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5541,14 +5058,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem69 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem69 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem69 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem69 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5584,14 +5094,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem7 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem7 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem7 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem7 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5627,14 +5130,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem70 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem70 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem70 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem70 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5670,14 +5166,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem71 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem71 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem71 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem71 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5713,14 +5202,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem72 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem72 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem72 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem72 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5756,14 +5238,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem73 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem73 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem73 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem73 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5799,14 +5274,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem74 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem74 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem74 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem74 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5842,14 +5310,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem75 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem75 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem75 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem75 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5885,14 +5346,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem76 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem76 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem76 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem76 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5928,14 +5382,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem77 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem77 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem77 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem77 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5971,14 +5418,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem78 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem78 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem78 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem78 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6014,14 +5454,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem79 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem79 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem79 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem79 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6057,14 +5490,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem8 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem8 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem8 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem8 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6100,14 +5526,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem80 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem80 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem80 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem80 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6143,14 +5562,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem81 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem81 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem81 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem81 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6186,14 +5598,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem82 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem82 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem82 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem82 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6229,14 +5634,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem83 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem83 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem83 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem83 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6272,14 +5670,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem84 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem84 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem84 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem84 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6315,14 +5706,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem85 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem85 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem85 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem85 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6358,14 +5742,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem86 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem86 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem86 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem86 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6401,14 +5778,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem87 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem87 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem87 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem87 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6444,14 +5814,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem88 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem88 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem88 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem88 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6487,14 +5850,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem89 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem89 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem89 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem89 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6530,14 +5886,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem9 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem9 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem9 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem9 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6573,14 +5922,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem90 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem90 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem90 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem90 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6616,14 +5958,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem91 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem91 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem91 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem91 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6659,14 +5994,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem92 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem92 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem92 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem92 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6702,14 +6030,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem93 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem93 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem93 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem93 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6745,14 +6066,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem94 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem94 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem94 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem94 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6788,14 +6102,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem95 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem95 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem95 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem95 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6831,14 +6138,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem96 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem96 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem96 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem96 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6874,14 +6174,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem97 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem97 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem97 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem97 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6917,14 +6210,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem98 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem98 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem98 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem98 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6960,14 +6246,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem99 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dhtmem99 {
-                dhtmem_ram: u32,
-            }
-            let proxy = Dhtmem99 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dhtmem99 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -7015,16 +6294,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase0 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase0 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase0 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase0 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -7072,16 +6347,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase1 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase1 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase1 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -7129,16 +6400,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase10 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase10 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase10 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase10 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -7186,16 +6453,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase11 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase11 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase11 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase11 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -7243,16 +6506,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase12 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase12 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase12 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase12 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -7300,16 +6559,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase13 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase13 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase13 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase13 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -7357,16 +6612,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase14 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase14 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase14 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase14 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -7414,16 +6665,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase15 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase15 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase15 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase15 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -7471,16 +6718,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase16 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase16 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase16 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase16 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -7528,16 +6771,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase17 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase17 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase17 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase17 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -7585,16 +6824,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase18 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase18 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase18 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase18 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -7642,16 +6877,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase19 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase19 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase19 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase19 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -7699,16 +6930,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase2 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase2 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase2 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -7756,16 +6983,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase20 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase20 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase20 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase20 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -7813,16 +7036,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase21 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase21 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase21 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase21 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -7870,16 +7089,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase22 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase22 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase22 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase22 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -7927,16 +7142,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase23 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase23 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase23 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase23 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -7984,16 +7195,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase24 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase24 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase24 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase24 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -8041,16 +7248,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase25 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase25 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase25 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase25 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -8098,16 +7301,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase26 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase26 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase26 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase26 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -8155,16 +7354,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase27 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase27 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase27 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase27 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -8212,16 +7407,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase28 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase28 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase28 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase28 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -8269,16 +7460,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase29 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase29 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase29 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase29 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -8326,16 +7513,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase3 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase3 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase3 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -8383,16 +7566,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase30 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase30 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase30 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase30 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -8440,16 +7619,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase31 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase31 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase31 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase31 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -8497,16 +7672,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase4 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase4 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase4 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -8554,16 +7725,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase5 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase5 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase5 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase5 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -8611,16 +7778,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase6 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase6 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase6 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase6 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -8668,16 +7831,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase7 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase7 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase7 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase7 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -8725,16 +7884,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase8 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase8 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase8 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase8 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -8782,16 +7937,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffbase9 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffbase9 {
-                huff_base_ram_0: u16,
-                huff_base_ram_1: u16,
-            }
-            let proxy = Huffbase9 {
-                huff_base_ram_0: self.huff_base_ram_0(),
-                huff_base_ram_1: self.huff_base_ram_1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Huffbase9 {{ huff_base_ram_0: {=u16:?}, huff_base_ram_1: {=u16:?} }}",
+                self.huff_base_ram_0(),
+                self.huff_base_ram_1()
+            )
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8827,14 +7978,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc00 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc00 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc00 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc00 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8870,14 +8014,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc01 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc01 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc01 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc01 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8913,14 +8050,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc010 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc010 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc010 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc010 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8956,14 +8086,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc011 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc011 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc011 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc011 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8999,14 +8122,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc012 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc012 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc012 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc012 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9042,14 +8158,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc013 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc013 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc013 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc013 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9085,14 +8194,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc014 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc014 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc014 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc014 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9128,14 +8230,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc015 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc015 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc015 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc015 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9171,14 +8266,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc016 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc016 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc016 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc016 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9214,14 +8302,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc017 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc017 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc017 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc017 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9257,14 +8338,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc018 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc018 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc018 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc018 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9300,14 +8374,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc019 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc019 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc019 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc019 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9343,14 +8410,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc02 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc02 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc02 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc02 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9386,14 +8446,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc020 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc020 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc020 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc020 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9429,14 +8482,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc021 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc021 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc021 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc021 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9472,14 +8518,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc022 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc022 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc022 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc022 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9515,14 +8554,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc023 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc023 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc023 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc023 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9558,14 +8590,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc024 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc024 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc024 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc024 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9601,14 +8626,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc025 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc025 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc025 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc025 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9644,14 +8662,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc026 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc026 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc026 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc026 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9687,14 +8698,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc027 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc027 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc027 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc027 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9730,14 +8734,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc028 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc028 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc028 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc028 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9773,14 +8770,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc029 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc029 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc029 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc029 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9816,14 +8806,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc03 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc03 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc03 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc03 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9859,14 +8842,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc030 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc030 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc030 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc030 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9902,14 +8878,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc031 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc031 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc031 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc031 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9945,14 +8914,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc032 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc032 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc032 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc032 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9988,14 +8950,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc033 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc033 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc033 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc033 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10031,14 +8986,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc034 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc034 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc034 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc034 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10074,14 +9022,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc035 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc035 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc035 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc035 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10117,14 +9058,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc036 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc036 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc036 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc036 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10160,14 +9094,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc037 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc037 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc037 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc037 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10203,14 +9130,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc038 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc038 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc038 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc038 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10246,14 +9166,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc039 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc039 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc039 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc039 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10289,14 +9202,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc04 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc04 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc04 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc04 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10332,14 +9238,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc040 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc040 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc040 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc040 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10375,14 +9274,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc041 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc041 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc041 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc041 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10418,14 +9310,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc042 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc042 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc042 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc042 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10461,14 +9346,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc043 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc043 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc043 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc043 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10504,14 +9382,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc044 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc044 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc044 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc044 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10547,14 +9418,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc045 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc045 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc045 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc045 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10590,14 +9454,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc046 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc046 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc046 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc046 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10633,14 +9490,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc047 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc047 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc047 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc047 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10676,14 +9526,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc048 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc048 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc048 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc048 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10719,14 +9562,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc049 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc049 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc049 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc049 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10762,14 +9598,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc05 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc05 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc05 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc05 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10805,14 +9634,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc050 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc050 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc050 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc050 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10848,14 +9670,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc051 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc051 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc051 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc051 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10891,14 +9706,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc052 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc052 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc052 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc052 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10934,14 +9742,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc053 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc053 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc053 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc053 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10977,14 +9778,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc054 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc054 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc054 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc054 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11020,14 +9814,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc055 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc055 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc055 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc055 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11063,14 +9850,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc056 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc056 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc056 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc056 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11106,14 +9886,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc057 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc057 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc057 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc057 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11149,14 +9922,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc058 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc058 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc058 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc058 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11192,14 +9958,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc059 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc059 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc059 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc059 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11235,14 +9994,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc06 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc06 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc06 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc06 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11278,14 +10030,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc060 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc060 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc060 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc060 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11321,14 +10066,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc061 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc061 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc061 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc061 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11364,14 +10102,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc062 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc062 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc062 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc062 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11407,14 +10138,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc063 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc063 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc063 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc063 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11450,14 +10174,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc064 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc064 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc064 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc064 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11493,14 +10210,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc065 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc065 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc065 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc065 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11536,14 +10246,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc066 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc066 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc066 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc066 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11579,14 +10282,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc067 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc067 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc067 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc067 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11622,14 +10318,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc068 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc068 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc068 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc068 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11665,14 +10354,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc069 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc069 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc069 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc069 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11708,14 +10390,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc07 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc07 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc07 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc07 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11751,14 +10426,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc070 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc070 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc070 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc070 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11794,14 +10462,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc071 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc071 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc071 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc071 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11837,14 +10498,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc072 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc072 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc072 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc072 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11880,14 +10534,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc073 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc073 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc073 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc073 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11923,14 +10570,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc074 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc074 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc074 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc074 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11966,14 +10606,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc075 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc075 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc075 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc075 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -12009,14 +10642,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc076 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc076 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc076 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc076 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -12052,14 +10678,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc077 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc077 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc077 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc077 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -12095,14 +10714,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc078 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc078 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc078 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc078 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -12138,14 +10750,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc079 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc079 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc079 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc079 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -12181,14 +10786,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc08 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc08 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc08 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc08 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -12224,14 +10822,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc080 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc080 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc080 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc080 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -12267,14 +10858,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc081 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc081 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc081 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc081 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -12310,14 +10894,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc082 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc082 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc082 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc082 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -12353,14 +10930,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc083 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc083 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc083 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc083 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -12396,14 +10966,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc084 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc084 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc084 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc084 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -12439,14 +11002,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc085 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc085 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc085 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc085 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -12482,14 +11038,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc086 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc086 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc086 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc086 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -12525,14 +11074,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc087 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc087 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc087 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc087 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -12568,14 +11110,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc09 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc09 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc09 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc09 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12611,14 +11146,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc10 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc10 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc10 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc10 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12654,14 +11182,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc11 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc11 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc11 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc11 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12697,14 +11218,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc110 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc110 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc110 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc110 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12740,14 +11254,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc111 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc111 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc111 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc111 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12783,14 +11290,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc112 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc112 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc112 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc112 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12826,14 +11326,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc113 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc113 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc113 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc113 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12869,14 +11362,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc114 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc114 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc114 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc114 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12912,14 +11398,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc115 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc115 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc115 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc115 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12955,14 +11434,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc116 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc116 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc116 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc116 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12998,14 +11470,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc117 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc117 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc117 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc117 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13041,14 +11506,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc118 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc118 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc118 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc118 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13084,14 +11542,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc119 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc119 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc119 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc119 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13127,14 +11578,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc12 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc12 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc12 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc12 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13170,14 +11614,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc120 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc120 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc120 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc120 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13213,14 +11650,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc121 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc121 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc121 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc121 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13256,14 +11686,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc122 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc122 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc122 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc122 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13299,14 +11722,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc123 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc123 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc123 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc123 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13342,14 +11758,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc124 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc124 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc124 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc124 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13385,14 +11794,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc125 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc125 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc125 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc125 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13428,14 +11830,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc126 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc126 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc126 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc126 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13471,14 +11866,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc127 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc127 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc127 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc127 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13514,14 +11902,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc128 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc128 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc128 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc128 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13557,14 +11938,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc129 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc129 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc129 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc129 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13600,14 +11974,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc13 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc13 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc13 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc13 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13643,14 +12010,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc130 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc130 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc130 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc130 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13686,14 +12046,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc131 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc131 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc131 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc131 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13729,14 +12082,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc132 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc132 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc132 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc132 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13772,14 +12118,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc133 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc133 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc133 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc133 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13815,14 +12154,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc134 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc134 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc134 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc134 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13858,14 +12190,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc135 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc135 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc135 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc135 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13901,14 +12226,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc136 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc136 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc136 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc136 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13944,14 +12262,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc137 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc137 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc137 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc137 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13987,14 +12298,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc138 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc138 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc138 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc138 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14030,14 +12334,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc139 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc139 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc139 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc139 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14073,14 +12370,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc14 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc14 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc14 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc14 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14116,14 +12406,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc140 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc140 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc140 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc140 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14159,14 +12442,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc141 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc141 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc141 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc141 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14202,14 +12478,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc142 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc142 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc142 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc142 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14245,14 +12514,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc143 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc143 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc143 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc143 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14288,14 +12550,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc144 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc144 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc144 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc144 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14331,14 +12586,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc145 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc145 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc145 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc145 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14374,14 +12622,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc146 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc146 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc146 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc146 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14417,14 +12658,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc147 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc147 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc147 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc147 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14460,14 +12694,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc148 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc148 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc148 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc148 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14503,14 +12730,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc149 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc149 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc149 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc149 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14546,14 +12766,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc15 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc15 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc15 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc15 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14589,14 +12802,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc150 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc150 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc150 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc150 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14632,14 +12838,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc151 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc151 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc151 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc151 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14675,14 +12874,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc152 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc152 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc152 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc152 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14718,14 +12910,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc153 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc153 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc153 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc153 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14761,14 +12946,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc154 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc154 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc154 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc154 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14804,14 +12982,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc155 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc155 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc155 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc155 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14847,14 +13018,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc156 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc156 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc156 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc156 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14890,14 +13054,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc157 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc157 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc157 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc157 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14933,14 +13090,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc158 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc158 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc158 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc158 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14976,14 +13126,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc159 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc159 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc159 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc159 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15019,14 +13162,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc16 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc16 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc16 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc16 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15062,14 +13198,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc160 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc160 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc160 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc160 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15105,14 +13234,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc161 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc161 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc161 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc161 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15148,14 +13270,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc162 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc162 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc162 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc162 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15191,14 +13306,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc163 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc163 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc163 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc163 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15234,14 +13342,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc164 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc164 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc164 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc164 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15277,14 +13378,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc165 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc165 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc165 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc165 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15320,14 +13414,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc166 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc166 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc166 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc166 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15363,14 +13450,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc167 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc167 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc167 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc167 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15406,14 +13486,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc168 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc168 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc168 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc168 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15449,14 +13522,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc169 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc169 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc169 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc169 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15492,14 +13558,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc17 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc17 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc17 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc17 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15535,14 +13594,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc170 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc170 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc170 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc170 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15578,14 +13630,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc171 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc171 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc171 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc171 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15621,14 +13666,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc172 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc172 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc172 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc172 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15664,14 +13702,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc173 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc173 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc173 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc173 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15707,14 +13738,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc174 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc174 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc174 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc174 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15750,14 +13774,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc175 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc175 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc175 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc175 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15793,14 +13810,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc176 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc176 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc176 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc176 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15836,14 +13846,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc177 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc177 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc177 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc177 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15879,14 +13882,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc178 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc178 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc178 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc178 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15922,14 +13918,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc179 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc179 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc179 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc179 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -15965,14 +13954,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc18 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc18 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc18 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc18 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -16008,14 +13990,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc180 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc180 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc180 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc180 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -16051,14 +14026,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc181 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc181 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc181 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc181 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -16094,14 +14062,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc182 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc182 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc182 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc182 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -16137,14 +14098,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc183 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc183 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc183 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc183 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -16180,14 +14134,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc184 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc184 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc184 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc184 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -16223,14 +14170,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc185 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc185 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc185 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc185 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -16266,14 +14206,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc186 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc186 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc186 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc186 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -16309,14 +14242,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc187 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc187 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc187 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc187 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -16352,14 +14278,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc19 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencAc19 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencAc19 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencAc19 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
@@ -16395,14 +14314,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc00 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencDc00 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencDc00 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencDc00 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
@@ -16438,14 +14350,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc01 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencDc01 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencDc01 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencDc01 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
@@ -16481,14 +14386,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc02 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencDc02 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencDc02 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencDc02 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
@@ -16524,14 +14422,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc03 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencDc03 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencDc03 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencDc03 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
@@ -16567,14 +14458,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc04 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencDc04 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencDc04 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencDc04 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
@@ -16610,14 +14494,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc05 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencDc05 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencDc05 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencDc05 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
@@ -16653,14 +14530,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc06 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencDc06 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencDc06 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencDc06 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
@@ -16696,14 +14566,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc07 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencDc07 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencDc07 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencDc07 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
@@ -16739,14 +14602,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc10 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencDc10 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencDc10 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencDc10 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
@@ -16782,14 +14638,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc11 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencDc11 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencDc11 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencDc11 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
@@ -16825,14 +14674,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc12 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencDc12 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencDc12 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencDc12 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
@@ -16868,14 +14710,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc13 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencDc13 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencDc13 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencDc13 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
@@ -16911,14 +14746,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc14 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencDc14 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencDc14 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencDc14 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
@@ -16954,14 +14782,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc15 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencDc15 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencDc15 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencDc15 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
@@ -16997,14 +14818,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc16 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencDc16 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencDc16 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencDc16 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
@@ -17040,14 +14854,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc17 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HuffencDc17 {
-                dhtmem_ram: u32,
-            }
-            let proxy = HuffencDc17 {
-                dhtmem_ram: self.dhtmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "HuffencDc17 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
         }
     }
     #[doc = "JPEG HuffMin tables"]
@@ -17083,14 +14890,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffmin0 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffmin0 {
-                huff_min_ram: u32,
-            }
-            let proxy = Huffmin0 {
-                huff_min_ram: self.huff_min_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffmin0 {{ huff_min_ram: {=u32:?} }}", self.huff_min_ram())
         }
     }
     #[doc = "JPEG HuffMin tables"]
@@ -17126,14 +14926,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffmin1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffmin1 {
-                huff_min_ram: u32,
-            }
-            let proxy = Huffmin1 {
-                huff_min_ram: self.huff_min_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffmin1 {{ huff_min_ram: {=u32:?} }}", self.huff_min_ram())
         }
     }
     #[doc = "JPEG HuffMin tables"]
@@ -17169,14 +14962,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffmin10 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffmin10 {
-                huff_min_ram: u32,
-            }
-            let proxy = Huffmin10 {
-                huff_min_ram: self.huff_min_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffmin10 {{ huff_min_ram: {=u32:?} }}", self.huff_min_ram())
         }
     }
     #[doc = "JPEG HuffMin tables"]
@@ -17212,14 +14998,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffmin11 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffmin11 {
-                huff_min_ram: u32,
-            }
-            let proxy = Huffmin11 {
-                huff_min_ram: self.huff_min_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffmin11 {{ huff_min_ram: {=u32:?} }}", self.huff_min_ram())
         }
     }
     #[doc = "JPEG HuffMin tables"]
@@ -17255,14 +15034,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffmin12 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffmin12 {
-                huff_min_ram: u32,
-            }
-            let proxy = Huffmin12 {
-                huff_min_ram: self.huff_min_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffmin12 {{ huff_min_ram: {=u32:?} }}", self.huff_min_ram())
         }
     }
     #[doc = "JPEG HuffMin tables"]
@@ -17298,14 +15070,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffmin13 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffmin13 {
-                huff_min_ram: u32,
-            }
-            let proxy = Huffmin13 {
-                huff_min_ram: self.huff_min_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffmin13 {{ huff_min_ram: {=u32:?} }}", self.huff_min_ram())
         }
     }
     #[doc = "JPEG HuffMin tables"]
@@ -17341,14 +15106,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffmin14 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffmin14 {
-                huff_min_ram: u32,
-            }
-            let proxy = Huffmin14 {
-                huff_min_ram: self.huff_min_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffmin14 {{ huff_min_ram: {=u32:?} }}", self.huff_min_ram())
         }
     }
     #[doc = "JPEG HuffMin tables"]
@@ -17384,14 +15142,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffmin15 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffmin15 {
-                huff_min_ram: u32,
-            }
-            let proxy = Huffmin15 {
-                huff_min_ram: self.huff_min_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffmin15 {{ huff_min_ram: {=u32:?} }}", self.huff_min_ram())
         }
     }
     #[doc = "JPEG HuffMin tables"]
@@ -17427,14 +15178,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffmin2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffmin2 {
-                huff_min_ram: u32,
-            }
-            let proxy = Huffmin2 {
-                huff_min_ram: self.huff_min_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffmin2 {{ huff_min_ram: {=u32:?} }}", self.huff_min_ram())
         }
     }
     #[doc = "JPEG HuffMin tables"]
@@ -17470,14 +15214,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffmin3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffmin3 {
-                huff_min_ram: u32,
-            }
-            let proxy = Huffmin3 {
-                huff_min_ram: self.huff_min_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffmin3 {{ huff_min_ram: {=u32:?} }}", self.huff_min_ram())
         }
     }
     #[doc = "JPEG HuffMin tables"]
@@ -17513,14 +15250,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffmin4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffmin4 {
-                huff_min_ram: u32,
-            }
-            let proxy = Huffmin4 {
-                huff_min_ram: self.huff_min_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffmin4 {{ huff_min_ram: {=u32:?} }}", self.huff_min_ram())
         }
     }
     #[doc = "JPEG HuffMin tables"]
@@ -17556,14 +15286,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffmin5 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffmin5 {
-                huff_min_ram: u32,
-            }
-            let proxy = Huffmin5 {
-                huff_min_ram: self.huff_min_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffmin5 {{ huff_min_ram: {=u32:?} }}", self.huff_min_ram())
         }
     }
     #[doc = "JPEG HuffMin tables"]
@@ -17599,14 +15322,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffmin6 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffmin6 {
-                huff_min_ram: u32,
-            }
-            let proxy = Huffmin6 {
-                huff_min_ram: self.huff_min_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffmin6 {{ huff_min_ram: {=u32:?} }}", self.huff_min_ram())
         }
     }
     #[doc = "JPEG HuffMin tables"]
@@ -17642,14 +15358,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffmin7 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffmin7 {
-                huff_min_ram: u32,
-            }
-            let proxy = Huffmin7 {
-                huff_min_ram: self.huff_min_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffmin7 {{ huff_min_ram: {=u32:?} }}", self.huff_min_ram())
         }
     }
     #[doc = "JPEG HuffMin tables"]
@@ -17685,14 +15394,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffmin8 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffmin8 {
-                huff_min_ram: u32,
-            }
-            let proxy = Huffmin8 {
-                huff_min_ram: self.huff_min_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffmin8 {{ huff_min_ram: {=u32:?} }}", self.huff_min_ram())
         }
     }
     #[doc = "JPEG HuffMin tables"]
@@ -17728,14 +15430,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffmin9 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffmin9 {
-                huff_min_ram: u32,
-            }
-            let proxy = Huffmin9 {
-                huff_min_ram: self.huff_min_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffmin9 {{ huff_min_ram: {=u32:?} }}", self.huff_min_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -17771,14 +15466,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb0 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb0 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb0 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb0 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -17814,14 +15502,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb1 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb1 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb1 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -17857,14 +15538,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb10 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb10 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb10 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb10 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -17900,14 +15574,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb11 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb11 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb11 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb11 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -17943,14 +15610,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb12 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb12 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb12 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb12 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -17986,14 +15646,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb13 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb13 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb13 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb13 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18029,14 +15682,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb14 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb14 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb14 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb14 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18072,14 +15718,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb15 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb15 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb15 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb15 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18115,14 +15754,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb16 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb16 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb16 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb16 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18158,14 +15790,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb17 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb17 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb17 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb17 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18201,14 +15826,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb18 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb18 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb18 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb18 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18244,14 +15862,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb19 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb19 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb19 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb19 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18287,14 +15898,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb2 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb2 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb2 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18330,14 +15934,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb20 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb20 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb20 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb20 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18373,14 +15970,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb21 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb21 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb21 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb21 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18416,14 +16006,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb22 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb22 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb22 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb22 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18459,14 +16042,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb23 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb23 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb23 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb23 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18502,14 +16078,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb24 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb24 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb24 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb24 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18545,14 +16114,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb25 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb25 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb25 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb25 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18588,14 +16150,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb26 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb26 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb26 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb26 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18631,14 +16186,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb27 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb27 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb27 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb27 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18674,14 +16222,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb28 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb28 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb28 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb28 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18717,14 +16258,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb29 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb29 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb29 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb29 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18760,14 +16294,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb3 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb3 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb3 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18803,14 +16330,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb30 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb30 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb30 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb30 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18846,14 +16366,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb31 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb31 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb31 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb31 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18889,14 +16402,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb32 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb32 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb32 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb32 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18932,14 +16438,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb33 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb33 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb33 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb33 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -18975,14 +16474,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb34 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb34 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb34 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb34 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19018,14 +16510,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb35 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb35 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb35 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb35 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19061,14 +16546,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb36 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb36 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb36 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb36 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19104,14 +16582,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb37 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb37 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb37 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb37 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19147,14 +16618,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb38 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb38 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb38 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb38 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19190,14 +16654,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb39 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb39 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb39 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb39 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19233,14 +16690,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb4 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb4 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb4 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19276,14 +16726,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb40 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb40 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb40 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb40 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19319,14 +16762,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb41 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb41 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb41 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb41 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19362,14 +16798,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb42 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb42 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb42 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb42 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19405,14 +16834,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb43 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb43 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb43 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb43 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19448,14 +16870,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb44 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb44 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb44 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb44 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19491,14 +16906,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb45 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb45 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb45 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb45 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19534,14 +16942,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb46 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb46 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb46 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb46 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19577,14 +16978,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb47 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb47 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb47 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb47 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19620,14 +17014,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb48 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb48 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb48 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb48 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19663,14 +17050,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb49 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb49 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb49 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb49 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19706,14 +17086,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb5 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb5 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb5 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb5 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19749,14 +17122,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb50 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb50 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb50 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb50 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19792,14 +17158,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb51 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb51 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb51 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb51 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19835,14 +17194,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb52 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb52 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb52 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb52 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19878,14 +17230,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb53 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb53 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb53 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb53 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19921,14 +17266,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb54 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb54 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb54 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb54 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -19964,14 +17302,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb55 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb55 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb55 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb55 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20007,14 +17338,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb56 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb56 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb56 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb56 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20050,14 +17374,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb57 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb57 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb57 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb57 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20093,14 +17410,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb58 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb58 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb58 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb58 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20136,14 +17446,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb59 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb59 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb59 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb59 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20179,14 +17482,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb6 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb6 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb6 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb6 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20222,14 +17518,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb60 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb60 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb60 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb60 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20265,14 +17554,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb61 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb61 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb61 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb61 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20308,14 +17590,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb62 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb62 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb62 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb62 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20351,14 +17626,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb63 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb63 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb63 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb63 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20394,14 +17662,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb64 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb64 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb64 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb64 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20437,14 +17698,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb65 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb65 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb65 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb65 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20480,14 +17734,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb66 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb66 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb66 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb66 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20523,14 +17770,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb67 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb67 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb67 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb67 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20566,14 +17806,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb68 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb68 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb68 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb68 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20609,14 +17842,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb69 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb69 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb69 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb69 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20652,14 +17878,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb7 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb7 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb7 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb7 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20695,14 +17914,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb70 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb70 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb70 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb70 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20738,14 +17950,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb71 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb71 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb71 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb71 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20781,14 +17986,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb72 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb72 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb72 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb72 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20824,14 +18022,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb73 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb73 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb73 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb73 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20867,14 +18058,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb74 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb74 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb74 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb74 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20910,14 +18094,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb75 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb75 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb75 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb75 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20953,14 +18130,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb76 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb76 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb76 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb76 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -20996,14 +18166,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb77 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb77 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb77 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb77 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -21039,14 +18202,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb78 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb78 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb78 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb78 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -21082,14 +18238,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb79 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb79 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb79 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb79 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -21125,14 +18274,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb8 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb8 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb8 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb8 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -21168,14 +18310,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb80 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb80 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb80 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb80 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -21211,14 +18346,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb81 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb81 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb81 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb81 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -21254,14 +18382,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb82 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb82 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb82 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb82 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -21297,14 +18418,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb83 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb83 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb83 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb83 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG HUFFSYMB tables"]
@@ -21340,14 +18454,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Huffsymb9 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Huffsymb9 {
-                huff_symb_ram: u32,
-            }
-            let proxy = Huffsymb9 {
-                huff_symb_ram: self.huff_symb_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Huffsymb9 {{ huff_symb_ram: {=u32:?} }}", self.huff_symb_ram())
         }
     }
     #[doc = "JPEG clear flag register"]
@@ -21395,16 +18502,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for JpegCfr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct JpegCfr {
-                ceocf: bool,
-                chpdf: bool,
-            }
-            let proxy = JpegCfr {
-                ceocf: self.ceocf(),
-                chpdf: self.chpdf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "JpegCfr {{ ceocf: {=bool:?}, chpdf: {=bool:?} }}",
+                self.ceocf(),
+                self.chpdf()
+            )
         }
     }
     #[doc = "JPEG codec configuration register 0"]
@@ -21438,12 +18541,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for JpegConfr0 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct JpegConfr0 {
-                start: bool,
-            }
-            let proxy = JpegConfr0 { start: self.start() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "JpegConfr0 {{ start: {=bool:?} }}", self.start())
         }
     }
     #[doc = "JPEG codec configuration register 1"]
@@ -21539,24 +18637,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for JpegConfr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct JpegConfr1 {
-                nf: u8,
-                de: bool,
-                colorspace: u8,
-                ns: u8,
-                hdr: bool,
-                ysize: u16,
-            }
-            let proxy = JpegConfr1 {
-                nf: self.nf(),
-                de: self.de(),
-                colorspace: self.colorspace(),
-                ns: self.ns(),
-                hdr: self.hdr(),
-                ysize: self.ysize(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "JpegConfr1 {{ nf: {=u8:?}, de: {=bool:?}, colorspace: {=u8:?}, ns: {=u8:?}, hdr: {=bool:?}, ysize: {=u16:?} }}" , self . nf () , self . de () , self . colorspace () , self . ns () , self . hdr () , self . ysize ())
         }
     }
     #[doc = "JPEG codec configuration register 2"]
@@ -21590,12 +18671,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for JpegConfr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct JpegConfr2 {
-                nmcu: u32,
-            }
-            let proxy = JpegConfr2 { nmcu: self.nmcu() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "JpegConfr2 {{ nmcu: {=u32:?} }}", self.nmcu())
         }
     }
     #[doc = "JPEG codec configuration register 3"]
@@ -21629,12 +18705,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for JpegConfr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct JpegConfr3 {
-                xsize: u16,
-            }
-            let proxy = JpegConfr3 { xsize: self.xsize() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "JpegConfr3 {{ xsize: {=u16:?} }}", self.xsize())
         }
     }
     #[doc = "JPEG codec configuration register 4"]
@@ -21730,24 +18801,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for JpegConfr4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct JpegConfr4 {
-                hd: bool,
-                ha: bool,
-                qt: u8,
-                nb: u8,
-                vsf: u8,
-                hsf: u8,
-            }
-            let proxy = JpegConfr4 {
-                hd: self.hd(),
-                ha: self.ha(),
-                qt: self.qt(),
-                nb: self.nb(),
-                vsf: self.vsf(),
-                hsf: self.hsf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "JpegConfr4 {{ hd: {=bool:?}, ha: {=bool:?}, qt: {=u8:?}, nb: {=u8:?}, vsf: {=u8:?}, hsf: {=u8:?} }}",
+                self.hd(),
+                self.ha(),
+                self.qt(),
+                self.nb(),
+                self.vsf(),
+                self.hsf()
+            )
         }
     }
     #[doc = "JPEG codec configuration register 5"]
@@ -21843,24 +18906,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for JpegConfr5 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct JpegConfr5 {
-                hd: bool,
-                ha: bool,
-                qt: u8,
-                nb: u8,
-                vsf: u8,
-                hsf: u8,
-            }
-            let proxy = JpegConfr5 {
-                hd: self.hd(),
-                ha: self.ha(),
-                qt: self.qt(),
-                nb: self.nb(),
-                vsf: self.vsf(),
-                hsf: self.hsf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "JpegConfr5 {{ hd: {=bool:?}, ha: {=bool:?}, qt: {=u8:?}, nb: {=u8:?}, vsf: {=u8:?}, hsf: {=u8:?} }}",
+                self.hd(),
+                self.ha(),
+                self.qt(),
+                self.nb(),
+                self.vsf(),
+                self.hsf()
+            )
         }
     }
     #[doc = "JPEG codec configuration register 6"]
@@ -21956,24 +19011,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for JpegConfr6 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct JpegConfr6 {
-                hd: bool,
-                ha: bool,
-                qt: u8,
-                nb: u8,
-                vsf: u8,
-                hsf: u8,
-            }
-            let proxy = JpegConfr6 {
-                hd: self.hd(),
-                ha: self.ha(),
-                qt: self.qt(),
-                nb: self.nb(),
-                vsf: self.vsf(),
-                hsf: self.hsf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "JpegConfr6 {{ hd: {=bool:?}, ha: {=bool:?}, qt: {=u8:?}, nb: {=u8:?}, vsf: {=u8:?}, hsf: {=u8:?} }}",
+                self.hd(),
+                self.ha(),
+                self.qt(),
+                self.nb(),
+                self.vsf(),
+                self.hsf()
+            )
         }
     }
     #[doc = "JPEG codec configuration register 7"]
@@ -22069,24 +19116,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for JpegConfr7 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct JpegConfr7 {
-                hd: bool,
-                ha: bool,
-                qt: u8,
-                nb: u8,
-                vsf: u8,
-                hsf: u8,
-            }
-            let proxy = JpegConfr7 {
-                hd: self.hd(),
-                ha: self.ha(),
-                qt: self.qt(),
-                nb: self.nb(),
-                vsf: self.vsf(),
-                hsf: self.hsf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "JpegConfr7 {{ hd: {=bool:?}, ha: {=bool:?}, qt: {=u8:?}, nb: {=u8:?}, vsf: {=u8:?}, hsf: {=u8:?} }}",
+                self.hd(),
+                self.ha(),
+                self.qt(),
+                self.nb(),
+                self.vsf(),
+                self.hsf()
+            )
         }
     }
     #[doc = "JPEG control register"]
@@ -22242,34 +19281,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for JpegCr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct JpegCr {
-                jcen: bool,
-                iftie: bool,
-                ifnfie: bool,
-                oftie: bool,
-                ofneie: bool,
-                eocie: bool,
-                hpdie: bool,
-                idmaen: bool,
-                odmaen: bool,
-                iff: bool,
-                off: bool,
-            }
-            let proxy = JpegCr {
-                jcen: self.jcen(),
-                iftie: self.iftie(),
-                ifnfie: self.ifnfie(),
-                oftie: self.oftie(),
-                ofneie: self.ofneie(),
-                eocie: self.eocie(),
-                hpdie: self.hpdie(),
-                idmaen: self.idmaen(),
-                odmaen: self.odmaen(),
-                iff: self.iff(),
-                off: self.off(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "JpegCr {{ jcen: {=bool:?}, iftie: {=bool:?}, ifnfie: {=bool:?}, oftie: {=bool:?}, ofneie: {=bool:?}, eocie: {=bool:?}, hpdie: {=bool:?}, idmaen: {=bool:?}, odmaen: {=bool:?}, iff: {=bool:?}, off: {=bool:?} }}" , self . jcen () , self . iftie () , self . ifnfie () , self . oftie () , self . ofneie () , self . eocie () , self . hpdie () , self . idmaen () , self . odmaen () , self . iff () , self . off ())
         }
     }
     #[doc = "JPEG data input register"]
@@ -22303,12 +19315,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for JpegDir {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct JpegDir {
-                datain: u32,
-            }
-            let proxy = JpegDir { datain: self.datain() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "JpegDir {{ datain: {=u32:?} }}", self.datain())
         }
     }
     #[doc = "JPEG data output register"]
@@ -22342,14 +19349,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for JpegDor {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct JpegDor {
-                dataout: u32,
-            }
-            let proxy = JpegDor {
-                dataout: self.dataout(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "JpegDor {{ dataout: {=u32:?} }}", self.dataout())
         }
     }
     #[doc = "JPEG status register"]
@@ -22457,26 +19457,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for JpegSr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct JpegSr {
-                iftf: bool,
-                ifnff: bool,
-                oftf: bool,
-                ofnef: bool,
-                eocf: bool,
-                hpdf: bool,
-                cof: bool,
-            }
-            let proxy = JpegSr {
-                iftf: self.iftf(),
-                ifnff: self.ifnff(),
-                oftf: self.oftf(),
-                ofnef: self.ofnef(),
-                eocf: self.eocf(),
-                hpdf: self.hpdf(),
-                cof: self.cof(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "JpegSr {{ iftf: {=bool:?}, ifnff: {=bool:?}, oftf: {=bool:?}, ofnef: {=bool:?}, eocf: {=bool:?}, hpdf: {=bool:?}, cof: {=bool:?} }}" , self . iftf () , self . ifnff () , self . oftf () , self . ofnef () , self . eocf () , self . hpdf () , self . cof ())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -22510,14 +19491,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem00 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem00 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem00 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem00 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -22551,14 +19525,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem01 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem01 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem01 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem01 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -22592,14 +19559,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem010 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem010 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem010 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem010 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -22633,14 +19593,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem011 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem011 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem011 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem011 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -22674,14 +19627,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem012 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem012 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem012 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem012 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -22715,14 +19661,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem013 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem013 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem013 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem013 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -22756,14 +19695,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem014 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem014 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem014 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem014 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -22797,14 +19729,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem015 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem015 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem015 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem015 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -22838,14 +19763,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem02 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem02 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem02 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem02 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -22879,14 +19797,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem03 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem03 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem03 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem03 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -22920,14 +19831,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem04 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem04 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem04 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem04 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -22961,14 +19865,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem05 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem05 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem05 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem05 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23002,14 +19899,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem06 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem06 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem06 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem06 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23043,14 +19933,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem07 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem07 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem07 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem07 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23084,14 +19967,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem08 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem08 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem08 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem08 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23125,14 +20001,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem09 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem09 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem09 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem09 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23166,14 +20035,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem10 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem10 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem10 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem10 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23207,14 +20069,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem11 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem11 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem11 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem11 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23248,14 +20103,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem110 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem110 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem110 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem110 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23289,14 +20137,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem111 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem111 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem111 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem111 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23330,14 +20171,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem112 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem112 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem112 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem112 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23371,14 +20205,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem113 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem113 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem113 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem113 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23412,14 +20239,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem114 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem114 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem114 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem114 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23453,14 +20273,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem115 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem115 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem115 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem115 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23494,14 +20307,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem12 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem12 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem12 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem12 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23535,14 +20341,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem13 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem13 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem13 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem13 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23576,14 +20375,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem14 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem14 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem14 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem14 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23617,14 +20409,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem15 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem15 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem15 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem15 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23658,14 +20443,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem16 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem16 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem16 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem16 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23699,14 +20477,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem17 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem17 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem17 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem17 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23740,14 +20511,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem18 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem18 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem18 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem18 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23781,14 +20545,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem19 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem19 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem19 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem19 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23822,14 +20579,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem20 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem20 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem20 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem20 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23863,14 +20613,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem21 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem21 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem21 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem21 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23904,14 +20647,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem210 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem210 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem210 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem210 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23945,14 +20681,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem211 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem211 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem211 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem211 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -23986,14 +20715,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem212 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem212 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem212 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem212 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24027,14 +20749,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem213 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem213 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem213 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem213 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24068,14 +20783,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem214 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem214 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem214 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem214 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24109,14 +20817,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem215 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem215 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem215 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem215 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24150,14 +20851,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem22 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem22 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem22 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem22 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24191,14 +20885,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem23 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem23 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem23 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem23 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24232,14 +20919,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem24 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem24 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem24 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem24 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24273,14 +20953,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem25 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem25 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem25 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem25 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24314,14 +20987,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem26 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem26 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem26 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem26 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24355,14 +21021,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem27 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem27 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem27 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem27 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24396,14 +21055,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem28 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem28 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem28 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem28 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24437,14 +21089,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem29 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem29 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem29 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem29 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24478,14 +21123,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem30 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem30 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem30 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem30 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24519,14 +21157,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem31 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem31 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem31 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem31 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24560,14 +21191,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem310 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem310 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem310 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem310 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24601,14 +21225,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem311 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem311 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem311 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem311 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24642,14 +21259,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem312 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem312 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem312 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem312 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24683,14 +21293,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem313 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem313 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem313 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem313 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24724,14 +21327,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem314 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem314 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem314 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem314 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24765,14 +21361,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem315 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem315 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem315 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem315 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24806,14 +21395,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem32 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem32 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem32 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem32 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24847,14 +21429,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem33 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem33 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem33 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem33 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24888,14 +21463,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem34 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem34 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem34 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem34 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24929,14 +21497,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem35 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem35 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem35 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem35 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -24970,14 +21531,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem36 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem36 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem36 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem36 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -25011,14 +21565,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem37 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem37 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem37 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem37 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -25052,14 +21599,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem38 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem38 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem38 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem38 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -25093,14 +21633,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem39 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Qmem39 {
-                qmem_ram: u32,
-            }
-            let proxy = Qmem39 {
-                qmem_ram: self.qmem_ram(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Qmem39 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
         }
     }
 }

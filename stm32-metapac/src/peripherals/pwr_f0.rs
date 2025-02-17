@@ -136,26 +136,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                lpds: bool,
-                pdds: super::vals::Pdds,
-                cwuf: bool,
-                csbf: bool,
-                pvde: bool,
-                pls: u8,
-                dbp: bool,
-            }
-            let proxy = Cr {
-                lpds: self.lpds(),
-                pdds: self.pdds(),
-                cwuf: self.cwuf(),
-                csbf: self.csbf(),
-                pvde: self.pvde(),
-                pls: self.pls(),
-                dbp: self.dbp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ lpds: {=bool:?}, pdds: {:?}, cwuf: {=bool:?}, csbf: {=bool:?}, pvde: {=bool:?}, pls: {=u8:?}, dbp: {=bool:?} }}" , self . lpds () , self . pdds () , self . cwuf () , self . csbf () , self . pvde () , self . pls () , self . dbp ())
         }
     }
     #[doc = "power control/status register"]
@@ -236,50 +217,21 @@ pub mod regs {
                 .field("sbf", &self.sbf())
                 .field("pvdo", &self.pvdo())
                 .field("vrefintrdy", &self.vrefintrdy())
-                .field(
-                    "ewup",
-                    &[
-                        self.ewup(0usize),
-                        self.ewup(1usize),
-                        self.ewup(2usize),
-                        self.ewup(3usize),
-                        self.ewup(4usize),
-                        self.ewup(5usize),
-                        self.ewup(6usize),
-                        self.ewup(7usize),
-                    ],
-                )
+                .field("ewup[0]", &self.ewup(0usize))
+                .field("ewup[1]", &self.ewup(1usize))
+                .field("ewup[2]", &self.ewup(2usize))
+                .field("ewup[3]", &self.ewup(3usize))
+                .field("ewup[4]", &self.ewup(4usize))
+                .field("ewup[5]", &self.ewup(5usize))
+                .field("ewup[6]", &self.ewup(6usize))
+                .field("ewup[7]", &self.ewup(7usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                wuf: bool,
-                sbf: bool,
-                pvdo: bool,
-                vrefintrdy: bool,
-                ewup: [bool; 8usize],
-            }
-            let proxy = Csr {
-                wuf: self.wuf(),
-                sbf: self.sbf(),
-                pvdo: self.pvdo(),
-                vrefintrdy: self.vrefintrdy(),
-                ewup: [
-                    self.ewup(0usize),
-                    self.ewup(1usize),
-                    self.ewup(2usize),
-                    self.ewup(3usize),
-                    self.ewup(4usize),
-                    self.ewup(5usize),
-                    self.ewup(6usize),
-                    self.ewup(7usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Csr {{ wuf: {=bool:?}, sbf: {=bool:?}, pvdo: {=bool:?}, vrefintrdy: {=bool:?}, ewup[0]: {=bool:?}, ewup[1]: {=bool:?}, ewup[2]: {=bool:?}, ewup[3]: {=bool:?}, ewup[4]: {=bool:?}, ewup[5]: {=bool:?}, ewup[6]: {=bool:?}, ewup[7]: {=bool:?} }}" , self . wuf () , self . sbf () , self . pvdo () , self . vrefintrdy () , self . ewup (0usize) , self . ewup (1usize) , self . ewup (2usize) , self . ewup (3usize) , self . ewup (4usize) , self . ewup (5usize) , self . ewup (6usize) , self . ewup (7usize))
         }
     }
 }

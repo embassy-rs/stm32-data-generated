@@ -194,34 +194,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1Fz {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Apb1Fz {
-                dbg_tim2_stop: bool,
-                dbg_tim3_stop: bool,
-                dbg_tim4_stop: bool,
-                dbg_tim5_stop: bool,
-                dbg_tim6_stop: bool,
-                dbg_tim7_stop: bool,
-                dbg_rtc_stop: bool,
-                dbg_wwdg_stop: bool,
-                dbg_iwdg_stop: bool,
-                dbg_i2c1_smbus_timeout: bool,
-                dbg_i2c2_smbus_timeout: bool,
-            }
-            let proxy = Apb1Fz {
-                dbg_tim2_stop: self.dbg_tim2_stop(),
-                dbg_tim3_stop: self.dbg_tim3_stop(),
-                dbg_tim4_stop: self.dbg_tim4_stop(),
-                dbg_tim5_stop: self.dbg_tim5_stop(),
-                dbg_tim6_stop: self.dbg_tim6_stop(),
-                dbg_tim7_stop: self.dbg_tim7_stop(),
-                dbg_rtc_stop: self.dbg_rtc_stop(),
-                dbg_wwdg_stop: self.dbg_wwdg_stop(),
-                dbg_iwdg_stop: self.dbg_iwdg_stop(),
-                dbg_i2c1_smbus_timeout: self.dbg_i2c1_smbus_timeout(),
-                dbg_i2c2_smbus_timeout: self.dbg_i2c2_smbus_timeout(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Apb1Fz {{ dbg_tim2_stop: {=bool:?}, dbg_tim3_stop: {=bool:?}, dbg_tim4_stop: {=bool:?}, dbg_tim5_stop: {=bool:?}, dbg_tim6_stop: {=bool:?}, dbg_tim7_stop: {=bool:?}, dbg_rtc_stop: {=bool:?}, dbg_wwdg_stop: {=bool:?}, dbg_iwdg_stop: {=bool:?}, dbg_i2c1_smbus_timeout: {=bool:?}, dbg_i2c2_smbus_timeout: {=bool:?} }}" , self . dbg_tim2_stop () , self . dbg_tim3_stop () , self . dbg_tim4_stop () , self . dbg_tim5_stop () , self . dbg_tim6_stop () , self . dbg_tim7_stop () , self . dbg_rtc_stop () , self . dbg_wwdg_stop () , self . dbg_iwdg_stop () , self . dbg_i2c1_smbus_timeout () , self . dbg_i2c2_smbus_timeout ())
         }
     }
     #[doc = "Debug MCU APB1 freeze register 2"]
@@ -281,18 +254,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb2Fz {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Apb2Fz {
-                dbg_tim9_stop: bool,
-                dbg_tim10_stop: bool,
-                dbg_tim11_stop: bool,
-            }
-            let proxy = Apb2Fz {
-                dbg_tim9_stop: self.dbg_tim9_stop(),
-                dbg_tim10_stop: self.dbg_tim10_stop(),
-                dbg_tim11_stop: self.dbg_tim11_stop(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Apb2Fz {{ dbg_tim9_stop: {=bool:?}, dbg_tim10_stop: {=bool:?}, dbg_tim11_stop: {=bool:?} }}",
+                self.dbg_tim9_stop(),
+                self.dbg_tim10_stop(),
+                self.dbg_tim11_stop()
+            )
         }
     }
     #[doc = "Debug MCU configuration register"]
@@ -376,22 +344,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                dbg_sleep: bool,
-                dbg_stop: bool,
-                dbg_standby: bool,
-                trace_ioen: bool,
-                trace_mode: u8,
-            }
-            let proxy = Cr {
-                dbg_sleep: self.dbg_sleep(),
-                dbg_stop: self.dbg_stop(),
-                dbg_standby: self.dbg_standby(),
-                trace_ioen: self.trace_ioen(),
-                trace_mode: self.trace_mode(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ dbg_sleep: {=bool:?}, dbg_stop: {=bool:?}, dbg_standby: {=bool:?}, trace_ioen: {=bool:?}, trace_mode: {=u8:?} }}" , self . dbg_sleep () , self . dbg_stop () , self . dbg_standby () , self . trace_ioen () , self . trace_mode ())
         }
     }
     #[doc = "DBGMCU_IDCODE"]
@@ -439,16 +392,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Idcode {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Idcode {
-                dev_id: u16,
-                rev_id: u16,
-            }
-            let proxy = Idcode {
-                dev_id: self.dev_id(),
-                rev_id: self.rev_id(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Idcode {{ dev_id: {=u16:?}, rev_id: {=u16:?} }}",
+                self.dev_id(),
+                self.rev_id()
+            )
         }
     }
 }

@@ -158,26 +158,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccr {
-                dmareq_id: u8,
-                soie: bool,
-                ege: bool,
-                se: bool,
-                spol: super::vals::Pol,
-                nbreq: u8,
-                sync_id: u8,
-            }
-            let proxy = Ccr {
-                dmareq_id: self.dmareq_id(),
-                soie: self.soie(),
-                ege: self.ege(),
-                se: self.se(),
-                spol: self.spol(),
-                nbreq: self.nbreq(),
-                sync_id: self.sync_id(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ccr {{ dmareq_id: {=u8:?}, soie: {=bool:?}, ege: {=bool:?}, se: {=bool:?}, spol: {:?}, nbreq: {=u8:?}, sync_id: {=u8:?} }}" , self . dmareq_id () , self . soie () , self . ege () , self . se () , self . spol () , self . nbreq () , self . sync_id ())
         }
     }
     #[doc = "DMAMUX request line multiplexer interrupt channel status register"]
@@ -210,58 +191,29 @@ pub mod regs {
     impl core::fmt::Debug for Csr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csr")
-                .field(
-                    "sof",
-                    &[
-                        self.sof(0usize),
-                        self.sof(1usize),
-                        self.sof(2usize),
-                        self.sof(3usize),
-                        self.sof(4usize),
-                        self.sof(5usize),
-                        self.sof(6usize),
-                        self.sof(7usize),
-                        self.sof(8usize),
-                        self.sof(9usize),
-                        self.sof(10usize),
-                        self.sof(11usize),
-                        self.sof(12usize),
-                        self.sof(13usize),
-                        self.sof(14usize),
-                        self.sof(15usize),
-                    ],
-                )
+                .field("sof[0]", &self.sof(0usize))
+                .field("sof[1]", &self.sof(1usize))
+                .field("sof[2]", &self.sof(2usize))
+                .field("sof[3]", &self.sof(3usize))
+                .field("sof[4]", &self.sof(4usize))
+                .field("sof[5]", &self.sof(5usize))
+                .field("sof[6]", &self.sof(6usize))
+                .field("sof[7]", &self.sof(7usize))
+                .field("sof[8]", &self.sof(8usize))
+                .field("sof[9]", &self.sof(9usize))
+                .field("sof[10]", &self.sof(10usize))
+                .field("sof[11]", &self.sof(11usize))
+                .field("sof[12]", &self.sof(12usize))
+                .field("sof[13]", &self.sof(13usize))
+                .field("sof[14]", &self.sof(14usize))
+                .field("sof[15]", &self.sof(15usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                sof: [bool; 16usize],
-            }
-            let proxy = Csr {
-                sof: [
-                    self.sof(0usize),
-                    self.sof(1usize),
-                    self.sof(2usize),
-                    self.sof(3usize),
-                    self.sof(4usize),
-                    self.sof(5usize),
-                    self.sof(6usize),
-                    self.sof(7usize),
-                    self.sof(8usize),
-                    self.sof(9usize),
-                    self.sof(10usize),
-                    self.sof(11usize),
-                    self.sof(12usize),
-                    self.sof(13usize),
-                    self.sof(14usize),
-                    self.sof(15usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Csr {{ sof[0]: {=bool:?}, sof[1]: {=bool:?}, sof[2]: {=bool:?}, sof[3]: {=bool:?}, sof[4]: {=bool:?}, sof[5]: {=bool:?}, sof[6]: {=bool:?}, sof[7]: {=bool:?}, sof[8]: {=bool:?}, sof[9]: {=bool:?}, sof[10]: {=bool:?}, sof[11]: {=bool:?}, sof[12]: {=bool:?}, sof[13]: {=bool:?}, sof[14]: {=bool:?}, sof[15]: {=bool:?} }}" , self . sof (0usize) , self . sof (1usize) , self . sof (2usize) , self . sof (3usize) , self . sof (4usize) , self . sof (5usize) , self . sof (6usize) , self . sof (7usize) , self . sof (8usize) , self . sof (9usize) , self . sof (10usize) , self . sof (11usize) , self . sof (12usize) , self . sof (13usize) , self . sof (14usize) , self . sof (15usize))
         }
     }
     #[doc = "DMAMux - DMA request generator channel x control register"]
@@ -345,22 +297,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rgcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rgcr {
-                sig_id: u8,
-                oie: bool,
-                ge: bool,
-                gpol: super::vals::Pol,
-                gnbreq: u8,
-            }
-            let proxy = Rgcr {
-                sig_id: self.sig_id(),
-                oie: self.oie(),
-                ge: self.ge(),
-                gpol: self.gpol(),
-                gnbreq: self.gnbreq(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Rgcr {{ sig_id: {=u8:?}, oie: {=bool:?}, ge: {=bool:?}, gpol: {:?}, gnbreq: {=u8:?} }}",
+                self.sig_id(),
+                self.oie(),
+                self.ge(),
+                self.gpol(),
+                self.gnbreq()
+            )
         }
     }
     #[doc = "DMAMux - DMA request generator status register"]
@@ -393,42 +338,21 @@ pub mod regs {
     impl core::fmt::Debug for Rgsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rgsr")
-                .field(
-                    "of",
-                    &[
-                        self.of(0usize),
-                        self.of(1usize),
-                        self.of(2usize),
-                        self.of(3usize),
-                        self.of(4usize),
-                        self.of(5usize),
-                        self.of(6usize),
-                        self.of(7usize),
-                    ],
-                )
+                .field("of[0]", &self.of(0usize))
+                .field("of[1]", &self.of(1usize))
+                .field("of[2]", &self.of(2usize))
+                .field("of[3]", &self.of(3usize))
+                .field("of[4]", &self.of(4usize))
+                .field("of[5]", &self.of(5usize))
+                .field("of[6]", &self.of(6usize))
+                .field("of[7]", &self.of(7usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rgsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rgsr {
-                of: [bool; 8usize],
-            }
-            let proxy = Rgsr {
-                of: [
-                    self.of(0usize),
-                    self.of(1usize),
-                    self.of(2usize),
-                    self.of(3usize),
-                    self.of(4usize),
-                    self.of(5usize),
-                    self.of(6usize),
-                    self.of(7usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Rgsr {{ of[0]: {=bool:?}, of[1]: {=bool:?}, of[2]: {=bool:?}, of[3]: {=bool:?}, of[4]: {=bool:?}, of[5]: {=bool:?}, of[6]: {=bool:?}, of[7]: {=bool:?} }}" , self . of (0usize) , self . of (1usize) , self . of (2usize) , self . of (3usize) , self . of (4usize) , self . of (5usize) , self . of (6usize) , self . of (7usize))
         }
     }
 }

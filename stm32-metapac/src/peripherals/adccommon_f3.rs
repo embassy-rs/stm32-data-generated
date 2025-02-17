@@ -153,28 +153,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccr {
-                dual: super::vals::Dual,
-                delay: u8,
-                dmacfg: super::vals::Dmacfg,
-                mdma: super::vals::Mdma,
-                ckmode: super::vals::Ckmode,
-                vrefen: bool,
-                tsen: bool,
-                vbaten: bool,
-            }
-            let proxy = Ccr {
-                dual: self.dual(),
-                delay: self.delay(),
-                dmacfg: self.dmacfg(),
-                mdma: self.mdma(),
-                ckmode: self.ckmode(),
-                vrefen: self.vrefen(),
-                tsen: self.tsen(),
-                vbaten: self.vbaten(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ccr {{ dual: {:?}, delay: {=u8:?}, dmacfg: {:?}, mdma: {:?}, ckmode: {:?}, vrefen: {=bool:?}, tsen: {=bool:?}, vbaten: {=bool:?} }}" , self . dual () , self . delay () , self . dmacfg () , self . mdma () , self . ckmode () , self . vrefen () , self . tsen () , self . vbaten ())
         }
     }
     #[doc = "ADC common regular data register for dual and triple modes"]
@@ -222,16 +201,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cdr {
-                rdata_mst: u16,
-                rdata_slv: u16,
-            }
-            let proxy = Cdr {
-                rdata_mst: self.rdata_mst(),
-                rdata_slv: self.rdata_slv(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cdr {{ rdata_mst: {=u16:?}, rdata_slv: {=u16:?} }}",
+                self.rdata_mst(),
+                self.rdata_slv()
+            )
         }
     }
     #[repr(transparent)]
@@ -461,10 +436,9 @@ pub mod regs {
                 .field("ovr_mst", &self.ovr_mst())
                 .field("jeoc_mst", &self.jeoc_mst())
                 .field("jeos", &self.jeos())
-                .field(
-                    "awd_mst",
-                    &[self.awd_mst(0usize), self.awd_mst(1usize), self.awd_mst(2usize)],
-                )
+                .field("awd_mst[0]", &self.awd_mst(0usize))
+                .field("awd_mst[1]", &self.awd_mst(1usize))
+                .field("awd_mst[2]", &self.awd_mst(2usize))
                 .field("jqovf_mst", &self.jqovf_mst())
                 .field("adrdy_slv", &self.adrdy_slv())
                 .field("eosmp_slv", &self.eosmp_slv())
@@ -473,10 +447,9 @@ pub mod regs {
                 .field("ovr_slv", &self.ovr_slv())
                 .field("jeoc_slv", &self.jeoc_slv())
                 .field("jeos_slv", &self.jeos_slv())
-                .field(
-                    "awd_slv",
-                    &[self.awd_slv(0usize), self.awd_slv(1usize), self.awd_slv(2usize)],
-                )
+                .field("awd_slv[0]", &self.awd_slv(0usize))
+                .field("awd_slv[1]", &self.awd_slv(1usize))
+                .field("awd_slv[2]", &self.awd_slv(2usize))
                 .field("jqovf_slv", &self.jqovf_slv())
                 .finish()
         }
@@ -484,48 +457,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                adrdy_mst: bool,
-                eosmp_mst: bool,
-                eoc_mst: bool,
-                eos_mst: bool,
-                ovr_mst: bool,
-                jeoc_mst: bool,
-                jeos: bool,
-                awd_mst: [bool; 3usize],
-                jqovf_mst: bool,
-                adrdy_slv: bool,
-                eosmp_slv: bool,
-                eoc_slv: bool,
-                eos_slv: bool,
-                ovr_slv: bool,
-                jeoc_slv: bool,
-                jeos_slv: bool,
-                awd_slv: [bool; 3usize],
-                jqovf_slv: bool,
-            }
-            let proxy = Csr {
-                adrdy_mst: self.adrdy_mst(),
-                eosmp_mst: self.eosmp_mst(),
-                eoc_mst: self.eoc_mst(),
-                eos_mst: self.eos_mst(),
-                ovr_mst: self.ovr_mst(),
-                jeoc_mst: self.jeoc_mst(),
-                jeos: self.jeos(),
-                awd_mst: [self.awd_mst(0usize), self.awd_mst(1usize), self.awd_mst(2usize)],
-                jqovf_mst: self.jqovf_mst(),
-                adrdy_slv: self.adrdy_slv(),
-                eosmp_slv: self.eosmp_slv(),
-                eoc_slv: self.eoc_slv(),
-                eos_slv: self.eos_slv(),
-                ovr_slv: self.ovr_slv(),
-                jeoc_slv: self.jeoc_slv(),
-                jeos_slv: self.jeos_slv(),
-                awd_slv: [self.awd_slv(0usize), self.awd_slv(1usize), self.awd_slv(2usize)],
-                jqovf_slv: self.jqovf_slv(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Csr {{ adrdy_mst: {=bool:?}, eosmp_mst: {=bool:?}, eoc_mst: {=bool:?}, eos_mst: {=bool:?}, ovr_mst: {=bool:?}, jeoc_mst: {=bool:?}, jeos: {=bool:?}, awd_mst[0]: {=bool:?}, awd_mst[1]: {=bool:?}, awd_mst[2]: {=bool:?}, jqovf_mst: {=bool:?}, adrdy_slv: {=bool:?}, eosmp_slv: {=bool:?}, eoc_slv: {=bool:?}, eos_slv: {=bool:?}, ovr_slv: {=bool:?}, jeoc_slv: {=bool:?}, jeos_slv: {=bool:?}, awd_slv[0]: {=bool:?}, awd_slv[1]: {=bool:?}, awd_slv[2]: {=bool:?}, jqovf_slv: {=bool:?} }}" , self . adrdy_mst () , self . eosmp_mst () , self . eoc_mst () , self . eos_mst () , self . ovr_mst () , self . jeoc_mst () , self . jeos () , self . awd_mst (0usize) , self . awd_mst (1usize) , self . awd_mst (2usize) , self . jqovf_mst () , self . adrdy_slv () , self . eosmp_slv () , self . eoc_slv () , self . eos_slv () , self . ovr_slv () , self . jeoc_slv () , self . jeos_slv () , self . awd_slv (0usize) , self . awd_slv (1usize) , self . awd_slv (2usize) , self . jqovf_slv ())
         }
     }
 }

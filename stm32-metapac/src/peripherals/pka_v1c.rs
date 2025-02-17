@@ -99,18 +99,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Clrfr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Clrfr {
-                procendfc: bool,
-                ramerrfc: bool,
-                addrerrfc: bool,
-            }
-            let proxy = Clrfr {
-                procendfc: self.procendfc(),
-                ramerrfc: self.ramerrfc(),
-                addrerrfc: self.addrerrfc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Clrfr {{ procendfc: {=bool:?}, ramerrfc: {=bool:?}, addrerrfc: {=bool:?} }}",
+                self.procendfc(),
+                self.ramerrfc(),
+                self.addrerrfc()
+            )
         }
     }
     #[doc = "PKA control register."]
@@ -206,24 +201,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                en: bool,
-                start: bool,
-                mode: u8,
-                procendie: bool,
-                ramerrie: bool,
-                addrerrie: bool,
-            }
-            let proxy = Cr {
-                en: self.en(),
-                start: self.start(),
-                mode: self.mode(),
-                procendie: self.procendie(),
-                ramerrie: self.ramerrie(),
-                addrerrie: self.addrerrie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ en: {=bool:?}, start: {=bool:?}, mode: {=u8:?}, procendie: {=bool:?}, ramerrie: {=bool:?}, addrerrie: {=bool:?} }}" , self . en () , self . start () , self . mode () , self . procendie () , self . ramerrie () , self . addrerrie ())
         }
     }
     #[doc = "PKA status register."]
@@ -295,20 +273,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                busy: bool,
-                procendf: bool,
-                ramerrf: bool,
-                addrerrf: bool,
-            }
-            let proxy = Sr {
-                busy: self.busy(),
-                procendf: self.procendf(),
-                ramerrf: self.ramerrf(),
-                addrerrf: self.addrerrf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sr {{ busy: {=bool:?}, procendf: {=bool:?}, ramerrf: {=bool:?}, addrerrf: {=bool:?} }}",
+                self.busy(),
+                self.procendf(),
+                self.ramerrf(),
+                self.addrerrf()
+            )
         }
     }
 }

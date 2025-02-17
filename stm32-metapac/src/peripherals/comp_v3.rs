@@ -191,36 +191,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                en: bool,
-                pwrmode: super::vals::Pwrmode,
-                inmsel: u8,
-                inpsel: u8,
-                polarity: super::vals::Polarity,
-                hyst: super::vals::Hyst,
-                blanking: super::vals::Blanking,
-                brgen: bool,
-                scalen: bool,
-                inmesel: u8,
-                value: bool,
-                lock: bool,
-            }
-            let proxy = Csr {
-                en: self.en(),
-                pwrmode: self.pwrmode(),
-                inmsel: self.inmsel(),
-                inpsel: self.inpsel(),
-                polarity: self.polarity(),
-                hyst: self.hyst(),
-                blanking: self.blanking(),
-                brgen: self.brgen(),
-                scalen: self.scalen(),
-                inmesel: self.inmesel(),
-                value: self.value(),
-                lock: self.lock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Csr {{ en: {=bool:?}, pwrmode: {:?}, inmsel: {=u8:?}, inpsel: {=u8:?}, polarity: {:?}, hyst: {:?}, blanking: {:?}, brgen: {=bool:?}, scalen: {=bool:?}, inmesel: {=u8:?}, value: {=bool:?}, lock: {=bool:?} }}" , self . en () , self . pwrmode () , self . inmsel () , self . inpsel () , self . polarity () , self . hyst () , self . blanking () , self . brgen () , self . scalen () , self . inmesel () , self . value () , self . lock ())
         }
     }
 }

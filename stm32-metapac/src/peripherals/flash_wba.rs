@@ -249,22 +249,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Acr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Acr {
-                latency: u8,
-                prften: bool,
-                lpm: bool,
-                pdreq: bool,
-                sleep_pd: bool,
-            }
-            let proxy = Acr {
-                latency: self.latency(),
-                prften: self.prften(),
-                lpm: self.lpm(),
-                pdreq: self.pdreq(),
-                sleep_pd: self.sleep_pd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Acr {{ latency: {=u8:?}, prften: {=bool:?}, lpm: {=bool:?}, pdreq: {=bool:?}, sleep_pd: {=bool:?} }}",
+                self.latency(),
+                self.prften(),
+                self.lpm(),
+                self.pdreq(),
+                self.sleep_pd()
+            )
         }
     }
     #[doc = "block based register"]
@@ -295,90 +288,45 @@ pub mod regs {
     impl core::fmt::Debug for Bbr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bbr")
-                .field(
-                    "block",
-                    &[
-                        self.block(0usize),
-                        self.block(1usize),
-                        self.block(2usize),
-                        self.block(3usize),
-                        self.block(4usize),
-                        self.block(5usize),
-                        self.block(6usize),
-                        self.block(7usize),
-                        self.block(8usize),
-                        self.block(9usize),
-                        self.block(10usize),
-                        self.block(11usize),
-                        self.block(12usize),
-                        self.block(13usize),
-                        self.block(14usize),
-                        self.block(15usize),
-                        self.block(16usize),
-                        self.block(17usize),
-                        self.block(18usize),
-                        self.block(19usize),
-                        self.block(20usize),
-                        self.block(21usize),
-                        self.block(22usize),
-                        self.block(23usize),
-                        self.block(24usize),
-                        self.block(25usize),
-                        self.block(26usize),
-                        self.block(27usize),
-                        self.block(28usize),
-                        self.block(29usize),
-                        self.block(30usize),
-                        self.block(31usize),
-                    ],
-                )
+                .field("block[0]", &self.block(0usize))
+                .field("block[1]", &self.block(1usize))
+                .field("block[2]", &self.block(2usize))
+                .field("block[3]", &self.block(3usize))
+                .field("block[4]", &self.block(4usize))
+                .field("block[5]", &self.block(5usize))
+                .field("block[6]", &self.block(6usize))
+                .field("block[7]", &self.block(7usize))
+                .field("block[8]", &self.block(8usize))
+                .field("block[9]", &self.block(9usize))
+                .field("block[10]", &self.block(10usize))
+                .field("block[11]", &self.block(11usize))
+                .field("block[12]", &self.block(12usize))
+                .field("block[13]", &self.block(13usize))
+                .field("block[14]", &self.block(14usize))
+                .field("block[15]", &self.block(15usize))
+                .field("block[16]", &self.block(16usize))
+                .field("block[17]", &self.block(17usize))
+                .field("block[18]", &self.block(18usize))
+                .field("block[19]", &self.block(19usize))
+                .field("block[20]", &self.block(20usize))
+                .field("block[21]", &self.block(21usize))
+                .field("block[22]", &self.block(22usize))
+                .field("block[23]", &self.block(23usize))
+                .field("block[24]", &self.block(24usize))
+                .field("block[25]", &self.block(25usize))
+                .field("block[26]", &self.block(26usize))
+                .field("block[27]", &self.block(27usize))
+                .field("block[28]", &self.block(28usize))
+                .field("block[29]", &self.block(29usize))
+                .field("block[30]", &self.block(30usize))
+                .field("block[31]", &self.block(31usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bbr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bbr {
-                block: [bool; 32usize],
-            }
-            let proxy = Bbr {
-                block: [
-                    self.block(0usize),
-                    self.block(1usize),
-                    self.block(2usize),
-                    self.block(3usize),
-                    self.block(4usize),
-                    self.block(5usize),
-                    self.block(6usize),
-                    self.block(7usize),
-                    self.block(8usize),
-                    self.block(9usize),
-                    self.block(10usize),
-                    self.block(11usize),
-                    self.block(12usize),
-                    self.block(13usize),
-                    self.block(14usize),
-                    self.block(15usize),
-                    self.block(16usize),
-                    self.block(17usize),
-                    self.block(18usize),
-                    self.block(19usize),
-                    self.block(20usize),
-                    self.block(21usize),
-                    self.block(22usize),
-                    self.block(23usize),
-                    self.block(24usize),
-                    self.block(25usize),
-                    self.block(26usize),
-                    self.block(27usize),
-                    self.block(28usize),
-                    self.block(29usize),
-                    self.block(30usize),
-                    self.block(31usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Bbr {{ block[0]: {=bool:?}, block[1]: {=bool:?}, block[2]: {=bool:?}, block[3]: {=bool:?}, block[4]: {=bool:?}, block[5]: {=bool:?}, block[6]: {=bool:?}, block[7]: {=bool:?}, block[8]: {=bool:?}, block[9]: {=bool:?}, block[10]: {=bool:?}, block[11]: {=bool:?}, block[12]: {=bool:?}, block[13]: {=bool:?}, block[14]: {=bool:?}, block[15]: {=bool:?}, block[16]: {=bool:?}, block[17]: {=bool:?}, block[18]: {=bool:?}, block[19]: {=bool:?}, block[20]: {=bool:?}, block[21]: {=bool:?}, block[22]: {=bool:?}, block[23]: {=bool:?}, block[24]: {=bool:?}, block[25]: {=bool:?}, block[26]: {=bool:?}, block[27]: {=bool:?}, block[28]: {=bool:?}, block[29]: {=bool:?}, block[30]: {=bool:?}, block[31]: {=bool:?} }}" , self . block (0usize) , self . block (1usize) , self . block (2usize) , self . block (3usize) , self . block (4usize) , self . block (5usize) , self . block (6usize) , self . block (7usize) , self . block (8usize) , self . block (9usize) , self . block (10usize) , self . block (11usize) , self . block (12usize) , self . block (13usize) , self . block (14usize) , self . block (15usize) , self . block (16usize) , self . block (17usize) , self . block (18usize) , self . block (19usize) , self . block (20usize) , self . block (21usize) , self . block (22usize) , self . block (23usize) , self . block (24usize) , self . block (25usize) , self . block (26usize) , self . block (27usize) , self . block (28usize) , self . block (29usize) , self . block (30usize) , self . block (31usize))
         }
     }
     #[doc = "ECC register"]
@@ -462,22 +410,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Eccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Eccr {
-                addr_ecc: u32,
-                sysf_ecc: bool,
-                eccie: bool,
-                eccc: bool,
-                eccd: bool,
-            }
-            let proxy = Eccr {
-                addr_ecc: self.addr_ecc(),
-                sysf_ecc: self.sysf_ecc(),
-                eccie: self.eccie(),
-                eccc: self.eccc(),
-                eccd: self.eccd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Eccr {{ addr_ecc: {=u32:?}, sysf_ecc: {=bool:?}, eccie: {=bool:?}, eccc: {=bool:?}, eccd: {=bool:?} }}" , self . addr_ecc () , self . sysf_ecc () , self . eccie () , self . eccc () , self . eccd ())
         }
     }
     #[doc = "boot address 0 register"]
@@ -519,14 +452,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nsbootadd0r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Nsbootadd0r {
-                nsbootadd0: u32,
-            }
-            let proxy = Nsbootadd0r {
-                nsbootadd0: self.nsbootadd0(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Nsbootadd0r {{ nsbootadd0: {=u32:?} }}", self.nsbootadd0())
         }
     }
     #[doc = "boot address 1 register"]
@@ -568,14 +494,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nsbootadd1r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Nsbootadd1r {
-                nsbootadd1: u32,
-            }
-            let proxy = Nsbootadd1r {
-                nsbootadd1: self.nsbootadd1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Nsbootadd1r {{ nsbootadd1: {=u32:?} }}", self.nsbootadd1())
         }
     }
     #[doc = "control register"]
@@ -743,36 +662,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nscr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Nscr1 {
-                pg: bool,
-                per: bool,
-                mer: bool,
-                pnb: u8,
-                bwr: bool,
-                strt: bool,
-                optstrt: bool,
-                eopie: bool,
-                errie: bool,
-                obl_launch: bool,
-                optlock: bool,
-                lock: bool,
-            }
-            let proxy = Nscr1 {
-                pg: self.pg(),
-                per: self.per(),
-                mer: self.mer(),
-                pnb: self.pnb(),
-                bwr: self.bwr(),
-                strt: self.strt(),
-                optstrt: self.optstrt(),
-                eopie: self.eopie(),
-                errie: self.errie(),
-                obl_launch: self.obl_launch(),
-                optlock: self.optlock(),
-                lock: self.lock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Nscr1 {{ pg: {=bool:?}, per: {=bool:?}, mer: {=bool:?}, pnb: {=u8:?}, bwr: {=bool:?}, strt: {=bool:?}, optstrt: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, obl_launch: {=bool:?}, optlock: {=bool:?}, lock: {=bool:?} }}" , self . pg () , self . per () , self . mer () , self . pnb () , self . bwr () , self . strt () , self . optstrt () , self . eopie () , self . errie () , self . obl_launch () , self . optlock () , self . lock ())
         }
     }
     #[doc = "control 2 register"]
@@ -820,16 +710,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nscr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Nscr2 {
-                ps: bool,
-                es: bool,
-            }
-            let proxy = Nscr2 {
-                ps: self.ps(),
-                es: self.es(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Nscr2 {{ ps: {=bool:?}, es: {=bool:?} }}", self.ps(), self.es())
         }
     }
     #[doc = "status register"]
@@ -1009,38 +890,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nssr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Nssr {
-                eop: bool,
-                operr: bool,
-                progerr: bool,
-                wrperr: bool,
-                pgaerr: bool,
-                sizerr: bool,
-                pgserr: bool,
-                optwerr: bool,
-                bsy: bool,
-                wdw: bool,
-                oem1lock: bool,
-                oem2lock: bool,
-                pd: bool,
-            }
-            let proxy = Nssr {
-                eop: self.eop(),
-                operr: self.operr(),
-                progerr: self.progerr(),
-                wrperr: self.wrperr(),
-                pgaerr: self.pgaerr(),
-                sizerr: self.sizerr(),
-                pgserr: self.pgserr(),
-                optwerr: self.optwerr(),
-                bsy: self.bsy(),
-                wdw: self.wdw(),
-                oem1lock: self.oem1lock(),
-                oem2lock: self.oem2lock(),
-                pd: self.pd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Nssr {{ eop: {=bool:?}, operr: {=bool:?}, progerr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, pgserr: {=bool:?}, optwerr: {=bool:?}, bsy: {=bool:?}, wdw: {=bool:?}, oem1lock: {=bool:?}, oem2lock: {=bool:?}, pd: {=bool:?} }}" , self . eop () , self . operr () , self . progerr () , self . wrperr () , self . pgaerr () , self . sizerr () , self . pgserr () , self . optwerr () , self . bsy () , self . wdw () , self . oem1lock () , self . oem2lock () , self . pd ())
         }
     }
     #[doc = "operation status register"]
@@ -1100,18 +950,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Opsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Opsr {
-                addr_op: u32,
-                sysf_op: bool,
-                code_op: super::vals::CodeOp,
-            }
-            let proxy = Opsr {
-                addr_op: self.addr_op(),
-                sysf_op: self.sysf_op(),
-                code_op: self.code_op(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Opsr {{ addr_op: {=u32:?}, sysf_op: {=bool:?}, code_op: {:?} }}",
+                self.addr_op(),
+                self.sysf_op(),
+                self.code_op()
+            )
         }
     }
     #[doc = "option register"]
@@ -1303,40 +1148,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Optr {
-                rdp: super::vals::Rdp,
-                bor_lev: super::vals::BorLev,
-                nrst_stop: bool,
-                nrst_stdby: bool,
-                sram1_rst: bool,
-                iwdg_sw: bool,
-                iwdg_stop: bool,
-                iwdg_stdby: bool,
-                wwdg_sw: bool,
-                sram2_pe: bool,
-                sram2_rst: bool,
-                nswboot0: bool,
-                nboot0: bool,
-                tzen: bool,
-            }
-            let proxy = Optr {
-                rdp: self.rdp(),
-                bor_lev: self.bor_lev(),
-                nrst_stop: self.nrst_stop(),
-                nrst_stdby: self.nrst_stdby(),
-                sram1_rst: self.sram1_rst(),
-                iwdg_sw: self.iwdg_sw(),
-                iwdg_stop: self.iwdg_stop(),
-                iwdg_stdby: self.iwdg_stdby(),
-                wwdg_sw: self.wwdg_sw(),
-                sram2_pe: self.sram2_pe(),
-                sram2_rst: self.sram2_rst(),
-                nswboot0: self.nswboot0(),
-                nboot0: self.nboot0(),
-                tzen: self.tzen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Optr {{ rdp: {:?}, bor_lev: {:?}, nrst_stop: {=bool:?}, nrst_stdby: {=bool:?}, sram1_rst: {=bool:?}, iwdg_sw: {=bool:?}, iwdg_stop: {=bool:?}, iwdg_stdby: {=bool:?}, wwdg_sw: {=bool:?}, sram2_pe: {=bool:?}, sram2_rst: {=bool:?}, nswboot0: {=bool:?}, nboot0: {=bool:?}, tzen: {=bool:?} }}" , self . rdp () , self . bor_lev () , self . nrst_stop () , self . nrst_stdby () , self . sram1_rst () , self . iwdg_sw () , self . iwdg_stop () , self . iwdg_stdby () , self . wwdg_sw () , self . sram2_pe () , self . sram2_rst () , self . nswboot0 () , self . nboot0 () , self . tzen ())
         }
     }
     #[doc = "privilege configuration register"]
@@ -1384,16 +1196,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Prifcfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Prifcfgr {
-                spriv: bool,
-                nspriv: bool,
-            }
-            let proxy = Prifcfgr {
-                spriv: self.spriv(),
-                nspriv: self.nspriv(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Prifcfgr {{ spriv: {=bool:?}, nspriv: {=bool:?} }}",
+                self.spriv(),
+                self.nspriv()
+            )
         }
     }
     #[doc = "secure boot address 0 register"]
@@ -1451,16 +1259,12 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Secbootadd0r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Secbootadd0r {
-                boot_lock: bool,
-                secbootadd0: u32,
-            }
-            let proxy = Secbootadd0r {
-                boot_lock: self.boot_lock(),
-                secbootadd0: self.secbootadd0(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Secbootadd0r {{ boot_lock: {=bool:?}, secbootadd0: {=u32:?} }}",
+                self.boot_lock(),
+                self.secbootadd0()
+            )
         }
     }
     #[doc = "secure control register"]
@@ -1604,32 +1408,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Seccr1 {
-                pg: bool,
-                per: bool,
-                mer: bool,
-                pnb: u8,
-                bwr: bool,
-                strt: bool,
-                eopie: bool,
-                errie: bool,
-                inv: bool,
-                lock: bool,
-            }
-            let proxy = Seccr1 {
-                pg: self.pg(),
-                per: self.per(),
-                mer: self.mer(),
-                pnb: self.pnb(),
-                bwr: self.bwr(),
-                strt: self.strt(),
-                eopie: self.eopie(),
-                errie: self.errie(),
-                inv: self.inv(),
-                lock: self.lock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Seccr1 {{ pg: {=bool:?}, per: {=bool:?}, mer: {=bool:?}, pnb: {=u8:?}, bwr: {=bool:?}, strt: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, inv: {=bool:?}, lock: {=bool:?} }}" , self . pg () , self . per () , self . mer () , self . pnb () , self . bwr () , self . strt () , self . eopie () , self . errie () , self . inv () , self . lock ())
         }
     }
     #[doc = "secure control 2 register"]
@@ -1677,16 +1456,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Seccr2 {
-                ps: bool,
-                es: bool,
-            }
-            let proxy = Seccr2 {
-                ps: self.ps(),
-                es: self.es(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Seccr2 {{ ps: {=bool:?}, es: {=bool:?} }}", self.ps(), self.es())
         }
     }
     #[doc = "secure HDP control register"]
@@ -1722,14 +1492,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sechdpcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sechdpcr {
-                hdp_accdis: bool,
-            }
-            let proxy = Sechdpcr {
-                hdp_accdis: self.hdp_accdis(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Sechdpcr {{ hdp_accdis: {=bool:?} }}", self.hdp_accdis())
         }
     }
     #[doc = "secure status register"]
@@ -1861,30 +1624,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Secsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Secsr {
-                eop: bool,
-                operr: bool,
-                progerr: bool,
-                wrperr: bool,
-                pgaerr: bool,
-                sizerr: bool,
-                pgserr: bool,
-                bsy: bool,
-                wdw: bool,
-            }
-            let proxy = Secsr {
-                eop: self.eop(),
-                operr: self.operr(),
-                progerr: self.progerr(),
-                wrperr: self.wrperr(),
-                pgaerr: self.pgaerr(),
-                sizerr: self.sizerr(),
-                pgserr: self.pgserr(),
-                bsy: self.bsy(),
-                wdw: self.wdw(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Secsr {{ eop: {=bool:?}, operr: {=bool:?}, progerr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, pgserr: {=bool:?}, bsy: {=bool:?}, wdw: {=bool:?} }}" , self . eop () , self . operr () , self . progerr () , self . wrperr () , self . pgaerr () , self . sizerr () , self . pgserr () , self . bsy () , self . wdw ())
         }
     }
     #[doc = "secure watermark register 1"]
@@ -1932,16 +1672,12 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Secwmr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Secwmr1 {
-                secwm_pstrt: u8,
-                secwm_pend: u8,
-            }
-            let proxy = Secwmr1 {
-                secwm_pstrt: self.secwm_pstrt(),
-                secwm_pend: self.secwm_pend(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Secwmr1 {{ secwm_pstrt: {=u8:?}, secwm_pend: {=u8:?} }}",
+                self.secwm_pstrt(),
+                self.secwm_pend()
+            )
         }
     }
     #[doc = "secure watermark register 2"]
@@ -1989,16 +1725,12 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Secwmr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Secwmr2 {
-                hdp_pend: u8,
-                hdpen: bool,
-            }
-            let proxy = Secwmr2 {
-                hdp_pend: self.hdp_pend(),
-                hdpen: self.hdpen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Secwmr2 {{ hdp_pend: {=u8:?}, hdpen: {=bool:?} }}",
+                self.hdp_pend(),
+                self.hdpen()
+            )
         }
     }
     #[doc = "WRP area A address register"]
@@ -2058,18 +1790,13 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrpar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wrpar {
-                wrpa_pstrt: u8,
-                wrpa_pend: u8,
-                unlock: bool,
-            }
-            let proxy = Wrpar {
-                wrpa_pstrt: self.wrpa_pstrt(),
-                wrpa_pend: self.wrpa_pend(),
-                unlock: self.unlock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Wrpar {{ wrpa_pstrt: {=u8:?}, wrpa_pend: {=u8:?}, unlock: {=bool:?} }}",
+                self.wrpa_pstrt(),
+                self.wrpa_pend(),
+                self.unlock()
+            )
         }
     }
     #[doc = "WRP area B address register"]
@@ -2129,18 +1856,13 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrpbr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wrpbr {
-                wrpb_pstrt: u8,
-                wrpb_pend: u8,
-                unlock: bool,
-            }
-            let proxy = Wrpbr {
-                wrpb_pstrt: self.wrpb_pstrt(),
-                wrpb_pend: self.wrpb_pend(),
-                unlock: self.unlock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Wrpbr {{ wrpb_pstrt: {=u8:?}, wrpb_pend: {=u8:?}, unlock: {=bool:?} }}",
+                self.wrpb_pstrt(),
+                self.wrpb_pend(),
+                self.unlock()
+            )
         }
     }
 }
@@ -2230,7 +1952,7 @@ pub mod vals {
     }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Rdp(pub u8);
+    pub struct Rdp(u8);
     impl Rdp {
         #[doc = "Level 0.5 (readout protection not active, only non-secure debug access is possible). Only available when TrustZone is active (TZEN=1)"]
         pub const B_0X55: Self = Self(0x55);

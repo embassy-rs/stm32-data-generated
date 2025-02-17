@@ -112,18 +112,13 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ewcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ewcr {
-                ewit: u16,
-                ewic: bool,
-                ewie: bool,
-            }
-            let proxy = Ewcr {
-                ewit: self.ewit(),
-                ewic: self.ewic(),
-                ewie: self.ewie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ewcr {{ ewit: {=u16:?}, ewic: {=bool:?}, ewie: {=bool:?} }}",
+                self.ewit(),
+                self.ewic(),
+                self.ewie()
+            )
         }
     }
     #[doc = "Key register"]
@@ -157,12 +152,7 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
     #[cfg(feature = "defmt")]
     impl defmt::Format for Kr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Kr {
-                key: super::vals::Key,
-            }
-            let proxy = Kr { key: self.key() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Kr {{ key: {:?} }}", self.key())
         }
     }
     #[doc = "Prescaler register"]
@@ -196,12 +186,7 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pr {
-                pr: super::vals::Pr,
-            }
-            let proxy = Pr { pr: self.pr() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Pr {{ pr: {:?} }}", self.pr())
         }
     }
     #[doc = "Reload register"]
@@ -235,12 +220,7 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rlr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rlr {
-                rl: u16,
-            }
-            let proxy = Rlr { rl: self.rl() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Rlr {{ rl: {=u16:?} }}", self.rl())
         }
     }
     #[doc = "Status register"]
@@ -326,22 +306,15 @@ and EWIE fields can be updated only when EWU bit is reset."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                pvu: bool,
-                rvu: bool,
-                wvu: bool,
-                ewu: bool,
-                ewif: bool,
-            }
-            let proxy = Sr {
-                pvu: self.pvu(),
-                rvu: self.rvu(),
-                wvu: self.wvu(),
-                ewu: self.ewu(),
-                ewif: self.ewif(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sr {{ pvu: {=bool:?}, rvu: {=bool:?}, wvu: {=bool:?}, ewu: {=bool:?}, ewif: {=bool:?} }}",
+                self.pvu(),
+                self.rvu(),
+                self.wvu(),
+                self.ewu(),
+                self.ewif()
+            )
         }
     }
     #[doc = "Window register"]
@@ -375,19 +348,14 @@ and EWIE fields can be updated only when EWU bit is reset."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Winr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Winr {
-                win: u16,
-            }
-            let proxy = Winr { win: self.win() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Winr {{ win: {=u16:?} }}", self.win())
         }
     }
 }
 pub mod vals {
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Key(pub u16);
+    pub struct Key(u16);
     impl Key {
         #[doc = "Enable access to PR, RLR and WINR registers (0x5555)"]
         pub const ENABLE: Self = Self(0x5555);

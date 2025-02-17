@@ -189,34 +189,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                func: super::vals::Func,
-                precision: super::vals::Precision,
-                scale: super::vals::Scale,
-                ien: bool,
-                dmaren: bool,
-                dmawen: bool,
-                nres: super::vals::Num,
-                nargs: super::vals::Num,
-                ressize: super::vals::Size,
-                argsize: super::vals::Size,
-                rrdy: bool,
-            }
-            let proxy = Csr {
-                func: self.func(),
-                precision: self.precision(),
-                scale: self.scale(),
-                ien: self.ien(),
-                dmaren: self.dmaren(),
-                dmawen: self.dmawen(),
-                nres: self.nres(),
-                nargs: self.nargs(),
-                ressize: self.ressize(),
-                argsize: self.argsize(),
-                rrdy: self.rrdy(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Csr {{ func: {:?}, precision: {:?}, scale: {:?}, ien: {=bool:?}, dmaren: {=bool:?}, dmawen: {=bool:?}, nres: {:?}, nargs: {:?}, ressize: {:?}, argsize: {:?}, rrdy: {=bool:?} }}" , self . func () , self . precision () , self . scale () , self . ien () , self . dmaren () , self . dmawen () , self . nres () , self . nargs () , self . ressize () , self . argsize () , self . rrdy ())
         }
     }
 }

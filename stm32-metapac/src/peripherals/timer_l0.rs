@@ -466,12 +466,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for ArrCore {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ArrCore {
-                arr: u16,
-            }
-            let proxy = ArrCore { arr: self.arr() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "ArrCore {{ arr: {=u16:?} }}", self.arr())
         }
     }
     #[doc = "capture/compare enable register"]
@@ -534,27 +529,22 @@ pub mod regs {
     impl core::fmt::Debug for Ccer1ch {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccer1ch")
-                .field("cce", &[self.cce(0usize)])
-                .field("ccp", &[self.ccp(0usize)])
-                .field("ccnp", &[self.ccnp(0usize)])
+                .field("cce[0]", &self.cce(0usize))
+                .field("ccp[0]", &self.ccp(0usize))
+                .field("ccnp[0]", &self.ccnp(0usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccer1ch {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccer1ch {
-                cce: [bool; 1usize],
-                ccp: [bool; 1usize],
-                ccnp: [bool; 1usize],
-            }
-            let proxy = Ccer1ch {
-                cce: [self.cce(0usize)],
-                ccp: [self.ccp(0usize)],
-                ccnp: [self.ccnp(0usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ccer1ch {{ cce[0]: {=bool:?}, ccp[0]: {=bool:?}, ccnp[0]: {=bool:?} }}",
+                self.cce(0usize),
+                self.ccp(0usize),
+                self.ccnp(0usize)
+            )
         }
     }
     #[doc = "capture/compare enable register"]
@@ -617,27 +607,19 @@ pub mod regs {
     impl core::fmt::Debug for Ccer2ch {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccer2ch")
-                .field("cce", &[self.cce(0usize), self.cce(1usize)])
-                .field("ccp", &[self.ccp(0usize), self.ccp(1usize)])
-                .field("ccnp", &[self.ccnp(0usize), self.ccnp(1usize)])
+                .field("cce[0]", &self.cce(0usize))
+                .field("cce[1]", &self.cce(1usize))
+                .field("ccp[0]", &self.ccp(0usize))
+                .field("ccp[1]", &self.ccp(1usize))
+                .field("ccnp[0]", &self.ccnp(0usize))
+                .field("ccnp[1]", &self.ccnp(1usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccer2ch {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccer2ch {
-                cce: [bool; 2usize],
-                ccp: [bool; 2usize],
-                ccnp: [bool; 2usize],
-            }
-            let proxy = Ccer2ch {
-                cce: [self.cce(0usize), self.cce(1usize)],
-                ccp: [self.ccp(0usize), self.ccp(1usize)],
-                ccnp: [self.ccnp(0usize), self.ccnp(1usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ccer2ch {{ cce[0]: {=bool:?}, cce[1]: {=bool:?}, ccp[0]: {=bool:?}, ccp[1]: {=bool:?}, ccnp[0]: {=bool:?}, ccnp[1]: {=bool:?} }}" , self . cce (0usize) , self . cce (1usize) , self . ccp (0usize) , self . ccp (1usize) , self . ccnp (0usize) , self . ccnp (1usize))
         }
     }
     #[doc = "capture/compare enable register"]
@@ -700,46 +682,25 @@ pub mod regs {
     impl core::fmt::Debug for CcerGp16 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("CcerGp16")
-                .field(
-                    "cce",
-                    &[self.cce(0usize), self.cce(1usize), self.cce(2usize), self.cce(3usize)],
-                )
-                .field(
-                    "ccp",
-                    &[self.ccp(0usize), self.ccp(1usize), self.ccp(2usize), self.ccp(3usize)],
-                )
-                .field(
-                    "ccnp",
-                    &[
-                        self.ccnp(0usize),
-                        self.ccnp(1usize),
-                        self.ccnp(2usize),
-                        self.ccnp(3usize),
-                    ],
-                )
+                .field("cce[0]", &self.cce(0usize))
+                .field("cce[1]", &self.cce(1usize))
+                .field("cce[2]", &self.cce(2usize))
+                .field("cce[3]", &self.cce(3usize))
+                .field("ccp[0]", &self.ccp(0usize))
+                .field("ccp[1]", &self.ccp(1usize))
+                .field("ccp[2]", &self.ccp(2usize))
+                .field("ccp[3]", &self.ccp(3usize))
+                .field("ccnp[0]", &self.ccnp(0usize))
+                .field("ccnp[1]", &self.ccnp(1usize))
+                .field("ccnp[2]", &self.ccnp(2usize))
+                .field("ccnp[3]", &self.ccnp(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for CcerGp16 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CcerGp16 {
-                cce: [bool; 4usize],
-                ccp: [bool; 4usize],
-                ccnp: [bool; 4usize],
-            }
-            let proxy = CcerGp16 {
-                cce: [self.cce(0usize), self.cce(1usize), self.cce(2usize), self.cce(3usize)],
-                ccp: [self.ccp(0usize), self.ccp(1usize), self.ccp(2usize), self.ccp(3usize)],
-                ccnp: [
-                    self.ccnp(0usize),
-                    self.ccnp(1usize),
-                    self.ccnp(2usize),
-                    self.ccnp(3usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "CcerGp16 {{ cce[0]: {=bool:?}, cce[1]: {=bool:?}, cce[2]: {=bool:?}, cce[3]: {=bool:?}, ccp[0]: {=bool:?}, ccp[1]: {=bool:?}, ccp[2]: {=bool:?}, ccp[3]: {=bool:?}, ccnp[0]: {=bool:?}, ccnp[1]: {=bool:?}, ccnp[2]: {=bool:?}, ccnp[3]: {=bool:?} }}" , self . cce (0usize) , self . cce (1usize) , self . cce (2usize) , self . cce (3usize) , self . ccp (0usize) , self . ccp (1usize) , self . ccp (2usize) , self . ccp (3usize) , self . ccnp (0usize) , self . ccnp (1usize) , self . ccnp (2usize) , self . ccnp (3usize))
         }
     }
     #[doc = "capture/compare mode register x (x=1) (input mode)"]
@@ -802,27 +763,22 @@ pub mod regs {
     impl core::fmt::Debug for CcmrInput1ch {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("CcmrInput1ch")
-                .field("ccs", &[self.ccs(0usize)])
-                .field("icpsc", &[self.icpsc(0usize)])
-                .field("icf", &[self.icf(0usize)])
+                .field("ccs[0]", &self.ccs(0usize))
+                .field("icpsc[0]", &self.icpsc(0usize))
+                .field("icf[0]", &self.icf(0usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for CcmrInput1ch {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CcmrInput1ch {
-                ccs: [super::vals::CcmrInputCcs; 1usize],
-                icpsc: [u8; 1usize],
-                icf: [super::vals::FilterValue; 1usize],
-            }
-            let proxy = CcmrInput1ch {
-                ccs: [self.ccs(0usize)],
-                icpsc: [self.icpsc(0usize)],
-                icf: [self.icf(0usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "CcmrInput1ch {{ ccs[0]: {:?}, icpsc[0]: {=u8:?}, icf[0]: {:?} }}",
+                self.ccs(0usize),
+                self.icpsc(0usize),
+                self.icf(0usize)
+            )
         }
     }
     #[doc = "capture/compare mode register x (x=1) (input mode)"]
@@ -885,27 +841,19 @@ pub mod regs {
     impl core::fmt::Debug for CcmrInput2ch {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("CcmrInput2ch")
-                .field("ccs", &[self.ccs(0usize), self.ccs(1usize)])
-                .field("icpsc", &[self.icpsc(0usize), self.icpsc(1usize)])
-                .field("icf", &[self.icf(0usize), self.icf(1usize)])
+                .field("ccs[0]", &self.ccs(0usize))
+                .field("ccs[1]", &self.ccs(1usize))
+                .field("icpsc[0]", &self.icpsc(0usize))
+                .field("icpsc[1]", &self.icpsc(1usize))
+                .field("icf[0]", &self.icf(0usize))
+                .field("icf[1]", &self.icf(1usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for CcmrInput2ch {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CcmrInput2ch {
-                ccs: [super::vals::CcmrInputCcs; 2usize],
-                icpsc: [u8; 2usize],
-                icf: [super::vals::FilterValue; 2usize],
-            }
-            let proxy = CcmrInput2ch {
-                ccs: [self.ccs(0usize), self.ccs(1usize)],
-                icpsc: [self.icpsc(0usize), self.icpsc(1usize)],
-                icf: [self.icf(0usize), self.icf(1usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "CcmrInput2ch {{ ccs[0]: {:?}, ccs[1]: {:?}, icpsc[0]: {=u8:?}, icpsc[1]: {=u8:?}, icf[0]: {:?}, icf[1]: {:?} }}" , self . ccs (0usize) , self . ccs (1usize) , self . icpsc (0usize) , self . icpsc (1usize) , self . icf (0usize) , self . icf (1usize))
         }
     }
     #[doc = "capture/compare mode register x (x=1) (output mode)"]
@@ -983,30 +931,24 @@ pub mod regs {
     impl core::fmt::Debug for CcmrOutput1ch {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("CcmrOutput1ch")
-                .field("ccs", &[self.ccs(0usize)])
-                .field("ocfe", &[self.ocfe(0usize)])
-                .field("ocpe", &[self.ocpe(0usize)])
-                .field("ocm", &[self.ocm(0usize)])
+                .field("ccs[0]", &self.ccs(0usize))
+                .field("ocfe[0]", &self.ocfe(0usize))
+                .field("ocpe[0]", &self.ocpe(0usize))
+                .field("ocm[0]", &self.ocm(0usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for CcmrOutput1ch {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CcmrOutput1ch {
-                ccs: [super::vals::CcmrOutputCcs; 1usize],
-                ocfe: [bool; 1usize],
-                ocpe: [bool; 1usize],
-                ocm: [super::vals::Ocm; 1usize],
-            }
-            let proxy = CcmrOutput1ch {
-                ccs: [self.ccs(0usize)],
-                ocfe: [self.ocfe(0usize)],
-                ocpe: [self.ocpe(0usize)],
-                ocm: [self.ocm(0usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "CcmrOutput1ch {{ ccs[0]: {:?}, ocfe[0]: {=bool:?}, ocpe[0]: {=bool:?}, ocm[0]: {:?} }}",
+                self.ccs(0usize),
+                self.ocfe(0usize),
+                self.ocpe(0usize),
+                self.ocm(0usize)
+            )
         }
     }
     #[doc = "capture/compare mode register x (x=1) (output mode)"]
@@ -1084,30 +1026,21 @@ pub mod regs {
     impl core::fmt::Debug for CcmrOutput2ch {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("CcmrOutput2ch")
-                .field("ccs", &[self.ccs(0usize), self.ccs(1usize)])
-                .field("ocfe", &[self.ocfe(0usize), self.ocfe(1usize)])
-                .field("ocpe", &[self.ocpe(0usize), self.ocpe(1usize)])
-                .field("ocm", &[self.ocm(0usize), self.ocm(1usize)])
+                .field("ccs[0]", &self.ccs(0usize))
+                .field("ccs[1]", &self.ccs(1usize))
+                .field("ocfe[0]", &self.ocfe(0usize))
+                .field("ocfe[1]", &self.ocfe(1usize))
+                .field("ocpe[0]", &self.ocpe(0usize))
+                .field("ocpe[1]", &self.ocpe(1usize))
+                .field("ocm[0]", &self.ocm(0usize))
+                .field("ocm[1]", &self.ocm(1usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for CcmrOutput2ch {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CcmrOutput2ch {
-                ccs: [super::vals::CcmrOutputCcs; 2usize],
-                ocfe: [bool; 2usize],
-                ocpe: [bool; 2usize],
-                ocm: [super::vals::Ocm; 2usize],
-            }
-            let proxy = CcmrOutput2ch {
-                ccs: [self.ccs(0usize), self.ccs(1usize)],
-                ocfe: [self.ocfe(0usize), self.ocfe(1usize)],
-                ocpe: [self.ocpe(0usize), self.ocpe(1usize)],
-                ocm: [self.ocm(0usize), self.ocm(1usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "CcmrOutput2ch {{ ccs[0]: {:?}, ccs[1]: {:?}, ocfe[0]: {=bool:?}, ocfe[1]: {=bool:?}, ocpe[0]: {=bool:?}, ocpe[1]: {=bool:?}, ocm[0]: {:?}, ocm[1]: {:?} }}" , self . ccs (0usize) , self . ccs (1usize) , self . ocfe (0usize) , self . ocfe (1usize) , self . ocpe (0usize) , self . ocpe (1usize) , self . ocm (0usize) , self . ocm (1usize))
         }
     }
     #[doc = "capture/compare mode register x (x=1-2) (output mode)"]
@@ -1200,33 +1133,23 @@ pub mod regs {
     impl core::fmt::Debug for CcmrOutputGp16 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("CcmrOutputGp16")
-                .field("ccs", &[self.ccs(0usize), self.ccs(1usize)])
-                .field("ocfe", &[self.ocfe(0usize), self.ocfe(1usize)])
-                .field("ocpe", &[self.ocpe(0usize), self.ocpe(1usize)])
-                .field("ocm", &[self.ocm(0usize), self.ocm(1usize)])
-                .field("occe", &[self.occe(0usize), self.occe(1usize)])
+                .field("ccs[0]", &self.ccs(0usize))
+                .field("ccs[1]", &self.ccs(1usize))
+                .field("ocfe[0]", &self.ocfe(0usize))
+                .field("ocfe[1]", &self.ocfe(1usize))
+                .field("ocpe[0]", &self.ocpe(0usize))
+                .field("ocpe[1]", &self.ocpe(1usize))
+                .field("ocm[0]", &self.ocm(0usize))
+                .field("ocm[1]", &self.ocm(1usize))
+                .field("occe[0]", &self.occe(0usize))
+                .field("occe[1]", &self.occe(1usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for CcmrOutputGp16 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CcmrOutputGp16 {
-                ccs: [super::vals::CcmrOutputCcs; 2usize],
-                ocfe: [bool; 2usize],
-                ocpe: [bool; 2usize],
-                ocm: [super::vals::Ocm; 2usize],
-                occe: [bool; 2usize],
-            }
-            let proxy = CcmrOutputGp16 {
-                ccs: [self.ccs(0usize), self.ccs(1usize)],
-                ocfe: [self.ocfe(0usize), self.ocfe(1usize)],
-                ocpe: [self.ocpe(0usize), self.ocpe(1usize)],
-                ocm: [self.ocm(0usize), self.ocm(1usize)],
-                occe: [self.occe(0usize), self.occe(1usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "CcmrOutputGp16 {{ ccs[0]: {:?}, ccs[1]: {:?}, ocfe[0]: {=bool:?}, ocfe[1]: {=bool:?}, ocpe[0]: {=bool:?}, ocpe[1]: {=bool:?}, ocm[0]: {:?}, ocm[1]: {:?}, occe[0]: {=bool:?}, occe[1]: {=bool:?} }}" , self . ccs (0usize) , self . ccs (1usize) , self . ocfe (0usize) , self . ocfe (1usize) , self . ocpe (0usize) , self . ocpe (1usize) , self . ocm (0usize) , self . ocm (1usize) , self . occe (0usize) , self . occe (1usize))
         }
     }
     #[doc = "capture/compare register x (x=1-4,6)"]
@@ -1260,12 +1183,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccr1ch {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccr1ch {
-                ccr: u16,
-            }
-            let proxy = Ccr1ch { ccr: self.ccr() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ccr1ch {{ ccr: {=u16:?} }}", self.ccr())
         }
     }
     #[doc = "counter"]
@@ -1313,16 +1231,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for CntCore {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CntCore {
-                cnt: u16,
-                uifcpy: bool,
-            }
-            let proxy = CntCore {
-                cnt: self.cnt(),
-                uifcpy: self.uifcpy(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "CntCore {{ cnt: {=u16:?}, uifcpy: {=bool:?} }}",
+                self.cnt(),
+                self.uifcpy()
+            )
         }
     }
     #[doc = "control register 1"]
@@ -1430,26 +1344,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr11ch {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr11ch {
-                cen: bool,
-                udis: bool,
-                urs: super::vals::Urs,
-                opm: bool,
-                arpe: bool,
-                ckd: super::vals::Ckd,
-                uifremap: bool,
-            }
-            let proxy = Cr11ch {
-                cen: self.cen(),
-                udis: self.udis(),
-                urs: self.urs(),
-                opm: self.opm(),
-                arpe: self.arpe(),
-                ckd: self.ckd(),
-                uifremap: self.uifremap(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr11ch {{ cen: {=bool:?}, udis: {=bool:?}, urs: {:?}, opm: {=bool:?}, arpe: {=bool:?}, ckd: {:?}, uifremap: {=bool:?} }}" , self . cen () , self . udis () , self . urs () , self . opm () , self . arpe () , self . ckd () , self . uifremap ())
         }
     }
     #[doc = "control register 1"]
@@ -1545,24 +1440,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1Core {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr1Core {
-                cen: bool,
-                udis: bool,
-                urs: super::vals::Urs,
-                opm: bool,
-                arpe: bool,
-                uifremap: bool,
-            }
-            let proxy = Cr1Core {
-                cen: self.cen(),
-                udis: self.udis(),
-                urs: self.urs(),
-                opm: self.opm(),
-                arpe: self.arpe(),
-                uifremap: self.uifremap(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr1Core {{ cen: {=bool:?}, udis: {=bool:?}, urs: {:?}, opm: {=bool:?}, arpe: {=bool:?}, uifremap: {=bool:?} }}" , self . cen () , self . udis () , self . urs () , self . opm () , self . arpe () , self . uifremap ())
         }
     }
     #[doc = "control register 1"]
@@ -1694,30 +1572,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1Gp16 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr1Gp16 {
-                cen: bool,
-                udis: bool,
-                urs: super::vals::Urs,
-                opm: bool,
-                dir: super::vals::Dir,
-                cms: super::vals::Cms,
-                arpe: bool,
-                ckd: super::vals::Ckd,
-                uifremap: bool,
-            }
-            let proxy = Cr1Gp16 {
-                cen: self.cen(),
-                udis: self.udis(),
-                urs: self.urs(),
-                opm: self.opm(),
-                dir: self.dir(),
-                cms: self.cms(),
-                arpe: self.arpe(),
-                ckd: self.ckd(),
-                uifremap: self.uifremap(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr1Gp16 {{ cen: {=bool:?}, udis: {=bool:?}, urs: {:?}, opm: {=bool:?}, dir: {:?}, cms: {:?}, arpe: {=bool:?}, ckd: {:?}, uifremap: {=bool:?} }}" , self . cen () , self . udis () , self . urs () , self . opm () , self . dir () , self . cms () , self . arpe () , self . ckd () , self . uifremap ())
         }
     }
     #[doc = "control register 2"]
@@ -1765,16 +1620,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr22ch {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr22ch {
-                mms: super::vals::Mms,
-                ti1s: super::vals::Ti1s,
-            }
-            let proxy = Cr22ch {
-                mms: self.mms(),
-                ti1s: self.ti1s(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cr22ch {{ mms: {:?}, ti1s: {:?} }}", self.mms(), self.ti1s())
         }
     }
     #[doc = "control register 2"]
@@ -1808,12 +1654,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2Basic {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr2Basic {
-                mms: super::vals::Mms,
-            }
-            let proxy = Cr2Basic { mms: self.mms() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cr2Basic {{ mms: {:?} }}", self.mms())
         }
     }
     #[doc = "control register 2"]
@@ -1873,18 +1714,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2Gp16 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr2Gp16 {
-                ccds: super::vals::Ccds,
-                mms: super::vals::Mms,
-                ti1s: super::vals::Ti1s,
-            }
-            let proxy = Cr2Gp16 {
-                ccds: self.ccds(),
-                mms: self.mms(),
-                ti1s: self.ti1s(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cr2Gp16 {{ ccds: {:?}, mms: {:?}, ti1s: {:?} }}",
+                self.ccds(),
+                self.mms(),
+                self.ti1s()
+            )
         }
     }
     #[doc = "DMA control register"]
@@ -1932,16 +1768,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DcrGp16 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DcrGp16 {
-                dba: u8,
-                dbl: u8,
-            }
-            let proxy = DcrGp16 {
-                dba: self.dba(),
-                dbl: self.dbl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "DcrGp16 {{ dba: {=u8:?}, dbl: {=u8:?} }}", self.dba(), self.dbl())
         }
     }
     #[doc = "DMA/Interrupt enable register"]
@@ -1986,23 +1813,19 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dier1ch")
                 .field("uie", &self.uie())
-                .field("ccie", &[self.ccie(0usize)])
+                .field("ccie[0]", &self.ccie(0usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dier1ch {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dier1ch {
-                uie: bool,
-                ccie: [bool; 1usize],
-            }
-            let proxy = Dier1ch {
-                uie: self.uie(),
-                ccie: [self.ccie(0usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dier1ch {{ uie: {=bool:?}, ccie[0]: {=bool:?} }}",
+                self.uie(),
+                self.ccie(0usize)
+            )
         }
     }
     #[doc = "DMA/Interrupt enable register"]
@@ -2058,7 +1881,8 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dier2ch")
                 .field("uie", &self.uie())
-                .field("ccie", &[self.ccie(0usize), self.ccie(1usize)])
+                .field("ccie[0]", &self.ccie(0usize))
+                .field("ccie[1]", &self.ccie(1usize))
                 .field("tie", &self.tie())
                 .finish()
         }
@@ -2066,18 +1890,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dier2ch {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dier2ch {
-                uie: bool,
-                ccie: [bool; 2usize],
-                tie: bool,
-            }
-            let proxy = Dier2ch {
-                uie: self.uie(),
-                ccie: [self.ccie(0usize), self.ccie(1usize)],
-                tie: self.tie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dier2ch {{ uie: {=bool:?}, ccie[0]: {=bool:?}, ccie[1]: {=bool:?}, tie: {=bool:?} }}",
+                self.uie(),
+                self.ccie(0usize),
+                self.ccie(1usize),
+                self.tie()
+            )
         }
     }
     #[doc = "DMA/Interrupt enable register"]
@@ -2125,16 +1945,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DierBasicNoCr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DierBasicNoCr2 {
-                uie: bool,
-                ude: bool,
-            }
-            let proxy = DierBasicNoCr2 {
-                uie: self.uie(),
-                ude: self.ude(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "DierBasicNoCr2 {{ uie: {=bool:?}, ude: {=bool:?} }}",
+                self.uie(),
+                self.ude()
+            )
         }
     }
     #[doc = "DMA/Interrupt enable register"]
@@ -2168,12 +1984,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DierCore {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DierCore {
-                uie: bool,
-            }
-            let proxy = DierCore { uie: self.uie() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "DierCore {{ uie: {=bool:?} }}", self.uie())
         }
     }
     #[doc = "DMA/Interrupt enable register"]
@@ -2266,26 +2077,16 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DierGp16")
                 .field("uie", &self.uie())
-                .field(
-                    "ccie",
-                    &[
-                        self.ccie(0usize),
-                        self.ccie(1usize),
-                        self.ccie(2usize),
-                        self.ccie(3usize),
-                    ],
-                )
+                .field("ccie[0]", &self.ccie(0usize))
+                .field("ccie[1]", &self.ccie(1usize))
+                .field("ccie[2]", &self.ccie(2usize))
+                .field("ccie[3]", &self.ccie(3usize))
                 .field("tie", &self.tie())
                 .field("ude", &self.ude())
-                .field(
-                    "ccde",
-                    &[
-                        self.ccde(0usize),
-                        self.ccde(1usize),
-                        self.ccde(2usize),
-                        self.ccde(3usize),
-                    ],
-                )
+                .field("ccde[0]", &self.ccde(0usize))
+                .field("ccde[1]", &self.ccde(1usize))
+                .field("ccde[2]", &self.ccde(2usize))
+                .field("ccde[3]", &self.ccde(3usize))
                 .field("tde", &self.tde())
                 .finish()
         }
@@ -2293,34 +2094,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DierGp16 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DierGp16 {
-                uie: bool,
-                ccie: [bool; 4usize],
-                tie: bool,
-                ude: bool,
-                ccde: [bool; 4usize],
-                tde: bool,
-            }
-            let proxy = DierGp16 {
-                uie: self.uie(),
-                ccie: [
-                    self.ccie(0usize),
-                    self.ccie(1usize),
-                    self.ccie(2usize),
-                    self.ccie(3usize),
-                ],
-                tie: self.tie(),
-                ude: self.ude(),
-                ccde: [
-                    self.ccde(0usize),
-                    self.ccde(1usize),
-                    self.ccde(2usize),
-                    self.ccde(3usize),
-                ],
-                tde: self.tde(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "DierGp16 {{ uie: {=bool:?}, ccie[0]: {=bool:?}, ccie[1]: {=bool:?}, ccie[2]: {=bool:?}, ccie[3]: {=bool:?}, tie: {=bool:?}, ude: {=bool:?}, ccde[0]: {=bool:?}, ccde[1]: {=bool:?}, ccde[2]: {=bool:?}, ccde[3]: {=bool:?}, tde: {=bool:?} }}" , self . uie () , self . ccie (0usize) , self . ccie (1usize) , self . ccie (2usize) , self . ccie (3usize) , self . tie () , self . ude () , self . ccde (0usize) , self . ccde (1usize) , self . ccde (2usize) , self . ccde (3usize) , self . tde ())
         }
     }
     #[doc = "DMA address for full transfer"]
@@ -2354,12 +2128,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DmarGp16 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DmarGp16 {
-                dmab: u16,
-            }
-            let proxy = DmarGp16 { dmab: self.dmab() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "DmarGp16 {{ dmab: {=u16:?} }}", self.dmab())
         }
     }
     #[doc = "event generation register"]
@@ -2404,23 +2173,19 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Egr1ch")
                 .field("ug", &self.ug())
-                .field("ccg", &[self.ccg(0usize)])
+                .field("ccg[0]", &self.ccg(0usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Egr1ch {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Egr1ch {
-                ug: bool,
-                ccg: [bool; 1usize],
-            }
-            let proxy = Egr1ch {
-                ug: self.ug(),
-                ccg: [self.ccg(0usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Egr1ch {{ ug: {=bool:?}, ccg[0]: {=bool:?} }}",
+                self.ug(),
+                self.ccg(0usize)
+            )
         }
     }
     #[doc = "event generation register"]
@@ -2476,7 +2241,8 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Egr2ch")
                 .field("ug", &self.ug())
-                .field("ccg", &[self.ccg(0usize), self.ccg(1usize)])
+                .field("ccg[0]", &self.ccg(0usize))
+                .field("ccg[1]", &self.ccg(1usize))
                 .field("tg", &self.tg())
                 .finish()
         }
@@ -2484,18 +2250,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Egr2ch {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Egr2ch {
-                ug: bool,
-                ccg: [bool; 2usize],
-                tg: bool,
-            }
-            let proxy = Egr2ch {
-                ug: self.ug(),
-                ccg: [self.ccg(0usize), self.ccg(1usize)],
-                tg: self.tg(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Egr2ch {{ ug: {=bool:?}, ccg[0]: {=bool:?}, ccg[1]: {=bool:?}, tg: {=bool:?} }}",
+                self.ug(),
+                self.ccg(0usize),
+                self.ccg(1usize),
+                self.tg()
+            )
         }
     }
     #[doc = "event generation register"]
@@ -2529,12 +2291,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for EgrCore {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct EgrCore {
-                ug: bool,
-            }
-            let proxy = EgrCore { ug: self.ug() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "EgrCore {{ ug: {=bool:?} }}", self.ug())
         }
     }
     #[doc = "event generation register"]
@@ -2590,10 +2347,10 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("EgrGp16")
                 .field("ug", &self.ug())
-                .field(
-                    "ccg",
-                    &[self.ccg(0usize), self.ccg(1usize), self.ccg(2usize), self.ccg(3usize)],
-                )
+                .field("ccg[0]", &self.ccg(0usize))
+                .field("ccg[1]", &self.ccg(1usize))
+                .field("ccg[2]", &self.ccg(2usize))
+                .field("ccg[3]", &self.ccg(3usize))
                 .field("tg", &self.tg())
                 .finish()
         }
@@ -2601,18 +2358,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for EgrGp16 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct EgrGp16 {
-                ug: bool,
-                ccg: [bool; 4usize],
-                tg: bool,
-            }
-            let proxy = EgrGp16 {
-                ug: self.ug(),
-                ccg: [self.ccg(0usize), self.ccg(1usize), self.ccg(2usize), self.ccg(3usize)],
-                tg: self.tg(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "EgrGp16 {{ ug: {=bool:?}, ccg[0]: {=bool:?}, ccg[1]: {=bool:?}, ccg[2]: {=bool:?}, ccg[3]: {=bool:?}, tg: {=bool:?} }}" , self . ug () , self . ccg (0usize) , self . ccg (1usize) , self . ccg (2usize) , self . ccg (3usize) , self . tg ())
         }
     }
     #[doc = "slave mode control register"]
@@ -2720,26 +2466,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for SmcrGp16 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SmcrGp16 {
-                sms: super::vals::Sms,
-                ts: super::vals::Ts,
-                msm: super::vals::Msm,
-                etf: super::vals::FilterValue,
-                etps: super::vals::Etps,
-                ece: bool,
-                etp: super::vals::Etp,
-            }
-            let proxy = SmcrGp16 {
-                sms: self.sms(),
-                ts: self.ts(),
-                msm: self.msm(),
-                etf: self.etf(),
-                etps: self.etps(),
-                ece: self.ece(),
-                etp: self.etp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "SmcrGp16 {{ sms: {:?}, ts: {:?}, msm: {:?}, etf: {:?}, etps: {:?}, ece: {=bool:?}, etp: {:?} }}",
+                self.sms(),
+                self.ts(),
+                self.msm(),
+                self.etf(),
+                self.etps(),
+                self.ece(),
+                self.etp()
+            )
         }
     }
     #[doc = "status register"]
@@ -2799,26 +2536,21 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr1ch")
                 .field("uif", &self.uif())
-                .field("ccif", &[self.ccif(0usize)])
-                .field("ccof", &[self.ccof(0usize)])
+                .field("ccif[0]", &self.ccif(0usize))
+                .field("ccof[0]", &self.ccof(0usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr1ch {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr1ch {
-                uif: bool,
-                ccif: [bool; 1usize],
-                ccof: [bool; 1usize],
-            }
-            let proxy = Sr1ch {
-                uif: self.uif(),
-                ccif: [self.ccif(0usize)],
-                ccof: [self.ccof(0usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sr1ch {{ uif: {=bool:?}, ccif[0]: {=bool:?}, ccof[0]: {=bool:?} }}",
+                self.uif(),
+                self.ccif(0usize),
+                self.ccof(0usize)
+            )
         }
     }
     #[doc = "status register"]
@@ -2889,29 +2621,18 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr2ch")
                 .field("uif", &self.uif())
-                .field("ccif", &[self.ccif(0usize), self.ccif(1usize)])
+                .field("ccif[0]", &self.ccif(0usize))
+                .field("ccif[1]", &self.ccif(1usize))
                 .field("tif", &self.tif())
-                .field("ccof", &[self.ccof(0usize), self.ccof(1usize)])
+                .field("ccof[0]", &self.ccof(0usize))
+                .field("ccof[1]", &self.ccof(1usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr2ch {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr2ch {
-                uif: bool,
-                ccif: [bool; 2usize],
-                tif: bool,
-                ccof: [bool; 2usize],
-            }
-            let proxy = Sr2ch {
-                uif: self.uif(),
-                ccif: [self.ccif(0usize), self.ccif(1usize)],
-                tif: self.tif(),
-                ccof: [self.ccof(0usize), self.ccof(1usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr2ch {{ uif: {=bool:?}, ccif[0]: {=bool:?}, ccif[1]: {=bool:?}, tif: {=bool:?}, ccof[0]: {=bool:?}, ccof[1]: {=bool:?} }}" , self . uif () , self . ccif (0usize) , self . ccif (1usize) , self . tif () , self . ccof (0usize) , self . ccof (1usize))
         }
     }
     #[doc = "status register"]
@@ -2945,12 +2666,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for SrCore {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SrCore {
-                uif: bool,
-            }
-            let proxy = SrCore { uif: self.uif() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "SrCore {{ uif: {=bool:?} }}", self.uif())
         }
     }
     #[doc = "status register"]
@@ -3021,55 +2737,22 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SrGp16")
                 .field("uif", &self.uif())
-                .field(
-                    "ccif",
-                    &[
-                        self.ccif(0usize),
-                        self.ccif(1usize),
-                        self.ccif(2usize),
-                        self.ccif(3usize),
-                    ],
-                )
+                .field("ccif[0]", &self.ccif(0usize))
+                .field("ccif[1]", &self.ccif(1usize))
+                .field("ccif[2]", &self.ccif(2usize))
+                .field("ccif[3]", &self.ccif(3usize))
                 .field("tif", &self.tif())
-                .field(
-                    "ccof",
-                    &[
-                        self.ccof(0usize),
-                        self.ccof(1usize),
-                        self.ccof(2usize),
-                        self.ccof(3usize),
-                    ],
-                )
+                .field("ccof[0]", &self.ccof(0usize))
+                .field("ccof[1]", &self.ccof(1usize))
+                .field("ccof[2]", &self.ccof(2usize))
+                .field("ccof[3]", &self.ccof(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for SrGp16 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SrGp16 {
-                uif: bool,
-                ccif: [bool; 4usize],
-                tif: bool,
-                ccof: [bool; 4usize],
-            }
-            let proxy = SrGp16 {
-                uif: self.uif(),
-                ccif: [
-                    self.ccif(0usize),
-                    self.ccif(1usize),
-                    self.ccif(2usize),
-                    self.ccif(3usize),
-                ],
-                tif: self.tif(),
-                ccof: [
-                    self.ccof(0usize),
-                    self.ccof(1usize),
-                    self.ccof(2usize),
-                    self.ccof(3usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "SrGp16 {{ uif: {=bool:?}, ccif[0]: {=bool:?}, ccif[1]: {=bool:?}, ccif[2]: {=bool:?}, ccif[3]: {=bool:?}, tif: {=bool:?}, ccof[0]: {=bool:?}, ccof[1]: {=bool:?}, ccof[2]: {=bool:?}, ccof[3]: {=bool:?} }}" , self . uif () , self . ccif (0usize) , self . ccif (1usize) , self . ccif (2usize) , self . ccif (3usize) , self . tif () , self . ccof (0usize) , self . ccof (1usize) , self . ccof (2usize) , self . ccof (3usize))
         }
     }
 }

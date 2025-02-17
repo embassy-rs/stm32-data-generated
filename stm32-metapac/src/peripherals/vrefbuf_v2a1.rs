@@ -68,12 +68,7 @@ with an arbitrary value. This is permanently disabling the control of the trimmi
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccr {
-                trim: u8,
-            }
-            let proxy = Ccr { trim: self.trim() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ccr {{ trim: {=u8:?} }}", self.trim())
         }
     }
     #[doc = "VREFBUF control and status register."]
@@ -145,20 +140,14 @@ with an arbitrary value. This is permanently disabling the control of the trimmi
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                envr: bool,
-                hiz: super::vals::Hiz,
-                vrr: bool,
-                vrs: super::vals::Vrs,
-            }
-            let proxy = Csr {
-                envr: self.envr(),
-                hiz: self.hiz(),
-                vrr: self.vrr(),
-                vrs: self.vrs(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Csr {{ envr: {=bool:?}, hiz: {:?}, vrr: {=bool:?}, vrs: {:?} }}",
+                self.envr(),
+                self.hiz(),
+                self.vrr(),
+                self.vrs()
+            )
         }
     }
 }

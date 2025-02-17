@@ -230,30 +230,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1fzr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Apb1fzr {
-                dbg_tim2_stop: bool,
-                dbg_tim3_stop: bool,
-                dbg_tim6_stop: bool,
-                dbg_tim7_stop: bool,
-                dbg_rtc_stop: bool,
-                dbg_wwdg_stop: bool,
-                dbg_iwdg_stop: bool,
-                dbg_lptim2_stop: bool,
-                dbg_lptim1_stop: bool,
-            }
-            let proxy = Apb1fzr {
-                dbg_tim2_stop: self.dbg_tim2_stop(),
-                dbg_tim3_stop: self.dbg_tim3_stop(),
-                dbg_tim6_stop: self.dbg_tim6_stop(),
-                dbg_tim7_stop: self.dbg_tim7_stop(),
-                dbg_rtc_stop: self.dbg_rtc_stop(),
-                dbg_wwdg_stop: self.dbg_wwdg_stop(),
-                dbg_iwdg_stop: self.dbg_iwdg_stop(),
-                dbg_lptim2_stop: self.dbg_lptim2_stop(),
-                dbg_lptim1_stop: self.dbg_lptim1_stop(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Apb1fzr {{ dbg_tim2_stop: {=bool:?}, dbg_tim3_stop: {=bool:?}, dbg_tim6_stop: {=bool:?}, dbg_tim7_stop: {=bool:?}, dbg_rtc_stop: {=bool:?}, dbg_wwdg_stop: {=bool:?}, dbg_iwdg_stop: {=bool:?}, dbg_lptim2_stop: {=bool:?}, dbg_lptim1_stop: {=bool:?} }}" , self . dbg_tim2_stop () , self . dbg_tim3_stop () , self . dbg_tim6_stop () , self . dbg_tim7_stop () , self . dbg_rtc_stop () , self . dbg_wwdg_stop () , self . dbg_iwdg_stop () , self . dbg_lptim2_stop () , self . dbg_lptim1_stop ())
         }
     }
     #[doc = "DBG APB2 freeze register."]
@@ -325,20 +302,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb2fzr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Apb2fzr {
-                dbg_tim1_stop: bool,
-                dbg_tim15_stop: bool,
-                dbg_tim16_stop: bool,
-                dbg_lptim3_stop: bool,
-            }
-            let proxy = Apb2fzr {
-                dbg_tim1_stop: self.dbg_tim1_stop(),
-                dbg_tim15_stop: self.dbg_tim15_stop(),
-                dbg_tim16_stop: self.dbg_tim16_stop(),
-                dbg_lptim3_stop: self.dbg_lptim3_stop(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Apb2fzr {{ dbg_tim1_stop: {=bool:?}, dbg_tim15_stop: {=bool:?}, dbg_tim16_stop: {=bool:?}, dbg_lptim3_stop: {=bool:?} }}" , self . dbg_tim1_stop () , self . dbg_tim15_stop () , self . dbg_tim16_stop () , self . dbg_lptim3_stop ())
         }
     }
     #[doc = "DBGMCU CoreSight component identity register 0."]
@@ -372,14 +336,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cidr0 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cidr0 {
-                preamble: u8,
-            }
-            let proxy = Cidr0 {
-                preamble: self.preamble(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cidr0 {{ preamble: {=u8:?} }}", self.preamble())
         }
     }
     #[doc = "DBGMCU CoreSight component identity register 1."]
@@ -429,16 +386,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cidr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cidr1 {
-                preamble: u8,
-                class: u8,
-            }
-            let proxy = Cidr1 {
-                preamble: self.preamble(),
-                class: self.class(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cidr1 {{ preamble: {=u8:?}, class: {=u8:?} }}",
+                self.preamble(),
+                self.class()
+            )
         }
     }
     #[doc = "DBGMCU CoreSight component identity register 2."]
@@ -472,14 +425,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cidr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cidr2 {
-                preamble: u8,
-            }
-            let proxy = Cidr2 {
-                preamble: self.preamble(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cidr2 {{ preamble: {=u8:?} }}", self.preamble())
         }
     }
     #[doc = "DBGMCU CoreSight component identity register 3."]
@@ -513,14 +459,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cidr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cidr3 {
-                preamble: u8,
-            }
-            let proxy = Cidr3 {
-                preamble: self.preamble(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cidr3 {{ preamble: {=u8:?} }}", self.preamble())
         }
     }
     #[doc = "DBGMCU configuration register."]
@@ -568,16 +507,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                dbg_stop: bool,
-                dbg_standby: bool,
-            }
-            let proxy = Cr {
-                dbg_stop: self.dbg_stop(),
-                dbg_standby: self.dbg_standby(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cr {{ dbg_stop: {=bool:?}, dbg_standby: {=bool:?} }}",
+                self.dbg_stop(),
+                self.dbg_standby()
+            )
         }
     }
     #[doc = "DBGMCU debug authentication mailbox device register."]
@@ -613,14 +548,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DbgAuthDevice {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DbgAuthDevice {
-                message: u32,
-            }
-            let proxy = DbgAuthDevice {
-                message: self.message(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "DbgAuthDevice {{ message: {=u32:?} }}", self.message())
         }
     }
     #[doc = "DBGMCU debug authentication mailbox host register."]
@@ -654,14 +582,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DbgAuthHost {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DbgAuthHost {
-                message: u32,
-            }
-            let proxy = DbgAuthHost {
-                message: self.message(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "DbgAuthHost {{ message: {=u32:?} }}", self.message())
         }
     }
     #[doc = "DBGMCU device ID code register."]
@@ -709,16 +630,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Idcode {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Idcode {
-                dev_id: u16,
-                rev_id: u16,
-            }
-            let proxy = Idcode {
-                dev_id: self.dev_id(),
-                rev_id: self.rev_id(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Idcode {{ dev_id: {=u16:?}, rev_id: {=u16:?} }}",
+                self.dev_id(),
+                self.rev_id()
+            )
         }
     }
     #[doc = "DBGMCU CoreSight peripheral identity register 0."]
@@ -752,14 +669,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pidr0 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pidr0 {
-                partnum: u8,
-            }
-            let proxy = Pidr0 {
-                partnum: self.partnum(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Pidr0 {{ partnum: {=u8:?} }}", self.partnum())
         }
     }
     #[doc = "DBGMCU CoreSight peripheral identity register 1."]
@@ -807,16 +717,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pidr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pidr1 {
-                partnum: u8,
-                jep106id: u8,
-            }
-            let proxy = Pidr1 {
-                partnum: self.partnum(),
-                jep106id: self.jep106id(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Pidr1 {{ partnum: {=u8:?}, jep106id: {=u8:?} }}",
+                self.partnum(),
+                self.jep106id()
+            )
         }
     }
     #[doc = "DBGMCU CoreSight peripheral identity register 2."]
@@ -876,18 +782,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pidr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pidr2 {
-                jep106id: u8,
-                jedec: bool,
-                revision: u8,
-            }
-            let proxy = Pidr2 {
-                jep106id: self.jep106id(),
-                jedec: self.jedec(),
-                revision: self.revision(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Pidr2 {{ jep106id: {=u8:?}, jedec: {=bool:?}, revision: {=u8:?} }}",
+                self.jep106id(),
+                self.jedec(),
+                self.revision()
+            )
         }
     }
     #[doc = "DBGMCU CoreSight peripheral identity register 3."]
@@ -935,16 +836,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pidr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pidr3 {
-                cmod: u8,
-                revand: u8,
-            }
-            let proxy = Pidr3 {
-                cmod: self.cmod(),
-                revand: self.revand(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Pidr3 {{ cmod: {=u8:?}, revand: {=u8:?} }}",
+                self.cmod(),
+                self.revand()
+            )
         }
     }
     #[doc = "DBGMCU CoreSight peripheral identity register 4."]
@@ -992,16 +889,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pidr4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pidr4 {
-                jep106con: u8,
-                size: u8,
-            }
-            let proxy = Pidr4 {
-                jep106con: self.jep106con(),
-                size: self.size(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Pidr4 {{ jep106con: {=u8:?}, size: {=u8:?} }}",
+                self.jep106con(),
+                self.size()
+            )
         }
     }
     #[doc = "DBGMCU status register."]
@@ -1073,20 +966,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                ap1_present: bool,
-                ap0_present: bool,
-                ap1_enabled: bool,
-                ap0_enabled: bool,
-            }
-            let proxy = Sr {
-                ap1_present: self.ap1_present(),
-                ap0_present: self.ap0_present(),
-                ap1_enabled: self.ap1_enabled(),
-                ap0_enabled: self.ap0_enabled(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr {{ ap1_present: {=bool:?}, ap0_present: {=bool:?}, ap1_enabled: {=bool:?}, ap0_enabled: {=bool:?} }}" , self . ap1_present () , self . ap0_present () , self . ap1_enabled () , self . ap0_enabled ())
         }
     }
 }

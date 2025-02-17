@@ -240,42 +240,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bcr {
-                mbken: bool,
-                muxen: bool,
-                mtyp: super::vals::Mtyp,
-                mwid: super::vals::Mwid,
-                faccen: bool,
-                bursten: bool,
-                waitpol: super::vals::Waitpol,
-                wrapmod: bool,
-                waitcfg: super::vals::Waitcfg,
-                wren: bool,
-                waiten: bool,
-                extmod: bool,
-                asyncwait: bool,
-                cpsize: super::vals::Cpsize,
-                cburstrw: bool,
-            }
-            let proxy = Bcr {
-                mbken: self.mbken(),
-                muxen: self.muxen(),
-                mtyp: self.mtyp(),
-                mwid: self.mwid(),
-                faccen: self.faccen(),
-                bursten: self.bursten(),
-                waitpol: self.waitpol(),
-                wrapmod: self.wrapmod(),
-                waitcfg: self.waitcfg(),
-                wren: self.wren(),
-                waiten: self.waiten(),
-                extmod: self.extmod(),
-                asyncwait: self.asyncwait(),
-                cpsize: self.cpsize(),
-                cburstrw: self.cburstrw(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Bcr {{ mbken: {=bool:?}, muxen: {=bool:?}, mtyp: {:?}, mwid: {:?}, faccen: {=bool:?}, bursten: {=bool:?}, waitpol: {:?}, wrapmod: {=bool:?}, waitcfg: {:?}, wren: {=bool:?}, waiten: {=bool:?}, extmod: {=bool:?}, asyncwait: {=bool:?}, cpsize: {:?}, cburstrw: {=bool:?} }}" , self . mbken () , self . muxen () , self . mtyp () , self . mwid () , self . faccen () , self . bursten () , self . waitpol () , self . wrapmod () , self . waitcfg () , self . wren () , self . waiten () , self . extmod () , self . asyncwait () , self . cpsize () , self . cburstrw ())
         }
     }
     #[doc = "SRAM/NOR-Flash chip-select timing register"]
@@ -383,26 +348,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Btr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Btr {
-                addset: u8,
-                addhld: u8,
-                datast: u8,
-                busturn: u8,
-                clkdiv: u8,
-                datlat: u8,
-                accmod: super::vals::Accmod,
-            }
-            let proxy = Btr {
-                addset: self.addset(),
-                addhld: self.addhld(),
-                datast: self.datast(),
-                busturn: self.busturn(),
-                clkdiv: self.clkdiv(),
-                datlat: self.datlat(),
-                accmod: self.accmod(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Btr {{ addset: {=u8:?}, addhld: {=u8:?}, datast: {=u8:?}, busturn: {=u8:?}, clkdiv: {=u8:?}, datlat: {=u8:?}, accmod: {:?} }}" , self . addset () , self . addhld () , self . datast () , self . busturn () , self . clkdiv () , self . datlat () , self . accmod ())
         }
     }
     #[doc = "SRAM/NOR-Flash write timing registers"]
@@ -486,22 +432,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bwtr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bwtr {
-                addset: u8,
-                addhld: u8,
-                datast: u8,
-                busturn: u8,
-                accmod: super::vals::Accmod,
-            }
-            let proxy = Bwtr {
-                addset: self.addset(),
-                addhld: self.addhld(),
-                datast: self.datast(),
-                busturn: self.busturn(),
-                accmod: self.accmod(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Bwtr {{ addset: {=u8:?}, addhld: {=u8:?}, datast: {=u8:?}, busturn: {=u8:?}, accmod: {:?} }}",
+                self.addset(),
+                self.addhld(),
+                self.datast(),
+                self.busturn(),
+                self.accmod()
+            )
         }
     }
 }

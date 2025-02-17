@@ -217,32 +217,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr1 {
-                boosten: bool,
-                anaswvdd: bool,
-                i2c_pb6_fmp: bool,
-                i2c_pb7_fmp: bool,
-                i2c_pb8_fmp: bool,
-                i2c_pb9_fmp: bool,
-                i2c1_fmp: bool,
-                i2c2_fmp: bool,
-                i2c3_fmp: bool,
-                i2c4_fmp: bool,
-            }
-            let proxy = Cfgr1 {
-                boosten: self.boosten(),
-                anaswvdd: self.anaswvdd(),
-                i2c_pb6_fmp: self.i2c_pb6_fmp(),
-                i2c_pb7_fmp: self.i2c_pb7_fmp(),
-                i2c_pb8_fmp: self.i2c_pb8_fmp(),
-                i2c_pb9_fmp: self.i2c_pb9_fmp(),
-                i2c1_fmp: self.i2c1_fmp(),
-                i2c2_fmp: self.i2c2_fmp(),
-                i2c3_fmp: self.i2c3_fmp(),
-                i2c4_fmp: self.i2c4_fmp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr1 {{ boosten: {=bool:?}, anaswvdd: {=bool:?}, i2c_pb6_fmp: {=bool:?}, i2c_pb7_fmp: {=bool:?}, i2c_pb8_fmp: {=bool:?}, i2c_pb9_fmp: {=bool:?}, i2c1_fmp: {=bool:?}, i2c2_fmp: {=bool:?}, i2c3_fmp: {=bool:?}, i2c4_fmp: {=bool:?} }}" , self . boosten () , self . anaswvdd () , self . i2c_pb6_fmp () , self . i2c_pb7_fmp () , self . i2c_pb8_fmp () , self . i2c_pb9_fmp () , self . i2c1_fmp () , self . i2c2_fmp () , self . i2c3_fmp () , self . i2c4_fmp ())
         }
     }
     #[doc = "CFGR2"]
@@ -326,22 +301,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr2 {
-                cll: bool,
-                spl: bool,
-                pvdl: bool,
-                eccl: bool,
-                spf: bool,
-            }
-            let proxy = Cfgr2 {
-                cll: self.cll(),
-                spl: self.spl(),
-                pvdl: self.pvdl(),
-                eccl: self.eccl(),
-                spf: self.spf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cfgr2 {{ cll: {=bool:?}, spl: {=bool:?}, pvdl: {=bool:?}, eccl: {=bool:?}, spf: {=bool:?} }}",
+                self.cll(),
+                self.spl(),
+                self.pvdl(),
+                self.eccl(),
+                self.spf()
+            )
         }
     }
     #[doc = "SYSCFG CPU non-secure lock register"]
@@ -389,16 +357,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cnslckr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cnslckr {
-                locknsvtor: bool,
-                locknsmpu: bool,
-            }
-            let proxy = Cnslckr {
-                locknsvtor: self.locknsvtor(),
-                locknsmpu: self.locknsmpu(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cnslckr {{ locknsvtor: {=bool:?}, locknsmpu: {=bool:?} }}",
+                self.locknsvtor(),
+                self.locknsmpu()
+            )
         }
     }
     #[doc = "SYSCFG CPU secure lock register"]
@@ -458,18 +422,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cslockr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cslockr {
-                locksvtaircr: bool,
-                locksmpu: bool,
-                locksau: bool,
-            }
-            let proxy = Cslockr {
-                locksvtaircr: self.locksvtaircr(),
-                locksmpu: self.locksmpu(),
-                locksau: self.locksau(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cslockr {{ locksvtaircr: {=bool:?}, locksmpu: {=bool:?}, locksau: {=bool:?} }}",
+                self.locksvtaircr(),
+                self.locksmpu(),
+                self.locksau()
+            )
         }
     }
     #[doc = "FPU interrupt mask register"]
@@ -503,12 +462,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fpuimr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fpuimr {
-                fpu_ie: u8,
-            }
-            let proxy = Fpuimr { fpu_ie: self.fpu_ie() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Fpuimr {{ fpu_ie: {=u8:?} }}", self.fpu_ie())
         }
     }
     #[doc = "RSSCMDR"]
@@ -542,12 +496,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rsscmdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rsscmdr {
-                rsscmd: u8,
-            }
-            let proxy = Rsscmdr { rsscmd: self.rsscmd() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Rsscmdr {{ rsscmd: {=u8:?} }}", self.rsscmd())
         }
     }
     #[doc = "SCSR"]
@@ -595,16 +544,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Scsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Scsr {
-                sram2er: bool,
-                sram2bsy: bool,
-            }
-            let proxy = Scsr {
-                sram2er: self.sram2er(),
-                sram2bsy: self.sram2bsy(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Scsr {{ sram2er: {=bool:?}, sram2bsy: {=bool:?} }}",
+                self.sram2er(),
+                self.sram2bsy()
+            )
         }
     }
     #[doc = "SYSCFG secure configuration register"]
@@ -676,20 +621,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Seccfgr {
-                syscfgsec: bool,
-                classbsec: bool,
-                sram2sec: bool,
-                fpusec: bool,
-            }
-            let proxy = Seccfgr {
-                syscfgsec: self.syscfgsec(),
-                classbsec: self.classbsec(),
-                sram2sec: self.sram2sec(),
-                fpusec: self.fpusec(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Seccfgr {{ syscfgsec: {=bool:?}, classbsec: {=bool:?}, sram2sec: {=bool:?}, fpusec: {=bool:?} }}",
+                self.syscfgsec(),
+                self.classbsec(),
+                self.sram2sec(),
+                self.fpusec()
+            )
         }
     }
     #[doc = "SKR"]
@@ -723,12 +662,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Skr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Skr {
-                key: u8,
-            }
-            let proxy = Skr { key: self.key() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Skr {{ key: {=u8:?} }}", self.key())
         }
     }
     #[doc = "SWPR"]
@@ -1136,76 +1070,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Swpr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Swpr {
-                p0wp: bool,
-                p1wp: bool,
-                p2wp: bool,
-                p3wp: bool,
-                p4wp: bool,
-                p5wp: bool,
-                p6wp: bool,
-                p7wp: bool,
-                p8wp: bool,
-                p9wp: bool,
-                p10wp: bool,
-                p11wp: bool,
-                p12wp: bool,
-                p13wp: bool,
-                p14wp: bool,
-                p15wp: bool,
-                p16wp: bool,
-                p17wp: bool,
-                p18wp: bool,
-                p19wp: bool,
-                p20wp: bool,
-                p21wp: bool,
-                p22wp: bool,
-                p23wp: bool,
-                p24wp: bool,
-                p25wp: bool,
-                p26wp: bool,
-                p27wp: bool,
-                p28wp: bool,
-                p29wp: bool,
-                p30wp: bool,
-                p31wp: bool,
-            }
-            let proxy = Swpr {
-                p0wp: self.p0wp(),
-                p1wp: self.p1wp(),
-                p2wp: self.p2wp(),
-                p3wp: self.p3wp(),
-                p4wp: self.p4wp(),
-                p5wp: self.p5wp(),
-                p6wp: self.p6wp(),
-                p7wp: self.p7wp(),
-                p8wp: self.p8wp(),
-                p9wp: self.p9wp(),
-                p10wp: self.p10wp(),
-                p11wp: self.p11wp(),
-                p12wp: self.p12wp(),
-                p13wp: self.p13wp(),
-                p14wp: self.p14wp(),
-                p15wp: self.p15wp(),
-                p16wp: self.p16wp(),
-                p17wp: self.p17wp(),
-                p18wp: self.p18wp(),
-                p19wp: self.p19wp(),
-                p20wp: self.p20wp(),
-                p21wp: self.p21wp(),
-                p22wp: self.p22wp(),
-                p23wp: self.p23wp(),
-                p24wp: self.p24wp(),
-                p25wp: self.p25wp(),
-                p26wp: self.p26wp(),
-                p27wp: self.p27wp(),
-                p28wp: self.p28wp(),
-                p29wp: self.p29wp(),
-                p30wp: self.p30wp(),
-                p31wp: self.p31wp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Swpr {{ p0wp: {=bool:?}, p1wp: {=bool:?}, p2wp: {=bool:?}, p3wp: {=bool:?}, p4wp: {=bool:?}, p5wp: {=bool:?}, p6wp: {=bool:?}, p7wp: {=bool:?}, p8wp: {=bool:?}, p9wp: {=bool:?}, p10wp: {=bool:?}, p11wp: {=bool:?}, p12wp: {=bool:?}, p13wp: {=bool:?}, p14wp: {=bool:?}, p15wp: {=bool:?}, p16wp: {=bool:?}, p17wp: {=bool:?}, p18wp: {=bool:?}, p19wp: {=bool:?}, p20wp: {=bool:?}, p21wp: {=bool:?}, p22wp: {=bool:?}, p23wp: {=bool:?}, p24wp: {=bool:?}, p25wp: {=bool:?}, p26wp: {=bool:?}, p27wp: {=bool:?}, p28wp: {=bool:?}, p29wp: {=bool:?}, p30wp: {=bool:?}, p31wp: {=bool:?} }}" , self . p0wp () , self . p1wp () , self . p2wp () , self . p3wp () , self . p4wp () , self . p5wp () , self . p6wp () , self . p7wp () , self . p8wp () , self . p9wp () , self . p10wp () , self . p11wp () , self . p12wp () , self . p13wp () , self . p14wp () , self . p15wp () , self . p16wp () , self . p17wp () , self . p18wp () , self . p19wp () , self . p20wp () , self . p21wp () , self . p22wp () , self . p23wp () , self . p24wp () , self . p25wp () , self . p26wp () , self . p27wp () , self . p28wp () , self . p29wp () , self . p30wp () , self . p31wp ())
         }
     }
     #[doc = "SWPR2"]
@@ -1613,76 +1478,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Swpr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Swpr2 {
-                p32wp: bool,
-                p33wp: bool,
-                p34wp: bool,
-                p35wp: bool,
-                p36wp: bool,
-                p37wp: bool,
-                p38wp: bool,
-                p39wp: bool,
-                p40wp: bool,
-                p41wp: bool,
-                p42wp: bool,
-                p43wp: bool,
-                p44wp: bool,
-                p45wp: bool,
-                p46wp: bool,
-                p47wp: bool,
-                p48wp: bool,
-                p49wp: bool,
-                p50wp: bool,
-                p51wp: bool,
-                p52wp: bool,
-                p53wp: bool,
-                p54wp: bool,
-                p55wp: bool,
-                p56wp: bool,
-                p57wp: bool,
-                p58wp: bool,
-                p59wp: bool,
-                p60wp: bool,
-                p61wp: bool,
-                p62wp: bool,
-                p63wp: bool,
-            }
-            let proxy = Swpr2 {
-                p32wp: self.p32wp(),
-                p33wp: self.p33wp(),
-                p34wp: self.p34wp(),
-                p35wp: self.p35wp(),
-                p36wp: self.p36wp(),
-                p37wp: self.p37wp(),
-                p38wp: self.p38wp(),
-                p39wp: self.p39wp(),
-                p40wp: self.p40wp(),
-                p41wp: self.p41wp(),
-                p42wp: self.p42wp(),
-                p43wp: self.p43wp(),
-                p44wp: self.p44wp(),
-                p45wp: self.p45wp(),
-                p46wp: self.p46wp(),
-                p47wp: self.p47wp(),
-                p48wp: self.p48wp(),
-                p49wp: self.p49wp(),
-                p50wp: self.p50wp(),
-                p51wp: self.p51wp(),
-                p52wp: self.p52wp(),
-                p53wp: self.p53wp(),
-                p54wp: self.p54wp(),
-                p55wp: self.p55wp(),
-                p56wp: self.p56wp(),
-                p57wp: self.p57wp(),
-                p58wp: self.p58wp(),
-                p59wp: self.p59wp(),
-                p60wp: self.p60wp(),
-                p61wp: self.p61wp(),
-                p62wp: self.p62wp(),
-                p63wp: self.p63wp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Swpr2 {{ p32wp: {=bool:?}, p33wp: {=bool:?}, p34wp: {=bool:?}, p35wp: {=bool:?}, p36wp: {=bool:?}, p37wp: {=bool:?}, p38wp: {=bool:?}, p39wp: {=bool:?}, p40wp: {=bool:?}, p41wp: {=bool:?}, p42wp: {=bool:?}, p43wp: {=bool:?}, p44wp: {=bool:?}, p45wp: {=bool:?}, p46wp: {=bool:?}, p47wp: {=bool:?}, p48wp: {=bool:?}, p49wp: {=bool:?}, p50wp: {=bool:?}, p51wp: {=bool:?}, p52wp: {=bool:?}, p53wp: {=bool:?}, p54wp: {=bool:?}, p55wp: {=bool:?}, p56wp: {=bool:?}, p57wp: {=bool:?}, p58wp: {=bool:?}, p59wp: {=bool:?}, p60wp: {=bool:?}, p61wp: {=bool:?}, p62wp: {=bool:?}, p63wp: {=bool:?} }}" , self . p32wp () , self . p33wp () , self . p34wp () , self . p35wp () , self . p36wp () , self . p37wp () , self . p38wp () , self . p39wp () , self . p40wp () , self . p41wp () , self . p42wp () , self . p43wp () , self . p44wp () , self . p45wp () , self . p46wp () , self . p47wp () , self . p48wp () , self . p49wp () , self . p50wp () , self . p51wp () , self . p52wp () , self . p53wp () , self . p54wp () , self . p55wp () , self . p56wp () , self . p57wp () , self . p58wp () , self . p59wp () , self . p60wp () , self . p61wp () , self . p62wp () , self . p63wp ())
         }
     }
 }

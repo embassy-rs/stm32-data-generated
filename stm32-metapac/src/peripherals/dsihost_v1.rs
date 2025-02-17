@@ -426,16 +426,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccr {
-                txeckdiv: u8,
-                tockdiv: u8,
-            }
-            let proxy = Ccr {
-                txeckdiv: self.txeckdiv(),
-                tockdiv: self.tockdiv(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ccr {{ txeckdiv: {=u8:?}, tockdiv: {=u8:?} }}",
+                self.txeckdiv(),
+                self.tockdiv()
+            )
         }
     }
     #[doc = "DSI Host Clock Lane Configuration Register."]
@@ -483,16 +479,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Clcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Clcr {
-                dpcc: bool,
-                acr: bool,
-            }
-            let proxy = Clcr {
-                dpcc: self.dpcc(),
-                acr: self.acr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Clcr {{ dpcc: {=bool:?}, acr: {=bool:?} }}", self.dpcc(), self.acr())
         }
     }
     #[doc = "DSI Host Clock Lane Timer Configuration Register."]
@@ -540,16 +527,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cltcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cltcr {
-                lp2hs_time: u16,
-                hs2lp_time: u16,
-            }
-            let proxy = Cltcr {
-                lp2hs_time: self.lp2hs_time(),
-                hs2lp_time: self.hs2lp_time(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cltcr {{ lp2hs_time: {=u16:?}, hs2lp_time: {=u16:?} }}",
+                self.lp2hs_time(),
+                self.hs2lp_time()
+            )
         }
     }
     #[doc = "DSI Host Command mode Configuration Register."]
@@ -741,40 +724,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cmcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cmcr {
-                teare: bool,
-                are: bool,
-                gsw0tx: bool,
-                gsw1tx: bool,
-                gsw2tx: bool,
-                gsr0tx: bool,
-                gsr1tx: bool,
-                gsr2tx: bool,
-                glwtx: bool,
-                dsw0tx: bool,
-                dsw1tx: bool,
-                dsr0tx: bool,
-                dlwtx: bool,
-                mrdps: bool,
-            }
-            let proxy = Cmcr {
-                teare: self.teare(),
-                are: self.are(),
-                gsw0tx: self.gsw0tx(),
-                gsw1tx: self.gsw1tx(),
-                gsw2tx: self.gsw2tx(),
-                gsr0tx: self.gsr0tx(),
-                gsr1tx: self.gsr1tx(),
-                gsr2tx: self.gsr2tx(),
-                glwtx: self.glwtx(),
-                dsw0tx: self.dsw0tx(),
-                dsw1tx: self.dsw1tx(),
-                dsr0tx: self.dsr0tx(),
-                dlwtx: self.dlwtx(),
-                mrdps: self.mrdps(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cmcr {{ teare: {=bool:?}, are: {=bool:?}, gsw0tx: {=bool:?}, gsw1tx: {=bool:?}, gsw2tx: {=bool:?}, gsr0tx: {=bool:?}, gsr1tx: {=bool:?}, gsr2tx: {=bool:?}, glwtx: {=bool:?}, dsw0tx: {=bool:?}, dsw1tx: {=bool:?}, dsr0tx: {=bool:?}, dlwtx: {=bool:?}, mrdps: {=bool:?} }}" , self . teare () , self . are () , self . gsw0tx () , self . gsw1tx () , self . gsw2tx () , self . gsr0tx () , self . gsr1tx () , self . gsr2tx () , self . glwtx () , self . dsw0tx () , self . dsw1tx () , self . dsr0tx () , self . dlwtx () , self . mrdps ())
         }
     }
     #[doc = "DSI Host Control Register."]
@@ -808,12 +758,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                en: bool,
-            }
-            let proxy = Cr { en: self.en() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cr {{ en: {=bool:?} }}", self.en())
         }
     }
     #[doc = "DSI Host Data Lane Timer Configuration Register."]
@@ -873,18 +818,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dltcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dltcr {
-                mrd_time: u16,
-                lp2hs_time: u8,
-                hs2lp_time: u8,
-            }
-            let proxy = Dltcr {
-                mrd_time: self.mrd_time(),
-                lp2hs_time: self.lp2hs_time(),
-                hs2lp_time: self.hs2lp_time(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dltcr {{ mrd_time: {=u16:?}, lp2hs_time: {=u8:?}, hs2lp_time: {=u8:?} }}",
+                self.mrd_time(),
+                self.lp2hs_time(),
+                self.hs2lp_time()
+            )
         }
     }
     #[doc = "DSI Host Force Interrupt Register 0."]
@@ -1160,54 +1100,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fir0 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fir0 {
-                fae0: bool,
-                fae1: bool,
-                fae2: bool,
-                fae3: bool,
-                fae4: bool,
-                fae5: bool,
-                fae6: bool,
-                fae7: bool,
-                fae8: bool,
-                fae9: bool,
-                fae10: bool,
-                fae11: bool,
-                fae12: bool,
-                fae13: bool,
-                fae14: bool,
-                fae15: bool,
-                fpe0: bool,
-                fpe1: bool,
-                fpe2: bool,
-                fpe3: bool,
-                fpe4: bool,
-            }
-            let proxy = Fir0 {
-                fae0: self.fae0(),
-                fae1: self.fae1(),
-                fae2: self.fae2(),
-                fae3: self.fae3(),
-                fae4: self.fae4(),
-                fae5: self.fae5(),
-                fae6: self.fae6(),
-                fae7: self.fae7(),
-                fae8: self.fae8(),
-                fae9: self.fae9(),
-                fae10: self.fae10(),
-                fae11: self.fae11(),
-                fae12: self.fae12(),
-                fae13: self.fae13(),
-                fae14: self.fae14(),
-                fae15: self.fae15(),
-                fpe0: self.fpe0(),
-                fpe1: self.fpe1(),
-                fpe2: self.fpe2(),
-                fpe3: self.fpe3(),
-                fpe4: self.fpe4(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Fir0 {{ fae0: {=bool:?}, fae1: {=bool:?}, fae2: {=bool:?}, fae3: {=bool:?}, fae4: {=bool:?}, fae5: {=bool:?}, fae6: {=bool:?}, fae7: {=bool:?}, fae8: {=bool:?}, fae9: {=bool:?}, fae10: {=bool:?}, fae11: {=bool:?}, fae12: {=bool:?}, fae13: {=bool:?}, fae14: {=bool:?}, fae15: {=bool:?}, fpe0: {=bool:?}, fpe1: {=bool:?}, fpe2: {=bool:?}, fpe3: {=bool:?}, fpe4: {=bool:?} }}" , self . fae0 () , self . fae1 () , self . fae2 () , self . fae3 () , self . fae4 () , self . fae5 () , self . fae6 () , self . fae7 () , self . fae8 () , self . fae9 () , self . fae10 () , self . fae11 () , self . fae12 () , self . fae13 () , self . fae14 () , self . fae15 () , self . fpe0 () , self . fpe1 () , self . fpe2 () , self . fpe3 () , self . fpe4 ())
         }
     }
     #[doc = "DSI Host Force Interrupt Register 1."]
@@ -1387,38 +1280,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fir1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fir1 {
-                ftohstx: bool,
-                ftolprx: bool,
-                feccse: bool,
-                feccme: bool,
-                fcrce: bool,
-                fpse: bool,
-                feotpe: bool,
-                flpwre: bool,
-                fgcwre: bool,
-                fgpwre: bool,
-                fgptxe: bool,
-                fgprde: bool,
-                fgprxe: bool,
-            }
-            let proxy = Fir1 {
-                ftohstx: self.ftohstx(),
-                ftolprx: self.ftolprx(),
-                feccse: self.feccse(),
-                feccme: self.feccme(),
-                fcrce: self.fcrce(),
-                fpse: self.fpse(),
-                feotpe: self.feotpe(),
-                flpwre: self.flpwre(),
-                fgcwre: self.fgcwre(),
-                fgpwre: self.fgpwre(),
-                fgptxe: self.fgptxe(),
-                fgprde: self.fgprde(),
-                fgprxe: self.fgprxe(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Fir1 {{ ftohstx: {=bool:?}, ftolprx: {=bool:?}, feccse: {=bool:?}, feccme: {=bool:?}, fcrce: {=bool:?}, fpse: {=bool:?}, feotpe: {=bool:?}, flpwre: {=bool:?}, fgcwre: {=bool:?}, fgpwre: {=bool:?}, fgptxe: {=bool:?}, fgprde: {=bool:?}, fgprxe: {=bool:?} }}" , self . ftohstx () , self . ftolprx () , self . feccse () , self . feccme () , self . fcrce () , self . fpse () , self . feotpe () , self . flpwre () , self . fgcwre () , self . fgpwre () , self . fgptxe () , self . fgprde () , self . fgprxe ())
         }
     }
     #[doc = "DSI Host Generic Header Configuration Register."]
@@ -1490,20 +1352,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ghcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ghcr {
-                dt: u8,
-                vcid: u8,
-                wclsb: u8,
-                wcmsb: u8,
-            }
-            let proxy = Ghcr {
-                dt: self.dt(),
-                vcid: self.vcid(),
-                wclsb: self.wclsb(),
-                wcmsb: self.wcmsb(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ghcr {{ dt: {=u8:?}, vcid: {=u8:?}, wclsb: {=u8:?}, wcmsb: {=u8:?} }}",
+                self.dt(),
+                self.vcid(),
+                self.wclsb(),
+                self.wcmsb()
+            )
         }
     }
     #[doc = "DSI Host Generic Payload Data Register."]
@@ -1575,20 +1431,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gpdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Gpdr {
-                data1: u8,
-                data2: u8,
-                data3: u8,
-                data4: u8,
-            }
-            let proxy = Gpdr {
-                data1: self.data1(),
-                data2: self.data2(),
-                data3: self.data3(),
-                data4: self.data4(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Gpdr {{ data1: {=u8:?}, data2: {=u8:?}, data3: {=u8:?}, data4: {=u8:?} }}",
+                self.data1(),
+                self.data2(),
+                self.data3(),
+                self.data4()
+            )
         }
     }
     #[doc = "DSI Host Generic Packet Status Register."]
@@ -1696,26 +1546,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gpsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Gpsr {
-                cmdfe: bool,
-                cmdff: bool,
-                pwrfe: bool,
-                pwrff: bool,
-                prdfe: bool,
-                prdff: bool,
-                rcb: bool,
-            }
-            let proxy = Gpsr {
-                cmdfe: self.cmdfe(),
-                cmdff: self.cmdff(),
-                pwrfe: self.pwrfe(),
-                pwrff: self.pwrff(),
-                prdfe: self.prdfe(),
-                prdff: self.prdff(),
-                rcb: self.rcb(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Gpsr {{ cmdfe: {=bool:?}, cmdff: {=bool:?}, pwrfe: {=bool:?}, pwrff: {=bool:?}, prdfe: {=bool:?}, prdff: {=bool:?}, rcb: {=bool:?} }}" , self . cmdfe () , self . cmdff () , self . pwrfe () , self . pwrff () , self . prdfe () , self . prdff () , self . rcb ())
         }
     }
     #[doc = "DSI Host Generic VCID Register."]
@@ -1749,12 +1580,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gvcidr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Gvcidr {
-                vcid: u8,
-            }
-            let proxy = Gvcidr { vcid: self.vcid() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Gvcidr {{ vcid: {=u8:?} }}", self.vcid())
         }
     }
     #[doc = "DSI Host Interrupt Enable Register 0."]
@@ -2030,54 +1856,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier0 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ier0 {
-                ae0ie: bool,
-                ae1ie: bool,
-                ae2ie: bool,
-                ae3ie: bool,
-                ae4ie: bool,
-                ae5ie: bool,
-                ae6ie: bool,
-                ae7ie: bool,
-                ae8ie: bool,
-                ae9ie: bool,
-                ae10ie: bool,
-                ae11ie: bool,
-                ae12ie: bool,
-                ae13ie: bool,
-                ae14ie: bool,
-                ae15ie: bool,
-                pe0ie: bool,
-                pe1ie: bool,
-                pe2ie: bool,
-                pe3ie: bool,
-                pe4ie: bool,
-            }
-            let proxy = Ier0 {
-                ae0ie: self.ae0ie(),
-                ae1ie: self.ae1ie(),
-                ae2ie: self.ae2ie(),
-                ae3ie: self.ae3ie(),
-                ae4ie: self.ae4ie(),
-                ae5ie: self.ae5ie(),
-                ae6ie: self.ae6ie(),
-                ae7ie: self.ae7ie(),
-                ae8ie: self.ae8ie(),
-                ae9ie: self.ae9ie(),
-                ae10ie: self.ae10ie(),
-                ae11ie: self.ae11ie(),
-                ae12ie: self.ae12ie(),
-                ae13ie: self.ae13ie(),
-                ae14ie: self.ae14ie(),
-                ae15ie: self.ae15ie(),
-                pe0ie: self.pe0ie(),
-                pe1ie: self.pe1ie(),
-                pe2ie: self.pe2ie(),
-                pe3ie: self.pe3ie(),
-                pe4ie: self.pe4ie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ier0 {{ ae0ie: {=bool:?}, ae1ie: {=bool:?}, ae2ie: {=bool:?}, ae3ie: {=bool:?}, ae4ie: {=bool:?}, ae5ie: {=bool:?}, ae6ie: {=bool:?}, ae7ie: {=bool:?}, ae8ie: {=bool:?}, ae9ie: {=bool:?}, ae10ie: {=bool:?}, ae11ie: {=bool:?}, ae12ie: {=bool:?}, ae13ie: {=bool:?}, ae14ie: {=bool:?}, ae15ie: {=bool:?}, pe0ie: {=bool:?}, pe1ie: {=bool:?}, pe2ie: {=bool:?}, pe3ie: {=bool:?}, pe4ie: {=bool:?} }}" , self . ae0ie () , self . ae1ie () , self . ae2ie () , self . ae3ie () , self . ae4ie () , self . ae5ie () , self . ae6ie () , self . ae7ie () , self . ae8ie () , self . ae9ie () , self . ae10ie () , self . ae11ie () , self . ae12ie () , self . ae13ie () , self . ae14ie () , self . ae15ie () , self . pe0ie () , self . pe1ie () , self . pe2ie () , self . pe3ie () , self . pe4ie ())
         }
     }
     #[doc = "DSI Host Interrupt Enable Register 1."]
@@ -2257,38 +2036,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ier1 {
-                tohstxie: bool,
-                tolprxie: bool,
-                eccseie: bool,
-                eccmeie: bool,
-                crceie: bool,
-                pseie: bool,
-                eotpeie: bool,
-                lpwreie: bool,
-                gcwreie: bool,
-                gpwreie: bool,
-                gptxeie: bool,
-                gprdeie: bool,
-                gprxeie: bool,
-            }
-            let proxy = Ier1 {
-                tohstxie: self.tohstxie(),
-                tolprxie: self.tolprxie(),
-                eccseie: self.eccseie(),
-                eccmeie: self.eccmeie(),
-                crceie: self.crceie(),
-                pseie: self.pseie(),
-                eotpeie: self.eotpeie(),
-                lpwreie: self.lpwreie(),
-                gcwreie: self.gcwreie(),
-                gpwreie: self.gpwreie(),
-                gptxeie: self.gptxeie(),
-                gprdeie: self.gprdeie(),
-                gprxeie: self.gprxeie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ier1 {{ tohstxie: {=bool:?}, tolprxie: {=bool:?}, eccseie: {=bool:?}, eccmeie: {=bool:?}, crceie: {=bool:?}, pseie: {=bool:?}, eotpeie: {=bool:?}, lpwreie: {=bool:?}, gcwreie: {=bool:?}, gpwreie: {=bool:?}, gptxeie: {=bool:?}, gprdeie: {=bool:?}, gprxeie: {=bool:?} }}" , self . tohstxie () , self . tolprxie () , self . eccseie () , self . eccmeie () , self . crceie () , self . pseie () , self . eotpeie () , self . lpwreie () , self . gcwreie () , self . gpwreie () , self . gptxeie () , self . gprdeie () , self . gprxeie ())
         }
     }
     #[doc = "DSI Host Interrupt & Status Register 0."]
@@ -2564,54 +2312,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr0 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Isr0 {
-                ae0: bool,
-                ae1: bool,
-                ae2: bool,
-                ae3: bool,
-                ae4: bool,
-                ae5: bool,
-                ae6: bool,
-                ae7: bool,
-                ae8: bool,
-                ae9: bool,
-                ae10: bool,
-                ae11: bool,
-                ae12: bool,
-                ae13: bool,
-                ae14: bool,
-                ae15: bool,
-                pe0: bool,
-                pe1: bool,
-                pe2: bool,
-                pe3: bool,
-                pe4: bool,
-            }
-            let proxy = Isr0 {
-                ae0: self.ae0(),
-                ae1: self.ae1(),
-                ae2: self.ae2(),
-                ae3: self.ae3(),
-                ae4: self.ae4(),
-                ae5: self.ae5(),
-                ae6: self.ae6(),
-                ae7: self.ae7(),
-                ae8: self.ae8(),
-                ae9: self.ae9(),
-                ae10: self.ae10(),
-                ae11: self.ae11(),
-                ae12: self.ae12(),
-                ae13: self.ae13(),
-                ae14: self.ae14(),
-                ae15: self.ae15(),
-                pe0: self.pe0(),
-                pe1: self.pe1(),
-                pe2: self.pe2(),
-                pe3: self.pe3(),
-                pe4: self.pe4(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Isr0 {{ ae0: {=bool:?}, ae1: {=bool:?}, ae2: {=bool:?}, ae3: {=bool:?}, ae4: {=bool:?}, ae5: {=bool:?}, ae6: {=bool:?}, ae7: {=bool:?}, ae8: {=bool:?}, ae9: {=bool:?}, ae10: {=bool:?}, ae11: {=bool:?}, ae12: {=bool:?}, ae13: {=bool:?}, ae14: {=bool:?}, ae15: {=bool:?}, pe0: {=bool:?}, pe1: {=bool:?}, pe2: {=bool:?}, pe3: {=bool:?}, pe4: {=bool:?} }}" , self . ae0 () , self . ae1 () , self . ae2 () , self . ae3 () , self . ae4 () , self . ae5 () , self . ae6 () , self . ae7 () , self . ae8 () , self . ae9 () , self . ae10 () , self . ae11 () , self . ae12 () , self . ae13 () , self . ae14 () , self . ae15 () , self . pe0 () , self . pe1 () , self . pe2 () , self . pe3 () , self . pe4 ())
         }
     }
     #[doc = "DSI Host Interrupt & Status Register 1."]
@@ -2791,38 +2492,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Isr1 {
-                tohstx: bool,
-                tolprx: bool,
-                eccse: bool,
-                eccme: bool,
-                crce: bool,
-                pse: bool,
-                eotpe: bool,
-                lpwre: bool,
-                gcwre: bool,
-                gpwre: bool,
-                gptxe: bool,
-                gprde: bool,
-                gprxe: bool,
-            }
-            let proxy = Isr1 {
-                tohstx: self.tohstx(),
-                tolprx: self.tolprx(),
-                eccse: self.eccse(),
-                eccme: self.eccme(),
-                crce: self.crce(),
-                pse: self.pse(),
-                eotpe: self.eotpe(),
-                lpwre: self.lpwre(),
-                gcwre: self.gcwre(),
-                gpwre: self.gpwre(),
-                gptxe: self.gptxe(),
-                gprde: self.gprde(),
-                gprxe: self.gprxe(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Isr1 {{ tohstx: {=bool:?}, tolprx: {=bool:?}, eccse: {=bool:?}, eccme: {=bool:?}, crce: {=bool:?}, pse: {=bool:?}, eotpe: {=bool:?}, lpwre: {=bool:?}, gcwre: {=bool:?}, gpwre: {=bool:?}, gptxe: {=bool:?}, gprde: {=bool:?}, gprxe: {=bool:?} }}" , self . tohstx () , self . tolprx () , self . eccse () , self . eccme () , self . crce () , self . pse () , self . eotpe () , self . lpwre () , self . gcwre () , self . gpwre () , self . gptxe () , self . gprde () , self . gprxe ())
         }
     }
     #[doc = "DSI Host LTDC Current Color Coding Register."]
@@ -2870,16 +2540,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Lcccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Lcccr {
-                colc: u8,
-                lpe: bool,
-            }
-            let proxy = Lcccr {
-                colc: self.colc(),
-                lpe: self.lpe(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Lcccr {{ colc: {=u8:?}, lpe: {=bool:?} }}", self.colc(), self.lpe())
         }
     }
     #[doc = "DSI Host LTDC Command Configuration Register."]
@@ -2913,14 +2574,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Lccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Lccr {
-                cmdsize: u16,
-            }
-            let proxy = Lccr {
-                cmdsize: self.cmdsize(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Lccr {{ cmdsize: {=u16:?} }}", self.cmdsize())
         }
     }
     #[doc = "DSI Host LTDC Color Coding Register."]
@@ -2968,16 +2622,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Lcolcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Lcolcr {
-                colc: u8,
-                lpe: bool,
-            }
-            let proxy = Lcolcr {
-                colc: self.colc(),
-                lpe: self.lpe(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Lcolcr {{ colc: {=u8:?}, lpe: {=bool:?} }}", self.colc(), self.lpe())
         }
     }
     #[doc = "DSI Host LTDC Current VCID Register."]
@@ -3011,12 +2656,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Lcvcidr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Lcvcidr {
-                vcid: u8,
-            }
-            let proxy = Lcvcidr { vcid: self.vcid() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Lcvcidr {{ vcid: {=u8:?} }}", self.vcid())
         }
     }
     #[doc = "DSI Host LTDC Polarity Configuration Register."]
@@ -3076,18 +2716,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Lpcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Lpcr {
-                dep: bool,
-                vsp: bool,
-                hsp: bool,
-            }
-            let proxy = Lpcr {
-                dep: self.dep(),
-                vsp: self.vsp(),
-                hsp: self.hsp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Lpcr {{ dep: {=bool:?}, vsp: {=bool:?}, hsp: {=bool:?} }}",
+                self.dep(),
+                self.vsp(),
+                self.hsp()
+            )
         }
     }
     #[doc = "DSI Host Low-Power mode Current Configuration Register."]
@@ -3135,16 +2770,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Lpmccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Lpmccr {
-                vlpsize: u8,
-                lpsize: u8,
-            }
-            let proxy = Lpmccr {
-                vlpsize: self.vlpsize(),
-                lpsize: self.lpsize(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Lpmccr {{ vlpsize: {=u8:?}, lpsize: {=u8:?} }}",
+                self.vlpsize(),
+                self.lpsize()
+            )
         }
     }
     #[doc = "DSI Host Low-Power mode Configuration Register."]
@@ -3192,16 +2823,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Lpmcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Lpmcr {
-                vlpsize: u8,
-                lpsize: u8,
-            }
-            let proxy = Lpmcr {
-                vlpsize: self.vlpsize(),
-                lpsize: self.lpsize(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Lpmcr {{ vlpsize: {=u8:?}, lpsize: {=u8:?} }}",
+                self.vlpsize(),
+                self.lpsize()
+            )
         }
     }
     #[doc = "DSI Host LTDC VCID Register."]
@@ -3235,12 +2862,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Lvcidr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Lvcidr {
-                vcid: u8,
-            }
-            let proxy = Lvcidr { vcid: self.vcid() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Lvcidr {{ vcid: {=u8:?} }}", self.vcid())
         }
     }
     #[doc = "DSI Host mode Configuration Register."]
@@ -3274,12 +2896,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mcr {
-                cmdm: bool,
-            }
-            let proxy = Mcr { cmdm: self.cmdm() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Mcr {{ cmdm: {=bool:?} }}", self.cmdm())
         }
     }
     #[doc = "DSI Host PHY Configuration Register."]
@@ -3327,16 +2944,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pconfr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pconfr {
-                nl: u8,
-                sw_time: u8,
-            }
-            let proxy = Pconfr {
-                nl: self.nl(),
-                sw_time: self.sw_time(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Pconfr {{ nl: {=u8:?}, sw_time: {=u8:?} }}",
+                self.nl(),
+                self.sw_time()
+            )
         }
     }
     #[doc = "DSI Host Protocol Configuration Register."]
@@ -3420,22 +3033,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pcr {
-                ettxe: bool,
-                etrxe: bool,
-                btae: bool,
-                eccrxe: bool,
-                crcrxe: bool,
-            }
-            let proxy = Pcr {
-                ettxe: self.ettxe(),
-                etrxe: self.etrxe(),
-                btae: self.btae(),
-                eccrxe: self.eccrxe(),
-                crcrxe: self.crcrxe(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Pcr {{ ettxe: {=bool:?}, etrxe: {=bool:?}, btae: {=bool:?}, eccrxe: {=bool:?}, crcrxe: {=bool:?} }}",
+                self.ettxe(),
+                self.etrxe(),
+                self.btae(),
+                self.eccrxe(),
+                self.crcrxe()
+            )
         }
     }
     #[doc = "DSI Host PHY Control Register."]
@@ -3483,16 +3089,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pctlr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pctlr {
-                den: bool,
-                cke: bool,
-            }
-            let proxy = Pctlr {
-                den: self.den(),
-                cke: self.cke(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Pctlr {{ den: {=bool:?}, cke: {=bool:?} }}", self.den(), self.cke())
         }
     }
     #[doc = "DSI Host PHY Status Register."]
@@ -3612,28 +3209,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Psr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Psr {
-                pd: bool,
-                pssc: bool,
-                uanc: bool,
-                pss0: bool,
-                uan0: bool,
-                rue0: bool,
-                pss1: bool,
-                uan1: bool,
-            }
-            let proxy = Psr {
-                pd: self.pd(),
-                pssc: self.pssc(),
-                uanc: self.uanc(),
-                pss0: self.pss0(),
-                uan0: self.uan0(),
-                rue0: self.rue0(),
-                pss1: self.pss1(),
-                uan1: self.uan1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Psr {{ pd: {=bool:?}, pssc: {=bool:?}, uanc: {=bool:?}, pss0: {=bool:?}, uan0: {=bool:?}, rue0: {=bool:?}, pss1: {=bool:?}, uan1: {=bool:?} }}" , self . pd () , self . pssc () , self . uanc () , self . pss0 () , self . uan0 () , self . rue0 () , self . pss1 () , self . uan1 ())
         }
     }
     #[doc = "DSI Host PHY TX Triggers Configuration Register."]
@@ -3667,14 +3243,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pttcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pttcr {
-                tx_trig: u8,
-            }
-            let proxy = Pttcr {
-                tx_trig: self.tx_trig(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Pttcr {{ tx_trig: {=u8:?} }}", self.tx_trig())
         }
     }
     #[doc = "DSI Host PHY ULPS Control Register."]
@@ -3746,20 +3315,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pucr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pucr {
-                urcl: bool,
-                uecl: bool,
-                urdl: bool,
-                uedl: bool,
-            }
-            let proxy = Pucr {
-                urcl: self.urcl(),
-                uecl: self.uecl(),
-                urdl: self.urdl(),
-                uedl: self.uedl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Pucr {{ urcl: {=bool:?}, uecl: {=bool:?}, urdl: {=bool:?}, uedl: {=bool:?} }}",
+                self.urcl(),
+                self.uecl(),
+                self.urdl(),
+                self.uedl()
+            )
         }
     }
     #[doc = "DSI Host Timeout Counter Configuration Register 0."]
@@ -3807,16 +3370,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tccr0 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tccr0 {
-                lprx_tocnt: u16,
-                hstx_tocnt: u16,
-            }
-            let proxy = Tccr0 {
-                lprx_tocnt: self.lprx_tocnt(),
-                hstx_tocnt: self.hstx_tocnt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Tccr0 {{ lprx_tocnt: {=u16:?}, hstx_tocnt: {=u16:?} }}",
+                self.lprx_tocnt(),
+                self.hstx_tocnt()
+            )
         }
     }
     #[doc = "DSI Host Timeout Counter Configuration Register 1."]
@@ -3850,14 +3409,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tccr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tccr1 {
-                hsrd_tocnt: u16,
-            }
-            let proxy = Tccr1 {
-                hsrd_tocnt: self.hsrd_tocnt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Tccr1 {{ hsrd_tocnt: {=u16:?} }}", self.hsrd_tocnt())
         }
     }
     #[doc = "DSI Host Timeout Counter Configuration Register 2."]
@@ -3891,14 +3443,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tccr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tccr2 {
-                lprd_tocnt: u16,
-            }
-            let proxy = Tccr2 {
-                lprd_tocnt: self.lprd_tocnt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Tccr2 {{ lprd_tocnt: {=u16:?} }}", self.lprd_tocnt())
         }
     }
     #[doc = "DSI Host Timeout Counter Configuration Register 3."]
@@ -3946,16 +3491,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tccr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tccr3 {
-                hswr_tocnt: u16,
-                pm: bool,
-            }
-            let proxy = Tccr3 {
-                hswr_tocnt: self.hswr_tocnt(),
-                pm: self.pm(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Tccr3 {{ hswr_tocnt: {=u16:?}, pm: {=bool:?} }}",
+                self.hswr_tocnt(),
+                self.pm()
+            )
         }
     }
     #[doc = "DSI Host Timeout Counter Configuration Register 4."]
@@ -3989,14 +3530,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tccr4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tccr4 {
-                lswr_tocnt: u16,
-            }
-            let proxy = Tccr4 {
-                lswr_tocnt: self.lswr_tocnt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Tccr4 {{ lswr_tocnt: {=u16:?} }}", self.lswr_tocnt())
         }
     }
     #[doc = "DSI Host Timeout Counter Configuration Register 5."]
@@ -4030,14 +3564,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tccr5 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tccr5 {
-                bta_tocnt: u16,
-            }
-            let proxy = Tccr5 {
-                bta_tocnt: self.bta_tocnt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Tccr5 {{ bta_tocnt: {=u16:?} }}", self.bta_tocnt())
         }
     }
     #[doc = "DSI Host Video Chunks Current Configuration Register."]
@@ -4071,12 +3598,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vcccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vcccr {
-                numc: u16,
-            }
-            let proxy = Vcccr { numc: self.numc() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vcccr {{ numc: {=u16:?} }}", self.numc())
         }
     }
     #[doc = "DSI Host Video Chunks Configuration Register."]
@@ -4110,12 +3632,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vccr {
-                numc: u16,
-            }
-            let proxy = Vccr { numc: self.numc() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vccr {{ numc: {=u16:?} }}", self.numc())
         }
     }
     #[doc = "DSI Host Video HBP Current Configuration Register."]
@@ -4149,12 +3666,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vhbpccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vhbpccr {
-                hbp: u16,
-            }
-            let proxy = Vhbpccr { hbp: self.hbp() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vhbpccr {{ hbp: {=u16:?} }}", self.hbp())
         }
     }
     #[doc = "DSI Host Video HBP Configuration Register."]
@@ -4188,12 +3700,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vhbpcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vhbpcr {
-                hbp: u16,
-            }
-            let proxy = Vhbpcr { hbp: self.hbp() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vhbpcr {{ hbp: {=u16:?} }}", self.hbp())
         }
     }
     #[doc = "DSI Host Video HSA Current Configuration Register."]
@@ -4227,12 +3734,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vhsaccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vhsaccr {
-                hsa: u16,
-            }
-            let proxy = Vhsaccr { hsa: self.hsa() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vhsaccr {{ hsa: {=u16:?} }}", self.hsa())
         }
     }
     #[doc = "DSI Host Video HSA Configuration Register."]
@@ -4266,12 +3768,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vhsacr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vhsacr {
-                hsa: u16,
-            }
-            let proxy = Vhsacr { hsa: self.hsa() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vhsacr {{ hsa: {=u16:?} }}", self.hsa())
         }
     }
     #[doc = "DSI Host Video Line Current Configuration Register."]
@@ -4305,12 +3802,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vlccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vlccr {
-                hline: u16,
-            }
-            let proxy = Vlccr { hline: self.hline() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vlccr {{ hline: {=u16:?} }}", self.hline())
         }
     }
     #[doc = "DSI Host Video Line Configuration Register."]
@@ -4344,12 +3836,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vlcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vlcr {
-                hline: u16,
-            }
-            let proxy = Vlcr { hline: self.hline() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vlcr {{ hline: {=u16:?} }}", self.hline())
         }
     }
     #[doc = "DSI Host Video mode Current Configuration Register."]
@@ -4481,30 +3968,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vmccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vmccr {
-                vmt: u8,
-                lpvsae: bool,
-                lpvbpe: bool,
-                lpvfpe: bool,
-                lpvae: bool,
-                lphbpe: bool,
-                lphfe: bool,
-                fbtaae: bool,
-                lpce: bool,
-            }
-            let proxy = Vmccr {
-                vmt: self.vmt(),
-                lpvsae: self.lpvsae(),
-                lpvbpe: self.lpvbpe(),
-                lpvfpe: self.lpvfpe(),
-                lpvae: self.lpvae(),
-                lphbpe: self.lphbpe(),
-                lphfe: self.lphfe(),
-                fbtaae: self.fbtaae(),
-                lpce: self.lpce(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Vmccr {{ vmt: {=u8:?}, lpvsae: {=bool:?}, lpvbpe: {=bool:?}, lpvfpe: {=bool:?}, lpvae: {=bool:?}, lphbpe: {=bool:?}, lphfe: {=bool:?}, fbtaae: {=bool:?}, lpce: {=bool:?} }}" , self . vmt () , self . lpvsae () , self . lpvbpe () , self . lpvfpe () , self . lpvae () , self . lphbpe () , self . lphfe () , self . fbtaae () , self . lpce ())
         }
     }
     #[doc = "DSI Host Video mode Configuration Register."]
@@ -4672,36 +4136,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vmcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vmcr {
-                vmt: u8,
-                lpvsae: bool,
-                lpvbpe: bool,
-                lpvfpe: bool,
-                lpvae: bool,
-                lphbpe: bool,
-                lphfpe: bool,
-                fbtaae: bool,
-                lpce: bool,
-                pge: bool,
-                pgm: bool,
-                pgo: bool,
-            }
-            let proxy = Vmcr {
-                vmt: self.vmt(),
-                lpvsae: self.lpvsae(),
-                lpvbpe: self.lpvbpe(),
-                lpvfpe: self.lpvfpe(),
-                lpvae: self.lpvae(),
-                lphbpe: self.lphbpe(),
-                lphfpe: self.lphfpe(),
-                fbtaae: self.fbtaae(),
-                lpce: self.lpce(),
-                pge: self.pge(),
-                pgm: self.pgm(),
-                pgo: self.pgo(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Vmcr {{ vmt: {=u8:?}, lpvsae: {=bool:?}, lpvbpe: {=bool:?}, lpvfpe: {=bool:?}, lpvae: {=bool:?}, lphbpe: {=bool:?}, lphfpe: {=bool:?}, fbtaae: {=bool:?}, lpce: {=bool:?}, pge: {=bool:?}, pgm: {=bool:?}, pgo: {=bool:?} }}" , self . vmt () , self . lpvsae () , self . lpvbpe () , self . lpvfpe () , self . lpvae () , self . lphbpe () , self . lphfpe () , self . fbtaae () , self . lpce () , self . pge () , self . pgm () , self . pgo ())
         }
     }
     #[doc = "DSI Host Video Null Packet Current Configuration Register."]
@@ -4735,12 +4170,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vnpccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vnpccr {
-                npsize: u16,
-            }
-            let proxy = Vnpccr { npsize: self.npsize() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vnpccr {{ npsize: {=u16:?} }}", self.npsize())
         }
     }
     #[doc = "DSI Host Video Null Packet Configuration Register."]
@@ -4774,12 +4204,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vnpcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vnpcr {
-                npsize: u16,
-            }
-            let proxy = Vnpcr { npsize: self.npsize() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vnpcr {{ npsize: {=u16:?} }}", self.npsize())
         }
     }
     #[doc = "DSI Host Video Packet Current Configuration Register."]
@@ -4813,12 +4238,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vpccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vpccr {
-                vpsize: u16,
-            }
-            let proxy = Vpccr { vpsize: self.vpsize() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vpccr {{ vpsize: {=u16:?} }}", self.vpsize())
         }
     }
     #[doc = "DSI Host Video Packet Configuration Register."]
@@ -4852,12 +4272,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vpcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vpcr {
-                vpsize: u16,
-            }
-            let proxy = Vpcr { vpsize: self.vpsize() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vpcr {{ vpsize: {=u16:?} }}", self.vpsize())
         }
     }
     #[doc = "DSI Host Version Register."]
@@ -4891,14 +4306,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vr {
-                version: u32,
-            }
-            let proxy = Vr {
-                version: self.version(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vr {{ version: {=u32:?} }}", self.version())
         }
     }
     #[doc = "DSI Host Video Shadow Control Register."]
@@ -4946,16 +4354,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vscr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vscr {
-                en: bool,
-                ur: bool,
-            }
-            let proxy = Vscr {
-                en: self.en(),
-                ur: self.ur(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vscr {{ en: {=bool:?}, ur: {=bool:?} }}", self.en(), self.ur())
         }
     }
     #[doc = "DSI Host Video VA Current Configuration Register."]
@@ -4989,12 +4388,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vvaccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vvaccr {
-                va: u16,
-            }
-            let proxy = Vvaccr { va: self.va() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vvaccr {{ va: {=u16:?} }}", self.va())
         }
     }
     #[doc = "DSI Host Video VA Configuration Register."]
@@ -5028,12 +4422,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vvacr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vvacr {
-                va: u16,
-            }
-            let proxy = Vvacr { va: self.va() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vvacr {{ va: {=u16:?} }}", self.va())
         }
     }
     #[doc = "DSI Host Video VBP Current Configuration Register."]
@@ -5067,12 +4456,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vvbpccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vvbpccr {
-                vbp: u16,
-            }
-            let proxy = Vvbpccr { vbp: self.vbp() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vvbpccr {{ vbp: {=u16:?} }}", self.vbp())
         }
     }
     #[doc = "DSI Host Video VBP Configuration Register."]
@@ -5106,12 +4490,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vvbpcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vvbpcr {
-                vbp: u16,
-            }
-            let proxy = Vvbpcr { vbp: self.vbp() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vvbpcr {{ vbp: {=u16:?} }}", self.vbp())
         }
     }
     #[doc = "DSI Host Video VFP Current Configuration Register."]
@@ -5145,12 +4524,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vvfpccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vvfpccr {
-                vfp: u16,
-            }
-            let proxy = Vvfpccr { vfp: self.vfp() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vvfpccr {{ vfp: {=u16:?} }}", self.vfp())
         }
     }
     #[doc = "DSI Host Video VFP Configuration Register."]
@@ -5184,12 +4558,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vvfpcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vvfpcr {
-                vfp: u16,
-            }
-            let proxy = Vvfpcr { vfp: self.vfp() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vvfpcr {{ vfp: {=u16:?} }}", self.vfp())
         }
     }
     #[doc = "DSI Host Video VSA Current Configuration Register."]
@@ -5223,12 +4592,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vvsaccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vvsaccr {
-                vsa: u16,
-            }
-            let proxy = Vvsaccr { vsa: self.vsa() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vvsaccr {{ vsa: {=u16:?} }}", self.vsa())
         }
     }
     #[doc = "DSI Host Video VSA Configuration Register."]
@@ -5262,12 +4626,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vvsacr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Vvsacr {
-                vsa: u16,
-            }
-            let proxy = Vvsacr { vsa: self.vsa() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Vvsacr {{ vsa: {=u16:?} }}", self.vsa())
         }
     }
     #[doc = "DSI Wrapper Configuration Register."]
@@ -5363,24 +4722,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wcfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wcfgr {
-                dsim: bool,
-                colmux: u8,
-                tesrc: bool,
-                tepol: bool,
-                ar: bool,
-                vspol: bool,
-            }
-            let proxy = Wcfgr {
-                dsim: self.dsim(),
-                colmux: self.colmux(),
-                tesrc: self.tesrc(),
-                tepol: self.tepol(),
-                ar: self.ar(),
-                vspol: self.vspol(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Wcfgr {{ dsim: {=bool:?}, colmux: {=u8:?}, tesrc: {=bool:?}, tepol: {=bool:?}, ar: {=bool:?}, vspol: {=bool:?} }}" , self . dsim () , self . colmux () , self . tesrc () , self . tepol () , self . ar () , self . vspol ())
         }
     }
     #[doc = "DSI Wrapper Control Register."]
@@ -5452,20 +4794,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wcr {
-                colm: bool,
-                shtdn: bool,
-                ltdcen: bool,
-                dsien: bool,
-            }
-            let proxy = Wcr {
-                colm: self.colm(),
-                shtdn: self.shtdn(),
-                ltdcen: self.ltdcen(),
-                dsien: self.dsien(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Wcr {{ colm: {=bool:?}, shtdn: {=bool:?}, ltdcen: {=bool:?}, dsien: {=bool:?} }}",
+                self.colm(),
+                self.shtdn(),
+                self.ltdcen(),
+                self.dsien()
+            )
         }
     }
     #[doc = "DSI Wrapper Interrupt Enable Register."]
@@ -5549,22 +4885,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wier {
-                teie: bool,
-                erie: bool,
-                plllie: bool,
-                plluie: bool,
-                rrie: bool,
-            }
-            let proxy = Wier {
-                teie: self.teie(),
-                erie: self.erie(),
-                plllie: self.plllie(),
-                plluie: self.plluie(),
-                rrie: self.rrie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Wier {{ teie: {=bool:?}, erie: {=bool:?}, plllie: {=bool:?}, plluie: {=bool:?}, rrie: {=bool:?} }}",
+                self.teie(),
+                self.erie(),
+                self.plllie(),
+                self.plluie(),
+                self.rrie()
+            )
         }
     }
     #[doc = "DSI Wrapper Interrupt Flag Clear Register."]
@@ -5648,22 +4977,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wifcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wifcr {
-                cteif: bool,
-                cerif: bool,
-                cplllif: bool,
-                cplluif: bool,
-                crrif: bool,
-            }
-            let proxy = Wifcr {
-                cteif: self.cteif(),
-                cerif: self.cerif(),
-                cplllif: self.cplllif(),
-                cplluif: self.cplluif(),
-                crrif: self.crrif(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Wifcr {{ cteif: {=bool:?}, cerif: {=bool:?}, cplllif: {=bool:?}, cplluif: {=bool:?}, crrif: {=bool:?} }}" , self . cteif () , self . cerif () , self . cplllif () , self . cplluif () , self . crrif ())
         }
     }
     #[doc = "DSI Wrapper Interrupt & Status Register."]
@@ -5783,28 +5097,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wisr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wisr {
-                teif: bool,
-                erif: bool,
-                busy: bool,
-                pllls: bool,
-                plllif: bool,
-                plluif: bool,
-                rrs: bool,
-                rrif: bool,
-            }
-            let proxy = Wisr {
-                teif: self.teif(),
-                erif: self.erif(),
-                busy: self.busy(),
-                pllls: self.pllls(),
-                plllif: self.plllif(),
-                plluif: self.plluif(),
-                rrs: self.rrs(),
-                rrif: self.rrif(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Wisr {{ teif: {=bool:?}, erif: {=bool:?}, busy: {=bool:?}, pllls: {=bool:?}, plllif: {=bool:?}, plluif: {=bool:?}, rrs: {=bool:?}, rrif: {=bool:?} }}" , self . teif () , self . erif () , self . busy () , self . pllls () , self . plllif () , self . plluif () , self . rrs () , self . rrif ())
         }
     }
     #[doc = "DSI Wrapper PHY Configuration Register 0."]
@@ -6080,54 +5373,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wpcr0 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wpcr0 {
-                uix4: u8,
-                swcl: bool,
-                swdl0: bool,
-                swdl1: bool,
-                hsicl: bool,
-                hsidl0: bool,
-                hsidl1: bool,
-                ftxsmcl: bool,
-                ftxsmdl: bool,
-                cdoffdl: bool,
-                tddl: bool,
-                pden: bool,
-                tclkprepen: bool,
-                tclkzeroen: bool,
-                thsprepen: bool,
-                thstrailen: bool,
-                thszeroen: bool,
-                tlpxden: bool,
-                thsexiten: bool,
-                tlpxcen: bool,
-                tclkposten: bool,
-            }
-            let proxy = Wpcr0 {
-                uix4: self.uix4(),
-                swcl: self.swcl(),
-                swdl0: self.swdl0(),
-                swdl1: self.swdl1(),
-                hsicl: self.hsicl(),
-                hsidl0: self.hsidl0(),
-                hsidl1: self.hsidl1(),
-                ftxsmcl: self.ftxsmcl(),
-                ftxsmdl: self.ftxsmdl(),
-                cdoffdl: self.cdoffdl(),
-                tddl: self.tddl(),
-                pden: self.pden(),
-                tclkprepen: self.tclkprepen(),
-                tclkzeroen: self.tclkzeroen(),
-                thsprepen: self.thsprepen(),
-                thstrailen: self.thstrailen(),
-                thszeroen: self.thszeroen(),
-                tlpxden: self.tlpxden(),
-                thsexiten: self.thsexiten(),
-                tlpxcen: self.tlpxcen(),
-                tclkposten: self.tclkposten(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Wpcr0 {{ uix4: {=u8:?}, swcl: {=bool:?}, swdl0: {=bool:?}, swdl1: {=bool:?}, hsicl: {=bool:?}, hsidl0: {=bool:?}, hsidl1: {=bool:?}, ftxsmcl: {=bool:?}, ftxsmdl: {=bool:?}, cdoffdl: {=bool:?}, tddl: {=bool:?}, pden: {=bool:?}, tclkprepen: {=bool:?}, tclkzeroen: {=bool:?}, thsprepen: {=bool:?}, thstrailen: {=bool:?}, thszeroen: {=bool:?}, tlpxden: {=bool:?}, thsexiten: {=bool:?}, tlpxcen: {=bool:?}, tclkposten: {=bool:?} }}" , self . uix4 () , self . swcl () , self . swdl0 () , self . swdl1 () , self . hsicl () , self . hsidl0 () , self . hsidl1 () , self . ftxsmcl () , self . ftxsmdl () , self . cdoffdl () , self . tddl () , self . pden () , self . tclkprepen () , self . tclkzeroen () , self . thsprepen () , self . thstrailen () , self . thszeroen () , self . tlpxden () , self . thsexiten () , self . tlpxcen () , self . tclkposten ())
         }
     }
     #[doc = "DSI Wrapper PHY Configuration Register 1."]
@@ -6259,30 +5505,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wpcr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wpcr1 {
-                hstxdcl: u8,
-                hstxdll: u8,
-                lpsrcl: u8,
-                lpsrdl: u8,
-                sdcc: bool,
-                hstxsrccl: u8,
-                hstxsrcdl: u8,
-                flprxlpm: bool,
-                lprxft: u8,
-            }
-            let proxy = Wpcr1 {
-                hstxdcl: self.hstxdcl(),
-                hstxdll: self.hstxdll(),
-                lpsrcl: self.lpsrcl(),
-                lpsrdl: self.lpsrdl(),
-                sdcc: self.sdcc(),
-                hstxsrccl: self.hstxsrccl(),
-                hstxsrcdl: self.hstxsrcdl(),
-                flprxlpm: self.flprxlpm(),
-                lprxft: self.lprxft(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Wpcr1 {{ hstxdcl: {=u8:?}, hstxdll: {=u8:?}, lpsrcl: {=u8:?}, lpsrdl: {=u8:?}, sdcc: {=bool:?}, hstxsrccl: {=u8:?}, hstxsrcdl: {=u8:?}, flprxlpm: {=bool:?}, lprxft: {=u8:?} }}" , self . hstxdcl () , self . hstxdll () , self . lpsrcl () , self . lpsrdl () , self . sdcc () , self . hstxsrccl () , self . hstxsrcdl () , self . flprxlpm () , self . lprxft ())
         }
     }
     #[doc = "DSI Wrapper PHY Configuration Register 2."]
@@ -6354,20 +5577,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wpcr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wpcr2 {
-                tclkprep: u8,
-                tclkzeo: u8,
-                thsprep: u8,
-                thstrail: u8,
-            }
-            let proxy = Wpcr2 {
-                tclkprep: self.tclkprep(),
-                tclkzeo: self.tclkzeo(),
-                thsprep: self.thsprep(),
-                thstrail: self.thstrail(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Wpcr2 {{ tclkprep: {=u8:?}, tclkzeo: {=u8:?}, thsprep: {=u8:?}, thstrail: {=u8:?} }}",
+                self.tclkprep(),
+                self.tclkzeo(),
+                self.thsprep(),
+                self.thstrail()
+            )
         }
     }
     #[doc = "DSI Wrapper PHY Configuration Register 3."]
@@ -6439,20 +5656,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wpcr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wpcr3 {
-                thszero: u8,
-                tlpxd: u8,
-                thsexit: u8,
-                tlpxc: u8,
-            }
-            let proxy = Wpcr3 {
-                thszero: self.thszero(),
-                tlpxd: self.tlpxd(),
-                thsexit: self.thsexit(),
-                tlpxc: self.tlpxc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Wpcr3 {{ thszero: {=u8:?}, tlpxd: {=u8:?}, thsexit: {=u8:?}, tlpxc: {=u8:?} }}",
+                self.thszero(),
+                self.tlpxd(),
+                self.thsexit(),
+                self.tlpxc()
+            )
         }
     }
     #[doc = "DSI Wrapper PHY Configuration Register 4."]
@@ -6486,14 +5697,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wpcr4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wpcr4 {
-                tclkpost: u8,
-            }
-            let proxy = Wpcr4 {
-                tclkpost: self.tclkpost(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Wpcr4 {{ tclkpost: {=u8:?} }}", self.tclkpost())
         }
     }
     #[doc = "DSI Wrapper Regulator and PLL Control Register."]
@@ -6577,22 +5781,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrpcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wrpcr {
-                pllen: bool,
-                ndiv: u8,
-                idf: u8,
-                odf: u8,
-                regen: bool,
-            }
-            let proxy = Wrpcr {
-                pllen: self.pllen(),
-                ndiv: self.ndiv(),
-                idf: self.idf(),
-                odf: self.odf(),
-                regen: self.regen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Wrpcr {{ pllen: {=bool:?}, ndiv: {=u8:?}, idf: {=u8:?}, odf: {=u8:?}, regen: {=bool:?} }}",
+                self.pllen(),
+                self.ndiv(),
+                self.idf(),
+                self.odf(),
+                self.regen()
+            )
         }
     }
 }

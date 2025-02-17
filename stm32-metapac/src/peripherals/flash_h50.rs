@@ -245,20 +245,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Acr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Acr {
-                latency: u8,
-                wrhighfreq: u8,
-                prften: bool,
-                s_prften: bool,
-            }
-            let proxy = Acr {
-                latency: self.latency(),
-                wrhighfreq: self.wrhighfreq(),
-                prften: self.prften(),
-                s_prften: self.s_prften(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Acr {{ latency: {=u8:?}, wrhighfreq: {=u8:?}, prften: {=bool:?}, s_prften: {=bool:?} }}",
+                self.latency(),
+                self.wrhighfreq(),
+                self.prften(),
+                self.s_prften()
+            )
         }
     }
     #[doc = "FLASH Flash ECC correction register"]
@@ -354,24 +348,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ecccorr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ecccorr {
-                addr_ecc: u16,
-                bk_ecc: bool,
-                sysf_ecc: bool,
-                otp_ecc: bool,
-                ecccie: bool,
-                eccc: bool,
-            }
-            let proxy = Ecccorr {
-                addr_ecc: self.addr_ecc(),
-                bk_ecc: self.bk_ecc(),
-                sysf_ecc: self.sysf_ecc(),
-                otp_ecc: self.otp_ecc(),
-                ecccie: self.ecccie(),
-                eccc: self.eccc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ecccorr {{ addr_ecc: {=u16:?}, bk_ecc: {=bool:?}, sysf_ecc: {=bool:?}, otp_ecc: {=bool:?}, ecccie: {=bool:?}, eccc: {=bool:?} }}" , self . addr_ecc () , self . bk_ecc () , self . sysf_ecc () , self . otp_ecc () , self . ecccie () , self . eccc ())
         }
     }
     #[doc = "FLASH ECC detection register"]
@@ -455,22 +432,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Eccdetr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Eccdetr {
-                addr_ecc: u16,
-                bk_ecc: bool,
-                sysf_ecc: bool,
-                otp_ecc: bool,
-                eccd: bool,
-            }
-            let proxy = Eccdetr {
-                addr_ecc: self.addr_ecc(),
-                bk_ecc: self.bk_ecc(),
-                sysf_ecc: self.sysf_ecc(),
-                otp_ecc: self.otp_ecc(),
-                eccd: self.eccd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Eccdetr {{ addr_ecc: {=u16:?}, bk_ecc: {=bool:?}, sysf_ecc: {=bool:?}, otp_ecc: {=bool:?}, eccd: {=bool:?} }}" , self . addr_ecc () , self . bk_ecc () , self . sysf_ecc () , self . otp_ecc () , self . eccd ())
         }
     }
     #[doc = "FLASH ECC data"]
@@ -504,14 +466,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Eccdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Eccdr {
-                data_ecc: u16,
-            }
-            let proxy = Eccdr {
-                data_ecc: self.data_ecc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Eccdr {{ data_ecc: {=u16:?} }}", self.data_ecc())
         }
     }
     #[doc = "FLASH HDP Bank1 register"]
@@ -559,16 +514,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hdp1r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hdp1r {
-                hdp1_strt: u8,
-                hdp1_end: u8,
-            }
-            let proxy = Hdp1r {
-                hdp1_strt: self.hdp1_strt(),
-                hdp1_end: self.hdp1_end(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Hdp1r {{ hdp1_strt: {=u8:?}, hdp1_end: {=u8:?} }}",
+                self.hdp1_strt(),
+                self.hdp1_end()
+            )
         }
     }
     #[doc = "FLASH HDP Bank2 register"]
@@ -616,16 +567,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hdp2r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hdp2r {
-                hdp2_strt: u8,
-                hdp2_end: u8,
-            }
-            let proxy = Hdp2r {
-                hdp2_strt: self.hdp2_strt(),
-                hdp2_end: self.hdp2_end(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Hdp2r {{ hdp2_strt: {=u8:?}, hdp2_end: {=u8:?} }}",
+                self.hdp2_strt(),
+                self.hdp2_end()
+            )
         }
     }
     #[doc = "FLASH HDP extension register"]
@@ -673,16 +620,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hdpextr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hdpextr {
-                hdp1_ext: u8,
-                hdp2_ext: u8,
-            }
-            let proxy = Hdpextr {
-                hdp1_ext: self.hdp1_ext(),
-                hdp2_ext: self.hdp2_ext(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Hdpextr {{ hdp1_ext: {=u8:?}, hdp2_ext: {=u8:?} }}",
+                self.hdp1_ext(),
+                self.hdp2_ext()
+            )
         }
     }
     #[doc = "FLASH non-secure unique boot entry register"]
@@ -730,16 +673,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nsbootr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Nsbootr {
-                nsboot_lock: super::vals::NsbootrNsbootLock,
-                nsbootadd: u32,
-            }
-            let proxy = Nsbootr {
-                nsboot_lock: self.nsboot_lock(),
-                nsbootadd: self.nsbootadd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Nsbootr {{ nsboot_lock: {:?}, nsbootadd: {=u32:?} }}",
+                self.nsboot_lock(),
+                self.nsbootadd()
+            )
         }
     }
     #[doc = "FLASH non-secure clear control register"]
@@ -835,24 +774,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nsccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Nsccr {
-                clr_eop: bool,
-                clr_wrperr: bool,
-                clr_pgserr: bool,
-                clr_strberr: bool,
-                clr_incerr: bool,
-                clr_optchangeerr: bool,
-            }
-            let proxy = Nsccr {
-                clr_eop: self.clr_eop(),
-                clr_wrperr: self.clr_wrperr(),
-                clr_pgserr: self.clr_pgserr(),
-                clr_strberr: self.clr_strberr(),
-                clr_incerr: self.clr_incerr(),
-                clr_optchangeerr: self.clr_optchangeerr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Nsccr {{ clr_eop: {=bool:?}, clr_wrperr: {=bool:?}, clr_pgserr: {=bool:?}, clr_strberr: {=bool:?}, clr_incerr: {=bool:?}, clr_optchangeerr: {=bool:?} }}" , self . clr_eop () , self . clr_wrperr () , self . clr_pgserr () , self . clr_strberr () , self . clr_incerr () , self . clr_optchangeerr ())
         }
     }
     #[doc = "FLASH Non Secure control register"]
@@ -1056,42 +978,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nscr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Nscr {
-                lock: bool,
-                pg: bool,
-                ser: bool,
-                ber: bool,
-                fw: bool,
-                strt: bool,
-                snb: u8,
-                mer: bool,
-                eopie: bool,
-                wrperrie: bool,
-                pgserrie: bool,
-                strberrie: bool,
-                incerrie: bool,
-                optchangeerrie: bool,
-                bksel: super::vals::Bksel,
-            }
-            let proxy = Nscr {
-                lock: self.lock(),
-                pg: self.pg(),
-                ser: self.ser(),
-                ber: self.ber(),
-                fw: self.fw(),
-                strt: self.strt(),
-                snb: self.snb(),
-                mer: self.mer(),
-                eopie: self.eopie(),
-                wrperrie: self.wrperrie(),
-                pgserrie: self.pgserrie(),
-                strberrie: self.strberrie(),
-                incerrie: self.incerrie(),
-                optchangeerrie: self.optchangeerrie(),
-                bksel: self.bksel(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Nscr {{ lock: {=bool:?}, pg: {=bool:?}, ser: {=bool:?}, ber: {=bool:?}, fw: {=bool:?}, strt: {=bool:?}, snb: {=u8:?}, mer: {=bool:?}, eopie: {=bool:?}, wrperrie: {=bool:?}, pgserrie: {=bool:?}, strberrie: {=bool:?}, incerrie: {=bool:?}, optchangeerrie: {=bool:?}, bksel: {:?} }}" , self . lock () , self . pg () , self . ser () , self . ber () , self . fw () , self . strt () , self . snb () , self . mer () , self . eopie () , self . wrperrie () , self . pgserrie () , self . strberrie () , self . incerrie () , self . optchangeerrie () , self . bksel ())
         }
     }
     #[doc = "FLASH non-secure status register"]
@@ -1223,30 +1110,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nssr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Nssr {
-                bsy: bool,
-                wbne: bool,
-                dbne: bool,
-                eop: bool,
-                wrperr: bool,
-                pgserr: bool,
-                strberr: bool,
-                incerr: bool,
-                optchangeerr: bool,
-            }
-            let proxy = Nssr {
-                bsy: self.bsy(),
-                wbne: self.wbne(),
-                dbne: self.dbne(),
-                eop: self.eop(),
-                wrperr: self.wrperr(),
-                pgserr: self.pgserr(),
-                strberr: self.strberr(),
-                incerr: self.incerr(),
-                optchangeerr: self.optchangeerr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Nssr {{ bsy: {=bool:?}, wbne: {=bool:?}, dbne: {=bool:?}, eop: {=bool:?}, wrperr: {=bool:?}, pgserr: {=bool:?}, strberr: {=bool:?}, incerr: {=bool:?}, optchangeerr: {=bool:?} }}" , self . bsy () , self . wbne () , self . dbne () , self . eop () , self . wrperr () , self . pgserr () , self . strberr () , self . incerr () , self . optchangeerr ())
         }
     }
     #[doc = "FLASH operation status register"]
@@ -1330,22 +1194,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Opsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Opsr {
-                addr_op: u32,
-                bk_op: bool,
-                sysf_op: bool,
-                otp_op: bool,
-                code_op: super::vals::CodeOp,
-            }
-            let proxy = Opsr {
-                addr_op: self.addr_op(),
-                bk_op: self.bk_op(),
-                sysf_op: self.sysf_op(),
-                otp_op: self.otp_op(),
-                code_op: self.code_op(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Opsr {{ addr_op: {=u32:?}, bk_op: {=bool:?}, sysf_op: {=bool:?}, otp_op: {=bool:?}, code_op: {:?} }}",
+                self.addr_op(),
+                self.bk_op(),
+                self.sysf_op(),
+                self.otp_op(),
+                self.code_op()
+            )
         }
     }
     #[doc = "FLASH option control register"]
@@ -1405,18 +1262,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Optcr {
-                optlock: bool,
-                optstrt: bool,
-                swap_bank: bool,
-            }
-            let proxy = Optcr {
-                optlock: self.optlock(),
-                optstrt: self.optstrt(),
-                swap_bank: self.swap_bank(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Optcr {{ optlock: {=bool:?}, optstrt: {=bool:?}, swap_bank: {=bool:?} }}",
+                self.optlock(),
+                self.optstrt(),
+                self.swap_bank()
+            )
         }
     }
     #[doc = "FLASH option status register"]
@@ -1596,38 +1448,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Optsr {
-                bor_lev: super::vals::OptsrBorLev,
-                borh_en: bool,
-                iwdg_sw: super::vals::OptsrIwdgSw,
-                wwdg_sw: super::vals::OptsrWwdgSw,
-                nrst_shdw: super::vals::OptsrNrstShdw,
-                nrst_stop: super::vals::OptsrNrstStop,
-                nrst_stdby: super::vals::OptsrNrstStdby,
-                product_state: super::vals::ProductState,
-                io_vdd_hslv: super::vals::OptsrIoVddHslv,
-                io_vddio2_hslv: super::vals::OptsrIoVddioHslv,
-                iwdg_stop: super::vals::OptsrIwdgStop,
-                iwdg_stdby: super::vals::OptsrIwdgStdby,
-                swap_bank: bool,
-            }
-            let proxy = Optsr {
-                bor_lev: self.bor_lev(),
-                borh_en: self.borh_en(),
-                iwdg_sw: self.iwdg_sw(),
-                wwdg_sw: self.wwdg_sw(),
-                nrst_shdw: self.nrst_shdw(),
-                nrst_stop: self.nrst_stop(),
-                nrst_stdby: self.nrst_stdby(),
-                product_state: self.product_state(),
-                io_vdd_hslv: self.io_vdd_hslv(),
-                io_vddio2_hslv: self.io_vddio2_hslv(),
-                iwdg_stop: self.iwdg_stop(),
-                iwdg_stdby: self.iwdg_stdby(),
-                swap_bank: self.swap_bank(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Optsr {{ bor_lev: {:?}, borh_en: {=bool:?}, iwdg_sw: {:?}, wwdg_sw: {:?}, nrst_shdw: {:?}, nrst_stop: {:?}, nrst_stdby: {:?}, product_state: {:?}, io_vdd_hslv: {:?}, io_vddio2_hslv: {:?}, iwdg_stop: {:?}, iwdg_stdby: {:?}, swap_bank: {=bool:?} }}" , self . bor_lev () , self . borh_en () , self . iwdg_sw () , self . wwdg_sw () , self . nrst_shdw () , self . nrst_stop () , self . nrst_stdby () , self . product_state () , self . io_vdd_hslv () , self . io_vddio2_hslv () , self . iwdg_stop () , self . iwdg_stdby () , self . swap_bank ())
         }
     }
     #[doc = "FLASH option status register 2"]
@@ -1711,22 +1532,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optsr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Optsr2 {
-                sram2_rst: bool,
-                bkpram_ecc: super::vals::OptsrBkpramEcc,
-                sram2_ecc: super::vals::OptsrSramEcc,
-                sram1_rst: bool,
-                sram1_ecc: super::vals::OptsrSramEcc,
-            }
-            let proxy = Optsr2 {
-                sram2_rst: self.sram2_rst(),
-                bkpram_ecc: self.bkpram_ecc(),
-                sram2_ecc: self.sram2_ecc(),
-                sram1_rst: self.sram1_rst(),
-                sram1_ecc: self.sram1_ecc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Optsr2 {{ sram2_rst: {=bool:?}, bkpram_ecc: {:?}, sram2_ecc: {:?}, sram1_rst: {=bool:?}, sram1_ecc: {:?} }}" , self . sram2_rst () , self . bkpram_ecc () , self . sram2_ecc () , self . sram1_rst () , self . sram1_ecc ())
         }
     }
     #[doc = "FLASH non-secure OTP block lock"]
@@ -1764,12 +1570,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Otpblr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Otpblr {
-                lockbl: u32,
-            }
-            let proxy = Otpblr { lockbl: self.lockbl() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Otpblr {{ lockbl: {=u32:?} }}", self.lockbl())
         }
     }
     #[doc = "FLASH privilege register for bank 1"]
@@ -1803,12 +1604,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Privbb {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Privbb {
-                privbb: super::vals::Privbb,
-            }
-            let proxy = Privbb { privbb: self.privbb() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Privbb {{ privbb: {:?} }}", self.privbb())
         }
     }
     #[doc = "FLASH privilege configuration register"]
@@ -1842,12 +1638,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Privcfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Privcfgr {
-                nspriv: super::vals::Nspriv,
-            }
-            let proxy = Privcfgr { nspriv: self.nspriv() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Privcfgr {{ nspriv: {:?} }}", self.nspriv())
         }
     }
     #[doc = "FLASH secure status register"]
@@ -1967,28 +1758,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Secsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Secsr {
-                secbsy: bool,
-                secwbne: bool,
-                secdbne: bool,
-                seceop: bool,
-                secwrperr: bool,
-                secpgserr: bool,
-                secstrberr: bool,
-                secincerr: bool,
-            }
-            let proxy = Secsr {
-                secbsy: self.secbsy(),
-                secwbne: self.secwbne(),
-                secdbne: self.secdbne(),
-                seceop: self.seceop(),
-                secwrperr: self.secwrperr(),
-                secpgserr: self.secpgserr(),
-                secstrberr: self.secstrberr(),
-                secincerr: self.secincerr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Secsr {{ secbsy: {=bool:?}, secwbne: {=bool:?}, secdbne: {=bool:?}, seceop: {=bool:?}, secwrperr: {=bool:?}, secpgserr: {=bool:?}, secstrberr: {=bool:?}, secincerr: {=bool:?} }}" , self . secbsy () , self . secwbne () , self . secdbne () , self . seceop () , self . secwrperr () , self . secpgserr () , self . secstrberr () , self . secincerr ())
         }
     }
     #[doc = "FLASH write sector protection for Bank2"]
@@ -2022,12 +1792,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrp {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wrp {
-                wrpsg: u8,
-            }
-            let proxy = Wrp { wrpsg: self.wrpsg() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Wrp {{ wrpsg: {=u8:?} }}", self.wrpsg())
         }
     }
 }
@@ -2106,7 +1871,7 @@ pub mod vals {
     }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct NsbootrNsbootLock(pub u8);
+    pub struct NsbootrNsbootLock(u8);
     impl NsbootrNsbootLock {
         #[doc = "The NSBOOTADD and SWAP_BANK are frozen."]
         pub const B_0X_B4: Self = Self(0xb4);
@@ -2561,7 +2326,7 @@ pub mod vals {
     }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Privbb(pub u8);
+    pub struct Privbb(u8);
     impl Privbb {
         #[doc = "sectors y in bank 1 is non privileged"]
         pub const B_0X0: Self = Self(0x0);
@@ -2607,281 +2372,56 @@ pub mod vals {
             Privbb::to_bits(val)
         }
     }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum ProductState {
-        _RESERVED_0 = 0x0,
-        _RESERVED_1 = 0x01,
-        _RESERVED_2 = 0x02,
-        _RESERVED_3 = 0x03,
-        _RESERVED_4 = 0x04,
-        _RESERVED_5 = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-        _RESERVED_8 = 0x08,
-        _RESERVED_9 = 0x09,
-        _RESERVED_a = 0x0a,
-        _RESERVED_b = 0x0b,
-        _RESERVED_c = 0x0c,
-        _RESERVED_d = 0x0d,
-        _RESERVED_e = 0x0e,
-        _RESERVED_f = 0x0f,
-        _RESERVED_10 = 0x10,
-        _RESERVED_11 = 0x11,
-        _RESERVED_12 = 0x12,
-        _RESERVED_13 = 0x13,
-        _RESERVED_14 = 0x14,
-        _RESERVED_15 = 0x15,
-        _RESERVED_16 = 0x16,
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub struct ProductState(u8);
+    impl ProductState {
         #[doc = "Provisioning"]
-        PROVISIONING = 0x17,
-        _RESERVED_18 = 0x18,
-        _RESERVED_19 = 0x19,
-        _RESERVED_1a = 0x1a,
-        _RESERVED_1b = 0x1b,
-        _RESERVED_1c = 0x1c,
-        _RESERVED_1d = 0x1d,
-        _RESERVED_1e = 0x1e,
-        _RESERVED_1f = 0x1f,
-        _RESERVED_20 = 0x20,
-        _RESERVED_21 = 0x21,
-        _RESERVED_22 = 0x22,
-        _RESERVED_23 = 0x23,
-        _RESERVED_24 = 0x24,
-        _RESERVED_25 = 0x25,
-        _RESERVED_26 = 0x26,
-        _RESERVED_27 = 0x27,
-        _RESERVED_28 = 0x28,
-        _RESERVED_29 = 0x29,
-        _RESERVED_2a = 0x2a,
-        _RESERVED_2b = 0x2b,
-        _RESERVED_2c = 0x2c,
-        _RESERVED_2d = 0x2d,
+        pub const PROVISIONING: Self = Self(0x17);
         #[doc = "iROT-Provisioned"]
-        IROT_PROVISIONED = 0x2e,
-        _RESERVED_2f = 0x2f,
-        _RESERVED_30 = 0x30,
-        _RESERVED_31 = 0x31,
-        _RESERVED_32 = 0x32,
-        _RESERVED_33 = 0x33,
-        _RESERVED_34 = 0x34,
-        _RESERVED_35 = 0x35,
-        _RESERVED_36 = 0x36,
-        _RESERVED_37 = 0x37,
-        _RESERVED_38 = 0x38,
-        _RESERVED_39 = 0x39,
-        _RESERVED_3a = 0x3a,
-        _RESERVED_3b = 0x3b,
-        _RESERVED_3c = 0x3c,
-        _RESERVED_3d = 0x3d,
-        _RESERVED_3e = 0x3e,
-        _RESERVED_3f = 0x3f,
-        _RESERVED_40 = 0x40,
-        _RESERVED_41 = 0x41,
-        _RESERVED_42 = 0x42,
-        _RESERVED_43 = 0x43,
-        _RESERVED_44 = 0x44,
-        _RESERVED_45 = 0x45,
-        _RESERVED_46 = 0x46,
-        _RESERVED_47 = 0x47,
-        _RESERVED_48 = 0x48,
-        _RESERVED_49 = 0x49,
-        _RESERVED_4a = 0x4a,
-        _RESERVED_4b = 0x4b,
-        _RESERVED_4c = 0x4c,
-        _RESERVED_4d = 0x4d,
-        _RESERVED_4e = 0x4e,
-        _RESERVED_4f = 0x4f,
-        _RESERVED_50 = 0x50,
-        _RESERVED_51 = 0x51,
-        _RESERVED_52 = 0x52,
-        _RESERVED_53 = 0x53,
-        _RESERVED_54 = 0x54,
-        _RESERVED_55 = 0x55,
-        _RESERVED_56 = 0x56,
-        _RESERVED_57 = 0x57,
-        _RESERVED_58 = 0x58,
-        _RESERVED_59 = 0x59,
-        _RESERVED_5a = 0x5a,
-        _RESERVED_5b = 0x5b,
+        pub const IROT_PROVISIONED: Self = Self(0x2e);
         #[doc = "Locked"]
-        LOCKED = 0x5c,
-        _RESERVED_5d = 0x5d,
-        _RESERVED_5e = 0x5e,
-        _RESERVED_5f = 0x5f,
-        _RESERVED_60 = 0x60,
-        _RESERVED_61 = 0x61,
-        _RESERVED_62 = 0x62,
-        _RESERVED_63 = 0x63,
-        _RESERVED_64 = 0x64,
-        _RESERVED_65 = 0x65,
-        _RESERVED_66 = 0x66,
-        _RESERVED_67 = 0x67,
-        _RESERVED_68 = 0x68,
-        _RESERVED_69 = 0x69,
-        _RESERVED_6a = 0x6a,
-        _RESERVED_6b = 0x6b,
-        _RESERVED_6c = 0x6c,
-        _RESERVED_6d = 0x6d,
-        _RESERVED_6e = 0x6e,
-        _RESERVED_6f = 0x6f,
-        _RESERVED_70 = 0x70,
-        _RESERVED_71 = 0x71,
+        pub const LOCKED: Self = Self(0x5c);
         #[doc = "Closed"]
-        CLOSED = 0x72,
-        _RESERVED_73 = 0x73,
-        _RESERVED_74 = 0x74,
-        _RESERVED_75 = 0x75,
-        _RESERVED_76 = 0x76,
-        _RESERVED_77 = 0x77,
-        _RESERVED_78 = 0x78,
-        _RESERVED_79 = 0x79,
-        _RESERVED_7a = 0x7a,
-        _RESERVED_7b = 0x7b,
-        _RESERVED_7c = 0x7c,
-        _RESERVED_7d = 0x7d,
-        _RESERVED_7e = 0x7e,
-        _RESERVED_7f = 0x7f,
-        _RESERVED_80 = 0x80,
-        _RESERVED_81 = 0x81,
-        _RESERVED_82 = 0x82,
-        _RESERVED_83 = 0x83,
-        _RESERVED_84 = 0x84,
-        _RESERVED_85 = 0x85,
-        _RESERVED_86 = 0x86,
-        _RESERVED_87 = 0x87,
-        _RESERVED_88 = 0x88,
-        _RESERVED_89 = 0x89,
-        _RESERVED_8a = 0x8a,
-        _RESERVED_8b = 0x8b,
-        _RESERVED_8c = 0x8c,
-        _RESERVED_8d = 0x8d,
-        _RESERVED_8e = 0x8e,
-        _RESERVED_8f = 0x8f,
-        _RESERVED_90 = 0x90,
-        _RESERVED_91 = 0x91,
-        _RESERVED_92 = 0x92,
-        _RESERVED_93 = 0x93,
-        _RESERVED_94 = 0x94,
-        _RESERVED_95 = 0x95,
-        _RESERVED_96 = 0x96,
-        _RESERVED_97 = 0x97,
-        _RESERVED_98 = 0x98,
-        _RESERVED_99 = 0x99,
+        pub const CLOSED: Self = Self(0x72);
         #[doc = "Regression"]
-        REGRESSION = 0x9a,
-        _RESERVED_9b = 0x9b,
-        _RESERVED_9c = 0x9c,
-        _RESERVED_9d = 0x9d,
-        _RESERVED_9e = 0x9e,
-        _RESERVED_9f = 0x9f,
-        _RESERVED_a0 = 0xa0,
-        _RESERVED_a1 = 0xa1,
-        _RESERVED_a2 = 0xa2,
-        _RESERVED_a3 = 0xa3,
-        _RESERVED_a4 = 0xa4,
-        _RESERVED_a5 = 0xa5,
-        _RESERVED_a6 = 0xa6,
-        _RESERVED_a7 = 0xa7,
-        _RESERVED_a8 = 0xa8,
-        _RESERVED_a9 = 0xa9,
-        _RESERVED_aa = 0xaa,
-        _RESERVED_ab = 0xab,
-        _RESERVED_ac = 0xac,
-        _RESERVED_ad = 0xad,
-        _RESERVED_ae = 0xae,
-        _RESERVED_af = 0xaf,
-        _RESERVED_b0 = 0xb0,
-        _RESERVED_b1 = 0xb1,
-        _RESERVED_b2 = 0xb2,
-        _RESERVED_b3 = 0xb3,
-        _RESERVED_b4 = 0xb4,
-        _RESERVED_b5 = 0xb5,
-        _RESERVED_b6 = 0xb6,
-        _RESERVED_b7 = 0xb7,
-        _RESERVED_b8 = 0xb8,
-        _RESERVED_b9 = 0xb9,
-        _RESERVED_ba = 0xba,
-        _RESERVED_bb = 0xbb,
-        _RESERVED_bc = 0xbc,
-        _RESERVED_bd = 0xbd,
-        _RESERVED_be = 0xbe,
-        _RESERVED_bf = 0xbf,
-        _RESERVED_c0 = 0xc0,
-        _RESERVED_c1 = 0xc1,
-        _RESERVED_c2 = 0xc2,
-        _RESERVED_c3 = 0xc3,
-        _RESERVED_c4 = 0xc4,
-        _RESERVED_c5 = 0xc5,
-        _RESERVED_c6 = 0xc6,
-        _RESERVED_c7 = 0xc7,
-        _RESERVED_c8 = 0xc8,
-        _RESERVED_c9 = 0xc9,
-        _RESERVED_ca = 0xca,
-        _RESERVED_cb = 0xcb,
-        _RESERVED_cc = 0xcc,
-        _RESERVED_cd = 0xcd,
-        _RESERVED_ce = 0xce,
-        _RESERVED_cf = 0xcf,
-        _RESERVED_d0 = 0xd0,
-        _RESERVED_d1 = 0xd1,
-        _RESERVED_d2 = 0xd2,
-        _RESERVED_d3 = 0xd3,
-        _RESERVED_d4 = 0xd4,
-        _RESERVED_d5 = 0xd5,
-        _RESERVED_d6 = 0xd6,
-        _RESERVED_d7 = 0xd7,
-        _RESERVED_d8 = 0xd8,
-        _RESERVED_d9 = 0xd9,
-        _RESERVED_da = 0xda,
-        _RESERVED_db = 0xdb,
-        _RESERVED_dc = 0xdc,
-        _RESERVED_dd = 0xdd,
-        _RESERVED_de = 0xde,
-        _RESERVED_df = 0xdf,
-        _RESERVED_e0 = 0xe0,
-        _RESERVED_e1 = 0xe1,
-        _RESERVED_e2 = 0xe2,
-        _RESERVED_e3 = 0xe3,
-        _RESERVED_e4 = 0xe4,
-        _RESERVED_e5 = 0xe5,
-        _RESERVED_e6 = 0xe6,
-        _RESERVED_e7 = 0xe7,
-        _RESERVED_e8 = 0xe8,
-        _RESERVED_e9 = 0xe9,
-        _RESERVED_ea = 0xea,
-        _RESERVED_eb = 0xeb,
-        _RESERVED_ec = 0xec,
+        pub const REGRESSION: Self = Self(0x9a);
         #[doc = "Open"]
-        OPEN = 0xed,
-        _RESERVED_ee = 0xee,
-        _RESERVED_ef = 0xef,
-        _RESERVED_f0 = 0xf0,
-        _RESERVED_f1 = 0xf1,
-        _RESERVED_f2 = 0xf2,
-        _RESERVED_f3 = 0xf3,
-        _RESERVED_f4 = 0xf4,
-        _RESERVED_f5 = 0xf5,
-        _RESERVED_f6 = 0xf6,
-        _RESERVED_f7 = 0xf7,
-        _RESERVED_f8 = 0xf8,
-        _RESERVED_f9 = 0xf9,
-        _RESERVED_fa = 0xfa,
-        _RESERVED_fb = 0xfb,
-        _RESERVED_fc = 0xfc,
-        _RESERVED_fd = 0xfd,
-        _RESERVED_fe = 0xfe,
-        _RESERVED_ff = 0xff,
+        pub const OPEN: Self = Self(0xed);
     }
     impl ProductState {
-        #[inline(always)]
         pub const fn from_bits(val: u8) -> ProductState {
-            unsafe { core::mem::transmute(val & 0xff) }
+            Self(val & 0xff)
         }
-        #[inline(always)]
         pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
+            self.0
+        }
+    }
+    impl core::fmt::Debug for ProductState {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            match self.0 {
+                0x17 => f.write_str("PROVISIONING"),
+                0x2e => f.write_str("IROT_PROVISIONED"),
+                0x5c => f.write_str("LOCKED"),
+                0x72 => f.write_str("CLOSED"),
+                0x9a => f.write_str("REGRESSION"),
+                0xed => f.write_str("OPEN"),
+                other => core::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ProductState {
+        fn format(&self, f: defmt::Formatter) {
+            match self.0 {
+                0x17 => defmt::write!(f, "PROVISIONING"),
+                0x2e => defmt::write!(f, "IROT_PROVISIONED"),
+                0x5c => defmt::write!(f, "LOCKED"),
+                0x72 => defmt::write!(f, "CLOSED"),
+                0x9a => defmt::write!(f, "REGRESSION"),
+                0xed => defmt::write!(f, "OPEN"),
+                other => defmt::write!(f, "0x{:02X}", other),
+            }
         }
     }
     impl From<u8> for ProductState {

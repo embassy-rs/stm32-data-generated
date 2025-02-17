@@ -704,14 +704,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DmaccarxBr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DmaccarxBr {
-                currbufaptr: u32,
-            }
-            let proxy = DmaccarxBr {
-                currbufaptr: self.currbufaptr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "DmaccarxBr {{ currbufaptr: {=u32:?} }}", self.currbufaptr())
         }
     }
     #[doc = "Channel current application receive descriptor register"]
@@ -747,14 +740,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DmaccarxDr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DmaccarxDr {
-                currdesaptr: u32,
-            }
-            let proxy = DmaccarxDr {
-                currdesaptr: self.currdesaptr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "DmaccarxDr {{ currdesaptr: {=u32:?} }}", self.currdesaptr())
         }
     }
     #[doc = "Channel current application transmit buffer register"]
@@ -790,14 +776,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DmaccatxBr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DmaccatxBr {
-                curtbufaptr: u32,
-            }
-            let proxy = DmaccatxBr {
-                curtbufaptr: self.curtbufaptr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "DmaccatxBr {{ curtbufaptr: {=u32:?} }}", self.curtbufaptr())
         }
     }
     #[doc = "Channel current application transmit descriptor register"]
@@ -833,14 +812,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DmaccatxDr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DmaccatxDr {
-                curtdesaptr: u32,
-            }
-            let proxy = DmaccatxDr {
-                curtdesaptr: self.curtdesaptr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "DmaccatxDr {{ curtdesaptr: {=u32:?} }}", self.curtdesaptr())
         }
     }
     #[doc = "Channel control register"]
@@ -900,18 +872,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dmaccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dmaccr {
-                mss: u16,
-                pblx8: bool,
-                dsl: u8,
-            }
-            let proxy = Dmaccr {
-                mss: self.mss(),
-                pblx8: self.pblx8(),
-                dsl: self.dsl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dmaccr {{ mss: {=u16:?}, pblx8: {=bool:?}, dsl: {=u8:?} }}",
+                self.mss(),
+                self.pblx8(),
+                self.dsl()
+            )
         }
     }
     #[doc = "Channel interrupt enable register"]
@@ -1091,38 +1058,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dmacier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dmacier {
-                tie: bool,
-                txse: bool,
-                tbue: bool,
-                rie: bool,
-                rbue: bool,
-                rse: bool,
-                rwte: bool,
-                etie: bool,
-                erie: bool,
-                fbee: bool,
-                cdee: bool,
-                aie: bool,
-                nie: bool,
-            }
-            let proxy = Dmacier {
-                tie: self.tie(),
-                txse: self.txse(),
-                tbue: self.tbue(),
-                rie: self.rie(),
-                rbue: self.rbue(),
-                rse: self.rse(),
-                rwte: self.rwte(),
-                etie: self.etie(),
-                erie: self.erie(),
-                fbee: self.fbee(),
-                cdee: self.cdee(),
-                aie: self.aie(),
-                nie: self.nie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Dmacier {{ tie: {=bool:?}, txse: {=bool:?}, tbue: {=bool:?}, rie: {=bool:?}, rbue: {=bool:?}, rse: {=bool:?}, rwte: {=bool:?}, etie: {=bool:?}, erie: {=bool:?}, fbee: {=bool:?}, cdee: {=bool:?}, aie: {=bool:?}, nie: {=bool:?} }}" , self . tie () , self . txse () , self . tbue () , self . rie () , self . rbue () , self . rse () , self . rwte () , self . etie () , self . erie () , self . fbee () , self . cdee () , self . aie () , self . nie ())
         }
     }
     #[doc = "Channel missed frame count register"]
@@ -1170,16 +1106,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dmacmfcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dmacmfcr {
-                mfc: u16,
-                mfco: bool,
-            }
-            let proxy = Dmacmfcr {
-                mfc: self.mfc(),
-                mfco: self.mfco(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dmacmfcr {{ mfc: {=u16:?}, mfco: {=bool:?} }}",
+                self.mfc(),
+                self.mfco()
+            )
         }
     }
     #[doc = "Channel receive control register"]
@@ -1251,20 +1183,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DmacrxCr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DmacrxCr {
-                sr: bool,
-                rbsz: u16,
-                rxpbl: u8,
-                rpf: bool,
-            }
-            let proxy = DmacrxCr {
-                sr: self.sr(),
-                rbsz: self.rbsz(),
-                rxpbl: self.rxpbl(),
-                rpf: self.rpf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "DmacrxCr {{ sr: {=bool:?}, rbsz: {=u16:?}, rxpbl: {=u8:?}, rpf: {=bool:?} }}",
+                self.sr(),
+                self.rbsz(),
+                self.rxpbl(),
+                self.rpf()
+            )
         }
     }
     #[doc = "Channel Rx descriptor list address register"]
@@ -1298,12 +1224,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DmacrxDlar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DmacrxDlar {
-                rdesla: u32,
-            }
-            let proxy = DmacrxDlar { rdesla: self.rdesla() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "DmacrxDlar {{ rdesla: {=u32:?} }}", self.rdesla())
         }
     }
     #[doc = "Channel Rx descriptor tail pointer register"]
@@ -1337,12 +1258,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DmacrxDtpr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DmacrxDtpr {
-                rdt: u32,
-            }
-            let proxy = DmacrxDtpr { rdt: self.rdt() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "DmacrxDtpr {{ rdt: {=u32:?} }}", self.rdt())
         }
     }
     #[doc = "Channel Rx interrupt watchdog timer register"]
@@ -1376,12 +1292,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DmacrxIwtr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DmacrxIwtr {
-                rwt: u8,
-            }
-            let proxy = DmacrxIwtr { rwt: self.rwt() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "DmacrxIwtr {{ rwt: {=u8:?} }}", self.rwt())
         }
     }
     #[doc = "Channel Rx descriptor ring length register"]
@@ -1415,12 +1326,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DmacrxRlr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DmacrxRlr {
-                rdrl: u16,
-            }
-            let proxy = DmacrxRlr { rdrl: self.rdrl() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "DmacrxRlr {{ rdrl: {=u16:?} }}", self.rdrl())
         }
     }
     #[doc = "Channel status register"]
@@ -1624,42 +1530,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dmacsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dmacsr {
-                ti: bool,
-                tps: bool,
-                tbu: bool,
-                ri: bool,
-                rbu: bool,
-                rps: bool,
-                rwt: bool,
-                et: bool,
-                er: bool,
-                fbe: bool,
-                cde: bool,
-                ais: bool,
-                nis: bool,
-                teb: u8,
-                reb: u8,
-            }
-            let proxy = Dmacsr {
-                ti: self.ti(),
-                tps: self.tps(),
-                tbu: self.tbu(),
-                ri: self.ri(),
-                rbu: self.rbu(),
-                rps: self.rps(),
-                rwt: self.rwt(),
-                et: self.et(),
-                er: self.er(),
-                fbe: self.fbe(),
-                cde: self.cde(),
-                ais: self.ais(),
-                nis: self.nis(),
-                teb: self.teb(),
-                reb: self.reb(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Dmacsr {{ ti: {=bool:?}, tps: {=bool:?}, tbu: {=bool:?}, ri: {=bool:?}, rbu: {=bool:?}, rps: {=bool:?}, rwt: {=bool:?}, et: {=bool:?}, er: {=bool:?}, fbe: {=bool:?}, cde: {=bool:?}, ais: {=bool:?}, nis: {=bool:?}, teb: {=u8:?}, reb: {=u8:?} }}" , self . ti () , self . tps () , self . tbu () , self . ri () , self . rbu () , self . rps () , self . rwt () , self . et () , self . er () , self . fbe () , self . cde () , self . ais () , self . nis () , self . teb () , self . reb ())
         }
     }
     #[doc = "Channel transmit control register"]
@@ -1731,20 +1602,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DmactxCr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DmactxCr {
-                st: bool,
-                osf: bool,
-                tse: bool,
-                txpbl: u8,
-            }
-            let proxy = DmactxCr {
-                st: self.st(),
-                osf: self.osf(),
-                tse: self.tse(),
-                txpbl: self.txpbl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "DmactxCr {{ st: {=bool:?}, osf: {=bool:?}, tse: {=bool:?}, txpbl: {=u8:?} }}",
+                self.st(),
+                self.osf(),
+                self.tse(),
+                self.txpbl()
+            )
         }
     }
     #[doc = "Channel Tx descriptor list address register"]
@@ -1778,12 +1643,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DmactxDlar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DmactxDlar {
-                tdesla: u32,
-            }
-            let proxy = DmactxDlar { tdesla: self.tdesla() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "DmactxDlar {{ tdesla: {=u32:?} }}", self.tdesla())
         }
     }
     #[doc = "Channel Tx descriptor tail pointer register"]
@@ -1817,12 +1677,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DmactxDtpr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DmactxDtpr {
-                tdt: u32,
-            }
-            let proxy = DmactxDtpr { tdt: self.tdt() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "DmactxDtpr {{ tdt: {=u32:?} }}", self.tdt())
         }
     }
     #[doc = "Channel Tx descriptor ring length register"]
@@ -1856,12 +1711,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DmactxRlr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DmactxRlr {
-                tdrl: u16,
-            }
-            let proxy = DmactxRlr { tdrl: self.tdrl() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "DmactxRlr {{ tdrl: {=u16:?} }}", self.tdrl())
         }
     }
     #[doc = "Debug status register"]
@@ -1921,18 +1771,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dmadsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dmadsr {
-                axwhsts: bool,
-                rps0: u8,
-                tps0: u8,
-            }
-            let proxy = Dmadsr {
-                axwhsts: self.axwhsts(),
-                rps0: self.rps0(),
-                tps0: self.tps0(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dmadsr {{ axwhsts: {=bool:?}, rps0: {=u8:?}, tps0: {=u8:?} }}",
+                self.axwhsts(),
+                self.rps0(),
+                self.tps0()
+            )
         }
     }
     #[doc = "Interrupt status register"]
@@ -1992,18 +1837,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dmaisr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dmaisr {
-                dc0is: bool,
-                mtlis: bool,
-                macis: bool,
-            }
-            let proxy = Dmaisr {
-                dc0is: self.dc0is(),
-                mtlis: self.mtlis(),
-                macis: self.macis(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dmaisr {{ dc0is: {=bool:?}, mtlis: {=bool:?}, macis: {=bool:?} }}",
+                self.dc0is(),
+                self.mtlis(),
+                self.macis()
+            )
         }
     }
     #[doc = "DMA mode register"]
@@ -2087,22 +1927,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dmamr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dmamr {
-                swr: bool,
-                da: bool,
-                txpr: bool,
-                pr: u8,
-                intm: u8,
-            }
-            let proxy = Dmamr {
-                swr: self.swr(),
-                da: self.da(),
-                txpr: self.txpr(),
-                pr: self.pr(),
-                intm: self.intm(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dmamr {{ swr: {=bool:?}, da: {=bool:?}, txpr: {=bool:?}, pr: {=u8:?}, intm: {=u8:?} }}",
+                self.swr(),
+                self.da(),
+                self.txpr(),
+                self.pr(),
+                self.intm()
+            )
         }
     }
     #[doc = "System bus mode register"]
@@ -2174,20 +2007,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dmasbmr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dmasbmr {
-                fb: bool,
-                aal: bool,
-                mb: bool,
-                rb: bool,
-            }
-            let proxy = Dmasbmr {
-                fb: self.fb(),
-                aal: self.aal(),
-                mb: self.mb(),
-                rb: self.rb(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dmasbmr {{ fb: {=bool:?}, aal: {=bool:?}, mb: {=bool:?}, rb: {=bool:?} }}",
+                self.fb(),
+                self.aal(),
+                self.mb(),
+                self.rb()
+            )
         }
     }
     #[doc = "1-microsecond-tick counter register"]
@@ -2223,14 +2050,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mac1ustcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mac1ustcr {
-                tic_1us_cntr: u16,
-            }
-            let proxy = Mac1ustcr {
-                tic_1us_cntr: self.tic_1us_cntr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Mac1ustcr {{ tic_1us_cntr: {=u16:?} }}", self.tic_1us_cntr())
         }
     }
     #[doc = "Address 0 high register"]
@@ -2278,16 +2098,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Maca0hr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Maca0hr {
-                addrhi: u16,
-                ae: bool,
-            }
-            let proxy = Maca0hr {
-                addrhi: self.addrhi(),
-                ae: self.ae(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Maca0hr {{ addrhi: {=u16:?}, ae: {=bool:?} }}",
+                self.addrhi(),
+                self.ae()
+            )
         }
     }
     #[doc = "Address 0 low register"]
@@ -2321,12 +2137,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Maca0lr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Maca0lr {
-                addrlo: u32,
-            }
-            let proxy = Maca0lr { addrlo: self.addrlo() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Maca0lr {{ addrlo: {=u32:?} }}", self.addrlo())
         }
     }
     #[doc = "Auxiliary control register"]
@@ -2371,36 +2182,17 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macacr")
                 .field("atsfc", &self.atsfc())
-                .field(
-                    "atsen",
-                    &[
-                        self.atsen(0usize),
-                        self.atsen(1usize),
-                        self.atsen(2usize),
-                        self.atsen(3usize),
-                    ],
-                )
+                .field("atsen[0]", &self.atsen(0usize))
+                .field("atsen[1]", &self.atsen(1usize))
+                .field("atsen[2]", &self.atsen(2usize))
+                .field("atsen[3]", &self.atsen(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macacr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macacr {
-                atsfc: bool,
-                atsen: [bool; 4usize],
-            }
-            let proxy = Macacr {
-                atsfc: self.atsfc(),
-                atsen: [
-                    self.atsen(0usize),
-                    self.atsen(1usize),
-                    self.atsen(2usize),
-                    self.atsen(3usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Macacr {{ atsfc: {=bool:?}, atsen[0]: {=bool:?}, atsen[1]: {=bool:?}, atsen[2]: {=bool:?}, atsen[3]: {=bool:?} }}" , self . atsfc () , self . atsen (0usize) , self . atsen (1usize) , self . atsen (2usize) , self . atsen (3usize))
         }
     }
     #[doc = "Address 1/2/3 high register"]
@@ -2472,20 +2264,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macahr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macahr {
-                addrhi: u16,
-                mbc: u8,
-                sa: bool,
-                ae: bool,
-            }
-            let proxy = Macahr {
-                addrhi: self.addrhi(),
-                mbc: self.mbc(),
-                sa: self.sa(),
-                ae: self.ae(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Macahr {{ addrhi: {=u16:?}, mbc: {=u8:?}, sa: {=bool:?}, ae: {=bool:?} }}",
+                self.addrhi(),
+                self.mbc(),
+                self.sa(),
+                self.ae()
+            )
         }
     }
     #[doc = "Address 1/2/3 low register"]
@@ -2519,12 +2305,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macalr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macalr {
-                addrlo: u32,
-            }
-            let proxy = Macalr { addrlo: self.addrlo() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macalr {{ addrlo: {=u32:?} }}", self.addrlo())
         }
     }
     #[doc = "ARP address register"]
@@ -2558,12 +2339,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macarpar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macarpar {
-                arppa: u32,
-            }
-            let proxy = Macarpar { arppa: self.arppa() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macarpar {{ arppa: {=u32:?} }}", self.arppa())
         }
     }
     #[doc = "Auxiliary timestamp nanoseconds register"]
@@ -2597,14 +2373,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macatsnr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macatsnr {
-                auxtslo: u32,
-            }
-            let proxy = Macatsnr {
-                auxtslo: self.auxtslo(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macatsnr {{ auxtslo: {=u32:?} }}", self.auxtslo())
         }
     }
     #[doc = "Auxiliary timestamp seconds register"]
@@ -2638,14 +2407,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macatssr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macatssr {
-                auxtshi: u32,
-            }
-            let proxy = Macatssr {
-                auxtshi: self.auxtshi(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macatssr {{ auxtshi: {=u32:?} }}", self.auxtshi())
         }
     }
     #[doc = "Operating mode configuration register"]
@@ -2945,58 +2707,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Maccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Maccr {
-                re: bool,
-                te: bool,
-                prelen: u8,
-                dc: bool,
-                bl: u8,
-                dr: bool,
-                dcrs: bool,
-                do_: bool,
-                ecrsfd: bool,
-                lm: bool,
-                dm: bool,
-                fes: bool,
-                je: bool,
-                jd: bool,
-                wd: bool,
-                acs: bool,
-                cst: bool,
-                s2kp: bool,
-                gpslce: bool,
-                ipg: u8,
-                ipc: bool,
-                sarc: u8,
-                arpen: bool,
-            }
-            let proxy = Maccr {
-                re: self.re(),
-                te: self.te(),
-                prelen: self.prelen(),
-                dc: self.dc(),
-                bl: self.bl(),
-                dr: self.dr(),
-                dcrs: self.dcrs(),
-                do_: self.do_(),
-                ecrsfd: self.ecrsfd(),
-                lm: self.lm(),
-                dm: self.dm(),
-                fes: self.fes(),
-                je: self.je(),
-                jd: self.jd(),
-                wd: self.wd(),
-                acs: self.acs(),
-                cst: self.cst(),
-                s2kp: self.s2kp(),
-                gpslce: self.gpslce(),
-                ipg: self.ipg(),
-                ipc: self.ipc(),
-                sarc: self.sarc(),
-                arpen: self.arpen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Maccr {{ re: {=bool:?}, te: {=bool:?}, prelen: {=u8:?}, dc: {=bool:?}, bl: {=u8:?}, dr: {=bool:?}, dcrs: {=bool:?}, do_: {=bool:?}, ecrsfd: {=bool:?}, lm: {=bool:?}, dm: {=bool:?}, fes: {=bool:?}, je: {=bool:?}, jd: {=bool:?}, wd: {=bool:?}, acs: {=bool:?}, cst: {=bool:?}, s2kp: {=bool:?}, gpslce: {=bool:?}, ipg: {=u8:?}, ipc: {=bool:?}, sarc: {=u8:?}, arpen: {=bool:?} }}" , self . re () , self . te () , self . prelen () , self . dc () , self . bl () , self . dr () , self . dcrs () , self . do_ () , self . ecrsfd () , self . lm () , self . dm () , self . fes () , self . je () , self . jd () , self . wd () , self . acs () , self . cst () , self . s2kp () , self . gpslce () , self . ipg () , self . ipc () , self . sarc () , self . arpen ())
         }
     }
     #[doc = "Debug register"]
@@ -3068,20 +2779,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macdr {
-                rpests: bool,
-                rfcfcsts: u8,
-                tpests: bool,
-                tfcsts: u8,
-            }
-            let proxy = Macdr {
-                rpests: self.rpests(),
-                rfcfcsts: self.rfcfcsts(),
-                tpests: self.tpests(),
-                tfcsts: self.tfcsts(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Macdr {{ rpests: {=bool:?}, rfcfcsts: {=u8:?}, tpests: {=bool:?}, tfcsts: {=u8:?} }}",
+                self.rpests(),
+                self.rfcfcsts(),
+                self.tpests(),
+                self.tfcsts()
+            )
         }
     }
     #[doc = "Extended operating mode configuration register"]
@@ -3177,24 +2882,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macecr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macecr {
-                gpsl: u16,
-                dcrcc: bool,
-                spen: bool,
-                usp: bool,
-                eipgen: bool,
-                eipg: u8,
-            }
-            let proxy = Macecr {
-                gpsl: self.gpsl(),
-                dcrcc: self.dcrcc(),
-                spen: self.spen(),
-                usp: self.usp(),
-                eipgen: self.eipgen(),
-                eipg: self.eipg(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Macecr {{ gpsl: {=u16:?}, dcrcc: {=bool:?}, spen: {=bool:?}, usp: {=bool:?}, eipgen: {=bool:?}, eipg: {=u8:?} }}" , self . gpsl () , self . dcrcc () , self . spen () , self . usp () , self . eipgen () , self . eipg ())
         }
     }
     #[doc = "Hash Table 0/1 register"]
@@ -3228,12 +2916,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Machtr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Machtr {
-                ht: u32,
-            }
-            let proxy = Machtr { ht: self.ht() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Machtr {{ ht: {=u32:?} }}", self.ht())
         }
     }
     #[doc = "HW feature 1 register"]
@@ -3413,38 +3096,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Machwf1r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Machwf1r {
-                rxfifosize: u8,
-                txfifosize: u8,
-                osten: bool,
-                ptoen: bool,
-                advthword: bool,
-                addr64: u8,
-                dcben: bool,
-                sphen: bool,
-                tsoen: bool,
-                dbgmema: bool,
-                avsel: bool,
-                hashtblsz: u8,
-                l3l4fnum: u8,
-            }
-            let proxy = Machwf1r {
-                rxfifosize: self.rxfifosize(),
-                txfifosize: self.txfifosize(),
-                osten: self.osten(),
-                ptoen: self.ptoen(),
-                advthword: self.advthword(),
-                addr64: self.addr64(),
-                dcben: self.dcben(),
-                sphen: self.sphen(),
-                tsoen: self.tsoen(),
-                dbgmema: self.dbgmema(),
-                avsel: self.avsel(),
-                hashtblsz: self.hashtblsz(),
-                l3l4fnum: self.l3l4fnum(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Machwf1r {{ rxfifosize: {=u8:?}, txfifosize: {=u8:?}, osten: {=bool:?}, ptoen: {=bool:?}, advthword: {=bool:?}, addr64: {=u8:?}, dcben: {=bool:?}, sphen: {=bool:?}, tsoen: {=bool:?}, dbgmema: {=bool:?}, avsel: {=bool:?}, hashtblsz: {=u8:?}, l3l4fnum: {=u8:?} }}" , self . rxfifosize () , self . txfifosize () , self . osten () , self . ptoen () , self . advthword () , self . addr64 () , self . dcben () , self . sphen () , self . tsoen () , self . dbgmema () , self . avsel () , self . hashtblsz () , self . l3l4fnum ())
         }
     }
     #[doc = "HW feature 2 register"]
@@ -3540,24 +3192,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Machwf2r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Machwf2r {
-                rxqcnt: u8,
-                txqcnt: u8,
-                rxchcnt: u8,
-                txchcnt: u8,
-                ppsoutnum: u8,
-                auxsnapnum: u8,
-            }
-            let proxy = Machwf2r {
-                rxqcnt: self.rxqcnt(),
-                txqcnt: self.txqcnt(),
-                rxchcnt: self.rxchcnt(),
-                txchcnt: self.txchcnt(),
-                ppsoutnum: self.ppsoutnum(),
-                auxsnapnum: self.auxsnapnum(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Machwf2r {{ rxqcnt: {=u8:?}, txqcnt: {=u8:?}, rxchcnt: {=u8:?}, txchcnt: {=u8:?}, ppsoutnum: {=u8:?}, auxsnapnum: {=u8:?} }}" , self . rxqcnt () , self . txqcnt () , self . rxchcnt () , self . txchcnt () , self . ppsoutnum () , self . auxsnapnum ())
         }
     }
     #[doc = "Interrupt enable register"]
@@ -3653,24 +3288,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macier {
-                phyie: bool,
-                pmtie: bool,
-                lpiie: bool,
-                tsie: bool,
-                txstsie: bool,
-                rxstsie: bool,
-            }
-            let proxy = Macier {
-                phyie: self.phyie(),
-                pmtie: self.pmtie(),
-                lpiie: self.lpiie(),
-                tsie: self.tsie(),
-                txstsie: self.txstsie(),
-                rxstsie: self.rxstsie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Macier {{ phyie: {=bool:?}, pmtie: {=bool:?}, lpiie: {=bool:?}, tsie: {=bool:?}, txstsie: {=bool:?}, rxstsie: {=bool:?} }}" , self . phyie () , self . pmtie () , self . lpiie () , self . tsie () , self . txstsie () , self . rxstsie ())
         }
     }
     #[doc = "Interrupt status register"]
@@ -3802,30 +3420,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macisr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macisr {
-                phyis: bool,
-                pmtis: bool,
-                lpiis: bool,
-                mmcis: bool,
-                mmcrxis: bool,
-                mmctxis: bool,
-                tsis: bool,
-                txstsis: bool,
-                rxstsis: bool,
-            }
-            let proxy = Macisr {
-                phyis: self.phyis(),
-                pmtis: self.pmtis(),
-                lpiis: self.lpiis(),
-                mmcis: self.mmcis(),
-                mmcrxis: self.mmcrxis(),
-                mmctxis: self.mmctxis(),
-                tsis: self.tsis(),
-                txstsis: self.txstsis(),
-                rxstsis: self.rxstsis(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Macisr {{ phyis: {=bool:?}, pmtis: {=bool:?}, lpiis: {=bool:?}, mmcis: {=bool:?}, mmcrxis: {=bool:?}, mmctxis: {=bool:?}, tsis: {=bool:?}, txstsis: {=bool:?}, rxstsis: {=bool:?} }}" , self . phyis () , self . pmtis () , self . lpiis () , self . mmcis () , self . mmcrxis () , self . mmctxis () , self . tsis () , self . txstsis () , self . rxstsis ())
         }
     }
     #[doc = "Inner VLAN inclusion register"]
@@ -3909,22 +3504,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macivir {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macivir {
-                vlt: u16,
-                vlc: u8,
-                vlp: bool,
-                csvl: bool,
-                vlti: bool,
-            }
-            let proxy = Macivir {
-                vlt: self.vlt(),
-                vlc: self.vlc(),
-                vlp: self.vlp(),
-                csvl: self.csvl(),
-                vlti: self.vlti(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Macivir {{ vlt: {=u16:?}, vlc: {=u8:?}, vlp: {=bool:?}, csvl: {=bool:?}, vlti: {=bool:?} }}",
+                self.vlt(),
+                self.vlc(),
+                self.vlp(),
+                self.csvl(),
+                self.vlti()
+            )
         }
     }
     #[doc = "MACL3A00R"]
@@ -3958,12 +3546,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macl3a00r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macl3a00r {
-                l3a00: u32,
-            }
-            let proxy = Macl3a00r { l3a00: self.l3a00() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macl3a00r {{ l3a00: {=u32:?} }}", self.l3a00())
         }
     }
     #[doc = "Layer3 address 0 filter 1 Register"]
@@ -3997,12 +3580,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macl3a01r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macl3a01r {
-                l3a01: u32,
-            }
-            let proxy = Macl3a01r { l3a01: self.l3a01() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macl3a01r {{ l3a01: {=u32:?} }}", self.l3a01())
         }
     }
     #[doc = "Layer3 address 1 filter 0 register"]
@@ -4036,12 +3614,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macl3a10r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macl3a10r {
-                l3a10: u32,
-            }
-            let proxy = Macl3a10r { l3a10: self.l3a10() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macl3a10r {{ l3a10: {=u32:?} }}", self.l3a10())
         }
     }
     #[doc = "Layer3 address 1 filter 1 register"]
@@ -4075,12 +3648,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macl3a11r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macl3a11r {
-                l3a11: u32,
-            }
-            let proxy = Macl3a11r { l3a11: self.l3a11() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macl3a11r {{ l3a11: {=u32:?} }}", self.l3a11())
         }
     }
     #[doc = "Layer3 Address 2 filter 0 register"]
@@ -4114,12 +3682,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macl3a20 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macl3a20 {
-                l3a20: u32,
-            }
-            let proxy = Macl3a20 { l3a20: self.l3a20() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macl3a20 {{ l3a20: {=u32:?} }}", self.l3a20())
         }
     }
     #[doc = "Layer3 address 2 filter 1 Register"]
@@ -4153,12 +3716,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macl3a21r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macl3a21r {
-                l3a21: u32,
-            }
-            let proxy = Macl3a21r { l3a21: self.l3a21() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macl3a21r {{ l3a21: {=u32:?} }}", self.l3a21())
         }
     }
     #[doc = "Layer3 Address 3 filter 0 register"]
@@ -4192,12 +3750,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macl3a30 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macl3a30 {
-                l3a30: u32,
-            }
-            let proxy = Macl3a30 { l3a30: self.l3a30() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macl3a30 {{ l3a30: {=u32:?} }}", self.l3a30())
         }
     }
     #[doc = "Layer3 address 3 filter 1 register"]
@@ -4231,12 +3784,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macl3a31r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macl3a31r {
-                l3a31: u32,
-            }
-            let proxy = Macl3a31r { l3a31: self.l3a31() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macl3a31r {{ l3a31: {=u32:?} }}", self.l3a31())
         }
     }
     #[doc = "L3 and L4 control 0 register"]
@@ -4404,36 +3952,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macl3l4c0r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macl3l4c0r {
-                l3pen0: bool,
-                l3sam0: bool,
-                l3saim0: bool,
-                l3dam0: bool,
-                l3daim0: bool,
-                l3hsbm0: u8,
-                l3hdbm0: u8,
-                l4pen0: bool,
-                l4spm0: bool,
-                l4spim0: bool,
-                l4dpm0: bool,
-                l4dpim0: bool,
-            }
-            let proxy = Macl3l4c0r {
-                l3pen0: self.l3pen0(),
-                l3sam0: self.l3sam0(),
-                l3saim0: self.l3saim0(),
-                l3dam0: self.l3dam0(),
-                l3daim0: self.l3daim0(),
-                l3hsbm0: self.l3hsbm0(),
-                l3hdbm0: self.l3hdbm0(),
-                l4pen0: self.l4pen0(),
-                l4spm0: self.l4spm0(),
-                l4spim0: self.l4spim0(),
-                l4dpm0: self.l4dpm0(),
-                l4dpim0: self.l4dpim0(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Macl3l4c0r {{ l3pen0: {=bool:?}, l3sam0: {=bool:?}, l3saim0: {=bool:?}, l3dam0: {=bool:?}, l3daim0: {=bool:?}, l3hsbm0: {=u8:?}, l3hdbm0: {=u8:?}, l4pen0: {=bool:?}, l4spm0: {=bool:?}, l4spim0: {=bool:?}, l4dpm0: {=bool:?}, l4dpim0: {=bool:?} }}" , self . l3pen0 () , self . l3sam0 () , self . l3saim0 () , self . l3dam0 () , self . l3daim0 () , self . l3hsbm0 () , self . l3hdbm0 () , self . l4pen0 () , self . l4spm0 () , self . l4spim0 () , self . l4dpm0 () , self . l4dpim0 ())
         }
     }
     #[doc = "L3 and L4 control 1 register"]
@@ -4601,36 +4120,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macl3l4c1r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macl3l4c1r {
-                l3pen1: bool,
-                l3sam1: bool,
-                l3saim1: bool,
-                l3dam1: bool,
-                l3daim1: bool,
-                l3hsbm1: u8,
-                l3hdbm1: u8,
-                l4pen1: bool,
-                l4spm1: bool,
-                l4spim1: bool,
-                l4dpm1: bool,
-                l4dpim1: bool,
-            }
-            let proxy = Macl3l4c1r {
-                l3pen1: self.l3pen1(),
-                l3sam1: self.l3sam1(),
-                l3saim1: self.l3saim1(),
-                l3dam1: self.l3dam1(),
-                l3daim1: self.l3daim1(),
-                l3hsbm1: self.l3hsbm1(),
-                l3hdbm1: self.l3hdbm1(),
-                l4pen1: self.l4pen1(),
-                l4spm1: self.l4spm1(),
-                l4spim1: self.l4spim1(),
-                l4dpm1: self.l4dpm1(),
-                l4dpim1: self.l4dpim1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Macl3l4c1r {{ l3pen1: {=bool:?}, l3sam1: {=bool:?}, l3saim1: {=bool:?}, l3dam1: {=bool:?}, l3daim1: {=bool:?}, l3hsbm1: {=u8:?}, l3hdbm1: {=u8:?}, l4pen1: {=bool:?}, l4spm1: {=bool:?}, l4spim1: {=bool:?}, l4dpm1: {=bool:?}, l4dpim1: {=bool:?} }}" , self . l3pen1 () , self . l3sam1 () , self . l3saim1 () , self . l3dam1 () , self . l3daim1 () , self . l3hsbm1 () , self . l3hdbm1 () , self . l4pen1 () , self . l4spm1 () , self . l4spim1 () , self . l4dpm1 () , self . l4dpim1 ())
         }
     }
     #[doc = "Layer4 address filter 0 register"]
@@ -4678,16 +4168,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macl4a0r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macl4a0r {
-                l4sp0: u16,
-                l4dp0: u16,
-            }
-            let proxy = Macl4a0r {
-                l4sp0: self.l4sp0(),
-                l4dp0: self.l4dp0(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Macl4a0r {{ l4sp0: {=u16:?}, l4dp0: {=u16:?} }}",
+                self.l4sp0(),
+                self.l4dp0()
+            )
         }
     }
     #[doc = "Layer 4 address filter 1 register"]
@@ -4735,16 +4221,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macl4a1r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macl4a1r {
-                l4sp1: u16,
-                l4dp1: u16,
-            }
-            let proxy = Macl4a1r {
-                l4sp1: self.l4sp1(),
-                l4dp1: self.l4dp1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Macl4a1r {{ l4sp1: {=u16:?}, l4dp1: {=u16:?} }}",
+                self.l4sp1(),
+                self.l4dp1()
+            )
         }
     }
     #[doc = "LPI control status register"]
@@ -4900,34 +4382,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Maclcsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Maclcsr {
-                tlpien: bool,
-                tlpiex: bool,
-                rlpien: bool,
-                rlpiex: bool,
-                tlpist: bool,
-                rlpist: bool,
-                lpien: bool,
-                pls: bool,
-                plsen: bool,
-                lpitxa: bool,
-                lpite: bool,
-            }
-            let proxy = Maclcsr {
-                tlpien: self.tlpien(),
-                tlpiex: self.tlpiex(),
-                rlpien: self.rlpien(),
-                rlpiex: self.rlpiex(),
-                tlpist: self.tlpist(),
-                rlpist: self.rlpist(),
-                lpien: self.lpien(),
-                pls: self.pls(),
-                plsen: self.plsen(),
-                lpitxa: self.lpitxa(),
-                lpite: self.lpite(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Maclcsr {{ tlpien: {=bool:?}, tlpiex: {=bool:?}, rlpien: {=bool:?}, rlpiex: {=bool:?}, tlpist: {=bool:?}, rlpist: {=bool:?}, lpien: {=bool:?}, pls: {=bool:?}, plsen: {=bool:?}, lpitxa: {=bool:?}, lpite: {=bool:?} }}" , self . tlpien () , self . tlpiex () , self . rlpien () , self . rlpiex () , self . tlpist () , self . rlpist () , self . lpien () , self . pls () , self . plsen () , self . lpitxa () , self . lpite ())
         }
     }
     #[doc = "LPI entry timer register"]
@@ -4961,12 +4416,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macletr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macletr {
-                lpiet: u32,
-            }
-            let proxy = Macletr { lpiet: self.lpiet() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macletr {{ lpiet: {=u32:?} }}", self.lpiet())
         }
     }
     #[doc = "Log message interval register"]
@@ -5026,18 +4476,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Maclmir {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Maclmir {
-                lsi: u8,
-                drsyncr: u8,
-                lmpdri: u8,
-            }
-            let proxy = Maclmir {
-                lsi: self.lsi(),
-                drsyncr: self.drsyncr(),
-                lmpdri: self.lmpdri(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Maclmir {{ lsi: {=u8:?}, drsyncr: {=u8:?}, lmpdri: {=u8:?} }}",
+                self.lsi(),
+                self.drsyncr(),
+                self.lmpdri()
+            )
         }
     }
     #[doc = "LPI timers control register"]
@@ -5085,16 +4530,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macltcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macltcr {
-                twt: u16,
-                lst: u16,
-            }
-            let proxy = Macltcr {
-                twt: self.twt(),
-                lst: self.lst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macltcr {{ twt: {=u16:?}, lst: {=u16:?} }}", self.twt(), self.lst())
         }
     }
     #[doc = "MDIO address register"]
@@ -5238,32 +4674,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macmdioar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macmdioar {
-                mb: bool,
-                c45e: bool,
-                goc: u8,
-                skap: bool,
-                cr: u8,
-                ntc: u8,
-                rda: u8,
-                pa: u8,
-                btb: bool,
-                pse: bool,
-            }
-            let proxy = Macmdioar {
-                mb: self.mb(),
-                c45e: self.c45e(),
-                goc: self.goc(),
-                skap: self.skap(),
-                cr: self.cr(),
-                ntc: self.ntc(),
-                rda: self.rda(),
-                pa: self.pa(),
-                btb: self.btb(),
-                pse: self.pse(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Macmdioar {{ mb: {=bool:?}, c45e: {=bool:?}, goc: {=u8:?}, skap: {=bool:?}, cr: {=u8:?}, ntc: {=u8:?}, rda: {=u8:?}, pa: {=u8:?}, btb: {=bool:?}, pse: {=bool:?} }}" , self . mb () , self . c45e () , self . goc () , self . skap () , self . cr () , self . ntc () , self . rda () , self . pa () , self . btb () , self . pse ())
         }
     }
     #[doc = "MDIO data register"]
@@ -5311,16 +4722,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macmdiodr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macmdiodr {
-                md: u16,
-                ra: u16,
-            }
-            let proxy = Macmdiodr {
-                md: self.md(),
-                ra: self.ra(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macmdiodr {{ md: {=u16:?}, ra: {=u16:?} }}", self.md(), self.ra())
         }
     }
     #[doc = "PMT control status register"]
@@ -5452,30 +4854,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macpcsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macpcsr {
-                pwrdwn: bool,
-                mgkpkten: bool,
-                rwkpkten: bool,
-                mgkprcvd: bool,
-                rwkprcvd: bool,
-                glblucast: bool,
-                rwkpfe: bool,
-                rwkptr: u8,
-                rwkfiltrst: bool,
-            }
-            let proxy = Macpcsr {
-                pwrdwn: self.pwrdwn(),
-                mgkpkten: self.mgkpkten(),
-                rwkpkten: self.rwkpkten(),
-                mgkprcvd: self.mgkprcvd(),
-                rwkprcvd: self.rwkprcvd(),
-                glblucast: self.glblucast(),
-                rwkpfe: self.rwkpfe(),
-                rwkptr: self.rwkptr(),
-                rwkfiltrst: self.rwkfiltrst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Macpcsr {{ pwrdwn: {=bool:?}, mgkpkten: {=bool:?}, rwkpkten: {=bool:?}, mgkprcvd: {=bool:?}, rwkprcvd: {=bool:?}, glblucast: {=bool:?}, rwkpfe: {=bool:?}, rwkptr: {=u8:?}, rwkfiltrst: {=bool:?} }}" , self . pwrdwn () , self . mgkpkten () , self . rwkpkten () , self . mgkprcvd () , self . rwkprcvd () , self . glblucast () , self . rwkpfe () , self . rwkptr () , self . rwkfiltrst ())
         }
     }
     #[doc = "Packet filtering control register"]
@@ -5667,40 +5046,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macpfr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macpfr {
-                pr: bool,
-                huc: bool,
-                hmc: bool,
-                daif: bool,
-                pm: bool,
-                dbf: bool,
-                pcf: u8,
-                saif: bool,
-                saf: bool,
-                hpf: bool,
-                vtfe: bool,
-                ipfe: bool,
-                dntu: bool,
-                ra: bool,
-            }
-            let proxy = Macpfr {
-                pr: self.pr(),
-                huc: self.huc(),
-                hmc: self.hmc(),
-                daif: self.daif(),
-                pm: self.pm(),
-                dbf: self.dbf(),
-                pcf: self.pcf(),
-                saif: self.saif(),
-                saf: self.saf(),
-                hpf: self.hpf(),
-                vtfe: self.vtfe(),
-                ipfe: self.ipfe(),
-                dntu: self.dntu(),
-                ra: self.ra(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Macpfr {{ pr: {=bool:?}, huc: {=bool:?}, hmc: {=bool:?}, daif: {=bool:?}, pm: {=bool:?}, dbf: {=bool:?}, pcf: {=u8:?}, saif: {=bool:?}, saf: {=bool:?}, hpf: {=bool:?}, vtfe: {=bool:?}, ipfe: {=bool:?}, dntu: {=bool:?}, ra: {=bool:?} }}" , self . pr () , self . huc () , self . hmc () , self . daif () , self . pm () , self . dbf () , self . pcf () , self . saif () , self . saf () , self . hpf () , self . vtfe () , self . ipfe () , self . dntu () , self . ra ())
         }
     }
     #[doc = "PTP Offload control register"]
@@ -5808,26 +5154,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macpocr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macpocr {
-                ptoen: bool,
-                asyncen: bool,
-                apdreqen: bool,
-                asynctrig: bool,
-                apdreqtrig: bool,
-                drrdis: bool,
-                dn: u8,
-            }
-            let proxy = Macpocr {
-                ptoen: self.ptoen(),
-                asyncen: self.asyncen(),
-                apdreqen: self.apdreqen(),
-                asynctrig: self.asynctrig(),
-                apdreqtrig: self.apdreqtrig(),
-                drrdis: self.drrdis(),
-                dn: self.dn(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Macpocr {{ ptoen: {=bool:?}, asyncen: {=bool:?}, apdreqen: {=bool:?}, asynctrig: {=bool:?}, apdreqtrig: {=bool:?}, drrdis: {=bool:?}, dn: {=u8:?} }}" , self . ptoen () , self . asyncen () , self . apdreqen () , self . asynctrig () , self . apdreqtrig () , self . drrdis () , self . dn ())
         }
     }
     #[doc = "PPS control register"]
@@ -5887,18 +5214,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macppscr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macppscr {
-                ppsctrl: u8,
-                ppsen0: bool,
-                trgtmodsel0: u8,
-            }
-            let proxy = Macppscr {
-                ppsctrl: self.ppsctrl(),
-                ppsen0: self.ppsen0(),
-                trgtmodsel0: self.trgtmodsel0(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Macppscr {{ ppsctrl: {=u8:?}, ppsen0: {=bool:?}, trgtmodsel0: {=u8:?} }}",
+                self.ppsctrl(),
+                self.ppsen0(),
+                self.trgtmodsel0()
+            )
         }
     }
     #[doc = "PPS interval register"]
@@ -5932,14 +5254,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macppsir {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macppsir {
-                ppsint0: u32,
-            }
-            let proxy = Macppsir {
-                ppsint0: self.ppsint0(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macppsir {{ ppsint0: {=u32:?} }}", self.ppsint0())
         }
     }
     #[doc = "PPS target time nanoseconds register"]
@@ -5987,16 +5302,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macppsttnr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macppsttnr {
-                ttsl0: u32,
-                trgtbusy0: bool,
-            }
-            let proxy = Macppsttnr {
-                ttsl0: self.ttsl0(),
-                trgtbusy0: self.trgtbusy0(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Macppsttnr {{ ttsl0: {=u32:?}, trgtbusy0: {=bool:?} }}",
+                self.ttsl0(),
+                self.trgtbusy0()
+            )
         }
     }
     #[doc = "PPS target time seconds register"]
@@ -6030,12 +5341,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macppsttsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macppsttsr {
-                tstrh0: u32,
-            }
-            let proxy = Macppsttsr { tstrh0: self.tstrh0() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macppsttsr {{ tstrh0: {=u32:?} }}", self.tstrh0())
         }
     }
     #[doc = "PPS width register"]
@@ -6071,14 +5377,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macppswr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macppswr {
-                ppswidth0: u32,
-            }
-            let proxy = Macppswr {
-                ppswidth0: self.ppswidth0(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macppswr {{ ppswidth0: {=u32:?} }}", self.ppswidth0())
         }
     }
     #[doc = "Tx Queue flow control register"]
@@ -6162,22 +5461,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MacqtxFcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MacqtxFcr {
-                fcb_bpa: bool,
-                tfe: bool,
-                plt: u8,
-                dzpq: bool,
-                pt: u16,
-            }
-            let proxy = MacqtxFcr {
-                fcb_bpa: self.fcb_bpa(),
-                tfe: self.tfe(),
-                plt: self.plt(),
-                dzpq: self.dzpq(),
-                pt: self.pt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "MacqtxFcr {{ fcb_bpa: {=bool:?}, tfe: {=bool:?}, plt: {=u8:?}, dzpq: {=bool:?}, pt: {=u16:?} }}",
+                self.fcb_bpa(),
+                self.tfe(),
+                self.plt(),
+                self.dzpq(),
+                self.pt()
+            )
         }
     }
     #[doc = "Remove wakeup packet filter register"]
@@ -6213,14 +5505,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macrwkpfr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macrwkpfr {
-                macrwkpfr: u32,
-            }
-            let proxy = Macrwkpfr {
-                macrwkpfr: self.macrwkpfr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macrwkpfr {{ macrwkpfr: {=u32:?} }}", self.macrwkpfr())
         }
     }
     #[doc = "Rx flow control register"]
@@ -6268,16 +5553,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MacrxFcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MacrxFcr {
-                rfe: bool,
-                up: bool,
-            }
-            let proxy = MacrxFcr {
-                rfe: self.rfe(),
-                up: self.up(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "MacrxFcr {{ rfe: {=bool:?}, up: {=bool:?} }}", self.rfe(), self.up())
         }
     }
     #[doc = "Rx Tx status register"]
@@ -6385,26 +5661,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MacrxTxSr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MacrxTxSr {
-                tjt: bool,
-                ncarr: bool,
-                lcarr: bool,
-                exdef: bool,
-                lcol: bool,
-                excol: bool,
-                rwt: bool,
-            }
-            let proxy = MacrxTxSr {
-                tjt: self.tjt(),
-                ncarr: self.ncarr(),
-                lcarr: self.lcarr(),
-                exdef: self.exdef(),
-                lcol: self.lcol(),
-                excol: self.excol(),
-                rwt: self.rwt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "MacrxTxSr {{ tjt: {=bool:?}, ncarr: {=bool:?}, lcarr: {=bool:?}, exdef: {=bool:?}, lcol: {=bool:?}, excol: {=bool:?}, rwt: {=bool:?} }}" , self . tjt () , self . ncarr () , self . lcarr () , self . exdef () , self . lcol () , self . excol () , self . rwt ())
         }
     }
     #[doc = "PTP Source Port Identity 0 Register"]
@@ -6438,12 +5695,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macspi0r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macspi0r {
-                spi0: u32,
-            }
-            let proxy = Macspi0r { spi0: self.spi0() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macspi0r {{ spi0: {=u32:?} }}", self.spi0())
         }
     }
     #[doc = "PTP Source port identity 1 register"]
@@ -6477,12 +5729,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macspi1r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macspi1r {
-                spi1: u32,
-            }
-            let proxy = Macspi1r { spi1: self.spi1() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macspi1r {{ spi1: {=u32:?} }}", self.spi1())
         }
     }
     #[doc = "PTP Source port identity 2 register"]
@@ -6516,12 +5763,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macspi2r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macspi2r {
-                spi2: u16,
-            }
-            let proxy = Macspi2r { spi2: self.spi2() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macspi2r {{ spi2: {=u16:?} }}", self.spi2())
         }
     }
     #[doc = "Sub-second increment register"]
@@ -6569,16 +5811,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macssir {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macssir {
-                snsinc: u8,
-                ssinc: u8,
-            }
-            let proxy = Macssir {
-                snsinc: self.snsinc(),
-                ssinc: self.ssinc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Macssir {{ snsinc: {=u8:?}, ssinc: {=u8:?} }}",
+                self.snsinc(),
+                self.ssinc()
+            )
         }
     }
     #[doc = "System time nanoseconds register"]
@@ -6612,12 +5850,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macstnr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macstnr {
-                tsss: u32,
-            }
-            let proxy = Macstnr { tsss: self.tsss() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macstnr {{ tsss: {=u32:?} }}", self.tsss())
         }
     }
     #[doc = "System time nanoseconds update register"]
@@ -6665,16 +5898,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macstnur {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macstnur {
-                tsss: u32,
-                addsub: bool,
-            }
-            let proxy = Macstnur {
-                tsss: self.tsss(),
-                addsub: self.addsub(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Macstnur {{ tsss: {=u32:?}, addsub: {=bool:?} }}",
+                self.tsss(),
+                self.addsub()
+            )
         }
     }
     #[doc = "System time seconds register"]
@@ -6708,12 +5937,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macstsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macstsr {
-                tss: u32,
-            }
-            let proxy = Macstsr { tss: self.tss() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macstsr {{ tss: {=u32:?} }}", self.tss())
         }
     }
     #[doc = "System time seconds update register"]
@@ -6747,12 +5971,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macstsur {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macstsur {
-                tss: u32,
-            }
-            let proxy = Macstsur { tss: self.tss() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macstsur {{ tss: {=u32:?} }}", self.tss())
         }
     }
     #[doc = "Timestamp addend register"]
@@ -6786,12 +6005,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mactsar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mactsar {
-                tsar: u32,
-            }
-            let proxy = Mactsar { tsar: self.tsar() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Mactsar {{ tsar: {=u32:?} }}", self.tsar())
         }
     }
     #[doc = "Timestamp control Register"]
@@ -7019,46 +6233,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mactscr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mactscr {
-                tsena: bool,
-                tscfupdt: bool,
-                tsinit: bool,
-                tsupdt: bool,
-                tsaddreg: bool,
-                tsenall: bool,
-                tsctrlssr: bool,
-                tsver2ena: bool,
-                tsipena: bool,
-                tsipv6ena: bool,
-                tsipv4ena: bool,
-                tsevntena: bool,
-                tsmstrena: bool,
-                snaptypsel: u8,
-                tsenmacaddr: bool,
-                csc: bool,
-                txtsstsm: bool,
-            }
-            let proxy = Mactscr {
-                tsena: self.tsena(),
-                tscfupdt: self.tscfupdt(),
-                tsinit: self.tsinit(),
-                tsupdt: self.tsupdt(),
-                tsaddreg: self.tsaddreg(),
-                tsenall: self.tsenall(),
-                tsctrlssr: self.tsctrlssr(),
-                tsver2ena: self.tsver2ena(),
-                tsipena: self.tsipena(),
-                tsipv6ena: self.tsipv6ena(),
-                tsipv4ena: self.tsipv4ena(),
-                tsevntena: self.tsevntena(),
-                tsmstrena: self.tsmstrena(),
-                snaptypsel: self.snaptypsel(),
-                tsenmacaddr: self.tsenmacaddr(),
-                csc: self.csc(),
-                txtsstsm: self.txtsstsm(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Mactscr {{ tsena: {=bool:?}, tscfupdt: {=bool:?}, tsinit: {=bool:?}, tsupdt: {=bool:?}, tsaddreg: {=bool:?}, tsenall: {=bool:?}, tsctrlssr: {=bool:?}, tsver2ena: {=bool:?}, tsipena: {=bool:?}, tsipv6ena: {=bool:?}, tsipv4ena: {=bool:?}, tsevntena: {=bool:?}, tsmstrena: {=bool:?}, snaptypsel: {=u8:?}, tsenmacaddr: {=bool:?}, csc: {=bool:?}, txtsstsm: {=bool:?} }}" , self . tsena () , self . tscfupdt () , self . tsinit () , self . tsupdt () , self . tsaddreg () , self . tsenall () , self . tsctrlssr () , self . tsver2ena () , self . tsipena () , self . tsipv6ena () , self . tsipv4ena () , self . tsevntena () , self . tsmstrena () , self . snaptypsel () , self . tsenmacaddr () , self . csc () , self . txtsstsm ())
         }
     }
     #[doc = "Timestamp Egress asymmetric correction register"]
@@ -7092,12 +6267,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mactseacr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mactseacr {
-                osteac: u32,
-            }
-            let proxy = Mactseacr { osteac: self.osteac() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Mactseacr {{ osteac: {=u32:?} }}", self.osteac())
         }
     }
     #[doc = "Timestamp Egress correction nanosecond register"]
@@ -7131,12 +6301,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mactsecnr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mactsecnr {
-                tsec: u32,
-            }
-            let proxy = Mactsecnr { tsec: self.tsec() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Mactsecnr {{ tsec: {=u32:?} }}", self.tsec())
         }
     }
     #[doc = "Timestamp Ingress asymmetric correction register"]
@@ -7170,12 +6335,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mactsiacr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mactsiacr {
-                ostiac: u32,
-            }
-            let proxy = Mactsiacr { ostiac: self.ostiac() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Mactsiacr {{ ostiac: {=u32:?} }}", self.ostiac())
         }
     }
     #[doc = "Timestamp Ingress correction nanosecond register"]
@@ -7209,12 +6369,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mactsicnr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mactsicnr {
-                tsic: u32,
-            }
-            let proxy = Mactsicnr { tsic: self.tsic() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Mactsicnr {{ tsic: {=u32:?} }}", self.tsic())
         }
     }
     #[doc = "Timestamp status register"]
@@ -7334,28 +6489,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mactssr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mactssr {
-                tssovf: bool,
-                tstargt0: bool,
-                auxtstrig: bool,
-                tstrgterr0: bool,
-                txtssis: bool,
-                atsstn: u8,
-                atsstm: bool,
-                atsns: u8,
-            }
-            let proxy = Mactssr {
-                tssovf: self.tssovf(),
-                tstargt0: self.tstargt0(),
-                auxtstrig: self.auxtstrig(),
-                tstrgterr0: self.tstrgterr0(),
-                txtssis: self.txtssis(),
-                atsstn: self.atsstn(),
-                atsstm: self.atsstm(),
-                atsns: self.atsns(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Mactssr {{ tssovf: {=bool:?}, tstargt0: {=bool:?}, auxtstrig: {=bool:?}, tstrgterr0: {=bool:?}, txtssis: {=bool:?}, atsstn: {=u8:?}, atsstm: {=bool:?}, atsns: {=u8:?} }}" , self . tssovf () , self . tstargt0 () , self . auxtstrig () , self . tstrgterr0 () , self . txtssis () , self . atsstn () , self . atsstm () , self . atsns ())
         }
     }
     #[doc = "Tx timestamp status nanoseconds register"]
@@ -7403,16 +6537,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MactxTssnr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MactxTssnr {
-                txtsslo: u32,
-                txtssmis: bool,
-            }
-            let proxy = MactxTssnr {
-                txtsslo: self.txtsslo(),
-                txtssmis: self.txtssmis(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "MactxTssnr {{ txtsslo: {=u32:?}, txtssmis: {=bool:?} }}",
+                self.txtsslo(),
+                self.txtssmis()
+            )
         }
     }
     #[doc = "Tx timestamp status seconds register"]
@@ -7446,14 +6576,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MactxTsssr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MactxTsssr {
-                txtsshi: u32,
-            }
-            let proxy = MactxTsssr {
-                txtsshi: self.txtsshi(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "MactxTsssr {{ txtsshi: {=u32:?} }}", self.txtsshi())
         }
     }
     #[doc = "VLAN Hash table register"]
@@ -7487,12 +6610,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macvhtr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macvhtr {
-                vlht: u16,
-            }
-            let proxy = Macvhtr { vlht: self.vlht() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macvhtr {{ vlht: {=u16:?} }}", self.vlht())
         }
     }
     #[doc = "VLAN inclusion register"]
@@ -7576,22 +6694,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macvir {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macvir {
-                vlt: u16,
-                vlc: u8,
-                vlp: bool,
-                csvl: bool,
-                vlti: bool,
-            }
-            let proxy = Macvir {
-                vlt: self.vlt(),
-                vlc: self.vlc(),
-                vlp: self.vlp(),
-                csvl: self.csvl(),
-                vlti: self.vlti(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Macvir {{ vlt: {=u16:?}, vlc: {=u8:?}, vlp: {=bool:?}, csvl: {=bool:?}, vlti: {=bool:?} }}",
+                self.vlt(),
+                self.vlc(),
+                self.vlp(),
+                self.csvl(),
+                self.vlti()
+            )
         }
     }
     #[doc = "Version register"]
@@ -7639,16 +6750,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macvr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macvr {
-                snpsver: u8,
-                userver: u8,
-            }
-            let proxy = Macvr {
-                snpsver: self.snpsver(),
-                userver: self.userver(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Macvr {{ snpsver: {=u8:?}, userver: {=u8:?} }}",
+                self.snpsver(),
+                self.userver()
+            )
         }
     }
     #[doc = "VLAN tag register"]
@@ -7828,38 +6935,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macvtr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macvtr {
-                vl: u16,
-                etv: bool,
-                vtim: bool,
-                esvl: bool,
-                ersvlm: bool,
-                dovltc: bool,
-                evls: u8,
-                evlrxs: bool,
-                vthm: bool,
-                edvlp: bool,
-                erivlt: bool,
-                eivls: u8,
-                eivlrxs: bool,
-            }
-            let proxy = Macvtr {
-                vl: self.vl(),
-                etv: self.etv(),
-                vtim: self.vtim(),
-                esvl: self.esvl(),
-                ersvlm: self.ersvlm(),
-                dovltc: self.dovltc(),
-                evls: self.evls(),
-                evlrxs: self.evlrxs(),
-                vthm: self.vthm(),
-                edvlp: self.edvlp(),
-                erivlt: self.erivlt(),
-                eivls: self.eivls(),
-                eivlrxs: self.eivlrxs(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Macvtr {{ vl: {=u16:?}, etv: {=bool:?}, vtim: {=bool:?}, esvl: {=bool:?}, ersvlm: {=bool:?}, dovltc: {=bool:?}, evls: {=u8:?}, evlrxs: {=bool:?}, vthm: {=bool:?}, edvlp: {=bool:?}, erivlt: {=bool:?}, eivls: {=u8:?}, eivlrxs: {=bool:?} }}" , self . vl () , self . etv () , self . vtim () , self . esvl () , self . ersvlm () , self . dovltc () , self . evls () , self . evlrxs () , self . vthm () , self . edvlp () , self . erivlt () , self . eivls () , self . eivlrxs ())
         }
     }
     #[doc = "Watchdog timeout register"]
@@ -7907,16 +6983,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macwtr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Macwtr {
-                wto: u8,
-                pwe: bool,
-            }
-            let proxy = Macwtr {
-                wto: self.wto(),
-                pwe: self.pwe(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Macwtr {{ wto: {=u8:?}, pwe: {=bool:?} }}", self.wto(), self.pwe())
         }
     }
     #[doc = "MMC control register"]
@@ -8024,26 +7091,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MmcControl {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MmcControl {
-                cntrst: bool,
-                cntstopro: bool,
-                rstonrd: bool,
-                cntfreez: bool,
-                cntprst: bool,
-                cntprstlvl: bool,
-                ucdbc: bool,
-            }
-            let proxy = MmcControl {
-                cntrst: self.cntrst(),
-                cntstopro: self.cntstopro(),
-                rstonrd: self.rstonrd(),
-                cntfreez: self.cntfreez(),
-                cntprst: self.cntprst(),
-                cntprstlvl: self.cntprstlvl(),
-                ucdbc: self.ucdbc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "MmcControl {{ cntrst: {=bool:?}, cntstopro: {=bool:?}, rstonrd: {=bool:?}, cntfreez: {=bool:?}, cntprst: {=bool:?}, cntprstlvl: {=bool:?}, ucdbc: {=bool:?} }}" , self . cntrst () , self . cntstopro () , self . rstonrd () , self . cntfreez () , self . cntprst () , self . cntprstlvl () , self . ucdbc ())
         }
     }
     #[doc = "MMC Rx interrupt register"]
@@ -8127,22 +7175,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MmcRxInterrupt {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MmcRxInterrupt {
-                rxcrcerpis: bool,
-                rxalgnerpis: bool,
-                rxucgpis: bool,
-                rxlpiuscis: bool,
-                rxlpitrcis: bool,
-            }
-            let proxy = MmcRxInterrupt {
-                rxcrcerpis: self.rxcrcerpis(),
-                rxalgnerpis: self.rxalgnerpis(),
-                rxucgpis: self.rxucgpis(),
-                rxlpiuscis: self.rxlpiuscis(),
-                rxlpitrcis: self.rxlpitrcis(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "MmcRxInterrupt {{ rxcrcerpis: {=bool:?}, rxalgnerpis: {=bool:?}, rxucgpis: {=bool:?}, rxlpiuscis: {=bool:?}, rxlpitrcis: {=bool:?} }}" , self . rxcrcerpis () , self . rxalgnerpis () , self . rxucgpis () , self . rxlpiuscis () , self . rxlpitrcis ())
         }
     }
     #[doc = "MMC Rx interrupt mask register"]
@@ -8226,22 +7259,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MmcRxInterruptMask {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MmcRxInterruptMask {
-                rxcrcerpim: bool,
-                rxalgnerpim: bool,
-                rxucgpim: bool,
-                rxlpiuscim: bool,
-                rxlpitrcim: bool,
-            }
-            let proxy = MmcRxInterruptMask {
-                rxcrcerpim: self.rxcrcerpim(),
-                rxalgnerpim: self.rxalgnerpim(),
-                rxucgpim: self.rxucgpim(),
-                rxlpiuscim: self.rxlpiuscim(),
-                rxlpitrcim: self.rxlpitrcim(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "MmcRxInterruptMask {{ rxcrcerpim: {=bool:?}, rxalgnerpim: {=bool:?}, rxucgpim: {=bool:?}, rxlpiuscim: {=bool:?}, rxlpitrcim: {=bool:?} }}" , self . rxcrcerpim () , self . rxalgnerpim () , self . rxucgpim () , self . rxlpiuscim () , self . rxlpitrcim ())
         }
     }
     #[doc = "MMC Tx interrupt register"]
@@ -8325,22 +7343,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MmcTxInterrupt {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MmcTxInterrupt {
-                txscolgpis: bool,
-                txmcolgpis: bool,
-                txgpktis: bool,
-                txlpiuscis: bool,
-                txlpitrcis: bool,
-            }
-            let proxy = MmcTxInterrupt {
-                txscolgpis: self.txscolgpis(),
-                txmcolgpis: self.txmcolgpis(),
-                txgpktis: self.txgpktis(),
-                txlpiuscis: self.txlpiuscis(),
-                txlpitrcis: self.txlpitrcis(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "MmcTxInterrupt {{ txscolgpis: {=bool:?}, txmcolgpis: {=bool:?}, txgpktis: {=bool:?}, txlpiuscis: {=bool:?}, txlpitrcis: {=bool:?} }}" , self . txscolgpis () , self . txmcolgpis () , self . txgpktis () , self . txlpiuscis () , self . txlpitrcis ())
         }
     }
     #[doc = "MMC Tx interrupt mask register"]
@@ -8424,22 +7427,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MmcTxInterruptMask {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MmcTxInterruptMask {
-                txscolgpim: bool,
-                txmcolgpim: bool,
-                txgpktim: bool,
-                txlpiuscim: bool,
-                txlpitrcim: bool,
-            }
-            let proxy = MmcTxInterruptMask {
-                txscolgpim: self.txscolgpim(),
-                txmcolgpim: self.txmcolgpim(),
-                txgpktim: self.txgpktim(),
-                txlpiuscim: self.txlpiuscim(),
-                txlpitrcim: self.txlpitrcim(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "MmcTxInterruptMask {{ txscolgpim: {=bool:?}, txmcolgpim: {=bool:?}, txgpktim: {=bool:?}, txlpiuscim: {=bool:?}, txlpitrcim: {=bool:?} }}" , self . txscolgpim () , self . txmcolgpim () , self . txgpktim () , self . txlpiuscim () , self . txlpitrcim ())
         }
     }
     #[doc = "Interrupt status Register"]
@@ -8473,12 +7461,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mtlisr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mtlisr {
-                q0is: bool,
-            }
-            let proxy = Mtlisr { q0is: self.q0is() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Mtlisr {{ q0is: {=bool:?} }}", self.q0is())
         }
     }
     #[doc = "Operating mode Register"]
@@ -8538,18 +7521,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mtlomr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mtlomr {
-                dtxsts: bool,
-                cntprst: bool,
-                cntclr: bool,
-            }
-            let proxy = Mtlomr {
-                dtxsts: self.dtxsts(),
-                cntprst: self.cntprst(),
-                cntclr: self.cntclr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Mtlomr {{ dtxsts: {=bool:?}, cntprst: {=bool:?}, cntclr: {=bool:?} }}",
+                self.dtxsts(),
+                self.cntprst(),
+                self.cntclr()
+            )
         }
     }
     #[doc = "Queue interrupt control status Register"]
@@ -8621,20 +7599,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mtlqicsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mtlqicsr {
-                txunfis: bool,
-                txuie: bool,
-                rxovfis: bool,
-                rxoie: bool,
-            }
-            let proxy = Mtlqicsr {
-                txunfis: self.txunfis(),
-                txuie: self.txuie(),
-                rxovfis: self.rxovfis(),
-                rxoie: self.rxoie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Mtlqicsr {{ txunfis: {=bool:?}, txuie: {=bool:?}, rxovfis: {=bool:?}, rxoie: {=bool:?} }}",
+                self.txunfis(),
+                self.txuie(),
+                self.rxovfis(),
+                self.rxoie()
+            )
         }
     }
     #[doc = "Rx queue debug register"]
@@ -8706,20 +7678,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MtlrxQdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MtlrxQdr {
-                rwcsts: bool,
-                rrcsts: u8,
-                rxqsts: u8,
-                prxq: u16,
-            }
-            let proxy = MtlrxQdr {
-                rwcsts: self.rwcsts(),
-                rrcsts: self.rrcsts(),
-                rxqsts: self.rxqsts(),
-                prxq: self.prxq(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "MtlrxQdr {{ rwcsts: {=bool:?}, rrcsts: {=u8:?}, rxqsts: {=u8:?}, prxq: {=u16:?} }}",
+                self.rwcsts(),
+                self.rrcsts(),
+                self.rxqsts(),
+                self.prxq()
+            )
         }
     }
     #[doc = "Rx queue missed packet and overflow counter register"]
@@ -8791,20 +7757,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MtlrxQmpocr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MtlrxQmpocr {
-                ovfpktcnt: u16,
-                ovfcntovf: bool,
-                mispktcnt: u16,
-                miscntovf: bool,
-            }
-            let proxy = MtlrxQmpocr {
-                ovfpktcnt: self.ovfpktcnt(),
-                ovfcntovf: self.ovfcntovf(),
-                mispktcnt: self.mispktcnt(),
-                miscntovf: self.miscntovf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "MtlrxQmpocr {{ ovfpktcnt: {=u16:?}, ovfcntovf: {=bool:?}, mispktcnt: {=u16:?}, miscntovf: {=bool:?} }}" , self . ovfpktcnt () , self . ovfcntovf () , self . mispktcnt () , self . miscntovf ())
         }
     }
     #[doc = "Rx queue operating mode register"]
@@ -8936,30 +7889,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MtlrxQomr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MtlrxQomr {
-                rtc: u8,
-                fup: bool,
-                fep: bool,
-                rsf: bool,
-                dis_tcp_ef: bool,
-                ehfc: bool,
-                rfa: u8,
-                rfd: u8,
-                rqs: u8,
-            }
-            let proxy = MtlrxQomr {
-                rtc: self.rtc(),
-                fup: self.fup(),
-                fep: self.fep(),
-                rsf: self.rsf(),
-                dis_tcp_ef: self.dis_tcp_ef(),
-                ehfc: self.ehfc(),
-                rfa: self.rfa(),
-                rfd: self.rfd(),
-                rqs: self.rqs(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "MtlrxQomr {{ rtc: {=u8:?}, fup: {=bool:?}, fep: {=bool:?}, rsf: {=bool:?}, dis_tcp_ef: {=bool:?}, ehfc: {=bool:?}, rfa: {=u8:?}, rfd: {=u8:?}, rqs: {=u8:?} }}" , self . rtc () , self . fup () , self . fep () , self . rsf () , self . dis_tcp_ef () , self . ehfc () , self . rfa () , self . rfd () , self . rqs ())
         }
     }
     #[doc = "Tx queue debug Register"]
@@ -9067,26 +7997,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MtltxQdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MtltxQdr {
-                txqpaused: bool,
-                trcsts: u8,
-                twcsts: bool,
-                txqsts: bool,
-                txstsfsts: bool,
-                ptxq: u8,
-                stxstsf: u8,
-            }
-            let proxy = MtltxQdr {
-                txqpaused: self.txqpaused(),
-                trcsts: self.trcsts(),
-                twcsts: self.twcsts(),
-                txqsts: self.txqsts(),
-                txstsfsts: self.txstsfsts(),
-                ptxq: self.ptxq(),
-                stxstsf: self.stxstsf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "MtltxQdr {{ txqpaused: {=bool:?}, trcsts: {=u8:?}, twcsts: {=bool:?}, txqsts: {=bool:?}, txstsfsts: {=bool:?}, ptxq: {=u8:?}, stxstsf: {=u8:?} }}" , self . txqpaused () , self . trcsts () , self . twcsts () , self . txqsts () , self . txstsfsts () , self . ptxq () , self . stxstsf ())
         }
     }
     #[doc = "Tx queue operating mode Register"]
@@ -9170,22 +8081,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MtltxQomr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MtltxQomr {
-                ftq: bool,
-                tsf: bool,
-                txqen: u8,
-                ttc: u8,
-                tqs: u8,
-            }
-            let proxy = MtltxQomr {
-                ftq: self.ftq(),
-                tsf: self.tsf(),
-                txqen: self.txqen(),
-                ttc: self.ttc(),
-                tqs: self.tqs(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "MtltxQomr {{ ftq: {=bool:?}, tsf: {=bool:?}, txqen: {=u8:?}, ttc: {=u8:?}, tqs: {=u8:?} }}",
+                self.ftq(),
+                self.tsf(),
+                self.txqen(),
+                self.ttc(),
+                self.tqs()
+            )
         }
     }
     #[doc = "Tx queue underflow register"]
@@ -9233,16 +8137,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MtltxQur {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MtltxQur {
-                uffrmcnt: u16,
-                ufcntovf: bool,
-            }
-            let proxy = MtltxQur {
-                uffrmcnt: self.uffrmcnt(),
-                ufcntovf: self.ufcntovf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "MtltxQur {{ uffrmcnt: {=u16:?}, ufcntovf: {=bool:?} }}",
+                self.uffrmcnt(),
+                self.ufcntovf()
+            )
         }
     }
     #[doc = "Rx alignment error packets register"]
@@ -9278,14 +8178,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RxAlignmentErrorPackets {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RxAlignmentErrorPackets {
-                rxalgnerr: u32,
-            }
-            let proxy = RxAlignmentErrorPackets {
-                rxalgnerr: self.rxalgnerr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "RxAlignmentErrorPackets {{ rxalgnerr: {=u32:?} }}", self.rxalgnerr())
         }
     }
     #[doc = "Rx CRC error packets register"]
@@ -9321,14 +8214,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RxCrcErrorPackets {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RxCrcErrorPackets {
-                rxcrcerr: u32,
-            }
-            let proxy = RxCrcErrorPackets {
-                rxcrcerr: self.rxcrcerr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "RxCrcErrorPackets {{ rxcrcerr: {=u32:?} }}", self.rxcrcerr())
         }
     }
     #[doc = "Rx LPI transition counter register"]
@@ -9364,14 +8250,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RxLpiTranCntr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RxLpiTranCntr {
-                rxlpitrc: u32,
-            }
-            let proxy = RxLpiTranCntr {
-                rxlpitrc: self.rxlpitrc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "RxLpiTranCntr {{ rxlpitrc: {=u32:?} }}", self.rxlpitrc())
         }
     }
     #[doc = "Rx LPI microsecond counter register"]
@@ -9407,14 +8286,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RxLpiUsecCntr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RxLpiUsecCntr {
-                rxlpiusc: u32,
-            }
-            let proxy = RxLpiUsecCntr {
-                rxlpiusc: self.rxlpiusc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "RxLpiUsecCntr {{ rxlpiusc: {=u32:?} }}", self.rxlpiusc())
         }
     }
     #[doc = "Rx unicast packets good register"]
@@ -9450,14 +8322,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RxUnicastPacketsGood {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RxUnicastPacketsGood {
-                rxucastg: u32,
-            }
-            let proxy = RxUnicastPacketsGood {
-                rxucastg: self.rxucastg(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "RxUnicastPacketsGood {{ rxucastg: {=u32:?} }}", self.rxucastg())
         }
     }
     #[doc = "Tx LPI transition counter register"]
@@ -9493,14 +8358,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for TxLpiTranCntr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TxLpiTranCntr {
-                txlpitrc: u32,
-            }
-            let proxy = TxLpiTranCntr {
-                txlpitrc: self.txlpitrc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "TxLpiTranCntr {{ txlpitrc: {=u32:?} }}", self.txlpitrc())
         }
     }
     #[doc = "Tx LPI microsecond timer register"]
@@ -9536,14 +8394,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for TxLpiUsecCntr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TxLpiUsecCntr {
-                txlpiusc: u32,
-            }
-            let proxy = TxLpiUsecCntr {
-                txlpiusc: self.txlpiusc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "TxLpiUsecCntr {{ txlpiusc: {=u32:?} }}", self.txlpiusc())
         }
     }
     #[doc = "Tx multiple collision good packets register"]
@@ -9579,14 +8430,11 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for TxMultipleCollisionGoodPackets {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TxMultipleCollisionGoodPackets {
-                txmultcolg: u32,
-            }
-            let proxy = TxMultipleCollisionGoodPackets {
-                txmultcolg: self.txmultcolg(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "TxMultipleCollisionGoodPackets {{ txmultcolg: {=u32:?} }}",
+                self.txmultcolg()
+            )
         }
     }
     #[doc = "Tx packet count good register"]
@@ -9622,12 +8470,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for TxPacketCountGood {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TxPacketCountGood {
-                txpktg: u32,
-            }
-            let proxy = TxPacketCountGood { txpktg: self.txpktg() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "TxPacketCountGood {{ txpktg: {=u32:?} }}", self.txpktg())
         }
     }
     #[doc = "Tx single collision good packets register"]
@@ -9663,14 +8506,11 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for TxSingleCollisionGoodPackets {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TxSingleCollisionGoodPackets {
-                txsnglcolg: u32,
-            }
-            let proxy = TxSingleCollisionGoodPackets {
-                txsnglcolg: self.txsnglcolg(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "TxSingleCollisionGoodPackets {{ txsnglcolg: {=u32:?} }}",
+                self.txsnglcolg()
+            )
         }
     }
 }

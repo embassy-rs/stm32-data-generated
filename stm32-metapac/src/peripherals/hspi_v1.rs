@@ -203,14 +203,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Abr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Abr {
-                alternate: u32,
-            }
-            let proxy = Abr {
-                alternate: self.alternate(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Abr {{ alternate: {=u32:?} }}", self.alternate())
         }
     }
     #[repr(transparent)]
@@ -245,14 +238,7 @@ is forced to 1. Writes to this field are ignored when BUSY├é┬á=├é┬á1
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ar {
-                address: u32,
-            }
-            let proxy = Ar {
-                address: self.address(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ar {{ address: {=u32:?} }}", self.address())
         }
     }
     #[doc = "HSPI full-cycle calibration configuration."]
@@ -312,18 +298,13 @@ is forced to 1. Writes to this field are ignored when BUSY├é┬á=├é┬á1
     #[cfg(feature = "defmt")]
     impl defmt::Format for Calfcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Calfcr {
-                fine: u8,
-                coarse: u8,
-                calmax: bool,
-            }
-            let proxy = Calfcr {
-                fine: self.fine(),
-                coarse: self.coarse(),
-                calmax: self.calmax(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Calfcr {{ fine: {=u8:?}, coarse: {=u8:?}, calmax: {=bool:?} }}",
+                self.fine(),
+                self.coarse(),
+                self.calmax()
+            )
         }
     }
     #[doc = "HSPI DLL master calibration configuration."]
@@ -371,16 +352,12 @@ is forced to 1. Writes to this field are ignored when BUSY├é┬á=├é┬á1
     #[cfg(feature = "defmt")]
     impl defmt::Format for Calmr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Calmr {
-                fine: u8,
-                coarse: u8,
-            }
-            let proxy = Calmr {
-                fine: self.fine(),
-                coarse: self.coarse(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Calmr {{ fine: {=u8:?}, coarse: {=u8:?} }}",
+                self.fine(),
+                self.coarse()
+            )
         }
     }
     #[doc = "HSPI DLL slave input calibration configuration."]
@@ -428,16 +405,12 @@ is forced to 1. Writes to this field are ignored when BUSY├é┬á=├é┬á1
     #[cfg(feature = "defmt")]
     impl defmt::Format for Calsir {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Calsir {
-                fine: u8,
-                coarse: u8,
-            }
-            let proxy = Calsir {
-                fine: self.fine(),
-                coarse: self.coarse(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Calsir {{ fine: {=u8:?}, coarse: {=u8:?} }}",
+                self.fine(),
+                self.coarse()
+            )
         }
     }
     #[doc = "HSPI DLL slave output calibration configuration."]
@@ -485,16 +458,12 @@ is forced to 1. Writes to this field are ignored when BUSY├é┬á=├é┬á1
     #[cfg(feature = "defmt")]
     impl defmt::Format for Calsor {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Calsor {
-                fine: u8,
-                coarse: u8,
-            }
-            let proxy = Calsor {
-                fine: self.fine(),
-                coarse: self.coarse(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Calsor {{ fine: {=u8:?}, coarse: {=u8:?} }}",
+                self.fine(),
+                self.coarse()
+            )
         }
     }
     #[doc = "HSPI communication configuration register."]
@@ -674,38 +643,7 @@ is forced to 1. Writes to this field are ignored when BUSY├é┬á=├é┬á1
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccr {
-                imode: u8,
-                idtr: bool,
-                isize: u8,
-                admode: u8,
-                addtr: bool,
-                adsize: u8,
-                abmode: u8,
-                abdtr: bool,
-                absize: u8,
-                dmode: u8,
-                ddtr: bool,
-                dqse: bool,
-                sioo: bool,
-            }
-            let proxy = Ccr {
-                imode: self.imode(),
-                idtr: self.idtr(),
-                isize: self.isize(),
-                admode: self.admode(),
-                addtr: self.addtr(),
-                adsize: self.adsize(),
-                abmode: self.abmode(),
-                abdtr: self.abdtr(),
-                absize: self.absize(),
-                dmode: self.dmode(),
-                ddtr: self.ddtr(),
-                dqse: self.dqse(),
-                sioo: self.sioo(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ccr {{ imode: {=u8:?}, idtr: {=bool:?}, isize: {=u8:?}, admode: {=u8:?}, addtr: {=bool:?}, adsize: {=u8:?}, abmode: {=u8:?}, abdtr: {=bool:?}, absize: {=u8:?}, dmode: {=u8:?}, ddtr: {=bool:?}, dqse: {=bool:?}, sioo: {=bool:?} }}" , self . imode () , self . idtr () , self . isize () , self . admode () , self . addtr () , self . adsize () , self . abmode () , self . abdtr () , self . absize () , self . dmode () , self . ddtr () , self . dqse () , self . sioo ())
         }
     }
     #[doc = "HSPI control register."]
@@ -935,44 +873,7 @@ These bits are ignored when in dual-octal configuration (data on 8 bits and DMM�
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                en: bool,
-                abort: bool,
-                dmaen: bool,
-                tcen: bool,
-                dmm: bool,
-                fsel: bool,
-                fthres: u8,
-                teie: bool,
-                tcie: bool,
-                ftie: bool,
-                smie: bool,
-                toie: bool,
-                apms: bool,
-                pmm: bool,
-                fmode: u8,
-                msel: u8,
-            }
-            let proxy = Cr {
-                en: self.en(),
-                abort: self.abort(),
-                dmaen: self.dmaen(),
-                tcen: self.tcen(),
-                dmm: self.dmm(),
-                fsel: self.fsel(),
-                fthres: self.fthres(),
-                teie: self.teie(),
-                tcie: self.tcie(),
-                ftie: self.ftie(),
-                smie: self.smie(),
-                toie: self.toie(),
-                apms: self.apms(),
-                pmm: self.pmm(),
-                fmode: self.fmode(),
-                msel: self.msel(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ en: {=bool:?}, abort: {=bool:?}, dmaen: {=bool:?}, tcen: {=bool:?}, dmm: {=bool:?}, fsel: {=bool:?}, fthres: {=u8:?}, teie: {=bool:?}, tcie: {=bool:?}, ftie: {=bool:?}, smie: {=bool:?}, toie: {=bool:?}, apms: {=bool:?}, pmm: {=bool:?}, fmode: {=u8:?}, msel: {=u8:?} }}" , self . en () , self . abort () , self . dmaen () , self . tcen () , self . dmm () , self . fsel () , self . fthres () , self . teie () , self . tcie () , self . ftie () , self . smie () , self . toie () , self . apms () , self . pmm () , self . fmode () , self . msel ())
         }
     }
     #[doc = "HSPI device configuration register 1."]
@@ -1074,24 +975,7 @@ for memories different from Micron. Others: Reserved."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dcr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dcr1 {
-                ckmode: bool,
-                frck: bool,
-                dlybyp: bool,
-                csht: u8,
-                devsize: u8,
-                mtyp: u8,
-            }
-            let proxy = Dcr1 {
-                ckmode: self.ckmode(),
-                frck: self.frck(),
-                dlybyp: self.dlybyp(),
-                csht: self.csht(),
-                devsize: self.devsize(),
-                mtyp: self.mtyp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Dcr1 {{ ckmode: {=bool:?}, frck: {=bool:?}, dlybyp: {=bool:?}, csht: {=u8:?}, devsize: {=u8:?}, mtyp: {=u8:?} }}" , self . ckmode () , self . frck () , self . dlybyp () , self . csht () , self . devsize () , self . mtyp ())
         }
     }
     #[doc = "HSPI device configuration register 2."]
@@ -1139,16 +1023,12 @@ for memories different from Micron. Others: Reserved."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dcr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dcr2 {
-                prescaler: u8,
-                wrapsize: u8,
-            }
-            let proxy = Dcr2 {
-                prescaler: self.prescaler(),
-                wrapsize: self.wrapsize(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dcr2 {{ prescaler: {=u8:?}, wrapsize: {=u8:?} }}",
+                self.prescaler(),
+                self.wrapsize()
+            )
         }
     }
     #[doc = "HSPI device configuration register 3."]
@@ -1196,16 +1076,12 @@ for memories different from Micron. Others: Reserved."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dcr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dcr3 {
-                maxtran: u8,
-                csbound: u8,
-            }
-            let proxy = Dcr3 {
-                maxtran: self.maxtran(),
-                csbound: self.csbound(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dcr3 {{ maxtran: {=u8:?}, csbound: {=u8:?} }}",
+                self.maxtran(),
+                self.csbound()
+            )
         }
     }
     #[doc = "HSPI device configuration register 4."]
@@ -1239,14 +1115,7 @@ for memories different from Micron. Others: Reserved."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dcr4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dcr4 {
-                refresh: u32,
-            }
-            let proxy = Dcr4 {
-                refresh: self.refresh(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dcr4 {{ refresh: {=u32:?} }}", self.refresh())
         }
     }
     #[doc = "HSPI data length register."]
@@ -1282,12 +1151,7 @@ is stuck at 1 in Dual-memory mode (DMM├é┬á=├é┬á1) even when 0 is wri
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dlr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dlr {
-                dl: u32,
-            }
-            let proxy = Dlr { dl: self.dl() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dlr {{ dl: {=u32:?} }}", self.dl())
         }
     }
     #[repr(transparent)]
@@ -1322,12 +1186,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dr {
-                data: u32,
-            }
-            let proxy = Dr { data: self.data() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dr {{ data: {=u32:?} }}", self.data())
         }
     }
     #[repr(transparent)]
@@ -1398,20 +1257,14 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fcr {
-                ctef: bool,
-                ctcf: bool,
-                csmf: bool,
-                ctof: bool,
-            }
-            let proxy = Fcr {
-                ctef: self.ctef(),
-                ctcf: self.ctcf(),
-                csmf: self.csmf(),
-                ctof: self.ctof(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Fcr {{ ctef: {=bool:?}, ctcf: {=bool:?}, csmf: {=bool:?}, ctof: {=bool:?} }}",
+                self.ctef(),
+                self.ctcf(),
+                self.csmf(),
+                self.ctof()
+            )
         }
     }
     #[doc = "HSPI HyperBus latency configuration register."]
@@ -1483,20 +1336,14 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hlcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hlcr {
-                lm: bool,
-                wzl: bool,
-                tacc: u8,
-                trwr: u8,
-            }
-            let proxy = Hlcr {
-                lm: self.lm(),
-                wzl: self.wzl(),
-                tacc: self.tacc(),
-                trwr: self.trwr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Hlcr {{ lm: {=bool:?}, wzl: {=bool:?}, tacc: {=u8:?}, trwr: {=u8:?} }}",
+                self.lm(),
+                self.wzl(),
+                self.tacc(),
+                self.trwr()
+            )
         }
     }
     #[doc = "HSPI instruction register."]
@@ -1530,14 +1377,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ir {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ir {
-                instruction: u32,
-            }
-            let proxy = Ir {
-                instruction: self.instruction(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ir {{ instruction: {=u32:?} }}", self.instruction())
         }
     }
     #[doc = "HSPI low-power timeout register."]
@@ -1571,14 +1411,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Lptr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Lptr {
-                timeout: u16,
-            }
-            let proxy = Lptr {
-                timeout: self.timeout(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Lptr {{ timeout: {=u16:?} }}", self.timeout())
         }
     }
     #[doc = "HSPI polling interval register."]
@@ -1612,14 +1445,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pir {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pir {
-                interval: u16,
-            }
-            let proxy = Pir {
-                interval: self.interval(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Pir {{ interval: {=u16:?} }}", self.interval())
         }
     }
     #[doc = "HSPI polling status match register."]
@@ -1653,12 +1479,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Psmar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Psmar {
-                match_: u32,
-            }
-            let proxy = Psmar { match_: self.match_() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Psmar {{ match_: {=u32:?} }}", self.match_())
         }
     }
     #[doc = "HSPI polling status mask register."]
@@ -1692,12 +1513,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Psmkr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Psmkr {
-                mask: u32,
-            }
-            let proxy = Psmkr { mask: self.mask() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Psmkr {{ mask: {=u32:?} }}", self.mask())
         }
     }
     #[repr(transparent)]
@@ -1804,26 +1620,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                tef: bool,
-                tcf: bool,
-                ftf: bool,
-                smf: bool,
-                tof: bool,
-                busy: bool,
-                flevel: u8,
-            }
-            let proxy = Sr {
-                tef: self.tef(),
-                tcf: self.tcf(),
-                ftf: self.ftf(),
-                smf: self.smf(),
-                tof: self.tof(),
-                busy: self.busy(),
-                flevel: self.flevel(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr {{ tef: {=bool:?}, tcf: {=bool:?}, ftf: {=bool:?}, smf: {=bool:?}, tof: {=bool:?}, busy: {=bool:?}, flevel: {=u8:?} }}" , self . tef () , self . tcf () , self . ftf () , self . smf () , self . tof () , self . busy () , self . flevel ())
         }
     }
     #[doc = "HSPI timing configuration register."]
@@ -1883,18 +1680,13 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tcr {
-                dcyc: u8,
-                dhqc: bool,
-                sshift: bool,
-            }
-            let proxy = Tcr {
-                dcyc: self.dcyc(),
-                dhqc: self.dhqc(),
-                sshift: self.sshift(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Tcr {{ dcyc: {=u8:?}, dhqc: {=bool:?}, sshift: {=bool:?} }}",
+                self.dcyc(),
+                self.dhqc(),
+                self.sshift()
+            )
         }
     }
     #[doc = "HSPI write alternate bytes register."]
@@ -1928,14 +1720,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wabr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wabr {
-                alternate: u32,
-            }
-            let proxy = Wabr {
-                alternate: self.alternate(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Wabr {{ alternate: {=u32:?} }}", self.alternate())
         }
     }
     #[doc = "HSPI write communication configuration register."]
@@ -2103,36 +1888,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wccr {
-                imode: u8,
-                idtr: bool,
-                isize: u8,
-                admode: u8,
-                addtr: bool,
-                adsize: u8,
-                abmode: u8,
-                abdtr: bool,
-                absize: u8,
-                dmode: u8,
-                ddtr: bool,
-                dqse: bool,
-            }
-            let proxy = Wccr {
-                imode: self.imode(),
-                idtr: self.idtr(),
-                isize: self.isize(),
-                admode: self.admode(),
-                addtr: self.addtr(),
-                adsize: self.adsize(),
-                abmode: self.abmode(),
-                abdtr: self.abdtr(),
-                absize: self.absize(),
-                dmode: self.dmode(),
-                ddtr: self.ddtr(),
-                dqse: self.dqse(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Wccr {{ imode: {=u8:?}, idtr: {=bool:?}, isize: {=u8:?}, admode: {=u8:?}, addtr: {=bool:?}, adsize: {=u8:?}, abmode: {=u8:?}, abdtr: {=bool:?}, absize: {=u8:?}, dmode: {=u8:?}, ddtr: {=bool:?}, dqse: {=bool:?} }}" , self . imode () , self . idtr () , self . isize () , self . admode () , self . addtr () , self . adsize () , self . abmode () , self . abdtr () , self . absize () , self . dmode () , self . ddtr () , self . dqse ())
         }
     }
     #[doc = "HSPI write instruction register."]
@@ -2166,14 +1922,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wir {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wir {
-                instruction: u32,
-            }
-            let proxy = Wir {
-                instruction: self.instruction(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Wir {{ instruction: {=u32:?} }}", self.instruction())
         }
     }
     #[doc = "HSPI wrap alternate bytes register."]
@@ -2207,14 +1956,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wpabr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wpabr {
-                alternate: u32,
-            }
-            let proxy = Wpabr {
-                alternate: self.alternate(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Wpabr {{ alternate: {=u32:?} }}", self.alternate())
         }
     }
     #[doc = "HSPI wrap communication configuration register."]
@@ -2382,36 +2124,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wpccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wpccr {
-                imode: u8,
-                idtr: bool,
-                isize: u8,
-                admode: u8,
-                addtr: bool,
-                adsize: u8,
-                abmode: u8,
-                abdtr: bool,
-                absize: u8,
-                dmode: u8,
-                ddtr: bool,
-                dqse: bool,
-            }
-            let proxy = Wpccr {
-                imode: self.imode(),
-                idtr: self.idtr(),
-                isize: self.isize(),
-                admode: self.admode(),
-                addtr: self.addtr(),
-                adsize: self.adsize(),
-                abmode: self.abmode(),
-                abdtr: self.abdtr(),
-                absize: self.absize(),
-                dmode: self.dmode(),
-                ddtr: self.ddtr(),
-                dqse: self.dqse(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Wpccr {{ imode: {=u8:?}, idtr: {=bool:?}, isize: {=u8:?}, admode: {=u8:?}, addtr: {=bool:?}, adsize: {=u8:?}, abmode: {=u8:?}, abdtr: {=bool:?}, absize: {=u8:?}, dmode: {=u8:?}, ddtr: {=bool:?}, dqse: {=bool:?} }}" , self . imode () , self . idtr () , self . isize () , self . admode () , self . addtr () , self . adsize () , self . abmode () , self . abdtr () , self . absize () , self . dmode () , self . ddtr () , self . dqse ())
         }
     }
     #[doc = "HSPI wrap instruction register."]
@@ -2447,14 +2160,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wpir {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wpir {
-                instruction: u32,
-            }
-            let proxy = Wpir {
-                instruction: self.instruction(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Wpir {{ instruction: {=u32:?} }}", self.instruction())
         }
     }
     #[doc = "HSPI wrap timing configuration register."]
@@ -2514,18 +2220,13 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wptcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wptcr {
-                dcyc: u8,
-                dhqc: bool,
-                sshift: bool,
-            }
-            let proxy = Wptcr {
-                dcyc: self.dcyc(),
-                dhqc: self.dhqc(),
-                sshift: self.sshift(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Wptcr {{ dcyc: {=u8:?}, dhqc: {=bool:?}, sshift: {=bool:?} }}",
+                self.dcyc(),
+                self.dhqc(),
+                self.sshift()
+            )
         }
     }
     #[doc = "HSPI write timing configuration register."]
@@ -2559,12 +2260,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wtcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wtcr {
-                dcyc: u8,
-            }
-            let proxy = Wtcr { dcyc: self.dcyc() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Wtcr {{ dcyc: {=u8:?} }}", self.dcyc())
         }
     }
 }

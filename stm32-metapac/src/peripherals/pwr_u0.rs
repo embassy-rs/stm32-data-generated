@@ -221,26 +221,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr1 {
-                lpms: super::vals::Lpms,
-                fpd_stop: bool,
-                fpd_lprun: bool,
-                fpd_lpslp: bool,
-                dbp: bool,
-                vos: super::vals::Vos,
-                lpr: bool,
-            }
-            let proxy = Cr1 {
-                lpms: self.lpms(),
-                fpd_stop: self.fpd_stop(),
-                fpd_lprun: self.fpd_lprun(),
-                fpd_lpslp: self.fpd_lpslp(),
-                dbp: self.dbp(),
-                vos: self.vos(),
-                lpr: self.lpr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr1 {{ lpms: {:?}, fpd_stop: {=bool:?}, fpd_lprun: {=bool:?}, fpd_lpslp: {=bool:?}, dbp: {=bool:?}, vos: {:?}, lpr: {=bool:?} }}" , self . lpms () , self . fpd_stop () , self . fpd_lprun () , self . fpd_lpslp () , self . dbp () , self . vos () , self . lpr ())
         }
     }
     #[doc = "Power control register 2"]
@@ -336,24 +317,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr2 {
-                pvde: bool,
-                pls: super::vals::Pls,
-                pvme1: bool,
-                pvme3: bool,
-                pvme4: bool,
-                usv: bool,
-            }
-            let proxy = Cr2 {
-                pvde: self.pvde(),
-                pls: self.pls(),
-                pvme1: self.pvme1(),
-                pvme3: self.pvme3(),
-                pvme4: self.pvme4(),
-                usv: self.usv(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr2 {{ pvde: {=bool:?}, pls: {:?}, pvme1: {=bool:?}, pvme3: {=bool:?}, pvme4: {=bool:?}, usv: {=bool:?} }}" , self . pvde () , self . pls () , self . pvme1 () , self . pvme3 () , self . pvme4 () , self . usv ())
         }
     }
     #[doc = "Power control register 3"]
@@ -497,32 +461,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr3 {
-                ewup1: bool,
-                ewup2: bool,
-                ewup3: bool,
-                ewup4: bool,
-                ewup5: bool,
-                ewup7: bool,
-                rrs: bool,
-                enulp: bool,
-                apc: bool,
-                eiwul: bool,
-            }
-            let proxy = Cr3 {
-                ewup1: self.ewup1(),
-                ewup2: self.ewup2(),
-                ewup3: self.ewup3(),
-                ewup4: self.ewup4(),
-                ewup5: self.ewup5(),
-                ewup7: self.ewup7(),
-                rrs: self.rrs(),
-                enulp: self.enulp(),
-                apc: self.apc(),
-                eiwul: self.eiwul(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr3 {{ ewup1: {=bool:?}, ewup2: {=bool:?}, ewup3: {=bool:?}, ewup4: {=bool:?}, ewup5: {=bool:?}, ewup7: {=bool:?}, rrs: {=bool:?}, enulp: {=bool:?}, apc: {=bool:?}, eiwul: {=bool:?} }}" , self . ewup1 () , self . ewup2 () , self . ewup3 () , self . ewup4 () , self . ewup5 () , self . ewup7 () , self . rrs () , self . enulp () , self . apc () , self . eiwul ())
         }
     }
     #[doc = "Power control register 4"]
@@ -642,28 +581,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr4 {
-                wp1: bool,
-                wp2: bool,
-                wp3: bool,
-                wp4: bool,
-                wp5: bool,
-                wp7: bool,
-                vbe: bool,
-                vbrs: bool,
-            }
-            let proxy = Cr4 {
-                wp1: self.wp1(),
-                wp2: self.wp2(),
-                wp3: self.wp3(),
-                wp4: self.wp4(),
-                wp5: self.wp5(),
-                wp7: self.wp7(),
-                vbe: self.vbe(),
-                vbrs: self.vbrs(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr4 {{ wp1: {=bool:?}, wp2: {=bool:?}, wp3: {=bool:?}, wp4: {=bool:?}, wp5: {=bool:?}, wp7: {=bool:?}, vbe: {=bool:?}, vbrs: {=bool:?} }}" , self . wp1 () , self . wp2 () , self . wp3 () , self . wp4 () , self . wp5 () , self . wp7 () , self . vbe () , self . vbrs ())
         }
     }
     #[doc = "Power Port A pull-down control register"]
@@ -911,44 +829,7 @@ when APC bit is set in PWR_CR3 register."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pdcra {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pdcra {
-                pd0: bool,
-                pd1: bool,
-                pd2: bool,
-                pd3: bool,
-                pd4: bool,
-                pd5: bool,
-                pd6: bool,
-                pd7: bool,
-                pd8: bool,
-                pd9: bool,
-                pd10: bool,
-                pd11: bool,
-                pd12: bool,
-                pd13: bool,
-                pd14: bool,
-                pd15: bool,
-            }
-            let proxy = Pdcra {
-                pd0: self.pd0(),
-                pd1: self.pd1(),
-                pd2: self.pd2(),
-                pd3: self.pd3(),
-                pd4: self.pd4(),
-                pd5: self.pd5(),
-                pd6: self.pd6(),
-                pd7: self.pd7(),
-                pd8: self.pd8(),
-                pd9: self.pd9(),
-                pd10: self.pd10(),
-                pd11: self.pd11(),
-                pd12: self.pd12(),
-                pd13: self.pd13(),
-                pd14: self.pd14(),
-                pd15: self.pd15(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Pdcra {{ pd0: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?}, pd3: {=bool:?}, pd4: {=bool:?}, pd5: {=bool:?}, pd6: {=bool:?}, pd7: {=bool:?}, pd8: {=bool:?}, pd9: {=bool:?}, pd10: {=bool:?}, pd11: {=bool:?}, pd12: {=bool:?}, pd13: {=bool:?}, pd14: {=bool:?}, pd15: {=bool:?} }}" , self . pd0 () , self . pd1 () , self . pd2 () , self . pd3 () , self . pd4 () , self . pd5 () , self . pd6 () , self . pd7 () , self . pd8 () , self . pd9 () , self . pd10 () , self . pd11 () , self . pd12 () , self . pd13 () , self . pd14 () , self . pd15 ())
         }
     }
     #[doc = "Power Port B pull-down control register"]
@@ -1196,44 +1077,7 @@ when APC bit is set in PWR_CR3 register."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pdcrb {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pdcrb {
-                pd0: bool,
-                pd1: bool,
-                pd2: bool,
-                pd3: bool,
-                pd4: bool,
-                pd5: bool,
-                pd6: bool,
-                pd7: bool,
-                pd8: bool,
-                pd9: bool,
-                pd10: bool,
-                pd11: bool,
-                pd12: bool,
-                pd13: bool,
-                pd14: bool,
-                pd15: bool,
-            }
-            let proxy = Pdcrb {
-                pd0: self.pd0(),
-                pd1: self.pd1(),
-                pd2: self.pd2(),
-                pd3: self.pd3(),
-                pd4: self.pd4(),
-                pd5: self.pd5(),
-                pd6: self.pd6(),
-                pd7: self.pd7(),
-                pd8: self.pd8(),
-                pd9: self.pd9(),
-                pd10: self.pd10(),
-                pd11: self.pd11(),
-                pd12: self.pd12(),
-                pd13: self.pd13(),
-                pd14: self.pd14(),
-                pd15: self.pd15(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Pdcrb {{ pd0: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?}, pd3: {=bool:?}, pd4: {=bool:?}, pd5: {=bool:?}, pd6: {=bool:?}, pd7: {=bool:?}, pd8: {=bool:?}, pd9: {=bool:?}, pd10: {=bool:?}, pd11: {=bool:?}, pd12: {=bool:?}, pd13: {=bool:?}, pd14: {=bool:?}, pd15: {=bool:?} }}" , self . pd0 () , self . pd1 () , self . pd2 () , self . pd3 () , self . pd4 () , self . pd5 () , self . pd6 () , self . pd7 () , self . pd8 () , self . pd9 () , self . pd10 () , self . pd11 () , self . pd12 () , self . pd13 () , self . pd14 () , self . pd15 ())
         }
     }
     #[doc = "Power Port C pull-down control register"]
@@ -1481,44 +1325,7 @@ when APC bit is set in PWR_CR3 register."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pdcrc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pdcrc {
-                pd0: bool,
-                pd1: bool,
-                pd2: bool,
-                pd3: bool,
-                pd4: bool,
-                pd5: bool,
-                pd6: bool,
-                pd7: bool,
-                pd8: bool,
-                pd9: bool,
-                pd10: bool,
-                pd11: bool,
-                pd12: bool,
-                pd13: bool,
-                pd14: bool,
-                pd15: bool,
-            }
-            let proxy = Pdcrc {
-                pd0: self.pd0(),
-                pd1: self.pd1(),
-                pd2: self.pd2(),
-                pd3: self.pd3(),
-                pd4: self.pd4(),
-                pd5: self.pd5(),
-                pd6: self.pd6(),
-                pd7: self.pd7(),
-                pd8: self.pd8(),
-                pd9: self.pd9(),
-                pd10: self.pd10(),
-                pd11: self.pd11(),
-                pd12: self.pd12(),
-                pd13: self.pd13(),
-                pd14: self.pd14(),
-                pd15: self.pd15(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Pdcrc {{ pd0: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?}, pd3: {=bool:?}, pd4: {=bool:?}, pd5: {=bool:?}, pd6: {=bool:?}, pd7: {=bool:?}, pd8: {=bool:?}, pd9: {=bool:?}, pd10: {=bool:?}, pd11: {=bool:?}, pd12: {=bool:?}, pd13: {=bool:?}, pd14: {=bool:?}, pd15: {=bool:?} }}" , self . pd0 () , self . pd1 () , self . pd2 () , self . pd3 () , self . pd4 () , self . pd5 () , self . pd6 () , self . pd7 () , self . pd8 () , self . pd9 () , self . pd10 () , self . pd11 () , self . pd12 () , self . pd13 () , self . pd14 () , self . pd15 ())
         }
     }
     #[doc = "Power Port D pull-down control register"]
@@ -1724,38 +1531,7 @@ when APC bit is set in PWR_CR3 register."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pdcrd {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pdcrd {
-                pd0: bool,
-                pd1: bool,
-                pd2: bool,
-                pd3: bool,
-                pd4: bool,
-                pd5: bool,
-                pd6: bool,
-                pd8: bool,
-                pd9: bool,
-                pd10: bool,
-                pd11: bool,
-                pd12: bool,
-                pd13: bool,
-            }
-            let proxy = Pdcrd {
-                pd0: self.pd0(),
-                pd1: self.pd1(),
-                pd2: self.pd2(),
-                pd3: self.pd3(),
-                pd4: self.pd4(),
-                pd5: self.pd5(),
-                pd6: self.pd6(),
-                pd8: self.pd8(),
-                pd9: self.pd9(),
-                pd10: self.pd10(),
-                pd11: self.pd11(),
-                pd12: self.pd12(),
-                pd13: self.pd13(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Pdcrd {{ pd0: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?}, pd3: {=bool:?}, pd4: {=bool:?}, pd5: {=bool:?}, pd6: {=bool:?}, pd8: {=bool:?}, pd9: {=bool:?}, pd10: {=bool:?}, pd11: {=bool:?}, pd12: {=bool:?}, pd13: {=bool:?} }}" , self . pd0 () , self . pd1 () , self . pd2 () , self . pd3 () , self . pd4 () , self . pd5 () , self . pd6 () , self . pd8 () , self . pd9 () , self . pd10 () , self . pd11 () , self . pd12 () , self . pd13 ())
         }
     }
     #[doc = "Power Port E pull-down control register"]
@@ -1835,20 +1611,14 @@ when APC bit is set in PWR_CR3 register."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pdcre {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pdcre {
-                pd3: bool,
-                pd7: bool,
-                pd8: bool,
-                pd9: bool,
-            }
-            let proxy = Pdcre {
-                pd3: self.pd3(),
-                pd7: self.pd7(),
-                pd8: self.pd8(),
-                pd9: self.pd9(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Pdcre {{ pd3: {=bool:?}, pd7: {=bool:?}, pd8: {=bool:?}, pd9: {=bool:?} }}",
+                self.pd3(),
+                self.pd7(),
+                self.pd8(),
+                self.pd9()
+            )
         }
     }
     #[doc = "Power Port F pull-down control register"]
@@ -1928,20 +1698,14 @@ when APC bit is set in PWR_CR3 register."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pdcrf {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pdcrf {
-                pd0: bool,
-                pd1: bool,
-                pd2: bool,
-                pd3: bool,
-            }
-            let proxy = Pdcrf {
-                pd0: self.pd0(),
-                pd1: self.pd1(),
-                pd2: self.pd2(),
-                pd3: self.pd3(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Pdcrf {{ pd0: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?}, pd3: {=bool:?} }}",
+                self.pd0(),
+                self.pd1(),
+                self.pd2(),
+                self.pd3()
+            )
         }
     }
     #[doc = "Power Port A pull-up control register"]
@@ -2189,44 +1953,7 @@ when APC bit is set in PWR_CR3 register. If the corresponding PDy bit is also se
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pucra {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pucra {
-                pu0: bool,
-                pu1: bool,
-                pu2: bool,
-                pu3: bool,
-                pu4: bool,
-                pu5: bool,
-                pu6: bool,
-                pu7: bool,
-                pu8: bool,
-                pu9: bool,
-                pu10: bool,
-                pu11: bool,
-                pu12: bool,
-                pu13: bool,
-                pu14: bool,
-                pu15: bool,
-            }
-            let proxy = Pucra {
-                pu0: self.pu0(),
-                pu1: self.pu1(),
-                pu2: self.pu2(),
-                pu3: self.pu3(),
-                pu4: self.pu4(),
-                pu5: self.pu5(),
-                pu6: self.pu6(),
-                pu7: self.pu7(),
-                pu8: self.pu8(),
-                pu9: self.pu9(),
-                pu10: self.pu10(),
-                pu11: self.pu11(),
-                pu12: self.pu12(),
-                pu13: self.pu13(),
-                pu14: self.pu14(),
-                pu15: self.pu15(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Pucra {{ pu0: {=bool:?}, pu1: {=bool:?}, pu2: {=bool:?}, pu3: {=bool:?}, pu4: {=bool:?}, pu5: {=bool:?}, pu6: {=bool:?}, pu7: {=bool:?}, pu8: {=bool:?}, pu9: {=bool:?}, pu10: {=bool:?}, pu11: {=bool:?}, pu12: {=bool:?}, pu13: {=bool:?}, pu14: {=bool:?}, pu15: {=bool:?} }}" , self . pu0 () , self . pu1 () , self . pu2 () , self . pu3 () , self . pu4 () , self . pu5 () , self . pu6 () , self . pu7 () , self . pu8 () , self . pu9 () , self . pu10 () , self . pu11 () , self . pu12 () , self . pu13 () , self . pu14 () , self . pu15 ())
         }
     }
     #[doc = "Power Port B pull-up control register"]
@@ -2474,44 +2201,7 @@ when APC bit is set in PWR_CR3 register."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pucrb {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pucrb {
-                pu0: bool,
-                pu1: bool,
-                pu2: bool,
-                pu3: bool,
-                pu4: bool,
-                pu5: bool,
-                pu6: bool,
-                pu7: bool,
-                pu8: bool,
-                pu9: bool,
-                pu10: bool,
-                pu11: bool,
-                pu12: bool,
-                pu13: bool,
-                pu14: bool,
-                pu15: bool,
-            }
-            let proxy = Pucrb {
-                pu0: self.pu0(),
-                pu1: self.pu1(),
-                pu2: self.pu2(),
-                pu3: self.pu3(),
-                pu4: self.pu4(),
-                pu5: self.pu5(),
-                pu6: self.pu6(),
-                pu7: self.pu7(),
-                pu8: self.pu8(),
-                pu9: self.pu9(),
-                pu10: self.pu10(),
-                pu11: self.pu11(),
-                pu12: self.pu12(),
-                pu13: self.pu13(),
-                pu14: self.pu14(),
-                pu15: self.pu15(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Pucrb {{ pu0: {=bool:?}, pu1: {=bool:?}, pu2: {=bool:?}, pu3: {=bool:?}, pu4: {=bool:?}, pu5: {=bool:?}, pu6: {=bool:?}, pu7: {=bool:?}, pu8: {=bool:?}, pu9: {=bool:?}, pu10: {=bool:?}, pu11: {=bool:?}, pu12: {=bool:?}, pu13: {=bool:?}, pu14: {=bool:?}, pu15: {=bool:?} }}" , self . pu0 () , self . pu1 () , self . pu2 () , self . pu3 () , self . pu4 () , self . pu5 () , self . pu6 () , self . pu7 () , self . pu8 () , self . pu9 () , self . pu10 () , self . pu11 () , self . pu12 () , self . pu13 () , self . pu14 () , self . pu15 ())
         }
     }
     #[doc = "Power Port C pull-up control register"]
@@ -2759,44 +2449,7 @@ when APC bit is set in PWR_CR3 register. If the corresponding PDy bit is also se
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pucrc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pucrc {
-                pu0: bool,
-                pu1: bool,
-                pu2: bool,
-                pu3: bool,
-                pu4: bool,
-                pu5: bool,
-                pu6: bool,
-                pu7: bool,
-                pu8: bool,
-                pu9: bool,
-                pu10: bool,
-                pu11: bool,
-                pu12: bool,
-                pu13: bool,
-                pu14: bool,
-                pu15: bool,
-            }
-            let proxy = Pucrc {
-                pu0: self.pu0(),
-                pu1: self.pu1(),
-                pu2: self.pu2(),
-                pu3: self.pu3(),
-                pu4: self.pu4(),
-                pu5: self.pu5(),
-                pu6: self.pu6(),
-                pu7: self.pu7(),
-                pu8: self.pu8(),
-                pu9: self.pu9(),
-                pu10: self.pu10(),
-                pu11: self.pu11(),
-                pu12: self.pu12(),
-                pu13: self.pu13(),
-                pu14: self.pu14(),
-                pu15: self.pu15(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Pucrc {{ pu0: {=bool:?}, pu1: {=bool:?}, pu2: {=bool:?}, pu3: {=bool:?}, pu4: {=bool:?}, pu5: {=bool:?}, pu6: {=bool:?}, pu7: {=bool:?}, pu8: {=bool:?}, pu9: {=bool:?}, pu10: {=bool:?}, pu11: {=bool:?}, pu12: {=bool:?}, pu13: {=bool:?}, pu14: {=bool:?}, pu15: {=bool:?} }}" , self . pu0 () , self . pu1 () , self . pu2 () , self . pu3 () , self . pu4 () , self . pu5 () , self . pu6 () , self . pu7 () , self . pu8 () , self . pu9 () , self . pu10 () , self . pu11 () , self . pu12 () , self . pu13 () , self . pu14 () , self . pu15 ())
         }
     }
     #[doc = "Power Port D pull-up control register"]
@@ -3002,38 +2655,7 @@ when APC bit is set in PWR_CR3 register. If the corresponding PDy bit is also se
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pucrd {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pucrd {
-                pu0: bool,
-                pu1: bool,
-                pu2: bool,
-                pu3: bool,
-                pu4: bool,
-                pu5: bool,
-                pu6: bool,
-                pu8: bool,
-                pu9: bool,
-                pu10: bool,
-                pu11: bool,
-                pu12: bool,
-                pu13: bool,
-            }
-            let proxy = Pucrd {
-                pu0: self.pu0(),
-                pu1: self.pu1(),
-                pu2: self.pu2(),
-                pu3: self.pu3(),
-                pu4: self.pu4(),
-                pu5: self.pu5(),
-                pu6: self.pu6(),
-                pu8: self.pu8(),
-                pu9: self.pu9(),
-                pu10: self.pu10(),
-                pu11: self.pu11(),
-                pu12: self.pu12(),
-                pu13: self.pu13(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Pucrd {{ pu0: {=bool:?}, pu1: {=bool:?}, pu2: {=bool:?}, pu3: {=bool:?}, pu4: {=bool:?}, pu5: {=bool:?}, pu6: {=bool:?}, pu8: {=bool:?}, pu9: {=bool:?}, pu10: {=bool:?}, pu11: {=bool:?}, pu12: {=bool:?}, pu13: {=bool:?} }}" , self . pu0 () , self . pu1 () , self . pu2 () , self . pu3 () , self . pu4 () , self . pu5 () , self . pu6 () , self . pu8 () , self . pu9 () , self . pu10 () , self . pu11 () , self . pu12 () , self . pu13 ())
         }
     }
     #[doc = "Power Port E pull-up control register"]
@@ -3113,20 +2735,14 @@ when APC bit is set in PWR_CR3 register. If the corresponding PDy bit is also se
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pucre {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pucre {
-                pu3: bool,
-                pu7: bool,
-                pu8: bool,
-                pu9: bool,
-            }
-            let proxy = Pucre {
-                pu3: self.pu3(),
-                pu7: self.pu7(),
-                pu8: self.pu8(),
-                pu9: self.pu9(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Pucre {{ pu3: {=bool:?}, pu7: {=bool:?}, pu8: {=bool:?}, pu9: {=bool:?} }}",
+                self.pu3(),
+                self.pu7(),
+                self.pu8(),
+                self.pu9()
+            )
         }
     }
     #[doc = "Power Port F pull-up control register"]
@@ -3206,20 +2822,14 @@ when APC bit is set in PWR_CR3 register. If the corresponding PDy bit is also se
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pucrf {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pucrf {
-                pu0: bool,
-                pu1: bool,
-                pu2: bool,
-                pu3: bool,
-            }
-            let proxy = Pucrf {
-                pu0: self.pu0(),
-                pu1: self.pu1(),
-                pu2: self.pu2(),
-                pu3: self.pu3(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Pucrf {{ pu0: {=bool:?}, pu1: {=bool:?}, pu2: {=bool:?}, pu3: {=bool:?} }}",
+                self.pu0(),
+                self.pu1(),
+                self.pu2(),
+                self.pu3()
+            )
         }
     }
     #[doc = "Power status clear register"]
@@ -3327,26 +2937,7 @@ when APC bit is set in PWR_CR3 register. If the corresponding PDy bit is also se
     #[cfg(feature = "defmt")]
     impl defmt::Format for Scr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Scr {
-                cwuf1: bool,
-                cwuf2: bool,
-                cwuf3: bool,
-                cwuf4: bool,
-                cwuf5: bool,
-                cwuf7: bool,
-                csbf: bool,
-            }
-            let proxy = Scr {
-                cwuf1: self.cwuf1(),
-                cwuf2: self.cwuf2(),
-                cwuf3: self.cwuf3(),
-                cwuf4: self.cwuf4(),
-                cwuf5: self.cwuf5(),
-                cwuf7: self.cwuf7(),
-                csbf: self.csbf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Scr {{ cwuf1: {=bool:?}, cwuf2: {=bool:?}, cwuf3: {=bool:?}, cwuf4: {=bool:?}, cwuf5: {=bool:?}, cwuf7: {=bool:?}, csbf: {=bool:?} }}" , self . cwuf1 () , self . cwuf2 () , self . cwuf3 () , self . cwuf4 () , self . cwuf5 () , self . cwuf7 () , self . csbf ())
         }
     }
     #[doc = "Power status register 1"]
@@ -3478,30 +3069,7 @@ when APC bit is set in PWR_CR3 register. If the corresponding PDy bit is also se
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr1 {
-                wuf1: bool,
-                wuf2: bool,
-                wuf3: bool,
-                wuf4: bool,
-                wuf5: bool,
-                wuf7: bool,
-                sbf: bool,
-                stopf: super::vals::Stopf,
-                wufi: bool,
-            }
-            let proxy = Sr1 {
-                wuf1: self.wuf1(),
-                wuf2: self.wuf2(),
-                wuf3: self.wuf3(),
-                wuf4: self.wuf4(),
-                wuf5: self.wuf5(),
-                wuf7: self.wuf7(),
-                sbf: self.sbf(),
-                stopf: self.stopf(),
-                wufi: self.wufi(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr1 {{ wuf1: {=bool:?}, wuf2: {=bool:?}, wuf3: {=bool:?}, wuf4: {=bool:?}, wuf5: {=bool:?}, wuf7: {=bool:?}, sbf: {=bool:?}, stopf: {:?}, wufi: {=bool:?} }}" , self . wuf1 () , self . wuf2 () , self . wuf3 () , self . wuf4 () , self . wuf5 () , self . wuf7 () , self . sbf () , self . stopf () , self . wufi ())
         }
     }
     #[doc = "Power status register 2"]
@@ -3621,28 +3189,7 @@ when APC bit is set in PWR_CR3 register. If the corresponding PDy bit is also se
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr2 {
-                flash_rdy: bool,
-                reglps: bool,
-                reglpf: bool,
-                vosf: bool,
-                pvdo: bool,
-                pvmo1: bool,
-                pvmo3: bool,
-                pvmo4: bool,
-            }
-            let proxy = Sr2 {
-                flash_rdy: self.flash_rdy(),
-                reglps: self.reglps(),
-                reglpf: self.reglpf(),
-                vosf: self.vosf(),
-                pvdo: self.pvdo(),
-                pvmo1: self.pvmo1(),
-                pvmo3: self.pvmo3(),
-                pvmo4: self.pvmo4(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr2 {{ flash_rdy: {=bool:?}, reglps: {=bool:?}, reglpf: {=bool:?}, vosf: {=bool:?}, pvdo: {=bool:?}, pvmo1: {=bool:?}, pvmo3: {=bool:?}, pvmo4: {=bool:?} }}" , self . flash_rdy () , self . reglps () , self . reglpf () , self . vosf () , self . pvdo () , self . pvmo1 () , self . pvmo3 () , self . pvmo4 ())
         }
     }
 }

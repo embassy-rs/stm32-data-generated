@@ -352,62 +352,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                dbg_sleep: bool,
-                dbg_stop: bool,
-                dbg_standby: bool,
-                trace_ioen: bool,
-                trace_mode: u8,
-                iwdg: bool,
-                wwdg: bool,
-                tim1: bool,
-                tim2: bool,
-                tim3: bool,
-                tim4: bool,
-                can1: bool,
-                dbg_i2c1_smbus_timeout: bool,
-                dbg_i2c2_smbus_timeout: bool,
-                tim8: bool,
-                tim5: bool,
-                tim6: bool,
-                tim7: bool,
-                can2: bool,
-                tim15: bool,
-                tim16: bool,
-                tim17: bool,
-                tim12: bool,
-                tim13: bool,
-                tim14: bool,
-            }
-            let proxy = Cr {
-                dbg_sleep: self.dbg_sleep(),
-                dbg_stop: self.dbg_stop(),
-                dbg_standby: self.dbg_standby(),
-                trace_ioen: self.trace_ioen(),
-                trace_mode: self.trace_mode(),
-                iwdg: self.iwdg(),
-                wwdg: self.wwdg(),
-                tim1: self.tim1(),
-                tim2: self.tim2(),
-                tim3: self.tim3(),
-                tim4: self.tim4(),
-                can1: self.can1(),
-                dbg_i2c1_smbus_timeout: self.dbg_i2c1_smbus_timeout(),
-                dbg_i2c2_smbus_timeout: self.dbg_i2c2_smbus_timeout(),
-                tim8: self.tim8(),
-                tim5: self.tim5(),
-                tim6: self.tim6(),
-                tim7: self.tim7(),
-                can2: self.can2(),
-                tim15: self.tim15(),
-                tim16: self.tim16(),
-                tim17: self.tim17(),
-                tim12: self.tim12(),
-                tim13: self.tim13(),
-                tim14: self.tim14(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ dbg_sleep: {=bool:?}, dbg_stop: {=bool:?}, dbg_standby: {=bool:?}, trace_ioen: {=bool:?}, trace_mode: {=u8:?}, iwdg: {=bool:?}, wwdg: {=bool:?}, tim1: {=bool:?}, tim2: {=bool:?}, tim3: {=bool:?}, tim4: {=bool:?}, can1: {=bool:?}, dbg_i2c1_smbus_timeout: {=bool:?}, dbg_i2c2_smbus_timeout: {=bool:?}, tim8: {=bool:?}, tim5: {=bool:?}, tim6: {=bool:?}, tim7: {=bool:?}, can2: {=bool:?}, tim15: {=bool:?}, tim16: {=bool:?}, tim17: {=bool:?}, tim12: {=bool:?}, tim13: {=bool:?}, tim14: {=bool:?} }}" , self . dbg_sleep () , self . dbg_stop () , self . dbg_standby () , self . trace_ioen () , self . trace_mode () , self . iwdg () , self . wwdg () , self . tim1 () , self . tim2 () , self . tim3 () , self . tim4 () , self . can1 () , self . dbg_i2c1_smbus_timeout () , self . dbg_i2c2_smbus_timeout () , self . tim8 () , self . tim5 () , self . tim6 () , self . tim7 () , self . can2 () , self . tim15 () , self . tim16 () , self . tim17 () , self . tim12 () , self . tim13 () , self . tim14 ())
         }
     }
     #[doc = "DBGMCU_IDCODE"]
@@ -455,16 +400,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Idcode {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Idcode {
-                dev_id: u16,
-                rev_id: u16,
-            }
-            let proxy = Idcode {
-                dev_id: self.dev_id(),
-                rev_id: self.rev_id(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Idcode {{ dev_id: {=u16:?}, rev_id: {=u16:?} }}",
+                self.dev_id(),
+                self.rev_id()
+            )
         }
     }
 }

@@ -125,18 +125,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Clrfr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Clrfr {
-                cperf: bool,
-                cserf: bool,
-                cterf: bool,
-            }
-            let proxy = Clrfr {
-                cperf: self.cperf(),
-                cserf: self.cserf(),
-                cterf: self.cterf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Clrfr {{ cperf: {=bool:?}, cserf: {=bool:?}, cterf: {=bool:?} }}",
+                self.cperf(),
+                self.cserf(),
+                self.cterf()
+            )
         }
     }
     #[doc = "MDIOS configuration register"]
@@ -232,24 +227,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                en: bool,
-                wrie: bool,
-                rdie: bool,
-                eie: bool,
-                dpc: bool,
-                port_address: u8,
-            }
-            let proxy = Cr {
-                en: self.en(),
-                wrie: self.wrie(),
-                rdie: self.rdie(),
-                eie: self.eie(),
-                dpc: self.dpc(),
-                port_address: self.port_address(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ en: {=bool:?}, wrie: {=bool:?}, rdie: {=bool:?}, eie: {=bool:?}, dpc: {=bool:?}, port_address: {=u8:?} }}" , self . en () , self . wrie () , self . rdie () , self . eie () , self . dpc () , self . port_address ())
         }
     }
     #[doc = "MDIOS clear read flag register"]
@@ -283,12 +261,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Crdfr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Crdfr {
-                crdf: u32,
-            }
-            let proxy = Crdfr { crdf: self.crdf() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Crdfr {{ crdf: {=u32:?} }}", self.crdf())
         }
     }
     #[doc = "MDIOS clear write flag register"]
@@ -322,12 +295,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cwrfr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cwrfr {
-                cwrf: u32,
-            }
-            let proxy = Cwrfr { cwrf: self.cwrf() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cwrfr {{ cwrf: {=u32:?} }}", self.cwrf())
         }
     }
     #[doc = "MDIOS input data register %s"]
@@ -361,12 +329,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dinr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dinr {
-                din: u16,
-            }
-            let proxy = Dinr { din: self.din() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dinr {{ din: {=u16:?} }}", self.din())
         }
     }
     #[doc = "MDIOS output data register %s"]
@@ -400,12 +363,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Doutr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Doutr {
-                dout: u16,
-            }
-            let proxy = Doutr { dout: self.dout() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Doutr {{ dout: {=u16:?} }}", self.dout())
         }
     }
     #[doc = "MDIOS read flag register"]
@@ -439,12 +397,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rdfr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rdfr {
-                rdf: u32,
-            }
-            let proxy = Rdfr { rdf: self.rdf() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Rdfr {{ rdf: {=u32:?} }}", self.rdf())
         }
     }
     #[doc = "MDIOS status register"]
@@ -504,18 +457,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                perf: bool,
-                serf: bool,
-                terf: bool,
-            }
-            let proxy = Sr {
-                perf: self.perf(),
-                serf: self.serf(),
-                terf: self.terf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sr {{ perf: {=bool:?}, serf: {=bool:?}, terf: {=bool:?} }}",
+                self.perf(),
+                self.serf(),
+                self.terf()
+            )
         }
     }
     #[doc = "MDIOS write flag register"]
@@ -549,12 +497,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrfr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wrfr {
-                wrf: u32,
-            }
-            let proxy = Wrfr { wrf: self.wrf() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Wrfr {{ wrf: {=u32:?} }}", self.wrf())
         }
     }
 }

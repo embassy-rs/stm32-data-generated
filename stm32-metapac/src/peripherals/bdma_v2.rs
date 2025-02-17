@@ -244,36 +244,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                en: bool,
-                tcie: bool,
-                htie: bool,
-                teie: bool,
-                dir: super::vals::Dir,
-                circ: bool,
-                pinc: bool,
-                minc: bool,
-                psize: super::vals::Size,
-                msize: super::vals::Size,
-                pl: super::vals::Pl,
-                mem2mem: bool,
-            }
-            let proxy = Cr {
-                en: self.en(),
-                tcie: self.tcie(),
-                htie: self.htie(),
-                teie: self.teie(),
-                dir: self.dir(),
-                circ: self.circ(),
-                pinc: self.pinc(),
-                minc: self.minc(),
-                psize: self.psize(),
-                msize: self.msize(),
-                pl: self.pl(),
-                mem2mem: self.mem2mem(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ en: {=bool:?}, tcie: {=bool:?}, htie: {=bool:?}, teie: {=bool:?}, dir: {:?}, circ: {=bool:?}, pinc: {=bool:?}, minc: {=bool:?}, psize: {:?}, msize: {:?}, pl: {:?}, mem2mem: {=bool:?} }}" , self . en () , self . tcie () , self . htie () , self . teie () , self . dir () , self . circ () , self . pinc () , self . minc () , self . psize () , self . msize () , self . pl () , self . mem2mem ())
         }
     }
     #[doc = "channel selection register"]
@@ -306,42 +277,21 @@ pub mod regs {
     impl core::fmt::Debug for Cselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cselr")
-                .field(
-                    "cs",
-                    &[
-                        self.cs(0usize),
-                        self.cs(1usize),
-                        self.cs(2usize),
-                        self.cs(3usize),
-                        self.cs(4usize),
-                        self.cs(5usize),
-                        self.cs(6usize),
-                        self.cs(7usize),
-                    ],
-                )
+                .field("cs[0]", &self.cs(0usize))
+                .field("cs[1]", &self.cs(1usize))
+                .field("cs[2]", &self.cs(2usize))
+                .field("cs[3]", &self.cs(3usize))
+                .field("cs[4]", &self.cs(4usize))
+                .field("cs[5]", &self.cs(5usize))
+                .field("cs[6]", &self.cs(6usize))
+                .field("cs[7]", &self.cs(7usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cselr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cselr {
-                cs: [u8; 8usize],
-            }
-            let proxy = Cselr {
-                cs: [
-                    self.cs(0usize),
-                    self.cs(1usize),
-                    self.cs(2usize),
-                    self.cs(3usize),
-                    self.cs(4usize),
-                    self.cs(5usize),
-                    self.cs(6usize),
-                    self.cs(7usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cselr {{ cs[0]: {=u8:?}, cs[1]: {=u8:?}, cs[2]: {=u8:?}, cs[3]: {=u8:?}, cs[4]: {=u8:?}, cs[5]: {=u8:?}, cs[6]: {=u8:?}, cs[7]: {=u8:?} }}" , self . cs (0usize) , self . cs (1usize) , self . cs (2usize) , self . cs (3usize) , self . cs (4usize) , self . cs (5usize) , self . cs (6usize) , self . cs (7usize))
         }
     }
     #[doc = "DMA interrupt status register (DMA_ISR)"]
@@ -419,114 +369,45 @@ pub mod regs {
     impl core::fmt::Debug for Isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Isr")
-                .field(
-                    "gif",
-                    &[
-                        self.gif(0usize),
-                        self.gif(1usize),
-                        self.gif(2usize),
-                        self.gif(3usize),
-                        self.gif(4usize),
-                        self.gif(5usize),
-                        self.gif(6usize),
-                        self.gif(7usize),
-                    ],
-                )
-                .field(
-                    "tcif",
-                    &[
-                        self.tcif(0usize),
-                        self.tcif(1usize),
-                        self.tcif(2usize),
-                        self.tcif(3usize),
-                        self.tcif(4usize),
-                        self.tcif(5usize),
-                        self.tcif(6usize),
-                        self.tcif(7usize),
-                    ],
-                )
-                .field(
-                    "htif",
-                    &[
-                        self.htif(0usize),
-                        self.htif(1usize),
-                        self.htif(2usize),
-                        self.htif(3usize),
-                        self.htif(4usize),
-                        self.htif(5usize),
-                        self.htif(6usize),
-                        self.htif(7usize),
-                    ],
-                )
-                .field(
-                    "teif",
-                    &[
-                        self.teif(0usize),
-                        self.teif(1usize),
-                        self.teif(2usize),
-                        self.teif(3usize),
-                        self.teif(4usize),
-                        self.teif(5usize),
-                        self.teif(6usize),
-                        self.teif(7usize),
-                    ],
-                )
+                .field("gif[0]", &self.gif(0usize))
+                .field("gif[1]", &self.gif(1usize))
+                .field("gif[2]", &self.gif(2usize))
+                .field("gif[3]", &self.gif(3usize))
+                .field("gif[4]", &self.gif(4usize))
+                .field("gif[5]", &self.gif(5usize))
+                .field("gif[6]", &self.gif(6usize))
+                .field("gif[7]", &self.gif(7usize))
+                .field("tcif[0]", &self.tcif(0usize))
+                .field("tcif[1]", &self.tcif(1usize))
+                .field("tcif[2]", &self.tcif(2usize))
+                .field("tcif[3]", &self.tcif(3usize))
+                .field("tcif[4]", &self.tcif(4usize))
+                .field("tcif[5]", &self.tcif(5usize))
+                .field("tcif[6]", &self.tcif(6usize))
+                .field("tcif[7]", &self.tcif(7usize))
+                .field("htif[0]", &self.htif(0usize))
+                .field("htif[1]", &self.htif(1usize))
+                .field("htif[2]", &self.htif(2usize))
+                .field("htif[3]", &self.htif(3usize))
+                .field("htif[4]", &self.htif(4usize))
+                .field("htif[5]", &self.htif(5usize))
+                .field("htif[6]", &self.htif(6usize))
+                .field("htif[7]", &self.htif(7usize))
+                .field("teif[0]", &self.teif(0usize))
+                .field("teif[1]", &self.teif(1usize))
+                .field("teif[2]", &self.teif(2usize))
+                .field("teif[3]", &self.teif(3usize))
+                .field("teif[4]", &self.teif(4usize))
+                .field("teif[5]", &self.teif(5usize))
+                .field("teif[6]", &self.teif(6usize))
+                .field("teif[7]", &self.teif(7usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Isr {
-                gif: [bool; 8usize],
-                tcif: [bool; 8usize],
-                htif: [bool; 8usize],
-                teif: [bool; 8usize],
-            }
-            let proxy = Isr {
-                gif: [
-                    self.gif(0usize),
-                    self.gif(1usize),
-                    self.gif(2usize),
-                    self.gif(3usize),
-                    self.gif(4usize),
-                    self.gif(5usize),
-                    self.gif(6usize),
-                    self.gif(7usize),
-                ],
-                tcif: [
-                    self.tcif(0usize),
-                    self.tcif(1usize),
-                    self.tcif(2usize),
-                    self.tcif(3usize),
-                    self.tcif(4usize),
-                    self.tcif(5usize),
-                    self.tcif(6usize),
-                    self.tcif(7usize),
-                ],
-                htif: [
-                    self.htif(0usize),
-                    self.htif(1usize),
-                    self.htif(2usize),
-                    self.htif(3usize),
-                    self.htif(4usize),
-                    self.htif(5usize),
-                    self.htif(6usize),
-                    self.htif(7usize),
-                ],
-                teif: [
-                    self.teif(0usize),
-                    self.teif(1usize),
-                    self.teif(2usize),
-                    self.teif(3usize),
-                    self.teif(4usize),
-                    self.teif(5usize),
-                    self.teif(6usize),
-                    self.teif(7usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Isr {{ gif[0]: {=bool:?}, gif[1]: {=bool:?}, gif[2]: {=bool:?}, gif[3]: {=bool:?}, gif[4]: {=bool:?}, gif[5]: {=bool:?}, gif[6]: {=bool:?}, gif[7]: {=bool:?}, tcif[0]: {=bool:?}, tcif[1]: {=bool:?}, tcif[2]: {=bool:?}, tcif[3]: {=bool:?}, tcif[4]: {=bool:?}, tcif[5]: {=bool:?}, tcif[6]: {=bool:?}, tcif[7]: {=bool:?}, htif[0]: {=bool:?}, htif[1]: {=bool:?}, htif[2]: {=bool:?}, htif[3]: {=bool:?}, htif[4]: {=bool:?}, htif[5]: {=bool:?}, htif[6]: {=bool:?}, htif[7]: {=bool:?}, teif[0]: {=bool:?}, teif[1]: {=bool:?}, teif[2]: {=bool:?}, teif[3]: {=bool:?}, teif[4]: {=bool:?}, teif[5]: {=bool:?}, teif[6]: {=bool:?}, teif[7]: {=bool:?} }}" , self . gif (0usize) , self . gif (1usize) , self . gif (2usize) , self . gif (3usize) , self . gif (4usize) , self . gif (5usize) , self . gif (6usize) , self . gif (7usize) , self . tcif (0usize) , self . tcif (1usize) , self . tcif (2usize) , self . tcif (3usize) , self . tcif (4usize) , self . tcif (5usize) , self . tcif (6usize) , self . tcif (7usize) , self . htif (0usize) , self . htif (1usize) , self . htif (2usize) , self . htif (3usize) , self . htif (4usize) , self . htif (5usize) , self . htif (6usize) , self . htif (7usize) , self . teif (0usize) , self . teif (1usize) , self . teif (2usize) , self . teif (3usize) , self . teif (4usize) , self . teif (5usize) , self . teif (6usize) , self . teif (7usize))
         }
     }
     #[doc = "DMA channel 1 number of data register"]
@@ -560,12 +441,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ndtr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ndtr {
-                ndt: u16,
-            }
-            let proxy = Ndtr { ndt: self.ndt() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ndtr {{ ndt: {=u16:?} }}", self.ndt())
         }
     }
 }

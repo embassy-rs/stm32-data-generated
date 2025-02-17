@@ -146,26 +146,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccr {
-                dual: super::vals::Dual,
-                delay: u8,
-                damdf: super::vals::Damdf,
-                presc: super::vals::Presc,
-                vrefen: bool,
-                vsenseen: bool,
-                vbaten: bool,
-            }
-            let proxy = Ccr {
-                dual: self.dual(),
-                delay: self.delay(),
-                damdf: self.damdf(),
-                presc: self.presc(),
-                vrefen: self.vrefen(),
-                vsenseen: self.vsenseen(),
-                vbaten: self.vbaten(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ccr {{ dual: {:?}, delay: {=u8:?}, damdf: {:?}, presc: {:?}, vrefen: {=bool:?}, vsenseen: {=bool:?}, vbaten: {=bool:?} }}" , self . dual () , self . delay () , self . damdf () , self . presc () , self . vrefen () , self . vsenseen () , self . vbaten ())
         }
     }
     #[doc = "ADC common regular data register for dual mode."]
@@ -215,16 +196,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cdr {
-                rdata_mst: u16,
-                rdata_slv: u16,
-            }
-            let proxy = Cdr {
-                rdata_mst: self.rdata_mst(),
-                rdata_slv: self.rdata_slv(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cdr {{ rdata_mst: {=u16:?}, rdata_slv: {=u16:?} }}",
+                self.rdata_mst(),
+                self.rdata_slv()
+            )
         }
     }
     #[doc = "ADC common regular data register for 32-bit dual mode."]
@@ -258,14 +235,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cdr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cdr2 {
-                rdata_alt: u32,
-            }
-            let proxy = Cdr2 {
-                rdata_alt: self.rdata_alt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cdr2 {{ rdata_alt: {=u32:?} }}", self.rdata_alt())
         }
     }
     #[doc = "ADC common status register."]
@@ -496,10 +466,9 @@ pub mod regs {
                 .field("ovr_mst", &self.ovr_mst())
                 .field("jeoc_mst", &self.jeoc_mst())
                 .field("jeos_mst", &self.jeos_mst())
-                .field(
-                    "awd_mst",
-                    &[self.awd_mst(0usize), self.awd_mst(1usize), self.awd_mst(2usize)],
-                )
+                .field("awd_mst[0]", &self.awd_mst(0usize))
+                .field("awd_mst[1]", &self.awd_mst(1usize))
+                .field("awd_mst[2]", &self.awd_mst(2usize))
                 .field("ldordy_mst", &self.ldordy_mst())
                 .field("adrdy_slv", &self.adrdy_slv())
                 .field("eosmp_slv", &self.eosmp_slv())
@@ -508,10 +477,9 @@ pub mod regs {
                 .field("ovr_slv", &self.ovr_slv())
                 .field("jeoc_slv", &self.jeoc_slv())
                 .field("jeos_slv", &self.jeos_slv())
-                .field(
-                    "awd1_slv",
-                    &[self.awd1_slv(0usize), self.awd1_slv(1usize), self.awd1_slv(2usize)],
-                )
+                .field("awd1_slv[0]", &self.awd1_slv(0usize))
+                .field("awd1_slv[1]", &self.awd1_slv(1usize))
+                .field("awd1_slv[2]", &self.awd1_slv(2usize))
                 .field("ldordy_slv", &self.ldordy_slv())
                 .finish()
         }
@@ -519,48 +487,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                adrdy_mst: bool,
-                eosmp_mst: bool,
-                eoc_mst: bool,
-                eos_mst: bool,
-                ovr_mst: bool,
-                jeoc_mst: bool,
-                jeos_mst: bool,
-                awd_mst: [bool; 3usize],
-                ldordy_mst: bool,
-                adrdy_slv: bool,
-                eosmp_slv: bool,
-                eoc_slv: bool,
-                eos_slv: bool,
-                ovr_slv: bool,
-                jeoc_slv: bool,
-                jeos_slv: bool,
-                awd1_slv: [bool; 3usize],
-                ldordy_slv: bool,
-            }
-            let proxy = Csr {
-                adrdy_mst: self.adrdy_mst(),
-                eosmp_mst: self.eosmp_mst(),
-                eoc_mst: self.eoc_mst(),
-                eos_mst: self.eos_mst(),
-                ovr_mst: self.ovr_mst(),
-                jeoc_mst: self.jeoc_mst(),
-                jeos_mst: self.jeos_mst(),
-                awd_mst: [self.awd_mst(0usize), self.awd_mst(1usize), self.awd_mst(2usize)],
-                ldordy_mst: self.ldordy_mst(),
-                adrdy_slv: self.adrdy_slv(),
-                eosmp_slv: self.eosmp_slv(),
-                eoc_slv: self.eoc_slv(),
-                eos_slv: self.eos_slv(),
-                ovr_slv: self.ovr_slv(),
-                jeoc_slv: self.jeoc_slv(),
-                jeos_slv: self.jeos_slv(),
-                awd1_slv: [self.awd1_slv(0usize), self.awd1_slv(1usize), self.awd1_slv(2usize)],
-                ldordy_slv: self.ldordy_slv(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Csr {{ adrdy_mst: {=bool:?}, eosmp_mst: {=bool:?}, eoc_mst: {=bool:?}, eos_mst: {=bool:?}, ovr_mst: {=bool:?}, jeoc_mst: {=bool:?}, jeos_mst: {=bool:?}, awd_mst[0]: {=bool:?}, awd_mst[1]: {=bool:?}, awd_mst[2]: {=bool:?}, ldordy_mst: {=bool:?}, adrdy_slv: {=bool:?}, eosmp_slv: {=bool:?}, eoc_slv: {=bool:?}, eos_slv: {=bool:?}, ovr_slv: {=bool:?}, jeoc_slv: {=bool:?}, jeos_slv: {=bool:?}, awd1_slv[0]: {=bool:?}, awd1_slv[1]: {=bool:?}, awd1_slv[2]: {=bool:?}, ldordy_slv: {=bool:?} }}" , self . adrdy_mst () , self . eosmp_mst () , self . eoc_mst () , self . eos_mst () , self . ovr_mst () , self . jeoc_mst () , self . jeos_mst () , self . awd_mst (0usize) , self . awd_mst (1usize) , self . awd_mst (2usize) , self . ldordy_mst () , self . adrdy_slv () , self . eosmp_slv () , self . eoc_slv () , self . eos_slv () , self . ovr_slv () , self . jeoc_slv () , self . jeos_slv () , self . awd1_slv (0usize) , self . awd1_slv (1usize) , self . awd1_slv (2usize) , self . ldordy_slv ())
         }
     }
 }

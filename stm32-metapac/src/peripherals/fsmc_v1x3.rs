@@ -275,42 +275,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bcr {
-                mbken: bool,
-                muxen: bool,
-                mtyp: super::vals::Mtyp,
-                mwid: super::vals::Mwid,
-                faccen: bool,
-                bursten: bool,
-                waitpol: super::vals::Waitpol,
-                wrapmod: bool,
-                waitcfg: super::vals::Waitcfg,
-                wren: bool,
-                waiten: bool,
-                extmod: bool,
-                asyncwait: bool,
-                cpsize: super::vals::Cpsize,
-                cburstrw: bool,
-            }
-            let proxy = Bcr {
-                mbken: self.mbken(),
-                muxen: self.muxen(),
-                mtyp: self.mtyp(),
-                mwid: self.mwid(),
-                faccen: self.faccen(),
-                bursten: self.bursten(),
-                waitpol: self.waitpol(),
-                wrapmod: self.wrapmod(),
-                waitcfg: self.waitcfg(),
-                wren: self.wren(),
-                waiten: self.waiten(),
-                extmod: self.extmod(),
-                asyncwait: self.asyncwait(),
-                cpsize: self.cpsize(),
-                cburstrw: self.cburstrw(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Bcr {{ mbken: {=bool:?}, muxen: {=bool:?}, mtyp: {:?}, mwid: {:?}, faccen: {=bool:?}, bursten: {=bool:?}, waitpol: {:?}, wrapmod: {=bool:?}, waitcfg: {:?}, wren: {=bool:?}, waiten: {=bool:?}, extmod: {=bool:?}, asyncwait: {=bool:?}, cpsize: {:?}, cburstrw: {=bool:?} }}" , self . mbken () , self . muxen () , self . mtyp () , self . mwid () , self . faccen () , self . bursten () , self . waitpol () , self . wrapmod () , self . waitcfg () , self . wren () , self . waiten () , self . extmod () , self . asyncwait () , self . cpsize () , self . cburstrw ())
         }
     }
     #[doc = "SRAM/NOR-Flash chip-select timing register"]
@@ -418,26 +383,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Btr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Btr {
-                addset: u8,
-                addhld: u8,
-                datast: u8,
-                busturn: u8,
-                clkdiv: u8,
-                datlat: u8,
-                accmod: super::vals::Accmod,
-            }
-            let proxy = Btr {
-                addset: self.addset(),
-                addhld: self.addhld(),
-                datast: self.datast(),
-                busturn: self.busturn(),
-                clkdiv: self.clkdiv(),
-                datlat: self.datlat(),
-                accmod: self.accmod(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Btr {{ addset: {=u8:?}, addhld: {=u8:?}, datast: {=u8:?}, busturn: {=u8:?}, clkdiv: {=u8:?}, datlat: {=u8:?}, accmod: {:?} }}" , self . addset () , self . addhld () , self . datast () , self . busturn () , self . clkdiv () , self . datlat () , self . accmod ())
         }
     }
     #[doc = "SRAM/NOR-Flash write timing registers"]
@@ -521,22 +467,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bwtr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bwtr {
-                addset: u8,
-                addhld: u8,
-                datast: u8,
-                busturn: u8,
-                accmod: super::vals::Accmod,
-            }
-            let proxy = Bwtr {
-                addset: self.addset(),
-                addhld: self.addhld(),
-                datast: self.datast(),
-                busturn: self.busturn(),
-                accmod: self.accmod(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Bwtr {{ addset: {=u8:?}, addhld: {=u8:?}, datast: {=u8:?}, busturn: {=u8:?}, accmod: {:?} }}",
+                self.addset(),
+                self.addhld(),
+                self.datast(),
+                self.busturn(),
+                self.accmod()
+            )
         }
     }
     #[doc = "ECC result register"]
@@ -570,12 +509,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Eccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Eccr {
-                ecc: u32,
-            }
-            let proxy = Eccr { ecc: self.ecc() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Eccr {{ ecc: {=u32:?} }}", self.ecc())
         }
     }
     #[doc = "Attribute memory space timing register"]
@@ -647,20 +581,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Patt {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Patt {
-                attset: u8,
-                attwait: u8,
-                atthold: u8,
-                atthiz: u8,
-            }
-            let proxy = Patt {
-                attset: self.attset(),
-                attwait: self.attwait(),
-                atthold: self.atthold(),
-                atthiz: self.atthiz(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Patt {{ attset: {=u8:?}, attwait: {=u8:?}, atthold: {=u8:?}, atthiz: {=u8:?} }}",
+                self.attset(),
+                self.attwait(),
+                self.atthold(),
+                self.atthiz()
+            )
         }
     }
     #[doc = "PC Card/NAND Flash control register"]
@@ -780,28 +708,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pcr {
-                pwaiten: bool,
-                pbken: bool,
-                ptyp: super::vals::Ptyp,
-                pwid: super::vals::Pwid,
-                eccen: bool,
-                tclr: u8,
-                tar: u8,
-                eccps: super::vals::Eccps,
-            }
-            let proxy = Pcr {
-                pwaiten: self.pwaiten(),
-                pbken: self.pbken(),
-                ptyp: self.ptyp(),
-                pwid: self.pwid(),
-                eccen: self.eccen(),
-                tclr: self.tclr(),
-                tar: self.tar(),
-                eccps: self.eccps(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Pcr {{ pwaiten: {=bool:?}, pbken: {=bool:?}, ptyp: {:?}, pwid: {:?}, eccen: {=bool:?}, tclr: {=u8:?}, tar: {=u8:?}, eccps: {:?} }}" , self . pwaiten () , self . pbken () , self . ptyp () , self . pwid () , self . eccen () , self . tclr () , self . tar () , self . eccps ())
         }
     }
     #[doc = "I/O space timing register 4"]
@@ -873,20 +780,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pio4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pio4 {
-                iosetx: u8,
-                iowaitx: u8,
-                ioholdx: u8,
-                iohizx: u8,
-            }
-            let proxy = Pio4 {
-                iosetx: self.iosetx(),
-                iowaitx: self.iowaitx(),
-                ioholdx: self.ioholdx(),
-                iohizx: self.iohizx(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Pio4 {{ iosetx: {=u8:?}, iowaitx: {=u8:?}, ioholdx: {=u8:?}, iohizx: {=u8:?} }}",
+                self.iosetx(),
+                self.iowaitx(),
+                self.ioholdx(),
+                self.iohizx()
+            )
         }
     }
     #[doc = "Common memory space timing register"]
@@ -958,20 +859,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pmem {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pmem {
-                memset: u8,
-                memwait: u8,
-                memhold: u8,
-                memhiz: u8,
-            }
-            let proxy = Pmem {
-                memset: self.memset(),
-                memwait: self.memwait(),
-                memhold: self.memhold(),
-                memhiz: self.memhiz(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Pmem {{ memset: {=u8:?}, memwait: {=u8:?}, memhold: {=u8:?}, memhiz: {=u8:?} }}",
+                self.memset(),
+                self.memwait(),
+                self.memhold(),
+                self.memhiz()
+            )
         }
     }
     #[doc = "FIFO status and interrupt register"]
@@ -1079,26 +974,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                irs: bool,
-                ils: bool,
-                ifs: bool,
-                iren: bool,
-                ilen: bool,
-                ifen: bool,
-                fempt: bool,
-            }
-            let proxy = Sr {
-                irs: self.irs(),
-                ils: self.ils(),
-                ifs: self.ifs(),
-                iren: self.iren(),
-                ilen: self.ilen(),
-                ifen: self.ifen(),
-                fempt: self.fempt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr {{ irs: {=bool:?}, ils: {=bool:?}, ifs: {=bool:?}, iren: {=bool:?}, ilen: {=bool:?}, ifen: {=bool:?}, fempt: {=bool:?} }}" , self . irs () , self . ils () , self . ifs () , self . iren () , self . ilen () , self . ifen () , self . fempt ())
         }
     }
 }

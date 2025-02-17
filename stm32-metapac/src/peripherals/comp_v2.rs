@@ -167,32 +167,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                en: bool,
-                inmsel: u8,
-                inpsel: bool,
-                polarity: super::vals::Polarity,
-                hyst: super::vals::Hyst,
-                blanksel: u8,
-                brgen: bool,
-                scalen: bool,
-                value_do_not_set: bool,
-                lock: bool,
-            }
-            let proxy = Csr {
-                en: self.en(),
-                inmsel: self.inmsel(),
-                inpsel: self.inpsel(),
-                polarity: self.polarity(),
-                hyst: self.hyst(),
-                blanksel: self.blanksel(),
-                brgen: self.brgen(),
-                scalen: self.scalen(),
-                value_do_not_set: self.value_do_not_set(),
-                lock: self.lock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Csr {{ en: {=bool:?}, inmsel: {=u8:?}, inpsel: {=bool:?}, polarity: {:?}, hyst: {:?}, blanksel: {=u8:?}, brgen: {=bool:?}, scalen: {=bool:?}, value_do_not_set: {=bool:?}, lock: {=bool:?} }}" , self . en () , self . inmsel () , self . inpsel () , self . polarity () , self . hyst () , self . blanksel () , self . brgen () , self . scalen () , self . value_do_not_set () , self . lock ())
         }
     }
 }

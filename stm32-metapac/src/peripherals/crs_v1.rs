@@ -122,22 +122,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr {
-                reload: u16,
-                felim: u8,
-                syncdiv: u8,
-                syncsrc: super::vals::Syncsrc,
-                syncpol: bool,
-            }
-            let proxy = Cfgr {
-                reload: self.reload(),
-                felim: self.felim(),
-                syncdiv: self.syncdiv(),
-                syncsrc: self.syncsrc(),
-                syncpol: self.syncpol(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cfgr {{ reload: {=u16:?}, felim: {=u8:?}, syncdiv: {=u8:?}, syncsrc: {:?}, syncpol: {=bool:?} }}",
+                self.reload(),
+                self.felim(),
+                self.syncdiv(),
+                self.syncsrc(),
+                self.syncpol()
+            )
         }
     }
     #[doc = "control register"]
@@ -257,28 +250,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                syncokie: bool,
-                syncwarnie: bool,
-                errie: bool,
-                esyncie: bool,
-                cen: bool,
-                autotrimen: bool,
-                swsync: bool,
-                trim: u8,
-            }
-            let proxy = Cr {
-                syncokie: self.syncokie(),
-                syncwarnie: self.syncwarnie(),
-                errie: self.errie(),
-                esyncie: self.esyncie(),
-                cen: self.cen(),
-                autotrimen: self.autotrimen(),
-                swsync: self.swsync(),
-                trim: self.trim(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ syncokie: {=bool:?}, syncwarnie: {=bool:?}, errie: {=bool:?}, esyncie: {=bool:?}, cen: {=bool:?}, autotrimen: {=bool:?}, swsync: {=bool:?}, trim: {=u8:?} }}" , self . syncokie () , self . syncwarnie () , self . errie () , self . esyncie () , self . cen () , self . autotrimen () , self . swsync () , self . trim ())
         }
     }
     #[doc = "interrupt flag clear register"]
@@ -350,20 +322,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Icr {
-                syncokc: bool,
-                syncwarnc: bool,
-                errc: bool,
-                esyncc: bool,
-            }
-            let proxy = Icr {
-                syncokc: self.syncokc(),
-                syncwarnc: self.syncwarnc(),
-                errc: self.errc(),
-                esyncc: self.esyncc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Icr {{ syncokc: {=bool:?}, syncwarnc: {=bool:?}, errc: {=bool:?}, esyncc: {=bool:?} }}",
+                self.syncokc(),
+                self.syncwarnc(),
+                self.errc(),
+                self.esyncc()
+            )
         }
     }
     #[doc = "interrupt and status register"]
@@ -495,30 +461,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Isr {
-                syncokf: bool,
-                syncwarnf: bool,
-                errf: bool,
-                esyncf: bool,
-                syncerr: bool,
-                syncmiss: bool,
-                trimovf: bool,
-                fedir: bool,
-                fecap: u16,
-            }
-            let proxy = Isr {
-                syncokf: self.syncokf(),
-                syncwarnf: self.syncwarnf(),
-                errf: self.errf(),
-                esyncf: self.esyncf(),
-                syncerr: self.syncerr(),
-                syncmiss: self.syncmiss(),
-                trimovf: self.trimovf(),
-                fedir: self.fedir(),
-                fecap: self.fecap(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Isr {{ syncokf: {=bool:?}, syncwarnf: {=bool:?}, errf: {=bool:?}, esyncf: {=bool:?}, syncerr: {=bool:?}, syncmiss: {=bool:?}, trimovf: {=bool:?}, fedir: {=bool:?}, fecap: {=u16:?} }}" , self . syncokf () , self . syncwarnf () , self . errf () , self . esyncf () , self . syncerr () , self . syncmiss () , self . trimovf () , self . fedir () , self . fecap ())
         }
     }
 }

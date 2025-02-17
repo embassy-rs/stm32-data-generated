@@ -62,12 +62,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccr {
-                trim: u8,
-            }
-            let proxy = Ccr { trim: self.trim() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ccr {{ trim: {=u8:?} }}", self.trim())
         }
     }
     #[doc = "control and status register."]
@@ -139,20 +134,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                envr: bool,
-                hiz: super::vals::Hiz,
-                vrs: super::vals::Vrs,
-                vrr: bool,
-            }
-            let proxy = Csr {
-                envr: self.envr(),
-                hiz: self.hiz(),
-                vrs: self.vrs(),
-                vrr: self.vrr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Csr {{ envr: {=bool:?}, hiz: {:?}, vrs: {:?}, vrr: {=bool:?} }}",
+                self.envr(),
+                self.hiz(),
+                self.vrs(),
+                self.vrr()
+            )
         }
     }
 }

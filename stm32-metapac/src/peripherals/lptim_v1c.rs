@@ -104,12 +104,7 @@ value."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Arr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Arr {
-                arr: u16,
-            }
-            let proxy = Arr { arr: self.arr() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Arr {{ arr: {=u16:?} }}", self.arr())
         }
     }
     #[doc = "LPTIM configuration register."]
@@ -289,38 +284,7 @@ value."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr {
-                cksel: super::vals::ClockSource,
-                ckpol: super::vals::Ckpol,
-                ckflt: super::vals::Filter,
-                trgflt: super::vals::Filter,
-                presc: super::vals::Presc,
-                trigsel: u8,
-                trigen: super::vals::Trigen,
-                timout: bool,
-                wave: bool,
-                wavpol: super::vals::Wavpol,
-                preload: bool,
-                countmode: super::vals::ClockSource,
-                enc: bool,
-            }
-            let proxy = Cfgr {
-                cksel: self.cksel(),
-                ckpol: self.ckpol(),
-                ckflt: self.ckflt(),
-                trgflt: self.trgflt(),
-                presc: self.presc(),
-                trigsel: self.trigsel(),
-                trigen: self.trigen(),
-                timout: self.timout(),
-                wave: self.wave(),
-                wavpol: self.wavpol(),
-                preload: self.preload(),
-                countmode: self.countmode(),
-                enc: self.enc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr {{ cksel: {:?}, ckpol: {:?}, ckflt: {:?}, trgflt: {:?}, presc: {:?}, trigsel: {=u8:?}, trigen: {:?}, timout: {=bool:?}, wave: {=bool:?}, wavpol: {:?}, preload: {=bool:?}, countmode: {:?}, enc: {=bool:?} }}" , self . cksel () , self . ckpol () , self . ckflt () , self . trgflt () , self . presc () , self . trigsel () , self . trigen () , self . timout () , self . wave () , self . wavpol () , self . preload () , self . countmode () , self . enc ())
         }
     }
     #[doc = "LPTIM compare register 1."]
@@ -354,12 +318,7 @@ value."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cmp {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cmp {
-                cmp: u16,
-            }
-            let proxy = Cmp { cmp: self.cmp() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cmp {{ cmp: {=u16:?} }}", self.cmp())
         }
     }
     #[doc = "LPTIM counter register."]
@@ -393,12 +352,7 @@ value."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cnt {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cnt {
-                cnt: u16,
-            }
-            let proxy = Cnt { cnt: self.cnt() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cnt {{ cnt: {=u16:?} }}", self.cnt())
         }
     }
     #[doc = "LPTIM control register."]
@@ -490,22 +444,7 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                enable: bool,
-                sngstrt: bool,
-                cntstrt: bool,
-                countrst: bool,
-                rstare: bool,
-            }
-            let proxy = Cr {
-                enable: self.enable(),
-                sngstrt: self.sngstrt(),
-                cntstrt: self.cntstrt(),
-                countrst: self.countrst(),
-                rstare: self.rstare(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ enable: {=bool:?}, sngstrt: {=bool:?}, cntstrt: {=bool:?}, countrst: {=bool:?}, rstare: {=bool:?} }}" , self . enable () , self . sngstrt () , self . cntstrt () , self . countrst () , self . rstare ())
         }
     }
     #[doc = "LPTIM interrupt clear register."]
@@ -630,10 +569,10 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
     impl core::fmt::Debug for Icr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Icr")
-                .field("cccf", &[self.cccf(0usize)])
+                .field("cccf[0]", &self.cccf(0usize))
                 .field("arrmcf", &self.arrmcf())
                 .field("exttrigcf", &self.exttrigcf())
-                .field("cmpokcf", &[self.cmpokcf(0usize)])
+                .field("cmpokcf[0]", &self.cmpokcf(0usize))
                 .field("arrokcf", &self.arrokcf())
                 .field("upcf", &self.upcf())
                 .field("downcf", &self.downcf())
@@ -645,30 +584,7 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Icr {
-                cccf: [bool; 1usize],
-                arrmcf: bool,
-                exttrigcf: bool,
-                cmpokcf: [bool; 1usize],
-                arrokcf: bool,
-                upcf: bool,
-                downcf: bool,
-                uecf: bool,
-                repokcf: bool,
-            }
-            let proxy = Icr {
-                cccf: [self.cccf(0usize)],
-                arrmcf: self.arrmcf(),
-                exttrigcf: self.exttrigcf(),
-                cmpokcf: [self.cmpokcf(0usize)],
-                arrokcf: self.arrokcf(),
-                upcf: self.upcf(),
-                downcf: self.downcf(),
-                uecf: self.uecf(),
-                repokcf: self.repokcf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Icr {{ cccf[0]: {=bool:?}, arrmcf: {=bool:?}, exttrigcf: {=bool:?}, cmpokcf[0]: {=bool:?}, arrokcf: {=bool:?}, upcf: {=bool:?}, downcf: {=bool:?}, uecf: {=bool:?}, repokcf: {=bool:?} }}" , self . cccf (0usize) , self . arrmcf () , self . exttrigcf () , self . cmpokcf (0usize) , self . arrokcf () , self . upcf () , self . downcf () , self . uecf () , self . repokcf ())
         }
     }
     #[doc = "LPTIM interrupt enable register."]
@@ -793,10 +709,10 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
     impl core::fmt::Debug for Ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ier")
-                .field("ccie", &[self.ccie(0usize)])
+                .field("ccie[0]", &self.ccie(0usize))
                 .field("arrmie", &self.arrmie())
                 .field("exttrigie", &self.exttrigie())
-                .field("cmpokie", &[self.cmpokie(0usize)])
+                .field("cmpokie[0]", &self.cmpokie(0usize))
                 .field("arrokie", &self.arrokie())
                 .field("upie", &self.upie())
                 .field("downie", &self.downie())
@@ -808,30 +724,7 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ier {
-                ccie: [bool; 1usize],
-                arrmie: bool,
-                exttrigie: bool,
-                cmpokie: [bool; 1usize],
-                arrokie: bool,
-                upie: bool,
-                downie: bool,
-                ueie: bool,
-                repokie: bool,
-            }
-            let proxy = Ier {
-                ccie: [self.ccie(0usize)],
-                arrmie: self.arrmie(),
-                exttrigie: self.exttrigie(),
-                cmpokie: [self.cmpokie(0usize)],
-                arrokie: self.arrokie(),
-                upie: self.upie(),
-                downie: self.downie(),
-                ueie: self.ueie(),
-                repokie: self.repokie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ier {{ ccie[0]: {=bool:?}, arrmie: {=bool:?}, exttrigie: {=bool:?}, cmpokie[0]: {=bool:?}, arrokie: {=bool:?}, upie: {=bool:?}, downie: {=bool:?}, ueie: {=bool:?}, repokie: {=bool:?} }}" , self . ccie (0usize) , self . arrmie () , self . exttrigie () , self . cmpokie (0usize) , self . arrokie () , self . upie () , self . downie () , self . ueie () , self . repokie ())
         }
     }
     #[doc = "LPTIM interrupt and status register."]
@@ -956,10 +849,10 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
     impl core::fmt::Debug for Isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Isr")
-                .field("ccif", &[self.ccif(0usize)])
+                .field("ccif[0]", &self.ccif(0usize))
                 .field("arrm", &self.arrm())
                 .field("exttrig", &self.exttrig())
-                .field("cmpok", &[self.cmpok(0usize)])
+                .field("cmpok[0]", &self.cmpok(0usize))
                 .field("arrok", &self.arrok())
                 .field("up", &self.up())
                 .field("down", &self.down())
@@ -971,30 +864,7 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Isr {
-                ccif: [bool; 1usize],
-                arrm: bool,
-                exttrig: bool,
-                cmpok: [bool; 1usize],
-                arrok: bool,
-                up: bool,
-                down: bool,
-                ue: bool,
-                repok: bool,
-            }
-            let proxy = Isr {
-                ccif: [self.ccif(0usize)],
-                arrm: self.arrm(),
-                exttrig: self.exttrig(),
-                cmpok: [self.cmpok(0usize)],
-                arrok: self.arrok(),
-                up: self.up(),
-                down: self.down(),
-                ue: self.ue(),
-                repok: self.repok(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Isr {{ ccif[0]: {=bool:?}, arrm: {=bool:?}, exttrig: {=bool:?}, cmpok[0]: {=bool:?}, arrok: {=bool:?}, up: {=bool:?}, down: {=bool:?}, ue: {=bool:?}, repok: {=bool:?} }}" , self . ccif (0usize) , self . arrm () , self . exttrig () , self . cmpok (0usize) , self . arrok () , self . up () , self . down () , self . ue () , self . repok ())
         }
     }
     #[doc = "LPTIM repetition register."]
@@ -1028,12 +898,7 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rcr {
-                rep: u8,
-            }
-            let proxy = Rcr { rep: self.rep() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Rcr {{ rep: {=u8:?} }}", self.rep())
         }
     }
 }

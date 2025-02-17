@@ -206,36 +206,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr1 {
-                en: bool,
-                brgen: bool,
-                scalen: bool,
-                polarity: bool,
-                iten: bool,
-                hyst: super::vals::Hyst,
-                pwrmode: super::vals::Pwrmode,
-                inmsel: super::vals::Inmsel,
-                inpsel1: bool,
-                inpsel2: bool,
-                blanking: super::vals::Blanking,
-                lock: bool,
-            }
-            let proxy = Cfgr1 {
-                en: self.en(),
-                brgen: self.brgen(),
-                scalen: self.scalen(),
-                polarity: self.polarity(),
-                iten: self.iten(),
-                hyst: self.hyst(),
-                pwrmode: self.pwrmode(),
-                inmsel: self.inmsel(),
-                inpsel1: self.inpsel1(),
-                inpsel2: self.inpsel2(),
-                blanking: self.blanking(),
-                lock: self.lock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr1 {{ en: {=bool:?}, brgen: {=bool:?}, scalen: {=bool:?}, polarity: {=bool:?}, iten: {=bool:?}, hyst: {:?}, pwrmode: {:?}, inmsel: {:?}, inpsel1: {=bool:?}, inpsel2: {=bool:?}, blanking: {:?}, lock: {=bool:?} }}" , self . en () , self . brgen () , self . scalen () , self . polarity () , self . iten () , self . hyst () , self . pwrmode () , self . inmsel () , self . inpsel1 () , self . inpsel2 () , self . blanking () , self . lock ())
         }
     }
     #[doc = "Comparator configuration register 2."]
@@ -283,16 +254,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr2 {
-                inpsel0: bool,
-                lock: bool,
-            }
-            let proxy = Cfgr2 {
-                inpsel0: self.inpsel0(),
-                lock: self.lock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cfgr2 {{ inpsel0: {=bool:?}, lock: {=bool:?} }}",
+                self.inpsel0(),
+                self.lock()
+            )
         }
     }
     #[doc = "Comparator interrupt clear flag register."]
@@ -324,20 +291,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Icfr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Icfr").field("ccif", &[self.ccif(0usize)]).finish()
+            f.debug_struct("Icfr").field("ccif[0]", &self.ccif(0usize)).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icfr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Icfr {
-                ccif: [bool; 1usize],
-            }
-            let proxy = Icfr {
-                ccif: [self.ccif(0usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Icfr {{ ccif[0]: {=bool:?} }}", self.ccif(0usize))
         }
     }
     #[doc = "Comparator status register."]
@@ -385,24 +345,20 @@ pub mod regs {
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
-                .field("cval", &[self.cval(0usize)])
-                .field("cif", &[self.cif(0usize)])
+                .field("cval[0]", &self.cval(0usize))
+                .field("cif[0]", &self.cif(0usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                cval: [bool; 1usize],
-                cif: [bool; 1usize],
-            }
-            let proxy = Sr {
-                cval: [self.cval(0usize)],
-                cif: [self.cif(0usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sr {{ cval[0]: {=bool:?}, cif[0]: {=bool:?} }}",
+                self.cval(0usize),
+                self.cif(0usize)
+            )
         }
     }
 }

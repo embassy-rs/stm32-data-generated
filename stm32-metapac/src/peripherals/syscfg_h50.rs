@@ -146,27 +146,19 @@ pub mod regs {
     impl core::fmt::Debug for Cccsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cccsr")
-                .field("en", &[self.en(0usize), self.en(1usize)])
-                .field("cs", &[self.cs(0usize), self.cs(1usize)])
-                .field("rdy", &[self.rdy(0usize), self.rdy(1usize)])
+                .field("en[0]", &self.en(0usize))
+                .field("en[1]", &self.en(1usize))
+                .field("cs[0]", &self.cs(0usize))
+                .field("cs[1]", &self.cs(1usize))
+                .field("rdy[0]", &self.rdy(0usize))
+                .field("rdy[1]", &self.rdy(1usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cccsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cccsr {
-                en: [bool; 2usize],
-                cs: [super::vals::Cs; 2usize],
-                rdy: [bool; 2usize],
-            }
-            let proxy = Cccsr {
-                en: [self.en(0usize), self.en(1usize)],
-                cs: [self.cs(0usize), self.cs(1usize)],
-                rdy: [self.rdy(0usize), self.rdy(1usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cccsr {{ en[0]: {=bool:?}, en[1]: {=bool:?}, cs[0]: {:?}, cs[1]: {:?}, rdy[0]: {=bool:?}, rdy[1]: {=bool:?} }}" , self . en (0usize) , self . en (1usize) , self . cs (0usize) , self . cs (1usize) , self . rdy (0usize) , self . rdy (1usize))
         }
     }
     #[doc = "SBS compensation cell for I/Os software code register"]
@@ -238,20 +230,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccswcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccswcr {
-                sw_ansrc1: u8,
-                sw_apsrc1: u8,
-                sw_ansrc2: u8,
-                sw_apsrc2: u8,
-            }
-            let proxy = Ccswcr {
-                sw_ansrc1: self.sw_ansrc1(),
-                sw_apsrc1: self.sw_apsrc1(),
-                sw_ansrc2: self.sw_ansrc2(),
-                sw_apsrc2: self.sw_apsrc2(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ccswcr {{ sw_ansrc1: {=u8:?}, sw_apsrc1: {=u8:?}, sw_ansrc2: {=u8:?}, sw_apsrc2: {=u8:?} }}",
+                self.sw_ansrc1(),
+                self.sw_apsrc1(),
+                self.sw_ansrc2(),
+                self.sw_apsrc2()
+            )
         }
     }
     #[doc = "SBS compensation cell for I/Os value register"]
@@ -323,20 +309,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccvalr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccvalr {
-                ansrc1: u8,
-                apsrc1: u8,
-                ansrc2: u8,
-                apsrc2: u8,
-            }
-            let proxy = Ccvalr {
-                ansrc1: self.ansrc1(),
-                apsrc1: self.apsrc1(),
-                ansrc2: self.ansrc2(),
-                apsrc2: self.apsrc2(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ccvalr {{ ansrc1: {=u8:?}, apsrc1: {=u8:?}, ansrc2: {=u8:?}, apsrc2: {=u8:?} }}",
+                self.ansrc1(),
+                self.apsrc1(),
+                self.ansrc2(),
+                self.apsrc2()
+            )
         }
     }
     #[doc = "SBS Class B register"]
@@ -408,20 +388,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr2 {
-                cll: bool,
-                sel: bool,
-                pvdl: bool,
-                eccl: bool,
-            }
-            let proxy = Cfgr2 {
-                cll: self.cll(),
-                sel: self.sel(),
-                pvdl: self.pvdl(),
-                eccl: self.eccl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cfgr2 {{ cll: {=bool:?}, sel: {=bool:?}, pvdl: {=bool:?}, eccl: {=bool:?} }}",
+                self.cll(),
+                self.sel(),
+                self.pvdl(),
+                self.eccl()
+            )
         }
     }
     #[doc = "SBS CPU lock register"]
@@ -469,16 +443,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cnslckr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cnslckr {
-                locknsvtor: bool,
-                locknsmpu: bool,
-            }
-            let proxy = Cnslckr {
-                locknsvtor: self.locknsvtor(),
-                locknsmpu: self.locknsmpu(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cnslckr {{ locknsvtor: {=bool:?}, locknsmpu: {=bool:?} }}",
+                self.locknsvtor(),
+                self.locknsmpu()
+            )
         }
     }
     #[doc = "SBS debug control register"]
@@ -538,18 +508,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dbgcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dbgcr {
-                ap_unlock: u8,
-                dbg_unlock: u8,
-                dbg_auth_hdpl: super::vals::DbgAuthHdpl,
-            }
-            let proxy = Dbgcr {
-                ap_unlock: self.ap_unlock(),
-                dbg_unlock: self.dbg_unlock(),
-                dbg_auth_hdpl: self.dbg_auth_hdpl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dbgcr {{ ap_unlock: {=u8:?}, dbg_unlock: {=u8:?}, dbg_auth_hdpl: {:?} }}",
+                self.ap_unlock(),
+                self.dbg_unlock(),
+                self.dbg_auth_hdpl()
+            )
         }
     }
     #[doc = "SBS debug lock register"]
@@ -585,14 +550,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dbglockr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dbglockr {
-                dbgcfg_lock: super::vals::DbgcfgLock,
-            }
-            let proxy = Dbglockr {
-                dbgcfg_lock: self.dbgcfg_lock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dbglockr {{ dbgcfg_lock: {:?} }}", self.dbgcfg_lock())
         }
     }
     #[doc = "SBS flift ECC NMI mask register"]
@@ -628,14 +586,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Eccnmir {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Eccnmir {
-                eccnmi_mask_en: bool,
-            }
-            let proxy = Eccnmir {
-                eccnmi_mask_en: self.eccnmi_mask_en(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Eccnmir {{ eccnmi_mask_en: {=bool:?} }}", self.eccnmi_mask_en())
         }
     }
     #[doc = "SBS FPU interrupt mask register"]
@@ -669,12 +620,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fpuimr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fpuimr {
-                fpu_ie: u8,
-            }
-            let proxy = Fpuimr { fpu_ie: self.fpu_ie() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Fpuimr {{ fpu_ie: {=u8:?} }}", self.fpu_ie())
         }
     }
     #[doc = "SBS temporal isolation control register"]
@@ -708,14 +654,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hdplcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hdplcr {
-                incr_hdpl: super::vals::IncrHdpl,
-            }
-            let proxy = Hdplcr {
-                incr_hdpl: self.incr_hdpl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Hdplcr {{ incr_hdpl: {:?} }}", self.incr_hdpl())
         }
     }
     #[doc = "SBS temporal isolation status register"]
@@ -749,12 +688,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hdplsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hdplsr {
-                hdpl: super::vals::Hdpl,
-            }
-            let proxy = Hdplsr { hdpl: self.hdpl() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Hdplsr {{ hdpl: {:?} }}", self.hdpl())
         }
     }
     #[doc = "SBS memory erase status register"]
@@ -802,16 +736,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mesr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mesr {
-                mclr: bool,
-                ipmee: bool,
-            }
-            let proxy = Mesr {
-                mclr: self.mclr(),
-                ipmee: self.ipmee(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Mesr {{ mclr: {=bool:?}, ipmee: {=bool:?} }}",
+                self.mclr(),
+                self.ipmee()
+            )
         }
     }
     #[doc = "SBS product mode and configuration register"]
@@ -895,22 +825,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pmcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pmcr {
-                boosten: bool,
-                boostvddsel: bool,
-                pb6_fmplus: bool,
-                pb7_fmplus: bool,
-                pb8_fmplus: bool,
-            }
-            let proxy = Pmcr {
-                boosten: self.boosten(),
-                boostvddsel: self.boostvddsel(),
-                pb6_fmplus: self.pb6_fmplus(),
-                pb7_fmplus: self.pb7_fmplus(),
-                pb8_fmplus: self.pb8_fmplus(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Pmcr {{ boosten: {=bool:?}, boostvddsel: {=bool:?}, pb6_fmplus: {=bool:?}, pb7_fmplus: {=bool:?}, pb8_fmplus: {=bool:?} }}" , self . boosten () , self . boostvddsel () , self . pb6_fmplus () , self . pb7_fmplus () , self . pb8_fmplus ())
         }
     }
 }
@@ -948,7 +863,7 @@ pub mod vals {
     }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct DbgAuthHdpl(pub u8);
+    pub struct DbgAuthHdpl(u8);
     impl DbgAuthHdpl {
         #[doc = "HDPL1"]
         pub const B_0X51: Self = Self(0x51);
@@ -1000,7 +915,7 @@ pub mod vals {
     }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct DbgcfgLock(pub u8);
+    pub struct DbgcfgLock(u8);
     impl DbgcfgLock {
         #[doc = "Writes to SBS_DBGCR allowed (default)"]
         pub const B_0X_B4: Self = Self(0xb4);
@@ -1044,7 +959,7 @@ pub mod vals {
     }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Hdpl(pub u8);
+    pub struct Hdpl(u8);
     impl Hdpl {
         #[doc = "HDPL1, iRoT"]
         pub const B_0X51: Self = Self(0x51);
@@ -1100,7 +1015,7 @@ pub mod vals {
     }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct IncrHdpl(pub u8);
+    pub struct IncrHdpl(u8);
     impl IncrHdpl {
         #[doc = "recommended value to increment HDPL level by one"]
         pub const B_0X6A: Self = Self(0x6a);

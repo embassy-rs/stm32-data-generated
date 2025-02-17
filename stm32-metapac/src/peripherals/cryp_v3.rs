@@ -268,30 +268,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                algodir: bool,
-                algomode0: u8,
-                datatype: u8,
-                keysize: u8,
-                fflush: bool,
-                crypen: bool,
-                gcm_ccmph: u8,
-                algomode3: bool,
-                npblb: u8,
-            }
-            let proxy = Cr {
-                algodir: self.algodir(),
-                algomode0: self.algomode0(),
-                datatype: self.datatype(),
-                keysize: self.keysize(),
-                fflush: self.fflush(),
-                crypen: self.crypen(),
-                gcm_ccmph: self.gcm_ccmph(),
-                algomode3: self.algomode3(),
-                npblb: self.npblb(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ algodir: {=bool:?}, algomode0: {=u8:?}, datatype: {=u8:?}, keysize: {=u8:?}, fflush: {=bool:?}, crypen: {=bool:?}, gcm_ccmph: {=u8:?}, algomode3: {=bool:?}, npblb: {=u8:?} }}" , self . algodir () , self . algomode0 () , self . datatype () , self . keysize () , self . fflush () , self . crypen () , self . gcm_ccmph () , self . algomode3 () , self . npblb ())
         }
     }
     #[doc = "DMA control register."]
@@ -339,16 +316,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dmacr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dmacr {
-                dien: bool,
-                doen: bool,
-            }
-            let proxy = Dmacr {
-                dien: self.dien(),
-                doen: self.doen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dmacr {{ dien: {=bool:?}, doen: {=bool:?} }}",
+                self.dien(),
+                self.doen()
+            )
         }
     }
     #[doc = "interrupt mask set/clear register."]
@@ -396,16 +369,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Imscr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Imscr {
-                inim: bool,
-                outim: bool,
-            }
-            let proxy = Imscr {
-                inim: self.inim(),
-                outim: self.outim(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Imscr {{ inim: {=bool:?}, outim: {=bool:?} }}",
+                self.inim(),
+                self.outim()
+            )
         }
     }
     #[doc = "masked interrupt status register."]
@@ -453,16 +422,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Misr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Misr {
-                inmis: bool,
-                outmis: bool,
-            }
-            let proxy = Misr {
-                inmis: self.inmis(),
-                outmis: self.outmis(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Misr {{ inmis: {=bool:?}, outmis: {=bool:?} }}",
+                self.inmis(),
+                self.outmis()
+            )
         }
     }
     #[doc = "raw interrupt status register."]
@@ -510,16 +475,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Risr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Risr {
-                inris: bool,
-                outris: bool,
-            }
-            let proxy = Risr {
-                inris: self.inris(),
-                outris: self.outris(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Risr {{ inris: {=bool:?}, outris: {=bool:?} }}",
+                self.inris(),
+                self.outris()
+            )
         }
     }
     #[doc = "status register."]
@@ -603,22 +564,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                ifem: bool,
-                ifnf: bool,
-                ofne: bool,
-                offu: bool,
-                busy: bool,
-            }
-            let proxy = Sr {
-                ifem: self.ifem(),
-                ifnf: self.ifnf(),
-                ofne: self.ofne(),
-                offu: self.offu(),
-                busy: self.busy(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sr {{ ifem: {=bool:?}, ifnf: {=bool:?}, ofne: {=bool:?}, offu: {=bool:?}, busy: {=bool:?} }}",
+                self.ifem(),
+                self.ifnf(),
+                self.ofne(),
+                self.offu(),
+                self.busy()
+            )
         }
     }
 }

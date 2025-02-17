@@ -242,38 +242,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                en: bool,
-                datatype: super::vals::Datatype,
-                mode: super::vals::Mode,
-                chmod10: u8,
-                ccfc: bool,
-                errc: bool,
-                ccfie: bool,
-                errie: bool,
-                dmainen: bool,
-                dmaouten: bool,
-                gcmph: super::vals::Gcmph,
-                chmod2: bool,
-                keysize: bool,
-            }
-            let proxy = Cr {
-                en: self.en(),
-                datatype: self.datatype(),
-                mode: self.mode(),
-                chmod10: self.chmod10(),
-                ccfc: self.ccfc(),
-                errc: self.errc(),
-                ccfie: self.ccfie(),
-                errie: self.errie(),
-                dmainen: self.dmainen(),
-                dmaouten: self.dmaouten(),
-                gcmph: self.gcmph(),
-                chmod2: self.chmod2(),
-                keysize: self.keysize(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ en: {=bool:?}, datatype: {:?}, mode: {:?}, chmod10: {=u8:?}, ccfc: {=bool:?}, errc: {=bool:?}, ccfie: {=bool:?}, errie: {=bool:?}, dmainen: {=bool:?}, dmaouten: {=bool:?}, gcmph: {:?}, chmod2: {=bool:?}, keysize: {=bool:?} }}" , self . en () , self . datatype () , self . mode () , self . chmod10 () , self . ccfc () , self . errc () , self . ccfie () , self . errie () , self . dmainen () , self . dmaouten () , self . gcmph () , self . chmod2 () , self . keysize ())
         }
     }
     #[doc = "Data input register"]
@@ -307,12 +276,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dinr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dinr {
-                din: u32,
-            }
-            let proxy = Dinr { din: self.din() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dinr {{ din: {=u32:?} }}", self.din())
         }
     }
     #[doc = "Data output register"]
@@ -346,12 +310,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Doutr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Doutr {
-                dout: u32,
-            }
-            let proxy = Doutr { dout: self.dout() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Doutr {{ dout: {=u32:?} }}", self.dout())
         }
     }
     #[doc = "Initialization vector register"]
@@ -385,12 +344,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ivr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ivr {
-                ivi: u32,
-            }
-            let proxy = Ivr { ivi: self.ivi() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ivr {{ ivi: {=u32:?} }}", self.ivi())
         }
     }
     #[doc = "Key register"]
@@ -424,12 +378,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Keyr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Keyr {
-                key: u32,
-            }
-            let proxy = Keyr { key: self.key() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Keyr {{ key: {=u32:?} }}", self.key())
         }
     }
     #[doc = "Status register"]
@@ -501,20 +450,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                ccf: bool,
-                rderr: bool,
-                wrerr: bool,
-                busy: bool,
-            }
-            let proxy = Sr {
-                ccf: self.ccf(),
-                rderr: self.rderr(),
-                wrerr: self.wrerr(),
-                busy: self.busy(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sr {{ ccf: {=bool:?}, rderr: {=bool:?}, wrerr: {=bool:?}, busy: {=bool:?} }}",
+                self.ccf(),
+                self.rderr(),
+                self.wrerr(),
+                self.busy()
+            )
         }
     }
     #[doc = "Suspend register"]
@@ -548,12 +491,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Suspr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Suspr {
-                susp: u32,
-            }
-            let proxy = Suspr { susp: self.susp() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Suspr {{ susp: {=u32:?} }}", self.susp())
         }
     }
 }

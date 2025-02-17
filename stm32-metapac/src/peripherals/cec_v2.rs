@@ -180,30 +180,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr {
-                sft: u8,
-                rxtol: bool,
-                brestp: bool,
-                bregen: bool,
-                lbpegen: bool,
-                brdnogen: bool,
-                sftopt: bool,
-                oar: u16,
-                lstn: bool,
-            }
-            let proxy = Cfgr {
-                sft: self.sft(),
-                rxtol: self.rxtol(),
-                brestp: self.brestp(),
-                bregen: self.bregen(),
-                lbpegen: self.lbpegen(),
-                brdnogen: self.brdnogen(),
-                sftopt: self.sftopt(),
-                oar: self.oar(),
-                lstn: self.lstn(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr {{ sft: {=u8:?}, rxtol: {=bool:?}, brestp: {=bool:?}, bregen: {=bool:?}, lbpegen: {=bool:?}, brdnogen: {=bool:?}, sftopt: {=bool:?}, oar: {=u16:?}, lstn: {=bool:?} }}" , self . sft () , self . rxtol () , self . brestp () , self . bregen () , self . lbpegen () , self . brdnogen () , self . sftopt () , self . oar () , self . lstn ())
         }
     }
     #[doc = "CEC control register."]
@@ -263,18 +240,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                cecen: bool,
-                txsom: bool,
-                txeom: bool,
-            }
-            let proxy = Cr {
-                cecen: self.cecen(),
-                txsom: self.txsom(),
-                txeom: self.txeom(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cr {{ cecen: {=bool:?}, txsom: {=bool:?}, txeom: {=bool:?} }}",
+                self.cecen(),
+                self.txsom(),
+                self.txeom()
+            )
         }
     }
     #[doc = "CEC interrupt enable register."]
@@ -454,38 +426,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ier {
-                rxbrie: bool,
-                rxendie: bool,
-                rxovrie: bool,
-                breie: bool,
-                sbpeie: bool,
-                lbpeie: bool,
-                rxackie: bool,
-                arblstie: bool,
-                txbrie: bool,
-                txendie: bool,
-                txudrie: bool,
-                txerrie: bool,
-                txackie: bool,
-            }
-            let proxy = Ier {
-                rxbrie: self.rxbrie(),
-                rxendie: self.rxendie(),
-                rxovrie: self.rxovrie(),
-                breie: self.breie(),
-                sbpeie: self.sbpeie(),
-                lbpeie: self.lbpeie(),
-                rxackie: self.rxackie(),
-                arblstie: self.arblstie(),
-                txbrie: self.txbrie(),
-                txendie: self.txendie(),
-                txudrie: self.txudrie(),
-                txerrie: self.txerrie(),
-                txackie: self.txackie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ier {{ rxbrie: {=bool:?}, rxendie: {=bool:?}, rxovrie: {=bool:?}, breie: {=bool:?}, sbpeie: {=bool:?}, lbpeie: {=bool:?}, rxackie: {=bool:?}, arblstie: {=bool:?}, txbrie: {=bool:?}, txendie: {=bool:?}, txudrie: {=bool:?}, txerrie: {=bool:?}, txackie: {=bool:?} }}" , self . rxbrie () , self . rxendie () , self . rxovrie () , self . breie () , self . sbpeie () , self . lbpeie () , self . rxackie () , self . arblstie () , self . txbrie () , self . txendie () , self . txudrie () , self . txerrie () , self . txackie ())
         }
     }
     #[doc = "CEC Interrupt and Status Register."]
@@ -665,38 +606,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Isr {
-                rxbr: bool,
-                rxend: bool,
-                rxovr: bool,
-                bre: bool,
-                sbpe: bool,
-                lbpe: bool,
-                rxacke: bool,
-                arblst: bool,
-                txbr: bool,
-                txend: bool,
-                txudr: bool,
-                txerr: bool,
-                txacke: bool,
-            }
-            let proxy = Isr {
-                rxbr: self.rxbr(),
-                rxend: self.rxend(),
-                rxovr: self.rxovr(),
-                bre: self.bre(),
-                sbpe: self.sbpe(),
-                lbpe: self.lbpe(),
-                rxacke: self.rxacke(),
-                arblst: self.arblst(),
-                txbr: self.txbr(),
-                txend: self.txend(),
-                txudr: self.txudr(),
-                txerr: self.txerr(),
-                txacke: self.txacke(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Isr {{ rxbr: {=bool:?}, rxend: {=bool:?}, rxovr: {=bool:?}, bre: {=bool:?}, sbpe: {=bool:?}, lbpe: {=bool:?}, rxacke: {=bool:?}, arblst: {=bool:?}, txbr: {=bool:?}, txend: {=bool:?}, txudr: {=bool:?}, txerr: {=bool:?}, txacke: {=bool:?} }}" , self . rxbr () , self . rxend () , self . rxovr () , self . bre () , self . sbpe () , self . lbpe () , self . rxacke () , self . arblst () , self . txbr () , self . txend () , self . txudr () , self . txerr () , self . txacke ())
         }
     }
     #[doc = "CEC Rx Data Register."]
@@ -730,12 +640,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rxdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rxdr {
-                rxd: u8,
-            }
-            let proxy = Rxdr { rxd: self.rxd() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Rxdr {{ rxd: {=u8:?} }}", self.rxd())
         }
     }
     #[doc = "CEC Tx data register."]
@@ -769,12 +674,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Txdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Txdr {
-                txd: u8,
-            }
-            let proxy = Txdr { txd: self.txd() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Txdr {{ txd: {=u8:?} }}", self.txd())
         }
     }
 }

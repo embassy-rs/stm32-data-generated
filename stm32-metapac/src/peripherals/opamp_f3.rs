@@ -239,44 +239,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                opampen: bool,
-                force_vp: super::vals::ForceVp,
-                vp_sel: super::vals::VpSel,
-                vm_sel: super::vals::VmSel,
-                tcm_en: bool,
-                vms_sel: super::vals::VmsSel,
-                vps_sel: super::vals::VpsSel,
-                calon: bool,
-                calsel: super::vals::Calsel,
-                pga_gain: super::vals::PgaGain,
-                user_trim: bool,
-                trimoffsetp: u8,
-                trimoffsetn: u8,
-                tstref: bool,
-                outcal: super::vals::Outcal,
-                lock: bool,
-            }
-            let proxy = Csr {
-                opampen: self.opampen(),
-                force_vp: self.force_vp(),
-                vp_sel: self.vp_sel(),
-                vm_sel: self.vm_sel(),
-                tcm_en: self.tcm_en(),
-                vms_sel: self.vms_sel(),
-                vps_sel: self.vps_sel(),
-                calon: self.calon(),
-                calsel: self.calsel(),
-                pga_gain: self.pga_gain(),
-                user_trim: self.user_trim(),
-                trimoffsetp: self.trimoffsetp(),
-                trimoffsetn: self.trimoffsetn(),
-                tstref: self.tstref(),
-                outcal: self.outcal(),
-                lock: self.lock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Csr {{ opampen: {=bool:?}, force_vp: {:?}, vp_sel: {:?}, vm_sel: {:?}, tcm_en: {=bool:?}, vms_sel: {:?}, vps_sel: {:?}, calon: {=bool:?}, calsel: {:?}, pga_gain: {:?}, user_trim: {=bool:?}, trimoffsetp: {=u8:?}, trimoffsetn: {=u8:?}, tstref: {=bool:?}, outcal: {:?}, lock: {=bool:?} }}" , self . opampen () , self . force_vp () , self . vp_sel () , self . vm_sel () , self . tcm_en () , self . vms_sel () , self . vps_sel () , self . calon () , self . calsel () , self . pga_gain () , self . user_trim () , self . trimoffsetp () , self . trimoffsetn () , self . tstref () , self . outcal () , self . lock ())
         }
     }
 }

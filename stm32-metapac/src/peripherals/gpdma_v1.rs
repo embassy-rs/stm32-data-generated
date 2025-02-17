@@ -236,24 +236,16 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else a user setting error is reported and no
     #[cfg(feature = "defmt")]
     impl defmt::Format for ChBr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ChBr1 {
-                bndt: u16,
-                brc: u16,
-                sdec: super::vals::Dec,
-                ddec: super::vals::Dec,
-                brsdec: super::vals::Dec,
-                brddec: super::vals::Dec,
-            }
-            let proxy = ChBr1 {
-                bndt: self.bndt(),
-                brc: self.brc(),
-                sdec: self.sdec(),
-                ddec: self.ddec(),
-                brsdec: self.brsdec(),
-                brddec: self.brddec(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "ChBr1 {{ bndt: {=u16:?}, brc: {=u16:?}, sdec: {:?}, ddec: {:?}, brsdec: {:?}, brddec: {:?} }}",
+                self.bndt(),
+                self.brc(),
+                self.sdec(),
+                self.ddec(),
+                self.brsdec(),
+                self.brddec()
+            )
         }
     }
     #[doc = "GPDMA channel 12 block register 2"]
@@ -305,16 +297,12 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else a user setting error is reported and no
     #[cfg(feature = "defmt")]
     impl defmt::Format for ChBr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ChBr2 {
-                brsao: u16,
-                brdao: u16,
-            }
-            let proxy = ChBr2 {
-                brsao: self.brsao(),
-                brdao: self.brdao(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "ChBr2 {{ brsao: {=u16:?}, brdao: {=u16:?} }}",
+                self.brsao(),
+                self.brdao()
+            )
         }
     }
     #[doc = "GPDMA channel 11 control register"]
@@ -498,38 +486,7 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else a user setting error is reported and no
     #[cfg(feature = "defmt")]
     impl defmt::Format for ChCr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ChCr {
-                en: bool,
-                reset: bool,
-                susp: bool,
-                tcie: bool,
-                htie: bool,
-                dteie: bool,
-                uleie: bool,
-                useie: bool,
-                suspie: bool,
-                toie: bool,
-                lsm: super::vals::Lsm,
-                lap: super::vals::Ap,
-                prio: super::vals::Prio,
-            }
-            let proxy = ChCr {
-                en: self.en(),
-                reset: self.reset(),
-                susp: self.susp(),
-                tcie: self.tcie(),
-                htie: self.htie(),
-                dteie: self.dteie(),
-                uleie: self.uleie(),
-                useie: self.useie(),
-                suspie: self.suspie(),
-                toie: self.toie(),
-                lsm: self.lsm(),
-                lap: self.lap(),
-                prio: self.prio(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "ChCr {{ en: {=bool:?}, reset: {=bool:?}, susp: {=bool:?}, tcie: {=bool:?}, htie: {=bool:?}, dteie: {=bool:?}, uleie: {=bool:?}, useie: {=bool:?}, suspie: {=bool:?}, toie: {=bool:?}, lsm: {:?}, lap: {:?}, prio: {:?} }}" , self . en () , self . reset () , self . susp () , self . tcie () , self . htie () , self . dteie () , self . uleie () , self . useie () , self . suspie () , self . toie () , self . lsm () , self . lap () , self . prio ())
         }
     }
     #[doc = "GPDMA channel 7 flag clear register"]
@@ -637,26 +594,7 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else a user setting error is reported and no
     #[cfg(feature = "defmt")]
     impl defmt::Format for ChFcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ChFcr {
-                tcf: bool,
-                htf: bool,
-                dtef: bool,
-                ulef: bool,
-                usef: bool,
-                suspf: bool,
-                tof: bool,
-            }
-            let proxy = ChFcr {
-                tcf: self.tcf(),
-                htf: self.htf(),
-                dtef: self.dtef(),
-                ulef: self.ulef(),
-                usef: self.usef(),
-                suspf: self.suspf(),
-                tof: self.tof(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "ChFcr {{ tcf: {=bool:?}, htf: {=bool:?}, dtef: {=bool:?}, ulef: {=bool:?}, usef: {=bool:?}, suspf: {=bool:?}, tof: {=bool:?} }}" , self . tcf () , self . htf () , self . dtef () , self . ulef () , self . usef () , self . suspf () , self . tof ())
         }
     }
     #[doc = "GPDMA channel 14 linked-list base address register"]
@@ -690,12 +628,7 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else a user setting error is reported and no
     #[cfg(feature = "defmt")]
     impl defmt::Format for ChLbar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ChLbar {
-                lba: u16,
-            }
-            let proxy = ChLbar { lba: self.lba() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "ChLbar {{ lba: {=u16:?} }}", self.lba())
         }
     }
     #[doc = "GPDMA channel 15 alternate linked-list address register"]
@@ -831,30 +764,7 @@ is then restored to the programmed value after data transfer is completed and be
     #[cfg(feature = "defmt")]
     impl defmt::Format for ChLlr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ChLlr {
-                la: u16,
-                ull: bool,
-                ub2: bool,
-                ut3: bool,
-                uda: bool,
-                usa: bool,
-                ub1: bool,
-                ut2: bool,
-                ut1: bool,
-            }
-            let proxy = ChLlr {
-                la: self.la(),
-                ull: self.ull(),
-                ub2: self.ub2(),
-                ut3: self.ut3(),
-                uda: self.uda(),
-                usa: self.usa(),
-                ub1: self.ub1(),
-                ut2: self.ut2(),
-                ut1: self.ut1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "ChLlr {{ la: {=u16:?}, ull: {=bool:?}, ub2: {=bool:?}, ut3: {=bool:?}, uda: {=bool:?}, usa: {=bool:?}, ub1: {=bool:?}, ut2: {=bool:?}, ut1: {=bool:?} }}" , self . la () , self . ull () , self . ub2 () , self . ut3 () , self . uda () , self . usa () , self . ub1 () , self . ut2 () , self . ut1 ())
         }
     }
     #[doc = "GPDMA channel 15 status register"]
@@ -988,30 +898,7 @@ and CH\\[x\\].BR1.BRC\\[10:0\\], to know how many data have been transferred to 
     #[cfg(feature = "defmt")]
     impl defmt::Format for ChSr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ChSr {
-                idlef: bool,
-                tcf: bool,
-                htf: bool,
-                dtef: bool,
-                ulef: bool,
-                usef: bool,
-                suspf: bool,
-                tof: bool,
-                fifol: u8,
-            }
-            let proxy = ChSr {
-                idlef: self.idlef(),
-                tcf: self.tcf(),
-                htf: self.htf(),
-                dtef: self.dtef(),
-                ulef: self.ulef(),
-                usef: self.usef(),
-                suspf: self.suspf(),
-                tof: self.tof(),
-                fifol: self.fifol(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "ChSr {{ idlef: {=bool:?}, tcf: {=bool:?}, htf: {=bool:?}, dtef: {=bool:?}, ulef: {=bool:?}, usef: {=bool:?}, suspf: {=bool:?}, tof: {=bool:?}, fifol: {=u8:?} }}" , self . idlef () , self . tcf () , self . htf () , self . dtef () , self . ulef () , self . usef () , self . suspf () , self . tof () , self . fifol ())
         }
     }
     #[doc = "GPDMA channel 8 transfer register 1"]
@@ -1215,40 +1102,7 @@ and address offset CH\\[x\\].TR3.DAO\\[2:0\\], versus DDW\\[1:0\\]). Otherwise a
     #[cfg(feature = "defmt")]
     impl defmt::Format for ChTr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ChTr1 {
-                sdw: super::vals::Dw,
-                sinc: bool,
-                sbl_1: u8,
-                pam: super::vals::Pam,
-                sbx: bool,
-                sap: super::vals::Ap,
-                ssec: bool,
-                ddw: super::vals::Dw,
-                dinc: bool,
-                dbl_1: u8,
-                dbx: bool,
-                dhx: bool,
-                dap: super::vals::Ap,
-                dsec: bool,
-            }
-            let proxy = ChTr1 {
-                sdw: self.sdw(),
-                sinc: self.sinc(),
-                sbl_1: self.sbl_1(),
-                pam: self.pam(),
-                sbx: self.sbx(),
-                sap: self.sap(),
-                ssec: self.ssec(),
-                ddw: self.ddw(),
-                dinc: self.dinc(),
-                dbl_1: self.dbl_1(),
-                dbx: self.dbx(),
-                dhx: self.dhx(),
-                dap: self.dap(),
-                dsec: self.dsec(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "ChTr1 {{ sdw: {:?}, sinc: {=bool:?}, sbl_1: {=u8:?}, pam: {:?}, sbx: {=bool:?}, sap: {:?}, ssec: {=bool:?}, ddw: {:?}, dinc: {=bool:?}, dbl_1: {=u8:?}, dbx: {=bool:?}, dhx: {=bool:?}, dap: {:?}, dsec: {=bool:?} }}" , self . sdw () , self . sinc () , self . sbl_1 () , self . pam () , self . sbx () , self . sap () , self . ssec () , self . ddw () , self . dinc () , self . dbl_1 () , self . dbx () , self . dhx () , self . dap () , self . dsec ())
         }
     }
     #[doc = "GPDMA channel 10 transfer register 2"]
@@ -1394,28 +1248,7 @@ or TRIGPOL\\[1:0\\], resets the monitoring, trashing the memorized hit of the fo
     #[cfg(feature = "defmt")]
     impl defmt::Format for ChTr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ChTr2 {
-                reqsel: u8,
-                swreq: super::vals::Swreq,
-                dreq: super::vals::Dreq,
-                breq: super::vals::Breq,
-                trigm: super::vals::Trigm,
-                trigsel: u8,
-                trigpol: super::vals::Trigpol,
-                tcem: super::vals::Tcem,
-            }
-            let proxy = ChTr2 {
-                reqsel: self.reqsel(),
-                swreq: self.swreq(),
-                dreq: self.dreq(),
-                breq: self.breq(),
-                trigm: self.trigm(),
-                trigsel: self.trigsel(),
-                trigpol: self.trigpol(),
-                tcem: self.tcem(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "ChTr2 {{ reqsel: {=u8:?}, swreq: {:?}, dreq: {:?}, breq: {:?}, trigm: {:?}, trigsel: {=u8:?}, trigpol: {:?}, tcem: {:?} }}" , self . reqsel () , self . swreq () , self . dreq () , self . breq () , self . trigm () , self . trigsel () , self . trigpol () , self . tcem ())
         }
     }
     #[doc = "GPDMA channel 14 transfer register 3"]
@@ -1473,16 +1306,7 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else, a user setting error is reported and n
     #[cfg(feature = "defmt")]
     impl defmt::Format for ChTr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ChTr3 {
-                sao: u16,
-                dao: u16,
-            }
-            let proxy = ChTr3 {
-                sao: self.sao(),
-                dao: self.dao(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "ChTr3 {{ sao: {=u16:?}, dao: {=u16:?} }}", self.sao(), self.dao())
         }
     }
     #[doc = "GPDMA secure masked interrupt status register"]
@@ -1515,58 +1339,29 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else, a user setting error is reported and n
     impl core::fmt::Debug for Misr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Misr")
-                .field(
-                    "mis",
-                    &[
-                        self.mis(0usize),
-                        self.mis(1usize),
-                        self.mis(2usize),
-                        self.mis(3usize),
-                        self.mis(4usize),
-                        self.mis(5usize),
-                        self.mis(6usize),
-                        self.mis(7usize),
-                        self.mis(8usize),
-                        self.mis(9usize),
-                        self.mis(10usize),
-                        self.mis(11usize),
-                        self.mis(12usize),
-                        self.mis(13usize),
-                        self.mis(14usize),
-                        self.mis(15usize),
-                    ],
-                )
+                .field("mis[0]", &self.mis(0usize))
+                .field("mis[1]", &self.mis(1usize))
+                .field("mis[2]", &self.mis(2usize))
+                .field("mis[3]", &self.mis(3usize))
+                .field("mis[4]", &self.mis(4usize))
+                .field("mis[5]", &self.mis(5usize))
+                .field("mis[6]", &self.mis(6usize))
+                .field("mis[7]", &self.mis(7usize))
+                .field("mis[8]", &self.mis(8usize))
+                .field("mis[9]", &self.mis(9usize))
+                .field("mis[10]", &self.mis(10usize))
+                .field("mis[11]", &self.mis(11usize))
+                .field("mis[12]", &self.mis(12usize))
+                .field("mis[13]", &self.mis(13usize))
+                .field("mis[14]", &self.mis(14usize))
+                .field("mis[15]", &self.mis(15usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Misr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Misr {
-                mis: [bool; 16usize],
-            }
-            let proxy = Misr {
-                mis: [
-                    self.mis(0usize),
-                    self.mis(1usize),
-                    self.mis(2usize),
-                    self.mis(3usize),
-                    self.mis(4usize),
-                    self.mis(5usize),
-                    self.mis(6usize),
-                    self.mis(7usize),
-                    self.mis(8usize),
-                    self.mis(9usize),
-                    self.mis(10usize),
-                    self.mis(11usize),
-                    self.mis(12usize),
-                    self.mis(13usize),
-                    self.mis(14usize),
-                    self.mis(15usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Misr {{ mis[0]: {=bool:?}, mis[1]: {=bool:?}, mis[2]: {=bool:?}, mis[3]: {=bool:?}, mis[4]: {=bool:?}, mis[5]: {=bool:?}, mis[6]: {=bool:?}, mis[7]: {=bool:?}, mis[8]: {=bool:?}, mis[9]: {=bool:?}, mis[10]: {=bool:?}, mis[11]: {=bool:?}, mis[12]: {=bool:?}, mis[13]: {=bool:?}, mis[14]: {=bool:?}, mis[15]: {=bool:?} }}" , self . mis (0usize) , self . mis (1usize) , self . mis (2usize) , self . mis (3usize) , self . mis (4usize) , self . mis (5usize) , self . mis (6usize) , self . mis (7usize) , self . mis (8usize) , self . mis (9usize) , self . mis (10usize) , self . mis (11usize) , self . mis (12usize) , self . mis (13usize) , self . mis (14usize) , self . mis (15usize))
         }
     }
     #[doc = "GPDMA privileged configuration register"]
@@ -1599,58 +1394,29 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else, a user setting error is reported and n
     impl core::fmt::Debug for Privcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgr")
-                .field(
-                    "priv_",
-                    &[
-                        self.priv_(0usize),
-                        self.priv_(1usize),
-                        self.priv_(2usize),
-                        self.priv_(3usize),
-                        self.priv_(4usize),
-                        self.priv_(5usize),
-                        self.priv_(6usize),
-                        self.priv_(7usize),
-                        self.priv_(8usize),
-                        self.priv_(9usize),
-                        self.priv_(10usize),
-                        self.priv_(11usize),
-                        self.priv_(12usize),
-                        self.priv_(13usize),
-                        self.priv_(14usize),
-                        self.priv_(15usize),
-                    ],
-                )
+                .field("priv_[0]", &self.priv_(0usize))
+                .field("priv_[1]", &self.priv_(1usize))
+                .field("priv_[2]", &self.priv_(2usize))
+                .field("priv_[3]", &self.priv_(3usize))
+                .field("priv_[4]", &self.priv_(4usize))
+                .field("priv_[5]", &self.priv_(5usize))
+                .field("priv_[6]", &self.priv_(6usize))
+                .field("priv_[7]", &self.priv_(7usize))
+                .field("priv_[8]", &self.priv_(8usize))
+                .field("priv_[9]", &self.priv_(9usize))
+                .field("priv_[10]", &self.priv_(10usize))
+                .field("priv_[11]", &self.priv_(11usize))
+                .field("priv_[12]", &self.priv_(12usize))
+                .field("priv_[13]", &self.priv_(13usize))
+                .field("priv_[14]", &self.priv_(14usize))
+                .field("priv_[15]", &self.priv_(15usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Privcfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Privcfgr {
-                priv_: [bool; 16usize],
-            }
-            let proxy = Privcfgr {
-                priv_: [
-                    self.priv_(0usize),
-                    self.priv_(1usize),
-                    self.priv_(2usize),
-                    self.priv_(3usize),
-                    self.priv_(4usize),
-                    self.priv_(5usize),
-                    self.priv_(6usize),
-                    self.priv_(7usize),
-                    self.priv_(8usize),
-                    self.priv_(9usize),
-                    self.priv_(10usize),
-                    self.priv_(11usize),
-                    self.priv_(12usize),
-                    self.priv_(13usize),
-                    self.priv_(14usize),
-                    self.priv_(15usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Privcfgr {{ priv_[0]: {=bool:?}, priv_[1]: {=bool:?}, priv_[2]: {=bool:?}, priv_[3]: {=bool:?}, priv_[4]: {=bool:?}, priv_[5]: {=bool:?}, priv_[6]: {=bool:?}, priv_[7]: {=bool:?}, priv_[8]: {=bool:?}, priv_[9]: {=bool:?}, priv_[10]: {=bool:?}, priv_[11]: {=bool:?}, priv_[12]: {=bool:?}, priv_[13]: {=bool:?}, priv_[14]: {=bool:?}, priv_[15]: {=bool:?} }}" , self . priv_ (0usize) , self . priv_ (1usize) , self . priv_ (2usize) , self . priv_ (3usize) , self . priv_ (4usize) , self . priv_ (5usize) , self . priv_ (6usize) , self . priv_ (7usize) , self . priv_ (8usize) , self . priv_ (9usize) , self . priv_ (10usize) , self . priv_ (11usize) , self . priv_ (12usize) , self . priv_ (13usize) , self . priv_ (14usize) , self . priv_ (15usize))
         }
     }
     #[doc = "GPDMA configuration lock register"]
@@ -1683,58 +1449,29 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else, a user setting error is reported and n
     impl core::fmt::Debug for Rcfglockr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rcfglockr")
-                .field(
-                    "lock",
-                    &[
-                        self.lock(0usize),
-                        self.lock(1usize),
-                        self.lock(2usize),
-                        self.lock(3usize),
-                        self.lock(4usize),
-                        self.lock(5usize),
-                        self.lock(6usize),
-                        self.lock(7usize),
-                        self.lock(8usize),
-                        self.lock(9usize),
-                        self.lock(10usize),
-                        self.lock(11usize),
-                        self.lock(12usize),
-                        self.lock(13usize),
-                        self.lock(14usize),
-                        self.lock(15usize),
-                    ],
-                )
+                .field("lock[0]", &self.lock(0usize))
+                .field("lock[1]", &self.lock(1usize))
+                .field("lock[2]", &self.lock(2usize))
+                .field("lock[3]", &self.lock(3usize))
+                .field("lock[4]", &self.lock(4usize))
+                .field("lock[5]", &self.lock(5usize))
+                .field("lock[6]", &self.lock(6usize))
+                .field("lock[7]", &self.lock(7usize))
+                .field("lock[8]", &self.lock(8usize))
+                .field("lock[9]", &self.lock(9usize))
+                .field("lock[10]", &self.lock(10usize))
+                .field("lock[11]", &self.lock(11usize))
+                .field("lock[12]", &self.lock(12usize))
+                .field("lock[13]", &self.lock(13usize))
+                .field("lock[14]", &self.lock(14usize))
+                .field("lock[15]", &self.lock(15usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rcfglockr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rcfglockr {
-                lock: [bool; 16usize],
-            }
-            let proxy = Rcfglockr {
-                lock: [
-                    self.lock(0usize),
-                    self.lock(1usize),
-                    self.lock(2usize),
-                    self.lock(3usize),
-                    self.lock(4usize),
-                    self.lock(5usize),
-                    self.lock(6usize),
-                    self.lock(7usize),
-                    self.lock(8usize),
-                    self.lock(9usize),
-                    self.lock(10usize),
-                    self.lock(11usize),
-                    self.lock(12usize),
-                    self.lock(13usize),
-                    self.lock(14usize),
-                    self.lock(15usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Rcfglockr {{ lock[0]: {=bool:?}, lock[1]: {=bool:?}, lock[2]: {=bool:?}, lock[3]: {=bool:?}, lock[4]: {=bool:?}, lock[5]: {=bool:?}, lock[6]: {=bool:?}, lock[7]: {=bool:?}, lock[8]: {=bool:?}, lock[9]: {=bool:?}, lock[10]: {=bool:?}, lock[11]: {=bool:?}, lock[12]: {=bool:?}, lock[13]: {=bool:?}, lock[14]: {=bool:?}, lock[15]: {=bool:?} }}" , self . lock (0usize) , self . lock (1usize) , self . lock (2usize) , self . lock (3usize) , self . lock (4usize) , self . lock (5usize) , self . lock (6usize) , self . lock (7usize) , self . lock (8usize) , self . lock (9usize) , self . lock (10usize) , self . lock (11usize) , self . lock (12usize) , self . lock (13usize) , self . lock (14usize) , self . lock (15usize))
         }
     }
     #[doc = "GPDMA secure configuration register"]
@@ -1767,58 +1504,29 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else, a user setting error is reported and n
     impl core::fmt::Debug for Seccfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Seccfgr")
-                .field(
-                    "sec",
-                    &[
-                        self.sec(0usize),
-                        self.sec(1usize),
-                        self.sec(2usize),
-                        self.sec(3usize),
-                        self.sec(4usize),
-                        self.sec(5usize),
-                        self.sec(6usize),
-                        self.sec(7usize),
-                        self.sec(8usize),
-                        self.sec(9usize),
-                        self.sec(10usize),
-                        self.sec(11usize),
-                        self.sec(12usize),
-                        self.sec(13usize),
-                        self.sec(14usize),
-                        self.sec(15usize),
-                    ],
-                )
+                .field("sec[0]", &self.sec(0usize))
+                .field("sec[1]", &self.sec(1usize))
+                .field("sec[2]", &self.sec(2usize))
+                .field("sec[3]", &self.sec(3usize))
+                .field("sec[4]", &self.sec(4usize))
+                .field("sec[5]", &self.sec(5usize))
+                .field("sec[6]", &self.sec(6usize))
+                .field("sec[7]", &self.sec(7usize))
+                .field("sec[8]", &self.sec(8usize))
+                .field("sec[9]", &self.sec(9usize))
+                .field("sec[10]", &self.sec(10usize))
+                .field("sec[11]", &self.sec(11usize))
+                .field("sec[12]", &self.sec(12usize))
+                .field("sec[13]", &self.sec(13usize))
+                .field("sec[14]", &self.sec(14usize))
+                .field("sec[15]", &self.sec(15usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Seccfgr {
-                sec: [bool; 16usize],
-            }
-            let proxy = Seccfgr {
-                sec: [
-                    self.sec(0usize),
-                    self.sec(1usize),
-                    self.sec(2usize),
-                    self.sec(3usize),
-                    self.sec(4usize),
-                    self.sec(5usize),
-                    self.sec(6usize),
-                    self.sec(7usize),
-                    self.sec(8usize),
-                    self.sec(9usize),
-                    self.sec(10usize),
-                    self.sec(11usize),
-                    self.sec(12usize),
-                    self.sec(13usize),
-                    self.sec(14usize),
-                    self.sec(15usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Seccfgr {{ sec[0]: {=bool:?}, sec[1]: {=bool:?}, sec[2]: {=bool:?}, sec[3]: {=bool:?}, sec[4]: {=bool:?}, sec[5]: {=bool:?}, sec[6]: {=bool:?}, sec[7]: {=bool:?}, sec[8]: {=bool:?}, sec[9]: {=bool:?}, sec[10]: {=bool:?}, sec[11]: {=bool:?}, sec[12]: {=bool:?}, sec[13]: {=bool:?}, sec[14]: {=bool:?}, sec[15]: {=bool:?} }}" , self . sec (0usize) , self . sec (1usize) , self . sec (2usize) , self . sec (3usize) , self . sec (4usize) , self . sec (5usize) , self . sec (6usize) , self . sec (7usize) , self . sec (8usize) , self . sec (9usize) , self . sec (10usize) , self . sec (11usize) , self . sec (12usize) , self . sec (13usize) , self . sec (14usize) , self . sec (15usize))
         }
     }
 }

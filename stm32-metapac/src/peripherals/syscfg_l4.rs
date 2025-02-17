@@ -198,32 +198,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr1 {
-                fwdis: bool,
-                boosten: bool,
-                i2c_pb6_fmp: bool,
-                i2c_pb7_fmp: bool,
-                i2c_pb8_fmp: bool,
-                i2c_pb9_fmp: bool,
-                i2c1_fmp: bool,
-                i2c2_fmp: bool,
-                i2c3_fmp: bool,
-                fpu_ie: u8,
-            }
-            let proxy = Cfgr1 {
-                fwdis: self.fwdis(),
-                boosten: self.boosten(),
-                i2c_pb6_fmp: self.i2c_pb6_fmp(),
-                i2c_pb7_fmp: self.i2c_pb7_fmp(),
-                i2c_pb8_fmp: self.i2c_pb8_fmp(),
-                i2c_pb9_fmp: self.i2c_pb9_fmp(),
-                i2c1_fmp: self.i2c1_fmp(),
-                i2c2_fmp: self.i2c2_fmp(),
-                i2c3_fmp: self.i2c3_fmp(),
-                fpu_ie: self.fpu_ie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr1 {{ fwdis: {=bool:?}, boosten: {=bool:?}, i2c_pb6_fmp: {=bool:?}, i2c_pb7_fmp: {=bool:?}, i2c_pb8_fmp: {=bool:?}, i2c_pb9_fmp: {=bool:?}, i2c1_fmp: {=bool:?}, i2c2_fmp: {=bool:?}, i2c3_fmp: {=bool:?}, fpu_ie: {=u8:?} }}" , self . fwdis () , self . boosten () , self . i2c_pb6_fmp () , self . i2c_pb7_fmp () , self . i2c_pb8_fmp () , self . i2c_pb9_fmp () , self . i2c1_fmp () , self . i2c2_fmp () , self . i2c3_fmp () , self . fpu_ie ())
         }
     }
     #[doc = "CFGR2"]
@@ -307,22 +282,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr2 {
-                cll: bool,
-                spl: bool,
-                pvdl: bool,
-                eccl: bool,
-                spf: bool,
-            }
-            let proxy = Cfgr2 {
-                cll: self.cll(),
-                spl: self.spl(),
-                pvdl: self.pvdl(),
-                eccl: self.eccl(),
-                spf: self.spf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cfgr2 {{ cll: {=bool:?}, spl: {=bool:?}, pvdl: {=bool:?}, eccl: {=bool:?}, spf: {=bool:?} }}",
+                self.cll(),
+                self.spl(),
+                self.pvdl(),
+                self.eccl(),
+                self.spf()
+            )
         }
     }
     #[doc = "external interrupt configuration register 4"]
@@ -355,34 +323,24 @@ pub mod regs {
     impl core::fmt::Debug for Exticr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Exticr")
-                .field(
-                    "exti",
-                    &[
-                        self.exti(0usize),
-                        self.exti(1usize),
-                        self.exti(2usize),
-                        self.exti(3usize),
-                    ],
-                )
+                .field("exti[0]", &self.exti(0usize))
+                .field("exti[1]", &self.exti(1usize))
+                .field("exti[2]", &self.exti(2usize))
+                .field("exti[3]", &self.exti(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Exticr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Exticr {
-                exti: [u8; 4usize],
-            }
-            let proxy = Exticr {
-                exti: [
-                    self.exti(0usize),
-                    self.exti(1usize),
-                    self.exti(2usize),
-                    self.exti(3usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Exticr {{ exti[0]: {=u8:?}, exti[1]: {=u8:?}, exti[2]: {=u8:?}, exti[3]: {=u8:?} }}",
+                self.exti(0usize),
+                self.exti(1usize),
+                self.exti(2usize),
+                self.exti(3usize)
+            )
         }
     }
     #[doc = "memory remap register"]
@@ -442,18 +400,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Memrmp {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Memrmp {
-                mem_mode: u8,
-                qfs: bool,
-                fb_mode: bool,
-            }
-            let proxy = Memrmp {
-                mem_mode: self.mem_mode(),
-                qfs: self.qfs(),
-                fb_mode: self.fb_mode(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Memrmp {{ mem_mode: {=u8:?}, qfs: {=bool:?}, fb_mode: {=bool:?} }}",
+                self.mem_mode(),
+                self.qfs(),
+                self.fb_mode()
+            )
         }
     }
     #[doc = "SCSR"]
@@ -501,16 +454,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Scsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Scsr {
-                sram2er: bool,
-                sram2bsy: bool,
-            }
-            let proxy = Scsr {
-                sram2er: self.sram2er(),
-                sram2bsy: self.sram2bsy(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Scsr {{ sram2er: {=bool:?}, sram2bsy: {=bool:?} }}",
+                self.sram2er(),
+                self.sram2bsy()
+            )
         }
     }
     #[doc = "SKR"]
@@ -544,12 +493,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Skr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Skr {
-                key: u8,
-            }
-            let proxy = Skr { key: self.key() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Skr {{ key: {=u8:?} }}", self.key())
         }
     }
     #[doc = "SWPR"]
@@ -582,90 +526,45 @@ pub mod regs {
     impl core::fmt::Debug for Swpr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Swpr")
-                .field(
-                    "pwp",
-                    &[
-                        self.pwp(0usize),
-                        self.pwp(1usize),
-                        self.pwp(2usize),
-                        self.pwp(3usize),
-                        self.pwp(4usize),
-                        self.pwp(5usize),
-                        self.pwp(6usize),
-                        self.pwp(7usize),
-                        self.pwp(8usize),
-                        self.pwp(9usize),
-                        self.pwp(10usize),
-                        self.pwp(11usize),
-                        self.pwp(12usize),
-                        self.pwp(13usize),
-                        self.pwp(14usize),
-                        self.pwp(15usize),
-                        self.pwp(16usize),
-                        self.pwp(17usize),
-                        self.pwp(18usize),
-                        self.pwp(19usize),
-                        self.pwp(20usize),
-                        self.pwp(21usize),
-                        self.pwp(22usize),
-                        self.pwp(23usize),
-                        self.pwp(24usize),
-                        self.pwp(25usize),
-                        self.pwp(26usize),
-                        self.pwp(27usize),
-                        self.pwp(28usize),
-                        self.pwp(29usize),
-                        self.pwp(30usize),
-                        self.pwp(31usize),
-                    ],
-                )
+                .field("pwp[0]", &self.pwp(0usize))
+                .field("pwp[1]", &self.pwp(1usize))
+                .field("pwp[2]", &self.pwp(2usize))
+                .field("pwp[3]", &self.pwp(3usize))
+                .field("pwp[4]", &self.pwp(4usize))
+                .field("pwp[5]", &self.pwp(5usize))
+                .field("pwp[6]", &self.pwp(6usize))
+                .field("pwp[7]", &self.pwp(7usize))
+                .field("pwp[8]", &self.pwp(8usize))
+                .field("pwp[9]", &self.pwp(9usize))
+                .field("pwp[10]", &self.pwp(10usize))
+                .field("pwp[11]", &self.pwp(11usize))
+                .field("pwp[12]", &self.pwp(12usize))
+                .field("pwp[13]", &self.pwp(13usize))
+                .field("pwp[14]", &self.pwp(14usize))
+                .field("pwp[15]", &self.pwp(15usize))
+                .field("pwp[16]", &self.pwp(16usize))
+                .field("pwp[17]", &self.pwp(17usize))
+                .field("pwp[18]", &self.pwp(18usize))
+                .field("pwp[19]", &self.pwp(19usize))
+                .field("pwp[20]", &self.pwp(20usize))
+                .field("pwp[21]", &self.pwp(21usize))
+                .field("pwp[22]", &self.pwp(22usize))
+                .field("pwp[23]", &self.pwp(23usize))
+                .field("pwp[24]", &self.pwp(24usize))
+                .field("pwp[25]", &self.pwp(25usize))
+                .field("pwp[26]", &self.pwp(26usize))
+                .field("pwp[27]", &self.pwp(27usize))
+                .field("pwp[28]", &self.pwp(28usize))
+                .field("pwp[29]", &self.pwp(29usize))
+                .field("pwp[30]", &self.pwp(30usize))
+                .field("pwp[31]", &self.pwp(31usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Swpr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Swpr {
-                pwp: [bool; 32usize],
-            }
-            let proxy = Swpr {
-                pwp: [
-                    self.pwp(0usize),
-                    self.pwp(1usize),
-                    self.pwp(2usize),
-                    self.pwp(3usize),
-                    self.pwp(4usize),
-                    self.pwp(5usize),
-                    self.pwp(6usize),
-                    self.pwp(7usize),
-                    self.pwp(8usize),
-                    self.pwp(9usize),
-                    self.pwp(10usize),
-                    self.pwp(11usize),
-                    self.pwp(12usize),
-                    self.pwp(13usize),
-                    self.pwp(14usize),
-                    self.pwp(15usize),
-                    self.pwp(16usize),
-                    self.pwp(17usize),
-                    self.pwp(18usize),
-                    self.pwp(19usize),
-                    self.pwp(20usize),
-                    self.pwp(21usize),
-                    self.pwp(22usize),
-                    self.pwp(23usize),
-                    self.pwp(24usize),
-                    self.pwp(25usize),
-                    self.pwp(26usize),
-                    self.pwp(27usize),
-                    self.pwp(28usize),
-                    self.pwp(29usize),
-                    self.pwp(30usize),
-                    self.pwp(31usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Swpr {{ pwp[0]: {=bool:?}, pwp[1]: {=bool:?}, pwp[2]: {=bool:?}, pwp[3]: {=bool:?}, pwp[4]: {=bool:?}, pwp[5]: {=bool:?}, pwp[6]: {=bool:?}, pwp[7]: {=bool:?}, pwp[8]: {=bool:?}, pwp[9]: {=bool:?}, pwp[10]: {=bool:?}, pwp[11]: {=bool:?}, pwp[12]: {=bool:?}, pwp[13]: {=bool:?}, pwp[14]: {=bool:?}, pwp[15]: {=bool:?}, pwp[16]: {=bool:?}, pwp[17]: {=bool:?}, pwp[18]: {=bool:?}, pwp[19]: {=bool:?}, pwp[20]: {=bool:?}, pwp[21]: {=bool:?}, pwp[22]: {=bool:?}, pwp[23]: {=bool:?}, pwp[24]: {=bool:?}, pwp[25]: {=bool:?}, pwp[26]: {=bool:?}, pwp[27]: {=bool:?}, pwp[28]: {=bool:?}, pwp[29]: {=bool:?}, pwp[30]: {=bool:?}, pwp[31]: {=bool:?} }}" , self . pwp (0usize) , self . pwp (1usize) , self . pwp (2usize) , self . pwp (3usize) , self . pwp (4usize) , self . pwp (5usize) , self . pwp (6usize) , self . pwp (7usize) , self . pwp (8usize) , self . pwp (9usize) , self . pwp (10usize) , self . pwp (11usize) , self . pwp (12usize) , self . pwp (13usize) , self . pwp (14usize) , self . pwp (15usize) , self . pwp (16usize) , self . pwp (17usize) , self . pwp (18usize) , self . pwp (19usize) , self . pwp (20usize) , self . pwp (21usize) , self . pwp (22usize) , self . pwp (23usize) , self . pwp (24usize) , self . pwp (25usize) , self . pwp (26usize) , self . pwp (27usize) , self . pwp (28usize) , self . pwp (29usize) , self . pwp (30usize) , self . pwp (31usize))
         }
     }
 }

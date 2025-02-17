@@ -235,30 +235,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfg1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfg1 {
-                dsize: u8,
-                fthlv: super::vals::Fthlv,
-                udrcfg: super::vals::Udrcfg,
-                rxdmaen: bool,
-                txdmaen: bool,
-                crcsize: u8,
-                crcen: bool,
-                mbr: super::vals::Mbr,
-                bpass: bool,
-            }
-            let proxy = Cfg1 {
-                dsize: self.dsize(),
-                fthlv: self.fthlv(),
-                udrcfg: self.udrcfg(),
-                rxdmaen: self.rxdmaen(),
-                txdmaen: self.txdmaen(),
-                crcsize: self.crcsize(),
-                crcen: self.crcen(),
-                mbr: self.mbr(),
-                bpass: self.bpass(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfg1 {{ dsize: {=u8:?}, fthlv: {:?}, udrcfg: {:?}, rxdmaen: {=bool:?}, txdmaen: {=bool:?}, crcsize: {=u8:?}, crcen: {=bool:?}, mbr: {:?}, bpass: {=bool:?} }}" , self . dsize () , self . fthlv () , self . udrcfg () , self . rxdmaen () , self . txdmaen () , self . crcsize () , self . crcen () , self . mbr () , self . bpass ())
         }
     }
     #[doc = "configuration register 2"]
@@ -474,44 +451,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfg2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfg2 {
-                mssi: u8,
-                midi: u8,
-                rdiom: super::vals::Rdiom,
-                rdiop: super::vals::Rdiop,
-                ioswp: bool,
-                comm: super::vals::Comm,
-                sp: super::vals::Sp,
-                master: super::vals::Master,
-                lsbfirst: super::vals::Lsbfirst,
-                cpha: super::vals::Cpha,
-                cpol: super::vals::Cpol,
-                ssm: bool,
-                ssiop: super::vals::Ssiop,
-                ssoe: bool,
-                ssom: super::vals::Ssom,
-                afcntr: bool,
-            }
-            let proxy = Cfg2 {
-                mssi: self.mssi(),
-                midi: self.midi(),
-                rdiom: self.rdiom(),
-                rdiop: self.rdiop(),
-                ioswp: self.ioswp(),
-                comm: self.comm(),
-                sp: self.sp(),
-                master: self.master(),
-                lsbfirst: self.lsbfirst(),
-                cpha: self.cpha(),
-                cpol: self.cpol(),
-                ssm: self.ssm(),
-                ssiop: self.ssiop(),
-                ssoe: self.ssoe(),
-                ssom: self.ssom(),
-                afcntr: self.afcntr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfg2 {{ mssi: {=u8:?}, midi: {=u8:?}, rdiom: {:?}, rdiop: {:?}, ioswp: {=bool:?}, comm: {:?}, sp: {:?}, master: {:?}, lsbfirst: {:?}, cpha: {:?}, cpol: {:?}, ssm: {=bool:?}, ssiop: {:?}, ssoe: {=bool:?}, ssom: {:?}, afcntr: {=bool:?} }}" , self . mssi () , self . midi () , self . rdiom () , self . rdiop () , self . ioswp () , self . comm () , self . sp () , self . master () , self . lsbfirst () , self . cpha () , self . cpol () , self . ssm () , self . ssiop () , self . ssoe () , self . ssom () , self . afcntr ())
         }
     }
     #[doc = "control register 1"]
@@ -655,32 +595,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr1 {
-                spe: bool,
-                masrx: bool,
-                cstart: bool,
-                csusp: bool,
-                hddir: super::vals::Hddir,
-                ssi: bool,
-                crc33_17: bool,
-                rcrcini: super::vals::Rcrcini,
-                tcrcini: super::vals::Tcrcini,
-                iolock: bool,
-            }
-            let proxy = Cr1 {
-                spe: self.spe(),
-                masrx: self.masrx(),
-                cstart: self.cstart(),
-                csusp: self.csusp(),
-                hddir: self.hddir(),
-                ssi: self.ssi(),
-                crc33_17: self.crc33_17(),
-                rcrcini: self.rcrcini(),
-                tcrcini: self.tcrcini(),
-                iolock: self.iolock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr1 {{ spe: {=bool:?}, masrx: {=bool:?}, cstart: {=bool:?}, csusp: {=bool:?}, hddir: {:?}, ssi: {=bool:?}, crc33_17: {=bool:?}, rcrcini: {:?}, tcrcini: {:?}, iolock: {=bool:?} }}" , self . spe () , self . masrx () , self . cstart () , self . csusp () , self . hddir () , self . ssi () , self . crc33_17 () , self . rcrcini () , self . tcrcini () , self . iolock ())
         }
     }
     #[doc = "control register 2"]
@@ -714,12 +629,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr2 {
-                tsize: u16,
-            }
-            let proxy = Cr2 { tsize: self.tsize() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cr2 {{ tsize: {=u16:?} }}", self.tsize())
         }
     }
     #[doc = "Polynomial Register"]
@@ -753,14 +663,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Crcpoly {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Crcpoly {
-                crcpoly: u32,
-            }
-            let proxy = Crcpoly {
-                crcpoly: self.crcpoly(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Crcpoly {{ crcpoly: {=u32:?} }}", self.crcpoly())
         }
     }
     #[doc = "Interrupt Enable Register"]
@@ -904,32 +807,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ier {
-                rxpie: bool,
-                txpie: bool,
-                dxpie: bool,
-                eotie: bool,
-                txtfie: bool,
-                udrie: bool,
-                ovrie: bool,
-                crceie: bool,
-                tifreie: bool,
-                modfie: bool,
-            }
-            let proxy = Ier {
-                rxpie: self.rxpie(),
-                txpie: self.txpie(),
-                dxpie: self.dxpie(),
-                eotie: self.eotie(),
-                txtfie: self.txtfie(),
-                udrie: self.udrie(),
-                ovrie: self.ovrie(),
-                crceie: self.crceie(),
-                tifreie: self.tifreie(),
-                modfie: self.modfie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ier {{ rxpie: {=bool:?}, txpie: {=bool:?}, dxpie: {=bool:?}, eotie: {=bool:?}, txtfie: {=bool:?}, udrie: {=bool:?}, ovrie: {=bool:?}, crceie: {=bool:?}, tifreie: {=bool:?}, modfie: {=bool:?} }}" , self . rxpie () , self . txpie () , self . dxpie () , self . eotie () , self . txtfie () , self . udrie () , self . ovrie () , self . crceie () , self . tifreie () , self . modfie ())
         }
     }
     #[doc = "Interrupt/Status Flags Clear Register"]
@@ -1049,28 +927,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ifcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ifcr {
-                eotc: bool,
-                txtfc: bool,
-                udrc: bool,
-                ovrc: bool,
-                crcec: bool,
-                tifrec: bool,
-                modfc: bool,
-                suspc: bool,
-            }
-            let proxy = Ifcr {
-                eotc: self.eotc(),
-                txtfc: self.txtfc(),
-                udrc: self.udrc(),
-                ovrc: self.ovrc(),
-                crcec: self.crcec(),
-                tifrec: self.tifrec(),
-                modfc: self.modfc(),
-                suspc: self.suspc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ifcr {{ eotc: {=bool:?}, txtfc: {=bool:?}, udrc: {=bool:?}, ovrc: {=bool:?}, crcec: {=bool:?}, tifrec: {=bool:?}, modfc: {=bool:?}, suspc: {=bool:?} }}" , self . eotc () , self . txtfc () , self . udrc () , self . ovrc () , self . crcec () , self . tifrec () , self . modfc () , self . suspc ())
         }
     }
     #[doc = "Receiver CRC Register"]
@@ -1104,12 +961,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rxcrc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rxcrc {
-                rxcrc: u32,
-            }
-            let proxy = Rxcrc { rxcrc: self.rxcrc() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Rxcrc {{ rxcrc: {=u32:?} }}", self.rxcrc())
         }
     }
     #[doc = "Status Register"]
@@ -1313,42 +1165,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                rxp: bool,
-                txp: bool,
-                dxp: bool,
-                eot: bool,
-                txtf: bool,
-                udr: bool,
-                ovr: bool,
-                crce: bool,
-                tifre: bool,
-                modf: bool,
-                susp: bool,
-                txc: bool,
-                rxplvl: super::vals::Rxplvl,
-                rxwne: super::vals::Rxwne,
-                ctsize: u16,
-            }
-            let proxy = Sr {
-                rxp: self.rxp(),
-                txp: self.txp(),
-                dxp: self.dxp(),
-                eot: self.eot(),
-                txtf: self.txtf(),
-                udr: self.udr(),
-                ovr: self.ovr(),
-                crce: self.crce(),
-                tifre: self.tifre(),
-                modf: self.modf(),
-                susp: self.susp(),
-                txc: self.txc(),
-                rxplvl: self.rxplvl(),
-                rxwne: self.rxwne(),
-                ctsize: self.ctsize(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr {{ rxp: {=bool:?}, txp: {=bool:?}, dxp: {=bool:?}, eot: {=bool:?}, txtf: {=bool:?}, udr: {=bool:?}, ovr: {=bool:?}, crce: {=bool:?}, tifre: {=bool:?}, modf: {=bool:?}, susp: {=bool:?}, txc: {=bool:?}, rxplvl: {:?}, rxwne: {:?}, ctsize: {=u16:?} }}" , self . rxp () , self . txp () , self . dxp () , self . eot () , self . txtf () , self . udr () , self . ovr () , self . crce () , self . tifre () , self . modf () , self . susp () , self . txc () , self . rxplvl () , self . rxwne () , self . ctsize ())
         }
     }
     #[doc = "Transmitter CRC Register"]
@@ -1382,12 +1199,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Txcrc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Txcrc {
-                txcrc: u32,
-            }
-            let proxy = Txcrc { txcrc: self.txcrc() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Txcrc {{ txcrc: {=u32:?} }}", self.txcrc())
         }
     }
     #[doc = "Underrun Data Register"]
@@ -1421,12 +1233,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Udrdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Udrdr {
-                udrdr: u32,
-            }
-            let proxy = Udrdr { udrdr: self.udrdr() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Udrdr {{ udrdr: {=u32:?} }}", self.udrdr())
         }
     }
 }

@@ -136,26 +136,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                lpds: bool,
-                pdds: super::vals::Pdds,
-                cwuf: bool,
-                csbf: bool,
-                pvde: bool,
-                pls: u8,
-                dbp: bool,
-            }
-            let proxy = Cr {
-                lpds: self.lpds(),
-                pdds: self.pdds(),
-                cwuf: self.cwuf(),
-                csbf: self.csbf(),
-                pvde: self.pvde(),
-                pls: self.pls(),
-                dbp: self.dbp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ lpds: {=bool:?}, pdds: {:?}, cwuf: {=bool:?}, csbf: {=bool:?}, pvde: {=bool:?}, pls: {=u8:?}, dbp: {=bool:?} }}" , self . lpds () , self . pdds () , self . cwuf () , self . csbf () , self . pvde () , self . pls () , self . dbp ())
         }
     }
     #[doc = "Power control register (PWR_CR)"]
@@ -227,20 +208,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                wuf: bool,
-                sbf: bool,
-                pvdo: bool,
-                ewup: bool,
-            }
-            let proxy = Csr {
-                wuf: self.wuf(),
-                sbf: self.sbf(),
-                pvdo: self.pvdo(),
-                ewup: self.ewup(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Csr {{ wuf: {=bool:?}, sbf: {=bool:?}, pvdo: {=bool:?}, ewup: {=bool:?} }}",
+                self.wuf(),
+                self.sbf(),
+                self.pvdo(),
+                self.ewup()
+            )
         }
     }
 }

@@ -148,28 +148,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                lpds: bool,
-                pdds: super::vals::Pdds,
-                cwuf: bool,
-                csbf: bool,
-                pvde: bool,
-                pls: u8,
-                dbp: bool,
-                fpds: bool,
-            }
-            let proxy = Cr {
-                lpds: self.lpds(),
-                pdds: self.pdds(),
-                cwuf: self.cwuf(),
-                csbf: self.csbf(),
-                pvde: self.pvde(),
-                pls: self.pls(),
-                dbp: self.dbp(),
-                fpds: self.fpds(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ lpds: {=bool:?}, pdds: {:?}, cwuf: {=bool:?}, csbf: {=bool:?}, pvde: {=bool:?}, pls: {=u8:?}, dbp: {=bool:?}, fpds: {=bool:?} }}" , self . lpds () , self . pdds () , self . cwuf () , self . csbf () , self . pvde () , self . pls () , self . dbp () , self . fpds ())
         }
     }
     #[doc = "power control/status register"]
@@ -265,24 +244,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                wuf: bool,
-                sbf: bool,
-                pvdo: bool,
-                brr: bool,
-                ewup: bool,
-                bre: bool,
-            }
-            let proxy = Csr {
-                wuf: self.wuf(),
-                sbf: self.sbf(),
-                pvdo: self.pvdo(),
-                brr: self.brr(),
-                ewup: self.ewup(),
-                bre: self.bre(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Csr {{ wuf: {=bool:?}, sbf: {=bool:?}, pvdo: {=bool:?}, brr: {=bool:?}, ewup: {=bool:?}, bre: {=bool:?} }}" , self . wuf () , self . sbf () , self . pvdo () , self . brr () , self . ewup () , self . bre ())
         }
     }
 }

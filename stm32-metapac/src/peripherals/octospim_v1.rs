@@ -81,16 +81,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                muxen: bool,
-                req2ack_time: u8,
-            }
-            let proxy = Cr {
-                muxen: self.muxen(),
-                req2ack_time: self.req2ack_time(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cr {{ muxen: {=bool:?}, req2ack_time: {=u8:?} }}",
+                self.muxen(),
+                self.req2ack_time()
+            )
         }
     }
     #[doc = "OctoSPI IO Manager Port 1 Configuration Register"]
@@ -234,32 +230,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for P1cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct P1cr {
-                clken: bool,
-                clksrc: bool,
-                dqsen: bool,
-                dqssrc: bool,
-                ncsen: bool,
-                ncssrc: bool,
-                iolen: bool,
-                iolsrc: u8,
-                iohen: bool,
-                iohsrc: u8,
-            }
-            let proxy = P1cr {
-                clken: self.clken(),
-                clksrc: self.clksrc(),
-                dqsen: self.dqsen(),
-                dqssrc: self.dqssrc(),
-                ncsen: self.ncsen(),
-                ncssrc: self.ncssrc(),
-                iolen: self.iolen(),
-                iolsrc: self.iolsrc(),
-                iohen: self.iohen(),
-                iohsrc: self.iohsrc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "P1cr {{ clken: {=bool:?}, clksrc: {=bool:?}, dqsen: {=bool:?}, dqssrc: {=bool:?}, ncsen: {=bool:?}, ncssrc: {=bool:?}, iolen: {=bool:?}, iolsrc: {=u8:?}, iohen: {=bool:?}, iohsrc: {=u8:?} }}" , self . clken () , self . clksrc () , self . dqsen () , self . dqssrc () , self . ncsen () , self . ncssrc () , self . iolen () , self . iolsrc () , self . iohen () , self . iohsrc ())
         }
     }
     #[doc = "OctoSPI IO Manager Port 2 Configuration Register"]
@@ -403,32 +374,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for P2cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct P2cr {
-                clken: bool,
-                clksrc: bool,
-                dqsen: bool,
-                dqssrc: bool,
-                ncsen: bool,
-                ncssrc: bool,
-                iolen: bool,
-                iolsrc: u8,
-                iohen: bool,
-                iohsrc: u8,
-            }
-            let proxy = P2cr {
-                clken: self.clken(),
-                clksrc: self.clksrc(),
-                dqsen: self.dqsen(),
-                dqssrc: self.dqssrc(),
-                ncsen: self.ncsen(),
-                ncssrc: self.ncssrc(),
-                iolen: self.iolen(),
-                iolsrc: self.iolsrc(),
-                iohen: self.iohen(),
-                iohsrc: self.iohsrc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "P2cr {{ clken: {=bool:?}, clksrc: {=bool:?}, dqsen: {=bool:?}, dqssrc: {=bool:?}, ncsen: {=bool:?}, ncssrc: {=bool:?}, iolen: {=bool:?}, iolsrc: {=u8:?}, iohen: {=bool:?}, iohsrc: {=u8:?} }}" , self . clken () , self . clksrc () , self . dqsen () , self . dqssrc () , self . ncsen () , self . ncssrc () , self . iolen () , self . iolsrc () , self . iohen () , self . iohsrc ())
         }
     }
 }

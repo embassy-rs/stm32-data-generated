@@ -344,24 +344,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Acr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Acr {
-                latency: u8,
-                prften: bool,
-                lpm: super::vals::Lpm,
-                pdreq1: super::vals::Pdreq,
-                pdreq2: super::vals::Pdreq,
-                sleep_pd: super::vals::SleepPd,
-            }
-            let proxy = Acr {
-                latency: self.latency(),
-                prften: self.prften(),
-                lpm: self.lpm(),
-                pdreq1: self.pdreq1(),
-                pdreq2: self.pdreq2(),
-                sleep_pd: self.sleep_pd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Acr {{ latency: {=u8:?}, prften: {=bool:?}, lpm: {:?}, pdreq1: {:?}, pdreq2: {:?}, sleep_pd: {:?} }}",
+                self.latency(),
+                self.prften(),
+                self.lpm(),
+                self.pdreq1(),
+                self.pdreq2(),
+                self.sleep_pd()
+            )
         }
     }
     #[doc = "FLASH ECC register"]
@@ -457,24 +449,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Eccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Eccr {
-                addr_ecc: u32,
-                bk_ecc: super::vals::BkEcc,
-                sysf_ecc: bool,
-                eccie: super::vals::Eccie,
-                eccc: bool,
-                eccd: bool,
-            }
-            let proxy = Eccr {
-                addr_ecc: self.addr_ecc(),
-                bk_ecc: self.bk_ecc(),
-                sysf_ecc: self.sysf_ecc(),
-                eccie: self.eccie(),
-                eccc: self.eccc(),
-                eccd: self.eccd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Eccr {{ addr_ecc: {=u32:?}, bk_ecc: {:?}, sysf_ecc: {=bool:?}, eccie: {:?}, eccc: {=bool:?}, eccd: {=bool:?} }}" , self . addr_ecc () , self . bk_ecc () , self . sysf_ecc () , self . eccie () , self . eccc () , self . eccd ())
         }
     }
     #[doc = "FLASH non-secure boot address 0 register"]
@@ -516,14 +491,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nsbootadd0r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Nsbootadd0r {
-                nsbootadd0: u32,
-            }
-            let proxy = Nsbootadd0r {
-                nsbootadd0: self.nsbootadd0(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Nsbootadd0r {{ nsbootadd0: {=u32:?} }}", self.nsbootadd0())
         }
     }
     #[doc = "FLASH non-secure boot address 1 register"]
@@ -565,14 +533,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nsbootadd1r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Nsbootadd1r {
-                nsbootadd1: u32,
-            }
-            let proxy = Nsbootadd1r {
-                nsbootadd1: self.nsbootadd1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Nsbootadd1r {{ nsbootadd1: {=u32:?} }}", self.nsbootadd1())
         }
     }
     #[doc = "FLASH non-secure control register"]
@@ -764,40 +725,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nscr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Nscr {
-                pg: super::vals::NscrPg,
-                per: super::vals::NscrPer,
-                mer1: bool,
-                pnb: u8,
-                bker: super::vals::NscrBker,
-                bwr: bool,
-                mer2: bool,
-                strt: bool,
-                optstrt: bool,
-                eopie: super::vals::NscrEopie,
-                errie: super::vals::NscrErrie,
-                obl_launch: super::vals::OblLaunch,
-                optlock: bool,
-                lock: bool,
-            }
-            let proxy = Nscr {
-                pg: self.pg(),
-                per: self.per(),
-                mer1: self.mer1(),
-                pnb: self.pnb(),
-                bker: self.bker(),
-                bwr: self.bwr(),
-                mer2: self.mer2(),
-                strt: self.strt(),
-                optstrt: self.optstrt(),
-                eopie: self.eopie(),
-                errie: self.errie(),
-                obl_launch: self.obl_launch(),
-                optlock: self.optlock(),
-                lock: self.lock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Nscr {{ pg: {:?}, per: {:?}, mer1: {=bool:?}, pnb: {=u8:?}, bker: {:?}, bwr: {=bool:?}, mer2: {=bool:?}, strt: {=bool:?}, optstrt: {=bool:?}, eopie: {:?}, errie: {:?}, obl_launch: {:?}, optlock: {=bool:?}, lock: {=bool:?} }}" , self . pg () , self . per () , self . mer1 () , self . pnb () , self . bker () , self . bwr () , self . mer2 () , self . strt () , self . optstrt () , self . eopie () , self . errie () , self . obl_launch () , self . optlock () , self . lock ())
         }
     }
     #[doc = "FLASH non-secure status register"]
@@ -989,40 +917,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nssr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Nssr {
-                eop: bool,
-                operr: bool,
-                progerr: bool,
-                wrperr: bool,
-                pgaerr: bool,
-                sizerr: bool,
-                pgserr: bool,
-                optwerr: bool,
-                bsy: bool,
-                wdw: bool,
-                oem1lock: bool,
-                oem2lock: bool,
-                pd1: bool,
-                pd2: bool,
-            }
-            let proxy = Nssr {
-                eop: self.eop(),
-                operr: self.operr(),
-                progerr: self.progerr(),
-                wrperr: self.wrperr(),
-                pgaerr: self.pgaerr(),
-                sizerr: self.sizerr(),
-                pgserr: self.pgserr(),
-                optwerr: self.optwerr(),
-                bsy: self.bsy(),
-                wdw: self.wdw(),
-                oem1lock: self.oem1lock(),
-                oem2lock: self.oem2lock(),
-                pd1: self.pd1(),
-                pd2: self.pd2(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Nssr {{ eop: {=bool:?}, operr: {=bool:?}, progerr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, pgserr: {=bool:?}, optwerr: {=bool:?}, bsy: {=bool:?}, wdw: {=bool:?}, oem1lock: {=bool:?}, oem2lock: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?} }}" , self . eop () , self . operr () , self . progerr () , self . wrperr () , self . pgaerr () , self . sizerr () , self . pgserr () , self . optwerr () , self . bsy () , self . wdw () , self . oem1lock () , self . oem2lock () , self . pd1 () , self . pd2 ())
         }
     }
     #[doc = "FLASH OEM1 key register 1"]
@@ -1056,14 +951,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Oem1keyr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Oem1keyr1 {
-                oem1key: u32,
-            }
-            let proxy = Oem1keyr1 {
-                oem1key: self.oem1key(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Oem1keyr1 {{ oem1key: {=u32:?} }}", self.oem1key())
         }
     }
     #[doc = "FLASH OEM1 key register 2"]
@@ -1097,14 +985,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Oem1keyr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Oem1keyr2 {
-                oem1key: u32,
-            }
-            let proxy = Oem1keyr2 {
-                oem1key: self.oem1key(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Oem1keyr2 {{ oem1key: {=u32:?} }}", self.oem1key())
         }
     }
     #[doc = "FLASH OEM2 key register 1"]
@@ -1138,14 +1019,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Oem2keyr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Oem2keyr1 {
-                oem2key: u32,
-            }
-            let proxy = Oem2keyr1 {
-                oem2key: self.oem2key(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Oem2keyr1 {{ oem2key: {=u32:?} }}", self.oem2key())
         }
     }
     #[doc = "FLASH OEM2 key register 2"]
@@ -1179,14 +1053,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Oem2keyr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Oem2keyr2 {
-                oem2key: u32,
-            }
-            let proxy = Oem2keyr2 {
-                oem2key: self.oem2key(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Oem2keyr2 {{ oem2key: {=u32:?} }}", self.oem2key())
         }
     }
     #[doc = "FLASH operation status register"]
@@ -1258,20 +1125,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Opsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Opsr {
-                addr_op: u32,
-                bk_op: super::vals::BkOp,
-                sysf_op: bool,
-                code_op: super::vals::CodeOp,
-            }
-            let proxy = Opsr {
-                addr_op: self.addr_op(),
-                bk_op: self.bk_op(),
-                sysf_op: self.sysf_op(),
-                code_op: self.code_op(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Opsr {{ addr_op: {=u32:?}, bk_op: {:?}, sysf_op: {=bool:?}, code_op: {:?} }}",
+                self.addr_op(),
+                self.bk_op(),
+                self.sysf_op(),
+                self.code_op()
+            )
         }
     }
     #[doc = "FLASH option register"]
@@ -1559,56 +1420,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Optr {
-                rdp: super::vals::Rdp,
-                bor_lev: super::vals::BorLev,
-                n_rst_stop: super::vals::NRstStop,
-                n_rst_stdby: super::vals::NRstStdby,
-                n_rst_shdw: super::vals::NRstShdw,
-                sram1345_rst: bool,
-                iwdg_sw: super::vals::IwdgSw,
-                iwdg_stop: super::vals::IwdgStop,
-                iwdg_stdby: super::vals::IwdgStdby,
-                wwdg_sw: super::vals::WwdgSw,
-                swap_bank: super::vals::SwapBank,
-                dualbank: super::vals::Dualbank,
-                bkpsram_ecc: super::vals::BkpsramEcc,
-                sram3_ecc: super::vals::SramEcc,
-                sram2_ecc: super::vals::SramEcc,
-                sram2_rst: bool,
-                n_swboot0: super::vals::NSwboot,
-                n_boot0: super::vals::NBoot,
-                pa15_pupen: bool,
-                io_vdd_hslv: super::vals::IoVddHslv,
-                io_vddio2_hslv: super::vals::IoVddioHslv,
-                tzen: bool,
-            }
-            let proxy = Optr {
-                rdp: self.rdp(),
-                bor_lev: self.bor_lev(),
-                n_rst_stop: self.n_rst_stop(),
-                n_rst_stdby: self.n_rst_stdby(),
-                n_rst_shdw: self.n_rst_shdw(),
-                sram1345_rst: self.sram1345_rst(),
-                iwdg_sw: self.iwdg_sw(),
-                iwdg_stop: self.iwdg_stop(),
-                iwdg_stdby: self.iwdg_stdby(),
-                wwdg_sw: self.wwdg_sw(),
-                swap_bank: self.swap_bank(),
-                dualbank: self.dualbank(),
-                bkpsram_ecc: self.bkpsram_ecc(),
-                sram3_ecc: self.sram3_ecc(),
-                sram2_ecc: self.sram2_ecc(),
-                sram2_rst: self.sram2_rst(),
-                n_swboot0: self.n_swboot0(),
-                n_boot0: self.n_boot0(),
-                pa15_pupen: self.pa15_pupen(),
-                io_vdd_hslv: self.io_vdd_hslv(),
-                io_vddio2_hslv: self.io_vddio2_hslv(),
-                tzen: self.tzen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Optr {{ rdp: {:?}, bor_lev: {:?}, n_rst_stop: {:?}, n_rst_stdby: {:?}, n_rst_shdw: {:?}, sram1345_rst: {=bool:?}, iwdg_sw: {:?}, iwdg_stop: {:?}, iwdg_stdby: {:?}, wwdg_sw: {:?}, swap_bank: {:?}, dualbank: {:?}, bkpsram_ecc: {:?}, sram3_ecc: {:?}, sram2_ecc: {:?}, sram2_rst: {=bool:?}, n_swboot0: {:?}, n_boot0: {:?}, pa15_pupen: {=bool:?}, io_vdd_hslv: {:?}, io_vddio2_hslv: {:?}, tzen: {=bool:?} }}" , self . rdp () , self . bor_lev () , self . n_rst_stop () , self . n_rst_stdby () , self . n_rst_shdw () , self . sram1345_rst () , self . iwdg_sw () , self . iwdg_stop () , self . iwdg_stdby () , self . wwdg_sw () , self . swap_bank () , self . dualbank () , self . bkpsram_ecc () , self . sram3_ecc () , self . sram2_ecc () , self . sram2_rst () , self . n_swboot0 () , self . n_boot0 () , self . pa15_pupen () , self . io_vdd_hslv () , self . io_vddio2_hslv () , self . tzen ())
         }
     }
     #[doc = "FLASH bank 1 power-down key register"]
@@ -1642,12 +1454,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pdkey1r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pdkey1r {
-                pdkey1: u32,
-            }
-            let proxy = Pdkey1r { pdkey1: self.pdkey1() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Pdkey1r {{ pdkey1: {=u32:?} }}", self.pdkey1())
         }
     }
     #[doc = "FLASH bank 2 power-down key register"]
@@ -1681,12 +1488,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pdkey2r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pdkey2r {
-                pdkey2: u32,
-            }
-            let proxy = Pdkey2r { pdkey2: self.pdkey2() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Pdkey2r {{ pdkey2: {=u32:?} }}", self.pdkey2())
         }
     }
     #[doc = "FLASH privilege block based bank 1 register 1"]
@@ -2094,76 +1896,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Priv1bbr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Priv1bbr1 {
-                priv1bb0: bool,
-                priv1bb1: bool,
-                priv1bb2: bool,
-                priv1bb3: bool,
-                priv1bb4: bool,
-                priv1bb5: bool,
-                priv1bb6: bool,
-                priv1bb7: bool,
-                priv1bb8: bool,
-                priv1bb9: bool,
-                priv1bb10: bool,
-                priv1bb11: bool,
-                priv1bb12: bool,
-                priv1bb13: bool,
-                priv1bb14: bool,
-                priv1bb15: bool,
-                priv1bb16: bool,
-                priv1bb17: bool,
-                priv1bb18: bool,
-                priv1bb19: bool,
-                priv1bb20: bool,
-                priv1bb21: bool,
-                priv1bb22: bool,
-                priv1bb23: bool,
-                priv1bb24: bool,
-                priv1bb25: bool,
-                priv1bb26: bool,
-                priv1bb27: bool,
-                priv1bb28: bool,
-                priv1bb29: bool,
-                priv1bb30: bool,
-                priv1bb31: bool,
-            }
-            let proxy = Priv1bbr1 {
-                priv1bb0: self.priv1bb0(),
-                priv1bb1: self.priv1bb1(),
-                priv1bb2: self.priv1bb2(),
-                priv1bb3: self.priv1bb3(),
-                priv1bb4: self.priv1bb4(),
-                priv1bb5: self.priv1bb5(),
-                priv1bb6: self.priv1bb6(),
-                priv1bb7: self.priv1bb7(),
-                priv1bb8: self.priv1bb8(),
-                priv1bb9: self.priv1bb9(),
-                priv1bb10: self.priv1bb10(),
-                priv1bb11: self.priv1bb11(),
-                priv1bb12: self.priv1bb12(),
-                priv1bb13: self.priv1bb13(),
-                priv1bb14: self.priv1bb14(),
-                priv1bb15: self.priv1bb15(),
-                priv1bb16: self.priv1bb16(),
-                priv1bb17: self.priv1bb17(),
-                priv1bb18: self.priv1bb18(),
-                priv1bb19: self.priv1bb19(),
-                priv1bb20: self.priv1bb20(),
-                priv1bb21: self.priv1bb21(),
-                priv1bb22: self.priv1bb22(),
-                priv1bb23: self.priv1bb23(),
-                priv1bb24: self.priv1bb24(),
-                priv1bb25: self.priv1bb25(),
-                priv1bb26: self.priv1bb26(),
-                priv1bb27: self.priv1bb27(),
-                priv1bb28: self.priv1bb28(),
-                priv1bb29: self.priv1bb29(),
-                priv1bb30: self.priv1bb30(),
-                priv1bb31: self.priv1bb31(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Priv1bbr1 {{ priv1bb0: {=bool:?}, priv1bb1: {=bool:?}, priv1bb2: {=bool:?}, priv1bb3: {=bool:?}, priv1bb4: {=bool:?}, priv1bb5: {=bool:?}, priv1bb6: {=bool:?}, priv1bb7: {=bool:?}, priv1bb8: {=bool:?}, priv1bb9: {=bool:?}, priv1bb10: {=bool:?}, priv1bb11: {=bool:?}, priv1bb12: {=bool:?}, priv1bb13: {=bool:?}, priv1bb14: {=bool:?}, priv1bb15: {=bool:?}, priv1bb16: {=bool:?}, priv1bb17: {=bool:?}, priv1bb18: {=bool:?}, priv1bb19: {=bool:?}, priv1bb20: {=bool:?}, priv1bb21: {=bool:?}, priv1bb22: {=bool:?}, priv1bb23: {=bool:?}, priv1bb24: {=bool:?}, priv1bb25: {=bool:?}, priv1bb26: {=bool:?}, priv1bb27: {=bool:?}, priv1bb28: {=bool:?}, priv1bb29: {=bool:?}, priv1bb30: {=bool:?}, priv1bb31: {=bool:?} }}" , self . priv1bb0 () , self . priv1bb1 () , self . priv1bb2 () , self . priv1bb3 () , self . priv1bb4 () , self . priv1bb5 () , self . priv1bb6 () , self . priv1bb7 () , self . priv1bb8 () , self . priv1bb9 () , self . priv1bb10 () , self . priv1bb11 () , self . priv1bb12 () , self . priv1bb13 () , self . priv1bb14 () , self . priv1bb15 () , self . priv1bb16 () , self . priv1bb17 () , self . priv1bb18 () , self . priv1bb19 () , self . priv1bb20 () , self . priv1bb21 () , self . priv1bb22 () , self . priv1bb23 () , self . priv1bb24 () , self . priv1bb25 () , self . priv1bb26 () , self . priv1bb27 () , self . priv1bb28 () , self . priv1bb29 () , self . priv1bb30 () , self . priv1bb31 ())
         }
     }
     #[doc = "FLASH privilege block based bank 1 register 2"]
@@ -2571,76 +2304,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Priv1bbr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Priv1bbr2 {
-                priv1bb0: bool,
-                priv1bb1: bool,
-                priv1bb2: bool,
-                priv1bb3: bool,
-                priv1bb4: bool,
-                priv1bb5: bool,
-                priv1bb6: bool,
-                priv1bb7: bool,
-                priv1bb8: bool,
-                priv1bb9: bool,
-                priv1bb10: bool,
-                priv1bb11: bool,
-                priv1bb12: bool,
-                priv1bb13: bool,
-                priv1bb14: bool,
-                priv1bb15: bool,
-                priv1bb16: bool,
-                priv1bb17: bool,
-                priv1bb18: bool,
-                priv1bb19: bool,
-                priv1bb20: bool,
-                priv1bb21: bool,
-                priv1bb22: bool,
-                priv1bb23: bool,
-                priv1bb24: bool,
-                priv1bb25: bool,
-                priv1bb26: bool,
-                priv1bb27: bool,
-                priv1bb28: bool,
-                priv1bb29: bool,
-                priv1bb30: bool,
-                priv1bb31: bool,
-            }
-            let proxy = Priv1bbr2 {
-                priv1bb0: self.priv1bb0(),
-                priv1bb1: self.priv1bb1(),
-                priv1bb2: self.priv1bb2(),
-                priv1bb3: self.priv1bb3(),
-                priv1bb4: self.priv1bb4(),
-                priv1bb5: self.priv1bb5(),
-                priv1bb6: self.priv1bb6(),
-                priv1bb7: self.priv1bb7(),
-                priv1bb8: self.priv1bb8(),
-                priv1bb9: self.priv1bb9(),
-                priv1bb10: self.priv1bb10(),
-                priv1bb11: self.priv1bb11(),
-                priv1bb12: self.priv1bb12(),
-                priv1bb13: self.priv1bb13(),
-                priv1bb14: self.priv1bb14(),
-                priv1bb15: self.priv1bb15(),
-                priv1bb16: self.priv1bb16(),
-                priv1bb17: self.priv1bb17(),
-                priv1bb18: self.priv1bb18(),
-                priv1bb19: self.priv1bb19(),
-                priv1bb20: self.priv1bb20(),
-                priv1bb21: self.priv1bb21(),
-                priv1bb22: self.priv1bb22(),
-                priv1bb23: self.priv1bb23(),
-                priv1bb24: self.priv1bb24(),
-                priv1bb25: self.priv1bb25(),
-                priv1bb26: self.priv1bb26(),
-                priv1bb27: self.priv1bb27(),
-                priv1bb28: self.priv1bb28(),
-                priv1bb29: self.priv1bb29(),
-                priv1bb30: self.priv1bb30(),
-                priv1bb31: self.priv1bb31(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Priv1bbr2 {{ priv1bb0: {=bool:?}, priv1bb1: {=bool:?}, priv1bb2: {=bool:?}, priv1bb3: {=bool:?}, priv1bb4: {=bool:?}, priv1bb5: {=bool:?}, priv1bb6: {=bool:?}, priv1bb7: {=bool:?}, priv1bb8: {=bool:?}, priv1bb9: {=bool:?}, priv1bb10: {=bool:?}, priv1bb11: {=bool:?}, priv1bb12: {=bool:?}, priv1bb13: {=bool:?}, priv1bb14: {=bool:?}, priv1bb15: {=bool:?}, priv1bb16: {=bool:?}, priv1bb17: {=bool:?}, priv1bb18: {=bool:?}, priv1bb19: {=bool:?}, priv1bb20: {=bool:?}, priv1bb21: {=bool:?}, priv1bb22: {=bool:?}, priv1bb23: {=bool:?}, priv1bb24: {=bool:?}, priv1bb25: {=bool:?}, priv1bb26: {=bool:?}, priv1bb27: {=bool:?}, priv1bb28: {=bool:?}, priv1bb29: {=bool:?}, priv1bb30: {=bool:?}, priv1bb31: {=bool:?} }}" , self . priv1bb0 () , self . priv1bb1 () , self . priv1bb2 () , self . priv1bb3 () , self . priv1bb4 () , self . priv1bb5 () , self . priv1bb6 () , self . priv1bb7 () , self . priv1bb8 () , self . priv1bb9 () , self . priv1bb10 () , self . priv1bb11 () , self . priv1bb12 () , self . priv1bb13 () , self . priv1bb14 () , self . priv1bb15 () , self . priv1bb16 () , self . priv1bb17 () , self . priv1bb18 () , self . priv1bb19 () , self . priv1bb20 () , self . priv1bb21 () , self . priv1bb22 () , self . priv1bb23 () , self . priv1bb24 () , self . priv1bb25 () , self . priv1bb26 () , self . priv1bb27 () , self . priv1bb28 () , self . priv1bb29 () , self . priv1bb30 () , self . priv1bb31 ())
         }
     }
     #[doc = "FLASH privilege block based bank 1 register 3"]
@@ -3048,76 +2712,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Priv1bbr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Priv1bbr3 {
-                priv1bb0: bool,
-                priv1bb1: bool,
-                priv1bb2: bool,
-                priv1bb3: bool,
-                priv1bb4: bool,
-                priv1bb5: bool,
-                priv1bb6: bool,
-                priv1bb7: bool,
-                priv1bb8: bool,
-                priv1bb9: bool,
-                priv1bb10: bool,
-                priv1bb11: bool,
-                priv1bb12: bool,
-                priv1bb13: bool,
-                priv1bb14: bool,
-                priv1bb15: bool,
-                priv1bb16: bool,
-                priv1bb17: bool,
-                priv1bb18: bool,
-                priv1bb19: bool,
-                priv1bb20: bool,
-                priv1bb21: bool,
-                priv1bb22: bool,
-                priv1bb23: bool,
-                priv1bb24: bool,
-                priv1bb25: bool,
-                priv1bb26: bool,
-                priv1bb27: bool,
-                priv1bb28: bool,
-                priv1bb29: bool,
-                priv1bb30: bool,
-                priv1bb31: bool,
-            }
-            let proxy = Priv1bbr3 {
-                priv1bb0: self.priv1bb0(),
-                priv1bb1: self.priv1bb1(),
-                priv1bb2: self.priv1bb2(),
-                priv1bb3: self.priv1bb3(),
-                priv1bb4: self.priv1bb4(),
-                priv1bb5: self.priv1bb5(),
-                priv1bb6: self.priv1bb6(),
-                priv1bb7: self.priv1bb7(),
-                priv1bb8: self.priv1bb8(),
-                priv1bb9: self.priv1bb9(),
-                priv1bb10: self.priv1bb10(),
-                priv1bb11: self.priv1bb11(),
-                priv1bb12: self.priv1bb12(),
-                priv1bb13: self.priv1bb13(),
-                priv1bb14: self.priv1bb14(),
-                priv1bb15: self.priv1bb15(),
-                priv1bb16: self.priv1bb16(),
-                priv1bb17: self.priv1bb17(),
-                priv1bb18: self.priv1bb18(),
-                priv1bb19: self.priv1bb19(),
-                priv1bb20: self.priv1bb20(),
-                priv1bb21: self.priv1bb21(),
-                priv1bb22: self.priv1bb22(),
-                priv1bb23: self.priv1bb23(),
-                priv1bb24: self.priv1bb24(),
-                priv1bb25: self.priv1bb25(),
-                priv1bb26: self.priv1bb26(),
-                priv1bb27: self.priv1bb27(),
-                priv1bb28: self.priv1bb28(),
-                priv1bb29: self.priv1bb29(),
-                priv1bb30: self.priv1bb30(),
-                priv1bb31: self.priv1bb31(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Priv1bbr3 {{ priv1bb0: {=bool:?}, priv1bb1: {=bool:?}, priv1bb2: {=bool:?}, priv1bb3: {=bool:?}, priv1bb4: {=bool:?}, priv1bb5: {=bool:?}, priv1bb6: {=bool:?}, priv1bb7: {=bool:?}, priv1bb8: {=bool:?}, priv1bb9: {=bool:?}, priv1bb10: {=bool:?}, priv1bb11: {=bool:?}, priv1bb12: {=bool:?}, priv1bb13: {=bool:?}, priv1bb14: {=bool:?}, priv1bb15: {=bool:?}, priv1bb16: {=bool:?}, priv1bb17: {=bool:?}, priv1bb18: {=bool:?}, priv1bb19: {=bool:?}, priv1bb20: {=bool:?}, priv1bb21: {=bool:?}, priv1bb22: {=bool:?}, priv1bb23: {=bool:?}, priv1bb24: {=bool:?}, priv1bb25: {=bool:?}, priv1bb26: {=bool:?}, priv1bb27: {=bool:?}, priv1bb28: {=bool:?}, priv1bb29: {=bool:?}, priv1bb30: {=bool:?}, priv1bb31: {=bool:?} }}" , self . priv1bb0 () , self . priv1bb1 () , self . priv1bb2 () , self . priv1bb3 () , self . priv1bb4 () , self . priv1bb5 () , self . priv1bb6 () , self . priv1bb7 () , self . priv1bb8 () , self . priv1bb9 () , self . priv1bb10 () , self . priv1bb11 () , self . priv1bb12 () , self . priv1bb13 () , self . priv1bb14 () , self . priv1bb15 () , self . priv1bb16 () , self . priv1bb17 () , self . priv1bb18 () , self . priv1bb19 () , self . priv1bb20 () , self . priv1bb21 () , self . priv1bb22 () , self . priv1bb23 () , self . priv1bb24 () , self . priv1bb25 () , self . priv1bb26 () , self . priv1bb27 () , self . priv1bb28 () , self . priv1bb29 () , self . priv1bb30 () , self . priv1bb31 ())
         }
     }
     #[doc = "FLASH privilege block based bank 1 register 4"]
@@ -3525,76 +3120,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Priv1bbr4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Priv1bbr4 {
-                priv1bb0: bool,
-                priv1bb1: bool,
-                priv1bb2: bool,
-                priv1bb3: bool,
-                priv1bb4: bool,
-                priv1bb5: bool,
-                priv1bb6: bool,
-                priv1bb7: bool,
-                priv1bb8: bool,
-                priv1bb9: bool,
-                priv1bb10: bool,
-                priv1bb11: bool,
-                priv1bb12: bool,
-                priv1bb13: bool,
-                priv1bb14: bool,
-                priv1bb15: bool,
-                priv1bb16: bool,
-                priv1bb17: bool,
-                priv1bb18: bool,
-                priv1bb19: bool,
-                priv1bb20: bool,
-                priv1bb21: bool,
-                priv1bb22: bool,
-                priv1bb23: bool,
-                priv1bb24: bool,
-                priv1bb25: bool,
-                priv1bb26: bool,
-                priv1bb27: bool,
-                priv1bb28: bool,
-                priv1bb29: bool,
-                priv1bb30: bool,
-                priv1bb31: bool,
-            }
-            let proxy = Priv1bbr4 {
-                priv1bb0: self.priv1bb0(),
-                priv1bb1: self.priv1bb1(),
-                priv1bb2: self.priv1bb2(),
-                priv1bb3: self.priv1bb3(),
-                priv1bb4: self.priv1bb4(),
-                priv1bb5: self.priv1bb5(),
-                priv1bb6: self.priv1bb6(),
-                priv1bb7: self.priv1bb7(),
-                priv1bb8: self.priv1bb8(),
-                priv1bb9: self.priv1bb9(),
-                priv1bb10: self.priv1bb10(),
-                priv1bb11: self.priv1bb11(),
-                priv1bb12: self.priv1bb12(),
-                priv1bb13: self.priv1bb13(),
-                priv1bb14: self.priv1bb14(),
-                priv1bb15: self.priv1bb15(),
-                priv1bb16: self.priv1bb16(),
-                priv1bb17: self.priv1bb17(),
-                priv1bb18: self.priv1bb18(),
-                priv1bb19: self.priv1bb19(),
-                priv1bb20: self.priv1bb20(),
-                priv1bb21: self.priv1bb21(),
-                priv1bb22: self.priv1bb22(),
-                priv1bb23: self.priv1bb23(),
-                priv1bb24: self.priv1bb24(),
-                priv1bb25: self.priv1bb25(),
-                priv1bb26: self.priv1bb26(),
-                priv1bb27: self.priv1bb27(),
-                priv1bb28: self.priv1bb28(),
-                priv1bb29: self.priv1bb29(),
-                priv1bb30: self.priv1bb30(),
-                priv1bb31: self.priv1bb31(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Priv1bbr4 {{ priv1bb0: {=bool:?}, priv1bb1: {=bool:?}, priv1bb2: {=bool:?}, priv1bb3: {=bool:?}, priv1bb4: {=bool:?}, priv1bb5: {=bool:?}, priv1bb6: {=bool:?}, priv1bb7: {=bool:?}, priv1bb8: {=bool:?}, priv1bb9: {=bool:?}, priv1bb10: {=bool:?}, priv1bb11: {=bool:?}, priv1bb12: {=bool:?}, priv1bb13: {=bool:?}, priv1bb14: {=bool:?}, priv1bb15: {=bool:?}, priv1bb16: {=bool:?}, priv1bb17: {=bool:?}, priv1bb18: {=bool:?}, priv1bb19: {=bool:?}, priv1bb20: {=bool:?}, priv1bb21: {=bool:?}, priv1bb22: {=bool:?}, priv1bb23: {=bool:?}, priv1bb24: {=bool:?}, priv1bb25: {=bool:?}, priv1bb26: {=bool:?}, priv1bb27: {=bool:?}, priv1bb28: {=bool:?}, priv1bb29: {=bool:?}, priv1bb30: {=bool:?}, priv1bb31: {=bool:?} }}" , self . priv1bb0 () , self . priv1bb1 () , self . priv1bb2 () , self . priv1bb3 () , self . priv1bb4 () , self . priv1bb5 () , self . priv1bb6 () , self . priv1bb7 () , self . priv1bb8 () , self . priv1bb9 () , self . priv1bb10 () , self . priv1bb11 () , self . priv1bb12 () , self . priv1bb13 () , self . priv1bb14 () , self . priv1bb15 () , self . priv1bb16 () , self . priv1bb17 () , self . priv1bb18 () , self . priv1bb19 () , self . priv1bb20 () , self . priv1bb21 () , self . priv1bb22 () , self . priv1bb23 () , self . priv1bb24 () , self . priv1bb25 () , self . priv1bb26 () , self . priv1bb27 () , self . priv1bb28 () , self . priv1bb29 () , self . priv1bb30 () , self . priv1bb31 ())
         }
     }
     #[doc = "FLASH privilege block based bank 2 register 1"]
@@ -4002,76 +3528,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Priv2bbr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Priv2bbr1 {
-                priv2bb0: bool,
-                priv2bb1: bool,
-                priv2bb2: bool,
-                priv2bb3: bool,
-                priv2bb4: bool,
-                priv2bb5: bool,
-                priv2bb6: bool,
-                priv2bb7: bool,
-                priv2bb8: bool,
-                priv2bb9: bool,
-                priv2bb10: bool,
-                priv2bb11: bool,
-                priv2bb12: bool,
-                priv2bb13: bool,
-                priv2bb14: bool,
-                priv2bb15: bool,
-                priv2bb16: bool,
-                priv2bb17: bool,
-                priv2bb18: bool,
-                priv2bb19: bool,
-                priv2bb20: bool,
-                priv2bb21: bool,
-                priv2bb22: bool,
-                priv2bb23: bool,
-                priv2bb24: bool,
-                priv2bb25: bool,
-                priv2bb26: bool,
-                priv2bb27: bool,
-                priv2bb28: bool,
-                priv2bb29: bool,
-                priv2bb30: bool,
-                priv2bb31: bool,
-            }
-            let proxy = Priv2bbr1 {
-                priv2bb0: self.priv2bb0(),
-                priv2bb1: self.priv2bb1(),
-                priv2bb2: self.priv2bb2(),
-                priv2bb3: self.priv2bb3(),
-                priv2bb4: self.priv2bb4(),
-                priv2bb5: self.priv2bb5(),
-                priv2bb6: self.priv2bb6(),
-                priv2bb7: self.priv2bb7(),
-                priv2bb8: self.priv2bb8(),
-                priv2bb9: self.priv2bb9(),
-                priv2bb10: self.priv2bb10(),
-                priv2bb11: self.priv2bb11(),
-                priv2bb12: self.priv2bb12(),
-                priv2bb13: self.priv2bb13(),
-                priv2bb14: self.priv2bb14(),
-                priv2bb15: self.priv2bb15(),
-                priv2bb16: self.priv2bb16(),
-                priv2bb17: self.priv2bb17(),
-                priv2bb18: self.priv2bb18(),
-                priv2bb19: self.priv2bb19(),
-                priv2bb20: self.priv2bb20(),
-                priv2bb21: self.priv2bb21(),
-                priv2bb22: self.priv2bb22(),
-                priv2bb23: self.priv2bb23(),
-                priv2bb24: self.priv2bb24(),
-                priv2bb25: self.priv2bb25(),
-                priv2bb26: self.priv2bb26(),
-                priv2bb27: self.priv2bb27(),
-                priv2bb28: self.priv2bb28(),
-                priv2bb29: self.priv2bb29(),
-                priv2bb30: self.priv2bb30(),
-                priv2bb31: self.priv2bb31(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Priv2bbr1 {{ priv2bb0: {=bool:?}, priv2bb1: {=bool:?}, priv2bb2: {=bool:?}, priv2bb3: {=bool:?}, priv2bb4: {=bool:?}, priv2bb5: {=bool:?}, priv2bb6: {=bool:?}, priv2bb7: {=bool:?}, priv2bb8: {=bool:?}, priv2bb9: {=bool:?}, priv2bb10: {=bool:?}, priv2bb11: {=bool:?}, priv2bb12: {=bool:?}, priv2bb13: {=bool:?}, priv2bb14: {=bool:?}, priv2bb15: {=bool:?}, priv2bb16: {=bool:?}, priv2bb17: {=bool:?}, priv2bb18: {=bool:?}, priv2bb19: {=bool:?}, priv2bb20: {=bool:?}, priv2bb21: {=bool:?}, priv2bb22: {=bool:?}, priv2bb23: {=bool:?}, priv2bb24: {=bool:?}, priv2bb25: {=bool:?}, priv2bb26: {=bool:?}, priv2bb27: {=bool:?}, priv2bb28: {=bool:?}, priv2bb29: {=bool:?}, priv2bb30: {=bool:?}, priv2bb31: {=bool:?} }}" , self . priv2bb0 () , self . priv2bb1 () , self . priv2bb2 () , self . priv2bb3 () , self . priv2bb4 () , self . priv2bb5 () , self . priv2bb6 () , self . priv2bb7 () , self . priv2bb8 () , self . priv2bb9 () , self . priv2bb10 () , self . priv2bb11 () , self . priv2bb12 () , self . priv2bb13 () , self . priv2bb14 () , self . priv2bb15 () , self . priv2bb16 () , self . priv2bb17 () , self . priv2bb18 () , self . priv2bb19 () , self . priv2bb20 () , self . priv2bb21 () , self . priv2bb22 () , self . priv2bb23 () , self . priv2bb24 () , self . priv2bb25 () , self . priv2bb26 () , self . priv2bb27 () , self . priv2bb28 () , self . priv2bb29 () , self . priv2bb30 () , self . priv2bb31 ())
         }
     }
     #[doc = "FLASH privilege block based bank 2 register 2"]
@@ -4479,76 +3936,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Priv2bbr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Priv2bbr2 {
-                priv2bb0: bool,
-                priv2bb1: bool,
-                priv2bb2: bool,
-                priv2bb3: bool,
-                priv2bb4: bool,
-                priv2bb5: bool,
-                priv2bb6: bool,
-                priv2bb7: bool,
-                priv2bb8: bool,
-                priv2bb9: bool,
-                priv2bb10: bool,
-                priv2bb11: bool,
-                priv2bb12: bool,
-                priv2bb13: bool,
-                priv2bb14: bool,
-                priv2bb15: bool,
-                priv2bb16: bool,
-                priv2bb17: bool,
-                priv2bb18: bool,
-                priv2bb19: bool,
-                priv2bb20: bool,
-                priv2bb21: bool,
-                priv2bb22: bool,
-                priv2bb23: bool,
-                priv2bb24: bool,
-                priv2bb25: bool,
-                priv2bb26: bool,
-                priv2bb27: bool,
-                priv2bb28: bool,
-                priv2bb29: bool,
-                priv2bb30: bool,
-                priv2bb31: bool,
-            }
-            let proxy = Priv2bbr2 {
-                priv2bb0: self.priv2bb0(),
-                priv2bb1: self.priv2bb1(),
-                priv2bb2: self.priv2bb2(),
-                priv2bb3: self.priv2bb3(),
-                priv2bb4: self.priv2bb4(),
-                priv2bb5: self.priv2bb5(),
-                priv2bb6: self.priv2bb6(),
-                priv2bb7: self.priv2bb7(),
-                priv2bb8: self.priv2bb8(),
-                priv2bb9: self.priv2bb9(),
-                priv2bb10: self.priv2bb10(),
-                priv2bb11: self.priv2bb11(),
-                priv2bb12: self.priv2bb12(),
-                priv2bb13: self.priv2bb13(),
-                priv2bb14: self.priv2bb14(),
-                priv2bb15: self.priv2bb15(),
-                priv2bb16: self.priv2bb16(),
-                priv2bb17: self.priv2bb17(),
-                priv2bb18: self.priv2bb18(),
-                priv2bb19: self.priv2bb19(),
-                priv2bb20: self.priv2bb20(),
-                priv2bb21: self.priv2bb21(),
-                priv2bb22: self.priv2bb22(),
-                priv2bb23: self.priv2bb23(),
-                priv2bb24: self.priv2bb24(),
-                priv2bb25: self.priv2bb25(),
-                priv2bb26: self.priv2bb26(),
-                priv2bb27: self.priv2bb27(),
-                priv2bb28: self.priv2bb28(),
-                priv2bb29: self.priv2bb29(),
-                priv2bb30: self.priv2bb30(),
-                priv2bb31: self.priv2bb31(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Priv2bbr2 {{ priv2bb0: {=bool:?}, priv2bb1: {=bool:?}, priv2bb2: {=bool:?}, priv2bb3: {=bool:?}, priv2bb4: {=bool:?}, priv2bb5: {=bool:?}, priv2bb6: {=bool:?}, priv2bb7: {=bool:?}, priv2bb8: {=bool:?}, priv2bb9: {=bool:?}, priv2bb10: {=bool:?}, priv2bb11: {=bool:?}, priv2bb12: {=bool:?}, priv2bb13: {=bool:?}, priv2bb14: {=bool:?}, priv2bb15: {=bool:?}, priv2bb16: {=bool:?}, priv2bb17: {=bool:?}, priv2bb18: {=bool:?}, priv2bb19: {=bool:?}, priv2bb20: {=bool:?}, priv2bb21: {=bool:?}, priv2bb22: {=bool:?}, priv2bb23: {=bool:?}, priv2bb24: {=bool:?}, priv2bb25: {=bool:?}, priv2bb26: {=bool:?}, priv2bb27: {=bool:?}, priv2bb28: {=bool:?}, priv2bb29: {=bool:?}, priv2bb30: {=bool:?}, priv2bb31: {=bool:?} }}" , self . priv2bb0 () , self . priv2bb1 () , self . priv2bb2 () , self . priv2bb3 () , self . priv2bb4 () , self . priv2bb5 () , self . priv2bb6 () , self . priv2bb7 () , self . priv2bb8 () , self . priv2bb9 () , self . priv2bb10 () , self . priv2bb11 () , self . priv2bb12 () , self . priv2bb13 () , self . priv2bb14 () , self . priv2bb15 () , self . priv2bb16 () , self . priv2bb17 () , self . priv2bb18 () , self . priv2bb19 () , self . priv2bb20 () , self . priv2bb21 () , self . priv2bb22 () , self . priv2bb23 () , self . priv2bb24 () , self . priv2bb25 () , self . priv2bb26 () , self . priv2bb27 () , self . priv2bb28 () , self . priv2bb29 () , self . priv2bb30 () , self . priv2bb31 ())
         }
     }
     #[doc = "FLASH privilege block based bank 2 register 3"]
@@ -4956,76 +4344,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Priv2bbr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Priv2bbr3 {
-                priv2bb0: bool,
-                priv2bb1: bool,
-                priv2bb2: bool,
-                priv2bb3: bool,
-                priv2bb4: bool,
-                priv2bb5: bool,
-                priv2bb6: bool,
-                priv2bb7: bool,
-                priv2bb8: bool,
-                priv2bb9: bool,
-                priv2bb10: bool,
-                priv2bb11: bool,
-                priv2bb12: bool,
-                priv2bb13: bool,
-                priv2bb14: bool,
-                priv2bb15: bool,
-                priv2bb16: bool,
-                priv2bb17: bool,
-                priv2bb18: bool,
-                priv2bb19: bool,
-                priv2bb20: bool,
-                priv2bb21: bool,
-                priv2bb22: bool,
-                priv2bb23: bool,
-                priv2bb24: bool,
-                priv2bb25: bool,
-                priv2bb26: bool,
-                priv2bb27: bool,
-                priv2bb28: bool,
-                priv2bb29: bool,
-                priv2bb30: bool,
-                priv2bb31: bool,
-            }
-            let proxy = Priv2bbr3 {
-                priv2bb0: self.priv2bb0(),
-                priv2bb1: self.priv2bb1(),
-                priv2bb2: self.priv2bb2(),
-                priv2bb3: self.priv2bb3(),
-                priv2bb4: self.priv2bb4(),
-                priv2bb5: self.priv2bb5(),
-                priv2bb6: self.priv2bb6(),
-                priv2bb7: self.priv2bb7(),
-                priv2bb8: self.priv2bb8(),
-                priv2bb9: self.priv2bb9(),
-                priv2bb10: self.priv2bb10(),
-                priv2bb11: self.priv2bb11(),
-                priv2bb12: self.priv2bb12(),
-                priv2bb13: self.priv2bb13(),
-                priv2bb14: self.priv2bb14(),
-                priv2bb15: self.priv2bb15(),
-                priv2bb16: self.priv2bb16(),
-                priv2bb17: self.priv2bb17(),
-                priv2bb18: self.priv2bb18(),
-                priv2bb19: self.priv2bb19(),
-                priv2bb20: self.priv2bb20(),
-                priv2bb21: self.priv2bb21(),
-                priv2bb22: self.priv2bb22(),
-                priv2bb23: self.priv2bb23(),
-                priv2bb24: self.priv2bb24(),
-                priv2bb25: self.priv2bb25(),
-                priv2bb26: self.priv2bb26(),
-                priv2bb27: self.priv2bb27(),
-                priv2bb28: self.priv2bb28(),
-                priv2bb29: self.priv2bb29(),
-                priv2bb30: self.priv2bb30(),
-                priv2bb31: self.priv2bb31(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Priv2bbr3 {{ priv2bb0: {=bool:?}, priv2bb1: {=bool:?}, priv2bb2: {=bool:?}, priv2bb3: {=bool:?}, priv2bb4: {=bool:?}, priv2bb5: {=bool:?}, priv2bb6: {=bool:?}, priv2bb7: {=bool:?}, priv2bb8: {=bool:?}, priv2bb9: {=bool:?}, priv2bb10: {=bool:?}, priv2bb11: {=bool:?}, priv2bb12: {=bool:?}, priv2bb13: {=bool:?}, priv2bb14: {=bool:?}, priv2bb15: {=bool:?}, priv2bb16: {=bool:?}, priv2bb17: {=bool:?}, priv2bb18: {=bool:?}, priv2bb19: {=bool:?}, priv2bb20: {=bool:?}, priv2bb21: {=bool:?}, priv2bb22: {=bool:?}, priv2bb23: {=bool:?}, priv2bb24: {=bool:?}, priv2bb25: {=bool:?}, priv2bb26: {=bool:?}, priv2bb27: {=bool:?}, priv2bb28: {=bool:?}, priv2bb29: {=bool:?}, priv2bb30: {=bool:?}, priv2bb31: {=bool:?} }}" , self . priv2bb0 () , self . priv2bb1 () , self . priv2bb2 () , self . priv2bb3 () , self . priv2bb4 () , self . priv2bb5 () , self . priv2bb6 () , self . priv2bb7 () , self . priv2bb8 () , self . priv2bb9 () , self . priv2bb10 () , self . priv2bb11 () , self . priv2bb12 () , self . priv2bb13 () , self . priv2bb14 () , self . priv2bb15 () , self . priv2bb16 () , self . priv2bb17 () , self . priv2bb18 () , self . priv2bb19 () , self . priv2bb20 () , self . priv2bb21 () , self . priv2bb22 () , self . priv2bb23 () , self . priv2bb24 () , self . priv2bb25 () , self . priv2bb26 () , self . priv2bb27 () , self . priv2bb28 () , self . priv2bb29 () , self . priv2bb30 () , self . priv2bb31 ())
         }
     }
     #[doc = "FLASH privilege block based bank 2 register 4"]
@@ -5433,76 +4752,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Priv2bbr4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Priv2bbr4 {
-                priv2bb0: bool,
-                priv2bb1: bool,
-                priv2bb2: bool,
-                priv2bb3: bool,
-                priv2bb4: bool,
-                priv2bb5: bool,
-                priv2bb6: bool,
-                priv2bb7: bool,
-                priv2bb8: bool,
-                priv2bb9: bool,
-                priv2bb10: bool,
-                priv2bb11: bool,
-                priv2bb12: bool,
-                priv2bb13: bool,
-                priv2bb14: bool,
-                priv2bb15: bool,
-                priv2bb16: bool,
-                priv2bb17: bool,
-                priv2bb18: bool,
-                priv2bb19: bool,
-                priv2bb20: bool,
-                priv2bb21: bool,
-                priv2bb22: bool,
-                priv2bb23: bool,
-                priv2bb24: bool,
-                priv2bb25: bool,
-                priv2bb26: bool,
-                priv2bb27: bool,
-                priv2bb28: bool,
-                priv2bb29: bool,
-                priv2bb30: bool,
-                priv2bb31: bool,
-            }
-            let proxy = Priv2bbr4 {
-                priv2bb0: self.priv2bb0(),
-                priv2bb1: self.priv2bb1(),
-                priv2bb2: self.priv2bb2(),
-                priv2bb3: self.priv2bb3(),
-                priv2bb4: self.priv2bb4(),
-                priv2bb5: self.priv2bb5(),
-                priv2bb6: self.priv2bb6(),
-                priv2bb7: self.priv2bb7(),
-                priv2bb8: self.priv2bb8(),
-                priv2bb9: self.priv2bb9(),
-                priv2bb10: self.priv2bb10(),
-                priv2bb11: self.priv2bb11(),
-                priv2bb12: self.priv2bb12(),
-                priv2bb13: self.priv2bb13(),
-                priv2bb14: self.priv2bb14(),
-                priv2bb15: self.priv2bb15(),
-                priv2bb16: self.priv2bb16(),
-                priv2bb17: self.priv2bb17(),
-                priv2bb18: self.priv2bb18(),
-                priv2bb19: self.priv2bb19(),
-                priv2bb20: self.priv2bb20(),
-                priv2bb21: self.priv2bb21(),
-                priv2bb22: self.priv2bb22(),
-                priv2bb23: self.priv2bb23(),
-                priv2bb24: self.priv2bb24(),
-                priv2bb25: self.priv2bb25(),
-                priv2bb26: self.priv2bb26(),
-                priv2bb27: self.priv2bb27(),
-                priv2bb28: self.priv2bb28(),
-                priv2bb29: self.priv2bb29(),
-                priv2bb30: self.priv2bb30(),
-                priv2bb31: self.priv2bb31(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Priv2bbr4 {{ priv2bb0: {=bool:?}, priv2bb1: {=bool:?}, priv2bb2: {=bool:?}, priv2bb3: {=bool:?}, priv2bb4: {=bool:?}, priv2bb5: {=bool:?}, priv2bb6: {=bool:?}, priv2bb7: {=bool:?}, priv2bb8: {=bool:?}, priv2bb9: {=bool:?}, priv2bb10: {=bool:?}, priv2bb11: {=bool:?}, priv2bb12: {=bool:?}, priv2bb13: {=bool:?}, priv2bb14: {=bool:?}, priv2bb15: {=bool:?}, priv2bb16: {=bool:?}, priv2bb17: {=bool:?}, priv2bb18: {=bool:?}, priv2bb19: {=bool:?}, priv2bb20: {=bool:?}, priv2bb21: {=bool:?}, priv2bb22: {=bool:?}, priv2bb23: {=bool:?}, priv2bb24: {=bool:?}, priv2bb25: {=bool:?}, priv2bb26: {=bool:?}, priv2bb27: {=bool:?}, priv2bb28: {=bool:?}, priv2bb29: {=bool:?}, priv2bb30: {=bool:?}, priv2bb31: {=bool:?} }}" , self . priv2bb0 () , self . priv2bb1 () , self . priv2bb2 () , self . priv2bb3 () , self . priv2bb4 () , self . priv2bb5 () , self . priv2bb6 () , self . priv2bb7 () , self . priv2bb8 () , self . priv2bb9 () , self . priv2bb10 () , self . priv2bb11 () , self . priv2bb12 () , self . priv2bb13 () , self . priv2bb14 () , self . priv2bb15 () , self . priv2bb16 () , self . priv2bb17 () , self . priv2bb18 () , self . priv2bb19 () , self . priv2bb20 () , self . priv2bb21 () , self . priv2bb22 () , self . priv2bb23 () , self . priv2bb24 () , self . priv2bb25 () , self . priv2bb26 () , self . priv2bb27 () , self . priv2bb28 () , self . priv2bb29 () , self . priv2bb30 () , self . priv2bb31 ())
         }
     }
     #[doc = "FLASH privilege configuration register"]
@@ -5550,16 +4800,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Privcfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Privcfgr {
-                spriv: super::vals::Spriv,
-                nspriv: super::vals::Nspriv,
-            }
-            let proxy = Privcfgr {
-                spriv: self.spriv(),
-                nspriv: self.nspriv(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Privcfgr {{ spriv: {:?}, nspriv: {:?} }}",
+                self.spriv(),
+                self.nspriv()
+            )
         }
     }
     #[doc = "FLASH secure block based bank 1 register 1"]
@@ -5967,76 +5213,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sec1bbr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sec1bbr1 {
-                sec1bb0: bool,
-                sec1bb1: bool,
-                sec1bb2: bool,
-                sec1bb3: bool,
-                sec1bb4: bool,
-                sec1bb5: bool,
-                sec1bb6: bool,
-                sec1bb7: bool,
-                sec1bb8: bool,
-                sec1bb9: bool,
-                sec1bb10: bool,
-                sec1bb11: bool,
-                sec1bb12: bool,
-                sec1bb13: bool,
-                sec1bb14: bool,
-                sec1bb15: bool,
-                sec1bb16: bool,
-                sec1bb17: bool,
-                sec1bb18: bool,
-                sec1bb19: bool,
-                sec1bb20: bool,
-                sec1bb21: bool,
-                sec1bb22: bool,
-                sec1bb23: bool,
-                sec1bb24: bool,
-                sec1bb25: bool,
-                sec1bb26: bool,
-                sec1bb27: bool,
-                sec1bb28: bool,
-                sec1bb29: bool,
-                sec1bb30: bool,
-                sec1bb31: bool,
-            }
-            let proxy = Sec1bbr1 {
-                sec1bb0: self.sec1bb0(),
-                sec1bb1: self.sec1bb1(),
-                sec1bb2: self.sec1bb2(),
-                sec1bb3: self.sec1bb3(),
-                sec1bb4: self.sec1bb4(),
-                sec1bb5: self.sec1bb5(),
-                sec1bb6: self.sec1bb6(),
-                sec1bb7: self.sec1bb7(),
-                sec1bb8: self.sec1bb8(),
-                sec1bb9: self.sec1bb9(),
-                sec1bb10: self.sec1bb10(),
-                sec1bb11: self.sec1bb11(),
-                sec1bb12: self.sec1bb12(),
-                sec1bb13: self.sec1bb13(),
-                sec1bb14: self.sec1bb14(),
-                sec1bb15: self.sec1bb15(),
-                sec1bb16: self.sec1bb16(),
-                sec1bb17: self.sec1bb17(),
-                sec1bb18: self.sec1bb18(),
-                sec1bb19: self.sec1bb19(),
-                sec1bb20: self.sec1bb20(),
-                sec1bb21: self.sec1bb21(),
-                sec1bb22: self.sec1bb22(),
-                sec1bb23: self.sec1bb23(),
-                sec1bb24: self.sec1bb24(),
-                sec1bb25: self.sec1bb25(),
-                sec1bb26: self.sec1bb26(),
-                sec1bb27: self.sec1bb27(),
-                sec1bb28: self.sec1bb28(),
-                sec1bb29: self.sec1bb29(),
-                sec1bb30: self.sec1bb30(),
-                sec1bb31: self.sec1bb31(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sec1bbr1 {{ sec1bb0: {=bool:?}, sec1bb1: {=bool:?}, sec1bb2: {=bool:?}, sec1bb3: {=bool:?}, sec1bb4: {=bool:?}, sec1bb5: {=bool:?}, sec1bb6: {=bool:?}, sec1bb7: {=bool:?}, sec1bb8: {=bool:?}, sec1bb9: {=bool:?}, sec1bb10: {=bool:?}, sec1bb11: {=bool:?}, sec1bb12: {=bool:?}, sec1bb13: {=bool:?}, sec1bb14: {=bool:?}, sec1bb15: {=bool:?}, sec1bb16: {=bool:?}, sec1bb17: {=bool:?}, sec1bb18: {=bool:?}, sec1bb19: {=bool:?}, sec1bb20: {=bool:?}, sec1bb21: {=bool:?}, sec1bb22: {=bool:?}, sec1bb23: {=bool:?}, sec1bb24: {=bool:?}, sec1bb25: {=bool:?}, sec1bb26: {=bool:?}, sec1bb27: {=bool:?}, sec1bb28: {=bool:?}, sec1bb29: {=bool:?}, sec1bb30: {=bool:?}, sec1bb31: {=bool:?} }}" , self . sec1bb0 () , self . sec1bb1 () , self . sec1bb2 () , self . sec1bb3 () , self . sec1bb4 () , self . sec1bb5 () , self . sec1bb6 () , self . sec1bb7 () , self . sec1bb8 () , self . sec1bb9 () , self . sec1bb10 () , self . sec1bb11 () , self . sec1bb12 () , self . sec1bb13 () , self . sec1bb14 () , self . sec1bb15 () , self . sec1bb16 () , self . sec1bb17 () , self . sec1bb18 () , self . sec1bb19 () , self . sec1bb20 () , self . sec1bb21 () , self . sec1bb22 () , self . sec1bb23 () , self . sec1bb24 () , self . sec1bb25 () , self . sec1bb26 () , self . sec1bb27 () , self . sec1bb28 () , self . sec1bb29 () , self . sec1bb30 () , self . sec1bb31 ())
         }
     }
     #[doc = "FLASH secure block based bank 1 register 2"]
@@ -6444,76 +5621,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sec1bbr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sec1bbr2 {
-                sec1bb0: bool,
-                sec1bb1: bool,
-                sec1bb2: bool,
-                sec1bb3: bool,
-                sec1bb4: bool,
-                sec1bb5: bool,
-                sec1bb6: bool,
-                sec1bb7: bool,
-                sec1bb8: bool,
-                sec1bb9: bool,
-                sec1bb10: bool,
-                sec1bb11: bool,
-                sec1bb12: bool,
-                sec1bb13: bool,
-                sec1bb14: bool,
-                sec1bb15: bool,
-                sec1bb16: bool,
-                sec1bb17: bool,
-                sec1bb18: bool,
-                sec1bb19: bool,
-                sec1bb20: bool,
-                sec1bb21: bool,
-                sec1bb22: bool,
-                sec1bb23: bool,
-                sec1bb24: bool,
-                sec1bb25: bool,
-                sec1bb26: bool,
-                sec1bb27: bool,
-                sec1bb28: bool,
-                sec1bb29: bool,
-                sec1bb30: bool,
-                sec1bb31: bool,
-            }
-            let proxy = Sec1bbr2 {
-                sec1bb0: self.sec1bb0(),
-                sec1bb1: self.sec1bb1(),
-                sec1bb2: self.sec1bb2(),
-                sec1bb3: self.sec1bb3(),
-                sec1bb4: self.sec1bb4(),
-                sec1bb5: self.sec1bb5(),
-                sec1bb6: self.sec1bb6(),
-                sec1bb7: self.sec1bb7(),
-                sec1bb8: self.sec1bb8(),
-                sec1bb9: self.sec1bb9(),
-                sec1bb10: self.sec1bb10(),
-                sec1bb11: self.sec1bb11(),
-                sec1bb12: self.sec1bb12(),
-                sec1bb13: self.sec1bb13(),
-                sec1bb14: self.sec1bb14(),
-                sec1bb15: self.sec1bb15(),
-                sec1bb16: self.sec1bb16(),
-                sec1bb17: self.sec1bb17(),
-                sec1bb18: self.sec1bb18(),
-                sec1bb19: self.sec1bb19(),
-                sec1bb20: self.sec1bb20(),
-                sec1bb21: self.sec1bb21(),
-                sec1bb22: self.sec1bb22(),
-                sec1bb23: self.sec1bb23(),
-                sec1bb24: self.sec1bb24(),
-                sec1bb25: self.sec1bb25(),
-                sec1bb26: self.sec1bb26(),
-                sec1bb27: self.sec1bb27(),
-                sec1bb28: self.sec1bb28(),
-                sec1bb29: self.sec1bb29(),
-                sec1bb30: self.sec1bb30(),
-                sec1bb31: self.sec1bb31(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sec1bbr2 {{ sec1bb0: {=bool:?}, sec1bb1: {=bool:?}, sec1bb2: {=bool:?}, sec1bb3: {=bool:?}, sec1bb4: {=bool:?}, sec1bb5: {=bool:?}, sec1bb6: {=bool:?}, sec1bb7: {=bool:?}, sec1bb8: {=bool:?}, sec1bb9: {=bool:?}, sec1bb10: {=bool:?}, sec1bb11: {=bool:?}, sec1bb12: {=bool:?}, sec1bb13: {=bool:?}, sec1bb14: {=bool:?}, sec1bb15: {=bool:?}, sec1bb16: {=bool:?}, sec1bb17: {=bool:?}, sec1bb18: {=bool:?}, sec1bb19: {=bool:?}, sec1bb20: {=bool:?}, sec1bb21: {=bool:?}, sec1bb22: {=bool:?}, sec1bb23: {=bool:?}, sec1bb24: {=bool:?}, sec1bb25: {=bool:?}, sec1bb26: {=bool:?}, sec1bb27: {=bool:?}, sec1bb28: {=bool:?}, sec1bb29: {=bool:?}, sec1bb30: {=bool:?}, sec1bb31: {=bool:?} }}" , self . sec1bb0 () , self . sec1bb1 () , self . sec1bb2 () , self . sec1bb3 () , self . sec1bb4 () , self . sec1bb5 () , self . sec1bb6 () , self . sec1bb7 () , self . sec1bb8 () , self . sec1bb9 () , self . sec1bb10 () , self . sec1bb11 () , self . sec1bb12 () , self . sec1bb13 () , self . sec1bb14 () , self . sec1bb15 () , self . sec1bb16 () , self . sec1bb17 () , self . sec1bb18 () , self . sec1bb19 () , self . sec1bb20 () , self . sec1bb21 () , self . sec1bb22 () , self . sec1bb23 () , self . sec1bb24 () , self . sec1bb25 () , self . sec1bb26 () , self . sec1bb27 () , self . sec1bb28 () , self . sec1bb29 () , self . sec1bb30 () , self . sec1bb31 ())
         }
     }
     #[doc = "FLASH secure block based bank 1 register 3"]
@@ -6921,76 +6029,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sec1bbr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sec1bbr3 {
-                sec1bb0: bool,
-                sec1bb1: bool,
-                sec1bb2: bool,
-                sec1bb3: bool,
-                sec1bb4: bool,
-                sec1bb5: bool,
-                sec1bb6: bool,
-                sec1bb7: bool,
-                sec1bb8: bool,
-                sec1bb9: bool,
-                sec1bb10: bool,
-                sec1bb11: bool,
-                sec1bb12: bool,
-                sec1bb13: bool,
-                sec1bb14: bool,
-                sec1bb15: bool,
-                sec1bb16: bool,
-                sec1bb17: bool,
-                sec1bb18: bool,
-                sec1bb19: bool,
-                sec1bb20: bool,
-                sec1bb21: bool,
-                sec1bb22: bool,
-                sec1bb23: bool,
-                sec1bb24: bool,
-                sec1bb25: bool,
-                sec1bb26: bool,
-                sec1bb27: bool,
-                sec1bb28: bool,
-                sec1bb29: bool,
-                sec1bb30: bool,
-                sec1bb31: bool,
-            }
-            let proxy = Sec1bbr3 {
-                sec1bb0: self.sec1bb0(),
-                sec1bb1: self.sec1bb1(),
-                sec1bb2: self.sec1bb2(),
-                sec1bb3: self.sec1bb3(),
-                sec1bb4: self.sec1bb4(),
-                sec1bb5: self.sec1bb5(),
-                sec1bb6: self.sec1bb6(),
-                sec1bb7: self.sec1bb7(),
-                sec1bb8: self.sec1bb8(),
-                sec1bb9: self.sec1bb9(),
-                sec1bb10: self.sec1bb10(),
-                sec1bb11: self.sec1bb11(),
-                sec1bb12: self.sec1bb12(),
-                sec1bb13: self.sec1bb13(),
-                sec1bb14: self.sec1bb14(),
-                sec1bb15: self.sec1bb15(),
-                sec1bb16: self.sec1bb16(),
-                sec1bb17: self.sec1bb17(),
-                sec1bb18: self.sec1bb18(),
-                sec1bb19: self.sec1bb19(),
-                sec1bb20: self.sec1bb20(),
-                sec1bb21: self.sec1bb21(),
-                sec1bb22: self.sec1bb22(),
-                sec1bb23: self.sec1bb23(),
-                sec1bb24: self.sec1bb24(),
-                sec1bb25: self.sec1bb25(),
-                sec1bb26: self.sec1bb26(),
-                sec1bb27: self.sec1bb27(),
-                sec1bb28: self.sec1bb28(),
-                sec1bb29: self.sec1bb29(),
-                sec1bb30: self.sec1bb30(),
-                sec1bb31: self.sec1bb31(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sec1bbr3 {{ sec1bb0: {=bool:?}, sec1bb1: {=bool:?}, sec1bb2: {=bool:?}, sec1bb3: {=bool:?}, sec1bb4: {=bool:?}, sec1bb5: {=bool:?}, sec1bb6: {=bool:?}, sec1bb7: {=bool:?}, sec1bb8: {=bool:?}, sec1bb9: {=bool:?}, sec1bb10: {=bool:?}, sec1bb11: {=bool:?}, sec1bb12: {=bool:?}, sec1bb13: {=bool:?}, sec1bb14: {=bool:?}, sec1bb15: {=bool:?}, sec1bb16: {=bool:?}, sec1bb17: {=bool:?}, sec1bb18: {=bool:?}, sec1bb19: {=bool:?}, sec1bb20: {=bool:?}, sec1bb21: {=bool:?}, sec1bb22: {=bool:?}, sec1bb23: {=bool:?}, sec1bb24: {=bool:?}, sec1bb25: {=bool:?}, sec1bb26: {=bool:?}, sec1bb27: {=bool:?}, sec1bb28: {=bool:?}, sec1bb29: {=bool:?}, sec1bb30: {=bool:?}, sec1bb31: {=bool:?} }}" , self . sec1bb0 () , self . sec1bb1 () , self . sec1bb2 () , self . sec1bb3 () , self . sec1bb4 () , self . sec1bb5 () , self . sec1bb6 () , self . sec1bb7 () , self . sec1bb8 () , self . sec1bb9 () , self . sec1bb10 () , self . sec1bb11 () , self . sec1bb12 () , self . sec1bb13 () , self . sec1bb14 () , self . sec1bb15 () , self . sec1bb16 () , self . sec1bb17 () , self . sec1bb18 () , self . sec1bb19 () , self . sec1bb20 () , self . sec1bb21 () , self . sec1bb22 () , self . sec1bb23 () , self . sec1bb24 () , self . sec1bb25 () , self . sec1bb26 () , self . sec1bb27 () , self . sec1bb28 () , self . sec1bb29 () , self . sec1bb30 () , self . sec1bb31 ())
         }
     }
     #[doc = "FLASH secure block based bank 1 register 4"]
@@ -7398,76 +6437,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sec1bbr4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sec1bbr4 {
-                sec1bb0: bool,
-                sec1bb1: bool,
-                sec1bb2: bool,
-                sec1bb3: bool,
-                sec1bb4: bool,
-                sec1bb5: bool,
-                sec1bb6: bool,
-                sec1bb7: bool,
-                sec1bb8: bool,
-                sec1bb9: bool,
-                sec1bb10: bool,
-                sec1bb11: bool,
-                sec1bb12: bool,
-                sec1bb13: bool,
-                sec1bb14: bool,
-                sec1bb15: bool,
-                sec1bb16: bool,
-                sec1bb17: bool,
-                sec1bb18: bool,
-                sec1bb19: bool,
-                sec1bb20: bool,
-                sec1bb21: bool,
-                sec1bb22: bool,
-                sec1bb23: bool,
-                sec1bb24: bool,
-                sec1bb25: bool,
-                sec1bb26: bool,
-                sec1bb27: bool,
-                sec1bb28: bool,
-                sec1bb29: bool,
-                sec1bb30: bool,
-                sec1bb31: bool,
-            }
-            let proxy = Sec1bbr4 {
-                sec1bb0: self.sec1bb0(),
-                sec1bb1: self.sec1bb1(),
-                sec1bb2: self.sec1bb2(),
-                sec1bb3: self.sec1bb3(),
-                sec1bb4: self.sec1bb4(),
-                sec1bb5: self.sec1bb5(),
-                sec1bb6: self.sec1bb6(),
-                sec1bb7: self.sec1bb7(),
-                sec1bb8: self.sec1bb8(),
-                sec1bb9: self.sec1bb9(),
-                sec1bb10: self.sec1bb10(),
-                sec1bb11: self.sec1bb11(),
-                sec1bb12: self.sec1bb12(),
-                sec1bb13: self.sec1bb13(),
-                sec1bb14: self.sec1bb14(),
-                sec1bb15: self.sec1bb15(),
-                sec1bb16: self.sec1bb16(),
-                sec1bb17: self.sec1bb17(),
-                sec1bb18: self.sec1bb18(),
-                sec1bb19: self.sec1bb19(),
-                sec1bb20: self.sec1bb20(),
-                sec1bb21: self.sec1bb21(),
-                sec1bb22: self.sec1bb22(),
-                sec1bb23: self.sec1bb23(),
-                sec1bb24: self.sec1bb24(),
-                sec1bb25: self.sec1bb25(),
-                sec1bb26: self.sec1bb26(),
-                sec1bb27: self.sec1bb27(),
-                sec1bb28: self.sec1bb28(),
-                sec1bb29: self.sec1bb29(),
-                sec1bb30: self.sec1bb30(),
-                sec1bb31: self.sec1bb31(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sec1bbr4 {{ sec1bb0: {=bool:?}, sec1bb1: {=bool:?}, sec1bb2: {=bool:?}, sec1bb3: {=bool:?}, sec1bb4: {=bool:?}, sec1bb5: {=bool:?}, sec1bb6: {=bool:?}, sec1bb7: {=bool:?}, sec1bb8: {=bool:?}, sec1bb9: {=bool:?}, sec1bb10: {=bool:?}, sec1bb11: {=bool:?}, sec1bb12: {=bool:?}, sec1bb13: {=bool:?}, sec1bb14: {=bool:?}, sec1bb15: {=bool:?}, sec1bb16: {=bool:?}, sec1bb17: {=bool:?}, sec1bb18: {=bool:?}, sec1bb19: {=bool:?}, sec1bb20: {=bool:?}, sec1bb21: {=bool:?}, sec1bb22: {=bool:?}, sec1bb23: {=bool:?}, sec1bb24: {=bool:?}, sec1bb25: {=bool:?}, sec1bb26: {=bool:?}, sec1bb27: {=bool:?}, sec1bb28: {=bool:?}, sec1bb29: {=bool:?}, sec1bb30: {=bool:?}, sec1bb31: {=bool:?} }}" , self . sec1bb0 () , self . sec1bb1 () , self . sec1bb2 () , self . sec1bb3 () , self . sec1bb4 () , self . sec1bb5 () , self . sec1bb6 () , self . sec1bb7 () , self . sec1bb8 () , self . sec1bb9 () , self . sec1bb10 () , self . sec1bb11 () , self . sec1bb12 () , self . sec1bb13 () , self . sec1bb14 () , self . sec1bb15 () , self . sec1bb16 () , self . sec1bb17 () , self . sec1bb18 () , self . sec1bb19 () , self . sec1bb20 () , self . sec1bb21 () , self . sec1bb22 () , self . sec1bb23 () , self . sec1bb24 () , self . sec1bb25 () , self . sec1bb26 () , self . sec1bb27 () , self . sec1bb28 () , self . sec1bb29 () , self . sec1bb30 () , self . sec1bb31 ())
         }
     }
     #[doc = "FLASH secure block based bank 2 register 1"]
@@ -7875,76 +6845,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sec2bbr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sec2bbr1 {
-                sec2bb0: bool,
-                sec2bb1: bool,
-                sec2bb2: bool,
-                sec2bb3: bool,
-                sec2bb4: bool,
-                sec2bb5: bool,
-                sec2bb6: bool,
-                sec2bb7: bool,
-                sec2bb8: bool,
-                sec2bb9: bool,
-                sec2bb10: bool,
-                sec2bb11: bool,
-                sec2bb12: bool,
-                sec2bb13: bool,
-                sec2bb14: bool,
-                sec2bb15: bool,
-                sec2bb16: bool,
-                sec2bb17: bool,
-                sec2bb18: bool,
-                sec2bb19: bool,
-                sec2bb20: bool,
-                sec2bb21: bool,
-                sec2bb22: bool,
-                sec2bb23: bool,
-                sec2bb24: bool,
-                sec2bb25: bool,
-                sec2bb26: bool,
-                sec2bb27: bool,
-                sec2bb28: bool,
-                sec2bb29: bool,
-                sec2bb30: bool,
-                sec2bb31: bool,
-            }
-            let proxy = Sec2bbr1 {
-                sec2bb0: self.sec2bb0(),
-                sec2bb1: self.sec2bb1(),
-                sec2bb2: self.sec2bb2(),
-                sec2bb3: self.sec2bb3(),
-                sec2bb4: self.sec2bb4(),
-                sec2bb5: self.sec2bb5(),
-                sec2bb6: self.sec2bb6(),
-                sec2bb7: self.sec2bb7(),
-                sec2bb8: self.sec2bb8(),
-                sec2bb9: self.sec2bb9(),
-                sec2bb10: self.sec2bb10(),
-                sec2bb11: self.sec2bb11(),
-                sec2bb12: self.sec2bb12(),
-                sec2bb13: self.sec2bb13(),
-                sec2bb14: self.sec2bb14(),
-                sec2bb15: self.sec2bb15(),
-                sec2bb16: self.sec2bb16(),
-                sec2bb17: self.sec2bb17(),
-                sec2bb18: self.sec2bb18(),
-                sec2bb19: self.sec2bb19(),
-                sec2bb20: self.sec2bb20(),
-                sec2bb21: self.sec2bb21(),
-                sec2bb22: self.sec2bb22(),
-                sec2bb23: self.sec2bb23(),
-                sec2bb24: self.sec2bb24(),
-                sec2bb25: self.sec2bb25(),
-                sec2bb26: self.sec2bb26(),
-                sec2bb27: self.sec2bb27(),
-                sec2bb28: self.sec2bb28(),
-                sec2bb29: self.sec2bb29(),
-                sec2bb30: self.sec2bb30(),
-                sec2bb31: self.sec2bb31(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sec2bbr1 {{ sec2bb0: {=bool:?}, sec2bb1: {=bool:?}, sec2bb2: {=bool:?}, sec2bb3: {=bool:?}, sec2bb4: {=bool:?}, sec2bb5: {=bool:?}, sec2bb6: {=bool:?}, sec2bb7: {=bool:?}, sec2bb8: {=bool:?}, sec2bb9: {=bool:?}, sec2bb10: {=bool:?}, sec2bb11: {=bool:?}, sec2bb12: {=bool:?}, sec2bb13: {=bool:?}, sec2bb14: {=bool:?}, sec2bb15: {=bool:?}, sec2bb16: {=bool:?}, sec2bb17: {=bool:?}, sec2bb18: {=bool:?}, sec2bb19: {=bool:?}, sec2bb20: {=bool:?}, sec2bb21: {=bool:?}, sec2bb22: {=bool:?}, sec2bb23: {=bool:?}, sec2bb24: {=bool:?}, sec2bb25: {=bool:?}, sec2bb26: {=bool:?}, sec2bb27: {=bool:?}, sec2bb28: {=bool:?}, sec2bb29: {=bool:?}, sec2bb30: {=bool:?}, sec2bb31: {=bool:?} }}" , self . sec2bb0 () , self . sec2bb1 () , self . sec2bb2 () , self . sec2bb3 () , self . sec2bb4 () , self . sec2bb5 () , self . sec2bb6 () , self . sec2bb7 () , self . sec2bb8 () , self . sec2bb9 () , self . sec2bb10 () , self . sec2bb11 () , self . sec2bb12 () , self . sec2bb13 () , self . sec2bb14 () , self . sec2bb15 () , self . sec2bb16 () , self . sec2bb17 () , self . sec2bb18 () , self . sec2bb19 () , self . sec2bb20 () , self . sec2bb21 () , self . sec2bb22 () , self . sec2bb23 () , self . sec2bb24 () , self . sec2bb25 () , self . sec2bb26 () , self . sec2bb27 () , self . sec2bb28 () , self . sec2bb29 () , self . sec2bb30 () , self . sec2bb31 ())
         }
     }
     #[doc = "FLASH secure block based bank 2 register 2"]
@@ -8352,76 +7253,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sec2bbr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sec2bbr2 {
-                sec2bb0: bool,
-                sec2bb1: bool,
-                sec2bb2: bool,
-                sec2bb3: bool,
-                sec2bb4: bool,
-                sec2bb5: bool,
-                sec2bb6: bool,
-                sec2bb7: bool,
-                sec2bb8: bool,
-                sec2bb9: bool,
-                sec2bb10: bool,
-                sec2bb11: bool,
-                sec2bb12: bool,
-                sec2bb13: bool,
-                sec2bb14: bool,
-                sec2bb15: bool,
-                sec2bb16: bool,
-                sec2bb17: bool,
-                sec2bb18: bool,
-                sec2bb19: bool,
-                sec2bb20: bool,
-                sec2bb21: bool,
-                sec2bb22: bool,
-                sec2bb23: bool,
-                sec2bb24: bool,
-                sec2bb25: bool,
-                sec2bb26: bool,
-                sec2bb27: bool,
-                sec2bb28: bool,
-                sec2bb29: bool,
-                sec2bb30: bool,
-                sec2bb31: bool,
-            }
-            let proxy = Sec2bbr2 {
-                sec2bb0: self.sec2bb0(),
-                sec2bb1: self.sec2bb1(),
-                sec2bb2: self.sec2bb2(),
-                sec2bb3: self.sec2bb3(),
-                sec2bb4: self.sec2bb4(),
-                sec2bb5: self.sec2bb5(),
-                sec2bb6: self.sec2bb6(),
-                sec2bb7: self.sec2bb7(),
-                sec2bb8: self.sec2bb8(),
-                sec2bb9: self.sec2bb9(),
-                sec2bb10: self.sec2bb10(),
-                sec2bb11: self.sec2bb11(),
-                sec2bb12: self.sec2bb12(),
-                sec2bb13: self.sec2bb13(),
-                sec2bb14: self.sec2bb14(),
-                sec2bb15: self.sec2bb15(),
-                sec2bb16: self.sec2bb16(),
-                sec2bb17: self.sec2bb17(),
-                sec2bb18: self.sec2bb18(),
-                sec2bb19: self.sec2bb19(),
-                sec2bb20: self.sec2bb20(),
-                sec2bb21: self.sec2bb21(),
-                sec2bb22: self.sec2bb22(),
-                sec2bb23: self.sec2bb23(),
-                sec2bb24: self.sec2bb24(),
-                sec2bb25: self.sec2bb25(),
-                sec2bb26: self.sec2bb26(),
-                sec2bb27: self.sec2bb27(),
-                sec2bb28: self.sec2bb28(),
-                sec2bb29: self.sec2bb29(),
-                sec2bb30: self.sec2bb30(),
-                sec2bb31: self.sec2bb31(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sec2bbr2 {{ sec2bb0: {=bool:?}, sec2bb1: {=bool:?}, sec2bb2: {=bool:?}, sec2bb3: {=bool:?}, sec2bb4: {=bool:?}, sec2bb5: {=bool:?}, sec2bb6: {=bool:?}, sec2bb7: {=bool:?}, sec2bb8: {=bool:?}, sec2bb9: {=bool:?}, sec2bb10: {=bool:?}, sec2bb11: {=bool:?}, sec2bb12: {=bool:?}, sec2bb13: {=bool:?}, sec2bb14: {=bool:?}, sec2bb15: {=bool:?}, sec2bb16: {=bool:?}, sec2bb17: {=bool:?}, sec2bb18: {=bool:?}, sec2bb19: {=bool:?}, sec2bb20: {=bool:?}, sec2bb21: {=bool:?}, sec2bb22: {=bool:?}, sec2bb23: {=bool:?}, sec2bb24: {=bool:?}, sec2bb25: {=bool:?}, sec2bb26: {=bool:?}, sec2bb27: {=bool:?}, sec2bb28: {=bool:?}, sec2bb29: {=bool:?}, sec2bb30: {=bool:?}, sec2bb31: {=bool:?} }}" , self . sec2bb0 () , self . sec2bb1 () , self . sec2bb2 () , self . sec2bb3 () , self . sec2bb4 () , self . sec2bb5 () , self . sec2bb6 () , self . sec2bb7 () , self . sec2bb8 () , self . sec2bb9 () , self . sec2bb10 () , self . sec2bb11 () , self . sec2bb12 () , self . sec2bb13 () , self . sec2bb14 () , self . sec2bb15 () , self . sec2bb16 () , self . sec2bb17 () , self . sec2bb18 () , self . sec2bb19 () , self . sec2bb20 () , self . sec2bb21 () , self . sec2bb22 () , self . sec2bb23 () , self . sec2bb24 () , self . sec2bb25 () , self . sec2bb26 () , self . sec2bb27 () , self . sec2bb28 () , self . sec2bb29 () , self . sec2bb30 () , self . sec2bb31 ())
         }
     }
     #[doc = "FLASH secure block based bank 2 register 3"]
@@ -8829,76 +7661,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sec2bbr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sec2bbr3 {
-                sec2bb0: bool,
-                sec2bb1: bool,
-                sec2bb2: bool,
-                sec2bb3: bool,
-                sec2bb4: bool,
-                sec2bb5: bool,
-                sec2bb6: bool,
-                sec2bb7: bool,
-                sec2bb8: bool,
-                sec2bb9: bool,
-                sec2bb10: bool,
-                sec2bb11: bool,
-                sec2bb12: bool,
-                sec2bb13: bool,
-                sec2bb14: bool,
-                sec2bb15: bool,
-                sec2bb16: bool,
-                sec2bb17: bool,
-                sec2bb18: bool,
-                sec2bb19: bool,
-                sec2bb20: bool,
-                sec2bb21: bool,
-                sec2bb22: bool,
-                sec2bb23: bool,
-                sec2bb24: bool,
-                sec2bb25: bool,
-                sec2bb26: bool,
-                sec2bb27: bool,
-                sec2bb28: bool,
-                sec2bb29: bool,
-                sec2bb30: bool,
-                sec2bb31: bool,
-            }
-            let proxy = Sec2bbr3 {
-                sec2bb0: self.sec2bb0(),
-                sec2bb1: self.sec2bb1(),
-                sec2bb2: self.sec2bb2(),
-                sec2bb3: self.sec2bb3(),
-                sec2bb4: self.sec2bb4(),
-                sec2bb5: self.sec2bb5(),
-                sec2bb6: self.sec2bb6(),
-                sec2bb7: self.sec2bb7(),
-                sec2bb8: self.sec2bb8(),
-                sec2bb9: self.sec2bb9(),
-                sec2bb10: self.sec2bb10(),
-                sec2bb11: self.sec2bb11(),
-                sec2bb12: self.sec2bb12(),
-                sec2bb13: self.sec2bb13(),
-                sec2bb14: self.sec2bb14(),
-                sec2bb15: self.sec2bb15(),
-                sec2bb16: self.sec2bb16(),
-                sec2bb17: self.sec2bb17(),
-                sec2bb18: self.sec2bb18(),
-                sec2bb19: self.sec2bb19(),
-                sec2bb20: self.sec2bb20(),
-                sec2bb21: self.sec2bb21(),
-                sec2bb22: self.sec2bb22(),
-                sec2bb23: self.sec2bb23(),
-                sec2bb24: self.sec2bb24(),
-                sec2bb25: self.sec2bb25(),
-                sec2bb26: self.sec2bb26(),
-                sec2bb27: self.sec2bb27(),
-                sec2bb28: self.sec2bb28(),
-                sec2bb29: self.sec2bb29(),
-                sec2bb30: self.sec2bb30(),
-                sec2bb31: self.sec2bb31(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sec2bbr3 {{ sec2bb0: {=bool:?}, sec2bb1: {=bool:?}, sec2bb2: {=bool:?}, sec2bb3: {=bool:?}, sec2bb4: {=bool:?}, sec2bb5: {=bool:?}, sec2bb6: {=bool:?}, sec2bb7: {=bool:?}, sec2bb8: {=bool:?}, sec2bb9: {=bool:?}, sec2bb10: {=bool:?}, sec2bb11: {=bool:?}, sec2bb12: {=bool:?}, sec2bb13: {=bool:?}, sec2bb14: {=bool:?}, sec2bb15: {=bool:?}, sec2bb16: {=bool:?}, sec2bb17: {=bool:?}, sec2bb18: {=bool:?}, sec2bb19: {=bool:?}, sec2bb20: {=bool:?}, sec2bb21: {=bool:?}, sec2bb22: {=bool:?}, sec2bb23: {=bool:?}, sec2bb24: {=bool:?}, sec2bb25: {=bool:?}, sec2bb26: {=bool:?}, sec2bb27: {=bool:?}, sec2bb28: {=bool:?}, sec2bb29: {=bool:?}, sec2bb30: {=bool:?}, sec2bb31: {=bool:?} }}" , self . sec2bb0 () , self . sec2bb1 () , self . sec2bb2 () , self . sec2bb3 () , self . sec2bb4 () , self . sec2bb5 () , self . sec2bb6 () , self . sec2bb7 () , self . sec2bb8 () , self . sec2bb9 () , self . sec2bb10 () , self . sec2bb11 () , self . sec2bb12 () , self . sec2bb13 () , self . sec2bb14 () , self . sec2bb15 () , self . sec2bb16 () , self . sec2bb17 () , self . sec2bb18 () , self . sec2bb19 () , self . sec2bb20 () , self . sec2bb21 () , self . sec2bb22 () , self . sec2bb23 () , self . sec2bb24 () , self . sec2bb25 () , self . sec2bb26 () , self . sec2bb27 () , self . sec2bb28 () , self . sec2bb29 () , self . sec2bb30 () , self . sec2bb31 ())
         }
     }
     #[doc = "FLASH secure block based bank 2 register 4"]
@@ -9306,76 +8069,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sec2bbr4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sec2bbr4 {
-                sec2bb0: bool,
-                sec2bb1: bool,
-                sec2bb2: bool,
-                sec2bb3: bool,
-                sec2bb4: bool,
-                sec2bb5: bool,
-                sec2bb6: bool,
-                sec2bb7: bool,
-                sec2bb8: bool,
-                sec2bb9: bool,
-                sec2bb10: bool,
-                sec2bb11: bool,
-                sec2bb12: bool,
-                sec2bb13: bool,
-                sec2bb14: bool,
-                sec2bb15: bool,
-                sec2bb16: bool,
-                sec2bb17: bool,
-                sec2bb18: bool,
-                sec2bb19: bool,
-                sec2bb20: bool,
-                sec2bb21: bool,
-                sec2bb22: bool,
-                sec2bb23: bool,
-                sec2bb24: bool,
-                sec2bb25: bool,
-                sec2bb26: bool,
-                sec2bb27: bool,
-                sec2bb28: bool,
-                sec2bb29: bool,
-                sec2bb30: bool,
-                sec2bb31: bool,
-            }
-            let proxy = Sec2bbr4 {
-                sec2bb0: self.sec2bb0(),
-                sec2bb1: self.sec2bb1(),
-                sec2bb2: self.sec2bb2(),
-                sec2bb3: self.sec2bb3(),
-                sec2bb4: self.sec2bb4(),
-                sec2bb5: self.sec2bb5(),
-                sec2bb6: self.sec2bb6(),
-                sec2bb7: self.sec2bb7(),
-                sec2bb8: self.sec2bb8(),
-                sec2bb9: self.sec2bb9(),
-                sec2bb10: self.sec2bb10(),
-                sec2bb11: self.sec2bb11(),
-                sec2bb12: self.sec2bb12(),
-                sec2bb13: self.sec2bb13(),
-                sec2bb14: self.sec2bb14(),
-                sec2bb15: self.sec2bb15(),
-                sec2bb16: self.sec2bb16(),
-                sec2bb17: self.sec2bb17(),
-                sec2bb18: self.sec2bb18(),
-                sec2bb19: self.sec2bb19(),
-                sec2bb20: self.sec2bb20(),
-                sec2bb21: self.sec2bb21(),
-                sec2bb22: self.sec2bb22(),
-                sec2bb23: self.sec2bb23(),
-                sec2bb24: self.sec2bb24(),
-                sec2bb25: self.sec2bb25(),
-                sec2bb26: self.sec2bb26(),
-                sec2bb27: self.sec2bb27(),
-                sec2bb28: self.sec2bb28(),
-                sec2bb29: self.sec2bb29(),
-                sec2bb30: self.sec2bb30(),
-                sec2bb31: self.sec2bb31(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sec2bbr4 {{ sec2bb0: {=bool:?}, sec2bb1: {=bool:?}, sec2bb2: {=bool:?}, sec2bb3: {=bool:?}, sec2bb4: {=bool:?}, sec2bb5: {=bool:?}, sec2bb6: {=bool:?}, sec2bb7: {=bool:?}, sec2bb8: {=bool:?}, sec2bb9: {=bool:?}, sec2bb10: {=bool:?}, sec2bb11: {=bool:?}, sec2bb12: {=bool:?}, sec2bb13: {=bool:?}, sec2bb14: {=bool:?}, sec2bb15: {=bool:?}, sec2bb16: {=bool:?}, sec2bb17: {=bool:?}, sec2bb18: {=bool:?}, sec2bb19: {=bool:?}, sec2bb20: {=bool:?}, sec2bb21: {=bool:?}, sec2bb22: {=bool:?}, sec2bb23: {=bool:?}, sec2bb24: {=bool:?}, sec2bb25: {=bool:?}, sec2bb26: {=bool:?}, sec2bb27: {=bool:?}, sec2bb28: {=bool:?}, sec2bb29: {=bool:?}, sec2bb30: {=bool:?}, sec2bb31: {=bool:?} }}" , self . sec2bb0 () , self . sec2bb1 () , self . sec2bb2 () , self . sec2bb3 () , self . sec2bb4 () , self . sec2bb5 () , self . sec2bb6 () , self . sec2bb7 () , self . sec2bb8 () , self . sec2bb9 () , self . sec2bb10 () , self . sec2bb11 () , self . sec2bb12 () , self . sec2bb13 () , self . sec2bb14 () , self . sec2bb15 () , self . sec2bb16 () , self . sec2bb17 () , self . sec2bb18 () , self . sec2bb19 () , self . sec2bb20 () , self . sec2bb21 () , self . sec2bb22 () , self . sec2bb23 () , self . sec2bb24 () , self . sec2bb25 () , self . sec2bb26 () , self . sec2bb27 () , self . sec2bb28 () , self . sec2bb29 () , self . sec2bb30 () , self . sec2bb31 ())
         }
     }
     #[doc = "FLASH secure boot address 0 register"]
@@ -9433,16 +8127,12 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Secbootadd0r {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Secbootadd0r {
-                boot_lock: bool,
-                secbootadd0: u32,
-            }
-            let proxy = Secbootadd0r {
-                boot_lock: self.boot_lock(),
-                secbootadd0: self.secbootadd0(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Secbootadd0r {{ boot_lock: {=bool:?}, secbootadd0: {=u32:?} }}",
+                self.boot_lock(),
+                self.secbootadd0()
+            )
         }
     }
     #[doc = "FLASH secure control register"]
@@ -9622,38 +8312,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Seccr {
-                pg: super::vals::SeccrPg,
-                per: super::vals::SeccrPer,
-                mer1: bool,
-                pnb: u8,
-                bker: super::vals::SeccrBker,
-                bwr: bool,
-                mer2: bool,
-                strt: bool,
-                eopie: super::vals::SeccrEopie,
-                errie: super::vals::SeccrErrie,
-                rderrie: bool,
-                inv: bool,
-                lock: bool,
-            }
-            let proxy = Seccr {
-                pg: self.pg(),
-                per: self.per(),
-                mer1: self.mer1(),
-                pnb: self.pnb(),
-                bker: self.bker(),
-                bwr: self.bwr(),
-                mer2: self.mer2(),
-                strt: self.strt(),
-                eopie: self.eopie(),
-                errie: self.errie(),
-                rderrie: self.rderrie(),
-                inv: self.inv(),
-                lock: self.lock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Seccr {{ pg: {:?}, per: {:?}, mer1: {=bool:?}, pnb: {=u8:?}, bker: {:?}, bwr: {=bool:?}, mer2: {=bool:?}, strt: {=bool:?}, eopie: {:?}, errie: {:?}, rderrie: {=bool:?}, inv: {=bool:?}, lock: {=bool:?} }}" , self . pg () , self . per () , self . mer1 () , self . pnb () , self . bker () , self . bwr () , self . mer2 () , self . strt () , self . eopie () , self . errie () , self . rderrie () , self . inv () , self . lock ())
         }
     }
     #[doc = "FLASH secure HDP control register"]
@@ -9701,16 +8360,12 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sechdpcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sechdpcr {
-                hdp1_accdis: super::vals::HdpAccdis,
-                hdp2_accdis: super::vals::HdpAccdis,
-            }
-            let proxy = Sechdpcr {
-                hdp1_accdis: self.hdp1_accdis(),
-                hdp2_accdis: self.hdp2_accdis(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sechdpcr {{ hdp1_accdis: {:?}, hdp2_accdis: {:?} }}",
+                self.hdp1_accdis(),
+                self.hdp2_accdis()
+            )
         }
     }
     #[doc = "FLASH secure status register"]
@@ -9842,30 +8497,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Secsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Secsr {
-                eop: bool,
-                operr: bool,
-                progerr: bool,
-                wrperr: bool,
-                pgaerr: bool,
-                sizerr: bool,
-                pgserr: bool,
-                bsy: bool,
-                wdw: bool,
-            }
-            let proxy = Secsr {
-                eop: self.eop(),
-                operr: self.operr(),
-                progerr: self.progerr(),
-                wrperr: self.wrperr(),
-                pgaerr: self.pgaerr(),
-                sizerr: self.sizerr(),
-                pgserr: self.pgserr(),
-                bsy: self.bsy(),
-                wdw: self.wdw(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Secsr {{ eop: {=bool:?}, operr: {=bool:?}, progerr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, pgserr: {=bool:?}, bsy: {=bool:?}, wdw: {=bool:?} }}" , self . eop () , self . operr () , self . progerr () , self . wrperr () , self . pgaerr () , self . sizerr () , self . pgserr () , self . bsy () , self . wdw ())
         }
     }
     #[doc = "FLASH secure watermark1 register 1"]
@@ -9913,16 +8545,12 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Secwm1r1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Secwm1r1 {
-                secwm1_pstrt: u8,
-                secwm1_pend: u8,
-            }
-            let proxy = Secwm1r1 {
-                secwm1_pstrt: self.secwm1_pstrt(),
-                secwm1_pend: self.secwm1_pend(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Secwm1r1 {{ secwm1_pstrt: {=u8:?}, secwm1_pend: {=u8:?} }}",
+                self.secwm1_pstrt(),
+                self.secwm1_pend()
+            )
         }
     }
     #[doc = "FLASH secure watermark1 register 2"]
@@ -9970,16 +8598,12 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Secwm1r2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Secwm1r2 {
-                hdp1_pend: u8,
-                hdp1en: bool,
-            }
-            let proxy = Secwm1r2 {
-                hdp1_pend: self.hdp1_pend(),
-                hdp1en: self.hdp1en(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Secwm1r2 {{ hdp1_pend: {=u8:?}, hdp1en: {=bool:?} }}",
+                self.hdp1_pend(),
+                self.hdp1en()
+            )
         }
     }
     #[doc = "FLASH secure watermark2 register 1"]
@@ -10027,16 +8651,12 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Secwm2r1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Secwm2r1 {
-                secwm2_pstrt: u8,
-                secwm2_pend: u8,
-            }
-            let proxy = Secwm2r1 {
-                secwm2_pstrt: self.secwm2_pstrt(),
-                secwm2_pend: self.secwm2_pend(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Secwm2r1 {{ secwm2_pstrt: {=u8:?}, secwm2_pend: {=u8:?} }}",
+                self.secwm2_pstrt(),
+                self.secwm2_pend()
+            )
         }
     }
     #[doc = "FLASH secure watermark2 register 2"]
@@ -10084,16 +8704,12 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Secwm2r2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Secwm2r2 {
-                hdp2_pend: u8,
-                hdp2en: bool,
-            }
-            let proxy = Secwm2r2 {
-                hdp2_pend: self.hdp2_pend(),
-                hdp2en: self.hdp2en(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Secwm2r2 {{ hdp2_pend: {=u8:?}, hdp2en: {=bool:?} }}",
+                self.hdp2_pend(),
+                self.hdp2en()
+            )
         }
     }
     #[doc = "FLASH WRP1 area A address register"]
@@ -10153,18 +8769,13 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrp1ar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wrp1ar {
-                wrp1a_pstrt: u8,
-                wrp1a_pend: u8,
-                unlock: super::vals::WrparUnlock,
-            }
-            let proxy = Wrp1ar {
-                wrp1a_pstrt: self.wrp1a_pstrt(),
-                wrp1a_pend: self.wrp1a_pend(),
-                unlock: self.unlock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Wrp1ar {{ wrp1a_pstrt: {=u8:?}, wrp1a_pend: {=u8:?}, unlock: {:?} }}",
+                self.wrp1a_pstrt(),
+                self.wrp1a_pend(),
+                self.unlock()
+            )
         }
     }
     #[doc = "FLASH WRP1 area B address register"]
@@ -10224,18 +8835,13 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrp1br {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wrp1br {
-                wrp1b_pstrt: u8,
-                wrp1b_pend: u8,
-                unlock: super::vals::WrpbrUnlock,
-            }
-            let proxy = Wrp1br {
-                wrp1b_pstrt: self.wrp1b_pstrt(),
-                wrp1b_pend: self.wrp1b_pend(),
-                unlock: self.unlock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Wrp1br {{ wrp1b_pstrt: {=u8:?}, wrp1b_pend: {=u8:?}, unlock: {:?} }}",
+                self.wrp1b_pstrt(),
+                self.wrp1b_pend(),
+                self.unlock()
+            )
         }
     }
     #[doc = "FLASH WPR2 area A address register"]
@@ -10295,18 +8901,13 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrp2ar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wrp2ar {
-                wrp2a_pstrt: u8,
-                wrp2a_pend: u8,
-                unlock: super::vals::WrparUnlock,
-            }
-            let proxy = Wrp2ar {
-                wrp2a_pstrt: self.wrp2a_pstrt(),
-                wrp2a_pend: self.wrp2a_pend(),
-                unlock: self.unlock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Wrp2ar {{ wrp2a_pstrt: {=u8:?}, wrp2a_pend: {=u8:?}, unlock: {:?} }}",
+                self.wrp2a_pstrt(),
+                self.wrp2a_pend(),
+                self.unlock()
+            )
         }
     }
     #[doc = "FLASH WPR2 area B address register"]
@@ -10366,18 +8967,13 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrp2br {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wrp2br {
-                wrp2b_pstrt: u8,
-                wrp2b_pend: u8,
-                unlock: super::vals::WrpbrUnlock,
-            }
-            let proxy = Wrp2br {
-                wrp2b_pstrt: self.wrp2b_pstrt(),
-                wrp2b_pend: self.wrp2b_pend(),
-                unlock: self.unlock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Wrp2br {{ wrp2b_pstrt: {=u8:?}, wrp2b_pend: {=u8:?}, unlock: {:?} }}",
+                self.wrp2b_pstrt(),
+                self.wrp2b_pend(),
+                self.unlock()
+            )
         }
     }
 }
@@ -11241,7 +9837,7 @@ pub mod vals {
     }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Rdp(pub u8);
+    pub struct Rdp(u8);
     impl Rdp {
         #[doc = "Level 0.5 (readout protection not active, only non-secure debug access is possible). Only available when TrustZone is active (TZEN=1)"]
         pub const B_0X55: Self = Self(0x55);

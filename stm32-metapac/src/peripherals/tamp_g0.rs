@@ -118,12 +118,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bkpr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bkpr {
-                bkp: u32,
-            }
-            let proxy = Bkpr { bkp: self.bkp() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Bkpr {{ bkp: {=u32:?} }}", self.bkp())
         }
     }
     #[doc = "control register 1"]
@@ -171,41 +166,21 @@ pub mod regs {
     impl core::fmt::Debug for Cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr1")
-                .field("tampe", &[self.tampe(0usize), self.tampe(1usize)])
-                .field(
-                    "itampe",
-                    &[
-                        self.itampe(0usize),
-                        self.itampe(1usize),
-                        self.itampe(2usize),
-                        self.itampe(3usize),
-                        self.itampe(4usize),
-                        self.itampe(5usize),
-                    ],
-                )
+                .field("tampe[0]", &self.tampe(0usize))
+                .field("tampe[1]", &self.tampe(1usize))
+                .field("itampe[0]", &self.itampe(0usize))
+                .field("itampe[1]", &self.itampe(1usize))
+                .field("itampe[2]", &self.itampe(2usize))
+                .field("itampe[3]", &self.itampe(3usize))
+                .field("itampe[4]", &self.itampe(4usize))
+                .field("itampe[5]", &self.itampe(5usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr1 {
-                tampe: [bool; 2usize],
-                itampe: [bool; 6usize],
-            }
-            let proxy = Cr1 {
-                tampe: [self.tampe(0usize), self.tampe(1usize)],
-                itampe: [
-                    self.itampe(0usize),
-                    self.itampe(1usize),
-                    self.itampe(2usize),
-                    self.itampe(3usize),
-                    self.itampe(4usize),
-                    self.itampe(5usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr1 {{ tampe[0]: {=bool:?}, tampe[1]: {=bool:?}, itampe[0]: {=bool:?}, itampe[1]: {=bool:?}, itampe[2]: {=bool:?}, itampe[3]: {=bool:?}, itampe[4]: {=bool:?}, itampe[5]: {=bool:?} }}" , self . tampe (0usize) , self . tampe (1usize) , self . itampe (0usize) , self . itampe (1usize) , self . itampe (2usize) , self . itampe (3usize) , self . itampe (4usize) , self . itampe (5usize))
         }
     }
     #[doc = "control register 2"]
@@ -268,27 +243,19 @@ pub mod regs {
     impl core::fmt::Debug for Cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr2")
-                .field("tampnoer", &[self.tampnoer(0usize), self.tampnoer(1usize)])
-                .field("tampmsk", &[self.tampmsk(0usize), self.tampmsk(1usize)])
-                .field("tamptrg", &[self.tamptrg(0usize), self.tamptrg(1usize)])
+                .field("tampnoer[0]", &self.tampnoer(0usize))
+                .field("tampnoer[1]", &self.tampnoer(1usize))
+                .field("tampmsk[0]", &self.tampmsk(0usize))
+                .field("tampmsk[1]", &self.tampmsk(1usize))
+                .field("tamptrg[0]", &self.tamptrg(0usize))
+                .field("tamptrg[1]", &self.tamptrg(1usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr2 {
-                tampnoer: [bool; 2usize],
-                tampmsk: [bool; 2usize],
-                tamptrg: [bool; 2usize],
-            }
-            let proxy = Cr2 {
-                tampnoer: [self.tampnoer(0usize), self.tampnoer(1usize)],
-                tampmsk: [self.tampmsk(0usize), self.tampmsk(1usize)],
-                tamptrg: [self.tamptrg(0usize), self.tamptrg(1usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr2 {{ tampnoer[0]: {=bool:?}, tampnoer[1]: {=bool:?}, tampmsk[0]: {=bool:?}, tampmsk[1]: {=bool:?}, tamptrg[0]: {=bool:?}, tamptrg[1]: {=bool:?} }}" , self . tampnoer (0usize) , self . tampnoer (1usize) , self . tampmsk (0usize) , self . tampmsk (1usize) , self . tamptrg (0usize) , self . tamptrg (1usize))
         }
     }
     #[doc = "TAMP filter control register"]
@@ -360,20 +327,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fltcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fltcr {
-                tampfreq: u8,
-                tampflt: u8,
-                tampprch: u8,
-                tamppudis: bool,
-            }
-            let proxy = Fltcr {
-                tampfreq: self.tampfreq(),
-                tampflt: self.tampflt(),
-                tampprch: self.tampprch(),
-                tamppudis: self.tamppudis(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Fltcr {{ tampfreq: {=u8:?}, tampflt: {=u8:?}, tampprch: {=u8:?}, tamppudis: {=bool:?} }}",
+                self.tampfreq(),
+                self.tampflt(),
+                self.tampprch(),
+                self.tamppudis()
+            )
         }
     }
     #[doc = "TAMP hardware configuration register 1"]
@@ -445,20 +406,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hwcfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hwcfgr1 {
-                backup_regs: u8,
-                tamper: u8,
-                active_tamper: u8,
-                int_tamper: u16,
-            }
-            let proxy = Hwcfgr1 {
-                backup_regs: self.backup_regs(),
-                tamper: self.tamper(),
-                active_tamper: self.active_tamper(),
-                int_tamper: self.int_tamper(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Hwcfgr1 {{ backup_regs: {=u8:?}, tamper: {=u8:?}, active_tamper: {=u8:?}, int_tamper: {=u16:?} }}",
+                self.backup_regs(),
+                self.tamper(),
+                self.active_tamper(),
+                self.int_tamper()
+            )
         }
     }
     #[doc = "TAMP hardware configuration register 2"]
@@ -506,16 +461,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hwcfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hwcfgr2 {
-                ptionreg_out: u8,
-                trust_zone: u8,
-            }
-            let proxy = Hwcfgr2 {
-                ptionreg_out: self.ptionreg_out(),
-                trust_zone: self.trust_zone(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Hwcfgr2 {{ ptionreg_out: {=u8:?}, trust_zone: {=u8:?} }}",
+                self.ptionreg_out(),
+                self.trust_zone()
+            )
         }
     }
     #[doc = "TAMP interrupt enable register"]
@@ -563,41 +514,21 @@ pub mod regs {
     impl core::fmt::Debug for Ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ier")
-                .field("tampie", &[self.tampie(0usize), self.tampie(1usize)])
-                .field(
-                    "itampie",
-                    &[
-                        self.itampie(0usize),
-                        self.itampie(1usize),
-                        self.itampie(2usize),
-                        self.itampie(3usize),
-                        self.itampie(4usize),
-                        self.itampie(5usize),
-                    ],
-                )
+                .field("tampie[0]", &self.tampie(0usize))
+                .field("tampie[1]", &self.tampie(1usize))
+                .field("itampie[0]", &self.itampie(0usize))
+                .field("itampie[1]", &self.itampie(1usize))
+                .field("itampie[2]", &self.itampie(2usize))
+                .field("itampie[3]", &self.itampie(3usize))
+                .field("itampie[4]", &self.itampie(4usize))
+                .field("itampie[5]", &self.itampie(5usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ier {
-                tampie: [bool; 2usize],
-                itampie: [bool; 6usize],
-            }
-            let proxy = Ier {
-                tampie: [self.tampie(0usize), self.tampie(1usize)],
-                itampie: [
-                    self.itampie(0usize),
-                    self.itampie(1usize),
-                    self.itampie(2usize),
-                    self.itampie(3usize),
-                    self.itampie(4usize),
-                    self.itampie(5usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ier {{ tampie[0]: {=bool:?}, tampie[1]: {=bool:?}, itampie[0]: {=bool:?}, itampie[1]: {=bool:?}, itampie[2]: {=bool:?}, itampie[3]: {=bool:?}, itampie[4]: {=bool:?}, itampie[5]: {=bool:?} }}" , self . tampie (0usize) , self . tampie (1usize) , self . itampie (0usize) , self . itampie (1usize) , self . itampie (2usize) , self . itampie (3usize) , self . itampie (4usize) , self . itampie (5usize))
         }
     }
     #[doc = "EXTI Identification register"]
@@ -631,12 +562,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ipidr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ipidr {
-                ipid: u32,
-            }
-            let proxy = Ipidr { ipid: self.ipid() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ipidr {{ ipid: {=u32:?} }}", self.ipid())
         }
     }
     #[doc = "TAMP masked interrupt status register"]
@@ -684,41 +610,21 @@ pub mod regs {
     impl core::fmt::Debug for Misr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Misr")
-                .field("tampmf", &[self.tampmf(0usize), self.tampmf(1usize)])
-                .field(
-                    "itampmf",
-                    &[
-                        self.itampmf(0usize),
-                        self.itampmf(1usize),
-                        self.itampmf(2usize),
-                        self.itampmf(3usize),
-                        self.itampmf(4usize),
-                        self.itampmf(5usize),
-                    ],
-                )
+                .field("tampmf[0]", &self.tampmf(0usize))
+                .field("tampmf[1]", &self.tampmf(1usize))
+                .field("itampmf[0]", &self.itampmf(0usize))
+                .field("itampmf[1]", &self.itampmf(1usize))
+                .field("itampmf[2]", &self.itampmf(2usize))
+                .field("itampmf[3]", &self.itampmf(3usize))
+                .field("itampmf[4]", &self.itampmf(4usize))
+                .field("itampmf[5]", &self.itampmf(5usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Misr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Misr {
-                tampmf: [bool; 2usize],
-                itampmf: [bool; 6usize],
-            }
-            let proxy = Misr {
-                tampmf: [self.tampmf(0usize), self.tampmf(1usize)],
-                itampmf: [
-                    self.itampmf(0usize),
-                    self.itampmf(1usize),
-                    self.itampmf(2usize),
-                    self.itampmf(3usize),
-                    self.itampmf(4usize),
-                    self.itampmf(5usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Misr {{ tampmf[0]: {=bool:?}, tampmf[1]: {=bool:?}, itampmf[0]: {=bool:?}, itampmf[1]: {=bool:?}, itampmf[2]: {=bool:?}, itampmf[3]: {=bool:?}, itampmf[4]: {=bool:?}, itampmf[5]: {=bool:?} }}" , self . tampmf (0usize) , self . tampmf (1usize) , self . itampmf (0usize) , self . itampmf (1usize) , self . itampmf (2usize) , self . itampmf (3usize) , self . itampmf (4usize) , self . itampmf (5usize))
         }
     }
     #[doc = "TAMP status clear register"]
@@ -766,43 +672,22 @@ pub mod regs {
     impl core::fmt::Debug for Scr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Scr")
-                .field("ctampf", &[self.ctampf(0usize), self.ctampf(1usize)])
-                .field(
-                    "citampf",
-                    &[
-                        self.citampf(0usize),
-                        self.citampf(1usize),
-                        self.citampf(2usize),
-                        self.citampf(3usize),
-                        self.citampf(4usize),
-                        self.citampf(5usize),
-                        self.citampf(6usize),
-                    ],
-                )
+                .field("ctampf[0]", &self.ctampf(0usize))
+                .field("ctampf[1]", &self.ctampf(1usize))
+                .field("citampf[0]", &self.citampf(0usize))
+                .field("citampf[1]", &self.citampf(1usize))
+                .field("citampf[2]", &self.citampf(2usize))
+                .field("citampf[3]", &self.citampf(3usize))
+                .field("citampf[4]", &self.citampf(4usize))
+                .field("citampf[5]", &self.citampf(5usize))
+                .field("citampf[6]", &self.citampf(6usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Scr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Scr {
-                ctampf: [bool; 2usize],
-                citampf: [bool; 7usize],
-            }
-            let proxy = Scr {
-                ctampf: [self.ctampf(0usize), self.ctampf(1usize)],
-                citampf: [
-                    self.citampf(0usize),
-                    self.citampf(1usize),
-                    self.citampf(2usize),
-                    self.citampf(3usize),
-                    self.citampf(4usize),
-                    self.citampf(5usize),
-                    self.citampf(6usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Scr {{ ctampf[0]: {=bool:?}, ctampf[1]: {=bool:?}, citampf[0]: {=bool:?}, citampf[1]: {=bool:?}, citampf[2]: {=bool:?}, citampf[3]: {=bool:?}, citampf[4]: {=bool:?}, citampf[5]: {=bool:?}, citampf[6]: {=bool:?} }}" , self . ctampf (0usize) , self . ctampf (1usize) , self . citampf (0usize) , self . citampf (1usize) , self . citampf (2usize) , self . citampf (3usize) , self . citampf (4usize) , self . citampf (5usize) , self . citampf (6usize))
         }
     }
     #[doc = "EXTI Size ID register"]
@@ -836,12 +721,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sidr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sidr {
-                sid: u32,
-            }
-            let proxy = Sidr { sid: self.sid() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Sidr {{ sid: {=u32:?} }}", self.sid())
         }
     }
     #[doc = "TAMP status register"]
@@ -889,43 +769,22 @@ pub mod regs {
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
-                .field("tampf", &[self.tampf(0usize), self.tampf(1usize)])
-                .field(
-                    "itampf",
-                    &[
-                        self.itampf(0usize),
-                        self.itampf(1usize),
-                        self.itampf(2usize),
-                        self.itampf(3usize),
-                        self.itampf(4usize),
-                        self.itampf(5usize),
-                        self.itampf(6usize),
-                    ],
-                )
+                .field("tampf[0]", &self.tampf(0usize))
+                .field("tampf[1]", &self.tampf(1usize))
+                .field("itampf[0]", &self.itampf(0usize))
+                .field("itampf[1]", &self.itampf(1usize))
+                .field("itampf[2]", &self.itampf(2usize))
+                .field("itampf[3]", &self.itampf(3usize))
+                .field("itampf[4]", &self.itampf(4usize))
+                .field("itampf[5]", &self.itampf(5usize))
+                .field("itampf[6]", &self.itampf(6usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                tampf: [bool; 2usize],
-                itampf: [bool; 7usize],
-            }
-            let proxy = Sr {
-                tampf: [self.tampf(0usize), self.tampf(1usize)],
-                itampf: [
-                    self.itampf(0usize),
-                    self.itampf(1usize),
-                    self.itampf(2usize),
-                    self.itampf(3usize),
-                    self.itampf(4usize),
-                    self.itampf(5usize),
-                    self.itampf(6usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr {{ tampf[0]: {=bool:?}, tampf[1]: {=bool:?}, itampf[0]: {=bool:?}, itampf[1]: {=bool:?}, itampf[2]: {=bool:?}, itampf[3]: {=bool:?}, itampf[4]: {=bool:?}, itampf[5]: {=bool:?}, itampf[6]: {=bool:?} }}" , self . tampf (0usize) , self . tampf (1usize) , self . itampf (0usize) , self . itampf (1usize) , self . itampf (2usize) , self . itampf (3usize) , self . itampf (4usize) , self . itampf (5usize) , self . itampf (6usize))
         }
     }
     #[doc = "EXTI IP Version register"]
@@ -973,16 +832,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Verr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Verr {
-                minrev: u8,
-                majrev: u8,
-            }
-            let proxy = Verr {
-                minrev: self.minrev(),
-                majrev: self.majrev(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Verr {{ minrev: {=u8:?}, majrev: {=u8:?} }}",
+                self.minrev(),
+                self.majrev()
+            )
         }
     }
 }

@@ -160,20 +160,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cccr {
-                ncc1: u8,
-                pcc1: u8,
-                ncc2: u8,
-                pcc2: u8,
-            }
-            let proxy = Cccr {
-                ncc1: self.ncc1(),
-                pcc1: self.pcc1(),
-                ncc2: self.ncc2(),
-                pcc2: self.pcc2(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cccr {{ ncc1: {=u8:?}, pcc1: {=u8:?}, ncc2: {=u8:?}, pcc2: {=u8:?} }}",
+                self.ncc1(),
+                self.pcc1(),
+                self.ncc2(),
+                self.pcc2()
+            )
         }
     }
     #[doc = "compensation cell control/status register"]
@@ -269,24 +263,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cccsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cccsr {
-                en1: bool,
-                cs1: bool,
-                en2: bool,
-                cs2: bool,
-                rdy1: bool,
-                rdy2: bool,
-            }
-            let proxy = Cccsr {
-                en1: self.en1(),
-                cs1: self.cs1(),
-                en2: self.en2(),
-                cs2: self.cs2(),
-                rdy1: self.rdy1(),
-                rdy2: self.rdy2(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cccsr {{ en1: {=bool:?}, cs1: {=bool:?}, en2: {=bool:?}, cs2: {=bool:?}, rdy1: {=bool:?}, rdy2: {=bool:?} }}" , self . en1 () , self . cs1 () , self . en2 () , self . cs2 () , self . rdy1 () , self . rdy2 ())
         }
     }
     #[doc = "compensation cell value register"]
@@ -358,20 +335,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccvr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccvr {
-                ncv1: u8,
-                pcv1: u8,
-                ncv2: u8,
-                pcv2: u8,
-            }
-            let proxy = Ccvr {
-                ncv1: self.ncv1(),
-                pcv1: self.pcv1(),
-                ncv2: self.ncv2(),
-                pcv2: self.pcv2(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ccvr {{ ncv1: {=u8:?}, pcv1: {=u8:?}, ncv2: {=u8:?}, pcv2: {=u8:?} }}",
+                self.ncv1(),
+                self.pcv1(),
+                self.ncv2(),
+                self.pcv2()
+            )
         }
     }
     #[doc = "configuration register 1"]
@@ -467,24 +438,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr1 {
-                boosten: bool,
-                anaswvdd: bool,
-                pb6_fmp: bool,
-                pb7_fmp: bool,
-                pb8_fmp: bool,
-                pb9_fmp: bool,
-            }
-            let proxy = Cfgr1 {
-                boosten: self.boosten(),
-                anaswvdd: self.anaswvdd(),
-                pb6_fmp: self.pb6_fmp(),
-                pb7_fmp: self.pb7_fmp(),
-                pb8_fmp: self.pb8_fmp(),
-                pb9_fmp: self.pb9_fmp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr1 {{ boosten: {=bool:?}, anaswvdd: {=bool:?}, pb6_fmp: {=bool:?}, pb7_fmp: {=bool:?}, pb8_fmp: {=bool:?}, pb9_fmp: {=bool:?} }}" , self . boosten () , self . anaswvdd () , self . pb6_fmp () , self . pb7_fmp () , self . pb8_fmp () , self . pb9_fmp ())
         }
     }
     #[doc = "configuration register 2"]
@@ -556,20 +510,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr2 {
-                cll: bool,
-                spl: bool,
-                pvdl: bool,
-                eccl: bool,
-            }
-            let proxy = Cfgr2 {
-                cll: self.cll(),
-                spl: self.spl(),
-                pvdl: self.pvdl(),
-                eccl: self.eccl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cfgr2 {{ cll: {=bool:?}, spl: {=bool:?}, pvdl: {=bool:?}, eccl: {=bool:?} }}",
+                self.cll(),
+                self.spl(),
+                self.pvdl(),
+                self.eccl()
+            )
         }
     }
     #[doc = "SYSCFG CPU non-secure lock register"]
@@ -617,16 +565,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cnslckr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cnslckr {
-                locknsvtor: bool,
-                locknsmpu: bool,
-            }
-            let proxy = Cnslckr {
-                locknsvtor: self.locknsvtor(),
-                locknsmpu: self.locknsmpu(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cnslckr {{ locknsvtor: {=bool:?}, locknsmpu: {=bool:?} }}",
+                self.locknsvtor(),
+                self.locknsmpu()
+            )
         }
     }
     #[doc = "SYSCFG CPU secure lock register"]
@@ -686,18 +630,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cslockr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cslockr {
-                locksvtaircr: bool,
-                locksmpu: bool,
-                locksau: bool,
-            }
-            let proxy = Cslockr {
-                locksvtaircr: self.locksvtaircr(),
-                locksmpu: self.locksmpu(),
-                locksau: self.locksau(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cslockr {{ locksvtaircr: {=bool:?}, locksmpu: {=bool:?}, locksau: {=bool:?} }}",
+                self.locksvtaircr(),
+                self.locksmpu(),
+                self.locksau()
+            )
         }
     }
     #[doc = "FPU interrupt mask register"]
@@ -731,12 +670,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fpuimr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fpuimr {
-                fpu_ie: u8,
-            }
-            let proxy = Fpuimr { fpu_ie: self.fpu_ie() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Fpuimr {{ fpu_ie: {=u8:?} }}", self.fpu_ie())
         }
     }
     #[doc = "memory erase status register"]
@@ -784,16 +718,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mesr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mesr {
-                mclr: bool,
-                ipmee: bool,
-            }
-            let proxy = Mesr {
-                mclr: self.mclr(),
-                ipmee: self.ipmee(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Mesr {{ mclr: {=bool:?}, ipmee: {=bool:?} }}",
+                self.mclr(),
+                self.ipmee()
+            )
         }
     }
     #[doc = "OTG_HS PHY register"]
@@ -853,18 +783,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Otghsphycr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Otghsphycr {
-                en: bool,
-                pdctrl: bool,
-                clksel: super::vals::Usbrefcksel,
-            }
-            let proxy = Otghsphycr {
-                en: self.en(),
-                pdctrl: self.pdctrl(),
-                clksel: self.clksel(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Otghsphycr {{ en: {=bool:?}, pdctrl: {=bool:?}, clksel: {:?} }}",
+                self.en(),
+                self.pdctrl(),
+                self.clksel()
+            )
         }
     }
     #[doc = "OTG_HS tune register 2"]
@@ -924,18 +849,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Otghsphytuner2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Otghsphytuner2 {
-                compdistune: u8,
-                sqrxtune: u8,
-                txpreempamptune: u8,
-            }
-            let proxy = Otghsphytuner2 {
-                compdistune: self.compdistune(),
-                sqrxtune: self.sqrxtune(),
-                txpreempamptune: self.txpreempamptune(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Otghsphytuner2 {{ compdistune: {=u8:?}, sqrxtune: {=u8:?}, txpreempamptune: {=u8:?} }}",
+                self.compdistune(),
+                self.sqrxtune(),
+                self.txpreempamptune()
+            )
         }
     }
     #[doc = "RSS command register"]
@@ -969,12 +889,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rsscmdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rsscmdr {
-                rsscmd: u16,
-            }
-            let proxy = Rsscmdr { rsscmd: self.rsscmd() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Rsscmdr {{ rsscmd: {=u16:?} }}", self.rsscmd())
         }
     }
     #[doc = "SYSCFG secure configuration register"]
@@ -1034,18 +949,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Seccfgr {
-                syscfgsec: bool,
-                classbsec: bool,
-                fpusec: bool,
-            }
-            let proxy = Seccfgr {
-                syscfgsec: self.syscfgsec(),
-                classbsec: self.classbsec(),
-                fpusec: self.fpusec(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Seccfgr {{ syscfgsec: {=bool:?}, classbsec: {=bool:?}, fpusec: {=bool:?} }}",
+                self.syscfgsec(),
+                self.classbsec(),
+                self.fpusec()
+            )
         }
     }
     #[doc = "USB Type C and Power Delivery register"]
@@ -1093,16 +1003,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ucpdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ucpdr {
-                cc1enrxfilter: bool,
-                cc2enrxfilter: bool,
-            }
-            let proxy = Ucpdr {
-                cc1enrxfilter: self.cc1enrxfilter(),
-                cc2enrxfilter: self.cc2enrxfilter(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ucpdr {{ cc1enrxfilter: {=bool:?}, cc2enrxfilter: {=bool:?} }}",
+                self.cc1enrxfilter(),
+                self.cc2enrxfilter()
+            )
         }
     }
 }

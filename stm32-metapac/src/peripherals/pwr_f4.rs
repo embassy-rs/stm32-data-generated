@@ -262,46 +262,7 @@ ONLY)"]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr1 {
-                lpds: bool,
-                pdds: super::vals::Pdds,
-                cwuf: bool,
-                csbf: bool,
-                pvde: bool,
-                pls: u8,
-                dbp: bool,
-                fpds: bool,
-                lplvds: bool,
-                mrlvds: bool,
-                adcdc1: bool,
-                vos: super::vals::Vos,
-                oden: bool,
-                odswen: bool,
-                uden: u8,
-                fmssr: bool,
-                fissr: bool,
-            }
-            let proxy = Cr1 {
-                lpds: self.lpds(),
-                pdds: self.pdds(),
-                cwuf: self.cwuf(),
-                csbf: self.csbf(),
-                pvde: self.pvde(),
-                pls: self.pls(),
-                dbp: self.dbp(),
-                fpds: self.fpds(),
-                lplvds: self.lplvds(),
-                mrlvds: self.mrlvds(),
-                adcdc1: self.adcdc1(),
-                vos: self.vos(),
-                oden: self.oden(),
-                odswen: self.odswen(),
-                uden: self.uden(),
-                fmssr: self.fmssr(),
-                fissr: self.fissr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr1 {{ lpds: {=bool:?}, pdds: {:?}, cwuf: {=bool:?}, csbf: {=bool:?}, pvde: {=bool:?}, pls: {=u8:?}, dbp: {=bool:?}, fpds: {=bool:?}, lplvds: {=bool:?}, mrlvds: {=bool:?}, adcdc1: {=bool:?}, vos: {:?}, oden: {=bool:?}, odswen: {=bool:?}, uden: {=u8:?}, fmssr: {=bool:?}, fissr: {=bool:?} }}" , self . lpds () , self . pdds () , self . cwuf () , self . csbf () , self . pvde () , self . pls () , self . dbp () , self . fpds () , self . lplvds () , self . mrlvds () , self . adcdc1 () , self . vos () , self . oden () , self . odswen () , self . uden () , self . fmssr () , self . fissr ())
         }
     }
     #[doc = "power control/status register"]
@@ -463,34 +424,7 @@ ONLY)"]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr1 {
-                wuf: bool,
-                sbf: bool,
-                pvdo: bool,
-                brr: bool,
-                ewup2: bool,
-                ewup: bool,
-                bre: bool,
-                vosrdy: bool,
-                odrdy: bool,
-                odswrdy: bool,
-                udrdy: u8,
-            }
-            let proxy = Csr1 {
-                wuf: self.wuf(),
-                sbf: self.sbf(),
-                pvdo: self.pvdo(),
-                brr: self.brr(),
-                ewup2: self.ewup2(),
-                ewup: self.ewup(),
-                bre: self.bre(),
-                vosrdy: self.vosrdy(),
-                odrdy: self.odrdy(),
-                odswrdy: self.odswrdy(),
-                udrdy: self.udrdy(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Csr1 {{ wuf: {=bool:?}, sbf: {=bool:?}, pvdo: {=bool:?}, brr: {=bool:?}, ewup2: {=bool:?}, ewup: {=bool:?}, bre: {=bool:?}, vosrdy: {=bool:?}, odrdy: {=bool:?}, odswrdy: {=bool:?}, udrdy: {=u8:?} }}" , self . wuf () , self . sbf () , self . pvdo () , self . brr () , self . ewup2 () , self . ewup () , self . bre () , self . vosrdy () , self . odrdy () , self . odswrdy () , self . udrdy ())
         }
     }
 }

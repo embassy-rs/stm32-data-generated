@@ -128,12 +128,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Argr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Argr {
-                cmdarg: u32,
-            }
-            let proxy = Argr { cmdarg: self.cmdarg() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Argr {{ cmdarg: {=u32:?} }}", self.cmdarg())
         }
     }
     #[doc = "SDI clock control register"]
@@ -241,26 +236,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Clkcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Clkcr {
-                clkdiv: u8,
-                clken: bool,
-                pwrsav: bool,
-                bypass: bool,
-                widbus: u8,
-                negedge: bool,
-                hwfc_en: bool,
-            }
-            let proxy = Clkcr {
-                clkdiv: self.clkdiv(),
-                clken: self.clken(),
-                pwrsav: self.pwrsav(),
-                bypass: self.bypass(),
-                widbus: self.widbus(),
-                negedge: self.negedge(),
-                hwfc_en: self.hwfc_en(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Clkcr {{ clkdiv: {=u8:?}, clken: {=bool:?}, pwrsav: {=bool:?}, bypass: {=bool:?}, widbus: {=u8:?}, negedge: {=bool:?}, hwfc_en: {=bool:?} }}" , self . clkdiv () , self . clken () , self . pwrsav () , self . bypass () , self . widbus () , self . negedge () , self . hwfc_en ())
         }
     }
     #[doc = "command register"]
@@ -356,24 +332,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cmdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cmdr {
-                cmdindex: u8,
-                waitresp: u8,
-                waitint: bool,
-                waitpend: bool,
-                cpsmen: bool,
-                sdiosuspend: bool,
-            }
-            let proxy = Cmdr {
-                cmdindex: self.cmdindex(),
-                waitresp: self.waitresp(),
-                waitint: self.waitint(),
-                waitpend: self.waitpend(),
-                cpsmen: self.cpsmen(),
-                sdiosuspend: self.sdiosuspend(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cmdr {{ cmdindex: {=u8:?}, waitresp: {=u8:?}, waitint: {=bool:?}, waitpend: {=bool:?}, cpsmen: {=bool:?}, sdiosuspend: {=bool:?} }}" , self . cmdindex () , self . waitresp () , self . waitint () , self . waitpend () , self . cpsmen () , self . sdiosuspend ())
         }
     }
     #[doc = "data counter register"]
@@ -407,14 +366,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dcntr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dcntr {
-                datacount: u32,
-            }
-            let proxy = Dcntr {
-                datacount: self.datacount(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dcntr {{ datacount: {=u32:?} }}", self.datacount())
         }
     }
     #[doc = "data control register"]
@@ -546,30 +498,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dctrl {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dctrl {
-                dten: bool,
-                dtdir: bool,
-                dtmode: bool,
-                dmaen: bool,
-                dblocksize: u8,
-                rwstart: bool,
-                rwstop: bool,
-                rwmod: bool,
-                sdioen: bool,
-            }
-            let proxy = Dctrl {
-                dten: self.dten(),
-                dtdir: self.dtdir(),
-                dtmode: self.dtmode(),
-                dmaen: self.dmaen(),
-                dblocksize: self.dblocksize(),
-                rwstart: self.rwstart(),
-                rwstop: self.rwstop(),
-                rwmod: self.rwmod(),
-                sdioen: self.sdioen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Dctrl {{ dten: {=bool:?}, dtdir: {=bool:?}, dtmode: {=bool:?}, dmaen: {=bool:?}, dblocksize: {=u8:?}, rwstart: {=bool:?}, rwstop: {=bool:?}, rwmod: {=bool:?}, sdioen: {=bool:?} }}" , self . dten () , self . dtdir () , self . dtmode () , self . dmaen () , self . dblocksize () , self . rwstart () , self . rwstop () , self . rwmod () , self . sdioen ())
         }
     }
     #[doc = "data length register"]
@@ -603,14 +532,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dlenr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dlenr {
-                datalength: u32,
-            }
-            let proxy = Dlenr {
-                datalength: self.datalength(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dlenr {{ datalength: {=u32:?} }}", self.datalength())
         }
     }
     #[doc = "data timer register"]
@@ -644,14 +566,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dtimer {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dtimer {
-                datatime: u32,
-            }
-            let proxy = Dtimer {
-                datatime: self.datatime(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dtimer {{ datatime: {=u32:?} }}", self.datatime())
         }
     }
     #[doc = "FIFO counter register"]
@@ -685,14 +600,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fifocnt {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fifocnt {
-                fifocount: u32,
-            }
-            let proxy = Fifocnt {
-                fifocount: self.fifocount(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Fifocnt {{ fifocount: {=u32:?} }}", self.fifocount())
         }
     }
     #[doc = "data FIFO register"]
@@ -726,14 +634,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fifor {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fifor {
-                fifodata: u32,
-            }
-            let proxy = Fifor {
-                fifodata: self.fifodata(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Fifor {{ fifodata: {=u32:?} }}", self.fifodata())
         }
     }
     #[doc = "interrupt clear register"]
@@ -901,36 +802,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Icr {
-                ccrcfailc: bool,
-                dcrcfailc: bool,
-                ctimeoutc: bool,
-                dtimeoutc: bool,
-                txunderrc: bool,
-                rxoverrc: bool,
-                cmdrendc: bool,
-                cmdsentc: bool,
-                dataendc: bool,
-                stbiterrc: bool,
-                dbckendc: bool,
-                sdioitc: bool,
-            }
-            let proxy = Icr {
-                ccrcfailc: self.ccrcfailc(),
-                dcrcfailc: self.dcrcfailc(),
-                ctimeoutc: self.ctimeoutc(),
-                dtimeoutc: self.dtimeoutc(),
-                txunderrc: self.txunderrc(),
-                rxoverrc: self.rxoverrc(),
-                cmdrendc: self.cmdrendc(),
-                cmdsentc: self.cmdsentc(),
-                dataendc: self.dataendc(),
-                stbiterrc: self.stbiterrc(),
-                dbckendc: self.dbckendc(),
-                sdioitc: self.sdioitc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Icr {{ ccrcfailc: {=bool:?}, dcrcfailc: {=bool:?}, ctimeoutc: {=bool:?}, dtimeoutc: {=bool:?}, txunderrc: {=bool:?}, rxoverrc: {=bool:?}, cmdrendc: {=bool:?}, cmdsentc: {=bool:?}, dataendc: {=bool:?}, stbiterrc: {=bool:?}, dbckendc: {=bool:?}, sdioitc: {=bool:?} }}" , self . ccrcfailc () , self . dcrcfailc () , self . ctimeoutc () , self . dtimeoutc () , self . txunderrc () , self . rxoverrc () , self . cmdrendc () , self . cmdsentc () , self . dataendc () , self . stbiterrc () , self . dbckendc () , self . sdioitc ())
         }
     }
     #[doc = "mask register"]
@@ -1230,58 +1102,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Maskr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Maskr {
-                ccrcfailie: bool,
-                dcrcfailie: bool,
-                ctimeoutie: bool,
-                dtimeoutie: bool,
-                txunderrie: bool,
-                rxoverrie: bool,
-                cmdrendie: bool,
-                cmdsentie: bool,
-                dataendie: bool,
-                stbiterre: bool,
-                dbckendie: bool,
-                cmdactie: bool,
-                txactie: bool,
-                rxactie: bool,
-                txfifoheie: bool,
-                rxfifohfie: bool,
-                txfifofie: bool,
-                rxfifofie: bool,
-                txfifoeie: bool,
-                rxfifoeie: bool,
-                txdavlie: bool,
-                rxdavlie: bool,
-                sdioitie: bool,
-            }
-            let proxy = Maskr {
-                ccrcfailie: self.ccrcfailie(),
-                dcrcfailie: self.dcrcfailie(),
-                ctimeoutie: self.ctimeoutie(),
-                dtimeoutie: self.dtimeoutie(),
-                txunderrie: self.txunderrie(),
-                rxoverrie: self.rxoverrie(),
-                cmdrendie: self.cmdrendie(),
-                cmdsentie: self.cmdsentie(),
-                dataendie: self.dataendie(),
-                stbiterre: self.stbiterre(),
-                dbckendie: self.dbckendie(),
-                cmdactie: self.cmdactie(),
-                txactie: self.txactie(),
-                rxactie: self.rxactie(),
-                txfifoheie: self.txfifoheie(),
-                rxfifohfie: self.rxfifohfie(),
-                txfifofie: self.txfifofie(),
-                rxfifofie: self.rxfifofie(),
-                txfifoeie: self.txfifoeie(),
-                rxfifoeie: self.rxfifoeie(),
-                txdavlie: self.txdavlie(),
-                rxdavlie: self.rxdavlie(),
-                sdioitie: self.sdioitie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Maskr {{ ccrcfailie: {=bool:?}, dcrcfailie: {=bool:?}, ctimeoutie: {=bool:?}, dtimeoutie: {=bool:?}, txunderrie: {=bool:?}, rxoverrie: {=bool:?}, cmdrendie: {=bool:?}, cmdsentie: {=bool:?}, dataendie: {=bool:?}, stbiterre: {=bool:?}, dbckendie: {=bool:?}, cmdactie: {=bool:?}, txactie: {=bool:?}, rxactie: {=bool:?}, txfifoheie: {=bool:?}, rxfifohfie: {=bool:?}, txfifofie: {=bool:?}, rxfifofie: {=bool:?}, txfifoeie: {=bool:?}, rxfifoeie: {=bool:?}, txdavlie: {=bool:?}, rxdavlie: {=bool:?}, sdioitie: {=bool:?} }}" , self . ccrcfailie () , self . dcrcfailie () , self . ctimeoutie () , self . dtimeoutie () , self . txunderrie () , self . rxoverrie () , self . cmdrendie () , self . cmdsentie () , self . dataendie () , self . stbiterre () , self . dbckendie () , self . cmdactie () , self . txactie () , self . rxactie () , self . txfifoheie () , self . rxfifohfie () , self . txfifofie () , self . rxfifofie () , self . txfifoeie () , self . rxfifoeie () , self . txdavlie () , self . rxdavlie () , self . sdioitie ())
         }
     }
     #[doc = "power control register"]
@@ -1315,14 +1136,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Power {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Power {
-                pwrctrl: u8,
-            }
-            let proxy = Power {
-                pwrctrl: self.pwrctrl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Power {{ pwrctrl: {=u8:?} }}", self.pwrctrl())
         }
     }
     #[doc = "command response register"]
@@ -1356,14 +1170,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Respcmdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Respcmdr {
-                respcmd: u8,
-            }
-            let proxy = Respcmdr {
-                respcmd: self.respcmd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Respcmdr {{ respcmd: {=u8:?} }}", self.respcmd())
         }
     }
     #[doc = "response 1..4 register"]
@@ -1399,14 +1206,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RespxR {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RespxR {
-                cardstatus: u32,
-            }
-            let proxy = RespxR {
-                cardstatus: self.cardstatus(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "RespxR {{ cardstatus: {=u32:?} }}", self.cardstatus())
         }
     }
     #[doc = "status register"]
@@ -1706,58 +1506,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Star {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Star {
-                ccrcfail: bool,
-                dcrcfail: bool,
-                ctimeout: bool,
-                dtimeout: bool,
-                txunderr: bool,
-                rxoverr: bool,
-                cmdrend: bool,
-                cmdsent: bool,
-                dataend: bool,
-                stbiterr: bool,
-                dbckend: bool,
-                cmdact: bool,
-                txact: bool,
-                rxact: bool,
-                txfifohe: bool,
-                rxfifohf: bool,
-                txfifof: bool,
-                rxfifof: bool,
-                txfifoe: bool,
-                rxfifoe: bool,
-                txdavl: bool,
-                rxdavl: bool,
-                sdioit: bool,
-            }
-            let proxy = Star {
-                ccrcfail: self.ccrcfail(),
-                dcrcfail: self.dcrcfail(),
-                ctimeout: self.ctimeout(),
-                dtimeout: self.dtimeout(),
-                txunderr: self.txunderr(),
-                rxoverr: self.rxoverr(),
-                cmdrend: self.cmdrend(),
-                cmdsent: self.cmdsent(),
-                dataend: self.dataend(),
-                stbiterr: self.stbiterr(),
-                dbckend: self.dbckend(),
-                cmdact: self.cmdact(),
-                txact: self.txact(),
-                rxact: self.rxact(),
-                txfifohe: self.txfifohe(),
-                rxfifohf: self.rxfifohf(),
-                txfifof: self.txfifof(),
-                rxfifof: self.rxfifof(),
-                txfifoe: self.txfifoe(),
-                rxfifoe: self.rxfifoe(),
-                txdavl: self.txdavl(),
-                rxdavl: self.rxdavl(),
-                sdioit: self.sdioit(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Star {{ ccrcfail: {=bool:?}, dcrcfail: {=bool:?}, ctimeout: {=bool:?}, dtimeout: {=bool:?}, txunderr: {=bool:?}, rxoverr: {=bool:?}, cmdrend: {=bool:?}, cmdsent: {=bool:?}, dataend: {=bool:?}, stbiterr: {=bool:?}, dbckend: {=bool:?}, cmdact: {=bool:?}, txact: {=bool:?}, rxact: {=bool:?}, txfifohe: {=bool:?}, rxfifohf: {=bool:?}, txfifof: {=bool:?}, rxfifof: {=bool:?}, txfifoe: {=bool:?}, rxfifoe: {=bool:?}, txdavl: {=bool:?}, rxdavl: {=bool:?}, sdioit: {=bool:?} }}" , self . ccrcfail () , self . dcrcfail () , self . ctimeout () , self . dtimeout () , self . txunderr () , self . rxoverr () , self . cmdrend () , self . cmdsent () , self . dataend () , self . stbiterr () , self . dbckend () , self . cmdact () , self . txact () , self . rxact () , self . txfifohe () , self . rxfifohf () , self . txfifof () , self . rxfifof () , self . txfifoe () , self . rxfifoe () , self . txdavl () , self . rxdavl () , self . sdioit ())
         }
     }
 }

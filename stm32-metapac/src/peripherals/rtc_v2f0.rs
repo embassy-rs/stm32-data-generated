@@ -298,40 +298,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Alrmr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Alrmr {
-                su: u8,
-                st: u8,
-                msk1: super::vals::AlrmrMsk,
-                mnu: u8,
-                mnt: u8,
-                msk2: super::vals::AlrmrMsk,
-                hu: u8,
-                ht: u8,
-                pm: super::vals::AlrmrPm,
-                msk3: super::vals::AlrmrMsk,
-                du: u8,
-                dt: u8,
-                wdsel: super::vals::AlrmrWdsel,
-                msk4: super::vals::AlrmrMsk,
-            }
-            let proxy = Alrmr {
-                su: self.su(),
-                st: self.st(),
-                msk1: self.msk1(),
-                mnu: self.mnu(),
-                mnt: self.mnt(),
-                msk2: self.msk2(),
-                hu: self.hu(),
-                ht: self.ht(),
-                pm: self.pm(),
-                msk3: self.msk3(),
-                du: self.du(),
-                dt: self.dt(),
-                wdsel: self.wdsel(),
-                msk4: self.msk4(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Alrmr {{ su: {=u8:?}, st: {=u8:?}, msk1: {:?}, mnu: {=u8:?}, mnt: {=u8:?}, msk2: {:?}, hu: {=u8:?}, ht: {=u8:?}, pm: {:?}, msk3: {:?}, du: {=u8:?}, dt: {=u8:?}, wdsel: {:?}, msk4: {:?} }}" , self . su () , self . st () , self . msk1 () , self . mnu () , self . mnt () , self . msk2 () , self . hu () , self . ht () , self . pm () , self . msk3 () , self . du () , self . dt () , self . wdsel () , self . msk4 ())
         }
     }
     #[doc = "Alarm sub second register"]
@@ -379,16 +346,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Alrmssr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Alrmssr {
-                ss: u16,
-                maskss: u8,
-            }
-            let proxy = Alrmssr {
-                ss: self.ss(),
-                maskss: self.maskss(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Alrmssr {{ ss: {=u16:?}, maskss: {=u8:?} }}",
+                self.ss(),
+                self.maskss()
+            )
         }
     }
     #[doc = "Backup register"]
@@ -422,12 +385,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bkpr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bkpr {
-                bkp: u32,
-            }
-            let proxy = Bkpr { bkp: self.bkp() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Bkpr {{ bkp: {=u32:?} }}", self.bkp())
         }
     }
     #[doc = "Calibration register"]
@@ -499,20 +457,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Calr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Calr {
-                calm: u16,
-                calw16: super::vals::Calw16,
-                calw8: super::vals::Calw8,
-                calp: super::vals::Calp,
-            }
-            let proxy = Calr {
-                calm: self.calm(),
-                calw16: self.calw16(),
-                calw8: self.calw8(),
-                calp: self.calp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Calr {{ calm: {=u16:?}, calw16: {:?}, calw8: {:?}, calp: {:?} }}",
+                self.calm(),
+                self.calw16(),
+                self.calw8(),
+                self.calp()
+            )
         }
     }
     #[doc = "Control register"]
@@ -741,10 +693,10 @@ pub mod regs {
                 .field("refckon", &self.refckon())
                 .field("bypshad", &self.bypshad())
                 .field("fmt", &self.fmt())
-                .field("alre", &[self.alre(0usize)])
+                .field("alre[0]", &self.alre(0usize))
                 .field("wute", &self.wute())
                 .field("tse", &self.tse())
-                .field("alrie", &[self.alrie(0usize)])
+                .field("alrie[0]", &self.alrie(0usize))
                 .field("wutie", &self.wutie())
                 .field("tsie", &self.tsie())
                 .field("add1h", &self.add1h())
@@ -760,48 +712,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                wucksel: super::vals::Wucksel,
-                tsedge: super::vals::Tsedge,
-                refckon: bool,
-                bypshad: bool,
-                fmt: super::vals::Fmt,
-                alre: [bool; 1usize],
-                wute: bool,
-                tse: bool,
-                alrie: [bool; 1usize],
-                wutie: bool,
-                tsie: bool,
-                add1h: bool,
-                sub1h: bool,
-                bkp: bool,
-                cosel: super::vals::Cosel,
-                pol: super::vals::Pol,
-                osel: super::vals::Osel,
-                coe: bool,
-            }
-            let proxy = Cr {
-                wucksel: self.wucksel(),
-                tsedge: self.tsedge(),
-                refckon: self.refckon(),
-                bypshad: self.bypshad(),
-                fmt: self.fmt(),
-                alre: [self.alre(0usize)],
-                wute: self.wute(),
-                tse: self.tse(),
-                alrie: [self.alrie(0usize)],
-                wutie: self.wutie(),
-                tsie: self.tsie(),
-                add1h: self.add1h(),
-                sub1h: self.sub1h(),
-                bkp: self.bkp(),
-                cosel: self.cosel(),
-                pol: self.pol(),
-                osel: self.osel(),
-                coe: self.coe(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ wucksel: {:?}, tsedge: {:?}, refckon: {=bool:?}, bypshad: {=bool:?}, fmt: {:?}, alre[0]: {=bool:?}, wute: {=bool:?}, tse: {=bool:?}, alrie[0]: {=bool:?}, wutie: {=bool:?}, tsie: {=bool:?}, add1h: {=bool:?}, sub1h: {=bool:?}, bkp: {=bool:?}, cosel: {:?}, pol: {:?}, osel: {:?}, coe: {=bool:?} }}" , self . wucksel () , self . tsedge () , self . refckon () , self . bypshad () , self . fmt () , self . alre (0usize) , self . wute () , self . tse () , self . alrie (0usize) , self . wutie () , self . tsie () , self . add1h () , self . sub1h () , self . bkp () , self . cosel () , self . pol () , self . osel () , self . coe ())
         }
     }
     #[doc = "Date register"]
@@ -909,26 +820,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dr {
-                du: u8,
-                dt: u8,
-                mu: u8,
-                mt: bool,
-                wdu: u8,
-                yu: u8,
-                yt: u8,
-            }
-            let proxy = Dr {
-                du: self.du(),
-                dt: self.dt(),
-                mu: self.mu(),
-                mt: self.mt(),
-                wdu: self.wdu(),
-                yu: self.yu(),
-                yt: self.yt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dr {{ du: {=u8:?}, dt: {=u8:?}, mu: {=u8:?}, mt: {=bool:?}, wdu: {=u8:?}, yu: {=u8:?}, yt: {=u8:?} }}",
+                self.du(),
+                self.dt(),
+                self.mu(),
+                self.mt(),
+                self.wdu(),
+                self.yu(),
+                self.yt()
+            )
         }
     }
     #[doc = "Initialization and status register"]
@@ -1101,18 +1003,20 @@ pub mod regs {
     impl core::fmt::Debug for Isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Isr")
-                .field("alrwf", &[self.alrwf(0usize)])
+                .field("alrwf[0]", &self.alrwf(0usize))
                 .field("wutwf", &self.wutwf())
                 .field("shpf", &self.shpf())
                 .field("inits", &self.inits())
                 .field("rsf", &self.rsf())
                 .field("initf", &self.initf())
                 .field("init", &self.init())
-                .field("alrf", &[self.alrf(0usize)])
+                .field("alrf[0]", &self.alrf(0usize))
                 .field("wutf", &self.wutf())
                 .field("tsf", &self.tsf())
                 .field("tsovf", &self.tsovf())
-                .field("tampf", &[self.tampf(0usize), self.tampf(1usize), self.tampf(2usize)])
+                .field("tampf[0]", &self.tampf(0usize))
+                .field("tampf[1]", &self.tampf(1usize))
+                .field("tampf[2]", &self.tampf(2usize))
                 .field("recalpf", &self.recalpf())
                 .finish()
         }
@@ -1120,38 +1024,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Isr {
-                alrwf: [bool; 1usize],
-                wutwf: bool,
-                shpf: bool,
-                inits: bool,
-                rsf: bool,
-                initf: bool,
-                init: bool,
-                alrf: [bool; 1usize],
-                wutf: bool,
-                tsf: bool,
-                tsovf: bool,
-                tampf: [bool; 3usize],
-                recalpf: bool,
-            }
-            let proxy = Isr {
-                alrwf: [self.alrwf(0usize)],
-                wutwf: self.wutwf(),
-                shpf: self.shpf(),
-                inits: self.inits(),
-                rsf: self.rsf(),
-                initf: self.initf(),
-                init: self.init(),
-                alrf: [self.alrf(0usize)],
-                wutf: self.wutf(),
-                tsf: self.tsf(),
-                tsovf: self.tsovf(),
-                tampf: [self.tampf(0usize), self.tampf(1usize), self.tampf(2usize)],
-                recalpf: self.recalpf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Isr {{ alrwf[0]: {=bool:?}, wutwf: {=bool:?}, shpf: {=bool:?}, inits: {=bool:?}, rsf: {=bool:?}, initf: {=bool:?}, init: {=bool:?}, alrf[0]: {=bool:?}, wutf: {=bool:?}, tsf: {=bool:?}, tsovf: {=bool:?}, tampf[0]: {=bool:?}, tampf[1]: {=bool:?}, tampf[2]: {=bool:?}, recalpf: {=bool:?} }}" , self . alrwf (0usize) , self . wutwf () , self . shpf () , self . inits () , self . rsf () , self . initf () , self . init () , self . alrf (0usize) , self . wutf () , self . tsf () , self . tsovf () , self . tampf (0usize) , self . tampf (1usize) , self . tampf (2usize) , self . recalpf ())
         }
     }
     #[doc = "Prescaler register"]
@@ -1199,16 +1072,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Prer {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Prer {
-                prediv_s: u16,
-                prediv_a: u8,
-            }
-            let proxy = Prer {
-                prediv_s: self.prediv_s(),
-                prediv_a: self.prediv_a(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Prer {{ prediv_s: {=u16:?}, prediv_a: {=u8:?} }}",
+                self.prediv_s(),
+                self.prediv_a()
+            )
         }
     }
     #[doc = "Shift control register"]
@@ -1256,16 +1125,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Shiftr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Shiftr {
-                subfs: u16,
-                add1s: bool,
-            }
-            let proxy = Shiftr {
-                subfs: self.subfs(),
-                add1s: self.add1s(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Shiftr {{ subfs: {=u16:?}, add1s: {=bool:?} }}",
+                self.subfs(),
+                self.add1s()
+            )
         }
     }
     #[doc = "Sub second register"]
@@ -1299,12 +1164,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ssr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ssr {
-                ss: u16,
-            }
-            let proxy = Ssr { ss: self.ss() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ssr {{ ss: {=u16:?} }}", self.ss())
         }
     }
     #[doc = "Tamper and alternate function configuration register"]
@@ -1484,11 +1344,12 @@ pub mod regs {
     impl core::fmt::Debug for Tafcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Tafcr")
-                .field("tampe", &[self.tampe(0usize), self.tampe(1usize), self.tampe(2usize)])
-                .field(
-                    "tamptrg",
-                    &[self.tamptrg(0usize), self.tamptrg(1usize), self.tamptrg(2usize)],
-                )
+                .field("tampe[0]", &self.tampe(0usize))
+                .field("tampe[1]", &self.tampe(1usize))
+                .field("tampe[2]", &self.tampe(2usize))
+                .field("tamptrg[0]", &self.tamptrg(0usize))
+                .field("tamptrg[1]", &self.tamptrg(1usize))
+                .field("tamptrg[2]", &self.tamptrg(2usize))
                 .field("tampie", &self.tampie())
                 .field("tampts", &self.tampts())
                 .field("tampfreq", &self.tampfreq())
@@ -1507,40 +1368,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tafcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tafcr {
-                tampe: [bool; 3usize],
-                tamptrg: [super::vals::Tamptrg; 3usize],
-                tampie: bool,
-                tampts: bool,
-                tampfreq: super::vals::Tampfreq,
-                tampflt: super::vals::Tampflt,
-                tampprch: super::vals::Tampprch,
-                tamppudis: super::vals::Tamppudis,
-                pc13value: super::vals::Pcvalue,
-                pc13mode: super::vals::Pcmode,
-                pc14value: super::vals::Pcvalue,
-                pc14mode: super::vals::Pcmode,
-                pc15value: super::vals::Pcvalue,
-                pc15mode: super::vals::Pcmode,
-            }
-            let proxy = Tafcr {
-                tampe: [self.tampe(0usize), self.tampe(1usize), self.tampe(2usize)],
-                tamptrg: [self.tamptrg(0usize), self.tamptrg(1usize), self.tamptrg(2usize)],
-                tampie: self.tampie(),
-                tampts: self.tampts(),
-                tampfreq: self.tampfreq(),
-                tampflt: self.tampflt(),
-                tampprch: self.tampprch(),
-                tamppudis: self.tamppudis(),
-                pc13value: self.pc13value(),
-                pc13mode: self.pc13mode(),
-                pc14value: self.pc14value(),
-                pc14mode: self.pc14mode(),
-                pc15value: self.pc15value(),
-                pc15mode: self.pc15mode(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Tafcr {{ tampe[0]: {=bool:?}, tampe[1]: {=bool:?}, tampe[2]: {=bool:?}, tamptrg[0]: {:?}, tamptrg[1]: {:?}, tamptrg[2]: {:?}, tampie: {=bool:?}, tampts: {=bool:?}, tampfreq: {:?}, tampflt: {:?}, tampprch: {:?}, tamppudis: {:?}, pc13value: {:?}, pc13mode: {:?}, pc14value: {:?}, pc14mode: {:?}, pc15value: {:?}, pc15mode: {:?} }}" , self . tampe (0usize) , self . tampe (1usize) , self . tampe (2usize) , self . tamptrg (0usize) , self . tamptrg (1usize) , self . tamptrg (2usize) , self . tampie () , self . tampts () , self . tampfreq () , self . tampflt () , self . tampprch () , self . tamppudis () , self . pc13value () , self . pc13mode () , self . pc14value () , self . pc14mode () , self . pc15value () , self . pc15mode ())
         }
     }
     #[doc = "Time register"]
@@ -1648,26 +1476,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tr {
-                su: u8,
-                st: u8,
-                mnu: u8,
-                mnt: u8,
-                hu: u8,
-                ht: u8,
-                pm: super::vals::Ampm,
-            }
-            let proxy = Tr {
-                su: self.su(),
-                st: self.st(),
-                mnu: self.mnu(),
-                mnt: self.mnt(),
-                hu: self.hu(),
-                ht: self.ht(),
-                pm: self.pm(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Tr {{ su: {=u8:?}, st: {=u8:?}, mnu: {=u8:?}, mnt: {=u8:?}, hu: {=u8:?}, ht: {=u8:?}, pm: {:?} }}",
+                self.su(),
+                self.st(),
+                self.mnu(),
+                self.mnt(),
+                self.hu(),
+                self.ht(),
+                self.pm()
+            )
         }
     }
     #[doc = "Timestamp date register"]
@@ -1751,22 +1570,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tsdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tsdr {
-                du: u8,
-                dt: u8,
-                mu: u8,
-                mt: bool,
-                wdu: u8,
-            }
-            let proxy = Tsdr {
-                du: self.du(),
-                dt: self.dt(),
-                mu: self.mu(),
-                mt: self.mt(),
-                wdu: self.wdu(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Tsdr {{ du: {=u8:?}, dt: {=u8:?}, mu: {=u8:?}, mt: {=bool:?}, wdu: {=u8:?} }}",
+                self.du(),
+                self.dt(),
+                self.mu(),
+                self.mt(),
+                self.wdu()
+            )
         }
     }
     #[doc = "Timestamp sub second register"]
@@ -1800,12 +1612,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tsssr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tsssr {
-                ss: u16,
-            }
-            let proxy = Tsssr { ss: self.ss() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Tsssr {{ ss: {=u16:?} }}", self.ss())
         }
     }
     #[doc = "Timestamp time register"]
@@ -1913,26 +1720,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tstr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tstr {
-                su: u8,
-                st: u8,
-                mnu: u8,
-                mnt: u8,
-                hu: u8,
-                ht: u8,
-                pm: super::vals::Ampm,
-            }
-            let proxy = Tstr {
-                su: self.su(),
-                st: self.st(),
-                mnu: self.mnu(),
-                mnt: self.mnt(),
-                hu: self.hu(),
-                ht: self.ht(),
-                pm: self.pm(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Tstr {{ su: {=u8:?}, st: {=u8:?}, mnu: {=u8:?}, mnt: {=u8:?}, hu: {=u8:?}, ht: {=u8:?}, pm: {:?} }}",
+                self.su(),
+                self.st(),
+                self.mnu(),
+                self.mnt(),
+                self.hu(),
+                self.ht(),
+                self.pm()
+            )
         }
     }
     #[doc = "Write protection register"]
@@ -1966,12 +1764,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wpr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wpr {
-                key: u8,
-            }
-            let proxy = Wpr { key: self.key() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Wpr {{ key: {=u8:?} }}", self.key())
         }
     }
     #[doc = "Wakeup timer register"]
@@ -2005,12 +1798,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wutr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wutr {
-                wut: u16,
-            }
-            let proxy = Wutr { wut: self.wut() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Wutr {{ wut: {=u16:?} }}", self.wut())
         }
     }
 }

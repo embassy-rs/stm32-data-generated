@@ -97,42 +97,21 @@ pub mod regs {
     impl core::fmt::Debug for Afr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Afr")
-                .field(
-                    "afr",
-                    &[
-                        self.afr(0usize),
-                        self.afr(1usize),
-                        self.afr(2usize),
-                        self.afr(3usize),
-                        self.afr(4usize),
-                        self.afr(5usize),
-                        self.afr(6usize),
-                        self.afr(7usize),
-                    ],
-                )
+                .field("afr[0]", &self.afr(0usize))
+                .field("afr[1]", &self.afr(1usize))
+                .field("afr[2]", &self.afr(2usize))
+                .field("afr[3]", &self.afr(3usize))
+                .field("afr[4]", &self.afr(4usize))
+                .field("afr[5]", &self.afr(5usize))
+                .field("afr[6]", &self.afr(6usize))
+                .field("afr[7]", &self.afr(7usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Afr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Afr {
-                afr: [u8; 8usize],
-            }
-            let proxy = Afr {
-                afr: [
-                    self.afr(0usize),
-                    self.afr(1usize),
-                    self.afr(2usize),
-                    self.afr(3usize),
-                    self.afr(4usize),
-                    self.afr(5usize),
-                    self.afr(6usize),
-                    self.afr(7usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Afr {{ afr[0]: {=u8:?}, afr[1]: {=u8:?}, afr[2]: {=u8:?}, afr[3]: {=u8:?}, afr[4]: {=u8:?}, afr[5]: {=u8:?}, afr[6]: {=u8:?}, afr[7]: {=u8:?} }}" , self . afr (0usize) , self . afr (1usize) , self . afr (2usize) , self . afr (3usize) , self . afr (4usize) , self . afr (5usize) , self . afr (6usize) , self . afr (7usize))
         }
     }
     #[doc = "GPIO port bit set/reset register"]
@@ -180,98 +159,45 @@ pub mod regs {
     impl core::fmt::Debug for Bsrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bsrr")
-                .field(
-                    "bs",
-                    &[
-                        self.bs(0usize),
-                        self.bs(1usize),
-                        self.bs(2usize),
-                        self.bs(3usize),
-                        self.bs(4usize),
-                        self.bs(5usize),
-                        self.bs(6usize),
-                        self.bs(7usize),
-                        self.bs(8usize),
-                        self.bs(9usize),
-                        self.bs(10usize),
-                        self.bs(11usize),
-                        self.bs(12usize),
-                        self.bs(13usize),
-                        self.bs(14usize),
-                        self.bs(15usize),
-                    ],
-                )
-                .field(
-                    "br",
-                    &[
-                        self.br(0usize),
-                        self.br(1usize),
-                        self.br(2usize),
-                        self.br(3usize),
-                        self.br(4usize),
-                        self.br(5usize),
-                        self.br(6usize),
-                        self.br(7usize),
-                        self.br(8usize),
-                        self.br(9usize),
-                        self.br(10usize),
-                        self.br(11usize),
-                        self.br(12usize),
-                        self.br(13usize),
-                        self.br(14usize),
-                        self.br(15usize),
-                    ],
-                )
+                .field("bs[0]", &self.bs(0usize))
+                .field("bs[1]", &self.bs(1usize))
+                .field("bs[2]", &self.bs(2usize))
+                .field("bs[3]", &self.bs(3usize))
+                .field("bs[4]", &self.bs(4usize))
+                .field("bs[5]", &self.bs(5usize))
+                .field("bs[6]", &self.bs(6usize))
+                .field("bs[7]", &self.bs(7usize))
+                .field("bs[8]", &self.bs(8usize))
+                .field("bs[9]", &self.bs(9usize))
+                .field("bs[10]", &self.bs(10usize))
+                .field("bs[11]", &self.bs(11usize))
+                .field("bs[12]", &self.bs(12usize))
+                .field("bs[13]", &self.bs(13usize))
+                .field("bs[14]", &self.bs(14usize))
+                .field("bs[15]", &self.bs(15usize))
+                .field("br[0]", &self.br(0usize))
+                .field("br[1]", &self.br(1usize))
+                .field("br[2]", &self.br(2usize))
+                .field("br[3]", &self.br(3usize))
+                .field("br[4]", &self.br(4usize))
+                .field("br[5]", &self.br(5usize))
+                .field("br[6]", &self.br(6usize))
+                .field("br[7]", &self.br(7usize))
+                .field("br[8]", &self.br(8usize))
+                .field("br[9]", &self.br(9usize))
+                .field("br[10]", &self.br(10usize))
+                .field("br[11]", &self.br(11usize))
+                .field("br[12]", &self.br(12usize))
+                .field("br[13]", &self.br(13usize))
+                .field("br[14]", &self.br(14usize))
+                .field("br[15]", &self.br(15usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bsrr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bsrr {
-                bs: [bool; 16usize],
-                br: [bool; 16usize],
-            }
-            let proxy = Bsrr {
-                bs: [
-                    self.bs(0usize),
-                    self.bs(1usize),
-                    self.bs(2usize),
-                    self.bs(3usize),
-                    self.bs(4usize),
-                    self.bs(5usize),
-                    self.bs(6usize),
-                    self.bs(7usize),
-                    self.bs(8usize),
-                    self.bs(9usize),
-                    self.bs(10usize),
-                    self.bs(11usize),
-                    self.bs(12usize),
-                    self.bs(13usize),
-                    self.bs(14usize),
-                    self.bs(15usize),
-                ],
-                br: [
-                    self.br(0usize),
-                    self.br(1usize),
-                    self.br(2usize),
-                    self.br(3usize),
-                    self.br(4usize),
-                    self.br(5usize),
-                    self.br(6usize),
-                    self.br(7usize),
-                    self.br(8usize),
-                    self.br(9usize),
-                    self.br(10usize),
-                    self.br(11usize),
-                    self.br(12usize),
-                    self.br(13usize),
-                    self.br(14usize),
-                    self.br(15usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Bsrr {{ bs[0]: {=bool:?}, bs[1]: {=bool:?}, bs[2]: {=bool:?}, bs[3]: {=bool:?}, bs[4]: {=bool:?}, bs[5]: {=bool:?}, bs[6]: {=bool:?}, bs[7]: {=bool:?}, bs[8]: {=bool:?}, bs[9]: {=bool:?}, bs[10]: {=bool:?}, bs[11]: {=bool:?}, bs[12]: {=bool:?}, bs[13]: {=bool:?}, bs[14]: {=bool:?}, bs[15]: {=bool:?}, br[0]: {=bool:?}, br[1]: {=bool:?}, br[2]: {=bool:?}, br[3]: {=bool:?}, br[4]: {=bool:?}, br[5]: {=bool:?}, br[6]: {=bool:?}, br[7]: {=bool:?}, br[8]: {=bool:?}, br[9]: {=bool:?}, br[10]: {=bool:?}, br[11]: {=bool:?}, br[12]: {=bool:?}, br[13]: {=bool:?}, br[14]: {=bool:?}, br[15]: {=bool:?} }}" , self . bs (0usize) , self . bs (1usize) , self . bs (2usize) , self . bs (3usize) , self . bs (4usize) , self . bs (5usize) , self . bs (6usize) , self . bs (7usize) , self . bs (8usize) , self . bs (9usize) , self . bs (10usize) , self . bs (11usize) , self . bs (12usize) , self . bs (13usize) , self . bs (14usize) , self . bs (15usize) , self . br (0usize) , self . br (1usize) , self . br (2usize) , self . br (3usize) , self . br (4usize) , self . br (5usize) , self . br (6usize) , self . br (7usize) , self . br (8usize) , self . br (9usize) , self . br (10usize) , self . br (11usize) , self . br (12usize) , self . br (13usize) , self . br (14usize) , self . br (15usize))
         }
     }
     #[doc = "GPIO port input data register"]
@@ -304,58 +230,29 @@ pub mod regs {
     impl core::fmt::Debug for Idr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Idr")
-                .field(
-                    "idr",
-                    &[
-                        self.idr(0usize),
-                        self.idr(1usize),
-                        self.idr(2usize),
-                        self.idr(3usize),
-                        self.idr(4usize),
-                        self.idr(5usize),
-                        self.idr(6usize),
-                        self.idr(7usize),
-                        self.idr(8usize),
-                        self.idr(9usize),
-                        self.idr(10usize),
-                        self.idr(11usize),
-                        self.idr(12usize),
-                        self.idr(13usize),
-                        self.idr(14usize),
-                        self.idr(15usize),
-                    ],
-                )
+                .field("idr[0]", &self.idr(0usize))
+                .field("idr[1]", &self.idr(1usize))
+                .field("idr[2]", &self.idr(2usize))
+                .field("idr[3]", &self.idr(3usize))
+                .field("idr[4]", &self.idr(4usize))
+                .field("idr[5]", &self.idr(5usize))
+                .field("idr[6]", &self.idr(6usize))
+                .field("idr[7]", &self.idr(7usize))
+                .field("idr[8]", &self.idr(8usize))
+                .field("idr[9]", &self.idr(9usize))
+                .field("idr[10]", &self.idr(10usize))
+                .field("idr[11]", &self.idr(11usize))
+                .field("idr[12]", &self.idr(12usize))
+                .field("idr[13]", &self.idr(13usize))
+                .field("idr[14]", &self.idr(14usize))
+                .field("idr[15]", &self.idr(15usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Idr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Idr {
-                idr: [super::vals::Idr; 16usize],
-            }
-            let proxy = Idr {
-                idr: [
-                    self.idr(0usize),
-                    self.idr(1usize),
-                    self.idr(2usize),
-                    self.idr(3usize),
-                    self.idr(4usize),
-                    self.idr(5usize),
-                    self.idr(6usize),
-                    self.idr(7usize),
-                    self.idr(8usize),
-                    self.idr(9usize),
-                    self.idr(10usize),
-                    self.idr(11usize),
-                    self.idr(12usize),
-                    self.idr(13usize),
-                    self.idr(14usize),
-                    self.idr(15usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Idr {{ idr[0]: {:?}, idr[1]: {:?}, idr[2]: {:?}, idr[3]: {:?}, idr[4]: {:?}, idr[5]: {:?}, idr[6]: {:?}, idr[7]: {:?}, idr[8]: {:?}, idr[9]: {:?}, idr[10]: {:?}, idr[11]: {:?}, idr[12]: {:?}, idr[13]: {:?}, idr[14]: {:?}, idr[15]: {:?} }}" , self . idr (0usize) , self . idr (1usize) , self . idr (2usize) , self . idr (3usize) , self . idr (4usize) , self . idr (5usize) , self . idr (6usize) , self . idr (7usize) , self . idr (8usize) , self . idr (9usize) , self . idr (10usize) , self . idr (11usize) , self . idr (12usize) , self . idr (13usize) , self . idr (14usize) , self . idr (15usize))
         }
     }
     #[doc = "GPIO port configuration lock register"]
@@ -399,27 +296,22 @@ pub mod regs {
     impl core::fmt::Debug for Lckr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lckr")
-                .field(
-                    "lck",
-                    &[
-                        self.lck(0usize),
-                        self.lck(1usize),
-                        self.lck(2usize),
-                        self.lck(3usize),
-                        self.lck(4usize),
-                        self.lck(5usize),
-                        self.lck(6usize),
-                        self.lck(7usize),
-                        self.lck(8usize),
-                        self.lck(9usize),
-                        self.lck(10usize),
-                        self.lck(11usize),
-                        self.lck(12usize),
-                        self.lck(13usize),
-                        self.lck(14usize),
-                        self.lck(15usize),
-                    ],
-                )
+                .field("lck[0]", &self.lck(0usize))
+                .field("lck[1]", &self.lck(1usize))
+                .field("lck[2]", &self.lck(2usize))
+                .field("lck[3]", &self.lck(3usize))
+                .field("lck[4]", &self.lck(4usize))
+                .field("lck[5]", &self.lck(5usize))
+                .field("lck[6]", &self.lck(6usize))
+                .field("lck[7]", &self.lck(7usize))
+                .field("lck[8]", &self.lck(8usize))
+                .field("lck[9]", &self.lck(9usize))
+                .field("lck[10]", &self.lck(10usize))
+                .field("lck[11]", &self.lck(11usize))
+                .field("lck[12]", &self.lck(12usize))
+                .field("lck[13]", &self.lck(13usize))
+                .field("lck[14]", &self.lck(14usize))
+                .field("lck[15]", &self.lck(15usize))
                 .field("lckk", &self.lckk())
                 .finish()
         }
@@ -427,33 +319,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Lckr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Lckr {
-                lck: [bool; 16usize],
-                lckk: bool,
-            }
-            let proxy = Lckr {
-                lck: [
-                    self.lck(0usize),
-                    self.lck(1usize),
-                    self.lck(2usize),
-                    self.lck(3usize),
-                    self.lck(4usize),
-                    self.lck(5usize),
-                    self.lck(6usize),
-                    self.lck(7usize),
-                    self.lck(8usize),
-                    self.lck(9usize),
-                    self.lck(10usize),
-                    self.lck(11usize),
-                    self.lck(12usize),
-                    self.lck(13usize),
-                    self.lck(14usize),
-                    self.lck(15usize),
-                ],
-                lckk: self.lckk(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Lckr {{ lck[0]: {=bool:?}, lck[1]: {=bool:?}, lck[2]: {=bool:?}, lck[3]: {=bool:?}, lck[4]: {=bool:?}, lck[5]: {=bool:?}, lck[6]: {=bool:?}, lck[7]: {=bool:?}, lck[8]: {=bool:?}, lck[9]: {=bool:?}, lck[10]: {=bool:?}, lck[11]: {=bool:?}, lck[12]: {=bool:?}, lck[13]: {=bool:?}, lck[14]: {=bool:?}, lck[15]: {=bool:?}, lckk: {=bool:?} }}" , self . lck (0usize) , self . lck (1usize) , self . lck (2usize) , self . lck (3usize) , self . lck (4usize) , self . lck (5usize) , self . lck (6usize) , self . lck (7usize) , self . lck (8usize) , self . lck (9usize) , self . lck (10usize) , self . lck (11usize) , self . lck (12usize) , self . lck (13usize) , self . lck (14usize) , self . lck (15usize) , self . lckk ())
         }
     }
     #[doc = "GPIO port mode register"]
@@ -486,58 +352,29 @@ pub mod regs {
     impl core::fmt::Debug for Moder {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Moder")
-                .field(
-                    "moder",
-                    &[
-                        self.moder(0usize),
-                        self.moder(1usize),
-                        self.moder(2usize),
-                        self.moder(3usize),
-                        self.moder(4usize),
-                        self.moder(5usize),
-                        self.moder(6usize),
-                        self.moder(7usize),
-                        self.moder(8usize),
-                        self.moder(9usize),
-                        self.moder(10usize),
-                        self.moder(11usize),
-                        self.moder(12usize),
-                        self.moder(13usize),
-                        self.moder(14usize),
-                        self.moder(15usize),
-                    ],
-                )
+                .field("moder[0]", &self.moder(0usize))
+                .field("moder[1]", &self.moder(1usize))
+                .field("moder[2]", &self.moder(2usize))
+                .field("moder[3]", &self.moder(3usize))
+                .field("moder[4]", &self.moder(4usize))
+                .field("moder[5]", &self.moder(5usize))
+                .field("moder[6]", &self.moder(6usize))
+                .field("moder[7]", &self.moder(7usize))
+                .field("moder[8]", &self.moder(8usize))
+                .field("moder[9]", &self.moder(9usize))
+                .field("moder[10]", &self.moder(10usize))
+                .field("moder[11]", &self.moder(11usize))
+                .field("moder[12]", &self.moder(12usize))
+                .field("moder[13]", &self.moder(13usize))
+                .field("moder[14]", &self.moder(14usize))
+                .field("moder[15]", &self.moder(15usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Moder {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Moder {
-                moder: [super::vals::Moder; 16usize],
-            }
-            let proxy = Moder {
-                moder: [
-                    self.moder(0usize),
-                    self.moder(1usize),
-                    self.moder(2usize),
-                    self.moder(3usize),
-                    self.moder(4usize),
-                    self.moder(5usize),
-                    self.moder(6usize),
-                    self.moder(7usize),
-                    self.moder(8usize),
-                    self.moder(9usize),
-                    self.moder(10usize),
-                    self.moder(11usize),
-                    self.moder(12usize),
-                    self.moder(13usize),
-                    self.moder(14usize),
-                    self.moder(15usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Moder {{ moder[0]: {:?}, moder[1]: {:?}, moder[2]: {:?}, moder[3]: {:?}, moder[4]: {:?}, moder[5]: {:?}, moder[6]: {:?}, moder[7]: {:?}, moder[8]: {:?}, moder[9]: {:?}, moder[10]: {:?}, moder[11]: {:?}, moder[12]: {:?}, moder[13]: {:?}, moder[14]: {:?}, moder[15]: {:?} }}" , self . moder (0usize) , self . moder (1usize) , self . moder (2usize) , self . moder (3usize) , self . moder (4usize) , self . moder (5usize) , self . moder (6usize) , self . moder (7usize) , self . moder (8usize) , self . moder (9usize) , self . moder (10usize) , self . moder (11usize) , self . moder (12usize) , self . moder (13usize) , self . moder (14usize) , self . moder (15usize))
         }
     }
     #[doc = "GPIO port output data register"]
@@ -570,58 +407,29 @@ pub mod regs {
     impl core::fmt::Debug for Odr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Odr")
-                .field(
-                    "odr",
-                    &[
-                        self.odr(0usize),
-                        self.odr(1usize),
-                        self.odr(2usize),
-                        self.odr(3usize),
-                        self.odr(4usize),
-                        self.odr(5usize),
-                        self.odr(6usize),
-                        self.odr(7usize),
-                        self.odr(8usize),
-                        self.odr(9usize),
-                        self.odr(10usize),
-                        self.odr(11usize),
-                        self.odr(12usize),
-                        self.odr(13usize),
-                        self.odr(14usize),
-                        self.odr(15usize),
-                    ],
-                )
+                .field("odr[0]", &self.odr(0usize))
+                .field("odr[1]", &self.odr(1usize))
+                .field("odr[2]", &self.odr(2usize))
+                .field("odr[3]", &self.odr(3usize))
+                .field("odr[4]", &self.odr(4usize))
+                .field("odr[5]", &self.odr(5usize))
+                .field("odr[6]", &self.odr(6usize))
+                .field("odr[7]", &self.odr(7usize))
+                .field("odr[8]", &self.odr(8usize))
+                .field("odr[9]", &self.odr(9usize))
+                .field("odr[10]", &self.odr(10usize))
+                .field("odr[11]", &self.odr(11usize))
+                .field("odr[12]", &self.odr(12usize))
+                .field("odr[13]", &self.odr(13usize))
+                .field("odr[14]", &self.odr(14usize))
+                .field("odr[15]", &self.odr(15usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Odr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Odr {
-                odr: [super::vals::Odr; 16usize],
-            }
-            let proxy = Odr {
-                odr: [
-                    self.odr(0usize),
-                    self.odr(1usize),
-                    self.odr(2usize),
-                    self.odr(3usize),
-                    self.odr(4usize),
-                    self.odr(5usize),
-                    self.odr(6usize),
-                    self.odr(7usize),
-                    self.odr(8usize),
-                    self.odr(9usize),
-                    self.odr(10usize),
-                    self.odr(11usize),
-                    self.odr(12usize),
-                    self.odr(13usize),
-                    self.odr(14usize),
-                    self.odr(15usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Odr {{ odr[0]: {:?}, odr[1]: {:?}, odr[2]: {:?}, odr[3]: {:?}, odr[4]: {:?}, odr[5]: {:?}, odr[6]: {:?}, odr[7]: {:?}, odr[8]: {:?}, odr[9]: {:?}, odr[10]: {:?}, odr[11]: {:?}, odr[12]: {:?}, odr[13]: {:?}, odr[14]: {:?}, odr[15]: {:?} }}" , self . odr (0usize) , self . odr (1usize) , self . odr (2usize) , self . odr (3usize) , self . odr (4usize) , self . odr (5usize) , self . odr (6usize) , self . odr (7usize) , self . odr (8usize) , self . odr (9usize) , self . odr (10usize) , self . odr (11usize) , self . odr (12usize) , self . odr (13usize) , self . odr (14usize) , self . odr (15usize))
         }
     }
     #[doc = "GPIO port output speed register"]
@@ -654,58 +462,29 @@ pub mod regs {
     impl core::fmt::Debug for Ospeedr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ospeedr")
-                .field(
-                    "ospeedr",
-                    &[
-                        self.ospeedr(0usize),
-                        self.ospeedr(1usize),
-                        self.ospeedr(2usize),
-                        self.ospeedr(3usize),
-                        self.ospeedr(4usize),
-                        self.ospeedr(5usize),
-                        self.ospeedr(6usize),
-                        self.ospeedr(7usize),
-                        self.ospeedr(8usize),
-                        self.ospeedr(9usize),
-                        self.ospeedr(10usize),
-                        self.ospeedr(11usize),
-                        self.ospeedr(12usize),
-                        self.ospeedr(13usize),
-                        self.ospeedr(14usize),
-                        self.ospeedr(15usize),
-                    ],
-                )
+                .field("ospeedr[0]", &self.ospeedr(0usize))
+                .field("ospeedr[1]", &self.ospeedr(1usize))
+                .field("ospeedr[2]", &self.ospeedr(2usize))
+                .field("ospeedr[3]", &self.ospeedr(3usize))
+                .field("ospeedr[4]", &self.ospeedr(4usize))
+                .field("ospeedr[5]", &self.ospeedr(5usize))
+                .field("ospeedr[6]", &self.ospeedr(6usize))
+                .field("ospeedr[7]", &self.ospeedr(7usize))
+                .field("ospeedr[8]", &self.ospeedr(8usize))
+                .field("ospeedr[9]", &self.ospeedr(9usize))
+                .field("ospeedr[10]", &self.ospeedr(10usize))
+                .field("ospeedr[11]", &self.ospeedr(11usize))
+                .field("ospeedr[12]", &self.ospeedr(12usize))
+                .field("ospeedr[13]", &self.ospeedr(13usize))
+                .field("ospeedr[14]", &self.ospeedr(14usize))
+                .field("ospeedr[15]", &self.ospeedr(15usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ospeedr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ospeedr {
-                ospeedr: [super::vals::Ospeedr; 16usize],
-            }
-            let proxy = Ospeedr {
-                ospeedr: [
-                    self.ospeedr(0usize),
-                    self.ospeedr(1usize),
-                    self.ospeedr(2usize),
-                    self.ospeedr(3usize),
-                    self.ospeedr(4usize),
-                    self.ospeedr(5usize),
-                    self.ospeedr(6usize),
-                    self.ospeedr(7usize),
-                    self.ospeedr(8usize),
-                    self.ospeedr(9usize),
-                    self.ospeedr(10usize),
-                    self.ospeedr(11usize),
-                    self.ospeedr(12usize),
-                    self.ospeedr(13usize),
-                    self.ospeedr(14usize),
-                    self.ospeedr(15usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ospeedr {{ ospeedr[0]: {:?}, ospeedr[1]: {:?}, ospeedr[2]: {:?}, ospeedr[3]: {:?}, ospeedr[4]: {:?}, ospeedr[5]: {:?}, ospeedr[6]: {:?}, ospeedr[7]: {:?}, ospeedr[8]: {:?}, ospeedr[9]: {:?}, ospeedr[10]: {:?}, ospeedr[11]: {:?}, ospeedr[12]: {:?}, ospeedr[13]: {:?}, ospeedr[14]: {:?}, ospeedr[15]: {:?} }}" , self . ospeedr (0usize) , self . ospeedr (1usize) , self . ospeedr (2usize) , self . ospeedr (3usize) , self . ospeedr (4usize) , self . ospeedr (5usize) , self . ospeedr (6usize) , self . ospeedr (7usize) , self . ospeedr (8usize) , self . ospeedr (9usize) , self . ospeedr (10usize) , self . ospeedr (11usize) , self . ospeedr (12usize) , self . ospeedr (13usize) , self . ospeedr (14usize) , self . ospeedr (15usize))
         }
     }
     #[doc = "GPIO port output type register"]
@@ -738,58 +517,29 @@ pub mod regs {
     impl core::fmt::Debug for Otyper {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Otyper")
-                .field(
-                    "ot",
-                    &[
-                        self.ot(0usize),
-                        self.ot(1usize),
-                        self.ot(2usize),
-                        self.ot(3usize),
-                        self.ot(4usize),
-                        self.ot(5usize),
-                        self.ot(6usize),
-                        self.ot(7usize),
-                        self.ot(8usize),
-                        self.ot(9usize),
-                        self.ot(10usize),
-                        self.ot(11usize),
-                        self.ot(12usize),
-                        self.ot(13usize),
-                        self.ot(14usize),
-                        self.ot(15usize),
-                    ],
-                )
+                .field("ot[0]", &self.ot(0usize))
+                .field("ot[1]", &self.ot(1usize))
+                .field("ot[2]", &self.ot(2usize))
+                .field("ot[3]", &self.ot(3usize))
+                .field("ot[4]", &self.ot(4usize))
+                .field("ot[5]", &self.ot(5usize))
+                .field("ot[6]", &self.ot(6usize))
+                .field("ot[7]", &self.ot(7usize))
+                .field("ot[8]", &self.ot(8usize))
+                .field("ot[9]", &self.ot(9usize))
+                .field("ot[10]", &self.ot(10usize))
+                .field("ot[11]", &self.ot(11usize))
+                .field("ot[12]", &self.ot(12usize))
+                .field("ot[13]", &self.ot(13usize))
+                .field("ot[14]", &self.ot(14usize))
+                .field("ot[15]", &self.ot(15usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Otyper {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Otyper {
-                ot: [super::vals::Ot; 16usize],
-            }
-            let proxy = Otyper {
-                ot: [
-                    self.ot(0usize),
-                    self.ot(1usize),
-                    self.ot(2usize),
-                    self.ot(3usize),
-                    self.ot(4usize),
-                    self.ot(5usize),
-                    self.ot(6usize),
-                    self.ot(7usize),
-                    self.ot(8usize),
-                    self.ot(9usize),
-                    self.ot(10usize),
-                    self.ot(11usize),
-                    self.ot(12usize),
-                    self.ot(13usize),
-                    self.ot(14usize),
-                    self.ot(15usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Otyper {{ ot[0]: {:?}, ot[1]: {:?}, ot[2]: {:?}, ot[3]: {:?}, ot[4]: {:?}, ot[5]: {:?}, ot[6]: {:?}, ot[7]: {:?}, ot[8]: {:?}, ot[9]: {:?}, ot[10]: {:?}, ot[11]: {:?}, ot[12]: {:?}, ot[13]: {:?}, ot[14]: {:?}, ot[15]: {:?} }}" , self . ot (0usize) , self . ot (1usize) , self . ot (2usize) , self . ot (3usize) , self . ot (4usize) , self . ot (5usize) , self . ot (6usize) , self . ot (7usize) , self . ot (8usize) , self . ot (9usize) , self . ot (10usize) , self . ot (11usize) , self . ot (12usize) , self . ot (13usize) , self . ot (14usize) , self . ot (15usize))
         }
     }
     #[doc = "GPIO port pull-up/pull-down register"]
@@ -822,58 +572,29 @@ pub mod regs {
     impl core::fmt::Debug for Pupdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pupdr")
-                .field(
-                    "pupdr",
-                    &[
-                        self.pupdr(0usize),
-                        self.pupdr(1usize),
-                        self.pupdr(2usize),
-                        self.pupdr(3usize),
-                        self.pupdr(4usize),
-                        self.pupdr(5usize),
-                        self.pupdr(6usize),
-                        self.pupdr(7usize),
-                        self.pupdr(8usize),
-                        self.pupdr(9usize),
-                        self.pupdr(10usize),
-                        self.pupdr(11usize),
-                        self.pupdr(12usize),
-                        self.pupdr(13usize),
-                        self.pupdr(14usize),
-                        self.pupdr(15usize),
-                    ],
-                )
+                .field("pupdr[0]", &self.pupdr(0usize))
+                .field("pupdr[1]", &self.pupdr(1usize))
+                .field("pupdr[2]", &self.pupdr(2usize))
+                .field("pupdr[3]", &self.pupdr(3usize))
+                .field("pupdr[4]", &self.pupdr(4usize))
+                .field("pupdr[5]", &self.pupdr(5usize))
+                .field("pupdr[6]", &self.pupdr(6usize))
+                .field("pupdr[7]", &self.pupdr(7usize))
+                .field("pupdr[8]", &self.pupdr(8usize))
+                .field("pupdr[9]", &self.pupdr(9usize))
+                .field("pupdr[10]", &self.pupdr(10usize))
+                .field("pupdr[11]", &self.pupdr(11usize))
+                .field("pupdr[12]", &self.pupdr(12usize))
+                .field("pupdr[13]", &self.pupdr(13usize))
+                .field("pupdr[14]", &self.pupdr(14usize))
+                .field("pupdr[15]", &self.pupdr(15usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pupdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pupdr {
-                pupdr: [super::vals::Pupdr; 16usize],
-            }
-            let proxy = Pupdr {
-                pupdr: [
-                    self.pupdr(0usize),
-                    self.pupdr(1usize),
-                    self.pupdr(2usize),
-                    self.pupdr(3usize),
-                    self.pupdr(4usize),
-                    self.pupdr(5usize),
-                    self.pupdr(6usize),
-                    self.pupdr(7usize),
-                    self.pupdr(8usize),
-                    self.pupdr(9usize),
-                    self.pupdr(10usize),
-                    self.pupdr(11usize),
-                    self.pupdr(12usize),
-                    self.pupdr(13usize),
-                    self.pupdr(14usize),
-                    self.pupdr(15usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Pupdr {{ pupdr[0]: {:?}, pupdr[1]: {:?}, pupdr[2]: {:?}, pupdr[3]: {:?}, pupdr[4]: {:?}, pupdr[5]: {:?}, pupdr[6]: {:?}, pupdr[7]: {:?}, pupdr[8]: {:?}, pupdr[9]: {:?}, pupdr[10]: {:?}, pupdr[11]: {:?}, pupdr[12]: {:?}, pupdr[13]: {:?}, pupdr[14]: {:?}, pupdr[15]: {:?} }}" , self . pupdr (0usize) , self . pupdr (1usize) , self . pupdr (2usize) , self . pupdr (3usize) , self . pupdr (4usize) , self . pupdr (5usize) , self . pupdr (6usize) , self . pupdr (7usize) , self . pupdr (8usize) , self . pupdr (9usize) , self . pupdr (10usize) , self . pupdr (11usize) , self . pupdr (12usize) , self . pupdr (13usize) , self . pupdr (14usize) , self . pupdr (15usize))
         }
     }
 }

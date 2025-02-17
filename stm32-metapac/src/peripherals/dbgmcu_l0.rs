@@ -158,28 +158,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1fzr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Apb1fzr {
-                tim2: bool,
-                tim6: bool,
-                rtc: bool,
-                wwdg: bool,
-                iwdg: bool,
-                i2c1: bool,
-                i2c2: bool,
-                lptim: bool,
-            }
-            let proxy = Apb1fzr {
-                tim2: self.tim2(),
-                tim6: self.tim6(),
-                rtc: self.rtc(),
-                wwdg: self.wwdg(),
-                iwdg: self.iwdg(),
-                i2c1: self.i2c1(),
-                i2c2: self.i2c2(),
-                lptim: self.lptim(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Apb1fzr {{ tim2: {=bool:?}, tim6: {=bool:?}, rtc: {=bool:?}, wwdg: {=bool:?}, iwdg: {=bool:?}, i2c1: {=bool:?}, i2c2: {=bool:?}, lptim: {=bool:?} }}" , self . tim2 () , self . tim6 () , self . rtc () , self . wwdg () , self . iwdg () , self . i2c1 () , self . i2c2 () , self . lptim ())
         }
     }
     #[doc = "APB High Freeze Register"]
@@ -227,16 +206,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb2fzr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Apb2fzr {
-                tim21: bool,
-                tim22: bool,
-            }
-            let proxy = Apb2fzr {
-                tim21: self.tim21(),
-                tim22: self.tim22(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Apb2fzr {{ tim21: {=bool:?}, tim22: {=bool:?} }}",
+                self.tim21(),
+                self.tim22()
+            )
         }
     }
     #[doc = "Debug MCU Configuration Register"]
@@ -296,18 +271,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                dbg_sleep: bool,
-                dbg_stop: bool,
-                dbg_standby: bool,
-            }
-            let proxy = Cr {
-                dbg_sleep: self.dbg_sleep(),
-                dbg_stop: self.dbg_stop(),
-                dbg_standby: self.dbg_standby(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cr {{ dbg_sleep: {=bool:?}, dbg_stop: {=bool:?}, dbg_standby: {=bool:?} }}",
+                self.dbg_sleep(),
+                self.dbg_stop(),
+                self.dbg_standby()
+            )
         }
     }
     #[doc = "MCU Device ID Code Register"]
@@ -355,16 +325,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Idcode {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Idcode {
-                dev_id: u16,
-                rev_id: u16,
-            }
-            let proxy = Idcode {
-                dev_id: self.dev_id(),
-                rev_id: self.rev_id(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Idcode {{ dev_id: {=u16:?}, rev_id: {=u16:?} }}",
+                self.dev_id(),
+                self.rev_id()
+            )
         }
     }
 }

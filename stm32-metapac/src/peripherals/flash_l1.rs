@@ -157,22 +157,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Acr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Acr {
-                latency: bool,
-                prften: bool,
-                acc64: bool,
-                sleep_pd: bool,
-                run_pd: bool,
-            }
-            let proxy = Acr {
-                latency: self.latency(),
-                prften: self.prften(),
-                acc64: self.acc64(),
-                sleep_pd: self.sleep_pd(),
-                run_pd: self.run_pd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Acr {{ latency: {=bool:?}, prften: {=bool:?}, acc64: {=bool:?}, sleep_pd: {=bool:?}, run_pd: {=bool:?} }}" , self . latency () , self . prften () , self . acc64 () , self . sleep_pd () , self . run_pd ())
         }
     }
     #[doc = "Option byte register"]
@@ -268,24 +253,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Obr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Obr {
-                rdprt: u8,
-                bor_lev: u8,
-                iwdg_sw: bool,
-                n_rts_stop: bool,
-                n_rst_stdby: bool,
-                bfb2: bool,
-            }
-            let proxy = Obr {
-                rdprt: self.rdprt(),
-                bor_lev: self.bor_lev(),
-                iwdg_sw: self.iwdg_sw(),
-                n_rts_stop: self.n_rts_stop(),
-                n_rst_stdby: self.n_rst_stdby(),
-                bfb2: self.bfb2(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Obr {{ rdprt: {=u8:?}, bor_lev: {=u8:?}, iwdg_sw: {=bool:?}, n_rts_stop: {=bool:?}, n_rst_stdby: {=bool:?}, bfb2: {=bool:?} }}" , self . rdprt () , self . bor_lev () , self . iwdg_sw () , self . n_rts_stop () , self . n_rst_stdby () , self . bfb2 ())
         }
     }
     #[doc = "Program/erase control register"]
@@ -453,36 +421,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pecr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pecr {
-                pelock: bool,
-                prglock: bool,
-                optlock: bool,
-                prog: bool,
-                data: bool,
-                ftdw: bool,
-                erase: bool,
-                fprg: bool,
-                parallelbank: bool,
-                eopie: bool,
-                errie: bool,
-                obl_launch: bool,
-            }
-            let proxy = Pecr {
-                pelock: self.pelock(),
-                prglock: self.prglock(),
-                optlock: self.optlock(),
-                prog: self.prog(),
-                data: self.data(),
-                ftdw: self.ftdw(),
-                erase: self.erase(),
-                fprg: self.fprg(),
-                parallelbank: self.parallelbank(),
-                eopie: self.eopie(),
-                errie: self.errie(),
-                obl_launch: self.obl_launch(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Pecr {{ pelock: {=bool:?}, prglock: {=bool:?}, optlock: {=bool:?}, prog: {=bool:?}, data: {=bool:?}, ftdw: {=bool:?}, erase: {=bool:?}, fprg: {=bool:?}, parallelbank: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, obl_launch: {=bool:?} }}" , self . pelock () , self . prglock () , self . optlock () , self . prog () , self . data () , self . ftdw () , self . erase () , self . fprg () , self . parallelbank () , self . eopie () , self . errie () , self . obl_launch ())
         }
     }
     #[doc = "Status register"]
@@ -614,30 +553,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                bsy: bool,
-                eop: bool,
-                endhv: bool,
-                ready: bool,
-                wrperr: bool,
-                pgaerr: bool,
-                sizerr: bool,
-                optverr: bool,
-                optverrusr: bool,
-            }
-            let proxy = Sr {
-                bsy: self.bsy(),
-                eop: self.eop(),
-                endhv: self.endhv(),
-                ready: self.ready(),
-                wrperr: self.wrperr(),
-                pgaerr: self.pgaerr(),
-                sizerr: self.sizerr(),
-                optverr: self.optverr(),
-                optverrusr: self.optverrusr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr {{ bsy: {=bool:?}, eop: {=bool:?}, endhv: {=bool:?}, ready: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, optverr: {=bool:?}, optverrusr: {=bool:?} }}" , self . bsy () , self . eop () , self . endhv () , self . ready () , self . wrperr () , self . pgaerr () , self . sizerr () , self . optverr () , self . optverrusr ())
         }
     }
     #[doc = "Write protection register"]
@@ -671,12 +587,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrpr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wrpr1 {
-                wrp1: u32,
-            }
-            let proxy = Wrpr1 { wrp1: self.wrp1() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Wrpr1 {{ wrp1: {=u32:?} }}", self.wrp1())
         }
     }
     #[doc = "Write protection register"]
@@ -710,12 +621,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrpr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wrpr2 {
-                wrp2: u32,
-            }
-            let proxy = Wrpr2 { wrp2: self.wrp2() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Wrpr2 {{ wrp2: {=u32:?} }}", self.wrp2())
         }
     }
     #[doc = "Write protection register"]
@@ -749,12 +655,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrpr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wrpr3 {
-                wrp3: u32,
-            }
-            let proxy = Wrpr3 { wrp3: self.wrp3() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Wrpr3 {{ wrp3: {=u32:?} }}", self.wrp3())
         }
     }
 }

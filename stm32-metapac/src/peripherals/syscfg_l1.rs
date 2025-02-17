@@ -67,34 +67,24 @@ pub mod regs {
     impl core::fmt::Debug for Exticr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Exticr")
-                .field(
-                    "exti",
-                    &[
-                        self.exti(0usize),
-                        self.exti(1usize),
-                        self.exti(2usize),
-                        self.exti(3usize),
-                    ],
-                )
+                .field("exti[0]", &self.exti(0usize))
+                .field("exti[1]", &self.exti(1usize))
+                .field("exti[2]", &self.exti(2usize))
+                .field("exti[3]", &self.exti(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Exticr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Exticr {
-                exti: [u8; 4usize],
-            }
-            let proxy = Exticr {
-                exti: [
-                    self.exti(0usize),
-                    self.exti(1usize),
-                    self.exti(2usize),
-                    self.exti(3usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Exticr {{ exti[0]: {=u8:?}, exti[1]: {=u8:?}, exti[2]: {=u8:?}, exti[3]: {=u8:?} }}",
+                self.exti(0usize),
+                self.exti(1usize),
+                self.exti(2usize),
+                self.exti(3usize)
+            )
         }
     }
     #[doc = "memory remap register"]
@@ -142,16 +132,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Memrmp {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Memrmp {
-                mem_mode: u8,
-                boot_mode: u8,
-            }
-            let proxy = Memrmp {
-                mem_mode: self.mem_mode(),
-                boot_mode: self.boot_mode(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Memrmp {{ mem_mode: {=u8:?}, boot_mode: {=u8:?} }}",
+                self.mem_mode(),
+                self.boot_mode()
+            )
         }
     }
     #[doc = "peripheral mode configuration register"]
@@ -199,16 +185,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pmc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pmc {
-                usb_pu: bool,
-                lcd_capa: u8,
-            }
-            let proxy = Pmc {
-                usb_pu: self.usb_pu(),
-                lcd_capa: self.lcd_capa(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Pmc {{ usb_pu: {=bool:?}, lcd_capa: {=u8:?} }}",
+                self.usb_pu(),
+                self.lcd_capa()
+            )
         }
     }
 }

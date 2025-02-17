@@ -167,32 +167,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                en: bool,
-                inp_dac: bool,
-                mode: super::vals::Mode,
-                insel: u8,
-                wndwen: bool,
-                outsel: u8,
-                pol: bool,
-                hyst: super::vals::Hyst,
-                out: bool,
-                lock: bool,
-            }
-            let proxy = Csr {
-                en: self.en(),
-                inp_dac: self.inp_dac(),
-                mode: self.mode(),
-                insel: self.insel(),
-                wndwen: self.wndwen(),
-                outsel: self.outsel(),
-                pol: self.pol(),
-                hyst: self.hyst(),
-                out: self.out(),
-                lock: self.lock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Csr {{ en: {=bool:?}, inp_dac: {=bool:?}, mode: {:?}, insel: {=u8:?}, wndwen: {=bool:?}, outsel: {=u8:?}, pol: {=bool:?}, hyst: {:?}, out: {=bool:?}, lock: {=bool:?} }}" , self . en () , self . inp_dac () , self . mode () , self . insel () , self . wndwen () , self . outsel () , self . pol () , self . hyst () , self . out () , self . lock ())
         }
     }
 }

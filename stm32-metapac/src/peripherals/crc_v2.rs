@@ -120,20 +120,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                reset: bool,
-                polysize: super::vals::Polysize,
-                rev_in: super::vals::RevIn,
-                rev_out: super::vals::RevOut,
-            }
-            let proxy = Cr {
-                reset: self.reset(),
-                polysize: self.polysize(),
-                rev_in: self.rev_in(),
-                rev_out: self.rev_out(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cr {{ reset: {=bool:?}, polysize: {:?}, rev_in: {:?}, rev_out: {:?} }}",
+                self.reset(),
+                self.polysize(),
+                self.rev_in(),
+                self.rev_out()
+            )
         }
     }
 }

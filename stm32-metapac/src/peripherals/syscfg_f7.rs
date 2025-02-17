@@ -87,16 +87,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cmpcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cmpcr {
-                cmp_pd: bool,
-                ready: bool,
-            }
-            let proxy = Cmpcr {
-                cmp_pd: self.cmp_pd(),
-                ready: self.ready(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cmpcr {{ cmp_pd: {=bool:?}, ready: {=bool:?} }}",
+                self.cmp_pd(),
+                self.ready()
+            )
         }
     }
     #[doc = "external interrupt configuration register 1"]
@@ -129,34 +125,24 @@ pub mod regs {
     impl core::fmt::Debug for Exticr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Exticr")
-                .field(
-                    "exti",
-                    &[
-                        self.exti(0usize),
-                        self.exti(1usize),
-                        self.exti(2usize),
-                        self.exti(3usize),
-                    ],
-                )
+                .field("exti[0]", &self.exti(0usize))
+                .field("exti[1]", &self.exti(1usize))
+                .field("exti[2]", &self.exti(2usize))
+                .field("exti[3]", &self.exti(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Exticr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Exticr {
-                exti: [u8; 4usize],
-            }
-            let proxy = Exticr {
-                exti: [
-                    self.exti(0usize),
-                    self.exti(1usize),
-                    self.exti(2usize),
-                    self.exti(3usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Exticr {{ exti[0]: {=u8:?}, exti[1]: {=u8:?}, exti[2]: {=u8:?}, exti[3]: {=u8:?} }}",
+                self.exti(0usize),
+                self.exti(1usize),
+                self.exti(2usize),
+                self.exti(3usize)
+            )
         }
     }
     #[doc = "memory remap register"]
@@ -216,18 +202,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Memrmp {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Memrmp {
-                mem_boot: bool,
-                fb_mode: bool,
-                swp_fmc: u8,
-            }
-            let proxy = Memrmp {
-                mem_boot: self.mem_boot(),
-                fb_mode: self.fb_mode(),
-                swp_fmc: self.swp_fmc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Memrmp {{ mem_boot: {=bool:?}, fb_mode: {=bool:?}, swp_fmc: {=u8:?} }}",
+                self.mem_boot(),
+                self.fb_mode(),
+                self.swp_fmc()
+            )
         }
     }
     #[doc = "peripheral mode configuration register"]
@@ -395,36 +376,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pmc {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pmc {
-                i2c1_fmp: bool,
-                i2c2_fmp: bool,
-                i2c3_fmp: bool,
-                i2c4_fmp: bool,
-                pb6_fmp: bool,
-                pb7_fmp: bool,
-                pb8_fmp: bool,
-                pb9_fmp: bool,
-                adc1dc2: bool,
-                adc2dc2: bool,
-                adc3dc2: bool,
-                mii_rmii_sel: bool,
-            }
-            let proxy = Pmc {
-                i2c1_fmp: self.i2c1_fmp(),
-                i2c2_fmp: self.i2c2_fmp(),
-                i2c3_fmp: self.i2c3_fmp(),
-                i2c4_fmp: self.i2c4_fmp(),
-                pb6_fmp: self.pb6_fmp(),
-                pb7_fmp: self.pb7_fmp(),
-                pb8_fmp: self.pb8_fmp(),
-                pb9_fmp: self.pb9_fmp(),
-                adc1dc2: self.adc1dc2(),
-                adc2dc2: self.adc2dc2(),
-                adc3dc2: self.adc3dc2(),
-                mii_rmii_sel: self.mii_rmii_sel(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Pmc {{ i2c1_fmp: {=bool:?}, i2c2_fmp: {=bool:?}, i2c3_fmp: {=bool:?}, i2c4_fmp: {=bool:?}, pb6_fmp: {=bool:?}, pb7_fmp: {=bool:?}, pb8_fmp: {=bool:?}, pb9_fmp: {=bool:?}, adc1dc2: {=bool:?}, adc2dc2: {=bool:?}, adc3dc2: {=bool:?}, mii_rmii_sel: {=bool:?} }}" , self . i2c1_fmp () , self . i2c2_fmp () , self . i2c3_fmp () , self . i2c4_fmp () , self . pb6_fmp () , self . pb7_fmp () , self . pb8_fmp () , self . pb9_fmp () , self . adc1dc2 () , self . adc2dc2 () , self . adc3dc2 () , self . mii_rmii_sel ())
         }
     }
 }

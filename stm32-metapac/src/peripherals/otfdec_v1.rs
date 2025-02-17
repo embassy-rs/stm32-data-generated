@@ -125,12 +125,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                enc: super::vals::Enc,
-            }
-            let proxy = Cr { enc: self.enc() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cr {{ enc: {:?} }}", self.enc())
         }
     }
     #[doc = "OTFDEC interrupt clear register."]
@@ -190,18 +185,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Icr {
-                seif: bool,
-                xoneif: bool,
-                keif: bool,
-            }
-            let proxy = Icr {
-                seif: self.seif(),
-                xoneif: self.xoneif(),
-                keif: self.keif(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Icr {{ seif: {=bool:?}, xoneif: {=bool:?}, keif: {=bool:?} }}",
+                self.seif(),
+                self.xoneif(),
+                self.keif()
+            )
         }
     }
     #[doc = "OTFDEC interrupt enable register."]
@@ -261,18 +251,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ier {
-                seie: bool,
-                xoneie: bool,
-                keie: bool,
-            }
-            let proxy = Ier {
-                seie: self.seie(),
-                xoneie: self.xoneie(),
-                keie: self.keie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ier {{ seie: {=bool:?}, xoneie: {=bool:?}, keie: {=bool:?} }}",
+                self.seie(),
+                self.xoneie(),
+                self.keie()
+            )
         }
     }
     #[doc = "OTFDEC interrupt status register."]
@@ -332,18 +317,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Isr {
-                seif: bool,
-                xoneif: bool,
-                keif: bool,
-            }
-            let proxy = Isr {
-                seif: self.seif(),
-                xoneif: self.xoneif(),
-                keif: self.keif(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Isr {{ seif: {=bool:?}, xoneif: {=bool:?}, keif: {=bool:?} }}",
+                self.seif(),
+                self.xoneif(),
+                self.keif()
+            )
         }
     }
     #[doc = "OTFDEC_PRIVCFGR."]
@@ -377,12 +357,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Privcfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Privcfgr {
-                priv_: bool,
-            }
-            let proxy = Privcfgr { priv_: self.priv_() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Privcfgr {{ priv_: {=bool:?} }}", self.priv_())
         }
     }
     #[doc = "OTFDEC region 3 configuration register."]
@@ -478,24 +453,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RegionCfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RegionCfgr {
-                reg_en: bool,
-                configlock: bool,
-                keylock: bool,
-                mode: super::vals::Mode,
-                keycrc: u8,
-                reg_version: u16,
-            }
-            let proxy = RegionCfgr {
-                reg_en: self.reg_en(),
-                configlock: self.configlock(),
-                keylock: self.keylock(),
-                mode: self.mode(),
-                keycrc: self.keycrc(),
-                reg_version: self.reg_version(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "RegionCfgr {{ reg_en: {=bool:?}, configlock: {=bool:?}, keylock: {=bool:?}, mode: {:?}, keycrc: {=u8:?}, reg_version: {=u16:?} }}" , self . reg_en () , self . configlock () , self . keylock () , self . mode () , self . keycrc () , self . reg_version ())
         }
     }
 }

@@ -83,18 +83,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccr {
-                presc: super::vals::Presc,
-                vrefen: bool,
-                tsen: bool,
-            }
-            let proxy = Ccr {
-                presc: self.presc(),
-                vrefen: self.vrefen(),
-                tsen: self.tsen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ccr {{ presc: {:?}, vrefen: {=bool:?}, tsen: {=bool:?} }}",
+                self.presc(),
+                self.vrefen(),
+                self.tsen()
+            )
         }
     }
 }

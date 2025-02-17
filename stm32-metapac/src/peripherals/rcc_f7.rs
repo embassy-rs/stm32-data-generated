@@ -448,58 +448,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb1enr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ahb1enr {
-                gpioaen: bool,
-                gpioben: bool,
-                gpiocen: bool,
-                gpioden: bool,
-                gpioeen: bool,
-                gpiofen: bool,
-                gpiogen: bool,
-                gpiohen: bool,
-                gpioien: bool,
-                gpiojen: bool,
-                gpioken: bool,
-                crcen: bool,
-                bkpsramen: bool,
-                dtcmramen: bool,
-                dma1en: bool,
-                dma2en: bool,
-                dma2den: bool,
-                ethen: bool,
-                ethtxen: bool,
-                ethrxen: bool,
-                ethptpen: bool,
-                usb_otg_hsen: bool,
-                usb_otg_hsulpien: bool,
-            }
-            let proxy = Ahb1enr {
-                gpioaen: self.gpioaen(),
-                gpioben: self.gpioben(),
-                gpiocen: self.gpiocen(),
-                gpioden: self.gpioden(),
-                gpioeen: self.gpioeen(),
-                gpiofen: self.gpiofen(),
-                gpiogen: self.gpiogen(),
-                gpiohen: self.gpiohen(),
-                gpioien: self.gpioien(),
-                gpiojen: self.gpiojen(),
-                gpioken: self.gpioken(),
-                crcen: self.crcen(),
-                bkpsramen: self.bkpsramen(),
-                dtcmramen: self.dtcmramen(),
-                dma1en: self.dma1en(),
-                dma2en: self.dma2en(),
-                dma2den: self.dma2den(),
-                ethen: self.ethen(),
-                ethtxen: self.ethtxen(),
-                ethrxen: self.ethrxen(),
-                ethptpen: self.ethptpen(),
-                usb_otg_hsen: self.usb_otg_hsen(),
-                usb_otg_hsulpien: self.usb_otg_hsulpien(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ahb1enr {{ gpioaen: {=bool:?}, gpioben: {=bool:?}, gpiocen: {=bool:?}, gpioden: {=bool:?}, gpioeen: {=bool:?}, gpiofen: {=bool:?}, gpiogen: {=bool:?}, gpiohen: {=bool:?}, gpioien: {=bool:?}, gpiojen: {=bool:?}, gpioken: {=bool:?}, crcen: {=bool:?}, bkpsramen: {=bool:?}, dtcmramen: {=bool:?}, dma1en: {=bool:?}, dma2en: {=bool:?}, dma2den: {=bool:?}, ethen: {=bool:?}, ethtxen: {=bool:?}, ethrxen: {=bool:?}, ethptpen: {=bool:?}, usb_otg_hsen: {=bool:?}, usb_otg_hsulpien: {=bool:?} }}" , self . gpioaen () , self . gpioben () , self . gpiocen () , self . gpioden () , self . gpioeen () , self . gpiofen () , self . gpiogen () , self . gpiohen () , self . gpioien () , self . gpiojen () , self . gpioken () , self . crcen () , self . bkpsramen () , self . dtcmramen () , self . dma1en () , self . dma2en () , self . dma2den () , self . ethen () , self . ethtxen () , self . ethrxen () , self . ethptpen () , self . usb_otg_hsen () , self . usb_otg_hsulpien ())
         }
     }
     #[doc = "AHB1 peripheral clock enable in low power mode register"]
@@ -859,68 +808,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb1lpenr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ahb1lpenr {
-                gpioalpen: bool,
-                gpioblpen: bool,
-                gpioclpen: bool,
-                gpiodlpen: bool,
-                gpioelpen: bool,
-                gpioflpen: bool,
-                gpioglpen: bool,
-                gpiohlpen: bool,
-                gpioilpen: bool,
-                gpiojlpen: bool,
-                gpioklpen: bool,
-                crclpen: bool,
-                axilpen: bool,
-                flashlpen: bool,
-                sram1lpen: bool,
-                sram2lpen: bool,
-                bkpsramlpen: bool,
-                sram3lpen: bool,
-                dtcmlpen: bool,
-                dma1lpen: bool,
-                dma2lpen: bool,
-                dma2dlpen: bool,
-                ethlpen: bool,
-                ethtxlpen: bool,
-                ethrxlpen: bool,
-                ethptplpen: bool,
-                usb_otg_hslpen: bool,
-                usb_otg_hsulpilpen: bool,
-            }
-            let proxy = Ahb1lpenr {
-                gpioalpen: self.gpioalpen(),
-                gpioblpen: self.gpioblpen(),
-                gpioclpen: self.gpioclpen(),
-                gpiodlpen: self.gpiodlpen(),
-                gpioelpen: self.gpioelpen(),
-                gpioflpen: self.gpioflpen(),
-                gpioglpen: self.gpioglpen(),
-                gpiohlpen: self.gpiohlpen(),
-                gpioilpen: self.gpioilpen(),
-                gpiojlpen: self.gpiojlpen(),
-                gpioklpen: self.gpioklpen(),
-                crclpen: self.crclpen(),
-                axilpen: self.axilpen(),
-                flashlpen: self.flashlpen(),
-                sram1lpen: self.sram1lpen(),
-                sram2lpen: self.sram2lpen(),
-                bkpsramlpen: self.bkpsramlpen(),
-                sram3lpen: self.sram3lpen(),
-                dtcmlpen: self.dtcmlpen(),
-                dma1lpen: self.dma1lpen(),
-                dma2lpen: self.dma2lpen(),
-                dma2dlpen: self.dma2dlpen(),
-                ethlpen: self.ethlpen(),
-                ethtxlpen: self.ethtxlpen(),
-                ethrxlpen: self.ethrxlpen(),
-                ethptplpen: self.ethptplpen(),
-                usb_otg_hslpen: self.usb_otg_hslpen(),
-                usb_otg_hsulpilpen: self.usb_otg_hsulpilpen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ahb1lpenr {{ gpioalpen: {=bool:?}, gpioblpen: {=bool:?}, gpioclpen: {=bool:?}, gpiodlpen: {=bool:?}, gpioelpen: {=bool:?}, gpioflpen: {=bool:?}, gpioglpen: {=bool:?}, gpiohlpen: {=bool:?}, gpioilpen: {=bool:?}, gpiojlpen: {=bool:?}, gpioklpen: {=bool:?}, crclpen: {=bool:?}, axilpen: {=bool:?}, flashlpen: {=bool:?}, sram1lpen: {=bool:?}, sram2lpen: {=bool:?}, bkpsramlpen: {=bool:?}, sram3lpen: {=bool:?}, dtcmlpen: {=bool:?}, dma1lpen: {=bool:?}, dma2lpen: {=bool:?}, dma2dlpen: {=bool:?}, ethlpen: {=bool:?}, ethtxlpen: {=bool:?}, ethrxlpen: {=bool:?}, ethptplpen: {=bool:?}, usb_otg_hslpen: {=bool:?}, usb_otg_hsulpilpen: {=bool:?} }}" , self . gpioalpen () , self . gpioblpen () , self . gpioclpen () , self . gpiodlpen () , self . gpioelpen () , self . gpioflpen () , self . gpioglpen () , self . gpiohlpen () , self . gpioilpen () , self . gpiojlpen () , self . gpioklpen () , self . crclpen () , self . axilpen () , self . flashlpen () , self . sram1lpen () , self . sram2lpen () , self . bkpsramlpen () , self . sram3lpen () , self . dtcmlpen () , self . dma1lpen () , self . dma2lpen () , self . dma2dlpen () , self . ethlpen () , self . ethtxlpen () , self . ethrxlpen () , self . ethptplpen () , self . usb_otg_hslpen () , self . usb_otg_hsulpilpen ())
         }
     }
     #[doc = "AHB1 peripheral reset register"]
@@ -1148,46 +1036,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb1rstr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ahb1rstr {
-                gpioarst: bool,
-                gpiobrst: bool,
-                gpiocrst: bool,
-                gpiodrst: bool,
-                gpioerst: bool,
-                gpiofrst: bool,
-                gpiogrst: bool,
-                gpiohrst: bool,
-                gpioirst: bool,
-                gpiojrst: bool,
-                gpiokrst: bool,
-                crcrst: bool,
-                dma1rst: bool,
-                dma2rst: bool,
-                dma2drst: bool,
-                ethrst: bool,
-                usb_otg_hsrst: bool,
-            }
-            let proxy = Ahb1rstr {
-                gpioarst: self.gpioarst(),
-                gpiobrst: self.gpiobrst(),
-                gpiocrst: self.gpiocrst(),
-                gpiodrst: self.gpiodrst(),
-                gpioerst: self.gpioerst(),
-                gpiofrst: self.gpiofrst(),
-                gpiogrst: self.gpiogrst(),
-                gpiohrst: self.gpiohrst(),
-                gpioirst: self.gpioirst(),
-                gpiojrst: self.gpiojrst(),
-                gpiokrst: self.gpiokrst(),
-                crcrst: self.crcrst(),
-                dma1rst: self.dma1rst(),
-                dma2rst: self.dma2rst(),
-                dma2drst: self.dma2drst(),
-                ethrst: self.ethrst(),
-                usb_otg_hsrst: self.usb_otg_hsrst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ahb1rstr {{ gpioarst: {=bool:?}, gpiobrst: {=bool:?}, gpiocrst: {=bool:?}, gpiodrst: {=bool:?}, gpioerst: {=bool:?}, gpiofrst: {=bool:?}, gpiogrst: {=bool:?}, gpiohrst: {=bool:?}, gpioirst: {=bool:?}, gpiojrst: {=bool:?}, gpiokrst: {=bool:?}, crcrst: {=bool:?}, dma1rst: {=bool:?}, dma2rst: {=bool:?}, dma2drst: {=bool:?}, ethrst: {=bool:?}, usb_otg_hsrst: {=bool:?} }}" , self . gpioarst () , self . gpiobrst () , self . gpiocrst () , self . gpiodrst () , self . gpioerst () , self . gpiofrst () , self . gpiogrst () , self . gpiohrst () , self . gpioirst () , self . gpiojrst () , self . gpiokrst () , self . crcrst () , self . dma1rst () , self . dma2rst () , self . dma2drst () , self . ethrst () , self . usb_otg_hsrst ())
         }
     }
     #[doc = "AHB2 peripheral clock enable register"]
@@ -1295,26 +1144,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb2enr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ahb2enr {
-                dcmien: bool,
-                jpegen: bool,
-                aesen: bool,
-                crypen: bool,
-                hashen: bool,
-                rngen: bool,
-                usb_otg_fsen: bool,
-            }
-            let proxy = Ahb2enr {
-                dcmien: self.dcmien(),
-                jpegen: self.jpegen(),
-                aesen: self.aesen(),
-                crypen: self.crypen(),
-                hashen: self.hashen(),
-                rngen: self.rngen(),
-                usb_otg_fsen: self.usb_otg_fsen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ahb2enr {{ dcmien: {=bool:?}, jpegen: {=bool:?}, aesen: {=bool:?}, crypen: {=bool:?}, hashen: {=bool:?}, rngen: {=bool:?}, usb_otg_fsen: {=bool:?} }}" , self . dcmien () , self . jpegen () , self . aesen () , self . crypen () , self . hashen () , self . rngen () , self . usb_otg_fsen ())
         }
     }
     #[doc = "AHB2 peripheral clock enable in low power mode register"]
@@ -1422,26 +1252,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb2lpenr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ahb2lpenr {
-                dcmilpen: bool,
-                jpeglpen: bool,
-                aeslpen: bool,
-                cryplpen: bool,
-                hashlpen: bool,
-                rnglpen: bool,
-                usb_otg_fslpen: bool,
-            }
-            let proxy = Ahb2lpenr {
-                dcmilpen: self.dcmilpen(),
-                jpeglpen: self.jpeglpen(),
-                aeslpen: self.aeslpen(),
-                cryplpen: self.cryplpen(),
-                hashlpen: self.hashlpen(),
-                rnglpen: self.rnglpen(),
-                usb_otg_fslpen: self.usb_otg_fslpen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ahb2lpenr {{ dcmilpen: {=bool:?}, jpeglpen: {=bool:?}, aeslpen: {=bool:?}, cryplpen: {=bool:?}, hashlpen: {=bool:?}, rnglpen: {=bool:?}, usb_otg_fslpen: {=bool:?} }}" , self . dcmilpen () , self . jpeglpen () , self . aeslpen () , self . cryplpen () , self . hashlpen () , self . rnglpen () , self . usb_otg_fslpen ())
         }
     }
     #[doc = "AHB2 peripheral reset register"]
@@ -1537,24 +1348,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb2rstr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ahb2rstr {
-                dcmirst: bool,
-                aesrst: bool,
-                cryprst: bool,
-                hsahrst: bool,
-                rngrst: bool,
-                usb_otg_fsrst: bool,
-            }
-            let proxy = Ahb2rstr {
-                dcmirst: self.dcmirst(),
-                aesrst: self.aesrst(),
-                cryprst: self.cryprst(),
-                hsahrst: self.hsahrst(),
-                rngrst: self.rngrst(),
-                usb_otg_fsrst: self.usb_otg_fsrst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ahb2rstr {{ dcmirst: {=bool:?}, aesrst: {=bool:?}, cryprst: {=bool:?}, hsahrst: {=bool:?}, rngrst: {=bool:?}, usb_otg_fsrst: {=bool:?} }}" , self . dcmirst () , self . aesrst () , self . cryprst () , self . hsahrst () , self . rngrst () , self . usb_otg_fsrst ())
         }
     }
     #[doc = "AHB3 peripheral clock enable register"]
@@ -1602,16 +1396,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb3enr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ahb3enr {
-                fmcen: bool,
-                quadspien: bool,
-            }
-            let proxy = Ahb3enr {
-                fmcen: self.fmcen(),
-                quadspien: self.quadspien(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ahb3enr {{ fmcen: {=bool:?}, quadspien: {=bool:?} }}",
+                self.fmcen(),
+                self.quadspien()
+            )
         }
     }
     #[doc = "AHB3 peripheral clock enable in low power mode register"]
@@ -1659,16 +1449,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb3lpenr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ahb3lpenr {
-                fmclpen: bool,
-                quadspilpen: bool,
-            }
-            let proxy = Ahb3lpenr {
-                fmclpen: self.fmclpen(),
-                quadspilpen: self.quadspilpen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ahb3lpenr {{ fmclpen: {=bool:?}, quadspilpen: {=bool:?} }}",
+                self.fmclpen(),
+                self.quadspilpen()
+            )
         }
     }
     #[doc = "AHB3 peripheral reset register"]
@@ -1716,16 +1502,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb3rstr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ahb3rstr {
-                fmcrst: bool,
-                quadspirst: bool,
-            }
-            let proxy = Ahb3rstr {
-                fmcrst: self.fmcrst(),
-                quadspirst: self.quadspirst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ahb3rstr {{ fmcrst: {=bool:?}, quadspirst: {=bool:?} }}",
+                self.fmcrst(),
+                self.quadspirst()
+            )
         }
     }
     #[doc = "APB1 peripheral clock enable register"]
@@ -2121,74 +1903,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1enr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Apb1enr {
-                tim2en: bool,
-                tim3en: bool,
-                tim4en: bool,
-                tim5en: bool,
-                tim6en: bool,
-                tim7en: bool,
-                tim12en: bool,
-                tim13en: bool,
-                tim14en: bool,
-                lptim1en: bool,
-                rtcen: bool,
-                wwdgen: bool,
-                can3en: bool,
-                spi2en: bool,
-                spi3en: bool,
-                spdifrxen: bool,
-                usart2en: bool,
-                usart3en: bool,
-                uart4en: bool,
-                uart5en: bool,
-                i2c1en: bool,
-                i2c2en: bool,
-                i2c3en: bool,
-                i2c4en: bool,
-                can1en: bool,
-                can2en: bool,
-                cecen: bool,
-                pwren: bool,
-                dacen: bool,
-                uart7en: bool,
-                uart8en: bool,
-            }
-            let proxy = Apb1enr {
-                tim2en: self.tim2en(),
-                tim3en: self.tim3en(),
-                tim4en: self.tim4en(),
-                tim5en: self.tim5en(),
-                tim6en: self.tim6en(),
-                tim7en: self.tim7en(),
-                tim12en: self.tim12en(),
-                tim13en: self.tim13en(),
-                tim14en: self.tim14en(),
-                lptim1en: self.lptim1en(),
-                rtcen: self.rtcen(),
-                wwdgen: self.wwdgen(),
-                can3en: self.can3en(),
-                spi2en: self.spi2en(),
-                spi3en: self.spi3en(),
-                spdifrxen: self.spdifrxen(),
-                usart2en: self.usart2en(),
-                usart3en: self.usart3en(),
-                uart4en: self.uart4en(),
-                uart5en: self.uart5en(),
-                i2c1en: self.i2c1en(),
-                i2c2en: self.i2c2en(),
-                i2c3en: self.i2c3en(),
-                i2c4en: self.i2c4en(),
-                can1en: self.can1en(),
-                can2en: self.can2en(),
-                cecen: self.cecen(),
-                pwren: self.pwren(),
-                dacen: self.dacen(),
-                uart7en: self.uart7en(),
-                uart8en: self.uart8en(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Apb1enr {{ tim2en: {=bool:?}, tim3en: {=bool:?}, tim4en: {=bool:?}, tim5en: {=bool:?}, tim6en: {=bool:?}, tim7en: {=bool:?}, tim12en: {=bool:?}, tim13en: {=bool:?}, tim14en: {=bool:?}, lptim1en: {=bool:?}, rtcen: {=bool:?}, wwdgen: {=bool:?}, can3en: {=bool:?}, spi2en: {=bool:?}, spi3en: {=bool:?}, spdifrxen: {=bool:?}, usart2en: {=bool:?}, usart3en: {=bool:?}, uart4en: {=bool:?}, uart5en: {=bool:?}, i2c1en: {=bool:?}, i2c2en: {=bool:?}, i2c3en: {=bool:?}, i2c4en: {=bool:?}, can1en: {=bool:?}, can2en: {=bool:?}, cecen: {=bool:?}, pwren: {=bool:?}, dacen: {=bool:?}, uart7en: {=bool:?}, uart8en: {=bool:?} }}" , self . tim2en () , self . tim3en () , self . tim4en () , self . tim5en () , self . tim6en () , self . tim7en () , self . tim12en () , self . tim13en () , self . tim14en () , self . lptim1en () , self . rtcen () , self . wwdgen () , self . can3en () , self . spi2en () , self . spi3en () , self . spdifrxen () , self . usart2en () , self . usart3en () , self . uart4en () , self . uart5en () , self . i2c1en () , self . i2c2en () , self . i2c3en () , self . i2c4en () , self . can1en () , self . can2en () , self . cecen () , self . pwren () , self . dacen () , self . uart7en () , self . uart8en ())
         }
     }
     #[doc = "APB1 peripheral clock enable in low power mode register"]
@@ -2584,74 +2299,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1lpenr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Apb1lpenr {
-                tim2lpen: bool,
-                tim3lpen: bool,
-                tim4lpen: bool,
-                tim5lpen: bool,
-                tim6lpen: bool,
-                tim7lpen: bool,
-                tim12lpen: bool,
-                tim13lpen: bool,
-                tim14lpen: bool,
-                lptim1lpen: bool,
-                rtclpen: bool,
-                wwdglpen: bool,
-                can3lpen: bool,
-                spi2lpen: bool,
-                spi3lpen: bool,
-                spdifrxlpen: bool,
-                usart2lpen: bool,
-                usart3lpen: bool,
-                uart4lpen: bool,
-                uart5lpen: bool,
-                i2c1lpen: bool,
-                i2c2lpen: bool,
-                i2c3lpen: bool,
-                i2c4lpen: bool,
-                can1lpen: bool,
-                can2lpen: bool,
-                ceclpen: bool,
-                pwrlpen: bool,
-                daclpen: bool,
-                uart7lpen: bool,
-                uart8lpen: bool,
-            }
-            let proxy = Apb1lpenr {
-                tim2lpen: self.tim2lpen(),
-                tim3lpen: self.tim3lpen(),
-                tim4lpen: self.tim4lpen(),
-                tim5lpen: self.tim5lpen(),
-                tim6lpen: self.tim6lpen(),
-                tim7lpen: self.tim7lpen(),
-                tim12lpen: self.tim12lpen(),
-                tim13lpen: self.tim13lpen(),
-                tim14lpen: self.tim14lpen(),
-                lptim1lpen: self.lptim1lpen(),
-                rtclpen: self.rtclpen(),
-                wwdglpen: self.wwdglpen(),
-                can3lpen: self.can3lpen(),
-                spi2lpen: self.spi2lpen(),
-                spi3lpen: self.spi3lpen(),
-                spdifrxlpen: self.spdifrxlpen(),
-                usart2lpen: self.usart2lpen(),
-                usart3lpen: self.usart3lpen(),
-                uart4lpen: self.uart4lpen(),
-                uart5lpen: self.uart5lpen(),
-                i2c1lpen: self.i2c1lpen(),
-                i2c2lpen: self.i2c2lpen(),
-                i2c3lpen: self.i2c3lpen(),
-                i2c4lpen: self.i2c4lpen(),
-                can1lpen: self.can1lpen(),
-                can2lpen: self.can2lpen(),
-                ceclpen: self.ceclpen(),
-                pwrlpen: self.pwrlpen(),
-                daclpen: self.daclpen(),
-                uart7lpen: self.uart7lpen(),
-                uart8lpen: self.uart8lpen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Apb1lpenr {{ tim2lpen: {=bool:?}, tim3lpen: {=bool:?}, tim4lpen: {=bool:?}, tim5lpen: {=bool:?}, tim6lpen: {=bool:?}, tim7lpen: {=bool:?}, tim12lpen: {=bool:?}, tim13lpen: {=bool:?}, tim14lpen: {=bool:?}, lptim1lpen: {=bool:?}, rtclpen: {=bool:?}, wwdglpen: {=bool:?}, can3lpen: {=bool:?}, spi2lpen: {=bool:?}, spi3lpen: {=bool:?}, spdifrxlpen: {=bool:?}, usart2lpen: {=bool:?}, usart3lpen: {=bool:?}, uart4lpen: {=bool:?}, uart5lpen: {=bool:?}, i2c1lpen: {=bool:?}, i2c2lpen: {=bool:?}, i2c3lpen: {=bool:?}, i2c4lpen: {=bool:?}, can1lpen: {=bool:?}, can2lpen: {=bool:?}, ceclpen: {=bool:?}, pwrlpen: {=bool:?}, daclpen: {=bool:?}, uart7lpen: {=bool:?}, uart8lpen: {=bool:?} }}" , self . tim2lpen () , self . tim3lpen () , self . tim4lpen () , self . tim5lpen () , self . tim6lpen () , self . tim7lpen () , self . tim12lpen () , self . tim13lpen () , self . tim14lpen () , self . lptim1lpen () , self . rtclpen () , self . wwdglpen () , self . can3lpen () , self . spi2lpen () , self . spi3lpen () , self . spdifrxlpen () , self . usart2lpen () , self . usart3lpen () , self . uart4lpen () , self . uart5lpen () , self . i2c1lpen () , self . i2c2lpen () , self . i2c3lpen () , self . i2c4lpen () , self . can1lpen () , self . can2lpen () , self . ceclpen () , self . pwrlpen () , self . daclpen () , self . uart7lpen () , self . uart8lpen ())
         }
     }
     #[doc = "APB1 peripheral reset register"]
@@ -3035,72 +2683,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1rstr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Apb1rstr {
-                tim2rst: bool,
-                tim3rst: bool,
-                tim4rst: bool,
-                tim5rst: bool,
-                tim6rst: bool,
-                tim7rst: bool,
-                tim12rst: bool,
-                tim13rst: bool,
-                tim14rst: bool,
-                lptim1rst: bool,
-                wwdgrst: bool,
-                can3rst: bool,
-                spi2rst: bool,
-                spi3rst: bool,
-                spdifrxrst: bool,
-                usart2rst: bool,
-                usart3rst: bool,
-                uart4rst: bool,
-                uart5rst: bool,
-                i2c1rst: bool,
-                i2c2rst: bool,
-                i2c3rst: bool,
-                i2c4rst: bool,
-                can1rst: bool,
-                can2rst: bool,
-                cecrst: bool,
-                pwrrst: bool,
-                dacrst: bool,
-                uart7rst: bool,
-                uart8rst: bool,
-            }
-            let proxy = Apb1rstr {
-                tim2rst: self.tim2rst(),
-                tim3rst: self.tim3rst(),
-                tim4rst: self.tim4rst(),
-                tim5rst: self.tim5rst(),
-                tim6rst: self.tim6rst(),
-                tim7rst: self.tim7rst(),
-                tim12rst: self.tim12rst(),
-                tim13rst: self.tim13rst(),
-                tim14rst: self.tim14rst(),
-                lptim1rst: self.lptim1rst(),
-                wwdgrst: self.wwdgrst(),
-                can3rst: self.can3rst(),
-                spi2rst: self.spi2rst(),
-                spi3rst: self.spi3rst(),
-                spdifrxrst: self.spdifrxrst(),
-                usart2rst: self.usart2rst(),
-                usart3rst: self.usart3rst(),
-                uart4rst: self.uart4rst(),
-                uart5rst: self.uart5rst(),
-                i2c1rst: self.i2c1rst(),
-                i2c2rst: self.i2c2rst(),
-                i2c3rst: self.i2c3rst(),
-                i2c4rst: self.i2c4rst(),
-                can1rst: self.can1rst(),
-                can2rst: self.can2rst(),
-                cecrst: self.cecrst(),
-                pwrrst: self.pwrrst(),
-                dacrst: self.dacrst(),
-                uart7rst: self.uart7rst(),
-                uart8rst: self.uart8rst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Apb1rstr {{ tim2rst: {=bool:?}, tim3rst: {=bool:?}, tim4rst: {=bool:?}, tim5rst: {=bool:?}, tim6rst: {=bool:?}, tim7rst: {=bool:?}, tim12rst: {=bool:?}, tim13rst: {=bool:?}, tim14rst: {=bool:?}, lptim1rst: {=bool:?}, wwdgrst: {=bool:?}, can3rst: {=bool:?}, spi2rst: {=bool:?}, spi3rst: {=bool:?}, spdifrxrst: {=bool:?}, usart2rst: {=bool:?}, usart3rst: {=bool:?}, uart4rst: {=bool:?}, uart5rst: {=bool:?}, i2c1rst: {=bool:?}, i2c2rst: {=bool:?}, i2c3rst: {=bool:?}, i2c4rst: {=bool:?}, can1rst: {=bool:?}, can2rst: {=bool:?}, cecrst: {=bool:?}, pwrrst: {=bool:?}, dacrst: {=bool:?}, uart7rst: {=bool:?}, uart8rst: {=bool:?} }}" , self . tim2rst () , self . tim3rst () , self . tim4rst () , self . tim5rst () , self . tim6rst () , self . tim7rst () , self . tim12rst () , self . tim13rst () , self . tim14rst () , self . lptim1rst () , self . wwdgrst () , self . can3rst () , self . spi2rst () , self . spi3rst () , self . spdifrxrst () , self . usart2rst () , self . usart3rst () , self . uart4rst () , self . uart5rst () , self . i2c1rst () , self . i2c2rst () , self . i2c3rst () , self . i2c4rst () , self . can1rst () , self . can2rst () , self . cecrst () , self . pwrrst () , self . dacrst () , self . uart7rst () , self . uart8rst ())
         }
     }
     #[doc = "APB2 peripheral clock enable register"]
@@ -3412,60 +2995,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb2enr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Apb2enr {
-                tim1en: bool,
-                tim8en: bool,
-                usart1en: bool,
-                usart6en: bool,
-                sdmmc2en: bool,
-                adc1en: bool,
-                adc2en: bool,
-                adc3en: bool,
-                sdmmc1en: bool,
-                spi1en: bool,
-                spi4en: bool,
-                syscfgen: bool,
-                tim9en: bool,
-                tim10en: bool,
-                tim11en: bool,
-                spi5en: bool,
-                spi6en: bool,
-                sai1en: bool,
-                sai2en: bool,
-                ltdcen: bool,
-                dsien: bool,
-                dfsdm1en: bool,
-                mdiosen: bool,
-                usbphycen: bool,
-            }
-            let proxy = Apb2enr {
-                tim1en: self.tim1en(),
-                tim8en: self.tim8en(),
-                usart1en: self.usart1en(),
-                usart6en: self.usart6en(),
-                sdmmc2en: self.sdmmc2en(),
-                adc1en: self.adc1en(),
-                adc2en: self.adc2en(),
-                adc3en: self.adc3en(),
-                sdmmc1en: self.sdmmc1en(),
-                spi1en: self.spi1en(),
-                spi4en: self.spi4en(),
-                syscfgen: self.syscfgen(),
-                tim9en: self.tim9en(),
-                tim10en: self.tim10en(),
-                tim11en: self.tim11en(),
-                spi5en: self.spi5en(),
-                spi6en: self.spi6en(),
-                sai1en: self.sai1en(),
-                sai2en: self.sai2en(),
-                ltdcen: self.ltdcen(),
-                dsien: self.dsien(),
-                dfsdm1en: self.dfsdm1en(),
-                mdiosen: self.mdiosen(),
-                usbphycen: self.usbphycen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Apb2enr {{ tim1en: {=bool:?}, tim8en: {=bool:?}, usart1en: {=bool:?}, usart6en: {=bool:?}, sdmmc2en: {=bool:?}, adc1en: {=bool:?}, adc2en: {=bool:?}, adc3en: {=bool:?}, sdmmc1en: {=bool:?}, spi1en: {=bool:?}, spi4en: {=bool:?}, syscfgen: {=bool:?}, tim9en: {=bool:?}, tim10en: {=bool:?}, tim11en: {=bool:?}, spi5en: {=bool:?}, spi6en: {=bool:?}, sai1en: {=bool:?}, sai2en: {=bool:?}, ltdcen: {=bool:?}, dsien: {=bool:?}, dfsdm1en: {=bool:?}, mdiosen: {=bool:?}, usbphycen: {=bool:?} }}" , self . tim1en () , self . tim8en () , self . usart1en () , self . usart6en () , self . sdmmc2en () , self . adc1en () , self . adc2en () , self . adc3en () , self . sdmmc1en () , self . spi1en () , self . spi4en () , self . syscfgen () , self . tim9en () , self . tim10en () , self . tim11en () , self . spi5en () , self . spi6en () , self . sai1en () , self . sai2en () , self . ltdcen () , self . dsien () , self . dfsdm1en () , self . mdiosen () , self . usbphycen ())
         }
     }
     #[doc = "APB2 peripheral clock enabled in low power mode register"]
@@ -3765,58 +3295,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb2lpenr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Apb2lpenr {
-                tim1lpen: bool,
-                tim8lpen: bool,
-                usart1lpen: bool,
-                usart6lpen: bool,
-                sdmmc2lpen: bool,
-                adc1lpen: bool,
-                adc2lpen: bool,
-                adc3lpen: bool,
-                sdmmc1lpen: bool,
-                spi1lpen: bool,
-                spi4lpen: bool,
-                syscfglpen: bool,
-                tim9lpen: bool,
-                tim10lpen: bool,
-                tim11lpen: bool,
-                spi5lpen: bool,
-                spi6lpen: bool,
-                sai1lpen: bool,
-                sai2lpen: bool,
-                ltdclpen: bool,
-                dsilpen: bool,
-                dfsdm1lpen: bool,
-                mdioslpen: bool,
-            }
-            let proxy = Apb2lpenr {
-                tim1lpen: self.tim1lpen(),
-                tim8lpen: self.tim8lpen(),
-                usart1lpen: self.usart1lpen(),
-                usart6lpen: self.usart6lpen(),
-                sdmmc2lpen: self.sdmmc2lpen(),
-                adc1lpen: self.adc1lpen(),
-                adc2lpen: self.adc2lpen(),
-                adc3lpen: self.adc3lpen(),
-                sdmmc1lpen: self.sdmmc1lpen(),
-                spi1lpen: self.spi1lpen(),
-                spi4lpen: self.spi4lpen(),
-                syscfglpen: self.syscfglpen(),
-                tim9lpen: self.tim9lpen(),
-                tim10lpen: self.tim10lpen(),
-                tim11lpen: self.tim11lpen(),
-                spi5lpen: self.spi5lpen(),
-                spi6lpen: self.spi6lpen(),
-                sai1lpen: self.sai1lpen(),
-                sai2lpen: self.sai2lpen(),
-                ltdclpen: self.ltdclpen(),
-                dsilpen: self.dsilpen(),
-                dfsdm1lpen: self.dfsdm1lpen(),
-                mdioslpen: self.mdioslpen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Apb2lpenr {{ tim1lpen: {=bool:?}, tim8lpen: {=bool:?}, usart1lpen: {=bool:?}, usart6lpen: {=bool:?}, sdmmc2lpen: {=bool:?}, adc1lpen: {=bool:?}, adc2lpen: {=bool:?}, adc3lpen: {=bool:?}, sdmmc1lpen: {=bool:?}, spi1lpen: {=bool:?}, spi4lpen: {=bool:?}, syscfglpen: {=bool:?}, tim9lpen: {=bool:?}, tim10lpen: {=bool:?}, tim11lpen: {=bool:?}, spi5lpen: {=bool:?}, spi6lpen: {=bool:?}, sai1lpen: {=bool:?}, sai2lpen: {=bool:?}, ltdclpen: {=bool:?}, dsilpen: {=bool:?}, dfsdm1lpen: {=bool:?}, mdioslpen: {=bool:?} }}" , self . tim1lpen () , self . tim8lpen () , self . usart1lpen () , self . usart6lpen () , self . sdmmc2lpen () , self . adc1lpen () , self . adc2lpen () , self . adc3lpen () , self . sdmmc1lpen () , self . spi1lpen () , self . spi4lpen () , self . syscfglpen () , self . tim9lpen () , self . tim10lpen () , self . tim11lpen () , self . spi5lpen () , self . spi6lpen () , self . sai1lpen () , self . sai2lpen () , self . ltdclpen () , self . dsilpen () , self . dfsdm1lpen () , self . mdioslpen ())
         }
     }
     #[doc = "APB2 peripheral reset register"]
@@ -4104,56 +3583,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb2rstr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Apb2rstr {
-                tim1rst: bool,
-                tim8rst: bool,
-                usart1rst: bool,
-                usart6rst: bool,
-                sdmmc2rst: bool,
-                adcrst: bool,
-                sdmmc1rst: bool,
-                spi1rst: bool,
-                spi4rst: bool,
-                syscfgrst: bool,
-                tim9rst: bool,
-                tim10rst: bool,
-                tim11rst: bool,
-                spi5rst: bool,
-                spi6rst: bool,
-                sai1rst: bool,
-                sai2rst: bool,
-                ltdcrst: bool,
-                dsirst: bool,
-                dfsdm1rst: bool,
-                mdiosrst: bool,
-                usbphycrst: bool,
-            }
-            let proxy = Apb2rstr {
-                tim1rst: self.tim1rst(),
-                tim8rst: self.tim8rst(),
-                usart1rst: self.usart1rst(),
-                usart6rst: self.usart6rst(),
-                sdmmc2rst: self.sdmmc2rst(),
-                adcrst: self.adcrst(),
-                sdmmc1rst: self.sdmmc1rst(),
-                spi1rst: self.spi1rst(),
-                spi4rst: self.spi4rst(),
-                syscfgrst: self.syscfgrst(),
-                tim9rst: self.tim9rst(),
-                tim10rst: self.tim10rst(),
-                tim11rst: self.tim11rst(),
-                spi5rst: self.spi5rst(),
-                spi6rst: self.spi6rst(),
-                sai1rst: self.sai1rst(),
-                sai2rst: self.sai2rst(),
-                ltdcrst: self.ltdcrst(),
-                dsirst: self.dsirst(),
-                dfsdm1rst: self.dfsdm1rst(),
-                mdiosrst: self.mdiosrst(),
-                usbphycrst: self.usbphycrst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Apb2rstr {{ tim1rst: {=bool:?}, tim8rst: {=bool:?}, usart1rst: {=bool:?}, usart6rst: {=bool:?}, sdmmc2rst: {=bool:?}, adcrst: {=bool:?}, sdmmc1rst: {=bool:?}, spi1rst: {=bool:?}, spi4rst: {=bool:?}, syscfgrst: {=bool:?}, tim9rst: {=bool:?}, tim10rst: {=bool:?}, tim11rst: {=bool:?}, spi5rst: {=bool:?}, spi6rst: {=bool:?}, sai1rst: {=bool:?}, sai2rst: {=bool:?}, ltdcrst: {=bool:?}, dsirst: {=bool:?}, dfsdm1rst: {=bool:?}, mdiosrst: {=bool:?}, usbphycrst: {=bool:?} }}" , self . tim1rst () , self . tim8rst () , self . usart1rst () , self . usart6rst () , self . sdmmc2rst () , self . adcrst () , self . sdmmc1rst () , self . spi1rst () , self . spi4rst () , self . syscfgrst () , self . tim9rst () , self . tim10rst () , self . tim11rst () , self . spi5rst () , self . spi6rst () , self . sai1rst () , self . sai2rst () , self . ltdcrst () , self . dsirst () , self . dfsdm1rst () , self . mdiosrst () , self . usbphycrst ())
         }
     }
     #[doc = "Backup domain control register"]
@@ -4261,26 +3691,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bdcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bdcr {
-                lseon: bool,
-                lserdy: bool,
-                lsebyp: bool,
-                lsedrv: super::vals::Lsedrv,
-                rtcsel: super::vals::Rtcsel,
-                rtcen: bool,
-                bdrst: bool,
-            }
-            let proxy = Bdcr {
-                lseon: self.lseon(),
-                lserdy: self.lserdy(),
-                lsebyp: self.lsebyp(),
-                lsedrv: self.lsedrv(),
-                rtcsel: self.rtcsel(),
-                rtcen: self.rtcen(),
-                bdrst: self.bdrst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Bdcr {{ lseon: {=bool:?}, lserdy: {=bool:?}, lsebyp: {=bool:?}, lsedrv: {:?}, rtcsel: {:?}, rtcen: {=bool:?}, bdrst: {=bool:?} }}" , self . lseon () , self . lserdy () , self . lsebyp () , self . lsedrv () , self . rtcsel () , self . rtcen () , self . bdrst ())
         }
     }
     #[doc = "clock configuration register"]
@@ -4436,34 +3847,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr {
-                sw: super::vals::Sw,
-                sws: super::vals::Sw,
-                hpre: super::vals::Hpre,
-                ppre1: super::vals::Ppre,
-                ppre2: super::vals::Ppre,
-                rtcpre: u8,
-                mco1sel: super::vals::Mco1sel,
-                i2ssrc: super::vals::Issrc,
-                mco1pre: super::vals::Mcopre,
-                mco2pre: super::vals::Mcopre,
-                mco2sel: super::vals::Mco2sel,
-            }
-            let proxy = Cfgr {
-                sw: self.sw(),
-                sws: self.sws(),
-                hpre: self.hpre(),
-                ppre1: self.ppre1(),
-                ppre2: self.ppre2(),
-                rtcpre: self.rtcpre(),
-                mco1sel: self.mco1sel(),
-                i2ssrc: self.i2ssrc(),
-                mco1pre: self.mco1pre(),
-                mco2pre: self.mco2pre(),
-                mco2sel: self.mco2sel(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr {{ sw: {:?}, sws: {:?}, hpre: {:?}, ppre1: {:?}, ppre2: {:?}, rtcpre: {=u8:?}, mco1sel: {:?}, i2ssrc: {:?}, mco1pre: {:?}, mco2pre: {:?}, mco2sel: {:?} }}" , self . sw () , self . sws () , self . hpre () , self . ppre1 () , self . ppre2 () , self . rtcpre () , self . mco1sel () , self . i2ssrc () , self . mco1pre () , self . mco2pre () , self . mco2sel ())
         }
     }
     #[doc = "clock interrupt register"]
@@ -4763,58 +4147,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cir {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cir {
-                lsirdyf: bool,
-                lserdyf: bool,
-                hsirdyf: bool,
-                hserdyf: bool,
-                pllrdyf: bool,
-                plli2srdyf: bool,
-                pllsairdyf: bool,
-                cssf: bool,
-                lsirdyie: bool,
-                lserdyie: bool,
-                hsirdyie: bool,
-                hserdyie: bool,
-                pllrdyie: bool,
-                plli2srdyie: bool,
-                pllsairdyie: bool,
-                lsirdyc: bool,
-                lserdyc: bool,
-                hsirdyc: bool,
-                hserdyc: bool,
-                pllrdyc: bool,
-                plli2srdyc: bool,
-                pllsairdyc: bool,
-                cssc: bool,
-            }
-            let proxy = Cir {
-                lsirdyf: self.lsirdyf(),
-                lserdyf: self.lserdyf(),
-                hsirdyf: self.hsirdyf(),
-                hserdyf: self.hserdyf(),
-                pllrdyf: self.pllrdyf(),
-                plli2srdyf: self.plli2srdyf(),
-                pllsairdyf: self.pllsairdyf(),
-                cssf: self.cssf(),
-                lsirdyie: self.lsirdyie(),
-                lserdyie: self.lserdyie(),
-                hsirdyie: self.hsirdyie(),
-                hserdyie: self.hserdyie(),
-                pllrdyie: self.pllrdyie(),
-                plli2srdyie: self.plli2srdyie(),
-                pllsairdyie: self.pllsairdyie(),
-                lsirdyc: self.lsirdyc(),
-                lserdyc: self.lserdyc(),
-                hsirdyc: self.hsirdyc(),
-                hserdyc: self.hserdyc(),
-                pllrdyc: self.pllrdyc(),
-                plli2srdyc: self.plli2srdyc(),
-                pllsairdyc: self.pllsairdyc(),
-                cssc: self.cssc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cir {{ lsirdyf: {=bool:?}, lserdyf: {=bool:?}, hsirdyf: {=bool:?}, hserdyf: {=bool:?}, pllrdyf: {=bool:?}, plli2srdyf: {=bool:?}, pllsairdyf: {=bool:?}, cssf: {=bool:?}, lsirdyie: {=bool:?}, lserdyie: {=bool:?}, hsirdyie: {=bool:?}, hserdyie: {=bool:?}, pllrdyie: {=bool:?}, plli2srdyie: {=bool:?}, pllsairdyie: {=bool:?}, lsirdyc: {=bool:?}, lserdyc: {=bool:?}, hsirdyc: {=bool:?}, hserdyc: {=bool:?}, pllrdyc: {=bool:?}, plli2srdyc: {=bool:?}, pllsairdyc: {=bool:?}, cssc: {=bool:?} }}" , self . lsirdyf () , self . lserdyf () , self . hsirdyf () , self . hserdyf () , self . pllrdyf () , self . plli2srdyf () , self . pllsairdyf () , self . cssf () , self . lsirdyie () , self . lserdyie () , self . hsirdyie () , self . hserdyie () , self . pllrdyie () , self . plli2srdyie () , self . pllsairdyie () , self . lsirdyc () , self . lserdyc () , self . hsirdyc () , self . hserdyc () , self . pllrdyc () , self . plli2srdyc () , self . pllsairdyc () , self . cssc ())
         }
     }
     #[doc = "clock control register"]
@@ -5006,40 +4339,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                hsion: bool,
-                hsirdy: bool,
-                hsitrim: u8,
-                hsical: u8,
-                hseon: bool,
-                hserdy: bool,
-                hsebyp: bool,
-                csson: bool,
-                pllon: bool,
-                pllrdy: bool,
-                plli2son: bool,
-                plli2srdy: bool,
-                pllsaion: bool,
-                pllsairdy: bool,
-            }
-            let proxy = Cr {
-                hsion: self.hsion(),
-                hsirdy: self.hsirdy(),
-                hsitrim: self.hsitrim(),
-                hsical: self.hsical(),
-                hseon: self.hseon(),
-                hserdy: self.hserdy(),
-                hsebyp: self.hsebyp(),
-                csson: self.csson(),
-                pllon: self.pllon(),
-                pllrdy: self.pllrdy(),
-                plli2son: self.plli2son(),
-                plli2srdy: self.plli2srdy(),
-                pllsaion: self.pllsaion(),
-                pllsairdy: self.pllsairdy(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ hsion: {=bool:?}, hsirdy: {=bool:?}, hsitrim: {=u8:?}, hsical: {=u8:?}, hseon: {=bool:?}, hserdy: {=bool:?}, hsebyp: {=bool:?}, csson: {=bool:?}, pllon: {=bool:?}, pllrdy: {=bool:?}, plli2son: {=bool:?}, plli2srdy: {=bool:?}, pllsaion: {=bool:?}, pllsairdy: {=bool:?} }}" , self . hsion () , self . hsirdy () , self . hsitrim () , self . hsical () , self . hseon () , self . hserdy () , self . hsebyp () , self . csson () , self . pllon () , self . pllrdy () , self . plli2son () , self . plli2srdy () , self . pllsaion () , self . pllsairdy ())
         }
     }
     #[doc = "clock control & status register"]
@@ -5183,32 +4483,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                lsion: bool,
-                lsirdy: bool,
-                rmvf: bool,
-                borrstf: bool,
-                padrstf: bool,
-                porrstf: bool,
-                sftrstf: bool,
-                wdgrstf: bool,
-                wwdgrstf: bool,
-                lpwrrstf: bool,
-            }
-            let proxy = Csr {
-                lsion: self.lsion(),
-                lsirdy: self.lsirdy(),
-                rmvf: self.rmvf(),
-                borrstf: self.borrstf(),
-                padrstf: self.padrstf(),
-                porrstf: self.porrstf(),
-                sftrstf: self.sftrstf(),
-                wdgrstf: self.wdgrstf(),
-                wwdgrstf: self.wwdgrstf(),
-                lpwrrstf: self.lpwrrstf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Csr {{ lsion: {=bool:?}, lsirdy: {=bool:?}, rmvf: {=bool:?}, borrstf: {=bool:?}, padrstf: {=bool:?}, porrstf: {=bool:?}, sftrstf: {=bool:?}, wdgrstf: {=bool:?}, wwdgrstf: {=bool:?}, lpwrrstf: {=bool:?} }}" , self . lsion () , self . lsirdy () , self . rmvf () , self . borrstf () , self . padrstf () , self . porrstf () , self . sftrstf () , self . wdgrstf () , self . wwdgrstf () , self . lpwrrstf ())
         }
     }
     #[doc = "dedicated clocks configuration register"]
@@ -5328,28 +4603,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dckcfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dckcfgr1 {
-                plli2sdivq: super::vals::Plli2sdivq,
-                pllsaidivq: super::vals::Pllsaidivq,
-                pllsaidivr: super::vals::Pllsaidivr,
-                sai1sel: super::vals::Saisel,
-                sai2sel: super::vals::Saisel,
-                timpre: super::vals::Timpre,
-                dfsdm1sel: super::vals::Dfsdmsel,
-                adfsdm1sel: super::vals::Adfsdmsel,
-            }
-            let proxy = Dckcfgr1 {
-                plli2sdivq: self.plli2sdivq(),
-                pllsaidivq: self.pllsaidivq(),
-                pllsaidivr: self.pllsaidivr(),
-                sai1sel: self.sai1sel(),
-                sai2sel: self.sai2sel(),
-                timpre: self.timpre(),
-                dfsdm1sel: self.dfsdm1sel(),
-                adfsdm1sel: self.adfsdm1sel(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Dckcfgr1 {{ plli2sdivq: {:?}, pllsaidivq: {:?}, pllsaidivr: {:?}, sai1sel: {:?}, sai2sel: {:?}, timpre: {:?}, dfsdm1sel: {:?}, adfsdm1sel: {:?} }}" , self . plli2sdivq () , self . pllsaidivq () , self . pllsaidivr () , self . sai1sel () , self . sai2sel () , self . timpre () , self . dfsdm1sel () , self . adfsdm1sel ())
         }
     }
     #[doc = "dedicated clocks configuration register"]
@@ -5589,48 +4843,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dckcfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dckcfgr2 {
-                usart1sel: super::vals::Usart1sel,
-                usart2sel: super::vals::Usart2sel,
-                usart3sel: super::vals::Usart2sel,
-                uart4sel: super::vals::Usart2sel,
-                uart5sel: super::vals::Usart2sel,
-                usart6sel: super::vals::Usart1sel,
-                uart7sel: super::vals::Usart2sel,
-                uart8sel: super::vals::Usart2sel,
-                i2c1sel: super::vals::I2csel,
-                i2c2sel: super::vals::I2csel,
-                i2c3sel: super::vals::I2csel,
-                i2c4sel: super::vals::I2csel,
-                lptim1sel: super::vals::Lptimsel,
-                cecsel: super::vals::Cecsel,
-                clk48sel: super::vals::Clk48sel,
-                sdmmc1sel: super::vals::Sdmmcsel,
-                sdmmc2sel: super::vals::Sdmmcsel,
-                dsisel: super::vals::Dsisel,
-            }
-            let proxy = Dckcfgr2 {
-                usart1sel: self.usart1sel(),
-                usart2sel: self.usart2sel(),
-                usart3sel: self.usart3sel(),
-                uart4sel: self.uart4sel(),
-                uart5sel: self.uart5sel(),
-                usart6sel: self.usart6sel(),
-                uart7sel: self.uart7sel(),
-                uart8sel: self.uart8sel(),
-                i2c1sel: self.i2c1sel(),
-                i2c2sel: self.i2c2sel(),
-                i2c3sel: self.i2c3sel(),
-                i2c4sel: self.i2c4sel(),
-                lptim1sel: self.lptim1sel(),
-                cecsel: self.cecsel(),
-                clk48sel: self.clk48sel(),
-                sdmmc1sel: self.sdmmc1sel(),
-                sdmmc2sel: self.sdmmc2sel(),
-                dsisel: self.dsisel(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Dckcfgr2 {{ usart1sel: {:?}, usart2sel: {:?}, usart3sel: {:?}, uart4sel: {:?}, uart5sel: {:?}, usart6sel: {:?}, uart7sel: {:?}, uart8sel: {:?}, i2c1sel: {:?}, i2c2sel: {:?}, i2c3sel: {:?}, i2c4sel: {:?}, lptim1sel: {:?}, cecsel: {:?}, clk48sel: {:?}, sdmmc1sel: {:?}, sdmmc2sel: {:?}, dsisel: {:?} }}" , self . usart1sel () , self . usart2sel () , self . usart3sel () , self . uart4sel () , self . uart5sel () , self . usart6sel () , self . uart7sel () , self . uart8sel () , self . i2c1sel () , self . i2c2sel () , self . i2c3sel () , self . i2c4sel () , self . lptim1sel () , self . cecsel () , self . clk48sel () , self . sdmmc1sel () , self . sdmmc2sel () , self . dsisel ())
         }
     }
     #[doc = "PLL configuration register"]
@@ -5726,24 +4939,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pllcfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pllcfgr {
-                pllm: super::vals::Pllm,
-                plln: super::vals::Plln,
-                pllp: super::vals::Pllp,
-                pllsrc: super::vals::Pllsrc,
-                pllq: super::vals::Pllq,
-                pllr: super::vals::Pllr,
-            }
-            let proxy = Pllcfgr {
-                pllm: self.pllm(),
-                plln: self.plln(),
-                pllp: self.pllp(),
-                pllsrc: self.pllsrc(),
-                pllq: self.pllq(),
-                pllr: self.pllr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Pllcfgr {{ pllm: {:?}, plln: {:?}, pllp: {:?}, pllsrc: {:?}, pllq: {:?}, pllr: {:?} }}",
+                self.pllm(),
+                self.plln(),
+                self.pllp(),
+                self.pllsrc(),
+                self.pllq(),
+                self.pllr()
+            )
         }
     }
     #[doc = "PLLI2S configuration register"]
@@ -5815,20 +5020,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Plli2scfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Plli2scfgr {
-                plln: super::vals::Plln,
-                pllp: super::vals::Pllp,
-                pllq: super::vals::Pllq,
-                pllr: super::vals::Pllr,
-            }
-            let proxy = Plli2scfgr {
-                plln: self.plln(),
-                pllp: self.pllp(),
-                pllq: self.pllq(),
-                pllr: self.pllr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Plli2scfgr {{ plln: {:?}, pllp: {:?}, pllq: {:?}, pllr: {:?} }}",
+                self.plln(),
+                self.pllp(),
+                self.pllq(),
+                self.pllr()
+            )
         }
     }
     #[doc = "PLL configuration register"]
@@ -5900,20 +5099,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pllsaicfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pllsaicfgr {
-                plln: super::vals::Plln,
-                pllp: super::vals::Pllp,
-                pllq: super::vals::Pllq,
-                pllr: super::vals::Pllr,
-            }
-            let proxy = Pllsaicfgr {
-                plln: self.plln(),
-                pllp: self.pllp(),
-                pllq: self.pllq(),
-                pllr: self.pllr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Pllsaicfgr {{ plln: {:?}, pllp: {:?}, pllq: {:?}, pllr: {:?} }}",
+                self.plln(),
+                self.pllp(),
+                self.pllq(),
+                self.pllr()
+            )
         }
     }
     #[doc = "spread spectrum clock generation register"]
@@ -5985,20 +5178,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sscgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sscgr {
-                modper: u16,
-                incstep: u16,
-                spreadsel: super::vals::Spreadsel,
-                sscgen: bool,
-            }
-            let proxy = Sscgr {
-                modper: self.modper(),
-                incstep: self.incstep(),
-                spreadsel: self.spreadsel(),
-                sscgen: self.sscgen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sscgr {{ modper: {=u16:?}, incstep: {=u16:?}, spreadsel: {:?}, sscgen: {=bool:?} }}",
+                self.modper(),
+                self.incstep(),
+                self.spreadsel(),
+                self.sscgen()
+            )
         }
     }
 }
@@ -6637,1181 +5824,531 @@ pub mod vals {
             Pllm::to_bits(val)
         }
     }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Plln(pub u16);
-    impl Plln {
-        pub const MUL50: Self = Self(0x32);
-        pub const MUL51: Self = Self(0x33);
-        pub const MUL52: Self = Self(0x34);
-        pub const MUL53: Self = Self(0x35);
-        pub const MUL54: Self = Self(0x36);
-        pub const MUL55: Self = Self(0x37);
-        pub const MUL56: Self = Self(0x38);
-        pub const MUL57: Self = Self(0x39);
-        pub const MUL58: Self = Self(0x3a);
-        pub const MUL59: Self = Self(0x3b);
-        pub const MUL60: Self = Self(0x3c);
-        pub const MUL61: Self = Self(0x3d);
-        pub const MUL62: Self = Self(0x3e);
-        pub const MUL63: Self = Self(0x3f);
-        pub const MUL64: Self = Self(0x40);
-        pub const MUL65: Self = Self(0x41);
-        pub const MUL66: Self = Self(0x42);
-        pub const MUL67: Self = Self(0x43);
-        pub const MUL68: Self = Self(0x44);
-        pub const MUL69: Self = Self(0x45);
-        pub const MUL70: Self = Self(0x46);
-        pub const MUL71: Self = Self(0x47);
-        pub const MUL72: Self = Self(0x48);
-        pub const MUL73: Self = Self(0x49);
-        pub const MUL74: Self = Self(0x4a);
-        pub const MUL75: Self = Self(0x4b);
-        pub const MUL76: Self = Self(0x4c);
-        pub const MUL77: Self = Self(0x4d);
-        pub const MUL78: Self = Self(0x4e);
-        pub const MUL79: Self = Self(0x4f);
-        pub const MUL80: Self = Self(0x50);
-        pub const MUL81: Self = Self(0x51);
-        pub const MUL82: Self = Self(0x52);
-        pub const MUL83: Self = Self(0x53);
-        pub const MUL84: Self = Self(0x54);
-        pub const MUL85: Self = Self(0x55);
-        pub const MUL86: Self = Self(0x56);
-        pub const MUL87: Self = Self(0x57);
-        pub const MUL88: Self = Self(0x58);
-        pub const MUL89: Self = Self(0x59);
-        pub const MUL90: Self = Self(0x5a);
-        pub const MUL91: Self = Self(0x5b);
-        pub const MUL92: Self = Self(0x5c);
-        pub const MUL93: Self = Self(0x5d);
-        pub const MUL94: Self = Self(0x5e);
-        pub const MUL95: Self = Self(0x5f);
-        pub const MUL96: Self = Self(0x60);
-        pub const MUL97: Self = Self(0x61);
-        pub const MUL98: Self = Self(0x62);
-        pub const MUL99: Self = Self(0x63);
-        pub const MUL100: Self = Self(0x64);
-        pub const MUL101: Self = Self(0x65);
-        pub const MUL102: Self = Self(0x66);
-        pub const MUL103: Self = Self(0x67);
-        pub const MUL104: Self = Self(0x68);
-        pub const MUL105: Self = Self(0x69);
-        pub const MUL106: Self = Self(0x6a);
-        pub const MUL107: Self = Self(0x6b);
-        pub const MUL108: Self = Self(0x6c);
-        pub const MUL109: Self = Self(0x6d);
-        pub const MUL110: Self = Self(0x6e);
-        pub const MUL111: Self = Self(0x6f);
-        pub const MUL112: Self = Self(0x70);
-        pub const MUL113: Self = Self(0x71);
-        pub const MUL114: Self = Self(0x72);
-        pub const MUL115: Self = Self(0x73);
-        pub const MUL116: Self = Self(0x74);
-        pub const MUL117: Self = Self(0x75);
-        pub const MUL118: Self = Self(0x76);
-        pub const MUL119: Self = Self(0x77);
-        pub const MUL120: Self = Self(0x78);
-        pub const MUL121: Self = Self(0x79);
-        pub const MUL122: Self = Self(0x7a);
-        pub const MUL123: Self = Self(0x7b);
-        pub const MUL124: Self = Self(0x7c);
-        pub const MUL125: Self = Self(0x7d);
-        pub const MUL126: Self = Self(0x7e);
-        pub const MUL127: Self = Self(0x7f);
-        pub const MUL128: Self = Self(0x80);
-        pub const MUL129: Self = Self(0x81);
-        pub const MUL130: Self = Self(0x82);
-        pub const MUL131: Self = Self(0x83);
-        pub const MUL132: Self = Self(0x84);
-        pub const MUL133: Self = Self(0x85);
-        pub const MUL134: Self = Self(0x86);
-        pub const MUL135: Self = Self(0x87);
-        pub const MUL136: Self = Self(0x88);
-        pub const MUL137: Self = Self(0x89);
-        pub const MUL138: Self = Self(0x8a);
-        pub const MUL139: Self = Self(0x8b);
-        pub const MUL140: Self = Self(0x8c);
-        pub const MUL141: Self = Self(0x8d);
-        pub const MUL142: Self = Self(0x8e);
-        pub const MUL143: Self = Self(0x8f);
-        pub const MUL144: Self = Self(0x90);
-        pub const MUL145: Self = Self(0x91);
-        pub const MUL146: Self = Self(0x92);
-        pub const MUL147: Self = Self(0x93);
-        pub const MUL148: Self = Self(0x94);
-        pub const MUL149: Self = Self(0x95);
-        pub const MUL150: Self = Self(0x96);
-        pub const MUL151: Self = Self(0x97);
-        pub const MUL152: Self = Self(0x98);
-        pub const MUL153: Self = Self(0x99);
-        pub const MUL154: Self = Self(0x9a);
-        pub const MUL155: Self = Self(0x9b);
-        pub const MUL156: Self = Self(0x9c);
-        pub const MUL157: Self = Self(0x9d);
-        pub const MUL158: Self = Self(0x9e);
-        pub const MUL159: Self = Self(0x9f);
-        pub const MUL160: Self = Self(0xa0);
-        pub const MUL161: Self = Self(0xa1);
-        pub const MUL162: Self = Self(0xa2);
-        pub const MUL163: Self = Self(0xa3);
-        pub const MUL164: Self = Self(0xa4);
-        pub const MUL165: Self = Self(0xa5);
-        pub const MUL166: Self = Self(0xa6);
-        pub const MUL167: Self = Self(0xa7);
-        pub const MUL168: Self = Self(0xa8);
-        pub const MUL169: Self = Self(0xa9);
-        pub const MUL170: Self = Self(0xaa);
-        pub const MUL171: Self = Self(0xab);
-        pub const MUL172: Self = Self(0xac);
-        pub const MUL173: Self = Self(0xad);
-        pub const MUL174: Self = Self(0xae);
-        pub const MUL175: Self = Self(0xaf);
-        pub const MUL176: Self = Self(0xb0);
-        pub const MUL177: Self = Self(0xb1);
-        pub const MUL178: Self = Self(0xb2);
-        pub const MUL179: Self = Self(0xb3);
-        pub const MUL180: Self = Self(0xb4);
-        pub const MUL181: Self = Self(0xb5);
-        pub const MUL182: Self = Self(0xb6);
-        pub const MUL183: Self = Self(0xb7);
-        pub const MUL184: Self = Self(0xb8);
-        pub const MUL185: Self = Self(0xb9);
-        pub const MUL186: Self = Self(0xba);
-        pub const MUL187: Self = Self(0xbb);
-        pub const MUL188: Self = Self(0xbc);
-        pub const MUL189: Self = Self(0xbd);
-        pub const MUL190: Self = Self(0xbe);
-        pub const MUL191: Self = Self(0xbf);
-        pub const MUL192: Self = Self(0xc0);
-        pub const MUL193: Self = Self(0xc1);
-        pub const MUL194: Self = Self(0xc2);
-        pub const MUL195: Self = Self(0xc3);
-        pub const MUL196: Self = Self(0xc4);
-        pub const MUL197: Self = Self(0xc5);
-        pub const MUL198: Self = Self(0xc6);
-        pub const MUL199: Self = Self(0xc7);
-        pub const MUL200: Self = Self(0xc8);
-        pub const MUL201: Self = Self(0xc9);
-        pub const MUL202: Self = Self(0xca);
-        pub const MUL203: Self = Self(0xcb);
-        pub const MUL204: Self = Self(0xcc);
-        pub const MUL205: Self = Self(0xcd);
-        pub const MUL206: Self = Self(0xce);
-        pub const MUL207: Self = Self(0xcf);
-        pub const MUL208: Self = Self(0xd0);
-        pub const MUL209: Self = Self(0xd1);
-        pub const MUL210: Self = Self(0xd2);
-        pub const MUL211: Self = Self(0xd3);
-        pub const MUL212: Self = Self(0xd4);
-        pub const MUL213: Self = Self(0xd5);
-        pub const MUL214: Self = Self(0xd6);
-        pub const MUL215: Self = Self(0xd7);
-        pub const MUL216: Self = Self(0xd8);
-        pub const MUL217: Self = Self(0xd9);
-        pub const MUL218: Self = Self(0xda);
-        pub const MUL219: Self = Self(0xdb);
-        pub const MUL220: Self = Self(0xdc);
-        pub const MUL221: Self = Self(0xdd);
-        pub const MUL222: Self = Self(0xde);
-        pub const MUL223: Self = Self(0xdf);
-        pub const MUL224: Self = Self(0xe0);
-        pub const MUL225: Self = Self(0xe1);
-        pub const MUL226: Self = Self(0xe2);
-        pub const MUL227: Self = Self(0xe3);
-        pub const MUL228: Self = Self(0xe4);
-        pub const MUL229: Self = Self(0xe5);
-        pub const MUL230: Self = Self(0xe6);
-        pub const MUL231: Self = Self(0xe7);
-        pub const MUL232: Self = Self(0xe8);
-        pub const MUL233: Self = Self(0xe9);
-        pub const MUL234: Self = Self(0xea);
-        pub const MUL235: Self = Self(0xeb);
-        pub const MUL236: Self = Self(0xec);
-        pub const MUL237: Self = Self(0xed);
-        pub const MUL238: Self = Self(0xee);
-        pub const MUL239: Self = Self(0xef);
-        pub const MUL240: Self = Self(0xf0);
-        pub const MUL241: Self = Self(0xf1);
-        pub const MUL242: Self = Self(0xf2);
-        pub const MUL243: Self = Self(0xf3);
-        pub const MUL244: Self = Self(0xf4);
-        pub const MUL245: Self = Self(0xf5);
-        pub const MUL246: Self = Self(0xf6);
-        pub const MUL247: Self = Self(0xf7);
-        pub const MUL248: Self = Self(0xf8);
-        pub const MUL249: Self = Self(0xf9);
-        pub const MUL250: Self = Self(0xfa);
-        pub const MUL251: Self = Self(0xfb);
-        pub const MUL252: Self = Self(0xfc);
-        pub const MUL253: Self = Self(0xfd);
-        pub const MUL254: Self = Self(0xfe);
-        pub const MUL255: Self = Self(0xff);
-        pub const MUL256: Self = Self(0x0100);
-        pub const MUL257: Self = Self(0x0101);
-        pub const MUL258: Self = Self(0x0102);
-        pub const MUL259: Self = Self(0x0103);
-        pub const MUL260: Self = Self(0x0104);
-        pub const MUL261: Self = Self(0x0105);
-        pub const MUL262: Self = Self(0x0106);
-        pub const MUL263: Self = Self(0x0107);
-        pub const MUL264: Self = Self(0x0108);
-        pub const MUL265: Self = Self(0x0109);
-        pub const MUL266: Self = Self(0x010a);
-        pub const MUL267: Self = Self(0x010b);
-        pub const MUL268: Self = Self(0x010c);
-        pub const MUL269: Self = Self(0x010d);
-        pub const MUL270: Self = Self(0x010e);
-        pub const MUL271: Self = Self(0x010f);
-        pub const MUL272: Self = Self(0x0110);
-        pub const MUL273: Self = Self(0x0111);
-        pub const MUL274: Self = Self(0x0112);
-        pub const MUL275: Self = Self(0x0113);
-        pub const MUL276: Self = Self(0x0114);
-        pub const MUL277: Self = Self(0x0115);
-        pub const MUL278: Self = Self(0x0116);
-        pub const MUL279: Self = Self(0x0117);
-        pub const MUL280: Self = Self(0x0118);
-        pub const MUL281: Self = Self(0x0119);
-        pub const MUL282: Self = Self(0x011a);
-        pub const MUL283: Self = Self(0x011b);
-        pub const MUL284: Self = Self(0x011c);
-        pub const MUL285: Self = Self(0x011d);
-        pub const MUL286: Self = Self(0x011e);
-        pub const MUL287: Self = Self(0x011f);
-        pub const MUL288: Self = Self(0x0120);
-        pub const MUL289: Self = Self(0x0121);
-        pub const MUL290: Self = Self(0x0122);
-        pub const MUL291: Self = Self(0x0123);
-        pub const MUL292: Self = Self(0x0124);
-        pub const MUL293: Self = Self(0x0125);
-        pub const MUL294: Self = Self(0x0126);
-        pub const MUL295: Self = Self(0x0127);
-        pub const MUL296: Self = Self(0x0128);
-        pub const MUL297: Self = Self(0x0129);
-        pub const MUL298: Self = Self(0x012a);
-        pub const MUL299: Self = Self(0x012b);
-        pub const MUL300: Self = Self(0x012c);
-        pub const MUL301: Self = Self(0x012d);
-        pub const MUL302: Self = Self(0x012e);
-        pub const MUL303: Self = Self(0x012f);
-        pub const MUL304: Self = Self(0x0130);
-        pub const MUL305: Self = Self(0x0131);
-        pub const MUL306: Self = Self(0x0132);
-        pub const MUL307: Self = Self(0x0133);
-        pub const MUL308: Self = Self(0x0134);
-        pub const MUL309: Self = Self(0x0135);
-        pub const MUL310: Self = Self(0x0136);
-        pub const MUL311: Self = Self(0x0137);
-        pub const MUL312: Self = Self(0x0138);
-        pub const MUL313: Self = Self(0x0139);
-        pub const MUL314: Self = Self(0x013a);
-        pub const MUL315: Self = Self(0x013b);
-        pub const MUL316: Self = Self(0x013c);
-        pub const MUL317: Self = Self(0x013d);
-        pub const MUL318: Self = Self(0x013e);
-        pub const MUL319: Self = Self(0x013f);
-        pub const MUL320: Self = Self(0x0140);
-        pub const MUL321: Self = Self(0x0141);
-        pub const MUL322: Self = Self(0x0142);
-        pub const MUL323: Self = Self(0x0143);
-        pub const MUL324: Self = Self(0x0144);
-        pub const MUL325: Self = Self(0x0145);
-        pub const MUL326: Self = Self(0x0146);
-        pub const MUL327: Self = Self(0x0147);
-        pub const MUL328: Self = Self(0x0148);
-        pub const MUL329: Self = Self(0x0149);
-        pub const MUL330: Self = Self(0x014a);
-        pub const MUL331: Self = Self(0x014b);
-        pub const MUL332: Self = Self(0x014c);
-        pub const MUL333: Self = Self(0x014d);
-        pub const MUL334: Self = Self(0x014e);
-        pub const MUL335: Self = Self(0x014f);
-        pub const MUL336: Self = Self(0x0150);
-        pub const MUL337: Self = Self(0x0151);
-        pub const MUL338: Self = Self(0x0152);
-        pub const MUL339: Self = Self(0x0153);
-        pub const MUL340: Self = Self(0x0154);
-        pub const MUL341: Self = Self(0x0155);
-        pub const MUL342: Self = Self(0x0156);
-        pub const MUL343: Self = Self(0x0157);
-        pub const MUL344: Self = Self(0x0158);
-        pub const MUL345: Self = Self(0x0159);
-        pub const MUL346: Self = Self(0x015a);
-        pub const MUL347: Self = Self(0x015b);
-        pub const MUL348: Self = Self(0x015c);
-        pub const MUL349: Self = Self(0x015d);
-        pub const MUL350: Self = Self(0x015e);
-        pub const MUL351: Self = Self(0x015f);
-        pub const MUL352: Self = Self(0x0160);
-        pub const MUL353: Self = Self(0x0161);
-        pub const MUL354: Self = Self(0x0162);
-        pub const MUL355: Self = Self(0x0163);
-        pub const MUL356: Self = Self(0x0164);
-        pub const MUL357: Self = Self(0x0165);
-        pub const MUL358: Self = Self(0x0166);
-        pub const MUL359: Self = Self(0x0167);
-        pub const MUL360: Self = Self(0x0168);
-        pub const MUL361: Self = Self(0x0169);
-        pub const MUL362: Self = Self(0x016a);
-        pub const MUL363: Self = Self(0x016b);
-        pub const MUL364: Self = Self(0x016c);
-        pub const MUL365: Self = Self(0x016d);
-        pub const MUL366: Self = Self(0x016e);
-        pub const MUL367: Self = Self(0x016f);
-        pub const MUL368: Self = Self(0x0170);
-        pub const MUL369: Self = Self(0x0171);
-        pub const MUL370: Self = Self(0x0172);
-        pub const MUL371: Self = Self(0x0173);
-        pub const MUL372: Self = Self(0x0174);
-        pub const MUL373: Self = Self(0x0175);
-        pub const MUL374: Self = Self(0x0176);
-        pub const MUL375: Self = Self(0x0177);
-        pub const MUL376: Self = Self(0x0178);
-        pub const MUL377: Self = Self(0x0179);
-        pub const MUL378: Self = Self(0x017a);
-        pub const MUL379: Self = Self(0x017b);
-        pub const MUL380: Self = Self(0x017c);
-        pub const MUL381: Self = Self(0x017d);
-        pub const MUL382: Self = Self(0x017e);
-        pub const MUL383: Self = Self(0x017f);
-        pub const MUL384: Self = Self(0x0180);
-        pub const MUL385: Self = Self(0x0181);
-        pub const MUL386: Self = Self(0x0182);
-        pub const MUL387: Self = Self(0x0183);
-        pub const MUL388: Self = Self(0x0184);
-        pub const MUL389: Self = Self(0x0185);
-        pub const MUL390: Self = Self(0x0186);
-        pub const MUL391: Self = Self(0x0187);
-        pub const MUL392: Self = Self(0x0188);
-        pub const MUL393: Self = Self(0x0189);
-        pub const MUL394: Self = Self(0x018a);
-        pub const MUL395: Self = Self(0x018b);
-        pub const MUL396: Self = Self(0x018c);
-        pub const MUL397: Self = Self(0x018d);
-        pub const MUL398: Self = Self(0x018e);
-        pub const MUL399: Self = Self(0x018f);
-        pub const MUL400: Self = Self(0x0190);
-        pub const MUL401: Self = Self(0x0191);
-        pub const MUL402: Self = Self(0x0192);
-        pub const MUL403: Self = Self(0x0193);
-        pub const MUL404: Self = Self(0x0194);
-        pub const MUL405: Self = Self(0x0195);
-        pub const MUL406: Self = Self(0x0196);
-        pub const MUL407: Self = Self(0x0197);
-        pub const MUL408: Self = Self(0x0198);
-        pub const MUL409: Self = Self(0x0199);
-        pub const MUL410: Self = Self(0x019a);
-        pub const MUL411: Self = Self(0x019b);
-        pub const MUL412: Self = Self(0x019c);
-        pub const MUL413: Self = Self(0x019d);
-        pub const MUL414: Self = Self(0x019e);
-        pub const MUL415: Self = Self(0x019f);
-        pub const MUL416: Self = Self(0x01a0);
-        pub const MUL417: Self = Self(0x01a1);
-        pub const MUL418: Self = Self(0x01a2);
-        pub const MUL419: Self = Self(0x01a3);
-        pub const MUL420: Self = Self(0x01a4);
-        pub const MUL421: Self = Self(0x01a5);
-        pub const MUL422: Self = Self(0x01a6);
-        pub const MUL423: Self = Self(0x01a7);
-        pub const MUL424: Self = Self(0x01a8);
-        pub const MUL425: Self = Self(0x01a9);
-        pub const MUL426: Self = Self(0x01aa);
-        pub const MUL427: Self = Self(0x01ab);
-        pub const MUL428: Self = Self(0x01ac);
-        pub const MUL429: Self = Self(0x01ad);
-        pub const MUL430: Self = Self(0x01ae);
-        pub const MUL431: Self = Self(0x01af);
-        pub const MUL432: Self = Self(0x01b0);
+    #[repr(u16)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Plln {
+        _RESERVED_0 = 0x0,
+        _RESERVED_1 = 0x01,
+        _RESERVED_2 = 0x02,
+        _RESERVED_3 = 0x03,
+        _RESERVED_4 = 0x04,
+        _RESERVED_5 = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+        _RESERVED_8 = 0x08,
+        _RESERVED_9 = 0x09,
+        _RESERVED_a = 0x0a,
+        _RESERVED_b = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
+        _RESERVED_10 = 0x10,
+        _RESERVED_11 = 0x11,
+        _RESERVED_12 = 0x12,
+        _RESERVED_13 = 0x13,
+        _RESERVED_14 = 0x14,
+        _RESERVED_15 = 0x15,
+        _RESERVED_16 = 0x16,
+        _RESERVED_17 = 0x17,
+        _RESERVED_18 = 0x18,
+        _RESERVED_19 = 0x19,
+        _RESERVED_1a = 0x1a,
+        _RESERVED_1b = 0x1b,
+        _RESERVED_1c = 0x1c,
+        _RESERVED_1d = 0x1d,
+        _RESERVED_1e = 0x1e,
+        _RESERVED_1f = 0x1f,
+        _RESERVED_20 = 0x20,
+        _RESERVED_21 = 0x21,
+        _RESERVED_22 = 0x22,
+        _RESERVED_23 = 0x23,
+        _RESERVED_24 = 0x24,
+        _RESERVED_25 = 0x25,
+        _RESERVED_26 = 0x26,
+        _RESERVED_27 = 0x27,
+        _RESERVED_28 = 0x28,
+        _RESERVED_29 = 0x29,
+        _RESERVED_2a = 0x2a,
+        _RESERVED_2b = 0x2b,
+        _RESERVED_2c = 0x2c,
+        _RESERVED_2d = 0x2d,
+        _RESERVED_2e = 0x2e,
+        _RESERVED_2f = 0x2f,
+        _RESERVED_30 = 0x30,
+        _RESERVED_31 = 0x31,
+        MUL50 = 0x32,
+        MUL51 = 0x33,
+        MUL52 = 0x34,
+        MUL53 = 0x35,
+        MUL54 = 0x36,
+        MUL55 = 0x37,
+        MUL56 = 0x38,
+        MUL57 = 0x39,
+        MUL58 = 0x3a,
+        MUL59 = 0x3b,
+        MUL60 = 0x3c,
+        MUL61 = 0x3d,
+        MUL62 = 0x3e,
+        MUL63 = 0x3f,
+        MUL64 = 0x40,
+        MUL65 = 0x41,
+        MUL66 = 0x42,
+        MUL67 = 0x43,
+        MUL68 = 0x44,
+        MUL69 = 0x45,
+        MUL70 = 0x46,
+        MUL71 = 0x47,
+        MUL72 = 0x48,
+        MUL73 = 0x49,
+        MUL74 = 0x4a,
+        MUL75 = 0x4b,
+        MUL76 = 0x4c,
+        MUL77 = 0x4d,
+        MUL78 = 0x4e,
+        MUL79 = 0x4f,
+        MUL80 = 0x50,
+        MUL81 = 0x51,
+        MUL82 = 0x52,
+        MUL83 = 0x53,
+        MUL84 = 0x54,
+        MUL85 = 0x55,
+        MUL86 = 0x56,
+        MUL87 = 0x57,
+        MUL88 = 0x58,
+        MUL89 = 0x59,
+        MUL90 = 0x5a,
+        MUL91 = 0x5b,
+        MUL92 = 0x5c,
+        MUL93 = 0x5d,
+        MUL94 = 0x5e,
+        MUL95 = 0x5f,
+        MUL96 = 0x60,
+        MUL97 = 0x61,
+        MUL98 = 0x62,
+        MUL99 = 0x63,
+        MUL100 = 0x64,
+        MUL101 = 0x65,
+        MUL102 = 0x66,
+        MUL103 = 0x67,
+        MUL104 = 0x68,
+        MUL105 = 0x69,
+        MUL106 = 0x6a,
+        MUL107 = 0x6b,
+        MUL108 = 0x6c,
+        MUL109 = 0x6d,
+        MUL110 = 0x6e,
+        MUL111 = 0x6f,
+        MUL112 = 0x70,
+        MUL113 = 0x71,
+        MUL114 = 0x72,
+        MUL115 = 0x73,
+        MUL116 = 0x74,
+        MUL117 = 0x75,
+        MUL118 = 0x76,
+        MUL119 = 0x77,
+        MUL120 = 0x78,
+        MUL121 = 0x79,
+        MUL122 = 0x7a,
+        MUL123 = 0x7b,
+        MUL124 = 0x7c,
+        MUL125 = 0x7d,
+        MUL126 = 0x7e,
+        MUL127 = 0x7f,
+        MUL128 = 0x80,
+        MUL129 = 0x81,
+        MUL130 = 0x82,
+        MUL131 = 0x83,
+        MUL132 = 0x84,
+        MUL133 = 0x85,
+        MUL134 = 0x86,
+        MUL135 = 0x87,
+        MUL136 = 0x88,
+        MUL137 = 0x89,
+        MUL138 = 0x8a,
+        MUL139 = 0x8b,
+        MUL140 = 0x8c,
+        MUL141 = 0x8d,
+        MUL142 = 0x8e,
+        MUL143 = 0x8f,
+        MUL144 = 0x90,
+        MUL145 = 0x91,
+        MUL146 = 0x92,
+        MUL147 = 0x93,
+        MUL148 = 0x94,
+        MUL149 = 0x95,
+        MUL150 = 0x96,
+        MUL151 = 0x97,
+        MUL152 = 0x98,
+        MUL153 = 0x99,
+        MUL154 = 0x9a,
+        MUL155 = 0x9b,
+        MUL156 = 0x9c,
+        MUL157 = 0x9d,
+        MUL158 = 0x9e,
+        MUL159 = 0x9f,
+        MUL160 = 0xa0,
+        MUL161 = 0xa1,
+        MUL162 = 0xa2,
+        MUL163 = 0xa3,
+        MUL164 = 0xa4,
+        MUL165 = 0xa5,
+        MUL166 = 0xa6,
+        MUL167 = 0xa7,
+        MUL168 = 0xa8,
+        MUL169 = 0xa9,
+        MUL170 = 0xaa,
+        MUL171 = 0xab,
+        MUL172 = 0xac,
+        MUL173 = 0xad,
+        MUL174 = 0xae,
+        MUL175 = 0xaf,
+        MUL176 = 0xb0,
+        MUL177 = 0xb1,
+        MUL178 = 0xb2,
+        MUL179 = 0xb3,
+        MUL180 = 0xb4,
+        MUL181 = 0xb5,
+        MUL182 = 0xb6,
+        MUL183 = 0xb7,
+        MUL184 = 0xb8,
+        MUL185 = 0xb9,
+        MUL186 = 0xba,
+        MUL187 = 0xbb,
+        MUL188 = 0xbc,
+        MUL189 = 0xbd,
+        MUL190 = 0xbe,
+        MUL191 = 0xbf,
+        MUL192 = 0xc0,
+        MUL193 = 0xc1,
+        MUL194 = 0xc2,
+        MUL195 = 0xc3,
+        MUL196 = 0xc4,
+        MUL197 = 0xc5,
+        MUL198 = 0xc6,
+        MUL199 = 0xc7,
+        MUL200 = 0xc8,
+        MUL201 = 0xc9,
+        MUL202 = 0xca,
+        MUL203 = 0xcb,
+        MUL204 = 0xcc,
+        MUL205 = 0xcd,
+        MUL206 = 0xce,
+        MUL207 = 0xcf,
+        MUL208 = 0xd0,
+        MUL209 = 0xd1,
+        MUL210 = 0xd2,
+        MUL211 = 0xd3,
+        MUL212 = 0xd4,
+        MUL213 = 0xd5,
+        MUL214 = 0xd6,
+        MUL215 = 0xd7,
+        MUL216 = 0xd8,
+        MUL217 = 0xd9,
+        MUL218 = 0xda,
+        MUL219 = 0xdb,
+        MUL220 = 0xdc,
+        MUL221 = 0xdd,
+        MUL222 = 0xde,
+        MUL223 = 0xdf,
+        MUL224 = 0xe0,
+        MUL225 = 0xe1,
+        MUL226 = 0xe2,
+        MUL227 = 0xe3,
+        MUL228 = 0xe4,
+        MUL229 = 0xe5,
+        MUL230 = 0xe6,
+        MUL231 = 0xe7,
+        MUL232 = 0xe8,
+        MUL233 = 0xe9,
+        MUL234 = 0xea,
+        MUL235 = 0xeb,
+        MUL236 = 0xec,
+        MUL237 = 0xed,
+        MUL238 = 0xee,
+        MUL239 = 0xef,
+        MUL240 = 0xf0,
+        MUL241 = 0xf1,
+        MUL242 = 0xf2,
+        MUL243 = 0xf3,
+        MUL244 = 0xf4,
+        MUL245 = 0xf5,
+        MUL246 = 0xf6,
+        MUL247 = 0xf7,
+        MUL248 = 0xf8,
+        MUL249 = 0xf9,
+        MUL250 = 0xfa,
+        MUL251 = 0xfb,
+        MUL252 = 0xfc,
+        MUL253 = 0xfd,
+        MUL254 = 0xfe,
+        MUL255 = 0xff,
+        MUL256 = 0x0100,
+        MUL257 = 0x0101,
+        MUL258 = 0x0102,
+        MUL259 = 0x0103,
+        MUL260 = 0x0104,
+        MUL261 = 0x0105,
+        MUL262 = 0x0106,
+        MUL263 = 0x0107,
+        MUL264 = 0x0108,
+        MUL265 = 0x0109,
+        MUL266 = 0x010a,
+        MUL267 = 0x010b,
+        MUL268 = 0x010c,
+        MUL269 = 0x010d,
+        MUL270 = 0x010e,
+        MUL271 = 0x010f,
+        MUL272 = 0x0110,
+        MUL273 = 0x0111,
+        MUL274 = 0x0112,
+        MUL275 = 0x0113,
+        MUL276 = 0x0114,
+        MUL277 = 0x0115,
+        MUL278 = 0x0116,
+        MUL279 = 0x0117,
+        MUL280 = 0x0118,
+        MUL281 = 0x0119,
+        MUL282 = 0x011a,
+        MUL283 = 0x011b,
+        MUL284 = 0x011c,
+        MUL285 = 0x011d,
+        MUL286 = 0x011e,
+        MUL287 = 0x011f,
+        MUL288 = 0x0120,
+        MUL289 = 0x0121,
+        MUL290 = 0x0122,
+        MUL291 = 0x0123,
+        MUL292 = 0x0124,
+        MUL293 = 0x0125,
+        MUL294 = 0x0126,
+        MUL295 = 0x0127,
+        MUL296 = 0x0128,
+        MUL297 = 0x0129,
+        MUL298 = 0x012a,
+        MUL299 = 0x012b,
+        MUL300 = 0x012c,
+        MUL301 = 0x012d,
+        MUL302 = 0x012e,
+        MUL303 = 0x012f,
+        MUL304 = 0x0130,
+        MUL305 = 0x0131,
+        MUL306 = 0x0132,
+        MUL307 = 0x0133,
+        MUL308 = 0x0134,
+        MUL309 = 0x0135,
+        MUL310 = 0x0136,
+        MUL311 = 0x0137,
+        MUL312 = 0x0138,
+        MUL313 = 0x0139,
+        MUL314 = 0x013a,
+        MUL315 = 0x013b,
+        MUL316 = 0x013c,
+        MUL317 = 0x013d,
+        MUL318 = 0x013e,
+        MUL319 = 0x013f,
+        MUL320 = 0x0140,
+        MUL321 = 0x0141,
+        MUL322 = 0x0142,
+        MUL323 = 0x0143,
+        MUL324 = 0x0144,
+        MUL325 = 0x0145,
+        MUL326 = 0x0146,
+        MUL327 = 0x0147,
+        MUL328 = 0x0148,
+        MUL329 = 0x0149,
+        MUL330 = 0x014a,
+        MUL331 = 0x014b,
+        MUL332 = 0x014c,
+        MUL333 = 0x014d,
+        MUL334 = 0x014e,
+        MUL335 = 0x014f,
+        MUL336 = 0x0150,
+        MUL337 = 0x0151,
+        MUL338 = 0x0152,
+        MUL339 = 0x0153,
+        MUL340 = 0x0154,
+        MUL341 = 0x0155,
+        MUL342 = 0x0156,
+        MUL343 = 0x0157,
+        MUL344 = 0x0158,
+        MUL345 = 0x0159,
+        MUL346 = 0x015a,
+        MUL347 = 0x015b,
+        MUL348 = 0x015c,
+        MUL349 = 0x015d,
+        MUL350 = 0x015e,
+        MUL351 = 0x015f,
+        MUL352 = 0x0160,
+        MUL353 = 0x0161,
+        MUL354 = 0x0162,
+        MUL355 = 0x0163,
+        MUL356 = 0x0164,
+        MUL357 = 0x0165,
+        MUL358 = 0x0166,
+        MUL359 = 0x0167,
+        MUL360 = 0x0168,
+        MUL361 = 0x0169,
+        MUL362 = 0x016a,
+        MUL363 = 0x016b,
+        MUL364 = 0x016c,
+        MUL365 = 0x016d,
+        MUL366 = 0x016e,
+        MUL367 = 0x016f,
+        MUL368 = 0x0170,
+        MUL369 = 0x0171,
+        MUL370 = 0x0172,
+        MUL371 = 0x0173,
+        MUL372 = 0x0174,
+        MUL373 = 0x0175,
+        MUL374 = 0x0176,
+        MUL375 = 0x0177,
+        MUL376 = 0x0178,
+        MUL377 = 0x0179,
+        MUL378 = 0x017a,
+        MUL379 = 0x017b,
+        MUL380 = 0x017c,
+        MUL381 = 0x017d,
+        MUL382 = 0x017e,
+        MUL383 = 0x017f,
+        MUL384 = 0x0180,
+        MUL385 = 0x0181,
+        MUL386 = 0x0182,
+        MUL387 = 0x0183,
+        MUL388 = 0x0184,
+        MUL389 = 0x0185,
+        MUL390 = 0x0186,
+        MUL391 = 0x0187,
+        MUL392 = 0x0188,
+        MUL393 = 0x0189,
+        MUL394 = 0x018a,
+        MUL395 = 0x018b,
+        MUL396 = 0x018c,
+        MUL397 = 0x018d,
+        MUL398 = 0x018e,
+        MUL399 = 0x018f,
+        MUL400 = 0x0190,
+        MUL401 = 0x0191,
+        MUL402 = 0x0192,
+        MUL403 = 0x0193,
+        MUL404 = 0x0194,
+        MUL405 = 0x0195,
+        MUL406 = 0x0196,
+        MUL407 = 0x0197,
+        MUL408 = 0x0198,
+        MUL409 = 0x0199,
+        MUL410 = 0x019a,
+        MUL411 = 0x019b,
+        MUL412 = 0x019c,
+        MUL413 = 0x019d,
+        MUL414 = 0x019e,
+        MUL415 = 0x019f,
+        MUL416 = 0x01a0,
+        MUL417 = 0x01a1,
+        MUL418 = 0x01a2,
+        MUL419 = 0x01a3,
+        MUL420 = 0x01a4,
+        MUL421 = 0x01a5,
+        MUL422 = 0x01a6,
+        MUL423 = 0x01a7,
+        MUL424 = 0x01a8,
+        MUL425 = 0x01a9,
+        MUL426 = 0x01aa,
+        MUL427 = 0x01ab,
+        MUL428 = 0x01ac,
+        MUL429 = 0x01ad,
+        MUL430 = 0x01ae,
+        MUL431 = 0x01af,
+        MUL432 = 0x01b0,
+        _RESERVED_1b1 = 0x01b1,
+        _RESERVED_1b2 = 0x01b2,
+        _RESERVED_1b3 = 0x01b3,
+        _RESERVED_1b4 = 0x01b4,
+        _RESERVED_1b5 = 0x01b5,
+        _RESERVED_1b6 = 0x01b6,
+        _RESERVED_1b7 = 0x01b7,
+        _RESERVED_1b8 = 0x01b8,
+        _RESERVED_1b9 = 0x01b9,
+        _RESERVED_1ba = 0x01ba,
+        _RESERVED_1bb = 0x01bb,
+        _RESERVED_1bc = 0x01bc,
+        _RESERVED_1bd = 0x01bd,
+        _RESERVED_1be = 0x01be,
+        _RESERVED_1bf = 0x01bf,
+        _RESERVED_1c0 = 0x01c0,
+        _RESERVED_1c1 = 0x01c1,
+        _RESERVED_1c2 = 0x01c2,
+        _RESERVED_1c3 = 0x01c3,
+        _RESERVED_1c4 = 0x01c4,
+        _RESERVED_1c5 = 0x01c5,
+        _RESERVED_1c6 = 0x01c6,
+        _RESERVED_1c7 = 0x01c7,
+        _RESERVED_1c8 = 0x01c8,
+        _RESERVED_1c9 = 0x01c9,
+        _RESERVED_1ca = 0x01ca,
+        _RESERVED_1cb = 0x01cb,
+        _RESERVED_1cc = 0x01cc,
+        _RESERVED_1cd = 0x01cd,
+        _RESERVED_1ce = 0x01ce,
+        _RESERVED_1cf = 0x01cf,
+        _RESERVED_1d0 = 0x01d0,
+        _RESERVED_1d1 = 0x01d1,
+        _RESERVED_1d2 = 0x01d2,
+        _RESERVED_1d3 = 0x01d3,
+        _RESERVED_1d4 = 0x01d4,
+        _RESERVED_1d5 = 0x01d5,
+        _RESERVED_1d6 = 0x01d6,
+        _RESERVED_1d7 = 0x01d7,
+        _RESERVED_1d8 = 0x01d8,
+        _RESERVED_1d9 = 0x01d9,
+        _RESERVED_1da = 0x01da,
+        _RESERVED_1db = 0x01db,
+        _RESERVED_1dc = 0x01dc,
+        _RESERVED_1dd = 0x01dd,
+        _RESERVED_1de = 0x01de,
+        _RESERVED_1df = 0x01df,
+        _RESERVED_1e0 = 0x01e0,
+        _RESERVED_1e1 = 0x01e1,
+        _RESERVED_1e2 = 0x01e2,
+        _RESERVED_1e3 = 0x01e3,
+        _RESERVED_1e4 = 0x01e4,
+        _RESERVED_1e5 = 0x01e5,
+        _RESERVED_1e6 = 0x01e6,
+        _RESERVED_1e7 = 0x01e7,
+        _RESERVED_1e8 = 0x01e8,
+        _RESERVED_1e9 = 0x01e9,
+        _RESERVED_1ea = 0x01ea,
+        _RESERVED_1eb = 0x01eb,
+        _RESERVED_1ec = 0x01ec,
+        _RESERVED_1ed = 0x01ed,
+        _RESERVED_1ee = 0x01ee,
+        _RESERVED_1ef = 0x01ef,
+        _RESERVED_1f0 = 0x01f0,
+        _RESERVED_1f1 = 0x01f1,
+        _RESERVED_1f2 = 0x01f2,
+        _RESERVED_1f3 = 0x01f3,
+        _RESERVED_1f4 = 0x01f4,
+        _RESERVED_1f5 = 0x01f5,
+        _RESERVED_1f6 = 0x01f6,
+        _RESERVED_1f7 = 0x01f7,
+        _RESERVED_1f8 = 0x01f8,
+        _RESERVED_1f9 = 0x01f9,
+        _RESERVED_1fa = 0x01fa,
+        _RESERVED_1fb = 0x01fb,
+        _RESERVED_1fc = 0x01fc,
+        _RESERVED_1fd = 0x01fd,
+        _RESERVED_1fe = 0x01fe,
+        _RESERVED_1ff = 0x01ff,
     }
     impl Plln {
+        #[inline(always)]
         pub const fn from_bits(val: u16) -> Plln {
-            Self(val & 0x01ff)
+            unsafe { core::mem::transmute(val & 0x01ff) }
         }
+        #[inline(always)]
         pub const fn to_bits(self) -> u16 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Plln {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x32 => f.write_str("MUL50"),
-                0x33 => f.write_str("MUL51"),
-                0x34 => f.write_str("MUL52"),
-                0x35 => f.write_str("MUL53"),
-                0x36 => f.write_str("MUL54"),
-                0x37 => f.write_str("MUL55"),
-                0x38 => f.write_str("MUL56"),
-                0x39 => f.write_str("MUL57"),
-                0x3a => f.write_str("MUL58"),
-                0x3b => f.write_str("MUL59"),
-                0x3c => f.write_str("MUL60"),
-                0x3d => f.write_str("MUL61"),
-                0x3e => f.write_str("MUL62"),
-                0x3f => f.write_str("MUL63"),
-                0x40 => f.write_str("MUL64"),
-                0x41 => f.write_str("MUL65"),
-                0x42 => f.write_str("MUL66"),
-                0x43 => f.write_str("MUL67"),
-                0x44 => f.write_str("MUL68"),
-                0x45 => f.write_str("MUL69"),
-                0x46 => f.write_str("MUL70"),
-                0x47 => f.write_str("MUL71"),
-                0x48 => f.write_str("MUL72"),
-                0x49 => f.write_str("MUL73"),
-                0x4a => f.write_str("MUL74"),
-                0x4b => f.write_str("MUL75"),
-                0x4c => f.write_str("MUL76"),
-                0x4d => f.write_str("MUL77"),
-                0x4e => f.write_str("MUL78"),
-                0x4f => f.write_str("MUL79"),
-                0x50 => f.write_str("MUL80"),
-                0x51 => f.write_str("MUL81"),
-                0x52 => f.write_str("MUL82"),
-                0x53 => f.write_str("MUL83"),
-                0x54 => f.write_str("MUL84"),
-                0x55 => f.write_str("MUL85"),
-                0x56 => f.write_str("MUL86"),
-                0x57 => f.write_str("MUL87"),
-                0x58 => f.write_str("MUL88"),
-                0x59 => f.write_str("MUL89"),
-                0x5a => f.write_str("MUL90"),
-                0x5b => f.write_str("MUL91"),
-                0x5c => f.write_str("MUL92"),
-                0x5d => f.write_str("MUL93"),
-                0x5e => f.write_str("MUL94"),
-                0x5f => f.write_str("MUL95"),
-                0x60 => f.write_str("MUL96"),
-                0x61 => f.write_str("MUL97"),
-                0x62 => f.write_str("MUL98"),
-                0x63 => f.write_str("MUL99"),
-                0x64 => f.write_str("MUL100"),
-                0x65 => f.write_str("MUL101"),
-                0x66 => f.write_str("MUL102"),
-                0x67 => f.write_str("MUL103"),
-                0x68 => f.write_str("MUL104"),
-                0x69 => f.write_str("MUL105"),
-                0x6a => f.write_str("MUL106"),
-                0x6b => f.write_str("MUL107"),
-                0x6c => f.write_str("MUL108"),
-                0x6d => f.write_str("MUL109"),
-                0x6e => f.write_str("MUL110"),
-                0x6f => f.write_str("MUL111"),
-                0x70 => f.write_str("MUL112"),
-                0x71 => f.write_str("MUL113"),
-                0x72 => f.write_str("MUL114"),
-                0x73 => f.write_str("MUL115"),
-                0x74 => f.write_str("MUL116"),
-                0x75 => f.write_str("MUL117"),
-                0x76 => f.write_str("MUL118"),
-                0x77 => f.write_str("MUL119"),
-                0x78 => f.write_str("MUL120"),
-                0x79 => f.write_str("MUL121"),
-                0x7a => f.write_str("MUL122"),
-                0x7b => f.write_str("MUL123"),
-                0x7c => f.write_str("MUL124"),
-                0x7d => f.write_str("MUL125"),
-                0x7e => f.write_str("MUL126"),
-                0x7f => f.write_str("MUL127"),
-                0x80 => f.write_str("MUL128"),
-                0x81 => f.write_str("MUL129"),
-                0x82 => f.write_str("MUL130"),
-                0x83 => f.write_str("MUL131"),
-                0x84 => f.write_str("MUL132"),
-                0x85 => f.write_str("MUL133"),
-                0x86 => f.write_str("MUL134"),
-                0x87 => f.write_str("MUL135"),
-                0x88 => f.write_str("MUL136"),
-                0x89 => f.write_str("MUL137"),
-                0x8a => f.write_str("MUL138"),
-                0x8b => f.write_str("MUL139"),
-                0x8c => f.write_str("MUL140"),
-                0x8d => f.write_str("MUL141"),
-                0x8e => f.write_str("MUL142"),
-                0x8f => f.write_str("MUL143"),
-                0x90 => f.write_str("MUL144"),
-                0x91 => f.write_str("MUL145"),
-                0x92 => f.write_str("MUL146"),
-                0x93 => f.write_str("MUL147"),
-                0x94 => f.write_str("MUL148"),
-                0x95 => f.write_str("MUL149"),
-                0x96 => f.write_str("MUL150"),
-                0x97 => f.write_str("MUL151"),
-                0x98 => f.write_str("MUL152"),
-                0x99 => f.write_str("MUL153"),
-                0x9a => f.write_str("MUL154"),
-                0x9b => f.write_str("MUL155"),
-                0x9c => f.write_str("MUL156"),
-                0x9d => f.write_str("MUL157"),
-                0x9e => f.write_str("MUL158"),
-                0x9f => f.write_str("MUL159"),
-                0xa0 => f.write_str("MUL160"),
-                0xa1 => f.write_str("MUL161"),
-                0xa2 => f.write_str("MUL162"),
-                0xa3 => f.write_str("MUL163"),
-                0xa4 => f.write_str("MUL164"),
-                0xa5 => f.write_str("MUL165"),
-                0xa6 => f.write_str("MUL166"),
-                0xa7 => f.write_str("MUL167"),
-                0xa8 => f.write_str("MUL168"),
-                0xa9 => f.write_str("MUL169"),
-                0xaa => f.write_str("MUL170"),
-                0xab => f.write_str("MUL171"),
-                0xac => f.write_str("MUL172"),
-                0xad => f.write_str("MUL173"),
-                0xae => f.write_str("MUL174"),
-                0xaf => f.write_str("MUL175"),
-                0xb0 => f.write_str("MUL176"),
-                0xb1 => f.write_str("MUL177"),
-                0xb2 => f.write_str("MUL178"),
-                0xb3 => f.write_str("MUL179"),
-                0xb4 => f.write_str("MUL180"),
-                0xb5 => f.write_str("MUL181"),
-                0xb6 => f.write_str("MUL182"),
-                0xb7 => f.write_str("MUL183"),
-                0xb8 => f.write_str("MUL184"),
-                0xb9 => f.write_str("MUL185"),
-                0xba => f.write_str("MUL186"),
-                0xbb => f.write_str("MUL187"),
-                0xbc => f.write_str("MUL188"),
-                0xbd => f.write_str("MUL189"),
-                0xbe => f.write_str("MUL190"),
-                0xbf => f.write_str("MUL191"),
-                0xc0 => f.write_str("MUL192"),
-                0xc1 => f.write_str("MUL193"),
-                0xc2 => f.write_str("MUL194"),
-                0xc3 => f.write_str("MUL195"),
-                0xc4 => f.write_str("MUL196"),
-                0xc5 => f.write_str("MUL197"),
-                0xc6 => f.write_str("MUL198"),
-                0xc7 => f.write_str("MUL199"),
-                0xc8 => f.write_str("MUL200"),
-                0xc9 => f.write_str("MUL201"),
-                0xca => f.write_str("MUL202"),
-                0xcb => f.write_str("MUL203"),
-                0xcc => f.write_str("MUL204"),
-                0xcd => f.write_str("MUL205"),
-                0xce => f.write_str("MUL206"),
-                0xcf => f.write_str("MUL207"),
-                0xd0 => f.write_str("MUL208"),
-                0xd1 => f.write_str("MUL209"),
-                0xd2 => f.write_str("MUL210"),
-                0xd3 => f.write_str("MUL211"),
-                0xd4 => f.write_str("MUL212"),
-                0xd5 => f.write_str("MUL213"),
-                0xd6 => f.write_str("MUL214"),
-                0xd7 => f.write_str("MUL215"),
-                0xd8 => f.write_str("MUL216"),
-                0xd9 => f.write_str("MUL217"),
-                0xda => f.write_str("MUL218"),
-                0xdb => f.write_str("MUL219"),
-                0xdc => f.write_str("MUL220"),
-                0xdd => f.write_str("MUL221"),
-                0xde => f.write_str("MUL222"),
-                0xdf => f.write_str("MUL223"),
-                0xe0 => f.write_str("MUL224"),
-                0xe1 => f.write_str("MUL225"),
-                0xe2 => f.write_str("MUL226"),
-                0xe3 => f.write_str("MUL227"),
-                0xe4 => f.write_str("MUL228"),
-                0xe5 => f.write_str("MUL229"),
-                0xe6 => f.write_str("MUL230"),
-                0xe7 => f.write_str("MUL231"),
-                0xe8 => f.write_str("MUL232"),
-                0xe9 => f.write_str("MUL233"),
-                0xea => f.write_str("MUL234"),
-                0xeb => f.write_str("MUL235"),
-                0xec => f.write_str("MUL236"),
-                0xed => f.write_str("MUL237"),
-                0xee => f.write_str("MUL238"),
-                0xef => f.write_str("MUL239"),
-                0xf0 => f.write_str("MUL240"),
-                0xf1 => f.write_str("MUL241"),
-                0xf2 => f.write_str("MUL242"),
-                0xf3 => f.write_str("MUL243"),
-                0xf4 => f.write_str("MUL244"),
-                0xf5 => f.write_str("MUL245"),
-                0xf6 => f.write_str("MUL246"),
-                0xf7 => f.write_str("MUL247"),
-                0xf8 => f.write_str("MUL248"),
-                0xf9 => f.write_str("MUL249"),
-                0xfa => f.write_str("MUL250"),
-                0xfb => f.write_str("MUL251"),
-                0xfc => f.write_str("MUL252"),
-                0xfd => f.write_str("MUL253"),
-                0xfe => f.write_str("MUL254"),
-                0xff => f.write_str("MUL255"),
-                0x0100 => f.write_str("MUL256"),
-                0x0101 => f.write_str("MUL257"),
-                0x0102 => f.write_str("MUL258"),
-                0x0103 => f.write_str("MUL259"),
-                0x0104 => f.write_str("MUL260"),
-                0x0105 => f.write_str("MUL261"),
-                0x0106 => f.write_str("MUL262"),
-                0x0107 => f.write_str("MUL263"),
-                0x0108 => f.write_str("MUL264"),
-                0x0109 => f.write_str("MUL265"),
-                0x010a => f.write_str("MUL266"),
-                0x010b => f.write_str("MUL267"),
-                0x010c => f.write_str("MUL268"),
-                0x010d => f.write_str("MUL269"),
-                0x010e => f.write_str("MUL270"),
-                0x010f => f.write_str("MUL271"),
-                0x0110 => f.write_str("MUL272"),
-                0x0111 => f.write_str("MUL273"),
-                0x0112 => f.write_str("MUL274"),
-                0x0113 => f.write_str("MUL275"),
-                0x0114 => f.write_str("MUL276"),
-                0x0115 => f.write_str("MUL277"),
-                0x0116 => f.write_str("MUL278"),
-                0x0117 => f.write_str("MUL279"),
-                0x0118 => f.write_str("MUL280"),
-                0x0119 => f.write_str("MUL281"),
-                0x011a => f.write_str("MUL282"),
-                0x011b => f.write_str("MUL283"),
-                0x011c => f.write_str("MUL284"),
-                0x011d => f.write_str("MUL285"),
-                0x011e => f.write_str("MUL286"),
-                0x011f => f.write_str("MUL287"),
-                0x0120 => f.write_str("MUL288"),
-                0x0121 => f.write_str("MUL289"),
-                0x0122 => f.write_str("MUL290"),
-                0x0123 => f.write_str("MUL291"),
-                0x0124 => f.write_str("MUL292"),
-                0x0125 => f.write_str("MUL293"),
-                0x0126 => f.write_str("MUL294"),
-                0x0127 => f.write_str("MUL295"),
-                0x0128 => f.write_str("MUL296"),
-                0x0129 => f.write_str("MUL297"),
-                0x012a => f.write_str("MUL298"),
-                0x012b => f.write_str("MUL299"),
-                0x012c => f.write_str("MUL300"),
-                0x012d => f.write_str("MUL301"),
-                0x012e => f.write_str("MUL302"),
-                0x012f => f.write_str("MUL303"),
-                0x0130 => f.write_str("MUL304"),
-                0x0131 => f.write_str("MUL305"),
-                0x0132 => f.write_str("MUL306"),
-                0x0133 => f.write_str("MUL307"),
-                0x0134 => f.write_str("MUL308"),
-                0x0135 => f.write_str("MUL309"),
-                0x0136 => f.write_str("MUL310"),
-                0x0137 => f.write_str("MUL311"),
-                0x0138 => f.write_str("MUL312"),
-                0x0139 => f.write_str("MUL313"),
-                0x013a => f.write_str("MUL314"),
-                0x013b => f.write_str("MUL315"),
-                0x013c => f.write_str("MUL316"),
-                0x013d => f.write_str("MUL317"),
-                0x013e => f.write_str("MUL318"),
-                0x013f => f.write_str("MUL319"),
-                0x0140 => f.write_str("MUL320"),
-                0x0141 => f.write_str("MUL321"),
-                0x0142 => f.write_str("MUL322"),
-                0x0143 => f.write_str("MUL323"),
-                0x0144 => f.write_str("MUL324"),
-                0x0145 => f.write_str("MUL325"),
-                0x0146 => f.write_str("MUL326"),
-                0x0147 => f.write_str("MUL327"),
-                0x0148 => f.write_str("MUL328"),
-                0x0149 => f.write_str("MUL329"),
-                0x014a => f.write_str("MUL330"),
-                0x014b => f.write_str("MUL331"),
-                0x014c => f.write_str("MUL332"),
-                0x014d => f.write_str("MUL333"),
-                0x014e => f.write_str("MUL334"),
-                0x014f => f.write_str("MUL335"),
-                0x0150 => f.write_str("MUL336"),
-                0x0151 => f.write_str("MUL337"),
-                0x0152 => f.write_str("MUL338"),
-                0x0153 => f.write_str("MUL339"),
-                0x0154 => f.write_str("MUL340"),
-                0x0155 => f.write_str("MUL341"),
-                0x0156 => f.write_str("MUL342"),
-                0x0157 => f.write_str("MUL343"),
-                0x0158 => f.write_str("MUL344"),
-                0x0159 => f.write_str("MUL345"),
-                0x015a => f.write_str("MUL346"),
-                0x015b => f.write_str("MUL347"),
-                0x015c => f.write_str("MUL348"),
-                0x015d => f.write_str("MUL349"),
-                0x015e => f.write_str("MUL350"),
-                0x015f => f.write_str("MUL351"),
-                0x0160 => f.write_str("MUL352"),
-                0x0161 => f.write_str("MUL353"),
-                0x0162 => f.write_str("MUL354"),
-                0x0163 => f.write_str("MUL355"),
-                0x0164 => f.write_str("MUL356"),
-                0x0165 => f.write_str("MUL357"),
-                0x0166 => f.write_str("MUL358"),
-                0x0167 => f.write_str("MUL359"),
-                0x0168 => f.write_str("MUL360"),
-                0x0169 => f.write_str("MUL361"),
-                0x016a => f.write_str("MUL362"),
-                0x016b => f.write_str("MUL363"),
-                0x016c => f.write_str("MUL364"),
-                0x016d => f.write_str("MUL365"),
-                0x016e => f.write_str("MUL366"),
-                0x016f => f.write_str("MUL367"),
-                0x0170 => f.write_str("MUL368"),
-                0x0171 => f.write_str("MUL369"),
-                0x0172 => f.write_str("MUL370"),
-                0x0173 => f.write_str("MUL371"),
-                0x0174 => f.write_str("MUL372"),
-                0x0175 => f.write_str("MUL373"),
-                0x0176 => f.write_str("MUL374"),
-                0x0177 => f.write_str("MUL375"),
-                0x0178 => f.write_str("MUL376"),
-                0x0179 => f.write_str("MUL377"),
-                0x017a => f.write_str("MUL378"),
-                0x017b => f.write_str("MUL379"),
-                0x017c => f.write_str("MUL380"),
-                0x017d => f.write_str("MUL381"),
-                0x017e => f.write_str("MUL382"),
-                0x017f => f.write_str("MUL383"),
-                0x0180 => f.write_str("MUL384"),
-                0x0181 => f.write_str("MUL385"),
-                0x0182 => f.write_str("MUL386"),
-                0x0183 => f.write_str("MUL387"),
-                0x0184 => f.write_str("MUL388"),
-                0x0185 => f.write_str("MUL389"),
-                0x0186 => f.write_str("MUL390"),
-                0x0187 => f.write_str("MUL391"),
-                0x0188 => f.write_str("MUL392"),
-                0x0189 => f.write_str("MUL393"),
-                0x018a => f.write_str("MUL394"),
-                0x018b => f.write_str("MUL395"),
-                0x018c => f.write_str("MUL396"),
-                0x018d => f.write_str("MUL397"),
-                0x018e => f.write_str("MUL398"),
-                0x018f => f.write_str("MUL399"),
-                0x0190 => f.write_str("MUL400"),
-                0x0191 => f.write_str("MUL401"),
-                0x0192 => f.write_str("MUL402"),
-                0x0193 => f.write_str("MUL403"),
-                0x0194 => f.write_str("MUL404"),
-                0x0195 => f.write_str("MUL405"),
-                0x0196 => f.write_str("MUL406"),
-                0x0197 => f.write_str("MUL407"),
-                0x0198 => f.write_str("MUL408"),
-                0x0199 => f.write_str("MUL409"),
-                0x019a => f.write_str("MUL410"),
-                0x019b => f.write_str("MUL411"),
-                0x019c => f.write_str("MUL412"),
-                0x019d => f.write_str("MUL413"),
-                0x019e => f.write_str("MUL414"),
-                0x019f => f.write_str("MUL415"),
-                0x01a0 => f.write_str("MUL416"),
-                0x01a1 => f.write_str("MUL417"),
-                0x01a2 => f.write_str("MUL418"),
-                0x01a3 => f.write_str("MUL419"),
-                0x01a4 => f.write_str("MUL420"),
-                0x01a5 => f.write_str("MUL421"),
-                0x01a6 => f.write_str("MUL422"),
-                0x01a7 => f.write_str("MUL423"),
-                0x01a8 => f.write_str("MUL424"),
-                0x01a9 => f.write_str("MUL425"),
-                0x01aa => f.write_str("MUL426"),
-                0x01ab => f.write_str("MUL427"),
-                0x01ac => f.write_str("MUL428"),
-                0x01ad => f.write_str("MUL429"),
-                0x01ae => f.write_str("MUL430"),
-                0x01af => f.write_str("MUL431"),
-                0x01b0 => f.write_str("MUL432"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Plln {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x32 => defmt::write!(f, "MUL50"),
-                0x33 => defmt::write!(f, "MUL51"),
-                0x34 => defmt::write!(f, "MUL52"),
-                0x35 => defmt::write!(f, "MUL53"),
-                0x36 => defmt::write!(f, "MUL54"),
-                0x37 => defmt::write!(f, "MUL55"),
-                0x38 => defmt::write!(f, "MUL56"),
-                0x39 => defmt::write!(f, "MUL57"),
-                0x3a => defmt::write!(f, "MUL58"),
-                0x3b => defmt::write!(f, "MUL59"),
-                0x3c => defmt::write!(f, "MUL60"),
-                0x3d => defmt::write!(f, "MUL61"),
-                0x3e => defmt::write!(f, "MUL62"),
-                0x3f => defmt::write!(f, "MUL63"),
-                0x40 => defmt::write!(f, "MUL64"),
-                0x41 => defmt::write!(f, "MUL65"),
-                0x42 => defmt::write!(f, "MUL66"),
-                0x43 => defmt::write!(f, "MUL67"),
-                0x44 => defmt::write!(f, "MUL68"),
-                0x45 => defmt::write!(f, "MUL69"),
-                0x46 => defmt::write!(f, "MUL70"),
-                0x47 => defmt::write!(f, "MUL71"),
-                0x48 => defmt::write!(f, "MUL72"),
-                0x49 => defmt::write!(f, "MUL73"),
-                0x4a => defmt::write!(f, "MUL74"),
-                0x4b => defmt::write!(f, "MUL75"),
-                0x4c => defmt::write!(f, "MUL76"),
-                0x4d => defmt::write!(f, "MUL77"),
-                0x4e => defmt::write!(f, "MUL78"),
-                0x4f => defmt::write!(f, "MUL79"),
-                0x50 => defmt::write!(f, "MUL80"),
-                0x51 => defmt::write!(f, "MUL81"),
-                0x52 => defmt::write!(f, "MUL82"),
-                0x53 => defmt::write!(f, "MUL83"),
-                0x54 => defmt::write!(f, "MUL84"),
-                0x55 => defmt::write!(f, "MUL85"),
-                0x56 => defmt::write!(f, "MUL86"),
-                0x57 => defmt::write!(f, "MUL87"),
-                0x58 => defmt::write!(f, "MUL88"),
-                0x59 => defmt::write!(f, "MUL89"),
-                0x5a => defmt::write!(f, "MUL90"),
-                0x5b => defmt::write!(f, "MUL91"),
-                0x5c => defmt::write!(f, "MUL92"),
-                0x5d => defmt::write!(f, "MUL93"),
-                0x5e => defmt::write!(f, "MUL94"),
-                0x5f => defmt::write!(f, "MUL95"),
-                0x60 => defmt::write!(f, "MUL96"),
-                0x61 => defmt::write!(f, "MUL97"),
-                0x62 => defmt::write!(f, "MUL98"),
-                0x63 => defmt::write!(f, "MUL99"),
-                0x64 => defmt::write!(f, "MUL100"),
-                0x65 => defmt::write!(f, "MUL101"),
-                0x66 => defmt::write!(f, "MUL102"),
-                0x67 => defmt::write!(f, "MUL103"),
-                0x68 => defmt::write!(f, "MUL104"),
-                0x69 => defmt::write!(f, "MUL105"),
-                0x6a => defmt::write!(f, "MUL106"),
-                0x6b => defmt::write!(f, "MUL107"),
-                0x6c => defmt::write!(f, "MUL108"),
-                0x6d => defmt::write!(f, "MUL109"),
-                0x6e => defmt::write!(f, "MUL110"),
-                0x6f => defmt::write!(f, "MUL111"),
-                0x70 => defmt::write!(f, "MUL112"),
-                0x71 => defmt::write!(f, "MUL113"),
-                0x72 => defmt::write!(f, "MUL114"),
-                0x73 => defmt::write!(f, "MUL115"),
-                0x74 => defmt::write!(f, "MUL116"),
-                0x75 => defmt::write!(f, "MUL117"),
-                0x76 => defmt::write!(f, "MUL118"),
-                0x77 => defmt::write!(f, "MUL119"),
-                0x78 => defmt::write!(f, "MUL120"),
-                0x79 => defmt::write!(f, "MUL121"),
-                0x7a => defmt::write!(f, "MUL122"),
-                0x7b => defmt::write!(f, "MUL123"),
-                0x7c => defmt::write!(f, "MUL124"),
-                0x7d => defmt::write!(f, "MUL125"),
-                0x7e => defmt::write!(f, "MUL126"),
-                0x7f => defmt::write!(f, "MUL127"),
-                0x80 => defmt::write!(f, "MUL128"),
-                0x81 => defmt::write!(f, "MUL129"),
-                0x82 => defmt::write!(f, "MUL130"),
-                0x83 => defmt::write!(f, "MUL131"),
-                0x84 => defmt::write!(f, "MUL132"),
-                0x85 => defmt::write!(f, "MUL133"),
-                0x86 => defmt::write!(f, "MUL134"),
-                0x87 => defmt::write!(f, "MUL135"),
-                0x88 => defmt::write!(f, "MUL136"),
-                0x89 => defmt::write!(f, "MUL137"),
-                0x8a => defmt::write!(f, "MUL138"),
-                0x8b => defmt::write!(f, "MUL139"),
-                0x8c => defmt::write!(f, "MUL140"),
-                0x8d => defmt::write!(f, "MUL141"),
-                0x8e => defmt::write!(f, "MUL142"),
-                0x8f => defmt::write!(f, "MUL143"),
-                0x90 => defmt::write!(f, "MUL144"),
-                0x91 => defmt::write!(f, "MUL145"),
-                0x92 => defmt::write!(f, "MUL146"),
-                0x93 => defmt::write!(f, "MUL147"),
-                0x94 => defmt::write!(f, "MUL148"),
-                0x95 => defmt::write!(f, "MUL149"),
-                0x96 => defmt::write!(f, "MUL150"),
-                0x97 => defmt::write!(f, "MUL151"),
-                0x98 => defmt::write!(f, "MUL152"),
-                0x99 => defmt::write!(f, "MUL153"),
-                0x9a => defmt::write!(f, "MUL154"),
-                0x9b => defmt::write!(f, "MUL155"),
-                0x9c => defmt::write!(f, "MUL156"),
-                0x9d => defmt::write!(f, "MUL157"),
-                0x9e => defmt::write!(f, "MUL158"),
-                0x9f => defmt::write!(f, "MUL159"),
-                0xa0 => defmt::write!(f, "MUL160"),
-                0xa1 => defmt::write!(f, "MUL161"),
-                0xa2 => defmt::write!(f, "MUL162"),
-                0xa3 => defmt::write!(f, "MUL163"),
-                0xa4 => defmt::write!(f, "MUL164"),
-                0xa5 => defmt::write!(f, "MUL165"),
-                0xa6 => defmt::write!(f, "MUL166"),
-                0xa7 => defmt::write!(f, "MUL167"),
-                0xa8 => defmt::write!(f, "MUL168"),
-                0xa9 => defmt::write!(f, "MUL169"),
-                0xaa => defmt::write!(f, "MUL170"),
-                0xab => defmt::write!(f, "MUL171"),
-                0xac => defmt::write!(f, "MUL172"),
-                0xad => defmt::write!(f, "MUL173"),
-                0xae => defmt::write!(f, "MUL174"),
-                0xaf => defmt::write!(f, "MUL175"),
-                0xb0 => defmt::write!(f, "MUL176"),
-                0xb1 => defmt::write!(f, "MUL177"),
-                0xb2 => defmt::write!(f, "MUL178"),
-                0xb3 => defmt::write!(f, "MUL179"),
-                0xb4 => defmt::write!(f, "MUL180"),
-                0xb5 => defmt::write!(f, "MUL181"),
-                0xb6 => defmt::write!(f, "MUL182"),
-                0xb7 => defmt::write!(f, "MUL183"),
-                0xb8 => defmt::write!(f, "MUL184"),
-                0xb9 => defmt::write!(f, "MUL185"),
-                0xba => defmt::write!(f, "MUL186"),
-                0xbb => defmt::write!(f, "MUL187"),
-                0xbc => defmt::write!(f, "MUL188"),
-                0xbd => defmt::write!(f, "MUL189"),
-                0xbe => defmt::write!(f, "MUL190"),
-                0xbf => defmt::write!(f, "MUL191"),
-                0xc0 => defmt::write!(f, "MUL192"),
-                0xc1 => defmt::write!(f, "MUL193"),
-                0xc2 => defmt::write!(f, "MUL194"),
-                0xc3 => defmt::write!(f, "MUL195"),
-                0xc4 => defmt::write!(f, "MUL196"),
-                0xc5 => defmt::write!(f, "MUL197"),
-                0xc6 => defmt::write!(f, "MUL198"),
-                0xc7 => defmt::write!(f, "MUL199"),
-                0xc8 => defmt::write!(f, "MUL200"),
-                0xc9 => defmt::write!(f, "MUL201"),
-                0xca => defmt::write!(f, "MUL202"),
-                0xcb => defmt::write!(f, "MUL203"),
-                0xcc => defmt::write!(f, "MUL204"),
-                0xcd => defmt::write!(f, "MUL205"),
-                0xce => defmt::write!(f, "MUL206"),
-                0xcf => defmt::write!(f, "MUL207"),
-                0xd0 => defmt::write!(f, "MUL208"),
-                0xd1 => defmt::write!(f, "MUL209"),
-                0xd2 => defmt::write!(f, "MUL210"),
-                0xd3 => defmt::write!(f, "MUL211"),
-                0xd4 => defmt::write!(f, "MUL212"),
-                0xd5 => defmt::write!(f, "MUL213"),
-                0xd6 => defmt::write!(f, "MUL214"),
-                0xd7 => defmt::write!(f, "MUL215"),
-                0xd8 => defmt::write!(f, "MUL216"),
-                0xd9 => defmt::write!(f, "MUL217"),
-                0xda => defmt::write!(f, "MUL218"),
-                0xdb => defmt::write!(f, "MUL219"),
-                0xdc => defmt::write!(f, "MUL220"),
-                0xdd => defmt::write!(f, "MUL221"),
-                0xde => defmt::write!(f, "MUL222"),
-                0xdf => defmt::write!(f, "MUL223"),
-                0xe0 => defmt::write!(f, "MUL224"),
-                0xe1 => defmt::write!(f, "MUL225"),
-                0xe2 => defmt::write!(f, "MUL226"),
-                0xe3 => defmt::write!(f, "MUL227"),
-                0xe4 => defmt::write!(f, "MUL228"),
-                0xe5 => defmt::write!(f, "MUL229"),
-                0xe6 => defmt::write!(f, "MUL230"),
-                0xe7 => defmt::write!(f, "MUL231"),
-                0xe8 => defmt::write!(f, "MUL232"),
-                0xe9 => defmt::write!(f, "MUL233"),
-                0xea => defmt::write!(f, "MUL234"),
-                0xeb => defmt::write!(f, "MUL235"),
-                0xec => defmt::write!(f, "MUL236"),
-                0xed => defmt::write!(f, "MUL237"),
-                0xee => defmt::write!(f, "MUL238"),
-                0xef => defmt::write!(f, "MUL239"),
-                0xf0 => defmt::write!(f, "MUL240"),
-                0xf1 => defmt::write!(f, "MUL241"),
-                0xf2 => defmt::write!(f, "MUL242"),
-                0xf3 => defmt::write!(f, "MUL243"),
-                0xf4 => defmt::write!(f, "MUL244"),
-                0xf5 => defmt::write!(f, "MUL245"),
-                0xf6 => defmt::write!(f, "MUL246"),
-                0xf7 => defmt::write!(f, "MUL247"),
-                0xf8 => defmt::write!(f, "MUL248"),
-                0xf9 => defmt::write!(f, "MUL249"),
-                0xfa => defmt::write!(f, "MUL250"),
-                0xfb => defmt::write!(f, "MUL251"),
-                0xfc => defmt::write!(f, "MUL252"),
-                0xfd => defmt::write!(f, "MUL253"),
-                0xfe => defmt::write!(f, "MUL254"),
-                0xff => defmt::write!(f, "MUL255"),
-                0x0100 => defmt::write!(f, "MUL256"),
-                0x0101 => defmt::write!(f, "MUL257"),
-                0x0102 => defmt::write!(f, "MUL258"),
-                0x0103 => defmt::write!(f, "MUL259"),
-                0x0104 => defmt::write!(f, "MUL260"),
-                0x0105 => defmt::write!(f, "MUL261"),
-                0x0106 => defmt::write!(f, "MUL262"),
-                0x0107 => defmt::write!(f, "MUL263"),
-                0x0108 => defmt::write!(f, "MUL264"),
-                0x0109 => defmt::write!(f, "MUL265"),
-                0x010a => defmt::write!(f, "MUL266"),
-                0x010b => defmt::write!(f, "MUL267"),
-                0x010c => defmt::write!(f, "MUL268"),
-                0x010d => defmt::write!(f, "MUL269"),
-                0x010e => defmt::write!(f, "MUL270"),
-                0x010f => defmt::write!(f, "MUL271"),
-                0x0110 => defmt::write!(f, "MUL272"),
-                0x0111 => defmt::write!(f, "MUL273"),
-                0x0112 => defmt::write!(f, "MUL274"),
-                0x0113 => defmt::write!(f, "MUL275"),
-                0x0114 => defmt::write!(f, "MUL276"),
-                0x0115 => defmt::write!(f, "MUL277"),
-                0x0116 => defmt::write!(f, "MUL278"),
-                0x0117 => defmt::write!(f, "MUL279"),
-                0x0118 => defmt::write!(f, "MUL280"),
-                0x0119 => defmt::write!(f, "MUL281"),
-                0x011a => defmt::write!(f, "MUL282"),
-                0x011b => defmt::write!(f, "MUL283"),
-                0x011c => defmt::write!(f, "MUL284"),
-                0x011d => defmt::write!(f, "MUL285"),
-                0x011e => defmt::write!(f, "MUL286"),
-                0x011f => defmt::write!(f, "MUL287"),
-                0x0120 => defmt::write!(f, "MUL288"),
-                0x0121 => defmt::write!(f, "MUL289"),
-                0x0122 => defmt::write!(f, "MUL290"),
-                0x0123 => defmt::write!(f, "MUL291"),
-                0x0124 => defmt::write!(f, "MUL292"),
-                0x0125 => defmt::write!(f, "MUL293"),
-                0x0126 => defmt::write!(f, "MUL294"),
-                0x0127 => defmt::write!(f, "MUL295"),
-                0x0128 => defmt::write!(f, "MUL296"),
-                0x0129 => defmt::write!(f, "MUL297"),
-                0x012a => defmt::write!(f, "MUL298"),
-                0x012b => defmt::write!(f, "MUL299"),
-                0x012c => defmt::write!(f, "MUL300"),
-                0x012d => defmt::write!(f, "MUL301"),
-                0x012e => defmt::write!(f, "MUL302"),
-                0x012f => defmt::write!(f, "MUL303"),
-                0x0130 => defmt::write!(f, "MUL304"),
-                0x0131 => defmt::write!(f, "MUL305"),
-                0x0132 => defmt::write!(f, "MUL306"),
-                0x0133 => defmt::write!(f, "MUL307"),
-                0x0134 => defmt::write!(f, "MUL308"),
-                0x0135 => defmt::write!(f, "MUL309"),
-                0x0136 => defmt::write!(f, "MUL310"),
-                0x0137 => defmt::write!(f, "MUL311"),
-                0x0138 => defmt::write!(f, "MUL312"),
-                0x0139 => defmt::write!(f, "MUL313"),
-                0x013a => defmt::write!(f, "MUL314"),
-                0x013b => defmt::write!(f, "MUL315"),
-                0x013c => defmt::write!(f, "MUL316"),
-                0x013d => defmt::write!(f, "MUL317"),
-                0x013e => defmt::write!(f, "MUL318"),
-                0x013f => defmt::write!(f, "MUL319"),
-                0x0140 => defmt::write!(f, "MUL320"),
-                0x0141 => defmt::write!(f, "MUL321"),
-                0x0142 => defmt::write!(f, "MUL322"),
-                0x0143 => defmt::write!(f, "MUL323"),
-                0x0144 => defmt::write!(f, "MUL324"),
-                0x0145 => defmt::write!(f, "MUL325"),
-                0x0146 => defmt::write!(f, "MUL326"),
-                0x0147 => defmt::write!(f, "MUL327"),
-                0x0148 => defmt::write!(f, "MUL328"),
-                0x0149 => defmt::write!(f, "MUL329"),
-                0x014a => defmt::write!(f, "MUL330"),
-                0x014b => defmt::write!(f, "MUL331"),
-                0x014c => defmt::write!(f, "MUL332"),
-                0x014d => defmt::write!(f, "MUL333"),
-                0x014e => defmt::write!(f, "MUL334"),
-                0x014f => defmt::write!(f, "MUL335"),
-                0x0150 => defmt::write!(f, "MUL336"),
-                0x0151 => defmt::write!(f, "MUL337"),
-                0x0152 => defmt::write!(f, "MUL338"),
-                0x0153 => defmt::write!(f, "MUL339"),
-                0x0154 => defmt::write!(f, "MUL340"),
-                0x0155 => defmt::write!(f, "MUL341"),
-                0x0156 => defmt::write!(f, "MUL342"),
-                0x0157 => defmt::write!(f, "MUL343"),
-                0x0158 => defmt::write!(f, "MUL344"),
-                0x0159 => defmt::write!(f, "MUL345"),
-                0x015a => defmt::write!(f, "MUL346"),
-                0x015b => defmt::write!(f, "MUL347"),
-                0x015c => defmt::write!(f, "MUL348"),
-                0x015d => defmt::write!(f, "MUL349"),
-                0x015e => defmt::write!(f, "MUL350"),
-                0x015f => defmt::write!(f, "MUL351"),
-                0x0160 => defmt::write!(f, "MUL352"),
-                0x0161 => defmt::write!(f, "MUL353"),
-                0x0162 => defmt::write!(f, "MUL354"),
-                0x0163 => defmt::write!(f, "MUL355"),
-                0x0164 => defmt::write!(f, "MUL356"),
-                0x0165 => defmt::write!(f, "MUL357"),
-                0x0166 => defmt::write!(f, "MUL358"),
-                0x0167 => defmt::write!(f, "MUL359"),
-                0x0168 => defmt::write!(f, "MUL360"),
-                0x0169 => defmt::write!(f, "MUL361"),
-                0x016a => defmt::write!(f, "MUL362"),
-                0x016b => defmt::write!(f, "MUL363"),
-                0x016c => defmt::write!(f, "MUL364"),
-                0x016d => defmt::write!(f, "MUL365"),
-                0x016e => defmt::write!(f, "MUL366"),
-                0x016f => defmt::write!(f, "MUL367"),
-                0x0170 => defmt::write!(f, "MUL368"),
-                0x0171 => defmt::write!(f, "MUL369"),
-                0x0172 => defmt::write!(f, "MUL370"),
-                0x0173 => defmt::write!(f, "MUL371"),
-                0x0174 => defmt::write!(f, "MUL372"),
-                0x0175 => defmt::write!(f, "MUL373"),
-                0x0176 => defmt::write!(f, "MUL374"),
-                0x0177 => defmt::write!(f, "MUL375"),
-                0x0178 => defmt::write!(f, "MUL376"),
-                0x0179 => defmt::write!(f, "MUL377"),
-                0x017a => defmt::write!(f, "MUL378"),
-                0x017b => defmt::write!(f, "MUL379"),
-                0x017c => defmt::write!(f, "MUL380"),
-                0x017d => defmt::write!(f, "MUL381"),
-                0x017e => defmt::write!(f, "MUL382"),
-                0x017f => defmt::write!(f, "MUL383"),
-                0x0180 => defmt::write!(f, "MUL384"),
-                0x0181 => defmt::write!(f, "MUL385"),
-                0x0182 => defmt::write!(f, "MUL386"),
-                0x0183 => defmt::write!(f, "MUL387"),
-                0x0184 => defmt::write!(f, "MUL388"),
-                0x0185 => defmt::write!(f, "MUL389"),
-                0x0186 => defmt::write!(f, "MUL390"),
-                0x0187 => defmt::write!(f, "MUL391"),
-                0x0188 => defmt::write!(f, "MUL392"),
-                0x0189 => defmt::write!(f, "MUL393"),
-                0x018a => defmt::write!(f, "MUL394"),
-                0x018b => defmt::write!(f, "MUL395"),
-                0x018c => defmt::write!(f, "MUL396"),
-                0x018d => defmt::write!(f, "MUL397"),
-                0x018e => defmt::write!(f, "MUL398"),
-                0x018f => defmt::write!(f, "MUL399"),
-                0x0190 => defmt::write!(f, "MUL400"),
-                0x0191 => defmt::write!(f, "MUL401"),
-                0x0192 => defmt::write!(f, "MUL402"),
-                0x0193 => defmt::write!(f, "MUL403"),
-                0x0194 => defmt::write!(f, "MUL404"),
-                0x0195 => defmt::write!(f, "MUL405"),
-                0x0196 => defmt::write!(f, "MUL406"),
-                0x0197 => defmt::write!(f, "MUL407"),
-                0x0198 => defmt::write!(f, "MUL408"),
-                0x0199 => defmt::write!(f, "MUL409"),
-                0x019a => defmt::write!(f, "MUL410"),
-                0x019b => defmt::write!(f, "MUL411"),
-                0x019c => defmt::write!(f, "MUL412"),
-                0x019d => defmt::write!(f, "MUL413"),
-                0x019e => defmt::write!(f, "MUL414"),
-                0x019f => defmt::write!(f, "MUL415"),
-                0x01a0 => defmt::write!(f, "MUL416"),
-                0x01a1 => defmt::write!(f, "MUL417"),
-                0x01a2 => defmt::write!(f, "MUL418"),
-                0x01a3 => defmt::write!(f, "MUL419"),
-                0x01a4 => defmt::write!(f, "MUL420"),
-                0x01a5 => defmt::write!(f, "MUL421"),
-                0x01a6 => defmt::write!(f, "MUL422"),
-                0x01a7 => defmt::write!(f, "MUL423"),
-                0x01a8 => defmt::write!(f, "MUL424"),
-                0x01a9 => defmt::write!(f, "MUL425"),
-                0x01aa => defmt::write!(f, "MUL426"),
-                0x01ab => defmt::write!(f, "MUL427"),
-                0x01ac => defmt::write!(f, "MUL428"),
-                0x01ad => defmt::write!(f, "MUL429"),
-                0x01ae => defmt::write!(f, "MUL430"),
-                0x01af => defmt::write!(f, "MUL431"),
-                0x01b0 => defmt::write!(f, "MUL432"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
+            unsafe { core::mem::transmute(self) }
         }
     }
     impl From<u16> for Plln {

@@ -286,36 +286,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr1 {
-                awdch: u8,
-                eocie: bool,
-                awdie: bool,
-                jeocie: bool,
-                scan: bool,
-                awdsgl: bool,
-                jauto: bool,
-                discen: bool,
-                jdiscen: bool,
-                discnum: super::vals::Discnum,
-                jawden: bool,
-                awden: bool,
-            }
-            let proxy = Cr1 {
-                awdch: self.awdch(),
-                eocie: self.eocie(),
-                awdie: self.awdie(),
-                jeocie: self.jeocie(),
-                scan: self.scan(),
-                awdsgl: self.awdsgl(),
-                jauto: self.jauto(),
-                discen: self.discen(),
-                jdiscen: self.jdiscen(),
-                discnum: self.discnum(),
-                jawden: self.jawden(),
-                awden: self.awden(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr1 {{ awdch: {=u8:?}, eocie: {=bool:?}, awdie: {=bool:?}, jeocie: {=bool:?}, scan: {=bool:?}, awdsgl: {=bool:?}, jauto: {=bool:?}, discen: {=bool:?}, jdiscen: {=bool:?}, discnum: {:?}, jawden: {=bool:?}, awden: {=bool:?} }}" , self . awdch () , self . eocie () , self . awdie () , self . jeocie () , self . scan () , self . awdsgl () , self . jauto () , self . discen () , self . jdiscen () , self . discnum () , self . jawden () , self . awden ())
         }
     }
     #[doc = "control register 2"]
@@ -495,38 +466,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr2 {
-                adon: bool,
-                cont: bool,
-                cal: bool,
-                rstcal: bool,
-                dma: bool,
-                align: bool,
-                jextsel: u8,
-                jexttrig: bool,
-                extsel: u8,
-                exttrig: bool,
-                jswstart: bool,
-                swstart: bool,
-                tsvrefe: bool,
-            }
-            let proxy = Cr2 {
-                adon: self.adon(),
-                cont: self.cont(),
-                cal: self.cal(),
-                rstcal: self.rstcal(),
-                dma: self.dma(),
-                align: self.align(),
-                jextsel: self.jextsel(),
-                jexttrig: self.jexttrig(),
-                extsel: self.extsel(),
-                exttrig: self.exttrig(),
-                jswstart: self.jswstart(),
-                swstart: self.swstart(),
-                tsvrefe: self.tsvrefe(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr2 {{ adon: {=bool:?}, cont: {=bool:?}, cal: {=bool:?}, rstcal: {=bool:?}, dma: {=bool:?}, align: {=bool:?}, jextsel: {=u8:?}, jexttrig: {=bool:?}, extsel: {=u8:?}, exttrig: {=bool:?}, jswstart: {=bool:?}, swstart: {=bool:?}, tsvrefe: {=bool:?} }}" , self . adon () , self . cont () , self . cal () , self . rstcal () , self . dma () , self . align () , self . jextsel () , self . jexttrig () , self . extsel () , self . exttrig () , self . jswstart () , self . swstart () , self . tsvrefe ())
         }
     }
     #[doc = "regular data register"]
@@ -560,12 +500,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dr {
-                data: u16,
-            }
-            let proxy = Dr { data: self.data() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dr {{ data: {=u16:?} }}", self.data())
         }
     }
     #[doc = "watchdog higher threshold register"]
@@ -599,12 +534,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Htr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Htr {
-                ht: u16,
-            }
-            let proxy = Htr { ht: self.ht() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Htr {{ ht: {=u16:?} }}", self.ht())
         }
     }
     #[doc = "injected data register 1"]
@@ -638,12 +568,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Jdr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Jdr1 {
-                jdata1: u16,
-            }
-            let proxy = Jdr1 { jdata1: self.jdata1() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Jdr1 {{ jdata1: {=u16:?} }}", self.jdata1())
         }
     }
     #[doc = "injected data register 2"]
@@ -677,12 +602,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Jdr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Jdr2 {
-                jdata2: u16,
-            }
-            let proxy = Jdr2 { jdata2: self.jdata2() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Jdr2 {{ jdata2: {=u16:?} }}", self.jdata2())
         }
     }
     #[doc = "injected data register 3"]
@@ -716,12 +636,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Jdr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Jdr3 {
-                jdata3: u16,
-            }
-            let proxy = Jdr3 { jdata3: self.jdata3() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Jdr3 {{ jdata3: {=u16:?} }}", self.jdata3())
         }
     }
     #[doc = "injected data register 4"]
@@ -755,12 +670,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Jdr4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Jdr4 {
-                jdata4: u16,
-            }
-            let proxy = Jdr4 { jdata4: self.jdata4() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Jdr4 {{ jdata4: {=u16:?} }}", self.jdata4())
         }
     }
     #[doc = "injected channel data offset register 1"]
@@ -794,14 +704,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Jofr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Jofr1 {
-                joffset1: u16,
-            }
-            let proxy = Jofr1 {
-                joffset1: self.joffset1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Jofr1 {{ joffset1: {=u16:?} }}", self.joffset1())
         }
     }
     #[doc = "injected channel data offset register 2"]
@@ -835,14 +738,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Jofr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Jofr2 {
-                joffset2: u16,
-            }
-            let proxy = Jofr2 {
-                joffset2: self.joffset2(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Jofr2 {{ joffset2: {=u16:?} }}", self.joffset2())
         }
     }
     #[doc = "injected channel data offset register 3"]
@@ -876,14 +772,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Jofr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Jofr3 {
-                joffset3: u16,
-            }
-            let proxy = Jofr3 {
-                joffset3: self.joffset3(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Jofr3 {{ joffset3: {=u16:?} }}", self.joffset3())
         }
     }
     #[doc = "injected channel data offset register 4"]
@@ -917,14 +806,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Jofr4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Jofr4 {
-                joffset4: u16,
-            }
-            let proxy = Jofr4 {
-                joffset4: self.joffset4(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Jofr4 {{ joffset4: {=u16:?} }}", self.joffset4())
         }
     }
     #[doc = "injected sequence register"]
@@ -968,10 +850,10 @@ pub mod regs {
     impl core::fmt::Debug for Jsqr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Jsqr")
-                .field(
-                    "jsq",
-                    &[self.jsq(0usize), self.jsq(1usize), self.jsq(2usize), self.jsq(3usize)],
-                )
+                .field("jsq[0]", &self.jsq(0usize))
+                .field("jsq[1]", &self.jsq(1usize))
+                .field("jsq[2]", &self.jsq(2usize))
+                .field("jsq[3]", &self.jsq(3usize))
                 .field("jl", &self.jl())
                 .finish()
         }
@@ -979,16 +861,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Jsqr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Jsqr {
-                jsq: [u8; 4usize],
-                jl: u8,
-            }
-            let proxy = Jsqr {
-                jsq: [self.jsq(0usize), self.jsq(1usize), self.jsq(2usize), self.jsq(3usize)],
-                jl: self.jl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Jsqr {{ jsq[0]: {=u8:?}, jsq[1]: {=u8:?}, jsq[2]: {=u8:?}, jsq[3]: {=u8:?}, jl: {=u8:?} }}",
+                self.jsq(0usize),
+                self.jsq(1usize),
+                self.jsq(2usize),
+                self.jsq(3usize),
+                self.jl()
+            )
         }
     }
     #[doc = "watchdog lower threshold register"]
@@ -1022,12 +903,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ltr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ltr {
-                lt: u16,
-            }
-            let proxy = Ltr { lt: self.lt() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ltr {{ lt: {=u16:?} }}", self.lt())
         }
     }
     #[doc = "sample time register 1"]
@@ -1159,30 +1035,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Smpr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Smpr1 {
-                smp10: super::vals::SampleTime,
-                smp11: super::vals::SampleTime,
-                smp12: super::vals::SampleTime,
-                smp13: super::vals::SampleTime,
-                smp14: super::vals::SampleTime,
-                smp15: super::vals::SampleTime,
-                smp16: super::vals::SampleTime,
-                smp17: super::vals::SampleTime,
-                smp18: super::vals::SampleTime,
-            }
-            let proxy = Smpr1 {
-                smp10: self.smp10(),
-                smp11: self.smp11(),
-                smp12: self.smp12(),
-                smp13: self.smp13(),
-                smp14: self.smp14(),
-                smp15: self.smp15(),
-                smp16: self.smp16(),
-                smp17: self.smp17(),
-                smp18: self.smp18(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Smpr1 {{ smp10: {:?}, smp11: {:?}, smp12: {:?}, smp13: {:?}, smp14: {:?}, smp15: {:?}, smp16: {:?}, smp17: {:?}, smp18: {:?} }}" , self . smp10 () , self . smp11 () , self . smp12 () , self . smp13 () , self . smp14 () , self . smp15 () , self . smp16 () , self . smp17 () , self . smp18 ())
         }
     }
     #[doc = "sample time register 2"]
@@ -1326,32 +1179,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Smpr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Smpr2 {
-                smp0: super::vals::SampleTime,
-                smp1: super::vals::SampleTime,
-                smp2: super::vals::SampleTime,
-                smp3: super::vals::SampleTime,
-                smp4: super::vals::SampleTime,
-                smp5: super::vals::SampleTime,
-                smp6: super::vals::SampleTime,
-                smp7: super::vals::SampleTime,
-                smp8: super::vals::SampleTime,
-                smp9: super::vals::SampleTime,
-            }
-            let proxy = Smpr2 {
-                smp0: self.smp0(),
-                smp1: self.smp1(),
-                smp2: self.smp2(),
-                smp3: self.smp3(),
-                smp4: self.smp4(),
-                smp5: self.smp5(),
-                smp6: self.smp6(),
-                smp7: self.smp7(),
-                smp8: self.smp8(),
-                smp9: self.smp9(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Smpr2 {{ smp0: {:?}, smp1: {:?}, smp2: {:?}, smp3: {:?}, smp4: {:?}, smp5: {:?}, smp6: {:?}, smp7: {:?}, smp8: {:?}, smp9: {:?} }}" , self . smp0 () , self . smp1 () , self . smp2 () , self . smp3 () , self . smp4 () , self . smp5 () , self . smp6 () , self . smp7 () , self . smp8 () , self . smp9 ())
         }
     }
     #[doc = "regular sequence register 1"]
@@ -1435,22 +1263,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sqr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sqr1 {
-                sq13: u8,
-                sq14: u8,
-                sq15: u8,
-                sq16: u8,
-                l: u8,
-            }
-            let proxy = Sqr1 {
-                sq13: self.sq13(),
-                sq14: self.sq14(),
-                sq15: self.sq15(),
-                sq16: self.sq16(),
-                l: self.l(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sqr1 {{ sq13: {=u8:?}, sq14: {=u8:?}, sq15: {=u8:?}, sq16: {=u8:?}, l: {=u8:?} }}",
+                self.sq13(),
+                self.sq14(),
+                self.sq15(),
+                self.sq16(),
+                self.l()
+            )
         }
     }
     #[doc = "regular sequence register 2"]
@@ -1546,24 +1367,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sqr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sqr2 {
-                sq7: u8,
-                sq8: u8,
-                sq9: u8,
-                sq10: u8,
-                sq11: u8,
-                sq12: u8,
-            }
-            let proxy = Sqr2 {
-                sq7: self.sq7(),
-                sq8: self.sq8(),
-                sq9: self.sq9(),
-                sq10: self.sq10(),
-                sq11: self.sq11(),
-                sq12: self.sq12(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sqr2 {{ sq7: {=u8:?}, sq8: {=u8:?}, sq9: {=u8:?}, sq10: {=u8:?}, sq11: {=u8:?}, sq12: {=u8:?} }}",
+                self.sq7(),
+                self.sq8(),
+                self.sq9(),
+                self.sq10(),
+                self.sq11(),
+                self.sq12()
+            )
         }
     }
     #[doc = "regular sequence register 3"]
@@ -1659,24 +1472,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sqr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sqr3 {
-                sq1: u8,
-                sq2: u8,
-                sq3: u8,
-                sq4: u8,
-                sq5: u8,
-                sq6: u8,
-            }
-            let proxy = Sqr3 {
-                sq1: self.sq1(),
-                sq2: self.sq2(),
-                sq3: self.sq3(),
-                sq4: self.sq4(),
-                sq5: self.sq5(),
-                sq6: self.sq6(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sqr3 {{ sq1: {=u8:?}, sq2: {=u8:?}, sq3: {=u8:?}, sq4: {=u8:?}, sq5: {=u8:?}, sq6: {=u8:?} }}",
+                self.sq1(),
+                self.sq2(),
+                self.sq3(),
+                self.sq4(),
+                self.sq5(),
+                self.sq6()
+            )
         }
     }
     #[doc = "status register"]
@@ -1772,24 +1577,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                awd: bool,
-                eoc: bool,
-                jeoc: bool,
-                jstrt: bool,
-                strt: bool,
-                ovr: bool,
-            }
-            let proxy = Sr {
-                awd: self.awd(),
-                eoc: self.eoc(),
-                jeoc: self.jeoc(),
-                jstrt: self.jstrt(),
-                strt: self.strt(),
-                ovr: self.ovr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr {{ awd: {=bool:?}, eoc: {=bool:?}, jeoc: {=bool:?}, jstrt: {=bool:?}, strt: {=bool:?}, ovr: {=bool:?} }}" , self . awd () , self . eoc () , self . jeoc () , self . jstrt () , self . strt () , self . ovr ())
         }
     }
 }

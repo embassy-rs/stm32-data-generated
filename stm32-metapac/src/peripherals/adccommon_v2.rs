@@ -141,26 +141,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccr {
-                multi: super::vals::Multi,
-                delay: u8,
-                dds: super::vals::Dds,
-                dma: super::vals::Dma,
-                adcpre: super::vals::Adcpre,
-                vbate: bool,
-                tsvrefe: bool,
-            }
-            let proxy = Ccr {
-                multi: self.multi(),
-                delay: self.delay(),
-                dds: self.dds(),
-                dma: self.dma(),
-                adcpre: self.adcpre(),
-                vbate: self.vbate(),
-                tsvrefe: self.tsvrefe(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ccr {{ multi: {:?}, delay: {=u8:?}, dds: {:?}, dma: {:?}, adcpre: {:?}, vbate: {=bool:?}, tsvrefe: {=bool:?} }}" , self . multi () , self . delay () , self . dds () , self . dma () , self . adcpre () , self . vbate () , self . tsvrefe ())
         }
     }
     #[doc = "ADC common regular data register for dual and triple modes"]
@@ -193,21 +174,20 @@ pub mod regs {
     impl core::fmt::Debug for Cdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cdr")
-                .field("data", &[self.data(0usize), self.data(1usize)])
+                .field("data[0]", &self.data(0usize))
+                .field("data[1]", &self.data(1usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cdr {
-                data: [u16; 2usize],
-            }
-            let proxy = Cdr {
-                data: [self.data(0usize), self.data(1usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cdr {{ data[0]: {=u16:?}, data[1]: {=u16:?} }}",
+                self.data(0usize),
+                self.data(1usize)
+            )
         }
     }
     #[doc = "ADC common status register"]
@@ -315,36 +295,31 @@ pub mod regs {
     impl core::fmt::Debug for Csr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csr")
-                .field("awd", &[self.awd(0usize), self.awd(1usize), self.awd(2usize)])
-                .field("eoc", &[self.eoc(0usize), self.eoc(1usize), self.eoc(2usize)])
-                .field("jeoc", &[self.jeoc(0usize), self.jeoc(1usize), self.jeoc(2usize)])
-                .field("jstrt", &[self.jstrt(0usize), self.jstrt(1usize), self.jstrt(2usize)])
-                .field("strt", &[self.strt(0usize), self.strt(1usize), self.strt(2usize)])
-                .field("ovr", &[self.ovr(0usize), self.ovr(1usize), self.ovr(2usize)])
+                .field("awd[0]", &self.awd(0usize))
+                .field("awd[1]", &self.awd(1usize))
+                .field("awd[2]", &self.awd(2usize))
+                .field("eoc[0]", &self.eoc(0usize))
+                .field("eoc[1]", &self.eoc(1usize))
+                .field("eoc[2]", &self.eoc(2usize))
+                .field("jeoc[0]", &self.jeoc(0usize))
+                .field("jeoc[1]", &self.jeoc(1usize))
+                .field("jeoc[2]", &self.jeoc(2usize))
+                .field("jstrt[0]", &self.jstrt(0usize))
+                .field("jstrt[1]", &self.jstrt(1usize))
+                .field("jstrt[2]", &self.jstrt(2usize))
+                .field("strt[0]", &self.strt(0usize))
+                .field("strt[1]", &self.strt(1usize))
+                .field("strt[2]", &self.strt(2usize))
+                .field("ovr[0]", &self.ovr(0usize))
+                .field("ovr[1]", &self.ovr(1usize))
+                .field("ovr[2]", &self.ovr(2usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                awd: [bool; 3usize],
-                eoc: [bool; 3usize],
-                jeoc: [bool; 3usize],
-                jstrt: [bool; 3usize],
-                strt: [bool; 3usize],
-                ovr: [bool; 3usize],
-            }
-            let proxy = Csr {
-                awd: [self.awd(0usize), self.awd(1usize), self.awd(2usize)],
-                eoc: [self.eoc(0usize), self.eoc(1usize), self.eoc(2usize)],
-                jeoc: [self.jeoc(0usize), self.jeoc(1usize), self.jeoc(2usize)],
-                jstrt: [self.jstrt(0usize), self.jstrt(1usize), self.jstrt(2usize)],
-                strt: [self.strt(0usize), self.strt(1usize), self.strt(2usize)],
-                ovr: [self.ovr(0usize), self.ovr(1usize), self.ovr(2usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Csr {{ awd[0]: {=bool:?}, awd[1]: {=bool:?}, awd[2]: {=bool:?}, eoc[0]: {=bool:?}, eoc[1]: {=bool:?}, eoc[2]: {=bool:?}, jeoc[0]: {=bool:?}, jeoc[1]: {=bool:?}, jeoc[2]: {=bool:?}, jstrt[0]: {=bool:?}, jstrt[1]: {=bool:?}, jstrt[2]: {=bool:?}, strt[0]: {=bool:?}, strt[1]: {=bool:?}, strt[2]: {=bool:?}, ovr[0]: {=bool:?}, ovr[1]: {=bool:?}, ovr[2]: {=bool:?} }}" , self . awd (0usize) , self . awd (1usize) , self . awd (2usize) , self . eoc (0usize) , self . eoc (1usize) , self . eoc (2usize) , self . jeoc (0usize) , self . jeoc (1usize) , self . jeoc (2usize) , self . jstrt (0usize) , self . jstrt (1usize) , self . jstrt (2usize) , self . strt (0usize) , self . strt (1usize) , self . strt (2usize) , self . ovr (0usize) , self . ovr (1usize) , self . ovr (2usize))
         }
     }
 }

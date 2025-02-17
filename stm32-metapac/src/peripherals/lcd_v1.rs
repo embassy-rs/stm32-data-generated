@@ -119,16 +119,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Clr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Clr {
-                sofc: bool,
-                uddc: bool,
-            }
-            let proxy = Clr {
-                sofc: self.sofc(),
-                uddc: self.uddc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Clr {{ sofc: {=bool:?}, uddc: {=bool:?} }}",
+                self.sofc(),
+                self.uddc()
+            )
         }
     }
     #[doc = "control register"]
@@ -212,22 +208,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                lcden: bool,
-                vsel: bool,
-                duty: u8,
-                bias: u8,
-                mux_seg: bool,
-            }
-            let proxy = Cr {
-                lcden: self.lcden(),
-                vsel: self.vsel(),
-                duty: self.duty(),
-                bias: self.bias(),
-                mux_seg: self.mux_seg(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cr {{ lcden: {=bool:?}, vsel: {=bool:?}, duty: {=u8:?}, bias: {=u8:?}, mux_seg: {=bool:?} }}",
+                self.lcden(),
+                self.vsel(),
+                self.duty(),
+                self.bias(),
+                self.mux_seg()
+            )
         }
     }
     #[doc = "frame control register"]
@@ -371,32 +360,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fcr {
-                hd: bool,
-                sofie: bool,
-                uddie: bool,
-                pon: u8,
-                dead: u8,
-                cc: u8,
-                blinkf: u8,
-                blink: u8,
-                div: u8,
-                ps: u8,
-            }
-            let proxy = Fcr {
-                hd: self.hd(),
-                sofie: self.sofie(),
-                uddie: self.uddie(),
-                pon: self.pon(),
-                dead: self.dead(),
-                cc: self.cc(),
-                blinkf: self.blinkf(),
-                blink: self.blink(),
-                div: self.div(),
-                ps: self.ps(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Fcr {{ hd: {=bool:?}, sofie: {=bool:?}, uddie: {=bool:?}, pon: {=u8:?}, dead: {=u8:?}, cc: {=u8:?}, blinkf: {=u8:?}, blink: {=u8:?}, div: {=u8:?}, ps: {=u8:?} }}" , self . hd () , self . sofie () , self . uddie () , self . pon () , self . dead () , self . cc () , self . blinkf () , self . blink () , self . div () , self . ps ())
         }
     }
     #[doc = "status register"]
@@ -492,24 +456,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                ens: bool,
-                sof: bool,
-                udr: bool,
-                udd: bool,
-                rdy: bool,
-                fcrsf: bool,
-            }
-            let proxy = Sr {
-                ens: self.ens(),
-                sof: self.sof(),
-                udr: self.udr(),
-                udd: self.udd(),
-                rdy: self.rdy(),
-                fcrsf: self.fcrsf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr {{ ens: {=bool:?}, sof: {=bool:?}, udr: {=bool:?}, udd: {=bool:?}, rdy: {=bool:?}, fcrsf: {=bool:?} }}" , self . ens () , self . sof () , self . udr () , self . udd () , self . rdy () , self . fcrsf ())
         }
     }
 }

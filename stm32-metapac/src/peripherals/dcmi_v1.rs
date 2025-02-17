@@ -229,34 +229,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                capture: bool,
-                cm: bool,
-                crop: bool,
-                jpeg: bool,
-                ess: bool,
-                pckpol: bool,
-                hspol: bool,
-                vspol: bool,
-                fcrc: u8,
-                edm: u8,
-                enable: bool,
-            }
-            let proxy = Cr {
-                capture: self.capture(),
-                cm: self.cm(),
-                crop: self.crop(),
-                jpeg: self.jpeg(),
-                ess: self.ess(),
-                pckpol: self.pckpol(),
-                hspol: self.hspol(),
-                vspol: self.vspol(),
-                fcrc: self.fcrc(),
-                edm: self.edm(),
-                enable: self.enable(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ capture: {=bool:?}, cm: {=bool:?}, crop: {=bool:?}, jpeg: {=bool:?}, ess: {=bool:?}, pckpol: {=bool:?}, hspol: {=bool:?}, vspol: {=bool:?}, fcrc: {=u8:?}, edm: {=u8:?}, enable: {=bool:?} }}" , self . capture () , self . cm () , self . crop () , self . jpeg () , self . ess () , self . pckpol () , self . hspol () , self . vspol () , self . fcrc () , self . edm () , self . enable ())
         }
     }
     #[doc = "crop window size"]
@@ -304,16 +277,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cwsize {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cwsize {
-                capcnt: u16,
-                vline: u16,
-            }
-            let proxy = Cwsize {
-                capcnt: self.capcnt(),
-                vline: self.vline(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cwsize {{ capcnt: {=u16:?}, vline: {=u16:?} }}",
+                self.capcnt(),
+                self.vline()
+            )
         }
     }
     #[doc = "crop window start"]
@@ -361,16 +330,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cwstrt {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cwstrt {
-                hoffcnt: u16,
-                vst: u16,
-            }
-            let proxy = Cwstrt {
-                hoffcnt: self.hoffcnt(),
-                vst: self.vst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cwstrt {{ hoffcnt: {=u16:?}, vst: {=u16:?} }}",
+                self.hoffcnt(),
+                self.vst()
+            )
         }
     }
     #[doc = "data register"]
@@ -442,20 +407,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dr {
-                byte0: u8,
-                byte1: u8,
-                byte2: u8,
-                byte3: u8,
-            }
-            let proxy = Dr {
-                byte0: self.byte0(),
-                byte1: self.byte1(),
-                byte2: self.byte2(),
-                byte3: self.byte3(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dr {{ byte0: {=u8:?}, byte1: {=u8:?}, byte2: {=u8:?}, byte3: {=u8:?} }}",
+                self.byte0(),
+                self.byte1(),
+                self.byte2(),
+                self.byte3()
+            )
         }
     }
     #[doc = "embedded synchronization code register"]
@@ -527,20 +486,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Escr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Escr {
-                fsc: u8,
-                lsc: u8,
-                lec: u8,
-                fec: u8,
-            }
-            let proxy = Escr {
-                fsc: self.fsc(),
-                lsc: self.lsc(),
-                lec: self.lec(),
-                fec: self.fec(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Escr {{ fsc: {=u8:?}, lsc: {=u8:?}, lec: {=u8:?}, fec: {=u8:?} }}",
+                self.fsc(),
+                self.lsc(),
+                self.lec(),
+                self.fec()
+            )
         }
     }
     #[doc = "embedded synchronization unmask register"]
@@ -612,20 +565,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Esur {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Esur {
-                fsu: u8,
-                lsu: u8,
-                leu: u8,
-                feu: u8,
-            }
-            let proxy = Esur {
-                fsu: self.fsu(),
-                lsu: self.lsu(),
-                leu: self.leu(),
-                feu: self.feu(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Esur {{ fsu: {=u8:?}, lsu: {=u8:?}, leu: {=u8:?}, feu: {=u8:?} }}",
+                self.fsu(),
+                self.lsu(),
+                self.leu(),
+                self.feu()
+            )
         }
     }
     #[doc = "interrupt clear register"]
@@ -709,22 +656,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Icr {
-                frame_isc: bool,
-                ovr_isc: bool,
-                err_isc: bool,
-                vsync_isc: bool,
-                line_isc: bool,
-            }
-            let proxy = Icr {
-                frame_isc: self.frame_isc(),
-                ovr_isc: self.ovr_isc(),
-                err_isc: self.err_isc(),
-                vsync_isc: self.vsync_isc(),
-                line_isc: self.line_isc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Icr {{ frame_isc: {=bool:?}, ovr_isc: {=bool:?}, err_isc: {=bool:?}, vsync_isc: {=bool:?}, line_isc: {=bool:?} }}" , self . frame_isc () , self . ovr_isc () , self . err_isc () , self . vsync_isc () , self . line_isc ())
         }
     }
     #[doc = "interrupt enable register"]
@@ -808,22 +740,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ier {
-                frame_ie: bool,
-                ovr_ie: bool,
-                err_ie: bool,
-                vsync_ie: bool,
-                line_ie: bool,
-            }
-            let proxy = Ier {
-                frame_ie: self.frame_ie(),
-                ovr_ie: self.ovr_ie(),
-                err_ie: self.err_ie(),
-                vsync_ie: self.vsync_ie(),
-                line_ie: self.line_ie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ier {{ frame_ie: {=bool:?}, ovr_ie: {=bool:?}, err_ie: {=bool:?}, vsync_ie: {=bool:?}, line_ie: {=bool:?} }}" , self . frame_ie () , self . ovr_ie () , self . err_ie () , self . vsync_ie () , self . line_ie ())
         }
     }
     #[doc = "masked interrupt status register"]
@@ -907,22 +824,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mis {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mis {
-                frame_mis: bool,
-                ovr_mis: bool,
-                err_mis: bool,
-                vsync_mis: bool,
-                line_mis: bool,
-            }
-            let proxy = Mis {
-                frame_mis: self.frame_mis(),
-                ovr_mis: self.ovr_mis(),
-                err_mis: self.err_mis(),
-                vsync_mis: self.vsync_mis(),
-                line_mis: self.line_mis(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Mis {{ frame_mis: {=bool:?}, ovr_mis: {=bool:?}, err_mis: {=bool:?}, vsync_mis: {=bool:?}, line_mis: {=bool:?} }}" , self . frame_mis () , self . ovr_mis () , self . err_mis () , self . vsync_mis () , self . line_mis ())
         }
     }
     #[doc = "raw interrupt status register"]
@@ -1006,22 +908,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ris {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ris {
-                frame_ris: bool,
-                ovr_ris: bool,
-                err_ris: bool,
-                vsync_ris: bool,
-                line_ris: bool,
-            }
-            let proxy = Ris {
-                frame_ris: self.frame_ris(),
-                ovr_ris: self.ovr_ris(),
-                err_ris: self.err_ris(),
-                vsync_ris: self.vsync_ris(),
-                line_ris: self.line_ris(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ris {{ frame_ris: {=bool:?}, ovr_ris: {=bool:?}, err_ris: {=bool:?}, vsync_ris: {=bool:?}, line_ris: {=bool:?} }}" , self . frame_ris () , self . ovr_ris () , self . err_ris () , self . vsync_ris () , self . line_ris ())
         }
     }
     #[doc = "status register"]
@@ -1081,18 +968,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                hsync: bool,
-                vsync: bool,
-                fne: bool,
-            }
-            let proxy = Sr {
-                hsync: self.hsync(),
-                vsync: self.vsync(),
-                fne: self.fne(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sr {{ hsync: {=bool:?}, vsync: {=bool:?}, fne: {=bool:?} }}",
+                self.hsync(),
+                self.vsync(),
+                self.fne()
+            )
         }
     }
 }

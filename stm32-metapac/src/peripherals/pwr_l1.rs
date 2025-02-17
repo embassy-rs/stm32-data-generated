@@ -184,34 +184,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                lpsdsr: bool,
-                pdds: super::vals::Pdds,
-                cwuf: bool,
-                csbf: bool,
-                pvde: bool,
-                pls: u8,
-                dbp: bool,
-                ulp: bool,
-                fwu: bool,
-                vos: super::vals::Vos,
-                lprun: bool,
-            }
-            let proxy = Cr {
-                lpsdsr: self.lpsdsr(),
-                pdds: self.pdds(),
-                cwuf: self.cwuf(),
-                csbf: self.csbf(),
-                pvde: self.pvde(),
-                pls: self.pls(),
-                dbp: self.dbp(),
-                ulp: self.ulp(),
-                fwu: self.fwu(),
-                vos: self.vos(),
-                lprun: self.lprun(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ lpsdsr: {=bool:?}, pdds: {:?}, cwuf: {=bool:?}, csbf: {=bool:?}, pvde: {=bool:?}, pls: {=u8:?}, dbp: {=bool:?}, ulp: {=bool:?}, fwu: {=bool:?}, vos: {:?}, lprun: {=bool:?} }}" , self . lpsdsr () , self . pdds () , self . cwuf () , self . csbf () , self . pvde () , self . pls () , self . dbp () , self . ulp () , self . fwu () , self . vos () , self . lprun ())
         }
     }
     #[doc = "power control/status register"]
@@ -316,33 +289,16 @@ pub mod regs {
                 .field("vrefintrdyf", &self.vrefintrdyf())
                 .field("vosf", &self.vosf())
                 .field("reglpf", &self.reglpf())
-                .field("ewup", &[self.ewup(0usize), self.ewup(1usize), self.ewup(2usize)])
+                .field("ewup[0]", &self.ewup(0usize))
+                .field("ewup[1]", &self.ewup(1usize))
+                .field("ewup[2]", &self.ewup(2usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                wuf: bool,
-                sbf: bool,
-                pvdo: bool,
-                vrefintrdyf: bool,
-                vosf: bool,
-                reglpf: bool,
-                ewup: [bool; 3usize],
-            }
-            let proxy = Csr {
-                wuf: self.wuf(),
-                sbf: self.sbf(),
-                pvdo: self.pvdo(),
-                vrefintrdyf: self.vrefintrdyf(),
-                vosf: self.vosf(),
-                reglpf: self.reglpf(),
-                ewup: [self.ewup(0usize), self.ewup(1usize), self.ewup(2usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Csr {{ wuf: {=bool:?}, sbf: {=bool:?}, pvdo: {=bool:?}, vrefintrdyf: {=bool:?}, vosf: {=bool:?}, reglpf: {=bool:?}, ewup[0]: {=bool:?}, ewup[1]: {=bool:?}, ewup[2]: {=bool:?} }}" , self . wuf () , self . sbf () , self . pvdo () , self . vrefintrdyf () , self . vosf () , self . reglpf () , self . ewup (0usize) , self . ewup (1usize) , self . ewup (2usize))
         }
     }
 }

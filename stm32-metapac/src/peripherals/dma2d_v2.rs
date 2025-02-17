@@ -166,16 +166,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Amtcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Amtcr {
-                en: bool,
-                dt: u8,
-            }
-            let proxy = Amtcr {
-                en: self.en(),
-                dt: self.dt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Amtcr {{ en: {=bool:?}, dt: {=u8:?} }}", self.en(), self.dt())
         }
     }
     #[doc = "DMA2D background CLUT memory address register"]
@@ -209,12 +200,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bgcmar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bgcmar {
-                ma: u32,
-            }
-            let proxy = Bgcmar { ma: self.ma() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Bgcmar {{ ma: {=u32:?} }}", self.ma())
         }
     }
     #[doc = "DMA2D background color register"]
@@ -274,18 +260,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bgcolr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bgcolr {
-                blue: u8,
-                green: u8,
-                red: u8,
-            }
-            let proxy = Bgcolr {
-                blue: self.blue(),
-                green: self.green(),
-                red: self.red(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Bgcolr {{ blue: {=u8:?}, green: {=u8:?}, red: {=u8:?} }}",
+                self.blue(),
+                self.green(),
+                self.red()
+            )
         }
     }
     #[doc = "DMA2D background memory address register"]
@@ -319,12 +300,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bgmar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bgmar {
-                ma: u32,
-            }
-            let proxy = Bgmar { ma: self.ma() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Bgmar {{ ma: {=u32:?} }}", self.ma())
         }
     }
     #[doc = "DMA2D background offset register"]
@@ -358,12 +334,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bgor {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bgor {
-                lo: u16,
-            }
-            let proxy = Bgor { lo: self.lo() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Bgor {{ lo: {=u16:?} }}", self.lo())
         }
     }
     #[doc = "DMA2D background PFC control register"]
@@ -485,28 +456,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bgpfccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bgpfccr {
-                cm: super::vals::BgpfccrCm,
-                ccm: super::vals::BgpfccrCcm,
-                start: super::vals::BgpfccrStart,
-                cs: u8,
-                am: super::vals::BgpfccrAm,
-                ai: super::vals::BgpfccrAi,
-                rbs: super::vals::BgpfccrRbs,
-                alpha: u8,
-            }
-            let proxy = Bgpfccr {
-                cm: self.cm(),
-                ccm: self.ccm(),
-                start: self.start(),
-                cs: self.cs(),
-                am: self.am(),
-                ai: self.ai(),
-                rbs: self.rbs(),
-                alpha: self.alpha(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Bgpfccr {{ cm: {:?}, ccm: {:?}, start: {:?}, cs: {=u8:?}, am: {:?}, ai: {:?}, rbs: {:?}, alpha: {=u8:?} }}" , self . cm () , self . ccm () , self . start () , self . cs () , self . am () , self . ai () , self . rbs () , self . alpha ())
         }
     }
     #[doc = "DMA2D control register"]
@@ -650,32 +600,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                start: super::vals::CrStart,
-                susp: bool,
-                abort: super::vals::Abort,
-                teie: bool,
-                tcie: bool,
-                twie: bool,
-                caeie: bool,
-                ctcie: bool,
-                ceie: bool,
-                mode: super::vals::Mode,
-            }
-            let proxy = Cr {
-                start: self.start(),
-                susp: self.susp(),
-                abort: self.abort(),
-                teie: self.teie(),
-                tcie: self.tcie(),
-                twie: self.twie(),
-                caeie: self.caeie(),
-                ctcie: self.ctcie(),
-                ceie: self.ceie(),
-                mode: self.mode(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ start: {:?}, susp: {=bool:?}, abort: {:?}, teie: {=bool:?}, tcie: {=bool:?}, twie: {=bool:?}, caeie: {=bool:?}, ctcie: {=bool:?}, ceie: {=bool:?}, mode: {:?} }}" , self . start () , self . susp () , self . abort () , self . teie () , self . tcie () , self . twie () , self . caeie () , self . ctcie () , self . ceie () , self . mode ())
         }
     }
     #[doc = "DMA2D foreground CLUT memory address register"]
@@ -709,12 +634,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fgcmar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fgcmar {
-                ma: u32,
-            }
-            let proxy = Fgcmar { ma: self.ma() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Fgcmar {{ ma: {=u32:?} }}", self.ma())
         }
     }
     #[doc = "DMA2D foreground color register"]
@@ -774,18 +694,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fgcolr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fgcolr {
-                blue: u8,
-                green: u8,
-                red: u8,
-            }
-            let proxy = Fgcolr {
-                blue: self.blue(),
-                green: self.green(),
-                red: self.red(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Fgcolr {{ blue: {=u8:?}, green: {=u8:?}, red: {=u8:?} }}",
+                self.blue(),
+                self.green(),
+                self.red()
+            )
         }
     }
     #[doc = "DMA2D foreground memory address register"]
@@ -819,12 +734,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fgmar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fgmar {
-                ma: u32,
-            }
-            let proxy = Fgmar { ma: self.ma() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Fgmar {{ ma: {=u32:?} }}", self.ma())
         }
     }
     #[doc = "DMA2D foreground offset register"]
@@ -858,12 +768,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fgor {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fgor {
-                lo: u16,
-            }
-            let proxy = Fgor { lo: self.lo() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Fgor {{ lo: {=u16:?} }}", self.lo())
         }
     }
     #[doc = "DMA2D foreground PFC control register"]
@@ -999,30 +904,7 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fgpfccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fgpfccr {
-                cm: super::vals::FgpfccrCm,
-                ccm: super::vals::FgpfccrCcm,
-                start: super::vals::FgpfccrStart,
-                cs: u8,
-                am: super::vals::FgpfccrAm,
-                css: u8,
-                ai: super::vals::FgpfccrAi,
-                rbs: super::vals::FgpfccrRbs,
-                alpha: u8,
-            }
-            let proxy = Fgpfccr {
-                cm: self.cm(),
-                ccm: self.ccm(),
-                start: self.start(),
-                cs: self.cs(),
-                am: self.am(),
-                css: self.css(),
-                ai: self.ai(),
-                rbs: self.rbs(),
-                alpha: self.alpha(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Fgpfccr {{ cm: {:?}, ccm: {:?}, start: {:?}, cs: {=u8:?}, am: {:?}, css: {=u8:?}, ai: {:?}, rbs: {:?}, alpha: {=u8:?} }}" , self . cm () , self . ccm () , self . start () , self . cs () , self . am () , self . css () , self . ai () , self . rbs () , self . alpha ())
         }
     }
     #[doc = "DMA2D interrupt flag clear register"]
@@ -1118,24 +1000,16 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ifcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ifcr {
-                cteif: super::vals::Cteif,
-                ctcif: super::vals::Ctcif,
-                ctwif: super::vals::Ctwif,
-                caecif: super::vals::Caecif,
-                cctcif: super::vals::Cctcif,
-                cceif: super::vals::Cceif,
-            }
-            let proxy = Ifcr {
-                cteif: self.cteif(),
-                ctcif: self.ctcif(),
-                ctwif: self.ctwif(),
-                caecif: self.caecif(),
-                cctcif: self.cctcif(),
-                cceif: self.cceif(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ifcr {{ cteif: {:?}, ctcif: {:?}, ctwif: {:?}, caecif: {:?}, cctcif: {:?}, cceif: {:?} }}",
+                self.cteif(),
+                self.ctcif(),
+                self.ctwif(),
+                self.caecif(),
+                self.cctcif(),
+                self.cceif()
+            )
         }
     }
     #[doc = "DMA2D Interrupt Status Register"]
@@ -1231,24 +1105,7 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Isr {
-                teif: bool,
-                tcif: bool,
-                twif: bool,
-                caeif: bool,
-                ctcif: bool,
-                ceif: bool,
-            }
-            let proxy = Isr {
-                teif: self.teif(),
-                tcif: self.tcif(),
-                twif: self.twif(),
-                caeif: self.caeif(),
-                ctcif: self.ctcif(),
-                ceif: self.ceif(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Isr {{ teif: {=bool:?}, tcif: {=bool:?}, twif: {=bool:?}, caeif: {=bool:?}, ctcif: {=bool:?}, ceif: {=bool:?} }}" , self . teif () , self . tcif () , self . twif () , self . caeif () , self . ctcif () , self . ceif ())
         }
     }
     #[doc = "DMA2D line watermark register"]
@@ -1282,12 +1139,7 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Lwr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Lwr {
-                lw: u16,
-            }
-            let proxy = Lwr { lw: self.lw() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Lwr {{ lw: {=u16:?} }}", self.lw())
         }
     }
     #[doc = "DMA2D number of line register"]
@@ -1335,16 +1187,7 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nlr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Nlr {
-                nl: u16,
-                pl: u16,
-            }
-            let proxy = Nlr {
-                nl: self.nl(),
-                pl: self.pl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Nlr {{ nl: {=u16:?}, pl: {=u16:?} }}", self.nl(), self.pl())
         }
     }
     #[doc = "DMA2D output color register"]
@@ -1416,20 +1259,14 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ocolr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ocolr {
-                blue: u8,
-                green: u8,
-                red: u8,
-                alpha: u8,
-            }
-            let proxy = Ocolr {
-                blue: self.blue(),
-                green: self.green(),
-                red: self.red(),
-                alpha: self.alpha(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ocolr {{ blue: {=u8:?}, green: {=u8:?}, red: {=u8:?}, alpha: {=u8:?} }}",
+                self.blue(),
+                self.green(),
+                self.red(),
+                self.alpha()
+            )
         }
     }
     #[doc = "DMA2D output memory address register"]
@@ -1463,12 +1300,7 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Omar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Omar {
-                ma: u32,
-            }
-            let proxy = Omar { ma: self.ma() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Omar {{ ma: {=u32:?} }}", self.ma())
         }
     }
     #[doc = "DMA2D output offset register"]
@@ -1502,12 +1334,7 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Oor {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Oor {
-                lo: u16,
-            }
-            let proxy = Oor { lo: self.lo() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Oor {{ lo: {=u16:?} }}", self.lo())
         }
     }
     #[doc = "DMA2D output PFC control register"]
@@ -1579,20 +1406,14 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Opfccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Opfccr {
-                cm: super::vals::OpfccrCm,
-                sb: super::vals::Sb,
-                ai: super::vals::OpfccrAi,
-                rbs: super::vals::OpfccrRbs,
-            }
-            let proxy = Opfccr {
-                cm: self.cm(),
-                sb: self.sb(),
-                ai: self.ai(),
-                rbs: self.rbs(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Opfccr {{ cm: {:?}, sb: {:?}, ai: {:?}, rbs: {:?} }}",
+                self.cm(),
+                self.sb(),
+                self.ai(),
+                self.rbs()
+            )
         }
     }
 }

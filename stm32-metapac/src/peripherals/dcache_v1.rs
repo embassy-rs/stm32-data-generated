@@ -104,14 +104,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cmdreaddrr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cmdreaddrr {
-                cmdendaddr: u32,
-            }
-            let proxy = Cmdreaddrr {
-                cmdendaddr: self.cmdendaddr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cmdreaddrr {{ cmdendaddr: {=u32:?} }}", self.cmdendaddr())
         }
     }
     #[doc = "DCACHE command range start address register."]
@@ -147,14 +140,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cmdrsaddrr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cmdrsaddrr {
-                cmdstartaddr: u32,
-            }
-            let proxy = Cmdrsaddrr {
-                cmdstartaddr: self.cmdstartaddr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cmdrsaddrr {{ cmdstartaddr: {=u32:?} }}", self.cmdstartaddr())
         }
     }
     #[doc = "DCACHE control register."]
@@ -334,38 +320,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                en: bool,
-                cacheinv: bool,
-                cachecmd: u8,
-                startcmd: bool,
-                rhitmen: bool,
-                rmissmen: bool,
-                rhitmrst: bool,
-                rmissmrst: bool,
-                whitmen: bool,
-                wmissmen: bool,
-                whitmrst: bool,
-                wmissmrst: bool,
-                hburst: bool,
-            }
-            let proxy = Cr {
-                en: self.en(),
-                cacheinv: self.cacheinv(),
-                cachecmd: self.cachecmd(),
-                startcmd: self.startcmd(),
-                rhitmen: self.rhitmen(),
-                rmissmen: self.rmissmen(),
-                rhitmrst: self.rhitmrst(),
-                rmissmrst: self.rmissmrst(),
-                whitmen: self.whitmen(),
-                wmissmen: self.wmissmen(),
-                whitmrst: self.whitmrst(),
-                wmissmrst: self.wmissmrst(),
-                hburst: self.hburst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ en: {=bool:?}, cacheinv: {=bool:?}, cachecmd: {=u8:?}, startcmd: {=bool:?}, rhitmen: {=bool:?}, rmissmen: {=bool:?}, rhitmrst: {=bool:?}, rmissmrst: {=bool:?}, whitmen: {=bool:?}, wmissmen: {=bool:?}, whitmrst: {=bool:?}, wmissmrst: {=bool:?}, hburst: {=bool:?} }}" , self . en () , self . cacheinv () , self . cachecmd () , self . startcmd () , self . rhitmen () , self . rmissmen () , self . rhitmrst () , self . rmissmrst () , self . whitmen () , self . wmissmen () , self . whitmrst () , self . wmissmrst () , self . hburst ())
         }
     }
     #[doc = "DCACHE flag clear register."]
@@ -425,18 +380,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fcr {
-                cbsyendf: bool,
-                cerrf: bool,
-                ccmdendf: bool,
-            }
-            let proxy = Fcr {
-                cbsyendf: self.cbsyendf(),
-                cerrf: self.cerrf(),
-                ccmdendf: self.ccmdendf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Fcr {{ cbsyendf: {=bool:?}, cerrf: {=bool:?}, ccmdendf: {=bool:?} }}",
+                self.cbsyendf(),
+                self.cerrf(),
+                self.ccmdendf()
+            )
         }
     }
     #[doc = "DCACHE interrupt enable register."]
@@ -496,18 +446,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ier {
-                bsyendie: bool,
-                errie: bool,
-                cmdendie: bool,
-            }
-            let proxy = Ier {
-                bsyendie: self.bsyendie(),
-                errie: self.errie(),
-                cmdendie: self.cmdendie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ier {{ bsyendie: {=bool:?}, errie: {=bool:?}, cmdendie: {=bool:?} }}",
+                self.bsyendie(),
+                self.errie(),
+                self.cmdendie()
+            )
         }
     }
     #[doc = "DCACHE read-miss monitor register."]
@@ -541,14 +486,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rmmonr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rmmonr {
-                rmissmon: u16,
-            }
-            let proxy = Rmmonr {
-                rmissmon: self.rmissmon(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Rmmonr {{ rmissmon: {=u16:?} }}", self.rmissmon())
         }
     }
     #[doc = "DCACHE status register."]
@@ -632,22 +570,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                busyf: bool,
-                bsyendf: bool,
-                errf: bool,
-                busycmdf: bool,
-                cmdendf: bool,
-            }
-            let proxy = Sr {
-                busyf: self.busyf(),
-                bsyendf: self.bsyendf(),
-                errf: self.errf(),
-                busycmdf: self.busycmdf(),
-                cmdendf: self.cmdendf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr {{ busyf: {=bool:?}, bsyendf: {=bool:?}, errf: {=bool:?}, busycmdf: {=bool:?}, cmdendf: {=bool:?} }}" , self . busyf () , self . bsyendf () , self . errf () , self . busycmdf () , self . cmdendf ())
         }
     }
     #[doc = "DCACHE write-miss monitor register."]
@@ -681,14 +604,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wmmonr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wmmonr {
-                wmissmon: u16,
-            }
-            let proxy = Wmmonr {
-                wmissmon: self.wmissmon(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Wmmonr {{ wmissmon: {=u16:?} }}", self.wmissmon())
         }
     }
 }

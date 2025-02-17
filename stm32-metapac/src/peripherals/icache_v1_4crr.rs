@@ -162,26 +162,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                en: bool,
-                cacheinv: bool,
-                waysel: super::vals::Waysel,
-                hitmen: bool,
-                missmen: bool,
-                hitmrst: bool,
-                missmrst: bool,
-            }
-            let proxy = Cr {
-                en: self.en(),
-                cacheinv: self.cacheinv(),
-                waysel: self.waysel(),
-                hitmen: self.hitmen(),
-                missmen: self.missmen(),
-                hitmrst: self.hitmrst(),
-                missmrst: self.missmrst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ en: {=bool:?}, cacheinv: {=bool:?}, waysel: {:?}, hitmen: {=bool:?}, missmen: {=bool:?}, hitmrst: {=bool:?}, missmrst: {=bool:?} }}" , self . en () , self . cacheinv () , self . waysel () , self . hitmen () , self . missmen () , self . hitmrst () , self . missmrst ())
         }
     }
     #[doc = "ICACHE region configuration register."]
@@ -277,24 +258,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Crr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Crr {
-                baseaddr: u8,
-                rsize: super::vals::Rsize,
-                ren: bool,
-                remapaddr: u16,
-                mstsel: super::vals::Mstsel,
-                hburst: super::vals::Hburst,
-            }
-            let proxy = Crr {
-                baseaddr: self.baseaddr(),
-                rsize: self.rsize(),
-                ren: self.ren(),
-                remapaddr: self.remapaddr(),
-                mstsel: self.mstsel(),
-                hburst: self.hburst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Crr {{ baseaddr: {=u8:?}, rsize: {:?}, ren: {=bool:?}, remapaddr: {=u16:?}, mstsel: {:?}, hburst: {:?} }}" , self . baseaddr () , self . rsize () , self . ren () , self . remapaddr () , self . mstsel () , self . hburst ())
         }
     }
     #[doc = "ICACHE flag clear register."]
@@ -342,16 +306,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fcr {
-                cbsyendf: bool,
-                cerrf: bool,
-            }
-            let proxy = Fcr {
-                cbsyendf: self.cbsyendf(),
-                cerrf: self.cerrf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Fcr {{ cbsyendf: {=bool:?}, cerrf: {=bool:?} }}",
+                self.cbsyendf(),
+                self.cerrf()
+            )
         }
     }
     #[doc = "ICACHE interrupt enable register."]
@@ -399,16 +359,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ier {
-                bsyendie: bool,
-                errie: bool,
-            }
-            let proxy = Ier {
-                bsyendie: self.bsyendie(),
-                errie: self.errie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ier {{ bsyendie: {=bool:?}, errie: {=bool:?} }}",
+                self.bsyendie(),
+                self.errie()
+            )
         }
     }
     #[doc = "ICACHE miss monitor register."]
@@ -442,14 +398,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mmonr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mmonr {
-                missmon: u16,
-            }
-            let proxy = Mmonr {
-                missmon: self.missmon(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Mmonr {{ missmon: {=u16:?} }}", self.missmon())
         }
     }
     #[doc = "ICACHE status register."]
@@ -509,18 +458,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                busyf: bool,
-                bsyendf: bool,
-                errf: bool,
-            }
-            let proxy = Sr {
-                busyf: self.busyf(),
-                bsyendf: self.bsyendf(),
-                errf: self.errf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sr {{ busyf: {=bool:?}, bsyendf: {=bool:?}, errf: {=bool:?} }}",
+                self.busyf(),
+                self.bsyendf(),
+                self.errf()
+            )
         }
     }
 }

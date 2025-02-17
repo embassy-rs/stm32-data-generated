@@ -247,16 +247,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Acr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Acr {
-                latency: u8,
-                wrhighfreq: u8,
-            }
-            let proxy = Acr {
-                latency: self.latency(),
-                wrhighfreq: self.wrhighfreq(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Acr {{ latency: {=u8:?}, wrhighfreq: {=u8:?} }}",
+                self.latency(),
+                self.wrhighfreq()
+            )
         }
     }
     #[doc = "FLASH control register."]
@@ -400,32 +396,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                lock: bool,
-                pg: bool,
-                ser: bool,
-                ber: bool,
-                fw: bool,
-                start: bool,
-                ssn: u8,
-                pg_otp: bool,
-                crc_en: bool,
-                all_banks: bool,
-            }
-            let proxy = Cr {
-                lock: self.lock(),
-                pg: self.pg(),
-                ser: self.ser(),
-                ber: self.ber(),
-                fw: self.fw(),
-                start: self.start(),
-                ssn: self.ssn(),
-                pg_otp: self.pg_otp(),
-                crc_en: self.crc_en(),
-                all_banks: self.all_banks(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ lock: {=bool:?}, pg: {=bool:?}, ser: {=bool:?}, ber: {=bool:?}, fw: {=bool:?}, start: {=bool:?}, ssn: {=u8:?}, pg_otp: {=bool:?}, crc_en: {=bool:?}, all_banks: {=bool:?} }}" , self . lock () , self . pg () , self . ser () , self . ber () , self . fw () , self . start () , self . ssn () , self . pg_otp () , self . crc_en () , self . all_banks ())
         }
     }
     #[doc = "FLASH CRC control register."]
@@ -545,28 +516,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Crccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Crccr {
-                crc_sect: u8,
-                crc_by_sect: bool,
-                add_sect: bool,
-                clean_sect: bool,
-                start_crc: bool,
-                clean_crc: bool,
-                crc_burst: super::vals::CrcBurst,
-                all_sect: bool,
-            }
-            let proxy = Crccr {
-                crc_sect: self.crc_sect(),
-                crc_by_sect: self.crc_by_sect(),
-                add_sect: self.add_sect(),
-                clean_sect: self.clean_sect(),
-                start_crc: self.start_crc(),
-                clean_crc: self.clean_crc(),
-                crc_burst: self.crc_burst(),
-                all_sect: self.all_sect(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Crccr {{ crc_sect: {=u8:?}, crc_by_sect: {=bool:?}, add_sect: {=bool:?}, clean_sect: {=bool:?}, start_crc: {=bool:?}, clean_crc: {=bool:?}, crc_burst: {:?}, all_sect: {=bool:?} }}" , self . crc_sect () , self . crc_by_sect () , self . add_sect () , self . clean_sect () , self . start_crc () , self . clean_crc () , self . crc_burst () , self . all_sect ())
         }
     }
     #[doc = "FLASH CRC data register."]
@@ -600,14 +550,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Crcdatar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Crcdatar {
-                crc_data: u32,
-            }
-            let proxy = Crcdatar {
-                crc_data: self.crc_data(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Crcdatar {{ crc_data: {=u32:?} }}", self.crc_data())
         }
     }
     #[doc = "FLASH CRC end address register."]
@@ -645,14 +588,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Crceaddr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Crceaddr {
-                crc_end_addr: u16,
-            }
-            let proxy = Crceaddr {
-                crc_end_addr: self.crc_end_addr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Crceaddr {{ crc_end_addr: {=u16:?} }}", self.crc_end_addr())
         }
     }
     #[doc = "FLASH CRC start address register."]
@@ -690,14 +626,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Crcsaddr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Crcsaddr {
-                crc_start_addr: u16,
-            }
-            let proxy = Crcsaddr {
-                crc_start_addr: self.crc_start_addr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Crcsaddr {{ crc_start_addr: {=u16:?} }}", self.crc_start_addr())
         }
     }
     #[doc = "FLASH ECC double error fail address."]
@@ -731,14 +660,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Eccdfaddr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Eccdfaddr {
-                ded_fadd: u32,
-            }
-            let proxy = Eccdfaddr {
-                ded_fadd: self.ded_fadd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Eccdfaddr {{ ded_fadd: {=u32:?} }}", self.ded_fadd())
         }
     }
     #[doc = "FLASH ECC single error fail address."]
@@ -772,14 +694,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Eccsfaddr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Eccsfaddr {
-                sec_fadd: u32,
-            }
-            let proxy = Eccsfaddr {
-                sec_fadd: self.sec_fadd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Eccsfaddr {{ sec_fadd: {=u32:?} }}", self.sec_fadd())
         }
     }
     #[doc = "FLASH epoch status register."]
@@ -813,12 +728,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Epochsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Epochsr {
-                epoch: u32,
-            }
-            let proxy = Epochsr { epoch: self.epoch() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Epochsr {{ epoch: {=u32:?} }}", self.epoch())
         }
     }
     #[doc = "FLASH RoT status register programming."]
@@ -852,12 +762,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Epochsrp {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Epochsrp {
-                epoch: u32,
-            }
-            let proxy = Epochsrp { epoch: self.epoch() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Epochsrp {{ epoch: {=u32:?} }}", self.epoch())
         }
     }
     #[doc = "FLASH status register."]
@@ -891,14 +796,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fcr {
-                rcheckf: bool,
-            }
-            let proxy = Fcr {
-                rcheckf: self.rcheckf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Fcr {{ rcheckf: {=bool:?} }}", self.rcheckf())
         }
     }
     #[doc = "FLASH hide protection status register."]
@@ -946,16 +844,12 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hdpsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hdpsr {
-                hdp_area_start: u16,
-                hdp_area_end: u16,
-            }
-            let proxy = Hdpsr {
-                hdp_area_start: self.hdp_area_start(),
-                hdp_area_end: self.hdp_area_end(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Hdpsr {{ hdp_area_start: {=u16:?}, hdp_area_end: {=u16:?} }}",
+                self.hdp_area_start(),
+                self.hdp_area_end()
+            )
         }
     }
     #[doc = "FLASH hide protection status register programming."]
@@ -1003,16 +897,12 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hdpsrp {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hdpsrp {
-                hdp_area_start: u16,
-                hdp_area_end: u16,
-            }
-            let proxy = Hdpsrp {
-                hdp_area_start: self.hdp_area_start(),
-                hdp_area_end: self.hdp_area_end(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Hdpsrp {{ hdp_area_start: {=u16:?}, hdp_area_end: {=u16:?} }}",
+                self.hdp_area_start(),
+                self.hdp_area_end()
+            )
         }
     }
     #[doc = "FLASH interrupt clear register."]
@@ -1168,34 +1058,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Icr {
-                eopf: bool,
-                wrperrf: bool,
-                pgserrf: bool,
-                strberrf: bool,
-                oblerrf: bool,
-                incerrf: bool,
-                rdserrf: bool,
-                sneccerrf: bool,
-                dbeccerrf: bool,
-                crcendf: bool,
-                crcrderrf: bool,
-            }
-            let proxy = Icr {
-                eopf: self.eopf(),
-                wrperrf: self.wrperrf(),
-                pgserrf: self.pgserrf(),
-                strberrf: self.strberrf(),
-                oblerrf: self.oblerrf(),
-                incerrf: self.incerrf(),
-                rdserrf: self.rdserrf(),
-                sneccerrf: self.sneccerrf(),
-                dbeccerrf: self.dbeccerrf(),
-                crcendf: self.crcendf(),
-                crcrderrf: self.crcrderrf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Icr {{ eopf: {=bool:?}, wrperrf: {=bool:?}, pgserrf: {=bool:?}, strberrf: {=bool:?}, oblerrf: {=bool:?}, incerrf: {=bool:?}, rdserrf: {=bool:?}, sneccerrf: {=bool:?}, dbeccerrf: {=bool:?}, crcendf: {=bool:?}, crcrderrf: {=bool:?} }}" , self . eopf () , self . wrperrf () , self . pgserrf () , self . strberrf () , self . oblerrf () , self . incerrf () , self . rdserrf () , self . sneccerrf () , self . dbeccerrf () , self . crcendf () , self . crcrderrf ())
         }
     }
     #[doc = "FLASH interrupt enable register."]
@@ -1351,34 +1214,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ier {
-                eopie: bool,
-                wrperrie: bool,
-                pgserrie: bool,
-                strberrie: bool,
-                oblerrie: bool,
-                incerrie: bool,
-                rdserrie: bool,
-                sneccerrie: bool,
-                dbeccerrie: bool,
-                crcendie: bool,
-                crcrderrie: bool,
-            }
-            let proxy = Ier {
-                eopie: self.eopie(),
-                wrperrie: self.wrperrie(),
-                pgserrie: self.pgserrie(),
-                strberrie: self.strberrie(),
-                oblerrie: self.oblerrie(),
-                incerrie: self.incerrie(),
-                rdserrie: self.rdserrie(),
-                sneccerrie: self.sneccerrie(),
-                dbeccerrie: self.dbeccerrie(),
-                crcendie: self.crcendie(),
-                crcrderrie: self.crcrderrie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ier {{ eopie: {=bool:?}, wrperrie: {=bool:?}, pgserrie: {=bool:?}, strberrie: {=bool:?}, oblerrie: {=bool:?}, incerrie: {=bool:?}, rdserrie: {=bool:?}, sneccerrie: {=bool:?}, dbeccerrie: {=bool:?}, crcendie: {=bool:?}, crcrderrie: {=bool:?} }}" , self . eopie () , self . wrperrie () , self . pgserrie () , self . strberrie () , self . oblerrie () , self . incerrie () , self . rdserrie () , self . sneccerrie () , self . dbeccerrie () , self . crcendie () , self . crcrderrie ())
         }
     }
     #[doc = "FLASH interrupt status register."]
@@ -1534,34 +1370,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Isr {
-                eopf: bool,
-                wrperrf: bool,
-                pgserrf: bool,
-                strberrf: bool,
-                oblerrf: bool,
-                incerrf: bool,
-                rdserrf: bool,
-                sneccerrf: bool,
-                dbeccerrf: bool,
-                crcendf: bool,
-                crcrderrf: bool,
-            }
-            let proxy = Isr {
-                eopf: self.eopf(),
-                wrperrf: self.wrperrf(),
-                pgserrf: self.pgserrf(),
-                strberrf: self.strberrf(),
-                oblerrf: self.oblerrf(),
-                incerrf: self.incerrf(),
-                rdserrf: self.rdserrf(),
-                sneccerrf: self.sneccerrf(),
-                dbeccerrf: self.dbeccerrf(),
-                crcendf: self.crcendf(),
-                crcrderrf: self.crcrderrf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Isr {{ eopf: {=bool:?}, wrperrf: {=bool:?}, pgserrf: {=bool:?}, strberrf: {=bool:?}, oblerrf: {=bool:?}, incerrf: {=bool:?}, rdserrf: {=bool:?}, sneccerrf: {=bool:?}, dbeccerrf: {=bool:?}, crcendf: {=bool:?}, crcrderrf: {=bool:?} }}" , self . eopf () , self . wrperrf () , self . pgserrf () , self . strberrf () , self . oblerrf () , self . incerrf () , self . rdserrf () , self . sneccerrf () , self . dbeccerrf () , self . crcendf () , self . crcrderrf ())
         }
     }
     #[doc = "FLASH control key register."]
@@ -1595,12 +1404,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Keyr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Keyr {
-                cukey: u32,
-            }
-            let proxy = Keyr { cukey: self.cukey() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Keyr {{ cukey: {=u32:?} }}", self.cukey())
         }
     }
     #[doc = "FLASH non-volatile status register."]
@@ -1634,14 +1438,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nvsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Nvsr {
-                nvstate: super::vals::NvsrNvstate,
-            }
-            let proxy = Nvsr {
-                nvstate: self.nvstate(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Nvsr {{ nvstate: {:?} }}", self.nvstate())
         }
     }
     #[doc = "FLASH security status register programming."]
@@ -1675,14 +1472,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nvsrp {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Nvsrp {
-                nvstate: super::vals::NvsrpNvstate,
-            }
-            let proxy = Nvsrp {
-                nvstate: self.nvstate(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Nvsrp {{ nvstate: {:?} }}", self.nvstate())
         }
     }
     #[doc = "FLASH option byte key control register."]
@@ -1766,22 +1556,15 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Obkcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Obkcr {
-                obkindex: u8,
-                nextkl: super::vals::Nextkl,
-                obksize: super::vals::Obksize,
-                keyprog: bool,
-                keystart: bool,
-            }
-            let proxy = Obkcr {
-                obkindex: self.obkindex(),
-                nextkl: self.nextkl(),
-                obksize: self.obksize(),
-                keyprog: self.keyprog(),
-                keystart: self.keystart(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Obkcr {{ obkindex: {=u8:?}, nextkl: {:?}, obksize: {:?}, keyprog: {=bool:?}, keystart: {=bool:?} }}",
+                self.obkindex(),
+                self.nextkl(),
+                self.obksize(),
+                self.keyprog(),
+                self.keystart()
+            )
         }
     }
     #[doc = "FLASH option byte word 1 status register."]
@@ -1925,32 +1708,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Obw1sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Obw1sr {
-                bor_lev: super::vals::BorLev,
-                iwdg_hw: bool,
-                nrst_stop: bool,
-                nrst_stby: bool,
-                octo1_hslv: bool,
-                octo2_hslv: bool,
-                iwdg_fz_stop: bool,
-                iwdg_fz_sdby: bool,
-                perso_ok: bool,
-                vddio_hslv: bool,
-            }
-            let proxy = Obw1sr {
-                bor_lev: self.bor_lev(),
-                iwdg_hw: self.iwdg_hw(),
-                nrst_stop: self.nrst_stop(),
-                nrst_stby: self.nrst_stby(),
-                octo1_hslv: self.octo1_hslv(),
-                octo2_hslv: self.octo2_hslv(),
-                iwdg_fz_stop: self.iwdg_fz_stop(),
-                iwdg_fz_sdby: self.iwdg_fz_sdby(),
-                perso_ok: self.perso_ok(),
-                vddio_hslv: self.vddio_hslv(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Obw1sr {{ bor_lev: {:?}, iwdg_hw: {=bool:?}, nrst_stop: {=bool:?}, nrst_stby: {=bool:?}, octo1_hslv: {=bool:?}, octo2_hslv: {=bool:?}, iwdg_fz_stop: {=bool:?}, iwdg_fz_sdby: {=bool:?}, perso_ok: {=bool:?}, vddio_hslv: {=bool:?} }}" , self . bor_lev () , self . iwdg_hw () , self . nrst_stop () , self . nrst_stby () , self . octo1_hslv () , self . octo2_hslv () , self . iwdg_fz_stop () , self . iwdg_fz_sdby () , self . perso_ok () , self . vddio_hslv ())
         }
     }
     #[doc = "FLASH option byte word 1 status register programming."]
@@ -2082,30 +1840,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Obw1srp {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Obw1srp {
-                bor_lev: u8,
-                iwdg_hw: bool,
-                nrst_stop: bool,
-                nrst_stby: bool,
-                octo1_hslv: bool,
-                octo2_hslv: bool,
-                iwdg_fz_stop: bool,
-                iwdg_fz_sdby: bool,
-                vddio_hslv: bool,
-            }
-            let proxy = Obw1srp {
-                bor_lev: self.bor_lev(),
-                iwdg_hw: self.iwdg_hw(),
-                nrst_stop: self.nrst_stop(),
-                nrst_stby: self.nrst_stby(),
-                octo1_hslv: self.octo1_hslv(),
-                octo2_hslv: self.octo2_hslv(),
-                iwdg_fz_stop: self.iwdg_fz_stop(),
-                iwdg_fz_sdby: self.iwdg_fz_sdby(),
-                vddio_hslv: self.vddio_hslv(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Obw1srp {{ bor_lev: {=u8:?}, iwdg_hw: {=bool:?}, nrst_stop: {=bool:?}, nrst_stby: {=bool:?}, octo1_hslv: {=bool:?}, octo2_hslv: {=bool:?}, iwdg_fz_stop: {=bool:?}, iwdg_fz_sdby: {=bool:?}, vddio_hslv: {=bool:?} }}" , self . bor_lev () , self . iwdg_hw () , self . nrst_stop () , self . nrst_stby () , self . octo1_hslv () , self . octo2_hslv () , self . iwdg_fz_stop () , self . iwdg_fz_sdby () , self . vddio_hslv ())
         }
     }
     #[doc = "FLASH option byte word 2 status register."]
@@ -2177,20 +1912,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Obw2sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Obw2sr {
-                itcm_axi_share: u8,
-                dtcm_axi_share: u8,
-                ecc_on_sram: bool,
-                i2c_ni3c: bool,
-            }
-            let proxy = Obw2sr {
-                itcm_axi_share: self.itcm_axi_share(),
-                dtcm_axi_share: self.dtcm_axi_share(),
-                ecc_on_sram: self.ecc_on_sram(),
-                i2c_ni3c: self.i2c_ni3c(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Obw2sr {{ itcm_axi_share: {=u8:?}, dtcm_axi_share: {=u8:?}, ecc_on_sram: {=bool:?}, i2c_ni3c: {=bool:?} }}" , self . itcm_axi_share () , self . dtcm_axi_share () , self . ecc_on_sram () , self . i2c_ni3c ())
         }
     }
     #[doc = "FLASH option byte word 2 status register programming."]
@@ -2262,20 +1984,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Obw2srp {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Obw2srp {
-                itcm_axi_share: u8,
-                dtcm_axi_share: u8,
-                ecc_on_sram: bool,
-                i2c_ni3c: bool,
-            }
-            let proxy = Obw2srp {
-                itcm_axi_share: self.itcm_axi_share(),
-                dtcm_axi_share: self.dtcm_axi_share(),
-                ecc_on_sram: self.ecc_on_sram(),
-                i2c_ni3c: self.i2c_ni3c(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Obw2srp {{ itcm_axi_share: {=u8:?}, dtcm_axi_share: {=u8:?}, ecc_on_sram: {=bool:?}, i2c_ni3c: {=bool:?} }}" , self . itcm_axi_share () , self . dtcm_axi_share () , self . ecc_on_sram () , self . i2c_ni3c ())
         }
     }
     #[doc = "FLASH options control register."]
@@ -2359,22 +2068,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Optcr {
-                optlock: bool,
-                pg_opt: bool,
-                kveie: bool,
-                kteie: bool,
-                opterrie: bool,
-            }
-            let proxy = Optcr {
-                optlock: self.optlock(),
-                pg_opt: self.pg_opt(),
-                kveie: self.kveie(),
-                kteie: self.kteie(),
-                opterrie: self.opterrie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Optcr {{ optlock: {=bool:?}, pg_opt: {=bool:?}, kveie: {=bool:?}, kteie: {=bool:?}, opterrie: {=bool:?} }}" , self . optlock () , self . pg_opt () , self . kveie () , self . kteie () , self . opterrie ())
         }
     }
     #[doc = "FLASH options interrupt clear register."]
@@ -2434,18 +2128,13 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Opticr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Opticr {
-                kvef: bool,
-                ktef: bool,
-                opterrf: bool,
-            }
-            let proxy = Opticr {
-                kvef: self.kvef(),
-                ktef: self.ktef(),
-                opterrf: self.opterrf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Opticr {{ kvef: {=bool:?}, ktef: {=bool:?}, opterrf: {=bool:?} }}",
+                self.kvef(),
+                self.ktef(),
+                self.opterrf()
+            )
         }
     }
     #[doc = "FLASH options interrupt status register."]
@@ -2509,18 +2198,13 @@ and KEYSIZE bit in SAES_CR register. It also happen when an ECC dual error detec
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optisr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Optisr {
-                kvef: bool,
-                ktef: bool,
-                opterrf: bool,
-            }
-            let proxy = Optisr {
-                kvef: self.kvef(),
-                ktef: self.ktef(),
-                opterrf: self.opterrf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Optisr {{ kvef: {=bool:?}, ktef: {=bool:?}, opterrf: {=bool:?} }}",
+                self.kvef(),
+                self.ktef(),
+                self.opterrf()
+            )
         }
     }
     #[doc = "FLASH options key register."]
@@ -2554,12 +2238,7 @@ and KEYSIZE bit in SAES_CR register. It also happen when an ECC dual error detec
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optkeyr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Optkeyr {
-                ocukey: u32,
-            }
-            let proxy = Optkeyr { ocukey: self.ocukey() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Optkeyr {{ ocukey: {=u32:?} }}", self.ocukey())
         }
     }
     #[doc = "FLASH OTP lock status register."]
@@ -2597,12 +2276,7 @@ and KEYSIZE bit in SAES_CR register. It also happen when an ECC dual error detec
     #[cfg(feature = "defmt")]
     impl defmt::Format for Otplsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Otplsr {
-                otpl: u16,
-            }
-            let proxy = Otplsr { otpl: self.otpl() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Otplsr {{ otpl: {=u16:?} }}", self.otpl())
         }
     }
     #[doc = "FLASH OTP lock status register programming."]
@@ -2636,12 +2310,7 @@ and KEYSIZE bit in SAES_CR register. It also happen when an ECC dual error detec
     #[cfg(feature = "defmt")]
     impl defmt::Format for Otplsrp {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Otplsrp {
-                otpl: u16,
-            }
-            let proxy = Otplsrp { otpl: self.otpl() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Otplsrp {{ otpl: {=u16:?} }}", self.otpl())
         }
     }
     #[doc = "FLASH RoT status register."]
@@ -2701,18 +2370,13 @@ and KEYSIZE bit in SAES_CR register. It also happen when an ECC dual error detec
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rotsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rotsr {
-                oem_provd: super::vals::OemProvd,
-                dbg_auth: super::vals::DbgAuth,
-                irot_select: super::vals::IrotSelect,
-            }
-            let proxy = Rotsr {
-                oem_provd: self.oem_provd(),
-                dbg_auth: self.dbg_auth(),
-                irot_select: self.irot_select(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Rotsr {{ oem_provd: {:?}, dbg_auth: {:?}, irot_select: {:?} }}",
+                self.oem_provd(),
+                self.dbg_auth(),
+                self.irot_select()
+            )
         }
     }
     #[doc = "FLASH RoT status register programming."]
@@ -2772,18 +2436,13 @@ and KEYSIZE bit in SAES_CR register. It also happen when an ECC dual error detec
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rotsrp {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rotsrp {
-                oem_provd: u8,
-                dbg_auth: u8,
-                irot_select: u8,
-            }
-            let proxy = Rotsrp {
-                oem_provd: self.oem_provd(),
-                dbg_auth: self.dbg_auth(),
-                irot_select: self.irot_select(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Rotsrp {{ oem_provd: {=u8:?}, dbg_auth: {=u8:?}, irot_select: {=u8:?} }}",
+                self.oem_provd(),
+                self.dbg_auth(),
+                self.irot_select()
+            )
         }
     }
     #[doc = "FLASH status register."]
@@ -2903,28 +2562,7 @@ and KEYSIZE bit in SAES_CR register. It also happen when an ECC dual error detec
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                busy: bool,
-                wbne: bool,
-                qw: bool,
-                crc_busy: bool,
-                is_program: bool,
-                is_erase: bool,
-                is_optchange: bool,
-                rcheckf: bool,
-            }
-            let proxy = Sr {
-                busy: self.busy(),
-                wbne: self.wbne(),
-                qw: self.qw(),
-                crc_busy: self.crc_busy(),
-                is_program: self.is_program(),
-                is_erase: self.is_erase(),
-                is_optchange: self.is_optchange(),
-                rcheckf: self.rcheckf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr {{ busy: {=bool:?}, wbne: {=bool:?}, qw: {=bool:?}, crc_busy: {=bool:?}, is_program: {=bool:?}, is_erase: {=bool:?}, is_optchange: {=bool:?}, rcheckf: {=bool:?} }}" , self . busy () , self . wbne () , self . qw () , self . crc_busy () , self . is_program () , self . is_erase () , self . is_optchange () , self . rcheckf ())
         }
     }
     #[doc = "FLASH write protection status register."]
@@ -2958,12 +2596,7 @@ and KEYSIZE bit in SAES_CR register. It also happen when an ECC dual error detec
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrpsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wrpsr {
-                wrps: u8,
-            }
-            let proxy = Wrpsr { wrps: self.wrps() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Wrpsr {{ wrps: {=u8:?} }}", self.wrps())
         }
     }
     #[doc = "FLASH write protection status register programming."]
@@ -2997,12 +2630,7 @@ and KEYSIZE bit in SAES_CR register. It also happen when an ECC dual error detec
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrpsrp {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wrpsrp {
-                wrps: u8,
-            }
-            let proxy = Wrpsrp { wrps: self.wrps() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Wrpsrp {{ wrps: {=u8:?} }}", self.wrps())
         }
     }
 }
@@ -3079,7 +2707,7 @@ pub mod vals {
     }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct DbgAuth(pub u8);
+    pub struct DbgAuth(u8);
     impl DbgAuth {
         #[doc = "Authentication method using ECDSA signature (NIST P256)."]
         pub const ECDSA: Self = Self(0x51);
@@ -3135,7 +2763,7 @@ pub mod vals {
     }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct IrotSelect(pub u8);
+    pub struct IrotSelect(u8);
     impl IrotSelect {
         #[doc = "ST iRoT is selected at boot."]
         pub const SELECTED: Self = Self(0xb4);
@@ -3212,7 +2840,7 @@ pub mod vals {
     }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct NvsrNvstate(pub u8);
+    pub struct NvsrNvstate(u8);
     impl NvsrNvstate {
         #[doc = "CLOSED device."]
         pub const CLOSED: Self = Self(0x51);
@@ -3260,7 +2888,7 @@ pub mod vals {
     }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct NvsrpNvstate(pub u8);
+    pub struct NvsrpNvstate(u8);
     impl NvsrpNvstate {
         #[doc = "CLOSE."]
         pub const CLOSE: Self = Self(0x51);
@@ -3343,7 +2971,7 @@ pub mod vals {
     }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct OemProvd(pub u8);
+    pub struct OemProvd(u8);
     impl OemProvd {
         #[doc = "Device has been provisioned by the OEM."]
         pub const PROVISIONED: Self = Self(0xb4);

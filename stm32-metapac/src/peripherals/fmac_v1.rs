@@ -190,30 +190,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                rien: bool,
-                wien: bool,
-                ovflien: bool,
-                unflien: bool,
-                satien: bool,
-                dmaren: bool,
-                dmawen: bool,
-                clipen: bool,
-                reset: bool,
-            }
-            let proxy = Cr {
-                rien: self.rien(),
-                wien: self.wien(),
-                ovflien: self.ovflien(),
-                unflien: self.unflien(),
-                satien: self.satien(),
-                dmaren: self.dmaren(),
-                dmawen: self.dmawen(),
-                clipen: self.clipen(),
-                reset: self.reset(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ rien: {=bool:?}, wien: {=bool:?}, ovflien: {=bool:?}, unflien: {=bool:?}, satien: {=bool:?}, dmaren: {=bool:?}, dmawen: {=bool:?}, clipen: {=bool:?}, reset: {=bool:?} }}" , self . rien () , self . wien () , self . ovflien () , self . unflien () , self . satien () , self . dmaren () , self . dmawen () , self . clipen () , self . reset ())
         }
     }
     #[doc = "Parameter register"]
@@ -297,22 +274,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Param {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Param {
-                p: u8,
-                q: u8,
-                r: u8,
-                func: u8,
-                start: bool,
-            }
-            let proxy = Param {
-                p: self.p(),
-                q: self.q(),
-                r: self.r(),
-                func: self.func(),
-                start: self.start(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Param {{ p: {=u8:?}, q: {=u8:?}, r: {=u8:?}, func: {=u8:?}, start: {=bool:?} }}",
+                self.p(),
+                self.q(),
+                self.r(),
+                self.func(),
+                self.start()
+            )
         }
     }
     #[doc = "Read data register"]
@@ -346,12 +316,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rdata {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rdata {
-                res: u16,
-            }
-            let proxy = Rdata { res: self.res() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Rdata {{ res: {=u16:?} }}", self.res())
         }
     }
     #[doc = "Status register"]
@@ -435,22 +400,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                yempty: bool,
-                x1full: bool,
-                ovfl: bool,
-                unfl: bool,
-                sat: bool,
-            }
-            let proxy = Sr {
-                yempty: self.yempty(),
-                x1full: self.x1full(),
-                ovfl: self.ovfl(),
-                unfl: self.unfl(),
-                sat: self.sat(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sr {{ yempty: {=bool:?}, x1full: {=bool:?}, ovfl: {=bool:?}, unfl: {=bool:?}, sat: {=bool:?} }}",
+                self.yempty(),
+                self.x1full(),
+                self.ovfl(),
+                self.unfl(),
+                self.sat()
+            )
         }
     }
     #[doc = "Write data register"]
@@ -484,12 +442,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wdata {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wdata {
-                wdata: u16,
-            }
-            let proxy = Wdata { wdata: self.wdata() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Wdata {{ wdata: {=u16:?} }}", self.wdata())
         }
     }
     #[doc = "X1 buffer configuration register"]
@@ -549,18 +502,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for X1bufcfg {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct X1bufcfg {
-                x1_base: u8,
-                x1_buf_size: u8,
-                full_wm: u8,
-            }
-            let proxy = X1bufcfg {
-                x1_base: self.x1_base(),
-                x1_buf_size: self.x1_buf_size(),
-                full_wm: self.full_wm(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "X1bufcfg {{ x1_base: {=u8:?}, x1_buf_size: {=u8:?}, full_wm: {=u8:?} }}",
+                self.x1_base(),
+                self.x1_buf_size(),
+                self.full_wm()
+            )
         }
     }
     #[doc = "X2 buffer configuration register"]
@@ -608,16 +556,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for X2bufcfg {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct X2bufcfg {
-                x2_base: u8,
-                x2_buf_size: u8,
-            }
-            let proxy = X2bufcfg {
-                x2_base: self.x2_base(),
-                x2_buf_size: self.x2_buf_size(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "X2bufcfg {{ x2_base: {=u8:?}, x2_buf_size: {=u8:?} }}",
+                self.x2_base(),
+                self.x2_buf_size()
+            )
         }
     }
     #[doc = "Y buffer configuration register"]
@@ -677,18 +621,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ybufcfg {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ybufcfg {
-                y_base: u8,
-                y_buf_size: u8,
-                empty_wm: u8,
-            }
-            let proxy = Ybufcfg {
-                y_base: self.y_base(),
-                y_buf_size: self.y_buf_size(),
-                empty_wm: self.empty_wm(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ybufcfg {{ y_base: {=u8:?}, y_buf_size: {=u8:?}, empty_wm: {=u8:?} }}",
+                self.y_base(),
+                self.y_buf_size(),
+                self.empty_wm()
+            )
         }
     }
 }

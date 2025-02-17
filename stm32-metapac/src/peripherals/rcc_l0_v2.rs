@@ -219,24 +219,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahbenr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ahbenr {
-                dma1en: bool,
-                mifen: bool,
-                crcen: bool,
-                tscen: bool,
-                rngen: bool,
-                crypen: bool,
-            }
-            let proxy = Ahbenr {
-                dma1en: self.dma1en(),
-                mifen: self.mifen(),
-                crcen: self.crcen(),
-                tscen: self.tscen(),
-                rngen: self.rngen(),
-                crypen: self.crypen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ahbenr {{ dma1en: {=bool:?}, mifen: {=bool:?}, crcen: {=bool:?}, tscen: {=bool:?}, rngen: {=bool:?}, crypen: {=bool:?} }}" , self . dma1en () , self . mifen () , self . crcen () , self . tscen () , self . rngen () , self . crypen ())
         }
     }
     #[doc = "AHB peripheral reset register"]
@@ -332,24 +315,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahbrstr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ahbrstr {
-                dma1rst: bool,
-                mifrst: bool,
-                crcrst: bool,
-                tscrst: bool,
-                rngrst: bool,
-                cryprst: bool,
-            }
-            let proxy = Ahbrstr {
-                dma1rst: self.dma1rst(),
-                mifrst: self.mifrst(),
-                crcrst: self.crcrst(),
-                tscrst: self.tscrst(),
-                rngrst: self.rngrst(),
-                cryprst: self.cryprst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ahbrstr {{ dma1rst: {=bool:?}, mifrst: {=bool:?}, crcrst: {=bool:?}, tscrst: {=bool:?}, rngrst: {=bool:?}, cryprst: {=bool:?} }}" , self . dma1rst () , self . mifrst () , self . crcrst () , self . tscrst () , self . rngrst () , self . cryprst ())
         }
     }
     #[doc = "AHB peripheral clock enable in sleep mode register"]
@@ -457,26 +423,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahbsmenr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ahbsmenr {
-                dma1smen: bool,
-                mifsmen: bool,
-                sramsmen: bool,
-                crcsmen: bool,
-                tscsmen: bool,
-                rngsmen: bool,
-                crypsmen: bool,
-            }
-            let proxy = Ahbsmenr {
-                dma1smen: self.dma1smen(),
-                mifsmen: self.mifsmen(),
-                sramsmen: self.sramsmen(),
-                crcsmen: self.crcsmen(),
-                tscsmen: self.tscsmen(),
-                rngsmen: self.rngsmen(),
-                crypsmen: self.crypsmen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ahbsmenr {{ dma1smen: {=bool:?}, mifsmen: {=bool:?}, sramsmen: {=bool:?}, crcsmen: {=bool:?}, tscsmen: {=bool:?}, rngsmen: {=bool:?}, crypsmen: {=bool:?} }}" , self . dma1smen () , self . mifsmen () , self . sramsmen () , self . crcsmen () , self . tscsmen () , self . rngsmen () , self . crypsmen ())
         }
     }
     #[doc = "APB1 peripheral clock enable register"]
@@ -716,48 +663,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1enr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Apb1enr {
-                tim2en: bool,
-                tim3en: bool,
-                tim6en: bool,
-                tim7en: bool,
-                wwdgen: bool,
-                spi2en: bool,
-                usart2en: bool,
-                lpuart1en: bool,
-                usart4en: bool,
-                usart5en: bool,
-                i2c1en: bool,
-                i2c2en: bool,
-                usben: bool,
-                crsen: bool,
-                pwren: bool,
-                dacen: bool,
-                i2c3en: bool,
-                lptim1en: bool,
-            }
-            let proxy = Apb1enr {
-                tim2en: self.tim2en(),
-                tim3en: self.tim3en(),
-                tim6en: self.tim6en(),
-                tim7en: self.tim7en(),
-                wwdgen: self.wwdgen(),
-                spi2en: self.spi2en(),
-                usart2en: self.usart2en(),
-                lpuart1en: self.lpuart1en(),
-                usart4en: self.usart4en(),
-                usart5en: self.usart5en(),
-                i2c1en: self.i2c1en(),
-                i2c2en: self.i2c2en(),
-                usben: self.usben(),
-                crsen: self.crsen(),
-                pwren: self.pwren(),
-                dacen: self.dacen(),
-                i2c3en: self.i2c3en(),
-                lptim1en: self.lptim1en(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Apb1enr {{ tim2en: {=bool:?}, tim3en: {=bool:?}, tim6en: {=bool:?}, tim7en: {=bool:?}, wwdgen: {=bool:?}, spi2en: {=bool:?}, usart2en: {=bool:?}, lpuart1en: {=bool:?}, usart4en: {=bool:?}, usart5en: {=bool:?}, i2c1en: {=bool:?}, i2c2en: {=bool:?}, usben: {=bool:?}, crsen: {=bool:?}, pwren: {=bool:?}, dacen: {=bool:?}, i2c3en: {=bool:?}, lptim1en: {=bool:?} }}" , self . tim2en () , self . tim3en () , self . tim6en () , self . tim7en () , self . wwdgen () , self . spi2en () , self . usart2en () , self . lpuart1en () , self . usart4en () , self . usart5en () , self . i2c1en () , self . i2c2en () , self . usben () , self . crsen () , self . pwren () , self . dacen () , self . i2c3en () , self . lptim1en ())
         }
     }
     #[doc = "APB1 peripheral reset register"]
@@ -997,48 +903,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1rstr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Apb1rstr {
-                tim2rst: bool,
-                tim3rst: bool,
-                tim6rst: bool,
-                tim7rst: bool,
-                wwdgrst: bool,
-                spi2rst: bool,
-                usart2rst: bool,
-                lpuart1rst: bool,
-                usart4rst: bool,
-                usart5rst: bool,
-                i2c1rst: bool,
-                i2c2rst: bool,
-                usbrst: bool,
-                crsrst: bool,
-                pwrrst: bool,
-                dacrst: bool,
-                i2c3rst: bool,
-                lptim1rst: bool,
-            }
-            let proxy = Apb1rstr {
-                tim2rst: self.tim2rst(),
-                tim3rst: self.tim3rst(),
-                tim6rst: self.tim6rst(),
-                tim7rst: self.tim7rst(),
-                wwdgrst: self.wwdgrst(),
-                spi2rst: self.spi2rst(),
-                usart2rst: self.usart2rst(),
-                lpuart1rst: self.lpuart1rst(),
-                usart4rst: self.usart4rst(),
-                usart5rst: self.usart5rst(),
-                i2c1rst: self.i2c1rst(),
-                i2c2rst: self.i2c2rst(),
-                usbrst: self.usbrst(),
-                crsrst: self.crsrst(),
-                pwrrst: self.pwrrst(),
-                dacrst: self.dacrst(),
-                i2c3rst: self.i2c3rst(),
-                lptim1rst: self.lptim1rst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Apb1rstr {{ tim2rst: {=bool:?}, tim3rst: {=bool:?}, tim6rst: {=bool:?}, tim7rst: {=bool:?}, wwdgrst: {=bool:?}, spi2rst: {=bool:?}, usart2rst: {=bool:?}, lpuart1rst: {=bool:?}, usart4rst: {=bool:?}, usart5rst: {=bool:?}, i2c1rst: {=bool:?}, i2c2rst: {=bool:?}, usbrst: {=bool:?}, crsrst: {=bool:?}, pwrrst: {=bool:?}, dacrst: {=bool:?}, i2c3rst: {=bool:?}, lptim1rst: {=bool:?} }}" , self . tim2rst () , self . tim3rst () , self . tim6rst () , self . tim7rst () , self . wwdgrst () , self . spi2rst () , self . usart2rst () , self . lpuart1rst () , self . usart4rst () , self . usart5rst () , self . i2c1rst () , self . i2c2rst () , self . usbrst () , self . crsrst () , self . pwrrst () , self . dacrst () , self . i2c3rst () , self . lptim1rst ())
         }
     }
     #[doc = "APB1 peripheral clock enable in sleep mode register"]
@@ -1278,48 +1143,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1smenr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Apb1smenr {
-                tim2smen: bool,
-                tim3smen: bool,
-                tim6smen: bool,
-                tim7smen: bool,
-                wwdgsmen: bool,
-                spi2smen: bool,
-                usart2smen: bool,
-                lpuart1smen: bool,
-                usart4smen: bool,
-                usart5smen: bool,
-                i2c1smen: bool,
-                i2c2smen: bool,
-                usbsmen: bool,
-                crssmen: bool,
-                pwrsmen: bool,
-                dacsmen: bool,
-                i2c3smen: bool,
-                lptim1smen: bool,
-            }
-            let proxy = Apb1smenr {
-                tim2smen: self.tim2smen(),
-                tim3smen: self.tim3smen(),
-                tim6smen: self.tim6smen(),
-                tim7smen: self.tim7smen(),
-                wwdgsmen: self.wwdgsmen(),
-                spi2smen: self.spi2smen(),
-                usart2smen: self.usart2smen(),
-                lpuart1smen: self.lpuart1smen(),
-                usart4smen: self.usart4smen(),
-                usart5smen: self.usart5smen(),
-                i2c1smen: self.i2c1smen(),
-                i2c2smen: self.i2c2smen(),
-                usbsmen: self.usbsmen(),
-                crssmen: self.crssmen(),
-                pwrsmen: self.pwrsmen(),
-                dacsmen: self.dacsmen(),
-                i2c3smen: self.i2c3smen(),
-                lptim1smen: self.lptim1smen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Apb1smenr {{ tim2smen: {=bool:?}, tim3smen: {=bool:?}, tim6smen: {=bool:?}, tim7smen: {=bool:?}, wwdgsmen: {=bool:?}, spi2smen: {=bool:?}, usart2smen: {=bool:?}, lpuart1smen: {=bool:?}, usart4smen: {=bool:?}, usart5smen: {=bool:?}, i2c1smen: {=bool:?}, i2c2smen: {=bool:?}, usbsmen: {=bool:?}, crssmen: {=bool:?}, pwrsmen: {=bool:?}, dacsmen: {=bool:?}, i2c3smen: {=bool:?}, lptim1smen: {=bool:?} }}" , self . tim2smen () , self . tim3smen () , self . tim6smen () , self . tim7smen () , self . wwdgsmen () , self . spi2smen () , self . usart2smen () , self . lpuart1smen () , self . usart4smen () , self . usart5smen () , self . i2c1smen () , self . i2c2smen () , self . usbsmen () , self . crssmen () , self . pwrsmen () , self . dacsmen () , self . i2c3smen () , self . lptim1smen ())
         }
     }
     #[doc = "APB2 peripheral clock enable register"]
@@ -1439,28 +1263,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb2enr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Apb2enr {
-                syscfgen: bool,
-                tim21en: bool,
-                tim22en: bool,
-                fwen: bool,
-                adcen: bool,
-                spi1en: bool,
-                usart1en: bool,
-                dbgen: bool,
-            }
-            let proxy = Apb2enr {
-                syscfgen: self.syscfgen(),
-                tim21en: self.tim21en(),
-                tim22en: self.tim22en(),
-                fwen: self.fwen(),
-                adcen: self.adcen(),
-                spi1en: self.spi1en(),
-                usart1en: self.usart1en(),
-                dbgen: self.dbgen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Apb2enr {{ syscfgen: {=bool:?}, tim21en: {=bool:?}, tim22en: {=bool:?}, fwen: {=bool:?}, adcen: {=bool:?}, spi1en: {=bool:?}, usart1en: {=bool:?}, dbgen: {=bool:?} }}" , self . syscfgen () , self . tim21en () , self . tim22en () , self . fwen () , self . adcen () , self . spi1en () , self . usart1en () , self . dbgen ())
         }
     }
     #[doc = "APB2 peripheral reset register"]
@@ -1568,26 +1371,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb2rstr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Apb2rstr {
-                syscfgrst: bool,
-                tim21rst: bool,
-                tim22rst: bool,
-                adcrst: bool,
-                spi1rst: bool,
-                usart1rst: bool,
-                dbgrst: bool,
-            }
-            let proxy = Apb2rstr {
-                syscfgrst: self.syscfgrst(),
-                tim21rst: self.tim21rst(),
-                tim22rst: self.tim22rst(),
-                adcrst: self.adcrst(),
-                spi1rst: self.spi1rst(),
-                usart1rst: self.usart1rst(),
-                dbgrst: self.dbgrst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Apb2rstr {{ syscfgrst: {=bool:?}, tim21rst: {=bool:?}, tim22rst: {=bool:?}, adcrst: {=bool:?}, spi1rst: {=bool:?}, usart1rst: {=bool:?}, dbgrst: {=bool:?} }}" , self . syscfgrst () , self . tim21rst () , self . tim22rst () , self . adcrst () , self . spi1rst () , self . usart1rst () , self . dbgrst ())
         }
     }
     #[doc = "APB2 peripheral clock enable in sleep mode register"]
@@ -1695,26 +1479,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb2smenr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Apb2smenr {
-                syscfgsmen: bool,
-                tim21smen: bool,
-                tim22smen: bool,
-                adcsmen: bool,
-                spi1smen: bool,
-                usart1smen: bool,
-                dbgsmen: bool,
-            }
-            let proxy = Apb2smenr {
-                syscfgsmen: self.syscfgsmen(),
-                tim21smen: self.tim21smen(),
-                tim22smen: self.tim22smen(),
-                adcsmen: self.adcsmen(),
-                spi1smen: self.spi1smen(),
-                usart1smen: self.usart1smen(),
-                dbgsmen: self.dbgsmen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Apb2smenr {{ syscfgsmen: {=bool:?}, tim21smen: {=bool:?}, tim22smen: {=bool:?}, adcsmen: {=bool:?}, spi1smen: {=bool:?}, usart1smen: {=bool:?}, dbgsmen: {=bool:?} }}" , self . syscfgsmen () , self . tim21smen () , self . tim22smen () , self . adcsmen () , self . spi1smen () , self . usart1smen () , self . dbgsmen ())
         }
     }
     #[doc = "Clock configuration register"]
@@ -1822,26 +1587,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccipr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccipr {
-                usart1sel: super::vals::Usart1sel,
-                usart2sel: super::vals::Uartsel,
-                lpuart1sel: super::vals::Uartsel,
-                i2c1sel: super::vals::I2csel,
-                i2c3sel: super::vals::I2csel,
-                lptim1sel: super::vals::Lptimsel,
-                clk48sel: super::vals::Clk48sel,
-            }
-            let proxy = Ccipr {
-                usart1sel: self.usart1sel(),
-                usart2sel: self.usart2sel(),
-                lpuart1sel: self.lpuart1sel(),
-                i2c1sel: self.i2c1sel(),
-                i2c3sel: self.i2c3sel(),
-                lptim1sel: self.lptim1sel(),
-                clk48sel: self.clk48sel(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ccipr {{ usart1sel: {:?}, usart2sel: {:?}, lpuart1sel: {:?}, i2c1sel: {:?}, i2c3sel: {:?}, lptim1sel: {:?}, clk48sel: {:?} }}" , self . usart1sel () , self . usart2sel () , self . lpuart1sel () , self . i2c1sel () , self . i2c3sel () , self . lptim1sel () , self . clk48sel ())
         }
     }
     #[doc = "Clock configuration register"]
@@ -1997,34 +1743,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr {
-                sw: super::vals::Sw,
-                sws: super::vals::Sw,
-                hpre: super::vals::Hpre,
-                ppre1: super::vals::Ppre,
-                ppre2: super::vals::Ppre,
-                stopwuck: super::vals::Stopwuck,
-                pllsrc: super::vals::Pllsrc,
-                pllmul: super::vals::Pllmul,
-                plldiv: super::vals::Plldiv,
-                mcosel: super::vals::Mcosel,
-                mcopre: super::vals::Mcopre,
-            }
-            let proxy = Cfgr {
-                sw: self.sw(),
-                sws: self.sws(),
-                hpre: self.hpre(),
-                ppre1: self.ppre1(),
-                ppre2: self.ppre2(),
-                stopwuck: self.stopwuck(),
-                pllsrc: self.pllsrc(),
-                pllmul: self.pllmul(),
-                plldiv: self.plldiv(),
-                mcosel: self.mcosel(),
-                mcopre: self.mcopre(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr {{ sw: {:?}, sws: {:?}, hpre: {:?}, ppre1: {:?}, ppre2: {:?}, stopwuck: {:?}, pllsrc: {:?}, pllmul: {:?}, plldiv: {:?}, mcosel: {:?}, mcopre: {:?} }}" , self . sw () , self . sws () , self . hpre () , self . ppre1 () , self . ppre2 () , self . stopwuck () , self . pllsrc () , self . pllmul () , self . plldiv () , self . mcosel () , self . mcopre ())
         }
     }
     #[doc = "Clock interrupt clear register"]
@@ -2156,30 +1875,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cicr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cicr {
-                lsirdyc: bool,
-                lserdyc: bool,
-                hsirdyc: bool,
-                hserdyc: bool,
-                pllrdyc: bool,
-                msirdyc: bool,
-                hsi48rdyc: bool,
-                csslsec: bool,
-                csshsec: bool,
-            }
-            let proxy = Cicr {
-                lsirdyc: self.lsirdyc(),
-                lserdyc: self.lserdyc(),
-                hsirdyc: self.hsirdyc(),
-                hserdyc: self.hserdyc(),
-                pllrdyc: self.pllrdyc(),
-                msirdyc: self.msirdyc(),
-                hsi48rdyc: self.hsi48rdyc(),
-                csslsec: self.csslsec(),
-                csshsec: self.csshsec(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cicr {{ lsirdyc: {=bool:?}, lserdyc: {=bool:?}, hsirdyc: {=bool:?}, hserdyc: {=bool:?}, pllrdyc: {=bool:?}, msirdyc: {=bool:?}, hsi48rdyc: {=bool:?}, csslsec: {=bool:?}, csshsec: {=bool:?} }}" , self . lsirdyc () , self . lserdyc () , self . hsirdyc () , self . hserdyc () , self . pllrdyc () , self . msirdyc () , self . hsi48rdyc () , self . csslsec () , self . csshsec ())
         }
     }
     #[doc = "Clock interrupt enable register"]
@@ -2299,28 +1995,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cier {
-                lsirdyie: bool,
-                lserdyie: bool,
-                hsirdyie: bool,
-                hserdyie: bool,
-                pllrdyie: bool,
-                msirdyie: bool,
-                hsi48rdyie: bool,
-                csslse: bool,
-            }
-            let proxy = Cier {
-                lsirdyie: self.lsirdyie(),
-                lserdyie: self.lserdyie(),
-                hsirdyie: self.hsirdyie(),
-                hserdyie: self.hserdyie(),
-                pllrdyie: self.pllrdyie(),
-                msirdyie: self.msirdyie(),
-                hsi48rdyie: self.hsi48rdyie(),
-                csslse: self.csslse(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cier {{ lsirdyie: {=bool:?}, lserdyie: {=bool:?}, hsirdyie: {=bool:?}, hserdyie: {=bool:?}, pllrdyie: {=bool:?}, msirdyie: {=bool:?}, hsi48rdyie: {=bool:?}, csslse: {=bool:?} }}" , self . lsirdyie () , self . lserdyie () , self . hsirdyie () , self . hserdyie () , self . pllrdyie () , self . msirdyie () , self . hsi48rdyie () , self . csslse ())
         }
     }
     #[doc = "Clock interrupt flag register"]
@@ -2452,30 +2127,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cifr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cifr {
-                lsirdyf: bool,
-                lserdyf: bool,
-                hsirdyf: bool,
-                hserdyf: bool,
-                pllrdyf: bool,
-                msirdyf: bool,
-                hsi48rdyf: bool,
-                csslsef: bool,
-                csshsef: bool,
-            }
-            let proxy = Cifr {
-                lsirdyf: self.lsirdyf(),
-                lserdyf: self.lserdyf(),
-                hsirdyf: self.hsirdyf(),
-                hserdyf: self.hserdyf(),
-                pllrdyf: self.pllrdyf(),
-                msirdyf: self.msirdyf(),
-                hsi48rdyf: self.hsi48rdyf(),
-                csslsef: self.csslsef(),
-                csshsef: self.csshsef(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cifr {{ lsirdyf: {=bool:?}, lserdyf: {=bool:?}, hsirdyf: {=bool:?}, hserdyf: {=bool:?}, pllrdyf: {=bool:?}, msirdyf: {=bool:?}, hsi48rdyf: {=bool:?}, csslsef: {=bool:?}, csshsef: {=bool:?} }}" , self . lsirdyf () , self . lserdyf () , self . hsirdyf () , self . hserdyf () , self . pllrdyf () , self . msirdyf () , self . hsi48rdyf () , self . csslsef () , self . csshsef ())
         }
     }
     #[doc = "Clock control register"]
@@ -2679,42 +2331,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                hsion: bool,
-                hsikeron: bool,
-                hsirdy: bool,
-                hsidiven: bool,
-                hsidivf: bool,
-                hsiouten: bool,
-                msion: bool,
-                msirdy: bool,
-                hseon: bool,
-                hserdy: bool,
-                hsebyp: bool,
-                csshseon: bool,
-                rtcpre: super::vals::Rtcpre,
-                pllon: bool,
-                pllrdy: bool,
-            }
-            let proxy = Cr {
-                hsion: self.hsion(),
-                hsikeron: self.hsikeron(),
-                hsirdy: self.hsirdy(),
-                hsidiven: self.hsidiven(),
-                hsidivf: self.hsidivf(),
-                hsiouten: self.hsiouten(),
-                msion: self.msion(),
-                msirdy: self.msirdy(),
-                hseon: self.hseon(),
-                hserdy: self.hserdy(),
-                hsebyp: self.hsebyp(),
-                csshseon: self.csshseon(),
-                rtcpre: self.rtcpre(),
-                pllon: self.pllon(),
-                pllrdy: self.pllrdy(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ hsion: {=bool:?}, hsikeron: {=bool:?}, hsirdy: {=bool:?}, hsidiven: {=bool:?}, hsidivf: {=bool:?}, hsiouten: {=bool:?}, msion: {=bool:?}, msirdy: {=bool:?}, hseon: {=bool:?}, hserdy: {=bool:?}, hsebyp: {=bool:?}, csshseon: {=bool:?}, rtcpre: {:?}, pllon: {=bool:?}, pllrdy: {=bool:?} }}" , self . hsion () , self . hsikeron () , self . hsirdy () , self . hsidiven () , self . hsidivf () , self . hsiouten () , self . msion () , self . msirdy () , self . hseon () , self . hserdy () , self . hsebyp () , self . csshseon () , self . rtcpre () , self . pllon () , self . pllrdy ())
         }
     }
     #[doc = "Clock recovery RC register"]
@@ -2786,20 +2403,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Crrcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Crrcr {
-                hsi48on: bool,
-                hsi48rdy: bool,
-                hsi48div6en: bool,
-                hsi48cal: u8,
-            }
-            let proxy = Crrcr {
-                hsi48on: self.hsi48on(),
-                hsi48rdy: self.hsi48rdy(),
-                hsi48div6en: self.hsi48div6en(),
-                hsi48cal: self.hsi48cal(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Crrcr {{ hsi48on: {=bool:?}, hsi48rdy: {=bool:?}, hsi48div6en: {=bool:?}, hsi48cal: {=u8:?} }}",
+                self.hsi48on(),
+                self.hsi48rdy(),
+                self.hsi48div6en(),
+                self.hsi48cal()
+            )
         }
     }
     #[doc = "Control and status register"]
@@ -3063,52 +2674,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                lsion: bool,
-                lsirdy: bool,
-                lseon: bool,
-                lserdy: bool,
-                lsebyp: bool,
-                lsedrv: super::vals::Lsedrv,
-                csslseon: bool,
-                csslsed: bool,
-                rtcsel: super::vals::Rtcsel,
-                rtcen: bool,
-                rtcrst: bool,
-                rmvf: bool,
-                fwrstf: bool,
-                oblrstf: bool,
-                pinrstf: bool,
-                porrstf: bool,
-                sftrstf: bool,
-                iwdgrstf: bool,
-                wwdgrstf: bool,
-                lpwrrstf: bool,
-            }
-            let proxy = Csr {
-                lsion: self.lsion(),
-                lsirdy: self.lsirdy(),
-                lseon: self.lseon(),
-                lserdy: self.lserdy(),
-                lsebyp: self.lsebyp(),
-                lsedrv: self.lsedrv(),
-                csslseon: self.csslseon(),
-                csslsed: self.csslsed(),
-                rtcsel: self.rtcsel(),
-                rtcen: self.rtcen(),
-                rtcrst: self.rtcrst(),
-                rmvf: self.rmvf(),
-                fwrstf: self.fwrstf(),
-                oblrstf: self.oblrstf(),
-                pinrstf: self.pinrstf(),
-                porrstf: self.porrstf(),
-                sftrstf: self.sftrstf(),
-                iwdgrstf: self.iwdgrstf(),
-                wwdgrstf: self.wwdgrstf(),
-                lpwrrstf: self.lpwrrstf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Csr {{ lsion: {=bool:?}, lsirdy: {=bool:?}, lseon: {=bool:?}, lserdy: {=bool:?}, lsebyp: {=bool:?}, lsedrv: {:?}, csslseon: {=bool:?}, csslsed: {=bool:?}, rtcsel: {:?}, rtcen: {=bool:?}, rtcrst: {=bool:?}, rmvf: {=bool:?}, fwrstf: {=bool:?}, oblrstf: {=bool:?}, pinrstf: {=bool:?}, porrstf: {=bool:?}, sftrstf: {=bool:?}, iwdgrstf: {=bool:?}, wwdgrstf: {=bool:?}, lpwrrstf: {=bool:?} }}" , self . lsion () , self . lsirdy () , self . lseon () , self . lserdy () , self . lsebyp () , self . lsedrv () , self . csslseon () , self . csslsed () , self . rtcsel () , self . rtcen () , self . rtcrst () , self . rmvf () , self . fwrstf () , self . oblrstf () , self . pinrstf () , self . porrstf () , self . sftrstf () , self . iwdgrstf () , self . wwdgrstf () , self . lpwrrstf ())
         }
     }
     #[doc = "GPIO clock enable register"]
@@ -3204,24 +2770,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gpioenr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Gpioenr {
-                gpioaen: bool,
-                gpioben: bool,
-                gpiocen: bool,
-                gpioden: bool,
-                gpioeen: bool,
-                gpiohen: bool,
-            }
-            let proxy = Gpioenr {
-                gpioaen: self.gpioaen(),
-                gpioben: self.gpioben(),
-                gpiocen: self.gpiocen(),
-                gpioden: self.gpioden(),
-                gpioeen: self.gpioeen(),
-                gpiohen: self.gpiohen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Gpioenr {{ gpioaen: {=bool:?}, gpioben: {=bool:?}, gpiocen: {=bool:?}, gpioden: {=bool:?}, gpioeen: {=bool:?}, gpiohen: {=bool:?} }}" , self . gpioaen () , self . gpioben () , self . gpiocen () , self . gpioden () , self . gpioeen () , self . gpiohen ())
         }
     }
     #[doc = "GPIO reset register"]
@@ -3317,24 +2866,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gpiorstr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Gpiorstr {
-                gpioarst: bool,
-                gpiobrst: bool,
-                gpiocrst: bool,
-                gpiodrst: bool,
-                gpioerst: bool,
-                gpiohrst: bool,
-            }
-            let proxy = Gpiorstr {
-                gpioarst: self.gpioarst(),
-                gpiobrst: self.gpiobrst(),
-                gpiocrst: self.gpiocrst(),
-                gpiodrst: self.gpiodrst(),
-                gpioerst: self.gpioerst(),
-                gpiohrst: self.gpiohrst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Gpiorstr {{ gpioarst: {=bool:?}, gpiobrst: {=bool:?}, gpiocrst: {=bool:?}, gpiodrst: {=bool:?}, gpioerst: {=bool:?}, gpiohrst: {=bool:?} }}" , self . gpioarst () , self . gpiobrst () , self . gpiocrst () , self . gpiodrst () , self . gpioerst () , self . gpiohrst ())
         }
     }
     #[doc = "GPIO clock enable in sleep mode register"]
@@ -3430,24 +2962,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gpiosmen {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Gpiosmen {
-                gpioasmen: bool,
-                gpiobsmen: bool,
-                gpiocsmen: bool,
-                gpiodsmen: bool,
-                gpioesmen: bool,
-                gpiohsmen: bool,
-            }
-            let proxy = Gpiosmen {
-                gpioasmen: self.gpioasmen(),
-                gpiobsmen: self.gpiobsmen(),
-                gpiocsmen: self.gpiocsmen(),
-                gpiodsmen: self.gpiodsmen(),
-                gpioesmen: self.gpioesmen(),
-                gpiohsmen: self.gpiohsmen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Gpiosmen {{ gpioasmen: {=bool:?}, gpiobsmen: {=bool:?}, gpiocsmen: {=bool:?}, gpiodsmen: {=bool:?}, gpioesmen: {=bool:?}, gpiohsmen: {=bool:?} }}" , self . gpioasmen () , self . gpiobsmen () , self . gpiocsmen () , self . gpiodsmen () , self . gpioesmen () , self . gpiohsmen ())
         }
     }
     #[doc = "Internal clock sources calibration register"]
@@ -3531,22 +3046,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icscr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Icscr {
-                hsical: u8,
-                hsitrim: u8,
-                msirange: super::vals::Msirange,
-                msical: u8,
-                msitrim: u8,
-            }
-            let proxy = Icscr {
-                hsical: self.hsical(),
-                hsitrim: self.hsitrim(),
-                msirange: self.msirange(),
-                msical: self.msical(),
-                msitrim: self.msitrim(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Icscr {{ hsical: {=u8:?}, hsitrim: {=u8:?}, msirange: {:?}, msical: {=u8:?}, msitrim: {=u8:?} }}",
+                self.hsical(),
+                self.hsitrim(),
+                self.msirange(),
+                self.msical(),
+                self.msitrim()
+            )
         }
     }
 }

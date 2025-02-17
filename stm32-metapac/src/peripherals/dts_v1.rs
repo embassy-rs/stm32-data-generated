@@ -171,26 +171,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr1 {
-                en: bool,
-                start: bool,
-                intrig_sel: u8,
-                smp_time: u8,
-                refclk_sel: bool,
-                q_meas_opt: bool,
-                hsref_clk_div: u8,
-            }
-            let proxy = Cfgr1 {
-                en: self.en(),
-                start: self.start(),
-                intrig_sel: self.intrig_sel(),
-                smp_time: self.smp_time(),
-                refclk_sel: self.refclk_sel(),
-                q_meas_opt: self.q_meas_opt(),
-                hsref_clk_div: self.hsref_clk_div(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr1 {{ en: {=bool:?}, start: {=bool:?}, intrig_sel: {=u8:?}, smp_time: {=u8:?}, refclk_sel: {=bool:?}, q_meas_opt: {=bool:?}, hsref_clk_div: {=u8:?} }}" , self . en () , self . start () , self . intrig_sel () , self . smp_time () , self . refclk_sel () , self . q_meas_opt () , self . hsref_clk_div ())
         }
     }
     #[doc = "Temperature sensor data register."]
@@ -224,12 +205,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dr {
-                mfreq: u16,
-            }
-            let proxy = Dr { mfreq: self.mfreq() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dr {{ mfreq: {=u16:?} }}", self.mfreq())
         }
     }
     #[doc = "Temperature sensor clear interrupt flag register."]
@@ -325,24 +301,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icifr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Icifr {
-                citef: bool,
-                citlf: bool,
-                cithf: bool,
-                caitef: bool,
-                caitlf: bool,
-                caithf: bool,
-            }
-            let proxy = Icifr {
-                citef: self.citef(),
-                citlf: self.citlf(),
-                cithf: self.cithf(),
-                caitef: self.caitef(),
-                caitlf: self.caitlf(),
-                caithf: self.caithf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Icifr {{ citef: {=bool:?}, citlf: {=bool:?}, cithf: {=bool:?}, caitef: {=bool:?}, caitlf: {=bool:?}, caithf: {=bool:?} }}" , self . citef () , self . citlf () , self . cithf () , self . caitef () , self . caitlf () , self . caithf ())
         }
     }
     #[doc = "Temperature sensor interrupt enable register."]
@@ -438,24 +397,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itenr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itenr {
-                iteen: bool,
-                itlen: bool,
-                ithen: bool,
-                aiteen: bool,
-                aitlen: bool,
-                aithen: bool,
-            }
-            let proxy = Itenr {
-                iteen: self.iteen(),
-                itlen: self.itlen(),
-                ithen: self.ithen(),
-                aiteen: self.aiteen(),
-                aitlen: self.aitlen(),
-                aithen: self.aithen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Itenr {{ iteen: {=bool:?}, itlen: {=bool:?}, ithen: {=bool:?}, aiteen: {=bool:?}, aitlen: {=bool:?}, aithen: {=bool:?} }}" , self . iteen () , self . itlen () , self . ithen () , self . aiteen () , self . aitlen () , self . aithen ())
         }
     }
     #[doc = "Temperature sensor interrupt threshold register 1."]
@@ -503,16 +445,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itr1 {
-                litthd: u16,
-                hitthd: u16,
-            }
-            let proxy = Itr1 {
-                litthd: self.litthd(),
-                hitthd: self.hitthd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Itr1 {{ litthd: {=u16:?}, hitthd: {=u16:?} }}",
+                self.litthd(),
+                self.hitthd()
+            )
         }
     }
     #[doc = "Temperature sensor option register."]
@@ -545,90 +483,45 @@ pub mod regs {
     impl core::fmt::Debug for Or {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Or")
-                .field(
-                    "op",
-                    &[
-                        self.op(0usize),
-                        self.op(1usize),
-                        self.op(2usize),
-                        self.op(3usize),
-                        self.op(4usize),
-                        self.op(5usize),
-                        self.op(6usize),
-                        self.op(7usize),
-                        self.op(8usize),
-                        self.op(9usize),
-                        self.op(10usize),
-                        self.op(11usize),
-                        self.op(12usize),
-                        self.op(13usize),
-                        self.op(14usize),
-                        self.op(15usize),
-                        self.op(16usize),
-                        self.op(17usize),
-                        self.op(18usize),
-                        self.op(19usize),
-                        self.op(20usize),
-                        self.op(21usize),
-                        self.op(22usize),
-                        self.op(23usize),
-                        self.op(24usize),
-                        self.op(25usize),
-                        self.op(26usize),
-                        self.op(27usize),
-                        self.op(28usize),
-                        self.op(29usize),
-                        self.op(30usize),
-                        self.op(31usize),
-                    ],
-                )
+                .field("op[0]", &self.op(0usize))
+                .field("op[1]", &self.op(1usize))
+                .field("op[2]", &self.op(2usize))
+                .field("op[3]", &self.op(3usize))
+                .field("op[4]", &self.op(4usize))
+                .field("op[5]", &self.op(5usize))
+                .field("op[6]", &self.op(6usize))
+                .field("op[7]", &self.op(7usize))
+                .field("op[8]", &self.op(8usize))
+                .field("op[9]", &self.op(9usize))
+                .field("op[10]", &self.op(10usize))
+                .field("op[11]", &self.op(11usize))
+                .field("op[12]", &self.op(12usize))
+                .field("op[13]", &self.op(13usize))
+                .field("op[14]", &self.op(14usize))
+                .field("op[15]", &self.op(15usize))
+                .field("op[16]", &self.op(16usize))
+                .field("op[17]", &self.op(17usize))
+                .field("op[18]", &self.op(18usize))
+                .field("op[19]", &self.op(19usize))
+                .field("op[20]", &self.op(20usize))
+                .field("op[21]", &self.op(21usize))
+                .field("op[22]", &self.op(22usize))
+                .field("op[23]", &self.op(23usize))
+                .field("op[24]", &self.op(24usize))
+                .field("op[25]", &self.op(25usize))
+                .field("op[26]", &self.op(26usize))
+                .field("op[27]", &self.op(27usize))
+                .field("op[28]", &self.op(28usize))
+                .field("op[29]", &self.op(29usize))
+                .field("op[30]", &self.op(30usize))
+                .field("op[31]", &self.op(31usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Or {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Or {
-                op: [bool; 32usize],
-            }
-            let proxy = Or {
-                op: [
-                    self.op(0usize),
-                    self.op(1usize),
-                    self.op(2usize),
-                    self.op(3usize),
-                    self.op(4usize),
-                    self.op(5usize),
-                    self.op(6usize),
-                    self.op(7usize),
-                    self.op(8usize),
-                    self.op(9usize),
-                    self.op(10usize),
-                    self.op(11usize),
-                    self.op(12usize),
-                    self.op(13usize),
-                    self.op(14usize),
-                    self.op(15usize),
-                    self.op(16usize),
-                    self.op(17usize),
-                    self.op(18usize),
-                    self.op(19usize),
-                    self.op(20usize),
-                    self.op(21usize),
-                    self.op(22usize),
-                    self.op(23usize),
-                    self.op(24usize),
-                    self.op(25usize),
-                    self.op(26usize),
-                    self.op(27usize),
-                    self.op(28usize),
-                    self.op(29usize),
-                    self.op(30usize),
-                    self.op(31usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Or {{ op[0]: {=bool:?}, op[1]: {=bool:?}, op[2]: {=bool:?}, op[3]: {=bool:?}, op[4]: {=bool:?}, op[5]: {=bool:?}, op[6]: {=bool:?}, op[7]: {=bool:?}, op[8]: {=bool:?}, op[9]: {=bool:?}, op[10]: {=bool:?}, op[11]: {=bool:?}, op[12]: {=bool:?}, op[13]: {=bool:?}, op[14]: {=bool:?}, op[15]: {=bool:?}, op[16]: {=bool:?}, op[17]: {=bool:?}, op[18]: {=bool:?}, op[19]: {=bool:?}, op[20]: {=bool:?}, op[21]: {=bool:?}, op[22]: {=bool:?}, op[23]: {=bool:?}, op[24]: {=bool:?}, op[25]: {=bool:?}, op[26]: {=bool:?}, op[27]: {=bool:?}, op[28]: {=bool:?}, op[29]: {=bool:?}, op[30]: {=bool:?}, op[31]: {=bool:?} }}" , self . op (0usize) , self . op (1usize) , self . op (2usize) , self . op (3usize) , self . op (4usize) , self . op (5usize) , self . op (6usize) , self . op (7usize) , self . op (8usize) , self . op (9usize) , self . op (10usize) , self . op (11usize) , self . op (12usize) , self . op (13usize) , self . op (14usize) , self . op (15usize) , self . op (16usize) , self . op (17usize) , self . op (18usize) , self . op (19usize) , self . op (20usize) , self . op (21usize) , self . op (22usize) , self . op (23usize) , self . op (24usize) , self . op (25usize) , self . op (26usize) , self . op (27usize) , self . op (28usize) , self . op (29usize) , self . op (30usize) , self . op (31usize))
         }
     }
     #[doc = "Temperature sensor ramp value register."]
@@ -664,14 +557,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rampvalr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rampvalr {
-                ramp_coeff: u16,
-            }
-            let proxy = Rampvalr {
-                ramp_coeff: self.ramp_coeff(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Rampvalr {{ ramp_coeff: {=u16:?} }}", self.ramp_coeff())
         }
     }
     #[doc = "Temperature sensor status register."]
@@ -779,26 +665,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                itef: bool,
-                itlf: bool,
-                ithf: bool,
-                aitef: bool,
-                aitlf: bool,
-                aithf: bool,
-                rdy: bool,
-            }
-            let proxy = Sr {
-                itef: self.itef(),
-                itlf: self.itlf(),
-                ithf: self.ithf(),
-                aitef: self.aitef(),
-                aitlf: self.aitlf(),
-                aithf: self.aithf(),
-                rdy: self.rdy(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr {{ itef: {=bool:?}, itlf: {=bool:?}, ithf: {=bool:?}, aitef: {=bool:?}, aitlf: {=bool:?}, aithf: {=bool:?}, rdy: {=bool:?} }}" , self . itef () , self . itlf () , self . ithf () , self . aitef () , self . aitlf () , self . aithf () , self . rdy ())
         }
     }
     #[doc = "Temperature sensor T0 value register 1."]
@@ -846,16 +713,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for T0valr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct T0valr1 {
-                fmt0: u16,
-                t0: u8,
-            }
-            let proxy = T0valr1 {
-                fmt0: self.fmt0(),
-                t0: self.t0(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "T0valr1 {{ fmt0: {=u16:?}, t0: {=u8:?} }}", self.fmt0(), self.t0())
         }
     }
 }

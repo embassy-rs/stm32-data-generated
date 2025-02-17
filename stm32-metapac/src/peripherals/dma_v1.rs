@@ -335,50 +335,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                en: bool,
-                dmeie: bool,
-                teie: bool,
-                htie: bool,
-                tcie: bool,
-                pfctrl: super::vals::Pfctrl,
-                dir: super::vals::Dir,
-                circ: bool,
-                pinc: bool,
-                minc: bool,
-                psize: super::vals::Size,
-                msize: super::vals::Size,
-                pincos: super::vals::Pincos,
-                pl: super::vals::Pl,
-                dbm: bool,
-                ct: super::vals::Ct,
-                trbuff: bool,
-                pburst: super::vals::Burst,
-                mburst: super::vals::Burst,
-            }
-            let proxy = Cr {
-                en: self.en(),
-                dmeie: self.dmeie(),
-                teie: self.teie(),
-                htie: self.htie(),
-                tcie: self.tcie(),
-                pfctrl: self.pfctrl(),
-                dir: self.dir(),
-                circ: self.circ(),
-                pinc: self.pinc(),
-                minc: self.minc(),
-                psize: self.psize(),
-                msize: self.msize(),
-                pincos: self.pincos(),
-                pl: self.pl(),
-                dbm: self.dbm(),
-                ct: self.ct(),
-                trbuff: self.trbuff(),
-                pburst: self.pburst(),
-                mburst: self.mburst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ en: {=bool:?}, dmeie: {=bool:?}, teie: {=bool:?}, htie: {=bool:?}, tcie: {=bool:?}, pfctrl: {:?}, dir: {:?}, circ: {=bool:?}, pinc: {=bool:?}, minc: {=bool:?}, psize: {:?}, msize: {:?}, pincos: {:?}, pl: {:?}, dbm: {=bool:?}, ct: {:?}, trbuff: {=bool:?}, pburst: {:?}, mburst: {:?} }}" , self . en () , self . dmeie () , self . teie () , self . htie () , self . tcie () , self . pfctrl () , self . dir () , self . circ () , self . pinc () , self . minc () , self . psize () , self . msize () , self . pincos () , self . pl () , self . dbm () , self . ct () , self . trbuff () , self . pburst () , self . mburst ())
         }
     }
     #[doc = "stream x FIFO control register"]
@@ -450,20 +407,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fcr {
-                fth: super::vals::Fth,
-                dmdis: super::vals::Dmdis,
-                fs: super::vals::Fs,
-                feie: bool,
-            }
-            let proxy = Fcr {
-                fth: self.fth(),
-                dmdis: self.dmdis(),
-                fs: self.fs(),
-                feie: self.feie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Fcr {{ fth: {:?}, dmdis: {:?}, fs: {:?}, feie: {=bool:?} }}",
+                self.fth(),
+                self.dmdis(),
+                self.fs(),
+                self.feie()
+            )
         }
     }
     #[doc = "interrupt register"]
@@ -556,98 +507,33 @@ pub mod regs {
     impl core::fmt::Debug for Ixr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ixr")
-                .field(
-                    "feif",
-                    &[
-                        self.feif(0usize),
-                        self.feif(1usize),
-                        self.feif(2usize),
-                        self.feif(3usize),
-                    ],
-                )
-                .field(
-                    "dmeif",
-                    &[
-                        self.dmeif(0usize),
-                        self.dmeif(1usize),
-                        self.dmeif(2usize),
-                        self.dmeif(3usize),
-                    ],
-                )
-                .field(
-                    "teif",
-                    &[
-                        self.teif(0usize),
-                        self.teif(1usize),
-                        self.teif(2usize),
-                        self.teif(3usize),
-                    ],
-                )
-                .field(
-                    "htif",
-                    &[
-                        self.htif(0usize),
-                        self.htif(1usize),
-                        self.htif(2usize),
-                        self.htif(3usize),
-                    ],
-                )
-                .field(
-                    "tcif",
-                    &[
-                        self.tcif(0usize),
-                        self.tcif(1usize),
-                        self.tcif(2usize),
-                        self.tcif(3usize),
-                    ],
-                )
+                .field("feif[0]", &self.feif(0usize))
+                .field("feif[1]", &self.feif(1usize))
+                .field("feif[2]", &self.feif(2usize))
+                .field("feif[3]", &self.feif(3usize))
+                .field("dmeif[0]", &self.dmeif(0usize))
+                .field("dmeif[1]", &self.dmeif(1usize))
+                .field("dmeif[2]", &self.dmeif(2usize))
+                .field("dmeif[3]", &self.dmeif(3usize))
+                .field("teif[0]", &self.teif(0usize))
+                .field("teif[1]", &self.teif(1usize))
+                .field("teif[2]", &self.teif(2usize))
+                .field("teif[3]", &self.teif(3usize))
+                .field("htif[0]", &self.htif(0usize))
+                .field("htif[1]", &self.htif(1usize))
+                .field("htif[2]", &self.htif(2usize))
+                .field("htif[3]", &self.htif(3usize))
+                .field("tcif[0]", &self.tcif(0usize))
+                .field("tcif[1]", &self.tcif(1usize))
+                .field("tcif[2]", &self.tcif(2usize))
+                .field("tcif[3]", &self.tcif(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ixr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ixr {
-                feif: [bool; 4usize],
-                dmeif: [bool; 4usize],
-                teif: [bool; 4usize],
-                htif: [bool; 4usize],
-                tcif: [bool; 4usize],
-            }
-            let proxy = Ixr {
-                feif: [
-                    self.feif(0usize),
-                    self.feif(1usize),
-                    self.feif(2usize),
-                    self.feif(3usize),
-                ],
-                dmeif: [
-                    self.dmeif(0usize),
-                    self.dmeif(1usize),
-                    self.dmeif(2usize),
-                    self.dmeif(3usize),
-                ],
-                teif: [
-                    self.teif(0usize),
-                    self.teif(1usize),
-                    self.teif(2usize),
-                    self.teif(3usize),
-                ],
-                htif: [
-                    self.htif(0usize),
-                    self.htif(1usize),
-                    self.htif(2usize),
-                    self.htif(3usize),
-                ],
-                tcif: [
-                    self.tcif(0usize),
-                    self.tcif(1usize),
-                    self.tcif(2usize),
-                    self.tcif(3usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ixr {{ feif[0]: {=bool:?}, feif[1]: {=bool:?}, feif[2]: {=bool:?}, feif[3]: {=bool:?}, dmeif[0]: {=bool:?}, dmeif[1]: {=bool:?}, dmeif[2]: {=bool:?}, dmeif[3]: {=bool:?}, teif[0]: {=bool:?}, teif[1]: {=bool:?}, teif[2]: {=bool:?}, teif[3]: {=bool:?}, htif[0]: {=bool:?}, htif[1]: {=bool:?}, htif[2]: {=bool:?}, htif[3]: {=bool:?}, tcif[0]: {=bool:?}, tcif[1]: {=bool:?}, tcif[2]: {=bool:?}, tcif[3]: {=bool:?} }}" , self . feif (0usize) , self . feif (1usize) , self . feif (2usize) , self . feif (3usize) , self . dmeif (0usize) , self . dmeif (1usize) , self . dmeif (2usize) , self . dmeif (3usize) , self . teif (0usize) , self . teif (1usize) , self . teif (2usize) , self . teif (3usize) , self . htif (0usize) , self . htif (1usize) , self . htif (2usize) , self . htif (3usize) , self . tcif (0usize) , self . tcif (1usize) , self . tcif (2usize) , self . tcif (3usize))
         }
     }
     #[doc = "stream x number of data register"]
@@ -681,12 +567,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ndtr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ndtr {
-                ndt: u16,
-            }
-            let proxy = Ndtr { ndt: self.ndt() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ndtr {{ ndt: {=u16:?} }}", self.ndt())
         }
     }
 }

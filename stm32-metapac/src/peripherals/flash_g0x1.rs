@@ -219,24 +219,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Acr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Acr {
-                latency: super::vals::Latency,
-                prften: bool,
-                icen: bool,
-                icrst: bool,
-                empty: bool,
-                dbg_swen: bool,
-            }
-            let proxy = Acr {
-                latency: self.latency(),
-                prften: self.prften(),
-                icen: self.icen(),
-                icrst: self.icrst(),
-                empty: self.empty(),
-                dbg_swen: self.dbg_swen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Acr {{ latency: {:?}, prften: {=bool:?}, icen: {=bool:?}, icrst: {=bool:?}, empty: {=bool:?}, dbg_swen: {=bool:?} }}" , self . latency () , self . prften () , self . icen () , self . icrst () , self . empty () , self . dbg_swen ())
         }
     }
     #[doc = "Flash control register"]
@@ -452,44 +435,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                pg: bool,
-                per: bool,
-                mer: bool,
-                pnb: u8,
-                bker: bool,
-                mer2: bool,
-                strt: bool,
-                optstrt: bool,
-                fstpg: bool,
-                eopie: bool,
-                errie: bool,
-                rderrie: bool,
-                obl_launch: bool,
-                sec_prot: bool,
-                optlock: bool,
-                lock: bool,
-            }
-            let proxy = Cr {
-                pg: self.pg(),
-                per: self.per(),
-                mer: self.mer(),
-                pnb: self.pnb(),
-                bker: self.bker(),
-                mer2: self.mer2(),
-                strt: self.strt(),
-                optstrt: self.optstrt(),
-                fstpg: self.fstpg(),
-                eopie: self.eopie(),
-                errie: self.errie(),
-                rderrie: self.rderrie(),
-                obl_launch: self.obl_launch(),
-                sec_prot: self.sec_prot(),
-                optlock: self.optlock(),
-                lock: self.lock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ pg: {=bool:?}, per: {=bool:?}, mer: {=bool:?}, pnb: {=u8:?}, bker: {=bool:?}, mer2: {=bool:?}, strt: {=bool:?}, optstrt: {=bool:?}, fstpg: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, rderrie: {=bool:?}, obl_launch: {=bool:?}, sec_prot: {=bool:?}, optlock: {=bool:?}, lock: {=bool:?} }}" , self . pg () , self . per () , self . mer () , self . pnb () , self . bker () , self . mer2 () , self . strt () , self . optstrt () , self . fstpg () , self . eopie () , self . errie () , self . rderrie () , self . obl_launch () , self . sec_prot () , self . optlock () , self . lock ())
         }
     }
     #[doc = "Flash ECC register"]
@@ -573,22 +519,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Eccr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Eccr {
-                addr_ecc: u16,
-                sysf_ecc: bool,
-                eccie: bool,
-                eccc: bool,
-                eccd: bool,
-            }
-            let proxy = Eccr {
-                addr_ecc: self.addr_ecc(),
-                sysf_ecc: self.sysf_ecc(),
-                eccie: self.eccie(),
-                eccc: self.eccc(),
-                eccd: self.eccd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Eccr {{ addr_ecc: {=u16:?}, sysf_ecc: {=bool:?}, eccie: {=bool:?}, eccc: {=bool:?}, eccd: {=bool:?} }}" , self . addr_ecc () , self . sysf_ecc () , self . eccie () , self . eccc () , self . eccd ())
         }
     }
     #[doc = "Flash ECC register 2"]
@@ -672,22 +603,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Eccr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Eccr2 {
-                addr_ecc: u16,
-                sysf_ecc: bool,
-                eccie: bool,
-                eccc: bool,
-                eccd: bool,
-            }
-            let proxy = Eccr2 {
-                addr_ecc: self.addr_ecc(),
-                sysf_ecc: self.sysf_ecc(),
-                eccie: self.eccie(),
-                eccc: self.eccc(),
-                eccd: self.eccd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Eccr2 {{ addr_ecc: {=u16:?}, sysf_ecc: {=bool:?}, eccie: {=bool:?}, eccc: {=bool:?}, eccd: {=bool:?} }}" , self . addr_ecc () , self . sysf_ecc () , self . eccie () , self . eccc () , self . eccd ())
         }
     }
     #[doc = "Flash option register"]
@@ -939,50 +855,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Optr {
-                rdp: super::vals::Rdp,
-                boren: bool,
-                borf_lev: super::vals::BorfLev,
-                borr_lev: super::vals::BorrLev,
-                n_rst_stop: bool,
-                n_rst_stdby: bool,
-                n_rsts_hdw: bool,
-                idwg_sw: bool,
-                iwdg_stop: bool,
-                iwdg_stdby: bool,
-                wwdg_sw: bool,
-                n_swap_bank: bool,
-                dual_bank: bool,
-                ram_parity_check: bool,
-                n_boot_sel: bool,
-                n_boot1: bool,
-                n_boot0: bool,
-                nrst_mode: super::vals::NrstMode,
-                irhen: bool,
-            }
-            let proxy = Optr {
-                rdp: self.rdp(),
-                boren: self.boren(),
-                borf_lev: self.borf_lev(),
-                borr_lev: self.borr_lev(),
-                n_rst_stop: self.n_rst_stop(),
-                n_rst_stdby: self.n_rst_stdby(),
-                n_rsts_hdw: self.n_rsts_hdw(),
-                idwg_sw: self.idwg_sw(),
-                iwdg_stop: self.iwdg_stop(),
-                iwdg_stdby: self.iwdg_stdby(),
-                wwdg_sw: self.wwdg_sw(),
-                n_swap_bank: self.n_swap_bank(),
-                dual_bank: self.dual_bank(),
-                ram_parity_check: self.ram_parity_check(),
-                n_boot_sel: self.n_boot_sel(),
-                n_boot1: self.n_boot1(),
-                n_boot0: self.n_boot0(),
-                nrst_mode: self.nrst_mode(),
-                irhen: self.irhen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Optr {{ rdp: {:?}, boren: {=bool:?}, borf_lev: {:?}, borr_lev: {:?}, n_rst_stop: {=bool:?}, n_rst_stdby: {=bool:?}, n_rsts_hdw: {=bool:?}, idwg_sw: {=bool:?}, iwdg_stop: {=bool:?}, iwdg_stdby: {=bool:?}, wwdg_sw: {=bool:?}, n_swap_bank: {=bool:?}, dual_bank: {=bool:?}, ram_parity_check: {=bool:?}, n_boot_sel: {=bool:?}, n_boot1: {=bool:?}, n_boot0: {=bool:?}, nrst_mode: {:?}, irhen: {=bool:?} }}" , self . rdp () , self . boren () , self . borf_lev () , self . borr_lev () , self . n_rst_stop () , self . n_rst_stdby () , self . n_rsts_hdw () , self . idwg_sw () , self . iwdg_stop () , self . iwdg_stdby () , self . wwdg_sw () , self . n_swap_bank () , self . dual_bank () , self . ram_parity_check () , self . n_boot_sel () , self . n_boot1 () , self . n_boot0 () , self . nrst_mode () , self . irhen ())
         }
     }
     #[doc = "Flash PCROP zone A End address register"]
@@ -1030,16 +903,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pcrop1aer {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pcrop1aer {
-                pcrop1a_end: u16,
-                pcrop_rdp: bool,
-            }
-            let proxy = Pcrop1aer {
-                pcrop1a_end: self.pcrop1a_end(),
-                pcrop_rdp: self.pcrop_rdp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Pcrop1aer {{ pcrop1a_end: {=u16:?}, pcrop_rdp: {=bool:?} }}",
+                self.pcrop1a_end(),
+                self.pcrop_rdp()
+            )
         }
     }
     #[doc = "Flash PCROP zone A Start address register"]
@@ -1075,14 +944,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pcrop1asr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pcrop1asr {
-                pcrop1a_strt: u16,
-            }
-            let proxy = Pcrop1asr {
-                pcrop1a_strt: self.pcrop1a_strt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Pcrop1asr {{ pcrop1a_strt: {=u16:?} }}", self.pcrop1a_strt())
         }
     }
     #[doc = "Flash PCROP zone B End address register"]
@@ -1118,14 +980,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pcrop1ber {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pcrop1ber {
-                pcrop1b_end: u16,
-            }
-            let proxy = Pcrop1ber {
-                pcrop1b_end: self.pcrop1b_end(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Pcrop1ber {{ pcrop1b_end: {=u16:?} }}", self.pcrop1b_end())
         }
     }
     #[doc = "Flash PCROP zone B Start address register"]
@@ -1161,14 +1016,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pcrop1bsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pcrop1bsr {
-                pcrop1b_strt: u16,
-            }
-            let proxy = Pcrop1bsr {
-                pcrop1b_strt: self.pcrop1b_strt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Pcrop1bsr {{ pcrop1b_strt: {=u16:?} }}", self.pcrop1b_strt())
         }
     }
     #[doc = "Flash PCROP zone A End address register bank 2"]
@@ -1204,14 +1052,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pcrop2aer {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pcrop2aer {
-                pcrop2a_end: u16,
-            }
-            let proxy = Pcrop2aer {
-                pcrop2a_end: self.pcrop2a_end(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Pcrop2aer {{ pcrop2a_end: {=u16:?} }}", self.pcrop2a_end())
         }
     }
     #[doc = "Flash PCROP zone A Start address register bank 2"]
@@ -1247,14 +1088,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pcrop2asr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pcrop2asr {
-                pcrop2a_strt: u16,
-            }
-            let proxy = Pcrop2asr {
-                pcrop2a_strt: self.pcrop2a_strt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Pcrop2asr {{ pcrop2a_strt: {=u16:?} }}", self.pcrop2a_strt())
         }
     }
     #[doc = "Flash PCROP zone B End address register bank 2"]
@@ -1290,14 +1124,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pcrop2ber {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pcrop2ber {
-                pcrop2b_end: u16,
-            }
-            let proxy = Pcrop2ber {
-                pcrop2b_end: self.pcrop2b_end(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Pcrop2ber {{ pcrop2b_end: {=u16:?} }}", self.pcrop2b_end())
         }
     }
     #[doc = "Flash PCROP zone B Start address register bank 2"]
@@ -1333,14 +1160,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pcrop2bsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pcrop2bsr {
-                pcrop2b_strt: u16,
-            }
-            let proxy = Pcrop2bsr {
-                pcrop2b_strt: self.pcrop2b_strt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Pcrop2bsr {{ pcrop2b_strt: {=u16:?} }}", self.pcrop2b_strt())
         }
     }
     #[doc = "Flash Security register"]
@@ -1400,18 +1220,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Secr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Secr {
-                sec_size: u8,
-                boot_lock: bool,
-                sec_size_2: u8,
-            }
-            let proxy = Secr {
-                sec_size: self.sec_size(),
-                boot_lock: self.boot_lock(),
-                sec_size_2: self.sec_size_2(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Secr {{ sec_size: {=u8:?}, boot_lock: {=bool:?}, sec_size_2: {=u8:?} }}",
+                self.sec_size(),
+                self.boot_lock(),
+                self.sec_size_2()
+            )
         }
     }
     #[doc = "Status register"]
@@ -1603,40 +1418,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                eop: bool,
-                operr: bool,
-                progerr: bool,
-                wrperr: bool,
-                pgaerr: bool,
-                sizerr: bool,
-                pgserr: bool,
-                miserr: bool,
-                fasterr: bool,
-                rderr: bool,
-                optverr: bool,
-                bsy: bool,
-                bsy2: bool,
-                cfgbsy: bool,
-            }
-            let proxy = Sr {
-                eop: self.eop(),
-                operr: self.operr(),
-                progerr: self.progerr(),
-                wrperr: self.wrperr(),
-                pgaerr: self.pgaerr(),
-                sizerr: self.sizerr(),
-                pgserr: self.pgserr(),
-                miserr: self.miserr(),
-                fasterr: self.fasterr(),
-                rderr: self.rderr(),
-                optverr: self.optverr(),
-                bsy: self.bsy(),
-                bsy2: self.bsy2(),
-                cfgbsy: self.cfgbsy(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr {{ eop: {=bool:?}, operr: {=bool:?}, progerr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, pgserr: {=bool:?}, miserr: {=bool:?}, fasterr: {=bool:?}, rderr: {=bool:?}, optverr: {=bool:?}, bsy: {=bool:?}, bsy2: {=bool:?}, cfgbsy: {=bool:?} }}" , self . eop () , self . operr () , self . progerr () , self . wrperr () , self . pgaerr () , self . sizerr () , self . pgserr () , self . miserr () , self . fasterr () , self . rderr () , self . optverr () , self . bsy () , self . bsy2 () , self . cfgbsy ())
         }
     }
     #[doc = "Flash WRP area A address register"]
@@ -1684,16 +1466,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrp1ar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wrp1ar {
-                wrp1a_strt: u8,
-                wrp1a_end: u8,
-            }
-            let proxy = Wrp1ar {
-                wrp1a_strt: self.wrp1a_strt(),
-                wrp1a_end: self.wrp1a_end(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Wrp1ar {{ wrp1a_strt: {=u8:?}, wrp1a_end: {=u8:?} }}",
+                self.wrp1a_strt(),
+                self.wrp1a_end()
+            )
         }
     }
     #[doc = "Flash WRP area B address register"]
@@ -1741,16 +1519,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrp1br {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wrp1br {
-                wrp1b_strt: u8,
-                wrp1b_end: u8,
-            }
-            let proxy = Wrp1br {
-                wrp1b_strt: self.wrp1b_strt(),
-                wrp1b_end: self.wrp1b_end(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Wrp1br {{ wrp1b_strt: {=u8:?}, wrp1b_end: {=u8:?} }}",
+                self.wrp1b_strt(),
+                self.wrp1b_end()
+            )
         }
     }
     #[doc = "Flash WRP area A address register bank 2"]
@@ -1798,16 +1572,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrp2ar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wrp2ar {
-                wrp2a_strt: u8,
-                wrp2a_end: u8,
-            }
-            let proxy = Wrp2ar {
-                wrp2a_strt: self.wrp2a_strt(),
-                wrp2a_end: self.wrp2a_end(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Wrp2ar {{ wrp2a_strt: {=u8:?}, wrp2a_end: {=u8:?} }}",
+                self.wrp2a_strt(),
+                self.wrp2a_end()
+            )
         }
     }
     #[doc = "Flash WRP area B address register bank 2"]
@@ -1855,16 +1625,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrp2br {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wrp2br {
-                wrp2b_strt: u8,
-                wrp2b_end: u8,
-            }
-            let proxy = Wrp2br {
-                wrp2b_strt: self.wrp2b_strt(),
-                wrp2b_end: self.wrp2b_end(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Wrp2br {{ wrp2b_strt: {=u8:?}, wrp2b_end: {=u8:?} }}",
+                self.wrp2b_strt(),
+                self.wrp2b_end()
+            )
         }
     }
 }
@@ -2013,7 +1779,7 @@ pub mod vals {
     }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Rdp(pub u8);
+    pub struct Rdp(u8);
     impl Rdp {
         #[doc = "Read protection not active"]
         pub const LEVEL_0: Self = Self(0xaa);

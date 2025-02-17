@@ -182,32 +182,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1Fz {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Apb1Fz {
-                tim2: bool,
-                tim3: bool,
-                tim6: bool,
-                tim7: bool,
-                tim14: bool,
-                rtc: bool,
-                wwdg: bool,
-                iwdg: bool,
-                dbg_i2c1_smbus_timeout: bool,
-                can: bool,
-            }
-            let proxy = Apb1Fz {
-                tim2: self.tim2(),
-                tim3: self.tim3(),
-                tim6: self.tim6(),
-                tim7: self.tim7(),
-                tim14: self.tim14(),
-                rtc: self.rtc(),
-                wwdg: self.wwdg(),
-                iwdg: self.iwdg(),
-                dbg_i2c1_smbus_timeout: self.dbg_i2c1_smbus_timeout(),
-                can: self.can(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Apb1Fz {{ tim2: {=bool:?}, tim3: {=bool:?}, tim6: {=bool:?}, tim7: {=bool:?}, tim14: {=bool:?}, rtc: {=bool:?}, wwdg: {=bool:?}, iwdg: {=bool:?}, dbg_i2c1_smbus_timeout: {=bool:?}, can: {=bool:?} }}" , self . tim2 () , self . tim3 () , self . tim6 () , self . tim7 () , self . tim14 () , self . rtc () , self . wwdg () , self . iwdg () , self . dbg_i2c1_smbus_timeout () , self . can ())
         }
     }
     #[doc = "Debug MCU APB2 freeze register"]
@@ -279,20 +254,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb2Fz {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Apb2Fz {
-                tim1: bool,
-                tim15: bool,
-                tim16: bool,
-                tim17: bool,
-            }
-            let proxy = Apb2Fz {
-                tim1: self.tim1(),
-                tim15: self.tim15(),
-                tim16: self.tim16(),
-                tim17: self.tim17(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Apb2Fz {{ tim1: {=bool:?}, tim15: {=bool:?}, tim16: {=bool:?}, tim17: {=bool:?} }}",
+                self.tim1(),
+                self.tim15(),
+                self.tim16(),
+                self.tim17()
+            )
         }
     }
     #[doc = "Debug MCU Configuration Register"]
@@ -340,16 +309,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                dbg_stop: bool,
-                dbg_standby: bool,
-            }
-            let proxy = Cr {
-                dbg_stop: self.dbg_stop(),
-                dbg_standby: self.dbg_standby(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cr {{ dbg_stop: {=bool:?}, dbg_standby: {=bool:?} }}",
+                self.dbg_stop(),
+                self.dbg_standby()
+            )
         }
     }
     #[doc = "MCU Device ID Code Register"]
@@ -409,18 +374,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Idcode {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Idcode {
-                dev_id: u16,
-                div_id: u8,
-                rev_id: u16,
-            }
-            let proxy = Idcode {
-                dev_id: self.dev_id(),
-                div_id: self.div_id(),
-                rev_id: self.rev_id(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Idcode {{ dev_id: {=u16:?}, div_id: {=u8:?}, rev_id: {=u16:?} }}",
+                self.dev_id(),
+                self.div_id(),
+                self.rev_id()
+            )
         }
     }
 }

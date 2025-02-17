@@ -118,18 +118,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Acr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Acr {
-                latency: super::vals::Latency,
-                prftbe: bool,
-                prftbs: bool,
-            }
-            let proxy = Acr {
-                latency: self.latency(),
-                prftbe: self.prftbe(),
-                prftbs: self.prftbs(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Acr {{ latency: {:?}, prftbe: {=bool:?}, prftbs: {=bool:?} }}",
+                self.latency(),
+                self.prftbe(),
+                self.prftbs()
+            )
         }
     }
     #[doc = "Flash address register"]
@@ -163,12 +158,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ar {
-                far: u32,
-            }
-            let proxy = Ar { far: self.far() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ar {{ far: {=u32:?} }}", self.far())
         }
     }
     #[doc = "Flash control register"]
@@ -324,34 +314,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                pg: bool,
-                per: bool,
-                mer: bool,
-                optpg: bool,
-                opter: bool,
-                strt: bool,
-                lock: bool,
-                optwre: bool,
-                errie: bool,
-                eopie: bool,
-                force_optload: bool,
-            }
-            let proxy = Cr {
-                pg: self.pg(),
-                per: self.per(),
-                mer: self.mer(),
-                optpg: self.optpg(),
-                opter: self.opter(),
-                strt: self.strt(),
-                lock: self.lock(),
-                optwre: self.optwre(),
-                errie: self.errie(),
-                eopie: self.eopie(),
-                force_optload: self.force_optload(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ pg: {=bool:?}, per: {=bool:?}, mer: {=bool:?}, optpg: {=bool:?}, opter: {=bool:?}, strt: {=bool:?}, lock: {=bool:?}, optwre: {=bool:?}, errie: {=bool:?}, eopie: {=bool:?}, force_optload: {=bool:?} }}" , self . pg () , self . per () , self . mer () , self . optpg () , self . opter () , self . strt () , self . lock () , self . optwre () , self . errie () , self . eopie () , self . force_optload ())
         }
     }
     #[doc = "Option byte register"]
@@ -519,36 +482,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Obr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Obr {
-                opterr: bool,
-                rdprt: super::vals::Rdprt,
-                wdg_sw: super::vals::WdgSw,
-                n_rst_stop: super::vals::NRstStop,
-                n_rst_stdby: super::vals::NRstStdby,
-                n_boot0: bool,
-                n_boot1: bool,
-                vdda_monitor: bool,
-                ram_parity_check: super::vals::RamParityCheck,
-                boot_sel: super::vals::BootSel,
-                data0: u8,
-                data1: u8,
-            }
-            let proxy = Obr {
-                opterr: self.opterr(),
-                rdprt: self.rdprt(),
-                wdg_sw: self.wdg_sw(),
-                n_rst_stop: self.n_rst_stop(),
-                n_rst_stdby: self.n_rst_stdby(),
-                n_boot0: self.n_boot0(),
-                n_boot1: self.n_boot1(),
-                vdda_monitor: self.vdda_monitor(),
-                ram_parity_check: self.ram_parity_check(),
-                boot_sel: self.boot_sel(),
-                data0: self.data0(),
-                data1: self.data1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Obr {{ opterr: {=bool:?}, rdprt: {:?}, wdg_sw: {:?}, n_rst_stop: {:?}, n_rst_stdby: {:?}, n_boot0: {=bool:?}, n_boot1: {=bool:?}, vdda_monitor: {=bool:?}, ram_parity_check: {:?}, boot_sel: {:?}, data0: {=u8:?}, data1: {=u8:?} }}" , self . opterr () , self . rdprt () , self . wdg_sw () , self . n_rst_stop () , self . n_rst_stdby () , self . n_boot0 () , self . n_boot1 () , self . vdda_monitor () , self . ram_parity_check () , self . boot_sel () , self . data0 () , self . data1 ())
         }
     }
     #[doc = "Flash status register"]
@@ -620,20 +554,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                bsy: bool,
-                pgerr: bool,
-                wrprt: bool,
-                eop: bool,
-            }
-            let proxy = Sr {
-                bsy: self.bsy(),
-                pgerr: self.pgerr(),
-                wrprt: self.wrprt(),
-                eop: self.eop(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sr {{ bsy: {=bool:?}, pgerr: {=bool:?}, wrprt: {=bool:?}, eop: {=bool:?} }}",
+                self.bsy(),
+                self.pgerr(),
+                self.wrprt(),
+                self.eop()
+            )
         }
     }
     #[doc = "Write protection register"]
@@ -667,12 +595,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrpr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wrpr {
-                wrp: u32,
-            }
-            let proxy = Wrpr { wrp: self.wrp() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Wrpr {{ wrp: {=u32:?} }}", self.wrp())
         }
     }
 }

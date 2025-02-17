@@ -83,12 +83,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Btable {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Btable {
-                btable: u16,
-            }
-            let proxy = Btable { btable: self.btable() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Btable {{ btable: {=u16:?} }}", self.btable())
         }
     }
     #[doc = "control register"]
@@ -268,38 +263,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cntr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cntr {
-                fres: bool,
-                pdwn: bool,
-                lpmode: bool,
-                fsusp: bool,
-                resume: bool,
-                esofm: bool,
-                sofm: bool,
-                resetm: bool,
-                suspm: bool,
-                wkupm: bool,
-                errm: bool,
-                pmaovrm: bool,
-                ctrm: bool,
-            }
-            let proxy = Cntr {
-                fres: self.fres(),
-                pdwn: self.pdwn(),
-                lpmode: self.lpmode(),
-                fsusp: self.fsusp(),
-                resume: self.resume(),
-                esofm: self.esofm(),
-                sofm: self.sofm(),
-                resetm: self.resetm(),
-                suspm: self.suspm(),
-                wkupm: self.wkupm(),
-                errm: self.errm(),
-                pmaovrm: self.pmaovrm(),
-                ctrm: self.ctrm(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cntr {{ fres: {=bool:?}, pdwn: {=bool:?}, lpmode: {=bool:?}, fsusp: {=bool:?}, resume: {=bool:?}, esofm: {=bool:?}, sofm: {=bool:?}, resetm: {=bool:?}, suspm: {=bool:?}, wkupm: {=bool:?}, errm: {=bool:?}, pmaovrm: {=bool:?}, ctrm: {=bool:?} }}" , self . fres () , self . pdwn () , self . lpmode () , self . fsusp () , self . resume () , self . esofm () , self . sofm () , self . resetm () , self . suspm () , self . wkupm () , self . errm () , self . pmaovrm () , self . ctrm ())
         }
     }
     #[doc = "device address"]
@@ -347,16 +311,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Daddr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Daddr {
-                add: u8,
-                ef: bool,
-            }
-            let proxy = Daddr {
-                add: self.add(),
-                ef: self.ef(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Daddr {{ add: {=u8:?}, ef: {=bool:?} }}", self.add(), self.ef())
         }
     }
     #[doc = "endpoint register"]
@@ -500,32 +455,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Epr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Epr {
-                ea: u8,
-                stat_tx: super::vals::Stat,
-                dtog_tx: bool,
-                ctr_tx: bool,
-                ep_kind: bool,
-                ep_type: super::vals::EpType,
-                setup: bool,
-                stat_rx: super::vals::Stat,
-                dtog_rx: bool,
-                ctr_rx: bool,
-            }
-            let proxy = Epr {
-                ea: self.ea(),
-                stat_tx: self.stat_tx(),
-                dtog_tx: self.dtog_tx(),
-                ctr_tx: self.ctr_tx(),
-                ep_kind: self.ep_kind(),
-                ep_type: self.ep_type(),
-                setup: self.setup(),
-                stat_rx: self.stat_rx(),
-                dtog_rx: self.dtog_rx(),
-                ctr_rx: self.ctr_rx(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Epr {{ ea: {=u8:?}, stat_tx: {:?}, dtog_tx: {=bool:?}, ctr_tx: {=bool:?}, ep_kind: {=bool:?}, ep_type: {:?}, setup: {=bool:?}, stat_rx: {:?}, dtog_rx: {=bool:?}, ctr_rx: {=bool:?} }}" , self . ea () , self . stat_tx () , self . dtog_tx () , self . ctr_tx () , self . ep_kind () , self . ep_type () , self . setup () , self . stat_rx () , self . dtog_rx () , self . ctr_rx ())
         }
     }
     #[doc = "frame number register"]
@@ -609,22 +539,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fnr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fnr {
-                fn_: u16,
-                lsof: u8,
-                lck: bool,
-                rxdm: bool,
-                rxdp: bool,
-            }
-            let proxy = Fnr {
-                fn_: self.fn_(),
-                lsof: self.lsof(),
-                lck: self.lck(),
-                rxdm: self.rxdm(),
-                rxdp: self.rxdp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Fnr {{ fn_: {=u16:?}, lsof: {=u8:?}, lck: {=bool:?}, rxdm: {=bool:?}, rxdp: {=bool:?} }}",
+                self.fn_(),
+                self.lsof(),
+                self.lck(),
+                self.rxdm(),
+                self.rxdp()
+            )
         }
     }
     #[doc = "interrupt status register"]
@@ -768,32 +691,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Istr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Istr {
-                ep_id: u8,
-                dir: super::vals::Dir,
-                esof: bool,
-                sof: bool,
-                reset: bool,
-                susp: bool,
-                wkup: bool,
-                err: bool,
-                pmaovr: bool,
-                ctr: bool,
-            }
-            let proxy = Istr {
-                ep_id: self.ep_id(),
-                dir: self.dir(),
-                esof: self.esof(),
-                sof: self.sof(),
-                reset: self.reset(),
-                susp: self.susp(),
-                wkup: self.wkup(),
-                err: self.err(),
-                pmaovr: self.pmaovr(),
-                ctr: self.ctr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Istr {{ ep_id: {=u8:?}, dir: {:?}, esof: {=bool:?}, sof: {=bool:?}, reset: {=bool:?}, susp: {=bool:?}, wkup: {=bool:?}, err: {=bool:?}, pmaovr: {=bool:?}, ctr: {=bool:?} }}" , self . ep_id () , self . dir () , self . esof () , self . sof () , self . reset () , self . susp () , self . wkup () , self . err () , self . pmaovr () , self . ctr ())
         }
     }
 }

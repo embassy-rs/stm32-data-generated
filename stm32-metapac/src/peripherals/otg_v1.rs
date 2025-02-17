@@ -547,40 +547,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Adpctl {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Adpctl {
-                prb_dschg: u8,
-                prb_delta: u8,
-                prb_per: u8,
-                rtim: u16,
-                enaprb: bool,
-                enasns: bool,
-                adpres: bool,
-                adpen: bool,
-                adp_prb_int: bool,
-                adp_sns_int: bool,
-                adp_tmout_int: bool,
-                adp_prb_msk: bool,
-                adp_tmout_msk: bool,
-                ar: bool,
-            }
-            let proxy = Adpctl {
-                prb_dschg: self.prb_dschg(),
-                prb_delta: self.prb_delta(),
-                prb_per: self.prb_per(),
-                rtim: self.rtim(),
-                enaprb: self.enaprb(),
-                enasns: self.enasns(),
-                adpres: self.adpres(),
-                adpen: self.adpen(),
-                adp_prb_int: self.adp_prb_int(),
-                adp_sns_int: self.adp_sns_int(),
-                adp_tmout_int: self.adp_tmout_int(),
-                adp_prb_msk: self.adp_prb_msk(),
-                adp_tmout_msk: self.adp_tmout_msk(),
-                ar: self.ar(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Adpctl {{ prb_dschg: {=u8:?}, prb_delta: {=u8:?}, prb_per: {=u8:?}, rtim: {=u16:?}, enaprb: {=bool:?}, enasns: {=bool:?}, adpres: {=bool:?}, adpen: {=bool:?}, adp_prb_int: {=bool:?}, adp_sns_int: {=bool:?}, adp_tmout_int: {=bool:?}, adp_prb_msk: {=bool:?}, adp_tmout_msk: {=bool:?}, ar: {=bool:?} }}" , self . prb_dschg () , self . prb_delta () , self . prb_per () , self . rtim () , self . enaprb () , self . enasns () , self . adpres () , self . adpen () , self . adp_prb_int () , self . adp_sns_int () , self . adp_tmout_int () , self . adp_prb_msk () , self . adp_tmout_msk () , self . ar ())
         }
     }
     #[doc = "Core ID register"]
@@ -614,14 +581,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cid {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cid {
-                product_id: u32,
-            }
-            let proxy = Cid {
-                product_id: self.product_id(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cid {{ product_id: {=u32:?} }}", self.product_id())
         }
     }
     #[doc = "Device all endpoints interrupt register"]
@@ -669,16 +629,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Daint {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Daint {
-                iepint: u16,
-                oepint: u16,
-            }
-            let proxy = Daint {
-                iepint: self.iepint(),
-                oepint: self.oepint(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Daint {{ iepint: {=u16:?}, oepint: {=u16:?} }}",
+                self.iepint(),
+                self.oepint()
+            )
         }
     }
     #[doc = "All endpoints interrupt mask register"]
@@ -726,16 +682,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Daintmsk {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Daintmsk {
-                iepm: u16,
-                oepm: u16,
-            }
-            let proxy = Daintmsk {
-                iepm: self.iepm(),
-                oepm: self.oepm(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Daintmsk {{ iepm: {=u16:?}, oepm: {=u16:?} }}",
+                self.iepm(),
+                self.oepm()
+            )
         }
     }
     #[doc = "Device configuration register"]
@@ -819,22 +771,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dcfg {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dcfg {
-                dspd: super::vals::Dspd,
-                nzlsohsk: bool,
-                dad: u8,
-                pfivl: super::vals::Pfivl,
-                xcvrdly: bool,
-            }
-            let proxy = Dcfg {
-                dspd: self.dspd(),
-                nzlsohsk: self.nzlsohsk(),
-                dad: self.dad(),
-                pfivl: self.pfivl(),
-                xcvrdly: self.xcvrdly(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dcfg {{ dspd: {:?}, nzlsohsk: {=bool:?}, dad: {=u8:?}, pfivl: {:?}, xcvrdly: {=bool:?} }}",
+                self.dspd(),
+                self.nzlsohsk(),
+                self.dad(),
+                self.pfivl(),
+                self.xcvrdly()
+            )
         }
     }
     #[doc = "Device control register"]
@@ -978,32 +923,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dctl {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dctl {
-                rwusig: bool,
-                sdis: bool,
-                ginsts: bool,
-                gonsts: bool,
-                tctl: u8,
-                sginak: bool,
-                cginak: bool,
-                sgonak: bool,
-                cgonak: bool,
-                poprgdne: bool,
-            }
-            let proxy = Dctl {
-                rwusig: self.rwusig(),
-                sdis: self.sdis(),
-                ginsts: self.ginsts(),
-                gonsts: self.gonsts(),
-                tctl: self.tctl(),
-                sginak: self.sginak(),
-                cginak: self.cginak(),
-                sgonak: self.sgonak(),
-                cgonak: self.cgonak(),
-                poprgdne: self.poprgdne(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Dctl {{ rwusig: {=bool:?}, sdis: {=bool:?}, ginsts: {=bool:?}, gonsts: {=bool:?}, tctl: {=u8:?}, sginak: {=bool:?}, cginak: {=bool:?}, sgonak: {=bool:?}, cgonak: {=bool:?}, poprgdne: {=bool:?} }}" , self . rwusig () , self . sdis () , self . ginsts () , self . gonsts () , self . tctl () , self . sginak () , self . cginak () , self . sgonak () , self . cgonak () , self . poprgdne ())
         }
     }
     #[doc = "Device endpoint control register"]
@@ -1195,40 +1115,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Diepctl {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Diepctl {
-                mpsiz: u16,
-                usbaep: bool,
-                eonum_dpid: bool,
-                naksts: bool,
-                eptyp: super::vals::Eptyp,
-                snpm: bool,
-                stall: bool,
-                txfnum: u8,
-                cnak: bool,
-                snak: bool,
-                sd0pid_sevnfrm: bool,
-                soddfrm_sd1pid: bool,
-                epdis: bool,
-                epena: bool,
-            }
-            let proxy = Diepctl {
-                mpsiz: self.mpsiz(),
-                usbaep: self.usbaep(),
-                eonum_dpid: self.eonum_dpid(),
-                naksts: self.naksts(),
-                eptyp: self.eptyp(),
-                snpm: self.snpm(),
-                stall: self.stall(),
-                txfnum: self.txfnum(),
-                cnak: self.cnak(),
-                snak: self.snak(),
-                sd0pid_sevnfrm: self.sd0pid_sevnfrm(),
-                soddfrm_sd1pid: self.soddfrm_sd1pid(),
-                epdis: self.epdis(),
-                epena: self.epena(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Diepctl {{ mpsiz: {=u16:?}, usbaep: {=bool:?}, eonum_dpid: {=bool:?}, naksts: {=bool:?}, eptyp: {:?}, snpm: {=bool:?}, stall: {=bool:?}, txfnum: {=u8:?}, cnak: {=bool:?}, snak: {=bool:?}, sd0pid_sevnfrm: {=bool:?}, soddfrm_sd1pid: {=bool:?}, epdis: {=bool:?}, epena: {=bool:?} }}" , self . mpsiz () , self . usbaep () , self . eonum_dpid () , self . naksts () , self . eptyp () , self . snpm () , self . stall () , self . txfnum () , self . cnak () , self . snak () , self . sd0pid_sevnfrm () , self . soddfrm_sd1pid () , self . epdis () , self . epena ())
         }
     }
     #[doc = "Device IN endpoint FIFO empty interrupt mask register"]
@@ -1264,14 +1151,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Diepempmsk {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Diepempmsk {
-                ineptxfem: u16,
-            }
-            let proxy = Diepempmsk {
-                ineptxfem: self.ineptxfem(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Diepempmsk {{ ineptxfem: {=u16:?} }}", self.ineptxfem())
         }
     }
     #[doc = "Device endpoint interrupt register"]
@@ -1367,24 +1247,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Diepint {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Diepint {
-                xfrc: bool,
-                epdisd: bool,
-                toc: bool,
-                ittxfe: bool,
-                inepne: bool,
-                txfe: bool,
-            }
-            let proxy = Diepint {
-                xfrc: self.xfrc(),
-                epdisd: self.epdisd(),
-                toc: self.toc(),
-                ittxfe: self.ittxfe(),
-                inepne: self.inepne(),
-                txfe: self.txfe(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Diepint {{ xfrc: {=bool:?}, epdisd: {=bool:?}, toc: {=bool:?}, ittxfe: {=bool:?}, inepne: {=bool:?}, txfe: {=bool:?} }}" , self . xfrc () , self . epdisd () , self . toc () , self . ittxfe () , self . inepne () , self . txfe ())
         }
     }
     #[doc = "Device IN endpoint common interrupt mask register"]
@@ -1480,24 +1343,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Diepmsk {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Diepmsk {
-                xfrcm: bool,
-                epdm: bool,
-                tom: bool,
-                ittxfemsk: bool,
-                inepnmm: bool,
-                inepnem: bool,
-            }
-            let proxy = Diepmsk {
-                xfrcm: self.xfrcm(),
-                epdm: self.epdm(),
-                tom: self.tom(),
-                ittxfemsk: self.ittxfemsk(),
-                inepnmm: self.inepnmm(),
-                inepnem: self.inepnem(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Diepmsk {{ xfrcm: {=bool:?}, epdm: {=bool:?}, tom: {=bool:?}, ittxfemsk: {=bool:?}, inepnmm: {=bool:?}, inepnem: {=bool:?} }}" , self . xfrcm () , self . epdm () , self . tom () , self . ittxfemsk () , self . inepnmm () , self . inepnem ())
         }
     }
     #[doc = "Device endpoint transfer size register"]
@@ -1557,18 +1403,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dieptsiz {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dieptsiz {
-                xfrsiz: u32,
-                pktcnt: u16,
-                mcnt: u8,
-            }
-            let proxy = Dieptsiz {
-                xfrsiz: self.xfrsiz(),
-                pktcnt: self.pktcnt(),
-                mcnt: self.mcnt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dieptsiz {{ xfrsiz: {=u32:?}, pktcnt: {=u16:?}, mcnt: {=u8:?} }}",
+                self.xfrsiz(),
+                self.pktcnt(),
+                self.mcnt()
+            )
         }
     }
     #[doc = "Device endpoint control register"]
@@ -1748,38 +1589,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Doepctl {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Doepctl {
-                mpsiz: u16,
-                usbaep: bool,
-                eonum_dpid: bool,
-                naksts: bool,
-                eptyp: super::vals::Eptyp,
-                snpm: bool,
-                stall: bool,
-                cnak: bool,
-                snak: bool,
-                sd0pid_sevnfrm: bool,
-                soddfrm: bool,
-                epdis: bool,
-                epena: bool,
-            }
-            let proxy = Doepctl {
-                mpsiz: self.mpsiz(),
-                usbaep: self.usbaep(),
-                eonum_dpid: self.eonum_dpid(),
-                naksts: self.naksts(),
-                eptyp: self.eptyp(),
-                snpm: self.snpm(),
-                stall: self.stall(),
-                cnak: self.cnak(),
-                snak: self.snak(),
-                sd0pid_sevnfrm: self.sd0pid_sevnfrm(),
-                soddfrm: self.soddfrm(),
-                epdis: self.epdis(),
-                epena: self.epena(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Doepctl {{ mpsiz: {=u16:?}, usbaep: {=bool:?}, eonum_dpid: {=bool:?}, naksts: {=bool:?}, eptyp: {:?}, snpm: {=bool:?}, stall: {=bool:?}, cnak: {=bool:?}, snak: {=bool:?}, sd0pid_sevnfrm: {=bool:?}, soddfrm: {=bool:?}, epdis: {=bool:?}, epena: {=bool:?} }}" , self . mpsiz () , self . usbaep () , self . eonum_dpid () , self . naksts () , self . eptyp () , self . snpm () , self . stall () , self . cnak () , self . snak () , self . sd0pid_sevnfrm () , self . soddfrm () , self . epdis () , self . epena ())
         }
     }
     #[doc = "Device endpoint interrupt register"]
@@ -1863,22 +1673,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Doepint {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Doepint {
-                xfrc: bool,
-                epdisd: bool,
-                stup: bool,
-                otepdis: bool,
-                b2bstup: bool,
-            }
-            let proxy = Doepint {
-                xfrc: self.xfrc(),
-                epdisd: self.epdisd(),
-                stup: self.stup(),
-                otepdis: self.otepdis(),
-                b2bstup: self.b2bstup(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Doepint {{ xfrc: {=bool:?}, epdisd: {=bool:?}, stup: {=bool:?}, otepdis: {=bool:?}, b2bstup: {=bool:?} }}" , self . xfrc () , self . epdisd () , self . stup () , self . otepdis () , self . b2bstup ())
         }
     }
     #[doc = "Device OUT endpoint common interrupt mask register"]
@@ -1950,20 +1745,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Doepmsk {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Doepmsk {
-                xfrcm: bool,
-                epdm: bool,
-                stupm: bool,
-                otepdm: bool,
-            }
-            let proxy = Doepmsk {
-                xfrcm: self.xfrcm(),
-                epdm: self.epdm(),
-                stupm: self.stupm(),
-                otepdm: self.otepdm(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Doepmsk {{ xfrcm: {=bool:?}, epdm: {=bool:?}, stupm: {=bool:?}, otepdm: {=bool:?} }}",
+                self.xfrcm(),
+                self.epdm(),
+                self.stupm(),
+                self.otepdm()
+            )
         }
     }
     #[doc = "Device OUT endpoint transfer size register"]
@@ -2023,18 +1812,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Doeptsiz {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Doeptsiz {
-                xfrsiz: u32,
-                pktcnt: u16,
-                rxdpid_stupcnt: u8,
-            }
-            let proxy = Doeptsiz {
-                xfrsiz: self.xfrsiz(),
-                pktcnt: self.pktcnt(),
-                rxdpid_stupcnt: self.rxdpid_stupcnt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Doeptsiz {{ xfrsiz: {=u32:?}, pktcnt: {=u16:?}, rxdpid_stupcnt: {=u8:?} }}",
+                self.xfrsiz(),
+                self.pktcnt(),
+                self.rxdpid_stupcnt()
+            )
         }
     }
     #[doc = "Device status register"]
@@ -2106,20 +1890,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dsts {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dsts {
-                suspsts: bool,
-                enumspd: super::vals::Dspd,
-                eerr: bool,
-                fnsof: u16,
-            }
-            let proxy = Dsts {
-                suspsts: self.suspsts(),
-                enumspd: self.enumspd(),
-                eerr: self.eerr(),
-                fnsof: self.fnsof(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dsts {{ suspsts: {=bool:?}, enumspd: {:?}, eerr: {=bool:?}, fnsof: {=u16:?} }}",
+                self.suspsts(),
+                self.enumspd(),
+                self.eerr(),
+                self.fnsof()
+            )
         }
     }
     #[doc = "Device IN endpoint transmit FIFO status register"]
@@ -2153,14 +1931,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dtxfsts {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dtxfsts {
-                ineptfsav: u16,
-            }
-            let proxy = Dtxfsts {
-                ineptfsav: self.ineptfsav(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dtxfsts {{ ineptfsav: {=u16:?} }}", self.ineptfsav())
         }
     }
     #[doc = "Device VBUS discharge time register"]
@@ -2194,12 +1965,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dvbusdis {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dvbusdis {
-                vbusdt: u16,
-            }
-            let proxy = Dvbusdis { vbusdt: self.vbusdt() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dvbusdis {{ vbusdt: {=u16:?} }}", self.vbusdt())
         }
     }
     #[doc = "Device VBUS pulsing time register"]
@@ -2233,12 +1999,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dvbuspulse {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dvbuspulse {
-                dvbusp: u16,
-            }
-            let proxy = Dvbuspulse { dvbusp: self.dvbusp() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dvbuspulse {{ dvbusp: {=u16:?} }}", self.dvbusp())
         }
     }
     #[doc = "FIFO register"]
@@ -2272,12 +2033,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fifo {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fifo {
-                data: u32,
-            }
-            let proxy = Fifo { data: self.data() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Fifo {{ data: {=u32:?} }}", self.data())
         }
     }
     #[doc = "FIFO size register"]
@@ -2325,16 +2081,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fsiz {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fsiz {
-                sa: u16,
-                fd: u16,
-            }
-            let proxy = Fsiz {
-                sa: self.sa(),
-                fd: self.fd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Fsiz {{ sa: {=u16:?}, fd: {=u16:?} }}", self.sa(), self.fd())
         }
     }
     #[doc = "AHB configuration register"]
@@ -2418,22 +2165,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gahbcfg {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Gahbcfg {
-                gint: bool,
-                hbstlen: u8,
-                dmaen: bool,
-                txfelvl: bool,
-                ptxfelvl: bool,
-            }
-            let proxy = Gahbcfg {
-                gint: self.gint(),
-                hbstlen: self.hbstlen(),
-                dmaen: self.dmaen(),
-                txfelvl: self.txfelvl(),
-                ptxfelvl: self.ptxfelvl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Gahbcfg {{ gint: {=bool:?}, hbstlen: {=u8:?}, dmaen: {=bool:?}, txfelvl: {=bool:?}, ptxfelvl: {=bool:?} }}" , self . gint () , self . hbstlen () , self . dmaen () , self . txfelvl () , self . ptxfelvl ())
         }
     }
     #[doc = "General core configuration register"]
@@ -2517,22 +2249,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for GccfgV1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GccfgV1 {
-                pwrdwn: bool,
-                vbusasen: bool,
-                vbusbsen: bool,
-                sofouten: bool,
-                novbussens: bool,
-            }
-            let proxy = GccfgV1 {
-                pwrdwn: self.pwrdwn(),
-                vbusasen: self.vbusasen(),
-                vbusbsen: self.vbusbsen(),
-                sofouten: self.sofouten(),
-                novbussens: self.novbussens(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "GccfgV1 {{ pwrdwn: {=bool:?}, vbusasen: {=bool:?}, vbusbsen: {=bool:?}, sofouten: {=bool:?}, novbussens: {=bool:?} }}" , self . pwrdwn () , self . vbusasen () , self . vbusbsen () , self . sofouten () , self . novbussens ())
         }
     }
     #[doc = "General core configuration register"]
@@ -2688,34 +2405,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for GccfgV2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GccfgV2 {
-                dcdet: bool,
-                pdet: bool,
-                sdet: bool,
-                ps2det: bool,
-                pwrdwn: bool,
-                bcden: bool,
-                dcden: bool,
-                pden: bool,
-                sden: bool,
-                vbden: bool,
-                phyhsen: bool,
-            }
-            let proxy = GccfgV2 {
-                dcdet: self.dcdet(),
-                pdet: self.pdet(),
-                sdet: self.sdet(),
-                ps2det: self.ps2det(),
-                pwrdwn: self.pwrdwn(),
-                bcden: self.bcden(),
-                dcden: self.dcden(),
-                pden: self.pden(),
-                sden: self.sden(),
-                vbden: self.vbden(),
-                phyhsen: self.phyhsen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "GccfgV2 {{ dcdet: {=bool:?}, pdet: {=bool:?}, sdet: {=bool:?}, ps2det: {=bool:?}, pwrdwn: {=bool:?}, bcden: {=bool:?}, dcden: {=bool:?}, pden: {=bool:?}, sden: {=bool:?}, vbden: {=bool:?}, phyhsen: {=bool:?} }}" , self . dcdet () , self . pdet () , self . sdet () , self . ps2det () , self . pwrdwn () , self . bcden () , self . dcden () , self . pden () , self . sden () , self . vbden () , self . phyhsen ())
         }
     }
     #[doc = "OTG general core configuration register."]
@@ -2907,40 +2597,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for GccfgV3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GccfgV3 {
-                chgdet: bool,
-                fsvplus: bool,
-                fsvminus: bool,
-                sessvld: bool,
-                hcdpen: bool,
-                hcdpdeten: bool,
-                hvdmsrcen: bool,
-                dcden: bool,
-                pden: bool,
-                vbden: bool,
-                sden: bool,
-                vbvaloval: bool,
-                vbvaloven: bool,
-                forcehostpd: bool,
-            }
-            let proxy = GccfgV3 {
-                chgdet: self.chgdet(),
-                fsvplus: self.fsvplus(),
-                fsvminus: self.fsvminus(),
-                sessvld: self.sessvld(),
-                hcdpen: self.hcdpen(),
-                hcdpdeten: self.hcdpdeten(),
-                hvdmsrcen: self.hvdmsrcen(),
-                dcden: self.dcden(),
-                pden: self.pden(),
-                vbden: self.vbden(),
-                sden: self.sden(),
-                vbvaloval: self.vbvaloval(),
-                vbvaloven: self.vbvaloven(),
-                forcehostpd: self.forcehostpd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "GccfgV3 {{ chgdet: {=bool:?}, fsvplus: {=bool:?}, fsvminus: {=bool:?}, sessvld: {=bool:?}, hcdpen: {=bool:?}, hcdpdeten: {=bool:?}, hvdmsrcen: {=bool:?}, dcden: {=bool:?}, pden: {=bool:?}, vbden: {=bool:?}, sden: {=bool:?}, vbvaloval: {=bool:?}, vbvaloven: {=bool:?}, forcehostpd: {=bool:?} }}" , self . chgdet () , self . fsvplus () , self . fsvminus () , self . sessvld () , self . hcdpen () , self . hcdpdeten () , self . hvdmsrcen () , self . dcden () , self . pden () , self . vbden () , self . sden () , self . vbvaloval () , self . vbvaloven () , self . forcehostpd ())
         }
     }
     #[doc = "I2C access register"]
@@ -3072,30 +2729,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gi2cctl {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Gi2cctl {
-                rwdata: u8,
-                regaddr: u8,
-                addr: u8,
-                i2cen: bool,
-                ack: bool,
-                i2cdevadr: u8,
-                i2cdatse0: bool,
-                rw: bool,
-                bsydne: bool,
-            }
-            let proxy = Gi2cctl {
-                rwdata: self.rwdata(),
-                regaddr: self.regaddr(),
-                addr: self.addr(),
-                i2cen: self.i2cen(),
-                ack: self.ack(),
-                i2cdevadr: self.i2cdevadr(),
-                i2cdatse0: self.i2cdatse0(),
-                rw: self.rw(),
-                bsydne: self.bsydne(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Gi2cctl {{ rwdata: {=u8:?}, regaddr: {=u8:?}, addr: {=u8:?}, i2cen: {=bool:?}, ack: {=bool:?}, i2cdevadr: {=u8:?}, i2cdatse0: {=bool:?}, rw: {=bool:?}, bsydne: {=bool:?} }}" , self . rwdata () , self . regaddr () , self . addr () , self . i2cen () , self . ack () , self . i2cdevadr () , self . i2cdatse0 () , self . rw () , self . bsydne ())
         }
     }
     #[doc = "Interrupt mask register"]
@@ -3455,68 +3089,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gintmsk {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Gintmsk {
-                mmism: bool,
-                otgint: bool,
-                sofm: bool,
-                rxflvlm: bool,
-                nptxfem: bool,
-                ginakeffm: bool,
-                gonakeffm: bool,
-                esuspm: bool,
-                usbsuspm: bool,
-                usbrst: bool,
-                enumdnem: bool,
-                isoodrpm: bool,
-                eopfm: bool,
-                epmism: bool,
-                iepint: bool,
-                oepint: bool,
-                iisoixfrm: bool,
-                ipxfrm_iisooxfrm: bool,
-                fsuspm: bool,
-                rstde: bool,
-                prtim: bool,
-                hcim: bool,
-                ptxfem: bool,
-                lpmintm: bool,
-                cidschgm: bool,
-                discint: bool,
-                srqim: bool,
-                wuim: bool,
-            }
-            let proxy = Gintmsk {
-                mmism: self.mmism(),
-                otgint: self.otgint(),
-                sofm: self.sofm(),
-                rxflvlm: self.rxflvlm(),
-                nptxfem: self.nptxfem(),
-                ginakeffm: self.ginakeffm(),
-                gonakeffm: self.gonakeffm(),
-                esuspm: self.esuspm(),
-                usbsuspm: self.usbsuspm(),
-                usbrst: self.usbrst(),
-                enumdnem: self.enumdnem(),
-                isoodrpm: self.isoodrpm(),
-                eopfm: self.eopfm(),
-                epmism: self.epmism(),
-                iepint: self.iepint(),
-                oepint: self.oepint(),
-                iisoixfrm: self.iisoixfrm(),
-                ipxfrm_iisooxfrm: self.ipxfrm_iisooxfrm(),
-                fsuspm: self.fsuspm(),
-                rstde: self.rstde(),
-                prtim: self.prtim(),
-                hcim: self.hcim(),
-                ptxfem: self.ptxfem(),
-                lpmintm: self.lpmintm(),
-                cidschgm: self.cidschgm(),
-                discint: self.discint(),
-                srqim: self.srqim(),
-                wuim: self.wuim(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Gintmsk {{ mmism: {=bool:?}, otgint: {=bool:?}, sofm: {=bool:?}, rxflvlm: {=bool:?}, nptxfem: {=bool:?}, ginakeffm: {=bool:?}, gonakeffm: {=bool:?}, esuspm: {=bool:?}, usbsuspm: {=bool:?}, usbrst: {=bool:?}, enumdnem: {=bool:?}, isoodrpm: {=bool:?}, eopfm: {=bool:?}, epmism: {=bool:?}, iepint: {=bool:?}, oepint: {=bool:?}, iisoixfrm: {=bool:?}, ipxfrm_iisooxfrm: {=bool:?}, fsuspm: {=bool:?}, rstde: {=bool:?}, prtim: {=bool:?}, hcim: {=bool:?}, ptxfem: {=bool:?}, lpmintm: {=bool:?}, cidschgm: {=bool:?}, discint: {=bool:?}, srqim: {=bool:?}, wuim: {=bool:?} }}" , self . mmism () , self . otgint () , self . sofm () , self . rxflvlm () , self . nptxfem () , self . ginakeffm () , self . gonakeffm () , self . esuspm () , self . usbsuspm () , self . usbrst () , self . enumdnem () , self . isoodrpm () , self . eopfm () , self . epmism () , self . iepint () , self . oepint () , self . iisoixfrm () , self . ipxfrm_iisooxfrm () , self . fsuspm () , self . rstde () , self . prtim () , self . hcim () , self . ptxfem () , self . lpmintm () , self . cidschgm () , self . discint () , self . srqim () , self . wuim ())
         }
     }
     #[doc = "Core interrupt register"]
@@ -3864,66 +3437,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gintsts {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Gintsts {
-                cmod: bool,
-                mmis: bool,
-                otgint: bool,
-                sof: bool,
-                rxflvl: bool,
-                nptxfe: bool,
-                ginakeff: bool,
-                goutnakeff: bool,
-                esusp: bool,
-                usbsusp: bool,
-                usbrst: bool,
-                enumdne: bool,
-                isoodrp: bool,
-                eopf: bool,
-                iepint: bool,
-                oepint: bool,
-                iisoixfr: bool,
-                ipxfr_incompisoout: bool,
-                datafsusp: bool,
-                resetdet: bool,
-                hprtint: bool,
-                hcint: bool,
-                ptxfe: bool,
-                cidschg: bool,
-                discint: bool,
-                srqint: bool,
-                wkupint: bool,
-            }
-            let proxy = Gintsts {
-                cmod: self.cmod(),
-                mmis: self.mmis(),
-                otgint: self.otgint(),
-                sof: self.sof(),
-                rxflvl: self.rxflvl(),
-                nptxfe: self.nptxfe(),
-                ginakeff: self.ginakeff(),
-                goutnakeff: self.goutnakeff(),
-                esusp: self.esusp(),
-                usbsusp: self.usbsusp(),
-                usbrst: self.usbrst(),
-                enumdne: self.enumdne(),
-                isoodrp: self.isoodrp(),
-                eopf: self.eopf(),
-                iepint: self.iepint(),
-                oepint: self.oepint(),
-                iisoixfr: self.iisoixfr(),
-                ipxfr_incompisoout: self.ipxfr_incompisoout(),
-                datafsusp: self.datafsusp(),
-                resetdet: self.resetdet(),
-                hprtint: self.hprtint(),
-                hcint: self.hcint(),
-                ptxfe: self.ptxfe(),
-                cidschg: self.cidschg(),
-                discint: self.discint(),
-                srqint: self.srqint(),
-                wkupint: self.wkupint(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Gintsts {{ cmod: {=bool:?}, mmis: {=bool:?}, otgint: {=bool:?}, sof: {=bool:?}, rxflvl: {=bool:?}, nptxfe: {=bool:?}, ginakeff: {=bool:?}, goutnakeff: {=bool:?}, esusp: {=bool:?}, usbsusp: {=bool:?}, usbrst: {=bool:?}, enumdne: {=bool:?}, isoodrp: {=bool:?}, eopf: {=bool:?}, iepint: {=bool:?}, oepint: {=bool:?}, iisoixfr: {=bool:?}, ipxfr_incompisoout: {=bool:?}, datafsusp: {=bool:?}, resetdet: {=bool:?}, hprtint: {=bool:?}, hcint: {=bool:?}, ptxfe: {=bool:?}, cidschg: {=bool:?}, discint: {=bool:?}, srqint: {=bool:?}, wkupint: {=bool:?} }}" , self . cmod () , self . mmis () , self . otgint () , self . sof () , self . rxflvl () , self . nptxfe () , self . ginakeff () , self . goutnakeff () , self . esusp () , self . usbsusp () , self . usbrst () , self . enumdne () , self . isoodrp () , self . eopf () , self . iepint () , self . oepint () , self . iisoixfr () , self . ipxfr_incompisoout () , self . datafsusp () , self . resetdet () , self . hprtint () , self . hcint () , self . ptxfe () , self . cidschg () , self . discint () , self . srqint () , self . wkupint ())
         }
     }
     #[doc = "Core LPM configuration register"]
@@ -4127,42 +3641,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Glpmcfg {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Glpmcfg {
-                lpmen: bool,
-                lpmack: bool,
-                besl: u8,
-                remwake: bool,
-                l1ssen: bool,
-                beslthrs: u8,
-                l1dsen: bool,
-                lpmrst: u8,
-                slpsts: bool,
-                l1rsmok: bool,
-                lpmchidx: u8,
-                lpmrcnt: u8,
-                sndlpm: bool,
-                lpmrcntsts: u8,
-                enbesl: bool,
-            }
-            let proxy = Glpmcfg {
-                lpmen: self.lpmen(),
-                lpmack: self.lpmack(),
-                besl: self.besl(),
-                remwake: self.remwake(),
-                l1ssen: self.l1ssen(),
-                beslthrs: self.beslthrs(),
-                l1dsen: self.l1dsen(),
-                lpmrst: self.lpmrst(),
-                slpsts: self.slpsts(),
-                l1rsmok: self.l1rsmok(),
-                lpmchidx: self.lpmchidx(),
-                lpmrcnt: self.lpmrcnt(),
-                sndlpm: self.sndlpm(),
-                lpmrcntsts: self.lpmrcntsts(),
-                enbesl: self.enbesl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Glpmcfg {{ lpmen: {=bool:?}, lpmack: {=bool:?}, besl: {=u8:?}, remwake: {=bool:?}, l1ssen: {=bool:?}, beslthrs: {=u8:?}, l1dsen: {=bool:?}, lpmrst: {=u8:?}, slpsts: {=bool:?}, l1rsmok: {=bool:?}, lpmchidx: {=u8:?}, lpmrcnt: {=u8:?}, sndlpm: {=bool:?}, lpmrcntsts: {=u8:?}, enbesl: {=bool:?} }}" , self . lpmen () , self . lpmack () , self . besl () , self . remwake () , self . l1ssen () , self . beslthrs () , self . l1dsen () , self . lpmrst () , self . slpsts () , self . l1rsmok () , self . lpmchidx () , self . lpmrcnt () , self . sndlpm () , self . lpmrcntsts () , self . enbesl ())
         }
     }
     #[doc = "Control and status register"]
@@ -4390,46 +3869,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gotgctl {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Gotgctl {
-                srqscs: bool,
-                srq: bool,
-                vbvaloen: bool,
-                vbvaloval: bool,
-                avaloen: bool,
-                avaloval: bool,
-                bvaloen: bool,
-                bvaloval: bool,
-                hngscs: bool,
-                hnprq: bool,
-                hshnpen: bool,
-                dhnpen: bool,
-                ehen: bool,
-                cidsts: bool,
-                dbct: bool,
-                asvld: bool,
-                bsvld: bool,
-            }
-            let proxy = Gotgctl {
-                srqscs: self.srqscs(),
-                srq: self.srq(),
-                vbvaloen: self.vbvaloen(),
-                vbvaloval: self.vbvaloval(),
-                avaloen: self.avaloen(),
-                avaloval: self.avaloval(),
-                bvaloen: self.bvaloen(),
-                bvaloval: self.bvaloval(),
-                hngscs: self.hngscs(),
-                hnprq: self.hnprq(),
-                hshnpen: self.hshnpen(),
-                dhnpen: self.dhnpen(),
-                ehen: self.ehen(),
-                cidsts: self.cidsts(),
-                dbct: self.dbct(),
-                asvld: self.asvld(),
-                bsvld: self.bsvld(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Gotgctl {{ srqscs: {=bool:?}, srq: {=bool:?}, vbvaloen: {=bool:?}, vbvaloval: {=bool:?}, avaloen: {=bool:?}, avaloval: {=bool:?}, bvaloen: {=bool:?}, bvaloval: {=bool:?}, hngscs: {=bool:?}, hnprq: {=bool:?}, hshnpen: {=bool:?}, dhnpen: {=bool:?}, ehen: {=bool:?}, cidsts: {=bool:?}, dbct: {=bool:?}, asvld: {=bool:?}, bsvld: {=bool:?} }}" , self . srqscs () , self . srq () , self . vbvaloen () , self . vbvaloval () , self . avaloen () , self . avaloval () , self . bvaloen () , self . bvaloval () , self . hngscs () , self . hnprq () , self . hshnpen () , self . dhnpen () , self . ehen () , self . cidsts () , self . dbct () , self . asvld () , self . bsvld ())
         }
     }
     #[doc = "Interrupt register"]
@@ -4537,26 +3977,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gotgint {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Gotgint {
-                sedet: bool,
-                srsschg: bool,
-                hnsschg: bool,
-                hngdet: bool,
-                adtochg: bool,
-                dbcdne: bool,
-                idchng: bool,
-            }
-            let proxy = Gotgint {
-                sedet: self.sedet(),
-                srsschg: self.srsschg(),
-                hnsschg: self.hnsschg(),
-                hngdet: self.hngdet(),
-                adtochg: self.adtochg(),
-                dbcdne: self.dbcdne(),
-                idchng: self.idchng(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Gotgint {{ sedet: {=bool:?}, srsschg: {=bool:?}, hnsschg: {=bool:?}, hngdet: {=bool:?}, adtochg: {=bool:?}, dbcdne: {=bool:?}, idchng: {=bool:?} }}" , self . sedet () , self . srsschg () , self . hnsschg () , self . hngdet () , self . adtochg () , self . dbcdne () , self . idchng ())
         }
     }
     #[doc = "Reset register"]
@@ -4676,28 +4097,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Grstctl {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Grstctl {
-                csrst: bool,
-                hsrst: bool,
-                fcrst: bool,
-                rxfflsh: bool,
-                txfflsh: bool,
-                txfnum: u8,
-                dmareq: bool,
-                ahbidl: bool,
-            }
-            let proxy = Grstctl {
-                csrst: self.csrst(),
-                hsrst: self.hsrst(),
-                fcrst: self.fcrst(),
-                rxfflsh: self.rxfflsh(),
-                txfflsh: self.txfflsh(),
-                txfnum: self.txfnum(),
-                dmareq: self.dmareq(),
-                ahbidl: self.ahbidl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Grstctl {{ csrst: {=bool:?}, hsrst: {=bool:?}, fcrst: {=bool:?}, rxfflsh: {=bool:?}, txfflsh: {=bool:?}, txfnum: {=u8:?}, dmareq: {=bool:?}, ahbidl: {=bool:?} }}" , self . csrst () , self . hsrst () , self . fcrst () , self . rxfflsh () , self . txfflsh () , self . txfnum () , self . dmareq () , self . ahbidl ())
         }
     }
     #[doc = "Receive FIFO size register"]
@@ -4731,12 +4131,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Grxfsiz {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Grxfsiz {
-                rxfd: u16,
-            }
-            let proxy = Grxfsiz { rxfd: self.rxfd() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Grxfsiz {{ rxfd: {=u16:?} }}", self.rxfd())
         }
     }
     #[doc = "Status read and pop register"]
@@ -4832,24 +4227,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Grxsts {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Grxsts {
-                epnum: u8,
-                bcnt: u16,
-                dpid: super::vals::Dpid,
-                pktstsd: super::vals::Pktstsd,
-                pktstsh: super::vals::Pktstsh,
-                frmnum: u8,
-            }
-            let proxy = Grxsts {
-                epnum: self.epnum(),
-                bcnt: self.bcnt(),
-                dpid: self.dpid(),
-                pktstsd: self.pktstsd(),
-                pktstsh: self.pktstsh(),
-                frmnum: self.frmnum(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Grxsts {{ epnum: {=u8:?}, bcnt: {=u16:?}, dpid: {:?}, pktstsd: {:?}, pktstsh: {:?}, frmnum: {=u8:?} }}" , self . epnum () , self . bcnt () , self . dpid () , self . pktstsd () , self . pktstsh () , self . frmnum ())
         }
     }
     #[doc = "USB configuration register"]
@@ -5089,48 +4467,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gusbcfg {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Gusbcfg {
-                tocal: u8,
-                physel: bool,
-                srpcap: bool,
-                hnpcap: bool,
-                trdt: u8,
-                phylpcs: bool,
-                ulpifsls: bool,
-                ulpiar: bool,
-                ulpicsm: bool,
-                ulpievbusd: bool,
-                ulpievbusi: bool,
-                tsdps: bool,
-                pcci: bool,
-                ptci: bool,
-                ulpiipd: bool,
-                fhmod: bool,
-                fdmod: bool,
-                ctxpkt: bool,
-            }
-            let proxy = Gusbcfg {
-                tocal: self.tocal(),
-                physel: self.physel(),
-                srpcap: self.srpcap(),
-                hnpcap: self.hnpcap(),
-                trdt: self.trdt(),
-                phylpcs: self.phylpcs(),
-                ulpifsls: self.ulpifsls(),
-                ulpiar: self.ulpiar(),
-                ulpicsm: self.ulpicsm(),
-                ulpievbusd: self.ulpievbusd(),
-                ulpievbusi: self.ulpievbusi(),
-                tsdps: self.tsdps(),
-                pcci: self.pcci(),
-                ptci: self.ptci(),
-                ulpiipd: self.ulpiipd(),
-                fhmod: self.fhmod(),
-                fdmod: self.fdmod(),
-                ctxpkt: self.ctxpkt(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Gusbcfg {{ tocal: {=u8:?}, physel: {=bool:?}, srpcap: {=bool:?}, hnpcap: {=bool:?}, trdt: {=u8:?}, phylpcs: {=bool:?}, ulpifsls: {=bool:?}, ulpiar: {=bool:?}, ulpicsm: {=bool:?}, ulpievbusd: {=bool:?}, ulpievbusi: {=bool:?}, tsdps: {=bool:?}, pcci: {=bool:?}, ptci: {=bool:?}, ulpiipd: {=bool:?}, fhmod: {=bool:?}, fdmod: {=bool:?}, ctxpkt: {=bool:?} }}" , self . tocal () , self . physel () , self . srpcap () , self . hnpcap () , self . trdt () , self . phylpcs () , self . ulpifsls () , self . ulpiar () , self . ulpicsm () , self . ulpievbusd () , self . ulpievbusi () , self . tsdps () , self . pcci () , self . ptci () , self . ulpiipd () , self . fhmod () , self . fdmod () , self . ctxpkt ())
         }
     }
     #[doc = "Host all channels interrupt register"]
@@ -5164,12 +4501,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Haint {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Haint {
-                haint: u16,
-            }
-            let proxy = Haint { haint: self.haint() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Haint {{ haint: {=u16:?} }}", self.haint())
         }
     }
     #[doc = "Host all channels interrupt mask register"]
@@ -5203,12 +4535,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Haintmsk {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Haintmsk {
-                haintm: u16,
-            }
-            let proxy = Haintmsk { haintm: self.haintm() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Haintmsk {{ haintm: {=u16:?} }}", self.haintm())
         }
     }
     #[doc = "Host channel characteristics register"]
@@ -5352,32 +4679,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hcchar {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hcchar {
-                mpsiz: u16,
-                epnum: u8,
-                epdir: bool,
-                lsdev: bool,
-                eptyp: super::vals::Eptyp,
-                mcnt: u8,
-                dad: u8,
-                oddfrm: bool,
-                chdis: bool,
-                chena: bool,
-            }
-            let proxy = Hcchar {
-                mpsiz: self.mpsiz(),
-                epnum: self.epnum(),
-                epdir: self.epdir(),
-                lsdev: self.lsdev(),
-                eptyp: self.eptyp(),
-                mcnt: self.mcnt(),
-                dad: self.dad(),
-                oddfrm: self.oddfrm(),
-                chdis: self.chdis(),
-                chena: self.chena(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Hcchar {{ mpsiz: {=u16:?}, epnum: {=u8:?}, epdir: {=bool:?}, lsdev: {=bool:?}, eptyp: {:?}, mcnt: {=u8:?}, dad: {=u8:?}, oddfrm: {=bool:?}, chdis: {=bool:?}, chena: {=bool:?} }}" , self . mpsiz () , self . epnum () , self . epdir () , self . lsdev () , self . eptyp () , self . mcnt () , self . dad () , self . oddfrm () , self . chdis () , self . chena ())
         }
     }
     #[doc = "Host channel DMA config register"]
@@ -5425,16 +4727,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hcdma {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hcdma {
-                qtdaddr: u32,
-                cqtd: u8,
-            }
-            let proxy = Hcdma {
-                qtdaddr: self.qtdaddr(),
-                cqtd: self.cqtd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Hcdma {{ qtdaddr: {=u32:?}, cqtd: {=u8:?} }}",
+                self.qtdaddr(),
+                self.cqtd()
+            )
         }
     }
     #[doc = "Host configuration register"]
@@ -5518,22 +4816,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hcfg {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hcfg {
-                fslspcs: u8,
-                fslss: bool,
-                descdma: bool,
-                frlistlen: super::vals::Frlistlen,
-                perschedena: bool,
-            }
-            let proxy = Hcfg {
-                fslspcs: self.fslspcs(),
-                fslss: self.fslss(),
-                descdma: self.descdma(),
-                frlistlen: self.frlistlen(),
-                perschedena: self.perschedena(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Hcfg {{ fslspcs: {=u8:?}, fslss: {=bool:?}, descdma: {=bool:?}, frlistlen: {:?}, perschedena: {=bool:?} }}" , self . fslspcs () , self . fslss () , self . descdma () , self . frlistlen () , self . perschedena ())
         }
     }
     #[doc = "Host channel interrupt register"]
@@ -5665,30 +4948,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hcint {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hcint {
-                xfrc: bool,
-                chh: bool,
-                stall: bool,
-                nak: bool,
-                ack: bool,
-                txerr: bool,
-                bberr: bool,
-                frmor: bool,
-                dterr: bool,
-            }
-            let proxy = Hcint {
-                xfrc: self.xfrc(),
-                chh: self.chh(),
-                stall: self.stall(),
-                nak: self.nak(),
-                ack: self.ack(),
-                txerr: self.txerr(),
-                bberr: self.bberr(),
-                frmor: self.frmor(),
-                dterr: self.dterr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Hcint {{ xfrc: {=bool:?}, chh: {=bool:?}, stall: {=bool:?}, nak: {=bool:?}, ack: {=bool:?}, txerr: {=bool:?}, bberr: {=bool:?}, frmor: {=bool:?}, dterr: {=bool:?} }}" , self . xfrc () , self . chh () , self . stall () , self . nak () , self . ack () , self . txerr () , self . bberr () , self . frmor () , self . dterr ())
         }
     }
     #[doc = "Host channel mask register"]
@@ -5832,32 +5092,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hcintmsk {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hcintmsk {
-                xfrcm: bool,
-                chhm: bool,
-                stallm: bool,
-                nakm: bool,
-                ackm: bool,
-                nyet: bool,
-                txerrm: bool,
-                bberrm: bool,
-                frmorm: bool,
-                dterrm: bool,
-            }
-            let proxy = Hcintmsk {
-                xfrcm: self.xfrcm(),
-                chhm: self.chhm(),
-                stallm: self.stallm(),
-                nakm: self.nakm(),
-                ackm: self.ackm(),
-                nyet: self.nyet(),
-                txerrm: self.txerrm(),
-                bberrm: self.bberrm(),
-                frmorm: self.frmorm(),
-                dterrm: self.dterrm(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Hcintmsk {{ xfrcm: {=bool:?}, chhm: {=bool:?}, stallm: {=bool:?}, nakm: {=bool:?}, ackm: {=bool:?}, nyet: {=bool:?}, txerrm: {=bool:?}, bberrm: {=bool:?}, frmorm: {=bool:?}, dterrm: {=bool:?} }}" , self . xfrcm () , self . chhm () , self . stallm () , self . nakm () , self . ackm () , self . nyet () , self . txerrm () , self . bberrm () , self . frmorm () , self . dterrm ())
         }
     }
     #[doc = "Host channel transfer size register"]
@@ -5953,24 +5188,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hctsiz {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hctsiz {
-                schedinfo: u8,
-                xfrsiz: u32,
-                ntdl: u8,
-                pktcnt: u16,
-                dpid: u8,
-                doping: bool,
-            }
-            let proxy = Hctsiz {
-                schedinfo: self.schedinfo(),
-                xfrsiz: self.xfrsiz(),
-                ntdl: self.ntdl(),
-                pktcnt: self.pktcnt(),
-                dpid: self.dpid(),
-                doping: self.doping(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Hctsiz {{ schedinfo: {=u8:?}, xfrsiz: {=u32:?}, ntdl: {=u8:?}, pktcnt: {=u16:?}, dpid: {=u8:?}, doping: {=bool:?} }}" , self . schedinfo () , self . xfrsiz () , self . ntdl () , self . pktcnt () , self . dpid () , self . doping ())
         }
     }
     #[doc = "Host frame interval register"]
@@ -6018,16 +5236,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hfir {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hfir {
-                frivl: u16,
-                rldctrl: bool,
-            }
-            let proxy = Hfir {
-                frivl: self.frivl(),
-                rldctrl: self.rldctrl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Hfir {{ frivl: {=u16:?}, rldctrl: {=bool:?} }}",
+                self.frivl(),
+                self.rldctrl()
+            )
         }
     }
     #[doc = "Host frame number/frame time remaining register"]
@@ -6075,16 +5289,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hfnum {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hfnum {
-                frnum: u16,
-                ftrem: u16,
-            }
-            let proxy = Hfnum {
-                frnum: self.frnum(),
-                ftrem: self.ftrem(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Hfnum {{ frnum: {=u16:?}, ftrem: {=u16:?} }}",
+                self.frnum(),
+                self.ftrem()
+            )
         }
     }
     #[doc = "Non-periodic transmit FIFO/queue status register"]
@@ -6144,18 +5354,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hnptxsts {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hnptxsts {
-                nptxfsav: u16,
-                nptqxsav: u8,
-                nptxqtop: u8,
-            }
-            let proxy = Hnptxsts {
-                nptxfsav: self.nptxfsav(),
-                nptqxsav: self.nptqxsav(),
-                nptxqtop: self.nptxqtop(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Hnptxsts {{ nptxfsav: {=u16:?}, nptqxsav: {=u8:?}, nptxqtop: {=u8:?} }}",
+                self.nptxfsav(),
+                self.nptqxsav(),
+                self.nptxqtop()
+            )
         }
     }
     #[doc = "Host port control and status register"]
@@ -6335,38 +5540,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hprt {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hprt {
-                pcsts: bool,
-                pcdet: bool,
-                pena: bool,
-                penchng: bool,
-                poca: bool,
-                pocchng: bool,
-                pres: bool,
-                psusp: bool,
-                prst: bool,
-                plsts: u8,
-                ppwr: bool,
-                ptctl: u8,
-                pspd: u8,
-            }
-            let proxy = Hprt {
-                pcsts: self.pcsts(),
-                pcdet: self.pcdet(),
-                pena: self.pena(),
-                penchng: self.penchng(),
-                poca: self.poca(),
-                pocchng: self.pocchng(),
-                pres: self.pres(),
-                psusp: self.psusp(),
-                prst: self.prst(),
-                plsts: self.plsts(),
-                ppwr: self.ppwr(),
-                ptctl: self.ptctl(),
-                pspd: self.pspd(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Hprt {{ pcsts: {=bool:?}, pcdet: {=bool:?}, pena: {=bool:?}, penchng: {=bool:?}, poca: {=bool:?}, pocchng: {=bool:?}, pres: {=bool:?}, psusp: {=bool:?}, prst: {=bool:?}, plsts: {=u8:?}, ppwr: {=bool:?}, ptctl: {=u8:?}, pspd: {=u8:?} }}" , self . pcsts () , self . pcdet () , self . pena () , self . penchng () , self . poca () , self . pocchng () , self . pres () , self . psusp () , self . prst () , self . plsts () , self . ppwr () , self . ptctl () , self . pspd ())
         }
     }
     #[doc = "Periodic transmit FIFO/queue status register"]
@@ -6426,18 +5600,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hptxsts {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hptxsts {
-                ptxfsavl: u16,
-                ptxqsav: u8,
-                ptxqtop: u8,
-            }
-            let proxy = Hptxsts {
-                ptxfsavl: self.ptxfsavl(),
-                ptxqsav: self.ptxqsav(),
-                ptxqtop: self.ptxqtop(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Hptxsts {{ ptxfsavl: {=u16:?}, ptxqsav: {=u8:?}, ptxqtop: {=u8:?} }}",
+                self.ptxfsavl(),
+                self.ptxqsav(),
+                self.ptxqtop()
+            )
         }
     }
     #[doc = "Power and clock gating control register"]
@@ -6497,18 +5666,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pcgcctl {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pcgcctl {
-                stppclk: bool,
-                gatehclk: bool,
-                physusp: bool,
-            }
-            let proxy = Pcgcctl {
-                stppclk: self.stppclk(),
-                gatehclk: self.gatehclk(),
-                physusp: self.physusp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Pcgcctl {{ stppclk: {=bool:?}, gatehclk: {=bool:?}, physusp: {=bool:?} }}",
+                self.stppclk(),
+                self.gatehclk(),
+                self.physusp()
+            )
         }
     }
 }

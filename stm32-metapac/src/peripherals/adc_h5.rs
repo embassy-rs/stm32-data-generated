@@ -175,12 +175,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Awd2cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Awd2cr {
-                awd2ch: u32,
-            }
-            let proxy = Awd2cr { awd2ch: self.awd2ch() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Awd2cr {{ awd2ch: {=u32:?} }}", self.awd2ch())
         }
     }
     #[doc = "Analog Watchdog 3 Configuration Register"]
@@ -220,12 +215,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Awd3cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Awd3cr {
-                awd3ch: u32,
-            }
-            let proxy = Awd3cr { awd3ch: self.awd3ch() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Awd3cr {{ awd3ch: {=u32:?} }}", self.awd3ch())
         }
     }
     #[doc = "Calibration Factors"]
@@ -273,16 +263,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Calfact {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Calfact {
-                calfact_s: u8,
-                calfact_d: u8,
-            }
-            let proxy = Calfact {
-                calfact_s: self.calfact_s(),
-                calfact_d: self.calfact_d(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Calfact {{ calfact_s: {=u8:?}, calfact_d: {=u8:?} }}",
+                self.calfact_s(),
+                self.calfact_d()
+            )
         }
     }
     #[doc = "configuration register"]
@@ -520,16 +506,11 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
                 .field("dmaen", &self.dmaen())
                 .field("dmacfg", &self.dmacfg())
                 .field("res", &self.res())
-                .field(
-                    "extsel",
-                    &[
-                        self.extsel(0usize),
-                        self.extsel(1usize),
-                        self.extsel(2usize),
-                        self.extsel(3usize),
-                        self.extsel(4usize),
-                    ],
-                )
+                .field("extsel[0]", &self.extsel(0usize))
+                .field("extsel[1]", &self.extsel(1usize))
+                .field("extsel[2]", &self.extsel(2usize))
+                .field("extsel[3]", &self.extsel(3usize))
+                .field("extsel[4]", &self.extsel(4usize))
                 .field("exten", &self.exten())
                 .field("ovrmod", &self.ovrmod())
                 .field("cont", &self.cont())
@@ -551,56 +532,7 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr {
-                dmaen: bool,
-                dmacfg: super::vals::Dmacfg,
-                res: super::vals::Res,
-                extsel: [bool; 5usize],
-                exten: super::vals::Exten,
-                ovrmod: super::vals::Ovrmod,
-                cont: bool,
-                autdly: bool,
-                align: super::vals::Align,
-                discen: bool,
-                discnum: u8,
-                jdiscen: bool,
-                jqm: super::vals::Jqm,
-                awd1sgl: super::vals::Awd1sgl,
-                awd1en: bool,
-                jawd1en: bool,
-                jauto: bool,
-                awd1ch: u8,
-                jqdis: bool,
-            }
-            let proxy = Cfgr {
-                dmaen: self.dmaen(),
-                dmacfg: self.dmacfg(),
-                res: self.res(),
-                extsel: [
-                    self.extsel(0usize),
-                    self.extsel(1usize),
-                    self.extsel(2usize),
-                    self.extsel(3usize),
-                    self.extsel(4usize),
-                ],
-                exten: self.exten(),
-                ovrmod: self.ovrmod(),
-                cont: self.cont(),
-                autdly: self.autdly(),
-                align: self.align(),
-                discen: self.discen(),
-                discnum: self.discnum(),
-                jdiscen: self.jdiscen(),
-                jqm: self.jqm(),
-                awd1sgl: self.awd1sgl(),
-                awd1en: self.awd1en(),
-                jawd1en: self.jawd1en(),
-                jauto: self.jauto(),
-                awd1ch: self.awd1ch(),
-                jqdis: self.jqdis(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr {{ dmaen: {=bool:?}, dmacfg: {:?}, res: {:?}, extsel[0]: {=bool:?}, extsel[1]: {=bool:?}, extsel[2]: {=bool:?}, extsel[3]: {=bool:?}, extsel[4]: {=bool:?}, exten: {:?}, ovrmod: {:?}, cont: {=bool:?}, autdly: {=bool:?}, align: {:?}, discen: {=bool:?}, discnum: {=u8:?}, jdiscen: {=bool:?}, jqm: {:?}, awd1sgl: {:?}, awd1en: {=bool:?}, jawd1en: {=bool:?}, jauto: {=bool:?}, awd1ch: {=u8:?}, jqdis: {=bool:?} }}" , self . dmaen () , self . dmacfg () , self . res () , self . extsel (0usize) , self . extsel (1usize) , self . extsel (2usize) , self . extsel (3usize) , self . extsel (4usize) , self . exten () , self . ovrmod () , self . cont () , self . autdly () , self . align () , self . discen () , self . discnum () , self . jdiscen () , self . jqm () , self . awd1sgl () , self . awd1en () , self . jawd1en () , self . jauto () , self . awd1ch () , self . jqdis ())
         }
     }
     #[doc = "configuration register 2"]
@@ -732,30 +664,7 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr2 {
-                rovse: bool,
-                jovse: bool,
-                ovsr: super::vals::Ovsr,
-                ovss: u8,
-                trovs: super::vals::Trovs,
-                rovsm: super::vals::Rovsm,
-                swtrig: super::vals::Swtrig,
-                bulb: bool,
-                smptrig: bool,
-            }
-            let proxy = Cfgr2 {
-                rovse: self.rovse(),
-                jovse: self.jovse(),
-                ovsr: self.ovsr(),
-                ovss: self.ovss(),
-                trovs: self.trovs(),
-                rovsm: self.rovsm(),
-                swtrig: self.swtrig(),
-                bulb: self.bulb(),
-                smptrig: self.smptrig(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr2 {{ rovse: {=bool:?}, jovse: {=bool:?}, ovsr: {:?}, ovss: {=u8:?}, trovs: {:?}, rovsm: {:?}, swtrig: {:?}, bulb: {=bool:?}, smptrig: {=bool:?} }}" , self . rovse () , self . jovse () , self . ovsr () , self . ovss () , self . trovs () , self . rovsm () , self . swtrig () , self . bulb () , self . smptrig ())
         }
     }
     #[doc = "control register"]
@@ -899,32 +808,7 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                aden: bool,
-                addis: bool,
-                adstart: bool,
-                jadstart: bool,
-                adstp: bool,
-                jadstp: bool,
-                advregen: bool,
-                deeppwd: bool,
-                adcaldif: super::vals::Adcaldif,
-                adcal: bool,
-            }
-            let proxy = Cr {
-                aden: self.aden(),
-                addis: self.addis(),
-                adstart: self.adstart(),
-                jadstart: self.jadstart(),
-                adstp: self.adstp(),
-                jadstp: self.jadstp(),
-                advregen: self.advregen(),
-                deeppwd: self.deeppwd(),
-                adcaldif: self.adcaldif(),
-                adcal: self.adcal(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ aden: {=bool:?}, addis: {=bool:?}, adstart: {=bool:?}, jadstart: {=bool:?}, adstp: {=bool:?}, jadstp: {=bool:?}, advregen: {=bool:?}, deeppwd: {=bool:?}, adcaldif: {:?}, adcal: {=bool:?} }}" , self . aden () , self . addis () , self . adstart () , self . jadstart () , self . adstp () , self . jadstp () , self . advregen () , self . deeppwd () , self . adcaldif () , self . adcal ())
         }
     }
     #[doc = "Differential mode Selection Register"]
@@ -962,12 +846,7 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
     #[cfg(feature = "defmt")]
     impl defmt::Format for Difsel {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Difsel {
-                difsel: u32,
-            }
-            let proxy = Difsel { difsel: self.difsel() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Difsel {{ difsel: {=u32:?} }}", self.difsel())
         }
     }
     #[doc = "regular data register"]
@@ -1001,12 +880,7 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dr {
-                rdata: u16,
-            }
-            let proxy = Dr { rdata: self.rdata() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dr {{ rdata: {=u16:?} }}", self.rdata())
         }
     }
     #[doc = "interrupt enable register"]
@@ -1134,7 +1008,9 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
                 .field("ovrie", &self.ovrie())
                 .field("jeocie", &self.jeocie())
                 .field("jeosie", &self.jeosie())
-                .field("awdie", &[self.awdie(0usize), self.awdie(1usize), self.awdie(2usize)])
+                .field("awdie[0]", &self.awdie(0usize))
+                .field("awdie[1]", &self.awdie(1usize))
+                .field("awdie[2]", &self.awdie(2usize))
                 .field("jqovfie", &self.jqovfie())
                 .finish()
         }
@@ -1142,30 +1018,7 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ier {
-                adrdyie: bool,
-                eosmpie: bool,
-                eocie: bool,
-                eosie: bool,
-                ovrie: bool,
-                jeocie: bool,
-                jeosie: bool,
-                awdie: [bool; 3usize],
-                jqovfie: bool,
-            }
-            let proxy = Ier {
-                adrdyie: self.adrdyie(),
-                eosmpie: self.eosmpie(),
-                eocie: self.eocie(),
-                eosie: self.eosie(),
-                ovrie: self.ovrie(),
-                jeocie: self.jeocie(),
-                jeosie: self.jeosie(),
-                awdie: [self.awdie(0usize), self.awdie(1usize), self.awdie(2usize)],
-                jqovfie: self.jqovfie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ier {{ adrdyie: {=bool:?}, eosmpie: {=bool:?}, eocie: {=bool:?}, eosie: {=bool:?}, ovrie: {=bool:?}, jeocie: {=bool:?}, jeosie: {=bool:?}, awdie[0]: {=bool:?}, awdie[1]: {=bool:?}, awdie[2]: {=bool:?}, jqovfie: {=bool:?} }}" , self . adrdyie () , self . eosmpie () , self . eocie () , self . eosie () , self . ovrie () , self . jeocie () , self . jeosie () , self . awdie (0usize) , self . awdie (1usize) , self . awdie (2usize) , self . jqovfie ())
         }
     }
     #[doc = "interrupt and status register"]
@@ -1293,7 +1146,9 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
                 .field("ovr", &self.ovr())
                 .field("jeoc", &self.jeoc())
                 .field("jeos", &self.jeos())
-                .field("awd", &[self.awd(0usize), self.awd(1usize), self.awd(2usize)])
+                .field("awd[0]", &self.awd(0usize))
+                .field("awd[1]", &self.awd(1usize))
+                .field("awd[2]", &self.awd(2usize))
                 .field("jqovf", &self.jqovf())
                 .finish()
         }
@@ -1301,30 +1156,7 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Isr {
-                adrdy: bool,
-                eosmp: bool,
-                eoc: bool,
-                eos: bool,
-                ovr: bool,
-                jeoc: bool,
-                jeos: bool,
-                awd: [bool; 3usize],
-                jqovf: bool,
-            }
-            let proxy = Isr {
-                adrdy: self.adrdy(),
-                eosmp: self.eosmp(),
-                eoc: self.eoc(),
-                eos: self.eos(),
-                ovr: self.ovr(),
-                jeoc: self.jeoc(),
-                jeos: self.jeos(),
-                awd: [self.awd(0usize), self.awd(1usize), self.awd(2usize)],
-                jqovf: self.jqovf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Isr {{ adrdy: {=bool:?}, eosmp: {=bool:?}, eoc: {=bool:?}, eos: {=bool:?}, ovr: {=bool:?}, jeoc: {=bool:?}, jeos: {=bool:?}, awd[0]: {=bool:?}, awd[1]: {=bool:?}, awd[2]: {=bool:?}, jqovf: {=bool:?} }}" , self . adrdy () , self . eosmp () , self . eoc () , self . eos () , self . ovr () , self . jeoc () , self . jeos () , self . awd (0usize) , self . awd (1usize) , self . awd (2usize) , self . jqovf ())
         }
     }
     #[doc = "injected channel 1-4 data register"]
@@ -1358,12 +1190,7 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
     #[cfg(feature = "defmt")]
     impl defmt::Format for Jdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Jdr {
-                jdata: u16,
-            }
-            let proxy = Jdr { jdata: self.jdata() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Jdr {{ jdata: {=u16:?} }}", self.jdata())
         }
     }
     #[doc = "injected sequence register"]
@@ -1432,30 +1259,17 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
                 .field("jl", &self.jl())
                 .field("jextsel", &self.jextsel())
                 .field("jexten", &self.jexten())
-                .field(
-                    "jsq",
-                    &[self.jsq(0usize), self.jsq(1usize), self.jsq(2usize), self.jsq(3usize)],
-                )
+                .field("jsq[0]", &self.jsq(0usize))
+                .field("jsq[1]", &self.jsq(1usize))
+                .field("jsq[2]", &self.jsq(2usize))
+                .field("jsq[3]", &self.jsq(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Jsqr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Jsqr {
-                jl: u8,
-                jextsel: u8,
-                jexten: super::vals::Exten,
-                jsq: [u8; 4usize],
-            }
-            let proxy = Jsqr {
-                jl: self.jl(),
-                jextsel: self.jextsel(),
-                jexten: self.jexten(),
-                jsq: [self.jsq(0usize), self.jsq(1usize), self.jsq(2usize), self.jsq(3usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Jsqr {{ jl: {=u8:?}, jextsel: {=u8:?}, jexten: {:?}, jsq[0]: {=u8:?}, jsq[1]: {=u8:?}, jsq[2]: {=u8:?}, jsq[3]: {=u8:?} }}" , self . jl () , self . jextsel () , self . jexten () , self . jsq (0usize) , self . jsq (1usize) , self . jsq (2usize) , self . jsq (3usize))
         }
     }
     #[doc = "offset 1-4 register"]
@@ -1549,22 +1363,7 @@ applies. Note: The software is allowed to write these bits only when ADSTART = 0
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ofr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ofr {
-                offset: u16,
-                offsetpos: super::vals::Offsetpos,
-                saten: bool,
-                offset_ch: u8,
-                offset_en: bool,
-            }
-            let proxy = Ofr {
-                offset: self.offset(),
-                offsetpos: self.offsetpos(),
-                saten: self.saten(),
-                offset_ch: self.offset_ch(),
-                offset_en: self.offset_en(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ofr {{ offset: {=u16:?}, offsetpos: {:?}, saten: {=bool:?}, offset_ch: {=u8:?}, offset_en: {=bool:?} }}" , self . offset () , self . offsetpos () , self . saten () , self . offset_ch () , self . offset_en ())
         }
     }
     #[doc = "option register"]
@@ -1612,16 +1411,7 @@ applies. Note: The software is allowed to write these bits only when ADSTART = 0
     #[cfg(feature = "defmt")]
     impl defmt::Format for Or {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Or {
-                op0: bool,
-                op1: bool,
-            }
-            let proxy = Or {
-                op0: self.op0(),
-                op1: self.op1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Or {{ op0: {=bool:?}, op1: {=bool:?} }}", self.op0(), self.op1())
         }
     }
     #[doc = "sample time register 1"]
@@ -1667,21 +1457,16 @@ setting to the reset value."]
     impl core::fmt::Debug for Smpr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Smpr1")
-                .field(
-                    "smp",
-                    &[
-                        self.smp(0usize),
-                        self.smp(1usize),
-                        self.smp(2usize),
-                        self.smp(3usize),
-                        self.smp(4usize),
-                        self.smp(5usize),
-                        self.smp(6usize),
-                        self.smp(7usize),
-                        self.smp(8usize),
-                        self.smp(9usize),
-                    ],
-                )
+                .field("smp[0]", &self.smp(0usize))
+                .field("smp[1]", &self.smp(1usize))
+                .field("smp[2]", &self.smp(2usize))
+                .field("smp[3]", &self.smp(3usize))
+                .field("smp[4]", &self.smp(4usize))
+                .field("smp[5]", &self.smp(5usize))
+                .field("smp[6]", &self.smp(6usize))
+                .field("smp[7]", &self.smp(7usize))
+                .field("smp[8]", &self.smp(8usize))
+                .field("smp[9]", &self.smp(9usize))
                 .field("smpplus", &self.smpplus())
                 .finish()
         }
@@ -1689,27 +1474,7 @@ setting to the reset value."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Smpr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Smpr1 {
-                smp: [super::vals::SampleTime; 10usize],
-                smpplus: super::vals::Smpplus,
-            }
-            let proxy = Smpr1 {
-                smp: [
-                    self.smp(0usize),
-                    self.smp(1usize),
-                    self.smp(2usize),
-                    self.smp(3usize),
-                    self.smp(4usize),
-                    self.smp(5usize),
-                    self.smp(6usize),
-                    self.smp(7usize),
-                    self.smp(8usize),
-                    self.smp(9usize),
-                ],
-                smpplus: self.smpplus(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Smpr1 {{ smp[0]: {:?}, smp[1]: {:?}, smp[2]: {:?}, smp[3]: {:?}, smp[4]: {:?}, smp[5]: {:?}, smp[6]: {:?}, smp[7]: {:?}, smp[8]: {:?}, smp[9]: {:?}, smpplus: {:?} }}" , self . smp (0usize) , self . smp (1usize) , self . smp (2usize) , self . smp (3usize) , self . smp (4usize) , self . smp (5usize) , self . smp (6usize) , self . smp (7usize) , self . smp (8usize) , self . smp (9usize) , self . smpplus ())
         }
     }
     #[doc = "sample time register 2"]
@@ -1744,46 +1509,23 @@ setting to the reset value."]
     impl core::fmt::Debug for Smpr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Smpr2")
-                .field(
-                    "smp",
-                    &[
-                        self.smp(0usize),
-                        self.smp(1usize),
-                        self.smp(2usize),
-                        self.smp(3usize),
-                        self.smp(4usize),
-                        self.smp(5usize),
-                        self.smp(6usize),
-                        self.smp(7usize),
-                        self.smp(8usize),
-                        self.smp(9usize),
-                    ],
-                )
+                .field("smp[0]", &self.smp(0usize))
+                .field("smp[1]", &self.smp(1usize))
+                .field("smp[2]", &self.smp(2usize))
+                .field("smp[3]", &self.smp(3usize))
+                .field("smp[4]", &self.smp(4usize))
+                .field("smp[5]", &self.smp(5usize))
+                .field("smp[6]", &self.smp(6usize))
+                .field("smp[7]", &self.smp(7usize))
+                .field("smp[8]", &self.smp(8usize))
+                .field("smp[9]", &self.smp(9usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Smpr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Smpr2 {
-                smp: [super::vals::SampleTime; 10usize],
-            }
-            let proxy = Smpr2 {
-                smp: [
-                    self.smp(0usize),
-                    self.smp(1usize),
-                    self.smp(2usize),
-                    self.smp(3usize),
-                    self.smp(4usize),
-                    self.smp(5usize),
-                    self.smp(6usize),
-                    self.smp(7usize),
-                    self.smp(8usize),
-                    self.smp(9usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Smpr2 {{ smp[0]: {:?}, smp[1]: {:?}, smp[2]: {:?}, smp[3]: {:?}, smp[4]: {:?}, smp[5]: {:?}, smp[6]: {:?}, smp[7]: {:?}, smp[8]: {:?}, smp[9]: {:?} }}" , self . smp (0usize) , self . smp (1usize) , self . smp (2usize) , self . smp (3usize) , self . smp (4usize) , self . smp (5usize) , self . smp (6usize) , self . smp (7usize) , self . smp (8usize) , self . smp (9usize))
         }
     }
     #[doc = "regular sequence register 1"]
@@ -1828,26 +1570,25 @@ setting to the reset value."]
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sqr1")
                 .field("l", &self.l())
-                .field(
-                    "sq",
-                    &[self.sq(0usize), self.sq(1usize), self.sq(2usize), self.sq(3usize)],
-                )
+                .field("sq[0]", &self.sq(0usize))
+                .field("sq[1]", &self.sq(1usize))
+                .field("sq[2]", &self.sq(2usize))
+                .field("sq[3]", &self.sq(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sqr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sqr1 {
-                l: u8,
-                sq: [u8; 4usize],
-            }
-            let proxy = Sqr1 {
-                l: self.l(),
-                sq: [self.sq(0usize), self.sq(1usize), self.sq(2usize), self.sq(3usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sqr1 {{ l: {=u8:?}, sq[0]: {=u8:?}, sq[1]: {=u8:?}, sq[2]: {=u8:?}, sq[3]: {=u8:?} }}",
+                self.l(),
+                self.sq(0usize),
+                self.sq(1usize),
+                self.sq(2usize),
+                self.sq(3usize)
+            )
         }
     }
     #[doc = "regular sequence register 2"]
@@ -1880,36 +1621,26 @@ setting to the reset value."]
     impl core::fmt::Debug for Sqr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sqr2")
-                .field(
-                    "sq",
-                    &[
-                        self.sq(0usize),
-                        self.sq(1usize),
-                        self.sq(2usize),
-                        self.sq(3usize),
-                        self.sq(4usize),
-                    ],
-                )
+                .field("sq[0]", &self.sq(0usize))
+                .field("sq[1]", &self.sq(1usize))
+                .field("sq[2]", &self.sq(2usize))
+                .field("sq[3]", &self.sq(3usize))
+                .field("sq[4]", &self.sq(4usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sqr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sqr2 {
-                sq: [u8; 5usize],
-            }
-            let proxy = Sqr2 {
-                sq: [
-                    self.sq(0usize),
-                    self.sq(1usize),
-                    self.sq(2usize),
-                    self.sq(3usize),
-                    self.sq(4usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sqr2 {{ sq[0]: {=u8:?}, sq[1]: {=u8:?}, sq[2]: {=u8:?}, sq[3]: {=u8:?}, sq[4]: {=u8:?} }}",
+                self.sq(0usize),
+                self.sq(1usize),
+                self.sq(2usize),
+                self.sq(3usize),
+                self.sq(4usize)
+            )
         }
     }
     #[doc = "regular sequence register 3"]
@@ -1942,36 +1673,26 @@ setting to the reset value."]
     impl core::fmt::Debug for Sqr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sqr3")
-                .field(
-                    "sq",
-                    &[
-                        self.sq(0usize),
-                        self.sq(1usize),
-                        self.sq(2usize),
-                        self.sq(3usize),
-                        self.sq(4usize),
-                    ],
-                )
+                .field("sq[0]", &self.sq(0usize))
+                .field("sq[1]", &self.sq(1usize))
+                .field("sq[2]", &self.sq(2usize))
+                .field("sq[3]", &self.sq(3usize))
+                .field("sq[4]", &self.sq(4usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sqr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sqr3 {
-                sq: [u8; 5usize],
-            }
-            let proxy = Sqr3 {
-                sq: [
-                    self.sq(0usize),
-                    self.sq(1usize),
-                    self.sq(2usize),
-                    self.sq(3usize),
-                    self.sq(4usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sqr3 {{ sq[0]: {=u8:?}, sq[1]: {=u8:?}, sq[2]: {=u8:?}, sq[3]: {=u8:?}, sq[4]: {=u8:?} }}",
+                self.sq(0usize),
+                self.sq(1usize),
+                self.sq(2usize),
+                self.sq(3usize),
+                self.sq(4usize)
+            )
         }
     }
     #[doc = "regular sequence register 4"]
@@ -2004,21 +1725,20 @@ setting to the reset value."]
     impl core::fmt::Debug for Sqr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sqr4")
-                .field("sq", &[self.sq(0usize), self.sq(1usize)])
+                .field("sq[0]", &self.sq(0usize))
+                .field("sq[1]", &self.sq(1usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sqr4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sqr4 {
-                sq: [u8; 2usize],
-            }
-            let proxy = Sqr4 {
-                sq: [self.sq(0usize), self.sq(1usize)],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sqr4 {{ sq[0]: {=u8:?}, sq[1]: {=u8:?} }}",
+                self.sq(0usize),
+                self.sq(1usize)
+            )
         }
     }
     #[doc = "watchdog threshold register 1"]
@@ -2078,18 +1798,13 @@ setting to the reset value."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tr1 {
-                lt1: u16,
-                awdfilt: u8,
-                ht1: u16,
-            }
-            let proxy = Tr1 {
-                lt1: self.lt1(),
-                awdfilt: self.awdfilt(),
-                ht1: self.ht1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Tr1 {{ lt1: {=u16:?}, awdfilt: {=u8:?}, ht1: {=u16:?} }}",
+                self.lt1(),
+                self.awdfilt(),
+                self.ht1()
+            )
         }
     }
     #[doc = "watchdog threshold register 2"]
@@ -2137,16 +1852,7 @@ setting to the reset value."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tr2 {
-                lt2: u8,
-                ht2: u8,
-            }
-            let proxy = Tr2 {
-                lt2: self.lt2(),
-                ht2: self.ht2(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Tr2 {{ lt2: {=u8:?}, ht2: {=u8:?} }}", self.lt2(), self.ht2())
         }
     }
     #[doc = "watchdog threshold register 3"]
@@ -2194,16 +1900,7 @@ setting to the reset value."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Tr3 {
-                lt3: u8,
-                ht3: u8,
-            }
-            let proxy = Tr3 {
-                lt3: self.lt3(),
-                ht3: self.ht3(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Tr3 {{ lt3: {=u8:?}, ht3: {=u8:?} }}", self.lt3(), self.ht3())
         }
     }
 }

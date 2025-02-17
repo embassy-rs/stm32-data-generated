@@ -102,12 +102,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Alrh {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Alrh {
-                alrh: u16,
-            }
-            let proxy = Alrh { alrh: self.alrh() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Alrh {{ alrh: {=u16:?} }}", self.alrh())
         }
     }
     #[doc = "Alarm Register Low"]
@@ -141,12 +136,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Alrl {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Alrl {
-                alrl: u16,
-            }
-            let proxy = Alrl { alrl: self.alrl() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Alrl {{ alrl: {=u16:?} }}", self.alrl())
         }
     }
     #[doc = "Counter Register High"]
@@ -180,12 +170,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cnth {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cnth {
-                cnth: u16,
-            }
-            let proxy = Cnth { cnth: self.cnth() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cnth {{ cnth: {=u16:?} }}", self.cnth())
         }
     }
     #[doc = "Counter Register Low"]
@@ -219,12 +204,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cntl {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cntl {
-                cntl: u16,
-            }
-            let proxy = Cntl { cntl: self.cntl() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cntl {{ cntl: {=u16:?} }}", self.cntl())
         }
     }
     #[doc = "Control Register High"]
@@ -284,18 +264,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Crh {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Crh {
-                secie: bool,
-                alrie: bool,
-                owie: bool,
-            }
-            let proxy = Crh {
-                secie: self.secie(),
-                alrie: self.alrie(),
-                owie: self.owie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Crh {{ secie: {=bool:?}, alrie: {=bool:?}, owie: {=bool:?} }}",
+                self.secie(),
+                self.alrie(),
+                self.owie()
+            )
         }
     }
     #[doc = "Control Register Low"]
@@ -391,24 +366,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Crl {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Crl {
-                secf: bool,
-                alrf: bool,
-                owf: bool,
-                rsf: bool,
-                cnf: bool,
-                rtoff: super::vals::Rtoff,
-            }
-            let proxy = Crl {
-                secf: self.secf(),
-                alrf: self.alrf(),
-                owf: self.owf(),
-                rsf: self.rsf(),
-                cnf: self.cnf(),
-                rtoff: self.rtoff(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Crl {{ secf: {=bool:?}, alrf: {=bool:?}, owf: {=bool:?}, rsf: {=bool:?}, cnf: {=bool:?}, rtoff: {:?} }}" , self . secf () , self . alrf () , self . owf () , self . rsf () , self . cnf () , self . rtoff ())
         }
     }
     #[doc = "Prescaler Divider Register High"]
@@ -442,12 +400,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Divh {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Divh {
-                divh: u8,
-            }
-            let proxy = Divh { divh: self.divh() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Divh {{ divh: {=u8:?} }}", self.divh())
         }
     }
     #[doc = "Prescaler Divider Register Low"]
@@ -481,12 +434,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Divl {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Divl {
-                divl: u16,
-            }
-            let proxy = Divl { divl: self.divl() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Divl {{ divl: {=u16:?} }}", self.divl())
         }
     }
     #[doc = "Prescaler Load Register High"]
@@ -520,12 +468,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Prlh {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Prlh {
-                prlh: u8,
-            }
-            let proxy = Prlh { prlh: self.prlh() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Prlh {{ prlh: {=u8:?} }}", self.prlh())
         }
     }
     #[doc = "Prescaler Load Register Low"]
@@ -559,12 +502,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Prll {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Prll {
-                prll: u16,
-            }
-            let proxy = Prll { prll: self.prll() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Prll {{ prll: {=u16:?} }}", self.prll())
         }
     }
 }

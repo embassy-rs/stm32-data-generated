@@ -173,28 +173,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                ckpol: super::vals::Ckpol,
-                depol: super::vals::Depol,
-                rdypol: super::vals::Rdypol,
-                edm: super::vals::Edm,
-                enable: bool,
-                derdycfg: super::vals::Derdycfg,
-                dmaen: bool,
-                outen: super::vals::Outen,
-            }
-            let proxy = Cr {
-                ckpol: self.ckpol(),
-                depol: self.depol(),
-                rdypol: self.rdypol(),
-                edm: self.edm(),
-                enable: self.enable(),
-                derdycfg: self.derdycfg(),
-                dmaen: self.dmaen(),
-                outen: self.outen(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ ckpol: {:?}, depol: {:?}, rdypol: {:?}, edm: {:?}, enable: {=bool:?}, derdycfg: {:?}, dmaen: {=bool:?}, outen: {:?} }}" , self . ckpol () , self . depol () , self . rdypol () , self . edm () , self . enable () , self . derdycfg () , self . dmaen () , self . outen ())
         }
     }
     #[doc = "PSSI data register."]
@@ -227,34 +206,24 @@ pub mod regs {
     impl core::fmt::Debug for Dr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dr")
-                .field(
-                    "byte",
-                    &[
-                        self.byte(0usize),
-                        self.byte(1usize),
-                        self.byte(2usize),
-                        self.byte(3usize),
-                    ],
-                )
+                .field("byte[0]", &self.byte(0usize))
+                .field("byte[1]", &self.byte(1usize))
+                .field("byte[2]", &self.byte(2usize))
+                .field("byte[3]", &self.byte(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dr {
-                byte: [u8; 4usize],
-            }
-            let proxy = Dr {
-                byte: [
-                    self.byte(0usize),
-                    self.byte(1usize),
-                    self.byte(2usize),
-                    self.byte(3usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dr {{ byte[0]: {=u8:?}, byte[1]: {=u8:?}, byte[2]: {=u8:?}, byte[3]: {=u8:?} }}",
+                self.byte(0usize),
+                self.byte(1usize),
+                self.byte(2usize),
+                self.byte(3usize)
+            )
         }
     }
     #[doc = "PSSI interrupt clear register."]
@@ -288,14 +257,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Icr {
-                ovr_isc: bool,
-            }
-            let proxy = Icr {
-                ovr_isc: self.ovr_isc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Icr {{ ovr_isc: {=bool:?} }}", self.ovr_isc())
         }
     }
     #[doc = "PSSI interrupt enable register."]
@@ -329,12 +291,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ier {
-                ovr_ie: bool,
-            }
-            let proxy = Ier { ovr_ie: self.ovr_ie() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ier {{ ovr_ie: {=bool:?} }}", self.ovr_ie())
         }
     }
     #[doc = "PSSI masked interrupt status register."]
@@ -368,14 +325,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mis {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mis {
-                ovr_mis: bool,
-            }
-            let proxy = Mis {
-                ovr_mis: self.ovr_mis(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Mis {{ ovr_mis: {=bool:?} }}", self.ovr_mis())
         }
     }
     #[doc = "PSSI raw interrupt status register."]
@@ -409,14 +359,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ris {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ris {
-                ovr_ris: bool,
-            }
-            let proxy = Ris {
-                ovr_ris: self.ovr_ris(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Ris {{ ovr_ris: {=bool:?} }}", self.ovr_ris())
         }
     }
     #[doc = "PSSI status register."]
@@ -464,16 +407,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                rtt4b: bool,
-                rtt1b: bool,
-            }
-            let proxy = Sr {
-                rtt4b: self.rtt4b(),
-                rtt1b: self.rtt1b(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sr {{ rtt4b: {=bool:?}, rtt1b: {=bool:?} }}",
+                self.rtt4b(),
+                self.rtt1b()
+            )
         }
     }
 }

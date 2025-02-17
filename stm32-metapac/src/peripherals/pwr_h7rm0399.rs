@@ -195,30 +195,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cpucr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cpucr {
-                pdds_d1: bool,
-                pdds_d2: bool,
-                pdds_d3: bool,
-                stopf: bool,
-                sbf: bool,
-                sbf_d1: bool,
-                sbf_d2: bool,
-                cssf: bool,
-                run_d3: bool,
-            }
-            let proxy = Cpucr {
-                pdds_d1: self.pdds_d1(),
-                pdds_d2: self.pdds_d2(),
-                pdds_d3: self.pdds_d3(),
-                stopf: self.stopf(),
-                sbf: self.sbf(),
-                sbf_d1: self.sbf_d1(),
-                sbf_d2: self.sbf_d2(),
-                cssf: self.cssf(),
-                run_d3: self.run_d3(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cpucr {{ pdds_d1: {=bool:?}, pdds_d2: {=bool:?}, pdds_d3: {=bool:?}, stopf: {=bool:?}, sbf: {=bool:?}, sbf_d1: {=bool:?}, sbf_d2: {=bool:?}, cssf: {=bool:?}, run_d3: {=bool:?} }}" , self . pdds_d1 () , self . pdds_d2 () , self . pdds_d3 () , self . stopf () , self . sbf () , self . sbf_d1 () , self . sbf_d2 () , self . cssf () , self . run_d3 ())
         }
     }
     #[doc = "PWR control register 1"]
@@ -338,28 +315,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr1 {
-                lpds: bool,
-                pvde: bool,
-                pls: u8,
-                dbp: bool,
-                flps: bool,
-                svos: u8,
-                avden: bool,
-                als: u8,
-            }
-            let proxy = Cr1 {
-                lpds: self.lpds(),
-                pvde: self.pvde(),
-                pls: self.pls(),
-                dbp: self.dbp(),
-                flps: self.flps(),
-                svos: self.svos(),
-                avden: self.avden(),
-                als: self.als(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr1 {{ lpds: {=bool:?}, pvde: {=bool:?}, pls: {=u8:?}, dbp: {=bool:?}, flps: {=bool:?}, svos: {=u8:?}, avden: {=bool:?}, als: {=u8:?} }}" , self . lpds () , self . pvde () , self . pls () , self . dbp () , self . flps () , self . svos () , self . avden () , self . als ())
         }
     }
     #[doc = "This register is not reset by wakeup from Standby mode, RESET signal and VDD POR. It is only reset by VSW POR and VSWRST reset. This register shall not be accessed when VSWRST bit in RCC_BDCR register resets the VSW domain.After reset, PWR_CR2 register is write-protected. Prior to modifying its content, the DBP bit in PWR_CR1 register must be set to disable the write protection."]
@@ -467,26 +423,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr2 {
-                bren: bool,
-                monen: bool,
-                brrdy: bool,
-                vbatl: bool,
-                vbath: bool,
-                templ: bool,
-                temph: bool,
-            }
-            let proxy = Cr2 {
-                bren: self.bren(),
-                monen: self.monen(),
-                brrdy: self.brrdy(),
-                vbatl: self.vbatl(),
-                vbath: self.vbath(),
-                templ: self.templ(),
-                temph: self.temph(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr2 {{ bren: {=bool:?}, monen: {=bool:?}, brrdy: {=bool:?}, vbatl: {=bool:?}, vbath: {=bool:?}, templ: {=bool:?}, temph: {=bool:?} }}" , self . bren () , self . monen () , self . brrdy () , self . vbatl () , self . vbath () , self . templ () , self . temph ())
         }
     }
     #[doc = "Reset only by POR only, not reset by wakeup from Standby mode and RESET pad. The lower byte of this register is written once after POR and shall be written before changing VOS level or ck_sys clock frequency. No limitation applies to the upper bytes.Programming data corresponding to an invalid combination of SDLEVEL, SDEXTHP, SDEN, LDOEN and BYPASS bits (see Table9) will be ignored: data will not be written, the written-once mechanism will lock the register and any further write access will be ignored. The default supply configuration will be kept and the ACTVOSRDY bit in PWR control status register 1 (PWR_CSR1) will go on indicating invalid voltage levels. The system shall be power cycled before writing a new value."]
@@ -642,34 +579,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr3 {
-                bypass: bool,
-                ldoen: bool,
-                sden: bool,
-                sdexthp: bool,
-                sdlevel: super::vals::Sdlevel,
-                vbe: bool,
-                vbrs: bool,
-                sdextrdy: bool,
-                usb33den: bool,
-                usbregen: bool,
-                usb33rdy: bool,
-            }
-            let proxy = Cr3 {
-                bypass: self.bypass(),
-                ldoen: self.ldoen(),
-                sden: self.sden(),
-                sdexthp: self.sdexthp(),
-                sdlevel: self.sdlevel(),
-                vbe: self.vbe(),
-                vbrs: self.vbrs(),
-                sdextrdy: self.sdextrdy(),
-                usb33den: self.usb33den(),
-                usbregen: self.usbregen(),
-                usb33rdy: self.usb33rdy(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr3 {{ bypass: {=bool:?}, ldoen: {=bool:?}, sden: {=bool:?}, sdexthp: {=bool:?}, sdlevel: {:?}, vbe: {=bool:?}, vbrs: {=bool:?}, sdextrdy: {=bool:?}, usb33den: {=bool:?}, usbregen: {=bool:?}, usb33rdy: {=bool:?} }}" , self . bypass () , self . ldoen () , self . sden () , self . sdexthp () , self . sdlevel () , self . vbe () , self . vbrs () , self . sdextrdy () , self . usb33den () , self . usbregen () , self . usb33rdy ())
         }
     }
     #[doc = "PWR control status register 1"]
@@ -741,20 +651,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr1 {
-                pvdo: bool,
-                actvosrdy: bool,
-                actvos: u8,
-                avdo: bool,
-            }
-            let proxy = Csr1 {
-                pvdo: self.pvdo(),
-                actvosrdy: self.actvosrdy(),
-                actvos: self.actvos(),
-                avdo: self.avdo(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Csr1 {{ pvdo: {=bool:?}, actvosrdy: {=bool:?}, actvos: {=u8:?}, avdo: {=bool:?} }}",
+                self.pvdo(),
+                self.actvosrdy(),
+                self.actvos(),
+                self.avdo()
+            )
         }
     }
     #[doc = "This register allows controlling D3 domain power.Following reset VOSRDY will be read 1 by software"]
@@ -802,16 +706,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for D3cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct D3cr {
-                vosrdy: bool,
-                vos: super::vals::Vos,
-            }
-            let proxy = D3cr {
-                vosrdy: self.vosrdy(),
-                vos: self.vos(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "D3cr {{ vosrdy: {=bool:?}, vos: {:?} }}", self.vosrdy(), self.vos())
         }
     }
     #[doc = "reset only by system reset, not reset by wakeup from Standby mode5 wait states are required when writing this register (when clearing a WKUPF bit in PWR_WKUPFR, the AHB write access will complete after the WKUPF has been cleared)."]
@@ -845,12 +740,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wkupcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wkupcr {
-                wkupc: u8,
-            }
-            let proxy = Wkupcr { wkupc: self.wkupc() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Wkupcr {{ wkupc: {=u8:?} }}", self.wkupc())
         }
     }
     #[doc = "Reset only by system reset, not reset by wakeup from Standby mode"]
@@ -913,78 +803,31 @@ pub mod regs {
     impl core::fmt::Debug for Wkupepr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wkupepr")
-                .field(
-                    "wkupen",
-                    &[
-                        self.wkupen(0usize),
-                        self.wkupen(1usize),
-                        self.wkupen(2usize),
-                        self.wkupen(3usize),
-                        self.wkupen(4usize),
-                        self.wkupen(5usize),
-                    ],
-                )
-                .field(
-                    "wkupp",
-                    &[
-                        self.wkupp(0usize),
-                        self.wkupp(1usize),
-                        self.wkupp(2usize),
-                        self.wkupp(3usize),
-                        self.wkupp(4usize),
-                        self.wkupp(5usize),
-                    ],
-                )
-                .field(
-                    "wkuppupd",
-                    &[
-                        self.wkuppupd(0usize),
-                        self.wkuppupd(1usize),
-                        self.wkuppupd(2usize),
-                        self.wkuppupd(3usize),
-                        self.wkuppupd(4usize),
-                        self.wkuppupd(5usize),
-                    ],
-                )
+                .field("wkupen[0]", &self.wkupen(0usize))
+                .field("wkupen[1]", &self.wkupen(1usize))
+                .field("wkupen[2]", &self.wkupen(2usize))
+                .field("wkupen[3]", &self.wkupen(3usize))
+                .field("wkupen[4]", &self.wkupen(4usize))
+                .field("wkupen[5]", &self.wkupen(5usize))
+                .field("wkupp[0]", &self.wkupp(0usize))
+                .field("wkupp[1]", &self.wkupp(1usize))
+                .field("wkupp[2]", &self.wkupp(2usize))
+                .field("wkupp[3]", &self.wkupp(3usize))
+                .field("wkupp[4]", &self.wkupp(4usize))
+                .field("wkupp[5]", &self.wkupp(5usize))
+                .field("wkuppupd[0]", &self.wkuppupd(0usize))
+                .field("wkuppupd[1]", &self.wkuppupd(1usize))
+                .field("wkuppupd[2]", &self.wkuppupd(2usize))
+                .field("wkuppupd[3]", &self.wkuppupd(3usize))
+                .field("wkuppupd[4]", &self.wkuppupd(4usize))
+                .field("wkuppupd[5]", &self.wkuppupd(5usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wkupepr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wkupepr {
-                wkupen: [bool; 6usize],
-                wkupp: [bool; 6usize],
-                wkuppupd: [super::vals::Wkuppupd; 6usize],
-            }
-            let proxy = Wkupepr {
-                wkupen: [
-                    self.wkupen(0usize),
-                    self.wkupen(1usize),
-                    self.wkupen(2usize),
-                    self.wkupen(3usize),
-                    self.wkupen(4usize),
-                    self.wkupen(5usize),
-                ],
-                wkupp: [
-                    self.wkupp(0usize),
-                    self.wkupp(1usize),
-                    self.wkupp(2usize),
-                    self.wkupp(3usize),
-                    self.wkupp(4usize),
-                    self.wkupp(5usize),
-                ],
-                wkuppupd: [
-                    self.wkuppupd(0usize),
-                    self.wkuppupd(1usize),
-                    self.wkuppupd(2usize),
-                    self.wkuppupd(3usize),
-                    self.wkuppupd(4usize),
-                    self.wkuppupd(5usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Wkupepr {{ wkupen[0]: {=bool:?}, wkupen[1]: {=bool:?}, wkupen[2]: {=bool:?}, wkupen[3]: {=bool:?}, wkupen[4]: {=bool:?}, wkupen[5]: {=bool:?}, wkupp[0]: {=bool:?}, wkupp[1]: {=bool:?}, wkupp[2]: {=bool:?}, wkupp[3]: {=bool:?}, wkupp[4]: {=bool:?}, wkupp[5]: {=bool:?}, wkuppupd[0]: {:?}, wkuppupd[1]: {:?}, wkuppupd[2]: {:?}, wkuppupd[3]: {:?}, wkuppupd[4]: {:?}, wkuppupd[5]: {:?} }}" , self . wkupen (0usize) , self . wkupen (1usize) , self . wkupen (2usize) , self . wkupen (3usize) , self . wkupen (4usize) , self . wkupen (5usize) , self . wkupp (0usize) , self . wkupp (1usize) , self . wkupp (2usize) , self . wkupp (3usize) , self . wkupp (4usize) , self . wkupp (5usize) , self . wkuppupd (0usize) , self . wkuppupd (1usize) , self . wkuppupd (2usize) , self . wkuppupd (3usize) , self . wkuppupd (4usize) , self . wkuppupd (5usize))
         }
     }
     #[doc = "reset only by system reset, not reset by wakeup from Standby mode"]
@@ -1017,38 +860,19 @@ pub mod regs {
     impl core::fmt::Debug for Wkupfr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wkupfr")
-                .field(
-                    "wkupf",
-                    &[
-                        self.wkupf(0usize),
-                        self.wkupf(1usize),
-                        self.wkupf(2usize),
-                        self.wkupf(3usize),
-                        self.wkupf(4usize),
-                        self.wkupf(5usize),
-                    ],
-                )
+                .field("wkupf[0]", &self.wkupf(0usize))
+                .field("wkupf[1]", &self.wkupf(1usize))
+                .field("wkupf[2]", &self.wkupf(2usize))
+                .field("wkupf[3]", &self.wkupf(3usize))
+                .field("wkupf[4]", &self.wkupf(4usize))
+                .field("wkupf[5]", &self.wkupf(5usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wkupfr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wkupfr {
-                wkupf: [bool; 6usize],
-            }
-            let proxy = Wkupfr {
-                wkupf: [
-                    self.wkupf(0usize),
-                    self.wkupf(1usize),
-                    self.wkupf(2usize),
-                    self.wkupf(3usize),
-                    self.wkupf(4usize),
-                    self.wkupf(5usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Wkupfr {{ wkupf[0]: {=bool:?}, wkupf[1]: {=bool:?}, wkupf[2]: {=bool:?}, wkupf[3]: {=bool:?}, wkupf[4]: {=bool:?}, wkupf[5]: {=bool:?} }}" , self . wkupf (0usize) , self . wkupf (1usize) , self . wkupf (2usize) , self . wkupf (3usize) , self . wkupf (4usize) , self . wkupf (5usize))
         }
     }
 }

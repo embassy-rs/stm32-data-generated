@@ -143,16 +143,12 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bsmxcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bsmxcr {
-                bssel: super::vals::Bssel,
-                bsmxactive: bool,
-            }
-            let proxy = Bsmxcr {
-                bssel: self.bssel(),
-                bsmxactive: self.bsmxactive(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Bsmxcr {{ bssel: {:?}, bsmxactive: {=bool:?} }}",
+                self.bssel(),
+                self.bsmxactive()
+            )
         }
     }
     #[doc = "ADF clock generator control register."]
@@ -308,34 +304,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ckgcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ckgcr {
-                ckgden: bool,
-                cck0en: super::vals::Ccken,
-                cck1en: super::vals::Ccken,
-                ckgmod: super::vals::Ckgmod,
-                cck0dir: super::vals::Cckdir,
-                cck1dir: super::vals::Cckdir,
-                trgsens: super::vals::Trgsens,
-                trgsrc: super::vals::Trgsrc,
-                cckdiv: super::vals::Cckdiv,
-                procdiv: u8,
-                ckgactive: bool,
-            }
-            let proxy = Ckgcr {
-                ckgden: self.ckgden(),
-                cck0en: self.cck0en(),
-                cck1en: self.cck1en(),
-                ckgmod: self.ckgmod(),
-                cck0dir: self.cck0dir(),
-                cck1dir: self.cck1dir(),
-                trgsens: self.trgsens(),
-                trgsrc: self.trgsrc(),
-                cckdiv: self.cckdiv(),
-                procdiv: self.procdiv(),
-                ckgactive: self.ckgactive(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ckgcr {{ ckgden: {=bool:?}, cck0en: {:?}, cck1en: {:?}, ckgmod: {:?}, cck0dir: {:?}, cck1dir: {:?}, trgsens: {:?}, trgsrc: {:?}, cckdiv: {:?}, procdiv: {=u8:?}, ckgactive: {=bool:?} }}" , self . ckgden () , self . cck0en () , self . cck1en () , self . ckgmod () , self . cck0dir () , self . cck1dir () , self . trgsens () , self . trgsrc () , self . cckdiv () , self . procdiv () , self . ckgactive ())
         }
     }
     #[doc = "ADF digital filer configuration register 0."]
@@ -407,20 +376,14 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dfltcicr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dfltcicr {
-                datsrc: super::vals::Datsrc,
-                cicmod: super::vals::Cicmod,
-                mcicd: u16,
-                scale: u8,
-            }
-            let proxy = Dfltcicr {
-                datsrc: self.datsrc(),
-                cicmod: self.cicmod(),
-                mcicd: self.mcicd(),
-                scale: self.scale(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dfltcicr {{ datsrc: {:?}, cicmod: {:?}, mcicd: {=u16:?}, scale: {=u8:?} }}",
+                self.datsrc(),
+                self.cicmod(),
+                self.mcicd(),
+                self.scale()
+            )
         }
     }
     #[doc = "ADF digital filter control register 0."]
@@ -540,28 +503,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dfltcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dfltcr {
-                dflten: bool,
-                dmaen: bool,
-                fth: super::vals::Rxfifo,
-                acqmod: super::vals::Acqmod,
-                trgsrc: u8,
-                nbdis: u8,
-                dfltrun: bool,
-                dfltactive: bool,
-            }
-            let proxy = Dfltcr {
-                dflten: self.dflten(),
-                dmaen: self.dmaen(),
-                fth: self.fth(),
-                acqmod: self.acqmod(),
-                trgsrc: self.trgsrc(),
-                nbdis: self.nbdis(),
-                dfltrun: self.dfltrun(),
-                dfltactive: self.dfltactive(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Dfltcr {{ dflten: {=bool:?}, dmaen: {=bool:?}, fth: {:?}, acqmod: {:?}, trgsrc: {=u8:?}, nbdis: {=u8:?}, dfltrun: {=bool:?}, dfltactive: {=bool:?} }}" , self . dflten () , self . dmaen () , self . fth () , self . acqmod () , self . trgsrc () , self . nbdis () , self . dfltrun () , self . dfltactive ())
         }
     }
     #[doc = "ADF digital filter data register 0."]
@@ -595,12 +537,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dfltdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dfltdr {
-                dr: u32,
-            }
-            let proxy = Dfltdr { dr: self.dr() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dfltdr {{ dr: {=u32:?} }}", self.dr())
         }
     }
     #[doc = "ADF DFLT interrupt enable register."]
@@ -708,26 +645,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dfltier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dfltier {
-                fthie: bool,
-                dovrie: bool,
-                satie: bool,
-                ckabie: bool,
-                rfovrie: bool,
-                sddetie: bool,
-                sdlvlie: bool,
-            }
-            let proxy = Dfltier {
-                fthie: self.fthie(),
-                dovrie: self.dovrie(),
-                satie: self.satie(),
-                ckabie: self.ckabie(),
-                rfovrie: self.rfovrie(),
-                sddetie: self.sddetie(),
-                sdlvlie: self.sdlvlie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Dfltier {{ fthie: {=bool:?}, dovrie: {=bool:?}, satie: {=bool:?}, ckabie: {=bool:?}, rfovrie: {=bool:?}, sddetie: {=bool:?}, sdlvlie: {=bool:?} }}" , self . fthie () , self . dovrie () , self . satie () , self . ckabie () , self . rfovrie () , self . sddetie () , self . sdlvlie ())
         }
     }
     #[doc = "ADF DFLT interrupt status register 0."]
@@ -847,28 +765,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dfltisr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dfltisr {
-                fthf: bool,
-                dovrf: bool,
-                rxnef: bool,
-                satf: bool,
-                ckabf: bool,
-                rfovrf: bool,
-                sddetf: bool,
-                sdlvlf: bool,
-            }
-            let proxy = Dfltisr {
-                fthf: self.fthf(),
-                dovrf: self.dovrf(),
-                rxnef: self.rxnef(),
-                satf: self.satf(),
-                ckabf: self.ckabf(),
-                rfovrf: self.rfovrf(),
-                sddetf: self.sddetf(),
-                sdlvlf: self.sdlvlf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Dfltisr {{ fthf: {=bool:?}, dovrf: {=bool:?}, rxnef: {=bool:?}, satf: {=bool:?}, ckabf: {=bool:?}, rfovrf: {=bool:?}, sddetf: {=bool:?}, sdlvlf: {=bool:?} }}" , self . fthf () , self . dovrf () , self . rxnef () , self . satf () , self . ckabf () , self . rfovrf () , self . sddetf () , self . sdlvlf ())
         }
     }
     #[doc = "ADF reshape filter configuration register."]
@@ -940,20 +837,14 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dfltrsfr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dfltrsfr {
-                rsfltbyp: bool,
-                rsfltd: super::vals::Rsfltd,
-                hpfbyp: bool,
-                hpfc: super::vals::Hpfc,
-            }
-            let proxy = Dfltrsfr {
-                rsfltbyp: self.rsfltbyp(),
-                rsfltd: self.rsfltd(),
-                hpfbyp: self.hpfbyp(),
-                hpfc: self.hpfc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dfltrsfr {{ rsfltbyp: {=bool:?}, rsfltd: {:?}, hpfbyp: {=bool:?}, hpfc: {:?} }}",
+                self.rsfltbyp(),
+                self.rsfltd(),
+                self.hpfbyp(),
+                self.hpfc()
+            )
         }
     }
     #[doc = "ADF delay control register."]
@@ -1001,16 +892,12 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dlycr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dlycr {
-                skpdly: u8,
-                skpbf: bool,
-            }
-            let proxy = Dlycr {
-                skpdly: self.skpdly(),
-                skpbf: self.skpbf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dlycr {{ skpdly: {=u8:?}, skpbf: {=bool:?} }}",
+                self.skpdly(),
+                self.skpbf()
+            )
         }
     }
     #[doc = "ADF Global Control Register."]
@@ -1044,12 +931,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Gcr {
-                trgo: bool,
-            }
-            let proxy = Gcr { trgo: self.trgo() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Gcr {{ trgo: {=bool:?} }}", self.trgo())
         }
     }
     #[doc = "ADF SAD ambient noise level register. This bitfield is set by hardware. It contains the latest ambient noise level computed by the SAD. To refresh this bitfield, the SDLVLF flag must be cleared."]
@@ -1083,12 +965,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sadanlvr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sadanlvr {
-                anlvl: u16,
-            }
-            let proxy = Sadanlvr { anlvl: self.anlvl() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Sadanlvr {{ anlvl: {=u16:?} }}", self.anlvl())
         }
     }
     #[doc = "ADF SAD configuration register."]
@@ -1172,22 +1049,15 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sadcfgr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sadcfgr {
-                snthr: super::vals::Snthr,
-                anslp: u8,
-                lfrnb: super::vals::Lfrnb,
-                hgovr: super::vals::Hgovr,
-                anmin: u16,
-            }
-            let proxy = Sadcfgr {
-                snthr: self.snthr(),
-                anslp: self.anslp(),
-                lfrnb: self.lfrnb(),
-                hgovr: self.hgovr(),
-                anmin: self.anmin(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sadcfgr {{ snthr: {:?}, anslp: {=u8:?}, lfrnb: {:?}, hgovr: {:?}, anmin: {=u16:?} }}",
+                self.snthr(),
+                self.anslp(),
+                self.lfrnb(),
+                self.hgovr(),
+                self.anmin()
+            )
         }
     }
     #[doc = "ADF Sound activity detector (SAD) control register."]
@@ -1307,28 +1177,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sadcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sadcr {
-                saden: bool,
-                datcap: super::vals::Datcap,
-                detcfg: super::vals::Detcfg,
-                sadst: super::vals::Sadst,
-                hysten: bool,
-                frsize: super::vals::Frsize,
-                sadmod: super::vals::Sadmod,
-                sadactive: bool,
-            }
-            let proxy = Sadcr {
-                saden: self.saden(),
-                datcap: self.datcap(),
-                detcfg: self.detcfg(),
-                sadst: self.sadst(),
-                hysten: self.hysten(),
-                frsize: self.frsize(),
-                sadmod: self.sadmod(),
-                sadactive: self.sadactive(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sadcr {{ saden: {=bool:?}, datcap: {:?}, detcfg: {:?}, sadst: {:?}, hysten: {=bool:?}, frsize: {:?}, sadmod: {:?}, sadactive: {=bool:?} }}" , self . saden () , self . datcap () , self . detcfg () , self . sadst () , self . hysten () , self . frsize () , self . sadmod () , self . sadactive ())
         }
     }
     #[doc = "ADF SAD sound level register."]
@@ -1362,12 +1211,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sadsdlvr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sadsdlvr {
-                sdlvl: u16,
-            }
-            let proxy = Sadsdlvr { sdlvl: self.sdlvl() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Sadsdlvr {{ sdlvl: {=u16:?} }}", self.sdlvl())
         }
     }
     #[doc = "ADF serial interface control register 0."]
@@ -1447,22 +1291,15 @@ values lower than four are invalid."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sitfcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sitfcr {
-                sitfen: bool,
-                scksrc: super::vals::Scksrc,
-                sitfmod: super::vals::Sitfmod,
-                sth: u8,
-                sitfactive: bool,
-            }
-            let proxy = Sitfcr {
-                sitfen: self.sitfen(),
-                scksrc: self.scksrc(),
-                sitfmod: self.sitfmod(),
-                sth: self.sth(),
-                sitfactive: self.sitfactive(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sitfcr {{ sitfen: {=bool:?}, scksrc: {:?}, sitfmod: {:?}, sth: {=u8:?}, sitfactive: {=bool:?} }}",
+                self.sitfen(),
+                self.scksrc(),
+                self.sitfmod(),
+                self.sth(),
+                self.sitfactive()
+            )
         }
     }
 }

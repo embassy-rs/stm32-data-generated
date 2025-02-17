@@ -290,40 +290,7 @@ is cleared. With the bitfield value other than zero and KEYVALID set, the applic
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                en: bool,
-                datatype: super::vals::Datatype,
-                mode: super::vals::Mode,
-                chmod: super::vals::Chmod,
-                dmainen: bool,
-                dmaouten: bool,
-                gcmph: super::vals::Gcmph,
-                keysize: super::vals::Keysize,
-                keyprot: bool,
-                npblb: u8,
-                kmod: super::vals::Kmod,
-                kshareid: super::vals::Kshareid,
-                keysel: super::vals::Keysel,
-                iprst: bool,
-            }
-            let proxy = Cr {
-                en: self.en(),
-                datatype: self.datatype(),
-                mode: self.mode(),
-                chmod: self.chmod(),
-                dmainen: self.dmainen(),
-                dmaouten: self.dmaouten(),
-                gcmph: self.gcmph(),
-                keysize: self.keysize(),
-                keyprot: self.keyprot(),
-                npblb: self.npblb(),
-                kmod: self.kmod(),
-                kshareid: self.kshareid(),
-                keysel: self.keysel(),
-                iprst: self.iprst(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ en: {=bool:?}, datatype: {:?}, mode: {:?}, chmod: {:?}, dmainen: {=bool:?}, dmaouten: {=bool:?}, gcmph: {:?}, keysize: {:?}, keyprot: {=bool:?}, npblb: {=u8:?}, kmod: {:?}, kshareid: {:?}, keysel: {:?}, iprst: {=bool:?} }}" , self . en () , self . datatype () , self . mode () , self . chmod () , self . dmainen () , self . dmaouten () , self . gcmph () , self . keysize () , self . keyprot () , self . npblb () , self . kmod () , self . kshareid () , self . keysel () , self . iprst ())
         }
     }
     #[doc = "SAES interrupt clear register."]
@@ -395,20 +362,14 @@ is cleared. With the bitfield value other than zero and KEYVALID set, the applic
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Icr {
-                ccf: bool,
-                rweif: bool,
-                keif: bool,
-                rngeif: bool,
-            }
-            let proxy = Icr {
-                ccf: self.ccf(),
-                rweif: self.rweif(),
-                keif: self.keif(),
-                rngeif: self.rngeif(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Icr {{ ccf: {=bool:?}, rweif: {=bool:?}, keif: {=bool:?}, rngeif: {=bool:?} }}",
+                self.ccf(),
+                self.rweif(),
+                self.keif(),
+                self.rngeif()
+            )
         }
     }
     #[doc = "SAES interrupt enable register."]
@@ -480,20 +441,14 @@ is cleared. With the bitfield value other than zero and KEYVALID set, the applic
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ier {
-                ccfie: bool,
-                rweie: bool,
-                keie: bool,
-                rngeie: bool,
-            }
-            let proxy = Ier {
-                ccfie: self.ccfie(),
-                rweie: self.rweie(),
-                keie: self.keie(),
-                rngeie: self.rngeie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Ier {{ ccfie: {=bool:?}, rweie: {=bool:?}, keie: {=bool:?}, rngeie: {=bool:?} }}",
+                self.ccfie(),
+                self.rweie(),
+                self.keie(),
+                self.rngeie()
+            )
         }
     }
     #[doc = "SAES interrupt status register."]
@@ -565,20 +520,14 @@ is cleared. With the bitfield value other than zero and KEYVALID set, the applic
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Isr {
-                ccf: bool,
-                rweif: bool,
-                keif: bool,
-                rngeif: bool,
-            }
-            let proxy = Isr {
-                ccf: self.ccf(),
-                rweif: self.rweif(),
-                keif: self.keif(),
-                rngeif: self.rngeif(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Isr {{ ccf: {=bool:?}, rweif: {=bool:?}, keif: {=bool:?}, rngeif: {=bool:?} }}",
+                self.ccf(),
+                self.rweif(),
+                self.keif(),
+                self.rngeif()
+            )
         }
     }
     #[doc = "SAES status register."]
@@ -650,20 +599,14 @@ is cleared. With the bitfield value other than zero and KEYVALID set, the applic
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                rderr: bool,
-                wrerr: bool,
-                busy: bool,
-                keyvalid: bool,
-            }
-            let proxy = Sr {
-                rderr: self.rderr(),
-                wrerr: self.wrerr(),
-                busy: self.busy(),
-                keyvalid: self.keyvalid(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Sr {{ rderr: {=bool:?}, wrerr: {=bool:?}, busy: {=bool:?}, keyvalid: {=bool:?} }}",
+                self.rderr(),
+                self.wrerr(),
+                self.busy(),
+                self.keyvalid()
+            )
         }
     }
 }

@@ -208,38 +208,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                lpsdsr: super::vals::Mode,
-                pdds: super::vals::Pdds,
-                cwuf: bool,
-                csbf: bool,
-                pvde: bool,
-                pls: super::vals::Pls,
-                dbp: bool,
-                ulp: bool,
-                fwu: bool,
-                vos: super::vals::Vos,
-                ds_ee_koff: super::vals::DsEeKoff,
-                lprun: super::vals::Mode,
-                lpds: super::vals::Mode,
-            }
-            let proxy = Cr {
-                lpsdsr: self.lpsdsr(),
-                pdds: self.pdds(),
-                cwuf: self.cwuf(),
-                csbf: self.csbf(),
-                pvde: self.pvde(),
-                pls: self.pls(),
-                dbp: self.dbp(),
-                ulp: self.ulp(),
-                fwu: self.fwu(),
-                vos: self.vos(),
-                ds_ee_koff: self.ds_ee_koff(),
-                lprun: self.lprun(),
-                lpds: self.lpds(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cr {{ lpsdsr: {:?}, pdds: {:?}, cwuf: {=bool:?}, csbf: {=bool:?}, pvde: {=bool:?}, pls: {:?}, dbp: {=bool:?}, ulp: {=bool:?}, fwu: {=bool:?}, vos: {:?}, ds_ee_koff: {:?}, lprun: {:?}, lpds: {:?} }}" , self . lpsdsr () , self . pdds () , self . cwuf () , self . csbf () , self . pvde () , self . pls () , self . dbp () , self . ulp () , self . fwu () , self . vos () , self . ds_ee_koff () , self . lprun () , self . lpds ())
         }
     }
     #[doc = "power control/status register"]
@@ -371,30 +340,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                wuf: bool,
-                sbf: bool,
-                pvdo: bool,
-                vrefintrdyf: bool,
-                vosf: bool,
-                reglpf: bool,
-                ewup1: bool,
-                ewup2: bool,
-                ewup3: bool,
-            }
-            let proxy = Csr {
-                wuf: self.wuf(),
-                sbf: self.sbf(),
-                pvdo: self.pvdo(),
-                vrefintrdyf: self.vrefintrdyf(),
-                vosf: self.vosf(),
-                reglpf: self.reglpf(),
-                ewup1: self.ewup1(),
-                ewup2: self.ewup2(),
-                ewup3: self.ewup3(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Csr {{ wuf: {=bool:?}, sbf: {=bool:?}, pvdo: {=bool:?}, vrefintrdyf: {=bool:?}, vosf: {=bool:?}, reglpf: {=bool:?}, ewup1: {=bool:?}, ewup2: {=bool:?}, ewup3: {=bool:?} }}" , self . wuf () , self . sbf () , self . pvdo () , self . vrefintrdyf () , self . vosf () , self . reglpf () , self . ewup1 () , self . ewup2 () , self . ewup3 ())
         }
     }
 }

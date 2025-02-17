@@ -366,36 +366,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr1 {
-                mem_mode: super::vals::MemMode,
-                pa11_rmp: bool,
-                pa12_rmp: bool,
-                ir_pol: bool,
-                ir_mod: u8,
-                boosten: bool,
-                ucpd1_strobe: bool,
-                ucpd2_strobe: bool,
-                i2c_pbx_fmp: u8,
-                i2c1_fmp: bool,
-                i2c2_fmp: bool,
-                i2c_pax_fmp: u8,
-            }
-            let proxy = Cfgr1 {
-                mem_mode: self.mem_mode(),
-                pa11_rmp: self.pa11_rmp(),
-                pa12_rmp: self.pa12_rmp(),
-                ir_pol: self.ir_pol(),
-                ir_mod: self.ir_mod(),
-                boosten: self.boosten(),
-                ucpd1_strobe: self.ucpd1_strobe(),
-                ucpd2_strobe: self.ucpd2_strobe(),
-                i2c_pbx_fmp: self.i2c_pbx_fmp(),
-                i2c1_fmp: self.i2c1_fmp(),
-                i2c2_fmp: self.i2c2_fmp(),
-                i2c_pax_fmp: self.i2c_pax_fmp(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr1 {{ mem_mode: {:?}, pa11_rmp: {=bool:?}, pa12_rmp: {=bool:?}, ir_pol: {=bool:?}, ir_mod: {=u8:?}, boosten: {=bool:?}, ucpd1_strobe: {=bool:?}, ucpd2_strobe: {=bool:?}, i2c_pbx_fmp: {=u8:?}, i2c1_fmp: {=bool:?}, i2c2_fmp: {=bool:?}, i2c_pax_fmp: {=u8:?} }}" , self . mem_mode () , self . pa11_rmp () , self . pa12_rmp () , self . ir_pol () , self . ir_mod () , self . boosten () , self . ucpd1_strobe () , self . ucpd2_strobe () , self . i2c_pbx_fmp () , self . i2c1_fmp () , self . i2c2_fmp () , self . i2c_pax_fmp ())
         }
     }
     #[doc = "configuration register 1"]
@@ -575,38 +546,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr2 {
-                lockup_lock: bool,
-                sram_parity_lock: bool,
-                pvd_lock: bool,
-                ecc_lock: bool,
-                sram_pef: bool,
-                pa1_cden: bool,
-                pa3_cden: bool,
-                pa5_cden: bool,
-                pa6_cden: bool,
-                pa13_cden: bool,
-                pb0_cden: bool,
-                pb1_cden: bool,
-                pb2_cden: bool,
-            }
-            let proxy = Cfgr2 {
-                lockup_lock: self.lockup_lock(),
-                sram_parity_lock: self.sram_parity_lock(),
-                pvd_lock: self.pvd_lock(),
-                ecc_lock: self.ecc_lock(),
-                sram_pef: self.sram_pef(),
-                pa1_cden: self.pa1_cden(),
-                pa3_cden: self.pa3_cden(),
-                pa5_cden: self.pa5_cden(),
-                pa6_cden: self.pa6_cden(),
-                pa13_cden: self.pa13_cden(),
-                pb0_cden: self.pb0_cden(),
-                pb1_cden: self.pb1_cden(),
-                pb2_cden: self.pb2_cden(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr2 {{ lockup_lock: {=bool:?}, sram_parity_lock: {=bool:?}, pvd_lock: {=bool:?}, ecc_lock: {=bool:?}, sram_pef: {=bool:?}, pa1_cden: {=bool:?}, pa3_cden: {=bool:?}, pa5_cden: {=bool:?}, pa6_cden: {=bool:?}, pa13_cden: {=bool:?}, pb0_cden: {=bool:?}, pb1_cden: {=bool:?}, pb2_cden: {=bool:?} }}" , self . lockup_lock () , self . sram_parity_lock () , self . pvd_lock () , self . ecc_lock () , self . sram_pef () , self . pa1_cden () , self . pa3_cden () , self . pa5_cden () , self . pa6_cden () , self . pa13_cden () , self . pb0_cden () , self . pb1_cden () , self . pb2_cden ())
         }
     }
     #[doc = "interrupt line 0 status register"]
@@ -640,12 +580,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline0 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline0 {
-                wwdg: bool,
-            }
-            let proxy = Itline0 { wwdg: self.wwdg() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Itline0 {{ wwdg: {=bool:?} }}", self.wwdg())
         }
     }
     #[doc = "interrupt line 1 status register"]
@@ -679,12 +614,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline1 {
-                pvdout: bool,
-            }
-            let proxy = Itline1 { pvdout: self.pvdout() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Itline1 {{ pvdout: {=bool:?} }}", self.pvdout())
         }
     }
     #[doc = "interrupt line 10 status register"]
@@ -732,16 +662,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline10 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline10 {
-                dma1_ch2: bool,
-                dma1_ch3: bool,
-            }
-            let proxy = Itline10 {
-                dma1_ch2: self.dma1_ch2(),
-                dma1_ch3: self.dma1_ch3(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Itline10 {{ dma1_ch2: {=bool:?}, dma1_ch3: {=bool:?} }}",
+                self.dma1_ch2(),
+                self.dma1_ch3()
+            )
         }
     }
     #[doc = "interrupt line 11 status register"]
@@ -825,22 +751,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline11 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline11 {
-                dmamux: bool,
-                dma1_ch4: bool,
-                dma1_ch5: bool,
-                dma1_ch6: bool,
-                dma1_ch7: bool,
-            }
-            let proxy = Itline11 {
-                dmamux: self.dmamux(),
-                dma1_ch4: self.dma1_ch4(),
-                dma1_ch5: self.dma1_ch5(),
-                dma1_ch6: self.dma1_ch6(),
-                dma1_ch7: self.dma1_ch7(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Itline11 {{ dmamux: {=bool:?}, dma1_ch4: {=bool:?}, dma1_ch5: {=bool:?}, dma1_ch6: {=bool:?}, dma1_ch7: {=bool:?} }}" , self . dmamux () , self . dma1_ch4 () , self . dma1_ch5 () , self . dma1_ch6 () , self . dma1_ch7 ())
         }
     }
     #[doc = "interrupt line 12 status register"]
@@ -900,18 +811,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline12 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline12 {
-                adc: bool,
-                comp1: bool,
-                comp2: bool,
-            }
-            let proxy = Itline12 {
-                adc: self.adc(),
-                comp1: self.comp1(),
-                comp2: self.comp2(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Itline12 {{ adc: {=bool:?}, comp1: {=bool:?}, comp2: {=bool:?} }}",
+                self.adc(),
+                self.comp1(),
+                self.comp2()
+            )
         }
     }
     #[doc = "interrupt line 13 status register"]
@@ -983,20 +889,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline13 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline13 {
-                tim1_ccu: bool,
-                tim1_trg: bool,
-                tim1_upd: bool,
-                tim1_brk: bool,
-            }
-            let proxy = Itline13 {
-                tim1_ccu: self.tim1_ccu(),
-                tim1_trg: self.tim1_trg(),
-                tim1_upd: self.tim1_upd(),
-                tim1_brk: self.tim1_brk(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Itline13 {{ tim1_ccu: {=bool:?}, tim1_trg: {=bool:?}, tim1_upd: {=bool:?}, tim1_brk: {=bool:?} }}",
+                self.tim1_ccu(),
+                self.tim1_trg(),
+                self.tim1_upd(),
+                self.tim1_brk()
+            )
         }
     }
     #[doc = "interrupt line 14 status register"]
@@ -1030,14 +930,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline14 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline14 {
-                tim1_cc: bool,
-            }
-            let proxy = Itline14 {
-                tim1_cc: self.tim1_cc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Itline14 {{ tim1_cc: {=bool:?} }}", self.tim1_cc())
         }
     }
     #[doc = "interrupt line 15 status register"]
@@ -1071,12 +964,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline15 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline15 {
-                tim2: bool,
-            }
-            let proxy = Itline15 { tim2: self.tim2() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Itline15 {{ tim2: {=bool:?} }}", self.tim2())
         }
     }
     #[doc = "interrupt line 16 status register"]
@@ -1110,12 +998,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline16 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline16 {
-                tim3: bool,
-            }
-            let proxy = Itline16 { tim3: self.tim3() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Itline16 {{ tim3: {=bool:?} }}", self.tim3())
         }
     }
     #[doc = "interrupt line 17 status register"]
@@ -1175,18 +1058,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline17 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline17 {
-                tim6: bool,
-                dac: bool,
-                lptim1: bool,
-            }
-            let proxy = Itline17 {
-                tim6: self.tim6(),
-                dac: self.dac(),
-                lptim1: self.lptim1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Itline17 {{ tim6: {=bool:?}, dac: {=bool:?}, lptim1: {=bool:?} }}",
+                self.tim6(),
+                self.dac(),
+                self.lptim1()
+            )
         }
     }
     #[doc = "interrupt line 18 status register"]
@@ -1234,16 +1112,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline18 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline18 {
-                tim7: bool,
-                lptim2: bool,
-            }
-            let proxy = Itline18 {
-                tim7: self.tim7(),
-                lptim2: self.lptim2(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Itline18 {{ tim7: {=bool:?}, lptim2: {=bool:?} }}",
+                self.tim7(),
+                self.lptim2()
+            )
         }
     }
     #[doc = "interrupt line 19 status register"]
@@ -1277,12 +1151,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline19 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline19 {
-                tim14: bool,
-            }
-            let proxy = Itline19 { tim14: self.tim14() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Itline19 {{ tim14: {=bool:?} }}", self.tim14())
         }
     }
     #[doc = "interrupt line 2 status register"]
@@ -1330,16 +1199,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline2 {
-                tamp: bool,
-                rtc: bool,
-            }
-            let proxy = Itline2 {
-                tamp: self.tamp(),
-                rtc: self.rtc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Itline2 {{ tamp: {=bool:?}, rtc: {=bool:?} }}",
+                self.tamp(),
+                self.rtc()
+            )
         }
     }
     #[doc = "interrupt line 20 status register"]
@@ -1373,12 +1238,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline20 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline20 {
-                tim15: bool,
-            }
-            let proxy = Itline20 { tim15: self.tim15() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Itline20 {{ tim15: {=bool:?} }}", self.tim15())
         }
     }
     #[doc = "interrupt line 21 status register"]
@@ -1412,12 +1272,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline21 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline21 {
-                tim16: bool,
-            }
-            let proxy = Itline21 { tim16: self.tim16() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Itline21 {{ tim16: {=bool:?} }}", self.tim16())
         }
     }
     #[doc = "interrupt line 22 status register"]
@@ -1451,12 +1306,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline22 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline22 {
-                tim17: bool,
-            }
-            let proxy = Itline22 { tim17: self.tim17() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Itline22 {{ tim17: {=bool:?} }}", self.tim17())
         }
     }
     #[doc = "interrupt line 23 status register"]
@@ -1490,12 +1340,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline23 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline23 {
-                i2c1: bool,
-            }
-            let proxy = Itline23 { i2c1: self.i2c1() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Itline23 {{ i2c1: {=bool:?} }}", self.i2c1())
         }
     }
     #[doc = "interrupt line 24 status register"]
@@ -1529,12 +1374,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline24 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline24 {
-                i2c2: bool,
-            }
-            let proxy = Itline24 { i2c2: self.i2c2() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Itline24 {{ i2c2: {=bool:?} }}", self.i2c2())
         }
     }
     #[doc = "interrupt line 25 status register"]
@@ -1568,12 +1408,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline25 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline25 {
-                spi1: bool,
-            }
-            let proxy = Itline25 { spi1: self.spi1() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Itline25 {{ spi1: {=bool:?} }}", self.spi1())
         }
     }
     #[doc = "interrupt line 26 status register"]
@@ -1607,12 +1442,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline26 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline26 {
-                spi2: bool,
-            }
-            let proxy = Itline26 { spi2: self.spi2() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Itline26 {{ spi2: {=bool:?} }}", self.spi2())
         }
     }
     #[doc = "interrupt line 27 status register"]
@@ -1646,12 +1476,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline27 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline27 {
-                usart1: bool,
-            }
-            let proxy = Itline27 { usart1: self.usart1() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Itline27 {{ usart1: {=bool:?} }}", self.usart1())
         }
     }
     #[doc = "interrupt line 28 status register"]
@@ -1685,12 +1510,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline28 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline28 {
-                usart2: bool,
-            }
-            let proxy = Itline28 { usart2: self.usart2() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Itline28 {{ usart2: {=bool:?} }}", self.usart2())
         }
     }
     #[doc = "interrupt line 29 status register"]
@@ -1754,20 +1574,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline29 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline29 {
-                usart3: bool,
-                usart4: bool,
-                usart5: bool,
-                usart6: bool,
-            }
-            let proxy = Itline29 {
-                usart3: self.usart3(),
-                usart4: self.usart4(),
-                usart5: self.usart5(),
-                usart6: self.usart6(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Itline29 {{ usart3: {=bool:?}, usart4: {=bool:?}, usart5: {=bool:?}, usart6: {=bool:?} }}",
+                self.usart3(),
+                self.usart4(),
+                self.usart5(),
+                self.usart6()
+            )
         }
     }
     #[doc = "interrupt line 3 status register"]
@@ -1815,16 +1629,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline3 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline3 {
-                flash_itf: bool,
-                flash_ecc: bool,
-            }
-            let proxy = Itline3 {
-                flash_itf: self.flash_itf(),
-                flash_ecc: self.flash_ecc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Itline3 {{ flash_itf: {=bool:?}, flash_ecc: {=bool:?} }}",
+                self.flash_itf(),
+                self.flash_ecc()
+            )
         }
     }
     #[doc = "interrupt line 30 status register"]
@@ -1858,12 +1668,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline30 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline30 {
-                cec: bool,
-            }
-            let proxy = Itline30 { cec: self.cec() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Itline30 {{ cec: {=bool:?} }}", self.cec())
         }
     }
     #[doc = "interrupt line 31 status register"]
@@ -1911,16 +1716,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline31 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline31 {
-                rng: bool,
-                aes: bool,
-            }
-            let proxy = Itline31 {
-                rng: self.rng(),
-                aes: self.aes(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Itline31 {{ rng: {=bool:?}, aes: {=bool:?} }}",
+                self.rng(),
+                self.aes()
+            )
         }
     }
     #[doc = "interrupt line 4 status register"]
@@ -1954,12 +1755,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline4 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline4 {
-                rcc: bool,
-            }
-            let proxy = Itline4 { rcc: self.rcc() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Itline4 {{ rcc: {=bool:?} }}", self.rcc())
         }
     }
     #[doc = "interrupt line 5 status register"]
@@ -2007,16 +1803,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline5 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline5 {
-                exti0: bool,
-                exti1: bool,
-            }
-            let proxy = Itline5 {
-                exti0: self.exti0(),
-                exti1: self.exti1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Itline5 {{ exti0: {=bool:?}, exti1: {=bool:?} }}",
+                self.exti0(),
+                self.exti1()
+            )
         }
     }
     #[doc = "interrupt line 6 status register"]
@@ -2064,16 +1856,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline6 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline6 {
-                exti2: bool,
-                exti3: bool,
-            }
-            let proxy = Itline6 {
-                exti2: self.exti2(),
-                exti3: self.exti3(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Itline6 {{ exti2: {=bool:?}, exti3: {=bool:?} }}",
+                self.exti2(),
+                self.exti3()
+            )
         }
     }
     #[doc = "interrupt line 7 status register"]
@@ -2241,36 +2029,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline7 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline7 {
-                exti4: bool,
-                exti5: bool,
-                exti6: bool,
-                exti7: bool,
-                exti8: bool,
-                exti9: bool,
-                exti10: bool,
-                exti11: bool,
-                exti12: bool,
-                exti13: bool,
-                exti14: bool,
-                exti15: bool,
-            }
-            let proxy = Itline7 {
-                exti4: self.exti4(),
-                exti5: self.exti5(),
-                exti6: self.exti6(),
-                exti7: self.exti7(),
-                exti8: self.exti8(),
-                exti9: self.exti9(),
-                exti10: self.exti10(),
-                exti11: self.exti11(),
-                exti12: self.exti12(),
-                exti13: self.exti13(),
-                exti14: self.exti14(),
-                exti15: self.exti15(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Itline7 {{ exti4: {=bool:?}, exti5: {=bool:?}, exti6: {=bool:?}, exti7: {=bool:?}, exti8: {=bool:?}, exti9: {=bool:?}, exti10: {=bool:?}, exti11: {=bool:?}, exti12: {=bool:?}, exti13: {=bool:?}, exti14: {=bool:?}, exti15: {=bool:?} }}" , self . exti4 () , self . exti5 () , self . exti6 () , self . exti7 () , self . exti8 () , self . exti9 () , self . exti10 () , self . exti11 () , self . exti12 () , self . exti13 () , self . exti14 () , self . exti15 ())
         }
     }
     #[doc = "interrupt line 8 status register"]
@@ -2330,18 +2089,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline8 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline8 {
-                ucpd1: bool,
-                ucpd2: bool,
-                usb: bool,
-            }
-            let proxy = Itline8 {
-                ucpd1: self.ucpd1(),
-                ucpd2: self.ucpd2(),
-                usb: self.usb(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Itline8 {{ ucpd1: {=bool:?}, ucpd2: {=bool:?}, usb: {=bool:?} }}",
+                self.ucpd1(),
+                self.ucpd2(),
+                self.usb()
+            )
         }
     }
     #[doc = "interrupt line 9 status register"]
@@ -2375,14 +2129,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline9 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Itline9 {
-                dma1_ch1: bool,
-            }
-            let proxy = Itline9 {
-                dma1_ch1: self.dma1_ch1(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Itline9 {{ dma1_ch1: {=bool:?} }}", self.dma1_ch1())
         }
     }
     #[doc = "VREFBUF calibration control register"]
@@ -2416,12 +2163,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for VrefbufCcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct VrefbufCcr {
-                trim: u8,
-            }
-            let proxy = VrefbufCcr { trim: self.trim() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "VrefbufCcr {{ trim: {=u8:?} }}", self.trim())
         }
     }
     #[doc = "VREFBUF control and status register"]
@@ -2493,20 +2235,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for VrefbufCsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct VrefbufCsr {
-                envr: bool,
-                hiz: bool,
-                vrr: bool,
-                vrs: u8,
-            }
-            let proxy = VrefbufCsr {
-                envr: self.envr(),
-                hiz: self.hiz(),
-                vrr: self.vrr(),
-                vrs: self.vrs(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "VrefbufCsr {{ envr: {=bool:?}, hiz: {=bool:?}, vrr: {=bool:?}, vrs: {=u8:?} }}",
+                self.envr(),
+                self.hiz(),
+                self.vrr(),
+                self.vrs()
+            )
         }
     }
 }

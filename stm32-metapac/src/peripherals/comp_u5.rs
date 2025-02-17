@@ -179,80 +179,60 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Csr {
-                en: bool,
-                inmsel: super::vals::Inm,
-                inpsel: u8,
-                winmode: super::vals::WindowMode,
-                winout: super::vals::WindowOut,
-                polarity: super::vals::Polarity,
-                hyst: super::vals::Hysteresis,
-                pwrmode: super::vals::PowerMode,
-                blanksel: super::vals::Blanking,
-                value: bool,
-                lock: bool,
-            }
-            let proxy = Csr {
-                en: self.en(),
-                inmsel: self.inmsel(),
-                inpsel: self.inpsel(),
-                winmode: self.winmode(),
-                winout: self.winout(),
-                polarity: self.polarity(),
-                hyst: self.hyst(),
-                pwrmode: self.pwrmode(),
-                blanksel: self.blanksel(),
-                value: self.value(),
-                lock: self.lock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Csr {{ en: {=bool:?}, inmsel: {:?}, inpsel: {=u8:?}, winmode: {:?}, winout: {:?}, polarity: {:?}, hyst: {:?}, pwrmode: {:?}, blanksel: {:?}, value: {=bool:?}, lock: {=bool:?} }}" , self . en () , self . inmsel () , self . inpsel () , self . winmode () , self . winout () , self . polarity () , self . hyst () , self . pwrmode () , self . blanksel () , self . value () , self . lock ())
         }
     }
 }
 pub mod vals {
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Blanking(pub u8);
-    impl Blanking {
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Blanking {
         #[doc = "No blanking."]
-        pub const NO_BLANKING: Self = Self(0x0);
+        NO_BLANKING = 0x0,
         #[doc = "Check data sheet for blanking options"]
-        pub const BLANK1: Self = Self(0x01);
+        BLANK1 = 0x01,
         #[doc = "Check data sheet for blanking options"]
-        pub const BLANK2: Self = Self(0x02);
+        BLANK2 = 0x02,
+        _RESERVED_3 = 0x03,
         #[doc = "Check data sheet for blanking options"]
-        pub const BLANK3: Self = Self(0x04);
+        BLANK3 = 0x04,
+        _RESERVED_5 = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+        _RESERVED_8 = 0x08,
+        _RESERVED_9 = 0x09,
+        _RESERVED_a = 0x0a,
+        _RESERVED_b = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
+        _RESERVED_10 = 0x10,
+        _RESERVED_11 = 0x11,
+        _RESERVED_12 = 0x12,
+        _RESERVED_13 = 0x13,
+        _RESERVED_14 = 0x14,
+        _RESERVED_15 = 0x15,
+        _RESERVED_16 = 0x16,
+        _RESERVED_17 = 0x17,
+        _RESERVED_18 = 0x18,
+        _RESERVED_19 = 0x19,
+        _RESERVED_1a = 0x1a,
+        _RESERVED_1b = 0x1b,
+        _RESERVED_1c = 0x1c,
+        _RESERVED_1d = 0x1d,
+        _RESERVED_1e = 0x1e,
+        _RESERVED_1f = 0x1f,
     }
     impl Blanking {
+        #[inline(always)]
         pub const fn from_bits(val: u8) -> Blanking {
-            Self(val & 0x1f)
+            unsafe { core::mem::transmute(val & 0x1f) }
         }
+        #[inline(always)]
         pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Blanking {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("NO_BLANKING"),
-                0x01 => f.write_str("BLANK1"),
-                0x02 => f.write_str("BLANK2"),
-                0x04 => f.write_str("BLANK3"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Blanking {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "NO_BLANKING"),
-                0x01 => defmt::write!(f, "BLANK1"),
-                0x02 => defmt::write!(f, "BLANK2"),
-                0x04 => defmt::write!(f, "BLANK3"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
+            unsafe { core::mem::transmute(self) }
         }
     }
     impl From<u8> for Blanking {

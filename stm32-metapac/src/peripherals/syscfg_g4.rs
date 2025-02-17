@@ -210,34 +210,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr1 {
-                boosten: bool,
-                anaswvdd: bool,
-                i2c_pb6_fmp: bool,
-                i2c_pb7_fmp: bool,
-                i2c_pb8_fmp: bool,
-                i2c_pb9_fmp: bool,
-                i2c1_fmp: bool,
-                i2c2_fmp: bool,
-                i2c3_fmp: bool,
-                i2c4_fmp: bool,
-                fpu_ie: u8,
-            }
-            let proxy = Cfgr1 {
-                boosten: self.boosten(),
-                anaswvdd: self.anaswvdd(),
-                i2c_pb6_fmp: self.i2c_pb6_fmp(),
-                i2c_pb7_fmp: self.i2c_pb7_fmp(),
-                i2c_pb8_fmp: self.i2c_pb8_fmp(),
-                i2c_pb9_fmp: self.i2c_pb9_fmp(),
-                i2c1_fmp: self.i2c1_fmp(),
-                i2c2_fmp: self.i2c2_fmp(),
-                i2c3_fmp: self.i2c3_fmp(),
-                i2c4_fmp: self.i2c4_fmp(),
-                fpu_ie: self.fpu_ie(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cfgr1 {{ boosten: {=bool:?}, anaswvdd: {=bool:?}, i2c_pb6_fmp: {=bool:?}, i2c_pb7_fmp: {=bool:?}, i2c_pb8_fmp: {=bool:?}, i2c_pb9_fmp: {=bool:?}, i2c1_fmp: {=bool:?}, i2c2_fmp: {=bool:?}, i2c3_fmp: {=bool:?}, i2c4_fmp: {=bool:?}, fpu_ie: {=u8:?} }}" , self . boosten () , self . anaswvdd () , self . i2c_pb6_fmp () , self . i2c_pb7_fmp () , self . i2c_pb8_fmp () , self . i2c_pb9_fmp () , self . i2c1_fmp () , self . i2c2_fmp () , self . i2c3_fmp () , self . i2c4_fmp () , self . fpu_ie ())
         }
     }
     #[doc = "configuration register 2"]
@@ -321,22 +294,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfgr2 {
-                cll: bool,
-                spl: bool,
-                pvdl: bool,
-                eccl: bool,
-                spf: bool,
-            }
-            let proxy = Cfgr2 {
-                cll: self.cll(),
-                spl: self.spl(),
-                pvdl: self.pvdl(),
-                eccl: self.eccl(),
-                spf: self.spf(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cfgr2 {{ cll: {=bool:?}, spl: {=bool:?}, pvdl: {=bool:?}, eccl: {=bool:?}, spf: {=bool:?} }}",
+                self.cll(),
+                self.spl(),
+                self.pvdl(),
+                self.eccl(),
+                self.spf()
+            )
         }
     }
     #[doc = "external interrupt configuration register"]
@@ -369,34 +335,24 @@ pub mod regs {
     impl core::fmt::Debug for Exticr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Exticr")
-                .field(
-                    "exti",
-                    &[
-                        self.exti(0usize),
-                        self.exti(1usize),
-                        self.exti(2usize),
-                        self.exti(3usize),
-                    ],
-                )
+                .field("exti[0]", &self.exti(0usize))
+                .field("exti[1]", &self.exti(1usize))
+                .field("exti[2]", &self.exti(2usize))
+                .field("exti[3]", &self.exti(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Exticr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Exticr {
-                exti: [u8; 4usize],
-            }
-            let proxy = Exticr {
-                exti: [
-                    self.exti(0usize),
-                    self.exti(1usize),
-                    self.exti(2usize),
-                    self.exti(3usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Exticr {{ exti[0]: {=u8:?}, exti[1]: {=u8:?}, exti[2]: {=u8:?}, exti[3]: {=u8:?} }}",
+                self.exti(0usize),
+                self.exti(1usize),
+                self.exti(2usize),
+                self.exti(3usize)
+            )
         }
     }
     #[doc = "Remap Memory register"]
@@ -444,16 +400,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Memrmp {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Memrmp {
-                mem_mode: u8,
-                fb_mode: bool,
-            }
-            let proxy = Memrmp {
-                mem_mode: self.mem_mode(),
-                fb_mode: self.fb_mode(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Memrmp {{ mem_mode: {=u8:?}, fb_mode: {=bool:?} }}",
+                self.mem_mode(),
+                self.fb_mode()
+            )
         }
     }
     #[doc = "CCM SRAM control and status register"]
@@ -501,16 +453,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Scsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Scsr {
-                ccmer: bool,
-                ccmbsy: bool,
-            }
-            let proxy = Scsr {
-                ccmer: self.ccmer(),
-                ccmbsy: self.ccmbsy(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Scsr {{ ccmer: {=bool:?}, ccmbsy: {=bool:?} }}",
+                self.ccmer(),
+                self.ccmbsy()
+            )
         }
     }
     #[doc = "SRAM2 Key Register"]
@@ -544,12 +492,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Skr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Skr {
-                key: u8,
-            }
-            let proxy = Skr { key: self.key() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Skr {{ key: {=u8:?} }}", self.key())
         }
     }
     #[doc = "SRAM Write protection register"]
@@ -582,90 +525,45 @@ pub mod regs {
     impl core::fmt::Debug for Swpr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Swpr")
-                .field(
-                    "page_wp",
-                    &[
-                        self.page_wp(0usize),
-                        self.page_wp(1usize),
-                        self.page_wp(2usize),
-                        self.page_wp(3usize),
-                        self.page_wp(4usize),
-                        self.page_wp(5usize),
-                        self.page_wp(6usize),
-                        self.page_wp(7usize),
-                        self.page_wp(8usize),
-                        self.page_wp(9usize),
-                        self.page_wp(10usize),
-                        self.page_wp(11usize),
-                        self.page_wp(12usize),
-                        self.page_wp(13usize),
-                        self.page_wp(14usize),
-                        self.page_wp(15usize),
-                        self.page_wp(16usize),
-                        self.page_wp(17usize),
-                        self.page_wp(18usize),
-                        self.page_wp(19usize),
-                        self.page_wp(20usize),
-                        self.page_wp(21usize),
-                        self.page_wp(22usize),
-                        self.page_wp(23usize),
-                        self.page_wp(24usize),
-                        self.page_wp(25usize),
-                        self.page_wp(26usize),
-                        self.page_wp(27usize),
-                        self.page_wp(28usize),
-                        self.page_wp(29usize),
-                        self.page_wp(30usize),
-                        self.page_wp(31usize),
-                    ],
-                )
+                .field("page_wp[0]", &self.page_wp(0usize))
+                .field("page_wp[1]", &self.page_wp(1usize))
+                .field("page_wp[2]", &self.page_wp(2usize))
+                .field("page_wp[3]", &self.page_wp(3usize))
+                .field("page_wp[4]", &self.page_wp(4usize))
+                .field("page_wp[5]", &self.page_wp(5usize))
+                .field("page_wp[6]", &self.page_wp(6usize))
+                .field("page_wp[7]", &self.page_wp(7usize))
+                .field("page_wp[8]", &self.page_wp(8usize))
+                .field("page_wp[9]", &self.page_wp(9usize))
+                .field("page_wp[10]", &self.page_wp(10usize))
+                .field("page_wp[11]", &self.page_wp(11usize))
+                .field("page_wp[12]", &self.page_wp(12usize))
+                .field("page_wp[13]", &self.page_wp(13usize))
+                .field("page_wp[14]", &self.page_wp(14usize))
+                .field("page_wp[15]", &self.page_wp(15usize))
+                .field("page_wp[16]", &self.page_wp(16usize))
+                .field("page_wp[17]", &self.page_wp(17usize))
+                .field("page_wp[18]", &self.page_wp(18usize))
+                .field("page_wp[19]", &self.page_wp(19usize))
+                .field("page_wp[20]", &self.page_wp(20usize))
+                .field("page_wp[21]", &self.page_wp(21usize))
+                .field("page_wp[22]", &self.page_wp(22usize))
+                .field("page_wp[23]", &self.page_wp(23usize))
+                .field("page_wp[24]", &self.page_wp(24usize))
+                .field("page_wp[25]", &self.page_wp(25usize))
+                .field("page_wp[26]", &self.page_wp(26usize))
+                .field("page_wp[27]", &self.page_wp(27usize))
+                .field("page_wp[28]", &self.page_wp(28usize))
+                .field("page_wp[29]", &self.page_wp(29usize))
+                .field("page_wp[30]", &self.page_wp(30usize))
+                .field("page_wp[31]", &self.page_wp(31usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Swpr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Swpr {
-                page_wp: [bool; 32usize],
-            }
-            let proxy = Swpr {
-                page_wp: [
-                    self.page_wp(0usize),
-                    self.page_wp(1usize),
-                    self.page_wp(2usize),
-                    self.page_wp(3usize),
-                    self.page_wp(4usize),
-                    self.page_wp(5usize),
-                    self.page_wp(6usize),
-                    self.page_wp(7usize),
-                    self.page_wp(8usize),
-                    self.page_wp(9usize),
-                    self.page_wp(10usize),
-                    self.page_wp(11usize),
-                    self.page_wp(12usize),
-                    self.page_wp(13usize),
-                    self.page_wp(14usize),
-                    self.page_wp(15usize),
-                    self.page_wp(16usize),
-                    self.page_wp(17usize),
-                    self.page_wp(18usize),
-                    self.page_wp(19usize),
-                    self.page_wp(20usize),
-                    self.page_wp(21usize),
-                    self.page_wp(22usize),
-                    self.page_wp(23usize),
-                    self.page_wp(24usize),
-                    self.page_wp(25usize),
-                    self.page_wp(26usize),
-                    self.page_wp(27usize),
-                    self.page_wp(28usize),
-                    self.page_wp(29usize),
-                    self.page_wp(30usize),
-                    self.page_wp(31usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Swpr {{ page_wp[0]: {=bool:?}, page_wp[1]: {=bool:?}, page_wp[2]: {=bool:?}, page_wp[3]: {=bool:?}, page_wp[4]: {=bool:?}, page_wp[5]: {=bool:?}, page_wp[6]: {=bool:?}, page_wp[7]: {=bool:?}, page_wp[8]: {=bool:?}, page_wp[9]: {=bool:?}, page_wp[10]: {=bool:?}, page_wp[11]: {=bool:?}, page_wp[12]: {=bool:?}, page_wp[13]: {=bool:?}, page_wp[14]: {=bool:?}, page_wp[15]: {=bool:?}, page_wp[16]: {=bool:?}, page_wp[17]: {=bool:?}, page_wp[18]: {=bool:?}, page_wp[19]: {=bool:?}, page_wp[20]: {=bool:?}, page_wp[21]: {=bool:?}, page_wp[22]: {=bool:?}, page_wp[23]: {=bool:?}, page_wp[24]: {=bool:?}, page_wp[25]: {=bool:?}, page_wp[26]: {=bool:?}, page_wp[27]: {=bool:?}, page_wp[28]: {=bool:?}, page_wp[29]: {=bool:?}, page_wp[30]: {=bool:?}, page_wp[31]: {=bool:?} }}" , self . page_wp (0usize) , self . page_wp (1usize) , self . page_wp (2usize) , self . page_wp (3usize) , self . page_wp (4usize) , self . page_wp (5usize) , self . page_wp (6usize) , self . page_wp (7usize) , self . page_wp (8usize) , self . page_wp (9usize) , self . page_wp (10usize) , self . page_wp (11usize) , self . page_wp (12usize) , self . page_wp (13usize) , self . page_wp (14usize) , self . page_wp (15usize) , self . page_wp (16usize) , self . page_wp (17usize) , self . page_wp (18usize) , self . page_wp (19usize) , self . page_wp (20usize) , self . page_wp (21usize) , self . page_wp (22usize) , self . page_wp (23usize) , self . page_wp (24usize) , self . page_wp (25usize) , self . page_wp (26usize) , self . page_wp (27usize) , self . page_wp (28usize) , self . page_wp (29usize) , self . page_wp (30usize) , self . page_wp (31usize))
         }
     }
 }

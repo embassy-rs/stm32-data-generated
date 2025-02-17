@@ -93,18 +93,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cfr {
-                w: u8,
-                ewi: bool,
-                wdgtb: super::vals::Wdgtb,
-            }
-            let proxy = Cfr {
-                w: self.w(),
-                ewi: self.ewi(),
-                wdgtb: self.wdgtb(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Cfr {{ w: {=u8:?}, ewi: {=bool:?}, wdgtb: {:?} }}",
+                self.w(),
+                self.ewi(),
+                self.wdgtb()
+            )
         }
     }
     #[doc = "Control register"]
@@ -152,16 +147,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cr {
-                t: u8,
-                wdga: bool,
-            }
-            let proxy = Cr {
-                t: self.t(),
-                wdga: self.wdga(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Cr {{ t: {=u8:?}, wdga: {=bool:?} }}", self.t(), self.wdga())
         }
     }
     #[doc = "Status register"]
@@ -195,12 +181,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                ewif: bool,
-            }
-            let proxy = Sr { ewif: self.ewif() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Sr {{ ewif: {=bool:?} }}", self.ewif())
         }
     }
 }

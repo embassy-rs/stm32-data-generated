@@ -164,24 +164,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Acr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Acr {
-                latency: bool,
-                prften: bool,
-                sleep_pd: bool,
-                run_pd: bool,
-                disab_buf: bool,
-                pre_read: bool,
-            }
-            let proxy = Acr {
-                latency: self.latency(),
-                prften: self.prften(),
-                sleep_pd: self.sleep_pd(),
-                run_pd: self.run_pd(),
-                disab_buf: self.disab_buf(),
-                pre_read: self.pre_read(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Acr {{ latency: {=bool:?}, prften: {=bool:?}, sleep_pd: {=bool:?}, run_pd: {=bool:?}, disab_buf: {=bool:?}, pre_read: {=bool:?} }}" , self . latency () , self . prften () , self . sleep_pd () , self . run_pd () , self . disab_buf () , self . pre_read ())
         }
     }
     #[doc = "Option byte register"]
@@ -241,18 +224,13 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Optr {
-                rdprot: u8,
-                wprmod: bool,
-                bor_lev: u8,
-            }
-            let proxy = Optr {
-                rdprot: self.rdprot(),
-                wprmod: self.wprmod(),
-                bor_lev: self.bor_lev(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Optr {{ rdprot: {=u8:?}, wprmod: {=bool:?}, bor_lev: {=u8:?} }}",
+                self.rdprot(),
+                self.wprmod(),
+                self.bor_lev()
+            )
         }
     }
     #[doc = "Program/erase control register"]
@@ -420,36 +398,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pecr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pecr {
-                pelock: bool,
-                prglock: bool,
-                optlock: bool,
-                prog: bool,
-                data: bool,
-                fix: bool,
-                erase: bool,
-                fprg: bool,
-                parallelbank: bool,
-                eopie: bool,
-                errie: bool,
-                obl_launch: bool,
-            }
-            let proxy = Pecr {
-                pelock: self.pelock(),
-                prglock: self.prglock(),
-                optlock: self.optlock(),
-                prog: self.prog(),
-                data: self.data(),
-                fix: self.fix(),
-                erase: self.erase(),
-                fprg: self.fprg(),
-                parallelbank: self.parallelbank(),
-                eopie: self.eopie(),
-                errie: self.errie(),
-                obl_launch: self.obl_launch(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Pecr {{ pelock: {=bool:?}, prglock: {=bool:?}, optlock: {=bool:?}, prog: {=bool:?}, data: {=bool:?}, fix: {=bool:?}, erase: {=bool:?}, fprg: {=bool:?}, parallelbank: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, obl_launch: {=bool:?} }}" , self . pelock () , self . prglock () , self . optlock () , self . prog () , self . data () , self . fix () , self . erase () , self . fprg () , self . parallelbank () , self . eopie () , self . errie () , self . obl_launch ())
         }
     }
     #[doc = "Status register"]
@@ -605,34 +554,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Sr {
-                bsy: bool,
-                eop: bool,
-                endhv: bool,
-                ready: bool,
-                wrperr: bool,
-                pgaerr: bool,
-                sizerr: bool,
-                optverr: bool,
-                rderr: bool,
-                notzeroerr: bool,
-                fwwerr: bool,
-            }
-            let proxy = Sr {
-                bsy: self.bsy(),
-                eop: self.eop(),
-                endhv: self.endhv(),
-                ready: self.ready(),
-                wrperr: self.wrperr(),
-                pgaerr: self.pgaerr(),
-                sizerr: self.sizerr(),
-                optverr: self.optverr(),
-                rderr: self.rderr(),
-                notzeroerr: self.notzeroerr(),
-                fwwerr: self.fwwerr(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Sr {{ bsy: {=bool:?}, eop: {=bool:?}, endhv: {=bool:?}, ready: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, optverr: {=bool:?}, rderr: {=bool:?}, notzeroerr: {=bool:?}, fwwerr: {=bool:?} }}" , self . bsy () , self . eop () , self . endhv () , self . ready () , self . wrperr () , self . pgaerr () , self . sizerr () , self . optverr () , self . rderr () , self . notzeroerr () , self . fwwerr ())
         }
     }
     #[doc = "Write Protection Register"]
@@ -665,90 +587,45 @@ pub mod regs {
     impl core::fmt::Debug for Wrprot {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wrprot")
-                .field(
-                    "wrprot",
-                    &[
-                        self.wrprot(0usize),
-                        self.wrprot(1usize),
-                        self.wrprot(2usize),
-                        self.wrprot(3usize),
-                        self.wrprot(4usize),
-                        self.wrprot(5usize),
-                        self.wrprot(6usize),
-                        self.wrprot(7usize),
-                        self.wrprot(8usize),
-                        self.wrprot(9usize),
-                        self.wrprot(10usize),
-                        self.wrprot(11usize),
-                        self.wrprot(12usize),
-                        self.wrprot(13usize),
-                        self.wrprot(14usize),
-                        self.wrprot(15usize),
-                        self.wrprot(16usize),
-                        self.wrprot(17usize),
-                        self.wrprot(18usize),
-                        self.wrprot(19usize),
-                        self.wrprot(20usize),
-                        self.wrprot(21usize),
-                        self.wrprot(22usize),
-                        self.wrprot(23usize),
-                        self.wrprot(24usize),
-                        self.wrprot(25usize),
-                        self.wrprot(26usize),
-                        self.wrprot(27usize),
-                        self.wrprot(28usize),
-                        self.wrprot(29usize),
-                        self.wrprot(30usize),
-                        self.wrprot(31usize),
-                    ],
-                )
+                .field("wrprot[0]", &self.wrprot(0usize))
+                .field("wrprot[1]", &self.wrprot(1usize))
+                .field("wrprot[2]", &self.wrprot(2usize))
+                .field("wrprot[3]", &self.wrprot(3usize))
+                .field("wrprot[4]", &self.wrprot(4usize))
+                .field("wrprot[5]", &self.wrprot(5usize))
+                .field("wrprot[6]", &self.wrprot(6usize))
+                .field("wrprot[7]", &self.wrprot(7usize))
+                .field("wrprot[8]", &self.wrprot(8usize))
+                .field("wrprot[9]", &self.wrprot(9usize))
+                .field("wrprot[10]", &self.wrprot(10usize))
+                .field("wrprot[11]", &self.wrprot(11usize))
+                .field("wrprot[12]", &self.wrprot(12usize))
+                .field("wrprot[13]", &self.wrprot(13usize))
+                .field("wrprot[14]", &self.wrprot(14usize))
+                .field("wrprot[15]", &self.wrprot(15usize))
+                .field("wrprot[16]", &self.wrprot(16usize))
+                .field("wrprot[17]", &self.wrprot(17usize))
+                .field("wrprot[18]", &self.wrprot(18usize))
+                .field("wrprot[19]", &self.wrprot(19usize))
+                .field("wrprot[20]", &self.wrprot(20usize))
+                .field("wrprot[21]", &self.wrprot(21usize))
+                .field("wrprot[22]", &self.wrprot(22usize))
+                .field("wrprot[23]", &self.wrprot(23usize))
+                .field("wrprot[24]", &self.wrprot(24usize))
+                .field("wrprot[25]", &self.wrprot(25usize))
+                .field("wrprot[26]", &self.wrprot(26usize))
+                .field("wrprot[27]", &self.wrprot(27usize))
+                .field("wrprot[28]", &self.wrprot(28usize))
+                .field("wrprot[29]", &self.wrprot(29usize))
+                .field("wrprot[30]", &self.wrprot(30usize))
+                .field("wrprot[31]", &self.wrprot(31usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrprot {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Wrprot {
-                wrprot: [bool; 32usize],
-            }
-            let proxy = Wrprot {
-                wrprot: [
-                    self.wrprot(0usize),
-                    self.wrprot(1usize),
-                    self.wrprot(2usize),
-                    self.wrprot(3usize),
-                    self.wrprot(4usize),
-                    self.wrprot(5usize),
-                    self.wrprot(6usize),
-                    self.wrprot(7usize),
-                    self.wrprot(8usize),
-                    self.wrprot(9usize),
-                    self.wrprot(10usize),
-                    self.wrprot(11usize),
-                    self.wrprot(12usize),
-                    self.wrprot(13usize),
-                    self.wrprot(14usize),
-                    self.wrprot(15usize),
-                    self.wrprot(16usize),
-                    self.wrprot(17usize),
-                    self.wrprot(18usize),
-                    self.wrprot(19usize),
-                    self.wrprot(20usize),
-                    self.wrprot(21usize),
-                    self.wrprot(22usize),
-                    self.wrprot(23usize),
-                    self.wrprot(24usize),
-                    self.wrprot(25usize),
-                    self.wrprot(26usize),
-                    self.wrprot(27usize),
-                    self.wrprot(28usize),
-                    self.wrprot(29usize),
-                    self.wrprot(30usize),
-                    self.wrprot(31usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Wrprot {{ wrprot[0]: {=bool:?}, wrprot[1]: {=bool:?}, wrprot[2]: {=bool:?}, wrprot[3]: {=bool:?}, wrprot[4]: {=bool:?}, wrprot[5]: {=bool:?}, wrprot[6]: {=bool:?}, wrprot[7]: {=bool:?}, wrprot[8]: {=bool:?}, wrprot[9]: {=bool:?}, wrprot[10]: {=bool:?}, wrprot[11]: {=bool:?}, wrprot[12]: {=bool:?}, wrprot[13]: {=bool:?}, wrprot[14]: {=bool:?}, wrprot[15]: {=bool:?}, wrprot[16]: {=bool:?}, wrprot[17]: {=bool:?}, wrprot[18]: {=bool:?}, wrprot[19]: {=bool:?}, wrprot[20]: {=bool:?}, wrprot[21]: {=bool:?}, wrprot[22]: {=bool:?}, wrprot[23]: {=bool:?}, wrprot[24]: {=bool:?}, wrprot[25]: {=bool:?}, wrprot[26]: {=bool:?}, wrprot[27]: {=bool:?}, wrprot[28]: {=bool:?}, wrprot[29]: {=bool:?}, wrprot[30]: {=bool:?}, wrprot[31]: {=bool:?} }}" , self . wrprot (0usize) , self . wrprot (1usize) , self . wrprot (2usize) , self . wrprot (3usize) , self . wrprot (4usize) , self . wrprot (5usize) , self . wrprot (6usize) , self . wrprot (7usize) , self . wrprot (8usize) , self . wrprot (9usize) , self . wrprot (10usize) , self . wrprot (11usize) , self . wrprot (12usize) , self . wrprot (13usize) , self . wrprot (14usize) , self . wrprot (15usize) , self . wrprot (16usize) , self . wrprot (17usize) , self . wrprot (18usize) , self . wrprot (19usize) , self . wrprot (20usize) , self . wrprot (21usize) , self . wrprot (22usize) , self . wrprot (23usize) , self . wrprot (24usize) , self . wrprot (25usize) , self . wrprot (26usize) , self . wrprot (27usize) , self . wrprot (28usize) , self . wrprot (29usize) , self . wrprot (30usize) , self . wrprot (31usize))
         }
     }
 }

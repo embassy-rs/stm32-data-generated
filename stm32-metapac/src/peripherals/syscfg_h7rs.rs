@@ -211,28 +211,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bklockr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bklockr {
-                pvd_bl: bool,
-                flashecc_bl: bool,
-                cm7lckup_bl: bool,
-                bkramecc_bl: bool,
-                dtcmecc_bl: bool,
-                itcmecc_bl: bool,
-                aram3ecc_bl: bool,
-                aram1ecc_bl: bool,
-            }
-            let proxy = Bklockr {
-                pvd_bl: self.pvd_bl(),
-                flashecc_bl: self.flashecc_bl(),
-                cm7lckup_bl: self.cm7lckup_bl(),
-                bkramecc_bl: self.bkramecc_bl(),
-                dtcmecc_bl: self.dtcmecc_bl(),
-                itcmecc_bl: self.itcmecc_bl(),
-                aram3ecc_bl: self.aram3ecc_bl(),
-                aram1ecc_bl: self.aram1ecc_bl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Bklockr {{ pvd_bl: {=bool:?}, flashecc_bl: {=bool:?}, cm7lckup_bl: {=bool:?}, bkramecc_bl: {=bool:?}, dtcmecc_bl: {=bool:?}, itcmecc_bl: {=bool:?}, aram3ecc_bl: {=bool:?}, aram1ecc_bl: {=bool:?} }}" , self . pvd_bl () , self . flashecc_bl () , self . cm7lckup_bl () , self . bkramecc_bl () , self . dtcmecc_bl () , self . itcmecc_bl () , self . aram3ecc_bl () , self . aram1ecc_bl ())
         }
     }
     #[doc = "SBS boot status register."]
@@ -266,14 +245,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bootsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Bootsr {
-                initvtor: u32,
-            }
-            let proxy = Bootsr {
-                initvtor: self.initvtor(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Bootsr {{ initvtor: {=u32:?} }}", self.initvtor())
         }
     }
     #[doc = "SBS I/O compensation cell control and status register."]
@@ -441,36 +413,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cccsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Cccsr {
-                comp_en: bool,
-                comp_codesel: bool,
-                octo1_comp_en: bool,
-                octo1_comp_codesel: bool,
-                octo2_comp_en: bool,
-                octo2_comp_codesel: bool,
-                comp_rdy: bool,
-                octo1_comp_rdy: bool,
-                octo2_comp_rdy: bool,
-                iohslv: bool,
-                octo1_iohslv: bool,
-                octo2_iohslv: bool,
-            }
-            let proxy = Cccsr {
-                comp_en: self.comp_en(),
-                comp_codesel: self.comp_codesel(),
-                octo1_comp_en: self.octo1_comp_en(),
-                octo1_comp_codesel: self.octo1_comp_codesel(),
-                octo2_comp_en: self.octo2_comp_en(),
-                octo2_comp_codesel: self.octo2_comp_codesel(),
-                comp_rdy: self.comp_rdy(),
-                octo1_comp_rdy: self.octo1_comp_rdy(),
-                octo2_comp_rdy: self.octo2_comp_rdy(),
-                iohslv: self.iohslv(),
-                octo1_iohslv: self.octo1_iohslv(),
-                octo2_iohslv: self.octo2_iohslv(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Cccsr {{ comp_en: {=bool:?}, comp_codesel: {=bool:?}, octo1_comp_en: {=bool:?}, octo1_comp_codesel: {=bool:?}, octo2_comp_en: {=bool:?}, octo2_comp_codesel: {=bool:?}, comp_rdy: {=bool:?}, octo1_comp_rdy: {=bool:?}, octo2_comp_rdy: {=bool:?}, iohslv: {=bool:?}, octo1_iohslv: {=bool:?}, octo2_iohslv: {=bool:?} }}" , self . comp_en () , self . comp_codesel () , self . octo1_comp_en () , self . octo1_comp_codesel () , self . octo2_comp_en () , self . octo2_comp_codesel () , self . comp_rdy () , self . octo1_comp_rdy () , self . octo2_comp_rdy () , self . iohslv () , self . octo1_iohslv () , self . octo2_iohslv ())
         }
     }
     #[doc = "SBS compensation cell for I/Os software value register."]
@@ -566,24 +509,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccswvalr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccswvalr {
-                sw_nsrc: u8,
-                sw_psrc: u8,
-                octo1_sw_nsrc: u8,
-                octo1_sw_psrc: u8,
-                octo2_sw_nsrc: u8,
-                octo2_sw_psrc: u8,
-            }
-            let proxy = Ccswvalr {
-                sw_nsrc: self.sw_nsrc(),
-                sw_psrc: self.sw_psrc(),
-                octo1_sw_nsrc: self.octo1_sw_nsrc(),
-                octo1_sw_psrc: self.octo1_sw_psrc(),
-                octo2_sw_nsrc: self.octo2_sw_nsrc(),
-                octo2_sw_psrc: self.octo2_sw_psrc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ccswvalr {{ sw_nsrc: {=u8:?}, sw_psrc: {=u8:?}, octo1_sw_nsrc: {=u8:?}, octo1_sw_psrc: {=u8:?}, octo2_sw_nsrc: {=u8:?}, octo2_sw_psrc: {=u8:?} }}" , self . sw_nsrc () , self . sw_psrc () , self . octo1_sw_nsrc () , self . octo1_sw_psrc () , self . octo2_sw_nsrc () , self . octo2_sw_psrc ())
         }
     }
     #[doc = "SBS compensation cell for I/Os value register."]
@@ -679,24 +605,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccvalr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Ccvalr {
-                nsrc: u8,
-                psrc: u8,
-                octo1_nsrc: u8,
-                octo1_psrc: u8,
-                octo2_nsrc: u8,
-                octo2_psrc: u8,
-            }
-            let proxy = Ccvalr {
-                nsrc: self.nsrc(),
-                psrc: self.psrc(),
-                octo1_nsrc: self.octo1_nsrc(),
-                octo1_psrc: self.octo1_psrc(),
-                octo2_nsrc: self.octo2_nsrc(),
-                octo2_psrc: self.octo2_psrc(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Ccvalr {{ nsrc: {=u8:?}, psrc: {=u8:?}, octo1_nsrc: {=u8:?}, octo1_psrc: {=u8:?}, octo2_nsrc: {=u8:?}, octo2_psrc: {=u8:?} }}" , self . nsrc () , self . psrc () , self . octo1_nsrc () , self . octo1_psrc () , self . octo2_nsrc () , self . octo2_psrc ())
         }
     }
     #[doc = "SBS debug control register."]
@@ -756,18 +665,13 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dbgcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dbgcr {
-                ap_unlock: u8,
-                dbg_unlock: u8,
-                dbg_auth_hdpl: super::vals::DbgAuthHdpl,
-            }
-            let proxy = Dbgcr {
-                ap_unlock: self.ap_unlock(),
-                dbg_unlock: self.dbg_unlock(),
-                dbg_auth_hdpl: self.dbg_auth_hdpl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Dbgcr {{ ap_unlock: {=u8:?}, dbg_unlock: {=u8:?}, dbg_auth_hdpl: {:?} }}",
+                self.ap_unlock(),
+                self.dbg_unlock(),
+                self.dbg_auth_hdpl()
+            )
         }
     }
     #[doc = "SBS debug lock register."]
@@ -803,14 +707,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dbglockr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Dbglockr {
-                dbgcfg_lock: super::vals::DbgcfgLock,
-            }
-            let proxy = Dbglockr {
-                dbgcfg_lock: self.dbgcfg_lock(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Dbglockr {{ dbgcfg_lock: {:?} }}", self.dbgcfg_lock())
         }
     }
     #[doc = "external interrupt configuration register 2"]
@@ -843,34 +740,24 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
     impl core::fmt::Debug for Exticr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Exticr")
-                .field(
-                    "exti",
-                    &[
-                        self.exti(0usize),
-                        self.exti(1usize),
-                        self.exti(2usize),
-                        self.exti(3usize),
-                    ],
-                )
+                .field("exti[0]", &self.exti(0usize))
+                .field("exti[1]", &self.exti(1usize))
+                .field("exti[2]", &self.exti(2usize))
+                .field("exti[3]", &self.exti(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Exticr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Exticr {
-                exti: [u8; 4usize],
-            }
-            let proxy = Exticr {
-                exti: [
-                    self.exti(0usize),
-                    self.exti(1usize),
-                    self.exti(2usize),
-                    self.exti(3usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(
+                f,
+                "Exticr {{ exti[0]: {=u8:?}, exti[1]: {=u8:?}, exti[2]: {=u8:?}, exti[3]: {=u8:?} }}",
+                self.exti(0usize),
+                self.exti(1usize),
+                self.exti(2usize),
+                self.exti(3usize)
+            )
         }
     }
     #[doc = "SBS FPU interrupt mask register."]
@@ -904,12 +791,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fpuimr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Fpuimr {
-                fpu_ie: u8,
-            }
-            let proxy = Fpuimr { fpu_ie: self.fpu_ie() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Fpuimr {{ fpu_ie: {=u8:?} }}", self.fpu_ie())
         }
     }
     #[doc = "SBS hide protection control register."]
@@ -943,14 +825,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hdplcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hdplcr {
-                incr_hdpl: u8,
-            }
-            let proxy = Hdplcr {
-                incr_hdpl: self.incr_hdpl(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Hdplcr {{ incr_hdpl: {=u8:?} }}", self.incr_hdpl())
         }
     }
     #[doc = "SBS hide protection status register."]
@@ -984,12 +859,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hdplsr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Hdplsr {
-                hdpl: super::vals::Hdpl,
-            }
-            let proxy = Hdplsr { hdpl: self.hdpl() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Hdplsr {{ hdpl: {:?} }}", self.hdpl())
         }
     }
     #[doc = "SBS memory erase status register."]
@@ -1023,12 +893,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mesr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Mesr {
-                mef: bool,
-            }
-            let proxy = Mesr { mef: self.mef() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Mesr {{ mef: {=bool:?} }}", self.mef())
         }
     }
     #[doc = "SBS product mode and configuration register."]
@@ -1148,28 +1013,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pmcr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Pmcr {
-                fmplus_pb6: bool,
-                fmplus_pb7: bool,
-                fmplus_pb8: bool,
-                fmplus_pb9: bool,
-                boosten: bool,
-                boostvddsel: bool,
-                eth_sel_phy: super::vals::EthSelPhy,
-                axiram_ws: super::vals::AxiramWs,
-            }
-            let proxy = Pmcr {
-                fmplus_pb6: self.fmplus_pb6(),
-                fmplus_pb7: self.fmplus_pb7(),
-                fmplus_pb8: self.fmplus_pb8(),
-                fmplus_pb9: self.fmplus_pb9(),
-                boosten: self.boosten(),
-                boostvddsel: self.boostvddsel(),
-                eth_sel_phy: self.eth_sel_phy(),
-                axiram_ws: self.axiram_ws(),
-            };
-            defmt::write!(f, "{}", proxy)
+            defmt :: write ! (f , "Pmcr {{ fmplus_pb6: {=bool:?}, fmplus_pb7: {=bool:?}, fmplus_pb8: {=bool:?}, fmplus_pb9: {=bool:?}, boosten: {=bool:?}, boostvddsel: {=bool:?}, eth_sel_phy: {:?}, axiram_ws: {:?} }}" , self . fmplus_pb6 () , self . fmplus_pb7 () , self . fmplus_pb8 () , self . fmplus_pb9 () , self . boosten () , self . boostvddsel () , self . eth_sel_phy () , self . axiram_ws ())
         }
     }
     #[doc = "SBS RSS command register."]
@@ -1203,12 +1047,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rsscmdr {
         fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct Rsscmdr {
-                rsscmd: u16,
-            }
-            let proxy = Rsscmdr { rsscmd: self.rsscmd() };
-            defmt::write!(f, "{}", proxy)
+            defmt::write!(f, "Rsscmdr {{ rsscmd: {=u16:?} }}", self.rsscmd())
         }
     }
 }
@@ -1246,7 +1085,7 @@ pub mod vals {
     }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct DbgAuthHdpl(pub u8);
+    pub struct DbgAuthHdpl(u8);
     impl DbgAuthHdpl {
         #[doc = "HDPL1."]
         pub const HDPL1: Self = Self(0x51);
@@ -1298,7 +1137,7 @@ pub mod vals {
     }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct DbgcfgLock(pub u8);
+    pub struct DbgcfgLock(u8);
     impl DbgcfgLock {
         #[doc = "Writes to SBS_DBGCR allowed (default)."]
         pub const UNLOCK: Self = Self(0xb4);
@@ -1379,7 +1218,7 @@ pub mod vals {
     }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Hdpl(pub u8);
+    pub struct Hdpl(u8);
     impl Hdpl {
         #[doc = "HDPL1."]
         pub const HDPL1: Self = Self(0x51);

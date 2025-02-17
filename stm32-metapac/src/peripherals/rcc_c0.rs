@@ -564,13 +564,13 @@ pub mod regs {
         }
         #[doc = "ADC clock enable Set and cleared by software."]
         #[inline(always)]
-        pub const fn adcen(&self) -> bool {
+        pub const fn adc1en(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
         #[doc = "ADC clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_adcen(&mut self, val: bool) {
+        pub fn set_adc1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
     }
@@ -590,7 +590,7 @@ pub mod regs {
                 .field("tim14en", &self.tim14en())
                 .field("tim16en", &self.tim16en())
                 .field("tim17en", &self.tim17en())
-                .field("adcen", &self.adcen())
+                .field("adc1en", &self.adc1en())
                 .finish()
         }
     }
@@ -606,7 +606,7 @@ pub mod regs {
                 tim14en: bool,
                 tim16en: bool,
                 tim17en: bool,
-                adcen: bool,
+                adc1en: bool,
             }
             let proxy = Apbenr2 {
                 syscfgen: self.syscfgen(),
@@ -616,7 +616,7 @@ pub mod regs {
                 tim14en: self.tim14en(),
                 tim16en: self.tim16en(),
                 tim17en: self.tim17en(),
-                adcen: self.adcen(),
+                adc1en: self.adc1en(),
             };
             defmt::write!(f, "{}", proxy)
         }
@@ -804,13 +804,13 @@ pub mod regs {
         }
         #[doc = "ADC reset Set and cleared by software."]
         #[inline(always)]
-        pub const fn adcrst(&self) -> bool {
+        pub const fn adc1rst(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
         #[doc = "ADC reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_adcrst(&mut self, val: bool) {
+        pub fn set_adc1rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
     }
@@ -830,7 +830,7 @@ pub mod regs {
                 .field("tim14rst", &self.tim14rst())
                 .field("tim16rst", &self.tim16rst())
                 .field("tim17rst", &self.tim17rst())
-                .field("adcrst", &self.adcrst())
+                .field("adc1rst", &self.adc1rst())
                 .finish()
         }
     }
@@ -846,7 +846,7 @@ pub mod regs {
                 tim14rst: bool,
                 tim16rst: bool,
                 tim17rst: bool,
-                adcrst: bool,
+                adc1rst: bool,
             }
             let proxy = Apbrstr2 {
                 syscfgrst: self.syscfgrst(),
@@ -856,7 +856,7 @@ pub mod regs {
                 tim14rst: self.tim14rst(),
                 tim16rst: self.tim16rst(),
                 tim17rst: self.tim17rst(),
-                adcrst: self.adcrst(),
+                adc1rst: self.adc1rst(),
             };
             defmt::write!(f, "{}", proxy)
         }
@@ -1072,13 +1072,13 @@ pub mod regs {
         }
         #[doc = "ADC clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub const fn adcsmen(&self) -> bool {
+        pub const fn adc1smen(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
         #[doc = "ADC clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_adcsmen(&mut self, val: bool) {
+        pub fn set_adc1smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
     }
@@ -1098,7 +1098,7 @@ pub mod regs {
                 .field("tim14smen", &self.tim14smen())
                 .field("tim16smen", &self.tim16smen())
                 .field("tim17smen", &self.tim17smen())
-                .field("adcsmen", &self.adcsmen())
+                .field("adc1smen", &self.adc1smen())
                 .finish()
         }
     }
@@ -1114,7 +1114,7 @@ pub mod regs {
                 tim14smen: bool,
                 tim16smen: bool,
                 tim17smen: bool,
-                adcsmen: bool,
+                adc1smen: bool,
             }
             let proxy = Apbsmenr2 {
                 syscfgsmen: self.syscfgsmen(),
@@ -1124,7 +1124,7 @@ pub mod regs {
                 tim14smen: self.tim14smen(),
                 tim16smen: self.tim16smen(),
                 tim17smen: self.tim17smen(),
-                adcsmen: self.adcsmen(),
+                adc1smen: self.adc1smen(),
             };
             defmt::write!(f, "{}", proxy)
         }
@@ -1169,13 +1169,13 @@ pub mod regs {
         }
         #[doc = "ADCs clock source selection This bitfield is controlled by software to select the clock source for ADC:"]
         #[inline(always)]
-        pub const fn adcsel(&self) -> super::vals::Adcsel {
+        pub const fn adc1sel(&self) -> super::vals::Adcsel {
             let val = (self.0 >> 30usize) & 0x03;
             super::vals::Adcsel::from_bits(val as u8)
         }
         #[doc = "ADCs clock source selection This bitfield is controlled by software to select the clock source for ADC:"]
         #[inline(always)]
-        pub fn set_adcsel(&mut self, val: super::vals::Adcsel) {
+        pub fn set_adc1sel(&mut self, val: super::vals::Adcsel) {
             self.0 = (self.0 & !(0x03 << 30usize)) | (((val.to_bits() as u32) & 0x03) << 30usize);
         }
     }
@@ -1191,7 +1191,7 @@ pub mod regs {
                 .field("usart1sel", &self.usart1sel())
                 .field("i2c1sel", &self.i2c1sel())
                 .field("i2s1sel", &self.i2s1sel())
-                .field("adcsel", &self.adcsel())
+                .field("adc1sel", &self.adc1sel())
                 .finish()
         }
     }
@@ -1203,13 +1203,13 @@ pub mod regs {
                 usart1sel: super::vals::Usart1sel,
                 i2c1sel: super::vals::I2c1sel,
                 i2s1sel: super::vals::I2s1sel,
-                adcsel: super::vals::Adcsel,
+                adc1sel: super::vals::Adcsel,
             }
             let proxy = Ccipr {
                 usart1sel: self.usart1sel(),
                 i2c1sel: self.i2c1sel(),
                 i2s1sel: self.i2s1sel(),
-                adcsel: self.adcsel(),
+                adc1sel: self.adc1sel(),
             };
             defmt::write!(f, "{}", proxy)
         }

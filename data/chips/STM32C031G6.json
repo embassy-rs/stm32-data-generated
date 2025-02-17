@@ -207,19 +207,24 @@
         {
           "name": "ADC1",
           "address": 1073816576,
+          "registers": {
+            "kind": "adc",
+            "version": "c0",
+            "block": "ADC"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
               "register": "CCIPR",
-              "field": "ADCSEL"
+              "field": "ADC1SEL"
             },
             "enable": {
               "register": "APBENR2",
-              "field": "ADCEN"
+              "field": "ADC1EN"
             },
             "reset": {
               "register": "APBRSTR2",
-              "field": "ADCRST"
+              "field": "ADC1RST"
             }
           },
           "pins": [
@@ -300,7 +305,12 @@
         },
         {
           "name": "ADC1_COMMON",
-          "address": 1073817352
+          "address": 1073817352,
+          "registers": {
+            "kind": "adccommon",
+            "version": "c0",
+            "block": "ADC_COMMON"
+          }
         },
         {
           "name": "CRC",

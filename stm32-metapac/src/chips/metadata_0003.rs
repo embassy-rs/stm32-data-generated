@@ -3,20 +3,25 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "ADC1",
         address: 0x40012400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "adc",
+            version: "c0",
+            block: "ADC",
+            ir: &adc::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccRegister {
                 register: "CCIPR",
-                field: "ADCSEL",
+                field: "ADC1SEL",
             }),
             enable: Some(PeripheralRccRegister {
                 register: "APBENR2",
-                field: "ADCEN",
+                field: "ADC1EN",
             }),
             reset: Some(PeripheralRccRegister {
                 register: "APBRSTR2",
-                field: "ADCRST",
+                field: "ADC1RST",
             }),
             stop_mode: StopMode::Stop1,
         }),
@@ -102,7 +107,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "ADC1_COMMON",
         address: 0x40012708,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "adccommon",
+            version: "c0",
+            block: "ADC_COMMON",
+            ir: &adccommon::REGISTERS,
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -2033,6 +2043,10 @@ pub(crate) static PINS: &[Pin] = &[
     Pin { name: "PC15" },
     Pin { name: "PF2" },
 ];
+#[path = "../registers/adc_c0.rs"]
+pub mod adc;
+#[path = "../registers/adccommon_c0.rs"]
+pub mod adccommon;
 #[path = "../registers/bdma_v1.rs"]
 pub mod bdma;
 #[path = "../registers/crc_v3.rs"]

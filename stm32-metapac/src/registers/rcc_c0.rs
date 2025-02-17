@@ -755,7 +755,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "adcen",
+                    name: "adc1en",
                     description: Some(
                         "ADC clock enable\r Set and cleared by software.",
                     ),
@@ -957,7 +957,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "adcrst",
+                    name: "adc1rst",
                     description: Some(
                         "ADC reset\r Set and cleared by software.",
                     ),
@@ -1187,7 +1187,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "adcsmen",
+                    name: "adc1smen",
                     description: Some(
                         "ADC clock enable during Sleep mode\r Set and cleared by software.",
                     ),
@@ -1259,7 +1259,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 Field {
-                    name: "adcsel",
+                    name: "adc1sel",
                     description: Some(
                         "ADCs clock source selection\r This bitfield is controlled by software to select the clock source for ADC:",
                     ),

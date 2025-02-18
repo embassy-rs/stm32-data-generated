@@ -59,14 +59,14 @@ impl Adc {
     pub const fn awd2tr(self) -> crate::common::Reg<regs::Awd2tr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
-    #[doc = "channel selection register"]
+    #[doc = "channel selection register CHSELRMOD = 0 in ADC_CFGR1"]
     #[inline(always)]
     pub const fn chselr(self) -> crate::common::Reg<regs::Chselr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
-    #[doc = "channel selection register CHSELRMOD = 1 in ADC_CFGR1"]
+    #[doc = "channel selection register CHSELRMOD = 1 (seqencer enabled) in ADC_CFGR1"]
     #[inline(always)]
-    pub const fn chselr_1(self) -> crate::common::Reg<regs::Chselr1, crate::common::RW> {
+    pub const fn chselr_sq(self) -> crate::common::Reg<regs::ChselrSq, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "watchdog threshold register"]
@@ -718,121 +718,48 @@ pub mod regs {
     #[doc = "channel selection register CHSELRMOD = 1 in ADC_CFGR1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Chselr1(pub u32);
-    impl Chselr1 {
-        #[doc = "1st conversion of the sequence"]
+    pub struct ChselrSq(pub u32);
+    impl ChselrSq {
+        #[doc = "Conversion sequence definition"]
         #[inline(always)]
-        pub const fn sq1(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x0f;
+        pub const fn sq(&self, n: usize) -> u8 {
+            assert!(n < 8usize);
+            let offs = 0usize + n * 0usize;
+            let val = (self.0 >> offs) & 0x0f;
             val as u8
         }
-        #[doc = "1st conversion of the sequence"]
+        #[doc = "Conversion sequence definition"]
         #[inline(always)]
-        pub fn set_sq1(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
-        }
-        #[doc = "2nd conversion of the sequence"]
-        #[inline(always)]
-        pub const fn sq2(&self) -> u8 {
-            let val = (self.0 >> 4usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "2nd conversion of the sequence"]
-        #[inline(always)]
-        pub fn set_sq2(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
-        }
-        #[doc = "3rd conversion of the sequence"]
-        #[inline(always)]
-        pub const fn sq3(&self) -> u8 {
-            let val = (self.0 >> 8usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "3rd conversion of the sequence"]
-        #[inline(always)]
-        pub fn set_sq3(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
-        }
-        #[doc = "4th conversion of the sequence"]
-        #[inline(always)]
-        pub const fn sq4(&self) -> u8 {
-            let val = (self.0 >> 12usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "4th conversion of the sequence"]
-        #[inline(always)]
-        pub fn set_sq4(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 12usize)) | (((val as u32) & 0x0f) << 12usize);
-        }
-        #[doc = "5th conversion of the sequence"]
-        #[inline(always)]
-        pub const fn sq5(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "5th conversion of the sequence"]
-        #[inline(always)]
-        pub fn set_sq5(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 16usize)) | (((val as u32) & 0x0f) << 16usize);
-        }
-        #[doc = "6th conversion of the sequence"]
-        #[inline(always)]
-        pub const fn sq6(&self) -> u8 {
-            let val = (self.0 >> 20usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "6th conversion of the sequence"]
-        #[inline(always)]
-        pub fn set_sq6(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 20usize)) | (((val as u32) & 0x0f) << 20usize);
-        }
-        #[doc = "7th conversion of the sequence"]
-        #[inline(always)]
-        pub const fn sq7(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "7th conversion of the sequence"]
-        #[inline(always)]
-        pub fn set_sq7(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 24usize)) | (((val as u32) & 0x0f) << 24usize);
-        }
-        #[doc = "8th conversion of the sequence"]
-        #[inline(always)]
-        pub const fn sq8(&self) -> u8 {
-            let val = (self.0 >> 28usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "8th conversion of the sequence"]
-        #[inline(always)]
-        pub fn set_sq8(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 28usize)) | (((val as u32) & 0x0f) << 28usize);
+        pub fn set_sq(&mut self, n: usize, val: u8) {
+            assert!(n < 8usize);
+            let offs = 0usize + n * 0usize;
+            self.0 = (self.0 & !(0x0f << offs)) | (((val as u32) & 0x0f) << offs);
         }
     }
-    impl Default for Chselr1 {
+    impl Default for ChselrSq {
         #[inline(always)]
-        fn default() -> Chselr1 {
-            Chselr1(0)
+        fn default() -> ChselrSq {
+            ChselrSq(0)
         }
     }
-    impl core::fmt::Debug for Chselr1 {
+    impl core::fmt::Debug for ChselrSq {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Chselr1")
-                .field("sq1", &self.sq1())
-                .field("sq2", &self.sq2())
-                .field("sq3", &self.sq3())
-                .field("sq4", &self.sq4())
-                .field("sq5", &self.sq5())
-                .field("sq6", &self.sq6())
-                .field("sq7", &self.sq7())
-                .field("sq8", &self.sq8())
+            f.debug_struct("ChselrSq")
+                .field("sq[0]", &self.sq(0usize))
+                .field("sq[1]", &self.sq(1usize))
+                .field("sq[2]", &self.sq(2usize))
+                .field("sq[3]", &self.sq(3usize))
+                .field("sq[4]", &self.sq(4usize))
+                .field("sq[5]", &self.sq(5usize))
+                .field("sq[6]", &self.sq(6usize))
+                .field("sq[7]", &self.sq(7usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Chselr1 {
+    impl defmt::Format for ChselrSq {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Chselr1 {{ sq1: {=u8:?}, sq2: {=u8:?}, sq3: {=u8:?}, sq4: {=u8:?}, sq5: {=u8:?}, sq6: {=u8:?}, sq7: {=u8:?}, sq8: {=u8:?} }}" , self . sq1 () , self . sq2 () , self . sq3 () , self . sq4 () , self . sq5 () , self . sq6 () , self . sq7 () , self . sq8 ())
+            defmt :: write ! (f , "ChselrSq {{ sq[0]: {=u8:?}, sq[1]: {=u8:?}, sq[2]: {=u8:?}, sq[3]: {=u8:?}, sq[4]: {=u8:?}, sq[5]: {=u8:?}, sq[6]: {=u8:?}, sq[7]: {=u8:?} }}" , self . sq (0usize) , self . sq (1usize) , self . sq (2usize) , self . sq (3usize) , self . sq (4usize) , self . sq (5usize) , self . sq (6usize) , self . sq (7usize))
         }
     }
     #[doc = "control register"]

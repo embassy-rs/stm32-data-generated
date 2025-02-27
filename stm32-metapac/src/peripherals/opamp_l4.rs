@@ -43,13 +43,13 @@ pub mod regs {
     impl Csr {
         #[doc = "Operational amplifier Enable."]
         #[inline(always)]
-        pub const fn opaen(&self) -> bool {
+        pub const fn opampen(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[doc = "Operational amplifier Enable."]
         #[inline(always)]
-        pub fn set_opaen(&mut self, val: bool) {
+        pub fn set_opampen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Operational amplifier Low Power Mode."]
@@ -172,7 +172,7 @@ pub mod regs {
     impl core::fmt::Debug for Csr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csr")
-                .field("opaen", &self.opaen())
+                .field("opampen", &self.opampen())
                 .field("opalpm", &self.opalpm())
                 .field("opamode", &self.opamode())
                 .field("pga_gain", &self.pga_gain())
@@ -189,7 +189,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Csr {{ opaen: {=bool:?}, opalpm: {:?}, opamode: {:?}, pga_gain: {:?}, vm_sel: {:?}, vp_sel: {:?}, calon: {=bool:?}, calsel: {:?}, usertrim: {:?}, calout: {=bool:?}, opa_range: {:?} }}" , self . opaen () , self . opalpm () , self . opamode () , self . pga_gain () , self . vm_sel () , self . vp_sel () , self . calon () , self . calsel () , self . usertrim () , self . calout () , self . opa_range ())
+            defmt :: write ! (f , "Csr {{ opampen: {=bool:?}, opalpm: {:?}, opamode: {:?}, pga_gain: {:?}, vm_sel: {:?}, vp_sel: {:?}, calon: {=bool:?}, calsel: {:?}, usertrim: {:?}, calout: {=bool:?}, opa_range: {:?} }}" , self . opampen () , self . opalpm () , self . opamode () , self . pga_gain () , self . vm_sel () , self . vp_sel () , self . calon () , self . calsel () , self . usertrim () , self . calout () , self . opa_range ())
         }
     }
     #[doc = "OPAMP offset trimming register in low-power mode."]

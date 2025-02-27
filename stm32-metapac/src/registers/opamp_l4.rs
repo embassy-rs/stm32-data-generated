@@ -49,7 +49,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "opaen",
+                    name: "opampen",
                     description: Some("Operational amplifier Enable."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,

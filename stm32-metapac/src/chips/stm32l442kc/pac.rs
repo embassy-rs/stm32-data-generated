@@ -337,7 +337,7 @@ pub const USB: usb::Usb = unsafe { usb::Usb::from_ptr(0x4000_6800usize as _) };
 pub const USBRAM: usbram::Usbram = unsafe { usbram::Usbram::from_ptr(0x4000_6c00usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4000_7000usize as _) };
 pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4000_7400usize as _) };
-pub const OPAMP1: *mut () = 0x4000_7800usize as _;
+pub const OPAMP1: opamp::Opamp = unsafe { opamp::Opamp::from_ptr(0x4000_7800usize as _) };
 pub const LPTIM1: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_7c00usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4000_8000usize as _) };
 pub const SWPMI1: *mut () = 0x4000_8800usize as _;
@@ -405,6 +405,8 @@ pub mod i2c;
 pub mod iwdg;
 #[path = "../../peripherals/lptim_v1a.rs"]
 pub mod lptim;
+#[path = "../../peripherals/opamp_l4.rs"]
+pub mod opamp;
 #[path = "../../peripherals/pwr_l4.rs"]
 pub mod pwr;
 #[path = "../../peripherals/quadspi_v1.rs"]

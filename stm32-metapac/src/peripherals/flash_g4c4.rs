@@ -259,13 +259,13 @@ pub mod regs {
         #[doc = "Page number"]
         #[inline(always)]
         pub const fn pnb(&self) -> u8 {
-            let val = (self.0 >> 3usize) & 0x7f;
+            let val = (self.0 >> 3usize) & 0xff;
             val as u8
         }
         #[doc = "Page number"]
         #[inline(always)]
         pub fn set_pnb(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 3usize)) | (((val as u32) & 0x7f) << 3usize);
+            self.0 = (self.0 & !(0xff << 3usize)) | (((val as u32) & 0xff) << 3usize);
         }
         #[doc = "Start"]
         #[inline(always)]

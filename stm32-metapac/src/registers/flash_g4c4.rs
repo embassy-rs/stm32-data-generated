@@ -266,7 +266,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "pnb",
                     description: Some("Page number"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
-                    bit_size: 7,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },

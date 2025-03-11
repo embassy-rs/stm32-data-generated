@@ -29,7 +29,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "isr",
                     description: Some(
-                        "DMA2D Interrupt Status Register",
+                        "DMA2D interrupt status register",
                     ),
                     array: None,
                     byte_offset: 0x4,
@@ -131,7 +131,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "fgpfccr",
                     description: Some(
-                        "DMA2D foreground PFC control register",
+                        "DMA2D foreground PFC (pixel format converter) control register",
                     ),
                     array: None,
                     byte_offset: 0x1c,
@@ -165,7 +165,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "bgpfccr",
                     description: Some(
-                        "DMA2D background PFC control register",
+                        "DMA2D background PFC (pixel format converter) control register",
                     ),
                     array: None,
                     byte_offset: 0x24,
@@ -233,7 +233,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "opfccr",
                     description: Some(
-                        "DMA2D output PFC control register",
+                        "DMA2D output PFC (pixel format converter) control register",
                     ),
                     array: None,
                     byte_offset: 0x34,
@@ -364,7 +364,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "en",
                     description: Some(
-                        "Enable Enables the dead time functionality.",
+                        "Enable. Enables the dead time functionality.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -378,7 +378,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dt",
                     description: Some(
-                        "Dead Time Dead time value in the AXI clock cycle inserted between two consecutive accesses on the AXI master port. These bits represent the minimum guaranteed number of cycles between two consecutive AXI accesses.",
+                        "Dead time. Dead time value in the AXI clock cycle inserted between two consecutive accesses on the AXI master port. These bits represent the minimum guaranteed number of cycles between two consecutive AXI accesses.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -402,7 +402,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ma",
                     description: Some(
-                        "Memory address Address of the data used for the CLUT address dedicated to the background image. This register can only be written when no transfer is on going. Once the CLUT transfer has started, this register is read-only. If the background CLUT format is 32-bit, the address must be 32-bit aligned.",
+                        "Memory address. Address of the data used for the CLUT address dedicated to the background image. This register can only be written when no transfer is on going. Once the CLUT transfer has started, this register is read-only. If the background CLUT format is 32-bit, the address must be 32-bit aligned.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -426,7 +426,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "blue",
                     description: Some(
-                        "Blue Value These bits define the blue value for the A4 or A8 mode of the background. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                        "Blue value. These bits define the blue value for the A4 or A8 mode of the background. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -440,7 +440,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "green",
                     description: Some(
-                        "Green Value These bits define the green value for the A4 or A8 mode of the background. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                        "Green value. These bits define the green value for the A4 or A8 mode of the background. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -454,7 +454,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "red",
                     description: Some(
-                        "Red Value These bits define the red value for the A4 or A8 mode of the background. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                        "Red value. These bits define the red value for the A4 or A8 mode of the background. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -478,7 +478,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ma",
                     description: Some(
-                        "Memory address Address of the data used for the background image. This register can only be written when data transfers are disabled. Once a data transfer has started, this register is read-only. The address alignment must match the image format selected e.g. a 32-bit per pixel format must be 32-bit aligned, a 16-bit per pixel format must be 16-bit aligned and a 4-bit per pixel format must be 8-bit aligned.",
+                        "Memory address. Address of the data used for the background image. This register can only be written when data transfers are disabled. Once a data transfer has started, this register is read-only. The address alignment must match the image format selected e.g. a 32-bit per pixel format must be 32-bit aligned, a 16-bit per pixel format must be 16-bit aligned and a 4-bit per pixel format must be 8-bit aligned.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -502,7 +502,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lo",
                     description: Some(
-                        "Line offset Line offset used for the background image (expressed in pixel). This value is used for the address generation. It is added at the end of each line to determine the starting address of the next line. These bits can only be written when data transfers are disabled. Once data transfer has started, they become read-only. If the image format is 4-bit per pixel, the line offset must be even.",
+                        "Line offset used for the background image (expressed in pixels (default) or bytes as per LOM in CR). This value is used for the address generation. It is added at the end of each line to determine the starting address of the next line. These bits can only be written when data transfers are disabled. Once data transfer has started, they become read-only. If the image format is 4-bit per pixel, the line offset must be even.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -519,14 +519,14 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Bgpfccr",
             extends: None,
             description: Some(
-                "DMA2D background PFC control register",
+                "DMA2D background PFC (pixel format converter) control register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "cm",
                     description: Some(
-                        "Color mode These bits define the color format of the foreground image. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only. others: meaningless",
+                        "Color mode. These bits define the color format of the foreground image. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only. others: meaningless",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -542,7 +542,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ccm",
                     description: Some(
-                        "CLUT Color mode These bits define the color format of the CLUT. This register can only be written when the transfer is disabled. Once the CLUT transfer has started, this bit is read-only.",
+                        "CLUT (color lookup table) color mode. These bits define the color format of the CLUT. This register can only be written when the transfer is disabled. Once the CLUT transfer has started, this bit is read-only.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -558,7 +558,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "start",
                     description: Some(
-                        "Start This bit is set to start the automatic loading of the CLUT. This bit is automatically reset: ** at the end of the transfer ** when the transfer is aborted by the user application by setting the ABORT bit in the DMA2D_CR ** when a transfer error occurs ** when the transfer has not started due to a configuration error or another transfer operation already on going (data transfer or automatic BackGround CLUT transfer).",
+                        "Start. This bit is set to start the automatic loading of the CLUT. This bit is automatically reset: ** at the end of the transfer ** when the transfer is aborted by the user application by setting the ABORT bit in the DMA2D_CR ** when a transfer error occurs ** when the transfer has not started due to a configuration error or another transfer operation already on going (data transfer or automatic BackGround CLUT transfer).",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -574,7 +574,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cs",
                     description: Some(
-                        "CLUT size These bits define the size of the CLUT used for the BG. Once the CLUT transfer has started, this field is read-only. The number of CLUT entries is equal to CS[7:0] + 1.",
+                        "CLUT size. These bits define the size of the CLUT used for the BG. Once the CLUT transfer has started, this field is read-only. The number of CLUT entries is equal to CS[7:0] + 1.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -588,7 +588,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "am",
                     description: Some(
-                        "Alpha mode These bits define which alpha channel value to be used for the background image. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only. others: meaningless",
+                        "Alpha mode. These bits define which alpha channel value to be used for the background image. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only. others: meaningless",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -604,7 +604,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ai",
                     description: Some(
-                        "Alpha Inverted This bit inverts the alpha value. Once the transfer has started, this bit is read-only.",
+                        "Alpha inverted. This bit inverts the alpha value. Once the transfer has started, this bit is read-only.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -620,7 +620,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rbs",
                     description: Some(
-                        "Red Blue Swap This bit allows to swap the R &amp; B to support BGR or ABGR color formats. Once the transfer has started, this bit is read-only.",
+                        "Red blue swap. This bit allows to swap the R and B to support BGR or ABGR color formats. Once the transfer has started, this bit is read-only.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -636,7 +636,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "alpha",
                     description: Some(
-                        "Alpha value These bits define a fixed alpha channel value which can replace the original alpha value or be multiplied with the original alpha value according to the alpha mode selected with bits AM[1: 0]. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                        "Alpha value. These bits define a fixed alpha channel value which can replace the original alpha value or be multiplied with the original alpha value according to the alpha mode selected with bits AM[1: 0]. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -660,7 +660,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "start",
                     description: Some(
-                        "Start This bit can be used to launch the DMA2D according to the parameters loaded in the various configuration registers",
+                        "Start. This bit can be used to launch the DMA2D according to the parameters loaded in the various configuration registers",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -676,7 +676,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "susp",
                     description: Some(
-                        "Suspend This bit can be used to suspend the current transfer. This bit is set and reset by software. It is automatically reset by hardware when the START bit is reset.",
+                        "Suspend. This bit can be used to suspend the current transfer. This bit is set and reset by software. It is automatically reset by hardware when the START bit is reset.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -690,7 +690,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "abort",
                     description: Some(
-                        "Abort This bit can be used to abort the current transfer. This bit is set by software and is automatically reset by hardware when the START bit is reset.",
+                        "Abort. This bit can be used to abort the current transfer. This bit is set by software and is automatically reset by hardware when the START bit is reset.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -704,9 +704,25 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 Field {
+                    name: "lom",
+                    description: Some(
+                        "Line offset mode. This bit configures how the line offset is expressed (in pixels or bytes) for the foreground, background and output. This bit is set and cleared by software. It can not be modified while a transfer is ongoing.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Lom",
+                    ),
+                },
+                Field {
                     name: "teie",
                     description: Some(
-                        "Transfer error interrupt enable This bit is set and cleared by software.",
+                        "Transfer error interrupt enable. This bit is set and cleared by software.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -720,7 +736,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tcie",
                     description: Some(
-                        "Transfer complete interrupt enable This bit is set and cleared by software.",
+                        "Transfer complete interrupt enable. This bit is set and cleared by software.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -734,7 +750,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "twie",
                     description: Some(
-                        "Transfer watermark interrupt enable This bit is set and cleared by software.",
+                        "Transfer watermark interrupt enable. This bit is set and cleared by software.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -748,7 +764,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "caeie",
                     description: Some(
-                        "CLUT access error interrupt enable This bit is set and cleared by software.",
+                        "CLUT access error interrupt enable. This bit is set and cleared by software.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -762,7 +778,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ctcie",
                     description: Some(
-                        "CLUT transfer complete interrupt enable This bit is set and cleared by software.",
+                        "CLUT transfer complete interrupt enable. This bit is set and cleared by software.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -776,7 +792,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ceie",
                     description: Some(
-                        "Configuration Error Interrupt Enable This bit is set and cleared by software.",
+                        "Configuration error interrupt enable. This bit is set and cleared by software.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -797,7 +813,7 @@ pub(crate) static REGISTERS: IR = IR {
                             offset: 16,
                         },
                     ),
-                    bit_size: 2,
+                    bit_size: 3,
                     array: None,
                     enumm: Some(
                         "Mode",
@@ -816,7 +832,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ma",
                     description: Some(
-                        "Memory Address Address of the data used for the CLUT address dedicated to the foreground image. This register can only be written when no transfer is ongoing. Once the CLUT transfer has started, this register is read-only. If the foreground CLUT format is 32-bit, the address must be 32-bit aligned.",
+                        "Memory Address. Address of the data used for the CLUT address dedicated to the foreground image. This register can only be written when no transfer is ongoing. Once the CLUT transfer has started, this register is read-only. If the foreground CLUT format is 32-bit, the address must be 32-bit aligned.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -840,7 +856,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "blue",
                     description: Some(
-                        "Blue Value These bits defines the blue value for the A4 or A8 mode of the foreground image. They can only be written when data transfers are disabled. Once the transfer has started, They are read-only.",
+                        "Blue Value. These bits define the blue value for the A4 or A8 mode of the foreground image. They can only be written when data transfers are disabled. Once the transfer has started, They are read-only.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -854,7 +870,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "green",
                     description: Some(
-                        "Green Value These bits defines the green value for the A4 or A8 mode of the foreground image. They can only be written when data transfers are disabled. Once the transfer has started, They are read-only.",
+                        "Green Value. These bits define the green value for the A4 or A8 mode of the foreground image. They can only be written when data transfers are disabled. Once the transfer has started, They are read-only.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -868,7 +884,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "red",
                     description: Some(
-                        "Red Value These bits defines the red value for the A4 or A8 mode of the foreground image. They can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                        "Red Value. These bits define the red value for the A4 or A8 mode of the foreground image. They can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -892,7 +908,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ma",
                     description: Some(
-                        "Memory address Address of the data used for the foreground image. This register can only be written when data transfers are disabled. Once the data transfer has started, this register is read-only. The address alignment must match the image format selected e.g. a 32-bit per pixel format must be 32-bit aligned, a 16-bit per pixel format must be 16-bit aligned and a 4-bit per pixel format must be 8-bit aligned.",
+                        "Memory address. Address of the data used for the foreground image. This register can only be written when data transfers are disabled. Once the data transfer has started, this register is read-only. The address alignment must match the image format selected e.g. a 32-bit per pixel format must be 32-bit aligned, a 16-bit per pixel format must be 16-bit aligned and a 4-bit per pixel format must be 8-bit aligned.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -916,7 +932,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lo",
                     description: Some(
-                        "Line offset Line offset used for the foreground expressed in pixel. This value is used to generate the address. It is added at the end of each line to determine the starting address of the next line. These bits can only be written when data transfers are disabled. Once a data transfer has started, they become read-only. If the image format is 4-bit per pixel, the line offset must be even.",
+                        "Line offset. Line offset used for the foreground expressed in pixel. This value is used to generate the address. It is added at the end of each line to determine the starting address of the next line. These bits can only be written when data transfers are disabled. Once a data transfer has started, they become read-only. If the image format is 4-bit per pixel, the line offset must be even.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -933,14 +949,14 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Fgpfccr",
             extends: None,
             description: Some(
-                "DMA2D foreground PFC control register",
+                "DMA2D foreground PFC (pixel format converter) control register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "cm",
                     description: Some(
-                        "Color mode These bits defines the color format of the foreground image. They can only be written when data transfers are disabled. Once the transfer has started, they are read-only. others: meaningless",
+                        "Color mode. These bits define the color format of the foreground image. They can only be written when data transfers are disabled. Once the transfer has started, they are read-only. others: meaningless",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -956,7 +972,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ccm",
                     description: Some(
-                        "CLUT color mode This bit defines the color format of the CLUT. It can only be written when the transfer is disabled. Once the CLUT transfer has started, this bit is read-only.",
+                        "CLUT color mode. This bit defines the color format of the CLUT. It can only be written when the transfer is disabled. Once the CLUT transfer has started, this bit is read-only.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -972,7 +988,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "start",
                     description: Some(
-                        "Start This bit can be set to start the automatic loading of the CLUT. It is automatically reset: ** at the end of the transfer ** when the transfer is aborted by the user application by setting the ABORT bit in DMA2D_CR ** when a transfer error occurs ** when the transfer has not started due to a configuration error or another transfer operation already ongoing (data transfer or automatic background CLUT transfer).",
+                        "Start. This bit can be set to start the automatic loading of the CLUT. It is automatically reset: ** at the end of the transfer ** when the transfer is aborted by the user application by setting the ABORT bit in DMA2D_CR ** when a transfer error occurs ** when the transfer has not started due to a configuration error or another transfer operation already ongoing (data transfer or automatic background CLUT transfer).",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -988,7 +1004,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cs",
                     description: Some(
-                        "CLUT size These bits define the size of the CLUT used for the foreground image. Once the CLUT transfer has started, this field is read-only. The number of CLUT entries is equal to CS[7:0] + 1.",
+                        "CLUT size. These bits define the size of the CLUT used for the foreground image. Once the CLUT transfer has started, this field is read-only. The number of CLUT entries is equal to CS[7:0] + 1.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1002,7 +1018,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "am",
                     description: Some(
-                        "Alpha mode These bits select the alpha channel value to be used for the foreground image. They can only be written data the transfer are disabled. Once the transfer has started, they become read-only. other configurations are meaningless",
+                        "Alpha mode. These bits select the alpha channel value to be used for the foreground image. They can only be written data the transfer are disabled. Once the transfer has started, they become read-only. other configurations are meaningless",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1018,7 +1034,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "css",
                     description: Some(
-                        "Chroma Sub-Sampling These bits define the chroma sub-sampling mode for YCbCr color mode. Once the transfer has started, these bits are read-only. others: meaningless",
+                        "Chroma Sub-Sampling. These bits define the chroma sub-sampling mode for YCbCr color mode. Once the transfer has started, these bits are read-only. others: meaningless",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1032,7 +1048,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ai",
                     description: Some(
-                        "Alpha Inverted This bit inverts the alpha value. Once the transfer has started, this bit is read-only.",
+                        "Alpha inverted. This bit inverts the alpha value. Once the transfer has started, this bit is read-only.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1048,7 +1064,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rbs",
                     description: Some(
-                        "Red Blue Swap This bit allows to swap the R &amp; B to support BGR or ABGR color formats. Once the transfer has started, this bit is read-only.",
+                        "Red blue swap. This bit allows to swap the R and B to support BGR or ABGR color formats. Once the transfer has started, this bit is read-only.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1064,7 +1080,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "alpha",
                     description: Some(
-                        "Alpha value These bits define a fixed alpha channel value which can replace the original alpha value or be multiplied by the original alpha value according to the alpha mode selected through the AM[1:0] bits. These bits can only be written when data transfers are disabled. Once a transfer has started, they become read-only.",
+                        "Alpha value. These bits define a fixed alpha channel value which can replace the original alpha value or be multiplied by the original alpha value according to the alpha mode selected through the AM[1:0] bits. These bits can only be written when data transfers are disabled. Once a transfer has started, they become read-only.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1088,7 +1104,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cteif",
                     description: Some(
-                        "Clear Transfer error interrupt flag Programming this bit to 1 clears the TEIF flag in the DMA2D_ISR register",
+                        "Clear transfer error interrupt flag. Programming this bit to 1 clears the TEIF flag in the DMA2D_ISR register",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1104,7 +1120,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ctcif",
                     description: Some(
-                        "Clear transfer complete interrupt flag Programming this bit to 1 clears the TCIF flag in the DMA2D_ISR register",
+                        "Clear transfer complete interrupt flag. Programming this bit to 1 clears the TCIF flag in the DMA2D_ISR register",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1120,7 +1136,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ctwif",
                     description: Some(
-                        "Clear transfer watermark interrupt flag Programming this bit to 1 clears the TWIF flag in the DMA2D_ISR register",
+                        "Clear transfer watermark interrupt flag. Programming this bit to 1 clears the TWIF flag in the DMA2D_ISR register",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1136,7 +1152,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "caecif",
                     description: Some(
-                        "Clear CLUT access error interrupt flag Programming this bit to 1 clears the CAEIF flag in the DMA2D_ISR register",
+                        "Clear CLUT access error interrupt flag. Programming this bit to 1 clears the CAEIF flag in the DMA2D_ISR register",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1152,7 +1168,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cctcif",
                     description: Some(
-                        "Clear CLUT transfer complete interrupt flag Programming this bit to 1 clears the CTCIF flag in the DMA2D_ISR register",
+                        "Clear CLUT transfer complete interrupt flag. Programming this bit to 1 clears the CTCIF flag in the DMA2D_ISR register",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1168,7 +1184,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cceif",
                     description: Some(
-                        "Clear configuration error interrupt flag Programming this bit to 1 clears the CEIF flag in the DMA2D_ISR register",
+                        "Clear configuration error interrupt flag. Programming this bit to 1 clears the CEIF flag in the DMA2D_ISR register",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1194,7 +1210,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "teif",
                     description: Some(
-                        "Transfer error interrupt flag This bit is set when an error occurs during a DMA transfer (data transfer or automatic CLUT loading).",
+                        "Transfer error interrupt flag. This bit is set when an error occurs during a DMA transfer (data transfer or automatic CLUT loading).",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1208,7 +1224,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tcif",
                     description: Some(
-                        "Transfer complete interrupt flag This bit is set when a DMA2D transfer operation is complete (data transfer only).",
+                        "Transfer complete interrupt flag. This bit is set when a DMA2D transfer operation is complete (data transfer only).",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1222,7 +1238,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "twif",
                     description: Some(
-                        "Transfer watermark interrupt flag This bit is set when the last pixel of the watermarked line has been transferred.",
+                        "Transfer watermark interrupt flag. This bit is set when the last pixel of the watermarked line has been transferred.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1236,7 +1252,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "caeif",
                     description: Some(
-                        "CLUT access error interrupt flag This bit is set when the CPU accesses the CLUT while the CLUT is being automatically copied from a system memory to the internal DMA2D.",
+                        "CLUT access error interrupt flag. This bit is set when the CPU accesses the CLUT while the CLUT is being automatically copied from a system memory to the internal DMA2D.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1250,7 +1266,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ctcif",
                     description: Some(
-                        "CLUT transfer complete interrupt flag This bit is set when the CLUT copy from a system memory area to the internal DMA2D memory is complete.",
+                        "CLUT transfer complete interrupt flag. This bit is set when the CLUT copy from a system memory area to the internal DMA2D memory is complete.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1264,7 +1280,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ceif",
                     description: Some(
-                        "Configuration error interrupt flag This bit is set when the START bit of DMA2D_CR, DMA2DFGPFCCR or DMA2D_BGPFCCR is set and a wrong configuration has been programmed.",
+                        "Configuration error interrupt flag. This bit is set when the START bit of DMA2D_CR, DMA2DFGPFCCR or DMA2D_BGPFCCR is set and a wrong configuration has been programmed.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1288,7 +1304,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lw",
                     description: Some(
-                        "Line watermark These bits allow to configure the line watermark for interrupt generation. An interrupt is raised when the last pixel of the watermarked line has been transferred. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                        "Line watermark. These bits allow to configure the line watermark for interrupt generation. An interrupt is raised when the last pixel of the watermarked line has been transferred. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1312,7 +1328,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "nl",
                     description: Some(
-                        "Number of lines Number of lines of the area to be transferred. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                        "Number of lines. Number of lines of the area to be transferred. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1326,7 +1342,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pl",
                     description: Some(
-                        "Pixel per lines Number of pixels per lines of the area to be transferred. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only. If any of the input image format is 4-bit per pixel, pixel per lines must be even.",
+                        "Pixel per lines. Number of pixels per lines of the area to be transferred. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only. If any of the input image format is 4-bit per pixel, pixel per lines must be even.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1348,58 +1364,16 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "blue",
+                    name: "color",
                     description: Some(
-                        "Blue Value These bits define the blue value of the output image. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                        "Color. Color in the format specified by color mode in OPFCCR (16, 24 or 32 bits). These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 0,
                         },
                     ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "green",
-                    description: Some(
-                        "Green Value These bits define the green value of the output image. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "red",
-                    description: Some(
-                        "Red Value These bits define the red value of the output image. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "alpha",
-                    description: Some(
-                        "Alpha Channel Value These bits define the alpha channel of the output color. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
-                    bit_size: 8,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -1416,7 +1390,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ma",
                     description: Some(
-                        "Memory Address Address of the data used for the output FIFO. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only. The address alignment must match the image format selected e.g. a 32-bit per pixel format must be 32-bit aligned and a 16-bit per pixel format must be 16-bit aligned.",
+                        "Memory Address. Address of the data used for the output FIFO. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only. The address alignment must match the image format selected e.g. a 32-bit per pixel format must be 32-bit aligned and a 16-bit per pixel format must be 16-bit aligned.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1440,7 +1414,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lo",
                     description: Some(
-                        "Line Offset Line offset used for the output (expressed in pixels). This value is used for the address generation. It is added at the end of each line to determine the starting address of the next line. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                        "Line offset. Line offset used for the output (expressed in pixels). This value is used for the address generation. It is added at the end of each line to determine the starting address of the next line. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1464,7 +1438,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cm",
                     description: Some(
-                        "Color mode These bits define the color format of the output image. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only. others: meaningless",
+                        "Color mode. These bits define the color format of the output image. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only. others: meaningless",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1496,7 +1470,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ai",
                     description: Some(
-                        "Alpha Inverted This bit inverts the alpha value. Once the transfer has started, this bit is read-only.",
+                        "Alpha inverted. This bit inverts the alpha value. Once the transfer has started, this bit is read-only.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1512,7 +1486,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rbs",
                     description: Some(
-                        "Red Blue Swap This bit allows to swap the R &amp; B to support BGR or ABGR color formats. Once the transfer has started, this bit is read-only.",
+                        "Red blue swap. This bit allows to swap the R and B to support BGR or ABGR color formats. Once the transfer has started, this bit is read-only.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1705,14 +1679,14 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "REGULAR",
                     description: Some(
-                        "No Red Blue Swap (RGB or ARGB)",
+                        "No red blue swap (RGB or ARGB)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "SWAP",
                     description: Some(
-                        "Red Blue Swap (BGR or ABGR)",
+                        "Red blue swap (BGR or ABGR)",
                     ),
                     value: 1,
                 },
@@ -1999,14 +1973,14 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "REGULAR",
                     description: Some(
-                        "No Red Blue Swap (RGB or ARGB)",
+                        "No red blue swap (RGB or ARGB)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "SWAP",
                     description: Some(
-                        "Red Blue Swap (BGR or ABGR)",
+                        "red blue swap (BGR or ABGR)",
                     ),
                     value: 1,
                 },
@@ -2027,9 +2001,30 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Lom",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "PIXELS",
+                    description: Some(
+                        "Line offsets expressed in pixels",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BYTES",
+                    description: Some(
+                        "Line offsets expressed in bytes",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Mode",
             description: None,
-            bit_size: 2,
+            bit_size: 3,
             variants: &[
                 EnumVariant {
                     name: "MEMORY_TO_MEMORY",
@@ -2041,7 +2036,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "MEMORY_TO_MEMORY_PFC",
                     description: Some(
-                        "Memory-to-memory with PFC (FG fetch only with FG PFC active)",
+                        "Memory-to-memory with PFC (pixel format converter) (FG fetch only with FG PFC active)",
                     ),
                     value: 1,
                 },
@@ -2055,9 +2050,23 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "REGISTER_TO_MEMORY",
                     description: Some(
-                        "Register-to-memory",
+                        "Register-to-memory (no FG nor BG, only output stage active)",
                     ),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "MEMORY_TO_MEMORY_PFCBLENDING_FIXED_COLOR_FG",
+                    description: Some(
+                        "Memory-to-memory with blending and fixed color FG (BG fetch only with FG and BG PFC active)",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "MEMORY_TO_MEMORY_PFCBLENDING_FIXED_COLOR_BG",
+                    description: Some(
+                        "Memory-to-memory with blending and fixed color BG (FG fetch only with FG and BG PFC active)",
+                    ),
+                    value: 5,
                 },
             ],
         },
@@ -2132,14 +2141,14 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "REGULAR",
                     description: Some(
-                        "No Red Blue Swap (RGB or ARGB)",
+                        "No red blue swap (RGB or ARGB)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "SWAP",
                     description: Some(
-                        "Red Blue Swap (BGR or ABGR)",
+                        "Red blue swap (BGR or ABGR)",
                     ),
                     value: 1,
                 },

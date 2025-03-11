@@ -763,7 +763,7 @@ pub mod dbgmcu;
 pub mod dcache;
 #[path = "../../peripherals/dcmi_v1.rs"]
 pub mod dcmi;
-#[path = "../../peripherals/dma2d_v1.rs"]
+#[path = "../../peripherals/dma2d_v2.rs"]
 pub mod dma2d;
 #[path = "../../peripherals/dsihost_u5.rs"]
 pub mod dsihost;

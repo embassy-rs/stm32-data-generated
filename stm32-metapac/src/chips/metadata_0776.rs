@@ -1046,7 +1046,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x4002b000,
         registers: Some(PeripheralRegisters {
             kind: "dma2d",
-            version: "v1",
+            version: "v2",
             block: "DMA2D",
             ir: &dma2d::REGISTERS,
         }),
@@ -9262,7 +9262,7 @@ pub mod dbgmcu;
 pub mod dcache;
 #[path = "../registers/dcmi_v1.rs"]
 pub mod dcmi;
-#[path = "../registers/dma2d_v1.rs"]
+#[path = "../registers/dma2d_v2.rs"]
 pub mod dma2d;
 #[path = "../registers/exti_u5.rs"]
 pub mod exti;

@@ -1565,7 +1565,7 @@
           "address": 1073917952,
           "registers": {
             "kind": "dma2d",
-            "version": "v1",
+            "version": "v2",
             "block": "DMA2D"
           },
           "rcc": {

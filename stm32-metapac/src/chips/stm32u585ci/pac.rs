@@ -680,7 +680,7 @@ pub mod dac;
 pub mod dbgmcu;
 #[path = "../../peripherals/dcache_v1.rs"]
 pub mod dcache;
-#[path = "../../peripherals/dma2d_v1.rs"]
+#[path = "../../peripherals/dma2d_v2.rs"]
 pub mod dma2d;
 #[path = "../../peripherals/exti_u5.rs"]
 pub mod exti;

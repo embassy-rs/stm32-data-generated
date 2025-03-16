@@ -1416,7 +1416,7 @@ pub mod regs {
             let offs = 0usize + n * 4usize;
             self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
         }
-        #[doc = "SMPSEL0."]
+        #[doc = "Channel sampling time selection"]
         #[inline(always)]
         pub const fn smpsel(&self, n: usize) -> bool {
             assert!(n < 24usize);
@@ -1424,7 +1424,7 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "SMPSEL0."]
+        #[doc = "Channel sampling time selection"]
         #[inline(always)]
         pub fn set_smpsel(&mut self, n: usize, val: bool) {
             assert!(n < 24usize);

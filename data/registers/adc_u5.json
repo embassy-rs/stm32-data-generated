@@ -753,7 +753,7 @@
       },
       {
         "name": "SMPSEL",
-        "description": "SMPSEL0.",
+        "description": "Channel sampling time selection",
         "bit_offset": 8,
         "bit_size": 1,
         "array": {

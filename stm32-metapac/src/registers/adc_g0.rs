@@ -1300,7 +1300,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("Channel sampling time selection"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 19, stride: 0 })),
+                    array: Some(Array::Regular(RegularArray { len: 19, stride: 1 })),
                     enumm: None,
                 },
             ],

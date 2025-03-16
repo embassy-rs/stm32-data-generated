@@ -2001,7 +2001,7 @@ pub mod regs {
         #[inline(always)]
         pub const fn smpsel(&self, n: usize) -> bool {
             assert!(n < 19usize);
-            let offs = 8usize + n * 0usize;
+            let offs = 8usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
@@ -2009,7 +2009,7 @@ pub mod regs {
         #[inline(always)]
         pub fn set_smpsel(&mut self, n: usize, val: bool) {
             assert!(n < 19usize);
-            let offs = 8usize + n * 0usize;
+            let offs = 8usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }

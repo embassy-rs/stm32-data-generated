@@ -1093,7 +1093,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "smpsel",
-                    description: Some("SMPSEL0."),
+                    description: Some("Channel sampling time selection"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 24, stride: 1 })),

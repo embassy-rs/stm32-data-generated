@@ -911,7 +911,7 @@
         "bit_size": 1,
         "array": {
           "len": 19,
-          "stride": 0
+          "stride": 1
         }
       }
     ]

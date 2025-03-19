@@ -926,12 +926,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[
             PeripheralPin {
                 pin: "PA1",
-                signal: "MII_RX_CLK",
+                signal: "REF_CLK",
                 af: Some(11),
             },
             PeripheralPin {
                 pin: "PA1",
-                signal: "RMII_REF_CLK",
+                signal: "RX_CLK",
                 af: Some(11),
             },
             PeripheralPin {
@@ -941,7 +941,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PA3",
-                signal: "MII_COL",
+                signal: "COL",
                 af: Some(11),
             },
             PeripheralPin {
@@ -951,52 +951,37 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PA7",
-                signal: "MII_RX_DV",
+                signal: "CRS_DV",
                 af: Some(11),
             },
             PeripheralPin {
                 pin: "PA7",
-                signal: "RMII_CRS_DV",
+                signal: "RX_DV",
                 af: Some(11),
             },
             PeripheralPin {
                 pin: "PB0",
-                signal: "MII_TXD0",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PB0",
-                signal: "RMII_TXD0",
+                signal: "TXD0",
                 af: Some(11),
             },
             PeripheralPin {
                 pin: "PB1",
-                signal: "MII_TXD1",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PB1",
-                signal: "RMII_TXD1",
+                signal: "TXD1",
                 af: Some(11),
             },
             PeripheralPin {
                 pin: "PB10",
-                signal: "MII_RX_ER",
+                signal: "RX_ER",
                 af: Some(11),
             },
             PeripheralPin {
                 pin: "PB11",
-                signal: "MII_TX_EN",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PB11",
-                signal: "RMII_TX_EN",
+                signal: "TX_EN",
                 af: Some(11),
             },
             PeripheralPin {
                 pin: "PB13",
-                signal: "MII_RXD3",
+                signal: "RXD3",
                 af: Some(11),
             },
             PeripheralPin {
@@ -1006,27 +991,22 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PB6",
-                signal: "MII_RX_CLK",
+                signal: "REF_CLK",
                 af: Some(11),
             },
             PeripheralPin {
                 pin: "PB6",
-                signal: "RMII_REF_CLK",
+                signal: "RX_CLK",
                 af: Some(11),
             },
             PeripheralPin {
                 pin: "PB7",
-                signal: "MII_TXD1",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PB7",
-                signal: "RMII_TXD1",
+                signal: "TXD1",
                 af: Some(11),
             },
             PeripheralPin {
                 pin: "PB8",
-                signal: "MII_TXD3",
+                signal: "TXD3",
                 af: Some(11),
             },
             PeripheralPin {
@@ -1036,32 +1016,22 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PC2",
-                signal: "MII_TXD2",
+                signal: "TXD2",
                 af: Some(11),
             },
             PeripheralPin {
                 pin: "PC3",
-                signal: "MII_TX_CLK",
+                signal: "TX_CLK",
                 af: Some(11),
             },
             PeripheralPin {
                 pin: "PC4",
-                signal: "MII_RXD0",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PC4",
-                signal: "RMII_RXD0",
+                signal: "RXD0",
                 af: Some(11),
             },
             PeripheralPin {
                 pin: "PC5",
-                signal: "MII_RXD1",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PC5",
-                signal: "RMII_RXD1",
+                signal: "RXD1",
                 af: Some(11),
             },
             PeripheralPin {
@@ -1076,37 +1046,32 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PD7",
-                signal: "MII_RX_CLK",
+                signal: "REF_CLK",
                 af: Some(4),
             },
             PeripheralPin {
                 pin: "PD7",
-                signal: "RMII_REF_CLK",
+                signal: "RX_CLK",
                 af: Some(4),
             },
             PeripheralPin {
                 pin: "PD8",
-                signal: "MII_TX_EN",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PD8",
-                signal: "RMII_TX_EN",
+                signal: "TX_EN",
                 af: Some(11),
             },
             PeripheralPin {
                 pin: "PE2",
-                signal: "MII_TXD3",
+                signal: "TXD3",
                 af: Some(11),
             },
             PeripheralPin {
                 pin: "PE3",
-                signal: "MII_RXD3",
+                signal: "RXD3",
                 af: Some(11),
             },
             PeripheralPin {
                 pin: "PF5",
-                signal: "MII_RXD2",
+                signal: "RXD2",
                 af: Some(11),
             },
         ],

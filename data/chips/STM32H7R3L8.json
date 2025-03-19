@@ -3658,12 +3658,12 @@
           "pins": [
             {
               "pin": "PA1",
-              "signal": "MII_RX_CLK",
+              "signal": "REF_CLK",
               "af": 11
             },
             {
               "pin": "PA1",
-              "signal": "RMII_REF_CLK",
+              "signal": "RX_CLK",
               "af": 11
             },
             {
@@ -3673,7 +3673,7 @@
             },
             {
               "pin": "PA3",
-              "signal": "MII_COL",
+              "signal": "COL",
               "af": 11
             },
             {
@@ -3683,52 +3683,37 @@
             },
             {
               "pin": "PA7",
-              "signal": "MII_RX_DV",
+              "signal": "CRS_DV",
               "af": 11
             },
             {
               "pin": "PA7",
-              "signal": "RMII_CRS_DV",
+              "signal": "RX_DV",
               "af": 11
             },
             {
               "pin": "PB0",
-              "signal": "MII_TXD0",
-              "af": 11
-            },
-            {
-              "pin": "PB0",
-              "signal": "RMII_TXD0",
+              "signal": "TXD0",
               "af": 11
             },
             {
               "pin": "PB1",
-              "signal": "MII_TXD1",
-              "af": 11
-            },
-            {
-              "pin": "PB1",
-              "signal": "RMII_TXD1",
+              "signal": "TXD1",
               "af": 11
             },
             {
               "pin": "PB10",
-              "signal": "MII_RX_ER",
+              "signal": "RX_ER",
               "af": 11
             },
             {
               "pin": "PB11",
-              "signal": "MII_TX_EN",
-              "af": 11
-            },
-            {
-              "pin": "PB11",
-              "signal": "RMII_TX_EN",
+              "signal": "TX_EN",
               "af": 11
             },
             {
               "pin": "PB13",
-              "signal": "MII_RXD3",
+              "signal": "RXD3",
               "af": 11
             },
             {
@@ -3738,27 +3723,22 @@
             },
             {
               "pin": "PB6",
-              "signal": "MII_RX_CLK",
+              "signal": "REF_CLK",
               "af": 11
             },
             {
               "pin": "PB6",
-              "signal": "RMII_REF_CLK",
+              "signal": "RX_CLK",
               "af": 11
             },
             {
               "pin": "PB7",
-              "signal": "MII_TXD1",
-              "af": 11
-            },
-            {
-              "pin": "PB7",
-              "signal": "RMII_TXD1",
+              "signal": "TXD1",
               "af": 11
             },
             {
               "pin": "PB8",
-              "signal": "MII_TXD3",
+              "signal": "TXD3",
               "af": 11
             },
             {
@@ -3768,32 +3748,22 @@
             },
             {
               "pin": "PC2",
-              "signal": "MII_TXD2",
+              "signal": "TXD2",
               "af": 11
             },
             {
               "pin": "PC3",
-              "signal": "MII_TX_CLK",
+              "signal": "TX_CLK",
               "af": 11
             },
             {
               "pin": "PC4",
-              "signal": "MII_RXD0",
-              "af": 11
-            },
-            {
-              "pin": "PC4",
-              "signal": "RMII_RXD0",
+              "signal": "RXD0",
               "af": 11
             },
             {
               "pin": "PC5",
-              "signal": "MII_RXD1",
-              "af": 11
-            },
-            {
-              "pin": "PC5",
-              "signal": "RMII_RXD1",
+              "signal": "RXD1",
               "af": 11
             },
             {
@@ -3808,87 +3778,62 @@
             },
             {
               "pin": "PD7",
-              "signal": "MII_RX_CLK",
+              "signal": "REF_CLK",
               "af": 4
             },
             {
               "pin": "PD7",
-              "signal": "RMII_REF_CLK",
+              "signal": "RX_CLK",
               "af": 4
             },
             {
               "pin": "PD8",
-              "signal": "MII_TX_EN",
-              "af": 11
-            },
-            {
-              "pin": "PD8",
-              "signal": "RMII_TX_EN",
+              "signal": "TX_EN",
               "af": 11
             },
             {
               "pin": "PE2",
-              "signal": "MII_TXD3",
+              "signal": "TXD3",
               "af": 11
             },
             {
               "pin": "PE3",
-              "signal": "MII_RXD3",
+              "signal": "RXD3",
               "af": 11
             },
             {
               "pin": "PF3",
-              "signal": "MII_CRS",
+              "signal": "CRS",
               "af": 11
             },
             {
               "pin": "PF4",
-              "signal": "MII_TX_ER",
+              "signal": "TX_ER",
               "af": 11
             },
             {
               "pin": "PF5",
-              "signal": "MII_RXD2",
+              "signal": "RXD2",
               "af": 11
             },
             {
               "pin": "PG11",
-              "signal": "MII_TX_EN",
-              "af": 11
-            },
-            {
-              "pin": "PG11",
-              "signal": "RMII_TX_EN",
+              "signal": "TX_EN",
               "af": 11
             },
             {
               "pin": "PG12",
-              "signal": "MII_TXD1",
-              "af": 11
-            },
-            {
-              "pin": "PG12",
-              "signal": "RMII_TXD1",
+              "signal": "TXD1",
               "af": 11
             },
             {
               "pin": "PG13",
-              "signal": "MII_TXD0",
-              "af": 11
-            },
-            {
-              "pin": "PG13",
-              "signal": "RMII_TXD0",
+              "signal": "TXD0",
               "af": 11
             },
             {
               "pin": "PG14",
-              "signal": "MII_TXD1",
-              "af": 11
-            },
-            {
-              "pin": "PG14",
-              "signal": "RMII_TXD1",
+              "signal": "TXD1",
               "af": 11
             },
             {
@@ -3898,22 +3843,12 @@
             },
             {
               "pin": "PG4",
-              "signal": "MII_RXD0",
-              "af": 11
-            },
-            {
-              "pin": "PG4",
-              "signal": "RMII_RXD0",
+              "signal": "RXD0",
               "af": 11
             },
             {
               "pin": "PG5",
-              "signal": "MII_RXD1",
-              "af": 11
-            },
-            {
-              "pin": "PG5",
-              "signal": "RMII_RXD1",
+              "signal": "RXD1",
               "af": 11
             },
             {

@@ -2130,7 +2130,7 @@
           "address": 1073782784,
           "registers": {
             "kind": "can",
-            "version": "fdcan_h7",
+            "version": "fdcan_v1",
             "block": "FDCAN"
           },
           "rcc": {
@@ -2196,7 +2196,7 @@
           "address": 1073783808,
           "registers": {
             "kind": "can",
-            "version": "fdcan_h7",
+            "version": "fdcan_v1",
             "block": "FDCAN"
           },
           "rcc": {
@@ -2253,11 +2253,20 @@
           ]
         },
         {
-          "name": "FDCANRAM",
+          "name": "FDCANRAM1",
           "address": 1073785856,
           "registers": {
             "kind": "fdcanram",
-            "version": "h7",
+            "version": "v1",
+            "block": "FDCANRAM"
+          }
+        },
+        {
+          "name": "FDCANRAM2",
+          "address": 1073786704,
+          "registers": {
+            "kind": "fdcanram",
+            "version": "v1",
             "block": "FDCANRAM"
           }
         },

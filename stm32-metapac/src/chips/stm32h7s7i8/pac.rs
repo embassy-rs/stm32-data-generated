@@ -711,7 +711,8 @@ pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_8400usize as _) };
 pub const MDIOS: mdios::Mdios = unsafe { mdios::Mdios::from_ptr(0x4000_9400usize as _) };
 pub const FDCAN1: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a000usize as _) };
 pub const FDCAN2: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a400usize as _) };
-pub const FDCANRAM: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_ac00usize as _) };
+pub const FDCANRAM1: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_ac00usize as _) };
+pub const FDCANRAM2: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_af50usize as _) };
 pub const GPDMA1: gpdma::Gpdma = unsafe { gpdma::Gpdma::from_ptr(0x4002_1000usize as _) };
 pub const ADC1: *mut () = 0x4002_2000usize as _;
 pub const ADC2: *mut () = 0x4002_2100usize as _;
@@ -793,7 +794,7 @@ pub use cortex_m_rt::interrupt;
 pub use Interrupt as interrupt;
 #[path = "../../peripherals/adccommon_v4.rs"]
 pub mod adccommon;
-#[path = "../../peripherals/can_fdcan_h7.rs"]
+#[path = "../../peripherals/can_fdcan_v1.rs"]
 pub mod can;
 #[path = "../../peripherals/cec_v2.rs"]
 pub mod cec;
@@ -815,7 +816,7 @@ pub mod dts;
 pub mod eth;
 #[path = "../../peripherals/exti_h7.rs"]
 pub mod exti;
-#[path = "../../peripherals/fdcanram_h7.rs"]
+#[path = "../../peripherals/fdcanram_v1.rs"]
 pub mod fdcanram;
 #[path = "../../peripherals/flash_h7rs.rs"]
 pub mod flash;

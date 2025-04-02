@@ -725,7 +725,8 @@ pub const DMA2D: dma2d::Dma2d = unsafe { dma2d::Dma2d::from_ptr(0x5200_1000usize
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x5200_2000usize as _) };
 pub const JPEG: jpeg::Jpeg = unsafe { jpeg::Jpeg::from_ptr(0x5200_3000usize as _) };
 pub const FMC: fmc::Fmc = unsafe { fmc::Fmc::from_ptr(0x5200_4000usize as _) };
-pub const XSPIM: *mut () = 0x5200_b400usize as _;
+pub const XSPI1: xspi::Xspi = unsafe { xspi::Xspi::from_ptr(0x5200_5000usize as _) };
+pub const XSPIM: xspim::Xspim = unsafe { xspim::Xspim::from_ptr(0x5200_b400usize as _) };
 pub const MCE1: *mut () = 0x5200_b800usize as _;
 pub const MCE2: *mut () = 0x5200_bc00usize as _;
 pub const MCE3: *mut () = 0x5200_c000usize as _;
@@ -758,7 +759,6 @@ pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x5802_4400usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x5802_4800usize as _) };
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x5802_4c00usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0x5c00_1000usize as _) };
-pub const XSPI1: *mut () = 0x9000_0000usize as _;
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 4;
@@ -842,3 +842,7 @@ pub mod usart;
 pub mod vrefbuf;
 #[path = "../../peripherals/wwdg_v2.rs"]
 pub mod wwdg;
+#[path = "../../peripherals/xspi_v1.rs"]
+pub mod xspi;
+#[path = "../../peripherals/xspim_v1.rs"]
+pub mod xspim;

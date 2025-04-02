@@ -8348,7 +8348,12 @@
         },
         {
           "name": "XSPI1",
-          "address": 2415919104,
+          "address": 1375752192,
+          "registers": {
+            "kind": "xspi",
+            "version": "v1",
+            "block": "XSPI"
+          },
           "rcc": {
             "bus_clock": "HCLK5",
             "kernel_clock": "HCLK5",
@@ -8377,7 +8382,12 @@
         },
         {
           "name": "XSPI2",
-          "address": 1879048192,
+          "address": 1375772672,
+          "registers": {
+            "kind": "xspi",
+            "version": "v1",
+            "block": "XSPI"
+          },
           "rcc": {
             "bus_clock": "HCLK5",
             "kernel_clock": "HCLK5",
@@ -8407,6 +8417,11 @@
         {
           "name": "XSPIM",
           "address": 1375777792,
+          "registers": {
+            "kind": "xspim",
+            "version": "v1",
+            "block": "XSPIM"
+          },
           "pins": [
             {
               "pin": "PN0",

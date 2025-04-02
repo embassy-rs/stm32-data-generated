@@ -4693,6 +4693,11 @@
         {
           "name": "XSPIM",
           "address": 1375777792,
+          "registers": {
+            "kind": "xspim",
+            "version": "v1",
+            "block": "XSPIM"
+          },
           "pins": [
             {
               "pin": "PO0",

@@ -122,4 +122,6 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("vrefbuf", &["v1", "v2a1", "v2a2", "v2b"]),
     ("vrefintcal", &["v1"]),
     ("wwdg", &["v1", "v2"]),
+    ("xspi", &["v1"]),
+    ("xspim", &["v1"]),
 ];

@@ -7958,8 +7958,13 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "XSPI1",
-        address: 0x90000000,
-        registers: None,
+        address: 0x52005000,
+        registers: Some(PeripheralRegisters {
+            kind: "xspi",
+            version: "v1",
+            block: "XSPI",
+            ir: &xspi::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK5",
             kernel_clock: Clock("HCLK5"),
@@ -7989,7 +7994,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "XSPIM",
         address: 0x5200b400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "xspim",
+            version: "v1",
+            block: "XSPIM",
+            ir: &xspim::REGISTERS,
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -9034,3 +9044,7 @@ pub mod usart;
 pub mod vrefbuf;
 #[path = "../registers/wwdg_v2.rs"]
 pub mod wwdg;
+#[path = "../registers/xspi_v1.rs"]
+pub mod xspi;
+#[path = "../registers/xspim_v1.rs"]
+pub mod xspim;

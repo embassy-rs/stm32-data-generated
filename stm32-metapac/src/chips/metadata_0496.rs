@@ -4464,7 +4464,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "XSPIM",
         address: 0x5200b400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "xspim",
+            version: "v1",
+            block: "XSPIM",
+            ir: &xspim::REGISTERS,
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -5387,3 +5392,5 @@ pub mod usart;
 pub mod vrefbuf;
 #[path = "../registers/wwdg_v2.rs"]
 pub mod wwdg;
+#[path = "../registers/xspim_v1.rs"]
+pub mod xspim;

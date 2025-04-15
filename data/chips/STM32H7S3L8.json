@@ -7700,7 +7700,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "APB1PERCKSELR",
+              "field": "SPI23SEL"
+            },
             "enable": {
               "register": "APB1ENR1",
               "field": "SPI2EN"
@@ -7886,7 +7889,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "APB1PERCKSELR",
+              "field": "SPI23SEL"
+            },
             "enable": {
               "register": "APB1ENR1",
               "field": "SPI3EN"

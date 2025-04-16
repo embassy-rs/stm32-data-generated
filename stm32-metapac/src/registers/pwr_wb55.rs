@@ -370,7 +370,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 3,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Lpms"),
                 },
                 Field {
                     name: "fpdr",
@@ -981,21 +981,55 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
     ],
-    enums: &[Enum {
-        name: "Vos",
-        description: None,
-        bit_size: 2,
-        variants: &[
-            EnumVariant {
-                name: "RANGE1",
-                description: Some("Range 1"),
-                value: 1,
-            },
-            EnumVariant {
-                name: "RANGE2",
-                description: Some("Range 2"),
-                value: 2,
-            },
-        ],
-    }],
+    enums: &[
+        Enum {
+            name: "Lpms",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "STOP0",
+                    description: Some("Stop0 mode"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "STOP1",
+                    description: Some("Stop1 mode"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "STOP2",
+                    description: Some("Stop2 mode"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "STANDBY",
+                    description: Some("Standby mode"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "SHUTDOWN",
+                    description: Some("Shutdown mode"),
+                    value: 4,
+                },
+            ],
+        },
+        Enum {
+            name: "Vos",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "RANGE1",
+                    description: Some("Range 1"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "RANGE2",
+                    description: Some("Range 2"),
+                    value: 2,
+                },
+            ],
+        },
+    ],
 };

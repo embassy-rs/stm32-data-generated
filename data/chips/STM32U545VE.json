@@ -5522,7 +5522,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK3",
-            "kernel_clock": "PCLK3",
+            "kernel_clock": {
+              "register": "BDCR",
+              "field": "RTCSEL"
+            },
             "enable": {
               "register": "APB3ENR",
               "field": "RTCAPBEN"

@@ -1493,7 +1493,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK7",
-            "kernel_clock": "PCLK7",
+            "kernel_clock": {
+              "register": "BDCR",
+              "field": "RTCSEL"
+            },
             "enable": {
               "register": "APB7ENR",
               "field": "RTCAPBEN"

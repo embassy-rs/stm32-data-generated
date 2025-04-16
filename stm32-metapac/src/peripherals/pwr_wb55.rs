@@ -319,14 +319,14 @@ pub mod regs {
     impl Cr1 {
         #[doc = "Low-power mode selection for CPU1"]
         #[inline(always)]
-        pub const fn lpms(&self) -> u8 {
+        pub const fn lpms(&self) -> super::vals::Lpms {
             let val = (self.0 >> 0usize) & 0x07;
-            val as u8
+            super::vals::Lpms::from_bits(val as u8)
         }
         #[doc = "Low-power mode selection for CPU1"]
         #[inline(always)]
-        pub fn set_lpms(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        pub fn set_lpms(&mut self, val: super::vals::Lpms) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
         }
         #[doc = "Flash power down mode during LPRun for CPU1"]
         #[inline(always)]
@@ -407,7 +407,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Cr1 {{ lpms: {=u8:?}, fpdr: {=bool:?}, fpds: {=bool:?}, dbp: {=bool:?}, vos: {:?}, lpr: {=bool:?} }}",
+                "Cr1 {{ lpms: {:?}, fpdr: {=bool:?}, fpds: {=bool:?}, dbp: {=bool:?}, vos: {:?}, lpr: {=bool:?} }}",
                 self.lpms(),
                 self.fpdr(),
                 self.fpds(),
@@ -1438,6 +1438,46 @@ pub mod regs {
     }
 }
 pub mod vals {
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Lpms {
+        #[doc = "Stop0 mode"]
+        STOP0 = 0x0,
+        #[doc = "Stop1 mode"]
+        STOP1 = 0x01,
+        #[doc = "Stop2 mode"]
+        STOP2 = 0x02,
+        #[doc = "Standby mode"]
+        STANDBY = 0x03,
+        #[doc = "Shutdown mode"]
+        SHUTDOWN = 0x04,
+        _RESERVED_5 = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+    }
+    impl Lpms {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Lpms {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Lpms {
+        #[inline(always)]
+        fn from(val: u8) -> Lpms {
+            Lpms::from_bits(val)
+        }
+    }
+    impl From<Lpms> for u8 {
+        #[inline(always)]
+        fn from(val: Lpms) -> u8 {
+            Lpms::to_bits(val)
+        }
+    }
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]

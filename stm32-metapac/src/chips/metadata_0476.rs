@@ -4243,7 +4243,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK4",
-            kernel_clock: Clock("PCLK4"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "BDCR",
+                field: "RTCSEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB4ENR",
                 field: "RTCAPBEN",

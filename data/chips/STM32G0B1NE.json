@@ -1951,7 +1951,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "BDCR",
+              "field": "RTCSEL"
+            },
             "enable": {
               "register": "APBENR1",
               "field": "RTCAPBEN"

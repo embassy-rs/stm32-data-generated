@@ -3493,7 +3493,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Smps"),
                 },
                 Field {
                     name: "smpsdiv",
@@ -3509,7 +3509,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Smps"),
                 },
             ],
         },
@@ -5003,6 +5003,28 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "SAI1_EXTCLK",
                     description: None,
                     value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Smps",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "HSI",
+                    description: None,
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MSI",
+                    description: None,
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSE",
+                    description: None,
+                    value: 2,
                 },
             ],
         },

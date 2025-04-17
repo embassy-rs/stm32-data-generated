@@ -5309,14 +5309,14 @@ pub mod regs {
     impl Smpscr {
         #[doc = "Step Down converter clock selection"]
         #[inline(always)]
-        pub const fn smpssel(&self) -> u8 {
+        pub const fn smpssel(&self) -> super::vals::Smps {
             let val = (self.0 >> 0usize) & 0x03;
-            val as u8
+            super::vals::Smps::from_bits(val as u8)
         }
         #[doc = "Step Down converter clock selection"]
         #[inline(always)]
-        pub fn set_smpssel(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
+        pub fn set_smpssel(&mut self, val: super::vals::Smps) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
         #[doc = "Step Down converter clock prescaler"]
         #[inline(always)]
@@ -5331,14 +5331,14 @@ pub mod regs {
         }
         #[doc = "Step Down converter clock switch status"]
         #[inline(always)]
-        pub const fn smpssws(&self) -> u8 {
+        pub const fn smpssws(&self) -> super::vals::Smps {
             let val = (self.0 >> 8usize) & 0x03;
-            val as u8
+            super::vals::Smps::from_bits(val as u8)
         }
         #[doc = "Step Down converter clock switch status"]
         #[inline(always)]
-        pub fn set_smpssws(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
+        pub fn set_smpssws(&mut self, val: super::vals::Smps) {
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
         }
     }
     impl Default for Smpscr {
@@ -5361,7 +5361,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Smpscr {{ smpssel: {=u8:?}, smpsdiv: {=u8:?}, smpssws: {=u8:?} }}",
+                "Smpscr {{ smpssel: {:?}, smpsdiv: {=u8:?}, smpssws: {:?} }}",
                 self.smpssel(),
                 self.smpsdiv(),
                 self.smpssws()
@@ -6372,6 +6372,37 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Sai1sel) -> u8 {
             Sai1sel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Smps {
+        HSI = 0x0,
+        MSI = 0x01,
+        HSE = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl Smps {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Smps {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Smps {
+        #[inline(always)]
+        fn from(val: u8) -> Smps {
+            Smps::from_bits(val)
+        }
+    }
+    impl From<Smps> for u8 {
+        #[inline(always)]
+        fn from(val: Smps) -> u8 {
+            Smps::to_bits(val)
         }
     }
     #[repr(u8)]

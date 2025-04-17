@@ -6732,7 +6732,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK4",
-            "kernel_clock": "PCLK4",
+            "kernel_clock": {
+              "register": "BDCR",
+              "field": "RTCSEL"
+            },
             "enable": {
               "register": "APB4ENR",
               "field": "RTCAPBEN"
@@ -17416,7 +17419,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK4",
-            "kernel_clock": "PCLK4",
+            "kernel_clock": {
+              "register": "BDCR",
+              "field": "RTCSEL"
+            },
             "enable": {
               "register": "APB4ENR",
               "field": "RTCAPBEN"

@@ -2495,7 +2495,8 @@
         "name": "SMPSSEL",
         "description": "Step Down converter clock selection",
         "bit_offset": 0,
-        "bit_size": 2
+        "bit_size": 2,
+        "enum": "SMPS"
       },
       {
         "name": "SMPSDIV",
@@ -2507,7 +2508,8 @@
         "name": "SMPSSWS",
         "description": "Step Down converter clock switch status",
         "bit_offset": 8,
-        "bit_size": 2
+        "bit_size": 2,
+        "enum": "SMPS"
       }
     ]
   },
@@ -3772,6 +3774,23 @@
       {
         "name": "SAI1_EXTCLK",
         "value": 3
+      }
+    ]
+  },
+  "enum/SMPS": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "HSI",
+        "value": 0
+      },
+      {
+        "name": "MSI",
+        "value": 1
+      },
+      {
+        "name": "HSE",
+        "value": 2
       }
     ]
   },

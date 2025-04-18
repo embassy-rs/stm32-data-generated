@@ -5953,7 +5953,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HSI_DIV488",
+                    name: "HSI_DIV_488",
                     description: Some(
                         "HSI divided by 488 clock is selected as HDMI-CEC clock",
                     ),

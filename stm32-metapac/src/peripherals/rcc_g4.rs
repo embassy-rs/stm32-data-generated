@@ -4988,7 +4988,7 @@ pub mod vals {
         #[doc = "LSI used as RTC clock"]
         LSI = 0x02,
         #[doc = "HSE divided by 32 used as RTC clock"]
-        HSE_DIV32 = 0x03,
+        HSE_DIV_32 = 0x03,
     }
     impl Rtcsel {
         #[inline(always)]

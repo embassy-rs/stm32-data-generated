@@ -5404,7 +5404,7 @@ pub mod vals {
         #[doc = "LSE clock is selected as HDMI-CEC clock"]
         LSE = 0x0,
         #[doc = "HSI divided by 488 clock is selected as HDMI-CEC clock"]
-        HSI_DIV488 = 0x01,
+        HSI_DIV_488 = 0x01,
     }
     impl Cecsel {
         #[inline(always)]

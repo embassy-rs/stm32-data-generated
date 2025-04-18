@@ -4015,7 +4015,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "HSE_DIV32",
+                    name: "HSE_DIV_32",
                     description: Some("HSE divided by 32 used as RTC clock"),
                     value: 3,
                 },

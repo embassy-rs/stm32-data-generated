@@ -3800,7 +3800,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "Disable",
+        "name": "DISABLE",
         "description": "No clock",
         "value": 0
       },

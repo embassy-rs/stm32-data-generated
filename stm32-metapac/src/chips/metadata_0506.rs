@@ -3,7 +3,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "ADC1",
         address: 0x40022000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "adc",
+            version: "h7rs",
+            block: "ADC",
+            ir: &adc::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK1",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -108,7 +113,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40022300,
         registers: Some(PeripheralRegisters {
             kind: "adccommon",
-            version: "v4",
+            version: "h5",
             block: "ADC_COMMON",
             ir: &adccommon::REGISTERS,
         }),
@@ -120,7 +125,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "ADC2",
         address: 0x40022100,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "adc",
+            version: "h7rs",
+            block: "ADC",
+            ir: &adc::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK1",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -5496,7 +5506,9 @@ pub(crate) static PINS: &[Pin] = &[
     Pin { name: "PP2" },
     Pin { name: "PP3" },
 ];
-#[path = "../registers/adccommon_v4.rs"]
+#[path = "../registers/adc_h7rs.rs"]
+pub mod adc;
+#[path = "../registers/adccommon_h5.rs"]
 pub mod adccommon;
 #[path = "../registers/can_fdcan_v1.rs"]
 pub mod can;

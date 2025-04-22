@@ -683,8 +683,8 @@ pub const FDCANRAM1: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(
 pub const FDCANRAM2: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_af50usize as _) };
 pub const UCPD1: ucpd::Ucpd = unsafe { ucpd::Ucpd::from_ptr(0x4000_ec00usize as _) };
 pub const GPDMA1: gpdma::Gpdma = unsafe { gpdma::Gpdma::from_ptr(0x4002_1000usize as _) };
-pub const ADC1: *mut () = 0x4002_2000usize as _;
-pub const ADC2: *mut () = 0x4002_2100usize as _;
+pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x4002_2000usize as _) };
+pub const ADC2: adc::Adc = unsafe { adc::Adc::from_ptr(0x4002_2100usize as _) };
 pub const ADC12_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4002_2300usize as _) };
 pub const USB_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4004_0000usize as _) };
 pub const USB_OTG_FS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4008_0000usize as _) };
@@ -745,7 +745,9 @@ pub const NVIC_PRIO_BITS: u8 = 4;
 pub use cortex_m_rt::interrupt;
 #[cfg(feature = "rt")]
 pub use Interrupt as interrupt;
-#[path = "../../peripherals/adccommon_v4.rs"]
+#[path = "../../peripherals/adc_h7rs.rs"]
+pub mod adc;
+#[path = "../../peripherals/adccommon_h5.rs"]
 pub mod adccommon;
 #[path = "../../peripherals/can_fdcan_v1.rs"]
 pub mod can;

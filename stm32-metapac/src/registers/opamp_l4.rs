@@ -1,161 +1,277 @@
 
 use crate::metadata::ir::*;
 pub(crate) static REGISTERS: IR = IR {
-    blocks: &[Block {
-        name: "Opamp",
-        extends: None,
-        description: Some("Operational amplifiers."),
-        items: &[
-            BlockItem {
-                name: "csr",
-                description: Some("OPAMP control/status register."),
-                array: None,
-                byte_offset: 0x0,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Csr"),
-                }),
-            },
-            BlockItem {
-                name: "otr",
-                description: Some("OPAMP offset trimming register in normal mode."),
-                array: None,
-                byte_offset: 0x4,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Otr"),
-                }),
-            },
-            BlockItem {
-                name: "lpotr",
-                description: Some("OPAMP offset trimming register in low-power mode."),
-                array: None,
-                byte_offset: 0x8,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Lpotr"),
-                }),
-            },
-        ],
-    }],
+    blocks: &[
+        Block {
+            name: "Opamp",
+            extends: None,
+            description: Some(
+                "Operational amplifier",
+            ),
+            items: &[
+                BlockItem {
+                    name: "csr",
+                    description: Some(
+                        "Control/status register",
+                    ),
+                    array: None,
+                    byte_offset: 0x0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Csr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "otr",
+                    description: Some(
+                        "Offset trimming register in normal mode",
+                    ),
+                    array: None,
+                    byte_offset: 0x4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Otr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "lpotr",
+                    description: Some(
+                        "Offset trimming register in low-power mode",
+                    ),
+                    array: None,
+                    byte_offset: 0x8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Lpotr",
+                            ),
+                        },
+                    ),
+                },
+            ],
+        },
+    ],
     fieldsets: &[
         FieldSet {
             name: "Csr",
             extends: None,
-            description: Some("OPAMP control/status register."),
+            description: Some(
+                "Control/status register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "opampen",
-                    description: Some("Operational amplifier Enable."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "opalpm",
-                    description: Some("Operational amplifier Low Power Mode."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    description: Some(
+                        "Low-power mode enable. The operational amplifier must be disabled to change this configuration.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Opalpm"),
+                    enumm: None,
                 },
                 Field {
                     name: "opamode",
-                    description: Some("Operational amplifier PGA mode."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    description: Some(
+                        "PGA mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Opamode"),
+                    enumm: Some(
+                        "Opamode",
+                    ),
                 },
                 Field {
                     name: "pga_gain",
-                    description: Some("Operational amplifier Programmable amplifier gain value."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    description: Some(
+                        "Gain in PGA mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("PgaGain"),
+                    enumm: Some(
+                        "PgaGain",
+                    ),
                 },
                 Field {
                     name: "vm_sel",
-                    description: Some("Inverting input selection."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "Inverting input selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("VmSel"),
+                    enumm: Some(
+                        "VmSel",
+                    ),
                 },
                 Field {
                     name: "vp_sel",
-                    description: Some("Non inverted input selection."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
+                    description: Some(
+                        "Non inverted input selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("VpSel"),
+                    enumm: Some(
+                        "VpSel",
+                    ),
                 },
                 Field {
                     name: "calon",
-                    description: Some("Calibration mode enabled."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    description: Some(
+                        "Calibration mode enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "calsel",
-                    description: Some("Calibration selection."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
+                    description: Some(
+                        "Calibration selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Calsel"),
+                    enumm: Some(
+                        "Calsel",
+                    ),
                 },
                 Field {
                     name: "usertrim",
-                    description: Some("allows to switch from AOP offset trimmed values to AOP offset."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    description: Some(
+                        "User trimming enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Usertrim"),
+                    enumm: None,
                 },
                 Field {
                     name: "calout",
-                    description: Some("Operational amplifier calibration output."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    description: Some(
+                        "Calibration output",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "opa_range",
-                    description: Some("Operational amplifier power supply range for stability."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
+                    description: Some(
+                        "Power supply range for stability",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("OpaRange"),
+                    enumm: Some(
+                        "OpaRange",
+                    ),
                 },
             ],
         },
         FieldSet {
             name: "Lpotr",
             extends: None,
-            description: Some("OPAMP offset trimming register in low-power mode."),
+            description: Some(
+                "Offset trimming register in low-power mode",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "trimlpoffsetn",
-                    description: Some("Trim for NMOS differential pairs."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "Offset trimming value (NMOS)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 5,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "trimlpoffsetp",
-                    description: Some("Trim for PMOS differential pairs."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "Offset trimming value (PMOS)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -165,21 +281,35 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Otr",
             extends: None,
-            description: Some("OPAMP offset trimming register in normal mode."),
+            description: Some(
+                "Offset trimming register in normal mode",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "trimoffsetn",
-                    description: Some("Trim for NMOS differential pairs."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    description: Some(
+                        "Offset trimming value (NMOS)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
                     bit_size: 5,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "trimoffsetp",
-                    description: Some("Trim for PMOS differential pairs."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    description: Some(
+                        "Offset trimming value (PMOS)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -195,12 +325,16 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "NMOS",
-                    description: Some("0.2V applied to OPAMP inputs during calibration."),
+                    description: Some(
+                        "NMOS calibration, 0.2 V applied to OPAMP inputs during calibration",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PMOS",
-                    description: Some("VDDA-0.2V applied to OPAMP inputs during calibration\"."),
+                    description: Some(
+                        "PMOS calibration, VDDA - 0.2 V applied to OPAMP inputs during calibration",
+                    ),
                     value: 1,
                 },
             ],
@@ -212,29 +346,16 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "LOW",
-                    description: Some("low range (VDDA < 2.4V."),
+                    description: Some(
+                        "Low range (VDDA < 2.4 V)",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "HIGH",
-                    description: Some("low range (VDDA >2.4V."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Opalpm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NORMAL",
-                    description: Some("OpAmp in normal mode."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LOW",
-                    description: Some("OpAmp in low power mode."),
+                    description: Some(
+                        "High range (VDDA > 2.4 V)",
+                    ),
                     value: 1,
                 },
             ],
@@ -245,18 +366,31 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PGA_DISABLED",
-                    description: Some("internal PGA diabled."),
+                    name: "DISABLE",
+                    description: Some(
+                        "Internal PGA disable",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PGA_ENABLED",
-                    description: Some("internal PGA enabled, gain programmed in PGA_GAIN."),
+                    name: "DISABLE2",
+                    description: Some(
+                        "Internal PGA disable (duplicate)",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "ENABLE",
+                    description: Some(
+                        "Internal PGA enable, gain programmed in PGA_GAIN",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "FOLLOWER",
-                    description: Some("internal follower."),
+                    description: Some(
+                        "Internal follower",
+                    ),
                     value: 3,
                 },
             ],
@@ -268,40 +402,31 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "GAIN2",
-                    description: Some("Gain 2."),
+                    description: Some(
+                        "Gain 2",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "GAIN4",
-                    description: Some("Gain 4."),
+                    description: Some(
+                        "Gain 4",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "GAIN8",
-                    description: Some("Gain 8."),
+                    description: Some(
+                        "Gain 8",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "GAIN16",
-                    description: Some("Gain 16."),
+                    description: Some(
+                        "Gain 16",
+                    ),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Usertrim",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "FACTORY",
-                    description: Some("Factory trim used."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "USER",
-                    description: Some("User trim used."),
-                    value: 1,
                 },
             ],
         },
@@ -312,17 +437,23 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "GPIO",
-                    description: Some("GPIO connectet to VINM."),
+                    description: Some(
+                        "GPIO connected to VINM (valid also in PGA mode for filtering)",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "LOW_LEAKAGE",
-                    description: Some("Low leakage inputs connecte (only available in certen BGA cases."),
+                    description: Some(
+                        "Low leakage inputs connected (only available in certain packages)",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PGA_MODE",
-                    description: Some("OPAMP in PGA mode."),
+                    name: "NOT_CONNECTED",
+                    description: Some(
+                        "VINM not externally connected, valid only in PGA mode",
+                    ),
                     value: 2,
                 },
             ],
@@ -334,12 +465,16 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "GPIO",
-                    description: Some("GPIO connectet to VINP."),
+                    description: Some(
+                        "GPIO connected to VINP",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "DAC",
-                    description: Some("DAC connected to VPINP."),
+                    description: Some(
+                        "DAC connected to VINP",
+                    ),
                     value: 1,
                 },
             ],

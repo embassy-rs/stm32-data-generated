@@ -4,10 +4,10 @@ pub(crate) static REGISTERS: IR = IR {
     blocks: &[Block {
         name: "Opamp",
         extends: None,
-        description: Some("Operational Amplifier"),
+        description: Some("Operational amplifier"),
         items: &[BlockItem {
             name: "csr",
-            description: Some("OPAMP control/status register"),
+            description: Some("Control/status register"),
             array: None,
             byte_offset: 0x0,
             inner: BlockItemInner::Register(Register {
@@ -20,12 +20,12 @@ pub(crate) static REGISTERS: IR = IR {
     fieldsets: &[FieldSet {
         name: "Csr",
         extends: None,
-        description: Some("OPAMP control/status register"),
+        description: Some("Control/status register"),
         bit_size: 32,
         fields: &[
             Field {
                 name: "opampen",
-                description: Some("OPAMP enable"),
+                description: Some("Enable"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: None,
@@ -33,17 +33,15 @@ pub(crate) static REGISTERS: IR = IR {
             },
             Field {
                 name: "force_vp",
-                description: Some(
-                    "Forces a calibration reference voltage on non-inverting input and disables external connections.",
-                ),
+                description: Some("Force internal reference on VP (reserved for test)"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                 bit_size: 1,
                 array: None,
-                enumm: Some("ForceVp"),
+                enumm: None,
             },
             Field {
                 name: "vp_sel",
-                description: Some("OPAMP Non inverting input selection"),
+                description: Some("Non-inverting input selection"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                 bit_size: 2,
                 array: None,
@@ -51,7 +49,7 @@ pub(crate) static REGISTERS: IR = IR {
             },
             Field {
                 name: "vm_sel",
-                description: Some("OPAMP inverting input selection"),
+                description: Some("Inverting input selection"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                 bit_size: 2,
                 array: None,
@@ -67,7 +65,7 @@ pub(crate) static REGISTERS: IR = IR {
             },
             Field {
                 name: "vms_sel",
-                description: Some("OPAMP inverting input secondary selection"),
+                description: Some("Inverting input secondary selection"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                 bit_size: 1,
                 array: None,
@@ -75,7 +73,7 @@ pub(crate) static REGISTERS: IR = IR {
             },
             Field {
                 name: "vps_sel",
-                description: Some("OPAMP Non inverting input secondary selection"),
+                description: Some("Non-inverting input secondary selection"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                 bit_size: 2,
                 array: None,
@@ -106,7 +104,7 @@ pub(crate) static REGISTERS: IR = IR {
                 enumm: Some("PgaGain"),
             },
             Field {
-                name: "user_trim",
+                name: "usertrim",
                 description: Some("User trimming enable"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                 bit_size: 1,
@@ -138,12 +136,12 @@ pub(crate) static REGISTERS: IR = IR {
                 enumm: None,
             },
             Field {
-                name: "outcal",
-                description: Some("OPAMP ouput status flag"),
+                name: "calout",
+                description: Some("Calibration output"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                 bit_size: 1,
                 array: None,
-                enumm: Some("Outcal"),
+                enumm: None,
             },
             Field {
                 name: "lock",
@@ -163,57 +161,23 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PERCENT3_3",
-                    description: Some("VREFOPAMP=3.3% VDDA"),
+                    description: Some("VREFOPAMP = 3.3% VDDA"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PERCENT10",
-                    description: Some("VREFOPAMP=10% VDDA"),
+                    description: Some("VREFOPAMP = 10% VDDA"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "PERCENT50",
-                    description: Some("VREFOPAMP=50% VDDA"),
+                    description: Some("VREFOPAMP = 50% VDDA"),
                     value: 2,
                 },
                 EnumVariant {
                     name: "PERCENT90",
-                    description: Some("VREFOPAMP=90% VDDA"),
+                    description: Some("VREFOPAMP = 90% VDDA"),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "ForceVp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NORMAL",
-                    description: Some("Normal operating mode"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CALIBRATION",
-                    description: Some("Calibration mode. Non-inverting input connected to calibration reference"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Outcal",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "LOW",
-                    description: Some("Non-inverting < inverting"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HIGH",
-                    description: Some("Non-inverting > inverting"),
-                    value: 1,
                 },
             ],
         },
@@ -318,12 +282,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PC5",
-                    description: Some("PC5 (VM0) used as OPAMP2 inverting input when TCM_EN=1"),
+                    description: Some("PC5 (VM0) used as OPAMP2 inverting input when TCM_EN = 1"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PA5",
-                    description: Some("PA5 (VM1) used as OPAMP2 inverting input when TCM_EN=1"),
+                    description: Some("PA5 (VM1) used as OPAMP2 inverting input when TCM_EN = 1"),
                     value: 1,
                 },
             ],

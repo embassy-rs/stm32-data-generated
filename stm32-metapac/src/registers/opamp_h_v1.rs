@@ -6,13 +6,13 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Opamp",
             extends: None,
             description: Some(
-                "Operational amplifiers.",
+                "Operational amplifier",
             ),
             items: &[
                 BlockItem {
                     name: "csr",
                     description: Some(
-                        "OPAMP1 control/status register.",
+                        "Control/status register",
                     ),
                     array: None,
                     byte_offset: 0x0,
@@ -29,7 +29,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "otr",
                     description: Some(
-                        "OPAMP1 offset trimming register in normal mode.",
+                        "Offset trimming register in normal mode",
                     ),
                     array: None,
                     byte_offset: 0x4,
@@ -46,7 +46,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "hsotr",
                     description: Some(
-                        "OPAMP1 offset trimming register in low-power mode.",
+                        "Offset trimming register in low-power mode",
                     ),
                     array: None,
                     byte_offset: 0x8,
@@ -68,14 +68,14 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Csr",
             extends: None,
             description: Some(
-                "OPAMP1 control/status register.",
+                "Control/status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "opampen",
                     description: Some(
-                        "Operational amplifier Enable.",
+                        "Enable",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -89,7 +89,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "force_vp",
                     description: Some(
-                        "Force internal reference on VP (reserved for test.",
+                        "Force internal reference on VP (reserved for test)",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -98,14 +98,12 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "ForceVp",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "vp_sel",
                     description: Some(
-                        "Operational amplifier PGA mode.",
+                        "Non-inverting input selection",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -121,7 +119,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "vm_sel",
                     description: Some(
-                        "Inverting input selection.",
+                        "Inverting input selection",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -137,7 +135,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "opahsm",
                     description: Some(
-                        "Operational amplifier high-speed mode.",
+                        "High-speed mode enable",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -146,14 +144,12 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Opahsm",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "calon",
                     description: Some(
-                        "Calibration mode enabled.",
+                        "Calibration mode enable",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -162,14 +158,12 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Calon",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "calsel",
                     description: Some(
-                        "Calibration selection.",
+                        "Calibration selection",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -185,7 +179,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pga_gain",
                     description: Some(
-                        "allows to switch from AOP offset trimmed values to AOP offset.",
+                        "Gain in PGA mode",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -201,7 +195,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "usertrim",
                     description: Some(
-                        "User trimming enable.",
+                        "User trimming enable",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -210,14 +204,12 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Usertrim",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "tstref",
                     description: Some(
-                        "OPAMP calibration reference voltage output control (reserved for test).",
+                        "Output the internal reference voltage",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -231,7 +223,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "calout",
                     description: Some(
-                        "Operational amplifier calibration output.",
+                        "Calibration output",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -240,9 +232,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Calout",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -250,14 +240,14 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Hsotr",
             extends: None,
             description: Some(
-                "OPAMP1 offset trimming register in low-power mode.",
+                "Offset trimming register in low-power mode",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "trimlpoffsetn",
                     description: Some(
-                        "Trim for NMOS differential pairs.",
+                        "Offset trimming value (NMOS)",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -271,7 +261,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "trimlpoffsetp",
                     description: Some(
-                        "Trim for PMOS differential pairs.",
+                        "Offset trimming value (PMOS)",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -288,14 +278,14 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Otr",
             extends: None,
             description: Some(
-                "OPAMP1 offset trimming register in normal mode.",
+                "Offset trimming register in normal mode",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "trimoffsetn",
                     description: Some(
-                        "Trim for NMOS differential pairs.",
+                        "Offset trimming value (NMOS)",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -309,7 +299,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "trimoffsetp",
                     description: Some(
-                        "Trim for PMOS differential pairs.",
+                        "Offset trimming value (PMOS)",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -325,48 +315,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Calon",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NORMAL",
-                    description: Some(
-                        "Normal mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CALIBRATION",
-                    description: Some(
-                        "Calibration mode (all switches opened by HW)",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Calout",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "LESS",
-                    description: Some(
-                        "Non-inverting < inverting",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "GREATER",
-                    description: Some(
-                        "Non-inverting > inverting",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Calsel",
             description: None,
             bit_size: 2,
@@ -374,72 +322,30 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "PERCENT3_3",
                     description: Some(
-                        "VREFOPAMP=3.3% VDDA.",
+                        "VREFOPAMP = 3.3% VDDA",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PERCENT10",
                     description: Some(
-                        "VREFOPAMP=10% VDDA.",
+                        "VREFOPAMP = 10% VDDA",
                     ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "PERCENT50",
                     description: Some(
-                        "VREFOPAMP=50% VDDA.",
+                        "VREFOPAMP = 50% VDDA",
                     ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "PERCENT90",
                     description: Some(
-                        "VREFOPAMP=90% VDDA.",
+                        "VREFOPAMP = 90% VDDA",
                     ),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "ForceVp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NORMAL_OPERATING",
-                    description: Some(
-                        "Normal operating mode. Non-inverting input connected to inputs.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CALIBRATION_VERIFICATION",
-                    description: Some(
-                        "Calibration verification mode. Non-inverting input connected to calibration reference voltage.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Opahsm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NORMAL",
-                    description: Some(
-                        "operational amplifier in normal mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HIGH_SPEED",
-                    description: Some(
-                        "operational amplifier in high-speed mode",
-                    ),
-                    value: 1,
                 },
             ],
         },
@@ -451,56 +357,56 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "GAIN2",
                     description: Some(
-                        "Non-inverting internal Gain 2, VREF- referenced",
+                        "Non-inverting internal gain 2, VREF- referenced",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "GAIN4",
                     description: Some(
-                        "Non-inverting internal Gain 4, VREF- referenced",
+                        "Non-inverting internal gain 4, VREF- referenced",
                     ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "GAIN8",
                     description: Some(
-                        "Non-inverting internal Gain 8, VREF- referenced",
+                        "Non-inverting internal gain 8, VREF- referenced",
                     ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "GAIN16",
                     description: Some(
-                        "Non-inverting internal Gain 16, VREF- referenced",
+                        "Non-inverting internal gain 16, VREF- referenced",
                     ),
                     value: 3,
                 },
                 EnumVariant {
                     name: "GAIN2_FILTERING_VINM0",
                     description: Some(
-                        "Non-inverting internal Gain 2 with filtering on INM0, VREF- referenced",
+                        "Non-inverting internal gain 2 with filtering on INM0, VREF- referenced",
                     ),
                     value: 4,
                 },
                 EnumVariant {
                     name: "GAIN4_FILTERING_VINM0",
                     description: Some(
-                        "Non-inverting internal Gain 4 with filtering on INM0, VREF- referenced",
+                        "Non-inverting internal gain 4 with filtering on INM0, VREF- referenced",
                     ),
                     value: 5,
                 },
                 EnumVariant {
                     name: "GAIN8_FILTERING_VINM0",
                     description: Some(
-                        "Non-inverting internal Gain 8 with filtering on INM0, VREF- referenced",
+                        "Non-inverting internal gain 8 with filtering on INM0, VREF- referenced",
                     ),
                     value: 6,
                 },
                 EnumVariant {
                     name: "GAIN16_FILTERING_VINM0",
                     description: Some(
-                        "Non-inverting internal Gain 8 with filtering on INM0, VREF- referenced",
+                        "Non-inverting internal gain 8 with filtering on INM0, VREF- referenced",
                     ),
                     value: 7,
                 },
@@ -563,27 +469,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Usertrim",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "FACTORY",
-                    description: Some(
-                        "\\'factory\\' trim code used",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "USER",
-                    description: Some(
-                        "\\'user\\' trim code used",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "VmSel",
             description: None,
             bit_size: 2,
@@ -626,14 +511,14 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "GPIO",
                     description: Some(
-                        "GPIO connected to OPAMPx_VINP",
+                        "GPIO connected to VINP",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "DAC_OUT",
                     description: Some(
-                        "dac_outx connected to OPAMPx_VINP",
+                        "DAC connected to VINP",
                     ),
                     value: 1,
                 },

@@ -3,7 +3,7 @@
 #![allow(clippy::unnecessary_cast)]
 #![allow(clippy::erasing_op)]
 
-#[doc = "Operational Amplifier"]
+#[doc = "Operational amplifier"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct Opamp {
     ptr: *mut u8,
@@ -19,58 +19,58 @@ impl Opamp {
     pub const fn as_ptr(&self) -> *mut () {
         self.ptr as _
     }
-    #[doc = "OPAMP control/status register"]
+    #[doc = "Control/status register"]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
 }
 pub mod regs {
-    #[doc = "OPAMP control/status register"]
+    #[doc = "Control/status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Csr(pub u32);
     impl Csr {
-        #[doc = "OPAMP enable"]
+        #[doc = "Enable"]
         #[inline(always)]
         pub const fn opampen(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
-        #[doc = "OPAMP enable"]
+        #[doc = "Enable"]
         #[inline(always)]
         pub fn set_opampen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "Forces a calibration reference voltage on non-inverting input and disables external connections."]
+        #[doc = "Force internal reference on VP (reserved for test)"]
         #[inline(always)]
-        pub const fn force_vp(&self) -> super::vals::ForceVp {
+        pub const fn force_vp(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::ForceVp::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "Forces a calibration reference voltage on non-inverting input and disables external connections."]
+        #[doc = "Force internal reference on VP (reserved for test)"]
         #[inline(always)]
-        pub fn set_force_vp(&mut self, val: super::vals::ForceVp) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_force_vp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "OPAMP Non inverting input selection"]
+        #[doc = "Non-inverting input selection"]
         #[inline(always)]
         pub const fn vp_sel(&self) -> super::vals::VpSel {
             let val = (self.0 >> 2usize) & 0x03;
             super::vals::VpSel::from_bits(val as u8)
         }
-        #[doc = "OPAMP Non inverting input selection"]
+        #[doc = "Non-inverting input selection"]
         #[inline(always)]
         pub fn set_vp_sel(&mut self, val: super::vals::VpSel) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
         }
-        #[doc = "OPAMP inverting input selection"]
+        #[doc = "Inverting input selection"]
         #[inline(always)]
         pub const fn vm_sel(&self) -> super::vals::VmSel {
             let val = (self.0 >> 5usize) & 0x03;
             super::vals::VmSel::from_bits(val as u8)
         }
-        #[doc = "OPAMP inverting input selection"]
+        #[doc = "Inverting input selection"]
         #[inline(always)]
         pub fn set_vm_sel(&mut self, val: super::vals::VmSel) {
             self.0 = (self.0 & !(0x03 << 5usize)) | (((val.to_bits() as u32) & 0x03) << 5usize);
@@ -86,24 +86,24 @@ pub mod regs {
         pub fn set_tcm_en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
-        #[doc = "OPAMP inverting input secondary selection"]
+        #[doc = "Inverting input secondary selection"]
         #[inline(always)]
         pub const fn vms_sel(&self) -> super::vals::VmsSel {
             let val = (self.0 >> 8usize) & 0x01;
             super::vals::VmsSel::from_bits(val as u8)
         }
-        #[doc = "OPAMP inverting input secondary selection"]
+        #[doc = "Inverting input secondary selection"]
         #[inline(always)]
         pub fn set_vms_sel(&mut self, val: super::vals::VmsSel) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
         }
-        #[doc = "OPAMP Non inverting input secondary selection"]
+        #[doc = "Non-inverting input secondary selection"]
         #[inline(always)]
         pub const fn vps_sel(&self) -> super::vals::VpsSel {
             let val = (self.0 >> 9usize) & 0x03;
             super::vals::VpsSel::from_bits(val as u8)
         }
-        #[doc = "OPAMP Non inverting input secondary selection"]
+        #[doc = "Non-inverting input secondary selection"]
         #[inline(always)]
         pub fn set_vps_sel(&mut self, val: super::vals::VpsSel) {
             self.0 = (self.0 & !(0x03 << 9usize)) | (((val.to_bits() as u32) & 0x03) << 9usize);
@@ -143,13 +143,13 @@ pub mod regs {
         }
         #[doc = "User trimming enable"]
         #[inline(always)]
-        pub const fn user_trim(&self) -> bool {
+        pub const fn usertrim(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
             val != 0
         }
         #[doc = "User trimming enable"]
         #[inline(always)]
-        pub fn set_user_trim(&mut self, val: bool) {
+        pub fn set_usertrim(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "Offset trimming value (PMOS)"]
@@ -185,16 +185,16 @@ pub mod regs {
         pub fn set_tstref(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
-        #[doc = "OPAMP ouput status flag"]
+        #[doc = "Calibration output"]
         #[inline(always)]
-        pub const fn outcal(&self) -> super::vals::Outcal {
+        pub const fn calout(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
-            super::vals::Outcal::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "OPAMP ouput status flag"]
+        #[doc = "Calibration output"]
         #[inline(always)]
-        pub fn set_outcal(&mut self, val: super::vals::Outcal) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+        pub fn set_calout(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "OPAMP lock"]
         #[inline(always)]
@@ -227,11 +227,11 @@ pub mod regs {
                 .field("calon", &self.calon())
                 .field("calsel", &self.calsel())
                 .field("pga_gain", &self.pga_gain())
-                .field("user_trim", &self.user_trim())
+                .field("usertrim", &self.usertrim())
                 .field("trimoffsetp", &self.trimoffsetp())
                 .field("trimoffsetn", &self.trimoffsetn())
                 .field("tstref", &self.tstref())
-                .field("outcal", &self.outcal())
+                .field("calout", &self.calout())
                 .field("lock", &self.lock())
                 .finish()
         }
@@ -239,7 +239,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Csr {{ opampen: {=bool:?}, force_vp: {:?}, vp_sel: {:?}, vm_sel: {:?}, tcm_en: {=bool:?}, vms_sel: {:?}, vps_sel: {:?}, calon: {=bool:?}, calsel: {:?}, pga_gain: {:?}, user_trim: {=bool:?}, trimoffsetp: {=u8:?}, trimoffsetn: {=u8:?}, tstref: {=bool:?}, outcal: {:?}, lock: {=bool:?} }}" , self . opampen () , self . force_vp () , self . vp_sel () , self . vm_sel () , self . tcm_en () , self . vms_sel () , self . vps_sel () , self . calon () , self . calsel () , self . pga_gain () , self . user_trim () , self . trimoffsetp () , self . trimoffsetn () , self . tstref () , self . outcal () , self . lock ())
+            defmt :: write ! (f , "Csr {{ opampen: {=bool:?}, force_vp: {=bool:?}, vp_sel: {:?}, vm_sel: {:?}, tcm_en: {=bool:?}, vms_sel: {:?}, vps_sel: {:?}, calon: {=bool:?}, calsel: {:?}, pga_gain: {:?}, usertrim: {=bool:?}, trimoffsetp: {=u8:?}, trimoffsetn: {=u8:?}, tstref: {=bool:?}, calout: {=bool:?}, lock: {=bool:?} }}" , self . opampen () , self . force_vp () , self . vp_sel () , self . vm_sel () , self . tcm_en () , self . vms_sel () , self . vps_sel () , self . calon () , self . calsel () , self . pga_gain () , self . usertrim () , self . trimoffsetp () , self . trimoffsetn () , self . tstref () , self . calout () , self . lock ())
         }
     }
 }
@@ -248,13 +248,13 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Calsel {
-        #[doc = "VREFOPAMP=3.3% VDDA"]
+        #[doc = "VREFOPAMP = 3.3% VDDA"]
         PERCENT3_3 = 0x0,
-        #[doc = "VREFOPAMP=10% VDDA"]
+        #[doc = "VREFOPAMP = 10% VDDA"]
         PERCENT10 = 0x01,
-        #[doc = "VREFOPAMP=50% VDDA"]
+        #[doc = "VREFOPAMP = 50% VDDA"]
         PERCENT50 = 0x02,
-        #[doc = "VREFOPAMP=90% VDDA"]
+        #[doc = "VREFOPAMP = 90% VDDA"]
         PERCENT90 = 0x03,
     }
     impl Calsel {
@@ -277,68 +277,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Calsel) -> u8 {
             Calsel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum ForceVp {
-        #[doc = "Normal operating mode"]
-        NORMAL = 0x0,
-        #[doc = "Calibration mode. Non-inverting input connected to calibration reference"]
-        CALIBRATION = 0x01,
-    }
-    impl ForceVp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> ForceVp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for ForceVp {
-        #[inline(always)]
-        fn from(val: u8) -> ForceVp {
-            ForceVp::from_bits(val)
-        }
-    }
-    impl From<ForceVp> for u8 {
-        #[inline(always)]
-        fn from(val: ForceVp) -> u8 {
-            ForceVp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Outcal {
-        #[doc = "Non-inverting < inverting"]
-        LOW = 0x0,
-        #[doc = "Non-inverting > inverting"]
-        HIGH = 0x01,
-    }
-    impl Outcal {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Outcal {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Outcal {
-        #[inline(always)]
-        fn from(val: u8) -> Outcal {
-            Outcal::from_bits(val)
-        }
-    }
-    impl From<Outcal> for u8 {
-        #[inline(always)]
-        fn from(val: Outcal) -> u8 {
-            Outcal::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -435,9 +373,9 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VmsSel {
-        #[doc = "PC5 (VM0) used as OPAMP2 inverting input when TCM_EN=1"]
+        #[doc = "PC5 (VM0) used as OPAMP2 inverting input when TCM_EN = 1"]
         PC5 = 0x0,
-        #[doc = "PA5 (VM1) used as OPAMP2 inverting input when TCM_EN=1"]
+        #[doc = "PA5 (VM1) used as OPAMP2 inverting input when TCM_EN = 1"]
         PA5 = 0x01,
     }
     impl VmsSel {

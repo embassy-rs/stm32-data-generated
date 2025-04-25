@@ -2009,15 +2009,15 @@ pub mod regs {
         pub fn set_smptrig(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
-        #[doc = "OSVR."]
+        #[doc = "OVSR."]
         #[inline(always)]
-        pub const fn osvr(&self) -> u16 {
+        pub const fn ovsr(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0x03ff;
             val as u16
         }
-        #[doc = "OSVR."]
+        #[doc = "OVSR."]
         #[inline(always)]
-        pub fn set_osvr(&mut self, val: u16) {
+        pub fn set_ovsr(&mut self, val: u16) {
             self.0 = (self.0 & !(0x03ff << 16usize)) | (((val as u32) & 0x03ff) << 16usize);
         }
         #[doc = "LFTRIG."]
@@ -2060,7 +2060,7 @@ pub mod regs {
                 .field("bulb", &self.bulb())
                 .field("swtrig", &self.swtrig())
                 .field("smptrig", &self.smptrig())
-                .field("osvr", &self.osvr())
+                .field("ovsr", &self.ovsr())
                 .field("lftrig", &self.lftrig())
                 .field("lshift", &self.lshift())
                 .finish()
@@ -2069,7 +2069,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr2 {{ rovse: {=bool:?}, jovse: {=bool:?}, ovss: {=u8:?}, trovs: {=bool:?}, rovsm: {=bool:?}, bulb: {=bool:?}, swtrig: {=bool:?}, smptrig: {=bool:?}, osvr: {=u16:?}, lftrig: {=bool:?}, lshift: {=u8:?} }}" , self . rovse () , self . jovse () , self . ovss () , self . trovs () , self . rovsm () , self . bulb () , self . swtrig () , self . smptrig () , self . osvr () , self . lftrig () , self . lshift ())
+            defmt :: write ! (f , "Cfgr2 {{ rovse: {=bool:?}, jovse: {=bool:?}, ovss: {=u8:?}, trovs: {=bool:?}, rovsm: {=bool:?}, bulb: {=bool:?}, swtrig: {=bool:?}, smptrig: {=bool:?}, ovsr: {=u16:?}, lftrig: {=bool:?}, lshift: {=u8:?} }}" , self . rovse () , self . jovse () , self . ovss () , self . trovs () , self . rovsm () , self . bulb () , self . swtrig () , self . smptrig () , self . ovsr () , self . lftrig () , self . lshift ())
         }
     }
     #[doc = "ADC control register."]

@@ -584,7 +584,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "osvr",
+                    name: "ovsr",
                     description: Some("Oversampling ratio"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 10,

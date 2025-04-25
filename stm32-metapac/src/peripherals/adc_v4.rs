@@ -695,13 +695,13 @@ pub mod regs {
         }
         #[doc = "Oversampling ratio"]
         #[inline(always)]
-        pub const fn osvr(&self) -> u16 {
+        pub const fn ovsr(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0x03ff;
             val as u16
         }
         #[doc = "Oversampling ratio"]
         #[inline(always)]
-        pub fn set_osvr(&mut self, val: u16) {
+        pub fn set_ovsr(&mut self, val: u16) {
             self.0 = (self.0 & !(0x03ff << 16usize)) | (((val as u32) & 0x03ff) << 16usize);
         }
         #[doc = "Left shift factor"]
@@ -734,7 +734,7 @@ pub mod regs {
                 .field("rshift2", &self.rshift2())
                 .field("rshift3", &self.rshift3())
                 .field("rshift4", &self.rshift4())
-                .field("osvr", &self.osvr())
+                .field("ovsr", &self.ovsr())
                 .field("lshift", &self.lshift())
                 .finish()
         }
@@ -742,7 +742,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr2 {{ rovse: {=bool:?}, jovse: {=bool:?}, ovss: {=u8:?}, trovs: {:?}, rovsm: {:?}, rshift1: {=bool:?}, rshift2: {=bool:?}, rshift3: {=bool:?}, rshift4: {=bool:?}, osvr: {=u16:?}, lshift: {=u8:?} }}" , self . rovse () , self . jovse () , self . ovss () , self . trovs () , self . rovsm () , self . rshift1 () , self . rshift2 () , self . rshift3 () , self . rshift4 () , self . osvr () , self . lshift ())
+            defmt :: write ! (f , "Cfgr2 {{ rovse: {=bool:?}, jovse: {=bool:?}, ovss: {=u8:?}, trovs: {:?}, rovsm: {:?}, rshift1: {=bool:?}, rshift2: {=bool:?}, rshift3: {=bool:?}, rshift4: {=bool:?}, ovsr: {=u16:?}, lshift: {=u8:?} }}" , self . rovse () , self . jovse () , self . ovss () , self . trovs () , self . rovsm () , self . rshift1 () , self . rshift2 () , self . rshift3 () , self . rshift4 () , self . ovsr () , self . lshift ())
         }
     }
     #[doc = "control register"]

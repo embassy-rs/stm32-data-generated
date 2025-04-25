@@ -1390,8 +1390,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "osvr",
-                    description: Some("OSVR."),
+                    name: "ovsr",
+                    description: Some("OVSR."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 10,
                     array: None,

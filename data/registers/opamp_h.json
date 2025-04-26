@@ -256,7 +256,7 @@
       },
       {
         "name": "Pga",
-        "description": "Feedback resistor is connected to the OPAMP_VINM input (PGA mode), Inverting input selection depends on the PGA_GAIN setting",
+        "description": "Feedback resistor connected to the OPAMP_VINM input (PGA mode), Inverting input selection depends on the PGA_GAIN setting",
         "value": 2
       },
       {
@@ -270,14 +270,19 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "Gpio",
-        "description": "GPIO connected to VINP",
+        "name": "GpioInp0",
+        "description": "GPIO INP0 connected to VINP",
         "value": 0
       },
       {
         "name": "DacOut",
         "description": "DAC connected to VINP",
         "value": 1
+      },
+      {
+        "name": "GpioInp2",
+        "description": "GPIO INP2 connected to OPAMP_VINP (not available on all chips)",
+        "value": 2
       }
     ]
   }

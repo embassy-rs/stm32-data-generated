@@ -3672,7 +3672,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40009000,
         registers: Some(PeripheralRegisters {
             kind: "opamp",
-            version: "h_v1",
+            version: "h",
             block: "OPAMP",
             ir: &opamp::REGISTERS,
         }),
@@ -3719,7 +3719,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40009010,
         registers: Some(PeripheralRegisters {
             kind: "opamp",
-            version: "h_v1",
+            version: "h",
             block: "OPAMP",
             ir: &opamp::REGISTERS,
         }),
@@ -9041,7 +9041,7 @@ pub mod mdios;
 pub mod octospi;
 #[path = "../registers/octospim_v1.rs"]
 pub mod octospim;
-#[path = "../registers/opamp_h_v1.rs"]
+#[path = "../registers/opamp_h.rs"]
 pub mod opamp;
 #[path = "../registers/otg_v1.rs"]
 pub mod otg;

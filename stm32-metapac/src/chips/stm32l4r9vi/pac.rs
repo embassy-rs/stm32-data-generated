@@ -544,7 +544,7 @@ pub mod ltdc;
 pub mod octospi;
 #[path = "../../peripherals/octospim_v1.rs"]
 pub mod octospim;
-#[path = "../../peripherals/opamp_l4.rs"]
+#[path = "../../peripherals/opamp_l4u0.rs"]
 pub mod opamp;
 #[path = "../../peripherals/otg_v1.rs"]
 pub mod otg;

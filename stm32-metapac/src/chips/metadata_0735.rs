@@ -1115,7 +1115,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40007800,
         registers: Some(PeripheralRegisters {
             kind: "opamp",
-            version: "u0",
+            version: "l4u0",
             block: "OPAMP",
             ir: &opamp::REGISTERS,
         }),
@@ -2863,7 +2863,7 @@ pub mod i2c;
 pub mod iwdg;
 #[path = "../registers/lptim_v2b.rs"]
 pub mod lptim;
-#[path = "../registers/opamp_u0.rs"]
+#[path = "../registers/opamp_l4u0.rs"]
 pub mod opamp;
 #[path = "../registers/pwr_u0.rs"]
 pub mod pwr;

@@ -262,7 +262,7 @@ pub mod iwdg;
 pub mod lcd;
 #[path = "../../peripherals/lptim_v2b.rs"]
 pub mod lptim;
-#[path = "../../peripherals/opamp_u0.rs"]
+#[path = "../../peripherals/opamp_l4u0.rs"]
 pub mod opamp;
 #[path = "../../peripherals/pwr_u0.rs"]
 pub mod pwr;

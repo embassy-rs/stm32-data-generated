@@ -3304,7 +3304,7 @@
           "address": 1073778688,
           "registers": {
             "kind": "opamp",
-            "version": "h_v1",
+            "version": "h",
             "block": "OPAMP"
           },
           "rcc": {

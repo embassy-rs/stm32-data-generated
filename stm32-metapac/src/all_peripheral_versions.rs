@@ -70,7 +70,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("mdios", &["v1"]),
     ("octospi", &["v1", "v2"]),
     ("octospim", &["v1"]),
-    ("opamp", &["f3", "g4", "h_v1", "h_v2", "l4", "u0"]),
+    ("opamp", &["f3", "g4", "h", "l4u0"]),
     ("otfdec", &["v1"]),
     ("otg", &["v1"]),
     ("pka", &["v1a", "v1b", "v1c"]),

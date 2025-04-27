@@ -1520,6 +1520,10 @@
               "signal": "VINP_SEC"
             },
             {
+              "pin": "PA1",
+              "signal": "VP3"
+            },
+            {
               "pin": "PA2",
               "signal": "VOUT"
             },
@@ -1540,12 +1544,20 @@
               "signal": "VINP_SEC"
             },
             {
+              "pin": "PA3",
+              "signal": "VP2"
+            },
+            {
               "pin": "PA5",
               "signal": "VINP"
             },
             {
               "pin": "PA5",
               "signal": "VINP_SEC"
+            },
+            {
+              "pin": "PA5",
+              "signal": "VP1"
             },
             {
               "pin": "PA7",
@@ -1558,18 +1570,6 @@
             {
               "pin": "PA7",
               "signal": "VP0"
-            },
-            {
-              "pin": "PA5",
-              "signal": "VP1"
-            },
-            {
-              "pin": "PA3",
-              "signal": "VP2"
-            },
-            {
-              "pin": "PA1",
-              "signal": "VP3"
             }
           ]
         },
@@ -1603,12 +1603,20 @@
               "signal": "VINP_SEC"
             },
             {
+              "pin": "PA7",
+              "signal": "VP3"
+            },
+            {
               "pin": "PB0",
               "signal": "VINP"
             },
             {
               "pin": "PB0",
               "signal": "VINP_SEC"
+            },
+            {
+              "pin": "PB0",
+              "signal": "VP2"
             },
             {
               "pin": "PB14",
@@ -1621,14 +1629,6 @@
             {
               "pin": "PB14",
               "signal": "VP1"
-            },
-            {
-              "pin": "PB0",
-              "signal": "VP2"
-            },
-            {
-              "pin": "PA7",
-              "signal": "VP3"
             }
           ]
         },

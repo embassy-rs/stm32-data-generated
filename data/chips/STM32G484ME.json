@@ -3735,6 +3735,10 @@
               "signal": "VINP_SEC"
             },
             {
+              "pin": "PA1",
+              "signal": "VP0"
+            },
+            {
               "pin": "PA2",
               "signal": "VOUT"
             },
@@ -3759,12 +3763,20 @@
               "signal": "VINP_SEC"
             },
             {
+              "pin": "PA3",
+              "signal": "VP1"
+            },
+            {
               "pin": "PA7",
               "signal": "VINP"
             },
             {
               "pin": "PA7",
               "signal": "VINP_SEC"
+            },
+            {
+              "pin": "PA7",
+              "signal": "VP2"
             },
             {
               "pin": "PC5",
@@ -3777,18 +3789,6 @@
             {
               "pin": "PC5",
               "signal": "VINM_SEC"
-            },
-            {
-              "pin": "PA1",
-              "signal": "VP0"
-            },
-            {
-              "pin": "PA3",
-              "signal": "VP1"
-            },
-            {
-              "pin": "PA7",
-              "signal": "VP2"
             }
           ]
         },
@@ -3826,6 +3826,10 @@
               "signal": "VINP_SEC"
             },
             {
+              "pin": "PA7",
+              "signal": "VP0"
+            },
+            {
               "pin": "PB0",
               "signal": "VINP"
             },
@@ -3834,12 +3838,20 @@
               "signal": "VINP_SEC"
             },
             {
+              "pin": "PB0",
+              "signal": "VP2"
+            },
+            {
               "pin": "PB14",
               "signal": "VINP"
             },
             {
               "pin": "PB14",
               "signal": "VINP_SEC"
+            },
+            {
+              "pin": "PB14",
+              "signal": "VP1"
             },
             {
               "pin": "PC5",
@@ -3852,18 +3864,6 @@
             {
               "pin": "PC5",
               "signal": "VINM_SEC"
-            },
-            {
-              "pin": "PA7",
-              "signal": "VP0"
-            },
-            {
-              "pin": "PB14",
-              "signal": "VP1"
-            },
-            {
-              "pin": "PB0",
-              "signal": "VP2"
             }
           ]
         },
@@ -3885,12 +3885,20 @@
               "signal": "VINP_SEC"
             },
             {
+              "pin": "PA1",
+              "signal": "VP2"
+            },
+            {
               "pin": "PB0",
               "signal": "VINP"
             },
             {
               "pin": "PB0",
               "signal": "VINP_SEC"
+            },
+            {
+              "pin": "PB0",
+              "signal": "VP0"
             },
             {
               "pin": "PB1",
@@ -3917,6 +3925,10 @@
               "signal": "VINP_SEC"
             },
             {
+              "pin": "PB13",
+              "signal": "VP1"
+            },
+            {
               "pin": "PB2",
               "signal": "VINM"
             },
@@ -3927,18 +3939,6 @@
             {
               "pin": "PB2",
               "signal": "VINM_SEC"
-            },
-            {
-              "pin": "PB0",
-              "signal": "VP0"
-            },
-            {
-              "pin": "PB13",
-              "signal": "VP1"
-            },
-            {
-              "pin": "PA1",
-              "signal": "VP2"
             }
           ]
         },
@@ -3972,6 +3972,10 @@
               "signal": "VINP_SEC"
             },
             {
+              "pin": "PB11",
+              "signal": "VP2"
+            },
+            {
               "pin": "PB12",
               "signal": "VOUT"
             },
@@ -3984,12 +3988,20 @@
               "signal": "VINP_SEC"
             },
             {
+              "pin": "PB13",
+              "signal": "VP0"
+            },
+            {
               "pin": "PD11",
               "signal": "VINP"
             },
             {
               "pin": "PD11",
               "signal": "VINP_SEC"
+            },
+            {
+              "pin": "PD11",
+              "signal": "VP1"
             },
             {
               "pin": "PD8",
@@ -4002,18 +4014,6 @@
             {
               "pin": "PD8",
               "signal": "VINM_SEC"
-            },
-            {
-              "pin": "PB13",
-              "signal": "VP0"
-            },
-            {
-              "pin": "PD11",
-              "signal": "VP1"
-            },
-            {
-              "pin": "PB11",
-              "signal": "VP2"
             }
           ]
         },
@@ -4051,6 +4051,10 @@
               "signal": "VINP_SEC"
             },
             {
+              "pin": "PB14",
+              "signal": "VP0"
+            },
+            {
               "pin": "PB15",
               "signal": "VINM"
             },
@@ -4069,10 +4073,6 @@
             {
               "pin": "PC3",
               "signal": "VINP_SEC"
-            },
-            {
-              "pin": "PB14",
-              "signal": "VP0"
             },
             {
               "pin": "PC3",
@@ -4126,32 +4126,32 @@
               "signal": "VINP_SEC"
             },
             {
-              "pin": "PB13",
-              "signal": "VINP"
-            },
-            {
-              "pin": "PB13",
-              "signal": "VINP_SEC"
-            },
-            {
-              "pin": "PD9",
-              "signal": "VINP"
-            },
-            {
-              "pin": "PD9",
-              "signal": "VINP_SEC"
-            },
-            {
               "pin": "PB12",
               "signal": "VP0"
             },
             {
-              "pin": "PD9",
-              "signal": "VP1"
+              "pin": "PB13",
+              "signal": "VINP"
+            },
+            {
+              "pin": "PB13",
+              "signal": "VINP_SEC"
             },
             {
               "pin": "PB13",
               "signal": "VP2"
+            },
+            {
+              "pin": "PD9",
+              "signal": "VINP"
+            },
+            {
+              "pin": "PD9",
+              "signal": "VINP_SEC"
+            },
+            {
+              "pin": "PD9",
+              "signal": "VP1"
             }
           ]
         },

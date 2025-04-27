@@ -1642,12 +1642,20 @@
               "signal": "VINP_SEC"
             },
             {
+              "pin": "PA7",
+              "signal": "VP3"
+            },
+            {
               "pin": "PB0",
               "signal": "VINP"
             },
             {
               "pin": "PB0",
               "signal": "VINP_SEC"
+            },
+            {
+              "pin": "PB0",
+              "signal": "VP2"
             },
             {
               "pin": "PB14",
@@ -1660,14 +1668,6 @@
             {
               "pin": "PB14",
               "signal": "VP1"
-            },
-            {
-              "pin": "PB0",
-              "signal": "VP2"
-            },
-            {
-              "pin": "PA7",
-              "signal": "VP3"
             }
           ]
         },

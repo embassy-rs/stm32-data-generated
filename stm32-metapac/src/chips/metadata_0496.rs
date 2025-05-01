@@ -2074,6 +2074,11 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PA12",
+                signal: "DE",
+                af: Some(3),
+            },
+            PeripheralPin {
+                pin: "PA12",
                 signal: "RTS",
                 af: Some(3),
             },
@@ -3881,12 +3886,22 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PA15",
+                signal: "DE",
+                af: Some(8),
+            },
+            PeripheralPin {
+                pin: "PA15",
                 signal: "RTS",
                 af: Some(8),
             },
             PeripheralPin {
                 pin: "PB0",
                 signal: "CTS",
+                af: Some(8),
+            },
+            PeripheralPin {
+                pin: "PB14",
+                signal: "DE",
                 af: Some(8),
             },
             PeripheralPin {
@@ -4161,6 +4176,11 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PA12",
+                signal: "DE",
+                af: Some(7),
+            },
+            PeripheralPin {
+                pin: "PA12",
                 signal: "RTS",
                 af: Some(7),
             },
@@ -4249,6 +4269,11 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PA1",
+                signal: "DE",
+                af: Some(7),
+            },
+            PeripheralPin {
+                pin: "PA1",
                 signal: "RTS",
                 af: Some(7),
             },
@@ -4328,6 +4353,11 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralPin {
                 pin: "PB12",
                 signal: "CK",
+                af: Some(7),
+            },
+            PeripheralPin {
+                pin: "PB14",
+                signal: "DE",
                 af: Some(7),
             },
             PeripheralPin {
@@ -4479,6 +4509,41 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "WWDG",
             },
         ],
+    },
+    Peripheral {
+        name: "XSPI1",
+        address: 0x52005000,
+        registers: Some(PeripheralRegisters {
+            kind: "xspi",
+            version: "v1",
+            block: "XSPI",
+            ir: &xspi::REGISTERS,
+        }),
+        rcc: Some(PeripheralRcc {
+            bus_clock: "HCLK5",
+            kernel_clock: Clock("HCLK5"),
+            enable: Some(PeripheralRccRegister {
+                register: "AHB5ENR",
+                field: "XSPI1EN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "AHB5RSTR",
+                field: "XSPI1RST",
+            }),
+            stop_mode: StopMode::Stop1,
+        }),
+        pins: &[],
+        dma_channels: &[PeripheralDmaChannel {
+            signal: "RX",
+            channel: None,
+            dmamux: None,
+            dma: Some("HPDMA1"),
+            request: Some(2),
+        }],
+        interrupts: &[PeripheralInterrupt {
+            signal: "GLOBAL",
+            interrupt: "XSPI1",
+        }],
     },
     Peripheral {
         name: "XSPIM",
@@ -5413,5 +5478,7 @@ pub mod usart;
 pub mod vrefbuf;
 #[path = "../registers/wwdg_v2.rs"]
 pub mod wwdg;
+#[path = "../registers/xspi_v1.rs"]
+pub mod xspi;
 #[path = "../registers/xspim_v1.rs"]
 pub mod xspim;

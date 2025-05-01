@@ -7430,7 +7430,13 @@
         },
         {
           "name": "RAMECC",
-          "address": 1375768576
+          "address": 1375768576,
+          "interrupts": [
+            {
+              "signal": "ECC",
+              "interrupt": "ECC"
+            }
+          ]
         },
         {
           "name": "RCC",

@@ -281,9 +281,7 @@
         },
         {
           "position": "E3",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "F1",

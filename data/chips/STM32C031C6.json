@@ -204,12 +204,14 @@
         {
           "position": "33",
           "signals": [
-            "PA11"
+            "PA11",
+            "PA9"
           ]
         },
         {
           "position": "34",
           "signals": [
+            "PA10",
             "PA12"
           ]
         },
@@ -498,12 +500,14 @@
         {
           "position": "33",
           "signals": [
-            "PA11"
+            "PA11",
+            "PA9"
           ]
         },
         {
           "position": "34",
           "signals": [
+            "PA10",
             "PA12"
           ]
         },

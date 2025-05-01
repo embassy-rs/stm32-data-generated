@@ -262,6 +262,12 @@
           ]
         },
         {
+          "position": "D4",
+          "signals": [
+            "VDD11"
+          ]
+        },
+        {
           "position": "D5",
           "signals": [
             "VSS"
@@ -643,6 +649,12 @@
           "position": "J8",
           "signals": [
             "PE12"
+          ]
+        },
+        {
+          "position": "J9",
+          "signals": [
+            "VDD11"
           ]
         },
         {
@@ -2876,91 +2888,6 @@
               "interrupt": "EXTI9"
             }
           ]
-        },
-        {
-          "name": "FDCAN1",
-          "address": 1073783808,
-          "registers": {
-            "kind": "can",
-            "version": "fdcan_v1",
-            "block": "FDCAN"
-          },
-          "rcc": {
-            "bus_clock": "PCLK1",
-            "kernel_clock": {
-              "register": "CCIPR1",
-              "field": "FDCAN1SEL"
-            },
-            "enable": {
-              "register": "APB1ENR2",
-              "field": "FDCAN1EN"
-            },
-            "reset": {
-              "register": "APB1RSTR2",
-              "field": "FDCAN1RST"
-            }
-          },
-          "pins": [
-            {
-              "pin": "PA11",
-              "signal": "RX",
-              "af": 9
-            },
-            {
-              "pin": "PA12",
-              "signal": "TX",
-              "af": 9
-            },
-            {
-              "pin": "PB8",
-              "signal": "RX",
-              "af": 9
-            },
-            {
-              "pin": "PB9",
-              "signal": "TX",
-              "af": 9
-            },
-            {
-              "pin": "PD0",
-              "signal": "RX",
-              "af": 9
-            },
-            {
-              "pin": "PD1",
-              "signal": "TX",
-              "af": 9
-            },
-            {
-              "pin": "PH13",
-              "signal": "TX",
-              "af": 9
-            },
-            {
-              "pin": "PH14",
-              "signal": "RX",
-              "af": 9
-            }
-          ],
-          "interrupts": [
-            {
-              "signal": "IT0",
-              "interrupt": "FDCAN1_IT0"
-            },
-            {
-              "signal": "IT1",
-              "interrupt": "FDCAN1_IT1"
-            }
-          ]
-        },
-        {
-          "name": "FDCANRAM1",
-          "address": 1073785856,
-          "registers": {
-            "kind": "fdcanram",
-            "version": "v1",
-            "block": "FDCANRAM"
-          }
         },
         {
           "name": "FLASH",

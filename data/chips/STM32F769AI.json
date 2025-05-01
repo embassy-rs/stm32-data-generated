@@ -11,9 +11,7 @@
       "pins": [
         {
           "position": "A1",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "A10",
@@ -29,21 +27,15 @@
         },
         {
           "position": "A12",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "A13",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "A2",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "A3",
@@ -89,9 +81,7 @@
         },
         {
           "position": "B1",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "B10",
@@ -113,9 +103,7 @@
         },
         {
           "position": "B13",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "B2",
@@ -935,9 +923,7 @@
         },
         {
           "position": "N1",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "N10",
@@ -959,9 +945,7 @@
         },
         {
           "position": "N13",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "N2",
@@ -1013,9 +997,7 @@
         },
         {
           "position": "P1",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "P10",
@@ -1031,21 +1013,15 @@
         },
         {
           "position": "P12",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "P13",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "P2",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "P3",

@@ -3187,6 +3187,11 @@
             },
             {
               "pin": "PA12",
+              "signal": "DE",
+              "af": 3
+            },
+            {
+              "pin": "PA12",
               "signal": "RTS",
               "af": 3
             },
@@ -6404,12 +6409,22 @@
             },
             {
               "pin": "PC5",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PC5",
               "signal": "RTS",
               "af": 7
             },
             {
               "pin": "PE10",
               "signal": "TX",
+              "af": 6
+            },
+            {
+              "pin": "PE7",
+              "signal": "DE",
               "af": 6
             },
             {
@@ -6751,6 +6766,11 @@
             },
             {
               "pin": "PE9",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PE9",
               "signal": "RTS",
               "af": 7
             }
@@ -6980,6 +7000,11 @@
             },
             {
               "pin": "PA12",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PA12",
               "signal": "RTS",
               "af": 7
             },
@@ -7094,6 +7119,11 @@
             },
             {
               "pin": "PC1",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PC1",
               "signal": "RTS",
               "af": 7
             }
@@ -7137,6 +7167,11 @@
             {
               "pin": "PA0",
               "signal": "NSS",
+              "af": 7
+            },
+            {
+              "pin": "PA1",
+              "signal": "DE",
               "af": 7
             },
             {
@@ -7231,6 +7266,11 @@
             {
               "pin": "PB13",
               "signal": "NSS",
+              "af": 7
+            },
+            {
+              "pin": "PB14",
+              "signal": "DE",
               "af": 7
             },
             {

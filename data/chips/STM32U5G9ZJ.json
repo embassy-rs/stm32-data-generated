@@ -262,6 +262,12 @@
           ]
         },
         {
+          "position": "D4",
+          "signals": [
+            "VDD11"
+          ]
+        },
+        {
           "position": "D5",
           "signals": [
             "VSS"
@@ -643,6 +649,12 @@
           "position": "J8",
           "signals": [
             "PE12"
+          ]
+        },
+        {
+          "position": "J9",
+          "signals": [
+            "VDD11"
           ]
         },
         {

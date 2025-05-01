@@ -2435,64 +2435,6 @@
           ]
         },
         {
-          "name": "I2C2",
-          "address": 1073764352,
-          "registers": {
-            "kind": "i2c",
-            "version": "v2",
-            "block": "I2C"
-          },
-          "rcc": {
-            "bus_clock": "PCLK1",
-            "kernel_clock": {
-              "register": "D2CCIP2R",
-              "field": "I2C1235SEL"
-            },
-            "enable": {
-              "register": "APB1LENR",
-              "field": "I2C2EN"
-            },
-            "reset": {
-              "register": "APB1LRSTR",
-              "field": "I2C2RST"
-            }
-          },
-          "pins": [
-            {
-              "pin": "PB10",
-              "signal": "SCL",
-              "af": 4
-            },
-            {
-              "pin": "PB12",
-              "signal": "SMBA",
-              "af": 4
-            }
-          ],
-          "interrupts": [
-            {
-              "signal": "ER",
-              "interrupt": "I2C2_ER"
-            },
-            {
-              "signal": "EV",
-              "interrupt": "I2C2_EV"
-            }
-          ],
-          "dma_channels": [
-            {
-              "signal": "RX",
-              "dmamux": "DMAMUX1",
-              "request": 35
-            },
-            {
-              "signal": "TX",
-              "dmamux": "DMAMUX1",
-              "request": 36
-            }
-          ]
-        },
-        {
           "name": "I2C3",
           "address": 1073765376,
           "registers": {
@@ -2630,6 +2572,84 @@
               "signal": "TX",
               "dmamux": "DMAMUX2",
               "request": 14
+            }
+          ]
+        },
+        {
+          "name": "I2C5",
+          "address": 1073767424,
+          "registers": {
+            "kind": "i2c",
+            "version": "v2",
+            "block": "I2C"
+          },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "D2CCIP2R",
+              "field": "I2C1235SEL"
+            },
+            "enable": {
+              "register": "APB1LENR",
+              "field": "I2C5EN"
+            },
+            "reset": {
+              "register": "APB1LRSTR",
+              "field": "I2C5RST"
+            }
+          },
+          "pins": [
+            {
+              "pin": "PA8",
+              "signal": "SCL",
+              "af": 6
+            },
+            {
+              "pin": "PA9",
+              "signal": "SMBA",
+              "af": 6
+            },
+            {
+              "pin": "PC10",
+              "signal": "SDA",
+              "af": 4
+            },
+            {
+              "pin": "PC11",
+              "signal": "SCL",
+              "af": 4
+            },
+            {
+              "pin": "PC12",
+              "signal": "SMBA",
+              "af": 4
+            },
+            {
+              "pin": "PC9",
+              "signal": "SDA",
+              "af": 6
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "ER",
+              "interrupt": "I2C5_ER"
+            },
+            {
+              "signal": "EV",
+              "interrupt": "I2C5_EV"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "RX",
+              "dmamux": "DMAMUX1",
+              "request": 124
+            },
+            {
+              "signal": "TX",
+              "dmamux": "DMAMUX1",
+              "request": 125
             }
           ]
         },
@@ -3741,6 +3761,101 @@
             {
               "signal": "WKUP",
               "interrupt": "RTC_WKUP"
+            }
+          ]
+        },
+        {
+          "name": "SAI4",
+          "address": 1476416512,
+          "registers": {
+            "kind": "sai",
+            "version": "v4_4pdm",
+            "block": "SAI"
+          },
+          "rcc": {
+            "bus_clock": "PCLK4",
+            "kernel_clock": "PCLK4",
+            "enable": {
+              "register": "APB4ENR",
+              "field": "SAI4EN"
+            },
+            "reset": {
+              "register": "APB4RSTR",
+              "field": "SAI4RST"
+            }
+          },
+          "pins": [
+            {
+              "pin": "PA0",
+              "signal": "SD_B",
+              "af": 10
+            },
+            {
+              "pin": "PA1",
+              "signal": "MCLK_B",
+              "af": 10
+            },
+            {
+              "pin": "PA12",
+              "signal": "FS_B",
+              "af": 8
+            },
+            {
+              "pin": "PA2",
+              "signal": "SCK_B",
+              "af": 8
+            },
+            {
+              "pin": "PB2",
+              "signal": "D1",
+              "af": 1
+            },
+            {
+              "pin": "PB2",
+              "signal": "SD_A",
+              "af": 8
+            },
+            {
+              "pin": "PC0",
+              "signal": "FS_B",
+              "af": 8
+            },
+            {
+              "pin": "PC1",
+              "signal": "D1",
+              "af": 1
+            },
+            {
+              "pin": "PC1",
+              "signal": "SD_A",
+              "af": 8
+            },
+            {
+              "pin": "PC5",
+              "signal": "D3",
+              "af": 1
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "A",
+              "interrupt": "SAI4"
+            },
+            {
+              "signal": "B",
+              "interrupt": "SAI4"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "A",
+              "dmamux": "DMAMUX2",
+              "request": 15
+            },
+            {
+              "signal": "B",
+              "dmamux": "DMAMUX2",
+              "request": 16
             }
           ]
         },

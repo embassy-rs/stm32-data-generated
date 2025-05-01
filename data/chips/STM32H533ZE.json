@@ -820,6 +820,12 @@
           ]
         },
         {
+          "position": "M12",
+          "signals": [
+            "VSS"
+          ]
+        },
+        {
           "position": "M2",
           "signals": [
             "PA3"
@@ -4427,6 +4433,11 @@
             {
               "pin": "PA11",
               "signal": "CTS",
+              "af": 3
+            },
+            {
+              "pin": "PA12",
+              "signal": "DE",
               "af": 3
             },
             {
@@ -8191,6 +8202,11 @@
             },
             {
               "pin": "PA12",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PA12",
               "signal": "RTS",
               "af": 7
             },
@@ -8295,6 +8311,11 @@
             },
             {
               "pin": "PA1",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PA1",
               "signal": "RTS",
               "af": 7
             },
@@ -8326,6 +8347,11 @@
             {
               "pin": "PD3",
               "signal": "NSS",
+              "af": 7
+            },
+            {
+              "pin": "PD4",
+              "signal": "DE",
               "af": 7
             },
             {
@@ -8429,6 +8455,11 @@
             },
             {
               "pin": "PB14",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PB14",
               "signal": "RTS",
               "af": 7
             },
@@ -8465,6 +8496,11 @@
             {
               "pin": "PD11",
               "signal": "NSS",
+              "af": 7
+            },
+            {
+              "pin": "PD12",
+              "signal": "DE",
               "af": 7
             },
             {
@@ -8578,6 +8614,11 @@
             },
             {
               "pin": "PG12",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PG12",
               "signal": "RTS",
               "af": 7
             },
@@ -8609,6 +8650,11 @@
             {
               "pin": "PG7",
               "signal": "CK",
+              "af": 7
+            },
+            {
+              "pin": "PG8",
+              "signal": "DE",
               "af": 7
             },
             {

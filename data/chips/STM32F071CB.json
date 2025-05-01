@@ -671,9 +671,7 @@
         },
         {
           "position": "B6",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "B7",

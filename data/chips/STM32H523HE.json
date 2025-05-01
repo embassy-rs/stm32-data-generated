@@ -1372,74 +1372,6 @@
           ]
         },
         {
-          "name": "I2C3",
-          "address": 1140860928,
-          "registers": {
-            "kind": "i2c",
-            "version": "v2",
-            "block": "I2C"
-          },
-          "rcc": {
-            "bus_clock": "PCLK3",
-            "kernel_clock": {
-              "register": "CCIPR4",
-              "field": "I2C3SEL"
-            },
-            "enable": {
-              "register": "APB3ENR",
-              "field": "I2C3EN"
-            },
-            "reset": {
-              "register": "APB3RSTR",
-              "field": "I2C3RST"
-            }
-          },
-          "pins": [
-            {
-              "pin": "PA8",
-              "signal": "SCL",
-              "af": 4
-            },
-            {
-              "pin": "PB4",
-              "signal": "SDA",
-              "af": 9
-            }
-          ],
-          "interrupts": [
-            {
-              "signal": "ER",
-              "interrupt": "I2C3_ER"
-            },
-            {
-              "signal": "EV",
-              "interrupt": "I2C3_EV"
-            }
-          ],
-          "dma_channels": [
-            {
-              "signal": "RX",
-              "dma": "GPDMA1",
-              "request": 18
-            },
-            {
-              "signal": "RX",
-              "dma": "GPDMA2",
-              "request": 18
-            },
-            {
-              "signal": "TX",
-              "dma": "GPDMA1",
-              "request": 19
-            },
-            {
-              "signal": "TX",
-              "dma": "GPDMA2",
-              "request": 19
-            }
-          ]
-        },
-        {
           "name": "I3C1",
           "address": 1073765376,
           "registers": {
@@ -1766,6 +1698,11 @@
             {
               "pin": "PA11",
               "signal": "CTS",
+              "af": 3
+            },
+            {
+              "pin": "PA12",
+              "signal": "DE",
               "af": 3
             },
             {
@@ -2372,32 +2309,12 @@
             },
             {
               "pin": "PA15",
-              "signal": "I2S_WS",
-              "af": 6
-            },
-            {
-              "pin": "PA15",
               "signal": "NSS",
               "af": 6
             },
             {
               "pin": "PA3",
-              "signal": "I2S_SDO",
-              "af": 6
-            },
-            {
-              "pin": "PA3",
               "signal": "MOSI",
-              "af": 6
-            },
-            {
-              "pin": "PA4",
-              "signal": "I2S_SDO",
-              "af": 4
-            },
-            {
-              "pin": "PA4",
-              "signal": "I2S_WS",
               "af": 6
             },
             {
@@ -2409,11 +2326,6 @@
               "pin": "PA4",
               "signal": "NSS",
               "af": 6
-            },
-            {
-              "pin": "PB0",
-              "signal": "I2S_SDI",
-              "af": 5
             },
             {
               "pin": "PB0",
@@ -2427,27 +2339,12 @@
             },
             {
               "pin": "PB3",
-              "signal": "I2S_CK",
-              "af": 6
-            },
-            {
-              "pin": "PB3",
               "signal": "SCK",
               "af": 6
             },
             {
               "pin": "PB4",
-              "signal": "I2S_SDI",
-              "af": 6
-            },
-            {
-              "pin": "PB4",
               "signal": "MISO",
-              "af": 6
-            },
-            {
-              "pin": "PB8",
-              "signal": "I2S_WS",
               "af": 6
             },
             {
@@ -2482,80 +2379,6 @@
               "signal": "TX",
               "dma": "GPDMA2",
               "request": 11
-            }
-          ]
-        },
-        {
-          "name": "SPI4",
-          "address": 1073826816,
-          "registers": {
-            "kind": "spi",
-            "version": "v4",
-            "block": "SPI"
-          },
-          "rcc": {
-            "bus_clock": "PCLK2",
-            "kernel_clock": {
-              "register": "CCIPR3",
-              "field": "SPI4SEL"
-            },
-            "enable": {
-              "register": "APB2ENR",
-              "field": "SPI4EN"
-            },
-            "reset": {
-              "register": "APB2RSTR",
-              "field": "SPI4RST"
-            }
-          },
-          "pins": [
-            {
-              "pin": "PA0",
-              "signal": "SCK",
-              "af": 5
-            },
-            {
-              "pin": "PA8",
-              "signal": "MOSI",
-              "af": 6
-            },
-            {
-              "pin": "PB7",
-              "signal": "MISO",
-              "af": 5
-            },
-            {
-              "pin": "PB8",
-              "signal": "RDY",
-              "af": 5
-            }
-          ],
-          "interrupts": [
-            {
-              "signal": "GLOBAL",
-              "interrupt": "SPI4"
-            }
-          ],
-          "dma_channels": [
-            {
-              "signal": "RX",
-              "dma": "GPDMA1",
-              "request": 47
-            },
-            {
-              "signal": "RX",
-              "dma": "GPDMA2",
-              "request": 47
-            },
-            {
-              "signal": "TX",
-              "dma": "GPDMA1",
-              "request": 48
-            },
-            {
-              "signal": "TX",
-              "dma": "GPDMA2",
-              "request": 48
             }
           ]
         },
@@ -3940,6 +3763,11 @@
             },
             {
               "pin": "PA12",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PA12",
               "signal": "RTS",
               "af": 7
             },
@@ -4029,6 +3857,11 @@
             },
             {
               "pin": "PA1",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PA1",
               "signal": "RTS",
               "af": 7
             },
@@ -4079,134 +3912,6 @@
               "signal": "TX",
               "dma": "GPDMA2",
               "request": 24
-            }
-          ]
-        },
-        {
-          "name": "USART3",
-          "address": 1073760256,
-          "registers": {
-            "kind": "usart",
-            "version": "v4",
-            "block": "USART"
-          },
-          "rcc": {
-            "bus_clock": "PCLK1",
-            "kernel_clock": {
-              "register": "CCIPR1",
-              "field": "USART3SEL"
-            },
-            "enable": {
-              "register": "APB1LENR",
-              "field": "USART3EN"
-            },
-            "reset": {
-              "register": "APB1LRSTR",
-              "field": "USART3RST"
-            }
-          },
-          "pins": [
-            {
-              "pin": "PB1",
-              "signal": "RX",
-              "af": 7
-            }
-          ],
-          "interrupts": [
-            {
-              "signal": "GLOBAL",
-              "interrupt": "USART3"
-            }
-          ],
-          "dma_channels": [
-            {
-              "signal": "RX",
-              "dma": "GPDMA1",
-              "request": 25
-            },
-            {
-              "signal": "RX",
-              "dma": "GPDMA2",
-              "request": 25
-            },
-            {
-              "signal": "TX",
-              "dma": "GPDMA1",
-              "request": 26
-            },
-            {
-              "signal": "TX",
-              "dma": "GPDMA2",
-              "request": 26
-            }
-          ]
-        },
-        {
-          "name": "USART6",
-          "address": 1073767424,
-          "registers": {
-            "kind": "usart",
-            "version": "v4",
-            "block": "USART"
-          },
-          "rcc": {
-            "bus_clock": "PCLK1",
-            "kernel_clock": {
-              "register": "CCIPR1",
-              "field": "USART6SEL"
-            },
-            "enable": {
-              "register": "APB1LENR",
-              "field": "USART6EN"
-            },
-            "reset": {
-              "register": "APB1LRSTR",
-              "field": "USART6RST"
-            }
-          },
-          "pins": [
-            {
-              "pin": "PA1",
-              "signal": "CK",
-              "af": 14
-            },
-            {
-              "pin": "PB7",
-              "signal": "CTS",
-              "af": 6
-            },
-            {
-              "pin": "PB7",
-              "signal": "NSS",
-              "af": 6
-            }
-          ],
-          "interrupts": [
-            {
-              "signal": "GLOBAL",
-              "interrupt": "USART6"
-            }
-          ],
-          "dma_channels": [
-            {
-              "signal": "RX",
-              "dma": "GPDMA1",
-              "request": 31
-            },
-            {
-              "signal": "RX",
-              "dma": "GPDMA2",
-              "request": 31
-            },
-            {
-              "signal": "TX",
-              "dma": "GPDMA1",
-              "request": 32
-            },
-            {
-              "signal": "TX",
-              "dma": "GPDMA2",
-              "request": 32
             }
           ]
         },

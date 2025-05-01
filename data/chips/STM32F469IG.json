@@ -1283,9 +1283,7 @@
         },
         {
           "position": "C14",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "C15",
@@ -2318,7 +2316,12 @@
       "name": "CCMRAM",
       "kind": "ram",
       "address": 268435456,
-      "size": 65536
+      "size": 65536,
+      "access": {
+        "read": true,
+        "write": true,
+        "execute": false
+      }
     },
     {
       "name": "OTP",

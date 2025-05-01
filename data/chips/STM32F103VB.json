@@ -359,9 +359,7 @@
         },
         {
           "position": "F8",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "F9",
@@ -1049,9 +1047,7 @@
         },
         {
           "position": "73",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "74",
@@ -1379,9 +1375,7 @@
         },
         {
           "position": "C11",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "C12",

@@ -3927,6 +3927,11 @@
             },
             {
               "pin": "PA12",
+              "signal": "DE",
+              "af": 3
+            },
+            {
+              "pin": "PA12",
               "signal": "RTS",
               "af": 3
             },
@@ -6075,12 +6080,22 @@
             },
             {
               "pin": "PA15",
+              "signal": "DE",
+              "af": 8
+            },
+            {
+              "pin": "PA15",
               "signal": "RTS",
               "af": 8
             },
             {
               "pin": "PB0",
               "signal": "CTS",
+              "af": 8
+            },
+            {
+              "pin": "PB14",
+              "signal": "DE",
               "af": 8
             },
             {
@@ -6410,6 +6425,11 @@
             },
             {
               "pin": "PA12",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PA12",
               "signal": "RTS",
               "af": 7
             },
@@ -6495,6 +6515,11 @@
             {
               "pin": "PA0",
               "signal": "NSS",
+              "af": 7
+            },
+            {
+              "pin": "PA1",
+              "signal": "DE",
               "af": 7
             },
             {
@@ -6588,6 +6613,11 @@
             },
             {
               "pin": "PB14",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PB14",
               "signal": "RTS",
               "af": 7
             },
@@ -6609,6 +6639,11 @@
             {
               "pin": "PC12",
               "signal": "CK",
+              "af": 7
+            },
+            {
+              "pin": "PD12",
+              "signal": "DE",
               "af": 7
             },
             {

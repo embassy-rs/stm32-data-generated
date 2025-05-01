@@ -1457,9 +1457,7 @@
         },
         {
           "position": "J1",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "J10",
@@ -1481,9 +1479,7 @@
         },
         {
           "position": "J2",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "J3",
@@ -1529,9 +1525,7 @@
         },
         {
           "position": "K1",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "K10",
@@ -1553,9 +1547,7 @@
         },
         {
           "position": "K2",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "K3",
@@ -1601,9 +1593,7 @@
         },
         {
           "position": "L1",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "L10",
@@ -1625,15 +1615,11 @@
         },
         {
           "position": "L2",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "L3",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "L4",

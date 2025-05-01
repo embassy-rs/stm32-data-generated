@@ -1785,6 +1785,11 @@
               "af": 11
             },
             {
+              "pin": "PB2",
+              "signal": "VLCD",
+              "af": 11
+            },
+            {
               "pin": "PB3",
               "signal": "SEG7",
               "af": 11

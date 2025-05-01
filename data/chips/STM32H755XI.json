@@ -887,15 +887,11 @@
         },
         {
           "position": "K16",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "K17",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "K2",
@@ -977,15 +973,11 @@
         },
         {
           "position": "L16",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "L17",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "L2",
@@ -1055,15 +1047,11 @@
         },
         {
           "position": "M16",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "M17",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "M2",
@@ -1139,9 +1127,7 @@
         },
         {
           "position": "N17",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "N2",

@@ -228,7 +228,6 @@
         {
           "position": "37",
           "signals": [
-            "NC",
             "PA9"
           ]
         },
@@ -259,7 +258,6 @@
         {
           "position": "42",
           "signals": [
-            "NC",
             "PA10"
           ]
         },

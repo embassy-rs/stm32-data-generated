@@ -2245,6 +2245,11 @@
               "af": 11
             },
             {
+              "pin": "PB2",
+              "signal": "VLCD",
+              "af": 11
+            },
+            {
               "pin": "PB3",
               "signal": "SEG7",
               "af": 11
@@ -2276,18 +2281,8 @@
             },
             {
               "pin": "PC0",
-              "signal": "BIAS1",
-              "af": 12
-            },
-            {
-              "pin": "PC0",
               "signal": "SEG18",
               "af": 11
-            },
-            {
-              "pin": "PC1",
-              "signal": "BIAS2",
-              "af": 12
             },
             {
               "pin": "PC1",
@@ -2341,12 +2336,12 @@
             },
             {
               "pin": "PC2",
-              "signal": "BIAS3",
-              "af": 12
+              "signal": "SEG20",
+              "af": 11
             },
             {
-              "pin": "PC2",
-              "signal": "SEG20",
+              "pin": "PC3",
+              "signal": "VLCD",
               "af": 11
             },
             {

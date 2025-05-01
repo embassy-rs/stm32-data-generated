@@ -11,9 +11,7 @@
       "pins": [
         {
           "position": "A1",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "A10",
@@ -35,9 +33,7 @@
         },
         {
           "position": "A13",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "A2",
@@ -947,9 +943,7 @@
         },
         {
           "position": "N1",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "N10",
@@ -971,9 +965,7 @@
         },
         {
           "position": "N13",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "N2",
@@ -1097,7 +1089,12 @@
       "name": "CCMRAM",
       "kind": "ram",
       "address": 268435456,
-      "size": 65536
+      "size": 65536,
+      "access": {
+        "read": true,
+        "write": true,
+        "execute": false
+      }
     },
     {
       "name": "OTP",

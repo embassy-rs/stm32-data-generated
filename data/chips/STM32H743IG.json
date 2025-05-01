@@ -7,7 +7,7 @@
   "packages": [
     {
       "name": "STM32H743IGKx",
-      "package": "UFBGA176",
+      "package": "UFBGA176+25",
       "pins": [
         {
           "position": "A1",

@@ -587,9 +587,7 @@
         },
         {
           "position": "K1",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "K10",

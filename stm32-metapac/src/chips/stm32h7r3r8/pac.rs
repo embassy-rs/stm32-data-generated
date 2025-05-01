@@ -701,6 +701,7 @@ pub const DMA2D: dma2d::Dma2d = unsafe { dma2d::Dma2d::from_ptr(0x5200_1000usize
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x5200_2000usize as _) };
 pub const JPEG: jpeg::Jpeg = unsafe { jpeg::Jpeg::from_ptr(0x5200_3000usize as _) };
 pub const FMC: fmc::Fmc = unsafe { fmc::Fmc::from_ptr(0x5200_4000usize as _) };
+pub const XSPI1: xspi::Xspi = unsafe { xspi::Xspi::from_ptr(0x5200_5000usize as _) };
 pub const XSPIM: xspim::Xspim = unsafe { xspim::Xspim::from_ptr(0x5200_b400usize as _) };
 pub const GFXMMU: *mut () = 0x5201_0000usize as _;
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x5800_0000usize as _) };
@@ -807,5 +808,7 @@ pub mod usart;
 pub mod vrefbuf;
 #[path = "../../peripherals/wwdg_v2.rs"]
 pub mod wwdg;
+#[path = "../../peripherals/xspi_v1.rs"]
+pub mod xspi;
 #[path = "../../peripherals/xspim_v1.rs"]
 pub mod xspim;

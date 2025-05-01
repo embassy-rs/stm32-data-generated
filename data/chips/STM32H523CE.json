@@ -2208,6 +2208,11 @@
             },
             {
               "pin": "PA12",
+              "signal": "DE",
+              "af": 3
+            },
+            {
+              "pin": "PA12",
               "signal": "RTS",
               "af": 3
             },
@@ -4705,6 +4710,11 @@
             },
             {
               "pin": "PA12",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PA12",
               "signal": "RTS",
               "af": 7
             },
@@ -4805,6 +4815,11 @@
             {
               "pin": "PA0",
               "signal": "NSS",
+              "af": 7
+            },
+            {
+              "pin": "PA1",
+              "signal": "DE",
               "af": 7
             },
             {
@@ -4913,6 +4928,11 @@
             },
             {
               "pin": "PB14",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PB14",
               "signal": "RTS",
               "af": 7
             }
@@ -4943,85 +4963,6 @@
               "signal": "TX",
               "dma": "GPDMA2",
               "request": 26
-            }
-          ]
-        },
-        {
-          "name": "USART6",
-          "address": 1073767424,
-          "registers": {
-            "kind": "usart",
-            "version": "v4",
-            "block": "USART"
-          },
-          "rcc": {
-            "bus_clock": "PCLK1",
-            "kernel_clock": {
-              "register": "CCIPR1",
-              "field": "USART6SEL"
-            },
-            "enable": {
-              "register": "APB1LENR",
-              "field": "USART6EN"
-            },
-            "reset": {
-              "register": "APB1LRSTR",
-              "field": "USART6RST"
-            }
-          },
-          "pins": [
-            {
-              "pin": "PA1",
-              "signal": "CK",
-              "af": 14
-            },
-            {
-              "pin": "PB5",
-              "signal": "TX",
-              "af": 6
-            },
-            {
-              "pin": "PB6",
-              "signal": "RX",
-              "af": 6
-            },
-            {
-              "pin": "PB7",
-              "signal": "CTS",
-              "af": 6
-            },
-            {
-              "pin": "PB7",
-              "signal": "NSS",
-              "af": 6
-            }
-          ],
-          "interrupts": [
-            {
-              "signal": "GLOBAL",
-              "interrupt": "USART6"
-            }
-          ],
-          "dma_channels": [
-            {
-              "signal": "RX",
-              "dma": "GPDMA1",
-              "request": 31
-            },
-            {
-              "signal": "RX",
-              "dma": "GPDMA2",
-              "request": 31
-            },
-            {
-              "signal": "TX",
-              "dma": "GPDMA1",
-              "request": 32
-            },
-            {
-              "signal": "TX",
-              "dma": "GPDMA2",
-              "request": 32
             }
           ]
         },

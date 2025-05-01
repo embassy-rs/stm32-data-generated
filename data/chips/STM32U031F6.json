@@ -95,20 +95,20 @@
         {
           "position": "14",
           "signals": [
-            "PA10",
-            "PA8",
-            "PA9"
+            "PA8"
           ]
         },
         {
           "position": "15",
           "signals": [
-            "PA11"
+            "PA11",
+            "PA9"
           ]
         },
         {
           "position": "16",
           "signals": [
+            "PA10",
             "PA12"
           ]
         },

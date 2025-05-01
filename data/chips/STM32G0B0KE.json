@@ -120,7 +120,6 @@
         {
           "position": "19",
           "signals": [
-            "NC",
             "PA9"
           ]
         },
@@ -133,7 +132,6 @@
         {
           "position": "21",
           "signals": [
-            "NC",
             "PA10"
           ]
         },
@@ -3197,6 +3195,69 @@
               "signal": "TX",
               "dmamux": "DMAMUX1",
               "request": 77
+            }
+          ]
+        },
+        {
+          "name": "USB",
+          "address": 1073765376,
+          "registers": {
+            "kind": "usb",
+            "version": "v4",
+            "block": "USB"
+          },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR2",
+              "field": "USBSEL"
+            },
+            "enable": {
+              "register": "APBENR1",
+              "field": "USBEN"
+            },
+            "reset": {
+              "register": "APBRSTR1",
+              "field": "USBRST"
+            }
+          },
+          "pins": [
+            {
+              "pin": "PA11",
+              "signal": "DM"
+            },
+            {
+              "pin": "PA12",
+              "signal": "DP"
+            },
+            {
+              "pin": "PA13",
+              "signal": "NOE",
+              "af": 2
+            },
+            {
+              "pin": "PA15",
+              "signal": "NOE",
+              "af": 6
+            },
+            {
+              "pin": "PA4",
+              "signal": "NOE",
+              "af": 2
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "HP",
+              "interrupt": "USB"
+            },
+            {
+              "signal": "LP",
+              "interrupt": "USB"
+            },
+            {
+              "signal": "WKUP",
+              "interrupt": "USB"
             }
           ]
         },

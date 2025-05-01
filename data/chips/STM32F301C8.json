@@ -341,9 +341,7 @@
         },
         {
           "position": "A7",
-          "signals": [
-            "NC"
-          ]
+          "signals": []
         },
         {
           "position": "B1",

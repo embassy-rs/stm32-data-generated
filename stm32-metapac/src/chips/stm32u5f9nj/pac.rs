@@ -632,8 +632,6 @@ pub const I2C4: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_8400usize as _) };
 pub const LPTIM2: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_9400usize as _) };
 pub const I2C5: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_9800usize as _) };
 pub const I2C6: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_9c00usize as _) };
-pub const FDCAN1: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a400usize as _) };
-pub const FDCANRAM1: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_ac00usize as _) };
 pub const UCPD1: ucpd::Ucpd = unsafe { ucpd::Ucpd::from_ptr(0x4000_dc00usize as _) };
 pub const TIM1: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_2c00usize as _) };
 pub const SPI1: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_3000usize as _) };
@@ -723,8 +721,6 @@ pub mod adc;
 pub mod adccommon;
 #[path = "../../peripherals/adf_v1.rs"]
 pub mod adf;
-#[path = "../../peripherals/can_fdcan_v1.rs"]
-pub mod can;
 #[path = "../../peripherals/comp_u5.rs"]
 pub mod comp;
 #[path = "../../peripherals/cordic_v1.rs"]
@@ -747,8 +743,6 @@ pub mod dma2d;
 pub mod dsihost;
 #[path = "../../peripherals/exti_u5.rs"]
 pub mod exti;
-#[path = "../../peripherals/fdcanram_v1.rs"]
-pub mod fdcanram;
 #[path = "../../peripherals/flash_u5.rs"]
 pub mod flash;
 #[path = "../../peripherals/fmac_v1.rs"]

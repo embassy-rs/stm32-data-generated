@@ -7,300 +7,252 @@
   "packages": [
     {
       "name": "STM32WBA55HGFx",
-      "package": "UFQFPN48",
+      "package": "WLCSP41",
       "pins": [
         {
-          "position": "1",
-          "signals": [
-            "PB12"
-          ]
-        },
-        {
-          "position": "2",
-          "signals": [
-            "PB11"
-          ]
-        },
-        {
-          "position": "3",
-          "signals": [
-            "PA8"
-          ]
-        },
-        {
-          "position": "4",
-          "signals": [
-            "PA7"
-          ]
-        },
-        {
-          "position": "5",
-          "signals": [
-            "PA6"
-          ]
-        },
-        {
-          "position": "6",
-          "signals": [
-            "VDDA"
-          ]
-        },
-        {
-          "position": "7",
-          "signals": [
-            "PA5"
-          ]
-        },
-        {
-          "position": "8",
-          "signals": [
-            "PA3"
-          ]
-        },
-        {
-          "position": "9",
-          "signals": [
-            "PB10"
-          ]
-        },
-        {
-          "position": "10",
-          "signals": [
-            "PA2"
-          ]
-        },
-        {
-          "position": "11",
+          "position": "A10",
           "signals": [
             "VDD"
           ]
         },
         {
-          "position": "12",
+          "position": "A12",
           "signals": [
-            "PA1"
+            "VSSSMPS"
           ]
         },
         {
-          "position": "13",
-          "signals": [
-            "PA0"
-          ]
-        },
-        {
-          "position": "14",
-          "signals": [
-            "PB9"
-          ]
-        },
-        {
-          "position": "15",
-          "signals": [
-            "PB8"
-          ]
-        },
-        {
-          "position": "16",
-          "signals": [
-            "PC15"
-          ]
-        },
-        {
-          "position": "17",
-          "signals": [
-            "PC14"
-          ]
-        },
-        {
-          "position": "18",
-          "signals": [
-            "PC13"
-          ]
-        },
-        {
-          "position": "19",
-          "signals": [
-            "PB7"
-          ]
-        },
-        {
-          "position": "20",
-          "signals": [
-            "PB6"
-          ]
-        },
-        {
-          "position": "21",
-          "signals": [
-            "PB5"
-          ]
-        },
-        {
-          "position": "22",
-          "signals": [
-            "VDD"
-          ]
-        },
-        {
-          "position": "23",
-          "signals": [
-            "PB4"
-          ]
-        },
-        {
-          "position": "24",
-          "signals": [
-            "PB3"
-          ]
-        },
-        {
-          "position": "25",
-          "signals": [
-            "PA15"
-          ]
-        },
-        {
-          "position": "26",
-          "signals": [
-            "PA14"
-          ]
-        },
-        {
-          "position": "27",
-          "signals": [
-            "PA13"
-          ]
-        },
-        {
-          "position": "28",
-          "signals": [
-            "PA12"
-          ]
-        },
-        {
-          "position": "29",
-          "signals": [
-            "PA11"
-          ]
-        },
-        {
-          "position": "30",
-          "signals": [
-            "PB2"
-          ]
-        },
-        {
-          "position": "31",
-          "signals": [
-            "PB1"
-          ]
-        },
-        {
-          "position": "32",
-          "signals": [
-            "PB0"
-          ]
-        },
-        {
-          "position": "33",
-          "signals": [
-            "PB15"
-          ]
-        },
-        {
-          "position": "34",
-          "signals": [
-            "PH3"
-          ]
-        },
-        {
-          "position": "35",
-          "signals": [
-            "VDD"
-          ]
-        },
-        {
-          "position": "36",
-          "signals": [
-            "NRST"
-          ]
-        },
-        {
-          "position": "37",
-          "signals": [
-            "RF"
-          ]
-        },
-        {
-          "position": "38",
-          "signals": [
-            "VDDHPA"
-          ]
-        },
-        {
-          "position": "39",
+          "position": "A6",
           "signals": [
             "VDDRF"
           ]
         },
         {
-          "position": "40",
-          "signals": [
-            "OSC_OUT"
-          ]
-        },
-        {
-          "position": "41",
+          "position": "A8",
           "signals": [
             "OSC_IN"
           ]
         },
         {
-          "position": "42",
+          "position": "B11",
+          "signals": [
+            "VDD11"
+          ]
+        },
+        {
+          "position": "B13",
+          "signals": [
+            "VDDSMPS"
+          ]
+        },
+        {
+          "position": "B5",
+          "signals": [
+            "VDDANA"
+          ]
+        },
+        {
+          "position": "B7",
+          "signals": [
+            "OSC_OUT"
+          ]
+        },
+        {
+          "position": "B9",
+          "signals": [
+            "VSS"
+          ]
+        },
+        {
+          "position": "C10",
+          "signals": [
+            "PB12"
+          ]
+        },
+        {
+          "position": "C12",
+          "signals": [
+            "VLXSMPS"
+          ]
+        },
+        {
+          "position": "C2",
+          "signals": [
+            "RF"
+          ]
+        },
+        {
+          "position": "C4",
+          "signals": [
+            "VDDHPA"
+          ]
+        },
+        {
+          "position": "C6",
           "signals": [
             "VDDRFPA"
           ]
         },
         {
-          "position": "43",
+          "position": "C8",
+          "signals": [
+            "PH3"
+          ]
+        },
+        {
+          "position": "D1",
+          "signals": [
+            "VSSRF"
+          ]
+        },
+        {
+          "position": "D11",
+          "signals": [
+            "PA7"
+          ]
+        },
+        {
+          "position": "D13",
+          "signals": [
+            "VSSA"
+          ]
+        },
+        {
+          "position": "D3",
+          "signals": [
+            "VSSRF"
+          ]
+        },
+        {
+          "position": "D5",
+          "signals": [
+            "VSSRF"
+          ]
+        },
+        {
+          "position": "D7",
+          "signals": [
+            "PA8"
+          ]
+        },
+        {
+          "position": "D9",
+          "signals": [
+            "PA6"
+          ]
+        },
+        {
+          "position": "E10",
+          "signals": [
+            "PA1"
+          ]
+        },
+        {
+          "position": "E12",
+          "signals": [
+            "VDDA"
+          ]
+        },
+        {
+          "position": "E2",
+          "signals": [
+            "NRST"
+          ]
+        },
+        {
+          "position": "E4",
+          "signals": [
+            "PB15"
+          ]
+        },
+        {
+          "position": "E6",
+          "signals": [
+            "PA12"
+          ]
+        },
+        {
+          "position": "E8",
+          "signals": [
+            "PA13"
+          ]
+        },
+        {
+          "position": "F1",
+          "signals": [
+            "PA14"
+          ]
+        },
+        {
+          "position": "F11",
+          "signals": [
+            "PA2"
+          ]
+        },
+        {
+          "position": "F13",
+          "signals": [
+            "PA5"
+          ]
+        },
+        {
+          "position": "F3",
+          "signals": [
+            "PA15"
+          ]
+        },
+        {
+          "position": "F5",
+          "signals": [
+            "PB4"
+          ]
+        },
+        {
+          "position": "F7",
+          "signals": [
+            "PC15"
+          ]
+        },
+        {
+          "position": "F9",
+          "signals": [
+            "PB9"
+          ]
+        },
+        {
+          "position": "G10",
+          "signals": [
+            "PB8"
+          ]
+        },
+        {
+          "position": "G12",
+          "signals": [
+            "PA0"
+          ]
+        },
+        {
+          "position": "G2",
+          "signals": [
+            "PB3"
+          ]
+        },
+        {
+          "position": "G4",
           "signals": [
             "VDD"
           ]
         },
         {
-          "position": "44",
+          "position": "G6",
           "signals": [
-            "VCAP"
+            "VSS"
           ]
         },
         {
-          "position": "45",
+          "position": "G8",
           "signals": [
-            "PA10"
-          ]
-        },
-        {
-          "position": "46",
-          "signals": [
-            "PA9"
-          ]
-        },
-        {
-          "position": "47",
-          "signals": [
-            "PB14"
-          ]
-        },
-        {
-          "position": "48",
-          "signals": [
-            "PB13"
-          ]
-        },
-        {
-          "position": "49",
-          "signals": [
-            "VSS (exposed pad)"
+            "PC14"
           ]
         }
       ]
@@ -371,10 +323,6 @@
             {
               "pin": "PA2",
               "signal": "IN7"
-            },
-            {
-              "pin": "PA3",
-              "signal": "IN6"
             },
             {
               "pin": "PA5",
@@ -872,18 +820,8 @@
               "af": 4
             },
             {
-              "pin": "PB1",
-              "signal": "SDA",
-              "af": 4
-            },
-            {
               "pin": "PB15",
               "signal": "SMBA",
-              "af": 4
-            },
-            {
-              "pin": "PB2",
-              "signal": "SCL",
               "af": 4
             },
             {
@@ -955,18 +893,8 @@
               "af": 4
             },
             {
-              "pin": "PB1",
-              "signal": "SDA",
-              "af": 6
-            },
-            {
               "pin": "PB15",
               "signal": "SMBA",
-              "af": 6
-            },
-            {
-              "pin": "PB2",
-              "signal": "SCL",
               "af": 6
             }
           ],
@@ -1069,16 +997,6 @@
               "af": 2
             },
             {
-              "pin": "PB11",
-              "signal": "CH1",
-              "af": 0
-            },
-            {
-              "pin": "PB11",
-              "signal": "ETR",
-              "af": 2
-            },
-            {
               "pin": "PB3",
               "signal": "IN2",
               "af": 2
@@ -1144,19 +1062,9 @@
               "af": 13
             },
             {
-              "pin": "PA11",
-              "signal": "CH1",
-              "af": 14
-            },
-            {
               "pin": "PA5",
               "signal": "ETR",
               "af": 14
-            },
-            {
-              "pin": "PB0",
-              "signal": "IN2",
-              "af": 2
             },
             {
               "pin": "PB4",
@@ -1229,38 +1137,13 @@
               "af": 8
             },
             {
-              "pin": "PA10",
-              "signal": "RX",
-              "af": 8
-            },
-            {
               "pin": "PA2",
-              "signal": "TX",
-              "af": 8
-            },
-            {
-              "pin": "PA9",
-              "signal": "DE",
-              "af": 8
-            },
-            {
-              "pin": "PA9",
-              "signal": "RTS",
-              "af": 8
-            },
-            {
-              "pin": "PB11",
               "signal": "TX",
               "af": 8
             },
             {
               "pin": "PB15",
               "signal": "CTS",
-              "af": 8
-            },
-            {
-              "pin": "PB5",
-              "signal": "TX",
               "af": 8
             },
             {
@@ -1354,10 +1237,6 @@
               "signal": "WKUP4"
             },
             {
-              "pin": "PA3",
-              "signal": "WKUP5"
-            },
-            {
               "pin": "PA5",
               "signal": "CSLEEP",
               "af": 0
@@ -1380,36 +1259,12 @@
               "signal": "WKUP8"
             },
             {
-              "pin": "PB1",
-              "signal": "WKUP4"
-            },
-            {
-              "pin": "PB14",
-              "signal": "WKUP7"
-            },
-            {
-              "pin": "PB2",
-              "signal": "WKUP1"
-            },
-            {
-              "pin": "PB6",
-              "signal": "WKUP3"
-            },
-            {
-              "pin": "PB7",
-              "signal": "WKUP5"
-            },
-            {
               "pin": "PB8",
               "signal": "PVD_IN"
             },
             {
               "pin": "PB9",
               "signal": "WKUP8"
-            },
-            {
-              "pin": "PC13",
-              "signal": "WKUP2"
             }
           ],
           "interrupts": [
@@ -1503,25 +1358,6 @@
             },
             "stop_mode": "Standby"
           },
-          "pins": [
-            {
-              "pin": "PB14",
-              "signal": "REFIN",
-              "af": 0
-            },
-            {
-              "pin": "PB2",
-              "signal": "OUT2"
-            },
-            {
-              "pin": "PC13",
-              "signal": "OUT1"
-            },
-            {
-              "pin": "PC13",
-              "signal": "TS"
-            }
-          ],
           "interrupts": [
             {
               "signal": "ALARM",
@@ -1594,11 +1430,6 @@
               "af": 3
             },
             {
-              "pin": "PA10",
-              "signal": "D1",
-              "af": 3
-            },
-            {
               "pin": "PA2",
               "signal": "D1",
               "af": 3
@@ -1629,43 +1460,13 @@
               "af": 13
             },
             {
-              "pin": "PA9",
-              "signal": "CK1",
-              "af": 3
-            },
-            {
               "pin": "PB12",
-              "signal": "SD_A",
-              "af": 13
-            },
-            {
-              "pin": "PB14",
               "signal": "SD_A",
               "af": 13
             },
             {
               "pin": "PB4",
               "signal": "MCLK_B",
-              "af": 13
-            },
-            {
-              "pin": "PB5",
-              "signal": "D2",
-              "af": 3
-            },
-            {
-              "pin": "PB5",
-              "signal": "FS_B",
-              "af": 13
-            },
-            {
-              "pin": "PB6",
-              "signal": "SCK_B",
-              "af": 13
-            },
-            {
-              "pin": "PB7",
-              "signal": "SD_B",
               "af": 13
             }
           ],
@@ -1870,22 +1671,6 @@
               "signal": "OUT2"
             },
             {
-              "pin": "PB7",
-              "signal": "IN5"
-            },
-            {
-              "pin": "PB7",
-              "signal": "OUT4"
-            },
-            {
-              "pin": "PC13",
-              "signal": "IN4"
-            },
-            {
-              "pin": "PC13",
-              "signal": "OUT5"
-            },
-            {
               "pin": "PH3",
               "signal": "IN2"
             },
@@ -1933,11 +1718,6 @@
               "af": 1
             },
             {
-              "pin": "PA11",
-              "signal": "CH1",
-              "af": 1
-            },
-            {
               "pin": "PA12",
               "signal": "CH2",
               "af": 1
@@ -1953,23 +1733,8 @@
               "af": 1
             },
             {
-              "pin": "PB0",
-              "signal": "CH3N",
-              "af": 1
-            },
-            {
-              "pin": "PB1",
-              "signal": "CH2N",
-              "af": 1
-            },
-            {
               "pin": "PB15",
               "signal": "BKIN2",
-              "af": 1
-            },
-            {
-              "pin": "PB2",
-              "signal": "CH1N",
               "af": 1
             },
             {
@@ -1983,11 +1748,6 @@
               "af": 1
             },
             {
-              "pin": "PB7",
-              "signal": "CH4N",
-              "af": 1
-            },
-            {
               "pin": "PB8",
               "signal": "CH1",
               "af": 1
@@ -1996,11 +1756,6 @@
               "pin": "PB9",
               "signal": "CH3N",
               "af": 1
-            },
-            {
-              "pin": "PC13",
-              "signal": "BKIN2",
-              "af": 2
             }
           ],
           "interrupts": [
@@ -2087,16 +1842,6 @@
             {
               "pin": "PA2",
               "signal": "CH1",
-              "af": 14
-            },
-            {
-              "pin": "PA3",
-              "signal": "CH1N",
-              "af": 14
-            },
-            {
-              "pin": "PB10",
-              "signal": "BKIN",
               "af": 14
             },
             {
@@ -2282,16 +2027,6 @@
               "pin": "PB12",
               "signal": "ETR",
               "af": 2
-            },
-            {
-              "pin": "PB6",
-              "signal": "CH1",
-              "af": 1
-            },
-            {
-              "pin": "PB6",
-              "signal": "ETR",
-              "af": 2
             }
           ],
           "interrupts": [
@@ -2381,39 +2116,14 @@
               "af": 2
             },
             {
-              "pin": "PA10",
-              "signal": "CH1",
-              "af": 2
-            },
-            {
               "pin": "PA2",
               "signal": "CH1",
-              "af": 2
-            },
-            {
-              "pin": "PA9",
-              "signal": "CH2",
               "af": 2
             },
             {
               "pin": "PB12",
               "signal": "ETR",
               "af": 14
-            },
-            {
-              "pin": "PB13",
-              "signal": "CH4",
-              "af": 2
-            },
-            {
-              "pin": "PB14",
-              "signal": "CH3",
-              "af": 2
-            },
-            {
-              "pin": "PB5",
-              "signal": "CH1",
-              "af": 2
             },
             {
               "pin": "PB8",
@@ -2528,11 +2238,6 @@
               "af": 9
             },
             {
-              "pin": "PA3",
-              "signal": "G4_IO2",
-              "af": 9
-            },
-            {
               "pin": "PA5",
               "signal": "G1_IO4",
               "af": 9
@@ -2553,23 +2258,8 @@
               "af": 9
             },
             {
-              "pin": "PB10",
-              "signal": "G4_IO3",
-              "af": 9
-            },
-            {
               "pin": "PB12",
               "signal": "SYNC",
-              "af": 9
-            },
-            {
-              "pin": "PB13",
-              "signal": "G6_IO2",
-              "af": 9
-            },
-            {
-              "pin": "PB14",
-              "signal": "G6_IO1",
               "af": 9
             },
             {
@@ -2583,21 +2273,6 @@
               "af": 9
             },
             {
-              "pin": "PB5",
-              "signal": "G5_IO4",
-              "af": 9
-            },
-            {
-              "pin": "PB6",
-              "signal": "G5_IO3",
-              "af": 9
-            },
-            {
-              "pin": "PB7",
-              "signal": "G5_IO2",
-              "af": 9
-            },
-            {
               "pin": "PB8",
               "signal": "G2_IO4",
               "af": 9
@@ -2605,11 +2280,6 @@
             {
               "pin": "PB9",
               "signal": "G2_IO3",
-              "af": 9
-            },
-            {
-              "pin": "PC13",
-              "signal": "G5_IO1",
               "af": 9
             }
           ],
@@ -2669,16 +2339,6 @@
               "af": 7
             },
             {
-              "pin": "PA3",
-              "signal": "DE",
-              "af": 7
-            },
-            {
-              "pin": "PA3",
-              "signal": "RTS",
-              "af": 7
-            },
-            {
               "pin": "PA5",
               "signal": "CK",
               "af": 7
@@ -2704,17 +2364,7 @@
               "af": 7
             },
             {
-              "pin": "PB10",
-              "signal": "CK",
-              "af": 7
-            },
-            {
               "pin": "PB12",
-              "signal": "TX",
-              "af": 7
-            },
-            {
-              "pin": "PB14",
               "signal": "TX",
               "af": 7
             }
@@ -2763,11 +2413,6 @@
           },
           "pins": [
             {
-              "pin": "PA11",
-              "signal": "RX",
-              "af": 3
-            },
-            {
               "pin": "PA12",
               "signal": "TX",
               "af": 3
@@ -2788,27 +2433,7 @@
               "af": 3
             },
             {
-              "pin": "PB0",
-              "signal": "TX",
-              "af": 3
-            },
-            {
-              "pin": "PB1",
-              "signal": "DE",
-              "af": 3
-            },
-            {
-              "pin": "PB1",
-              "signal": "RTS",
-              "af": 3
-            },
-            {
               "pin": "PB15",
-              "signal": "CTS",
-              "af": 3
-            },
-            {
-              "pin": "PB2",
               "signal": "CTS",
               "af": 3
             },
@@ -3227,9 +2852,6 @@
           "name": "PA2"
         },
         {
-          "name": "PA3"
-        },
-        {
           "name": "PA5"
         },
         {
@@ -3240,15 +2862,6 @@
         },
         {
           "name": "PA8"
-        },
-        {
-          "name": "PA9"
-        },
-        {
-          "name": "PA10"
-        },
-        {
-          "name": "PA11"
         },
         {
           "name": "PA12"
@@ -3263,28 +2876,10 @@
           "name": "PA15"
         },
         {
-          "name": "PB0"
-        },
-        {
-          "name": "PB1"
-        },
-        {
-          "name": "PB2"
-        },
-        {
           "name": "PB3"
         },
         {
           "name": "PB4"
-        },
-        {
-          "name": "PB5"
-        },
-        {
-          "name": "PB6"
-        },
-        {
-          "name": "PB7"
         },
         {
           "name": "PB8"
@@ -3293,25 +2888,10 @@
           "name": "PB9"
         },
         {
-          "name": "PB10"
-        },
-        {
-          "name": "PB11"
-        },
-        {
           "name": "PB12"
         },
         {
-          "name": "PB13"
-        },
-        {
-          "name": "PB14"
-        },
-        {
           "name": "PB15"
-        },
-        {
-          "name": "PC13"
         },
         {
           "name": "PC14"

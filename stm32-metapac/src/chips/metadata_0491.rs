@@ -4082,7 +4082,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         rcc: None,
         pins: &[],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[PeripheralInterrupt {
+            signal: "ECC",
+            interrupt: "ECC",
+        }],
     },
     Peripheral {
         name: "RCC",

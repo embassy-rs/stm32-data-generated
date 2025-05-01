@@ -2392,6 +2392,11 @@
             },
             {
               "pin": "PA12",
+              "signal": "DE",
+              "af": 3
+            },
+            {
+              "pin": "PA12",
               "signal": "RTS",
               "af": 3
             },
@@ -4162,12 +4167,22 @@
             },
             {
               "pin": "PA15",
+              "signal": "DE",
+              "af": 8
+            },
+            {
+              "pin": "PA15",
               "signal": "RTS",
               "af": 8
             },
             {
               "pin": "PB0",
               "signal": "CTS",
+              "af": 8
+            },
+            {
+              "pin": "PB14",
+              "signal": "DE",
               "af": 8
             },
             {
@@ -4413,6 +4428,11 @@
             },
             {
               "pin": "PA12",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PA12",
               "signal": "RTS",
               "af": 7
             },
@@ -4497,6 +4517,11 @@
             },
             {
               "pin": "PA1",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PA1",
               "signal": "RTS",
               "af": 7
             },
@@ -4572,6 +4597,11 @@
             {
               "pin": "PB12",
               "signal": "CK",
+              "af": 7
+            },
+            {
+              "pin": "PB14",
+              "signal": "DE",
               "af": 7
             },
             {
@@ -4706,6 +4736,40 @@
             {
               "signal": "RST",
               "interrupt": "WWDG"
+            }
+          ]
+        },
+        {
+          "name": "XSPI1",
+          "address": 1375752192,
+          "registers": {
+            "kind": "xspi",
+            "version": "v1",
+            "block": "XSPI"
+          },
+          "rcc": {
+            "bus_clock": "HCLK5",
+            "kernel_clock": "HCLK5",
+            "enable": {
+              "register": "AHB5ENR",
+              "field": "XSPI1EN"
+            },
+            "reset": {
+              "register": "AHB5RSTR",
+              "field": "XSPI1RST"
+            }
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "XSPI1"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "RX",
+              "dma": "HPDMA1",
+              "request": 2
             }
           ]
         },

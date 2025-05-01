@@ -1557,6 +1557,11 @@
             },
             {
               "pin": "PA12",
+              "signal": "DE",
+              "af": 3
+            },
+            {
+              "pin": "PA12",
               "signal": "RTS",
               "af": 3
             },
@@ -1567,7 +1572,17 @@
             },
             {
               "pin": "PA14",
+              "signal": "DE",
+              "af": 8
+            },
+            {
+              "pin": "PA14",
               "signal": "RTS",
+              "af": 8
+            },
+            {
+              "pin": "PA5",
+              "signal": "DE",
               "af": 8
             },
             {
@@ -3102,6 +3117,11 @@
             },
             {
               "pin": "PA12",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PA12",
               "signal": "RTS",
               "af": 7
             },
@@ -3128,6 +3148,11 @@
             {
               "pin": "PA15",
               "signal": "NSS",
+              "af": 8
+            },
+            {
+              "pin": "PA7",
+              "signal": "DE",
               "af": 8
             },
             {
@@ -3256,6 +3281,11 @@
             },
             {
               "pin": "PA15",
+              "signal": "DE",
+              "af": 11
+            },
+            {
+              "pin": "PA15",
               "signal": "RTS",
               "af": 11
             },
@@ -3283,6 +3313,11 @@
               "pin": "PA8",
               "signal": "TX",
               "af": 4
+            },
+            {
+              "pin": "PB15",
+              "signal": "DE",
+              "af": 11
             },
             {
               "pin": "PB15",
@@ -3390,6 +3425,11 @@
             },
             {
               "pin": "PA11",
+              "signal": "DE",
+              "af": 13
+            },
+            {
+              "pin": "PA11",
               "signal": "RTS",
               "af": 13
             },
@@ -3412,6 +3452,11 @@
               "pin": "PA7",
               "signal": "CK",
               "af": 13
+            },
+            {
+              "pin": "PA7",
+              "signal": "DE",
+              "af": 9
             },
             {
               "pin": "PA7",

@@ -613,29 +613,31 @@
     }
   ],
   "memory": [
-    {
-      "name": "BANK_1",
-      "kind": "flash",
-      "address": 134217728,
-      "size": 65536,
-      "settings": {
-        "erase_size": 16384,
-        "write_size": 16,
-        "erase_value": 255
+    [
+      {
+        "name": "BANK_1",
+        "kind": "flash",
+        "address": 134217728,
+        "size": 65536,
+        "settings": {
+          "erase_size": 16384,
+          "write_size": 16,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "DTCM",
+        "kind": "ram",
+        "address": 536870912,
+        "size": 65536
+      },
+      {
+        "name": "SRAM",
+        "kind": "ram",
+        "address": 536936448,
+        "size": 196608
       }
-    },
-    {
-      "name": "DTCM",
-      "kind": "ram",
-      "address": 536870912,
-      "size": 65536
-    },
-    {
-      "name": "SRAM",
-      "kind": "ram",
-      "address": 536936448,
-      "size": 196608
-    }
+    ]
   ],
   "docs": [
     {

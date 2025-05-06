@@ -1069,70 +1069,72 @@
     }
   ],
   "memory": [
-    {
-      "name": "ITCM",
-      "kind": "ram",
-      "address": 0,
-      "size": 65536
-    },
-    {
-      "name": "BANK_1",
-      "kind": "flash",
-      "address": 134217728,
-      "size": 524288,
-      "settings": {
-        "erase_size": 131072,
-        "write_size": 32,
-        "erase_value": 255
+    [
+      {
+        "name": "ITCM",
+        "kind": "ram",
+        "address": 0,
+        "size": 65536
+      },
+      {
+        "name": "BANK_1",
+        "kind": "flash",
+        "address": 134217728,
+        "size": 524288,
+        "settings": {
+          "erase_size": 131072,
+          "write_size": 32,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "BANK_2",
+        "kind": "flash",
+        "address": 135266304,
+        "size": 524288,
+        "settings": {
+          "erase_size": 131072,
+          "write_size": 32,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "DTCM",
+        "kind": "ram",
+        "address": 536870912,
+        "size": 131072
+      },
+      {
+        "name": "AXISRAM",
+        "kind": "ram",
+        "address": 603979776,
+        "size": 524288
+      },
+      {
+        "name": "SRAM1",
+        "kind": "ram",
+        "address": 805306368,
+        "size": 131072
+      },
+      {
+        "name": "SRAM2",
+        "kind": "ram",
+        "address": 805437440,
+        "size": 131072
+      },
+      {
+        "name": "SRAM3",
+        "kind": "ram",
+        "address": 805568512,
+        "size": 32768
+      },
+      {
+        "name": "SRAM4",
+        "kind": "ram",
+        "address": 939524096,
+        "size": 65536
       }
-    },
-    {
-      "name": "BANK_2",
-      "kind": "flash",
-      "address": 135266304,
-      "size": 524288,
-      "settings": {
-        "erase_size": 131072,
-        "write_size": 32,
-        "erase_value": 255
-      }
-    },
-    {
-      "name": "DTCM",
-      "kind": "ram",
-      "address": 536870912,
-      "size": 131072
-    },
-    {
-      "name": "AXISRAM",
-      "kind": "ram",
-      "address": 603979776,
-      "size": 524288
-    },
-    {
-      "name": "SRAM1",
-      "kind": "ram",
-      "address": 805306368,
-      "size": 131072
-    },
-    {
-      "name": "SRAM2",
-      "kind": "ram",
-      "address": 805437440,
-      "size": 131072
-    },
-    {
-      "name": "SRAM3",
-      "kind": "ram",
-      "address": 805568512,
-      "size": 32768
-    },
-    {
-      "name": "SRAM4",
-      "kind": "ram",
-      "address": 939524096,
-      "size": 65536
-    }
+    ]
   ],
   "docs": [
     {

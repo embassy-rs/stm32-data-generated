@@ -403,23 +403,25 @@
     }
   ],
   "memory": [
-    {
-      "name": "BANK_1",
-      "kind": "flash",
-      "address": 134217728,
-      "size": 196608,
-      "settings": {
-        "erase_size": 128,
-        "write_size": 4,
-        "erase_value": 0
+    [
+      {
+        "name": "BANK_1",
+        "kind": "flash",
+        "address": 134217728,
+        "size": 196608,
+        "settings": {
+          "erase_size": 128,
+          "write_size": 4,
+          "erase_value": 0
+        }
+      },
+      {
+        "name": "SRAM",
+        "kind": "ram",
+        "address": 536870912,
+        "size": 20480
       }
-    },
-    {
-      "name": "SRAM",
-      "kind": "ram",
-      "address": 536870912,
-      "size": 20480
-    }
+    ]
   ],
   "docs": [
     {

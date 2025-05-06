@@ -397,51 +397,53 @@
     }
   ],
   "memory": [
-    {
-      "name": "BANK_1",
-      "kind": "flash",
-      "address": 134217728,
-      "size": 65536,
-      "settings": {
-        "erase_size": 8192,
-        "write_size": 16,
-        "erase_value": 255
+    [
+      {
+        "name": "BANK_1",
+        "kind": "flash",
+        "address": 134217728,
+        "size": 65536,
+        "settings": {
+          "erase_size": 8192,
+          "write_size": 16,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "BANK_2",
+        "kind": "flash",
+        "address": 134283264,
+        "size": 65536,
+        "settings": {
+          "erase_size": 8192,
+          "write_size": 16,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "OTP",
+        "kind": "flash",
+        "address": 150990848,
+        "size": 2048,
+        "settings": {
+          "erase_size": 0,
+          "write_size": 16,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "SRAM1",
+        "kind": "ram",
+        "address": 536870912,
+        "size": 16384
+      },
+      {
+        "name": "SRAM2",
+        "kind": "ram",
+        "address": 536887296,
+        "size": 16384
       }
-    },
-    {
-      "name": "BANK_2",
-      "kind": "flash",
-      "address": 134283264,
-      "size": 65536,
-      "settings": {
-        "erase_size": 8192,
-        "write_size": 16,
-        "erase_value": 255
-      }
-    },
-    {
-      "name": "OTP",
-      "kind": "flash",
-      "address": 150990848,
-      "size": 2048,
-      "settings": {
-        "erase_size": 0,
-        "write_size": 16,
-        "erase_value": 255
-      }
-    },
-    {
-      "name": "SRAM1",
-      "kind": "ram",
-      "address": 536870912,
-      "size": 16384
-    },
-    {
-      "name": "SRAM2",
-      "kind": "ram",
-      "address": 536887296,
-      "size": 16384
-    }
+    ]
   ],
   "docs": [],
   "cores": [

@@ -4,7 +4,7 @@ pub static METADATA: Metadata = Metadata {
     name: "STM32U031K8",
     family: "STM32U0",
     line: "STM32U0x1",
-    memory: &[
+    memory: &[&[
         MemoryRegion {
             name: "BANK_1",
             kind: MemoryRegionKind::Flash,
@@ -34,7 +34,7 @@ pub static METADATA: Metadata = Metadata {
             size: 12288,
             settings: None,
         },
-    ],
+    ]],
     peripherals: PERIPHERALS,
     nvic_priority_bits: Some(2),
     interrupts: INTERRUPTS,

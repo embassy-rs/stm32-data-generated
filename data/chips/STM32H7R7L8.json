@@ -2719,65 +2719,67 @@
     }
   ],
   "memory": [
-    {
-      "name": "ITCM",
-      "kind": "ram",
-      "address": 0,
-      "size": 196608
-    },
-    {
-      "name": "BANK_1",
-      "kind": "flash",
-      "address": 134217728,
-      "size": 65536,
-      "settings": {
-        "erase_size": 8192,
-        "write_size": 16,
-        "erase_value": 255
+    [
+      {
+        "name": "ITCM",
+        "kind": "ram",
+        "address": 0,
+        "size": 196608
+      },
+      {
+        "name": "BANK_1",
+        "kind": "flash",
+        "address": 134217728,
+        "size": 65536,
+        "settings": {
+          "erase_size": 8192,
+          "write_size": 16,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "DTCM",
+        "kind": "ram",
+        "address": 536870912,
+        "size": 196608
+      },
+      {
+        "name": "SRAM1",
+        "kind": "ram",
+        "address": 603979776,
+        "size": 131072
+      },
+      {
+        "name": "SRAM2",
+        "kind": "ram",
+        "address": 604110848,
+        "size": 131072
+      },
+      {
+        "name": "SRAM3",
+        "kind": "ram",
+        "address": 604241920,
+        "size": 131072
+      },
+      {
+        "name": "SRAM4",
+        "kind": "ram",
+        "address": 604372992,
+        "size": 73728
+      },
+      {
+        "name": "AHB_SRAM1",
+        "kind": "ram",
+        "address": 805306368,
+        "size": 16384
+      },
+      {
+        "name": "AHB_SRAM2",
+        "kind": "ram",
+        "address": 805322752,
+        "size": 16384
       }
-    },
-    {
-      "name": "DTCM",
-      "kind": "ram",
-      "address": 536870912,
-      "size": 196608
-    },
-    {
-      "name": "SRAM1",
-      "kind": "ram",
-      "address": 603979776,
-      "size": 131072
-    },
-    {
-      "name": "SRAM2",
-      "kind": "ram",
-      "address": 604110848,
-      "size": 131072
-    },
-    {
-      "name": "SRAM3",
-      "kind": "ram",
-      "address": 604241920,
-      "size": 131072
-    },
-    {
-      "name": "SRAM4",
-      "kind": "ram",
-      "address": 604372992,
-      "size": 73728
-    },
-    {
-      "name": "AHB_SRAM1",
-      "kind": "ram",
-      "address": 805306368,
-      "size": 16384
-    },
-    {
-      "name": "AHB_SRAM2",
-      "kind": "ram",
-      "address": 805322752,
-      "size": 16384
-    }
+    ]
   ],
   "docs": [],
   "cores": [

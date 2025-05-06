@@ -553,57 +553,59 @@
     }
   ],
   "memory": [
-    {
-      "name": "BANK_1",
-      "kind": "flash",
-      "address": 134217728,
-      "size": 524288,
-      "settings": {
-        "erase_size": 8192,
-        "write_size": 16,
-        "erase_value": 255
+    [
+      {
+        "name": "BANK_1",
+        "kind": "flash",
+        "address": 134217728,
+        "size": 524288,
+        "settings": {
+          "erase_size": 8192,
+          "write_size": 16,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "BANK_2",
+        "kind": "flash",
+        "address": 134742016,
+        "size": 524288,
+        "settings": {
+          "erase_size": 8192,
+          "write_size": 16,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "OTP",
+        "kind": "flash",
+        "address": 200933376,
+        "size": 512,
+        "settings": {
+          "erase_size": 0,
+          "write_size": 16,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "SRAM",
+        "kind": "ram",
+        "address": 536870912,
+        "size": 196608
+      },
+      {
+        "name": "SRAM2",
+        "kind": "ram",
+        "address": 537067520,
+        "size": 65536
+      },
+      {
+        "name": "SRAM3",
+        "kind": "ram",
+        "address": 537133056,
+        "size": 524288
       }
-    },
-    {
-      "name": "BANK_2",
-      "kind": "flash",
-      "address": 134742016,
-      "size": 524288,
-      "settings": {
-        "erase_size": 8192,
-        "write_size": 16,
-        "erase_value": 255
-      }
-    },
-    {
-      "name": "OTP",
-      "kind": "flash",
-      "address": 200933376,
-      "size": 512,
-      "settings": {
-        "erase_size": 0,
-        "write_size": 16,
-        "erase_value": 255
-      }
-    },
-    {
-      "name": "SRAM",
-      "kind": "ram",
-      "address": 536870912,
-      "size": 196608
-    },
-    {
-      "name": "SRAM2",
-      "kind": "ram",
-      "address": 537067520,
-      "size": 65536
-    },
-    {
-      "name": "SRAM3",
-      "kind": "ram",
-      "address": 537133056,
-      "size": 524288
-    }
+    ]
   ],
   "docs": [
     {

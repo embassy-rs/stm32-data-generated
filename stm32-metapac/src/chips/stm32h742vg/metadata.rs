@@ -4,7 +4,7 @@ pub static METADATA: Metadata = Metadata {
     name: "STM32H742VG",
     family: "STM32H7",
     line: "STM32H742",
-    memory: &[
+    memory: &[&[
         MemoryRegion {
             name: "ITCM",
             kind: MemoryRegionKind::Ram,
@@ -69,7 +69,7 @@ pub static METADATA: Metadata = Metadata {
             size: 65536,
             settings: None,
         },
-    ],
+    ]],
     peripherals: PERIPHERALS,
     nvic_priority_bits: Some(4),
     interrupts: INTERRUPTS,

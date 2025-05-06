@@ -451,29 +451,31 @@
     }
   ],
   "memory": [
-    {
-      "name": "BANK_1",
-      "kind": "flash",
-      "address": 134217728,
-      "size": 131072,
-      "settings": {
-        "erase_size": 2048,
-        "write_size": 8,
-        "erase_value": 255
+    [
+      {
+        "name": "BANK_1",
+        "kind": "flash",
+        "address": 134217728,
+        "size": 131072,
+        "settings": {
+          "erase_size": 2048,
+          "write_size": 8,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "SRAM1",
+        "kind": "ram",
+        "address": 536870912,
+        "size": 24576
+      },
+      {
+        "name": "SRAM2",
+        "kind": "ram",
+        "address": 536895488,
+        "size": 24576
       }
-    },
-    {
-      "name": "SRAM1",
-      "kind": "ram",
-      "address": 536870912,
-      "size": 24576
-    },
-    {
-      "name": "SRAM2",
-      "kind": "ram",
-      "address": 536895488,
-      "size": 24576
-    }
+    ]
   ],
   "docs": [],
   "cores": [

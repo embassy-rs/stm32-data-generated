@@ -499,56 +499,58 @@
     }
   ],
   "memory": [
-    {
-      "name": "BANK_1_REGION_1",
-      "kind": "flash",
-      "address": 134217728,
-      "size": 65536,
-      "settings": {
-        "erase_size": 16384,
-        "write_size": 4,
-        "erase_value": 255
+    [
+      {
+        "name": "BANK_1_REGION_1",
+        "kind": "flash",
+        "address": 134217728,
+        "size": 65536,
+        "settings": {
+          "erase_size": 16384,
+          "write_size": 4,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "BANK_1_REGION_2",
+        "kind": "flash",
+        "address": 134283264,
+        "size": 65536,
+        "settings": {
+          "erase_size": 65536,
+          "write_size": 4,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "BANK_1_REGION_3",
+        "kind": "flash",
+        "address": 134348800,
+        "size": 1441792,
+        "settings": {
+          "erase_size": 131072,
+          "write_size": 4,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "OTP",
+        "kind": "flash",
+        "address": 536836096,
+        "size": 528,
+        "settings": {
+          "erase_size": 0,
+          "write_size": 4,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "SRAM",
+        "kind": "ram",
+        "address": 536870912,
+        "size": 327680
       }
-    },
-    {
-      "name": "BANK_1_REGION_2",
-      "kind": "flash",
-      "address": 134283264,
-      "size": 65536,
-      "settings": {
-        "erase_size": 65536,
-        "write_size": 4,
-        "erase_value": 255
-      }
-    },
-    {
-      "name": "BANK_1_REGION_3",
-      "kind": "flash",
-      "address": 134348800,
-      "size": 1441792,
-      "settings": {
-        "erase_size": 131072,
-        "write_size": 4,
-        "erase_value": 255
-      }
-    },
-    {
-      "name": "OTP",
-      "kind": "flash",
-      "address": 536836096,
-      "size": 528,
-      "settings": {
-        "erase_size": 0,
-        "write_size": 4,
-        "erase_value": 255
-      }
-    },
-    {
-      "name": "SRAM",
-      "kind": "ram",
-      "address": 536870912,
-      "size": 327680
-    }
+    ]
   ],
   "docs": [
     {

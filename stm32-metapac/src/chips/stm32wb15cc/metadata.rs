@@ -4,7 +4,7 @@ pub static METADATA: Metadata = Metadata {
     name: "STM32WB15CC",
     family: "STM32WB",
     line: "STM32WBx5",
-    memory: &[
+    memory: &[&[
         MemoryRegion {
             name: "BANK_1",
             kind: MemoryRegionKind::Flash,
@@ -51,7 +51,7 @@ pub static METADATA: Metadata = Metadata {
             size: 4096,
             settings: None,
         },
-    ],
+    ]],
     peripherals: PERIPHERALS,
     nvic_priority_bits: Some(4),
     interrupts: INTERRUPTS,

@@ -1261,62 +1261,64 @@
     }
   ],
   "memory": [
-    {
-      "name": "BANK_1_REGION_1",
-      "kind": "flash",
-      "address": 134217728,
-      "size": 131072,
-      "settings": {
-        "erase_size": 32768,
-        "write_size": 16,
-        "erase_value": 255
+    [
+      {
+        "name": "BANK_1_REGION_1",
+        "kind": "flash",
+        "address": 134217728,
+        "size": 131072,
+        "settings": {
+          "erase_size": 32768,
+          "write_size": 16,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "BANK_1_REGION_2",
+        "kind": "flash",
+        "address": 134348800,
+        "size": 131072,
+        "settings": {
+          "erase_size": 131072,
+          "write_size": 16,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "BANK_1_REGION_3",
+        "kind": "flash",
+        "address": 134479872,
+        "size": 262144,
+        "settings": {
+          "erase_size": 262144,
+          "write_size": 16,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "OTP",
+        "kind": "flash",
+        "address": 150990848,
+        "size": 2048,
+        "settings": {
+          "erase_size": 0,
+          "write_size": 16,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "DTCM",
+        "kind": "ram",
+        "address": 536870912,
+        "size": 65536
+      },
+      {
+        "name": "SRAM",
+        "kind": "ram",
+        "address": 536936448,
+        "size": 262144
       }
-    },
-    {
-      "name": "BANK_1_REGION_2",
-      "kind": "flash",
-      "address": 134348800,
-      "size": 131072,
-      "settings": {
-        "erase_size": 131072,
-        "write_size": 16,
-        "erase_value": 255
-      }
-    },
-    {
-      "name": "BANK_1_REGION_3",
-      "kind": "flash",
-      "address": 134479872,
-      "size": 262144,
-      "settings": {
-        "erase_size": 262144,
-        "write_size": 16,
-        "erase_value": 255
-      }
-    },
-    {
-      "name": "OTP",
-      "kind": "flash",
-      "address": 150990848,
-      "size": 2048,
-      "settings": {
-        "erase_size": 0,
-        "write_size": 16,
-        "erase_value": 255
-      }
-    },
-    {
-      "name": "DTCM",
-      "kind": "ram",
-      "address": 536870912,
-      "size": 65536
-    },
-    {
-      "name": "SRAM",
-      "kind": "ram",
-      "address": 536936448,
-      "size": 262144
-    }
+    ]
   ],
   "docs": [
     {

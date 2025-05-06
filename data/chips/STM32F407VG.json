@@ -613,73 +613,75 @@
     }
   ],
   "memory": [
-    {
-      "name": "BANK_1_REGION_1",
-      "kind": "flash",
-      "address": 134217728,
-      "size": 65536,
-      "settings": {
-        "erase_size": 16384,
-        "write_size": 4,
-        "erase_value": 255
+    [
+      {
+        "name": "BANK_1_REGION_1",
+        "kind": "flash",
+        "address": 134217728,
+        "size": 65536,
+        "settings": {
+          "erase_size": 16384,
+          "write_size": 4,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "BANK_1_REGION_2",
+        "kind": "flash",
+        "address": 134283264,
+        "size": 65536,
+        "settings": {
+          "erase_size": 65536,
+          "write_size": 4,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "BANK_1_REGION_3",
+        "kind": "flash",
+        "address": 134348800,
+        "size": 917504,
+        "settings": {
+          "erase_size": 131072,
+          "write_size": 4,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "CCMRAM",
+        "kind": "ram",
+        "address": 268435456,
+        "size": 65536,
+        "access": {
+          "read": true,
+          "write": true,
+          "execute": false
+        }
+      },
+      {
+        "name": "OTP",
+        "kind": "flash",
+        "address": 536836096,
+        "size": 528,
+        "settings": {
+          "erase_size": 0,
+          "write_size": 4,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "SRAM",
+        "kind": "ram",
+        "address": 536870912,
+        "size": 114688
+      },
+      {
+        "name": "SRAM2",
+        "kind": "ram",
+        "address": 536985600,
+        "size": 16384
       }
-    },
-    {
-      "name": "BANK_1_REGION_2",
-      "kind": "flash",
-      "address": 134283264,
-      "size": 65536,
-      "settings": {
-        "erase_size": 65536,
-        "write_size": 4,
-        "erase_value": 255
-      }
-    },
-    {
-      "name": "BANK_1_REGION_3",
-      "kind": "flash",
-      "address": 134348800,
-      "size": 917504,
-      "settings": {
-        "erase_size": 131072,
-        "write_size": 4,
-        "erase_value": 255
-      }
-    },
-    {
-      "name": "CCMRAM",
-      "kind": "ram",
-      "address": 268435456,
-      "size": 65536,
-      "access": {
-        "read": true,
-        "write": true,
-        "execute": false
-      }
-    },
-    {
-      "name": "OTP",
-      "kind": "flash",
-      "address": 536836096,
-      "size": 528,
-      "settings": {
-        "erase_size": 0,
-        "write_size": 4,
-        "erase_value": 255
-      }
-    },
-    {
-      "name": "SRAM",
-      "kind": "ram",
-      "address": 536870912,
-      "size": 114688
-    },
-    {
-      "name": "SRAM2",
-      "kind": "ram",
-      "address": 536985600,
-      "size": 16384
-    }
+    ]
   ],
   "docs": [
     {

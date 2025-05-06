@@ -1747,40 +1747,42 @@
     }
   ],
   "memory": [
-    {
-      "name": "BANK_1",
-      "kind": "flash",
-      "address": 134217728,
-      "size": 524288,
-      "settings": {
-        "erase_size": 2048,
-        "write_size": 8,
-        "erase_value": 255
+    [
+      {
+        "name": "BANK_1",
+        "kind": "flash",
+        "address": 134217728,
+        "size": 524288,
+        "settings": {
+          "erase_size": 2048,
+          "write_size": 8,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "BANK_2",
+        "kind": "flash",
+        "address": 134742016,
+        "size": 524288,
+        "settings": {
+          "erase_size": 2048,
+          "write_size": 8,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "SRAM2_ICODE",
+        "kind": "ram",
+        "address": 268435456,
+        "size": 32768
+      },
+      {
+        "name": "SRAM",
+        "kind": "ram",
+        "address": 536870912,
+        "size": 98304
       }
-    },
-    {
-      "name": "BANK_2",
-      "kind": "flash",
-      "address": 134742016,
-      "size": 524288,
-      "settings": {
-        "erase_size": 2048,
-        "write_size": 8,
-        "erase_value": 255
-      }
-    },
-    {
-      "name": "SRAM2_ICODE",
-      "kind": "ram",
-      "address": 268435456,
-      "size": 32768
-    },
-    {
-      "name": "SRAM",
-      "kind": "ram",
-      "address": 536870912,
-      "size": 98304
-    }
+    ]
   ],
   "docs": [
     {

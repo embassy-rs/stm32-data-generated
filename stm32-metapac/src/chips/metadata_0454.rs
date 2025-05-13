@@ -818,50 +818,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         interrupts: &[],
     },
     Peripheral {
-        name: "CRYP",
-        address: 0x48021000,
-        registers: Some(PeripheralRegisters {
-            kind: "cryp",
-            version: "v3",
-            block: "CRYP",
-            ir: &cryp::REGISTERS,
-        }),
-        rcc: Some(PeripheralRcc {
-            bus_clock: "HCLK2",
-            kernel_clock: Clock("HCLK2"),
-            enable: Some(PeripheralRccRegister {
-                register: "AHB2ENR",
-                field: "CRYPEN",
-            }),
-            reset: Some(PeripheralRccRegister {
-                register: "AHB2RSTR",
-                field: "CRYPRST",
-            }),
-            stop_mode: StopMode::Stop1,
-        }),
-        pins: &[],
-        dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "IN",
-                channel: None,
-                dmamux: Some("DMAMUX1"),
-                dma: None,
-                request: Some(76),
-            },
-            PeripheralDmaChannel {
-                signal: "OUT",
-                channel: None,
-                dmamux: Some("DMAMUX1"),
-                dma: None,
-                request: Some(77),
-            },
-        ],
-        interrupts: &[PeripheralInterrupt {
-            signal: "GLOBAL",
-            interrupt: "CRYP",
-        }],
-    },
-    Peripheral {
         name: "DAC1",
         address: 0x40007400,
         registers: Some(PeripheralRegisters {
@@ -3055,41 +3011,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         interrupts: &[],
     },
     Peripheral {
-        name: "HASH",
-        address: 0x48021400,
-        registers: Some(PeripheralRegisters {
-            kind: "hash",
-            version: "v2",
-            block: "HASH",
-            ir: &hash::REGISTERS,
-        }),
-        rcc: Some(PeripheralRcc {
-            bus_clock: "HCLK2",
-            kernel_clock: Clock("HCLK2"),
-            enable: Some(PeripheralRccRegister {
-                register: "AHB2ENR",
-                field: "HASHEN",
-            }),
-            reset: Some(PeripheralRccRegister {
-                register: "AHB2RSTR",
-                field: "HASHRST",
-            }),
-            stop_mode: StopMode::Stop1,
-        }),
-        pins: &[],
-        dma_channels: &[PeripheralDmaChannel {
-            signal: "IN",
-            channel: None,
-            dmamux: Some("DMAMUX1"),
-            dma: None,
-            request: Some(78),
-        }],
-        interrupts: &[PeripheralInterrupt {
-            signal: "GLOBAL",
-            interrupt: "HASH_RNG",
-        }],
-    },
-    Peripheral {
         name: "HRTIM1",
         address: 0x40017400,
         registers: Some(PeripheralRegisters {
@@ -3338,7 +3259,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x58026400,
         registers: Some(PeripheralRegisters {
             kind: "hsem",
-            version: "v2",
+            version: "v1",
             block: "HSEM",
             ir: &hsem::REGISTERS,
         }),
@@ -3753,6 +3674,20 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "IWDG1",
         address: 0x58004800,
+        registers: Some(PeripheralRegisters {
+            kind: "iwdg",
+            version: "v2",
+            block: "IWDG",
+            ir: &iwdg::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+    },
+    Peripheral {
+        name: "IWDG2",
+        address: 0x58004c00,
         registers: Some(PeripheralRegisters {
             kind: "iwdg",
             version: "v2",
@@ -4859,7 +4794,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x58024800,
         registers: Some(PeripheralRegisters {
             kind: "pwr",
-            version: "h7rm0433",
+            version: "h7rm0399",
             block: "PWR",
             ir: &pwr::REGISTERS,
         }),
@@ -5082,7 +5017,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x58024400,
         registers: Some(PeripheralRegisters {
             kind: "rcc",
-            version: "h7rm0433",
+            version: "h7",
             block: "RCC",
             ir: &rcc::REGISTERS,
         }),
@@ -5160,7 +5095,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         dma_channels: &[],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
-            interrupt: "HASH_RNG",
+            interrupt: "RNG",
         }],
     },
     Peripheral {
@@ -10040,6 +9975,32 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }),
         pins: &[],
         dma_channels: &[],
+        interrupts: &[PeripheralInterrupt {
+            signal: "RST",
+            interrupt: "WWDG_RST",
+        }],
+    },
+    Peripheral {
+        name: "WWDG2",
+        address: 0x40002c00,
+        registers: Some(PeripheralRegisters {
+            kind: "wwdg",
+            version: "v2",
+            block: "WWDG",
+            ir: &wwdg::REGISTERS,
+        }),
+        rcc: Some(PeripheralRcc {
+            bus_clock: "PCLK1",
+            kernel_clock: Clock("PCLK1"),
+            enable: Some(PeripheralRccRegister {
+                register: "APB1LENR",
+                field: "WWDG2EN",
+            }),
+            reset: None,
+            stop_mode: StopMode::Stop1,
+        }),
+        pins: &[],
+        dma_channels: &[],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "GLOBAL",
@@ -10303,6 +10264,14 @@ pub(crate) static INTERRUPTS: &[Interrupt] = &[
         number: 63,
     },
     Interrupt {
+        name: "CM7_SEV",
+        number: 64,
+    },
+    Interrupt {
+        name: "CM4_SEV",
+        number: 65,
+    },
+    Interrupt {
         name: "DMA2_STREAM5",
         number: 68,
     },
@@ -10347,11 +10316,7 @@ pub(crate) static INTERRUPTS: &[Interrupt] = &[
         number: 78,
     },
     Interrupt {
-        name: "CRYP",
-        number: 79,
-    },
-    Interrupt {
-        name: "HASH_RNG",
+        name: "RNG",
         number: 80,
     },
     Interrupt {
@@ -10531,6 +10496,10 @@ pub(crate) static INTERRUPTS: &[Interrupt] = &[
         number: 125,
     },
     Interrupt {
+        name: "HSEM2",
+        number: 126,
+    },
+    Interrupt {
         name: "ADC3",
         number: 127,
     },
@@ -10595,6 +10564,10 @@ pub(crate) static INTERRUPTS: &[Interrupt] = &[
         number: 142,
     },
     Interrupt {
+        name: "WWDG_RST",
+        number: 143,
+    },
+    Interrupt {
         name: "CRS",
         number: 144,
     },
@@ -10605,6 +10578,10 @@ pub(crate) static INTERRUPTS: &[Interrupt] = &[
     Interrupt {
         name: "SAI4",
         number: 146,
+    },
+    Interrupt {
+        name: "HOLD_CORE",
+        number: 148,
     },
     Interrupt {
         name: "WAKEUP_PIN",
@@ -10967,8 +10944,6 @@ pub mod comp;
 pub mod crc;
 #[path = "../registers/crs_v1.rs"]
 pub mod crs;
-#[path = "../registers/cryp_v3.rs"]
-pub mod cryp;
 #[path = "../registers/dac_v4.rs"]
 pub mod dac;
 #[path = "../registers/dbgmcu_h7.rs"]
@@ -10993,11 +10968,9 @@ pub mod flash;
 pub mod fmc;
 #[path = "../registers/gpio_v2.rs"]
 pub mod gpio;
-#[path = "../registers/hash_v2.rs"]
-pub mod hash;
 #[path = "../registers/hrtim_v1.rs"]
 pub mod hrtim;
-#[path = "../registers/hsem_v2.rs"]
+#[path = "../registers/hsem_v1.rs"]
 pub mod hsem;
 #[path = "../registers/i2c_v2.rs"]
 pub mod i2c;
@@ -11015,11 +10988,11 @@ pub mod mdios;
 pub mod opamp;
 #[path = "../registers/otg_v1.rs"]
 pub mod otg;
-#[path = "../registers/pwr_h7rm0433.rs"]
+#[path = "../registers/pwr_h7rm0399.rs"]
 pub mod pwr;
 #[path = "../registers/quadspi_v1.rs"]
 pub mod quadspi;
-#[path = "../registers/rcc_h7rm0433.rs"]
+#[path = "../registers/rcc_h7.rs"]
 pub mod rcc;
 #[path = "../registers/rng_v1.rs"]
 pub mod rng;

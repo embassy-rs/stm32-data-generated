@@ -76,11 +76,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PC1",
-                signal: "IN11",
-                af: None,
-            },
-            PeripheralPin {
                 pin: "PC2",
                 signal: "IN12",
                 af: None,
@@ -88,16 +83,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralPin {
                 pin: "PC3",
                 signal: "IN13",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PC4",
-                signal: "IN14",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PC5",
-                signal: "IN15",
                 af: None,
             },
         ],
@@ -212,11 +197,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PC1",
-                signal: "IN11",
-                af: None,
-            },
-            PeripheralPin {
                 pin: "PC2",
                 signal: "IN12",
                 af: None,
@@ -224,16 +204,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralPin {
                 pin: "PC3",
                 signal: "IN13",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PC4",
-                signal: "IN14",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PC5",
-                signal: "IN15",
                 af: None,
             },
         ],
@@ -301,11 +271,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralPin {
                 pin: "PC0",
                 signal: "IN10",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PC1",
-                signal: "IN11",
                 af: None,
             },
             PeripheralPin {
@@ -505,6 +470,50 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         interrupts: &[],
     },
     Peripheral {
+        name: "CRYP",
+        address: 0x50060000,
+        registers: Some(PeripheralRegisters {
+            kind: "cryp",
+            version: "v1",
+            block: "CRYP",
+            ir: &cryp::REGISTERS,
+        }),
+        rcc: Some(PeripheralRcc {
+            bus_clock: "HCLK2",
+            kernel_clock: Clock("HCLK2"),
+            enable: Some(PeripheralRccRegister {
+                register: "AHB2ENR",
+                field: "CRYPEN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "AHB2RSTR",
+                field: "CRYPRST",
+            }),
+            stop_mode: StopMode::Stop1,
+        }),
+        pins: &[],
+        dma_channels: &[
+            PeripheralDmaChannel {
+                signal: "OUT",
+                channel: Some("DMA2_CH5"),
+                dmamux: None,
+                dma: None,
+                request: Some(2),
+            },
+            PeripheralDmaChannel {
+                signal: "IN",
+                channel: Some("DMA2_CH6"),
+                dmamux: None,
+                dma: None,
+                request: Some(2),
+            },
+        ],
+        interrupts: &[PeripheralInterrupt {
+            signal: "GLOBAL",
+            interrupt: "CRYP",
+        }],
+    },
+    Peripheral {
         name: "DAC1",
         address: 0x40007400,
         registers: Some(PeripheralRegisters {
@@ -572,171 +581,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
-    },
-    Peripheral {
-        name: "DCMI",
-        address: 0x50050000,
-        registers: Some(PeripheralRegisters {
-            kind: "dcmi",
-            version: "v1",
-            block: "DCMI",
-            ir: &dcmi::REGISTERS,
-        }),
-        rcc: Some(PeripheralRcc {
-            bus_clock: "HCLK2",
-            kernel_clock: Clock("HCLK2"),
-            enable: Some(PeripheralRccRegister {
-                register: "AHB2ENR",
-                field: "DCMIEN",
-            }),
-            reset: Some(PeripheralRccRegister {
-                register: "AHB2RSTR",
-                field: "DCMIRST",
-            }),
-            stop_mode: StopMode::Stop1,
-        }),
-        pins: &[
-            PeripheralPin {
-                pin: "PA10",
-                signal: "D1",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PA4",
-                signal: "HSYNC",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PA6",
-                signal: "PIXCLK",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PA9",
-                signal: "D0",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PB5",
-                signal: "D10",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PB6",
-                signal: "D5",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PB7",
-                signal: "VSYNC",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PB8",
-                signal: "D6",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PB9",
-                signal: "D7",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PC10",
-                signal: "D8",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PC11",
-                signal: "D4",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PC12",
-                signal: "D9",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PC6",
-                signal: "D0",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PC7",
-                signal: "D1",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PC8",
-                signal: "D2",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PC9",
-                signal: "D3",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PD2",
-                signal: "D11",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PD3",
-                signal: "D5",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PD6",
-                signal: "D10",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PE0",
-                signal: "D2",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PE1",
-                signal: "D3",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PE4",
-                signal: "D4",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PE5",
-                signal: "D6",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PE6",
-                signal: "D7",
-                af: Some(13),
-            },
-        ],
-        dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "DCMI",
-                channel: Some("DMA2_CH1"),
-                dmamux: None,
-                dma: None,
-                request: Some(1),
-            },
-            PeripheralDmaChannel {
-                signal: "DCMI",
-                channel: Some("DMA2_CH7"),
-                dmamux: None,
-                dma: None,
-                request: Some(1),
-            },
-        ],
-        interrupts: &[PeripheralInterrupt {
-            signal: "GLOBAL",
-            interrupt: "DCMI",
-        }],
     },
     Peripheral {
         name: "DMA1",
@@ -857,176 +701,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         ],
     },
     Peripheral {
-        name: "DMA2D",
-        address: 0x4002b000,
-        registers: Some(PeripheralRegisters {
-            kind: "dma2d",
-            version: "v1",
-            block: "DMA2D",
-            ir: &dma2d::REGISTERS,
-        }),
-        rcc: Some(PeripheralRcc {
-            bus_clock: "HCLK1",
-            kernel_clock: Clock("HCLK1"),
-            enable: Some(PeripheralRccRegister {
-                register: "AHB1ENR",
-                field: "DMA2DEN",
-            }),
-            reset: Some(PeripheralRccRegister {
-                register: "AHB1RSTR",
-                field: "DMA2DRST",
-            }),
-            stop_mode: StopMode::Stop1,
-        }),
-        pins: &[],
-        dma_channels: &[],
-        interrupts: &[PeripheralInterrupt {
-            signal: "GLOBAL",
-            interrupt: "DMA2D",
-        }],
-    },
-    Peripheral {
-        name: "ETH",
-        address: 0x40028000,
-        registers: Some(PeripheralRegisters {
-            kind: "eth",
-            version: "v1b",
-            block: "ETH",
-            ir: &eth::REGISTERS,
-        }),
-        rcc: Some(PeripheralRcc {
-            bus_clock: "HCLK1",
-            kernel_clock: Clock("HCLK1"),
-            enable: Some(PeripheralRccRegister {
-                register: "AHB1ENR",
-                field: "ETHEN",
-            }),
-            reset: Some(PeripheralRccRegister {
-                register: "AHB1RSTR",
-                field: "ETHRST",
-            }),
-            stop_mode: StopMode::Stop1,
-        }),
-        pins: &[
-            PeripheralPin {
-                pin: "PA0",
-                signal: "CRS",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PA1",
-                signal: "REF_CLK",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PA1",
-                signal: "RX_CLK",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PA2",
-                signal: "MDIO",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PA3",
-                signal: "COL",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PA7",
-                signal: "CRS_DV",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PA7",
-                signal: "RX_DV",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PB0",
-                signal: "RXD2",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PB1",
-                signal: "RXD3",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PB10",
-                signal: "RX_ER",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PB11",
-                signal: "TX_EN",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PB12",
-                signal: "TXD0",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PB13",
-                signal: "TXD1",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PB5",
-                signal: "PPS_OUT",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PB8",
-                signal: "TXD3",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PC1",
-                signal: "MDC",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PC2",
-                signal: "TXD2",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PC3",
-                signal: "TX_CLK",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PC4",
-                signal: "RXD0",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PC5",
-                signal: "RXD1",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PE2",
-                signal: "TXD3",
-                af: Some(11),
-            },
-        ],
-        dma_channels: &[],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "ETH",
-            },
-            PeripheralInterrupt {
-                signal: "WKUP",
-                interrupt: "ETH_WKUP",
-            },
-        ],
-    },
-    Peripheral {
         name: "EXTI",
         address: 0x40013c00,
         registers: Some(PeripheralRegisters {
@@ -1123,24 +797,24 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }],
     },
     Peripheral {
-        name: "FMC",
+        name: "FSMC",
         address: 0xa0000000,
         registers: Some(PeripheralRegisters {
-            kind: "fmc",
+            kind: "fsmc",
             version: "v1x3",
-            block: "FMC",
-            ir: &fmc::REGISTERS,
+            block: "FSMC",
+            ir: &fsmc::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK3",
             kernel_clock: Clock("HCLK3"),
             enable: Some(PeripheralRccRegister {
                 register: "AHB3ENR",
-                field: "FMCEN",
+                field: "FSMCEN",
             }),
             reset: Some(PeripheralRccRegister {
                 register: "AHB3RSTR",
-                field: "FMCRST",
+                field: "FSMCRST",
             }),
             stop_mode: StopMode::Stop1,
         }),
@@ -1201,11 +875,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: Some(12),
             },
             PeripheralPin {
-                pin: "PD13",
-                signal: "A18",
-                af: Some(12),
-            },
-            PeripheralPin {
                 pin: "PD14",
                 signal: "D0",
                 af: Some(12),
@@ -1223,11 +892,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralPin {
                 pin: "PD15",
                 signal: "DA1",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PD3",
-                signal: "CLK",
                 af: Some(12),
             },
             PeripheralPin {
@@ -1273,16 +937,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralPin {
                 pin: "PD9",
                 signal: "DA14",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PE0",
-                signal: "NBL0",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PE1",
-                signal: "NBL1",
                 af: Some(12),
             },
             PeripheralPin {
@@ -1346,31 +1000,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: Some(12),
             },
             PeripheralPin {
-                pin: "PE2",
-                signal: "A23",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PE3",
-                signal: "A19",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PE4",
-                signal: "A20",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PE5",
-                signal: "A21",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PE6",
-                signal: "A22",
-                af: Some(12),
-            },
-            PeripheralPin {
                 pin: "PE7",
                 signal: "D4",
                 af: Some(12),
@@ -1404,7 +1033,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         dma_channels: &[],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
-            interrupt: "FMC",
+            interrupt: "FSMC",
         }],
     },
     Peripheral {
@@ -1642,56 +1271,36 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         interrupts: &[],
     },
     Peripheral {
-        name: "GPIOJ",
-        address: 0x40022400,
+        name: "HASH",
+        address: 0x50060400,
         registers: Some(PeripheralRegisters {
-            kind: "gpio",
-            version: "v2",
-            block: "GPIO",
-            ir: &gpio::REGISTERS,
+            kind: "hash",
+            version: "v1",
+            block: "HASH",
+            ir: &hash::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            bus_clock: "HCLK1",
-            kernel_clock: Clock("HCLK1"),
+            bus_clock: "HCLK2",
+            kernel_clock: Clock("HCLK2"),
             enable: Some(PeripheralRccRegister {
-                register: "AHB1ENR",
-                field: "GPIOJEN",
+                register: "AHB2ENR",
+                field: "HASHEN",
             }),
-            reset: Some(PeripheralRccRegister {
-                register: "AHB1RSTR",
-                field: "GPIOJRST",
-            }),
+            reset: None,
             stop_mode: StopMode::Stop1,
         }),
         pins: &[],
-        dma_channels: &[],
-        interrupts: &[],
-    },
-    Peripheral {
-        name: "GPIOK",
-        address: 0x40022800,
-        registers: Some(PeripheralRegisters {
-            kind: "gpio",
-            version: "v2",
-            block: "GPIO",
-            ir: &gpio::REGISTERS,
-        }),
-        rcc: Some(PeripheralRcc {
-            bus_clock: "HCLK1",
-            kernel_clock: Clock("HCLK1"),
-            enable: Some(PeripheralRccRegister {
-                register: "AHB1ENR",
-                field: "GPIOKEN",
-            }),
-            reset: Some(PeripheralRccRegister {
-                register: "AHB1RSTR",
-                field: "GPIOKRST",
-            }),
-            stop_mode: StopMode::Stop1,
-        }),
-        pins: &[],
-        dma_channels: &[],
-        interrupts: &[],
+        dma_channels: &[PeripheralDmaChannel {
+            signal: "IN",
+            channel: Some("DMA2_CH7"),
+            dmamux: None,
+            dma: None,
+            request: Some(2),
+        }],
+        interrupts: &[PeripheralInterrupt {
+            signal: "GLOBAL",
+            interrupt: "HASH_RNG",
+        }],
     },
     Peripheral {
         name: "I2C1",
@@ -1937,172 +1546,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         interrupts: &[],
     },
     Peripheral {
-        name: "LTDC",
-        address: 0x40016800,
-        registers: Some(PeripheralRegisters {
-            kind: "ltdc",
-            version: "v1",
-            block: "LTDC",
-            ir: &ltdc::REGISTERS,
-        }),
-        rcc: Some(PeripheralRcc {
-            bus_clock: "PCLK2",
-            kernel_clock: Clock("PCLK2"),
-            enable: Some(PeripheralRccRegister {
-                register: "APB2ENR",
-                field: "LTDCEN",
-            }),
-            reset: Some(PeripheralRccRegister {
-                register: "APB2RSTR",
-                field: "LTDCRST",
-            }),
-            stop_mode: StopMode::Stop1,
-        }),
-        pins: &[
-            PeripheralPin {
-                pin: "PA11",
-                signal: "R4",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PA12",
-                signal: "R5",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PA3",
-                signal: "B5",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PA4",
-                signal: "VSYNC",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PA6",
-                signal: "G2",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PA8",
-                signal: "R6",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PB0",
-                signal: "R3",
-                af: Some(9),
-            },
-            PeripheralPin {
-                pin: "PB1",
-                signal: "R6",
-                af: Some(9),
-            },
-            PeripheralPin {
-                pin: "PB10",
-                signal: "G4",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PB11",
-                signal: "G5",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PB8",
-                signal: "B6",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PB9",
-                signal: "B7",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PC10",
-                signal: "R2",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PC6",
-                signal: "HSYNC",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PC7",
-                signal: "G6",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PD10",
-                signal: "B3",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PD3",
-                signal: "G7",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PD6",
-                signal: "B2",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PE11",
-                signal: "G3",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PE12",
-                signal: "B4",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PE13",
-                signal: "DE",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PE14",
-                signal: "CLK",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PE15",
-                signal: "R7",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PE4",
-                signal: "B0",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PE5",
-                signal: "G0",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PE6",
-                signal: "G1",
-                af: Some(14),
-            },
-        ],
-        dma_channels: &[],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "ER",
-                interrupt: "LTDC_ER",
-            },
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "LTDC",
-            },
-        ],
-    },
-    Peripheral {
         name: "PWR",
         address: 0x40007000,
         registers: Some(PeripheralRegisters {
@@ -2147,12 +1590,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralPin {
                 pin: "PC14",
                 signal: "OSC32_IN",
-                af: None,
+                af: Some(0),
             },
             PeripheralPin {
                 pin: "PC15",
                 signal: "OSC32_OUT",
-                af: None,
+                af: Some(0),
             },
             PeripheralPin {
                 pin: "PC9",
@@ -2162,12 +1605,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralPin {
                 pin: "PH0",
                 signal: "OSC_IN",
-                af: None,
+                af: Some(0),
             },
             PeripheralPin {
                 pin: "PH1",
                 signal: "OSC_OUT",
-                af: None,
+                af: Some(0),
             },
         ],
         dma_channels: &[],
@@ -2236,7 +1679,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralPin {
                 pin: "PC13",
                 signal: "AF1",
-                af: None,
+                af: Some(0),
             },
         ],
         dma_channels: &[],
@@ -2256,101 +1699,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralInterrupt {
                 signal: "WKUP",
                 interrupt: "RTC_WKUP",
-            },
-        ],
-    },
-    Peripheral {
-        name: "SAI1",
-        address: 0x40015800,
-        registers: Some(PeripheralRegisters {
-            kind: "sai",
-            version: "v1",
-            block: "SAI",
-            ir: &sai::REGISTERS,
-        }),
-        rcc: Some(PeripheralRcc {
-            bus_clock: "PCLK2",
-            kernel_clock: Clock("PCLK2"),
-            enable: Some(PeripheralRccRegister {
-                register: "APB2ENR",
-                field: "SAI1EN",
-            }),
-            reset: Some(PeripheralRccRegister {
-                register: "APB2RSTR",
-                field: "SAI1RST",
-            }),
-            stop_mode: StopMode::Stop1,
-        }),
-        pins: &[
-            PeripheralPin {
-                pin: "PD6",
-                signal: "SD_A",
-                af: Some(6),
-            },
-            PeripheralPin {
-                pin: "PE2",
-                signal: "MCLK_A",
-                af: Some(6),
-            },
-            PeripheralPin {
-                pin: "PE3",
-                signal: "SD_B",
-                af: Some(6),
-            },
-            PeripheralPin {
-                pin: "PE4",
-                signal: "FS_A",
-                af: Some(6),
-            },
-            PeripheralPin {
-                pin: "PE5",
-                signal: "SCK_A",
-                af: Some(6),
-            },
-            PeripheralPin {
-                pin: "PE6",
-                signal: "SD_A",
-                af: Some(6),
-            },
-        ],
-        dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "A",
-                channel: Some("DMA2_CH1"),
-                dmamux: None,
-                dma: None,
-                request: Some(0),
-            },
-            PeripheralDmaChannel {
-                signal: "A",
-                channel: Some("DMA2_CH3"),
-                dmamux: None,
-                dma: None,
-                request: Some(0),
-            },
-            PeripheralDmaChannel {
-                signal: "B",
-                channel: Some("DMA2_CH4"),
-                dmamux: None,
-                dma: None,
-                request: Some(1),
-            },
-            PeripheralDmaChannel {
-                signal: "B",
-                channel: Some("DMA2_CH5"),
-                dmamux: None,
-                dma: None,
-                request: Some(0),
-            },
-        ],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "A",
-                interrupt: "SAI1",
-            },
-            PeripheralInterrupt {
-                signal: "B",
-                interrupt: "SAI1",
             },
         ],
     },
@@ -2688,12 +2036,22 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: Some(5),
             },
             PeripheralPin {
-                pin: "PD3",
+                pin: "PI0",
+                signal: "I2S_WS",
+                af: Some(5),
+            },
+            PeripheralPin {
+                pin: "PI0",
+                signal: "NSS",
+                af: Some(5),
+            },
+            PeripheralPin {
+                pin: "PI1",
                 signal: "I2S_CK",
                 af: Some(5),
             },
             PeripheralPin {
-                pin: "PD3",
+                pin: "PI1",
                 signal: "SCK",
                 af: Some(5),
             },
@@ -2827,16 +2185,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "I2S_MCK",
                 af: Some(6),
             },
-            PeripheralPin {
-                pin: "PD6",
-                signal: "I2S_SD",
-                af: Some(5),
-            },
-            PeripheralPin {
-                pin: "PD6",
-                signal: "MOSI",
-                af: Some(5),
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -2871,105 +2219,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
             interrupt: "SPI3",
-        }],
-    },
-    Peripheral {
-        name: "SPI4",
-        address: 0x40013400,
-        registers: Some(PeripheralRegisters {
-            kind: "spi",
-            version: "v1",
-            block: "SPI",
-            ir: &spi::REGISTERS,
-        }),
-        rcc: Some(PeripheralRcc {
-            bus_clock: "PCLK2",
-            kernel_clock: Clock("PCLK2"),
-            enable: Some(PeripheralRccRegister {
-                register: "APB2ENR",
-                field: "SPI4EN",
-            }),
-            reset: Some(PeripheralRccRegister {
-                register: "APB2RSTR",
-                field: "SPI4RST",
-            }),
-            stop_mode: StopMode::Stop1,
-        }),
-        pins: &[
-            PeripheralPin {
-                pin: "PE11",
-                signal: "NSS",
-                af: Some(5),
-            },
-            PeripheralPin {
-                pin: "PE12",
-                signal: "SCK",
-                af: Some(5),
-            },
-            PeripheralPin {
-                pin: "PE13",
-                signal: "MISO",
-                af: Some(5),
-            },
-            PeripheralPin {
-                pin: "PE14",
-                signal: "MOSI",
-                af: Some(5),
-            },
-            PeripheralPin {
-                pin: "PE2",
-                signal: "SCK",
-                af: Some(5),
-            },
-            PeripheralPin {
-                pin: "PE4",
-                signal: "NSS",
-                af: Some(5),
-            },
-            PeripheralPin {
-                pin: "PE5",
-                signal: "MISO",
-                af: Some(5),
-            },
-            PeripheralPin {
-                pin: "PE6",
-                signal: "MOSI",
-                af: Some(5),
-            },
-        ],
-        dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "RX",
-                channel: Some("DMA2_CH0"),
-                dmamux: None,
-                dma: None,
-                request: Some(4),
-            },
-            PeripheralDmaChannel {
-                signal: "TX",
-                channel: Some("DMA2_CH1"),
-                dmamux: None,
-                dma: None,
-                request: Some(4),
-            },
-            PeripheralDmaChannel {
-                signal: "RX",
-                channel: Some("DMA2_CH3"),
-                dmamux: None,
-                dma: None,
-                request: Some(5),
-            },
-            PeripheralDmaChannel {
-                signal: "TX",
-                channel: Some("DMA2_CH4"),
-                dmamux: None,
-                dma: None,
-                request: Some(5),
-            },
-        ],
-        interrupts: &[PeripheralInterrupt {
-            signal: "GLOBAL",
-            interrupt: "SPI4",
         }],
     },
     Peripheral {
@@ -3856,11 +3105,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: Some(2),
             },
             PeripheralPin {
-                pin: "PD13",
-                signal: "CH2",
-                af: Some(2),
-            },
-            PeripheralPin {
                 pin: "PD14",
                 signal: "CH3",
                 af: Some(2),
@@ -3868,11 +3112,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralPin {
                 pin: "PD15",
                 signal: "CH4",
-                af: Some(2),
-            },
-            PeripheralPin {
-                pin: "PE0",
-                signal: "ETR",
                 af: Some(2),
             },
         ],
@@ -3969,6 +3208,11 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PA3",
+                signal: "CH4",
+                af: Some(2),
+            },
+            PeripheralPin {
+                pin: "PI0",
                 signal: "CH4",
                 af: Some(2),
             },
@@ -4388,16 +3632,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "CH2",
                 af: Some(3),
             },
-            PeripheralPin {
-                pin: "PE5",
-                signal: "CH1",
-                af: Some(3),
-            },
-            PeripheralPin {
-                pin: "PE6",
-                signal: "CH2",
-                af: Some(3),
-            },
         ],
         dma_channels: &[],
         interrupts: &[
@@ -4541,116 +3775,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
             interrupt: "UART5",
-        }],
-    },
-    Peripheral {
-        name: "UART7",
-        address: 0x40007800,
-        registers: Some(PeripheralRegisters {
-            kind: "usart",
-            version: "v2",
-            block: "USART",
-            ir: &usart::REGISTERS,
-        }),
-        rcc: Some(PeripheralRcc {
-            bus_clock: "PCLK1",
-            kernel_clock: Clock("PCLK1"),
-            enable: Some(PeripheralRccRegister {
-                register: "APB1ENR",
-                field: "UART7EN",
-            }),
-            reset: Some(PeripheralRccRegister {
-                register: "APB1RSTR",
-                field: "UART7RST",
-            }),
-            stop_mode: StopMode::Stop1,
-        }),
-        pins: &[
-            PeripheralPin {
-                pin: "PE7",
-                signal: "RX",
-                af: Some(8),
-            },
-            PeripheralPin {
-                pin: "PE8",
-                signal: "TX",
-                af: Some(8),
-            },
-        ],
-        dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "TX",
-                channel: Some("DMA1_CH1"),
-                dmamux: None,
-                dma: None,
-                request: Some(5),
-            },
-            PeripheralDmaChannel {
-                signal: "RX",
-                channel: Some("DMA1_CH3"),
-                dmamux: None,
-                dma: None,
-                request: Some(5),
-            },
-        ],
-        interrupts: &[PeripheralInterrupt {
-            signal: "GLOBAL",
-            interrupt: "UART7",
-        }],
-    },
-    Peripheral {
-        name: "UART8",
-        address: 0x40007c00,
-        registers: Some(PeripheralRegisters {
-            kind: "usart",
-            version: "v2",
-            block: "USART",
-            ir: &usart::REGISTERS,
-        }),
-        rcc: Some(PeripheralRcc {
-            bus_clock: "PCLK1",
-            kernel_clock: Clock("PCLK1"),
-            enable: Some(PeripheralRccRegister {
-                register: "APB1ENR",
-                field: "UART8EN",
-            }),
-            reset: Some(PeripheralRccRegister {
-                register: "APB1RSTR",
-                field: "UART8RST",
-            }),
-            stop_mode: StopMode::Stop1,
-        }),
-        pins: &[
-            PeripheralPin {
-                pin: "PE0",
-                signal: "RX",
-                af: Some(8),
-            },
-            PeripheralPin {
-                pin: "PE1",
-                signal: "TX",
-                af: Some(8),
-            },
-        ],
-        dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "TX",
-                channel: Some("DMA1_CH0"),
-                dmamux: None,
-                dma: None,
-                request: Some(5),
-            },
-            PeripheralDmaChannel {
-                signal: "RX",
-                channel: Some("DMA1_CH6"),
-                dmamux: None,
-                dma: None,
-                request: Some(5),
-            },
-        ],
-        interrupts: &[PeripheralInterrupt {
-            signal: "GLOBAL",
-            interrupt: "UART8",
         }],
     },
     Peripheral {
@@ -4800,11 +3924,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralPin {
                 pin: "PA4",
                 signal: "CK",
-                af: Some(7),
-            },
-            PeripheralPin {
-                pin: "PD3",
-                signal: "CTS",
                 af: Some(7),
             },
             PeripheralPin {
@@ -5468,7 +4587,7 @@ pub(crate) static INTERRUPTS: &[Interrupt] = &[
         number: 47,
     },
     Interrupt {
-        name: "FMC",
+        name: "FSMC",
         number: 48,
     },
     Interrupt {
@@ -5518,14 +4637,6 @@ pub(crate) static INTERRUPTS: &[Interrupt] = &[
     Interrupt {
         name: "DMA2_STREAM4",
         number: 60,
-    },
-    Interrupt {
-        name: "ETH",
-        number: 61,
-    },
-    Interrupt {
-        name: "ETH_WKUP",
-        number: 62,
     },
     Interrupt {
         name: "CAN2_TX",
@@ -5588,8 +4699,8 @@ pub(crate) static INTERRUPTS: &[Interrupt] = &[
         number: 77,
     },
     Interrupt {
-        name: "DCMI",
-        number: 78,
+        name: "CRYP",
+        number: 79,
     },
     Interrupt {
         name: "HASH_RNG",
@@ -5598,42 +4709,6 @@ pub(crate) static INTERRUPTS: &[Interrupt] = &[
     Interrupt {
         name: "FPU",
         number: 81,
-    },
-    Interrupt {
-        name: "UART7",
-        number: 82,
-    },
-    Interrupt {
-        name: "UART8",
-        number: 83,
-    },
-    Interrupt {
-        name: "SPI4",
-        number: 84,
-    },
-    Interrupt {
-        name: "SPI5",
-        number: 85,
-    },
-    Interrupt {
-        name: "SPI6",
-        number: 86,
-    },
-    Interrupt {
-        name: "SAI1",
-        number: 87,
-    },
-    Interrupt {
-        name: "LTDC",
-        number: 88,
-    },
-    Interrupt {
-        name: "LTDC_ER",
-        number: 89,
-    },
-    Interrupt {
-        name: "DMA2D",
-        number: 90,
     },
 ];
 pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
@@ -5784,11 +4859,8 @@ pub(crate) static PINS: &[Pin] = &[
     Pin { name: "PB14" },
     Pin { name: "PB15" },
     Pin { name: "PC0" },
-    Pin { name: "PC1" },
     Pin { name: "PC2" },
     Pin { name: "PC3" },
-    Pin { name: "PC4" },
-    Pin { name: "PC5" },
     Pin { name: "PC6" },
     Pin { name: "PC7" },
     Pin { name: "PC8" },
@@ -5802,7 +4874,6 @@ pub(crate) static PINS: &[Pin] = &[
     Pin { name: "PD0" },
     Pin { name: "PD1" },
     Pin { name: "PD2" },
-    Pin { name: "PD3" },
     Pin { name: "PD4" },
     Pin { name: "PD5" },
     Pin { name: "PD6" },
@@ -5812,16 +4883,8 @@ pub(crate) static PINS: &[Pin] = &[
     Pin { name: "PD10" },
     Pin { name: "PD11" },
     Pin { name: "PD12" },
-    Pin { name: "PD13" },
     Pin { name: "PD14" },
     Pin { name: "PD15" },
-    Pin { name: "PE0" },
-    Pin { name: "PE1" },
-    Pin { name: "PE2" },
-    Pin { name: "PE3" },
-    Pin { name: "PE4" },
-    Pin { name: "PE5" },
-    Pin { name: "PE6" },
     Pin { name: "PE7" },
     Pin { name: "PE8" },
     Pin { name: "PE9" },
@@ -5833,6 +4896,8 @@ pub(crate) static PINS: &[Pin] = &[
     Pin { name: "PE15" },
     Pin { name: "PH0" },
     Pin { name: "PH1" },
+    Pin { name: "PI0" },
+    Pin { name: "PI1" },
 ];
 #[path = "../registers/adc_v2.rs"]
 pub mod adc;
@@ -5842,32 +4907,28 @@ pub mod adccommon;
 pub mod can;
 #[path = "../registers/crc_v1.rs"]
 pub mod crc;
+#[path = "../registers/cryp_v1.rs"]
+pub mod cryp;
 #[path = "../registers/dac_v2.rs"]
 pub mod dac;
 #[path = "../registers/dbgmcu_f4.rs"]
 pub mod dbgmcu;
-#[path = "../registers/dcmi_v1.rs"]
-pub mod dcmi;
 #[path = "../registers/dma_v2.rs"]
 pub mod dma;
-#[path = "../registers/dma2d_v1.rs"]
-pub mod dma2d;
-#[path = "../registers/eth_v1b.rs"]
-pub mod eth;
 #[path = "../registers/exti_v1.rs"]
 pub mod exti;
 #[path = "../registers/flash_f4.rs"]
 pub mod flash;
-#[path = "../registers/fmc_v1x3.rs"]
-pub mod fmc;
+#[path = "../registers/fsmc_v1x3.rs"]
+pub mod fsmc;
 #[path = "../registers/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../registers/hash_v1.rs"]
+pub mod hash;
 #[path = "../registers/i2c_v1.rs"]
 pub mod i2c;
 #[path = "../registers/iwdg_v1.rs"]
 pub mod iwdg;
-#[path = "../registers/ltdc_v1.rs"]
-pub mod ltdc;
 #[path = "../registers/otg_v1.rs"]
 pub mod otg;
 #[path = "../registers/pwr_f4.rs"]
@@ -5878,8 +4939,6 @@ pub mod rcc;
 pub mod rng;
 #[path = "../registers/rtc_v2f4.rs"]
 pub mod rtc;
-#[path = "../registers/sai_v1.rs"]
-pub mod sai;
 #[path = "../registers/sdmmc_v1.rs"]
 pub mod sdmmc;
 #[path = "../registers/spi_v1.rs"]

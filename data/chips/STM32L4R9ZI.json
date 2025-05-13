@@ -3522,7 +3522,7 @@
         "name": "BANK_2",
         "kind": "flash",
         "address": 135266304,
-        "size": 10264576,
+        "size": 1048576,
         "settings": {
           "erase_size": 4096,
           "write_size": 8,

@@ -28,6 +28,20 @@ pub static METADATA: Metadata = Metadata {
             }),
         },
         MemoryRegion {
+            name: "EEPROM_BANK_1",
+            kind: MemoryRegionKind::Eeprom,
+            address: 0x8080000,
+            size: 6144,
+            settings: None,
+        },
+        MemoryRegion {
+            name: "EEPROM_BANK_2",
+            kind: MemoryRegionKind::Eeprom,
+            address: 0x8081800,
+            size: 6144,
+            settings: None,
+        },
+        MemoryRegion {
             name: "SRAM",
             kind: MemoryRegionKind::Ram,
             address: 0x20000000,

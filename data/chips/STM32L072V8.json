@@ -1232,6 +1232,17 @@
         }
       },
       {
+        "name": "EEPROM_BANK_2",
+        "kind": "eeprom",
+        "address": 134745088,
+        "size": 3072,
+        "access": {
+          "read": true,
+          "write": true,
+          "execute": false
+        }
+      },
+      {
         "name": "SRAM",
         "kind": "ram",
         "address": 536870912,

@@ -5972,7 +5972,7 @@
           "address": 1476411392,
           "registers": {
             "kind": "rtc",
-            "version": "v2h7",
+            "version": "v3h7rs",
             "block": "RTC"
           },
           "rcc": {

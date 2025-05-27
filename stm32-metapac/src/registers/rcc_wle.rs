@@ -1431,7 +1431,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Usart1sel"),
                 },
                 Field {
                     name: "usart2sel",
@@ -1439,15 +1439,15 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Usart2sel"),
                 },
                 Field {
-                    name: "spi2sel",
+                    name: "spi2s2sel",
                     description: Some("SPI2 I2S clock source selection"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Spi2s2sel"),
                 },
                 Field {
                     name: "lpuart1sel",
@@ -1455,7 +1455,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Lpuart1sel"),
                 },
                 Field {
                     name: "i2c1sel",
@@ -1463,7 +1463,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("I2c1sel"),
                 },
                 Field {
                     name: "i2c2sel",
@@ -1471,7 +1471,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("I2c2sel"),
                 },
                 Field {
                     name: "i2c3sel",
@@ -1479,7 +1479,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("I2c3sel"),
                 },
                 Field {
                     name: "lptim1sel",
@@ -1487,7 +1487,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Lptim1sel"),
                 },
                 Field {
                     name: "lptim2sel",
@@ -1495,7 +1495,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Lptim2sel"),
                 },
                 Field {
                     name: "lptim3sel",
@@ -1503,7 +1503,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Lptim3sel"),
                 },
                 Field {
                     name: "adcsel",
@@ -2255,6 +2255,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
+                    name: "DISABLE",
+                    description: Some("No clock selected"),
+                    value: 0,
+                },
+                EnumVariant {
                     name: "HSI",
                     description: Some("HSI used as ADC clock source"),
                     value: 1,
@@ -2362,6 +2367,180 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV2",
                     description: None,
                     value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "I2c1sel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK1",
+                    description: Some("APB clock selected"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SYS",
+                    description: Some("System clock selected"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some("HSI16 clock selected"),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "I2c2sel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK1",
+                    description: Some("APB clock selected"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SYS",
+                    description: Some("System clock selected"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some("HSI16 clock selected"),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "I2c3sel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK1",
+                    description: Some("APB clock selected"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SYS",
+                    description: Some("System clock selected"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some("HSI16 clock selected"),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Lptim1sel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK1",
+                    description: Some("APB clock selected"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LSI",
+                    description: Some("LSI clock selected"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some("HSI16 clock selected"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some("LSE clock selected"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Lptim2sel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK1",
+                    description: Some("APB clock selected"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LSI",
+                    description: Some("LSI clock selected"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some("HSI16 clock selected"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some("LSE clock selected"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Lptim3sel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK1",
+                    description: Some("APB clock selected"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LSI",
+                    description: Some("LSI clock selected"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some("HSI16 clock selected"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some("LSE clock selected"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Lpuart1sel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK1",
+                    description: Some("APB clock selected"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SYS",
+                    description: Some("System clock selected"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some("HSI16 clock selected"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some("LSE clock selected"),
+                    value: 3,
                 },
             ],
         },
@@ -3526,22 +3705,22 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PLL1_Q",
-                    description: None,
+                    description: Some("PLL \"Q\" clock selected"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "LSI",
-                    description: None,
+                    description: Some("LSI clock selected"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "LSE",
-                    description: None,
+                    description: Some("LSE clock selected"),
                     value: 2,
                 },
                 EnumVariant {
                     name: "MSI",
-                    description: None,
+                    description: Some("MSI clock selected"),
                     value: 3,
                 },
             ],
@@ -3574,6 +3753,28 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Spi2s2sel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PLL1_Q",
+                    description: Some("PLL \"Q\" clock selected"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some("HSI16 clock selected"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "I2S_CKIN",
+                    description: Some("External input I2S_CKIN selected"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
             name: "Sw",
             description: None,
             bit_size: 2,
@@ -3596,6 +3797,60 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "PLL1_R",
                     description: None,
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Usart1sel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK2",
+                    description: Some("APB clock selected"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SYS",
+                    description: Some("System clock selected"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some("HSI16 clock selected"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some("LSE clock selected"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Usart2sel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK1",
+                    description: Some("APB clock selected"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SYS",
+                    description: Some("System clock selected"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some("HSI16 clock selected"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some("LSE clock selected"),
                     value: 3,
                 },
             ],

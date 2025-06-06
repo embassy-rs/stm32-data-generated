@@ -5703,6 +5703,11 @@
         {
           "name": "OPAMP1",
           "address": 1174425600,
+          "registers": {
+            "kind": "opamp",
+            "version": "l4u0",
+            "block": "OPAMP"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": "PCLK3",
@@ -5733,6 +5738,11 @@
         {
           "name": "OPAMP2",
           "address": 1174425616,
+          "registers": {
+            "kind": "opamp",
+            "version": "l4u0",
+            "block": "OPAMP"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": "PCLK3",

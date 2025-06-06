@@ -463,7 +463,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "COMP1",
         address: 0x5800380c,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "comp",
+            version: "h7_b",
+            block: "COMP",
+            ir: &comp::REGISTERS,
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -501,7 +506,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "COMP2",
         address: 0x58003810,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "comp",
+            version: "h7_b",
+            block: "COMP",
+            ir: &comp::REGISTERS,
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -3893,12 +3903,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[
             PeripheralPin {
                 pin: "PA7",
-                signal: "VINM",
+                signal: "VINM1",
                 af: None,
             },
             PeripheralPin {
                 pin: "PB0",
-                signal: "VINP",
+                signal: "VINP0",
                 af: None,
             },
             PeripheralPin {
@@ -3908,7 +3918,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PC5",
-                signal: "VINM",
+                signal: "VINM0",
                 af: None,
             },
         ],
@@ -3945,12 +3955,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PE8",
-                signal: "VINM",
+                signal: "VINM0",
                 af: None,
             },
             PeripheralPin {
                 pin: "PE9",
-                signal: "VINP",
+                signal: "VINP0",
                 af: None,
             },
         ],
@@ -9328,6 +9338,8 @@ pub mod bdma;
 pub mod can;
 #[path = "../registers/cec_v2.rs"]
 pub mod cec;
+#[path = "../registers/comp_h7_b.rs"]
+pub mod comp;
 #[path = "../registers/cordic_v1.rs"]
 pub mod cordic;
 #[path = "../registers/crc_v3.rs"]

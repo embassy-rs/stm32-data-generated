@@ -1869,15 +1869,7 @@
           "pins": [
             {
               "pin": "PA1",
-              "signal": "VINP"
-            },
-            {
-              "pin": "PA1",
-              "signal": "VINP_SEC"
-            },
-            {
-              "pin": "PA1",
-              "signal": "VP3"
+              "signal": "VP0"
             },
             {
               "pin": "PA2",
@@ -1885,19 +1877,7 @@
             },
             {
               "pin": "PA3",
-              "signal": "VINM"
-            },
-            {
-              "pin": "PA3",
-              "signal": "VINM_SEC"
-            },
-            {
-              "pin": "PA3",
-              "signal": "VINP"
-            },
-            {
-              "pin": "PA3",
-              "signal": "VINP_SEC"
+              "signal": "VM1"
             },
             {
               "pin": "PA3",
@@ -1905,35 +1885,15 @@
             },
             {
               "pin": "PA5",
-              "signal": "VINP"
+              "signal": "VP3"
             },
             {
-              "pin": "PA5",
-              "signal": "VINP_SEC"
-            },
-            {
-              "pin": "PA5",
+              "pin": "PA7",
               "signal": "VP1"
             },
             {
-              "pin": "PA7",
-              "signal": "VINP"
-            },
-            {
-              "pin": "PA7",
-              "signal": "VINP_SEC"
-            },
-            {
-              "pin": "PA7",
-              "signal": "VP0"
-            },
-            {
               "pin": "PC5",
-              "signal": "VINM"
-            },
-            {
-              "pin": "PC5",
-              "signal": "VINM_SEC"
+              "signal": "VM0"
             }
           ]
         },
@@ -1948,11 +1908,7 @@
           "pins": [
             {
               "pin": "PA5",
-              "signal": "VINM"
-            },
-            {
-              "pin": "PA5",
-              "signal": "VINM_SEC"
+              "signal": "VM1"
             },
             {
               "pin": "PA6",
@@ -1960,23 +1916,7 @@
             },
             {
               "pin": "PA7",
-              "signal": "VINP"
-            },
-            {
-              "pin": "PA7",
-              "signal": "VINP_SEC"
-            },
-            {
-              "pin": "PA7",
-              "signal": "VP3"
-            },
-            {
-              "pin": "PB0",
-              "signal": "VINP"
-            },
-            {
-              "pin": "PB0",
-              "signal": "VINP_SEC"
+              "signal": "VP0"
             },
             {
               "pin": "PB0",
@@ -1984,23 +1924,11 @@
             },
             {
               "pin": "PB14",
-              "signal": "VINP"
-            },
-            {
-              "pin": "PB14",
-              "signal": "VINP_SEC"
-            },
-            {
-              "pin": "PB14",
-              "signal": "VP1"
+              "signal": "VP3"
             },
             {
               "pin": "PC5",
-              "signal": "VINM"
-            },
-            {
-              "pin": "PC5",
-              "signal": "VINM_SEC"
+              "signal": "VM0"
             }
           ]
         },
@@ -2015,39 +1943,15 @@
           "pins": [
             {
               "pin": "PA1",
-              "signal": "VINP"
-            },
-            {
-              "pin": "PA1",
-              "signal": "VINP_SEC"
-            },
-            {
-              "pin": "PA1",
               "signal": "VP2"
             },
             {
               "pin": "PA5",
-              "signal": "VINP"
-            },
-            {
-              "pin": "PA5",
-              "signal": "VINP_SEC"
-            },
-            {
-              "pin": "PA5",
-              "signal": "VP1"
-            },
-            {
-              "pin": "PB0",
-              "signal": "VINP"
-            },
-            {
-              "pin": "PB0",
-              "signal": "VINP_SEC"
-            },
-            {
-              "pin": "PB0",
               "signal": "VP3"
+            },
+            {
+              "pin": "PB0",
+              "signal": "VP0"
             },
             {
               "pin": "PB1",
@@ -2055,23 +1959,11 @@
             },
             {
               "pin": "PB10",
-              "signal": "VINM"
-            },
-            {
-              "pin": "PB10",
-              "signal": "VINM_SEC"
+              "signal": "VM0"
             },
             {
               "pin": "PB13",
-              "signal": "VINP"
-            },
-            {
-              "pin": "PB13",
-              "signal": "VINP_SEC"
-            },
-            {
-              "pin": "PB13",
-              "signal": "VP0"
+              "signal": "VP1"
             }
           ]
         },
@@ -2086,35 +1978,15 @@
           "pins": [
             {
               "pin": "PA4",
-              "signal": "VINP"
-            },
-            {
-              "pin": "PA4",
-              "signal": "VINP_SEC"
-            },
-            {
-              "pin": "PA4",
               "signal": "VP2"
             },
             {
               "pin": "PB10",
-              "signal": "VINM"
-            },
-            {
-              "pin": "PB10",
-              "signal": "VINM_SEC"
+              "signal": "VM0"
             },
             {
               "pin": "PB11",
-              "signal": "VINP"
-            },
-            {
-              "pin": "PB11",
-              "signal": "VINP_SEC"
-            },
-            {
-              "pin": "PB11",
-              "signal": "VP1"
+              "signal": "VP3"
             },
             {
               "pin": "PB12",
@@ -2122,15 +1994,7 @@
             },
             {
               "pin": "PB13",
-              "signal": "VINP"
-            },
-            {
-              "pin": "PB13",
-              "signal": "VINP_SEC"
-            },
-            {
-              "pin": "PB13",
-              "signal": "VP3"
+              "signal": "VP0"
             }
           ]
         },

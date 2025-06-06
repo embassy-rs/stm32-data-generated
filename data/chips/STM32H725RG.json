@@ -1117,6 +1117,11 @@
         {
           "name": "COMP1",
           "address": 1476409356,
+          "registers": {
+            "kind": "comp",
+            "version": "h7_b",
+            "block": "COMP"
+          },
           "pins": [
             {
               "pin": "PB0",
@@ -1150,6 +1155,11 @@
         {
           "name": "COMP2",
           "address": 1476409360,
+          "registers": {
+            "kind": "comp",
+            "version": "h7_b",
+            "block": "COMP"
+          },
           "interrupts": [
             {
               "signal": "WKUP",
@@ -3350,11 +3360,11 @@
           "pins": [
             {
               "pin": "PA7",
-              "signal": "VINM"
+              "signal": "VINM1"
             },
             {
               "pin": "PB0",
-              "signal": "VINP"
+              "signal": "VINP0"
             },
             {
               "pin": "PC4",
@@ -3362,7 +3372,7 @@
             },
             {
               "pin": "PC5",
-              "signal": "VINM"
+              "signal": "VINM0"
             }
           ]
         },

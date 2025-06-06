@@ -574,7 +574,7 @@ pub const I2C3: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4600_2800usize as _) };
 pub const LPTIM1: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4600_4400usize as _) };
 pub const LPTIM3: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4600_4800usize as _) };
 pub const LPTIM4: lptim::LptimBasic = unsafe { lptim::LptimBasic::from_ptr(0x4600_4c00usize as _) };
-pub const OPAMP1: *mut () = 0x4600_5000usize as _;
+pub const OPAMP1: opamp::Opamp = unsafe { opamp::Opamp::from_ptr(0x4600_5000usize as _) };
 pub const COMP1: comp::Comp = unsafe { comp::Comp::from_ptr(0x4600_5400usize as _) };
 pub const VREFBUF: vrefbuf::Vrefbuf = unsafe { vrefbuf::Vrefbuf::from_ptr(0x4600_7400usize as _) };
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4600_7800usize as _) };
@@ -643,6 +643,8 @@ pub mod lpdma;
 pub mod lptim;
 #[path = "../../peripherals/octospi_v1.rs"]
 pub mod octospi;
+#[path = "../../peripherals/opamp_l4u0.rs"]
+pub mod opamp;
 #[path = "../../peripherals/pwr_u5.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_u5.rs"]

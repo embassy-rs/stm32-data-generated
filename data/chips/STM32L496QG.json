@@ -5721,6 +5721,10 @@
               "signal": "VINP"
             },
             {
+              "pin": "PA1",
+              "signal": "VINM"
+            },
+            {
               "pin": "PA3",
               "signal": "VOUT"
             }
@@ -5750,6 +5754,10 @@
             {
               "pin": "PA6",
               "signal": "VINP"
+            },
+            {
+              "pin": "PA7",
+              "signal": "VINM"
             },
             {
               "pin": "PB0",

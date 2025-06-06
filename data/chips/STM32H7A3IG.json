@@ -9225,11 +9225,11 @@
           "pins": [
             {
               "pin": "PA7",
-              "signal": "VINM"
+              "signal": "VINM1"
             },
             {
               "pin": "PB0",
-              "signal": "VINP"
+              "signal": "VINP0"
             },
             {
               "pin": "PC4",
@@ -9237,7 +9237,7 @@
             },
             {
               "pin": "PC5",
-              "signal": "VINM"
+              "signal": "VINM0"
             }
           ]
         },
@@ -9268,15 +9268,15 @@
             },
             {
               "pin": "PE8",
-              "signal": "VINM"
+              "signal": "VINM0"
             },
             {
               "pin": "PE9",
-              "signal": "VINP"
+              "signal": "VINP0"
             },
             {
               "pin": "PG1",
-              "signal": "VINM"
+              "signal": "VINM1"
             }
           ]
         },

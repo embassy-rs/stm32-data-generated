@@ -1621,7 +1621,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[
             PeripheralPin {
                 pin: "PA0",
-                signal: "VINP",
+                signal: "VINP2",
                 af: None,
             },
             PeripheralPin {

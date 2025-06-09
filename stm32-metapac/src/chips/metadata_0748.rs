@@ -2499,7 +2499,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "OPAMP1",
         address: 0x40007800,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "opamp",
+            version: "l4u0",
+            block: "OPAMP",
+            ir: &opamp::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Clock("PCLK1"),
@@ -2536,7 +2541,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "OPAMP2",
         address: 0x40007810,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "opamp",
+            version: "l4u0",
+            block: "OPAMP",
+            ir: &opamp::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Clock("PCLK1"),
@@ -6930,6 +6940,8 @@ pub mod iwdg;
 pub mod lptim;
 #[path = "../registers/octospi_v2.rs"]
 pub mod octospi;
+#[path = "../registers/opamp_l4u0.rs"]
+pub mod opamp;
 #[path = "../registers/otfdec_v1.rs"]
 pub mod otfdec;
 #[path = "../registers/pka_v1c.rs"]

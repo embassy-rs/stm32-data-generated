@@ -1801,7 +1801,7 @@
           "pins": [
             {
               "pin": "PA0",
-              "signal": "VINP"
+              "signal": "VINP2"
             },
             {
               "pin": "PA7",
@@ -1809,11 +1809,7 @@
             },
             {
               "pin": "PB0",
-              "signal": "VINP"
-            },
-            {
-              "pin": "PB1",
-              "signal": "VINM"
+              "signal": "VINP0"
             },
             {
               "pin": "PB1",

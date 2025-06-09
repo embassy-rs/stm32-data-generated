@@ -140,7 +140,7 @@ pub const UID: uid::Uid = unsafe { uid::Uid::from_ptr(0x1fff_7550usize as _) };
 pub const TIM2: timer::TimGp32 = unsafe { timer::TimGp32::from_ptr(0x4000_0000usize as _) };
 pub const TIM3: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4000_0400usize as _) };
 pub const TIM14: timer::Tim1ch = unsafe { timer::Tim1ch::from_ptr(0x4000_2000usize as _) };
-pub const RTC: *mut () = 0x4000_2800usize as _;
+pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4000_2800usize as _) };
 pub const WWDG: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x4000_2c00usize as _) };
 pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000usize as _) };
 pub const SPI2: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3800usize as _) };
@@ -206,6 +206,8 @@ pub mod iwdg;
 pub mod pwr;
 #[path = "../../peripherals/rcc_c0v2.rs"]
 pub mod rcc;
+#[path = "../../peripherals/rtc_v3.rs"]
+pub mod rtc;
 #[path = "../../peripherals/spi_v2.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_c0.rs"]

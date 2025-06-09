@@ -506,8 +506,8 @@ pub const I2C3: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5c00usize as _) };
 pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_6000usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4000_7000usize as _) };
 pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4000_7400usize as _) };
-pub const OPAMP1: *mut () = 0x4000_7800usize as _;
-pub const OPAMP2: *mut () = 0x4000_7810usize as _;
+pub const OPAMP1: opamp::Opamp = unsafe { opamp::Opamp::from_ptr(0x4000_7800usize as _) };
+pub const OPAMP2: opamp::Opamp = unsafe { opamp::Opamp::from_ptr(0x4000_7810usize as _) };
 pub const LPTIM1: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_7c00usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4000_8000usize as _) };
 pub const I2C4: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_8400usize as _) };
@@ -607,6 +607,8 @@ pub mod iwdg;
 pub mod lptim;
 #[path = "../../peripherals/octospi_v2.rs"]
 pub mod octospi;
+#[path = "../../peripherals/opamp_l4u0.rs"]
+pub mod opamp;
 #[path = "../../peripherals/otfdec_v1.rs"]
 pub mod otfdec;
 #[path = "../../peripherals/pka_v1c.rs"]

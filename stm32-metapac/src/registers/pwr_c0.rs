@@ -183,7 +183,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 3,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Lpms",
+                    ),
                 },
                 Field {
                     name: "fpd_stop",
@@ -465,5 +467,34 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
     ],
-    enums: &[],
+    enums: &[
+        Enum {
+            name: "Lpms",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "STOP",
+                    description: Some(
+                        "Selects Stop mode when entering DeepSleep.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "STANDBY",
+                    description: Some(
+                        "Selects Standby mode when entering DeepSleep.",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "SHUTDOWN",
+                    description: Some(
+                        "Selects Shutdown mode when entering DeepSleep.",
+                    ),
+                    value: 4,
+                },
+            ],
+        },
+    ],
 };

@@ -4595,7 +4595,7 @@
           "address": 1073778688,
           "registers": {
             "kind": "opamp",
-            "version": "h",
+            "version": "v4",
             "block": "OPAMP"
           },
           "rcc": {
@@ -4634,7 +4634,7 @@
           "address": 1073778704,
           "registers": {
             "kind": "opamp",
-            "version": "h",
+            "version": "v4",
             "block": "OPAMP"
           },
           "rcc": {

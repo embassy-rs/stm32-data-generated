@@ -1526,13 +1526,13 @@
           "address": 1073807420,
           "registers": {
             "kind": "opamp",
-            "version": "f3",
+            "version": "v2",
             "block": "OPAMP"
           },
           "pins": [
             {
               "pin": "PA5",
-              "signal": "VM1"
+              "signal": "VINM1"
             },
             {
               "pin": "PA6",
@@ -1540,19 +1540,19 @@
             },
             {
               "pin": "PA7",
-              "signal": "VP0"
+              "signal": "VINP0"
             },
             {
               "pin": "PB0",
-              "signal": "VP2"
+              "signal": "VINP2"
             },
             {
               "pin": "PB14",
-              "signal": "VP3"
+              "signal": "VINP3"
             },
             {
               "pin": "PC5",
-              "signal": "VM0"
+              "signal": "VINM0"
             }
           ]
         },

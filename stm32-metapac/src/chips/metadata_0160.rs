@@ -989,7 +989,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x4001003c,
         registers: Some(PeripheralRegisters {
             kind: "opamp",
-            version: "f3",
+            version: "v2",
             block: "OPAMP",
             ir: &opamp::REGISTERS,
         }),
@@ -997,7 +997,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[
             PeripheralPin {
                 pin: "PA5",
-                signal: "VM1",
+                signal: "VINM1",
                 af: None,
             },
             PeripheralPin {
@@ -1007,12 +1007,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PA7",
-                signal: "VP0",
+                signal: "VINP0",
                 af: None,
             },
             PeripheralPin {
                 pin: "PB0",
-                signal: "VP2",
+                signal: "VINP2",
                 af: None,
             },
         ],
@@ -2807,7 +2807,7 @@ pub mod hrtim;
 pub mod i2c;
 #[path = "../registers/iwdg_v2.rs"]
 pub mod iwdg;
-#[path = "../registers/opamp_f3.rs"]
+#[path = "../registers/opamp_v2.rs"]
 pub mod opamp;
 #[path = "../registers/pwr_f3.rs"]
 pub mod pwr;

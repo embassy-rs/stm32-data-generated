@@ -1601,7 +1601,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40003400,
         registers: Some(PeripheralRegisters {
             kind: "opamp",
-            version: "h",
+            version: "v4",
             block: "OPAMP",
             ir: &opamp::REGISTERS,
         }),
@@ -4239,7 +4239,7 @@ pub mod icache;
 pub mod iwdg;
 #[path = "../registers/lptim_v2a.rs"]
 pub mod lptim;
-#[path = "../registers/opamp_h.rs"]
+#[path = "../registers/opamp_v4.rs"]
 pub mod opamp;
 #[path = "../registers/pwr_h50.rs"]
 pub mod pwr;

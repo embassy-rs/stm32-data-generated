@@ -2594,7 +2594,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40010300,
         registers: Some(PeripheralRegisters {
             kind: "opamp",
-            version: "g4",
+            version: "v5",
             block: "OPAMP",
             ir: &opamp::REGISTERS,
         }),
@@ -2639,7 +2639,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40010304,
         registers: Some(PeripheralRegisters {
             kind: "opamp",
-            version: "g4",
+            version: "v5",
             block: "OPAMP",
             ir: &opamp::REGISTERS,
         }),
@@ -2684,7 +2684,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40010308,
         registers: Some(PeripheralRegisters {
             kind: "opamp",
-            version: "g4",
+            version: "v5",
             block: "OPAMP",
             ir: &opamp::REGISTERS,
         }),
@@ -2729,7 +2729,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x4001030c,
         registers: Some(PeripheralRegisters {
             kind: "opamp",
-            version: "g4",
+            version: "v5",
             block: "OPAMP",
             ir: &opamp::REGISTERS,
         }),
@@ -2764,7 +2764,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40010310,
         registers: Some(PeripheralRegisters {
             kind: "opamp",
-            version: "g4",
+            version: "v5",
             block: "OPAMP",
             ir: &opamp::REGISTERS,
         }),
@@ -2804,7 +2804,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40010314,
         registers: Some(PeripheralRegisters {
             kind: "opamp",
-            version: "g4",
+            version: "v5",
             block: "OPAMP",
             ir: &opamp::REGISTERS,
         }),
@@ -6576,7 +6576,7 @@ pub mod i2c;
 pub mod iwdg;
 #[path = "../registers/lptim_v1b_g4.rs"]
 pub mod lptim;
-#[path = "../registers/opamp_g4.rs"]
+#[path = "../registers/opamp_v5.rs"]
 pub mod opamp;
 #[path = "../registers/pwr_g4.rs"]
 pub mod pwr;

@@ -4828,7 +4828,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x46005000,
         registers: Some(PeripheralRegisters {
             kind: "opamp",
-            version: "l4u0",
+            version: "v3",
             block: "OPAMP",
             ir: &opamp::REGISTERS,
         }),
@@ -4848,12 +4848,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[
             PeripheralPin {
                 pin: "PA0",
-                signal: "VINP",
+                signal: "VINP0",
                 af: None,
             },
             PeripheralPin {
                 pin: "PA1",
-                signal: "VINM",
+                signal: "VINM0",
                 af: None,
             },
             PeripheralPin {
@@ -4870,7 +4870,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x46005010,
         registers: Some(PeripheralRegisters {
             kind: "opamp",
-            version: "l4u0",
+            version: "v3",
             block: "OPAMP",
             ir: &opamp::REGISTERS,
         }),
@@ -4890,12 +4890,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[
             PeripheralPin {
                 pin: "PA6",
-                signal: "VINP",
+                signal: "VINP0",
                 af: None,
             },
             PeripheralPin {
                 pin: "PA7",
-                signal: "VINM",
+                signal: "VINM0",
                 af: None,
             },
             PeripheralPin {
@@ -10372,7 +10372,7 @@ pub mod ltdc;
 pub mod octospi;
 #[path = "../registers/octospim_v1.rs"]
 pub mod octospim;
-#[path = "../registers/opamp_l4u0.rs"]
+#[path = "../registers/opamp_v3.rs"]
 pub mod opamp;
 #[path = "../registers/otg_v1.rs"]
 pub mod otg;

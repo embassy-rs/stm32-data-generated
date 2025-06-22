@@ -516,7 +516,7 @@ pub mod icache;
 pub mod iwdg;
 #[path = "../../peripherals/lptim_v2a.rs"]
 pub mod lptim;
-#[path = "../../peripherals/opamp_h.rs"]
+#[path = "../../peripherals/opamp_v4.rs"]
 pub mod opamp;
 #[path = "../../peripherals/pwr_h50.rs"]
 pub mod pwr;

@@ -781,7 +781,7 @@ pub mod mdios;
 pub mod octospi;
 #[path = "../../peripherals/octospim_v1.rs"]
 pub mod octospim;
-#[path = "../../peripherals/opamp_h.rs"]
+#[path = "../../peripherals/opamp_v4.rs"]
 pub mod opamp;
 #[path = "../../peripherals/otfdec_v1.rs"]
 pub mod otfdec;

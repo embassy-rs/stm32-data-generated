@@ -2319,7 +2319,7 @@
           "address": 1174425600,
           "registers": {
             "kind": "opamp",
-            "version": "l4u0",
+            "version": "v3",
             "block": "OPAMP"
           },
           "rcc": {
@@ -2337,11 +2337,11 @@
           "pins": [
             {
               "pin": "PA0",
-              "signal": "VINP"
+              "signal": "VINP0"
             },
             {
               "pin": "PA1",
-              "signal": "VINM"
+              "signal": "VINM0"
             },
             {
               "pin": "PA3",

@@ -3719,7 +3719,7 @@
           "address": 1073808128,
           "registers": {
             "kind": "opamp",
-            "version": "g4",
+            "version": "v5",
             "block": "OPAMP"
           },
           "pins": [
@@ -3754,7 +3754,7 @@
           "address": 1073808132,
           "registers": {
             "kind": "opamp",
-            "version": "g4",
+            "version": "v5",
             "block": "OPAMP"
           },
           "pins": [
@@ -3793,7 +3793,7 @@
           "address": 1073808136,
           "registers": {
             "kind": "opamp",
-            "version": "g4",
+            "version": "v5",
             "block": "OPAMP"
           },
           "pins": [
@@ -3828,7 +3828,7 @@
           "address": 1073808140,
           "registers": {
             "kind": "opamp",
-            "version": "g4",
+            "version": "v5",
             "block": "OPAMP"
           },
           "pins": [
@@ -3863,7 +3863,7 @@
           "address": 1073808144,
           "registers": {
             "kind": "opamp",
-            "version": "g4",
+            "version": "v5",
             "block": "OPAMP"
           },
           "pins": [
@@ -3898,7 +3898,7 @@
           "address": 1073808148,
           "registers": {
             "kind": "opamp",
-            "version": "g4",
+            "version": "v5",
             "block": "OPAMP"
           },
           "pins": [

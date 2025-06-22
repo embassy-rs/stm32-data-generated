@@ -645,7 +645,7 @@ pub mod lpdma;
 pub mod lptim;
 #[path = "../../peripherals/octospi_v1.rs"]
 pub mod octospi;
-#[path = "../../peripherals/opamp_l4u0.rs"]
+#[path = "../../peripherals/opamp_v3.rs"]
 pub mod opamp;
 #[path = "../../peripherals/pwr_u5.rs"]
 pub mod pwr;

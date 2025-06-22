@@ -770,7 +770,7 @@ pub mod iwdg;
 pub mod lptim;
 #[path = "../../peripherals/mdios_v1.rs"]
 pub mod mdios;
-#[path = "../../peripherals/opamp_h.rs"]
+#[path = "../../peripherals/opamp_v4.rs"]
 pub mod opamp;
 #[path = "../../peripherals/otg_v1.rs"]
 pub mod otg;

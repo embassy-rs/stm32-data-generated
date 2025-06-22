@@ -2266,13 +2266,13 @@
           "address": 1073807416,
           "registers": {
             "kind": "opamp",
-            "version": "f3",
+            "version": "v2",
             "block": "OPAMP"
           },
           "pins": [
             {
               "pin": "PA1",
-              "signal": "VP0"
+              "signal": "VINP0"
             },
             {
               "pin": "PA2",
@@ -2280,23 +2280,23 @@
             },
             {
               "pin": "PA3",
-              "signal": "VM1"
+              "signal": "VINM1"
             },
             {
               "pin": "PA3",
-              "signal": "VP2"
+              "signal": "VINP2"
             },
             {
               "pin": "PA5",
-              "signal": "VP3"
+              "signal": "VINP3"
             },
             {
               "pin": "PA7",
-              "signal": "VP1"
+              "signal": "VINP1"
             },
             {
               "pin": "PC5",
-              "signal": "VM0"
+              "signal": "VINM0"
             }
           ]
         },
@@ -2305,13 +2305,13 @@
           "address": 1073807420,
           "registers": {
             "kind": "opamp",
-            "version": "f3",
+            "version": "v2",
             "block": "OPAMP"
           },
           "pins": [
             {
               "pin": "PA5",
-              "signal": "VM1"
+              "signal": "VINM1"
             },
             {
               "pin": "PA6",
@@ -2319,23 +2319,23 @@
             },
             {
               "pin": "PA7",
-              "signal": "VP0"
+              "signal": "VINP0"
             },
             {
               "pin": "PB0",
-              "signal": "VP2"
+              "signal": "VINP2"
             },
             {
               "pin": "PB14",
-              "signal": "VP3"
+              "signal": "VINP3"
             },
             {
               "pin": "PC5",
-              "signal": "VM0"
+              "signal": "VINM0"
             },
             {
               "pin": "PD14",
-              "signal": "VP1"
+              "signal": "VINP1"
             }
           ]
         },
@@ -2344,21 +2344,21 @@
           "address": 1073807424,
           "registers": {
             "kind": "opamp",
-            "version": "f3",
+            "version": "v2",
             "block": "OPAMP"
           },
           "pins": [
             {
               "pin": "PA1",
-              "signal": "VP2"
+              "signal": "VINP2"
             },
             {
               "pin": "PA5",
-              "signal": "VP3"
+              "signal": "VINP3"
             },
             {
               "pin": "PB0",
-              "signal": "VP0"
+              "signal": "VINP0"
             },
             {
               "pin": "PB1",
@@ -2366,15 +2366,15 @@
             },
             {
               "pin": "PB10",
-              "signal": "VM0"
+              "signal": "VINM0"
             },
             {
               "pin": "PB13",
-              "signal": "VP1"
+              "signal": "VINP1"
             },
             {
               "pin": "PB2",
-              "signal": "VM1"
+              "signal": "VINM1"
             }
           ]
         },
@@ -2383,21 +2383,21 @@
           "address": 1073807428,
           "registers": {
             "kind": "opamp",
-            "version": "f3",
+            "version": "v2",
             "block": "OPAMP"
           },
           "pins": [
             {
               "pin": "PA4",
-              "signal": "VP2"
+              "signal": "VINP2"
             },
             {
               "pin": "PB10",
-              "signal": "VM0"
+              "signal": "VINM0"
             },
             {
               "pin": "PB11",
-              "signal": "VP3"
+              "signal": "VINP3"
             },
             {
               "pin": "PB12",
@@ -2405,15 +2405,15 @@
             },
             {
               "pin": "PB13",
-              "signal": "VP0"
+              "signal": "VINP0"
             },
             {
               "pin": "PD11",
-              "signal": "VP1"
+              "signal": "VINP1"
             },
             {
               "pin": "PD8",
-              "signal": "VM1"
+              "signal": "VINM1"
             }
           ]
         },

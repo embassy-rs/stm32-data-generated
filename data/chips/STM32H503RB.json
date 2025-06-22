@@ -2298,7 +2298,7 @@
           "address": 1073755136,
           "registers": {
             "kind": "opamp",
-            "version": "h",
+            "version": "v4",
             "block": "OPAMP"
           },
           "rcc": {

@@ -474,7 +474,7 @@ pub mod i2c;
 pub mod iwdg;
 #[path = "../../peripherals/lptim_v1a.rs"]
 pub mod lptim;
-#[path = "../../peripherals/opamp_l4u0.rs"]
+#[path = "../../peripherals/opamp_v3.rs"]
 pub mod opamp;
 #[path = "../../peripherals/pwr_l4.rs"]
 pub mod pwr;

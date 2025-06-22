@@ -4261,7 +4261,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40009000,
         registers: Some(PeripheralRegisters {
             kind: "opamp",
-            version: "h",
+            version: "v4",
             block: "OPAMP",
             ir: &opamp::REGISTERS,
         }),
@@ -4308,7 +4308,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40009010,
         registers: Some(PeripheralRegisters {
             kind: "opamp",
-            version: "h",
+            version: "v4",
             block: "OPAMP",
             ir: &opamp::REGISTERS,
         }),
@@ -10238,7 +10238,7 @@ pub mod lptim;
 pub mod ltdc;
 #[path = "../registers/mdios_v1.rs"]
 pub mod mdios;
-#[path = "../registers/opamp_h.rs"]
+#[path = "../registers/opamp_v4.rs"]
 pub mod opamp;
 #[path = "../registers/otg_v1.rs"]
 pub mod otg;

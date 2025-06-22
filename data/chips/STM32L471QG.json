@@ -3267,7 +3267,7 @@
           "address": 1073772544,
           "registers": {
             "kind": "opamp",
-            "version": "l4u0",
+            "version": "v3",
             "block": "OPAMP"
           },
           "rcc": {
@@ -3285,11 +3285,11 @@
           "pins": [
             {
               "pin": "PA0",
-              "signal": "VINP"
+              "signal": "VINP0"
             },
             {
               "pin": "PA1",
-              "signal": "VINM"
+              "signal": "VINM0"
             },
             {
               "pin": "PA3",
@@ -3302,7 +3302,7 @@
           "address": 1073772560,
           "registers": {
             "kind": "opamp",
-            "version": "l4u0",
+            "version": "v3",
             "block": "OPAMP"
           },
           "rcc": {
@@ -3320,11 +3320,11 @@
           "pins": [
             {
               "pin": "PA6",
-              "signal": "VINP"
+              "signal": "VINP0"
             },
             {
               "pin": "PA7",
-              "signal": "VINM"
+              "signal": "VINM0"
             },
             {
               "pin": "PB0",
